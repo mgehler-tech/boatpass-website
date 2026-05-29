@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Contact – Boatpass"
+  description="Contact the Boatpass team with questions, feedback, or bug reports."
+  lang="en"
+>
+  <div class="max-w-xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-text mb-4">Contact</h1>
+    <p class="text-gray-500 mb-10">Questions, feedback, or found a bug? Write to us!</p>
+
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" class="space-y-6">
+      <div>
+        <label class="block text-sm font-medium text-text mb-2" for="name">Your name</label>
+        <input type="text" id="name" name="name" required
+          class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-text mb-2" for="email">Email address</label>
+        <input type="email" id="email" name="email" required
+          class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium text-text mb-2" for="message">Your message</label>
+        <textarea id="message" name="message" rows="5" required
+          class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
+      </div>
+      <button type="submit"
+        class="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors">
+        Send
+      </button>
+    </form>
+  </div>
+</BaseLayout>
