@@ -1,0 +1,51 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  lang: 'de' | 'en';
+}
+
+const { post, lang } = Astro.props;
+const { title, description, date, readingTime, tags } = post.data;
+const formattedDate = date.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US', {
+  year: 'numeric', month: 'long', day: 'numeric'
+});
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+---
+
+<BaseLayout title={title} description={description} lang={lang} type="article">
+  <article class="max-w-3xl mx-auto px-4 py-16">
+    <header class="mb-10">
+      <div class="flex gap-2 mb-4">
+        {tags.map(tag => (
+          <span class="text-xs font-medium px-2 py-1 bg-primary/10 text-primary rounded-full">{tag}</span>
+        ))}
+      </div>
+      <h1 class="text-3xl md:text-4xl font-bold text-text leading-tight mb-4">{title}</h1>
+      <p class="text-gray-500 text-sm">{formattedDate} · {readingTime} {lang === 'de' ? 'Min. Lesezeit' : 'min read'}</p>
+    </header>
+
+    <div class="prose prose-lg max-w-none">
+      <slot />
+    </div>
+
+    <!-- CTA am Ende jedes Artikels -->
+    <div class="mt-16 p-8 bg-primary/5 rounded-2xl text-center">
+      <h2 class="text-2xl font-bold mb-3">
+        {lang === 'de' ? 'Jetzt mit der App lernen' : 'Start learning with the app'}
+      </h2>
+      <p class="text-gray-600 mb-6">
+        {lang === 'de'
+          ? 'Alle Prüfungsfragen, Prüfungssimulation und Fehler-Training — kostenlos starten.'
+          : 'All exam questions, exam simulation, and weak spot training — start for free.'}
+      </p>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors">
+        {lang === 'de' ? 'App kostenlos laden' : 'Download app for free'}
+      </a>
+    </div>
+  </article>
+</BaseLayout>

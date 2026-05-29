@@ -1,0 +1,64 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  lang: 'de' | 'en';
+  canonical?: string;
+  ogImage?: string;
+  type?: 'website' | 'article';
+}
+
+const {
+  title,
+  description,
+  lang,
+  canonical = Astro.url.href,
+  ogImage = '/images/og-image.png',
+  type = 'website',
+} = Astro.props;
+
+const altLang = lang === 'de' ? 'en' : 'de';
+const altUrl = lang === 'de'
+  ? `https://boatpass.de/en${Astro.url.pathname}`
+  : `https://boatpass.de${Astro.url.pathname.replace('/en', '')}`;
+---
+
+<title>{title} | Boatpass</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+
+<!-- hreflang -->
+<link rel="alternate" hreflang={lang} href={canonical} />
+<link rel="alternate" hreflang={altLang} href={altUrl} />
+<link rel="alternate" hreflang="x-default" href="https://boatpass.de/" />
+
+<!-- Open Graph -->
+<meta property="og:title" content={`${title} | Boatpass`} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={`https://boatpass.de${ogImage}`} />
+<meta property="og:url" content={canonical} />
+<meta property="og:type" content={type} />
+<meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={`${title} | Boatpass`} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={`https://boatpass.de${ogImage}`} />
+
+<!-- Schema.org MobileApplication (nur auf Landing Page) -->
+{type === 'website' && (
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Boatpass – SBF Lernapp",
+    "operatingSystem": "Android",
+    "applicationCategory": "EducationApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "4.99",
+      "priceCurrency": "EUR"
+    },
+    "description": description,
+  })} />
+)}
