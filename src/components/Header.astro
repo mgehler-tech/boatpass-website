@@ -27,6 +27,20 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <a href="#pricing" class="text-sm font-medium nav-link" style="color: #64748b; text-decoration: none;">
         {lang === 'de' ? 'Preise' : 'Pricing'}
       </a>
+
+      <!-- Führerscheine Dropdown (nur DE) -->
+      {lang === 'de' && (
+        <div class="nav-dropdown">
+          <button class="text-sm font-medium nav-link nav-dropdown-trigger" style="color: #64748b; background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; gap:4px;">
+            Führerscheine <span style="font-size:10px;">▾</span>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="/sbf-binnen/" class="nav-dropdown-item">SBF Binnen</a>
+            <a href="/sbf-see/" class="nav-dropdown-item">SBF See</a>
+          </div>
+        </div>
+      )}
+
       <a href={getLocalizedPath(lang, '/blog/')} class="text-sm font-medium nav-link" style="color: #64748b; text-decoration: none;">
         {t.nav.blog}
       </a>
@@ -52,4 +66,31 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
 <style>
   .nav-link:hover { color: #0a2647 !important; }
+
+  .nav-dropdown { position: relative; }
+  .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 1px solid rgba(12,95,155,0.12);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 150px;
+    box-shadow: 0 8px 24px rgba(10,38,71,0.1);
+    z-index: 100;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu { display: flex; flex-direction: column; gap: 2px; }
+  .nav-dropdown-item {
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+  .nav-dropdown-item:hover { background: rgba(8,145,178,0.07); color: #0a2647; }
 </style>
