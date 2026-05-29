@@ -79,7 +79,8 @@ export const en: Translations = {
   pricing: {
     chip: 'Pricing',
     title: 'Start free. Pay only for what you need.',
-    subtitle: 'Try the SBF Binnen study mode for free — no account, no subscription. Pay only when you\'re convinced.',
+    subtitle: 'Start free and buy only the catalogs you actually need — each license is a separate one-time purchase.',
+    modelHint: 'Each catalog purchased separately · no subscription · expand anytime',
     available: 'Available',
     price: '€4.99',
     ctaFree: 'Start for free',

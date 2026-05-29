@@ -77,7 +77,8 @@ export const de = {
   pricing: {
     chip: 'Preise',
     title: 'Kostenlos starten. Nur zahlen, was du brauchst.',
-    subtitle: 'Teste den SBF Binnen Lernmodus gratis — kein Account, kein Abo. Erst zahlen, wenn du überzeugt bist.',
+    subtitle: 'Starte kostenlos und kaufe nur die Kataloge, die du wirklich brauchst — jeder Führerschein ist ein eigener Einmalkauf.',
+    modelHint: 'Jeder Katalog einzeln kaufbar · kein Abo · jederzeit erweiterbar',
     available: 'Verfügbar',
     price: '€ 4,99',
     ctaFree: 'Kostenlos starten',
