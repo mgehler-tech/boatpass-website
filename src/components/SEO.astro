@@ -46,6 +46,25 @@ const altUrl = lang === 'de'
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={`https://boatpass.de${ogImage}`} />
 
+<!-- Schema.org Organization (auf allen Seiten) -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Boatpass",
+  "url": "https://boatpass.de",
+  "logo": "https://boatpass.de/images/app-icon.png",
+  "description": "Boatpass ist die moderne Lernapp für den Sportbootführerschein (SBF Binnen & See) – mit offiziellem ELWIS-Fragenkatalog, Prüfungssimulation und Fehler-Training.",
+  "sameAs": [
+    "https://play.google.com/store/apps/details?id=com.boatpass.app"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer support",
+    "url": "https://boatpass.de/kontakt/",
+    "availableLanguage": ["German", "English"]
+  }
+})} />
+
 <!-- Schema.org MobileApplication (nur auf Landing Page) -->
 {type === 'website' && (
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
