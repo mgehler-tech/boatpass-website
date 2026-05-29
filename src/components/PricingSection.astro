@@ -1,0 +1,53 @@
+---
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+---
+
+<section class="max-w-6xl mx-auto px-4 py-20">
+  <h2 class="text-3xl font-bold text-center text-text mb-14">{t.pricing.title}</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+    <!-- Free -->
+    <div class="bg-white p-8 rounded-2xl border border-gray-200">
+      <h3 class="text-xl font-bold text-text mb-1">{t.pricing.free}</h3>
+      <p class="text-3xl font-bold text-text mb-6">€0</p>
+      <ul class="space-y-3 mb-8">
+        {t.pricing.freeFeatures.map(f => (
+          <li class="flex items-center gap-2 text-gray-600">
+            <span class="text-success">✓</span> {f}
+          </li>
+        ))}
+      </ul>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        class="block text-center border-2 border-primary text-primary py-3 rounded-xl font-semibold hover:bg-primary/5 transition-colors">
+        {t.pricing.cta}
+      </a>
+    </div>
+
+    <!-- Premium -->
+    <div class="bg-primary p-8 rounded-2xl text-white relative overflow-hidden">
+      <div class="absolute top-4 right-4 bg-white/20 text-xs font-bold px-2 py-1 rounded-full">
+        {lang === 'de' ? 'Beliebt' : 'Popular'}
+      </div>
+      <h3 class="text-xl font-bold mb-1">{t.pricing.premium}</h3>
+      <p class="text-3xl font-bold mb-6">{t.pricing.price}</p>
+      <ul class="space-y-3 mb-8">
+        {t.pricing.premiumFeatures.map(f => (
+          <li class="flex items-center gap-2 text-white/90">
+            <span>✓</span> {f}
+          </li>
+        ))}
+      </ul>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        class="block text-center bg-white text-primary py-3 rounded-xl font-semibold hover:bg-white/90 transition-colors">
+        {t.pricing.cta}
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+  lang: 'de' | 'en';
+}
+
+const { post, lang } = Astro.props;
+const { title, description, date, readingTime, tags } = post.data;
+// post.id is e.g. "de/sbf-pruefung-alles-wissenswerte" in Astro 6 glob loader
+const slug = post.id.replace(`${lang}/`, '');
+const href = lang === 'de' ? `/blog/${slug}/` : `/en/blog/${slug}/`;
+const formattedDate = date.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US', {
+  year: 'numeric', month: 'short', day: 'numeric'
+});
+---
+
+<a href={href} class="block bg-white rounded-2xl border border-gray-100 hover:border-primary/30 hover:shadow-md transition-all p-6 group">
+  <div class="flex gap-2 mb-3">
+    {tags.slice(0, 2).map(tag => (
+      <span class="text-xs px-2 py-0.5 bg-primary/10 text-primary rounded-full">{tag}</span>
+    ))}
+  </div>
+  <h3 class="font-bold text-text text-lg leading-tight mb-2 group-hover:text-primary transition-colors">{title}</h3>
+  <p class="text-gray-500 text-sm leading-relaxed mb-4 line-clamp-2">{description}</p>
+  <div class="flex items-center justify-between text-xs text-gray-400">
+    <span>{formattedDate}</span>
+    <span>{readingTime} {lang === 'de' ? 'Min.' : 'min'}</span>
+  </div>
+</a>

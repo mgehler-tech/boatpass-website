@@ -1,0 +1,59 @@
+---
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+---
+
+<section class="max-w-6xl mx-auto px-4 pt-20 pb-16 md:pt-28 md:pb-24">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <!-- Text -->
+    <div>
+      <!-- Trust-Badge -->
+      <div class="inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full mb-6">
+        <span>✓</span>
+        <span>{lang === 'de' ? 'Offizieller DMYV-Fragenkatalog 2025/2026' : 'Official DMYV question catalog 2025/2026'}</span>
+      </div>
+
+      <h1 class="text-4xl md:text-5xl font-bold text-text leading-tight mb-6">
+        {t.hero.headline}
+      </h1>
+      <p class="text-xl text-gray-500 mb-8 leading-relaxed">
+        {t.hero.subline}
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer">
+          <img src="/images/google-play-badge.png" alt="Jetzt bei Google Play" class="h-14" />
+        </a>
+        <a href="#features" class="inline-flex items-center justify-center text-primary font-semibold py-3 px-6 border-2 border-primary rounded-xl hover:bg-primary/5 transition-colors">
+          {t.hero.ctaSecondary} →
+        </a>
+      </div>
+
+      <!-- Trust-Fakten -->
+      <div class="flex gap-8 mt-10 text-sm text-gray-500">
+        <div><span class="font-bold text-text text-lg">400+</span><br />{lang === 'de' ? 'Prüfungsfragen' : 'Exam questions'}</div>
+        <div><span class="font-bold text-text text-lg">5</span><br />{lang === 'de' ? 'Themenbereiche' : 'Topic areas'}</div>
+        <div><span class="font-bold text-text text-lg">2026</span><br />{lang === 'de' ? 'Aktueller Katalog' : 'Current catalog'}</div>
+      </div>
+    </div>
+
+    <!-- App Screenshot -->
+    <div class="flex justify-center">
+      <div class="relative">
+        <div class="absolute inset-0 bg-primary/10 rounded-3xl blur-3xl transform scale-110"></div>
+        <img
+          src="/images/app-screenshot.png"
+          alt={lang === 'de' ? 'Boatpass App Screenshot' : 'Boatpass app screenshot'}
+          class="relative w-64 md:w-72 rounded-3xl shadow-2xl"
+        />
+      </div>
+    </div>
+  </div>
+</section>

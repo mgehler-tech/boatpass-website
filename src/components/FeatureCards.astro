@@ -1,0 +1,29 @@
+---
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const features = [
+  { icon: '📚', title: t.features.learn.title, desc: t.features.learn.desc },
+  { icon: '📝', title: t.features.exam.title, desc: t.features.exam.desc },
+  { icon: '🎯', title: t.features.training.title, desc: t.features.training.desc },
+];
+---
+
+<section id="features" class="max-w-6xl mx-auto px-4 py-20">
+  <h2 class="text-3xl font-bold text-center text-text mb-14">{t.features.title}</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {features.map(f => (
+      <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
+        <div class="text-4xl mb-4">{f.icon}</div>
+        <h3 class="text-xl font-semibold text-text mb-3">{f.title}</h3>
+        <p class="text-gray-500 leading-relaxed">{f.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
