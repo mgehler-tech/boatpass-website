@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+---
+
+<BaseLayout
+  title="SBF Binnen lernen – Sportbootführerschein Binnen App"
+  description="Lerne für den SBF Binnen mit der Boatpass-App. Offizieller ELWIS-Fragenkatalog, Prüfungssimulation & Fehler-Training. Kostenlos starten."
+  lang="de"
+>
+
+  <!-- Hero -->
+  <div style="background:#f7faff; padding:100px 24px 60px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(8,145,178,0.08); border:1px solid rgba(8,145,178,0.2); color:#0891b2; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        ⚓ Sportbootführerschein Binnen
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-2px; color:#0a2647; line-height:1.1; margin-bottom:20px;">
+        SBF Binnen lernen –<br>die smarte Lernapp
+      </h1>
+      <p style="font-size:18px; color:#64748b; line-height:1.65; max-width:560px; margin:0 auto 36px;">
+        Bereite dich mit dem offiziellen ELWIS-Fragenkatalog auf die SBF-Binnen-Prüfung vor.
+        3 Lernmodi, Prüfungssimulation und gezieltes Fehler-Training — kostenlos starten.
+      </p>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#0a2647,#0c5f9b); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(10,38,71,0.2);">
+        ▶&nbsp;Kostenlos im Play Store
+      </a>
+    </div>
+  </div>
+
+  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+
+    <!-- Was ist SBF Binnen -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#0a2647; letter-spacing:-1px; margin-bottom:16px;">Was ist der SBF Binnen?</h2>
+      <p style="font-size:16px; color:#475569; line-height:1.75; margin-bottom:12px;">
+        Der <strong>Sportbootführerschein Binnen (SBF Binnen)</strong> ist die amtliche Fahrerlaubnis für Motorboote auf deutschen Binnenschifffahrtsstraßen — Flüsse, Kanäle und Binnenseen. Er ist Pflicht für Boote mit mehr als <strong>11,03 kW (15 PS) Motorleistung</strong> bzw. 7,5 kW bei Elektromotoren.
+      </p>
+      <p style="font-size:16px; color:#475569; line-height:1.75;">
+        Das Mindestalter beträgt 16 Jahre. Der Schein wird vom DMYV abgenommen und ist unbegrenzt gültig.
+      </p>
+    </section>
+
+    <!-- Prüfungsaufbau -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#0a2647; letter-spacing:-1px; margin-bottom:20px;">SBF-Binnen-Prüfung: Aufbau & Bestehensgrenze</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-bottom:20px;">
+        <div style="background:white; border:1px solid rgba(12,95,155,0.12); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Theorieprüfung</div>
+          <div style="font-size:15px; color:#475569; line-height:1.6;">30 Fragen · 45 Minuten<br>Multiple Choice</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(12,95,155,0.12); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Basisfragen</div>
+          <div style="font-size:15px; color:#475569; line-height:1.6;">7 Fragen<br>mind. 5 richtig</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(12,95,155,0.12); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Spezifische Fragen</div>
+          <div style="font-size:15px; color:#475569; line-height:1.6;">23 Fragen<br>mind. 18 richtig</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(12,95,155,0.12); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Fragenkatalog</div>
+          <div style="font-size:15px; color:#475569; line-height:1.6;">253+ Fragen<br>offizieller ELWIS-Katalog</div>
+        </div>
+      </div>
+      <p style="font-size:15px; color:#64748b; line-height:1.7;">
+        Nach der Theorie folgt eine <strong>praktische Prüfung</strong> auf dem Wasser. Die Prüfungsgebühren liegen bei ca. 130–150 € (Theorie + Praxis) je nach DMYV-Prüfungszentrum.
+      </p>
+    </section>
+
+    <!-- Wie die App hilft -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#0a2647; letter-spacing:-1px; margin-bottom:20px;">So hilft Boatpass beim SBF Binnen</h2>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        {[
+          { icon: '📚', title: 'Vollständiger ELWIS-Katalog', desc: 'Alle 253+ offiziellen Fragen für SBF Binnen — immer aktuell, direkt in der App.' },
+          { icon: '🎯', title: 'Prüfungssimulation', desc: 'Echte Prüfungsbedingungen: 30 Fragen, 45 Minuten, Bestehensgrenze — genau wie am Prüfungstag.' },
+          { icon: '🔁', title: 'Fehler-Training', desc: 'Trainiere gezielt die Fragen, die du noch nicht kannst. Kein Zeitverschwendung mit bereits gelernten Inhalten.' },
+          { icon: '📊', title: 'Fortschrittsanzeige', desc: 'Sieh jederzeit, wie weit du bist — nach Kategorie aufgeschlüsselt.' },
+        ].map(f => (
+          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(12,95,155,0.1); border-radius:16px; padding:20px;">
+            <span style="font-size:24px; flex-shrink:0;">{f.icon}</span>
+            <div>
+              <div style="font-weight:700; color:#0a2647; margin-bottom:4px;">{f.title}</div>
+              <div style="font-size:15px; color:#64748b; line-height:1.6;">{f.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background:linear-gradient(135deg,#0a2647,#0c5f9b); border-radius:24px; padding:48px 32px; text-align:center;">
+      <h2 style="font-size:26px; font-weight:800; color:white; margin-bottom:12px;">Jetzt kostenlos mit dem SBF Binnen starten</h2>
+      <p style="font-size:16px; color:rgba(255,255,255,0.75); margin-bottom:28px;">15 Lernfragen täglich gratis — kein Account nötig. Vollzugang für einmalig 4,99 €.</p>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:10px; background:white; color:#0a2647; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none;">
+        ▶&nbsp;Im Google Play Store öffnen
+      </a>
+    </section>
+
+    <!-- Interne Links -->
+    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(12,95,155,0.1);">
+      <h3 style="font-size:16px; font-weight:700; color:#0a2647; margin-bottom:16px;">Weiterführende Artikel</h3>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="/blog/sbf-pruefung-alles-wissenswerte/" style="color:#0891b2; text-decoration:none; font-size:15px;">→ SBF Prüfung: Alles was du wissen musst</a>
+        <a href="/blog/sbf-vorbereitung-wie-lange/" style="color:#0891b2; text-decoration:none; font-size:15px;">→ Wie lange muss ich für den SBF lernen?</a>
+        <a href="/blog/sbf-binnen-vs-see/" style="color:#0891b2; text-decoration:none; font-size:15px;">→ SBF Binnen vs. SBF See – was ist der Unterschied?</a>
+        <a href="/faq/" style="color:#0891b2; text-decoration:none; font-size:15px;">→ Häufige Fragen zum Sportbootführerschein</a>
+        <a href="/sbf-see/" style="color:#0891b2; text-decoration:none; font-size:15px;">→ SBF See lernen mit Boatpass</a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
