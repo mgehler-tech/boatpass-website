@@ -21,6 +21,16 @@ const { title, description, lang, ogImage, type } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Google Analytics 4 -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3Y8BE0JR9B"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3Y8BE0JR9B', {
+        page_path: window.location.pathname,
+      });
+    </script>
     <SEO title={title} description={description} lang={lang} ogImage={ogImage} type={type} />
   </head>
   <body class="min-h-screen bg-background">
