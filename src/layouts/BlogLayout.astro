@@ -21,6 +21,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
     <!-- Back link -->
     <a href={lang === 'de' ? '/blog/' : '/en/blog/'}
+      class="hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
       style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#0891b2; text-decoration:none; margin-bottom:36px;">
       ← {lang === 'de' ? 'Alle Artikel' : 'All articles'}
     </a>
@@ -51,14 +52,14 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <h2 style="font-size:22px; font-weight:900; color:white; margin-bottom:10px; letter-spacing:-0.3px;">
         {lang === 'de' ? 'Jetzt kostenlos mit dem Lernen starten' : 'Start learning for free now'}
       </h2>
-      <p style="font-size:14px; color:rgba(255,255,255,0.55); margin-bottom:24px; max-width:360px; margin-left:auto; margin-right:auto; line-height:1.6;">
+      <p style="font-size:14px; color:rgba(255,255,255,0.75); margin-bottom:24px; max-width:360px; margin-left:auto; margin-right:auto; line-height:1.6;">
         {lang === 'de'
           ? '15 Fragen täglich kostenlos — offizieller ELWIS-Fragenkatalog, Prüfungsmodus & Fehler-Training.'
           : '15 questions daily for free — official ELWIS catalog, exam simulation & error training.'}
       </p>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
         style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#0891b2,#0c5f9b); color:white; font-weight:700; font-size:15px; padding:13px 28px; border-radius:14px; text-decoration:none; box-shadow:0 6px 20px rgba(8,145,178,0.3);">
-        ▶&nbsp;{lang === 'de' ? 'App kostenlos laden' : 'Download app for free'}
+        <span aria-hidden="true">▶</span>&nbsp;{lang === 'de' ? 'App kostenlos laden' : 'Download app for free'}
       </a>
     </div>
 
