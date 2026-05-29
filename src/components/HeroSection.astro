@@ -35,7 +35,14 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <h1 class="animate-fade-up delay-1" style="font-size:clamp(40px,6vw,64px); font-weight:900; line-height:1.0; letter-spacing:-3px; color:#0a2647; margin-bottom:22px;">
         {t.hero.headline1}<br>
         {t.hero.headline2}<br>
-        <span class="gradient-text">{t.hero.headlineAccent}</span>
+        <span
+          id="hero-accent"
+          class="gradient-text"
+          data-words={JSON.stringify(lang === 'de'
+            ? ['SBF Binnen.', 'SBF See.', 'UBI.', 'SRC.']
+            : ['Boating License.', 'SBF Inland.', 'SBF Coastal.']
+          )}
+        >{t.hero.headlineAccent}</span>
       </h1>
 
       <!-- Subline -->
@@ -131,11 +138,33 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   <!-- Wave bottom -->
   <div style="position:absolute; bottom:-2px; left:0; right:0; height:80px; overflow:hidden; pointer-events:none;">
     <svg style="width:200%; height:100%; animation:wave 12s linear infinite;" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="white"/>
-      <path d="M1440,40 C1680,80 1920,0 2160,40 C2400,80 2640,0 2880,40 L2880,80 L1440,80 Z" fill="white"/>
+      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#f7faff"/>
+      <path d="M1440,40 C1680,80 1920,0 2160,40 C2400,80 2640,0 2880,40 L2880,80 L1440,80 Z" fill="#f7faff"/>
     </svg>
   </div>
 </section>
+
+<style>
+  #hero-accent { transition: opacity 0.3s ease; }
+</style>
+
+<script>
+  const el = document.getElementById('hero-accent') as HTMLElement | null;
+  if (el) {
+    const words: string[] = JSON.parse(el.dataset.words ?? '[]');
+    if (words.length > 1) {
+      let i = 0;
+      setInterval(() => {
+        el.style.opacity = '0';
+        setTimeout(() => {
+          i = (i + 1) % words.length;
+          el.textContent = words[i];
+          el.style.opacity = '1';
+        }, 300);
+      }, 2500);
+    }
+  }
+</script>
 
 <style>
   .hero-grid {
