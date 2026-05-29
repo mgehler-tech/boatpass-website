@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoatPass — Modernes Design Mockup</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #06090f;
+    color: white;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 48px;
+    background: rgba(6, 9, 15, 0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo { font-size: 20px; font-weight: 800; letter-spacing: -0.5px; }
+  .nav-logo span { color: #3b82f6; }
+  .nav-links { display: flex; gap: 32px; font-size: 14px; color: rgba(255,255,255,0.6); }
+  .nav-cta {
+    background: white; color: #06090f;
+    font-size: 14px; font-weight: 700;
+    padding: 10px 22px; border-radius: 100px;
+    text-decoration: none;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 120px 48px 80px;
+    overflow: hidden;
+  }
+
+  /* Animated gradient blobs */
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.35;
+    animation: pulse 8s ease-in-out infinite;
+  }
+  .blob-1 {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, #1d4ed8, #3b82f6);
+    top: -100px; right: -50px;
+    animation-delay: 0s;
+  }
+  .blob-2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, #0891b2, #06b6d4);
+    bottom: 50px; right: 200px;
+    animation-delay: 3s;
+  }
+  .blob-3 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, #6366f1, #8b5cf6);
+    top: 200px; left: 100px;
+    animation-delay: 5s; opacity: 0.15;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1) translate(0,0); }
+    50% { transform: scale(1.1) translate(20px, -20px); }
+  }
+
+  /* Grid noise overlay */
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M60 0v60M0 60h60' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 580px;
+  }
+
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(59, 130, 246, 0.15);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: #93c5fd;
+    font-size: 13px; font-weight: 600;
+    padding: 6px 14px; border-radius: 100px;
+    margin-bottom: 28px;
+  }
+  .badge-dot {
+    width: 6px; height: 6px;
+    background: #3b82f6; border-radius: 50%;
+    animation: blink 2s ease-in-out infinite;
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+  h1 {
+    font-size: 68px;
+    font-weight: 900;
+    line-height: 1.0;
+    letter-spacing: -3px;
+    margin-bottom: 24px;
+  }
+  h1 .accent {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subline {
+    font-size: 18px;
+    color: rgba(255,255,255,0.55);
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 440px;
+  }
+
+  .cta-group { display: flex; gap: 16px; align-items: center; margin-bottom: 56px; }
+
+  .cta-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    color: white; font-weight: 700; font-size: 15px;
+    padding: 14px 28px; border-radius: 14px;
+    text-decoration: none;
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+    transition: box-shadow 0.3s, transform 0.2s;
+  }
+  .cta-primary:hover { box-shadow: 0 0 60px rgba(59,130,246,0.6); transform: translateY(-1px); }
+
+  .cta-secondary {
+    color: rgba(255,255,255,0.7); font-size: 15px; font-weight: 500;
+    text-decoration: none;
+    display: flex; align-items: center; gap: 6px;
+  }
+
+  .stats {
+    display: flex; gap: 40px;
+  }
+  .stat-item { }
+  .stat-num {
+    font-size: 28px; font-weight: 800; letter-spacing: -1px;
+    background: linear-gradient(135deg, #fff, rgba(255,255,255,0.7));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-label { font-size: 13px; color: rgba(255,255,255,0.4); margin-top: 2px; }
+
+  /* ── PHONE MOCKUP ── */
+  .phone-wrap {
+    position: absolute;
+    right: 80px; top: 50%; transform: translateY(-50%);
+    z-index: 2;
+  }
+  .phone-glow {
+    position: absolute;
+    width: 360px; height: 360px;
+    background: radial-gradient(circle, rgba(59,130,246,0.5), transparent 70%);
+    bottom: -60px; left: 50%; transform: translateX(-50%);
+    filter: blur(30px);
+  }
+  .phone {
+    position: relative;
+    width: 280px;
+    background: #111827;
+    border-radius: 44px;
+    padding: 14px;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.1),
+      0 40px 80px rgba(0,0,0,0.8),
+      inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+  .phone-screen {
+    background: #0f172a;
+    border-radius: 32px;
+    overflow: hidden;
+    padding: 24px 16px;
+  }
+  .phone-greeting {
+    font-size: 12px; color: rgba(255,255,255,0.5);
+    margin-bottom: 4px;
+  }
+  .phone-title {
+    font-size: 18px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 20px;
+  }
+
+  /* Progress ring */
+  .progress-ring-wrap {
+    display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+  }
+  .ring-outer {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    background: conic-gradient(#3b82f6 216deg, rgba(255,255,255,0.08) 0deg);
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .ring-inner {
+    width: 85px; height: 85px;
+    background: #0f172a;
+    border-radius: 50%;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .ring-num { font-size: 18px; font-weight: 800; }
+  .ring-of { font-size: 10px; color: rgba(255,255,255,0.4); }
+
+  .phone-cards { display: flex; flex-direction: column; gap: 8px; }
+  .phone-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .phone-icon {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .phone-card-text .card-t { font-size: 13px; font-weight: 700; }
+  .phone-card-text .card-s { font-size: 11px; color: rgba(255,255,255,0.4); }
+
+  /* ── FEATURES ── */
+  .section { padding: 100px 48px; }
+  .section-label {
+    font-size: 12px; font-weight: 700; letter-spacing: 3px;
+    color: #3b82f6; text-transform: uppercase; margin-bottom: 16px;
+  }
+  .section-title {
+    font-size: 44px; font-weight: 800; letter-spacing: -2px;
+    line-height: 1.1; margin-bottom: 16px; max-width: 500px;
+  }
+  .section-sub {
+    font-size: 16px; color: rgba(255,255,255,0.5); max-width: 440px; line-height: 1.6;
+    margin-bottom: 60px;
+  }
+
+  .feat-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  .feat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+    padding: 28px;
+    transition: border-color 0.3s, background 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .feat-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .feat-card:hover { border-color: rgba(59,130,246,0.3); background: rgba(59,130,246,0.05); }
+  .feat-card:hover::before { opacity: 1; background: linear-gradient(90deg, #3b82f6, #06b6d4); }
+
+  .feat-icon {
+    width: 48px; height: 48px; border-radius: 14px;
+    background: rgba(59,130,246,0.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-bottom: 20px;
+  }
+  .feat-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; letter-spacing: -0.3px; }
+  .feat-desc { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+  /* ── HOW IT WORKS ── */
+  .how-section { padding: 80px 48px; background: rgba(255,255,255,0.02); }
+  .steps { display: flex; gap: 0; position: relative; margin-top: 60px; }
+  .steps::before {
+    content: '';
+    position: absolute; top: 28px; left: 60px; right: 60px; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59,130,246,0.4), rgba(6,182,212,0.4), transparent);
+  }
+  .step {
+    flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 0 20px;
+  }
+  .step-num {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: linear-gradient(135deg, #1d4ed8, #0891b2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 800;
+    margin-bottom: 20px;
+    box-shadow: 0 0 30px rgba(59,130,246,0.4);
+    position: relative; z-index: 1;
+  }
+  .step-label { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .step-desc { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.5; }
+
+  /* ── PRICING ── */
+  .pricing-section { padding: 100px 48px; }
+  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 800px; margin: 60px auto 0; }
+  .price-card {
+    border-radius: 24px; padding: 36px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+  }
+  .price-card.featured {
+    background: linear-gradient(135deg, #1d3a5e 0%, #0c2340 100%);
+    border-color: rgba(59,130,246,0.4);
+    position: relative;
+    box-shadow: 0 0 60px rgba(59,130,246,0.15);
+  }
+  .featured-badge {
+    position: absolute; top: 20px; right: 20px;
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    font-size: 11px; font-weight: 700; color: white;
+    padding: 4px 12px; border-radius: 100px;
+  }
+  .price-name { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.5); margin-bottom: 8px; }
+  .price-num { font-size: 48px; font-weight: 900; letter-spacing: -2px; margin-bottom: 6px; }
+  .price-sub { font-size: 13px; color: rgba(255,255,255,0.4); margin-bottom: 28px; }
+  .price-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+  .price-features li {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 14px; color: rgba(255,255,255,0.75);
+  }
+  .check { color: #22d3ee; font-weight: 700; }
+  .price-btn {
+    display: block; text-align: center;
+    padding: 14px; border-radius: 14px;
+    font-size: 15px; font-weight: 700;
+    text-decoration: none;
+  }
+  .price-btn.outline { border: 1px solid rgba(255,255,255,0.2); color: white; }
+  .price-btn.solid {
+    background: linear-gradient(135deg, #3b82f6, #06b6d4);
+    color: white;
+    box-shadow: 0 0 30px rgba(59,130,246,0.3);
+  }
+
+  /* ── FOOTER NOTE ── */
+  .note {
+    text-align: center; padding: 24px;
+    font-size: 13px; color: rgba(255,255,255,0.25);
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .note strong { color: rgba(255,255,255,0.5); }
+
+  /* Selection info at top */
+  .selection-bar {
+    background: rgba(59,130,246,0.15); border-bottom: 1px solid rgba(59,130,246,0.3);
+    padding: 10px 24px; text-align: center;
+    font-size: 13px; color: #93c5fd;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<div class="selection-bar">
+  Mockup: Modernes Dark-Design für BoatPass — inspiriert von Revolut, Linear, Vercel &nbsp;·&nbsp; <strong>Sieh dir alles an und sag mir, was gefällt / was nicht passt.</strong>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">boat<span>pass</span></div>
+  <div class="nav-links">
+    <span>Features</span>
+    <span>Preise</span>
+    <span>Blog</span>
+  </div>
+  <a class="nav-cta" href="#">Jetzt testen</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="hero-content">
+    <div class="badge">
+      <div class="badge-dot"></div>
+      Offizieller DMYV-Fragenkatalog 2025/2026
+    </div>
+
+    <h1>
+      Besteh den<br>
+      SBF Binnen.<br>
+      <span class="accent">Garantiert.</span>
+    </h1>
+
+    <p class="subline">
+      Die schnellste Methode zum Sportbootführerschein —
+      3 Lernmodi, 400+ Prüfungsfragen, sofortiges Feedback.
+      Kein Abo. Einmal zahlen, fertig.
+    </p>
+
+    <div class="cta-group">
+      <a class="cta-primary" href="#">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3 5.5C3 4.1 4.1 3 5.5 3h13C19.9 3 21 4.1 21 5.5v13c0 1.4-1.1 2.5-2.5 2.5h-13C4.1 21 3 19.9 3 18.5v-13z"/></svg>
+        Kostenlos im Play Store
+      </a>
+      <a class="cta-secondary" href="#">
+        Mehr erfahren →
+      </a>
+    </div>
+
+    <div class="stats">
+      <div class="stat-item">
+        <div class="stat-num">400+</div>
+        <div class="stat-label">Prüfungsfragen</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">Lernmodi</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4,99 €</div>
+        <div class="stat-label">Einmalkauf</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Phone -->
+  <div class="phone-wrap">
+    <div class="phone-glow"></div>
+    <div class="phone">
+      <div class="phone-screen">
+        <div class="phone-greeting">Guten Morgen ☀️</div>
+        <div class="phone-title">Dein Lernplan</div>
+
+        <div class="progress-ring-wrap">
+          <div class="ring-outer">
+            <div class="ring-inner">
+              <div class="ring-num">216</div>
+              <div class="ring-of">von 300</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="phone-cards">
+          <div class="phone-card">
+            <div class="phone-icon" style="background: rgba(59,130,246,0.15);">📚</div>
+            <div class="phone-card-text">
+              <div class="card-t">Lernen</div>
+              <div class="card-s">Kategorie wählen</div>
+            </div>
+          </div>
+          <div class="phone-card">
+            <div class="phone-icon" style="background: rgba(6,182,212,0.15);">📝</div>
+            <div class="phone-card-text">
+              <div class="card-t">Prüfungsmodus</div>
+              <div class="card-s">30 Fragen · 45 Min</div>
+            </div>
+          </div>
+          <div class="phone-card" style="border-color: rgba(59,130,246,0.3);">
+            <div class="phone-icon" style="background: rgba(239,68,68,0.15);">🎯</div>
+            <div class="phone-card-text">
+              <div class="card-t">Fehler-Training</div>
+              <div class="card-s">12 offene Fehler</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section">
+  <div class="section-label">Features</div>
+  <div class="section-title">Drei Wege zum Bestehen</div>
+  <div class="section-sub">Lernmodus, Prüfungssimulation und gezieltes Fehler-Training — alles in einer App.</div>
+
+  <div class="feat-grid">
+    <div class="feat-card">
+      <div class="feat-icon">📚</div>
+      <div class="feat-title">Lernmodus</div>
+      <div class="feat-desc">Fragen nach Kategorie, Sofortfeedback mit Erklärung. Lern in deinem Tempo — Navigation, Schifffahrtsrecht, Sicherheit & mehr.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📝</div>
+      <div class="feat-title">Prüfungssimulation</div>
+      <div class="feat-desc">Echte Prüfungsbedingungen: 30 Fragen, Zeitlimit, Bestehensgrenze. Feedback erst am Ende — wie bei der richtigen Prüfung.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🎯</div>
+      <div class="feat-title">Fehler-Training</div>
+      <div class="feat-desc">Trainiere gezielt deine Schwächen. Nur falsch beantwortete Fragen — kein Zeitverschwenden mit dem, was du schon kannst.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">📊</div>
+      <div class="feat-title">Fortschritt</div>
+      <div class="feat-desc">Ringdiagramm, Trefferquote je Kategorie, Lernzeit — du siehst immer genau, wo du stehst.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🌙</div>
+      <div class="feat-title">Dark Mode</div>
+      <div class="feat-desc">Augenschonendes Lernen am Abend. Deutsch & Englisch vollständig unterstützt.</div>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">⚓</div>
+      <div class="feat-title">Offizieller Katalog</div>
+      <div class="feat-desc">400+ Fragen aus dem offiziellen ELWIS-Fragenkatalog Binnen, Stand 01.08.2023. Exakt die Fragen aus der echten Prüfung.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div class="section-label">So einfach geht's</div>
+    <div class="section-title">In 3 Schritten zur Prüfung</div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-label">App herunterladen</div>
+        <div class="step-desc">Kostenlos im Google Play Store. Sofort loslegen — kein Account, kein Abo.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-label">Lernen & trainieren</div>
+        <div class="step-desc">Lernmodus, Prüfungssimulation oder Fehler-Training — du wählst, wie du lernst.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-label">Prüfung bestehen</div>
+        <div class="step-desc">Mit dem offiziellen Fragenkatalog bestens vorbereitet in die echte Prüfung.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing-section">
+  <div style="text-align: center;">
+    <div class="section-label" style="text-align:center">Preise</div>
+    <div class="section-title" style="margin: 0 auto 12px; text-align:center">Einmal zahlen. Für immer lernen.</div>
+    <p style="color: rgba(255,255,255,0.45); font-size: 16px;">Kein Abo. Kein Risiko. Einmalkauf via Google Play.</p>
+  </div>
+
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-name">Free</div>
+      <div class="price-num">€ 0</div>
+      <div class="price-sub">Für immer kostenlos</div>
+      <ul class="price-features">
+        <li><span class="check">✓</span> 20–30 Fragen aus dem Katalog</li>
+        <li><span class="check">✓</span> 1–2 Kategorien</li>
+        <li><span class="check">✓</span> Lernmodus (Basis)</li>
+      </ul>
+      <a class="price-btn outline" href="#">Kostenlos starten</a>
+    </div>
+    <div class="price-card featured">
+      <div class="featured-badge">Beliebt</div>
+      <div class="price-name">Premium</div>
+      <div class="price-num">€ 4,99</div>
+      <div class="price-sub">Einmalzahlung — kein Abo</div>
+      <ul class="price-features">
+        <li><span class="check">✓</span> 400+ Prüfungsfragen</li>
+        <li><span class="check">✓</span> Alle Kategorien</li>
+        <li><span class="check">✓</span> Prüfungsmodus</li>
+        <li><span class="check">✓</span> Fehler-Training</li>
+        <li><span class="check">✓</span> Statistiken & Fortschritt</li>
+        <li><span class="check">✓</span> Dark Mode · DE & EN</li>
+      </ul>
+      <a class="price-btn solid" href="#">Jetzt freischalten</a>
+    </div>
+  </div>
+</section>
+
+<div class="note">
+  Dieses Mockup zeigt die neue Designrichtung für die BoatPass-Website. &nbsp;·&nbsp;
+  <strong>Was gefällt? Was soll anders sein?</strong> — Sag es mir im Chat.
+</div>
+
+</body>
+</html>
