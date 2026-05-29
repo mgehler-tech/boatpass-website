@@ -1,17 +1,20 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import FeatureCards from '../components/FeatureCards.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import PricingSection from '../components/PricingSection.astro';
+import BlogTeaser from '../components/BlogTeaser.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout
+  title="SBF Lernapp"
+  description="Lerne für den Sportbootführerschein mit offiziellen Prüfungsfragen, Prüfungssimulation und Fehler-Training. Kostenlos starten."
+  lang="de"
+>
+  <HeroSection lang="de" />
+  <FeatureCards lang="de" />
+  <HowItWorks lang="de" />
+  <PricingSection lang="de" />
+  <BlogTeaser lang="de" />
+</BaseLayout>
