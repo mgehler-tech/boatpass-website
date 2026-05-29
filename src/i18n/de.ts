@@ -45,7 +45,7 @@ export const de = {
     },
     exam: {
       title: 'Prüfungssimulation',
-      desc: 'Echte Prüfungsbedingungen: 30 Fragen, Zeitlimit, Bestehensgrenze. Feedback erst am Ende — wie beim Original.',
+      desc: 'Echte Prüfungsbedingungen: Zeitlimit, Bestehensgrenze, Feedback erst am Ende — genau wie in der echten Prüfung.',
     },
     training: {
       title: 'Fehler-Training',

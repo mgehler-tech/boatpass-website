@@ -47,7 +47,7 @@ export const en: Translations = {
     },
     exam: {
       title: 'Exam simulation',
-      desc: 'Real exam conditions: 30 questions, time limit, pass threshold. Feedback only at the end — just like the real thing.',
+      desc: 'Real exam conditions: time limit, pass threshold, feedback only at the end — exactly like the real exam.',
     },
     training: {
       title: 'Error training',
