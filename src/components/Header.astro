@@ -1,6 +1,46 @@
 ---
+import { useTranslations, getLocalizedPath } from '../i18n/index';
+
 interface Props {
   lang: 'de' | 'en';
 }
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 ---
-<header></header>
+
+<header class="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-gray-100">
+  <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href={getLocalizedPath(lang, '/')} class="text-xl font-bold text-primary">
+      Boatpass
+    </a>
+
+    <!-- Navigation Links (Desktop) -->
+    <div class="hidden md:flex items-center gap-6">
+      <a href={getLocalizedPath(lang, '/blog/')} class="text-gray-600 hover:text-text transition-colors text-sm font-medium">
+        {t.nav.blog}
+      </a>
+      <a href={getLocalizedPath(lang, '/faq/')} class="text-gray-600 hover:text-text transition-colors text-sm font-medium">
+        {t.nav.faq}
+      </a>
+      <a href={lang === 'de' ? '/ueber-uns/' : '/en/about/'} class="text-gray-600 hover:text-text transition-colors text-sm font-medium">
+        {t.nav.about}
+      </a>
+    </div>
+
+    <!-- Rechts: Sprache + CTA -->
+    <div class="flex items-center gap-3">
+      <!-- Sprachumschalter -->
+      <a href={lang === 'de' ? '/en/' : '/'} class="text-sm text-gray-500 hover:text-text transition-colors">
+        {t.footer.switchLang}
+      </a>
+      <!-- CTA Button -->
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        class="hidden md:inline-flex bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors">
+        {t.nav.getApp}
+      </a>
+    </div>
+  </nav>
+</header>

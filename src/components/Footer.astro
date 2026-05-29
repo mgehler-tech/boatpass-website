@@ -1,6 +1,58 @@
 ---
+import { useTranslations, getLocalizedPath } from '../i18n/index';
+
 interface Props {
   lang: 'de' | 'en';
 }
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 ---
-<footer></footer>
+
+<footer class="bg-gray-50 border-t border-gray-100 mt-24">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+      <!-- Brand -->
+      <div>
+        <span class="text-lg font-bold text-primary">Boatpass</span>
+        <p class="text-gray-500 text-sm mt-2">
+          {lang === 'de'
+            ? 'Die App für den Sportbootführerschein.'
+            : 'The app for your boating license.'}
+        </p>
+        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="inline-block mt-3">
+          <img src="/images/google-play-badge.png" alt="Google Play" class="h-10" />
+        </a>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="font-semibold text-text mb-3 text-sm">{lang === 'de' ? 'Seiten' : 'Pages'}</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href={getLocalizedPath(lang, '/blog/')} class="text-gray-500 hover:text-text transition-colors">{t.nav.blog}</a></li>
+          <li><a href={getLocalizedPath(lang, '/faq/')} class="text-gray-500 hover:text-text transition-colors">{t.nav.faq}</a></li>
+          <li><a href={lang === 'de' ? '/ueber-uns/' : '/en/about/'} class="text-gray-500 hover:text-text transition-colors">{t.nav.about}</a></li>
+          <li><a href={lang === 'de' ? '/kontakt/' : '/en/contact/'} class="text-gray-500 hover:text-text transition-colors">{t.nav.contact}</a></li>
+        </ul>
+      </div>
+
+      <!-- Rechtliches -->
+      <div>
+        <h3 class="font-semibold text-text mb-3 text-sm">{lang === 'de' ? 'Rechtliches' : 'Legal'}</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="/datenschutz/" class="text-gray-500 hover:text-text transition-colors">{t.footer.privacy}</a></li>
+          <li><a href="/impressum/" class="text-gray-500 hover:text-text transition-colors">{t.footer.imprint}</a></li>
+        </ul>
+        <div class="mt-4">
+          <a href={lang === 'de' ? '/en/' : '/'} class="text-sm text-primary hover:underline">{t.footer.switchLang}</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-200 pt-6 text-center text-gray-400 text-xs">
+      © {year} Boatpass. {lang === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
+    </div>
+  </div>
+</footer>
