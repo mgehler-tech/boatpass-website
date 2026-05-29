@@ -12,18 +12,86 @@ const features = [
   { icon: '📚', title: t.features.learn.title, desc: t.features.learn.desc },
   { icon: '📝', title: t.features.exam.title, desc: t.features.exam.desc },
   { icon: '🎯', title: t.features.training.title, desc: t.features.training.desc },
+  { icon: '📊', title: t.features.progress.title, desc: t.features.progress.desc },
+  { icon: '🌙', title: t.features.darkMode.title, desc: t.features.darkMode.desc },
+  { icon: '⚓', title: t.features.catalog.title, desc: t.features.catalog.desc },
 ];
 ---
 
-<section id="features" class="max-w-6xl mx-auto px-4 py-20">
-  <h2 class="text-3xl font-bold text-center text-text mb-14">{t.features.title}</h2>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<section id="features" class="max-w-6xl mx-auto px-6 py-24">
+  <div class="reveal-item section-header" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+    <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(8,145,178,0.08); border:1px solid rgba(8,145,178,0.2); color:#0891b2; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
+      ⚡ {t.features.chip}
+    </div>
+    <h2 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#0a2647; line-height:1.1; margin-bottom:14px;">{t.features.title}</h2>
+    <p style="font-size:16px; color:#64748b; max-width:440px; line-height:1.65; margin-bottom:56px;">{t.features.subtitle}</p>
+  </div>
+
+  <div class="feat-grid">
     {features.map(f => (
-      <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-        <div class="text-4xl mb-4">{f.icon}</div>
-        <h3 class="text-xl font-semibold text-text mb-3">{f.title}</h3>
-        <p class="text-gray-500 leading-relaxed">{f.desc}</p>
+      <div class="feat-card reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+        <div class="feat-top-line"></div>
+        <div style="width:52px; height:52px; border-radius:14px; background:linear-gradient(135deg,rgba(8,145,178,0.1),rgba(12,95,155,0.08)); display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:20px;">
+          {f.icon}
+        </div>
+        <h3 style="font-size:17px; font-weight:800; color:#0a2647; margin-bottom:10px; letter-spacing:-0.2px;">{f.title}</h3>
+        <p style="font-size:14px; color:#64748b; line-height:1.65;">{f.desc}</p>
       </div>
     ))}
   </div>
 </section>
+
+<style>
+  .feat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+  .feat-card {
+    background: white;
+    border: 1px solid rgba(12,95,155,0.12);
+    border-radius: 20px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, opacity 0.6s ease;
+  }
+  .feat-top-line {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #0c5f9b, #0891b2);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    border-radius: 3px 3px 0 0;
+  }
+  .feat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(10,38,71,0.1);
+    border-color: rgba(12,95,155,0.2);
+  }
+  .feat-card:hover .feat-top-line {
+    transform: scaleX(1);
+  }
+  @media (max-width: 900px) {
+    .feat-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .feat-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        (e.target as HTMLElement).style.opacity = '1';
+        (e.target as HTMLElement).style.transform = 'translateY(0)';
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('#features .reveal-item').forEach(el => observer.observe(el));
+</script>
