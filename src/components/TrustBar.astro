@@ -9,21 +9,26 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const items = [
-  { icon: '⚓', label: t.trust.catalog },
-  { icon: '✅', label: t.trust.current },
-  { icon: '💳', label: t.trust.oneTime },
-  { icon: '🇩🇪', label: t.trust.languages },
-  { icon: '🌙', label: t.trust.darkMode },
+  t.trust.catalog,
+  t.trust.current,
+  t.trust.oneTime,
+  t.trust.languages,
 ];
 ---
 
-<div style="background:white; border-top:1px solid rgba(12,95,155,0.12); border-bottom:1px solid rgba(12,95,155,0.12); padding:20px 24px;">
+<div style="padding:14px 24px;">
   <div class="max-w-6xl mx-auto trust-inner">
-    {items.map(item => (
-      <div class="trust-item">
-        <span style="font-size:18px;">{item.icon}</span>
-        {item.label}
-      </div>
+    {items.map((label, i) => (
+      <>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="flex-shrink:0;">
+            <circle cx="8" cy="8" r="8" fill="rgba(8,145,178,0.1)"/>
+            <path d="M5 8.2L7 10.2L11 6" stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>{label}</span>
+        </div>
+        {i < items.length - 1 && <div class="trust-sep" aria-hidden="true"></div>}
+      </>
     ))}
   </div>
 </div>
@@ -33,15 +38,27 @@ const items = [
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
     flex-wrap: wrap;
+    gap: 0;
   }
   .trust-item {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #0a2647;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #475569;
+    padding: 6px 20px;
+    white-space: nowrap;
+  }
+  .trust-sep {
+    width: 1px;
+    height: 14px;
+    background: rgba(12,95,155,0.12);
+    flex-shrink: 0;
+  }
+  @media (max-width: 700px) {
+    .trust-sep { display: none; }
+    .trust-item { padding: 6px 12px; }
   }
 </style>

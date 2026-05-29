@@ -11,31 +11,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h1 class="text-4xl font-bold text-text mb-4">Kontakt</h1>
     <p class="text-gray-500 mb-10">Fragen, Feedback oder ein Bug gefunden? Schreib uns!</p>
 
-    <div data-fs-success style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; border-radius:12px; padding:16px 20px; margin-bottom:24px; font-weight:500;">
-      ✓ Nachricht gesendet! Wir melden uns bald.
+    <div id="success-msg" style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; border-radius:12px; padding:20px 24px; margin-bottom:24px; font-weight:500; font-size:1rem;">
+      ✓ Nachricht erfolgreich gesendet! Das Team meldet sich so schnell wie möglich bei dir.
     </div>
-    <div data-fs-error style="display:none; background:#fef2f2; border:1px solid #fecaca; color:#991b1b; border-radius:12px; padding:16px 20px; margin-bottom:24px;"></div>
+    <div id="error-msg" style="display:none; background:#fef2f2; border:1px solid #fecaca; color:#991b1b; border-radius:12px; padding:16px 20px; margin-bottom:24px;"></div>
 
     <form id="kontakt-form" class="space-y-6">
       <div>
         <label class="block text-sm font-medium text-text mb-2" for="name">Dein Name</label>
-        <input type="text" id="name" name="name" required data-fs-field
+        <input type="text" id="name" name="name" required
           class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors" />
-        <span data-fs-error="name" class="text-red-500 text-sm mt-1 block"></span>
       </div>
       <div>
         <label class="block text-sm font-medium text-text mb-2" for="email">E-Mail-Adresse</label>
-        <input type="email" id="email" name="email" required data-fs-field
+        <input type="email" id="email" name="email" required
           class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors" />
-        <span data-fs-error="email" class="text-red-500 text-sm mt-1 block"></span>
       </div>
       <div>
         <label class="block text-sm font-medium text-text mb-2" for="message">Deine Nachricht</label>
-        <textarea id="message" name="message" rows="5" required data-fs-field
+        <textarea id="message" name="message" rows="5" required
           class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
-        <span data-fs-error="message" class="text-red-500 text-sm mt-1 block"></span>
       </div>
-      <button type="submit" data-fs-submit-btn
+      <button type="submit" id="submit-btn"
         class="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
         Absenden
       </button>
@@ -43,8 +40,40 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </div>
 
   <script>
-    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
-    formspree('initForm', { formElement: '#kontakt-form', formId: 'xgoqqywe' });
+    const form = document.getElementById('kontakt-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successMsg = document.getElementById('success-msg');
+    const errorMsg = document.getElementById('error-msg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Wird gesendet…';
+      errorMsg.style.display = 'none';
+
+      try {
+        const res = await fetch('https://formspree.io/f/xgoqqywe', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+
+        if (res.ok) {
+          form.style.display = 'none';
+          successMsg.style.display = 'block';
+        } else {
+          const data = await res.json();
+          errorMsg.textContent = data?.errors?.map((e) => e.message).join(', ') || 'Fehler beim Senden. Bitte versuche es erneut.';
+          errorMsg.style.display = 'block';
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Absenden';
+        }
+      } catch {
+        errorMsg.textContent = 'Netzwerkfehler. Bitte versuche es erneut.';
+        errorMsg.style.display = 'block';
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Absenden';
+      }
+    });
   </script>
-  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </BaseLayout>

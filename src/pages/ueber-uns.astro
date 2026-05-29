@@ -7,27 +7,58 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Wer steckt hinter Boatpass? Die Geschichte und Motivation hinter der SBF-Lernapp."
   lang="de"
 >
-  <div class="max-w-3xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold text-text mb-8">Über Boatpass</h1>
-    <div class="prose prose-lg text-gray-600">
-      <p>
+  <div style="max-width:720px; margin:0 auto; padding:80px 24px 120px;">
+
+    <!-- Header -->
+    <div style="margin-bottom:48px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(8,145,178,0.08); border:1px solid rgba(8,145,178,0.2); color:#0891b2; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
+        ⚓ Über uns
+      </div>
+      <h1 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#0a2647; line-height:1.1; margin-bottom:12px;">Über Boatpass</h1>
+      <p style="font-size:16px; color:#64748b;">Die Geschichte hinter der besten SBF-Lernapp auf Android</p>
+    </div>
+
+    <!-- Card: Entstehung -->
+    <div style="background:white; border:1px solid rgba(12,95,155,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <h2 style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Wie alles begann</h2>
+      <p style="font-size:15px; color:#475569; line-height:1.7; margin-bottom:12px;">
         Boatpass entstand aus einer persönlichen Frustration: Beim Lernen für den Sportbootführerschein
         fehlte eine App, die sich wirklich gut anfühlt. Die verfügbaren Alternativen wirkten veraltet,
         unübersichtlich oder zu teuer.
       </p>
-      <p>
+      <p style="font-size:15px; color:#475569; line-height:1.7;">
         Also haben wir selbst eine gebaut — mit dem Ziel, die beste SBF-Lernapp auf Android zu sein.
         Modern, schnell, motivierend. Wie Duolingo fürs Bootfahren.
       </p>
-      <h2>Unser Versprechen</h2>
-      <ul>
-        <li>Immer aktueller Fragenkatalog</li>
-        <li>Kein Abo — einmaliger Kauf, lebenslanger Zugriff</li>
-        <li>Kein unnötiger Schnickschnack — nur das, was beim Bestehen hilft</li>
+    </div>
+
+    <!-- Card: Versprechen -->
+    <div style="background:white; border:1px solid rgba(12,95,155,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <h2 style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Unser Versprechen</h2>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#475569; line-height:1.6;">
+          <span style="color:#0891b2; font-weight:700; flex-shrink:0;">✓</span>
+          Immer aktueller Fragenkatalog
+        </li>
+        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#475569; line-height:1.6;">
+          <span style="color:#0891b2; font-weight:700; flex-shrink:0;">✓</span>
+          Kein Abo — einmaliger Kauf, lebenslanger Zugriff
+        </li>
+        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#475569; line-height:1.6;">
+          <span style="color:#0891b2; font-weight:700; flex-shrink:0;">✓</span>
+          Kein unnötiger Schnickschnack — nur das, was beim Bestehen hilft
+        </li>
       </ul>
-      <p>
-        Bei Fragen oder Feedback erreichst du uns über das <a href="/kontakt/" class="text-primary hover:underline">Kontaktformular</a>.
+    </div>
+
+    <!-- Card: Kontakt -->
+    <div style="background:white; border:1px solid rgba(12,95,155,0.1); border-radius:20px; padding:32px;">
+      <h2 style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Kontakt</h2>
+      <p style="font-size:15px; color:#475569; line-height:1.7;">
+        Bei Fragen oder Feedback erreichst du uns über das
+        <a href="/kontakt/" style="color:#0891b2; text-decoration:none; font-weight:500;">Kontaktformular</a>.
       </p>
     </div>
+
   </div>
 </BaseLayout>
