@@ -2,6 +2,13 @@
   command = "npm run build"
   publish = "dist"
 
+# www → naked domain redirect (SEO: eine kanonische URL)
+[[redirects]]
+  from = "https://www.boatpass.de/*"
+  to = "https://boatpass.de/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
