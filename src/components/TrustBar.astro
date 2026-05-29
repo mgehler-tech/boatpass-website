@@ -1,0 +1,47 @@
+---
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const items = [
+  { icon: '⚓', label: t.trust.catalog },
+  { icon: '✅', label: t.trust.current },
+  { icon: '💳', label: t.trust.oneTime },
+  { icon: '🇩🇪', label: t.trust.languages },
+  { icon: '🌙', label: t.trust.darkMode },
+];
+---
+
+<div style="background:white; border-top:1px solid rgba(12,95,155,0.12); border-bottom:1px solid rgba(12,95,155,0.12); padding:20px 24px;">
+  <div class="max-w-6xl mx-auto trust-inner">
+    {items.map(item => (
+      <div class="trust-item">
+        <span style="font-size:18px;">{item.icon}</span>
+        {item.label}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .trust-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0a2647;
+  }
+</style>
