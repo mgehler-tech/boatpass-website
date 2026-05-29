@@ -42,7 +42,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     </header>
 
     <!-- Content -->
-    <div class="prose prose-lg max-w-none prose-headings:font-black prose-headings:text-navy prose-headings:tracking-tight prose-p:text-slate-600 prose-p:leading-relaxed prose-strong:text-navy prose-a:text-primary prose-li:text-slate-600">
+    <div class="article-body">
       <slot />
     </div>
 
@@ -65,3 +65,108 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
   </article>
 </BaseLayout>
+
+<style>
+  .article-body {
+    font-size: 17px;
+    line-height: 1.75;
+    color: #475569;
+  }
+
+  /* Paragraphs */
+  .article-body p {
+    margin-bottom: 1.4em;
+  }
+
+  /* Headings */
+  .article-body h2 {
+    font-size: 1.45em;
+    font-weight: 900;
+    color: #0a2647;
+    letter-spacing: -0.4px;
+    line-height: 1.2;
+    margin-top: 2.2em;
+    margin-bottom: 0.6em;
+  }
+  .article-body h3 {
+    font-size: 1.15em;
+    font-weight: 800;
+    color: #0a2647;
+    letter-spacing: -0.2px;
+    line-height: 1.3;
+    margin-top: 1.8em;
+    margin-bottom: 0.5em;
+  }
+
+  /* Lists */
+  .article-body ul,
+  .article-body ol {
+    margin-bottom: 1.4em;
+    padding-left: 1.5em;
+  }
+  .article-body ul { list-style: disc; }
+  .article-body ol { list-style: decimal; }
+  .article-body li {
+    margin-bottom: 0.4em;
+  }
+
+  /* Strong */
+  .article-body strong {
+    font-weight: 700;
+    color: #0a2647;
+  }
+
+  /* Links */
+  .article-body a {
+    color: #0891b2;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .article-body a:hover { color: #0c5f9b; }
+
+  /* Blockquote */
+  .article-body blockquote {
+    border-left: 3px solid #0891b2;
+    margin: 1.8em 0;
+    padding: 12px 20px;
+    background: rgba(8,145,178,0.05);
+    border-radius: 0 8px 8px 0;
+    color: #334155;
+    font-style: normal;
+  }
+  .article-body blockquote p { margin-bottom: 0; }
+
+  /* Tables */
+  .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.6em;
+    font-size: 0.9em;
+  }
+  .article-body th {
+    background: rgba(10,38,71,0.05);
+    color: #0a2647;
+    font-weight: 700;
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 2px solid rgba(12,95,155,0.15);
+  }
+  .article-body td {
+    padding: 9px 14px;
+    border-bottom: 1px solid rgba(12,95,155,0.08);
+    vertical-align: top;
+  }
+  .article-body tr:last-child td { border-bottom: none; }
+  .article-body tr:nth-child(even) td {
+    background: rgba(10,38,71,0.02);
+  }
+
+  /* Code */
+  .article-body code {
+    font-size: 0.88em;
+    background: rgba(10,38,71,0.06);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #0c5f9b;
+  }
+</style>
