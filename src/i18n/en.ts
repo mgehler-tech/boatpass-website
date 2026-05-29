@@ -33,7 +33,7 @@ export const en: Translations = {
   },
   trust: {
     catalog: 'Official ELWIS question catalog',
-    current: 'As of August 2023 (currently valid)',
+    current: 'Always up to date — updated when catalogs change',
     oneTime: 'Start for free — no account needed',
     languages: 'German & English',
   },
@@ -63,7 +63,7 @@ export const en: Translations = {
     },
     catalog: {
       title: 'Official catalog',
-      desc: '400+ questions from the official ELWIS inland catalog, as of 01.08.2023. Exactly the questions from the real exam.',
+      desc: '400+ questions from the official ELWIS question catalog. Always up to date — updated immediately when the catalog changes.',
     },
   },
   howItWorks: {

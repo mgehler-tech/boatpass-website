@@ -31,7 +31,7 @@ export const de = {
   },
   trust: {
     catalog: 'Offizieller ELWIS-Fragenkatalog',
-    current: 'Stand August 2023 (aktuell gültig)',
+    current: 'Immer aktuell — Updates bei Katalogänderungen',
     oneTime: 'Kostenlos starten — kein Account',
     languages: 'Deutsch & Englisch',
   },
@@ -61,7 +61,7 @@ export const de = {
     },
     catalog: {
       title: 'Offizieller Katalog',
-      desc: '400+ Fragen aus dem offiziellen ELWIS-Katalog Binnen, Stand 01.08.2023. Exakt die Fragen der echten Prüfung.',
+      desc: '400+ Fragen aus dem offiziellen ELWIS-Fragenkatalog. Immer aktuell — wird bei Katalogänderungen sofort aktualisiert.',
     },
   },
   howItWorks: {
