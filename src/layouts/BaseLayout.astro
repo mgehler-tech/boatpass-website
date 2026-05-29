@@ -30,6 +30,17 @@ const { title, description, lang, ogImage, type } = Astro.props;
       gtag('config', 'G-3Y8BE0JR9B', {
         page_path: window.location.pathname,
       });
+
+      // Conversion Tracking: Play Store Klicks
+      document.addEventListener('click', function(e) {
+        const link = e.target.closest('a');
+        if (link && link.href && link.href.includes('play.google.com')) {
+          gtag('event', 'play_store_click', {
+            event_category: 'conversion',
+            event_label: window.location.pathname,
+          });
+        }
+      });
     </script>
     <SEO title={title} description={description} lang={lang} ogImage={ogImage} type={type} />
   </head>
