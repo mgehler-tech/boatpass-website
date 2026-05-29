@@ -1,39 +1,77 @@
 ---
 title: "SBF Binnen vs. SBF See – Was ist der Unterschied?"
-description: "Du willst den Sportbootführerschein machen, weißt aber nicht welchen? Hier erfährst du den Unterschied zwischen SBF Binnen und SBF See."
+description: "Welchen Sportbootführerschein brauchst du? Geltungsbereich, Prüfungsunterschiede, Kosten und der Kombinations-Tipp der die meisten Geld spart."
 date: 2026-05-29
 tags: ["SBF", "Binnen", "See", "Vergleich"]
-readingTime: 5
+readingTime: 7
 lang: de
 ---
 
-Wenn du anfängst, dich mit dem Sportbootführerschein zu beschäftigen, stößt du schnell auf eine wichtige Frage: Binnen oder See?
+Wenn du anfängst, dich mit dem Sportbootführerschein zu beschäftigen, stößt du schnell auf die entscheidende Frage: Binnen oder See? Beide Scheine berechtigen zum Führen von Motorbooten – aber auf unterschiedlichen Gewässern. Hier ist alles, was du wissen musst.
 
-## SBF Binnen
+## Was erlaubt dir welcher Schein?
 
-Der SBF Binnen berechtigt zum Führen von Motorbooten auf **Binnenschifffahrtsstraßen** – also Flüssen, Seen und Kanälen in Deutschland.
+### SBF Binnen
 
-**Für wen?** Wer auf Rhein, Elbe, Mosel, dem Bodensee oder anderen Binnengewässern fahren möchte.
+Der SBF Binnen gilt auf allen **deutschen Binnenschifffahrtsstraßen** – also auf Flüssen, Kanälen und Seen, die offiziell als Bundeswasserstraßen eingestuft sind. Dazu gehören:
 
-## SBF See
+- Rhein, Elbe, Mosel, Donau, Weser, Oder
+- Havel, Spree, Müritz, Chiemsee
+- Nord-Ostsee-Kanal, Elbe-Lübeck-Kanal
+- Masurische Seen (Polen – hier gelten jedoch polnische Regeln)
 
-Der SBF See berechtigt zum Führen von Motorbooten auf **Küstengewässern** bis 12 Seemeilen Entfernung von der Küste.
+**Für wen:** Wer hauptsächlich in Deutschland auf Binnengewässern fahren möchte – Hausboottörns, Flussreisen, Seen in Brandenburg oder Bayern.
 
-**Für wen?** Wer auf Nord- oder Ostsee, im Mittelmeer oder anderen Küstengewässern fahren möchte.
+### SBF See
 
-## Beide zusammen
+Der SBF See gilt auf den deutschen **Seeschifffahrtsstraßen** – also auf Küstengewässern an Nord- und Ostsee sowie auf Küstengewässern international (Mittelmeer, Adria, Atlantik-Küste).
 
-Viele Prüfungsanbieter ermöglichen es, beide Scheine in einem Kurs abzulegen. Das ist oft günstiger und effizienter.
+- Nordsee: Wattenmeer, Helgoland
+- Ostsee: Kieler Förde, Rügen, Usedom
+- International: Kroatische Küste, Griechische Inseln, Mallorca
 
-## Welchen soll ich nehmen?
+**Für wen:** Wer Küstenurlaub mit dem eigenen Boot plant oder Charterboote in Küstengebieten mieten möchte.
+
+> **Wichtig:** Die beiden Scheine gelten **nicht füreinander**. Wer nur den SBF Binnen hat, darf nicht auf Seeschifffahrtsstraßen fahren – und umgekehrt.
+
+## Unterschiede in der Prüfung
 
 | | SBF Binnen | SBF See |
 |---|---|---|
-| Gültig auf | Flüsse, Seen, Kanäle | Küstengewässer |
-| Prüfungsfragen | 30 (mind. 24 richtig) | 30 (mind. 24 richtig) |
-| Praktische Prüfung | Ja | Ja |
-| Preis | ca. 100–150 € | ca. 100–150 € |
+| Theorieprüfung | 30 Fragen, 45 Min | 30 Fragen + 9 Navigationsaufgaben, 60 Min |
+| Bestehensgrenze | 5/7 Basis + 18/23 spezifisch | 5/7 Basis + 18/23 spezifisch |
+| Schwerpunkte | Fahrregeln, Lichterführung, Schallzeichen, Binnenwasserstraßen | Navigation, Seekartenarbeit, Seerecht, Gezeiten |
+| Praktische Prüfung | Ja | Ja (auf Küstengewässer) |
+| Knotenprüfung | Ja | Ja |
 
-**Fazit:** Wenn du Küstenurlaub planst, nimm den SBF See. Wenn du in Deutschland auf Flüssen oder Seen unterwegs bist, reicht der SBF Binnen. Wenn du beides willst: kombiniere beide Scheine.
+Der **wesentliche Unterschied**: Der SBF See beinhaltet eine schriftliche **Navigationsaufgabe** – du musst Kurse auf einer Seekarte einzeichnen, Peilungen berechnen und mit dem Kompass umgehen. Das erfordert zusätzliches Üben und macht die SBF-See-Prüfung anspruchsvoller.
 
-Die Boatpass-App enthält Fragen für beide Varianten – du kannst gezielt nach Kategorie lernen.
+## Kosten im Vergleich
+
+| | SBF Binnen | SBF See | Kombi (See + Binnen) |
+|---|---|---|---|
+| Prüfungsgebühr DMYV | ca. 131 € | ca. 148 € | ca. 179 € |
+| Kurs (typisch) | ca. 265–299 € | ca. 370 € | ca. 470 € |
+| **Gesamt** | **ca. 400–430 €** | **ca. 520 €** | **ca. 650 €** |
+
+*(Quelle: DMYV, Nautigo Bootsschule, Stand 05/2026 – Preise je nach Prüfungsausschuss und Anbieter variabel)*
+
+### Der Kombinations-Tipp
+
+Wenn du langfristig beide Scheine machen willst: Mach sie **zusammen**. Bei einer Kombiprüfung (beide an einem Tag) zahlst du nur **179 €** Prüfungsgebühr statt 279 € (131 + 148 €) einzeln – eine Ersparnis von 100 € allein bei der Prüfungsgebühr.
+
+Empfehlung der meisten Bootsschulen: Beginne mit dem **SBF See** (schwieriger), danach fällt der SBF Binnen erheblich leichter, weil die Basisfragen (72 Fragen, die für beide Scheine gleich sind) bereits geübt sind.
+
+## Welchen soll ich zuerst machen?
+
+**Nur auf Binnengewässern in Deutschland fahren?** → SBF Binnen reicht
+
+**Küstenurlaub in Kroatien, Griechenland oder Ostsee planen?** → SBF See
+
+**Langfristig beides wollen?** → Mach die Kombiprüfung, spar dir die 100 € und die Doppelvorbereitung
+
+**Noch unsicher, welche Gewässer?** → Starte mit SBF Binnen (günstiger, einfacher) und ergänze später den SBF See
+
+## Fazit
+
+Der wichtigste Unterschied ist der Geltungsbereich: Binnen für Flüsse und Seen in Deutschland, See für Küstengewässer national und international. Wer langfristig flexibel sein will, sollte die Kombiprüfung in Betracht ziehen – sie ist günstiger als beide Scheine separat.
