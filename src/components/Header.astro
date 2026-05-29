@@ -10,37 +10,45 @@ const t = useTranslations(lang);
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 ---
 
-<header class="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-gray-100">
-  <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+<header class="fixed top-0 left-0 right-0 z-50 border-b" style="background: rgba(247,250,255,0.85); backdrop-filter: blur(20px); border-color: rgba(12,95,155,0.12);">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
     <!-- Logo -->
-    <a href={getLocalizedPath(lang, '/')} class="text-xl font-bold text-primary">
-      Boatpass
+    <a href={getLocalizedPath(lang, '/')} class="flex items-center gap-2 text-xl font-black" style="color: #0a2647; letter-spacing: -0.5px; text-decoration: none;">
+      <span style="font-size: 1.1rem;">⚓</span>
+      boat<span style="color: #0891b2;">pass</span>
     </a>
 
-    <!-- Navigation Links (Desktop) -->
-    <div class="hidden md:flex items-center gap-6">
-      <a href={getLocalizedPath(lang, '/blog/')} class="text-gray-600 hover:text-text transition-colors text-sm font-medium">
+    <!-- Links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#features" class="text-sm font-medium nav-link" style="color: #64748b; text-decoration: none;">
+        {lang === 'de' ? 'Features' : 'Features'}
+      </a>
+      <a href="#pricing" class="text-sm font-medium nav-link" style="color: #64748b; text-decoration: none;">
+        {lang === 'de' ? 'Preise' : 'Pricing'}
+      </a>
+      <a href={getLocalizedPath(lang, '/blog/')} class="text-sm font-medium nav-link" style="color: #64748b; text-decoration: none;">
         {t.nav.blog}
       </a>
-      <a href={getLocalizedPath(lang, '/faq/')} class="text-gray-600 hover:text-text transition-colors text-sm font-medium">
+      <a href={getLocalizedPath(lang, '/faq/')} class="text-sm font-medium nav-link" style="color: #64748b; text-decoration: none;">
         {t.nav.faq}
-      </a>
-      <a href={lang === 'de' ? '/ueber-uns/' : '/en/about/'} class="text-gray-600 hover:text-text transition-colors text-sm font-medium">
-        {t.nav.about}
       </a>
     </div>
 
-    <!-- Rechts: Sprache + CTA -->
+    <!-- Right side -->
     <div class="flex items-center gap-3">
-      <!-- Sprachumschalter -->
-      <a href={lang === 'de' ? '/en/' : '/'} class="text-sm text-gray-500 hover:text-text transition-colors">
+      <a href={lang === 'de' ? '/en/' : '/'} class="text-sm font-medium" style="color: #64748b; text-decoration: none;">
         {t.footer.switchLang}
       </a>
-      <!-- CTA Button -->
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        class="hidden md:inline-flex bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-primary/90 transition-colors">
+        class="hidden md:inline-flex items-center gap-2 text-sm font-bold text-white px-5 py-2.5 rounded-full"
+        style="background: linear-gradient(135deg, #0a2647, #0c5f9b); box-shadow: 0 4px 14px rgba(10,38,71,0.25); text-decoration: none;">
         {t.nav.getApp}
       </a>
     </div>
   </nav>
 </header>
+
+<style>
+  .nav-link:hover { color: #0a2647 !important; }
+</style>
