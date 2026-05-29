@@ -11,26 +11,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <h1 class="text-4xl font-bold text-text mb-4">Contact</h1>
     <p class="text-gray-500 mb-10">Questions, feedback, or found a bug? Write to us!</p>
 
-    <form action="https://formspree.io/f/xgoqqywe" method="POST" class="space-y-6">
+    <div data-fs-success style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; border-radius:12px; padding:16px 20px; margin-bottom:24px; font-weight:500;">
+      ✓ Message sent! We'll get back to you soon.
+    </div>
+    <div data-fs-error style="display:none; background:#fef2f2; border:1px solid #fecaca; color:#991b1b; border-radius:12px; padding:16px 20px; margin-bottom:24px;"></div>
+
+    <form id="contact-form" class="space-y-6">
       <div>
         <label class="block text-sm font-medium text-text mb-2" for="name">Your name</label>
-        <input type="text" id="name" name="name" required
+        <input type="text" id="name" name="name" required data-fs-field
           class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors" />
+        <span data-fs-error="name" class="text-red-500 text-sm mt-1 block"></span>
       </div>
       <div>
         <label class="block text-sm font-medium text-text mb-2" for="email">Email address</label>
-        <input type="email" id="email" name="email" required
+        <input type="email" id="email" name="email" required data-fs-field
           class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors" />
+        <span data-fs-error="email" class="text-red-500 text-sm mt-1 block"></span>
       </div>
       <div>
         <label class="block text-sm font-medium text-text mb-2" for="message">Your message</label>
-        <textarea id="message" name="message" rows="5" required
+        <textarea id="message" name="message" rows="5" required data-fs-field
           class="w-full border border-gray-200 rounded-xl px-4 py-3 focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
+        <span data-fs-error="message" class="text-red-500 text-sm mt-1 block"></span>
       </div>
-      <button type="submit"
-        class="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors">
+      <button type="submit" data-fs-submit-btn
+        class="w-full bg-primary text-white py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
         Send
       </button>
     </form>
   </div>
+
+  <script>
+    window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+    formspree('initForm', { formElement: '#contact-form', formId: 'xgoqqywe' });
+  </script>
+  <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </BaseLayout>
