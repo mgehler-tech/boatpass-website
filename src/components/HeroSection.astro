@@ -86,13 +86,14 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <div style="position:absolute; width:300px; height:300px; background:radial-gradient(circle,rgba(8,145,178,0.18),transparent 70%); bottom:-40px; left:50%; transform:translateX(-50%); filter:blur(24px); pointer-events:none;"></div>
       <!-- Shadow -->
       <div style="position:absolute; bottom:-20px; left:50%; transform:translateX(-50%); width:200px; height:28px; background:radial-gradient(ellipse,rgba(10,38,71,0.22),transparent 70%); filter:blur(10px);"></div>
-      <!-- Phone frame + screenshot -->
+      <!-- Phone frame + cycling screenshots -->
       <div style="position:relative; width:260px; border-radius:44px; padding:10px; background:linear-gradient(145deg,#1a2744,#0e1b35); box-shadow:0 0 0 1px rgba(255,255,255,0.08), 0 40px 80px rgba(10,38,71,0.35), inset 0 1px 0 rgba(255,255,255,0.06);">
-        <img
-          src="/images/app-screenshot.png"
-          alt="Boatpass App Screenshot"
-          style="width:100%; border-radius:36px; display:block;"
-        />
+        <div style="position:relative; border-radius:36px; overflow:hidden; line-height:0;">
+          <img src="/images/app-screenshot.png"   alt="Boatpass App" class="phone-slide" style="animation-delay:0s;" />
+          <img src="/images/app.screenshot.1.png" alt="Boatpass App" class="phone-slide" style="animation-delay:-4s;" />
+          <img src="/images/app.screenshot.2.png" alt="Boatpass App" class="phone-slide" style="animation-delay:-8s;" />
+          <img src="/images/app.screenshot.3.png" alt="Boatpass App" class="phone-slide" style="animation-delay:-12s;" />
+        </div>
       </div>
     </div>
   </div>
@@ -108,6 +109,25 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
 <style>
   #hero-accent { transition: opacity 0.3s ease; }
+
+  .phone-slide {
+    width: 100%;
+    display: block;
+    border-radius: 36px;
+    animation: phoneCycle 16s infinite;
+  }
+  .phone-slide + .phone-slide {
+    position: absolute;
+    top: 0; left: 0;
+  }
+
+  @keyframes phoneCycle {
+    0%   { opacity: 1; transform: scale(1)    translateY(0);    }
+    18%  { opacity: 1; transform: scale(1)    translateY(0);    }
+    25%  { opacity: 0; transform: scale(0.97) translateY(10px); }
+    94%  { opacity: 0; transform: scale(0.97) translateY(-10px);}
+    100% { opacity: 1; transform: scale(1)    translateY(0);    }
+  }
 </style>
 
 <script>
