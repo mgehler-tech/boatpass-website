@@ -37,7 +37,8 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
     <!-- Right side -->
     <div class="flex items-center gap-3">
-      <a href={lang === 'de' ? '/en/' : '/'} class="text-sm font-medium" style="color: #64748b; text-decoration: none;">
+      <a href={lang === 'de' ? '/en/' : '/'} class="text-sm font-medium" style="color: #64748b; text-decoration: none; display:inline-flex; align-items:center; gap:5px;">
+        <span style="font-size:16px; line-height:1;">{lang === 'de' ? '🇬🇧' : '🇩🇪'}</span>
         {t.footer.switchLang}
       </a>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
