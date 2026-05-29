@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 646 250">
+  <rect width="646" height="250" rx="12" fill="#000"/>
+  <rect x="1" y="1" width="644" height="248" rx="11" fill="#000" stroke="#A6A6A6" stroke-width="2"/>
+  <text x="100" y="90" font-family="Inter, sans-serif" font-size="22" fill="white">GET IT ON</text>
+  <text x="100" y="170" font-family="Inter, sans-serif" font-size="56" font-weight="bold" fill="white">Google Play</text>
+  <text x="323" y="220" font-family="Inter, sans-serif" font-size="14" fill="#A6A6A6" text-anchor="middle">Platzhalter – echtes Badge ersetzen</text>
+</svg>

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844">
+  <rect width="390" height="844" rx="40" fill="#1A1A2E"/>
+  <rect x="20" y="80" width="350" height="60" rx="12" fill="#2E86AB" opacity="0.2"/>
+  <text x="195" y="118" font-family="Inter, sans-serif" font-size="18" font-weight="bold" fill="#2E86AB" text-anchor="middle">Boatpass</text>
+  <rect x="20" y="160" width="350" height="120" rx="12" fill="#2E86AB" opacity="0.1"/>
+  <text x="195" y="215" font-family="Inter, sans-serif" font-size="14" fill="#FAFAF7" text-anchor="middle">Welches Licht zeigt dieses</text>
+  <text x="195" y="237" font-family="Inter, sans-serif" font-size="14" fill="#FAFAF7" text-anchor="middle">Fahrzeug?</text>
+  <rect x="20" y="300" width="350" height="52" rx="10" fill="#2E86AB"/>
+  <text x="195" y="332" font-family="Inter, sans-serif" font-size="14" fill="white" text-anchor="middle">Mastlicht + Seitenlichter</text>
+  <rect x="20" y="364" width="350" height="52" rx="10" fill="#FAFAF7" opacity="0.1"/>
+  <text x="195" y="396" font-family="Inter, sans-serif" font-size="14" fill="#FAFAF7" text-anchor="middle">Nur Ankerlicht</text>
+  <rect x="20" y="428" width="350" height="52" rx="10" fill="#FAFAF7" opacity="0.1"/>
+  <text x="195" y="460" font-family="Inter, sans-serif" font-size="14" fill="#FAFAF7" text-anchor="middle">Hecklicht + Seitenlichter</text>
+  <text x="195" y="560" font-family="Inter, sans-serif" font-size="28" font-weight="bold" fill="#2E86AB" text-anchor="middle">247</text>
+  <text x="195" y="590" font-family="Inter, sans-serif" font-size="12" fill="#FAFAF7" opacity="0.6" text-anchor="middle">Fragen gelernt</text>
+  <text x="195" y="780" font-family="Inter, sans-serif" font-size="11" fill="#FAFAF7" opacity="0.3" text-anchor="middle">Platzhalter – echten Screenshot ersetzen</text>
+</svg>
