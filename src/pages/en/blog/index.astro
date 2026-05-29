@@ -22,9 +22,11 @@ const [featured, ...rest] = posts;
 
     <div class="blog-index-grid">
       {featured && <BlogCard post={featured} lang="en" featured={true} />}
-      <div class="blog-index-compact">
-        {rest.map(post => <BlogCard post={post} lang="en" featured={false} />)}
-      </div>
+      {rest.length > 0 && (
+        <div class="blog-index-compact">
+          {rest.map(post => <BlogCard post={post} lang="en" featured={false} />)}
+        </div>
+      )}
     </div>
   </div>
 </BaseLayout>

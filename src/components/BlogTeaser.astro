@@ -28,9 +28,11 @@ const [featured, ...rest] = posts;
 
   <div class="blog-teaser-grid">
     {featured && <BlogCard post={featured} lang={lang} featured={true} />}
-    <div class="blog-teaser-compact">
-      {rest.map(post => <BlogCard post={post} lang={lang} featured={false} />)}
-    </div>
+    {rest.length > 0 && (
+      <div class="blog-teaser-compact">
+        {rest.map(post => <BlogCard post={post} lang={lang} featured={false} />)}
+      </div>
+    )}
   </div>
 </section>
 
