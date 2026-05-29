@@ -20,12 +20,12 @@ const categoryIcons: Record<string, string> = {
   'Vorbereitung': '📚', 'Vergleich': '⚖️', 'Leitfaden': '🗺️',
   'Tips': '💡', 'Exam': '📋', 'Preparation': '📚', 'Guide': '🗺️',
 };
-const secondTag = tags[1] ?? tags[0];
-const icon = categoryIcons[secondTag] ?? '⚓';
+const secondTag = tags.length > 0 ? (tags[1] ?? tags[0]) : '';
+const icon = secondTag ? (categoryIcons[secondTag] ?? '⚓') : '⚓';
 ---
 
 {featured ? (
-  <a href={href} class="blog-featured group" aria-label={title}>
+  <a href={href} class="blog-featured group">
     <div class="blog-featured-bar"></div>
     <div class="blog-featured-body">
       <div class="blog-tags">
@@ -42,10 +42,10 @@ const icon = categoryIcons[secondTag] ?? '⚓';
     </div>
   </a>
 ) : (
-  <a href={href} class="blog-compact group" aria-label={title}>
+  <a href={href} class="blog-compact group">
     <div class="blog-icon">{icon}</div>
     <div class="blog-compact-body">
-      <div class="blog-compact-cat">{secondTag} · {readingTime} {lang === 'de' ? 'Min' : 'min'}</div>
+      <div class="blog-compact-cat">{secondTag ? `${secondTag} · ` : ''}{readingTime} {lang === 'de' ? 'Min' : 'min'}</div>
       <h3 class="blog-compact-title group-hover:text-primary transition-colors">{title}</h3>
     </div>
   </a>
