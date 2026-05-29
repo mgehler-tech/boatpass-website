@@ -14,16 +14,39 @@ const allPosts = await getCollection('blog', entry => entry.data.lang === lang);
 const posts = allPosts
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
+
+const [featured, ...rest] = posts;
 ---
 
 <section class="max-w-6xl mx-auto px-4 py-20">
   <div class="flex items-center justify-between mb-10">
-    <h2 class="text-3xl font-bold text-text">{t.blog.title}</h2>
+    <h2 class="text-3xl font-bold" style="color:#0a2647">{t.blog.title}</h2>
     <a href={getLocalizedPath(lang, '/blog/')} class="text-primary font-semibold text-sm hover:underline">
       {t.blog.allArticles} →
     </a>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    {posts.map(post => <BlogCard post={post} lang={lang} />)}
+
+  <div class="blog-teaser-grid">
+    {featured && <BlogCard post={featured} lang={lang} featured={true} />}
+    <div class="blog-teaser-compact">
+      {rest.map(post => <BlogCard post={post} lang={lang} featured={false} />)}
+    </div>
   </div>
 </section>
+
+<style>
+  .blog-teaser-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .blog-teaser-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  @media (max-width: 768px) {
+    .blog-teaser-grid { grid-template-columns: 1fr; }
+  }
+</style>

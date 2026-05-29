@@ -5,18 +5,43 @@ import BlogCard from '../../../components/BlogCard.astro';
 
 const posts = (await getCollection('blog', entry => entry.data.lang === 'en'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const [featured, ...rest] = posts;
 ---
 
 <BaseLayout
   title="Blog – Boating License Tips"
-  description="Tips, guides, and knowledge about the German boating license exam and boating in Germany."
+  description="Tips, guides and knowledge about the SBF boating exam in Germany."
   lang="en"
 >
   <div class="max-w-6xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold text-text mb-4">Blog</h1>
-    <p class="text-gray-500 text-xl mb-12">Tips, guides, and knowledge about the boating license</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      {posts.map(post => <BlogCard post={post} lang="en" />)}
+    <div style="margin-bottom:48px;">
+      <h1 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#0a2647; margin-bottom:10px;">Blog</h1>
+      <p style="font-size:18px; color:#64748b;">Tips, guides and knowledge about the German boating license</p>
+    </div>
+
+    <div class="blog-index-grid">
+      {featured && <BlogCard post={featured} lang="en" featured={true} />}
+      <div class="blog-index-compact">
+        {rest.map(post => <BlogCard post={post} lang="en" featured={false} />)}
+      </div>
     </div>
   </div>
 </BaseLayout>
+
+<style>
+  .blog-index-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    align-items: start;
+  }
+  .blog-index-compact {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  @media (max-width: 768px) {
+    .blog-index-grid { grid-template-columns: 1fr; }
+  }
+</style>
