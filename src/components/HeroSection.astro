@@ -10,50 +10,153 @@ const t = useTranslations(lang);
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 ---
 
-<section class="max-w-6xl mx-auto px-4 pt-20 pb-16 md:pt-28 md:pb-24">
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-    <!-- Text -->
-    <div>
-      <!-- Trust-Badge -->
-      <div class="inline-flex items-center gap-2 bg-primary/10 text-primary text-sm font-medium px-3 py-1 rounded-full mb-6">
-        <span>✓</span>
-        <span>{lang === 'de' ? 'Offizieller DMYV-Fragenkatalog 2025/2026' : 'Official DMYV question catalog 2025/2026'}</span>
+<section style="position:relative; min-height:100vh; display:flex; align-items:center; padding: 100px 0 0; overflow:hidden; background:#f7faff;">
+
+  <!-- Background orbs -->
+  <div style="position:absolute; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(8,145,178,0.09),transparent 70%); top:-80px; right:-60px; pointer-events:none;"></div>
+  <div style="position:absolute; width:320px; height:320px; border-radius:50%; background:radial-gradient(circle,rgba(12,95,155,0.07),transparent 70%); bottom:120px; right:300px; pointer-events:none;"></div>
+
+  <!-- Dot grid overlay -->
+  <div style="position:absolute; inset:0; background-image:radial-gradient(rgba(12,95,155,0.12) 1px,transparent 1px); background-size:32px 32px; mask-image:radial-gradient(ellipse 80% 80% at 65% 40%,black 0%,transparent 70%); pointer-events:none;"></div>
+
+  <!-- Content grid -->
+  <div class="max-w-6xl mx-auto px-6 w-full hero-grid" style="position:relative; z-index:2;">
+
+    <!-- Left: text -->
+    <div style="max-width:580px;">
+
+      <!-- Badge -->
+      <div class="animate-fade-up" style="display:inline-flex; align-items:center; gap:8px; background:rgba(8,145,178,0.08); border:1px solid rgba(8,145,178,0.2); color:#0891b2; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:28px;">
+        <span class="animate-blink" style="width:6px;height:6px;background:#0891b2;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
+        {t.hero.badge}
       </div>
 
-      <h1 class="text-4xl md:text-5xl font-bold text-text leading-tight mb-6">
-        {t.hero.headline}
+      <!-- H1 -->
+      <h1 class="animate-fade-up delay-1" style="font-size:clamp(40px,6vw,64px); font-weight:900; line-height:1.0; letter-spacing:-3px; color:#0a2647; margin-bottom:22px;">
+        {t.hero.headline1}<br>
+        {t.hero.headline2}<br>
+        <span class="gradient-text">{t.hero.headlineAccent}</span>
       </h1>
-      <p class="text-xl text-gray-500 mb-8 leading-relaxed">
+
+      <!-- Subline -->
+      <p class="animate-fade-up delay-2" style="font-size:18px; color:#64748b; line-height:1.65; margin-bottom:40px; max-width:460px;">
         {t.hero.subline}
       </p>
 
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer">
-          <img src="/images/google-play-badge.png" alt="Jetzt bei Google Play" class="h-14" />
+      <!-- CTAs -->
+      <div class="animate-fade-up delay-3" style="display:flex; gap:14px; align-items:center; margin-bottom:52px; flex-wrap:wrap;">
+        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+          class="cta-primary"
+          style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#0a2647,#0c5f9b); color:white; font-weight:700; font-size:15px; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(10,38,71,0.2);">
+          ▶&nbsp;{t.hero.cta}
         </a>
-        <a href="#features" class="inline-flex items-center justify-center text-primary font-semibold py-3 px-6 border-2 border-primary rounded-xl hover:bg-primary/5 transition-colors">
+        <a href="#features"
+          style="color:#0c5f9b; font-size:15px; font-weight:600; text-decoration:none; display:flex; align-items:center; gap:6px;">
           {t.hero.ctaSecondary} →
         </a>
       </div>
 
-      <!-- Trust-Fakten -->
-      <div class="flex gap-8 mt-10 text-sm text-gray-500">
-        <div><span class="font-bold text-text text-lg">400+</span><br />{lang === 'de' ? 'Prüfungsfragen' : 'Exam questions'}</div>
-        <div><span class="font-bold text-text text-lg">5</span><br />{lang === 'de' ? 'Themenbereiche' : 'Topic areas'}</div>
-        <div><span class="font-bold text-text text-lg">2026</span><br />{lang === 'de' ? 'Aktueller Katalog' : 'Current catalog'}</div>
+      <!-- Stats -->
+      <div class="animate-fade-up delay-4" style="display:flex; gap:36px; padding-top:36px; border-top:1px solid rgba(12,95,155,0.12); flex-wrap:wrap;">
+        <div>
+          <div style="font-size:26px; font-weight:900; letter-spacing:-1px; color:#0a2647;">{t.hero.stat1Num}</div>
+          <div style="font-size:13px; color:#64748b; margin-top:2px;">{t.hero.stat1Label}</div>
+        </div>
+        <div>
+          <div style="font-size:26px; font-weight:900; letter-spacing:-1px; color:#0a2647;">{t.hero.stat2Num}</div>
+          <div style="font-size:13px; color:#64748b; margin-top:2px;">{t.hero.stat2Label}</div>
+        </div>
+        <div>
+          <div style="font-size:26px; font-weight:900; letter-spacing:-1px; color:#0a2647;">{t.hero.stat3Num}</div>
+          <div style="font-size:13px; color:#64748b; margin-top:2px;">{t.hero.stat3Label}</div>
+        </div>
       </div>
     </div>
 
-    <!-- App Screenshot -->
-    <div class="flex justify-center">
-      <div class="relative">
-        <div class="absolute inset-0 bg-primary/10 rounded-3xl blur-3xl transform scale-110"></div>
-        <img
-          src="/images/app-screenshot.png"
-          alt={lang === 'de' ? 'Boatpass App Screenshot' : 'Boatpass app screenshot'}
-          class="relative w-64 md:w-72 rounded-3xl shadow-2xl"
-        />
+    <!-- Right: phone mockup -->
+    <div class="animate-fade-up delay-3 animate-float phone-col" style="position:relative; flex-shrink:0;">
+      <!-- Glow -->
+      <div style="position:absolute; width:280px; height:280px; background:radial-gradient(circle,rgba(8,145,178,0.18),transparent 70%); bottom:-40px; left:50%; transform:translateX(-50%); filter:blur(20px); pointer-events:none;"></div>
+      <!-- Shadow -->
+      <div style="position:absolute; bottom:-16px; left:50%; transform:translateX(-50%); width:180px; height:24px; background:radial-gradient(ellipse,rgba(10,38,71,0.18),transparent 70%); filter:blur(8px);"></div>
+
+      <!-- Phone frame -->
+      <div style="position:relative; width:260px; background:linear-gradient(145deg,#1a2744,#0e1b35); border-radius:44px; padding:12px; box-shadow:0 0 0 1px rgba(255,255,255,0.08),0 40px 80px rgba(10,38,71,0.3),inset 0 1px 0 rgba(255,255,255,0.06);">
+        <!-- Notch -->
+        <div style="width:90px; height:24px; background:#0e1b35; border-radius:0 0 16px 16px; margin:0 auto; position:relative; z-index:2;"></div>
+        <!-- Screen -->
+        <div style="background:linear-gradient(160deg,#0f2140 0%,#071529 100%); border-radius:34px; overflow:hidden; padding:20px 16px 24px; margin-top:-4px;">
+          <div style="font-size:11px; color:rgba(255,255,255,0.4); margin-bottom:3px;">{t.hero.phoneGreeting}</div>
+          <div style="font-size:16px; font-weight:800; color:white; margin-bottom:18px; letter-spacing:-0.3px;">{t.hero.phonePlanTitle}</div>
+
+          <!-- Progress ring -->
+          <div style="display:flex; justify-content:center; margin-bottom:18px;">
+            <div style="width:100px; height:100px; border-radius:50%; background:conic-gradient(#0891b2 72%, rgba(255,255,255,0.07) 0); display:flex; align-items:center; justify-content:center;">
+              <div style="width:76px; height:76px; background:#071529; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                <div style="font-size:17px; font-weight:900; color:white;">216</div>
+                <div style="font-size:9px; color:rgba(255,255,255,0.35);">{lang === 'de' ? 'von 300' : 'of 300'}</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- App cards -->
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:10px 12px; display:flex; align-items:center; gap:10px;">
+              <div style="width:32px; height:32px; border-radius:9px; background:rgba(8,145,178,0.15); display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0;">📚</div>
+              <div>
+                <div style="font-size:12px; font-weight:700; color:white;">{t.hero.phoneCard1}</div>
+                <div style="font-size:10px; color:rgba(255,255,255,0.35);">{t.hero.phoneCard1Sub}</div>
+              </div>
+            </div>
+            <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.08); border-radius:14px; padding:10px 12px; display:flex; align-items:center; gap:10px;">
+              <div style="width:32px; height:32px; border-radius:9px; background:rgba(12,95,155,0.15); display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0;">📝</div>
+              <div>
+                <div style="font-size:12px; font-weight:700; color:white;">{t.hero.phoneCard2}</div>
+                <div style="font-size:10px; color:rgba(255,255,255,0.35);">{t.hero.phoneCard2Sub}</div>
+              </div>
+            </div>
+            <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(8,145,178,0.3); border-radius:14px; padding:10px 12px; display:flex; align-items:center; gap:10px;">
+              <div style="width:32px; height:32px; border-radius:9px; background:rgba(239,68,68,0.15); display:flex; align-items:center; justify-content:center; font-size:15px; flex-shrink:0;">🎯</div>
+              <div>
+                <div style="font-size:12px; font-weight:700; color:white;">{t.hero.phoneCard3}</div>
+                <div style="font-size:10px; color:rgba(255,255,255,0.35);">{t.hero.phoneCard3Sub}</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Wave bottom -->
+  <div style="position:absolute; bottom:-2px; left:0; right:0; height:80px; overflow:hidden; pointer-events:none;">
+    <svg style="width:200%; height:100%; animation:wave 12s linear infinite;" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="white"/>
+      <path d="M1440,40 C1680,80 1920,0 2160,40 C2400,80 2640,0 2880,40 L2880,80 L1440,80 Z" fill="white"/>
+    </svg>
+  </div>
 </section>
+
+<style>
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 60px;
+  }
+  .cta-primary {
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .cta-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(10,38,71,0.28) !important;
+  }
+  @media (max-width: 768px) {
+    .hero-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .phone-col {
+      display: none;
+    }
+  }
+</style>
