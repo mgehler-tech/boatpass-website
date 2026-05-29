@@ -1,5 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import { useTranslations } from '../i18n/index';
+import screenshot0 from '../assets/images/app-screenshot.png';
+import screenshot1 from '../assets/images/app.screenshot.1.png';
+import screenshot2 from '../assets/images/app.screenshot.2.png';
+import screenshot3 from '../assets/images/app.screenshot.3.png';
 
 interface Props {
   lang: 'de' | 'en';
@@ -89,10 +94,10 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <!-- Phone frame + cycling screenshots -->
       <div style="position:relative; width:260px; border-radius:44px; padding:10px; background:linear-gradient(145deg,#1a2744,#0e1b35); box-shadow:0 0 0 1px rgba(255,255,255,0.08), 0 40px 80px rgba(10,38,71,0.35), inset 0 1px 0 rgba(255,255,255,0.06);">
         <div style="position:relative; border-radius:36px; overflow:hidden; line-height:0;">
-          <img src="/images/app-screenshot.png"   alt="Boatpass SBF Lernapp – Hauptscreen" class="phone-slide" style="animation-delay:0s;" width="240" height="480" fetchpriority="high" decoding="async" />
-          <img src="/images/app.screenshot.1.png" alt="Boatpass App – Prüfungsmodus" class="phone-slide" style="animation-delay:-4s;" width="240" height="480" loading="lazy" decoding="async" />
-          <img src="/images/app.screenshot.2.png" alt="Boatpass App – Lernmodus" class="phone-slide" style="animation-delay:-8s;" width="240" height="480" loading="lazy" decoding="async" />
-          <img src="/images/app.screenshot.3.png" alt="Boatpass App – Fehler-Training" class="phone-slide" style="animation-delay:-12s;" width="240" height="480" loading="lazy" decoding="async" />
+          <Image src={screenshot0} alt="Boatpass SBF Lernapp – Hauptscreen" class="phone-slide" style="animation-delay:0s;" width={480} quality={80} fetchpriority="high" />
+          <Image src={screenshot1} alt="Boatpass App – Prüfungsmodus" class="phone-slide" style="animation-delay:-4s;" width={480} quality={80} loading="lazy" />
+          <Image src={screenshot2} alt="Boatpass App – Lernmodus" class="phone-slide" style="animation-delay:-8s;" width={480} quality={80} loading="lazy" />
+          <Image src={screenshot3} alt="Boatpass App – Fehler-Training" class="phone-slide" style="animation-delay:-12s;" width={480} quality={80} loading="lazy" />
         </div>
       </div>
     </div>
