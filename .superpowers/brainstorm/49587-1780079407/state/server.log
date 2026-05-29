@@ -1,0 +1,4 @@
+{"type":"server-started","port":57109,"host":"127.0.0.1","url_host":"localhost","url":"http://localhost:57109","screen_dir":"/Users/mariusgehler/boatpass-website/.superpowers/brainstorm/49587-1780079407/content","state_dir":"/Users/mariusgehler/boatpass-website/.superpowers/brainstorm/49587-1780079407/state"}
+{"type":"screen-added","file":"/Users/mariusgehler/boatpass-website/.superpowers/brainstorm/49587-1780079407/content/blog-design.html"}
+{"type":"screen-added","file":"/Users/mariusgehler/boatpass-website/.superpowers/brainstorm/49587-1780079407/content/waiting.html"}
+{"type":"server-stopped","reason":"owner process exited"}

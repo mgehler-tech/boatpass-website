@@ -1,0 +1,130 @@
+<h2>Blog Section — 3 Design-Ansätze</h2>
+<p class="subtitle">Alle ohne Emojis. Klick auf einen Ansatz um ihn auszuwählen.</p>
+
+<div class="cards" style="grid-template-columns: 1fr 1fr 1fr; gap: 24px;">
+
+  <!-- Option A -->
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="card-body">
+      <h3>Farbiger Akzentbalken</h3>
+      <p style="font-size:12px;color:#64748b;margin-bottom:16px;">Kategorie-Farbe als linker Rand. Kein Icon. Sehr editorial, wie ein Magazin.</p>
+
+      <!-- Featured card mockup -->
+      <div style="background:white;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:10px;">
+        <div style="height:3px;background:linear-gradient(90deg,#0a2647,#0891b2);"></div>
+        <div style="padding:20px;">
+          <div style="display:flex;gap:6px;margin-bottom:10px;">
+            <span style="font-size:10px;font-weight:700;background:rgba(8,145,178,0.08);color:#0891b2;border:1px solid rgba(8,145,178,0.2);padding:2px 8px;border-radius:100px;">SBF</span>
+            <span style="font-size:10px;font-weight:700;background:rgba(8,145,178,0.08);color:#0891b2;border:1px solid rgba(8,145,178,0.2);padding:2px 8px;border-radius:100px;">Tipps</span>
+          </div>
+          <p style="font-size:13px;font-weight:900;color:#0a2647;line-height:1.25;margin-bottom:8px;">Mit diesen 5 Tipps besteht du die SBF-Prüfung</p>
+          <p style="font-size:11px;color:#64748b;line-height:1.5;margin-bottom:12px;">Fünf konkrete Tipps für die optimale Vorbereitung mit echten Fakten...</p>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="font-size:10px;color:#94a3b8;">29. Mai 2026</span>
+            <span style="font-size:11px;font-weight:700;color:#0891b2;">7 Min lesen →</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compact card mockup A -->
+      <div style="background:white;border:1px solid #e2e8f0;border-left:3px solid #0891b2;border-radius:0 12px 12px 0;padding:14px 16px;margin-bottom:8px;">
+        <div style="font-size:9px;font-weight:700;color:#0891b2;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">PRÜFUNG · 8 MIN</div>
+        <p style="font-size:12px;font-weight:800;color:#0a2647;line-height:1.3;">Die häufigsten Fehler bei der SBF-Prüfung</p>
+      </div>
+      <div style="background:white;border:1px solid #e2e8f0;border-left:3px solid #0c5f9b;border-radius:0 12px 12px 0;padding:14px 16px;">
+        <div style="font-size:9px;font-weight:700;color:#0891b2;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">BINNEN · 7 MIN</div>
+        <p style="font-size:12px;font-weight:800;color:#0a2647;line-height:1.3;">SBF Binnen vs. SBF See – Was ist der Unterschied?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Option B -->
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="card-body">
+      <h3>Reine Typografie</h3>
+      <p style="font-size:12px;color:#64748b;margin-bottom:16px;">Kein Icon, kein Balken. Nur Kategorie-Label, Zeit, Titel. Maximal clean.</p>
+
+      <div style="background:white;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:10px;">
+        <div style="height:3px;background:linear-gradient(90deg,#0a2647,#0891b2);"></div>
+        <div style="padding:20px;">
+          <div style="display:flex;gap:6px;margin-bottom:10px;">
+            <span style="font-size:10px;font-weight:700;background:rgba(8,145,178,0.08);color:#0891b2;border:1px solid rgba(8,145,178,0.2);padding:2px 8px;border-radius:100px;">SBF</span>
+            <span style="font-size:10px;font-weight:700;background:rgba(8,145,178,0.08);color:#0891b2;border:1px solid rgba(8,145,178,0.2);padding:2px 8px;border-radius:100px;">Tipps</span>
+          </div>
+          <p style="font-size:13px;font-weight:900;color:#0a2647;line-height:1.25;margin-bottom:8px;">Mit diesen 5 Tipps besteht du die SBF-Prüfung</p>
+          <p style="font-size:11px;color:#64748b;line-height:1.5;margin-bottom:12px;">Fünf konkrete Tipps für die optimale Vorbereitung mit echten Fakten...</p>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="font-size:10px;color:#94a3b8;">29. Mai 2026</span>
+            <span style="font-size:11px;font-weight:700;color:#0891b2;">7 Min lesen →</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:white;border:1px solid #e2e8f0;border-radius:12px;padding:16px;margin-bottom:8px;">
+        <div style="font-size:9px;font-weight:700;color:#0891b2;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:5px;">PRÜFUNG · 8 MIN</div>
+        <p style="font-size:12px;font-weight:800;color:#0a2647;line-height:1.3;">Die häufigsten Fehler bei der SBF-Prüfung</p>
+      </div>
+      <div style="background:white;border:1px solid #e2e8f0;border-radius:12px;padding:16px;">
+        <div style="font-size:9px;font-weight:700;color:#0891b2;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:5px;">BINNEN · 7 MIN</div>
+        <p style="font-size:12px;font-weight:800;color:#0a2647;line-height:1.3;">SBF Binnen vs. SBF See – Was ist der Unterschied?</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Option C -->
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="card-body">
+      <h3>SVG-Icon (kein Emoji)</h3>
+      <p style="font-size:12px;color:#64748b;margin-bottom:16px;">Icon-Box bleibt, aber mit cleanen SVG-Icons. Einheitlich, monochrom.</p>
+
+      <div style="background:white;border:1px solid #e2e8f0;border-radius:14px;overflow:hidden;margin-bottom:10px;">
+        <div style="height:3px;background:linear-gradient(90deg,#0a2647,#0891b2);"></div>
+        <div style="padding:20px;">
+          <div style="display:flex;gap:6px;margin-bottom:10px;">
+            <span style="font-size:10px;font-weight:700;background:rgba(8,145,178,0.08);color:#0891b2;border:1px solid rgba(8,145,178,0.2);padding:2px 8px;border-radius:100px;">SBF</span>
+            <span style="font-size:10px;font-weight:700;background:rgba(8,145,178,0.08);color:#0891b2;border:1px solid rgba(8,145,178,0.2);padding:2px 8px;border-radius:100px;">Tipps</span>
+          </div>
+          <p style="font-size:13px;font-weight:900;color:#0a2647;line-height:1.25;margin-bottom:8px;">Mit diesen 5 Tipps besteht du die SBF-Prüfung</p>
+          <p style="font-size:11px;color:#64748b;line-height:1.5;margin-bottom:12px;">Fünf konkrete Tipps für die optimale Vorbereitung mit echten Fakten...</p>
+          <div style="display:flex;justify-content:space-between;">
+            <span style="font-size:10px;color:#94a3b8;">29. Mai 2026</span>
+            <span style="font-size:11px;font-weight:700;color:#0891b2;">7 Min lesen →</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Compact with SVG icons -->
+      <div style="background:white;border:1px solid #e2e8f0;border-radius:12px;padding:14px;display:flex;gap:12px;align-items:flex-start;margin-bottom:8px;">
+        <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#0a2647,#0891b2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <!-- Clipboard SVG -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="9" y="2" width="6" height="4" rx="1"/><path d="M5 4h2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-size:9px;font-weight:700;color:#0891b2;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">PRÜFUNG · 8 MIN</div>
+          <p style="font-size:12px;font-weight:800;color:#0a2647;line-height:1.3;">Die häufigsten Fehler bei der SBF-Prüfung</p>
+        </div>
+      </div>
+      <div style="background:white;border:1px solid #e2e8f0;border-radius:12px;padding:14px;display:flex;gap:12px;align-items:flex-start;">
+        <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#0a2647,#0891b2);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <!-- Waves SVG -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12s3-4 6-4 6 4 6 4 3-4 6-4"/><path d="M2 18s3-4 6-4 6 4 6 4 3-4 6-4"/>
+          </svg>
+        </div>
+        <div>
+          <div style="font-size:9px;font-weight:700;color:#0891b2;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;">BINNEN · 7 MIN</div>
+          <p style="font-size:12px;font-weight:800;color:#0a2647;line-height:1.3;">SBF Binnen vs. SBF See – Was ist der Unterschied?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top:24px;padding:16px;background:rgba(8,145,178,0.05);border-radius:12px;font-size:13px;color:#475569;">
+  💬 <strong>Meine Empfehlung:</strong> Option <strong>C (SVG-Icons)</strong> — die Icon-Box ist ein gutes visuelles Anker-Element, aber Emojis wirken kindisch. Saubere SVG-Icons sind zeitlos, brand-konsistent und laufen auf allen Betriebssystemen identisch aus.
+</div>
