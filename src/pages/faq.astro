@@ -4,43 +4,51 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const faqs = [
   {
     q: 'Was ist der Sportbootführerschein (SBF)?',
-    a: 'Der SBF ist die offizielle deutsche Fahrerlaubnis für Sportboote. Er ist Pflicht für Motorboote mit mehr als 15 PS auf Bundeswasserstraßen.',
+    a: 'Der Sportbootführerschein (SBF) ist die amtliche Fahrerlaubnis für Sportboote in Deutschland. Er ist Pflicht für Motorboote mit mehr als 15 PS (11 kW) auf Bundeswasserstraßen. Es gibt zwei Varianten: SBF Binnen für Binnengewässer und SBF See für Küstengewässer. Wer beide Scheine braucht, kann sie in einer kombinierten Prüfung ablegen.',
   },
   {
     q: 'Was ist der Unterschied zwischen SBF Binnen und SBF See?',
-    a: 'Der SBF Binnen gilt für Binnengewässer (Flüsse, Seen, Kanäle). Der SBF See gilt für Küstengewässer bis 12 Seemeilen. Beide können kombiniert abgelegt werden.',
+    a: 'Der SBF Binnen berechtigt zur Fahrt auf Binnenschifffahrtsstraßen — also auf Flüssen, Kanälen und Binnenseen. Der SBF See gilt auf Seeschifffahrtsstraßen, also den Küstengewässern Deutschlands (Nord- und Ostsee). Wichtig: Beide Scheine sind getrennte Führerscheine mit eigener Prüfung. Wer beide Reviere befahren möchte, muss beide ablegen — oder die Kombination wählen.',
   },
   {
-    q: 'Wie läuft die SBF-Prüfung ab?',
-    a: 'Die Theorieprüfung besteht aus 30 Multiple-Choice-Fragen (60 Minuten, mind. 24 richtig). Danach folgt eine praktische Prüfung auf dem Wasser.',
+    q: 'Wie läuft die SBF-Theorieprüfung ab?',
+    a: 'Beide Scheine haben eine schriftliche Theorieprüfung. Beim SBF Binnen besteht der Bogen aus 30 Fragen (7 Basisfragen + 23 spezifische Fragen), die in 45 Minuten beantwortet werden müssen. Bestanden ist, wer mindestens 5 von 7 Basisfragen und mindestens 18 von 23 spezifischen Fragen richtig hat. Der SBF See hat zusätzlich eine Navigationsaufgabe mit 9 Fragen (mind. 7 richtig), insgesamt 39 Fragen in 60 Minuten. Nach der Theorie folgt eine praktische Prüfung auf dem Wasser.',
   },
   {
-    q: 'Was kostet der SBF?',
-    a: 'Die Prüfungsgebühr liegt je nach Verein bei 100–200 €. Vorbereitungskurse kosten zusätzlich 150–400 €. Mit der Boatpass-App lernst du ohne Kurs.',
+    q: 'Muss ich einen Kurs besuchen oder kann ich mich selbst vorbereiten?',
+    a: 'Ein Kurs ist nicht vorgeschrieben — du kannst dich vollständig auf eigene Faust vorbereiten. Der offizielle ELWIS-Fragenkatalog ist öffentlich zugänglich, und Apps wie Boatpass ermöglichen ein strukturiertes Lernen ohne Fahrschule. Viele Prüflinge bestehen den theoretischen Teil ohne Kurs. Für die praktische Prüfung empfiehlt sich jedoch mindestens ein Übungstag auf dem Wasser.',
+  },
+  {
+    q: 'Was kostet die SBF-Prüfung?',
+    a: 'Die Prüfungsgebühren werden vom jeweiligen DMYV-Prüfungszentrum festgelegt und liegen aktuell bei ca. 130–150 € pro Schein (Theorie + Praxis). Die kombinierte Prüfung (SBF Binnen + See) ist günstiger als beide Einzelprüfungen zusammen. Hinzu kommen optional Kursgebühren (ca. 150–400 €). Mit der Boatpass-App lernst du die Theorie ohne teuren Vorbereitungskurs.',
   },
   {
     q: 'Wie viele Fragen hat der offizielle Fragenkatalog?',
-    a: 'Der offizielle DMYV-Fragenkatalog enthält über 400 Fragen aus 5 Themenbereichen. Boatpass enthält den kompletten Katalog.',
+    a: 'Der amtliche Fragenkatalog wird von ELWIS (Elektronisches Wasserstraßen-Informations-System) herausgegeben und ist kostenlos abrufbar. Der Katalog Binnen umfasst 253 spezifische Fragen plus gemeinsame Basisfragen; der Katalog See enthält ebenfalls Basis- und spezifische Fragen. Boatpass enthält den vollständigen aktuellen Katalog für beide Scheine.',
   },
   {
     q: 'Wie lange dauert die Vorbereitung?',
-    a: 'Mit konsequentem Lernen (30 Minuten täglich) sind 4–6 Wochen realistisch. Mit Boatpass lernst du effizient, wann und wo du willst.',
+    a: 'Mit konsequentem Lernen (20–30 Minuten täglich) sind 4–6 Wochen für die Theorie realistisch. Wer gezielt mit dem offiziellen Fragenkatalog übt und Fehler systematisch aufarbeitet, kommt auch schneller ans Ziel. Die Boatpass-App zeigt dir deinen Fortschritt und trainiert gezielt deine Schwachstellen.',
   },
   {
     q: 'Ist die Boatpass-App kostenlos?',
-    a: 'Ja — die App ist kostenlos mit 20 Übungsfragen und einem Lernmodus. Das Premium-Upgrade kostet einmalig 4,99 € und gibt dir Zugriff auf den vollständigen Katalog, Prüfungssimulation und Fehler-Training.',
+    a: 'Ja — die App ist kostenlos. Im kostenlosen Modus kannst du täglich 15 Lernfragen bearbeiten und die App kennenlernen. Der Vollzugang (unbegrenzte Fragen, Prüfungssimulation, Fehler-Training) ist ein einmaliger Kauf für 4,99 € pro Katalog — kein Abo, keine versteckten Kosten.',
   },
   {
     q: 'Auf welchen Geräten läuft die App?',
-    a: 'Boatpass ist aktuell für Android verfügbar (Google Play). Eine iOS-Version ist in Planung.',
+    a: 'Boatpass ist aktuell für Android verfügbar (Google Play Store). Eine iOS-Version ist in Planung.',
   },
   {
-    q: 'Wie aktuell ist der Fragenkatalog?',
-    a: 'Die App enthält den offiziellen Fragenkatalog 2025/2026 und wird bei Änderungen aktualisiert.',
+    q: 'Wie aktuell ist der Fragenkatalog in der App?',
+    a: 'Die App enthält immer den aktuellen amtlichen ELWIS-Fragenkatalog. Wenn ELWIS den Katalog aktualisiert, wird die App zeitnah nachgezogen — du lernst also immer mit den Fragen, die auch in der echten Prüfung gestellt werden.',
+  },
+  {
+    q: 'Gilt der deutsche SBF auch im Ausland?',
+    a: 'Der SBF Binnen wird auf deutschen Binnenschifffahrtsstraßen anerkannt. Im Ausland gelten die jeweiligen nationalen Vorschriften — in vielen europäischen Ländern reicht der SBF aus, in anderen ist zusätzlich der ICC (International Certificate of Competence) notwendig, den du auf Basis deines deutschen Scheins beantragen kannst.',
   },
   {
     q: 'Kann ich die App offline nutzen?',
-    a: 'Ja — alle Fragen und Erklärungen sind offline verfügbar. Eine Internetverbindung ist nur für den einmaligen Download nötig.',
+    a: 'Ja — alle Fragen und Erklärungen sind nach dem Download offline verfügbar. Eine Internetverbindung ist nur für den initialen Download und eventuelle Katalog-Updates nötig.',
   },
 ];
 
@@ -56,7 +64,7 @@ const faqSchema = {
 ---
 
 <BaseLayout
-  title="FAQ – Häufige Fragen zum SBF"
+  title="FAQ – Häufige Fragen zum Sportbootführerschein"
   description="Antworten auf die häufigsten Fragen rund um den Sportbootführerschein: Ablauf, Kosten, Unterschiede und die Boatpass-App."
   lang="de"
 >

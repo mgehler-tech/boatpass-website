@@ -7,7 +7,7 @@ export const de = {
     getApp: 'App laden',
   },
   hero: {
-    badge: 'Offizieller DMYV-Fragenkatalog 2025/2026',
+    badge: 'Offizieller ELWIS-Fragenkatalog',
     headline1: 'Der schnellste',
     headline2: 'Weg zum',
     headlineAccent: 'SBF Binnen.',

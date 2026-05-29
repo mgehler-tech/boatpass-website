@@ -9,7 +9,7 @@ export const en: Translations = {
     getApp: 'Get App',
   },
   hero: {
-    badge: 'Official DMYV Question Catalog 2025/2026',
+    badge: 'Official ELWIS Question Catalog',
     headline1: 'The fastest way',
     headline2: 'to get your',
     headlineAccent: 'Boating License.',
