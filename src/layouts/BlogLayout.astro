@@ -17,35 +17,50 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 ---
 
 <BaseLayout title={title} description={description} lang={lang} type="article">
-  <article class="max-w-3xl mx-auto px-4 py-16">
-    <header class="mb-10">
-      <div class="flex gap-2 mb-4">
+  <article class="max-w-2xl mx-auto px-4 py-16">
+
+    <!-- Back link -->
+    <a href={lang === 'de' ? '/blog/' : '/en/blog/'}
+      style="display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:#0891b2; text-decoration:none; margin-bottom:36px;">
+      ← {lang === 'de' ? 'Alle Artikel' : 'All articles'}
+    </a>
+
+    <!-- Header -->
+    <header style="margin-bottom:40px;">
+      <div style="display:flex; gap:6px; margin-bottom:16px;">
         {tags.map(tag => (
-          <span class="text-xs font-medium px-2 py-1 bg-primary/10 text-primary rounded-full">{tag}</span>
+          <span style="font-size:11px; font-weight:700; background:rgba(8,145,178,0.08); color:#0891b2; border:1px solid rgba(8,145,178,0.18); padding:3px 10px; border-radius:100px;">{tag}</span>
         ))}
       </div>
-      <h1 class="text-3xl md:text-4xl font-bold text-text leading-tight mb-4">{title}</h1>
-      <p class="text-gray-500 text-sm">{formattedDate} · {readingTime} {lang === 'de' ? 'Min. Lesezeit' : 'min read'}</p>
+      <h1 style="font-size:clamp(26px,4vw,38px); font-weight:900; letter-spacing:-1px; color:#0a2647; line-height:1.2; margin-bottom:16px;">{title}</h1>
+      <div style="display:flex; align-items:center; gap:16px; padding-bottom:24px; border-bottom:1px solid rgba(12,95,155,0.1);">
+        <span style="font-size:13px; color:#94a3b8;">{formattedDate}</span>
+        <span style="width:3px; height:3px; border-radius:50%; background:#cbd5e1;"></span>
+        <span style="font-size:13px; color:#94a3b8;">{readingTime} {lang === 'de' ? 'Min. Lesezeit' : 'min read'}</span>
+      </div>
     </header>
 
-    <div class="prose prose-lg max-w-none">
+    <!-- Content -->
+    <div class="prose prose-lg max-w-none prose-headings:font-black prose-headings:text-navy prose-headings:tracking-tight prose-p:text-slate-600 prose-p:leading-relaxed prose-strong:text-navy prose-a:text-primary prose-li:text-slate-600">
       <slot />
     </div>
 
-    <!-- CTA am Ende jedes Artikels -->
-    <div class="mt-16 p-8 bg-primary/5 rounded-2xl text-center">
-      <h2 class="text-2xl font-bold mb-3">
-        {lang === 'de' ? 'Jetzt mit der App lernen' : 'Start learning with the app'}
+    <!-- CTA -->
+    <div style="margin-top:64px; padding:40px; background:linear-gradient(135deg,#0a2647,#0d3562); border-radius:24px; text-align:center; position:relative; overflow:hidden;">
+      <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(8,145,178,0.3),transparent 70%);pointer-events:none;"></div>
+      <h2 style="font-size:22px; font-weight:900; color:white; margin-bottom:10px; letter-spacing:-0.3px;">
+        {lang === 'de' ? 'Jetzt kostenlos mit dem Lernen starten' : 'Start learning for free now'}
       </h2>
-      <p class="text-gray-600 mb-6">
+      <p style="font-size:14px; color:rgba(255,255,255,0.55); margin-bottom:24px; max-width:360px; margin-left:auto; margin-right:auto; line-height:1.6;">
         {lang === 'de'
-          ? 'Alle Prüfungsfragen, Prüfungssimulation und Fehler-Training — kostenlos starten.'
-          : 'All exam questions, exam simulation, and weak spot training — start for free.'}
+          ? '15 Fragen täglich kostenlos — offizieller ELWIS-Fragenkatalog, Prüfungsmodus & Fehler-Training.'
+          : '15 questions daily for free — official ELWIS catalog, exam simulation & error training.'}
       </p>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary/90 transition-colors">
-        {lang === 'de' ? 'App kostenlos laden' : 'Download app for free'}
+        style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#0891b2,#0c5f9b); color:white; font-weight:700; font-size:15px; padding:13px 28px; border-radius:14px; text-decoration:none; box-shadow:0 6px 20px rgba(8,145,178,0.3);">
+        ▶&nbsp;{lang === 'de' ? 'App kostenlos laden' : 'Download app for free'}
       </a>
     </div>
+
   </article>
 </BaseLayout>
