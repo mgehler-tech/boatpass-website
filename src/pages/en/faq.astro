@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    q: 'What is the Sportbootführerschein (SBF)?',
+    a: 'The SBF is the official German boating license for motorized vessels. It is required for boats with more than 15 HP on federal waterways.',
+  },
+  {
+    q: 'What is the difference between SBF Inland and SBF Coastal?',
+    a: 'The SBF Inland is valid for inland waterways (rivers, lakes, canals). The SBF Coastal is valid for coastal waters up to 12 nautical miles. Both can be taken together.',
+  },
+  {
+    q: 'How does the exam work?',
+    a: 'The theory exam consists of 30 multiple-choice questions (60 minutes, at least 24 correct). This is followed by a practical exam on the water.',
+  },
+  {
+    q: 'How much does the SBF cost?',
+    a: 'Exam fees range from €100–200 depending on the club. Preparation courses cost an additional €150–400. With the Boatpass app, you can study without a course.',
+  },
+  {
+    q: 'How many questions are in the official catalog?',
+    a: 'The official DMYV question catalog contains over 400 questions across 5 topic areas. Boatpass contains the complete catalog.',
+  },
+  {
+    q: 'How long does preparation take?',
+    a: 'With consistent studying (30 minutes daily), 4–6 weeks is realistic. Boatpass helps you study efficiently, whenever and wherever you want.',
+  },
+  {
+    q: 'Is the Boatpass app free?',
+    a: 'Yes — the app is free with 20 practice questions and study mode. The premium upgrade is a one-time €4.99 purchase for the full catalog, exam simulation, and weak spot training.',
+  },
+  {
+    q: 'Which devices does the app support?',
+    a: 'Boatpass is currently available for Android (Google Play). An iOS version is planned.',
+  },
+  {
+    q: 'How current is the question catalog?',
+    a: 'The app contains the official 2025/2026 question catalog and is updated when changes occur.',
+  },
+  {
+    q: 'Can I use the app offline?',
+    a: 'Yes — all questions and explanations are available offline. An internet connection is only needed for the initial download.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<BaseLayout
+  title="FAQ – Boating License Questions"
+  description="Answers to the most common questions about the German boating license: process, costs, differences, and the Boatpass app."
+  lang="en"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-text mb-4">Frequently Asked Questions</h1>
+    <p class="text-gray-500 text-xl mb-12">Everything about the boating license exam and the Boatpass app</p>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="bg-white border border-gray-100 rounded-2xl overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-text list-none">
+            {faq.q}
+            <span class="text-primary ml-4 transition-transform group-open:rotate-180">▼</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const faqs = [
+  {
+    q: 'Was ist der Sportbootführerschein (SBF)?',
+    a: 'Der SBF ist die offizielle deutsche Fahrerlaubnis für Sportboote. Er ist Pflicht für Motorboote mit mehr als 15 PS auf Bundeswasserstraßen.',
+  },
+  {
+    q: 'Was ist der Unterschied zwischen SBF Binnen und SBF See?',
+    a: 'Der SBF Binnen gilt für Binnengewässer (Flüsse, Seen, Kanäle). Der SBF See gilt für Küstengewässer bis 12 Seemeilen. Beide können kombiniert abgelegt werden.',
+  },
+  {
+    q: 'Wie läuft die SBF-Prüfung ab?',
+    a: 'Die Theorieprüfung besteht aus 30 Multiple-Choice-Fragen (60 Minuten, mind. 24 richtig). Danach folgt eine praktische Prüfung auf dem Wasser.',
+  },
+  {
+    q: 'Was kostet der SBF?',
+    a: 'Die Prüfungsgebühr liegt je nach Verein bei 100–200 €. Vorbereitungskurse kosten zusätzlich 150–400 €. Mit der Boatpass-App lernst du ohne Kurs.',
+  },
+  {
+    q: 'Wie viele Fragen hat der offizielle Fragenkatalog?',
+    a: 'Der offizielle DMYV-Fragenkatalog enthält über 400 Fragen aus 5 Themenbereichen. Boatpass enthält den kompletten Katalog.',
+  },
+  {
+    q: 'Wie lange dauert die Vorbereitung?',
+    a: 'Mit konsequentem Lernen (30 Minuten täglich) sind 4–6 Wochen realistisch. Mit Boatpass lernst du effizient, wann und wo du willst.',
+  },
+  {
+    q: 'Ist die Boatpass-App kostenlos?',
+    a: 'Ja — die App ist kostenlos mit 20 Übungsfragen und einem Lernmodus. Das Premium-Upgrade kostet einmalig 4,99 € und gibt dir Zugriff auf den vollständigen Katalog, Prüfungssimulation und Fehler-Training.',
+  },
+  {
+    q: 'Auf welchen Geräten läuft die App?',
+    a: 'Boatpass ist aktuell für Android verfügbar (Google Play). Eine iOS-Version ist in Planung.',
+  },
+  {
+    q: 'Wie aktuell ist der Fragenkatalog?',
+    a: 'Die App enthält den offiziellen Fragenkatalog 2025/2026 und wird bei Änderungen aktualisiert.',
+  },
+  {
+    q: 'Kann ich die App offline nutzen?',
+    a: 'Ja — alle Fragen und Erklärungen sind offline verfügbar. Eine Internetverbindung ist nur für den einmaligen Download nötig.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<BaseLayout
+  title="FAQ – Häufige Fragen zum SBF"
+  description="Antworten auf die häufigsten Fragen rund um den Sportbootführerschein: Ablauf, Kosten, Unterschiede und die Boatpass-App."
+  lang="de"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="max-w-3xl mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold text-text mb-4">Häufige Fragen</h1>
+    <p class="text-gray-500 text-xl mb-12">Alles rund um den Sportbootführerschein und die Boatpass-App</p>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="bg-white border border-gray-100 rounded-2xl overflow-hidden group">
+          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-text list-none">
+            {faq.q}
+            <span class="text-primary ml-4 transition-transform group-open:rotate-180">▼</span>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+            {faq.a}
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</BaseLayout>
