@@ -1,0 +1,137 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+---
+
+<BaseLayout
+  title="SRC Lernapp – Short Range Certificate Seefunk lernen"
+  description="Alles zum SRC (Short Range Certificate): Prüfungsaufbau, Inhalte, Kosten und Vorbereitung. Boatpass SRC-Modul kommt bald."
+  lang="de"
+>
+
+  <!-- Hero -->
+  <div style="background:#f7faff; padding:100px 24px 60px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(8,145,178,0.08); border:1px solid rgba(8,145,178,0.2); color:#0891b2; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        📡 Short Range Certificate · Seefunk
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-2px; color:#0a2647; line-height:1.1; margin-bottom:20px;">
+        SRC lernen –<br>Kurzstreckenzeugnis Seefunk
+      </h1>
+      <p style="font-size:18px; color:#64748b; line-height:1.65; max-width:580px; margin:0 auto 36px;">
+        Das Short Range Certificate (SRC) ist der internationale Seefunk-Führerschein für Küstengewässer.
+        Pflicht für jeden, der auf See Funk und GMDSS-Geräte bedient.
+      </p>
+
+      <!-- Coming Soon Badge -->
+      <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(245,158,11,0.1); border:1px solid rgba(245,158,11,0.3); color:#b45309; font-size:14px; font-weight:700; padding:10px 20px; border-radius:14px; margin-bottom:24px;">
+        🚧 Boatpass SRC-Modul — bald verfügbar
+      </div>
+      <br/>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#0a2647,#0c5f9b); color:white; font-weight:700; font-size:15px; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(10,38,71,0.2); margin-top:16px;">
+        ▶&nbsp;Jetzt SBF See lernen – SRC folgt bald
+      </a>
+    </div>
+  </div>
+
+  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+
+    <!-- Was ist SRC -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#0a2647; letter-spacing:-1px; margin-bottom:16px;">Was ist das SRC?</h2>
+      <p style="font-size:16px; color:#475569; line-height:1.75; margin-bottom:12px;">
+        Das <strong>Short Range Certificate (SRC)</strong> — auf Deutsch <em>Beschränkt Gültiges Funkbetriebszeugnis</em> — ist das international anerkannte Funkzeugnis für die Seeschifffahrt im Küstenbereich. Es berechtigt zur Bedienung aller UKW-Seefunkanlagen und GMDSS-Geräte (Global Maritime Distress and Safety System).
+      </p>
+      <p style="font-size:16px; color:#475569; line-height:1.75;">
+        Das SRC ist für Segler und Motorbootfahrer <strong>Pflicht, sobald ein UKW-Seefunkgerät an Bord genutzt wird</strong> — auch im Küstenbereich. Es wird von der Bundesnetzagentur abgenommen und ist international gültig.
+      </p>
+    </section>
+
+    <!-- SRC vs UBI -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#0a2647; letter-spacing:-1px; margin-bottom:20px;">SRC vs. UBI: Was ist der Unterschied?</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+        <div style="background:white; border:2px solid rgba(8,145,178,0.2); border-radius:16px; padding:24px;">
+          <div style="font-weight:800; color:#0a2647; margin-bottom:4px;">SRC</div>
+          <div style="font-size:13px; color:#0891b2; margin-bottom:12px;">Short Range Certificate</div>
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px; color:#475569; line-height:1.8;">
+            <li>✓ Seefunk (Küste, Nord-/Ostsee)</li>
+            <li>✓ GMDSS-Geräte</li>
+            <li>✓ International gültig</li>
+            <li>✓ Basis für LRC</li>
+          </ul>
+        </div>
+        <div style="background:white; border:2px solid rgba(12,95,155,0.12); border-radius:16px; padding:24px;">
+          <div style="font-weight:800; color:#0a2647; margin-bottom:4px;">UBI</div>
+          <div style="font-size:13px; color:#0891b2; margin-bottom:12px;">UKW-Sprechfunk Binnen</div>
+          <ul style="list-style:none; padding:0; margin:0; font-size:14px; color:#475569; line-height:1.8;">
+            <li>✓ Binnenfunk (Flüsse, Kanäle)</li>
+            <li>✓ AIS Binnenschifffahrt</li>
+            <li>✗ Nicht für Seefunk gültig</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:14px; color:#94a3b8; margin-top:12px; line-height:1.6;">
+        Wer sowohl Binnen- als auch Seerouten befahren will, benötigt <strong>beide Zeugnisse</strong> — UBI und SRC sind nicht gegenseitig anrechenbar.
+      </p>
+    </section>
+
+    <!-- Prüfungsaufbau -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#0a2647; letter-spacing:-1px; margin-bottom:20px;">SRC-Prüfung: Aufbau & Inhalte</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:20px;">
+        <div style="background:white; border:1px solid rgba(12,95,155,0.12); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Theorie</div>
+          <div style="font-size:15px; color:#475569; line-height:1.6;">Schriftliche Prüfung<br>Multiple Choice + Freitext</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(12,95,155,0.12); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Praxis</div>
+          <div style="font-size:15px; color:#475569; line-height:1.6;">Mündlich/praktisch<br>Notrufe & Sprechprozeduren</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(12,95,155,0.12); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Sprache</div>
+          <div style="font-size:15px; color:#475569; line-height:1.6;">Deutsch & Englisch<br>(Seenot-Englisch Pflicht)</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(12,95,155,0.12); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Kosten</div>
+          <div style="font-size:15px; color:#475569; line-height:1.6;">ca. 60–100 €<br>je nach Prüfungsstelle</div>
+        </div>
+      </div>
+      <div style="background:rgba(8,145,178,0.05); border:1px solid rgba(8,145,178,0.15); border-radius:14px; padding:20px;">
+        <p style="font-size:15px; color:#475569; line-height:1.7; margin:0;">
+          <strong style="color:#0a2647;">Prüfungsthemen:</strong> UKW-Seefunk, DSC-Verfahren (Digital Selective Calling), GMDSS-System, Seenot-, Dringlichkeits- und Sicherheitsverkehr, Schiff-zu-Schiff- und Schiff-zu-Land-Kommunikation, NAVTEX, internationale Buchstabiertafel, Funkvorschriften (VO Funk der ITU).
+        </p>
+      </div>
+    </section>
+
+    <!-- Boatpass Coming Soon -->
+    <section style="margin-bottom:48px; background:linear-gradient(135deg,#fffbeb,#fef3c7); border:1px solid rgba(245,158,11,0.25); border-radius:24px; padding:40px;">
+      <div style="font-size:13px; font-weight:700; color:#b45309; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">🚧 In Entwicklung</div>
+      <h2 style="font-size:24px; font-weight:800; color:#0a2647; margin-bottom:12px;">Boatpass SRC-Modul kommt bald</h2>
+      <p style="font-size:15px; color:#64748b; line-height:1.7; margin-bottom:20px;">
+        Das SRC-Modul für Boatpass ist in Entwicklung — mit dem gleichen Lernkonzept wie SBF See: offizieller Fragenkatalog der Bundesnetzagentur, Prüfungssimulation und gezieltes Fehler-Training.
+      </p>
+      <p style="font-size:14px; color:#92400e; line-height:1.6; margin-bottom:20px;">
+        📲 Lade die App jetzt herunter — das SRC-Update wird automatisch verfügbar, sobald es live ist.
+      </p>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:8px; background:#0a2647; color:white; font-weight:700; font-size:14px; padding:12px 24px; border-radius:12px; text-decoration:none;">
+        ▶&nbsp;App jetzt laden – Update automatisch
+      </a>
+    </section>
+
+    <!-- Interne Links -->
+    <section style="padding-top:32px; border-top:1px solid rgba(12,95,155,0.1);">
+      <h3 style="font-size:16px; font-weight:700; color:#0a2647; margin-bottom:16px;">Verwandte Führerscheine</h3>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="/sbf-see/" style="color:#0891b2; text-decoration:none; font-size:15px;">→ SBF See lernen mit Boatpass</a>
+        <a href="/sbf-binnen/" style="color:#0891b2; text-decoration:none; font-size:15px;">→ SBF Binnen lernen mit Boatpass</a>
+        <a href="/ubi/" style="color:#0891b2; text-decoration:none; font-size:15px;">→ UBI – UKW-Sprechfunkzeugnis Binnen</a>
+        <a href="/faq/" style="color:#0891b2; text-decoration:none; font-size:15px;">→ Häufige Fragen zum Sportbootführerschein</a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
