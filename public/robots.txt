@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://boatpass.de/sitemap-index.xml
