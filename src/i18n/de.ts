@@ -115,7 +115,7 @@ export const de = {
     subtitle: 'Alles rund um den Sportbootführerschein und die App',
   },
   about: {
-    title: 'Über Boatpass',
+    title: 'Über BoatPass',
   },
   contact: {
     title: 'Kontakt',
@@ -124,6 +124,11 @@ export const de = {
     message: 'Deine Nachricht',
     send: 'Absenden',
     success: 'Nachricht gesendet! Wir melden uns bald.',
+  },
+  ctaBanner: {
+    title: 'Bereit für deine Prüfung?',
+    subtitle: 'Lade BoatPass kostenlos und starte heute mit dem offiziellen Fragenkatalog.',
+    cta: 'Kostenlos im Play Store',
   },
 } as const;
 

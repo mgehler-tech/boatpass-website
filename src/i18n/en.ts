@@ -117,7 +117,7 @@ export const en: Translations = {
     subtitle: 'Everything about the boating license exam and the app',
   },
   about: {
-    title: 'About Boatpass',
+    title: 'About BoatPass',
   },
   contact: {
     title: 'Contact',
@@ -126,5 +126,10 @@ export const en: Translations = {
     message: 'Your message',
     send: 'Send',
     success: 'Message sent! We\'ll get back to you soon.',
+  },
+  ctaBanner: {
+    title: 'Ready for your exam?',
+    subtitle: 'Download BoatPass for free and start studying with the official question catalog today.',
+    cta: 'Free on Google Play',
   },
 };

@@ -10,56 +10,56 @@ const t = useTranslations(lang);
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 border-b" style="background: rgba(247,250,255,0.85); backdrop-filter: blur(20px); border-color: rgba(12,95,155,0.12);">
+<header class="fixed top-0 left-0 right-0 z-50 border-b" style="background: rgba(240,244,250,0.85); backdrop-filter: blur(20px); border-color: rgba(51,102,255,0.10);">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
     <!-- Logo -->
-    <a href={getLocalizedPath(lang, '/')} class="flex items-center gap-2 text-xl font-black" style="color: #0a2647; letter-spacing: -0.5px; text-decoration: none;">
-      <img src="/images/app-icon.png" alt="boat pass" style="width: 28px; height: 28px; border-radius: 6px;" />
-      boat<span style="color: #0891b2;">pass</span>
+    <a href={getLocalizedPath(lang, '/')} class="flex items-center gap-2 text-xl font-black" style="color: #1A1F36; letter-spacing: -0.5px; text-decoration: none;">
+      <img src="/images/app-icon.png" alt="BoatPass" style="width: 28px; height: 28px; border-radius: 6px;" />
+      Boat<span style="color: #3366FF;">Pass</span>
     </a>
 
     <!-- Links -->
     <div class="hidden md:flex items-center gap-8">
-      <a href="#features" class="text-sm font-medium nav-link" style="color: #64748b; text-decoration: none;">
+      <a href="#features" class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
         {lang === 'de' ? 'Features' : 'Features'}
       </a>
-      <a href="#pricing" class="text-sm font-medium nav-link" style="color: #64748b; text-decoration: none;">
+      <a href="#pricing" class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
         {lang === 'de' ? 'Preise' : 'Pricing'}
       </a>
 
       <!-- Führerscheine Dropdown (nur DE) -->
       {lang === 'de' && (
         <div class="nav-dropdown">
-          <button class="text-sm font-medium nav-link nav-dropdown-trigger" style="color: #64748b; background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; gap:4px;">
+          <button class="text-sm font-medium nav-link nav-dropdown-trigger" style="color: #6B7280; background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; gap:4px;">
             Führerscheine <span style="font-size:10px;">▾</span>
           </button>
           <div class="nav-dropdown-menu">
             <a href="/sbf-binnen/" class="nav-dropdown-item">SBF Binnen</a>
             <a href="/sbf-see/" class="nav-dropdown-item">SBF See</a>
-            <a href="/ubi/" class="nav-dropdown-item">UBI <span style="font-size:11px;color:#0891b2;">bald</span></a>
-            <a href="/src/" class="nav-dropdown-item">SRC <span style="font-size:11px;color:#0891b2;">bald</span></a>
+            <a href="/ubi/" class="nav-dropdown-item">UBI <span style="font-size:11px;color:#3366FF;">bald</span></a>
+            <a href="/src/" class="nav-dropdown-item">SRC <span style="font-size:11px;color:#3366FF;">bald</span></a>
           </div>
         </div>
       )}
 
-      <a href={getLocalizedPath(lang, '/blog/')} class="text-sm font-medium nav-link" style="color: #64748b; text-decoration: none;">
+      <a href={getLocalizedPath(lang, '/blog/')} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
         {t.nav.blog}
       </a>
-      <a href={getLocalizedPath(lang, '/faq/')} class="text-sm font-medium nav-link" style="color: #64748b; text-decoration: none;">
+      <a href={getLocalizedPath(lang, '/faq/')} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
         {t.nav.faq}
       </a>
     </div>
 
     <!-- Right side -->
     <div class="flex items-center gap-3">
-      <a href={lang === 'de' ? '/en/' : '/'} class="text-sm font-medium" style="color: #64748b; text-decoration: none; display:inline-flex; align-items:center; gap:5px;">
+      <a href={lang === 'de' ? '/en/' : '/'} class="text-sm font-medium" style="color: #6B7280; text-decoration: none; display:inline-flex; align-items:center; gap:5px;">
         <span style="font-size:16px; line-height:1;">{lang === 'de' ? '🇬🇧' : '🇩🇪'}</span>
         {t.footer.switchLang}
       </a>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
         class="hidden md:inline-flex items-center gap-2 text-sm font-bold text-white px-5 py-2.5 rounded-full"
-        style="background: linear-gradient(135deg, #0a2647, #0c5f9b); box-shadow: 0 4px 14px rgba(10,38,71,0.25); text-decoration: none;">
+        style="background: #3366FF; box-shadow: 0 4px 14px rgba(51,102,255,0.25); text-decoration: none;">
         {t.nav.getApp}
       </a>
     </div>
@@ -67,7 +67,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 </header>
 
 <style>
-  .nav-link:hover { color: #0a2647 !important; }
+  .nav-link:hover { color: #1A1F36 !important; }
 
   .nav-dropdown { position: relative; }
   .nav-dropdown-menu {
@@ -77,22 +77,22 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     left: 50%;
     transform: translateX(-50%);
     background: white;
-    border: 1px solid rgba(12,95,155,0.12);
+    border: 1px solid rgba(51,102,255,0.10);
     border-radius: 12px;
     padding: 8px;
     min-width: 150px;
-    box-shadow: 0 8px 24px rgba(10,38,71,0.1);
+    box-shadow: 0 8px 24px rgba(26,31,54,0.1);
     z-index: 100;
   }
   .nav-dropdown:hover .nav-dropdown-menu { display: flex; flex-direction: column; gap: 2px; }
   .nav-dropdown-item {
     font-size: 14px;
     font-weight: 500;
-    color: #475569;
+    color: #4B5563;
     text-decoration: none;
     padding: 8px 14px;
     border-radius: 8px;
     transition: background 0.15s;
   }
-  .nav-dropdown-item:hover { background: rgba(8,145,178,0.07); color: #0a2647; }
+  .nav-dropdown-item:hover { background: rgba(51,102,255,0.06); color: #1A1F36; }
 </style>
