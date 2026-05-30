@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Privacy Policy – BoatPass"
+  description="Privacy policy of the BoatPass website in accordance with GDPR."
+  lang="en"
+  showCta={false}
+>
+  <div style="max-width:720px; margin:0 auto; padding:80px 24px 120px;">
+
+    <!-- Header -->
+    <div style="margin-bottom:48px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#3366FF; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
+        🔒 Privacy
+      </div>
+      <h1 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:12px;">Privacy Policy</h1>
+      <p style="font-size:16px; color:#6B7280;">Information pursuant to GDPR on the processing of personal data.</p>
+    </div>
+
+    <!-- 1. Controller -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">01</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Controller</h2>
+      <p style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:4px;">Marius Gehler</p>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Blissestraße 56 · 10713 Berlin<br />
+        <a href="mailto:sbftestapp@gmail.com" style="color:#3366FF; text-decoration:none;">sbftestapp@gmail.com</a>
+      </p>
+    </div>
+
+    <!-- 2. Hosting -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">02</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Hosting</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        This website is hosted by <strong style="color:#1A1F36;">Netlify Inc.</strong> (2325 3rd Street, Suite 215, San Francisco, CA 94107, USA). When accessing the website, technically necessary data (IP address, access time, browser) are stored in Netlify server logs.
+      </p>
+      <div style="margin-top:12px; background:rgba(51,102,255,0.05); border-radius:10px; padding:12px 16px; font-size:13px; color:#4B5563;">
+        <strong style="color:#1A1F36;">Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in secure operation)
+      </div>
+    </div>
+
+    <!-- 3. Analytics -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">03</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Analytics</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        This website uses <strong style="color:#1A1F36;">Plausible Analytics</strong> — a privacy-friendly tool without cookies and without collecting personal data. No consent banner is required.
+      </p>
+      <a href="https://plausible.io/data-policy" target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:6px; margin-top:12px; font-size:13px; font-weight:600; color:#3366FF; text-decoration:none;">
+        plausible.io/data-policy →
+      </a>
+    </div>
+
+    <!-- 4. Contact form -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">04</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Contact form</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        The contact form is processed via <strong style="color:#1A1F36;">Formspree</strong> (Formspree Inc., USA). Submitted data (name, email address, message) is used solely to respond to your inquiry and deleted afterwards. Data is not shared with third parties.
+      </p>
+      <div style="margin-top:12px; background:rgba(51,102,255,0.05); border-radius:10px; padding:12px 16px; font-size:13px; color:#4B5563;">
+        <strong style="color:#1A1F36;">Legal basis:</strong> Art. 6(1)(b) GDPR (pre-contractual measures / responding to inquiries)
+      </div>
+    </div>
+
+    <!-- 5. Your rights -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">05</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Your rights</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:16px;">
+        Under GDPR you have the right to:
+      </p>
+      <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px;">
+        {['Access to stored data (Art. 15)', 'Rectification of inaccurate data (Art. 16)', 'Erasure of your data (Art. 17)', 'Restriction of processing (Art. 18)', 'Data portability (Art. 20)', 'Object to processing (Art. 21)'].map(r => (
+          <div style="display:flex; align-items:center; gap:10px;">
+            <span style="color:#3366FF; font-size:14px; flex-shrink:0;">✓</span>
+            <span style="font-size:14px; color:#4B5563;">{r}</span>
+          </div>
+        ))}
+      </div>
+      <p style="font-size:14px; color:#6B7280;">
+        For all requests: <a href="mailto:sbftestapp@gmail.com" style="color:#3366FF; text-decoration:none; font-weight:600;">sbftestapp@gmail.com</a>
+      </p>
+    </div>
+
+  </div>
+</BaseLayout>

@@ -3,31 +3,62 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="About – Boatpass"
-  description="Who is behind Boatpass? The story and motivation behind the boating license study app."
+  title="About – BoatPass"
+  description="Who is behind BoatPass? The story and motivation behind the boating license study app."
   lang="en"
 >
-  <div class="max-w-3xl mx-auto px-4 py-16">
-    <h1 class="text-4xl font-bold text-text mb-8">About Boatpass</h1>
-    <div class="prose prose-lg text-gray-600">
-      <p>
-        Boatpass was born from a personal frustration: when studying for the boating license,
+  <div style="max-width:720px; margin:0 auto; padding:80px 24px 120px;">
+
+    <!-- Header -->
+    <div style="margin-bottom:48px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#3366FF; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
+        ⚓ About us
+      </div>
+      <h1 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:12px;">About BoatPass</h1>
+      <p style="font-size:16px; color:#6B7280;">The story behind the best boating license study app on Android</p>
+    </div>
+
+    <!-- Card: How it started -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">How it all started</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
+        BoatPass was born from a personal frustration: when studying for the boating license,
         there was no app that actually felt good to use. The available alternatives felt outdated,
         cluttered, or overpriced.
       </p>
-      <p>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
         So we built one ourselves — with the goal of creating the best boating license study app
         on Android. Modern, fast, motivating. Like Duolingo for boating.
       </p>
-      <h2>Our promise</h2>
-      <ul>
-        <li>Always up-to-date question catalog</li>
-        <li>No subscription — one-time purchase, lifetime access</li>
-        <li>No unnecessary extras — only what helps you pass</li>
+    </div>
+
+    <!-- Card: Our promise -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Our promise</h2>
+      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
+        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
+          <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
+          Always up-to-date question catalog
+        </li>
+        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
+          <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
+          No subscription — one-time purchase, lifetime access
+        </li>
+        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
+          <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
+          No unnecessary extras — only what helps you pass
+        </li>
       </ul>
-      <p>
-        Have questions or feedback? Reach us via the <a href="/en/contact/" class="text-primary hover:underline">contact form</a>.
+    </div>
+
+    <!-- Card: Contact -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
+      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Contact</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Have questions or feedback? Reach us via the
+        <a href="/en/contact/" style="color:#3366FF; text-decoration:none; font-weight:500;">contact form</a>.
       </p>
     </div>
+
   </div>
 </BaseLayout>
