@@ -5,6 +5,7 @@ date: 2026-05-29
 tags: ["SBF", "Inland", "Coastal", "Comparison"]
 readingTime: 7
 lang: en
+author: "Marius Gehler"
 ---
 
 When you start researching the German boating license, you'll quickly hit the key question: inland (Binnen) or coastal (See)? Both licenses cover motorboats – but on different waters. Here's everything you need to decide.

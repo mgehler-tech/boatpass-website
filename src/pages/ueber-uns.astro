@@ -1,5 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Marius Gehler",
+  "url": "https://boatpass.de/ueber-uns/",
+  "jobTitle": "App-Entwickler & Gründer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Boatpass",
+    "url": "https://boatpass.de",
+  },
+  "description": "Marius Gehler ist Android-Entwickler und Gründer von Boatpass – der modernen Lernapp für den Sportbootführerschein (SBF Binnen & See).",
+  "knowsAbout": [
+    "Sportbootführerschein",
+    "SBF Binnen",
+    "SBF See",
+    "Android-Entwicklung",
+    "ELWIS-Fragenkatalog",
+  ],
+};
 ---
 
 <BaseLayout
@@ -7,56 +28,76 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   description="Wer steckt hinter Boatpass? Die Geschichte und Motivation hinter der SBF-Lernapp."
   lang="de"
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   <div style="max-width:720px; margin:0 auto; padding:80px 24px 120px;">
 
     <!-- Header -->
     <div style="margin-bottom:48px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(8,145,178,0.08); border:1px solid rgba(8,145,178,0.2); color:#0891b2; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#3366FF; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
         ⚓ Über uns
       </div>
-      <h1 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#0a2647; line-height:1.1; margin-bottom:12px;">Über Boatpass</h1>
-      <p style="font-size:16px; color:#64748b;">Die Geschichte hinter der besten SBF-Lernapp auf Android</p>
+      <h1 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:12px;">Über Boatpass</h1>
+      <p style="font-size:16px; color:#6B7280;">Die Geschichte hinter der besten SBF-Lernapp auf Android</p>
+    </div>
+
+    <!-- Autorenprofil -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px; display:flex; gap:24px; align-items:flex-start; flex-wrap:wrap;">
+      <div style="width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,#1A1F36,#3366FF); display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:900; color:white; flex-shrink:0;">M</div>
+      <div style="flex:1; min-width:200px;">
+        <div style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:4px;">Marius Gehler</div>
+        <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">App-Entwickler & Gründer</div>
+        <p style="font-size:15px; color:#4B5563; line-height:1.7; margin:0;">
+          Android-Entwickler, der Boatpass aus einem persönlichen Bedürfnis heraus entwickelt hat:
+          Beim eigenen Lernen für den Sportbootführerschein fehlte eine App, die sich wirklich gut anfühlt.
+          Boatpass ist die Antwort darauf — gebaut von jemandem, der denselben Prozess selbst durchlaufen hat.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;">
+          {["Android-Entwicklung", "Sportbootführerschein", "SBF Binnen", "SBF See", "ELWIS-Fragenkatalog"].map(tag => (
+            <span style="font-size:12px; font-weight:700; background:rgba(51,102,255,0.08); color:#3366FF; border:1px solid rgba(51,102,255,0.15); padding:3px 10px; border-radius:100px;">{tag}</span>
+          ))}
+        </div>
+      </div>
     </div>
 
     <!-- Card: Entstehung -->
-    <div style="background:white; border:1px solid rgba(12,95,155,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Wie alles begann</h2>
-      <p style="font-size:15px; color:#475569; line-height:1.7; margin-bottom:12px;">
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Wie alles begann</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
         Boatpass entstand aus einer persönlichen Frustration: Beim Lernen für den Sportbootführerschein
         fehlte eine App, die sich wirklich gut anfühlt. Die verfügbaren Alternativen wirkten veraltet,
         unübersichtlich oder zu teuer.
       </p>
-      <p style="font-size:15px; color:#475569; line-height:1.7;">
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
         Also haben wir selbst eine gebaut — mit dem Ziel, die beste SBF-Lernapp auf Android zu sein.
         Modern, schnell, motivierend. Wie Duolingo fürs Bootfahren.
       </p>
     </div>
 
     <!-- Card: Versprechen -->
-    <div style="background:white; border:1px solid rgba(12,95,155,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Unser Versprechen</h2>
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Unser Versprechen</h2>
       <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#475569; line-height:1.6;">
-          <span style="color:#0891b2; font-weight:700; flex-shrink:0;">✓</span>
+        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
+          <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
           Immer aktueller Fragenkatalog
         </li>
-        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#475569; line-height:1.6;">
-          <span style="color:#0891b2; font-weight:700; flex-shrink:0;">✓</span>
+        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
+          <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
           Kein Abo — einmaliger Kauf, lebenslanger Zugriff
         </li>
-        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#475569; line-height:1.6;">
-          <span style="color:#0891b2; font-weight:700; flex-shrink:0;">✓</span>
+        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
+          <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
           Kein unnötiger Schnickschnack — nur das, was beim Bestehen hilft
         </li>
       </ul>
     </div>
 
     <!-- Card: Kontakt -->
-    <div style="background:white; border:1px solid rgba(12,95,155,0.1); border-radius:20px; padding:32px;">
-      <h2 style="font-size:13px; font-weight:700; color:#0891b2; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Kontakt</h2>
-      <p style="font-size:15px; color:#475569; line-height:1.7;">
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
+      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Kontakt</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
         Bei Fragen oder Feedback erreichst du uns über das
-        <a href="/kontakt/" style="color:#0891b2; text-decoration:none; font-weight:500;">Kontaktformular</a>.
+        <a href="/kontakt/" style="color:#3366FF; text-decoration:none; font-weight:500;">Kontaktformular</a>.
       </p>
     </div>
 

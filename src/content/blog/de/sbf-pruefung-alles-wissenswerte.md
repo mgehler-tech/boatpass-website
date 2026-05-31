@@ -5,6 +5,7 @@ date: 2026-05-29
 tags: ["SBF", "Prüfung", "Leitfaden"]
 readingTime: 9
 lang: de
+author: "Marius Gehler"
 ---
 
 Der Sportbootführerschein (SBF) ist die offizielle Fahrerlaubnis für Sportboote in Deutschland. Diese Seite erklärt dir **alles**, was du vor der Prüfung wissen musst – mit korrekten Daten aus den offiziellen ELWIS- und DMYV-Regelwerken.

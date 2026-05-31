@@ -5,6 +5,7 @@ date: 2026-05-29
 tags: ["SBF", "Exam", "Guide"]
 readingTime: 9
 lang: en
+author: "Marius Gehler"
 ---
 
 The German Sportbootführerschein (SBF) is the official license for operating motorboats in Germany. This guide covers everything you need to know before your exam – with accurate data from official ELWIS and DMYV sources.

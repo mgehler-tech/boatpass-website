@@ -5,6 +5,7 @@ date: 2026-05-29
 tags: ["SBF", "Tipps", "Prüfung", "Vorbereitung"]
 readingTime: 7
 lang: de
+author: "Marius Gehler"
 ---
 
 Der Sportbootführerschein (SBF) ist kein Hexenwerk – aber ohne die richtige Strategie kann die Prüfung trotzdem schief gehen. Diese fünf Tipps basieren auf dem, was Kandidaten wirklich stolpern lässt.

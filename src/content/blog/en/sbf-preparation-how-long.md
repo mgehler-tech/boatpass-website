@@ -5,6 +5,7 @@ date: 2026-05-29
 tags: ["SBF", "Preparation", "Study Plan"]
 readingTime: 6
 lang: en
+author: "Marius Gehler"
 ---
 
 One of the most common questions before starting SBF prep: how long do I actually need to study? The honest answer depends on your prior knowledge and daily consistency. Here are realistic estimates – without sugarcoating.
