@@ -2,17 +2,17 @@
 @import "@fontsource-variable/inter";
 
 @theme {
-  --color-primary:    #0c5f9b;
-  --color-navy:       #0a2647;
-  --color-teal:       #0891b2;
-  --color-background: #f7faff;
+  --color-primary:    #3366FF;
+  --color-primary-dark: #2952CC;
+  --color-navy:       #1A1F36;
+  --color-background: #F0F4FA;
   --color-surface:    #ffffff;
-  --color-text:       #0a1929;
-  --color-muted:      #64748b;
-  --color-success:    #4CAF82;
-  --color-error:      #C0392B;
-  --color-border:     rgba(12, 95, 155, 0.12);
-  --font-family-sans: 'Inter', system-ui, sans-serif;
+  --color-text:       #1A1F36;
+  --color-muted:      #6B7280;
+  --color-success:    #22C55E;
+  --color-error:      #EF4444;
+  --color-border:     rgba(51, 102, 255, 0.10);
+  --font-family-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
 }
 
 @layer base {
@@ -61,7 +61,7 @@
 .animate-blink { animation: blink 2s ease-in-out infinite; }
 
 .gradient-text {
-  background: linear-gradient(135deg, #0c5f9b 0%, #0891b2 100%);
+  background: linear-gradient(135deg, #3366FF 0%, #5B8CFF 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -70,5 +70,5 @@
 }
 
 .gradient-bg {
-  background: linear-gradient(135deg, #0a2647, #0c5f9b);
+  background: linear-gradient(135deg, #1A1F36, #3366FF);
 }

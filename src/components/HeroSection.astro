@@ -1,10 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import { useTranslations } from '../i18n/index';
-import screenshot0 from '../assets/images/app-screenshot.png';
-import screenshot1 from '../assets/images/app.screenshot.1.png';
-import screenshot2 from '../assets/images/app.screenshot.2.png';
-import screenshot3 from '../assets/images/app.screenshot.3.png';
+import screenshot0De from '../assets/images/app-screenshot.de.png';
+import screenshot1De from '../assets/images/app.screenshot.1.de.png';
+import screenshot2De from '../assets/images/app.screenshot.2.de.png';
+import screenshot3De from '../assets/images/app.screenshot.3.de.png';
+import screenshot0En from '../assets/images/app-screenshot.en.png';
+import screenshot1En from '../assets/images/app.screenshot.1.en.png';
+import screenshot2En from '../assets/images/app.screenshot.2.en.png';
+import screenshot3En from '../assets/images/app.screenshot.3.en.png';
 
 interface Props {
   lang: 'de' | 'en';
@@ -12,6 +16,9 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const [screenshot0, screenshot1, screenshot2, screenshot3] = lang === 'en'
+  ? [screenshot0En, screenshot1En, screenshot2En, screenshot3En]
+  : [screenshot0De, screenshot1De, screenshot2De, screenshot3De];
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 ---
 
