@@ -55,10 +55,14 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
     <!-- Right side -->
     <div class="flex items-center gap-3">
-      <a href={lang === 'de' ? '/en/' : '/'} class="text-sm font-medium" style="color: #6B7280; text-decoration: none; display:inline-flex; align-items:center; gap:5px;">
-        <span style="font-size:16px; line-height:1;">{lang === 'de' ? '🇬🇧' : '🇩🇪'}</span>
-        {t.footer.switchLang}
-      </a>
+      <div class="lang-switcher">
+        <a href="/" class={`lang-option${lang === 'de' ? ' lang-active' : ''}`}>
+          <span>🇩🇪</span> DE
+        </a>
+        <a href="/en/" class={`lang-option${lang === 'en' ? ' lang-active' : ''}`}>
+          <span>🇬🇧</span> EN
+        </a>
+      </div>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
         class="hidden md:inline-flex items-center gap-2 text-sm font-bold text-white px-5 py-2.5 rounded-full"
         style="background: #3366FF; box-shadow: 0 4px 14px rgba(51,102,255,0.25); text-decoration: none;">
@@ -69,6 +73,34 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 </header>
 
 <style>
+  .lang-switcher {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(51,102,255,0.06);
+    border: 1px solid rgba(51,102,255,0.12);
+    border-radius: 100px;
+    padding: 3px;
+    gap: 2px;
+  }
+  .lang-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6B7280;
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 100px;
+    transition: color 0.15s;
+  }
+  .lang-option:hover { color: #1A1F36; }
+  .lang-active {
+    background: white;
+    color: #1A1F36 !important;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+
   .nav-link:hover { color: #1A1F36 !important; }
 
   .nav-dropdown { position: relative; }
