@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import { useTranslations, getLocalizedPath } from '../i18n/index';
+import appIcon from '../assets/images/app-icon.png';
 
 interface Props {
   lang: 'de' | 'en';
@@ -16,14 +18,14 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
       <!-- Brand -->
       <div>
-        <span class="text-lg font-black" style="color:#1A1F36; display:inline-flex; align-items:center; gap:8px;"><img src="/images/app-icon.png" alt="BoatPass" style="width:26px;height:26px;border-radius:6px;" /> Boat<span style="color:#3366FF;">Pass</span></span>
+        <span class="text-lg font-black" style="color:#1A1F36; display:inline-flex; align-items:center; gap:8px;"><Image src={appIcon} alt="Boatpass Logo" width={52} height={52} loading="lazy" style="width:26px;height:26px;border-radius:6px;" /> Boat<span style="color:#3366FF;">Pass</span></span>
         <p class="text-gray-500 text-sm mt-2">
           {lang === 'de'
             ? 'Die App für den Sportbootführerschein.'
             : 'The app for your boating license.'}
         </p>
         <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="inline-block mt-3">
-          <img src={lang === 'de' ? '/images/google-play-badge-1_de_.png' : '/images/google-play-badge-2_en_.png'} alt="Google Play" class="h-10" />
+          <img src={lang === 'de' ? '/images/google-play-badge-1_de_.png' : '/images/google-play-badge-2_en_.png'} alt={lang === 'de' ? 'Boatpass im Google Play Store herunterladen' : 'Download Boatpass on Google Play'} width="104" height="40" loading="lazy" class="h-10 w-auto" />
         </a>
       </div>
 
