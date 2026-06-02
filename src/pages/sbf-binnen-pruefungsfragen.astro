@@ -1,0 +1,166 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://boatpass.de/" },
+    { "@type": "ListItem", "position": 2, "name": "SBF Binnen", "item": "https://boatpass.de/sbf-binnen/" },
+    { "@type": "ListItem", "position": 3, "name": "Prüfungsfragen", "item": "https://boatpass.de/sbf-binnen-pruefungsfragen/" },
+  ],
+};
+
+const faqs = [
+  {
+    q: 'Wie viele Fragen hat der SBF-Binnen-Fragenkatalog?',
+    a: 'Der amtliche ELWIS-Fragenkatalog für den SBF Binnen umfasst über 250 spezifische Fragen plus die gemeinsamen Basisfragen. In der Prüfung selbst werden daraus 30 Fragen gezogen (7 Basisfragen + 23 spezifische Fragen).',
+  },
+  {
+    q: 'Wo finde ich die offiziellen SBF-Binnen-Prüfungsfragen?',
+    a: 'Der vollständige Fragenkatalog wird von ELWIS (Elektronisches Wasserstraßen-Informations-System) kostenlos herausgegeben. In der Boatpass-App lernst du genau diese Fragen strukturiert nach Kategorien — inklusive Prüfungssimulation und Fehler-Training.',
+  },
+  {
+    q: 'Sind die Fragen in der App identisch mit der echten Prüfung?',
+    a: 'Ja. Die App enthält den vollständigen, aktuellen amtlichen ELWIS-Katalog. Du lernst exakt die Fragen, die auch in der echten Theorieprüfung gestellt werden — wird der Katalog aktualisiert, zieht die App zeitnah nach.',
+  },
+  {
+    q: 'Wie viele Fragen muss ich richtig beantworten, um zu bestehen?',
+    a: 'Bestanden hat, wer mindestens 5 von 7 Basisfragen und mindestens 18 von 23 spezifischen Fragen richtig beantwortet. Insgesamt hast du 45 Minuten Zeit.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<BaseLayout
+  title="SBF Binnen Prüfungsfragen – offizieller Fragenkatalog üben"
+  description="Alle SBF-Binnen-Prüfungsfragen aus dem offiziellen ELWIS-Katalog üben: Aufbau, Kategorien, Bestehensgrenze und wie du die 30 Prüfungsfragen effektiv lernst."
+  lang="de"
+  hasAlternate={false}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
+  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        📝 SBF Binnen Prüfungsfragen
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+        SBF Binnen Fragen –<br>offiziellen Katalog üben
+      </h1>
+      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto 36px;">
+        Über 250 amtliche ELWIS-Fragen, übersichtlich nach Kategorien sortiert. Lern mit echter Prüfungssimulation und gezieltem Fehler-Training — und geh sicher in die SBF-Binnen-Theorieprüfung.
+      </p>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
+        ▶&nbsp;Kostenlos Fragen üben
+      </a>
+    </div>
+  </div>
+
+  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+
+    <!-- Der Katalog -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">Der offizielle SBF-Binnen-Fragenkatalog</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+        Die <strong>Prüfungsfragen für den SBF Binnen</strong> stammen aus dem amtlichen Fragenkatalog von <strong>ELWIS</strong> (Elektronisches Wasserstraßen-Informations-System). Er ist öffentlich und kostenlos zugänglich und umfasst <strong>über 250 spezifische Fragen</strong> zuzüglich der gemeinsamen Basisfragen.
+      </p>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+        In der echten Theorieprüfung wird daraus ein Bogen mit <strong>30 Fragen</strong> zusammengestellt — 7 Basisfragen und 23 spezifische Fragen. Wer den Katalog systematisch durcharbeitet, kennt am Prüfungstag jede mögliche Frage.
+      </p>
+    </section>
+
+    <!-- Aufbau der Prüfung -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">So ist die Theorieprüfung aufgebaut</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px;">
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Prüfungsbogen</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">30 Fragen · 45 Minuten<br>Multiple Choice</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Basisfragen</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">7 Fragen<br>mind. 5 richtig</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Spezifische Fragen</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">23 Fragen<br>mind. 18 richtig</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Kategorien</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">8 Themengebiete<br>vollständig abgedeckt</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Effektiv üben -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">SBF-Binnen-Fragen effektiv üben</h2>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        {[
+          { icon: '📚', title: 'Lernmodus: Kategorie für Kategorie', desc: 'Arbeite den Katalog strukturiert durch — alle 8 Themengebiete, in deinem Tempo. So bleibt kein Thema offen.' },
+          { icon: '🎯', title: 'Prüfungssimulation: 30 Fragen, 45 Minuten', desc: 'Übe unter echten Prüfungsbedingungen mit zufälligem Bogen und Bestehensgrenze — genau wie am Prüfungstag.' },
+          { icon: '🔁', title: 'Fehler-Training: nur deine Schwachstellen', desc: 'Wiederhole gezielt die Fragen, die du noch nicht sicher kannst, statt Zeit mit bereits Gelerntem zu verlieren.' },
+          { icon: '📊', title: 'Fortschritt im Blick', desc: 'Sieh nach Kategorie aufgeschlüsselt, wo du stehst und wann du prüfungsreif bist.' },
+        ].map(f => (
+          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
+            <span style="font-size:24px; flex-shrink:0;">{f.icon}</span>
+            <div>
+              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
+              <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Häufige Fragen zum Fragenkatalog</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <div style="font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</div>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background:linear-gradient(135deg,#1A1F36,#242B4A); border-radius:24px; padding:48px 32px; text-align:center;">
+      <h2 style="font-size:26px; font-weight:800; color:white; margin-bottom:12px;">Jetzt SBF-Binnen-Fragen üben</h2>
+      <p style="font-size:16px; color:rgba(255,255,255,0.75); margin-bottom:28px;">15 Fragen täglich gratis — Vollzugang zum kompletten ELWIS-Katalog für einmalig 6,99 €.</p>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:10px; background:white; color:#1A1F36; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none;">
+        ▶&nbsp;Im Google Play Store öffnen
+      </a>
+    </section>
+
+    <!-- Interne Links -->
+    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
+      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Weiterführende Seiten</h2>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="/sbf-binnen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen lernen: Überblick & App</a>
+        <a href="/sbf-see-pruefungsfragen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See Prüfungsfragen üben</a>
+        <a href="/sbf-pruefung-ablauf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Prüfung: Ablauf von Theorie & Praxis</a>
+        <a href="/sbf-kosten/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Was kostet der Sportbootführerschein?</a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

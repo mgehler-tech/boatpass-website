@@ -1,0 +1,177 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://boatpass.de/" },
+    { "@type": "ListItem", "position": 2, "name": "SBF See", "item": "https://boatpass.de/sbf-see/" },
+    { "@type": "ListItem", "position": 3, "name": "Prüfungsfragen", "item": "https://boatpass.de/sbf-see-pruefungsfragen/" },
+  ],
+};
+
+const faqs = [
+  {
+    q: 'Was ist beim SBF-See-Fragenkatalog anders als beim Binnen?',
+    a: 'Der SBF See deckt die Seeschifffahrtsstraßen ab und enthält zusätzlich eine Navigationsaufgabe. Die Theorieprüfung besteht aus 30 Standardfragen (7 Basis + 23 spezifisch) plus 9 Fragen zur Navigationsaufgabe — insgesamt 39 Fragen in 60 Minuten.',
+  },
+  {
+    q: 'Wie funktioniert die Navigationsaufgabe?',
+    a: 'In der Navigationsaufgabe arbeitest du mit einer Seekarte: Kurse abtragen, Positionen bestimmen, Gezeiten und Strom berücksichtigen. Von den 9 Fragen musst du mindestens 7 richtig beantworten. Genau dieser Teil wird in der Boatpass-App mit realem Navigationsteil geübt.',
+  },
+  {
+    q: 'Wo finde ich die offiziellen SBF-See-Prüfungsfragen?',
+    a: 'Der amtliche Fragenkatalog See wird von ELWIS kostenlos herausgegeben. In der Boatpass-App lernst du den vollständigen aktuellen Katalog für Küste und Seeschifffahrtsstraßen — inklusive Prüfungssimulation mit Navigationsteil.',
+  },
+  {
+    q: 'Wie viele Fragen muss ich richtig haben, um zu bestehen?',
+    a: 'Du brauchst mindestens 5 von 7 Basisfragen, 18 von 23 spezifischen Fragen und 7 von 9 Fragen der Navigationsaufgabe. Insgesamt stehen dir 60 Minuten zur Verfügung.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<BaseLayout
+  title="SBF See Prüfungsfragen – Fragenkatalog & Navigation üben"
+  description="Alle SBF-See-Prüfungsfragen aus dem offiziellen ELWIS-Katalog üben — inklusive Navigationsaufgabe. Aufbau, Bestehensgrenze und wie du die 39 Prüfungsfragen meisterst."
+  lang="de"
+  hasAlternate={false}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
+  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        🧭 SBF See Prüfungsfragen
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+        SBF See Fragen –<br>inklusive Navigation üben
+      </h1>
+      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto 36px;">
+        Der komplette amtliche ELWIS-Katalog See — plus die Navigationsaufgabe mit realem Navigationsteil. Übe alle 39 Prüfungsfragen unter echten Bedingungen.
+      </p>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
+        ▶&nbsp;Kostenlos Fragen üben
+      </a>
+    </div>
+  </div>
+
+  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+
+    <!-- Der Katalog -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">Der offizielle SBF-See-Fragenkatalog</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+        Die <strong>Prüfungsfragen für den SBF See</strong> stammen aus dem amtlichen ELWIS-Fragenkatalog für die <strong>Seeschifffahrtsstraßen</strong> (Nord- und Ostsee). Neben Basis- und spezifischen Fragen kommt beim See ein entscheidender Teil hinzu: die <strong>Navigationsaufgabe</strong>.
+      </p>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+        Die Theorieprüfung umfasst insgesamt <strong>39 Fragen in 60 Minuten</strong> — 30 Standardfragen plus 9 Fragen zur Navigationsaufgabe auf der Seekarte.
+      </p>
+    </section>
+
+    <!-- Aufbau der Prüfung -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">So ist die SBF-See-Theorieprüfung aufgebaut</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px;">
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Prüfungsbogen</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">39 Fragen · 60 Minuten<br>Multiple Choice + Navigation</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Basisfragen</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">7 Fragen<br>mind. 5 richtig</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Spezifische Fragen</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">23 Fragen<br>mind. 18 richtig</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Navigationsaufgabe</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">9 Fragen<br>mind. 7 richtig</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigationsaufgabe -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">Die Navigationsaufgabe — der Knackpunkt beim SBF See</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+        Die Navigationsaufgabe ist der Teil, vor dem die meisten Prüflinge Respekt haben. Auf einer <strong>Seekarte</strong> trägst du Kurse ab, bestimmst Positionen und berücksichtigst Einflüsse wie <strong>Strom, Wind und Gezeiten</strong>. Von den 9 Fragen musst du mindestens 7 richtig lösen.
+      </p>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+        Der Trick: Die Aufgabentypen wiederholen sich. Wer die Navigation mit einem <strong>realen Navigationsteil</strong> übt — genau wie in der echten Prüfung — geht souverän in den Prüfungstag. Genau das bildet die Boatpass-App ab.
+      </p>
+    </section>
+
+    <!-- Effektiv üben -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">SBF-See-Fragen effektiv üben</h2>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        {[
+          { icon: '📚', title: 'Kompletter ELWIS-Katalog See', desc: 'Alle Fragen zu Küste und Seeschifffahrtsstraßen — vollständig abgedeckt, immer aktuell.' },
+          { icon: '🧭', title: 'Navigation mit realem Navigationsteil', desc: 'Übe die Navigationsaufgabe so, wie sie in der echten Prüfung gestellt wird — Kurse, Positionen, Gezeiten.' },
+          { icon: '🎯', title: 'Prüfungssimulation: 39 Fragen, 60 Minuten', desc: 'Echte Prüfungsbedingungen inklusive Navigationsteil und Bestehensgrenze.' },
+          { icon: '🔁', title: 'Fehler-Training', desc: 'Wiederhole gezielt deine Schwachstellen, statt alles von vorne zu lernen.' },
+        ].map(f => (
+          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
+            <span style="font-size:24px; flex-shrink:0;">{f.icon}</span>
+            <div>
+              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
+              <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Häufige Fragen zum SBF-See-Katalog</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <div style="font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</div>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background:linear-gradient(135deg,#1A1F36,#3366FF); border-radius:24px; padding:48px 32px; text-align:center;">
+      <h2 style="font-size:26px; font-weight:800; color:white; margin-bottom:12px;">Jetzt SBF-See-Fragen üben</h2>
+      <p style="font-size:16px; color:rgba(255,255,255,0.75); margin-bottom:28px;">Kompletter ELWIS-Katalog See inklusive Navigationsteil — Vollzugang für einmalig 6,99 €.</p>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:10px; background:white; color:#1A1F36; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none;">
+        ▶&nbsp;Im Google Play Store öffnen
+      </a>
+    </section>
+
+    <!-- Interne Links -->
+    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
+      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Weiterführende Seiten</h2>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="/sbf-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See lernen: Überblick & App</a>
+        <a href="/sbf-binnen-pruefungsfragen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen Prüfungsfragen üben</a>
+        <a href="/sbf-pruefung-ablauf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Prüfung: Ablauf von Theorie & Praxis</a>
+        <a href="/sbf-kosten/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Was kostet der Sportbootführerschein?</a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
