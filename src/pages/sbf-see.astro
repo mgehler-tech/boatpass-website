@@ -2,13 +2,24 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://boatpass.de/" },
+    { "@type": "ListItem", "position": 2, "name": "SBF See", "item": "https://boatpass.de/sbf-see/" },
+  ],
+};
 ---
 
 <BaseLayout
   title="SBF See lernen – Sportbootführerschein See App"
   description="Lerne für den SBF See mit der Boatpass-App. Offizieller ELWIS-Fragenkatalog, Prüfungssimulation & Navigation. Kostenlos starten."
   lang="de"
+  hasAlternate={false}
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
@@ -116,7 +127,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     <!-- CTA -->
     <section style="background:linear-gradient(135deg,#1A1F36,#3366FF); border-radius:24px; padding:48px 32px; text-align:center;">
       <h2 style="font-size:26px; font-weight:800; color:white; margin-bottom:12px;">Jetzt mit dem SBF See starten</h2>
-      <p style="font-size:16px; color:rgba(255,255,255,0.75); margin-bottom:28px;">SBF See Vollzugang für einmalig 4,99 € — kein Abo, kein Account nötig.</p>
+      <p style="font-size:16px; color:rgba(255,255,255,0.75); margin-bottom:28px;">SBF See Vollzugang für einmalig 6,99 € — kein Abo, kein Account nötig.</p>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
         style="display:inline-flex; align-items:center; gap:10px; background:white; color:#1A1F36; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none;">
         ▶&nbsp;Im Google Play Store öffnen

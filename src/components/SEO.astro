@@ -6,6 +6,10 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   type?: 'website' | 'article';
+  /** Set false for pages that have no counterpart in the other language (e.g. DE-only landing pages). Prevents broken hreflang to non-existent URLs. */
+  hasAlternate?: boolean;
+  /** Set true to keep a page out of the index (e.g. thin/duplicate pages). */
+  noindex?: boolean;
 }
 
 const {
@@ -15,36 +19,48 @@ const {
   canonical = Astro.url.href,
   ogImage = '/images/og-image.png',
   type = 'website',
+  hasAlternate = true,
+  noindex = false,
 } = Astro.props;
 
 const altLang = lang === 'de' ? 'en' : 'de';
 const altUrl = lang === 'de'
   ? `https://boatpass.de/en${Astro.url.pathname}`
   : `https://boatpass.de${Astro.url.pathname.replace('/en', '')}`;
+const ogImageAbs = ogImage.startsWith('http') ? ogImage : `https://boatpass.de${ogImage}`;
+const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' || Astro.url.pathname === '/en';
 ---
 
 <title>{title} | Boatpass</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
+<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
+<meta name="theme-color" content="#3366FF" />
 
 <!-- hreflang -->
 <link rel="alternate" hreflang={lang} href={canonical} />
-<link rel="alternate" hreflang={altLang} href={altUrl} />
-<link rel="alternate" hreflang="x-default" href="https://boatpass.de/" />
+{hasAlternate && <link rel="alternate" hreflang={altLang} href={altUrl} />}
+<link rel="alternate" hreflang="x-default" href={hasAlternate ? 'https://boatpass.de/' : canonical} />
 
 <!-- Open Graph -->
+<meta property="og:site_name" content="Boatpass" />
 <meta property="og:title" content={`${title} | Boatpass`} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={`https://boatpass.de${ogImage}`} />
+<meta property="og:image" content={ogImageAbs} />
+<meta property="og:image:alt" content={`${title} – Boatpass`} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:url" content={canonical} />
 <meta property="og:type" content={type} />
 <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
+{hasAlternate && <meta property="og:locale:alternate" content={lang === 'de' ? 'en_US' : 'de_DE'} />}
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={`${title} | Boatpass`} />
 <meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={`https://boatpass.de${ogImage}`} />
+<meta name="twitter:image" content={ogImageAbs} />
+<meta name="twitter:image:alt" content={`${title} – Boatpass`} />
 
 <!-- Schema.org Organization (auf allen Seiten) -->
 <script is:inline type="application/ld+json" set:html={JSON.stringify({
@@ -65,8 +81,8 @@ const altUrl = lang === 'de'
   }
 })} />
 
-<!-- Schema.org MobileApplication (nur auf Landing Page) -->
-{type === 'website' && (
+<!-- Schema.org MobileApplication (nur auf Startseite) -->
+{isHomepage && (
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "MobileApplication",
@@ -75,20 +91,43 @@ const altUrl = lang === 'de'
     "downloadUrl": "https://play.google.com/store/apps/details?id=com.boatpass.app",
     "operatingSystem": "Android",
     "applicationCategory": "EducationApplication",
-    "offers": [
-      {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "EUR",
-        "description": "Kostenlos – 15 Fragen täglich gratis"
-      },
-      {
-        "@type": "Offer",
-        "price": "4.99",
-        "priceCurrency": "EUR",
-        "description": "Vollzugang – einmaliger Kauf, kein Abo"
-      }
-    ],
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "EUR",
+      "lowPrice": "0",
+      "highPrice": "11.99",
+      "offerCount": "4",
+      "offers": [
+        {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "name": "Kostenlos",
+          "description": "Kostenlos – 15 Fragen täglich gratis"
+        },
+        {
+          "@type": "Offer",
+          "price": "6.99",
+          "priceCurrency": "EUR",
+          "name": "SBF Binnen Vollzugang",
+          "description": "Vollzugang SBF Binnen – einmaliger Kauf, kein Abo"
+        },
+        {
+          "@type": "Offer",
+          "price": "6.99",
+          "priceCurrency": "EUR",
+          "name": "SBF See Vollzugang",
+          "description": "Vollzugang SBF See – einmaliger Kauf, kein Abo"
+        },
+        {
+          "@type": "Offer",
+          "price": "11.99",
+          "priceCurrency": "EUR",
+          "name": "Komplett-Paket SBF Binnen + See",
+          "description": "Beide Kataloge im Paket – einmaliger Kauf, 2 € gespart"
+        }
+      ]
+    },
     "description": description,
     "inLanguage": "de",
     "publisher": {

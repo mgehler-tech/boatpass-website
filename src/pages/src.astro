@@ -2,13 +2,24 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://boatpass.de/" },
+    { "@type": "ListItem", "position": 2, "name": "SRC Seefunk", "item": "https://boatpass.de/src/" },
+  ],
+};
 ---
 
 <BaseLayout
   title="SRC Lernapp – Short Range Certificate Seefunk lernen"
   description="Alles zum SRC (Short Range Certificate): Prüfungsaufbau, Inhalte, Kosten und Vorbereitung. Boatpass SRC-Modul kommt bald."
   lang="de"
+  hasAlternate={false}
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">

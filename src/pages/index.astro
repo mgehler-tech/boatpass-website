@@ -6,6 +6,16 @@ import FeatureCards from '../components/FeatureCards.astro';
 import HowItWorks from '../components/HowItWorks.astro';
 import PricingSection from '../components/PricingSection.astro';
 import BlogTeaser from '../components/BlogTeaser.astro';
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Boatpass",
+  "alternateName": "Boatpass – Sportbootführerschein App",
+  "url": "https://boatpass.de",
+  "inLanguage": "de-DE",
+  "publisher": { "@type": "Organization", "name": "Boatpass", "url": "https://boatpass.de" },
+};
 ---
 
 <BaseLayout
@@ -13,6 +23,7 @@ import BlogTeaser from '../components/BlogTeaser.astro';
   description="Die beste SBF Lernapp für Sportbootführerschein Binnen und See. Offizielle ELWIS-Prüfungsfragen, Prüfungssimulation & Fehler-Training. Kostenlos starten."
   lang="de"
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <HeroSection lang="de" />
   <TrustBar lang="de" />
   <FeatureCards lang="de" />

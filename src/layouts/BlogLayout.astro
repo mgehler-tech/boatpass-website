@@ -42,11 +42,23 @@ const articleSchema = {
   "inLanguage": lang === 'de' ? 'de-DE' : 'en-US',
 };
 
+const blogHref = lang === 'de' ? 'https://boatpass.de/blog/' : 'https://boatpass.de/en/blog/';
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": lang === 'de' ? 'Startseite' : 'Home', "item": lang === 'de' ? 'https://boatpass.de/' : 'https://boatpass.de/en/' },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": blogHref },
+    { "@type": "ListItem", "position": 3, "name": title, "item": Astro.url.href },
+  ],
+};
+
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 ---
 
-<BaseLayout title={title} description={description} lang={lang} type="article">
+<BaseLayout title={title} description={description} lang={lang} type="article" hasAlternate={false}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <article class="max-w-2xl mx-auto px-4 py-16">
 
     <!-- Back link -->
