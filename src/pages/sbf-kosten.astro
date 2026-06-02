@@ -15,11 +15,11 @@ const breadcrumbSchema = {
 const faqs = [
   {
     q: 'Was kostet der Sportbootführerschein insgesamt?',
-    a: 'Ohne Vorbereitungskurs liegst du pro Schein bei rund 140–160 € (Prüfungsgebühr + Lernmaterial). Mit klassischem Bootsführerschein-Kurs kommst du je nach Anbieter auf ca. 300–550 € pro Schein. Wer die Theorie selbstständig mit einer App lernt, spart die Kursgebühr fast vollständig.',
+    a: 'Mit komplettem Kurs (Theorie + Praxis) solltest du 2026 je nach Anbieter und Region mit rund 500–650 € pro Schein rechnen. Online-Kurse inklusive Praxisausbildung gibt es ab etwa 340–400 €. Wer die Theorie selbstständig mit einer App lernt und nur die praktische Übung extern bucht, spart die teure Kursgebühr und kommt deutlich günstiger weg.',
   },
   {
     q: 'Wie hoch sind die reinen Prüfungsgebühren?',
-    a: 'Die Prüfungsgebühren für Theorie und Praxis liegen je nach DMYV-Prüfungszentrum bei etwa 130–150 € pro Schein. Die kombinierte Prüfung SBF Binnen + See ist günstiger als zwei getrennte Prüfungen.',
+    a: 'Die amtlichen Prüfungsgebühren (Theorie + Praxis) liegen 2026 bei 130,78 € für den SBF Binnen und 148,38 € für den SBF See. Die kombinierte Prüfung SBF Binnen + See kostet zusammen nur 178,61 € — deutlich weniger als beide Einzelprüfungen (279,16 €).',
   },
   {
     q: 'Kann ich beim SBF Geld sparen?',
@@ -76,10 +76,10 @@ const faqSchema = {
     <section style="margin-bottom:48px;">
       <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">SBF Kosten im Überblick</h2>
       <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
-        Die Gesamtkosten für den <strong>Sportbootführerschein</strong> hängen vor allem davon ab, ob du einen Vorbereitungskurs besuchst oder die Theorie selbstständig lernst. Die festen Kosten sind die <strong>amtlichen Prüfungsgebühren</strong> — alles andere lässt sich beeinflussen.
+        Die Gesamtkosten für den <strong>Sportbootführerschein</strong> hängen vor allem davon ab, ob du einen Vorbereitungskurs besuchst oder die Theorie selbstständig lernst. Fest sind nur die <strong>amtlichen Prüfungsgebühren</strong> (130,78 € Binnen, 148,38 € See) — alles andere lässt sich beeinflussen.
       </p>
       <p style="font-size:16px; color:#4B5563; line-height:1.75;">
-        Grob gerechnet bewegst du dich pro Schein zwischen <strong>ca. 140 €</strong> (selbst gelernt mit App) und <strong>ca. 550 €</strong> (mit klassischem Kurs).
+        Mit komplettem Kurs liegst du 2026 pro Schein bei rund <strong>500–650 €</strong>. Wer die Theorie selbst lernt und nur die Praxis extern übt, kommt mit <strong>Prüfungsgebühr + App ab ca. 138 €</strong> plus Übungskosten deutlich günstiger weg.
       </p>
     </section>
 
@@ -97,13 +97,23 @@ const faqSchema = {
           </thead>
           <tbody>
             <tr style="border-top:1px solid rgba(51,102,255,0.08);">
-              <td style="padding:13px 16px; color:#374151;">Prüfungsgebühr (Theorie + Praxis)</td>
-              <td style="padding:13px 16px; color:#374151;">ca. 130–150 € pro Schein</td>
+              <td style="padding:13px 16px; color:#374151;">Prüfungsgebühr Binnen (Theorie + Praxis)</td>
+              <td style="padding:13px 16px; color:#374151;">130,78 €</td>
               <td style="padding:13px 16px; color:#374151;">Ja</td>
             </tr>
             <tr style="border-top:1px solid rgba(51,102,255,0.08); background:rgba(26,31,54,0.02);">
-              <td style="padding:13px 16px; color:#374151;">Vorbereitungskurs (Fahrschule)</td>
-              <td style="padding:13px 16px; color:#374151;">ca. 150–400 €</td>
+              <td style="padding:13px 16px; color:#374151;">Prüfungsgebühr See (Theorie + Praxis)</td>
+              <td style="padding:13px 16px; color:#374151;">148,38 €</td>
+              <td style="padding:13px 16px; color:#374151;">Ja</td>
+            </tr>
+            <tr style="border-top:1px solid rgba(51,102,255,0.08);">
+              <td style="padding:13px 16px; color:#374151;">Kombi-Prüfung Binnen + See</td>
+              <td style="padding:13px 16px; color:#374151;">178,61 € (statt 279,16 €)</td>
+              <td style="padding:13px 16px; color:#374151;">Ja</td>
+            </tr>
+            <tr style="border-top:1px solid rgba(51,102,255,0.08); background:rgba(26,31,54,0.02);">
+              <td style="padding:13px 16px; color:#374151;">Vorbereitungskurs (online/Fahrschule)</td>
+              <td style="padding:13px 16px; color:#374151;">ca. 340–400 € aufwärts</td>
               <td style="padding:13px 16px; color:#374151;">Optional</td>
             </tr>
             <tr style="border-top:1px solid rgba(51,102,255,0.08);">
@@ -125,7 +135,7 @@ const faqSchema = {
         </table>
       </div>
       <p style="font-size:14px; color:#9CA3AF; line-height:1.6; margin-top:12px;">
-        Die genauen Prüfungsgebühren legt das jeweilige DMYV-Prüfungszentrum fest und können regional leicht abweichen.
+        Die Prüfungsgebühren sind bundesweit einheitlich durch DSV und DMYV festgelegt (Stand 2026). Kurs- und Praxiskosten variieren je nach Anbieter und Region.
       </p>
     </section>
 
@@ -135,15 +145,15 @@ const faqSchema = {
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
         <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
           <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">SBF Binnen</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Eine Prüfungsgebühr + Lernmaterial. Selbst gelernt ab ca. <strong>140 €</strong>.</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Prüfungsgebühr <strong>130,78 €</strong> (Theorie + Praxis) plus Lernmaterial.</div>
         </div>
         <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
           <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">SBF See</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Wie Binnen, mit zusätzlicher Navigationsaufgabe in der Theorie. Selbst gelernt ab ca. <strong>140 €</strong>.</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Prüfungsgebühr <strong>148,38 €</strong> — etwas höher wegen der Navigationsaufgabe.</div>
         </div>
         <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
           <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Kombi Binnen + See</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Günstiger als zwei Einzelprüfungen — eine kombinierte Prüfung, beide Scheine.</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Nur <strong>178,61 €</strong> statt 279,16 € — über 100 € gespart bei einer kombinierten Prüfung.</div>
         </div>
       </div>
       <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-top:20px;">
