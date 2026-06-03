@@ -23,10 +23,10 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
     <!-- Links -->
     <div class="hidden md:flex items-center gap-8">
-      <a href="#features" class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
+      <a href={`${getLocalizedPath(lang, '/')}#features`} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
         {lang === 'de' ? 'Features' : 'Features'}
       </a>
-      <a href="#pricing" class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
+      <a href={`${getLocalizedPath(lang, '/')}#pricing`} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
         {lang === 'de' ? 'Preise' : 'Pricing'}
       </a>
 
