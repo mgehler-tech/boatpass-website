@@ -15,7 +15,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
 <footer style="background:#E8EDF6; border-top:1px solid rgba(51,102,255,0.10);" class="mt-24">
   <div class="max-w-6xl mx-auto px-4 py-12">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+    <div class={`grid grid-cols-1 ${lang === 'de' ? 'md:grid-cols-4' : 'md:grid-cols-3'} gap-8 mb-8`}>
       <!-- Brand -->
       <div>
         <span class="text-lg font-black" style="color:#1A1F36; display:inline-flex; align-items:center; gap:8px;"><Image src={appIcon} alt="Boatpass Logo" width={52} height={52} loading="lazy" style="width:26px;height:26px;border-radius:6px;" /> Boat<span style="color:#3366FF;">Pass</span></span>
@@ -28,6 +28,21 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
           <img src={lang === 'de' ? '/images/google-play-badge-1_de_.png' : '/images/google-play-badge-2_en_.png'} alt={lang === 'de' ? 'Boatpass im Google Play Store herunterladen' : 'Download Boatpass on Google Play'} width="104" height="40" loading="lazy" class="h-10 w-auto" />
         </a>
       </div>
+
+      <!-- Führerscheine (nur DE) -->
+      {lang === 'de' && (
+        <div>
+          <h3 class="font-semibold text-text mb-3 text-sm">Führerscheine</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/sbf-binnen/" class="text-gray-500 hover:text-text transition-colors">SBF Binnen</a></li>
+            <li><a href="/sbf-see/" class="text-gray-500 hover:text-text transition-colors">SBF See</a></li>
+            <li><a href="/sbf-kosten/" class="text-gray-500 hover:text-text transition-colors">SBF Kosten</a></li>
+            <li><a href="/sbf-pruefung-ablauf/" class="text-gray-500 hover:text-text transition-colors">Prüfung &amp; Ablauf</a></li>
+            <li><a href="/sbf-binnen-pruefungsfragen/" class="text-gray-500 hover:text-text transition-colors">Prüfungsfragen Binnen</a></li>
+            <li><a href="/sbf-see-pruefungsfragen/" class="text-gray-500 hover:text-text transition-colors">Prüfungsfragen See</a></li>
+          </ul>
+        </div>
+      )}
 
       <!-- Links -->
       <div>
