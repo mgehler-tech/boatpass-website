@@ -14,10 +14,6 @@ export const { getStaticPaths, GET } = await OGImageRoute({
       page.lang === 'de'
         ? 'Sportbootführerschein einfach lernen — Boatpass'
         : 'Learn your boating licence the easy way — Boatpass',
-    logo: {
-      path: './public/images/app-icon.png',
-      size: [96],
-    },
     bgGradient: [
       [26, 31, 54], // #1A1F36 dunkles Navy
       [51, 102, 255], // #3366FF Brand-Blau
