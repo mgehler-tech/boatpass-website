@@ -68,18 +68,21 @@ const [featured, ...rest] = posts;
     border-color: #3366FF;
   }
   .blog-index-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    align-items: start;
-  }
-  .blog-index-compact {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 24px;
   }
-  @media (max-width: 768px) {
-    .blog-index-grid { grid-template-columns: 1fr; }
+  .blog-index-compact {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: stretch;
+  }
+  @media (max-width: 900px) {
+    .blog-index-compact { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .blog-index-compact { grid-template-columns: 1fr; }
   }
 </style>
 
