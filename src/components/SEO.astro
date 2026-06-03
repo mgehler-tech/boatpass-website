@@ -8,6 +8,8 @@ interface Props {
   type?: 'website' | 'article';
   /** Set false for pages that have no counterpart in the other language (e.g. DE-only landing pages). Prevents broken hreflang to non-existent URLs. */
   hasAlternate?: boolean;
+  /** Explicit alternate-language URL. Needed when the slug differs between languages (e.g. blog posts), where the path heuristic does not apply. */
+  altUrl?: string;
   /** Set true to keep a page out of the index (e.g. thin/duplicate pages). */
   noindex?: boolean;
 }
@@ -20,13 +22,19 @@ const {
   ogImage = '/images/og-image.png',
   type = 'website',
   hasAlternate = true,
+  altUrl: altUrlOverride,
   noindex = false,
 } = Astro.props;
 
 const altLang = lang === 'de' ? 'en' : 'de';
-const altUrl = lang === 'de'
+const altUrl = altUrlOverride ?? (lang === 'de'
   ? `https://boatpass.de/en${Astro.url.pathname}`
-  : `https://boatpass.de${Astro.url.pathname.replace('/en', '')}`;
+  : `https://boatpass.de${Astro.url.pathname.replace('/en', '')}`);
+// Mit explizitem altUrl (z.B. Blog mit abweichenden Slugs) zeigt x-default auf die DE-Version,
+// sonst – wie bisher – auf die Startseite.
+const xDefaultUrl = altUrlOverride
+  ? (lang === 'de' ? canonical : altUrlOverride)
+  : (hasAlternate ? 'https://boatpass.de/' : canonical);
 const ogImageAbs = ogImage.startsWith('http') ? ogImage : `https://boatpass.de${ogImage}`;
 const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' || Astro.url.pathname === '/en';
 ---
@@ -40,7 +48,7 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' |
 <!-- hreflang -->
 <link rel="alternate" hreflang={lang} href={canonical} />
 {hasAlternate && <link rel="alternate" hreflang={altLang} href={altUrl} />}
-<link rel="alternate" hreflang="x-default" href={hasAlternate ? 'https://boatpass.de/' : canonical} />
+<link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="Boatpass" />

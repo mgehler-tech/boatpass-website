@@ -13,6 +13,8 @@ const blog = defineCollection({
     readingTime: z.number(),
     lang: z.enum(['de', 'en']),
     author: z.string().default('Marius Gehler'),
+    /** Slug des Artikels in der jeweils anderen Sprache (für hreflang DE↔EN). */
+    altSlug: z.string().optional(),
   }),
 });
 

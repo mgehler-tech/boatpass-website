@@ -6,6 +6,7 @@ tags: ["SBF", "Tips", "Exam", "Preparation"]
 readingTime: 7
 lang: en
 author: "Marius Gehler"
+altSlug: "5-tipps-sbf-bestehen"
 ---
 
 The German boating license (Sportbootführerschein, SBF) is achievable for anyone – but the wrong preparation strategy can lead to failure even with enough study time. Here are five concrete tips that make the real difference.

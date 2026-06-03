@@ -13,10 +13,11 @@ interface Props {
   type?: 'website' | 'article';
   showCta?: boolean;
   hasAlternate?: boolean;
+  altUrl?: string;
   noindex?: boolean;
 }
 
-const { title, description, lang, ogImage, type, showCta = true, hasAlternate = true, noindex = false } = Astro.props;
+const { title, description, lang, ogImage, type, showCta = true, hasAlternate = true, altUrl, noindex = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -46,7 +47,7 @@ const { title, description, lang, ogImage, type, showCta = true, hasAlternate = 
         }
       });
     </script>
-    <SEO title={title} description={description} lang={lang} ogImage={ogImage} type={type} hasAlternate={hasAlternate} noindex={noindex} />
+    <SEO title={title} description={description} lang={lang} ogImage={ogImage} type={type} hasAlternate={hasAlternate} altUrl={altUrl} noindex={noindex} />
   </head>
   <body class="min-h-screen bg-background">
     <Header lang={lang} />

@@ -6,6 +6,7 @@ tags: ["SBF", "Exam", "Mistakes", "Tips"]
 readingTime: 8
 lang: en
 author: "Marius Gehler"
+altSlug: "haeufigste-fehler-sbf"
 ---
 
 Many SBF candidates fail not because they didn't study, but because of avoidable, specific mistakes. Here are the most common ones, with concrete solutions.

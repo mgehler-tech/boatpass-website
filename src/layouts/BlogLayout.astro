@@ -8,10 +8,17 @@ interface Props {
 }
 
 const { post, lang } = Astro.props;
-const { title, description, date, readingTime, tags, author = 'Marius Gehler', image } = post.data;
+const { title, description, date, readingTime, tags, author = 'Marius Gehler', image, altSlug } = post.data;
 // Auto-generierte, gebrandete OG-Karte pro Artikel (siehe src/pages/og/blog/[...route].png.ts).
 // Frontmatter `image` überschreibt sie bei Bedarf.
 const ogImage = image ?? `/og/blog/${post.id}.png`;
+// hreflang DE↔EN: nur wenn eine Übersetzung via altSlug verlinkt ist.
+const hasAlternate = !!altSlug;
+const altUrl = altSlug
+  ? (lang === 'de'
+      ? `https://boatpass.de/en/blog/${altSlug}/`
+      : `https://boatpass.de/blog/${altSlug}/`)
+  : undefined;
 const formattedDate = date.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US', {
   year: 'numeric', month: 'long', day: 'numeric'
 });
@@ -57,7 +64,7 @@ const breadcrumbSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description} lang={lang} type="article" hasAlternate={false} ogImage={ogImage}>
+<BaseLayout title={title} description={description} lang={lang} type="article" hasAlternate={hasAlternate} altUrl={altUrl} ogImage={ogImage}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <article class="max-w-2xl mx-auto px-4 py-16">

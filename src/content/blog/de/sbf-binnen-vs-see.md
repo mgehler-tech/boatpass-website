@@ -6,6 +6,7 @@ tags: ["SBF", "Binnen", "See", "Vergleich"]
 readingTime: 7
 lang: de
 author: "Marius Gehler"
+altSlug: "sbf-inland-vs-coastal"
 ---
 
 Wenn du anfängst, dich mit dem Sportbootführerschein zu beschäftigen, stößt du schnell auf die entscheidende Frage: Binnen oder See? Beide Scheine berechtigen zum Führen von Motorbooten – aber auf unterschiedlichen Gewässern. Hier ist alles, was du wissen musst.

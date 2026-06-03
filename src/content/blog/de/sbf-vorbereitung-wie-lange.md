@@ -6,6 +6,7 @@ tags: ["SBF", "Vorbereitung", "Zeitplan"]
 readingTime: 6
 lang: de
 author: "Marius Gehler"
+altSlug: "sbf-preparation-how-long"
 ---
 
 Eine der häufigsten Fragen vor dem SBF: Wie lange muss ich eigentlich lernen? Die ehrliche Antwort: Es hängt stark von deinem Vorwissen und deiner Lerndisziplin ab. Hier sind realistische Schätzungen für verschiedene Lerntypen – ohne Beschönigung.
