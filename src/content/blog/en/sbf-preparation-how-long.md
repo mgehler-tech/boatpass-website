@@ -2,7 +2,7 @@
 title: "How Long Does It Take to Prepare for the SBF Exam?"
 description: "Realistic preparation timelines for the German boating license – with concrete weekly plans for different learning types and the categories that take the most time."
 date: 2026-05-29
-tags: ["SBF", "Preparation", "Study Plan"]
+tags: ["Preparation"]
 readingTime: 6
 lang: en
 author: "Marius Gehler"

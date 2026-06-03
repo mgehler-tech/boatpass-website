@@ -2,7 +2,7 @@
 title: "SBF Inland vs. SBF Coastal – What's the Difference?"
 description: "Which German boating license do you need? Coverage, exam differences, costs, and why combining both licenses is cheaper than doing them separately."
 date: 2026-05-29
-tags: ["SBF", "Inland", "Coastal", "Comparison"]
+tags: ["License Comparison"]
 readingTime: 7
 lang: en
 author: "Marius Gehler"

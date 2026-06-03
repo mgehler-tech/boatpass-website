@@ -6,6 +6,8 @@ import BlogCard from '../../components/BlogCard.astro';
 const posts = (await getCollection('blog', entry => entry.data.lang === 'de'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
+const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
+
 const [featured, ...rest] = posts;
 ---
 
@@ -20,6 +22,13 @@ const [featured, ...rest] = posts;
       <p style="font-size:18px; color:#6B7280;">Tipps, Guides und Wissenswertes rund um den Sportbootführerschein</p>
     </div>
 
+    <div class="blog-categories" id="blog-categories">
+      <button class="cat-btn active" data-cat="all">Alle</button>
+      {allTags.map(tag => (
+        <button class="cat-btn" data-cat={tag}>{tag}</button>
+      ))}
+    </div>
+
     <div class="blog-index-grid">
       {featured && <BlogCard post={featured} lang="de" featured={true} />}
       {rest.length > 0 && (
@@ -32,6 +41,32 @@ const [featured, ...rest] = posts;
 </BaseLayout>
 
 <style>
+  .blog-categories {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .cat-btn {
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 16px;
+    border-radius: 100px;
+    border: 1px solid rgba(51,102,255,0.15);
+    background: white;
+    color: #6B7280;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .cat-btn:hover {
+    border-color: rgba(51,102,255,0.3);
+    color: #3366FF;
+  }
+  .cat-btn.active {
+    background: #3366FF;
+    color: white;
+    border-color: #3366FF;
+  }
   .blog-index-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -47,3 +82,26 @@ const [featured, ...rest] = posts;
     .blog-index-grid { grid-template-columns: 1fr; }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = document.querySelectorAll('.cat-btn');
+    const cards = document.querySelectorAll('[data-tags]');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.getAttribute('data-cat');
+
+        cards.forEach(card => {
+          if (cat === 'all' || card.getAttribute('data-tags')?.includes(cat ?? '')) {
+            (card as HTMLElement).style.display = '';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+  });
+</script>
