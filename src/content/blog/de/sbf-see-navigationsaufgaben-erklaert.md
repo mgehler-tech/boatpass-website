@@ -2,7 +2,7 @@
 title: "SBF See Navigationsaufgaben erklärt – Aufbau, Aufgabentypen & Tipps"
 description: "Die Navigationsaufgabe ist der anspruchsvollste Teil der SBF-See-Prüfung. Hier erfährst du, wie sie aufgebaut ist, welche Aufgabentypen drankommen und wie du dich gezielt vorbereitest."
 date: 2026-06-03
-tags: ["Navigation", "SBF See", "Prüfung"]
+tags: ["Navigation"]
 readingTime: 9
 lang: de
 author: "Marius Gehler"
