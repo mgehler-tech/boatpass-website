@@ -4,6 +4,15 @@ Stand: 2026-06-03. Basis: Google SEO Starter Guide + Ist-Analyse der Codebase.
 Fundament (Canonical, hreflang, Sitemap, Schema, OG, alt-Texte) ist bereits stark.
 Dieser Plan deckt nur die **echten Lücken** ab, priorisiert nach Wirkung.
 
+## Status
+- ✅ **Phase 1** — tote Nav-Links entfernt + OG-Bild-Verdrahtung (Commit 11b40f4)
+- ✅ **Zusatz** — automatischer Generator für gebrandete Blog-OG-Karten,
+  Logo-frei, Titel-only (Commits 3e02667, e3a39ff)
+- ✅ **Phase 3** — Blog-hreflang DE↔EN via `altSlug` reaktiviert (Commit a26ac59)
+- ⏸️ **Phase 2** — BLOCKIERT bis App-Launch (App noch im geschlossenen Test,
+  keine echten Bewertungen → siehe Hinweis unter Schritt 2.1)
+- ⏳ **Phase 4** — redaktionell, laufend
+
 ---
 
 ## Phase 1 — Quick Wins (technisch, sofort umsetzbar)
@@ -34,6 +43,11 @@ generisches `og-image.png`.
 ---
 
 ## Phase 2 — Rich Results (größter Sicht-Effekt, braucht echte Daten)
+
+> ⏸️ **BLOCKIERT (Stand 2026-06-03):** App ist noch nicht gelauncht (geschlossener
+> Test). Es gibt keine echten Play-Store-Bewertungen. `aggregateRating` darf NICHT
+> mit erfundenen oder Platzhalter-Werten eingebaut werden → Google-Policy-Verstoß,
+> Risiko manueller Maßnahme. Erst nach Launch + echten Bewertungen umsetzen.
 
 ### Schritt 2.1: `aggregateRating` ins MobileApplication-Schema
 **Problem:** `src/components/SEO.astro:85` (MobileApplication) hat `offers`, aber
