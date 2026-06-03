@@ -123,6 +123,15 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     box-shadow: 0 8px 24px rgba(26,31,54,0.1);
     z-index: 100;
   }
+  /* Unsichtbare Brücke über die 12px-Lücke, damit der Hover nicht abreißt */
+  .nav-dropdown-menu::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: 0;
+    right: 0;
+    height: 12px;
+  }
   .nav-dropdown:hover .nav-dropdown-menu { display: flex; flex-direction: column; gap: 2px; }
   .nav-dropdown-item {
     font-size: 14px;
