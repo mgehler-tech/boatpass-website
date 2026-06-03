@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { post, lang } = Astro.props;
-const { title, description, date, readingTime, tags, author = 'Marius Gehler', image, altSlug } = post.data;
+const { title, description, date, updated, readingTime, tags, author = 'Marius Gehler', image, altSlug } = post.data;
 // Auto-generierte, gebrandete OG-Karte pro Artikel (siehe src/pages/og/blog/[...route].png.ts).
 // Frontmatter `image` überschreibt sie bei Bedarf.
 const ogImage = image ?? `/og/blog/${post.id}.png`;
@@ -19,10 +19,13 @@ const altUrl = altSlug
       ? `https://boatpass.de/en/blog/${altSlug}/`
       : `https://boatpass.de/blog/${altSlug}/`)
   : undefined;
-const formattedDate = date.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US', {
-  year: 'numeric', month: 'long', day: 'numeric'
-});
+const locale = lang === 'de' ? 'de-DE' : 'en-US';
+const dateOpts = { year: 'numeric', month: 'long', day: 'numeric' } as const;
+const formattedDate = date.toLocaleDateString(locale, dateOpts);
+// Frische-Signal: dateModified = updated, sonst Veröffentlichungsdatum.
 const isoDate = date.toISOString();
+const isoModified = (updated ?? date).toISOString();
+const formattedUpdated = updated ? updated.toLocaleDateString(locale, dateOpts) : null;
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -30,7 +33,7 @@ const articleSchema = {
   "headline": title,
   "description": description,
   "datePublished": isoDate,
-  "dateModified": isoDate,
+  "dateModified": isoModified,
   "author": {
     "@type": "Person",
     "name": author,
@@ -93,6 +96,12 @@ const breadcrumbSchema = {
         <span style="font-size:14px; color:#9CA3AF;">{formattedDate}</span>
         <span style="width:3px; height:3px; border-radius:50%; background:#D1D5DB;"></span>
         <span style="font-size:14px; color:#9CA3AF;">{readingTime} {lang === 'de' ? 'Min. Lesezeit' : 'min read'}</span>
+        {formattedUpdated && (
+          <>
+            <span style="width:3px; height:3px; border-radius:50%; background:#D1D5DB;"></span>
+            <span style="font-size:14px; color:#9CA3AF;">{lang === 'de' ? `Aktualisiert: ${formattedUpdated}` : `Updated: ${formattedUpdated}`}</span>
+          </>
+        )}
       </div>
     </header>
 
