@@ -30,25 +30,23 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
         {lang === 'de' ? 'Preise' : 'Pricing'}
       </a>
 
-      <!-- Führerscheine Dropdown (nur DE) -->
-      {lang === 'de' && (
-        <div class="nav-dropdown">
-          <button class="text-sm font-medium nav-link nav-dropdown-trigger" style="color: #6B7280; background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; gap:4px;">
-            Führerscheine <span style="font-size:10px;">▾</span>
-          </button>
-          <div class="nav-dropdown-menu">
-            <a href="/sbf-binnen/" class="nav-dropdown-item">SBF Binnen</a>
-            <a href="/sbf-see/" class="nav-dropdown-item">SBF See</a>
-            <a href="/sbf-kosten/" class="nav-dropdown-item">SBF Kosten</a>
-            <a href="/sbf-pruefung-ablauf/" class="nav-dropdown-item">Prüfung &amp; Ablauf</a>
-            <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
-            <a href="/ubi/" class="nav-dropdown-item">UBI <span style="font-size:11px;color:#3366FF;">bald</span></a>
-            <a href="/src/" class="nav-dropdown-item">SRC <span style="font-size:11px;color:#3366FF;">bald</span></a>
-            <span class="nav-dropdown-item nav-dropdown-soon">Bodenseeschifferpatent <span style="font-size:11px;color:#3366FF;">bald</span></span>
-            <span class="nav-dropdown-item nav-dropdown-soon">LRC <span style="font-size:11px;color:#3366FF;">bald</span></span>
-          </div>
+      <!-- Führerscheine / Licenses Dropdown -->
+      <div class="nav-dropdown">
+        <button class="text-sm font-medium nav-link nav-dropdown-trigger" style="color: #6B7280; background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; gap:4px;">
+          {lang === 'de' ? 'Führerscheine' : 'Licenses'} <span style="font-size:10px;">▾</span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="/sbf-binnen/" class="nav-dropdown-item">SBF Binnen</a>
+          <a href="/sbf-see/" class="nav-dropdown-item">SBF See</a>
+          <a href="/sbf-kosten/" class="nav-dropdown-item">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
+          <a href="/sbf-pruefung-ablauf/" class="nav-dropdown-item">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
+          <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
+          <a href="/ubi/" class="nav-dropdown-item">UBI <span style="font-size:11px;color:#3366FF;">{lang === 'de' ? 'bald' : 'soon'}</span></a>
+          <a href="/src/" class="nav-dropdown-item">SRC <span style="font-size:11px;color:#3366FF;">{lang === 'de' ? 'bald' : 'soon'}</span></a>
+          <span class="nav-dropdown-item nav-dropdown-soon">Bodenseeschifferpatent <span style="font-size:11px;color:#3366FF;">{lang === 'de' ? 'bald' : 'soon'}</span></span>
+          <span class="nav-dropdown-item nav-dropdown-soon">LRC <span style="font-size:11px;color:#3366FF;">{lang === 'de' ? 'bald' : 'soon'}</span></span>
         </div>
-      )}
+      </div>
 
       <a href={getLocalizedPath(lang, '/blog/')} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
         {t.nav.blog}
