@@ -32,7 +32,7 @@ Du brauchst ein **ärztliches Zeugnis für Sportbootführerscheinbewerber**. Das
 
 Der Arzt füllt das Formular aus und bestätigt deine Tauglichkeit. Es reicht ein Besuch beim Hausarzt. Das Zeugnis ist **12 Monate gültig** — lass es also nicht zu früh ausstellen.
 
-**Kosten:** Je nach Arzt zwischen 20 und 50 €. Der Sehtest beim Optiker kostet in der Regel 5–15 €.
+**Kosten:** Je nach Arzt zwischen 30 und 65 €. Den Seh- und Hörtest bieten viele Optiker kostenlos an.
 
 ## Zuverlässigkeit
 
@@ -62,7 +62,7 @@ Die Prüfung wird von den **Prüfungsausschüssen des DMYV und DSV** abgenommen 
 
 1. **Prüfungstermin suchen:** Auf der Website deines regionalen Prüfungsausschusses (z. B. DMYV-Prüfungszentrum NRW, Bayern, Schleswig-Holstein etc.) findest du die nächsten Termine.
 2. **Unterlagen zusammenstellen:** Alle Dokumente aus der Checkliste oben besorgen.
-3. **Anmeldung einreichen:** Per Post oder online (je nach Prüfungsausschuss) — mindestens **7 Tage vor dem Prüfungstermin**.
+3. **Anmeldung einreichen:** Per Post oder online (je nach Prüfungsausschuss) — meist **ein bis zwei Wochen vor dem Prüfungstermin** (die genaue Frist legt der Prüfungsausschuss fest).
 4. **Prüfungsgebühr überweisen:** Zusammen mit der Anmeldung oder laut Anweisung des Prüfungsausschusses.
 5. **Bestätigung abwarten:** Du bekommst eine Zulassung zur Prüfung — damit bist du angemeldet.
 
@@ -92,8 +92,8 @@ Du brauchst ein „Führungszeugnis zur Vorlage bei einer Behörde" (Belegart O)
 Klingt banal, passiert aber regelmäßig. Das Passfoto muss biometrisch sein (35 × 45 mm) — wie für den Personalausweis.
 
 ### Frist verpasst
-Unterlagen müssen mindestens 7 Tage vor dem Prüfungstermin beim Prüfungsausschuss eingehen. Wer zu spät einreicht, muss auf den nächsten Termin warten.
+Unterlagen müssen je nach Prüfungsausschuss meist ein bis zwei Wochen vor dem Prüfungstermin eingehen. Wer zu spät einreicht, muss auf den nächsten Termin warten.
 
 ## Fazit
 
-Die Voraussetzungen für den Sportbootführerschein sind überschaubar: Mindestalter 16 (Motor) bzw. 14 (Segel), ein ärztliches Zeugnis, ein Passfoto und ein Zuverlässigkeitsnachweis. Die Anmeldung läuft direkt über den Prüfungsausschuss — ein Kursbesuch ist keine Voraussetzung. Wer die Checkliste abhakt und die 7-Tage-Frist einhält, hat die formale Seite schnell erledigt — dann zählt nur noch die Vorbereitung.
+Die Voraussetzungen für den Sportbootführerschein sind überschaubar: Mindestalter 16 (Motor) bzw. 14 (Segel), ein ärztliches Zeugnis, ein Passfoto und ein Zuverlässigkeitsnachweis. Die Anmeldung läuft direkt über den Prüfungsausschuss — ein Kursbesuch ist keine Voraussetzung. Wer die Checkliste abhakt und die Anmeldefrist des Prüfungsausschusses einhält, hat die formale Seite schnell erledigt — dann zählt nur noch die Vorbereitung.

@@ -69,7 +69,7 @@ Prüfungstermine beim DMYV und bei anerkannten Prüfungsausschüssen sind oft **
 
 **Lösung:**
 1. Geh auf die Website des DMYV-Prüfungsausschusses in deiner Region
-2. Prüfe Termine und Fristen – die Anmeldung muss oft **7 Tage vorher** mit Prüfungsgebühr eingehen
+2. Prüfe Termine und Fristen – die Anmeldung muss je nach Prüfungsausschuss oft **ein bis zwei Wochen vorher** mit Prüfungsgebühr eingehen
 3. Buche früh – der Termin motiviert und gibt dir eine konkrete Deadline
 
 Die offizielle Prüfungsgebühr für den SBF Binnen liegt beim DMYV aktuell bei ca. **131 €** (Stand 05/2026).

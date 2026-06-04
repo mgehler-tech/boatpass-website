@@ -71,7 +71,7 @@ DMYV exam slots fill up weeks in advance – especially March through June befor
 **Solution:**
 1. Check the DMYV exam committee website for your region
 2. Register **4–6 weeks** before your planned study completion
-3. Note: exam fees must arrive at least 7 days before the exam
+3. Note: depending on the examination board, fees must usually arrive one to two weeks before the exam
 
 The official exam fee for SBF Inland is approximately **€131** (as of 05/2026).
 

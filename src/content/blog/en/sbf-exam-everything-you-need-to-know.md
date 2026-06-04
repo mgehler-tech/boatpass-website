@@ -67,7 +67,7 @@ You must independently operate a boat and demonstrate several maneuvers:
 
 1. Find the DMYV exam committee for your region (list at dmyv.de)
 2. Complete the registration form and submit required documents
-3. Pay the exam fee – it must arrive at least **7 days before the exam**
+3. Pay the exam fee – depending on the examination board it must usually arrive **one to two weeks before the exam**
 4. Bring on exam day: **ID document** and **exam admission notice**
 
 **Critical:** Forgotten documents can result in being unable to take the exam, or the exam being marked as failed.

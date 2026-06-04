@@ -67,7 +67,7 @@ Du musst ein Boot selbstständig führen und mehrere Manöver demonstrieren:
 
 1. Suche den DMYV-Prüfungsausschuss in deiner Region (Liste auf dmyv.de)
 2. Fülle das Anmeldeformular aus und reiche es mit den erforderlichen Dokumenten ein
-3. Zahle die Prüfungsgebühr – sie muss laut DMYV **mindestens 7 Tage vor der Prüfung** auf dem Konto des Prüfungsausschusses eingegangen sein
+3. Zahle die Prüfungsgebühr – sie muss je nach Prüfungsausschuss meist **ein bis zwei Wochen vor der Prüfung** auf dem Konto des Prüfungsausschusses eingegangen sein
 4. Bringe am Prüfungstag mit: **Personalausweis** und **Prüfungszulassung**
 
 **Wichtig:** Vergessene Dokumente können dazu führen, dass du an der Prüfung nicht teilnehmen darfst – oder im schlimmsten Fall, dass die Prüfung als nicht bestanden gewertet wird.

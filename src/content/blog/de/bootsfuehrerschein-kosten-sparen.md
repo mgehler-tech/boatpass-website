@@ -19,7 +19,7 @@ Bevor wir zu den Spartipps kommen, hier die aktuelle Kostenaufstellung für 2026
 | Prüfungsgebühr (DMYV) | 130,78 € | 148,38 € | 178,61 € |
 | Theorievorbereitung | 0–400 € | 0–400 € | 0–450 € |
 | Praxisausbildung | 50–150 € | 50–200 € | 80–250 € |
-| Ärztliches Zeugnis | 20–50 € | 20–50 € | 20–50 € |
+| Ärztliches Zeugnis | 30–65 € | 30–65 € | 30–65 € |
 | Passfoto | 5–15 € | 5–15 € | 5–15 € |
 | **Gesamt** | **200–650 €** | **220–700 €** | **280–770 €** |
 
