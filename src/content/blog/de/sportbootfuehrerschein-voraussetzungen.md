@@ -1,7 +1,7 @@
 ---
 title: "Sportbootführerschein Voraussetzungen – Was du für die Anmeldung brauchst"
 description: "Alle Voraussetzungen für den Sportbootführerschein: Mindestalter, ärztliches Zeugnis, Unterlagen und Prüfungsanmeldung — Schritt für Schritt erklärt."
-date: 2026-06-03
+date: 2026-04-15
 tags: ["Prüfungswissen"]
 readingTime: 6
 lang: de

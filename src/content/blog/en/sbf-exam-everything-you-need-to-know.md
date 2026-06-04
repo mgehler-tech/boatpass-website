@@ -1,7 +1,7 @@
 ---
 title: "SBF Exam: Everything You Need to Know"
 description: "Complete guide to the German boating license exam: correct exam structure, pass thresholds, what to bring, costs, and how to register."
-date: 2026-05-29
+date: 2026-04-08
 tags: ["Exam Knowledge"]
 readingTime: 9
 lang: en

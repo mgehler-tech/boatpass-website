@@ -1,7 +1,7 @@
 ---
 title: "Die häufigsten Fehler bei der SBF-Prüfung – und wie du sie vermeidest"
 description: "Diese konkreten Fehler machen die meisten SBF-Kandidaten beim Bootsführerschein – in der Theorie, der Praxis und bei der Vorbereitung."
-date: 2026-05-29
+date: 2026-05-12
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de

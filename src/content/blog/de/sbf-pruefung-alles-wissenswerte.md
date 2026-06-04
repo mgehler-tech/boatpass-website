@@ -1,7 +1,7 @@
 ---
 title: "SBF Prüfung: Alles was du wissen musst"
 description: "Vollständiger Leitfaden zur SBF-Theorieprüfung: korrekter Prüfungsaufbau, Bestehensgrenze, Ablauf, Kosten und Vorbereitung."
-date: 2026-05-29
+date: 2026-04-08
 tags: ["Prüfungswissen"]
 readingTime: 9
 lang: de

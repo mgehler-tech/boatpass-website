@@ -1,7 +1,7 @@
 ---
 title: "SBF Binnen vs. SBF See – Was ist der Unterschied?"
 description: "Welchen Sportbootführerschein brauchst du? Geltungsbereich, Prüfungsunterschiede, Kosten und der Kombinations-Tipp der die meisten Geld spart."
-date: 2026-05-29
+date: 2026-04-22
 tags: ["Führerschein-Vergleich"]
 readingTime: 7
 lang: de

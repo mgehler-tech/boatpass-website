@@ -1,7 +1,7 @@
 ---
 title: "SBF-Gültigkeit: Welcher Schein gilt wo?"
 description: "Wo gilt der SBF See, wo der SBF Binnen? Die genauen Grenzen an Elbe, Weser und Ostsee — plus Gültigkeit im Ausland mit ICC."
-date: 2026-06-03
+date: 2026-05-23
 tags: ["Führerschein-Vergleich"]
 readingTime: 7
 lang: de
