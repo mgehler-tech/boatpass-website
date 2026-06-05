@@ -72,6 +72,8 @@ Prüfungstermine beim DMYV und bei anerkannten Prüfungsausschüssen sind oft **
 2. Prüfe Termine und Fristen – die Anmeldung muss je nach Prüfungsausschuss oft **ein bis zwei Wochen vorher** mit Prüfungsgebühr eingehen
 3. Buche früh – der Termin motiviert und gibt dir eine konkrete Deadline
 
+Prüfe vor der Anmeldung außerdem, ob du alle [Voraussetzungen für den Sportbootführerschein](/blog/sportbootfuehrerschein-voraussetzungen/) erfüllst – vom Mindestalter bis zum ärztlichen Zeugnis.
+
 Die offizielle Prüfungsgebühr für den SBF Binnen liegt beim DMYV aktuell bei ca. **131 €** (Stand 05/2026).
 
 ## Fehler 6: Die Führerscheinpflicht falsch verstehen

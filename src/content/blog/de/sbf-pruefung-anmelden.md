@@ -50,6 +50,8 @@ Welche Dokumente genau verlangt werden, hängt vom Verband und Prüfungsort ab. 
 
 Die Prüfung kannst du oft schon kurz **vor** Erreichen des Mindestalters ablegen – ausgehändigt wird der Führerschein dann zum Geburtstag.
 
+Welche Unterlagen und formalen Voraussetzungen du für die Anmeldung sonst noch brauchst, fasst unser Überblick zu den [Voraussetzungen für den Sportbootführerschein](/blog/sportbootfuehrerschein-voraussetzungen/) zusammen.
+
 ## Theorie und Praxis: ein oder zwei Termine?
 
 Die SBF-Prüfung besteht aus **Theorie** und **Praxis**. Häufig finden beide am selben Termin oder an aufeinanderfolgenden Tagen statt:
