@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import type { CollectionEntry } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 interface Props {
   post: CollectionEntry<'blog'>;
@@ -9,6 +10,19 @@ interface Props {
 
 const { post, lang } = Astro.props;
 const { title, description, date, updated, readingTime, tags, author = 'Marius Gehler', image, altSlug } = post.data;
+
+// Verwandte Artikel: gleiche Sprache, gewichtet nach gemeinsamen Tags, dann nach Datum. Max. 3.
+// Cross-Linking zwischen Blogposts gegen "Sackgassen-Seiten" (verbessert Crawling/Indexierung).
+const relatedCandidates = await getCollection('blog', (e) => e.data.lang === lang && e.id !== post.id);
+const relatedPosts = relatedCandidates
+  .map((p) => ({ p, shared: p.data.tags.filter((t) => tags.includes(t)).length }))
+  .sort((a, b) => b.shared - a.shared || b.p.data.date.getTime() - a.p.data.date.getTime())
+  .slice(0, 3)
+  .map(({ p }) => ({
+    title: p.data.title,
+    readingTime: p.data.readingTime,
+    href: (lang === 'de' ? '/blog/' : '/en/blog/') + p.id.replace(/^(de|en)\//, '') + '/',
+  }));
 // Auto-generierte, gebrandete OG-Karte pro Artikel (siehe src/pages/og/blog/[...route].png.ts).
 // Frontmatter `image` überschreibt sie bei Bedarf.
 const ogImage = image ?? `/og/blog/${post.id}.png`;
@@ -117,6 +131,21 @@ const breadcrumbSchema = {
       <slot />
     </div>
 
+    <!-- Verwandte Artikel: cross-linking zwischen Blogposts -->
+    {relatedPosts.length > 0 && (
+      <section style="margin-top:48px;">
+        <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">{lang === 'de' ? 'Verwandte Artikel' : 'Related articles'}</div>
+        <div style="display:grid; gap:12px;">
+          {relatedPosts.map(r => (
+            <a href={r.href} style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 20px; background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; text-decoration:none;">
+              <span style="font-size:16px; font-weight:700; color:#1A1F36; line-height:1.35;">{r.title}</span>
+              <span style="font-size:13px; color:#9CA3AF; white-space:nowrap; flex-shrink:0;">{r.readingTime} {lang === 'de' ? 'Min.' : 'min'} →</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
     <!-- Autoren-Box: schafft Vertrauen & Nähe -->
     <div style="margin-top:48px; display:flex; gap:18px; align-items:flex-start; padding:24px; background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px;">
       <img src={authorPhoto} alt={author} width="64" height="64" loading="lazy" decoding="async" style="width:64px; height:64px; border-radius:50%; object-fit:cover; flex-shrink:0;" />
@@ -128,18 +157,26 @@ const breadcrumbSchema = {
       </div>
     </div>
 
-    <!-- Interne Links -->
-    {lang === 'de' && (
-      <div style="margin-top:48px; padding:24px; background:rgba(51,102,255,0.04); border:1px solid rgba(51,102,255,0.12); border-radius:16px;">
-        <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">Führerschein-Seiten</div>
-        <div style="display:flex; flex-wrap:wrap; gap:10px;">
-          <a href="/sbf-binnen/" style="font-size:14px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.12); padding:8px 16px; border-radius:100px; text-decoration:none;">⚓ SBF Binnen lernen</a>
-          <a href="/sbf-see/" style="font-size:14px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.12); padding:8px 16px; border-radius:100px; text-decoration:none;">🌊 SBF See lernen</a>
-          <a href="/sbf-kosten/" style="font-size:14px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.12); padding:8px 16px; border-radius:100px; text-decoration:none;">💶 SBF Kosten</a>
-          <a href="/faq/" style="font-size:14px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.12); padding:8px 16px; border-radius:100px; text-decoration:none;">❓ Häufige Fragen</a>
-        </div>
+    <!-- Pillar-/Führerschein-Seiten (zweisprachig) -->
+    <div style="margin-top:32px; padding:24px; background:rgba(51,102,255,0.04); border:1px solid rgba(51,102,255,0.12); border-radius:16px;">
+      <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">{lang === 'de' ? 'Führerschein-Seiten' : 'Licence pages'}</div>
+      <div style="display:flex; flex-wrap:wrap; gap:10px;">
+        {lang === 'de' ? (
+          <>
+            <a href="/sbf-binnen/" style="font-size:14px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.12); padding:8px 16px; border-radius:100px; text-decoration:none;">⚓ SBF Binnen lernen</a>
+            <a href="/sbf-see/" style="font-size:14px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.12); padding:8px 16px; border-radius:100px; text-decoration:none;">🌊 SBF See lernen</a>
+            <a href="/sbf-kosten/" style="font-size:14px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.12); padding:8px 16px; border-radius:100px; text-decoration:none;">💶 SBF Kosten</a>
+            <a href="/faq/" style="font-size:14px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.12); padding:8px 16px; border-radius:100px; text-decoration:none;">❓ Häufige Fragen</a>
+          </>
+        ) : (
+          <>
+            <a href="/en/licenses/" style="font-size:14px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.12); padding:8px 16px; border-radius:100px; text-decoration:none;">⚓ Boating licences</a>
+            <a href="/en/faq/" style="font-size:14px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.12); padding:8px 16px; border-radius:100px; text-decoration:none;">❓ FAQ</a>
+            <a href="/en/blog/" style="font-size:14px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.12); padding:8px 16px; border-radius:100px; text-decoration:none;">📖 Blog</a>
+          </>
+        )}
       </div>
-    )}
+    </div>
 
   </article>
 </BaseLayout>
