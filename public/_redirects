@@ -1,3 +1,0 @@
-# Cloudflare Pages redirects
-# www → nackte Domain (eine kanonische URL für SEO)
-https://www.boatpass.de/* https://boatpass.de/:splat 301
