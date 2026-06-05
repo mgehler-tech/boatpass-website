@@ -14,12 +14,7 @@ const href = lang === 'de' ? `/blog/${slug}/` : `/en/blog/${slug}/`;
 const formattedDate = date.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US', {
   year: 'numeric', month: 'short', day: 'numeric'
 });
-const authorInitials = author
-  .split(' ')
-  .map(part => part[0])
-  .slice(0, 2)
-  .join('')
-  .toUpperCase();
+const authorPhoto = '/marius.jpg';
 
 const categoryIcons: Record<string, string> = {
   'Prüfungswissen':        '<path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />',
@@ -48,7 +43,7 @@ const iconPaths = category ? (categoryIcons[category] ?? defaultIcon) : defaultI
       <p class="blog-featured-desc">{description}</p>
       <div class="blog-featured-footer">
         <div class="blog-author">
-          <span class="blog-avatar" aria-hidden="true">{authorInitials}</span>
+          <img class="blog-avatar" src={authorPhoto} alt={author} width="32" height="32" loading="lazy" decoding="async" />
           <span class="blog-author-meta">
             <span class="blog-author-name">{author}</span>
             <span class="blog-author-sub">{formattedDate} · {readingTime} {lang === 'de' ? 'Min lesen' : 'min read'}</span>
@@ -76,7 +71,7 @@ const iconPaths = category ? (categoryIcons[category] ?? defaultIcon) : defaultI
     </div>
     <div class="blog-compact-footer">
       <div class="blog-author">
-        <span class="blog-avatar" aria-hidden="true">{authorInitials}</span>
+        <img class="blog-avatar" src={authorPhoto} alt={author} width="32" height="32" loading="lazy" decoding="async" />
         <span class="blog-author-meta">
           <span class="blog-author-name">{author}</span>
           <span class="blog-author-sub">{formattedDate} · {readingTime} {lang === 'de' ? 'Min' : 'min'}</span>
@@ -158,14 +153,7 @@ const iconPaths = category ? (categoryIcons[category] ?? defaultIcon) : defaultI
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #1A1F36, #3366FF);
-    color: white;
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    object-fit: cover;
     flex-shrink: 0;
   }
   .blog-author-meta {
