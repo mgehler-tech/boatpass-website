@@ -1,12 +1,35 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Marius Gehler",
+  "url": "https://boatpass.de/en/about/",
+  "jobTitle": "Founder & Developer",
+  "image": "https://boatpass.de/marius.jpg",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "BoatPass",
+    "url": "https://boatpass.de",
+  },
+  "description": "Marius Gehler is the founder and developer of BoatPass – the modern study app for the German boating license (SBF Binnen & See).",
+  "knowsAbout": [
+    "Sportbootführerschein",
+    "SBF Binnen",
+    "SBF See",
+    "Android development",
+    "ELWIS question catalog",
+  ],
+};
 ---
 
 <BaseLayout
   title="About – BoatPass"
-  description="Who is behind BoatPass? The story and motivation behind the boating license study app."
+  description="Who is behind BoatPass? The story and motivation behind the boating license study app — built by someone studying for the license himself."
   lang="en"
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
   <div style="max-width:720px; margin:0 auto; padding:80px 24px 120px;">
 
     <!-- Header -->
@@ -15,38 +38,77 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         ⚓ About us
       </div>
       <h1 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:12px;">About BoatPass</h1>
-      <p style="font-size:16px; color:#6B7280;">The story behind the best boating license study app on Android</p>
+      <p style="font-size:16px; color:#6B7280;">The person behind the app – and why it exists.</p>
     </div>
 
-    <!-- Card: How it started -->
+    <!-- Author profile -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; overflow:hidden; margin-bottom:16px;">
+      <img
+        src="/marius.jpg"
+        alt="Marius Gehler, founder of BoatPass, at the helm of a sailboat"
+        loading="lazy"
+        style="display:block; width:100%; height:300px; object-fit:cover; object-position:center 35%;"
+      />
+      <div style="padding:32px;">
+        <div style="font-size:20px; font-weight:800; color:#1A1F36; margin-bottom:4px;">Marius Gehler</div>
+        <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Founder & Developer of BoatPass</div>
+        <p style="font-size:16px; color:#4B5563; line-height:1.7; margin:0;">
+          Hi, I'm Marius – founder and developer of BoatPass. Right now I'm studying for the boating
+          license myself. And that's exactly how this app came to be: not on a drawing board, but out
+          of my own day-to-day learning.
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:20px;">
+          {["SBF Binnen", "SBF See", "ELWIS catalog", "Android development"].map(tag => (
+            <span style="font-size:12px; font-weight:700; background:rgba(51,102,255,0.08); color:#3366FF; border:1px solid rgba(51,102,255,0.15); padding:3px 10px; border-radius:100px;">{tag}</span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Card: Why BoatPass exists -->
     <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">How it all started</h2>
+      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Why BoatPass exists</h2>
       <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
-        BoatPass was born from a personal frustration: when studying for the boating license,
-        there was no app that actually felt good to use. The available alternatives felt outdated,
-        cluttered, or overpriced.
+        When I started studying, I asked friends who already had their license. Their verdict was almost
+        always the same: there are apps with good content – but none that make studying on your phone
+        actually enjoyable. Clunky menus, uninspired interfaces, questions you just memorize by rote.
       </p>
       <p style="font-size:15px; color:#4B5563; line-height:1.7;">
-        So we built one ourselves — with the goal of creating the best boating license study app
-        on Android. Modern, fast, motivating. Like Duolingo for boating.
+        That stuck with me. I've been building apps in my spare time for years – BoatPass is my passion
+        project alongside my day job. My goal: an SBF app that genuinely feels great on a smartphone.
+        Fast, clean, motivating. So I built it – and I'm studying with it myself.
       </p>
     </div>
 
-    <!-- Card: Our promise -->
+    <!-- Card: What matters to me -->
     <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Our promise</h2>
+      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">What matters to me</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Studying theory for the boating license shouldn't feel like a chore. You should enjoy learning and
+        make fast progress. That's why every question comes with clear explanations and memory aids –
+        instead of just „right/wrong“. The material sticks, and you get out on the water sooner. ⛵
+      </p>
+    </div>
+
+    <!-- Card: My promise -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">My promise</h2>
       <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
         <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
           <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
-          Always up-to-date question catalog
+          Always up-to-date official question catalog (ELWIS)
         </li>
         <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
           <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
-          No subscription — one-time purchase, lifetime access
+          No subscription — buy once, use it for good
         </li>
         <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
           <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
-          No unnecessary extras — only what helps you pass
+          Explanations & memory aids instead of rote memorization
+        </li>
+        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
+          <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
+          Built by someone who's studying for the license right now
         </li>
       </ul>
     </div>
@@ -55,8 +117,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
       <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Contact</h2>
       <p style="font-size:15px; color:#4B5563; line-height:1.7;">
-        Have questions or feedback? Reach us via the
-        <a href="/en/contact/" style="color:#3366FF; text-decoration:none; font-weight:500;">contact form</a>.
+        Feedback, found a bug, or just a question? Reach me via the
+        <a href="/en/contact/" style="color:#3366FF; text-decoration:none; font-weight:500;">contact form</a> –
+        I read every message myself.
       </p>
     </div>
 
