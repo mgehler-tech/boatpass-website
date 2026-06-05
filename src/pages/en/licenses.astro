@@ -1,0 +1,211 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Detailseiten existieren nur auf Deutsch (Pattern: hasAlternate={false}) — daher verlinken die Karten dorthin
+const available = [
+  {
+    icon: '🌊',
+    title: 'SBF Inland',
+    tag: 'Rivers, canals & lakes',
+    desc: 'The boating license for inland waters — rivers, canals and lakes. Required for motorboats above 15 HP.',
+    href: '/sbf-binnen/',
+  },
+  {
+    icon: '⛵',
+    title: 'SBF Coastal',
+    tag: 'North & Baltic Sea',
+    desc: 'The license for coastal waters of the North and Baltic Sea. Its own exam with a navigation task.',
+    href: '/sbf-see/',
+  },
+  {
+    icon: '💶',
+    title: 'SBF Costs',
+    tag: 'Fees & saving tips',
+    desc: 'Exam fees, courses and practice at a glance — and how to save money while studying.',
+    href: '/sbf-kosten/',
+  },
+  {
+    icon: '📋',
+    title: 'Exam & Process',
+    tag: 'Theory & practice',
+    desc: 'How the theory and practical exams work, how to register and what counts on exam day.',
+    href: '/sbf-pruefung-ablauf/',
+  },
+];
+
+const soon = [
+  { icon: '📻', title: 'UBI', desc: 'VHF radio certificate for inland navigation.', href: '/ubi/' },
+  { icon: '📡', title: 'SRC', desc: 'Short Range Certificate — marine radio.', href: '/src/' },
+  { icon: '⚓', title: 'Bodensee Licence', desc: 'Mandatory licence for Lake Constance.', href: null },
+  { icon: '🛰️', title: 'LRC', desc: 'Long Range Certificate — worldwide marine radio.', href: null },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boatpass.de/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Licenses", "item": "https://boatpass.de/en/licenses/" },
+  ],
+};
+---
+
+<BaseLayout
+  title="Boating Licenses at a Glance — Which One Fits You? | Boatpass"
+  description="All boating licenses at a glance: SBF Inland, SBF Coastal, costs and the exam process — plus the radio certificates UBI and SRC. Find the right license for you."
+  lang="en"
+  hasAlternate={false}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <!-- Hero -->
+  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        ⚓ All Licenses
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+        Which license<br>fits you?
+      </h1>
+      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto;">
+        Inland waters or coast, motorboat or radio on board — find the right license here
+        and everything you need to know to prepare.
+      </p>
+    </div>
+  </div>
+
+  <div style="max-width:1000px; margin:0 auto; padding:60px 24px 80px;">
+
+    <!-- Available -->
+    <section style="margin-bottom:64px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:8px;">
+        Sportbootführerschein (SBF)
+      </h2>
+      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:28px;">
+        With Boatpass you learn the complete theory — the detail pages explain each license in depth.
+      </p>
+      <div class="license-grid">
+        {available.map(c => (
+          <a href={c.href} class="license-card">
+            <div class="license-icon">{c.icon}</div>
+            <div class="license-title">{c.title}</div>
+            <span class="license-tag">{c.tag}</span>
+            <div class="license-desc">{c.desc}</div>
+            <div class="license-link">Learn more →</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Coming soon -->
+    <section>
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:8px;">
+        Coming soon
+      </h2>
+      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:28px;">
+        We're working on more catalogs — radio certificates and special licenses are on the way.
+      </p>
+      <div class="license-grid">
+        {soon.map(c => (
+          c.href ? (
+            <a href={c.href} class="license-card license-card-soon">
+              <span class="license-soon-badge">soon</span>
+              <div class="license-icon">{c.icon}</div>
+              <div class="license-title">{c.title}</div>
+              <div class="license-desc">{c.desc}</div>
+              <div class="license-link">Preview →</div>
+            </a>
+          ) : (
+            <div class="license-card license-card-soon license-card-disabled">
+              <span class="license-soon-badge">soon</span>
+              <div class="license-icon">{c.icon}</div>
+              <div class="license-title">{c.title}</div>
+              <div class="license-desc">{c.desc}</div>
+            </div>
+          )
+        ))}
+      </div>
+    </section>
+
+  </div>
+
+</BaseLayout>
+
+<style>
+  .license-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .license-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid rgba(51,102,255,0.10);
+    border-radius: 20px;
+    padding: 28px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .license-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(26,31,54,0.10);
+    border-color: rgba(51,102,255,0.28);
+  }
+  .license-icon { font-size: 32px; margin-bottom: 14px; }
+  .license-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1A1F36;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+  .license-tag {
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 700;
+    color: #3366FF;
+    background: rgba(51,102,255,0.08);
+    border: 1px solid rgba(51,102,255,0.16);
+    padding: 4px 10px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+  }
+  .license-desc {
+    font-size: 15px;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex-grow: 1;
+  }
+  .license-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: #3366FF;
+  }
+
+  .license-card-soon { background: rgba(255,255,255,0.6); }
+  .license-soon-badge {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #b45309;
+    background: rgba(245,158,11,0.12);
+    border: 1px solid rgba(245,158,11,0.3);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  .license-card-disabled { opacity: 0.6; cursor: default; }
+  .license-card-disabled:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: rgba(51,102,255,0.10);
+  }
+
+  @media (max-width: 640px) {
+    .license-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,17 @@
+# Cloudflare Pages – Caching
+# Gehashte Build-Assets (Dateiname ändert sich bei jedem Build) → für immer cachen
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Bilder & Fonts → lange cachen
+/images/*
+  Cache-Control: public, max-age=2592000
+/*.webp
+  Cache-Control: public, max-age=2592000
+/*.svg
+  Cache-Control: public, max-age=2592000
+
+# Sicherheits-Header für alle Seiten
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

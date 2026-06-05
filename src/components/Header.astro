@@ -32,9 +32,9 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
       <!-- Führerscheine / Licenses Dropdown -->
       <div class="nav-dropdown">
-        <button class="text-sm font-medium nav-link nav-dropdown-trigger" style="color: #6B7280; background:none; border:none; cursor:pointer; padding:0; display:flex; align-items:center; gap:4px;">
+        <a href={lang === 'de' ? '/fuehrerscheine/' : '/en/licenses/'} class="text-sm font-medium nav-link nav-dropdown-trigger" style="color: #6B7280; text-decoration:none; display:flex; align-items:center; gap:4px;">
           {lang === 'de' ? 'Führerscheine' : 'Licenses'} <span style="font-size:10px;">▾</span>
-        </button>
+        </a>
         <div class="nav-dropdown-menu">
           <a href="/sbf-binnen/" class="nav-dropdown-item">SBF Binnen</a>
           <a href="/sbf-see/" class="nav-dropdown-item">SBF See</a>

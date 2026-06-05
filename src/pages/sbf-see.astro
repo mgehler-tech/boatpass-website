@@ -11,6 +11,50 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "SBF See", "item": "https://boatpass.de/sbf-see/" },
   ],
 };
+
+const faqs = [
+  {
+    q: 'Wo gilt der SBF See?',
+    a: 'Der SBF See berechtigt zur Fahrt auf den Seeschifffahrtsstraßen — den Küstengewässern von Nord- und Ostsee bis drei Seemeilen vor der Festlandküste, den Fahrwassern innerhalb der Zwölf-Seemeilen-Zone sowie den seewärtigen Mündungsbereichen von Ems, Weser, Elbe, Trave und Warnow und dem Nord-Ostsee-Kanal. Anders als beim SBF Binnen gibt es keine Begrenzung der Bootslänge.',
+  },
+  {
+    q: 'Wie läuft die SBF-See-Theorieprüfung ab?',
+    a: 'Die Theorie besteht aus einem Fragebogen mit 30 Multiple-Choice-Fragen (7 Basisfragen + 23 spezifische See-Fragen) und zusätzlich einer Navigationsaufgabe mit 9 Einzelfragen — insgesamt 60 Minuten Zeit. Bestanden ist die Prüfung mit mindestens 24 von 30 richtigen Antworten im Fragebogen und mindestens 7 von 9 richtigen Antworten in der Navigationsaufgabe.',
+  },
+  {
+    q: 'Was ist die Navigationsaufgabe?',
+    a: 'In der Navigationsaufgabe arbeitest du mit einer amtlichen Übungsseekarte: Kurse abtragen, den eigenen Standort bestimmen, Wind- und Stromversatz berücksichtigen und Gezeiten einrechnen. Sie gilt als anspruchsvollster Teil der Prüfung — deshalb übst du sie bei Boatpass gezielt und getrennt vom Fragebogen.',
+  },
+  {
+    q: 'Welche Voraussetzungen muss ich erfüllen?',
+    a: 'Das Mindestalter für den SBF See unter Motor beträgt 16 Jahre. Eine Fahrschule ist nicht vorgeschrieben — der offizielle ELWIS-Fragenkatalog ist frei verfügbar, sodass du die Theorie eigenständig lernen kannst. Für die Praxis wird mindestens ein Übungstag auf dem Wasser empfohlen.',
+  },
+  {
+    q: 'Lohnt sich die Kombination mit dem SBF Binnen?',
+    a: 'Ja. Wer Binnen und See zusammen in einer kombinierten Prüfung ablegt, zahlt mit rund 178,61 € deutlich weniger als für zwei Einzelprüfungen (130,78 € + 148,38 €). Viele Basisfragen sind identisch, sodass sich der Lernaufwand für beide Scheine stark überschneidet.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+// Direktvergleich Binnen vs. See als Entscheidungshilfe
+const compare = [
+  { label: 'Revier', binnen: 'Flüsse, Kanäle & Binnenseen', see: 'Küstengewässer Nord- & Ostsee' },
+  { label: 'Pflicht ab', binnen: '11,03 kW (15 PS)', see: '11,03 kW (15 PS)' },
+  { label: 'Bootslänge', binnen: 'unter Motor max. 20 m', see: 'keine Begrenzung' },
+  { label: 'Theorieprüfung', binnen: '30 Fragen · 45 Min', see: '30 Fragen + Navigation · 60 Min' },
+  { label: 'Navigationsaufgabe', binnen: '—', see: 'ja (Kartenaufgabe)' },
+  { label: 'Prüfungsgebühr 2026', binnen: '130,78 €', see: '148,38 €' },
+  { label: 'Mindestalter', binnen: '16 Jahre', see: '16 Jahre' },
+];
 ---
 
 <BaseLayout
@@ -20,6 +64,7 @@ const breadcrumbSchema = {
   hasAlternate={false}
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
@@ -76,30 +121,118 @@ const breadcrumbSchema = {
         </div>
       </div>
       <p style="font-size:15px; color:#6B7280; line-height:1.7;">
-        Der SBF See beinhaltet eine <strong>Navigationsaufgabe</strong> — das ist der anspruchsvollste Teil der Prüfung. Boatpass trainiert alle Fragentypen gezielt.
+        Der SBF See beinhaltet eine <strong>Navigationsaufgabe</strong> — das ist der anspruchsvollste Teil der Prüfung. Boatpass trainiert alle Fragentypen gezielt. Die amtliche Prüfungsgebühr beträgt 2026 <strong>148,38 €</strong> (Theorie + Praxis).
       </p>
     </section>
 
-    <!-- SBF Binnen vs See -->
+    <!-- Ablauf: Praxis & Anmeldung -->
     <section style="margin-bottom:48px;">
-      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">SBF See vs. SBF Binnen: Was brauchst du?</h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
-        <div style="background:white; border:2px solid rgba(51,102,255,0.2); border-radius:16px; padding:24px;">
-          <div style="font-weight:800; color:#1A1F36; margin-bottom:12px;">SBF Binnen</div>
-          <ul style="list-style:none; padding:0; margin:0; font-size:14px; color:#4B5563; line-height:1.8;">
-            <li>✓ Flüsse & Kanäle</li>
-            <li>✓ Binnenseen</li>
-            <li>✗ Nordsee / Ostsee</li>
-          </ul>
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">Ablauf: von der Anmeldung bis zur Praxis</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        Du meldest dich bei einem anerkannten Prüfungsausschuss (z. B. DMYV) an. Zuerst legst du die Theorieprüfung inkl. Navigationsaufgabe ab, danach folgt die <strong>praktische Prüfung</strong> auf dem Wasser.
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-bottom:18px;">
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">📝 Anmeldung</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;">Antrag beim Prüfungsausschuss, Passbild und Ausweis — Mindestalter 16 Jahre.</div>
         </div>
-        <div style="background:white; border:2px solid rgba(51,102,255,0.2); border-radius:16px; padding:24px;">
-          <div style="font-weight:800; color:#1A1F36; margin-bottom:12px;">SBF See</div>
-          <ul style="list-style:none; padding:0; margin:0; font-size:14px; color:#4B5563; line-height:1.8;">
-            <li>✓ Nord- & Ostsee</li>
-            <li>✓ Küstengewässer</li>
-            <li>✓ Basis für ICC</li>
-          </ul>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">🚤 Praktische Manöver</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;">An- und Ablegen, Wenden, Aufstoppen und das Mann-über-Bord-Manöver.</div>
         </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">🪢 Knoten</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;">Die prüfungsrelevanten Knoten zügig anwenden (z. B. Palstek, Webeleinstek, Klampe).</div>
+        </div>
+      </div>
+      <a href="/sbf-pruefung-ablauf/" style="display:inline-flex; align-items:center; gap:8px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">Prüfungsablauf Schritt für Schritt →</a>
+    </section>
+
+    <!-- Kosten kompakt -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">Was kostet der SBF See?</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        Fest ist nur die amtliche <strong>Prüfungsgebühr von 148,38 €</strong> (Theorie + Praxis). Den größten Kostenblock macht der Vorbereitungskurs aus — wer die Theorie selbst mit dem offiziellen ELWIS-Katalog lernt, spart genau diesen Posten.
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:18px;">
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
+          <div style="font-size:22px; font-weight:900; color:#1A1F36;">148,38 €</div>
+          <div style="font-size:14px; color:#6B7280; line-height:1.55; margin-top:4px;">Amtliche Prüfungsgebühr</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
+          <div style="font-size:22px; font-weight:900; color:#1A1F36;">≈ 500–650 €</div>
+          <div style="font-size:14px; color:#6B7280; line-height:1.55; margin-top:4px;">Kompletter Kurs (optional)</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
+          <div style="font-size:22px; font-weight:900; color:#3366FF;">ab 6,99 €</div>
+          <div style="font-size:14px; color:#6B7280; line-height:1.55; margin-top:4px;">Theorie lernen mit Boatpass</div>
+        </div>
+      </div>
+      <a href="/sbf-kosten/" style="display:inline-flex; align-items:center; gap:8px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">Alle SBF-Kosten im Detail →</a>
+    </section>
+
+    <!-- Geltungsbereich -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">Wo darf ich mit dem SBF See fahren?</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        Der SBF See gilt auf den <strong>Seeschifffahrtsstraßen</strong>: den Küstengewässern von Nord- und Ostsee bis drei Seemeilen vor der Festlandküste, den Fahrwassern innerhalb der Zwölf-Seemeilen-Zone sowie den seewärtigen Mündungen von Ems, Weser, Elbe, Trave und Warnow und dem Nord-Ostsee-Kanal. Eine Begrenzung der Bootslänge gibt es — anders als beim SBF Binnen — nicht.
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">🌊 Wo er gilt</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;">Küstengewässer von Nord- und Ostsee, Mündungsbereiche und Nord-Ostsee-Kanal.</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">⚓ Voraussetzungen</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;">Mindestalter 16 Jahre unter Motor. Grundlage für das internationale Zertifikat ICC.</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">🧭 Besonderheit</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;">Zusätzliche Navigationsaufgabe mit Seekarte, Kursberechnung und Gezeiten.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vergleich Binnen vs. See -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:8px;">SBF See oder Binnen — was brauchst du?</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        See und Binnen sind zwei eigenständige Scheine. Wer beide Reviere befahren will, kann sie in einer
+        <strong>kombinierten Prüfung</strong> günstiger zusammen ablegen (rund 178,61 € statt zweimal einzeln).
+      </p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
+          <thead>
+            <tr style="background:rgba(26,31,54,0.04);">
+              <th style="text-align:left; padding:14px 18px; font-weight:700; color:#1A1F36;"></th>
+              <th style="text-align:left; padding:14px 18px; font-weight:800; color:#1A1F36;">🌊 SBF Binnen</th>
+              <th style="text-align:left; padding:14px 18px; font-weight:800; color:#1A1F36;">⛵ SBF See</th>
+            </tr>
+          </thead>
+          <tbody>
+            {compare.map((row, i) => (
+              <tr style={`border-top:1px solid rgba(51,102,255,0.08);${i % 2 ? ' background:rgba(26,31,54,0.02);' : ''}`}>
+                <td style="padding:13px 18px; font-weight:600; color:#1A1F36;">{row.label}</td>
+                <td style="padding:13px 18px; color:#4B5563;">{row.binnen}</td>
+                <td style="padding:13px 18px; color:#4B5563;">{row.see}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <a href="/sbf-binnen/" style="display:inline-flex; align-items:center; gap:8px; margin-top:18px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">SBF Binnen im Detail ansehen →</a>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Häufige Fragen zum SBF See</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:16px; padding:22px;">
+            <div style="font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</div>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
       </div>
     </section>
 
