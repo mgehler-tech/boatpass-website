@@ -98,7 +98,7 @@ Es gibt genau 15 Navigationsaufgaben — nicht mehr. Wer alle 15 mindestens einm
 
 ### Umrechnungen auswendig können
 
-Die Formel rwK → mwK → MgK (und umgekehrt) muss sitzen. Übe die Umrechnung so lange, bis du sie im Schlaf beherrschst. Die häufigsten Fehler passieren bei den Vorzeichen — Missweisung und Ablenkung können positiv (Ost) oder negativ (West) sein.
+Die Formel rwK → mwK → MgK (und umgekehrt) muss sitzen. Übe die Umrechnung so lange, bis du sie im Schlaf beherrschst. Die häufigsten Fehler passieren bei den Vorzeichen — Missweisung und Ablenkung können positiv (Ost) oder negativ (West) sein. Eine Schritt-für-Schritt-Anleitung mit Rechenbeispielen findest du im Artikel [Kursumrechnung beim SBF See: rwK, mwK & MgK einfach erklärt](/blog/kursumrechnung-sbf-see/).
 
 ### Mit der echten Seekarte üben
 
