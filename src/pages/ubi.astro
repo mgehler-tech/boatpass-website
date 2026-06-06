@@ -106,6 +106,36 @@ const breadcrumbSchema = {
       </div>
     </section>
 
+    <!-- Kosten im Detail -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:8px;">Was kostet das UBI?</h2>
+      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:24px;">
+        Die amtliche Prüfungsgebühr setzt sich aus drei Posten zusammen. So viel zahlst du wofür:
+      </p>
+      <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; overflow:hidden;">
+        {[
+          { label: 'Zulassung zur Prüfung', desc: 'Antragsbearbeitung & Zulassung durch den Prüfungsausschuss', price: '15,89 €' },
+          { label: 'Prüfung Theorie & Praxis', desc: 'Abnahme der schriftlichen und praktischen Prüfung', price: '70,03 €' },
+          { label: 'Erteilung des Sprechfunkzeugnisses', desc: 'Ausstellung des amtlichen UBI-Zeugnisses', price: '22,79 €' },
+        ].map(row => (
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:18px 24px; border-bottom:1px solid rgba(51,102,255,0.08);">
+            <div>
+              <div style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:2px;">{row.label}</div>
+              <div style="font-size:13px; color:#6B7280; line-height:1.5;">{row.desc}</div>
+            </div>
+            <div style="font-size:16px; font-weight:800; color:#1A1F36; white-space:nowrap;">{row.price}</div>
+          </div>
+        ))}
+        <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 24px; background:rgba(51,102,255,0.05);">
+          <div style="font-size:15px; font-weight:800; color:#1A1F36;">Gesamt (inkl. MwSt.)</div>
+          <div style="font-size:20px; font-weight:900; color:#3366FF; white-space:nowrap;">108,71 €</div>
+        </div>
+      </div>
+      <p style="font-size:13px; color:#9CA3AF; line-height:1.6; margin-top:12px;">
+        Stand der Gebühren laut DSV. Wiederholung von Theorie <u>oder</u> Praxis: 45,64 €. Bei Auslandsprüfungen können zusätzliche Reisekosten anfallen. Diese amtlichen Gebühren sind unabhängig vom Boatpass UBI-Lernmodul (einmalig 5,99 €).
+      </p>
+    </section>
+
     <!-- Boatpass UBI-Modul verfügbar -->
     <section style="margin-bottom:48px; background:linear-gradient(135deg,#3366FF,#1A44D4); border:1px solid rgba(255,255,255,0.15); border-radius:24px; padding:40px; box-shadow:0 20px 60px rgba(51,102,255,0.3);">
       <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">✅ Jetzt verfügbar</div>
