@@ -7,7 +7,7 @@ export const de = {
     getApp: 'App laden',
   },
   hero: {
-    badge: 'Offizieller ELWIS-Fragenkatalog',
+    badge: 'Offizielle Prüfungskataloge',
     headline1: 'Der schnellste',
     headline2: 'Weg zum',
     headlineAccent: 'SBF Binnen.',
@@ -15,7 +15,7 @@ export const de = {
     cta: 'Kostenlos im Play Store',
     ctaSecondary: 'Features ansehen',
     stat1Num: 'Offiziell',
-    stat1Label: 'ELWIS-Katalog',
+    stat1Label: 'Prüfungskataloge',
     stat2Num: '3',
     stat2Label: 'Lernmodi',
     stat3Num: 'Kostenlos',
@@ -30,7 +30,7 @@ export const de = {
     phoneCard3Sub: '12 offene Fehler',
   },
   trust: {
-    catalog: 'Offizieller ELWIS-Fragenkatalog',
+    catalog: 'Offizielle Prüfungskataloge',
     current: 'Immer aktuell — Updates bei Katalogänderungen',
     oneTime: 'Kostenlos starten — kein Account',
     languages: 'Deutsch & Englisch',
@@ -61,7 +61,7 @@ export const de = {
     },
     catalog: {
       title: 'Offizieller Katalog',
-      desc: 'Alle Fragen stammen aus den offiziellen ELWIS-Fragenkatalogen. Immer aktuell — wird bei Katalogänderungen sofort aktualisiert.',
+      desc: 'Alle Fragen stammen aus den offiziellen Prüfungskatalogen der zuständigen Behörden. Immer aktuell — wird bei Katalogänderungen sofort aktualisiert.',
     },
   },
   howItWorks: {

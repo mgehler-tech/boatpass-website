@@ -9,7 +9,7 @@ export const en: Translations = {
     getApp: 'Get App',
   },
   hero: {
-    badge: 'Official ELWIS Question Catalog',
+    badge: 'Official exam catalogs',
     headline1: 'The fastest way',
     headline2: 'to get your',
     headlineAccent: 'Boating License.',
@@ -17,7 +17,7 @@ export const en: Translations = {
     cta: 'Free on Google Play',
     ctaSecondary: 'See features',
     stat1Num: 'Official',
-    stat1Label: 'ELWIS catalog',
+    stat1Label: 'Exam catalogs',
     stat2Num: '3',
     stat2Label: 'Learning modes',
     stat3Num: 'Free',
@@ -32,7 +32,7 @@ export const en: Translations = {
     phoneCard3Sub: '12 open errors',
   },
   trust: {
-    catalog: 'Official ELWIS question catalog',
+    catalog: 'Official exam catalogs',
     current: 'Always up to date — updated when catalogs change',
     oneTime: 'Start for free — no account needed',
     languages: 'German & English',
@@ -63,7 +63,7 @@ export const en: Translations = {
     },
     catalog: {
       title: 'Official catalog',
-      desc: 'All questions come from the official ELWIS question catalogs. Always up to date — updated immediately when a catalog changes.',
+      desc: 'All questions come from the official exam catalogs of the responsible authorities. Always up to date — updated immediately when a catalog changes.',
     },
   },
   howItWorks: {
