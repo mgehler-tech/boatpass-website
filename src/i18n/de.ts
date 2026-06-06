@@ -61,7 +61,7 @@ export const de = {
     },
     catalog: {
       title: 'Offizieller Katalog',
-      desc: '400+ Fragen aus dem offiziellen ELWIS-Fragenkatalog. Immer aktuell — wird bei Katalogänderungen sofort aktualisiert.',
+      desc: 'Alle Fragen stammen aus den offiziellen ELWIS-Fragenkatalogen. Immer aktuell — wird bei Katalogänderungen sofort aktualisiert.',
     },
   },
   howItWorks: {

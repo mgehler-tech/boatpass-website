@@ -63,7 +63,7 @@ export const en: Translations = {
     },
     catalog: {
       title: 'Official catalog',
-      desc: '400+ questions from the official ELWIS question catalog. Always up to date — updated immediately when the catalog changes.',
+      desc: 'All questions come from the official ELWIS question catalogs. Always up to date — updated immediately when a catalog changes.',
     },
   },
   howItWorks: {
