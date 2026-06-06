@@ -9,7 +9,7 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 
-const soonItems = [t.pricing.soon1, t.pricing.soon2, t.pricing.soon3, t.pricing.soon4];
+const soonItems = [t.pricing.soon1, t.pricing.soon2, t.pricing.soon3];
 ---
 
 <section id="pricing" style="padding:100px 24px; text-align:center;">
@@ -111,6 +111,24 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2, t.pricing.soon3, t.pricing.
             <div style="font-size:14px; color:#6B7280; margin-bottom:24px; line-height:1.5;">{t.pricing.catalog2Desc}</div>
             <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
               <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.price}</span>
+              <span style="font-size:13px; color:#6B7280; font-weight:500;">{lang === 'de' ? 'Einmalkauf' : 'one-time'}</span>
+            </div>
+            <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+              class="cta-see-btn"
+              style="display:block; text-align:center; padding:12px; border-radius:12px; font-size:14px; font-weight:700; text-decoration:none; border:1px solid rgba(51,102,255,0.15); color:#1A1F36; background:white;">
+              {t.pricing.ctaStore}
+            </a>
+          </div>
+        </div>
+
+        <!-- UBI Sprechfunk -->
+        <div class="reveal-item catalog-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.10); flex:1; box-shadow:0 8px 30px rgba(26,31,54,0.03);">
+          <div style="text-align:left;">
+            <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">{t.pricing.available}</div>
+            <div style="font-size:24px; font-weight:900; color:#1A1F36; margin-bottom:6px; letter-spacing:-0.3px;">{t.pricing.catalog3Name}</div>
+            <div style="font-size:14px; color:#6B7280; margin-bottom:24px; line-height:1.5;">{t.pricing.catalog3Desc}</div>
+            <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
+              <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.ubiPrice}</span>
               <span style="font-size:13px; color:#6B7280; font-weight:500;">{lang === 'de' ? 'Einmalkauf' : 'one-time'}</span>
             </div>
             <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
