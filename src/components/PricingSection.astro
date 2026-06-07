@@ -106,9 +106,19 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2, t.pricing.soon3];
         <!-- SBF See -->
         <div class="reveal-item catalog-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.10); flex:1; box-shadow:0 8px 30px rgba(26,31,54,0.03);">
           <div style="text-align:left;">
-            <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">{t.pricing.available}</div>
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+              <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px;">{t.pricing.available}</div>
+              <div style="font-size:11px; font-weight:600; color:#059669; background:#ECFDF5; border:1px solid #A7F3D0; padding:3px 9px; border-radius:100px;">{t.pricing.freeTrialNote}</div>
+            </div>
             <div style="font-size:24px; font-weight:900; color:#1A1F36; margin-bottom:6px; letter-spacing:-0.3px;">{t.pricing.catalog2Name}</div>
-            <div style="font-size:14px; color:#6B7280; margin-bottom:24px; line-height:1.5;">{t.pricing.catalog2Desc}</div>
+            <div style="font-size:14px; color:#6B7280; margin-bottom:16px; line-height:1.5;">{t.pricing.catalog2Desc}</div>
+            <div style="margin-bottom:16px;">
+              {t.pricing.seePaidFeatures.map(f => (
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
+                  <span style="font-size:12px; color:#4B5563;">{f}</span>
+                </div>
+              ))}
+            </div>
             <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
               <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.price}</span>
               <span style="font-size:13px; color:#6B7280; font-weight:500;">{lang === 'de' ? 'Einmalkauf' : 'one-time'}</span>
@@ -124,9 +134,19 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2, t.pricing.soon3];
         <!-- UBI Sprechfunk -->
         <div class="reveal-item catalog-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.10); flex:1; box-shadow:0 8px 30px rgba(26,31,54,0.03);">
           <div style="text-align:left;">
-            <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">{t.pricing.available}</div>
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+              <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px;">{t.pricing.available}</div>
+              <div style="font-size:11px; font-weight:600; color:#6B7280; background:#F9FAFB; border:1px solid #E5E7EB; padding:3px 9px; border-radius:100px;">{t.pricing.ubiOnlyNote}</div>
+            </div>
             <div style="font-size:24px; font-weight:900; color:#1A1F36; margin-bottom:6px; letter-spacing:-0.3px;">{t.pricing.catalog3Name}</div>
-            <div style="font-size:14px; color:#6B7280; margin-bottom:24px; line-height:1.5;">{t.pricing.catalog3Desc}</div>
+            <div style="font-size:14px; color:#6B7280; margin-bottom:16px; line-height:1.5;">{t.pricing.catalog3Desc}</div>
+            <div style="margin-bottom:16px;">
+              {t.pricing.ubiPaidFeatures.map(f => (
+                <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
+                  <span style="font-size:12px; color:#4B5563;">{f}</span>
+                </div>
+              ))}
+            </div>
             <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
               <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.ubiPrice}</span>
               <span style="font-size:13px; color:#6B7280; font-weight:500;">{lang === 'de' ? 'Einmalkauf' : 'one-time'}</span>
