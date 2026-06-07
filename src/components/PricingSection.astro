@@ -34,6 +34,9 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2, t.pricing.soon3];
 
     <div class="catalog-grid">
 
+      <!-- Left column: SBF Binnen Freemium + Coming Soon -->
+      <div style="display:flex; flex-direction:column; gap:16px;">
+
       <!-- SBF Binnen — Freemium card -->
       <div class="reveal-item catalog-card featured" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
         <!-- Orb -->
@@ -100,7 +103,26 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2, t.pricing.soon3];
         </div>
       </div>
 
-      <!-- Right column: SBF See + Coming Soon -->
+        <!-- Coming Soon -->
+        <div class="reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.06); border-radius:20px; padding:24px; box-shadow:0 8px 30px rgba(26,31,54,0.02); flex:1;">
+          <div style="font-size:11px; font-weight:700; color:#6B7280; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">{t.pricing.soonLabel}</div>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            {soonItems.map(item => (
+              <div style="display:flex; align-items:center; gap:10px;">
+                <span class="plus-circle">
+                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 1.5V6.5M1.5 4H6.5" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <span style="font-size:14px; font-weight:500; color:#6B7280;">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right column: SBF See + UBI -->
       <div style="display:flex; flex-direction:column; gap:16px;">
 
         <!-- SBF See -->
@@ -161,23 +183,6 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2, t.pricing.soon3];
               style="display:block; text-align:center; padding:12px; border-radius:12px; font-size:14px; font-weight:700; text-decoration:none; border:1px solid rgba(51,102,255,0.15); color:#1A1F36; background:white;">
               {t.pricing.ctaStore}
             </a>
-          </div>
-        </div>
-
-        <!-- Coming Soon -->
-        <div class="reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.06); border-radius:20px; padding:24px; box-shadow:0 8px 30px rgba(26,31,54,0.02);">
-          <div style="font-size:11px; font-weight:700; color:#6B7280; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">{t.pricing.soonLabel}</div>
-          <div style="display:flex; flex-direction:column; gap:8px;">
-            {soonItems.map(item => (
-              <div style="display:flex; align-items:center; gap:10px;">
-                <span class="plus-circle">
-                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 1.5V6.5M1.5 4H6.5" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                </span>
-                <span style="font-size:14px; font-weight:500; color:#6B7280;">{item}</span>
-              </div>
-            ))}
           </div>
         </div>
 
