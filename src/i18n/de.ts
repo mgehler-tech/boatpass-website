@@ -25,7 +25,7 @@ export const de = {
     phoneCard1: 'Lernen',
     phoneCard1Sub: 'Kategorie wählen',
     phoneCard2: 'Prüfungsmodus',
-    phoneCard2Sub: '6 Simulationen · 0 Bestanden',
+    phoneCard2Sub: '30 Fragen · 45 Min',
     phoneCard3: 'Fehler-Training',
     phoneCard3Sub: '12 offene Fehler',
   },

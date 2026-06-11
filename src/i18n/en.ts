@@ -27,7 +27,7 @@ export const en: Translations = {
     phoneCard1: 'Study',
     phoneCard1Sub: 'Choose category',
     phoneCard2: 'Exam mode',
-    phoneCard2Sub: '6 simulations · 0 passed',
+    phoneCard2Sub: '30 questions · 45 min',
     phoneCard3: 'Error training',
     phoneCard3Sub: '12 open errors',
   },
