@@ -1,8 +1,12 @@
 # Blog-Automatik – Playbook (für den geplanten Cloud-Agenten)
 
 Dieses Dokument ist die **vollständige, eigenständige Anleitung** für die Routine, die
-2× pro Woche (Di + Do, ~09:00) automatisch einen neuen Blogpost für boatpass.de erstellt.
+2× pro Woche (Di + Do) automatisch einen neuen Blogpost für boatpass.de erstellt.
 Der Agent startet ohne Vorwissen – alles Nötige steht hier.
+
+Umgesetzt als **Claude Code Routine** (claude.ai/code/routines): ein geplanter Cloud-Lauf,
+der auf das Repo `mgehler-tech/boatpass-website` zeigt. Der Routine-Prompt verweist auf
+genau dieses Playbook – siehe [`routine-prompt.md`](routine-prompt.md) zum Reinkopieren.
 
 ## Ziel
 
@@ -27,9 +31,12 @@ fundierter Artikel als dünner AI-Fülltext (Google straft Letzteres ab).
 6. **Backlog aktualisieren:** Hake das Thema in `topic-backlog.md` ab (`- [x]`) und
    ergänze in Klammern Datum + die beiden Slugs.
 7. **Build prüfen:** `npm run build` muss fehlerfrei durchlaufen (Frontmatter-Schema!).
-8. **Committen & pushen** auf `main`:
-   `git commit -m "feat(blog): <Titel DE>"` → `git push`.
-   Cloudflare/Netlify deployt automatisch beim Push. **Kein PR** – sofort live.
+8. **Veröffentlichen:**
+   - Bevorzugt **direkt auf `main`**: `git commit -m "feat(blog): <Titel DE>"` → `git push origin main`.
+     Cloudflare/Netlify deployt automatisch beim Push – sofort live.
+   - Falls die Umgebung keinen Direkt-Push auf `main` erlaubt: Branch `blog/<slug-de>` pushen
+     und einen **Pull Request** öffnen (Titel = Commit-Titel). Mit aktiviertem Auto-Merge geht
+     der Post nach den Checks automatisch live.
 
 ## Frontmatter (Pflicht, exakt nach Schema in `src/content.config.ts`)
 
