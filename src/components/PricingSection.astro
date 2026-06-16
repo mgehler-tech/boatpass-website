@@ -32,12 +32,9 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2];
       </div>
     </div>
 
-    <div class="catalog-grid">
+    <div class="catalog-stack">
 
-      <!-- Left column: SBF Binnen Freemium + Coming Soon -->
-      <div style="display:flex; flex-direction:column; gap:16px;">
-
-      <!-- SBF Binnen — Freemium card -->
+      <!-- SBF Binnen — Freemium card (full width hero) -->
       <div class="reveal-item catalog-card featured" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
         <!-- Orb -->
         <div style="position:absolute; top:-60px; right:-60px; width:220px; height:220px; border-radius:50%; background:radial-gradient(circle,rgba(255,255,255,0.15),transparent 70%); pointer-events:none;"></div>
@@ -103,31 +100,12 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2];
         </div>
       </div>
 
-        <!-- Coming Soon -->
-        <div class="reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.06); border-radius:20px; padding:24px; box-shadow:0 8px 30px rgba(26,31,54,0.02); flex:1;">
-          <div style="font-size:11px; font-weight:700; color:#6B7280; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">{t.pricing.soonLabel}</div>
-          <div style="display:flex; flex-direction:column; gap:8px;">
-            {soonItems.map(item => (
-              <div style="display:flex; align-items:center; gap:10px;">
-                <span class="plus-circle">
-                  <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 1.5V6.5M1.5 4H6.5" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                </span>
-                <span style="font-size:14px; font-weight:500; color:#6B7280;">{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Right column: SBF See + UBI -->
-      <div style="display:flex; flex-direction:column; gap:16px;">
+      <!-- Paid catalogs row: SBF See + UBI + LRC -->
+      <div class="paid-grid">
 
         <!-- SBF See -->
-        <div class="reveal-item catalog-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.10); flex:1; box-shadow:0 8px 30px rgba(26,31,54,0.03);">
-          <div style="text-align:left;">
+        <div class="reveal-item catalog-card paid-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.10); box-shadow:0 8px 30px rgba(26,31,54,0.03);">
+          <div class="paid-card-inner" style="text-align:left;">
             <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
               <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px;">{t.pricing.available}</div>
               <div style="font-size:11px; font-weight:600; color:#059669; background:#ECFDF5; border:1px solid #A7F3D0; padding:3px 9px; border-radius:100px;">{t.pricing.freeTrialNote}</div>
@@ -142,7 +120,7 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2];
                 </div>
               ))}
             </div>
-            <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
+            <div class="price-row" style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
               <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.price}</span>
               <span style="font-size:13px; color:#6B7280; font-weight:500;">{lang === 'de' ? 'Einmalkauf' : 'one-time'}</span>
             </div>
@@ -155,8 +133,8 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2];
         </div>
 
         <!-- UBI Sprechfunk -->
-        <div class="reveal-item catalog-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.10); flex:1; box-shadow:0 8px 30px rgba(26,31,54,0.03);">
-          <div style="text-align:left;">
+        <div class="reveal-item catalog-card paid-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.10); box-shadow:0 8px 30px rgba(26,31,54,0.03);">
+          <div class="paid-card-inner" style="text-align:left;">
             <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
               <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px;">{t.pricing.available}</div>
               <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
@@ -174,7 +152,7 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2];
                 </div>
               ))}
             </div>
-            <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
+            <div class="price-row" style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
               <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.ubiPrice}</span>
               <span style="font-size:13px; color:#6B7280; font-weight:500;">{lang === 'de' ? 'Einmalkauf' : 'one-time'}</span>
             </div>
@@ -187,8 +165,8 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2];
         </div>
 
         <!-- LRC Seefunk -->
-        <div class="reveal-item catalog-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.10); flex:1; box-shadow:0 8px 30px rgba(26,31,54,0.03);">
-          <div style="text-align:left;">
+        <div class="reveal-item catalog-card paid-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.10); box-shadow:0 8px 30px rgba(26,31,54,0.03);">
+          <div class="paid-card-inner" style="text-align:left;">
             <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
               <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px;">{t.pricing.available}</div>
               <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
@@ -206,7 +184,7 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2];
                 </div>
               ))}
             </div>
-            <div style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
+            <div class="price-row" style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
               <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.lrcPrice}</span>
               <span style="font-size:13px; color:#6B7280; font-weight:500;">{lang === 'de' ? 'Einmalkauf' : 'one-time'}</span>
             </div>
@@ -219,6 +197,24 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2];
         </div>
 
       </div>
+
+      <!-- Coming Soon — compact full-width bar -->
+      <div class="reveal-item soon-bar" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+        <div style="font-size:11px; font-weight:700; color:#6B7280; text-transform:uppercase; letter-spacing:1px; flex-shrink:0;">{t.pricing.soonLabel}</div>
+        <div class="soon-items">
+          {soonItems.map(item => (
+            <div style="display:flex; align-items:center; gap:8px;">
+              <span class="plus-circle">
+                <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 1.5V6.5M1.5 4H6.5" stroke="#9CA3AF" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <span style="font-size:14px; font-weight:500; color:#6B7280;">{item}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
     </div>
 
     <!-- Komplett-Paket / Bundle -->
@@ -253,19 +249,55 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2];
 </section>
 
 <style>
-  .catalog-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  .catalog-stack {
+    display: flex;
+    flex-direction: column;
     gap: 16px;
     max-width: 820px;
     margin: 0 auto;
-    align-items: start;
+  }
+  .paid-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
   .catalog-card {
     border-radius: 24px;
     padding: 32px;
     position: relative;
     overflow: hidden;
+  }
+  /* Paid catalog cards: equal height, prices + CTA aligned at the bottom */
+  .paid-card {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+  .paid-card-inner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .paid-card .price-row {
+    margin-top: auto;
+  }
+  /* Coming soon — compact full-width bar */
+  .soon-bar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    background: white;
+    border: 1px solid rgba(51,102,255,0.06);
+    border-radius: 20px;
+    padding: 18px 24px;
+    box-shadow: 0 8px 30px rgba(26,31,54,0.02);
+  }
+  .soon-items {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
   }
   .catalog-card.featured {
     background: linear-gradient(135deg, #3366FF 0%, #1A44D4 100%);
@@ -358,7 +390,7 @@ const soonItems = [t.pricing.soon1, t.pricing.soon2];
   }
 
   @media (max-width: 680px) {
-    .catalog-grid { grid-template-columns: 1fr; }
+    .paid-grid { grid-template-columns: 1fr; }
     .bundle-inner { flex-direction: column; align-items: flex-start; }
     .bundle-action { width: 100%; justify-content: space-between; }
   }
