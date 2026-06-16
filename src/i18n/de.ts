@@ -97,6 +97,10 @@ export const de = {
     catalog3Desc: 'UKW-Sprechfunkzeugnis Binnen · offizieller Fragenkatalog',
     ubiPaidFeatures: ['♾️ Unbegrenzte Lernfragen', '📝 Prüfungssimulation', '📖 Fragen-Browser'],
     ubiPrice: '€ 5,99',
+    lrcName: 'LRC Seefunk',
+    lrcDesc: 'Langstreckenfunkzeugnis (Seefunk) · offizieller Fragenkatalog',
+    lrcPaidFeatures: ['♾️ Unbegrenzte Lernfragen', '📝 Prüfungssimulation', '📖 Fragen-Browser'],
+    lrcPrice: '€ 6,99',
     freeTrialNote: 'Im Tageslimit testbar',
     ubiOnlyNote: 'Nur einzeln · nicht im Bundle',
     bundleLabel: 'Spar-Tipp',
@@ -107,7 +111,6 @@ export const de = {
     bundleCta: 'Paket freischalten',
     soon1: 'Bodenseeschifferpatent',
     soon2: 'SRC — Kurzstreckenzeugnis',
-    soon3: 'LRC — Langstreckenzeugnis',
     soonLabel: 'Bald verfügbar',
   },
   blog: {

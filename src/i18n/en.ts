@@ -99,6 +99,10 @@ export const en: Translations = {
     catalog3Desc: 'UKW radio certificate (inland) · official question catalog',
     ubiPaidFeatures: ['♾️ Unlimited study questions', '📝 Exam simulation', '📖 Question browser'],
     ubiPrice: '€5.99',
+    lrcName: 'LRC sea radio',
+    lrcDesc: 'Long Range Certificate (sea radio) · official question catalog',
+    lrcPaidFeatures: ['♾️ Unlimited study questions', '📝 Exam simulation', '📖 Question browser'],
+    lrcPrice: '€6.99',
     freeTrialNote: 'Try within daily limit',
     ubiOnlyNote: 'Individual only · not in bundle',
     bundleLabel: 'Best value',
@@ -109,7 +113,6 @@ export const en: Translations = {
     bundleCta: 'Unlock bundle',
     soon1: 'Bodenseeschifferpatent',
     soon2: 'SRC — Short Range Certificate',
-    soon3: 'LRC — Long Range Certificate',
     soonLabel: 'Coming soon',
   },
   blog: {
