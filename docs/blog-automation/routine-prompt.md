@@ -22,9 +22,19 @@ Vorgehen:
 6. Hake das Thema in `topic-backlog.md` ab (`- [x]` + Datum + beide Slugs).
 7. Führe `npm install` (falls nötig) und `npm run build` aus – muss fehlerfrei sein
    (Frontmatter-Schema in `src/content.config.ts`). Bei Fehlern beheben, bis grün.
-8. Veröffentlichen: bevorzugt direkt auf `main` committen & pushen
-   (`feat(blog): <Titel DE>`). Falls Direkt-Push nicht möglich ist, Branch `blog/<slug-de>`
-   pushen und einen Pull Request öffnen.
+8. QUALITÄTSSICHERUNG (Pflicht-Gate, siehe Playbook-Abschnitt „Qualitätssicherung"):
+   Starte einen separaten Prüf-/Subagenten mit frischem Blick, der die beiden fertigen
+   Dateien fachlich prüft. Schwerpunkt: RICHTIGKEIT – jede SBF-Aussage (Prüfungsaufbau,
+   Fragenzahl, Bestehensgrenzen, Regeln, Lichter/Signale, Knoten usw.) muss korrekt sein und
+   dem offiziellen Stand (ELWIS) entsprechen. Keine erfundenen Zahlen. Nicht sicher
+   Verifizierbares korrigieren, abschwächen oder streichen – im Zweifel weglassen, bei Bedarf
+   recherchieren. Der Prüf-Agent gibt BESTANDEN oder DURCHGEFALLEN (mit Mängelliste) zurück.
+   Bei DURCHGEFALLEN beheben und erneut prüfen, bis BESTANDEN. Erst dann veröffentlichen.
+9. Veröffentlichen (nur nach bestandener QA): bevorzugt direkt auf `main` committen & pushen
+   (`feat(blog): <Titel DE>`). Falls Direkt-Push nicht möglich ist ODER ein fachlicher Fehler
+   nicht sicher behoben werden konnte, Branch `blog/<slug-de>` pushen und einen Pull Request
+   öffnen (mit Hinweis auf die offene Stelle).
 
-Erfolg = ein neues DE+EN-Postpaar liegt im Repo, Build grün, auf main gepusht (oder PR offen).
-Melde am Ende: gewähltes Thema, beide Slugs, Build-Status, ob gepusht oder PR.
+Erfolg = ein neues DE+EN-Postpaar liegt im Repo, Build grün, QA BESTANDEN, auf main gepusht
+(oder PR offen). Melde am Ende: gewähltes Thema, beide Slugs, Build-Status, QA-Ergebnis,
+ob gepusht oder PR.

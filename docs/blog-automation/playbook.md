@@ -31,7 +31,9 @@ fundierter Artikel als dünner AI-Fülltext (Google straft Letzteres ab).
 6. **Backlog aktualisieren:** Hake das Thema in `topic-backlog.md` ab (`- [x]`) und
    ergänze in Klammern Datum + die beiden Slugs.
 7. **Build prüfen:** `npm run build` muss fehlerfrei durchlaufen (Frontmatter-Schema!).
-8. **Veröffentlichen:**
+8. **Qualitätssicherung – PFLICHT-GATE vor jeder Veröffentlichung** (siehe eigener Abschnitt
+   „Qualitätssicherung" unten). Erst veröffentlichen, wenn die QA mit **BESTANDEN** abschließt.
+9. **Veröffentlichen** (nur nach bestandener QA):
    - Bevorzugt **direkt auf `main`**: `git commit -m "feat(blog): <Titel DE>"` → `git push origin main`.
      Cloudflare/Netlify deployt automatisch beim Push – sofort live.
    - Falls die Umgebung keinen Direkt-Push auf `main` erlaubt: Branch `blog/<slug-de>` pushen
@@ -73,11 +75,41 @@ Neue Tags nur, wenn wirklich nötig und konsistent in beiden Sprachen.
 - **EN-Version:** eigenständige Übersetzung desselben Artikels (kein Wort-für-Wort),
   gleiche Struktur. Deutsche Begriffe (z. B. „Sportbootführerschein") erklären.
 
-## Qualitäts-Checkliste vor dem Push
+## Qualitätssicherung (PFLICHT-GATE vor jeder Veröffentlichung)
 
-- [ ] Thema nicht schon vorhanden
+Jeder Post wird **vor** dem Push von einem **separaten Review-Pass mit frischem Blick**
+fachlich geprüft. Starte dafür einen eigenen **Prüf-/Subagenten** (eigener Kontext), der NUR
+prüft – nicht schreibt. Er bekommt die beiden fertigen Dateien
+(`de/<slug>.md`, `en/<slug>.md`) und dieses Playbook und arbeitet die Checkliste ab.
+Er gibt am Ende **BESTANDEN** oder **DURCHGEFALLEN** zurück, bei „durchgefallen" mit konkreter
+Mängelliste.
+
+**Wichtigste Regel – Richtigkeit vor Veröffentlichung:**
+- Jede fachliche Aussage zum SBF (Prüfungsaufbau, Fragenzahl, Bestehensgrenzen, Fristen,
+  Rechtsregeln, Lichter/Schallsignale, Knoten, Seezeichen, Promille, Geltungsbereiche usw.)
+  muss **sachlich korrekt** sein und dem offiziellen Stand (ELWIS-Fragenkatalog, geltende
+  Vorschriften) entsprechen. **Keine erfundenen Zahlen oder Regeln.**
+- Lässt sich eine Aussage **nicht sicher verifizieren**, wird sie **korrigiert, konservativ
+  umformuliert oder gestrichen** – im Zweifel weglassen. Ungeprüfte Fakten dürfen NICHT live gehen.
+- Bei Unsicherheit recherchiert der Prüf-Agent (Websuche/offizielle Quellen) und gleicht ab.
+
+**Ablauf des Gates:**
+1. Review-Agent prüft (Checkliste unten).
+2. Bei **DURCHGEFALLEN**: Hauptagent behebt die genannten Mängel, dann erneut prüfen –
+   so lange, bis BESTANDEN.
+3. Lässt sich ein fachlicher Fehler nicht sicher beheben: **nicht direkt auf `main` pushen**.
+   Stattdessen als Pull Request (Branch `blog/<slug-de>`) öffnen und im Abschlussbericht klar
+   auf die offene Stelle hinweisen, damit ein Mensch entscheidet.
+4. Erst nach **BESTANDEN** veröffentlichen (Schritt 9).
+
+**Review-Checkliste:**
+- [ ] **Fachliche Richtigkeit:** jede Zahl/Regel/Behauptung stimmt mit dem offiziellen Stand überein
+- [ ] Keine unbelegten oder erfundenen Fakten; Unsicheres entfernt/abgeschwächt
+- [ ] DE und EN inhaltlich konsistent (gleiche Fakten, keine Widersprüche)
+- [ ] Thema nicht schon vorhanden (keine Dopplung mit Bestand)
 - [ ] DE + EN erstellt, `altSlug` gegenseitig korrekt
 - [ ] Frontmatter vollständig, `date` = heute, `tags` aus Bestand
-- [ ] Interne Links + Boatpass-App-CTA vorhanden
+- [ ] Interne Links zeigen auf existierende Seiten; Boatpass-App-CTA vorhanden
+- [ ] Sprache/Stil sauber (Rechtschreibung, Grammatik, „du"/„you", keine KI-Floskeln)
 - [ ] `npm run build` grün
 - [ ] Backlog abgehakt
