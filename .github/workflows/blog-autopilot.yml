@@ -1,0 +1,56 @@
+name: Blog-Autopilot
+
+# Läuft Di + Do um 07:07 UTC (~09:07 Berlin im Sommer / ~08:07 im Winter).
+# Erzeugt einen neuen SBF-Blogpost (DE+EN), prüft den Build und pusht ihn live.
+on:
+  schedule:
+    - cron: '7 7 * * 2,4'
+  workflow_dispatch: {}   # manuell auslösbar (Actions-Tab -> "Run workflow")
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-autopilot
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate blog post
+        id: generate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          node scripts/generate-blog-post.mjs | tee /tmp/gen.log
+          grep '^COMMIT_TITLE=' /tmp/gen.log | tail -1 >> "$GITHUB_OUTPUT"
+
+      - name: Verify build
+        run: npm run build
+
+      - name: Commit and push
+        run: |
+          git config user.name "Blog-Autopilot"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen – nichts zu committen."
+            exit 0
+          fi
+          git commit -m "${COMMIT_TITLE:-feat(blog): neuer Blogpost (Autopilot)}"
+          git push
+        env:
+          COMMIT_TITLE: ${{ steps.generate.outputs.COMMIT_TITLE }}
