@@ -6,7 +6,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 
 ## Offen
 
-- [ ] Bodensee-Schifferpatent – wann brauche ich es statt des SBF?
+- [x] Bodensee-Schifferpatent – wann brauche ich es statt des SBF? (2026-06-17: bodensee-schifferpatent / lake-constance-boat-license)
 - [ ] SBF im Ausland gültig? Führerscheinpflicht in Kroatien, Niederlande, Italien
 - [ ] Promillegrenze auf dem Boot – was gilt für Sportbootführer?
 - [ ] Die richtige Rettungsweste wählen – Auftriebsklassen erklärt
