@@ -7,7 +7,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 ## Offen
 
 - [x] Bodensee-Schifferpatent – wann brauche ich es statt des SBF? (2026-06-17: bodensee-schifferpatent / lake-constance-boat-license)
-- [ ] SBF im Ausland gültig? Führerscheinpflicht in Kroatien, Niederlande, Italien
+- [x] SBF im Ausland gültig? Führerscheinpflicht in Kroatien, Niederlande, Italien (2026-06-18: sbf-im-ausland-gueltig / sbf-valid-abroad)
 - [ ] Promillegrenze auf dem Boot – was gilt für Sportbootführer?
 - [ ] Die richtige Rettungsweste wählen – Auftriebsklassen erklärt
 - [ ] UBI vs. SRC – welcher Funkschein für welches Boot?
