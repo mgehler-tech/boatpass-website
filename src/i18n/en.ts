@@ -103,6 +103,10 @@ export const en: Translations = {
     lrcDesc: 'Long Range Certificate (sea radio) · official question catalog',
     lrcPaidFeatures: ['♾️ Unlimited study questions', '📝 Exam simulation', '📖 Question browser'],
     lrcPrice: '€6.99',
+    srcName: 'SRC sea radio',
+    srcDesc: 'Short Range Certificate (coastal sea radio) · official question catalog',
+    srcPaidFeatures: ['♾️ Unlimited study questions', '📝 Exam simulation', '📖 Question browser'],
+    srcPrice: '€6.99',
     freeTrialNote: 'Try within daily limit',
     ubiOnlyNote: 'Individual only · not in bundle',
     bundleLabel: 'Best value',
@@ -112,7 +116,6 @@ export const en: Translations = {
     bundleSave: 'Save €2.00',
     bundleCta: 'Unlock bundle',
     soon1: 'Bodenseeschifferpatent',
-    soon2: 'SRC — Short Range Certificate',
     soonLabel: 'Coming soon',
   },
   blog: {

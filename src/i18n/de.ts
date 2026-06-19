@@ -101,6 +101,10 @@ export const de = {
     lrcDesc: 'Langstreckenfunkzeugnis (Seefunk) · offizieller Fragenkatalog',
     lrcPaidFeatures: ['♾️ Unbegrenzte Lernfragen', '📝 Prüfungssimulation', '📖 Fragen-Browser'],
     lrcPrice: '€ 6,99',
+    srcName: 'SRC Seefunk',
+    srcDesc: 'Kurzstreckenzeugnis (Seefunk Küste) · offizieller Fragenkatalog',
+    srcPaidFeatures: ['♾️ Unbegrenzte Lernfragen', '📝 Prüfungssimulation', '📖 Fragen-Browser'],
+    srcPrice: '€ 6,99',
     freeTrialNote: 'Im Tageslimit testbar',
     ubiOnlyNote: 'Nur einzeln · nicht im Bundle',
     bundleLabel: 'Spar-Tipp',
@@ -110,7 +114,6 @@ export const de = {
     bundleSave: 'Spare 2,00 €',
     bundleCta: 'Paket freischalten',
     soon1: 'Bodenseeschifferpatent',
-    soon2: 'SRC — Kurzstreckenzeugnis',
     soonLabel: 'Bald verfügbar',
   },
   blog: {
