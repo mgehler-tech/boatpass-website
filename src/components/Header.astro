@@ -71,9 +71,116 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
         style="background: #3366FF; box-shadow: 0 4px 14px rgba(51,102,255,0.25); text-decoration: none;">
         {t.nav.getApp}
       </a>
+
+      <!-- Hamburger Button (Mobile only) -->
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-lg" style="background: rgba(51,102,255,0.06); border: 1px solid rgba(51,102,255,0.12);" aria-label="Menü öffnen" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
     </div>
   </nav>
+
+  <!-- Mobile Menu Panel -->
+  <div id="mobile-menu" class="mobile-menu-panel md:hidden" aria-hidden="true">
+    <nav class="px-5 py-4 flex flex-col gap-1">
+      <a href={`${getLocalizedPath(lang, '/')}#features`} class="mobile-nav-link">
+        {lang === 'de' ? 'Features' : 'Features'}
+      </a>
+      <a href={`${getLocalizedPath(lang, '/')}#pricing`} class="mobile-nav-link">
+        {lang === 'de' ? 'Preise' : 'Pricing'}
+      </a>
+
+      <!-- Führerscheine Accordion -->
+      <div class="mobile-accordion">
+        <button class="mobile-accordion-trigger mobile-nav-link w-full text-left" aria-expanded="false">
+          <span>{lang === 'de' ? 'Führerscheine' : 'Licenses'}</span>
+          <span class="accordion-chevron">▾</span>
+        </button>
+        <div class="mobile-accordion-body">
+          <a href="/sbf-binnen/" class="mobile-nav-sublink">SBF Binnen</a>
+          <a href="/sbf-see/" class="mobile-nav-sublink">SBF See</a>
+          <a href="/sbf-kosten/" class="mobile-nav-sublink">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
+          <a href="/sbf-pruefung-ablauf/" class="mobile-nav-sublink">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
+          <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
+          <a href="/ubi/" class="mobile-nav-sublink">UBI</a>
+          <a href="/src/" class="mobile-nav-sublink">SRC</a>
+          <a href="/lrc/" class="mobile-nav-sublink">LRC</a>
+          <span class="mobile-nav-sublink" style="opacity:0.45; cursor:default;">Bodenseeschifferpatent <span style="font-size:11px;color:#3366FF;">{lang === 'de' ? 'bald' : 'soon'}</span></span>
+        </div>
+      </div>
+
+      <a href={getLocalizedPath(lang, '/blog/')} class="mobile-nav-link">
+        {t.nav.blog}
+      </a>
+      <a href={getLocalizedPath(lang, '/faq/')} class="mobile-nav-link">
+        {t.nav.faq}
+      </a>
+
+      <div style="height:1px; background:rgba(51,102,255,0.10); margin:8px 0;"></div>
+
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        class="flex items-center justify-center gap-2 text-sm font-bold text-white py-3 rounded-xl"
+        style="background: #3366FF; box-shadow: 0 4px 14px rgba(51,102,255,0.25); text-decoration: none;">
+        {t.nav.getApp}
+      </a>
+    </nav>
+  </div>
 </header>
+
+<!-- Backdrop -->
+<div id="mobile-menu-backdrop" class="mobile-backdrop" aria-hidden="true"></div>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const backdrop = document.getElementById('mobile-menu-backdrop');
+  const lines = btn?.querySelectorAll('.hamburger-line');
+
+  function openMenu() {
+    menu?.classList.add('open');
+    backdrop?.classList.add('open');
+    btn?.setAttribute('aria-expanded', 'true');
+    menu?.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menu?.classList.remove('open');
+    backdrop?.classList.remove('open');
+    btn?.setAttribute('aria-expanded', 'false');
+    menu?.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  btn?.addEventListener('click', () => {
+    const isOpen = menu?.classList.contains('open');
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  backdrop?.addEventListener('click', closeMenu);
+
+  // Close on nav link click
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Accordion
+  menu?.querySelectorAll('.mobile-accordion-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+      const accordion = trigger.closest('.mobile-accordion');
+      const body = accordion?.querySelector('.mobile-accordion-body');
+      const isOpen = accordion?.classList.contains('accordion-open');
+      if (isOpen) {
+        accordion?.classList.remove('accordion-open');
+        trigger.setAttribute('aria-expanded', 'false');
+      } else {
+        accordion?.classList.add('accordion-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+</script>
 
 <style>
   .lang-switcher {
@@ -144,4 +251,93 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   /* "bald"-Einträge ohne Zielseite: sichtbar, aber nicht klickbar */
   .nav-dropdown-soon { cursor: default; opacity: 0.55; }
   .nav-dropdown-soon:hover { background: none; color: #4B5563; }
+
+  /* Hamburger lines */
+  .hamburger-line {
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #1A1F36;
+    border-radius: 2px;
+    margin: 2px 0;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  /* Mobile Menu Panel */
+  .mobile-menu-panel {
+    position: fixed;
+    top: 64px; /* header height */
+    left: 0;
+    right: 0;
+    background: white;
+    border-bottom: 1px solid rgba(51,102,255,0.10);
+    box-shadow: 0 8px 32px rgba(26,31,54,0.12);
+    transform: translateY(-8px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.22s cubic-bezier(0.4,0,0.2,1), opacity 0.22s;
+    z-index: 49;
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+  }
+  .mobile-menu-panel.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Backdrop */
+  .mobile-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,31,54,0.35);
+    z-index: 48;
+    backdrop-filter: blur(2px);
+  }
+  .mobile-backdrop.open { display: block; }
+
+  /* Mobile nav links */
+  .mobile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1A1F36;
+    text-decoration: none;
+    padding: 12px 14px;
+    border-radius: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+  }
+  .mobile-nav-link:hover { background: rgba(51,102,255,0.06); }
+
+  .mobile-nav-sublink {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4B5563;
+    text-decoration: none;
+    padding: 9px 14px 9px 28px;
+    border-radius: 8px;
+    transition: background 0.15s;
+  }
+  .mobile-nav-sublink:hover { background: rgba(51,102,255,0.06); color: #1A1F36; }
+
+  /* Accordion */
+  .accordion-chevron {
+    font-size: 12px;
+    transition: transform 0.2s;
+  }
+  .mobile-accordion-body {
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    padding-bottom: 4px;
+  }
+  .accordion-open .mobile-accordion-body { display: flex; }
+  .accordion-open .accordion-chevron { transform: rotate(180deg); }
 </style>
