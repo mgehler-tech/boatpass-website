@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Verfügbare Führerscheine/Themenseiten — verlinken auf die bestehenden Detailseiten
+// Verfügbare Führerscheine/Themenseiten – verlinken auf die bestehenden Detailseiten
 const available = [
   {
     icon: '🌊',
     title: 'SBF Binnen',
     tag: 'Flüsse, Kanäle & Seen',
-    desc: 'Der Sportbootführerschein für Binnengewässer — Flüsse, Kanäle und Seen. Pflicht ab 15 PS.',
+    desc: 'Der Sportbootführerschein für Binnengewässer – Flüsse, Kanäle und Seen. Pflicht ab 15 PS.',
     href: '/sbf-binnen/',
   },
   {
@@ -21,7 +21,7 @@ const available = [
     icon: '💶',
     title: 'SBF Kosten',
     tag: 'Gebühren & Spartipps',
-    desc: 'Prüfungsgebühren, Kurs und Praxis im Überblick — und wie du beim Lernen clever sparst.',
+    desc: 'Prüfungsgebühren, Kurs und Praxis im Überblick – und wie du beim Lernen clever sparst.',
     href: '/sbf-kosten/',
   },
   {
@@ -35,26 +35,26 @@ const available = [
     icon: '📻',
     title: 'UBI',
     tag: 'UKW-Sprechfunk Binnen',
-    desc: 'Das UKW-Sprechfunkzeugnis für die Binnenschifffahrt — jetzt als Modul in der App, einmalig 5,99 €.',
+    desc: 'Das UKW-Sprechfunkzeugnis für die Binnenschifffahrt – jetzt als Modul in der App, einmalig 5,99 €.',
     href: '/ubi/',
   },
   {
     icon: '📡',
     title: 'SRC',
     tag: 'Seefunk Küste',
-    desc: 'Das Short Range Certificate — UKW-Seefunkzeugnis (Kurzstrecke) für Küstengewässer — jetzt als Modul in der App, einmalig 6,99 €.',
+    desc: 'Das Short Range Certificate – UKW-Seefunkzeugnis (Kurzstrecke) für Küstengewässer – jetzt als Modul in der App, einmalig 6,99 €.',
     href: '/src/',
   },
   {
     icon: '🛰️',
     title: 'LRC',
     tag: 'Seefunk weltweit',
-    desc: 'Das Allgemeine Funkbetriebszeugnis für weltweiten Seefunk (UKW, Grenz-/Kurzwelle, Satellit) — jetzt als Modul in der App, einmalig 6,99 €.',
+    desc: 'Das Allgemeine Funkbetriebszeugnis für weltweiten Seefunk (UKW, Grenz-/Kurzwelle, Satellit) – jetzt als Modul in der App, einmalig 6,99 €.',
     href: '/lrc/',
   },
 ];
 
-// "Bald"-Themen — Bodensee noch ohne eigene Seite (nicht klickbar)
+// "Bald"-Themen – Bodensee noch ohne eigene Seite (nicht klickbar)
 const soon = [
   { icon: '⚓', title: 'Bodenseeschifferpatent', desc: 'Pflichtschein für den Bodensee.', href: null },
 ];
@@ -70,8 +70,8 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title="Bootsführerscheine im Überblick — welcher passt zu dir? | Boatpass"
-  description="Alle Bootsführerscheine auf einen Blick: SBF Binnen, SBF See, Kosten und Prüfungsablauf — plus Sprechfunkzeugnisse UBI und SRC. Finde den richtigen Schein."
+  title="Bootsführerscheine im Überblick – welcher passt zu dir? | Boatpass"
+  description="Alle Bootsführerscheine auf einen Blick: SBF Binnen, SBF See, Kosten und Prüfungsablauf – plus Sprechfunkzeugnisse UBI und SRC. Finde den richtigen Schein."
   lang="de"
   hasAlternate={false}
 >
@@ -87,7 +87,7 @@ const breadcrumbSchema = {
         Welche Lizenz<br>passt zu dir?
       </h1>
       <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto;">
-        Ob Binnengewässer oder Küste, Motorboot oder Funk an Bord — hier findest du
+        Ob Binnengewässer oder Küste, Motorboot oder Funk an Bord – hier findest du
         die richtige Lizenz und alles, was du für die Vorbereitung wissen musst.
       </p>
     </div>
@@ -101,7 +101,7 @@ const breadcrumbSchema = {
         Sportbootführerschein
       </h2>
       <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:28px;">
-        Mit Boatpass lernst du die komplette Theorie — die Detailseiten erklären jeden Schein im Detail.
+        Mit Boatpass lernst du die komplette Theorie – die Detailseiten erklären jeden Schein im Detail.
       </p>
       <div class="license-grid">
         {available.map(c => (
@@ -122,7 +122,7 @@ const breadcrumbSchema = {
         Bald verfügbar
       </h2>
       <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:28px;">
-        Wir arbeiten an weiteren Lizenzen — Sprechfunkzeugnisse und Spezialscheine folgen.
+        Wir arbeiten an weiteren Lizenzen – Sprechfunkzeugnisse und Spezialscheine folgen.
       </p>
       <div class="license-grid">
         {soon.map(c => (

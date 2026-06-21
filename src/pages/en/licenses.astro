@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-// Detailseiten existieren nur auf Deutsch (Pattern: hasAlternate={false}) — daher verlinken die Karten dorthin
+// Detailseiten existieren nur auf Deutsch (Pattern: hasAlternate={false}) – daher verlinken die Karten dorthin
 const available = [
   {
     icon: '🌊',
     title: 'SBF Inland',
     tag: 'Rivers, canals & lakes',
-    desc: 'The boating license for inland waters — rivers, canals and lakes. Required for motorboats above 15 HP.',
+    desc: 'The boating license for inland waters – rivers, canals and lakes. Required for motorboats above 15 HP.',
     href: '/sbf-binnen/',
   },
   {
@@ -21,7 +21,7 @@ const available = [
     icon: '💶',
     title: 'SBF Costs',
     tag: 'Fees & saving tips',
-    desc: 'Exam fees, courses and practice at a glance — and how to save money while studying.',
+    desc: 'Exam fees, courses and practice at a glance – and how to save money while studying.',
     href: '/sbf-kosten/',
   },
   {
@@ -35,15 +35,15 @@ const available = [
     icon: '📻',
     title: 'UBI',
     tag: 'VHF radio (inland)',
-    desc: 'The VHF radio certificate for inland navigation — now a module in the app, a one-time €5.99.',
+    desc: 'The VHF radio certificate for inland navigation – now a module in the app, a one-time €5.99.',
     href: '/ubi/',
   },
 ];
 
 const soon = [
-  { icon: '📡', title: 'SRC', desc: 'Short Range Certificate — marine radio.', href: '/src/' },
+  { icon: '📡', title: 'SRC', desc: 'Short Range Certificate – marine radio.', href: '/src/' },
   { icon: '⚓', title: 'Bodensee Licence', desc: 'Mandatory licence for Lake Constance.', href: null },
-  { icon: '🛰️', title: 'LRC', desc: 'Long Range Certificate — worldwide marine radio.', href: null },
+  { icon: '🛰️', title: 'LRC', desc: 'Long Range Certificate – worldwide marine radio.', href: null },
 ];
 
 const breadcrumbSchema = {
@@ -57,8 +57,8 @@ const breadcrumbSchema = {
 ---
 
 <BaseLayout
-  title="Boating Licenses at a Glance — Which One Fits You? | Boatpass"
-  description="All boating licenses at a glance: SBF Inland, SBF Coastal, costs and the exam process — plus the radio certificates UBI and SRC. Find the right license for you."
+  title="Boating Licenses at a Glance – Which One Fits You? | Boatpass"
+  description="All boating licenses at a glance: SBF Inland, SBF Coastal, costs and the exam process – plus the radio certificates UBI and SRC. Find the right license for you."
   lang="en"
   hasAlternate={false}
 >
@@ -74,7 +74,7 @@ const breadcrumbSchema = {
         Which license<br>fits you?
       </h1>
       <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto;">
-        Inland waters or coast, motorboat or radio on board — find the right license here
+        Inland waters or coast, motorboat or radio on board – find the right license here
         and everything you need to know to prepare.
       </p>
     </div>
@@ -88,7 +88,7 @@ const breadcrumbSchema = {
         Sportbootführerschein (SBF)
       </h2>
       <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:28px;">
-        With Boatpass you learn the complete theory — the detail pages explain each license in depth.
+        With Boatpass you learn the complete theory – the detail pages explain each license in depth.
       </p>
       <div class="license-grid">
         {available.map(c => (
@@ -109,7 +109,7 @@ const breadcrumbSchema = {
         Coming soon
       </h2>
       <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:28px;">
-        We're working on more catalogs — radio certificates and special licenses are on the way.
+        We're working on more catalogs – radio certificates and special licenses are on the way.
       </p>
       <div class="license-grid">
         {soon.map(c => (
