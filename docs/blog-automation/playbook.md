@@ -67,6 +67,8 @@ Neue Tags nur, wenn wirklich nötig und konsistent in beiden Sprachen.
 - **Formatierung:** zentrale Begriffe **fett**, Aufzählungen wo sinnvoll. Keine Tabellen
   nötig. Korrekte Fachbegriffe (ELWIS-Katalog, Prüfungsmodalitäten) – keine erfundenen
   Fakten/Zahlen. Im Zweifel konservativ formulieren.
+- **Keine Gedankenstriche (Em-Dash):** Das Zeichen „—" (langer Strich) ist verboten – auch
+  nicht als Aufzählung oder Trenner. Stattdessen kurzen Bindestrich „–" oder Komma/Punkt verwenden.
 - **Interne Verlinkung (wichtig für SEO):** verlinke 1–3 thematisch passende eigene
   Seiten/Posts, z. B. `/sbf-binnen/`, `/sbf-see/`, `/sbf-kosten/`,
   `/sbf-pruefung-ablauf/`, `/faq/` oder verwandte Blogposts. Markdown-Links.
@@ -110,6 +112,7 @@ Mängelliste.
 - [ ] DE + EN erstellt, `altSlug` gegenseitig korrekt
 - [ ] Frontmatter vollständig, `date` = heute, `tags` aus Bestand
 - [ ] Interne Links zeigen auf existierende Seiten; Boatpass-App-CTA vorhanden
+- [ ] Kein Em-Dash „—" im Text (verbotenes Zeichen, stattdessen „–" oder Komma/Punkt)
 - [ ] Sprache/Stil sauber (Rechtschreibung, Grammatik, „du"/„you", keine KI-Floskeln)
 - [ ] `npm run build` grün
 - [ ] Backlog abgehakt
