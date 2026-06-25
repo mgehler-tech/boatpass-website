@@ -1,7 +1,7 @@
 # Website-Optimierung – Playbook (für den geplanten Cloud-Agenten)
 
 Dieses Dokument ist die **vollständige, eigenständige Anleitung** für die Routine, die
-**Freitag und Sonntag um 09:00 Europe/Berlin** die **bestehende** Website boatpass.de technisch prüft
+**täglich um 09:00 Europe/Berlin** die **bestehende** Website boatpass.de technisch prüft
 und in **kleinen, fokussierten Schritten** verbessert. Der Agent startet ohne Vorwissen –
 alles Nötige steht hier.
 

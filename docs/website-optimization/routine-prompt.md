@@ -1,8 +1,8 @@
 # Routine-Prompt (zum Reinkopieren in claude.ai/code/routines)
 
 Diesen Text als **Prompt** der Claude Code Routine einfügen. Repository der Routine:
-`mgehler-tech/boatpass-website`. Zeitplan: **Freitag und Sonntag um 09:00 Europe/Berlin**.
-Cron: `0 9 * * 5,0` (Zeitzone Europe/Berlin; 5 = Freitag, 0 = Sonntag).
+`mgehler-tech/boatpass-website`. Zeitplan: **täglich um 09:00 Europe/Berlin**.
+Cron: `0 9 * * *` (Zeitzone Europe/Berlin).
 
 ---
 
