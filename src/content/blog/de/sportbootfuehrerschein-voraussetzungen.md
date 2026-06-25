@@ -8,7 +8,7 @@ lang: de
 author: "Marius Gehler"
 ---
 
-Bevor du die SBF-Prüfung ablegen kannst, musst du einige formale Voraussetzungen erfüllen und Unterlagen einreichen. Hier ist alles, was du wissen musst – von der Altersgrenze bis zur Prüfungsanmeldung.
+Bevor du die [SBF-Prüfung](/sbf-pruefung-ablauf/) ablegen kannst, musst du einige formale Voraussetzungen erfüllen und Unterlagen einreichen. Hier ist alles, was du wissen musst – von der Altersgrenze bis zur Prüfungsanmeldung.
 
 ## Mindestalter
 

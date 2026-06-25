@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "most-important-knots-sbf"
 ---
 
-Die Knoten sind für viele der praktische Teil mit dem größten „Aha-Effekt" – und der, den man am leichtesten unterschätzt. In der Praxisprüfung zum Sportbootführerschein See musst du Seemannsknoten nicht nur **knüpfen**, sondern auch ihren **Verwendungszweck** erklären. Hier bekommst du den Überblick über alle prüfungsrelevanten Knoten und wie du sie sicher beherrschst.
+Die Knoten sind für viele der praktische Teil mit dem größten „Aha-Effekt" – und der, den man am leichtesten unterschätzt. In der Praxisprüfung zum [Sportbootführerschein See](/sbf-see/) musst du Seemannsknoten nicht nur **knüpfen**, sondern auch ihren **Verwendungszweck** erklären. Hier bekommst du den Überblick über alle prüfungsrelevanten Knoten und wie du sie sicher beherrschst.
 
 ## Wie viele Knoten musst du können?
 

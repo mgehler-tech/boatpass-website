@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "how-to-register-sbf-exam"
 ---
 
-Du hast die Theorie gelernt und die Praxis geübt – jetzt fehlt nur noch die Anmeldung zur Prüfung. Hier kommen oft Fragen auf: Bei wem melde ich mich an? Welche Unterlagen brauche ich? Und was kostet das? Dieser Artikel führt dich Schritt für Schritt durch die Anmeldung zur Sportbootführerschein-Prüfung.
+Du hast die Theorie gelernt und die Praxis geübt – jetzt fehlt nur noch die Anmeldung zur Prüfung. Hier kommen oft Fragen auf: Bei wem melde ich mich an? Welche Unterlagen brauche ich? Und was kostet das? Dieser Artikel führt dich Schritt für Schritt durch die Anmeldung zur [Sportbootführerschein-Prüfung](/sbf-pruefung-ablauf/).
 
 ## Wer nimmt die Prüfung ab?
 

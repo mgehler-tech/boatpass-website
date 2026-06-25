@@ -69,4 +69,4 @@ Die Prüfungsgebühr beim DMYV liegt für den SBF Binnen aktuell bei ca. **131 �
 
 ## Fazit
 
-Mit dem richtigen Prüfungsverständnis, regelmäßigem Lernen und gezieltem Schwächentraining ist der SBF Binnen gut zu schaffen – auch ohne Vorwissen. Starte kostenlos mit der Boatpass-App: 15 Fragen täglich, offizieller ELWIS-Fragenkatalog, Fehler-Training inklusive.
+Mit dem richtigen Prüfungsverständnis, regelmäßigem Lernen und gezieltem Schwächentraining ist der [SBF Binnen](/sbf-binnen/) gut zu schaffen – auch ohne Vorwissen. Starte kostenlos mit der Boatpass-App: 15 Fragen täglich, offizieller ELWIS-Fragenkatalog, Fehler-Training inklusive.

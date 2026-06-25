@@ -90,4 +90,4 @@ Für den SBF Binnen sind bei täglichem Lernen von 30–45 Minuten **3–6 Woche
 
 ## Fazit
 
-Die SBF-Prüfung ist machbar – wenn du weißt, worauf es ankommt. Der häufigste Fehler ist, den Prüfungsaufbau nicht zu kennen und dann an einem der beiden Pflichtblöcke zu scheitern. Starte mit der Boatpass-App: 15 Fragen täglich kostenlos, offizieller ELWIS-Katalog, Prüfungsmodus inklusive.
+Die [SBF-Prüfung](/sbf-pruefung-ablauf/) ist machbar – wenn du weißt, worauf es ankommt. Der häufigste Fehler ist, den Prüfungsaufbau nicht zu kennen und dann an einem der beiden Pflichtblöcke zu scheitern. Starte mit der Boatpass-App: 15 Fragen täglich kostenlos, offizieller ELWIS-Katalog, Prüfungsmodus inklusive.

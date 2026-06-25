@@ -61,7 +61,7 @@ Sobald du regelmäßig fährst, ein eigenes Boot hast, aufs Meer willst oder im 
 
 ## Charterschein oder doch der SBF?
 
-Der Charterschein ist ideal für den **einmaligen Bootsurlaub** auf der Seenplatte. Wer aber öfter fahren will, ist mit dem **SBF Binnen** (Inland) oder **SBF See** (Küste) langfristig besser bedient: Der Führerschein gilt unbefristet, bundesweit und – mit ICC-Vermerk – auch im Ausland. Die Theorie dafür lässt sich heute bequem per App lernen.
+Der Charterschein ist ideal für den **einmaligen Bootsurlaub** auf der Seenplatte. Wer aber öfter fahren will, ist mit dem **[SBF Binnen](/sbf-binnen/)** (Inland) oder **[SBF See](/sbf-see/)** (Küste) langfristig besser bedient: Der Führerschein gilt unbefristet, bundesweit und – mit ICC-Vermerk – auch im Ausland. Die Theorie dafür lässt sich heute bequem per App lernen.
 
 ## Fazit
 

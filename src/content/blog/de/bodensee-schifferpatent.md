@@ -44,13 +44,13 @@ Kleinboote ohne Motor oder mit sehr kleinen Motoren unterliegen in der Regel kei
 
 ## Reicht der SBF Binnen oder SBF See?
 
-Kurze Antwort: **Nein**. Weder der SBF Binnen noch der SBF See berechtigen dich allein zur Fahrt mit einem führerscheinpflichtigen Motorboot auf dem Bodensee.
+Kurze Antwort: **Nein**. Weder der [SBF Binnen](/sbf-binnen/) noch der [SBF See](/sbf-see/) berechtigen dich allein zur Fahrt mit einem führerscheinpflichtigen Motorboot auf dem Bodensee.
 
 Der SBF Binnen gilt für deutsche Binnenwasserstraßen, jedoch nicht für den Bodensee, da dieser unter die ISB fällt. Der SBF See ist für Küsten- und Meeresgewässer ausgelegt – der Bodensee ist kein Meeresgewässer.
 
 Das klingt zunächst frustrierend, wenn du bereits einen oder beide Scheine hast. Der Silberstreif: Inhaber des **SBF Binnen oder SBF See** können je nach Behörde und aktueller Regelung von **vereinfachten Prüfungsanforderungen** profitieren, weil du das nötige Grundwissen bereits mitbringst. Frage dazu direkt bei der zuständigen Behörde oder einer Bodensee-Bootsschule nach, bevor du dich anmeldest.
 
-Eine Übersicht, wo der SBF Binnen und SBF See jeweils anerkannt werden, findest du im Artikel [SBF gültig – welcher Schein gilt wo?](/blog/de/sbf-gueltigkeit-welcher-schein-wo).
+Eine Übersicht, wo der SBF Binnen und SBF See jeweils anerkannt werden, findest du im Artikel [SBF gültig – welcher Schein gilt wo?](/blog/sbf-gueltigkeit-welcher-schein-wo/).
 
 ## So bekommst du das Bodensee-Schifferpatent
 
@@ -86,7 +86,7 @@ Wer den Bodensee kennt, weiß: Das Wetter hier kann sich schnell und dramatisch 
 
 Dass die Wetterkunde ein fester Bestandteil der BSP-Theorie ist, ist kein Zufall. Auf dem Bodensee – einem großen offenen Gewässer ohne Tidenschutz – ist das Lesen von Wetterlagen kein theoretisches Wissen, sondern eine direkte Sicherheitsfrage. Prüfungsrelevant und praxisrelevant sind hier dasselbe.
 
-Zum Thema Wetterkunde und dem **Beaufort-System** haben wir einen eigenen Artikel: [Windstärken und Beaufort-Skala für den SBF](/blog/de/wetterkunde-beaufort).
+Zum Thema Wetterkunde und dem **Beaufort-System** haben wir einen eigenen Artikel: [Windstärken und Beaufort-Skala für den SBF](/blog/wetterkunde-beaufort/).
 
 ## Für Bodensee-Anrainer, Urlauber und Charterfahrer
 

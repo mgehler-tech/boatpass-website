@@ -97,4 +97,4 @@ Wenn du beide Scheine gleichzeitig machst, trenne die Lernphasen. Eine Woche See
 
 ## Fazit
 
-Die schwierigsten SBF-Fragen betreffen beim See vor allem Wetterkunde, Lichterführung und Schallsignale – beim Binnen sind es die Segelfragen. Die Fehlerquoten (bis 48 %) zeigen, dass selbst engagierte Prüflinge an bestimmten Fragen scheitern. Der Schlüssel: Gezieltes Fehler-Training statt stumpfes Wiederholen aller Fragen. In der Boatpass-App werden genau die Fragen priorisiert, die du noch nicht sicher beherrschst.
+Die schwierigsten SBF-Fragen betreffen bei den [SBF-See-Prüfungsfragen](/sbf-see-pruefungsfragen/) vor allem Wetterkunde, Lichterführung und Schallsignale – bei den [SBF-Binnen-Prüfungsfragen](/sbf-binnen-pruefungsfragen/) sind es die Segelfragen. Die Fehlerquoten (bis 48 %) zeigen, dass selbst engagierte Prüflinge an bestimmten Fragen scheitern. Der Schlüssel: Gezieltes Fehler-Training statt stumpfes Wiederholen aller Fragen. In der Boatpass-App werden genau die Fragen priorisiert, die du noch nicht sicher beherrschst.

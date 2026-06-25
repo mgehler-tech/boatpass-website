@@ -8,7 +8,7 @@ lang: de
 author: "Marius Gehler"
 ---
 
-Die Navigationsaufgabe ist für viele Prüflinge die größte Hürde beim Sportbootführerschein See. Sie unterscheidet den SBF See vom SBF Binnen – und erfordert ein grundlegendes Verständnis der Seekartenarbeit. In diesem Artikel erklären wir den genauen Aufbau, die Aufgabentypen und geben Tipps für die Vorbereitung.
+Die Navigationsaufgabe ist für viele Prüflinge die größte Hürde beim [Sportbootführerschein See](/sbf-see/). Sie unterscheidet den SBF See vom SBF Binnen – und erfordert ein grundlegendes Verständnis der Seekartenarbeit. In diesem Artikel erklären wir den genauen Aufbau, die Aufgabentypen und geben Tipps für die Vorbereitung.
 
 ## Was ist die Navigationsaufgabe?
 

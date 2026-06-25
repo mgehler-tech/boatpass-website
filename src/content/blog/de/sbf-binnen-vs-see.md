@@ -15,7 +15,7 @@ Wenn du anfängst, dich mit dem Sportbootführerschein zu beschäftigen, stößt
 
 ### SBF Binnen
 
-Der SBF Binnen gilt auf allen **deutschen Binnenschifffahrtsstraßen** – also auf Flüssen, Kanälen und Seen, die offiziell als Bundeswasserstraßen eingestuft sind. Dazu gehören:
+Der [SBF Binnen](/sbf-binnen/) gilt auf allen **deutschen Binnenschifffahrtsstraßen** – also auf Flüssen, Kanälen und Seen, die offiziell als Bundeswasserstraßen eingestuft sind. Dazu gehören:
 
 - Rhein, Elbe, Mosel, Donau, Weser, Oder
 - Havel, Spree, Müritz, Chiemsee
@@ -26,7 +26,7 @@ Der SBF Binnen gilt auf allen **deutschen Binnenschifffahrtsstraßen** – also 
 
 ### SBF See
 
-Der SBF See gilt auf den deutschen **Seeschifffahrtsstraßen** – also auf Küstengewässern an Nord- und Ostsee sowie auf Küstengewässern international (Mittelmeer, Adria, Atlantik-Küste).
+Der [SBF See](/sbf-see/) gilt auf den deutschen **Seeschifffahrtsstraßen** – also auf Küstengewässern an Nord- und Ostsee sowie auf Küstengewässern international (Mittelmeer, Adria, Atlantik-Küste).
 
 - Nordsee: Wattenmeer, Helgoland
 - Ostsee: Kieler Förde, Rügen, Usedom

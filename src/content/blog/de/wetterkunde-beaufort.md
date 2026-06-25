@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "weather-beaufort-scale"
 ---
 
-Wetter ist auf See ein Sicherheitsfaktor – und deshalb fester Bestandteil der SBF-See-Theorieprüfung. Du musst nicht Meteorologe werden, aber die Grundlagen verstehen: Windstärken einschätzen, ein Tief von einem Hoch unterscheiden und Warnzeichen erkennen. Dieser Artikel erklärt die wichtigsten Themen kompakt.
+Wetter ist auf See ein Sicherheitsfaktor – und deshalb fester Bestandteil der [SBF-See-Theorieprüfung](/sbf-see/). Du musst nicht Meteorologe werden, aber die Grundlagen verstehen: Windstärken einschätzen, ein Tief von einem Hoch unterscheiden und Warnzeichen erkennen. Dieser Artikel erklärt die wichtigsten Themen kompakt.
 
 ## Die Beaufort-Skala
 
