@@ -67,7 +67,7 @@ const soonItems = [t.pricing.soon1];
             </div>
 
             <!-- Divider -->
-            <div style="width:1px; background:rgba(255,255,255,0.1); flex-shrink:0;"></div>
+            <div class="tier-divider" style="width:1px; background:rgba(255,255,255,0.1); flex-shrink:0;"></div>
 
             <!-- Paid column -->
             <div class="tier-col">
@@ -426,6 +426,11 @@ const soonItems = [t.pricing.soon1];
     .paid-grid { grid-template-columns: 1fr; }
     .bundle-inner { flex-direction: column; align-items: flex-start; }
     .bundle-action { width: 100%; justify-content: space-between; }
+    /* Free-vs-Paid-Vergleich auf schmalen Screens untereinander stapeln,
+       statt zwei zu enge Spalten nebeneinander zu quetschen. */
+    .catalog-card.featured { padding: 24px; }
+    .tier-row { flex-direction: column; gap: 16px; }
+    .tier-divider { width: 100%; height: 1px; }
   }
 </style>
 
