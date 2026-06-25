@@ -13,6 +13,14 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "UBI Sprechfunk", "item": "https://boatpass.de/ubi/" },
   ],
 };
+
+const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
+  { name: 'Verkehrskreise', desc: 'Kanal- und Revierfunk, Streckenfunk auf Binnenwasserstraßen', count: 30, icon: 'wifi', color: '#7C3AED', bg: 'rgba(124,58,237,0.10)' },
+  { name: 'Betriebsverfahren', desc: 'Gesprächsabwicklung, Prioritäten & Sprechprozeduren', count: 29, icon: 'microphone', color: '#EA580C', bg: 'rgba(234,88,12,0.10)' },
+  { name: 'ATIS & Technik', desc: 'Automatische Senderidentifizierung und Gerätekunde', count: 25, icon: 'satellite', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
+  { name: 'Notruf & Sicherheit', desc: 'Notrufe, Dringlichkeits- und Sicherheitsverkehr', count: 24, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
+  { name: 'Funk & Regelwerk', desc: 'Frequenzen, Lizenzrecht & Funkvorschriften', count: 22, icon: 'scale', color: '#1D4ED8', bg: 'rgba(29,78,216,0.10)' },
+];
 ---
 
 <BaseLayout
@@ -68,16 +76,19 @@ const breadcrumbSchema = {
       <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">Wer braucht das UBI?</h2>
       <div style="display:flex; flex-direction:column; gap:12px;">
         {([
-          { icon: 'anchor', text: 'Wer eine UKW-Sprechfunkanlage auf Binnenwasserstraßen betreibt' },
-          { icon: 'lifebuoy', text: 'Sportbootfahrer, die auf stark befahrenen Wasserstraßen (Rhein, Elbe, Donau) unterwegs sind' },
-          { icon: 'satellite', text: 'Wer AIS-Geräte (Automatic Identification System) mit Sendebetrieb nutzt' },
-          { icon: 'home', text: 'Charterer von Hausbooten und größeren Motorbooten auf Binnenwasserstraßen' },
-        ] satisfies { icon: IconName; text: string }[]).map(item => (
+          { icon: 'anchor', title: 'Binnenfunk-Pflicht', desc: 'Wer eine UKW-Sprechfunkanlage auf Binnenwasserstraßen betreibt' },
+          { icon: 'lifebuoy', title: 'Stark befahrene Reviere', desc: 'Sportbootfahrer, die auf Rhein, Elbe oder Donau unterwegs sind' },
+          { icon: 'satellite', title: 'AIS-Sendebetrieb', desc: 'Wer AIS-Geräte (Automatic Identification System) mit Sendebetrieb nutzt' },
+          { icon: 'home', title: 'Hausboote & Charter', desc: 'Charterer von Hausbooten und größeren Motorbooten auf Binnenwasserstraßen' },
+        ] satisfies { icon: IconName; title: string; desc: string }[]).map(item => (
           <div style="display:flex; align-items:flex-start; gap:14px; background:white; border:1px solid rgba(51,102,255,0.1); border-radius:14px; padding:18px;">
-            <span style="width:38px; height:38px; border-radius:10px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
               <Icon name={item.icon} size={20} stroke="#3366FF" strokeWidth={1.75} />
             </span>
-            <span style="font-size:15px; color:#4B5563; line-height:1.6;">{item.text}</span>
+            <div>
+              <div style="font-weight:700; color:#1A1F36; margin-bottom:3px; font-size:14px;">{item.title}</div>
+              <div style="font-size:14px; color:#4B5563; line-height:1.6;">{item.desc}</div>
+            </div>
           </div>
         ))}
       </div>
@@ -145,6 +156,51 @@ const breadcrumbSchema = {
       <p style="font-size:13px; color:#9CA3AF; line-height:1.6; margin-top:12px;">
         Stand der Gebühren laut DSV. Wiederholung von Theorie <u>oder</u> Praxis: 45,64 €. Bei Auslandsprüfungen können zusätzliche Reisekosten anfallen. Diese amtlichen Gebühren sind unabhängig vom Boatpass UBI-Lernmodul (einmalig 5,99 €).
       </p>
+    </section>
+
+    <!-- So hilft Boatpass beim UBI -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">So hilft Boatpass beim UBI</h2>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        {([
+          { icon: 'book', title: 'Vollständiger UBI-Fragenkatalog', desc: 'Alle offiziellen UBI-Fragen zu Binnenfunk und ATIS – vollständig abgedeckt, immer aktuell.' },
+          { icon: 'target', title: 'Prüfungssimulation', desc: 'Übe unter echten Prüfungsbedingungen mit Bestehensgrenze und Zeitdruck.' },
+          { icon: 'refresh', title: 'Fehler-Training', desc: 'Nur deine Schwachstellen trainieren – effizient und zielgerichtet.' },
+          { icon: 'chart', title: 'Fortschritt nach Kategorie', desc: 'Sieh nach Thema aufgeschlüsselt, wie gut du auf die UBI-Prüfung vorbereitet bist.' },
+        ] satisfies { icon: IconName; title: string; desc: string }[]).map(f => (
+          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
+            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <Icon name={f.icon} size={21} stroke="#3366FF" strokeWidth={1.75} />
+            </span>
+            <div>
+              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
+              <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Lernen nach Kategorie -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:8px;">Lernen nach Kategorie</h2>
+      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:20px;">
+        Der UBI-Fragenkatalog ist in Themengebiete unterteilt – übe gezielt nach Schwachstellen.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        {categories.map(c => (
+          <div style="display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px;">
+            <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
+              <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
+            </span>
+            <div style="flex:1; min-width:0;">
+              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
+              <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;">{c.desc}</div>
+            </div>
+            <span style="font-size:12px; font-weight:700; color:#6B7280; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} Fragen</span>
+          </div>
+        ))}
+      </div>
     </section>
 
     <!-- Boatpass UBI-Modul verfügbar -->

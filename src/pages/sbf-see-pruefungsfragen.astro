@@ -15,6 +15,15 @@ const breadcrumbSchema = {
   ],
 };
 
+const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
+  { name: 'Schifffahrtsrecht', desc: 'Vorfahrtregeln, Lichterführung & Kollisionsverhütungsregeln', count: 130, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
+  { name: 'Navigation & Seekarte', desc: 'Kartenarbeit, Kurse, Gezeiten & Strom', count: 72, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
+  { name: 'Sicherheit', desc: 'Rettungsausrüstung, Notsignale & Sicherheitsverhalten', count: 40, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
+  { name: 'Signale & Zeichen', desc: 'Schall-, Sicht- und Seezeichen', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
+  { name: 'Wetterkunde', desc: 'Wind, Wetter, Gezeitentafel & Vorhersage', count: 10, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
+  { name: 'Allgemein', desc: 'Allgemeine Grundlagen & Seemannschaft', count: 5, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
+];
+
 const faqs = [
   {
     q: 'Was ist beim SBF-See-Fragenkatalog anders als beim Binnen?',
@@ -67,7 +76,7 @@ const faqSchema = {
         Der komplette amtliche ELWIS-Katalog See – plus die Navigationsaufgabe mit realem Navigationsteil. Übe alle 39 Prüfungsfragen unter echten Bedingungen.
       </p>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
+        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
         ▶&nbsp;Kostenlos Fragen üben
       </a>
     </div>
@@ -151,6 +160,28 @@ const faqSchema = {
           <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
             <div style="font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</div>
             <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Lernen nach Kategorie -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:8px;">Lernen nach Kategorie</h2>
+      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:20px;">
+        Der Fragenkatalog ist in Themengebiete unterteilt – übe gezielt nach Schwachstellen.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        {categories.map(c => (
+          <div style="display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px;">
+            <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
+              <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
+            </span>
+            <div style="flex:1; min-width:0;">
+              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
+              <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;">{c.desc}</div>
+            </div>
+            <span style="font-size:12px; font-weight:700; color:#6B7280; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} Fragen</span>
           </div>
         ))}
       </div>
