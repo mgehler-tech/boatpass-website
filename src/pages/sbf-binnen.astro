@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import type { IconName } from '../icons';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 
@@ -70,7 +72,7 @@ const compare = [
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
     <div style="max-width:720px; margin:0 auto;">
       <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        ⚓ Sportbootführerschein Binnen
+        Sportbootführerschein Binnen
       </div>
       <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
         SBF Binnen lernen –<br>die smarte Lernapp
@@ -133,15 +135,15 @@ const compare = [
       </p>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-bottom:18px;">
         <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">📝 Anmeldung</div>
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Anmeldung</div>
           <div style="font-size:15px; color:#6B7280; line-height:1.65;">Antrag beim Prüfungsausschuss, Passbild und Ausweis – Mindestalter 16 Jahre.</div>
         </div>
         <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">🚤 Praktische Manöver</div>
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Praktische Manöver</div>
           <div style="font-size:15px; color:#6B7280; line-height:1.65;">An- und Ablegen, Wenden, Aufstoppen und das Mann-über-Bord-Manöver.</div>
         </div>
         <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">🪢 Knoten</div>
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Knoten</div>
           <div style="font-size:15px; color:#6B7280; line-height:1.65;">Die prüfungsrelevanten Knoten zügig anwenden (z. B. Palstek, Webeleinstek, Klampe).</div>
         </div>
       </div>
@@ -179,15 +181,15 @@ const compare = [
       </p>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
         <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">✓ Wo er gilt</div>
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Wo er gilt</div>
           <div style="font-size:15px; color:#6B7280; line-height:1.65;">Flüsse, Kanäle und Binnenseen auf deutschen Binnenschifffahrtsstraßen.</div>
         </div>
         <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">⚓ Voraussetzungen</div>
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Voraussetzungen</div>
           <div style="font-size:15px; color:#6B7280; line-height:1.65;">Mindestalter 16 Jahre. Der Schein wird vom DMYV abgenommen und gilt unbegrenzt.</div>
         </div>
         <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">⚠️ Regionale Grenzen</div>
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Regionale Grenzen</div>
           <div style="font-size:15px; color:#6B7280; line-height:1.65;">Auf manchen Revieren (z. B. Rhein) gelten strengere Leistungsgrenzen – vorher prüfen.</div>
         </div>
       </div>
@@ -205,8 +207,8 @@ const compare = [
           <thead>
             <tr style="background:rgba(26,31,54,0.04);">
               <th style="text-align:left; padding:14px 18px; font-weight:700; color:#1A1F36;"></th>
-              <th style="text-align:left; padding:14px 18px; font-weight:800; color:#1A1F36;">🌊 SBF Binnen</th>
-              <th style="text-align:left; padding:14px 18px; font-weight:800; color:#1A1F36;">⛵ SBF See</th>
+              <th style="text-align:left; padding:14px 18px; font-weight:800; color:#1A1F36;">SBF Binnen</th>
+              <th style="text-align:left; padding:14px 18px; font-weight:800; color:#1A1F36;">SBF See</th>
             </tr>
           </thead>
           <tbody>
@@ -240,14 +242,16 @@ const compare = [
     <section style="margin-bottom:48px;">
       <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">So hilft Boatpass beim SBF Binnen</h2>
       <div style="display:flex; flex-direction:column; gap:16px;">
-        {[
-          { icon: '📚', title: 'Vollständiger ELWIS-Katalog', desc: 'Alle 253+ offiziellen Fragen für SBF Binnen – immer aktuell, direkt in der App.' },
-          { icon: '🎯', title: 'Prüfungssimulation', desc: 'Echte Prüfungsbedingungen: 30 Fragen, 45 Minuten, Bestehensgrenze – genau wie am Prüfungstag.' },
-          { icon: '🔁', title: 'Fehler-Training', desc: 'Trainiere gezielt die Fragen, die du noch nicht kannst. Kein Zeitverschwendung mit bereits gelernten Inhalten.' },
-          { icon: '📊', title: 'Fortschrittsanzeige', desc: 'Sieh jederzeit, wie weit du bist – nach Kategorie aufgeschlüsselt.' },
-        ].map(f => (
+        {([
+          { icon: 'book', title: 'Vollständiger ELWIS-Katalog', desc: 'Alle 253+ offiziellen Fragen für SBF Binnen – immer aktuell, direkt in der App.' },
+          { icon: 'target', title: 'Prüfungssimulation', desc: 'Echte Prüfungsbedingungen: 30 Fragen, 45 Minuten, Bestehensgrenze – genau wie am Prüfungstag.' },
+          { icon: 'refresh', title: 'Fehler-Training', desc: 'Trainiere gezielt die Fragen, die du noch nicht kannst. Kein Zeitverschwendung mit bereits gelernten Inhalten.' },
+          { icon: 'chart', title: 'Fortschrittsanzeige', desc: 'Sieh jederzeit, wie weit du bist – nach Kategorie aufgeschlüsselt.' },
+        ] satisfies { icon: IconName; title: string; desc: string }[]).map(f => (
           <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
-            <span style="font-size:24px; flex-shrink:0;">{f.icon}</span>
+            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <Icon name={f.icon} size={21} stroke="#3366FF" strokeWidth={1.75} />
+            </span>
             <div>
               <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
               <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>

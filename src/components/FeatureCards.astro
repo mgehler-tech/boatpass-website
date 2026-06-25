@@ -1,5 +1,7 @@
 ---
 import { useTranslations } from '../i18n/index';
+import Icon from './Icon.astro';
+import type { IconName } from '../icons';
 
 interface Props {
   lang: 'de' | 'en';
@@ -8,20 +10,20 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-const features = [
-  { icon: '📚', title: t.features.learn.title, desc: t.features.learn.desc },
-  { icon: '📝', title: t.features.exam.title, desc: t.features.exam.desc },
-  { icon: '🎯', title: t.features.training.title, desc: t.features.training.desc },
-  { icon: '📊', title: t.features.progress.title, desc: t.features.progress.desc },
-  { icon: '🌐', title: t.features.languages.title, desc: t.features.languages.desc },
-  { icon: '⚓', title: t.features.catalog.title, desc: t.features.catalog.desc },
+const features: { icon: IconName; title: string; desc: string }[] = [
+  { icon: 'book', title: t.features.learn.title, desc: t.features.learn.desc },
+  { icon: 'clipboard', title: t.features.exam.title, desc: t.features.exam.desc },
+  { icon: 'target', title: t.features.training.title, desc: t.features.training.desc },
+  { icon: 'chart', title: t.features.progress.title, desc: t.features.progress.desc },
+  { icon: 'globe', title: t.features.languages.title, desc: t.features.languages.desc },
+  { icon: 'anchor', title: t.features.catalog.title, desc: t.features.catalog.desc },
 ];
 ---
 
 <section id="features" class="max-w-6xl mx-auto px-6 py-24">
   <div class="reveal-item section-header" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
     <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
-      ⚡ {t.features.chip}
+      {t.features.chip}
     </div>
     <h2 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:14px;">{t.features.title}</h2>
     <p style="font-size:16px; color:#6B7280; max-width:440px; line-height:1.65; margin-bottom:56px;">{t.features.subtitle}</p>
@@ -31,8 +33,8 @@ const features = [
     {features.map(f => (
       <div class="feat-card reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
         <div class="feat-top-line"></div>
-        <div style="width:52px; height:52px; border-radius:14px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; font-size:24px; margin-bottom:20px;">
-          {f.icon}
+        <div style="width:52px; height:52px; border-radius:14px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+          <Icon name={f.icon} size={24} stroke="#3366FF" strokeWidth={1.75} />
         </div>
         <h3 style="font-size:17px; font-weight:800; color:#1A1F36; margin-bottom:10px; letter-spacing:-0.2px;">{f.title}</h3>
         <p style="font-size:14px; color:#6B7280; line-height:1.65;">{f.desc}</p>

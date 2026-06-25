@@ -1,5 +1,6 @@
 ---
 import { useTranslations } from '../i18n/index';
+import Icon from './Icon.astro';
 
 interface Props {
   lang: 'de' | 'en';
@@ -18,7 +19,7 @@ const soonItems = [t.pricing.soon1];
     <!-- Header -->
     <div class="reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; margin-bottom:56px;">
       <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
-        💳 {t.pricing.chip}
+        {t.pricing.chip}
       </div>
       <h2 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:14px; max-width:640px; margin-left:auto; margin-right:auto;">{t.pricing.title}</h2>
       <p style="font-size:16px; color:#6B7280; max-width:520px; margin:0 auto;">{t.pricing.subtitle}</p>
@@ -26,8 +27,8 @@ const soonItems = [t.pricing.soon1];
 
     <!-- Model hint -->
     <div class="reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; margin-bottom:40px;">
-      <div style="display:inline-flex; align-items:center; gap:10px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:100px; padding:10px 20px; box-shadow:0 2px 8px rgba(26,31,54,0.04);">
-        <span style="font-size:15px;">🗂️</span>
+      <div style="display:inline-flex; align-items:center; gap:8px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:100px; padding:10px 20px; box-shadow:0 2px 8px rgba(26,31,54,0.04);">
+        <Icon name="check" size={15} stroke="#3366FF" strokeWidth={2.25} />
         <span style="font-size:13px; font-weight:600; color:#4B5563;">{t.pricing.modelHint}</span>
       </div>
     </div>
@@ -257,7 +258,7 @@ const soonItems = [t.pricing.soon1];
       <div class="bundle-inner">
         <div style="text-align:left;">
           <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.18); color:white; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:14px;">
-            ⭐ {t.pricing.bundleLabel}
+            {t.pricing.bundleLabel}
           </div>
           <div style="font-size:26px; font-weight:900; color:white; letter-spacing:-0.5px; margin-bottom:4px;">{t.pricing.bundleName}</div>
           <div style="font-size:14px; color:rgba(255,255,255,0.75);">{t.pricing.bundleDesc}</div>

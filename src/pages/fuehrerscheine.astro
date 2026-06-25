@@ -1,52 +1,54 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import type { IconName } from '../icons';
 
 // Verfügbare Führerscheine/Themenseiten – verlinken auf die bestehenden Detailseiten
 const available = [
   {
-    icon: '🌊',
+    icon: 'waves' as IconName,
     title: 'SBF Binnen',
     tag: 'Flüsse, Kanäle & Seen',
     desc: 'Der Sportbootführerschein für Binnengewässer – Flüsse, Kanäle und Seen. Pflicht ab 15 PS.',
     href: '/sbf-binnen/',
   },
   {
-    icon: '⛵',
+    icon: 'sailboat' as IconName,
     title: 'SBF See',
     tag: 'Nord- & Ostsee',
     desc: 'Der Schein für Küstengewässer von Nord- und Ostsee. Eigene Prüfung mit Navigationsaufgabe.',
     href: '/sbf-see/',
   },
   {
-    icon: '💶',
+    icon: 'banknotes' as IconName,
     title: 'SBF Kosten',
     tag: 'Gebühren & Spartipps',
     desc: 'Prüfungsgebühren, Kurs und Praxis im Überblick – und wie du beim Lernen clever sparst.',
     href: '/sbf-kosten/',
   },
   {
-    icon: '📋',
+    icon: 'document' as IconName,
     title: 'Prüfung & Ablauf',
     tag: 'Theorie & Praxis',
     desc: 'Wie Theorie- und Praxisprüfung ablaufen, wie du dich anmeldest und was am Prüfungstag zählt.',
     href: '/sbf-pruefung-ablauf/',
   },
   {
-    icon: '📻',
+    icon: 'phone' as IconName,
     title: 'UBI',
     tag: 'UKW-Sprechfunk Binnen',
     desc: 'Das UKW-Sprechfunkzeugnis für die Binnenschifffahrt – jetzt als Modul in der App, einmalig 5,99 €.',
     href: '/ubi/',
   },
   {
-    icon: '📡',
+    icon: 'satellite' as IconName,
     title: 'SRC',
     tag: 'Seefunk Küste',
     desc: 'Das Short Range Certificate – UKW-Seefunkzeugnis (Kurzstrecke) für Küstengewässer – jetzt als Modul in der App, einmalig 6,99 €.',
     href: '/src/',
   },
   {
-    icon: '🛰️',
+    icon: 'globe' as IconName,
     title: 'LRC',
     tag: 'Seefunk weltweit',
     desc: 'Das Allgemeine Funkbetriebszeugnis für weltweiten Seefunk (UKW, Grenz-/Kurzwelle, Satellit) – jetzt als Modul in der App, einmalig 6,99 €.',
@@ -56,7 +58,7 @@ const available = [
 
 // "Bald"-Themen – Bodensee noch ohne eigene Seite (nicht klickbar)
 const soon = [
-  { icon: '⚓', title: 'Bodenseeschifferpatent', desc: 'Pflichtschein für den Bodensee.', href: null },
+  { icon: 'anchor' as IconName, title: 'Bodenseeschifferpatent', desc: 'Pflichtschein für den Bodensee.', href: null },
 ];
 
 const breadcrumbSchema = {
@@ -81,7 +83,7 @@ const breadcrumbSchema = {
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
     <div style="max-width:720px; margin:0 auto;">
       <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        ⚓ Alle Lizenzen
+        Alle Lizenzen
       </div>
       <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
         Welche Lizenz<br>passt zu dir?
@@ -106,7 +108,7 @@ const breadcrumbSchema = {
       <div class="license-grid">
         {available.map(c => (
           <a href={c.href} class="license-card">
-            <div class="license-icon">{c.icon}</div>
+            <div class="license-icon"><Icon name={c.icon} size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
             <div class="license-title">{c.title}</div>
             <span class="license-tag">{c.tag}</span>
             <div class="license-desc">{c.desc}</div>
@@ -129,7 +131,7 @@ const breadcrumbSchema = {
           c.href ? (
             <a href={c.href} class="license-card license-card-soon">
               <span class="license-soon-badge">bald</span>
-              <div class="license-icon">{c.icon}</div>
+              <div class="license-icon"><Icon name={c.icon} size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
               <div class="license-title">{c.title}</div>
               <div class="license-desc">{c.desc}</div>
               <div class="license-link">Vorschau →</div>
@@ -137,7 +139,7 @@ const breadcrumbSchema = {
           ) : (
             <div class="license-card license-card-soon license-card-disabled">
               <span class="license-soon-badge">bald</span>
-              <div class="license-icon">{c.icon}</div>
+              <div class="license-icon"><Icon name={c.icon} size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
               <div class="license-title">{c.title}</div>
               <div class="license-desc">{c.desc}</div>
             </div>
@@ -172,7 +174,16 @@ const breadcrumbSchema = {
     box-shadow: 0 16px 36px rgba(26,31,54,0.10);
     border-color: rgba(51,102,255,0.28);
   }
-  .license-icon { font-size: 32px; margin-bottom: 14px; }
+  .license-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(51,102,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
   .license-title {
     font-size: 20px;
     font-weight: 800;

@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import type { IconName } from '../icons';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 
@@ -56,7 +58,7 @@ const faqSchema = {
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
     <div style="max-width:720px; margin:0 auto;">
       <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        📝 SBF Binnen Prüfungsfragen
+        SBF Binnen Prüfungsfragen
       </div>
       <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
         SBF Binnen Fragen –<br>offiziellen Katalog üben
@@ -112,13 +114,15 @@ const faqSchema = {
       <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">SBF-Binnen-Fragen effektiv üben</h2>
       <div style="display:flex; flex-direction:column; gap:16px;">
         {[
-          { icon: '📚', title: 'Lernmodus: Kategorie für Kategorie', desc: 'Arbeite den kompletten Katalog strukturiert nach Themengebieten durch, in deinem Tempo. So bleibt kein Thema offen.' },
-          { icon: '🎯', title: 'Prüfungssimulation: 30 Fragen, 45 Minuten', desc: 'Übe unter echten Prüfungsbedingungen mit zufälligem Bogen und Bestehensgrenze – genau wie am Prüfungstag.' },
-          { icon: '🔁', title: 'Fehler-Training: nur deine Schwachstellen', desc: 'Wiederhole gezielt die Fragen, die du noch nicht sicher kannst, statt Zeit mit bereits Gelerntem zu verlieren.' },
-          { icon: '📊', title: 'Fortschritt im Blick', desc: 'Sieh nach Kategorie aufgeschlüsselt, wo du stehst und wann du prüfungsreif bist.' },
+          { icon: 'book', title: 'Lernmodus: Kategorie für Kategorie', desc: 'Arbeite den kompletten Katalog strukturiert nach Themengebieten durch, in deinem Tempo. So bleibt kein Thema offen.' },
+          { icon: 'target', title: 'Prüfungssimulation: 30 Fragen, 45 Minuten', desc: 'Übe unter echten Prüfungsbedingungen mit zufälligem Bogen und Bestehensgrenze – genau wie am Prüfungstag.' },
+          { icon: 'refresh', title: 'Fehler-Training: nur deine Schwachstellen', desc: 'Wiederhole gezielt die Fragen, die du noch nicht sicher kannst, statt Zeit mit bereits Gelerntem zu verlieren.' },
+          { icon: 'chart', title: 'Fortschritt im Blick', desc: 'Sieh nach Kategorie aufgeschlüsselt, wo du stehst und wann du prüfungsreif bist.' },
         ].map(f => (
           <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
-            <span style="font-size:24px; flex-shrink:0;">{f.icon}</span>
+            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <Icon name={f.icon as IconName} size={21} stroke="#3366FF" strokeWidth={1.75} />
+            </span>
             <div>
               <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
               <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>

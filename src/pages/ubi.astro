@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import type { IconName } from '../icons';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 
@@ -25,7 +27,7 @@ const breadcrumbSchema = {
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
     <div style="max-width:720px; margin:0 auto;">
       <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        📻 UKW-Sprechfunkzeugnis Binnen
+        UKW-Sprechfunkzeugnis Binnen
       </div>
       <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
         UBI lernen –<br>alles zum Sprechfunkzeugnis
@@ -37,7 +39,8 @@ const breadcrumbSchema = {
 
       <!-- Verfügbar Badge -->
       <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#047857; font-size:14px; font-weight:700; padding:10px 20px; border-radius:14px; margin-bottom:24px;">
-        ✅ Boatpass UBI-Modul – jetzt verfügbar · einmalig 5,99 €
+        <Icon name="check" size={17} stroke="#047857" strokeWidth={2.5} />
+        Boatpass UBI-Modul – jetzt verfügbar · einmalig 5,99 €
       </div>
       <br/>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
@@ -64,14 +67,16 @@ const breadcrumbSchema = {
     <section style="margin-bottom:48px;">
       <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">Wer braucht das UBI?</h2>
       <div style="display:flex; flex-direction:column; gap:12px;">
-        {[
-          { icon: '⚓', text: 'Wer eine UKW-Sprechfunkanlage auf Binnenwasserstraßen betreibt' },
-          { icon: '🚤', text: 'Sportbootfahrer, die auf stark befahrenen Wasserstraßen (Rhein, Elbe, Donau) unterwegs sind' },
-          { icon: '📡', text: 'Wer AIS-Geräte (Automatic Identification System) mit Sendebetrieb nutzt' },
-          { icon: '🏕️', text: 'Charterer von Hausbooten und größeren Motorbooten auf Binnenwasserstraßen' },
-        ].map(item => (
+        {([
+          { icon: 'anchor', text: 'Wer eine UKW-Sprechfunkanlage auf Binnenwasserstraßen betreibt' },
+          { icon: 'lifebuoy', text: 'Sportbootfahrer, die auf stark befahrenen Wasserstraßen (Rhein, Elbe, Donau) unterwegs sind' },
+          { icon: 'satellite', text: 'Wer AIS-Geräte (Automatic Identification System) mit Sendebetrieb nutzt' },
+          { icon: 'home', text: 'Charterer von Hausbooten und größeren Motorbooten auf Binnenwasserstraßen' },
+        ] satisfies { icon: IconName; text: string }[]).map(item => (
           <div style="display:flex; align-items:flex-start; gap:14px; background:white; border:1px solid rgba(51,102,255,0.1); border-radius:14px; padding:18px;">
-            <span style="font-size:20px; flex-shrink:0;">{item.icon}</span>
+            <span style="width:38px; height:38px; border-radius:10px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <Icon name={item.icon} size={20} stroke="#3366FF" strokeWidth={1.75} />
+            </span>
             <span style="font-size:15px; color:#4B5563; line-height:1.6;">{item.text}</span>
           </div>
         ))}
@@ -105,7 +110,7 @@ const breadcrumbSchema = {
         </p>
       </div>
       <div style="display:flex; align-items:flex-start; gap:12px; background:rgba(16,185,129,0.07); border:1px solid rgba(16,185,129,0.25); border-radius:14px; padding:20px;">
-        <span style="font-size:20px; flex-shrink:0;">💡</span>
+        <span style="flex-shrink:0; margin-top:1px;"><Icon name="lightbulb" size={20} stroke="#047857" strokeWidth={1.75} /></span>
         <p style="font-size:15px; color:#4B5563; line-height:1.7; margin:0;">
           <strong style="color:#047857;">Schon ein Seefunkzeugnis?</strong> Für Inhaber des <a href="/src/" style="color:#3366FF; text-decoration:none;">SRC</a> oder <a href="/lrc/" style="color:#3366FF; text-decoration:none;">LRC</a> sind die theoretische und die praktische UBI-Prüfung verkürzt – beide Prüfungen sind ggf. sogar an einem Tag möglich.
         </p>
@@ -144,7 +149,7 @@ const breadcrumbSchema = {
 
     <!-- Boatpass UBI-Modul verfügbar -->
     <section style="margin-bottom:48px; background:linear-gradient(135deg,#3366FF,#1A44D4); border:1px solid rgba(255,255,255,0.15); border-radius:24px; padding:40px; box-shadow:0 20px 60px rgba(51,102,255,0.3);">
-      <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">✅ Jetzt verfügbar</div>
+      <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Jetzt verfügbar</div>
       <h2 style="font-size:24px; font-weight:800; color:white; margin-bottom:12px;">Boatpass UBI-Modul</h2>
       <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:20px;">
         Das UBI-Modul für Boatpass ist da – mit dem gleichen Lernkonzept wie SBF Binnen & See: offizieller Fragenkatalog, Prüfungssimulation und Fehler-Training. Einmalig <strong style="color:white;">5,99 €</strong>, kein Abo.
