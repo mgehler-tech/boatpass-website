@@ -93,4 +93,4 @@ Die Kombiprüfung spart dabei rund 100 € an Prüfungsgebühren – und die 72 
 
 ## Fazit
 
-Die Grenze zwischen SBF See und SBF Binnen verläuft an den Flussmündungen – nicht an der Küstenlinie. Wer auf der Elbe bis Hamburg fährt, braucht den SBF See. Im Ausland ist der deutsche SBF mit ICC in über 30 Ländern anerkannt und lebenslang gültig. Wer flexibel auf allen Gewässern fahren will, sollte die Kombiprüfung in Betracht ziehen.
+Die Grenze zwischen [SBF See](/sbf-see/) und [SBF Binnen](/sbf-binnen/) verläuft an den Flussmündungen – nicht an der Küstenlinie. Wer auf der Elbe bis Hamburg fährt, braucht den SBF See. Im Ausland ist der deutsche SBF mit ICC in über 30 Ländern anerkannt und lebenslang gültig. Wer flexibel auf allen Gewässern fahren will, sollte die Kombiprüfung in Betracht ziehen.

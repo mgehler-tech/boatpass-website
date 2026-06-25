@@ -81,4 +81,4 @@ Buche den Prüfungstermin **vor** dem Ende deiner Lernphase. Eine konkrete Deadl
 
 ## Fazit
 
-Für den SBF Binnen sind bei realistischem Lernaufwand **4–5 Wochen** für die meisten Kandidaten ausreichend. Der Schlüssel ist Regelmäßigkeit, nicht Intensität. Starte heute mit 15 Fragen in der Boatpass-App – kostenlos, offizieller ELWIS-Katalog, Fehler-Tracking inklusive.
+Für den [SBF Binnen](/sbf-binnen/) sind bei realistischem Lernaufwand **4–5 Wochen** für die meisten Kandidaten ausreichend. Der Schlüssel ist Regelmäßigkeit, nicht Intensität. Starte heute mit 15 Fragen in der Boatpass-App – kostenlos, offizieller ELWIS-Katalog, Fehler-Tracking inklusive.

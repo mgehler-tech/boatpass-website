@@ -65,10 +65,10 @@ In der Praxis ist die 15-PS-Grenze schneller erreicht, als viele denken: Schon e
 
 Wenn du den Führerschein brauchst, hängt die Wahl vom Revier ab:
 
-- **SBF Binnen** – für Flüsse, Kanäle und Seen im Inland.
-- **SBF See** – für die Küstengewässer und das Meer.
+- **[SBF Binnen](/sbf-binnen/)** – für Flüsse, Kanäle und Seen im Inland.
+- **[SBF See](/sbf-see/)** – für die Küstengewässer und das Meer.
 
-Viele machen beide Scheine in Kombination, weil die Theorie sich überschneidet und die zweite Prüfung dann deutlich günstiger ist. Mehr dazu liest du in unserem Vergleich von SBF Binnen und SBF See.
+Viele machen beide Scheine in Kombination, weil die Theorie sich überschneidet und die zweite Prüfung dann deutlich günstiger ist. Mehr dazu liest du in unserem [Vergleich von SBF Binnen und SBF See](/blog/sbf-binnen-vs-see/).
 
 ## Fazit
 

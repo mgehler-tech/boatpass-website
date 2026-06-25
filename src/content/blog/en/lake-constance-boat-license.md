@@ -50,7 +50,7 @@ The SBF Binnen applies to German inland waterways but not to Lake Constance, sin
 
 That might sound frustrating if you already hold one or both licenses. The good news: holders of the **SBF Binnen or SBF See** may benefit from **simplified exam requirements** when applying for the BSP, since you already have a nautical foundation. Check with the relevant authority or a sailing school at the lake before registering for the exam.
 
-For an overview of where the SBF Binnen and SBF See are recognized, see the article [SBF Abroad – Which License is Valid Where?](/blog/en/sbf-inland-vs-coastal).
+For an overview of where the SBF Binnen and SBF See are recognized, see the article [SBF Inland vs. SBF Coastal – What's the Difference?](/en/blog/sbf-inland-vs-coastal/).
 
 ## How to Obtain the Bodensee-Schifferpatent
 
@@ -86,7 +86,7 @@ Anyone who knows Lake Constance knows this: the weather here can change fast and
 
 Weather knowledge is a mandatory part of the BSP theory for good reason. Lake Constance is a large, open body of water with no tidal protection, and reading weather patterns correctly is not an academic exercise – it is a direct safety matter. What's tested in the exam is what you genuinely need on the water.
 
-For a broader introduction to wind scales and meteorology relevant to the SBF exams, see our article on the [Beaufort Scale and Weather Knowledge](/blog/en/weather-beaufort-scale).
+For a broader introduction to wind scales and meteorology relevant to the SBF exams, see our article on the [Beaufort Scale and Weather Knowledge](/en/blog/weather-beaufort-scale/).
 
 ## For Residents, Visitors, and Charter Sailors
 

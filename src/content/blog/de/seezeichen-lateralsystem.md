@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "sea-marks-lateral-system-explained"
 ---
 
-Seezeichen sind die „Verkehrsschilder" auf dem Wasser – und ein fester Bestandteil der SBF-See-Theorieprüfung. Wer das System einmal verstanden hat, kann fast jedes Zeichen aus der Logik ableiten. In diesem Artikel erklären wir das Lateralsystem, das Kardinalsystem und die wichtigsten Sonderzeichen so, dass du sie in der Prüfung sicher erkennst.
+Seezeichen sind die „Verkehrsschilder" auf dem Wasser – und ein fester Bestandteil der [SBF-See-Theorieprüfung](/sbf-see/). Wer das System einmal verstanden hat, kann fast jedes Zeichen aus der Logik ableiten. In diesem Artikel erklären wir das Lateralsystem, das Kardinalsystem und die wichtigsten Sonderzeichen so, dass du sie in der Prüfung sicher erkennst.
 
 ## IALA-Region A: das deutsche System
 

@@ -8,7 +8,7 @@ lang: de
 author: "Marius Gehler"
 ---
 
-Eine der ersten Fragen, wenn du dich für den Sportbootführerschein entscheidest: Brauche ich einen Theoriekurs bei einer Bootsschule – oder reicht eine Lern-App? Die kurze Antwort: Ein Kurs ist **nicht vorgeschrieben**. Du kannst dich vollständig selbst vorbereiten. Die längere Antwort hängt davon ab, wie du am besten lernst und was dir dein Geld wert ist.
+Eine der ersten Fragen, wenn du dich für den [Sportbootführerschein](/fuehrerscheine/) entscheidest: Brauche ich einen Theoriekurs bei einer Bootsschule – oder reicht eine Lern-App? Die kurze Antwort: Ein Kurs ist **nicht vorgeschrieben**. Du kannst dich vollständig selbst vorbereiten. Die längere Antwort hängt davon ab, wie du am besten lernst und was dir dein Geld wert ist.
 
 ## Was sagt die Prüfungsordnung?
 

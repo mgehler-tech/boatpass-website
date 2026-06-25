@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "most-common-sbf-mistakes"
 ---
 
-Jedes Jahr fallen viele SBF-Kandidaten bei der Prüfung durch – obwohl sie sich vorbereitet haben. Meistens stecken dieselben Fehler dahinter. Hier sind die häufigsten davon, konkret und mit Lösungen.
+Jedes Jahr fallen viele SBF-Kandidaten bei der [SBF-Prüfung](/sbf-pruefung-ablauf/) durch – obwohl sie sich vorbereitet haben. Meistens stecken dieselben Fehler dahinter. Hier sind die häufigsten davon, konkret und mit Lösungen.
 
 ## Fehler 1: Lichterführung und Schallzeichen nur oberflächlich lernen
 

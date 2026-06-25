@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "navigation-lights-explained"
 ---
 
-Bei Nacht oder schlechter Sicht erkennst du andere Fahrzeuge nur an ihren Lichtern – und musst aus der Lichterführung ablesen, um was für ein Fahrzeug es sich handelt, wohin es fährt und ob es vielleicht manövrierbehindert ist. Die Lichterführung ist ein Kernthema der SBF-See-Theorie. Hier bekommst du den Überblick, inklusive der berühmten Merksprüche.
+Bei Nacht oder schlechter Sicht erkennst du andere Fahrzeuge nur an ihren Lichtern – und musst aus der Lichterführung ablesen, um was für ein Fahrzeug es sich handelt, wohin es fährt und ob es vielleicht manövrierbehindert ist. Die Lichterführung ist ein Kernthema der [SBF-See-Theorie](/sbf-see/). Hier bekommst du den Überblick, inklusive der berühmten Merksprüche.
 
 ## Die Grundlichter und ihre Sektoren
 

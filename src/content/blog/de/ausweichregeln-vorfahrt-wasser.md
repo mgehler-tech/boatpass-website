@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "right-of-way-collision-rules"
 ---
 
-„Wer hat hier eigentlich Vorfahrt?" – diese Frage führt auf dem Wasser schnell in die Irre. Denn anders als im Straßenverkehr gibt es bei Booten **keine Vorfahrt**. Es gibt nur Ausweichregeln: Einer muss ausweichen, der andere hält Kurs. Dieser Artikel erklärt die wichtigsten Regeln der Kollisionsverhütung (KVR) – ein zentrales Thema in jeder SBF-Prüfung.
+„Wer hat hier eigentlich Vorfahrt?" – diese Frage führt auf dem Wasser schnell in die Irre. Denn anders als im Straßenverkehr gibt es bei Booten **keine Vorfahrt**. Es gibt nur Ausweichregeln: Einer muss ausweichen, der andere hält Kurs. Dieser Artikel erklärt die wichtigsten Regeln der Kollisionsverhütung (KVR) – ein zentrales Thema in jeder [SBF-Prüfung](/sbf-pruefung-ablauf/), egal ob [SBF Binnen](/sbf-binnen/) oder [SBF See](/sbf-see/).
 
 ## Vorfahrt? Gibt es nicht.
 

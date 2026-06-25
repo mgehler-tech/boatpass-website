@@ -8,7 +8,7 @@ lang: de
 author: "Marius Gehler"
 ---
 
-Der Sportbootführerschein kostet je nach Weg zwischen 200 und 1.000 € – eine große Spanne. Die Prüfungsgebühren sind für alle gleich, aber bei Theorievorbereitung und Praxisausbildung lässt sich einiges sparen. Hier sind die fünf Tipps, die den größten Unterschied machen.
+Der Sportbootführerschein kostet je nach Weg zwischen 200 und 1.000 € – eine große Spanne (die [vollständige Kostenübersicht für 2026](/sbf-kosten/) zeigt alle Posten im Detail). Die Prüfungsgebühren sind für alle gleich, aber bei Theorievorbereitung und Praxisausbildung lässt sich einiges sparen. Hier sind die fünf Tipps, die den größten Unterschied machen.
 
 ## Was kostet der SBF insgesamt?
 
