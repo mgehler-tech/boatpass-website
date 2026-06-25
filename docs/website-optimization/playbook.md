@@ -1,7 +1,7 @@
 # Website-Optimierung – Playbook (für den geplanten Cloud-Agenten)
 
 Dieses Dokument ist die **vollständige, eigenständige Anleitung** für die Routine, die
-regelmäßig (z. B. 1× pro Woche) die **bestehende** Website boatpass.de technisch prüft
+**täglich um 09:00 Europe/Berlin** die **bestehende** Website boatpass.de technisch prüft
 und in **kleinen, fokussierten Schritten** verbessert. Der Agent startet ohne Vorwissen –
 alles Nötige steht hier.
 
@@ -37,6 +37,10 @@ geprüfter Diff als ein großer riskanter.
    ELWIS-konform, im Zweifel konservativ.
 6. **Kein Em-Dash „—".** Das lange Strichzeichen ist im Seiten-Text verboten – stattdessen
    kurzer Bindestrich „–", Komma oder Punkt.
+7. **Leerlauf ist erlaubt.** Die Routine läuft täglich. Findet sich an einem Tag im
+   gesamten Turnus **keine** wirklich lohnende Maßnahme, macht der Agent **keine** Änderung
+   und öffnet **keinen** PR – er vermerkt nur „nichts zu tun" im Audit-Log. Lieber ein Tag
+   ohne Diff als ein erzwungener, sinnloser PR.
 
 ## Fokus-Rotation
 

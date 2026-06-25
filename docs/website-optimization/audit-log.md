@@ -8,7 +8,9 @@ offene Befunde gehen nicht verloren.
 4 Accessibility · 5 Interne Verlinkung · 6 Tote Links & Konsistenz · 7 Content-Aktualität
 
 **Regel:** Pro Lauf den Bereich nehmen, der am längsten nicht dran war – außer es steht
-unten ein **offener Befund**, dann hat dessen Behebung Vorrang.
+unten ein **offener Befund**, dann hat dessen Behebung Vorrang. Die Routine läuft **täglich
+um 09:00 Europe/Berlin**; an Tagen ohne lohnende Maßnahme wird nur „nichts zu tun" notiert
+(kein PR).
 
 ## Nächster Fokus
 
