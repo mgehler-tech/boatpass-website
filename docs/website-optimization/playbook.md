@@ -1,7 +1,7 @@
 # Website-Optimierung – Playbook (für den geplanten Cloud-Agenten)
 
 Dieses Dokument ist die **vollständige, eigenständige Anleitung** für die Routine, die
-**täglich um 09:00 Europe/Berlin** die **bestehende** Website boatpass.de technisch prüft
+**Freitag und Sonntag um 09:00 Europe/Berlin** die **bestehende** Website boatpass.de technisch prüft
 und in **kleinen, fokussierten Schritten** verbessert. Der Agent startet ohne Vorwissen –
 alles Nötige steht hier.
 
@@ -37,10 +37,13 @@ geprüfter Diff als ein großer riskanter.
    ELWIS-konform, im Zweifel konservativ.
 6. **Kein Em-Dash „—".** Das lange Strichzeichen ist im Seiten-Text verboten – stattdessen
    kurzer Bindestrich „–", Komma oder Punkt.
-7. **Leerlauf ist erlaubt.** Die Routine läuft täglich. Findet sich an einem Tag im
-   gesamten Turnus **keine** wirklich lohnende Maßnahme, macht der Agent **keine** Änderung
-   und öffnet **keinen** PR – er vermerkt nur „nichts zu tun" im Audit-Log. Lieber ein Tag
-   ohne Diff als ein erzwungener, sinnloser PR.
+7. **Leerlauf ist erlaubt.** Findet sich an einem Lauf im gesamten Turnus **keine** wirklich
+   lohnende Maßnahme, macht der Agent **keine** Änderung und öffnet **keinen** PR – er
+   vermerkt nur „nichts zu tun" im Audit-Log. Lieber ein Lauf ohne Diff als ein erzwungener,
+   sinnloser PR.
+8. **Mensch bestätigt.** Jede Änderung geht ausschließlich als **Pull Request** ein, der
+   **manuell von einem Menschen** geprüft und gemerged wird. **Kein Auto-Merge**, kein
+   direkter Push auf `main`.
 
 ## Fokus-Rotation
 
@@ -86,9 +89,10 @@ nicht** dran war (oder den, für den beim letzten Audit ein offener Befund notie
    - Branch `optimize/<kurzbeschreibung>` anlegen, committen
      (`fix(seo|a11y|perf|links): <kurze Beschreibung>`) und pushen.
    - **Pull Request** öffnen (Titel = Commit-Titel, Beschreibung = was & warum, plus die
-     QA-Checkliste). Optimierungen am Bestand werden **per PR** gemerged, nicht direkt auf
+     QA-Checkliste). Optimierungen am Bestand werden **per PR** eingebracht, nicht direkt auf
      `main` – so bleibt ein menschlicher Review-Schritt für Änderungen an Live-Seiten.
-   - Mit aktiviertem Auto-Merge geht die Änderung nach grünen Checks live.
+   - **Kein Auto-Merge.** Der PR bleibt offen, bis ein Mensch ihn prüft und manuell mergt.
+     Der Agent mergt nicht selbst.
 
 ## Qualitätssicherung (PFLICHT-GATE vor jeder Veröffentlichung)
 
@@ -115,7 +119,8 @@ Bei DURCHGEFALLEN behebt der Hauptagent die Mängel und lässt erneut prüfen, b
 - Keine neuen Blogposts schreiben (das macht die Blog-Automatik).
 - Keine großflächigen Redesigns, Framework-Wechsel oder Dependency-Upgrades.
 - Keine Umbenennung/Löschung bestehender Routen oder Slugs ohne ausdrücklichen Auftrag.
-- Keine direkten Pushes auf `main` – Änderungen am Bestand laufen über Pull Requests.
+- Keine direkten Pushes auf `main` und **kein Auto-Merge** – Änderungen laufen über einen
+  Pull Request, den ein Mensch manuell bestätigt und mergt.
 
 ## Erfolg
 

@@ -1,8 +1,8 @@
 # Routine-Prompt (zum Reinkopieren in claude.ai/code/routines)
 
 Diesen Text als **Prompt** der Claude Code Routine einfügen. Repository der Routine:
-`mgehler-tech/boatpass-website`. Zeitplan: **täglich um 09:00 Europe/Berlin**.
-Cron: `0 9 * * *` (Zeitzone Europe/Berlin).
+`mgehler-tech/boatpass-website`. Zeitplan: **Freitag und Sonntag um 09:00 Europe/Berlin**.
+Cron: `0 9 * * 5,0` (Zeitzone Europe/Berlin; 5 = Freitag, 0 = Sonntag).
 
 ---
 
@@ -35,7 +35,10 @@ Vorgehen:
    Build-/QA-Status, offene Restbefunde für den nächsten Lauf.
 8. Veröffentlichen (nur nach bestandener QA): Branch `optimize/<kurzbeschreibung>` anlegen,
    committen (`fix(seo|a11y|perf|links): <Beschreibung>`), pushen und einen Pull Request
-   öffnen (Beschreibung = was & warum + QA-Checkliste). NICHT direkt auf `main` pushen.
+   öffnen (Beschreibung = was & warum + QA-Checkliste). NICHT direkt auf `main` pushen,
+   **kein Auto-Merge** – den PR offen lassen, damit ein Mensch ihn prüft und manuell mergt.
+   Gibt es nichts wirklich Lohnendes zu tun: keine Änderung, kein PR, nur „nichts zu tun"
+   im Audit-Log vermerken.
 
 Erfolg = eine kleine, begründete Verbesserung liegt als PR vor, Build & `astro check`
 grün, QA BESTANDEN, Audit-Log fortgeschrieben. Melde am Ende: Fokusbereich, durchgeführte
