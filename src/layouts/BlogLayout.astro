@@ -91,7 +91,7 @@ const breadcrumbSchema = {
 <BaseLayout title={title} description={description} lang={lang} type="article" hasAlternate={hasAlternate} altUrl={altUrl} ogImage={ogImage}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
-  <article class="max-w-2xl mx-auto px-4 py-16">
+  <article class="max-w-2xl mx-auto px-4 pt-24 pb-16">
 
     <!-- Back link -->
     <a href={lang === 'de' ? '/blog/' : '/en/blog/'}
