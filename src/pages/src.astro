@@ -96,7 +96,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
     <!-- SRC vs UBI vs LRC -->
     <section style="margin-bottom:48px;">
       <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">SRC, UBI oder LRC – welches Funkzeugnis?</h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+      <div class="funk-compare-grid">
         <div style="background:white; border:2px solid rgba(51,102,255,0.2); border-radius:16px; padding:24px;">
           <div style="font-weight:800; color:#1A1F36; margin-bottom:4px;">SRC</div>
           <div style="font-size:13px; color:#3366FF; margin-bottom:12px;">Short Range Certificate</div>
@@ -262,3 +262,18 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 
   </div>
 </BaseLayout>
+
+<style>
+  /* SRC/UBI/LRC-Vergleich: 3 Spalten auf Desktop, auf schmalen Screens
+     gestapelt – sonst sprengen die Karten den Viewport (Horizontal-Overflow). */
+  .funk-compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 640px) {
+    .funk-compare-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
