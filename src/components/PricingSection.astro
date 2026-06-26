@@ -35,6 +35,19 @@ const soonItems = [t.pricing.soon1];
 
     <div class="catalog-stack">
 
+      <!-- In jedem Kauf enthalten: Mechanik-Vorteile einmal zentral über den Preiskategorien statt auf jeder Karte wiederholt -->
+      <div class="reveal-item included-bar" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+        <div class="included-label">{t.pricing.includedLabel}</div>
+        <div class="included-items">
+          {t.pricing.includedFeatures.map(f => (
+            <div class="included-item">
+              <Icon name="check" size={14} stroke="#3366FF" strokeWidth={2.5} />
+              <span>{f}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <!-- SBF Binnen – Freemium card (full width hero) -->
       <div class="reveal-item catalog-card featured" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
         <!-- Orb -->
@@ -108,19 +121,6 @@ const soonItems = [t.pricing.soon1];
               {t.pricing.ctaUnlock} · {t.pricing.price}
             </a>
           </div>
-        </div>
-      </div>
-
-      <!-- In jedem Kauf enthalten: Mechanik-Vorteile einmal zentral statt auf jeder Karte wiederholt -->
-      <div class="reveal-item included-bar" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
-        <div class="included-label">{t.pricing.includedLabel}</div>
-        <div class="included-items">
-          {t.pricing.includedFeatures.map(f => (
-            <div class="included-item">
-              <Icon name="check" size={14} stroke="#3366FF" strokeWidth={2.5} />
-              <span>{f}</span>
-            </div>
-          ))}
         </div>
       </div>
 
