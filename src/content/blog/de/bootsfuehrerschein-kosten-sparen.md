@@ -92,12 +92,12 @@ Vergleiche mindestens 2–3 Anbieter in deiner Region, bevor du buchst.
 
 | Posten | Kosten |
 |---|---|
-| Boatpass-App (Vollzugang SBF See) | 6,99 € |
+| Boatpass-App (Vollzugang SBF See) | 9,99 € |
 | Ärztliches Zeugnis + Sehtest | ca. 30 € |
 | Passfoto | ca. 10 € |
 | 1 Praxisstunde bei lokaler Bootsschule | ca. 80 € |
 | Prüfungsgebühr SBF See | 148,38 € |
-| **Gesamt** | **ca. 275 €** |
+| **Gesamt** | **ca. 280 €** |
 
 Das ist weniger als die Hälfte dessen, was ein Komplettkurs bei einer Bootsschule kostet.
 
