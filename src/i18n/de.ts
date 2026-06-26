@@ -78,7 +78,6 @@ export const de = {
     chip: 'Preise',
     title: 'Kostenlos starten. Nur zahlen, was du brauchst.',
     subtitle: 'Teste alle Lizenzen kostenlos – 15 Fragen täglich über alle Lizenzen. Kaufe nur, was du wirklich brauchst.',
-    modelHint: '15 Fragen/Tag über alle Lizenzen · kein Abo · jederzeit erweiterbar',
     available: 'Verfügbar',
     price: '€ 6,99',
     ctaFree: 'Kostenlos starten',

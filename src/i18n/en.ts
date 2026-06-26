@@ -80,7 +80,6 @@ export const en: Translations = {
     chip: 'Pricing',
     title: 'Start free. Pay only for what you need.',
     subtitle: 'Try all licenses for free – 15 questions daily across all licenses. Buy only what you actually need.',
-    modelHint: '15 questions/day across all licenses · no subscription · expand anytime',
     available: 'Available',
     price: '€6.99',
     ctaFree: 'Start for free',
