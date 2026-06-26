@@ -27,16 +27,46 @@ const soonItems = [t.pricing.soon1];
 
     <div class="catalog-stack">
 
-      <!-- In jedem Kauf enthalten: Mechanik-Vorteile einmal zentral über den Preiskategorien statt auf jeder Karte wiederholt -->
-      <div class="reveal-item included-bar" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
-        <div class="included-label">{t.pricing.includedLabel}</div>
-        <div class="included-items">
-          {t.pricing.includedFeatures.map(f => (
-            <div class="included-item">
-              <Icon name="check" size={14} stroke="#3366FF" strokeWidth={2.5} />
-              <span>{f}</span>
-            </div>
-          ))}
+      <!-- Free vs Paid: Geschäftsmodell einmal zentral vor den Lizenz-Karten gegenüberstellen -->
+      <div class="reveal-item compare-bar" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+        <!-- Free -->
+        <div class="compare-col compare-free">
+          <div class="compare-head">
+            <span class="compare-label">{t.pricing.freeLabel}</span>
+            <span class="compare-sub">{t.pricing.compareFreeSub}</span>
+          </div>
+          <div class="compare-features">
+            {t.pricing.freeFeatures.map(f => (
+              <div class="compare-feature">
+                <span class="compare-check compare-check-free">
+                  <Icon name="check" size={11} stroke="#3366FF" strokeWidth={2.5} />
+                </span>
+                <span>{f}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Paid -->
+        <div class="compare-col compare-paid">
+          <div class="compare-badge">{t.pricing.comparePaidBadge}</div>
+          <!-- Orb -->
+          <div style="position:absolute; top:-50px; right:-50px; width:160px; height:160px; border-radius:50%; background:radial-gradient(circle,rgba(255,255,255,0.15),transparent 70%); pointer-events:none;"></div>
+          <div class="compare-head" style="position:relative;">
+            <span class="compare-label">{t.pricing.comparePaidLabel}</span>
+            <span class="compare-sub">{t.pricing.comparePaidSub}</span>
+          </div>
+          <div class="compare-features" style="position:relative;">
+            {t.pricing.comparePaidFeatures.map(f => (
+              <div class="compare-feature">
+                <span class="compare-check compare-check-paid">
+                  <Icon name="check" size={11} stroke="white" strokeWidth={2.5} />
+                </span>
+                <span>{f}</span>
+              </div>
+            ))}
+          </div>
+          <div class="compare-price">{t.pricing.comparePaidPrice}</div>
         </div>
       </div>
 
@@ -59,45 +89,9 @@ const soonItems = [t.pricing.soon1];
             <span class="hero-stat"><strong>{t.pricing.catalog1Questions}</strong> {t.pricing.questionsUnit}</span>
             <span class="hero-stat"><strong>{t.pricing.catalog1Themes}</strong> {t.pricing.themesUnit}</span>
           </div>
-          <div style="display:flex; align-items:center; gap:7px; margin-bottom:24px;">
+          <div style="display:flex; align-items:center; gap:7px; margin-bottom:4px;">
             <Icon name="check" size={13} stroke="rgba(255,255,255,0.85)" strokeWidth={2.5} />
             <span style="font-size:12.5px; color:rgba(255,255,255,0.75);">{t.pricing.catalog1Note}</span>
-          </div>
-
-          <!-- Free vs Paid comparison -->
-          <div class="tier-row">
-            <!-- Free column -->
-            <div class="tier-col tier-col-free">
-              <div style="font-size:11px; font-weight:700; letter-spacing:0.5px; color:rgba(255,255,255,0.55); text-transform:uppercase; margin-bottom:12px;">{t.pricing.freeLabel}</div>
-              {t.pricing.freeFeatures.map(f => (
-                <div style="display:flex; align-items:flex-start; gap:8px; margin-bottom:9px;">
-                  <span class="checkmark-circle">
-                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
-                  <span style="font-size:13px; color:rgba(255,255,255,0.8); line-height:1.4;">{f}</span>
-                </div>
-              ))}
-            </div>
-
-            <!-- Divider -->
-            <div class="tier-divider" style="width:1px; background:rgba(255,255,255,0.1); flex-shrink:0;"></div>
-
-            <!-- Paid column -->
-            <div class="tier-col">
-              <div style="font-size:11px; font-weight:700; letter-spacing:0.5px; color:white; text-transform:uppercase; margin-bottom:12px;">{t.pricing.paidLabel}</div>
-              {t.pricing.paidFeatures.map(f => (
-                <div style="display:flex; align-items:flex-start; gap:8px; margin-bottom:9px;">
-                  <span class="checkmark-circle">
-                    <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1.5 4L3 5.5L6.5 2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
-                  <span style="font-size:13px; color:rgba(255,255,255,0.95); line-height:1.4;">{f}</span>
-                </div>
-              ))}
-            </div>
           </div>
 
           <!-- CTAs -->
@@ -398,38 +392,90 @@ const soonItems = [t.pricing.soon1];
     color: white;
     letter-spacing: -0.5px;
   }
-  /* "In jedem Kauf enthalten" – zentraler Streifen, hebt Mechanik-Vorteile einmal hervor */
-  .included-bar {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    background: rgba(51,102,255,0.04);
-    border: 1px solid rgba(51,102,255,0.12);
-    border-radius: 20px;
-    padding: 16px 24px;
+  /* Free vs Paid – zentrale Gegenüberstellung des Modells vor den Lizenz-Karten */
+  .compare-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    border: 1px solid rgba(51,102,255,0.10);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(26,31,54,0.03);
+    text-align: left;
   }
-  .included-label {
-    font-size: 11px;
+  .compare-col {
+    padding: 26px 28px;
+  }
+  .compare-paid {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #3366FF 0%, #1A44D4 100%);
+  }
+  .compare-badge {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    background: rgba(255,255,255,0.20);
+    color: white;
+    font-size: 10.5px;
     font-weight: 700;
-    color: #3366FF;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    padding: 4px 11px;
+    border-radius: 100px;
+  }
+  .compare-head {
+    margin-bottom: 18px;
+  }
+  .compare-label {
+    display: block;
+    font-size: 19px;
+    font-weight: 900;
+    letter-spacing: -0.4px;
+  }
+  .compare-free .compare-label { color: #1A1F36; }
+  .compare-paid .compare-label { color: white; }
+  .compare-sub {
+    display: block;
+    font-size: 12.5px;
+    margin-top: 3px;
+  }
+  .compare-free .compare-sub { color: #6B7280; }
+  .compare-paid .compare-sub { color: rgba(255,255,255,0.75); }
+  .compare-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .compare-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    font-size: 13.5px;
+    line-height: 1.4;
+  }
+  .compare-free .compare-feature { color: #4B5563; }
+  .compare-paid .compare-feature { color: rgba(255,255,255,0.95); }
+  .compare-check {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
     flex-shrink: 0;
+    margin-top: 1px;
   }
-  .included-items {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-  }
-  .included-item {
-    display: flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #4B5563;
+  .compare-check-free { background: #EEF2FB; }
+  .compare-check-paid { background: rgba(255,255,255,0.20); }
+  .compare-price {
+    position: relative;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
   }
   /* Katalog-Inhalt: Stats + Alleinstellungsmerkmal statt generischer Feature-Liste */
   .catalog-content {
@@ -478,31 +524,6 @@ const soonItems = [t.pricing.soon1];
     background: linear-gradient(135deg, #3366FF 0%, #1A44D4 100%);
     border: 1px solid rgba(255,255,255,0.15);
     box-shadow: 0 20px 60px rgba(51,102,255,0.3);
-  }
-  .tier-row {
-    display: flex;
-    gap: 20px;
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 14px;
-    padding: 16px;
-  }
-  .tier-col {
-    flex: 1;
-  }
-  .tier-col-free {
-    flex: 1;
-  }
-  .checkmark-circle {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.20);
-    flex-shrink: 0;
-    margin-top: 3px;
   }
   .plus-circle {
     display: inline-flex;
@@ -568,11 +589,10 @@ const soonItems = [t.pricing.soon1];
     .paid-grid { grid-template-columns: 1fr; }
     .bundle-inner { flex-direction: column; align-items: flex-start; }
     .bundle-action { width: 100%; justify-content: space-between; }
-    /* Free-vs-Paid-Vergleich auf schmalen Screens untereinander stapeln,
-       statt zwei zu enge Spalten nebeneinander zu quetschen. */
     .catalog-card.featured { padding: 24px; }
-    .tier-row { flex-direction: column; gap: 16px; }
-    .tier-divider { width: 100%; height: 1px; }
+    /* Free-vs-Paid-Gegenüberstellung auf schmalen Screens untereinander stapeln,
+       statt zwei zu enge Spalten nebeneinander zu quetschen. */
+    .compare-bar { grid-template-columns: 1fr; }
   }
 </style>
 
