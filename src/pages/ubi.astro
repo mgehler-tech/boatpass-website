@@ -185,7 +185,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
     <section style="margin-bottom:48px;">
       <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:8px;">Lernen nach Kategorie</h2>
       <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:20px;">
-        Der UBI-Fragenkatalog ist in Themengebiete unterteilt – übe gezielt nach Schwachstellen.
+        Der UBI-Fragenkatalog umfasst {categories.reduce((s, c) => s + c.count, 0)} Fragen in {categories.length} Themengebieten – übe gezielt nach Schwachstellen.
       </p>
       <div style="display:flex; flex-direction:column; gap:10px;">
         {categories.map(c => (
