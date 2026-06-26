@@ -97,7 +97,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
     <!-- LRC vs SRC -->
     <section style="margin-bottom:48px;">
       <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">LRC vs. SRC: Was ist der Unterschied?</h2>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+      <div class="lrc-compare-grid">
         <div style="background:white; border:2px solid rgba(51,102,255,0.2); border-radius:16px; padding:24px;">
           <div style="font-weight:800; color:#1A1F36; margin-bottom:4px;">LRC</div>
           <div style="font-size:13px; color:#3366FF; margin-bottom:12px;">Long Range Certificate</div>
@@ -254,3 +254,18 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 
   </div>
 </BaseLayout>
+
+<style>
+  /* LRC/SRC-Vergleich: 2 Spalten auf breiteren Screens, auf schmalen
+     Mobilgeräten gestapelt – sonst überlaufen die Karten den Viewport. */
+  .lrc-compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 640px) {
+    .lrc-compare-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
