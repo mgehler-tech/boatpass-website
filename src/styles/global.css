@@ -22,6 +22,14 @@
     font-family: var(--font-family-sans);
   }
 
+  /* Lange Komposita (z. B. "Datenschutzerklärung", "Kurzstreckenzeugnis")
+     in großen Überschriften umbrechen lassen, statt auf schmalen Screens
+     horizontalen Seiten-Overflow zu erzeugen. Greift nur, wenn ein einzelnes
+     Wort sonst überliefe – normaler Mehrwort-Umbruch bleibt unverändert. */
+  h1, h2, h3, h4 {
+    overflow-wrap: break-word;
+  }
+
   /* Sichtbarer, markenkonformer Fokus-Ring für die Tastatur-Navigation.
      Nur :focus-visible → erscheint bei Tastaturfokus, nicht bei Maus/Touch.
      outline (statt box-shadow) wird von overflow:hidden-Karten nicht
