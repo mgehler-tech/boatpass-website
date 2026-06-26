@@ -21,6 +21,16 @@
     color: var(--color-text);
     font-family: var(--font-family-sans);
   }
+
+  /* Sichtbarer, markenkonformer Fokus-Ring für die Tastatur-Navigation.
+     Nur :focus-visible → erscheint bei Tastaturfokus, nicht bei Maus/Touch.
+     outline (statt box-shadow) wird von overflow:hidden-Karten nicht
+     abgeschnitten. :where() hält die Spezifität niedrig, damit bestehende
+     Fokus-Stile (z. B. Formularfelder) Vorrang behalten. */
+  :where(a, button, summary, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
 }
 
 /* ── Animations ── */
