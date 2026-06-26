@@ -129,7 +129,7 @@ export const en: Translations = {
     ubiOnlyNote: 'Individual only · not in bundle',
     bundleLabel: 'Best value',
     bundleName: 'SBF Bundle',
-    bundleDesc: 'SBF Binnen + SBF See – both licenses in one purchase · UBI not included',
+    bundleDesc: 'SBF Binnen + SBF See – both licenses in one purchase',
     bundlePrice: '€16.98',
     bundleSave: 'Save €3.00',
     bundleCta: 'Unlock bundle',

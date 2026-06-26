@@ -127,7 +127,7 @@ export const de = {
     ubiOnlyNote: 'Nur einzeln · nicht im Bundle',
     bundleLabel: 'Spar-Tipp',
     bundleName: 'SBF-Bundle',
-    bundleDesc: 'SBF Binnen + SBF See – beide Lizenzen in einem Kauf · UBI nicht enthalten',
+    bundleDesc: 'SBF Binnen + SBF See – beide Lizenzen in einem Kauf',
     bundlePrice: '€ 16,98',
     bundleSave: 'Spare 3,00 €',
     bundleCta: 'Paket freischalten',
