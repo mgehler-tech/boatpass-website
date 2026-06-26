@@ -33,6 +33,20 @@
   }
 }
 
+/* Bewegung reduzieren für Nutzer mit entsprechender Systemeinstellung
+   (vestibuläre Beschwerden). Neutralisiert Animationen und Transitions,
+   ohne Inhalte zu verbergen – Reveal-Elemente erscheinen dann sofort. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ── Animations ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(32px); }

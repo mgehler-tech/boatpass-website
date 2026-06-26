@@ -272,13 +272,22 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       display: none;
     }
   }
+
+  /* Bei reduzierter Bewegung die durchwechselnden Floating-Banner ausblenden:
+     ohne ihr Timing würden alle vier deckungsgleich übereinander liegen. */
+  @media (prefers-reduced-motion: reduce) {
+    .phone-banner {
+      display: none;
+    }
+  }
 </style>
 
 <script>
   const el = document.getElementById('hero-accent') as HTMLElement | null;
   if (el) {
     const words: string[] = JSON.parse(el.dataset.words ?? '[]');
-    if (words.length > 1) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (words.length > 1 && !prefersReducedMotion) {
       let i = 0;
       setInterval(() => {
         el.style.opacity = '0';
