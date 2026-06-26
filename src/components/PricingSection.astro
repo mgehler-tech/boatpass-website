@@ -47,7 +47,13 @@ const soonItems = [t.pricing.soon1];
           </div>
 
           <div style="font-size:32px; font-weight:900; color:white; letter-spacing:-0.5px; margin-bottom:4px;">{t.pricing.catalog1Name}</div>
-          <div style="font-size:14px; color:rgba(255,255,255,0.7); margin-bottom:28px;">{t.pricing.catalog1Tagline}</div>
+          <div style="font-size:14px; color:rgba(255,255,255,0.7); margin-bottom:18px;">{t.pricing.catalog1Tagline}</div>
+
+          <!-- Inhalt des Katalogs: konkrete Zahlen statt generischer Feature-Wiederholung -->
+          <div style="display:flex; gap:8px; margin-bottom:24px;">
+            <span class="hero-stat"><strong>{t.pricing.catalog1Questions}</strong> {t.pricing.questionsUnit}</span>
+            <span class="hero-stat"><strong>{t.pricing.catalog1Themes}</strong> {t.pricing.themesUnit}</span>
+          </div>
 
           <!-- Free vs Paid comparison -->
           <div class="tier-row">
@@ -101,6 +107,19 @@ const soonItems = [t.pricing.soon1];
         </div>
       </div>
 
+      <!-- In jedem Kauf enthalten: Mechanik-Vorteile einmal zentral statt auf jeder Karte wiederholt -->
+      <div class="reveal-item included-bar" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+        <div class="included-label">{t.pricing.includedLabel}</div>
+        <div class="included-items">
+          {t.pricing.includedFeatures.map(f => (
+            <div class="included-item">
+              <Icon name="check" size={14} stroke="#3366FF" strokeWidth={2.5} />
+              <span>{f}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
       <!-- Paid catalogs row: SBF See + UBI + SRC + LRC -->
       <div class="paid-grid">
 
@@ -113,13 +132,21 @@ const soonItems = [t.pricing.soon1];
             </div>
             <div style="font-size:24px; font-weight:900; color:#1A1F36; margin-bottom:6px; letter-spacing:-0.3px;">{t.pricing.catalog2Name}</div>
             <div style="font-size:14px; color:#6B7280; margin-bottom:16px; line-height:1.5;">{t.pricing.catalog2Desc}</div>
-            <div style="margin-bottom:16px;">
-              {t.pricing.seePaidFeatures.map(f => (
-                <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
-                  <span style="width:5px; height:5px; border-radius:50%; background:#3366FF; flex-shrink:0; opacity:0.7;"></span>
-                  <span style="font-size:12px; color:#4B5563;">{f}</span>
+            <div class="catalog-content">
+              <div class="stat-grid">
+                <div class="stat-box">
+                  <div class="stat-num">{t.pricing.catalog2Questions}</div>
+                  <div class="stat-label">{t.pricing.questionsUnit}</div>
                 </div>
-              ))}
+                <div class="stat-box">
+                  <div class="stat-num">{t.pricing.catalog2Themes}</div>
+                  <div class="stat-label">{t.pricing.themesUnit}</div>
+                </div>
+              </div>
+              <div class="catalog-highlight">
+                <Icon name="check" size={14} stroke="#3366FF" strokeWidth={2.5} />
+                <span>{t.pricing.catalog2Highlight}</span>
+              </div>
             </div>
             <div class="price-row" style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
               <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.price}</span>
@@ -145,13 +172,21 @@ const soonItems = [t.pricing.soon1];
             </div>
             <div style="font-size:24px; font-weight:900; color:#1A1F36; margin-bottom:6px; letter-spacing:-0.3px;">{t.pricing.catalog3Name}</div>
             <div style="font-size:14px; color:#6B7280; margin-bottom:16px; line-height:1.5;">{t.pricing.catalog3Desc}</div>
-            <div style="margin-bottom:16px;">
-              {t.pricing.ubiPaidFeatures.map(f => (
-                <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
-                  <span style="width:5px; height:5px; border-radius:50%; background:#3366FF; flex-shrink:0; opacity:0.7;"></span>
-                  <span style="font-size:12px; color:#4B5563;">{f}</span>
+            <div class="catalog-content">
+              <div class="stat-grid">
+                <div class="stat-box">
+                  <div class="stat-num">{t.pricing.catalog3Questions}</div>
+                  <div class="stat-label">{t.pricing.questionsUnit}</div>
                 </div>
-              ))}
+                <div class="stat-box">
+                  <div class="stat-num">{t.pricing.catalog3Themes}</div>
+                  <div class="stat-label">{t.pricing.themesUnit}</div>
+                </div>
+              </div>
+              <div class="catalog-highlight">
+                <Icon name="check" size={14} stroke="#3366FF" strokeWidth={2.5} />
+                <span>{t.pricing.catalog3Highlight}</span>
+              </div>
             </div>
             <div class="price-row" style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
               <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.ubiPrice}</span>
@@ -177,13 +212,21 @@ const soonItems = [t.pricing.soon1];
             </div>
             <div style="font-size:24px; font-weight:900; color:#1A1F36; margin-bottom:6px; letter-spacing:-0.3px;">{t.pricing.srcName}</div>
             <div style="font-size:14px; color:#6B7280; margin-bottom:16px; line-height:1.5;">{t.pricing.srcDesc}</div>
-            <div style="margin-bottom:16px;">
-              {t.pricing.srcPaidFeatures.map(f => (
-                <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
-                  <span style="width:5px; height:5px; border-radius:50%; background:#3366FF; flex-shrink:0; opacity:0.7;"></span>
-                  <span style="font-size:12px; color:#4B5563;">{f}</span>
+            <div class="catalog-content">
+              <div class="stat-grid">
+                <div class="stat-box">
+                  <div class="stat-num">{t.pricing.srcQuestions}</div>
+                  <div class="stat-label">{t.pricing.questionsUnit}</div>
                 </div>
-              ))}
+                <div class="stat-box">
+                  <div class="stat-num">{t.pricing.srcThemes}</div>
+                  <div class="stat-label">{t.pricing.themesUnit}</div>
+                </div>
+              </div>
+              <div class="catalog-highlight">
+                <Icon name="check" size={14} stroke="#3366FF" strokeWidth={2.5} />
+                <span>{t.pricing.srcHighlight}</span>
+              </div>
             </div>
             <div class="price-row" style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
               <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.srcPrice}</span>
@@ -209,13 +252,21 @@ const soonItems = [t.pricing.soon1];
             </div>
             <div style="font-size:24px; font-weight:900; color:#1A1F36; margin-bottom:6px; letter-spacing:-0.3px;">{t.pricing.lrcName}</div>
             <div style="font-size:14px; color:#6B7280; margin-bottom:16px; line-height:1.5;">{t.pricing.lrcDesc}</div>
-            <div style="margin-bottom:16px;">
-              {t.pricing.lrcPaidFeatures.map(f => (
-                <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
-                  <span style="width:5px; height:5px; border-radius:50%; background:#3366FF; flex-shrink:0; opacity:0.7;"></span>
-                  <span style="font-size:12px; color:#4B5563;">{f}</span>
+            <div class="catalog-content">
+              <div class="stat-grid">
+                <div class="stat-box">
+                  <div class="stat-num">{t.pricing.lrcQuestions}</div>
+                  <div class="stat-label">{t.pricing.questionsUnit}</div>
                 </div>
-              ))}
+                <div class="stat-box">
+                  <div class="stat-num">{t.pricing.lrcThemes}</div>
+                  <div class="stat-label">{t.pricing.themesUnit}</div>
+                </div>
+              </div>
+              <div class="catalog-highlight">
+                <Icon name="check" size={14} stroke="#3366FF" strokeWidth={2.5} />
+                <span>{t.pricing.lrcHighlight}</span>
+              </div>
             </div>
             <div class="price-row" style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
               <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.lrcPrice}</span>
@@ -331,6 +382,94 @@ const soonItems = [t.pricing.soon1];
     align-items: center;
     gap: 20px;
     flex-wrap: wrap;
+  }
+  /* Hero stats (SBF Binnen) – translucent pills on the blue card */
+  .hero-stat {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.85);
+  }
+  .hero-stat strong {
+    font-size: 16px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -0.5px;
+  }
+  /* "In jedem Kauf enthalten" – zentraler Streifen, hebt Mechanik-Vorteile einmal hervor */
+  .included-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: rgba(51,102,255,0.04);
+    border: 1px solid rgba(51,102,255,0.12);
+    border-radius: 20px;
+    padding: 16px 24px;
+  }
+  .included-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #3366FF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    flex-shrink: 0;
+  }
+  .included-items {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .included-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4B5563;
+  }
+  /* Katalog-Inhalt: Stats + Alleinstellungsmerkmal statt generischer Feature-Liste */
+  .catalog-content {
+    margin-bottom: 16px;
+  }
+  .stat-grid {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .stat-box {
+    flex: 1;
+    background: #F7F9FC;
+    border: 1px solid rgba(51,102,255,0.08);
+    border-radius: 12px;
+    padding: 10px 12px;
+  }
+  .stat-num {
+    font-size: 22px;
+    font-weight: 900;
+    color: #1A1F36;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6B7280;
+    margin-top: 4px;
+  }
+  .catalog-highlight {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #3366FF;
   }
   .catalog-card.featured {
     background: linear-gradient(135deg, #3366FF 0%, #1A44D4 100%);
