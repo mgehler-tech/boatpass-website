@@ -32,10 +32,10 @@ export const en: Translations = {
     phoneCard3Sub: '12 open errors',
   },
   trust: {
-    catalog: 'Official licenses',
+    catalog: 'Official question catalog',
     current: 'Always up to date – updated when licenses change',
     oneTime: 'Start for free – no account needed',
-    languages: 'German & English',
+    languages: 'Bilingual: DE & EN',
   },
   features: {
     chip: 'Features',

@@ -30,10 +30,10 @@ export const de = {
     phoneCard3Sub: '12 offene Fehler',
   },
   trust: {
-    catalog: 'Offizielle Lizenzen',
+    catalog: 'Offizieller Fragenkatalog',
     current: 'Immer aktuell – Updates bei Änderungen',
     oneTime: 'Kostenlos starten – kein Account',
-    languages: 'Deutsch & Englisch',
+    languages: 'Zweisprachig: DE & EN',
   },
   features: {
     chip: 'Features',
