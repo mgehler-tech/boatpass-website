@@ -287,4 +287,14 @@ const breadcrumbSchema = {
     border-radius: 4px;
     color: #3366FF;
   }
+
+  /* Mobile: breite Tabellen horizontal scrollbar machen, statt das
+     gesamte Seitenlayout zu sprengen. Desktop bleibt unverändert. */
+  @media (max-width: 700px) {
+    .article-body table {
+      display: block;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
 </style>
