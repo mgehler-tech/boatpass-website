@@ -102,7 +102,7 @@ export const de = {
     catalog2Desc: 'Offizieller ELWIS-Fragenkatalog See · alle Kategorien · im Tageslimit testbar',
     catalog2Questions: '420',
     catalog2Themes: '7',
-    catalog2Highlight: 'inkl. 15 Navigationsaufgaben',
+    catalog2Highlight: 'inkl. 15 Navigationsaufgaben à 9 Fragen',
     catalog2Note: 'Mit Vorkenntnissen (z.B. SBF Binnen) lernst du weniger',
     catalog3Name: 'UBI Sprechfunk',
     catalog3Desc: 'UKW-Sprechfunkzeugnis Binnen · offizieller Fragenkatalog',

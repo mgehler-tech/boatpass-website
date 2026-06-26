@@ -104,7 +104,7 @@ export const en: Translations = {
     catalog2Desc: 'Official ELWIS question catalog · all categories · try within daily limit',
     catalog2Questions: '420',
     catalog2Themes: '7',
-    catalog2Highlight: 'incl. 15 navigation tasks',
+    catalog2Highlight: 'incl. 15 navigation tasks × 9 questions',
     catalog2Note: 'With prior knowledge (e.g. SBF Binnen) you learn fewer',
     catalog3Name: 'UBI radio certificate',
     catalog3Desc: 'UKW radio certificate (inland) · official question catalog',
