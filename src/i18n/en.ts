@@ -95,7 +95,7 @@ export const en: Translations = {
     comparePaidSub: 'Pay once · no subscription',
     comparePaidBadge: 'Recommended',
     comparePaidPrice: 'from €7.99 per license',
-    comparePaidFeatures: ['Unlimited study questions', 'Exam simulation', 'Error training', 'Question browser'],
+    comparePaidFeatures: ['Unlimited learning – every day, no limits', 'Unlimited exam simulations'],
     catalog1Name: 'SBF Binnen',
     catalog1Tagline: 'The entry-level license for inland waters',
     catalog1Questions: '300',

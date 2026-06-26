@@ -93,7 +93,7 @@ export const de = {
     comparePaidSub: 'Einmal zahlen · kein Abo',
     comparePaidBadge: 'Empfohlen',
     comparePaidPrice: 'ab € 7,99 pro Lizenz',
-    comparePaidFeatures: ['Unbegrenzte Lernfragen', 'Prüfungssimulation', 'Fehler-Training', 'Fragen-Browser'],
+    comparePaidFeatures: ['Unbegrenztes Lernen – jeden Tag, keine Limits', 'Unbegrenzte Prüfungssimulationen'],
     catalog1Name: 'SBF Binnen',
     catalog1Tagline: 'Die Einstiegslizenz für Binnengewässer',
     catalog1Questions: '300',
