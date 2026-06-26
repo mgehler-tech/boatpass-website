@@ -96,7 +96,7 @@ export const en: Translations = {
     freeLabel: 'Free',
     paidLabel: '€6.99 one-time',
     freeFeatures: ['15 questions/day (all licenses)', 'Try all licenses for free', 'Error training included'],
-    paidFeatures: ['Unlimited study questions', 'Exam simulation', 'Question browser'],
+    paidFeatures: ['Question browser'],
     catalog1Questions: '300',
     catalog1Themes: '7',
     catalog1Note: 'With prior knowledge you learn fewer – the app adapts',

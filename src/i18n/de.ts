@@ -94,7 +94,7 @@ export const de = {
     freeLabel: 'Kostenlos',
     paidLabel: '€ 6,99 Einmalkauf',
     freeFeatures: ['15 Lernfragen/Tag (alle Lizenzen)', 'Alle Lizenzen antestbar', 'Fehler-Training inklusive'],
-    paidFeatures: ['Unbegrenzte Lernfragen', 'Prüfungssimulation', 'Fragen-Browser'],
+    paidFeatures: ['Fragen-Browser'],
     catalog1Questions: '300',
     catalog1Themes: '7',
     catalog1Note: 'Mit Vorkenntnissen lernst du weniger – die App passt sich an',
