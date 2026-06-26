@@ -59,6 +59,8 @@ const items = [
   }
   @media (max-width: 700px) {
     .trust-sep { display: none; }
-    .trust-item { padding: 6px 12px; }
+    /* Lange Labels (z. B. im Englischen) umbrechen lassen statt den
+       Viewport auf sehr schmalen Screens zu sprengen. */
+    .trust-item { padding: 6px 12px; white-space: normal; }
   }
 </style>
