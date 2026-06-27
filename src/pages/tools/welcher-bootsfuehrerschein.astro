@@ -1,0 +1,336 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://boatpass.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Welchen Bootsführerschein brauche ich?", "item": "https://boatpass.de/tools/welcher-bootsfuehrerschein/" },
+  ],
+};
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bootsführerschein-Finder",
+  "url": "https://boatpass.de/tools/welcher-bootsfuehrerschein/",
+  "description": "Kostenloser interaktiver Konfigurator: Beantworte 3 Fragen zu Revier, Motorleistung und Funk und erfahre sofort, welchen Sportbootführerschein und welches Funkzeugnis du brauchst.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "de",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "publisher": { "@type": "Organization", "name": "Boatpass", "url": "https://boatpass.de" },
+};
+
+// Statische, crawl- und zitierbare Entscheidungslogik – dieselbe Wahrheit wie der
+// interaktive Konfigurator, aber ohne JavaScript erreichbar (wichtig für KI-Crawler).
+const decisionRows = [
+  { vorhaben: 'Motorboot über 15 PS · Binnengewässer', schein: 'SBF Binnen', funk: 'UBI (nur bei Funkanlage an Bord)' },
+  { vorhaben: 'Motorboot über 15 PS · Küste (Nord-/Ostsee)', schein: 'SBF See', funk: 'SRC (Küste) bzw. LRC (weltweit)' },
+  { vorhaben: 'Motorboot über 15 PS · Binnen + Küste', schein: 'SBF Binnen + SBF See (Kombiprüfung)', funk: 'UBI + SRC/LRC' },
+  { vorhaben: 'Motorboot bis 15 PS (11,03 kW)', schein: 'kein SBF gesetzlich nötig*', funk: 'UBI/SRC nur bei Funkanlage' },
+  { vorhaben: 'Segelboot ohne (Hilfs-)Motor', schein: 'kein SBF nötig*', funk: 'SRC nur bei Seefunkanlage' },
+  { vorhaben: 'Bodensee (Motor ab 6 PS oder Segelfläche ab 12 m²)', schein: 'Bodenseeschifferpatent', funk: 'UBI bei Funkanlage' },
+];
+
+const faqs = [
+  {
+    q: 'Welchen Bootsführerschein brauche ich für ein Motorboot über 15 PS?',
+    a: 'Für ein Motorboot mit mehr als 15 PS (11,03 kW) brauchst du auf Binnengewässern den SBF Binnen und an der Küste (Nord- und Ostsee) den SBF See. Wer beide Reviere befahren möchte, legt beide Scheine – am günstigsten in einer kombinierten Prüfung – ab.',
+  },
+  {
+    q: 'Brauche ich einen Führerschein für ein Boot unter 15 PS?',
+    a: 'Nein. Für Sportboote bis 15 PS (11,03 kW) ist in Deutschland kein amtlicher Sportbootführerschein vorgeschrieben. Ausnahmen gelten auf einigen Revieren wie dem Rhein und dem Bodensee. Zum Mieten verlangen Vercharterer häufig trotzdem einen Nachweis (z. B. Charterschein).',
+  },
+  {
+    q: 'Welches Funkzeugnis brauche ich für mein Boot?',
+    a: 'Sobald du eine Sprechfunkanlage bedienst, brauchst du das passende Zeugnis: UBI für den Binnenfunk (Flüsse, Kanäle), SRC (Short Range Certificate) für den UKW-Seefunk im Küstenbereich und LRC (Long Range Certificate) für den weltweiten Seefunk inklusive Grenz-/Kurzwelle und Satellit.',
+  },
+  {
+    q: 'Welcher Schein gilt auf dem Bodensee?',
+    a: 'Auf dem Bodensee gilt das Bodenseeschifferpatent. Es ist Pflicht für Motorboote ab 6 PS und für Segelboote ab 12 m² Segelfläche – die Regeln weichen damit vom übrigen Binnenbereich ab.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<BaseLayout
+  title="Welchen Bootsführerschein brauche ich? – kostenloser Finder"
+  description="Beantworte 3 kurze Fragen zu Revier, Motorleistung und Funk und finde sofort heraus, welchen Sportbootführerschein (SBF Binnen, SBF See) und welches Funkzeugnis (UBI, SRC, LRC) du brauchst."
+  lang="de"
+  hasAlternate={false}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(appSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
+  <div style="background:#F0F4FA; padding:100px 24px 56px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        Kostenloser Finder
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+        Welchen Bootsführerschein<br>brauche ich?
+      </h1>
+      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:560px; margin:0 auto;">
+        Beantworte 3 kurze Fragen zu Revier, Motorleistung und Funk – und erfahre
+        in 30 Sekunden, welchen Schein und welches Funkzeugnis du wirklich brauchst.
+      </p>
+    </div>
+  </div>
+
+  <div style="max-width:760px; margin:0 auto; padding:48px 24px 90px;">
+
+    <!-- Interaktiver Konfigurator -->
+    <div id="cfg" style="background:white; border:1px solid rgba(51,102,255,0.14); border-radius:20px; padding:28px 26px; box-shadow:0 10px 30px rgba(26,31,54,0.06);">
+      <div id="cfg-progress" style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;"></div>
+      <div id="cfg-question" style="font-size:22px; font-weight:800; color:#1A1F36; letter-spacing:-0.5px; margin-bottom:20px;"></div>
+      <div id="cfg-options" style="display:flex; flex-direction:column; gap:12px;"></div>
+      <div id="cfg-back" style="margin-top:20px; display:none;">
+        <button type="button" id="cfg-back-btn" style="background:none; border:none; color:#9CA3AF; font-size:14px; font-weight:600; cursor:pointer; padding:6px 0;">← Zurück</button>
+      </div>
+    </div>
+
+    <!-- Ergebnis -->
+    <div id="cfg-result" style="display:none; margin-top:24px;"></div>
+
+    <!-- Statische Entscheidungstabelle (immer sichtbar, ohne JS, KI-zitierbar) -->
+    <section style="margin-top:64px;">
+      <h2 style="font-size:26px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:8px;">Entscheidungshilfe auf einen Blick</h2>
+      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:20px;">
+        Welcher Bootsführerschein und welches Funkzeugnis für welches Vorhaben – die wichtigsten Fälle als Übersicht.
+      </p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
+          <thead>
+            <tr style="background:rgba(26,31,54,0.04);">
+              <th style="text-align:left; padding:14px 16px; font-weight:800; color:#1A1F36;">Dein Vorhaben</th>
+              <th style="text-align:left; padding:14px 16px; font-weight:800; color:#1A1F36;">Führerschein</th>
+              <th style="text-align:left; padding:14px 16px; font-weight:800; color:#1A1F36;">Funkzeugnis</th>
+            </tr>
+          </thead>
+          <tbody>
+            {decisionRows.map((row, i) => (
+              <tr style={`border-top:1px solid rgba(51,102,255,0.08);${i % 2 ? ' background:rgba(26,31,54,0.02);' : ''}`}>
+                <td style="padding:13px 16px; font-weight:600; color:#1A1F36;">{row.vorhaben}</td>
+                <td style="padding:13px 16px; color:#4B5563;">{row.schein}</td>
+                <td style="padding:13px 16px; color:#4B5563;">{row.funk}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px; color:#9CA3AF; line-height:1.6; margin-top:12px;">
+        * Die Führerscheinpflicht greift in Deutschland ab mehr als 15 PS (11,03 kW). Seit der Reform 2026 gilt diese Grenze technologieneutral – also auch für Elektroantriebe. Auf einzelnen Revieren (Rhein, Bodensee) gelten abweichende Regeln.
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-top:56px;">
+      <h2 style="font-size:26px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Häufige Fragen</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <div style="font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</div>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Interne Links -->
+    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
+      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Alle Lizenzen im Detail</h2>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="/sbf-binnen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen lernen</a>
+        <a href="/sbf-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See lernen</a>
+        <a href="/ubi/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ UBI – UKW-Sprechfunkzeugnis Binnen</a>
+        <a href="/src/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SRC – Seefunk Küste</a>
+        <a href="/lrc/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ LRC – Seefunk weltweit</a>
+        <a href="/fuehrerscheine/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Übersicht aller Bootsführerscheine</a>
+      </div>
+    </section>
+
+  </div>
+
+  <style>
+    .cfg-opt {
+      display:flex; align-items:center; gap:14px; text-align:left; width:100%;
+      background:white; border:1.5px solid rgba(51,102,255,0.16); border-radius:14px;
+      padding:16px 18px; cursor:pointer; transition:border-color .15s, background .15s, transform .05s;
+    }
+    .cfg-opt:hover { border-color:#3366FF; background:rgba(51,102,255,0.04); }
+    .cfg-opt:active { transform:scale(0.995); }
+    .cfg-opt-label { font-weight:700; color:#1A1F36; font-size:16px; }
+    .cfg-opt-sub { font-size:13px; color:#9CA3AF; margin-top:2px; }
+    .cfg-opt-arrow { margin-left:auto; color:#3366FF; font-weight:800; }
+    .res-card {
+      display:block; background:white; border:1px solid rgba(51,102,255,0.16);
+      border-left:4px solid #3366FF; border-radius:16px; padding:20px 22px; text-decoration:none;
+      transition:border-color .15s, box-shadow .15s;
+    }
+    a.res-card:hover { border-left-color:#1A1F36; box-shadow:0 8px 22px rgba(51,102,255,0.12); }
+  </style>
+
+  <script is:inline define:vars={{ playStoreUrl }}>
+    (function () {
+      const STEPS = [
+        { id: 'revier', q: 'Wo möchtest du fahren?', options: [
+          { v: 'binnen', label: 'Binnengewässer', sub: 'Flüsse, Kanäle & Seen' },
+          { v: 'see', label: 'Küste (Nord- & Ostsee)', sub: 'Seeschifffahrtsstraßen' },
+          { v: 'beides', label: 'Beides', sub: 'Binnen und Küste' },
+          { v: 'bodensee', label: 'Bodensee', sub: 'eigene Regelung' },
+        ]},
+        { id: 'motor', q: 'Wie stark ist der Antrieb deines Boots?', options: [
+          { v: 'unter15', label: 'Bis 15 PS', sub: 'höchstens 11,03 kW' },
+          { v: 'ueber15', label: 'Über 15 PS', sub: 'mehr als 11,03 kW' },
+          { v: 'segel', label: 'Segelboot ohne (Hilfs-)Motor', sub: '' },
+        ]},
+        { id: 'funk', q: 'Willst du eine UKW-Sprechfunkanlage bedienen?', options: [
+          { v: 'nein', label: 'Nein', sub: 'kein Funk an Bord' },
+          { v: 'ja', label: 'Ja', sub: 'Funkanlage / DSC an Bord' },
+        ]},
+        { id: 'reichweite', q: 'Wie weit fährst du auf See?',
+          when: function (a) { return a.funk === 'ja' && (a.revier === 'see' || a.revier === 'beides'); },
+          options: [
+            { v: 'kueste', label: 'Küstennah', sub: 'bis ~35 sm (Seegebiet A1)' },
+            { v: 'weltweit', label: 'Weltweit / Hochsee', sub: 'Grenz-/Kurzwelle & Satellit' },
+          ]},
+      ];
+
+      const FS = {
+        binnen: { cat: 'Sportbootführerschein', name: 'SBF Binnen', href: '/sbf-binnen/', sub: 'Pflicht für Motorboote über 15 PS auf Binnengewässern.' },
+        see: { cat: 'Sportbootführerschein', name: 'SBF See', href: '/sbf-see/', sub: 'Pflicht für Motorboote über 15 PS an der Küste – mit Navigationsaufgabe.' },
+      };
+      const FUNK = {
+        ubi: { cat: 'Funkzeugnis', name: 'UBI', href: '/ubi/', sub: 'UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk.' },
+        src: { cat: 'Funkzeugnis', name: 'SRC', href: '/src/', sub: 'UKW-Seefunkzeugnis mit DSC für den Küstenbereich.' },
+        lrc: { cat: 'Funkzeugnis', name: 'LRC', href: '/lrc/', sub: 'Allgemeines Funkbetriebszeugnis für den weltweiten Seefunk.' },
+      };
+
+      const answers = {};
+      const path = [];
+
+      const elProgress = document.getElementById('cfg-progress');
+      const elQuestion = document.getElementById('cfg-question');
+      const elOptions = document.getElementById('cfg-options');
+      const elBackWrap = document.getElementById('cfg-back');
+      const elBackBtn = document.getElementById('cfg-back-btn');
+      const elCfg = document.getElementById('cfg');
+      const elResult = document.getElementById('cfg-result');
+
+      function visibleSteps() {
+        return STEPS.filter(function (s) { return !s.when || s.when(answers); });
+      }
+
+      function render(stepId) {
+        const steps = visibleSteps();
+        const step = STEPS.find(function (s) { return s.id === stepId; });
+        const idx = steps.indexOf(step);
+        elProgress.textContent = 'Frage ' + (idx + 1) + ' von ' + steps.length;
+        elQuestion.textContent = step.q;
+        elOptions.innerHTML = '';
+        step.options.forEach(function (opt) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'cfg-opt';
+          btn.innerHTML =
+            '<div><div class="cfg-opt-label">' + opt.label + '</div>' +
+            (opt.sub ? '<div class="cfg-opt-sub">' + opt.sub + '</div>' : '') +
+            '</div><span class="cfg-opt-arrow">→</span>';
+          btn.addEventListener('click', function () { choose(stepId, opt.v); });
+          elOptions.appendChild(btn);
+        });
+        elBackWrap.style.display = path.length ? 'block' : 'none';
+      }
+
+      function choose(stepId, value) {
+        answers[stepId] = value;
+        path.push(stepId);
+        const steps = visibleSteps();
+        const step = STEPS.find(function (s) { return s.id === stepId; });
+        const next = steps[steps.indexOf(step) + 1];
+        if (next) { render(next.id); } else { showResult(); }
+      }
+
+      elBackBtn.addEventListener('click', function () {
+        const last = path.pop();
+        if (last) { delete answers[last]; }
+        elResult.style.display = 'none';
+        elCfg.style.display = 'block';
+        const steps = visibleSteps();
+        render(last || steps[0].id);
+      });
+
+      function compute() {
+        const recs = [];
+        const a = answers;
+        if (a.revier === 'bodensee') {
+          recs.push({ cat: 'Sportbootführerschein', name: 'Bodenseeschifferpatent', href: '/fuehrerscheine/', sub: 'Pflichtschein für den Bodensee (Motor ab 6 PS / Segel ab 12 m²). Boatpass-Modul in Vorbereitung.', soon: true });
+        } else if (a.motor === 'ueber15') {
+          if (a.revier === 'binnen') recs.push(FS.binnen);
+          else if (a.revier === 'see') recs.push(FS.see);
+          else if (a.revier === 'beides') { recs.push(FS.binnen); recs.push(FS.see); }
+        } else {
+          recs.push({ cat: 'Sportbootführerschein', name: 'Kein Pflicht-Führerschein', href: '/fuehrerscheine/', sub: 'Bis 15 PS (11,03 kW) ist kein SBF vorgeschrieben. Auf Rhein/Bodensee gelten Ausnahmen; zum Mieten kann ein Charterschein nötig sein.', info: true });
+        }
+        if (a.funk === 'ja') {
+          if (a.revier === 'binnen' || a.revier === 'bodensee') recs.push(FUNK.ubi);
+          else if (a.revier === 'see') recs.push(a.reichweite === 'weltweit' ? FUNK.lrc : FUNK.src);
+          else if (a.revier === 'beides') { recs.push(FUNK.ubi); recs.push(a.reichweite === 'weltweit' ? FUNK.lrc : FUNK.src); }
+        }
+        return recs;
+      }
+
+      function showResult() {
+        const recs = compute();
+        elCfg.style.display = 'none';
+        let html = '<div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Deine Empfehlung</div>';
+        html += '<div style="display:flex; flex-direction:column; gap:14px;">';
+        recs.forEach(function (r) {
+          const tag = r.href && !r.info && !r.soon ? '<span style="margin-left:auto; color:#3366FF; font-weight:800; white-space:nowrap;">Mehr erfahren →</span>' : '';
+          const wrap = r.href ? 'a' : 'div';
+          const hrefAttr = r.href ? ' href="' + r.href + '"' : '';
+          html += '<' + wrap + hrefAttr + ' class="res-card">' +
+            '<div style="display:flex; align-items:center; gap:10px;">' +
+            '<div><div style="font-size:12px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:0.5px;">' + r.cat + '</div>' +
+            '<div style="font-size:20px; font-weight:900; color:#1A1F36; letter-spacing:-0.5px;">' + r.name + '</div></div>' + tag + '</div>' +
+            '<div style="font-size:14px; color:#6B7280; line-height:1.6; margin-top:8px;">' + r.sub + '</div>' +
+            '</' + wrap + '>';
+        });
+        html += '</div>';
+        html += '<div style="margin-top:22px; display:flex; flex-wrap:wrap; gap:12px;">' +
+          '<a href="' + playStoreUrl + '" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:15px; padding:14px 26px; border-radius:14px; text-decoration:none;">▶&nbsp;Jetzt mit Boatpass lernen</a>' +
+          '<button type="button" id="cfg-restart" style="background:white; border:1.5px solid rgba(51,102,255,0.2); color:#3366FF; font-weight:700; font-size:15px; padding:14px 24px; border-radius:14px; cursor:pointer;">Nochmal starten</button>' +
+          '</div>';
+        elResult.innerHTML = html;
+        elResult.style.display = 'block';
+        document.getElementById('cfg-restart').addEventListener('click', function () {
+          for (const k in answers) delete answers[k];
+          path.length = 0;
+          elResult.style.display = 'none';
+          elCfg.style.display = 'block';
+          render(STEPS[0].id);
+        });
+        elResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      render(STEPS[0].id);
+    })();
+  </script>
+
+</BaseLayout>

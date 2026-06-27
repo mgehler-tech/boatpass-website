@@ -29,6 +29,10 @@
 - [Prüfungsablauf](https://boatpass.de/sbf-pruefung-ablauf/): Wie die SBF-Prüfung abläuft.
 - [FAQ](https://boatpass.de/faq/): Häufige Fragen zu Schein, Prüfung und Fragenkatalog.
 
+## Tools
+
+- [Welchen Bootsführerschein brauche ich?](https://boatpass.de/tools/welcher-bootsfuehrerschein/): Kostenloser Finder – 3 Fragen zu Revier, Motorleistung und Funk, dann die passende Lizenz (SBF Binnen/See, UBI, SRC, LRC) plus Entscheidungstabelle.
+
 ## Ratgeber (Blog)
 
 - [Blog-Übersicht](https://boatpass.de/blog/): Ratgeber rund um Sportbootführerschein, Navigation und Seemannschaft.

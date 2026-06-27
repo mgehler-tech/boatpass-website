@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 import PracticeBridge from '../components/PracticeBridge.astro';
+import CatalogSources from '../components/CatalogSources.astro';
 import type { IconName } from '../icons';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
@@ -153,6 +154,11 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
       </p>
     </section>
 
+    <!-- Quellen-Transparenz: amtlicher Fragenkatalog -->
+    <section style="margin-bottom:48px;">
+      <CatalogSources lang="de" only="see" />
+    </section>
+
     <!-- Prüfungsaufbau -->
     <section style="margin-bottom:48px;">
       <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">SBF-See-Prüfung: Aufbau & Bestehensgrenze</h2>
@@ -298,6 +304,9 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
       <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:8px;">Lernen nach Kategorie</h2>
       <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:20px;">
         Der offizielle ELWIS-Fragenkatalog umfasst {categories.reduce((s, c) => s + c.count, 0)} Fragen in {categories.length} Themengebieten (inkl. 15 Navigationsaufgaben à 9 Fragen) – übe gezielt nach Schwachstellen.
+      </p>
+      <p style="font-size:14px; color:#9CA3AF; line-height:1.6; margin-top:-8px; margin-bottom:20px;">
+        Quelle: amtlicher Fragenkatalog (DSV/DMYV) auf <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-neu-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
       </p>
       <div style="display:flex; flex-direction:column; gap:10px;">
         {categories.map(c => (
