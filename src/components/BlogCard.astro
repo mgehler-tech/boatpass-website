@@ -53,7 +53,7 @@ const searchText = `${title} ${description}`.toLowerCase();
         {tags.slice(0, 2).map(tag => (
           <span class="blog-tag" style={`color:${accent}; background:${accent}14; border-color:${accent}26`}>{tag}</span>
         ))}
-        {isNew && <span class="blog-tag-new">Neu</span>}
+        {isNew && <span class="blog-tag-new">{lang === 'de' ? 'Neu' : 'New'}</span>}
       </div>
       <h3 class="blog-featured-title group-hover:text-primary transition-colors">{title}</h3>
       <p class="blog-featured-desc">{description}</p>
@@ -80,7 +80,7 @@ const searchText = `${title} ${description}`.toLowerCase();
              set:html={iconPaths} />
       </div>
       {category && <span class="blog-tag" style={`color:${accent}; background:${accent}14; border-color:${accent}26`}>{category}</span>}
-      {isNew && <span class="blog-tag-new">Neu</span>}
+      {isNew && <span class="blog-tag-new">{lang === 'de' ? 'Neu' : 'New'}</span>}
     </div>
     <div class="blog-compact-body">
       <h3 class="blog-compact-title group-hover:text-primary transition-colors">{title}</h3>

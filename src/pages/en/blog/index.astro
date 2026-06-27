@@ -6,47 +6,350 @@ import BlogCard from '../../../components/BlogCard.astro';
 const posts = (await getCollection('blog', entry => entry.data.lang === 'en'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-const [featured, ...rest] = posts;
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+// Curated learning path for beginners – in the order of the SBF journey
+const journeySlugs = [
+  'sbf-exam-everything-you-need-to-know',
+  'sbf-inland-vs-coastal',
+  'sbf-preparation-how-long',
+  '5-tips-pass-sbf',
+];
+const journeyLabels = ['The basics', 'Which license?', 'Preparation', 'Pass the exam'];
+const journey = journeySlugs
+  .map((slug, i) => ({ post: posts.find(p => p.id === `en/${slug}`), label: journeyLabels[i] }))
+  .filter((j): j is { post: NonNullable<typeof j.post>; label: string } => Boolean(j.post));
+
+// Category order, color & short description for the topic clusters
+const categoryMeta: Record<string, { color: string; desc: string }> = {
+  'Exam Knowledge':     { color: '#3366FF', desc: 'The knowledge that is actually tested in the theory exam.' },
+  'Preparation':        { color: '#00A878', desc: 'Study time, costs and registration – prepare smart.' },
+  'License Comparison': { color: '#7C3AED', desc: 'Which license applies where – and when you need none.' },
+  'Navigation':         { color: '#0EA5E9', desc: 'Master courses, tides and navigation tasks.' },
+};
+
+const clusters = Object.entries(categoryMeta)
+  .map(([cat, meta]) => ({ cat, ...meta, posts: posts.filter(p => (p.data.tags[0] ?? '') === cat) }))
+  .filter(c => c.posts.length > 0);
+
+const totalCount = posts.length;
 ---
 
 <BaseLayout
   title="Blog – Boating License Tips"
   description="Tips, guides and knowledge about the SBF boating exam in Germany."
   lang="en"
+  showCta={false}
 >
   <div class="max-w-6xl mx-auto px-4 pt-24 pb-16">
-    <div style="margin-bottom:48px;">
-      <h1 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#1A1F36; margin-bottom:10px;">Blog</h1>
-      <p style="font-size:18px; color:#6B7280;">Tips, guides and knowledge about the German boating license</p>
+    <div class="blog-hero">
+      <h1>Blog</h1>
+      <p>Tips, guides and knowledge about the German boating license</p>
     </div>
 
-    <div class="blog-index-grid">
-      {featured && <BlogCard post={featured} lang="en" featured={true} />}
-      {rest.length > 0 && (
-        <div class="blog-index-compact">
-          {rest.map(post => <BlogCard post={post} lang="en" featured={false} />)}
+    {journey.length > 0 && (
+      <section class="start-block">
+        <div class="start-head">
+          <span class="start-eyebrow">New here?</span>
+          <h2 class="start-title">Your path to the boating license</h2>
+          <p class="start-sub">Follow this order for the best overview – from your first question to passing the exam.</p>
         </div>
-      )}
+        <div class="start-grid">
+          {journey.map((j, i) => {
+            const slug = j.post.id.replace('en/', '');
+            return (
+              <a href={`/en/blog/${slug}/`} class="start-step group">
+                <span class="start-num">{i + 1}</span>
+                <span class="start-label">{j.label}</span>
+                <span class="start-step-title group-hover:text-primary transition-colors">{j.post.data.title}</span>
+                <span class="start-meta">{j.post.data.readingTime} min read →</span>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    )}
+
+    <div class="blog-toolbar">
+      <div class="blog-search">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+             fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="m21 21-4.3-4.3"></path>
+        </svg>
+        <input type="search" id="blog-search" placeholder="Search articles …" autocomplete="off" aria-label="Search articles" />
+      </div>
+      <div class="blog-categories" id="blog-categories">
+        <button class="cat-btn active" data-cat="all">All <span class="cat-count">{totalCount}</span></button>
+        {clusters.map(c => (
+          <button class="cat-btn" data-cat={c.cat} style={`--accent:${c.color}`}>
+            {c.cat} <span class="cat-count">{c.posts.length}</span>
+          </button>
+        ))}
+      </div>
     </div>
+
+    <div id="blog-clusters">
+      {clusters.map(c => (
+        <section class="cluster" data-cluster={c.cat}>
+          <div class="cluster-head">
+            <span class="cluster-dot" style={`background:${c.color}`}></span>
+            <h2 class="cluster-title">{c.cat}</h2>
+            <span class="cluster-count">{c.posts.length}</span>
+            <p class="cluster-desc">{c.desc}</p>
+          </div>
+          <div class="cluster-grid">
+            {c.posts.map(post => <BlogCard post={post} lang="en" featured={false} />)}
+          </div>
+        </section>
+      ))}
+    </div>
+
+    <p id="blog-noresults" class="blog-noresults" hidden>No articles found. Try a different search term.</p>
+
+    <section class="blog-cta-block">
+      <div class="blog-cta-text">
+        <h2>From reading to passing</h2>
+        <p>Over 1,000 official ELWIS exam questions, exam simulation and mistake training – start for free.</p>
+      </div>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="blog-cta-btn">Get the app for free</a>
+    </section>
   </div>
 </BaseLayout>
 
 <style>
-  .blog-index-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+  .blog-hero { margin-bottom: 36px; }
+  .blog-hero h1 {
+    font-size: 42px; font-weight: 900; letter-spacing: -2px;
+    color: #1A1F36; margin-bottom: 10px;
   }
-  .blog-index-compact {
+  .blog-hero p { font-size: 18px; color: #6B7280; }
+
+  /* Start block – curated learning path */
+  .start-block {
+    background: linear-gradient(135deg, #1A1F36, #2A3360);
+    border-radius: 24px;
+    padding: 32px;
+    margin-bottom: 40px;
+    overflow: hidden;
+  }
+  .start-head { margin-bottom: 24px; }
+  .start-eyebrow {
+    display: inline-block;
+    font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
+    color: #8AA4FF; margin-bottom: 10px;
+  }
+  .start-title {
+    font-size: 26px; font-weight: 900; letter-spacing: -0.5px;
+    color: white; margin-bottom: 8px;
+  }
+  .start-sub { font-size: 15px; color: rgba(255,255,255,0.7); line-height: 1.5; max-width: 640px; }
+  .start-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+  }
+  .start-step {
+    display: flex; flex-direction: column;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 16px;
+    padding: 18px;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+  }
+  .start-step:hover {
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(138,164,255,0.5);
+    transform: translateY(-2px);
+  }
+  .start-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 28px; height: 28px; border-radius: 8px;
+    background: #3366FF; color: white;
+    font-size: 14px; font-weight: 800;
+    margin-bottom: 12px;
+  }
+  .start-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase;
+    color: #8AA4FF; margin-bottom: 6px;
+  }
+  .start-step-title {
+    font-size: 15px; font-weight: 800; color: white; line-height: 1.3;
+    margin-bottom: 14px; flex: 1;
+  }
+  .start-meta { font-size: 12.5px; font-weight: 700; color: rgba(255,255,255,0.6); }
+
+  /* Search & filter bar */
+  .blog-toolbar {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap; margin-bottom: 36px;
+  }
+  .blog-search {
+    display: flex; align-items: center; gap: 8px;
+    background: white;
+    border: 1px solid rgba(51,102,255,0.15);
+    border-radius: 100px;
+    padding: 0 16px;
+    min-height: 44px;
+    flex: 1; min-width: 240px; max-width: 340px;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .blog-search:focus-within {
+    border-color: #3366FF;
+    box-shadow: 0 0 0 3px rgba(51,102,255,0.12);
+  }
+  .blog-search svg { flex-shrink: 0; }
+  .blog-search input {
+    border: none; outline: none; background: transparent;
+    font-size: 14px; color: #1A1F36; width: 100%;
+  }
+  .blog-categories { display: flex; gap: 8px; flex-wrap: wrap; }
+  .cat-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    min-height: 44px;
+    font-size: 13px; font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(51,102,255,0.15);
+    background: white; color: #6B7280;
+    cursor: pointer; transition: all 0.15s;
+  }
+  .cat-btn:hover { border-color: var(--accent, #3366FF); color: var(--accent, #3366FF); }
+  .cat-btn.active {
+    background: var(--accent, #3366FF); color: white;
+    border-color: var(--accent, #3366FF);
+  }
+  .cat-count {
+    font-size: 11px; font-weight: 800;
+    background: rgba(0,0,0,0.06); color: inherit;
+    padding: 1px 7px; border-radius: 100px;
+  }
+  .cat-btn.active .cat-count { background: rgba(255,255,255,0.25); }
+
+  /* Topic clusters */
+  .cluster { margin-bottom: 44px; }
+  .cluster-head {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    align-items: stretch;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: "dot title count" "desc desc desc";
+    align-items: center;
+    gap: 4px 10px;
+    justify-content: start;
+    margin-bottom: 18px;
   }
+  .cluster-dot { grid-area: dot; width: 12px; height: 12px; border-radius: 50%; }
+  .cluster-title {
+    grid-area: title;
+    font-size: 22px; font-weight: 900; letter-spacing: -0.5px; color: #1A1F36;
+  }
+  .cluster-count {
+    grid-area: count;
+    font-size: 12px; font-weight: 800; color: #9CA3AF;
+    background: rgba(26,31,54,0.05); padding: 2px 9px; border-radius: 100px;
+  }
+  .cluster-desc { grid-area: desc; font-size: 14px; color: #6B7280; }
+  .cluster-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch;
+  }
+
+  .blog-noresults {
+    text-align: center; font-size: 16px; color: #6B7280;
+    padding: 48px 0;
+  }
+
+  /* App CTA */
+  .blog-cta-block {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+    background: linear-gradient(135deg, #3366FF, #2348C8);
+    border-radius: 24px;
+    padding: 32px 36px;
+    margin-top: 24px;
+  }
+  .blog-cta-text h2 { font-size: 24px; font-weight: 900; color: white; margin-bottom: 6px; }
+  .blog-cta-text p { font-size: 15px; color: rgba(255,255,255,0.85); line-height: 1.5; max-width: 520px; }
+  .blog-cta-btn {
+    flex-shrink: 0;
+    display: inline-flex; align-items: center; justify-content: center;
+    background: white; color: #2348C8;
+    font-size: 15px; font-weight: 800;
+    padding: 14px 28px; border-radius: 100px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .blog-cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+
   @media (max-width: 900px) {
-    .blog-index-compact { grid-template-columns: repeat(2, 1fr); }
+    .start-grid { grid-template-columns: repeat(2, 1fr); }
+    .cluster-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 600px) {
-    .blog-index-compact { grid-template-columns: 1fr; }
+    .start-block { padding: 24px; }
+    .start-grid { grid-template-columns: 1fr; }
+    .cluster-grid { grid-template-columns: 1fr; }
+    .blog-cta-block { padding: 28px 24px; }
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const buttons = Array.from(document.querySelectorAll<HTMLButtonElement>('.cat-btn'));
+    const clusters = Array.from(document.querySelectorAll<HTMLElement>('.cluster'));
+    const cards = Array.from(document.querySelectorAll<HTMLElement>('#blog-clusters [data-search]'));
+    const searchInput = document.getElementById('blog-search') as HTMLInputElement | null;
+    const noResults = document.getElementById('blog-noresults') as HTMLElement | null;
+
+    let activeCat = 'all';
+    let query = '';
+
+    const apply = () => {
+      let visibleTotal = 0;
+      cards.forEach(card => {
+        const tags = (card.getAttribute('data-tags') || '').split(',');
+        const text = card.getAttribute('data-search') || '';
+        const matchCat = activeCat === 'all' || tags.includes(activeCat);
+        const matchQuery = query === '' || text.includes(query);
+        const show = matchCat && matchQuery;
+        card.style.display = show ? '' : 'none';
+        if (show) visibleTotal++;
+      });
+      clusters.forEach(cl => {
+        const anyVisible = Array.from(cl.querySelectorAll<HTMLElement>('[data-search]'))
+          .some(c => c.style.display !== 'none');
+        cl.style.display = anyVisible ? '' : 'none';
+      });
+      if (noResults) noResults.hidden = visibleTotal !== 0;
+    };
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeCat = btn.getAttribute('data-cat') || 'all';
+        const url = new URL(window.location.href);
+        if (activeCat === 'all') url.searchParams.delete('category');
+        else url.searchParams.set('category', activeCat);
+        history.replaceState({}, '', url);
+        apply();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', () => {
+        query = searchInput.value.trim().toLowerCase();
+        apply();
+      });
+    }
+
+    // Apply initial state from URL (?category=…) – shareable & SEO-friendly
+    const initialCat = new URL(window.location.href).searchParams.get('category');
+    if (initialCat) {
+      const match = buttons.find(b => b.getAttribute('data-cat') === initialCat);
+      if (match) {
+        buttons.forEach(b => b.classList.remove('active'));
+        match.classList.add('active');
+        activeCat = initialCat;
+      }
+    }
+    apply();
+  });
+</script>
