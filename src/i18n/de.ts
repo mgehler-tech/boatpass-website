@@ -70,7 +70,7 @@ export const de = {
     step1: 'App herunterladen',
     step1Desc: 'Kostenlos im Google Play Store. Sofort loslegen – kein Account nötig.',
     step2: 'Lernen & trainieren',
-    step2Desc: 'Lernmodus, Prüfungssimulation oder Fehler-Training – du wählst deinen Weg.',
+    step2Desc: 'Üben, wiederholen, Schwächen gezielt schließen – bis deine Trefferquote sicher sitzt.',
     step3: 'Prüfung bestehen',
     step3Desc: 'Mit dem offiziellen Fragenkatalog bestens vorbereitet in die echte Prüfung.',
   },

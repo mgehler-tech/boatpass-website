@@ -72,7 +72,7 @@ export const en: Translations = {
     step1: 'Download the app',
     step1Desc: 'Free on Google Play Store. Start immediately – no account needed.',
     step2: 'Study & train',
-    step2Desc: 'Study mode, exam simulation, or error training – you choose your path.',
+    step2Desc: 'Practise, repeat, close your weak spots – until your score is solidly there.',
     step3: 'Pass the exam',
     step3Desc: 'Perfectly prepared with the official question catalog for the real exam.',
   },
