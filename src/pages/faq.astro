@@ -28,6 +28,38 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
     ],
   },
   {
+    id: 'voraussetzungen',
+    title: 'Voraussetzungen',
+    faqs: [
+      {
+        q: 'Welches Mindestalter gilt für den Sportbootführerschein?',
+        a: 'Das Mindestalter hängt vom Schein ab: Für den SBF Binnen und den SBF See unter Motor musst du mindestens 16 Jahre alt sein. Für den SBF Binnen unter Segel genügen 14 Jahre. Die Funkzeugnisse UBI und SRC kannst du ab 15 Jahren ablegen, das LRC ab 18 Jahren. Lernen und üben darfst du natürlich schon vorher.',
+      },
+      {
+        q: 'Brauche ich ein ärztliches Attest oder einen Sehtest?',
+        a: 'Ja. Für die Anmeldung zur Prüfung brauchst du ein ärztliches Zeugnis über ausreichendes Seh- und Hörvermögen (inklusive Farbsehtest) – bei Prüfungsantritt darf es nicht älter als 12 Monate sein. Zusätzlich weist du deine Zuverlässigkeit nach, in der Regel über eine Kopie deines Autoführerscheins oder ein Führungszeugnis. Wer den SBF See ablegt und bereits einen höchstens ein Jahr alten SBF Binnen besitzt, muss das ärztliche Zeugnis nicht erneut vorlegen.',
+      },
+      {
+        q: 'Ist der Sportbootführerschein zeitlich befristet?',
+        a: 'Nein. Der Sportbootführerschein gilt unbefristet – du musst ihn nicht verlängern oder erneuern, und es gibt keine Pflichtauffrischung. Auch die Seefunkzeugnisse sind zeitlich unbegrenzt gültig. Den Schein solltest du allerdings im Original an Bord mitführen.',
+      },
+    ],
+  },
+  {
+    id: 'charter',
+    title: 'Führerscheinfrei & Charter',
+    faqs: [
+      {
+        q: 'Bis wie viel PS darf ich ein Boot ohne Führerschein fahren?',
+        a: 'Auf den meisten deutschen Wasserstraßen darfst du Motorboote bis 15 PS (11,03 kW) ohne Führerschein fahren – darüber ist der passende SBF Pflicht. Achtung: Es gibt Ausnahmen mit strengeren Regeln, etwa auf dem Rhein und auf dem Bodensee. Auch ohne Schein gelten an Bord alle Verkehrs- und Sicherheitsregeln auf dem Wasser.',
+      },
+      {
+        q: 'Was ist der Charterschein bzw. die Charterbescheinigung?',
+        a: 'Die Charterbescheinigung – umgangssprachlich „Charterschein" – ist eine Sonderregelung für bestimmte Binnenreviere wie die Mecklenburgische Seenplatte. Nach einer kurzen Einweisung (mindestens drei Stunden) durch den Vercharterer darfst du dort ein Hausboot oder Motorboot über 15 PS fahren, ohne den vollständigen SBF zu besitzen. Die Bescheinigung gilt nur für das gecharterte Boot auf den ausgewiesenen Gewässern und meist mit Geschwindigkeitsbegrenzung – ein vollwertiger Führerschein ist sie nicht.',
+      },
+    ],
+  },
+  {
     id: 'pruefung',
     title: 'Prüfung & Vorbereitung',
     faqs: [
@@ -86,6 +118,28 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
     ],
   },
   {
+    id: 'recht',
+    title: 'Recht & Sicherheit an Bord',
+    faqs: [
+      {
+        q: 'Welche Promillegrenze gilt auf dem Boot?',
+        a: 'Auf dem Wasser gilt für Sportbootführer in der Regel die Grenze von 0,5 ‰ – wie im Straßenverkehr. Schon ab 0,3 ‰ kann das Fahren bei Ausfallerscheinungen strafbar sein. Auf dem Bodensee gelten gesonderte Vorschriften (Bodensee-Schifffahrts-Ordnung). Verstöße werden mit empfindlichen Bußgeldern geahndet, hohe Werte können den Führerschein kosten.',
+      },
+      {
+        q: 'Welche Dokumente muss ich an Bord mitführen?',
+        a: 'An Bord solltest du immer dabeihaben: deinen Sportbootführerschein im Original und einen amtlichen Lichtbildausweis. Nutzt du eine Funkanlage, kommen das jeweilige Funkzeugnis (UBI, SRC oder LRC) und die Frequenzzuteilungsurkunde dazu. Je nach Boot und Revier können weitere Papiere nötig sein, etwa das Bootskennzeichen bzw. der Bootsschein.',
+      },
+      {
+        q: 'Brauche ich auf dem Bodensee einen eigenen Schein?',
+        a: 'Ja. Für den Bodensee gilt ein eigenes Patent: das Bodensee-Schifferpatent. Es ist Pflicht für Motorboote mit mehr als 6 PS (4,4 kW) und für Segelboote ab 12 m² Segelfläche. Der deutsche SBF ersetzt es auf dem Bodensee nicht – wer dort regelmäßig fährt, braucht das Bodensee-Schifferpatent (Kategorie A für Motor, Kategorie D für Segel).',
+      },
+      {
+        q: 'Muss ich an Bord eine Rettungsweste tragen?',
+        a: 'Eine generelle gesetzliche Pflicht, an Bord eines Sportboots ständig eine Rettungsweste zu tragen, gibt es für Erwachsene auf den meisten Gewässern nicht. Dringend empfohlen wird sie aber immer – für jede Person an Bord sollte eine passende, geprüfte Weste griffbereit sein. Achte dabei auf die richtige Auftriebsklasse (in Newton) für dein Revier.',
+      },
+    ],
+  },
+  {
     id: 'app',
     title: 'Boatpass-App',
     faqs: [
@@ -117,7 +171,7 @@ const faqSchema = {
 
 <BaseLayout
   title="FAQ – Häufige Fragen zum Sportbootführerschein & Funkzeugnissen"
-  description="Antworten auf die häufigsten Fragen rund um Sportbootführerschein (SBF Binnen & See) sowie die Funkzeugnisse UBI, SRC und LRC: Ablauf, Kosten, Fragenkataloge und die Boatpass-App."
+  description="Antworten auf die häufigsten Fragen rund um Sportbootführerschein (SBF Binnen & See) und die Funkzeugnisse UBI, SRC und LRC: Voraussetzungen, Mindestalter, Kosten, Promillegrenze, führerscheinfreies Fahren, Fragenkataloge und die Boatpass-App."
   lang="de"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

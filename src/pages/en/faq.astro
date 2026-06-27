@@ -28,6 +28,38 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
     ],
   },
   {
+    id: 'requirements',
+    title: 'Requirements',
+    faqs: [
+      {
+        q: 'What is the minimum age for the boating license?',
+        a: 'The minimum age depends on the license: for the SBF Inland and SBF Coastal under motor you must be at least 16 years old. For the SBF Inland under sail, 14 years is enough. You can take the radio certificates UBI and SRC from age 15, and the LRC from age 18. You can of course start studying and practising earlier.',
+      },
+      {
+        q: 'Do I need a medical certificate or an eye test?',
+        a: 'Yes. To register for the exam you need a medical certificate confirming sufficient vision and hearing (including a colour-vision test) – at the time of the exam it must not be older than 12 months. You also prove your reliability, usually with a copy of your car driving licence or a certificate of good conduct. If you take the SBF Coastal and already hold an SBF Inland that is no more than one year old, you do not have to submit the medical certificate again.',
+      },
+      {
+        q: 'Does the boating license expire?',
+        a: 'No. The Sportbootführerschein is valid indefinitely – you do not have to renew it, and there is no mandatory refresher. The sea radio certificates are also valid without a time limit. You should, however, always carry the original license on board.',
+      },
+    ],
+  },
+  {
+    id: 'charter',
+    title: 'License-Free & Charter',
+    faqs: [
+      {
+        q: 'Up to how many HP may I drive a boat without a license?',
+        a: 'On most German waterways you may drive motorboats up to 15 HP (11.03 kW) without a license – above that, the matching SBF is mandatory. Note: there are exceptions with stricter rules, for example on the Rhine and on Lake Constance (Bodensee). Even without a license, all traffic and safety rules on the water apply on board.',
+      },
+      {
+        q: 'What is the charter certificate (Charterbescheinigung)?',
+        a: 'The Charterbescheinigung – colloquially the "charter license" – is a special arrangement for certain inland waters such as the Mecklenburg Lake District. After a short briefing (at least three hours) by the charter company, you may operate a houseboat or motorboat over 15 HP there without holding the full SBF. The certificate is only valid for the chartered boat on the designated waters and usually with a speed limit – it is not a full boating license.',
+      },
+    ],
+  },
+  {
     id: 'exam',
     title: 'Exam & Preparation',
     faqs: [
@@ -86,6 +118,28 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
     ],
   },
   {
+    id: 'law',
+    title: 'Law & Safety on Board',
+    faqs: [
+      {
+        q: 'What is the blood alcohol limit on a boat?',
+        a: 'On the water, the limit for recreational boat operators is generally 0.5 ‰ – the same as in road traffic. From 0.3 ‰ onward, operating the boat can already be a criminal offence if there are signs of impairment. Special rules apply on Lake Constance (Bodensee-Schifffahrts-Ordnung). Violations are punished with substantial fines, and high readings can cost you your license.',
+      },
+      {
+        q: 'Which documents must I carry on board?',
+        a: 'You should always have on board: your original boating license and an official photo ID. If you use a radio, the relevant radio certificate (UBI, SRC, or LRC) and the frequency assignment document are added. Depending on the boat and waters, further papers may be required, such as the boat registration / number.',
+      },
+      {
+        q: 'Do I need a separate license for Lake Constance?',
+        a: 'Yes. Lake Constance has its own license: the Bodensee-Schifferpatent. It is mandatory for motorboats with more than 6 HP (4.4 kW) and for sailboats with a sail area of 12 m² or more. The German SBF does not replace it on Lake Constance – anyone boating there regularly needs the Bodensee-Schifferpatent (category A for motor, category D for sail).',
+      },
+      {
+        q: 'Do I have to wear a life jacket on board?',
+        a: 'There is generally no legal obligation for adults to wear a life jacket at all times on a recreational boat on most waters. However, it is always strongly recommended – a suitable, certified jacket should be within reach for every person on board. Make sure to choose the correct buoyancy class (in Newtons) for your waters.',
+      },
+    ],
+  },
+  {
     id: 'app',
     title: 'Boatpass App',
     faqs: [
@@ -117,7 +171,7 @@ const faqSchema = {
 
 <BaseLayout
   title="FAQ – Boating License & Radio Certificate Questions"
-  description="Answers to the most common questions about the German boating license (SBF Inland & Coastal) and the radio certificates UBI, SRC, and LRC: process, costs, question catalogs, and the Boatpass app."
+  description="Answers to the most common questions about the German boating license (SBF Inland & Coastal) and the radio certificates UBI, SRC, and LRC: requirements, minimum age, costs, alcohol limits, license-free boating, question catalogs, and the Boatpass app."
   lang="en"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
