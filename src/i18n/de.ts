@@ -49,7 +49,7 @@ export const de = {
     },
     training: {
       title: 'Fehler-Training',
-      desc: 'Trainiere gezielt deine Schwächen. Nur falsch beantwortete Fragen – kein Zeitverschwenden.',
+      desc: 'Trainiere gezielt deine Schwächen – nur falsch beantwortete Fragen. Mit Trefferquote je Kategorie und Lernstatistik siehst du jederzeit, wo du stehst.',
     },
     progress: {
       title: 'Fortschritt & Statistik',
@@ -163,9 +163,9 @@ export const de = {
     partnerNote: 'BoatPass ersetzt nicht deine Fahrschule. Wir nehmen dir die Theorie ab, damit du dich auf dem Wasser auf das Wesentliche konzentrieren kannst – die Praxis bleibt bei den Profis vor Ort.',
   },
   catalogSources: {
-    chip: 'Quellen-Transparenz',
-    title: 'Welche Lizenz nutzt welchen Fragenkatalog?',
-    intro: 'Volle Transparenz: Für jede Lizenz siehst du den amtlichen Fragenkatalog, seinen aktuellen Stand und den direkten Link zur offiziellen Quelle. Prüf es selbst nach.',
+    chip: 'Aktualitäts-Garantie',
+    title: 'Du lernst die Fragen, die drankommen – nicht die von vorgestern.',
+    intro: 'Gedruckte Lehrbücher veralten mit jeder Katalog-Änderung. BoatPass nicht: Du lernst 1:1 mit dem amtlichen Fragenkatalog – und bei jeder Änderung kommt das Update zu dir. Für jede Lizenz siehst du hier den amtlichen Katalog, seinen Stand und den direkten Link zur offiziellen Quelle. Prüf es selbst nach.',
     colLicense: 'Lizenz',
     colCatalog: 'Amtlicher Fragenkatalog',
     colStand: 'Amtlicher Stand',

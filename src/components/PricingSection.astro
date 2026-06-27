@@ -151,125 +151,17 @@ const soonItems = [t.pricing.soon1];
           </div>
         </div>
 
-        <!-- UBI Sprechfunk -->
-        <div class="reveal-item catalog-card paid-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.10); box-shadow:0 8px 30px rgba(26,31,54,0.03);">
-          <div class="paid-card-inner" style="text-align:left;">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
-              <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px;">{t.pricing.available}</div>
-              <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
-                <div style="font-size:11px; font-weight:600; color:#059669; background:#ECFDF5; border:1px solid #A7F3D0; padding:3px 9px; border-radius:100px;">{t.pricing.freeTrialNote}</div>
-                <div style="font-size:11px; font-weight:600; color:#6B7280; background:#F9FAFB; border:1px solid #E5E7EB; padding:3px 9px; border-radius:100px;">{t.pricing.ubiOnlyNote}</div>
-              </div>
-            </div>
-            <div style="font-size:24px; font-weight:900; color:#1A1F36; margin-bottom:6px; letter-spacing:-0.3px;">{t.pricing.catalog3Name}</div>
-            <div style="font-size:14px; color:#6B7280; margin-bottom:16px; line-height:1.5;">{t.pricing.catalog3Desc}</div>
-            <div class="catalog-content">
-              <div class="stat-grid">
-                <div class="stat-box">
-                  <div class="stat-num">{t.pricing.catalog3Questions}</div>
-                  <div class="stat-label">{t.pricing.questionsUnit}</div>
-                </div>
-                <div class="stat-box">
-                  <div class="stat-num">{t.pricing.catalog3Themes}</div>
-                  <div class="stat-label">{t.pricing.themesUnit}</div>
-                </div>
-              </div>
-              <div class="catalog-highlight">
-                <Icon name="check" size={14} stroke="#3366FF" strokeWidth={2.5} />
-                <span>{t.pricing.catalog3Highlight}</span>
-              </div>
-            </div>
-            <div class="price-row" style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
-              <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.ubiPrice}</span>
-              <span style="font-size:13px; color:#6B7280; font-weight:500;">{lang === 'de' ? 'Einmalkauf' : 'one-time'}</span>
-            </div>
-            <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-              class="cta-see-btn"
-              style="display:block; text-align:center; padding:12px; border-radius:12px; font-size:14px; font-weight:700; text-decoration:none; border:1px solid rgba(51,102,255,0.15); color:#1A1F36; background:white;">
-              {t.pricing.ctaStore}
-            </a>
+        <!-- Weitere Funk-Lizenzen (UBI · SRC · LRC) – von der Homepage ausgelagert
+             auf die Lizenz-Seiten, um die Kaufentscheidung hier auf SBF zu fokussieren. -->
+        <a href={lang === 'de' ? '/fuehrerscheine/' : '/en/licenses/'}
+          class="reveal-item catalog-card paid-card licenses-link-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+          <div class="paid-card-inner" style="text-align:left; justify-content:center;">
+            <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">{lang === 'de' ? 'Weitere Lizenzen' : 'More licenses'}</div>
+            <div style="font-size:22px; font-weight:900; color:#1A1F36; letter-spacing:-0.3px; margin-bottom:8px;">UBI · SRC · LRC</div>
+            <div style="font-size:14px; color:#6B7280; line-height:1.5; margin-bottom:20px;">{lang === 'de' ? 'Sprechfunk- & Seefunkzeugnisse – jeweils mit offiziellem Fragenkatalog, ab € 7,99.' : 'Radio certificates – each with the official question catalog, from €7.99.'}</div>
+            <span class="licenses-link-cta">{lang === 'de' ? 'Alle Lizenzen ansehen' : 'View all licenses'} →</span>
           </div>
-        </div>
-
-        <!-- SRC Seefunk -->
-        <div class="reveal-item catalog-card paid-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.10); box-shadow:0 8px 30px rgba(26,31,54,0.03);">
-          <div class="paid-card-inner" style="text-align:left;">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
-              <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px;">{t.pricing.available}</div>
-              <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
-                <div style="font-size:11px; font-weight:600; color:#059669; background:#ECFDF5; border:1px solid #A7F3D0; padding:3px 9px; border-radius:100px;">{t.pricing.freeTrialNote}</div>
-                <div style="font-size:11px; font-weight:600; color:#6B7280; background:#F9FAFB; border:1px solid #E5E7EB; padding:3px 9px; border-radius:100px;">{t.pricing.ubiOnlyNote}</div>
-              </div>
-            </div>
-            <div style="font-size:24px; font-weight:900; color:#1A1F36; margin-bottom:6px; letter-spacing:-0.3px;">{t.pricing.srcName}</div>
-            <div style="font-size:14px; color:#6B7280; margin-bottom:16px; line-height:1.5;">{t.pricing.srcDesc}</div>
-            <div class="catalog-content">
-              <div class="stat-grid">
-                <div class="stat-box">
-                  <div class="stat-num">{t.pricing.srcQuestions}</div>
-                  <div class="stat-label">{t.pricing.questionsUnit}</div>
-                </div>
-                <div class="stat-box">
-                  <div class="stat-num">{t.pricing.srcThemes}</div>
-                  <div class="stat-label">{t.pricing.themesUnit}</div>
-                </div>
-              </div>
-              <div class="catalog-highlight">
-                <Icon name="check" size={14} stroke="#3366FF" strokeWidth={2.5} />
-                <span>{t.pricing.srcHighlight}</span>
-              </div>
-            </div>
-            <div class="price-row" style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
-              <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.srcPrice}</span>
-              <span style="font-size:13px; color:#6B7280; font-weight:500;">{lang === 'de' ? 'Einmalkauf' : 'one-time'}</span>
-            </div>
-            <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-              class="cta-see-btn"
-              style="display:block; text-align:center; padding:12px; border-radius:12px; font-size:14px; font-weight:700; text-decoration:none; border:1px solid rgba(51,102,255,0.15); color:#1A1F36; background:white;">
-              {t.pricing.ctaStore}
-            </a>
-          </div>
-        </div>
-
-        <!-- LRC Seefunk -->
-        <div class="reveal-item catalog-card paid-card" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; background:white; border:1px solid rgba(51,102,255,0.10); box-shadow:0 8px 30px rgba(26,31,54,0.03);">
-          <div class="paid-card-inner" style="text-align:left;">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
-              <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px;">{t.pricing.available}</div>
-              <div style="display:flex; flex-direction:column; align-items:flex-end; gap:4px;">
-                <div style="font-size:11px; font-weight:600; color:#059669; background:#ECFDF5; border:1px solid #A7F3D0; padding:3px 9px; border-radius:100px;">{t.pricing.freeTrialNote}</div>
-                <div style="font-size:11px; font-weight:600; color:#6B7280; background:#F9FAFB; border:1px solid #E5E7EB; padding:3px 9px; border-radius:100px;">{t.pricing.ubiOnlyNote}</div>
-              </div>
-            </div>
-            <div style="font-size:24px; font-weight:900; color:#1A1F36; margin-bottom:6px; letter-spacing:-0.3px;">{t.pricing.lrcName}</div>
-            <div style="font-size:14px; color:#6B7280; margin-bottom:16px; line-height:1.5;">{t.pricing.lrcDesc}</div>
-            <div class="catalog-content">
-              <div class="stat-grid">
-                <div class="stat-box">
-                  <div class="stat-num">{t.pricing.lrcQuestions}</div>
-                  <div class="stat-label">{t.pricing.questionsUnit}</div>
-                </div>
-                <div class="stat-box">
-                  <div class="stat-num">{t.pricing.lrcThemes}</div>
-                  <div class="stat-label">{t.pricing.themesUnit}</div>
-                </div>
-              </div>
-              <div class="catalog-highlight">
-                <Icon name="check" size={14} stroke="#3366FF" strokeWidth={2.5} />
-                <span>{t.pricing.lrcHighlight}</span>
-              </div>
-            </div>
-            <div class="price-row" style="display:flex; align-items:baseline; gap:6px; margin-bottom:20px;">
-              <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.lrcPrice}</span>
-              <span style="font-size:13px; color:#6B7280; font-weight:500;">{lang === 'de' ? 'Einmalkauf' : 'one-time'}</span>
-            </div>
-            <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-              class="cta-see-btn"
-              style="display:block; text-align:center; padding:12px; border-radius:12px; font-size:14px; font-weight:700; text-decoration:none; border:1px solid rgba(51,102,255,0.15); color:#1A1F36; background:white;">
-              {t.pricing.ctaStore}
-            </a>
-          </div>
-        </div>
+        </a>
 
       </div>
 
@@ -355,6 +247,24 @@ const soonItems = [t.pricing.soon1];
   }
   .paid-card .price-row {
     margin-top: auto;
+  }
+  /* Verweis-Karte auf die übrigen Lizenz-Seiten (UBI/SRC/LRC) */
+  .licenses-link-card {
+    text-decoration: none;
+    background: #F7F9FC;
+    border: 1px dashed rgba(51,102,255,0.28);
+    box-shadow: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  }
+  .licenses-link-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(51,102,255,0.5);
+    background: #F0F4FA;
+  }
+  .licenses-link-cta {
+    font-size: 14px;
+    font-weight: 700;
+    color: #3366FF;
   }
   /* Coming soon – compact full-width bar */
   .soon-bar {
