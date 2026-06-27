@@ -1,61 +1,113 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const faqs = [
+// FAQ grouped by topic: clearer for users + a clean H2 structure and thematic
+// keyword clusters for SEO. Each category has its own anchor (id) so Google can
+// pick it up as a standalone section.
+const categories: { id: string; title: string; faqs: { q: string; a: string }[] }[] = [
   {
-    q: 'What is the Sportbootführerschein (SBF)?',
-    a: 'The Sportbootführerschein (SBF) is the official German boating license for recreational motorized vessels. It is required for motorboats with more than 15 HP (11 kW) on federal waterways. There are two variants: SBF Inland (Binnen) for inland waterways and SBF Coastal (See) for coastal waters. Both can be taken together in a combined exam.',
+    id: 'basics',
+    title: 'Basics & Licenses',
+    faqs: [
+      {
+        q: 'What is the Sportbootführerschein (SBF)?',
+        a: 'The Sportbootführerschein (SBF) is the official German boating license for recreational motorized vessels. It is required for motorboats with more than 15 HP (11 kW) on federal waterways. There are two variants: SBF Inland (Binnen) for inland waterways and SBF Coastal (See) for coastal waters. Both can be taken together in a combined exam.',
+      },
+      {
+        q: 'What is the difference between SBF Inland and SBF Coastal?',
+        a: 'The SBF Inland (Binnen) authorizes you to navigate inland shipping waterways – rivers, canals, and inland lakes. The SBF Coastal (See) is valid on coastal shipping waterways along Germany\'s North Sea and Baltic Sea coast. These are two separate licenses, each requiring its own exam. If you want to navigate both areas, you need both – or take the combined exam.',
+      },
+      {
+        q: 'Which radio certificates exist – and do I need one?',
+        a: 'As soon as you operate a radio on board, you need the matching radio operator certificate. For inland radio (rivers, canals) that is the UBI (VHF radiotelephone certificate for inland waterways). For coastal sea radio it is the SRC (Short Range Certificate), and for worldwide sea radio including MF/HF and satellite it is the LRC (Long Range Certificate). These radio certificates are independent of the SBF and are offered as separate learning modules in Boatpass.',
+      },
+      {
+        q: 'Which license do I need for my waters?',
+        a: 'Rule of thumb: for a motorboat over 15 HP you need the SBF Inland on inland waters and the SBF Coastal at the coast. If a radio is on board, add the matching radio certificate – UBI for inland, SRC for coastal, LRC for worldwide voyages. You\'ll find an overview of all licenses on the "Licenses" page.',
+      },
+    ],
   },
   {
-    q: 'What is the difference between SBF Inland and SBF Coastal?',
-    a: 'The SBF Inland (Binnen) authorizes you to navigate inland shipping waterways – rivers, canals, and inland lakes. The SBF Coastal (See) is valid on coastal shipping waterways along Germany\'s North Sea and Baltic Sea coast. These are two separate licenses, each requiring its own exam. If you want to navigate both areas, you need both – or take the combined exam.',
+    id: 'exam',
+    title: 'Exam & Preparation',
+    faqs: [
+      {
+        q: 'How does the SBF theory exam work?',
+        a: 'Both licenses have a written theory exam. For the SBF Inland, the paper consists of 30 questions (7 base questions + 23 specific inland questions) to be answered in 45 minutes. You pass by answering at least 5 of 7 base questions and at least 18 of 23 specific questions correctly. The SBF Coastal additionally includes a navigation task with 9 questions (at least 7 correct), for a total of 39 questions in 60 minutes. The theory exam is followed by a practical exam on the water.',
+      },
+      {
+        q: 'Do I need to attend a course, or can I self-study?',
+        a: 'A course is not required – you can prepare entirely on your own. The official question catalogs are publicly available, and apps like Boatpass enable structured study without a sailing school. Many candidates pass the theory exam without a course. For the practical exam, at least one day of practice on the water is recommended.',
+      },
+      {
+        q: 'How long does preparation take?',
+        a: 'With consistent studying (20–30 minutes daily), 4–6 weeks for the theory part is realistic. Working systematically through the official question catalog and reviewing mistakes helps you get exam-ready faster. The Boatpass app tracks your progress and specifically trains your weak areas.',
+      },
+      {
+        q: 'Is the German SBF valid abroad?',
+        a: 'The SBF Inland is recognized on German inland waterways. Abroad, national regulations apply – in many European countries the SBF is sufficient, while others additionally require the ICC (International Certificate of Competence), which you can obtain based on your German license.',
+      },
+    ],
   },
   {
-    q: 'How does the SBF theory exam work?',
-    a: 'Both licenses have a written theory exam. For the SBF Inland, the paper consists of 30 questions (7 base questions + 23 specific inland questions) to be answered in 45 minutes. You pass by answering at least 5 of 7 base questions and at least 18 of 23 specific questions correctly. The SBF Coastal additionally includes a navigation task with 9 questions (at least 7 correct), for a total of 39 questions in 60 minutes. The theory exam is followed by a practical exam on the water.',
+    id: 'catalog',
+    title: 'Question Catalogs',
+    faqs: [
+      {
+        q: 'How many questions are in the official SBF catalog?',
+        a: 'The official SBF question catalog is set by the DSV and DMYV and published freely via ELWIS. Under motor, the inland catalog contains 72 base questions and 181 specific questions (253 in total), plus 47 sailing questions for the sailing scope. The coastal catalog contains 72 base questions and 213 specific coastal questions (285 in total). Boatpass contains the complete current catalog for both licenses.',
+      },
+      {
+        q: 'Which catalog do the radio modules (UBI, SRC, LRC) use?',
+        a: 'The radio certificates have their own official question catalog – not the ELWIS/SBF catalog. The exam questions for the sea radio certificates SRC and LRC and for the inland radio certificate UBI are issued by the Bundesnetzagentur (Germany\'s Federal Network Agency; its Hamburg branch office is responsible for sea radio), while the exams themselves are administered by the DSV and DMYV committees. The currently valid catalog has applied since the radio-certificate reform of 1 October 2018. Boatpass contains the complete official catalog for each radio module – UBI, SRC, and LRC.',
+      },
+      {
+        q: 'How up to date is the question catalog in the app?',
+        a: 'Boatpass contains the current official question catalog for each license. For SBF Inland and SBF Coastal that is the catalog published via ELWIS by the DSV/DMYV; for the radio modules UBI, SRC, and LRC it is the official radio question catalog of the Bundesnetzagentur. Whenever one of these bodies updates its catalog, we update the app promptly – so you always study with the exact questions used in the real exam.',
+      },
+    ],
   },
   {
-    q: 'Do I need to attend a course, or can I self-study?',
-    a: 'A course is not required – you can prepare entirely on your own. The official ELWIS question catalog is publicly available, and apps like Boatpass enable structured study without a sailing school. Many candidates pass the theory exam without a course. For the practical exam, at least one day of practice on the water is recommended.',
+    id: 'costs',
+    title: 'Costs',
+    faqs: [
+      {
+        q: 'How much does the SBF cost?',
+        a: 'The official exam fees (theory + practical) in 2026 are €130.78 for the SBF Inland and €148.38 for the SBF Coastal license. Taking both together as a combined exam costs just €178.61 instead of €279.16. Optional preparatory courses cost extra (online courses from around €340). With the Boatpass app, you can learn the theory without an expensive course.',
+      },
+      {
+        q: 'How much do the radio certificates (UBI, SRC, LRC) cost?',
+        a: 'The official exam fees (admission, examination, and issuing of the certificate) are around €109 for the UBI, around €128 for the SRC, and roughly €188–207 for the LRC. A preparatory course is optional. In Boatpass you learn the theory as a module: UBI and SRC for a one-time €7.99 each, LRC for a one-time €9.99 – no subscription.',
+      },
+      {
+        q: 'Is the Boatpass app free?',
+        a: 'Yes – the app is free. In the free mode, you can work through 15 study questions per day and explore the app. Full SBF access (unlimited questions, exam simulation, error training) is a one-time purchase of €9.99 per catalog – or both SBF catalogs as a complete bundle for €16.98 (you save €3). The radio modules UBI, SRC, and LRC are unlocked separately (from €7.99). No subscription, no hidden fees.',
+      },
+    ],
   },
   {
-    q: 'How much does the SBF cost?',
-    a: 'The official exam fees (theory + practical) in 2026 are €130.78 for the SBF Inland and €148.38 for the SBF Coastal license. Taking both together as a combined exam costs just €178.61 instead of €279.16. Optional preparatory courses cost extra (online courses from around €340). With the Boatpass app, you can learn the theory without an expensive course.',
-  },
-  {
-    q: 'How many questions are in the official catalog?',
-    a: 'The official question catalog is set by the DSV and DMYV and published freely via ELWIS. Under motor, the inland catalog contains 72 base questions and 181 specific questions (253 in total), plus 47 sailing questions for the sailing scope. The coastal catalog contains 72 base questions and 213 specific coastal questions (285 in total). Boatpass contains the complete current catalog for both licenses.',
-  },
-  {
-    q: 'How long does preparation take?',
-    a: 'With consistent studying (20–30 minutes daily), 4–6 weeks for the theory part is realistic. Working systematically through the official question catalog and reviewing mistakes helps you get exam-ready faster. The Boatpass app tracks your progress and specifically trains your weak areas.',
-  },
-  {
-    q: 'Is the Boatpass app free?',
-    a: 'Yes – the app is free. In the free mode, you can work through 15 study questions per day and explore the app. Full access (unlimited questions, exam simulation, error training) is a one-time purchase of €9.99 per catalog – or both catalogs as a complete bundle for €16.98 (you save €3). No subscription, no hidden fees.',
-  },
-  {
-    q: 'Which devices does the app support?',
-    a: 'Boatpass is currently available for Android (Google Play Store). An iOS version is planned.',
-  },
-  {
-    q: 'How up to date is the question catalog in the app?',
-    a: 'The app always contains the current official ELWIS question catalog. Whenever ELWIS updates the catalog, the app is updated promptly – so you always study with the exact questions used in the real exam.',
-  },
-  {
-    q: 'Is the German SBF valid abroad?',
-    a: 'The SBF Inland is recognized on German inland waterways. Abroad, national regulations apply – in many European countries the SBF is sufficient, while others additionally require the ICC (International Certificate of Competence), which you can obtain based on your German license.',
-  },
-  {
-    q: 'Can I use the app offline?',
-    a: 'Yes – all questions and explanations are available offline after the initial download. An internet connection is only needed for the first download and any catalog updates.',
+    id: 'app',
+    title: 'Boatpass App',
+    faqs: [
+      {
+        q: 'Which devices does the app support?',
+        a: 'Boatpass is currently available for Android (Google Play Store). An iOS version is planned.',
+      },
+      {
+        q: 'Can I use the app offline?',
+        a: 'Yes – all questions and explanations are available offline after the initial download. An internet connection is only needed for the first download and any catalog updates.',
+      },
+    ],
   },
 ];
+
+// All questions flattened for the FAQPage schema (rich results in Google Search).
+const allFaqs = categories.flatMap(c => c.faqs);
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": faqs.map(f => ({
+  "mainEntity": allFaqs.map(f => ({
     "@type": "Question",
     "name": f.q,
     "acceptedAnswer": { "@type": "Answer", "text": f.a },
@@ -64,27 +116,46 @@ const faqSchema = {
 ---
 
 <BaseLayout
-  title="FAQ – Boating License Questions"
-  description="Answers to the most common questions about the German boating license: process, costs, differences, and the Boatpass app."
+  title="FAQ – Boating License & Radio Certificate Questions"
+  description="Answers to the most common questions about the German boating license (SBF Inland & Coastal) and the radio certificates UBI, SRC, and LRC: process, costs, question catalogs, and the Boatpass app."
   lang="en"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <div class="max-w-3xl mx-auto px-4 pt-24 pb-16">
     <h1 class="text-4xl font-bold text-text mb-4">Frequently Asked Questions</h1>
-    <p class="text-gray-500 text-xl mb-12">Everything about the boating license exam and the Boatpass app</p>
+    <p class="text-gray-500 text-xl mb-8">Everything about the boating license, the radio certificates, and the Boatpass app</p>
 
-    <div class="space-y-4">
-      {faqs.map((faq) => (
-        <details class="bg-white border border-gray-100 rounded-2xl overflow-hidden group">
-          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-text list-none">
-            {faq.q}
-            <span class="text-primary ml-4 transition-transform group-open:rotate-180">▼</span>
-          </summary>
-          <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-            {faq.a}
+    <!-- Category navigation: jump links to the topic blocks -->
+    <nav aria-label="FAQ categories" class="flex flex-wrap gap-2 mb-12">
+      {categories.map((cat) => (
+        <a
+          href={`#${cat.id}`}
+          class="text-sm font-semibold text-primary bg-primary/8 border border-primary/15 rounded-full px-4 py-2 hover:bg-primary/15 transition-colors"
+        >
+          {cat.title}
+        </a>
+      ))}
+    </nav>
+
+    <div class="space-y-12">
+      {categories.map((cat) => (
+        <section id={cat.id} class="scroll-mt-24">
+          <h2 class="text-2xl font-bold text-text mb-5">{cat.title}</h2>
+          <div class="space-y-4">
+            {cat.faqs.map((faq) => (
+              <details class="bg-white border border-gray-100 rounded-2xl overflow-hidden group">
+                <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-text list-none">
+                  <h3 class="font-semibold text-base m-0">{faq.q}</h3>
+                  <span class="text-primary ml-4 transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
           </div>
-        </details>
+        </section>
       ))}
     </div>
   </div>
