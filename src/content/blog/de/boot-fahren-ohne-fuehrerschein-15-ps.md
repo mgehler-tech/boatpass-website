@@ -19,7 +19,7 @@ Das gilt für die allermeisten Gewässer in Deutschland. Erst **oberhalb von 15 
 
 ### Mindestalter
 
-Führerscheinfrei heißt nicht regellos: Wer ein Motorboot bis 15 PS führt, muss **mindestens 16 Jahre alt** sein. Für führerscheinpflichtige Boote (über 15 PS) gilt ein Mindestalter von 16 Jahren beim SBF Binnen und von 16 Jahren beim SBF See – die Praxis variiert je nach Schein.
+Führerscheinfrei heißt nicht regellos: Wer ein Motorboot bis 15 PS führt, muss **mindestens 16 Jahre alt** sein. Für den führerscheinpflichtigen Sportbootführerschein gilt mit Antriebsmaschine (Motor) ein Mindestalter von **16 Jahren** – das gilt für SBF Binnen und SBF See gleichermaßen. Nur für den Erwerb **unter Segel** (SBF Binnen) liegt das Mindestalter bei **14 Jahren**.
 
 ## Die wichtigsten Ausnahmen
 
