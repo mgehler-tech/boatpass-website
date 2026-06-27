@@ -42,6 +42,8 @@ Neben der Pyrotechnik kennt die KVR weitere anerkannte Notzeichen, die du ohne b
 - **Flammensignal** an Bord (z. B. ein brennender Teertonneninhalt).
 - Eine **Seenotfunkbake (EPIRB)**, die per Satellit Alarm und Position übermittelt.
 
+**Funk-Tipp:** Eine Seefunkanlage darfst du im Normalbetrieb nur mit dem passenden Sprechfunkzeugnis bedienen – im Binnenbereich mit dem [UBI](/ubi/), an der Küste mit dem [SRC](/src/) und für weltweite Fahrt mit dem [LRC](/lrc/). Das Absetzen eines Notrufs in einer akuten Seenot ist dagegen jedem erlaubt.
+
 ## Was tun, wenn du ein Notsignal siehst?
 
 Wer ein Notsignal wahrnimmt, ist zur **Hilfeleistung verpflichtet**, soweit er ohne ernste Gefahr für das eigene Boot und die eigene Besatzung helfen kann. Mindestens solltest du den Seenotfall über Funk (Kanal 16) oder telefonisch an die Seenotleitung weitergeben, damit professionelle Rettungskräfte alarmiert werden.

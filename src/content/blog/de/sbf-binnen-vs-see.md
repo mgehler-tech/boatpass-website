@@ -74,6 +74,8 @@ Empfehlung der meisten Bootsschulen: Beginne mit dem **SBF See** (schwieriger), 
 
 **Noch unsicher, welche Gewässer?** → Starte mit SBF Binnen (günstiger, einfacher) und ergänze später den SBF See
 
+Wenn du dir trotzdem unsicher bist, beantwortet unser [Bootsführerschein-Finder](/tools/welcher-bootsfuehrerschein/) mit drei kurzen Fragen, welcher Schein zu deinem Vorhaben passt.
+
 ## Fazit
 
 Der wichtigste Unterschied ist der Geltungsbereich: Binnen für Flüsse und Seen in Deutschland, See für Küstengewässer national und international. Wer langfristig flexibel sein will, sollte die Kombiprüfung in Betracht ziehen – sie ist günstiger als beide Scheine separat.

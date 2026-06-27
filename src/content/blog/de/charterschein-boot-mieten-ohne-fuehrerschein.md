@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "charter-certificate-rent-boat-without-license"
 ---
 
-Du willst einen Bootsurlaub auf der Müritz oder der Mecklenburgischen Seenplatte machen – aber ohne vorher den Sportbootführerschein zu machen? Das geht: mit dem **Charterschein**. Hier erfährst du, was die Charterbescheinigung erlaubt, welche Voraussetzungen gelten und wo ihre Grenzen liegen.
+Du willst einen Bootsurlaub auf der Müritz oder der Mecklenburgischen Seenplatte machen – aber ohne vorher den Sportbootführerschein zu machen? Das geht: mit dem **Charterschein**. Hier erfährst du, was die Charterbescheinigung erlaubt, welche Voraussetzungen gelten und wo ihre Grenzen liegen. Unsicher, ob du überhaupt einen Schein brauchst? Unser [Bootsführerschein-Finder](/tools/welcher-bootsfuehrerschein/) zeigt es dir in 30 Sekunden.
 
 ## Was ist der Charterschein?
 

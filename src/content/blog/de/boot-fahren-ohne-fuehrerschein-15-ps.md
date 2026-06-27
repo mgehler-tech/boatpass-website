@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "boating-without-license-15-hp"
 ---
 
-„Brauche ich überhaupt einen Bootsführerschein?" – das ist die erste Frage, die sich fast jeder am Anfang stellt. Die gute Nachricht: In Deutschland darfst du viele Motorboote ganz ohne Führerschein fahren. Die schlechte: Es gibt Ausnahmen, Sonderregeln und schnell erreichte Grenzen. Hier erfährst du genau, was erlaubt ist – und ab wann du den Sportbootführerschein (SBF) brauchst.
+„Brauche ich überhaupt einen Bootsführerschein?" – das ist die erste Frage, die sich fast jeder am Anfang stellt. Die gute Nachricht: In Deutschland darfst du viele Motorboote ganz ohne Führerschein fahren. Die schlechte: Es gibt Ausnahmen, Sonderregeln und schnell erreichte Grenzen. Hier erfährst du genau, was erlaubt ist – und ab wann du den Sportbootführerschein (SBF) brauchst. Schneller Überblick gefällig? Unser [Bootsführerschein-Finder](/tools/welcher-bootsfuehrerschein/) sagt dir in drei Fragen, welchen Schein du brauchst.
 
 ## Die Grundregel: bis 15 PS führerscheinfrei
 
