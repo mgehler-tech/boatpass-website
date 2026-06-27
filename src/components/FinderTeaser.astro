@@ -1,0 +1,195 @@
+---
+// DE-only Teaser für den Bootsführerschein-Finder. Verlinkt bewusst nur auf die
+// Tool-Seite (/tools/welcher-bootsfuehrerschein/) statt den interaktiven
+// Konfigurator zu duplizieren – so bleibt die Entscheidungslogik eine einzige
+// Quelle der Wahrheit. Wird nur für lang === 'de' eingebunden (wie der
+// Header-Link), weil der Finder ausschließlich auf Deutsch existiert.
+const finderUrl = '/tools/welcher-bootsfuehrerschein/';
+const questions = ['Revier', 'Motorleistung', 'Funk'];
+---
+
+<section id="finder-teaser" class="max-w-6xl mx-auto px-6 py-14 md:py-20">
+  <a href={finderUrl} class="finder-card reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+    <div class="finder-orb"></div>
+    <div class="finder-body">
+      <div class="finder-chip">Kostenloser Finder</div>
+      <h2 class="finder-title">Welchen Bootsführerschein<br>brauchst du wirklich?</h2>
+      <p class="finder-sub">
+        3 kurze Fragen zu Revier, Motorleistung und Funk – und du weißt in
+        30&nbsp;Sekunden, welcher Schein (SBF Binnen, SBF See) und welches
+        Funkzeugnis (UBI, SRC, LRC) zu deinem Vorhaben passt.
+      </p>
+      <div class="finder-steps">
+        {questions.map((q, i) => (
+          <>
+            {i > 0 && <span class="finder-step-arrow" aria-hidden="true">→</span>}
+            <span class="finder-step">{q}</span>
+          </>
+        ))}
+      </div>
+    </div>
+    <div class="finder-action">
+      <span class="finder-button">
+        Finder starten
+        <span class="finder-button-arrow" aria-hidden="true">→</span>
+      </span>
+    </div>
+  </a>
+</section>
+
+<style>
+  .finder-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background: #ffffff;
+    border: 1px solid rgba(51, 102, 255, 0.14);
+    border-radius: 28px;
+    padding: 44px 48px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 18px 44px rgba(26, 31, 54, 0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .finder-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 56px rgba(51, 102, 255, 0.16);
+    border-color: rgba(51, 102, 255, 0.28);
+  }
+
+  /* Decorative orb */
+  .finder-orb {
+    position: absolute;
+    top: -120px;
+    right: -80px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(51, 102, 255, 0.10), transparent 70%);
+    pointer-events: none;
+  }
+
+  .finder-body {
+    position: relative;
+    max-width: 620px;
+  }
+
+  .finder-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(51, 102, 255, 0.08);
+    border: 1px solid rgba(51, 102, 255, 0.18);
+    color: #3366FF;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 100px;
+    margin-bottom: 16px;
+  }
+
+  .finder-title {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    color: #1A1F36;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .finder-sub {
+    font-size: 16px;
+    color: #6B7280;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .finder-steps {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .finder-step {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(51, 102, 255, 0.06);
+    border: 1px solid rgba(51, 102, 255, 0.12);
+    color: #3366FF;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 100px;
+  }
+  .finder-step-arrow {
+    color: #9CA3AF;
+    font-weight: 700;
+  }
+
+  .finder-action {
+    position: relative;
+    flex-shrink: 0;
+  }
+  .finder-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #1A1F36, #3366FF);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 16px 30px;
+    border-radius: 100px;
+    box-shadow: 0 8px 22px rgba(51, 102, 255, 0.22);
+    transition: transform 0.2s ease;
+  }
+  .finder-button-arrow {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+  .finder-card:hover .finder-button-arrow {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 768px) {
+    .finder-card {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+      padding: 36px 24px;
+      gap: 28px;
+    }
+    .finder-title {
+      font-size: 26px;
+      letter-spacing: -1px;
+    }
+    .finder-title br {
+      display: none;
+    }
+    .finder-action {
+      width: 100%;
+    }
+    .finder-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        (e.target as HTMLElement).style.opacity = '1';
+        (e.target as HTMLElement).style.transform = 'translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('#finder-teaser .reveal-item').forEach(el => obs.observe(el));
+</script>
