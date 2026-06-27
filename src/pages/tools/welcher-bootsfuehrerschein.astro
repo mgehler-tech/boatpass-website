@@ -32,7 +32,7 @@ const decisionRows = [
   { vorhaben: 'Motorboot über 15 PS · Binnengewässer', schein: 'SBF Binnen', funk: 'UBI (nur bei Funkanlage an Bord)' },
   { vorhaben: 'Motorboot über 15 PS · Küste (Nord-/Ostsee)', schein: 'SBF See', funk: 'SRC (Küste) bzw. LRC (weltweit)' },
   { vorhaben: 'Motorboot über 15 PS · Binnen + Küste', schein: 'SBF Binnen + SBF See (Kombiprüfung)', funk: 'UBI + SRC/LRC' },
-  { vorhaben: 'Motorboot bis 15 PS (11,03 kW)', schein: 'kein SBF gesetzlich nötig*', funk: 'UBI/SRC nur bei Funkanlage' },
+  { vorhaben: 'Motorboot bis 15 PS / 11,03 kW (Verbrenner) bzw. bis 7,5 kW (Elektro)', schein: 'kein SBF gesetzlich nötig*', funk: 'UBI/SRC nur bei Funkanlage' },
   { vorhaben: 'Segelboot ohne (Hilfs-)Motor', schein: 'kein SBF nötig*', funk: 'SRC nur bei Seefunkanlage' },
   { vorhaben: 'Bodensee (Motor ab 6 PS oder Segelfläche ab 12 m²)', schein: 'Bodenseeschifferpatent', funk: 'UBI bei Funkanlage' },
 ];
@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     q: 'Brauche ich einen Führerschein für ein Boot unter 15 PS?',
-    a: 'Nein. Für Sportboote bis 15 PS (11,03 kW) ist in Deutschland kein amtlicher Sportbootführerschein vorgeschrieben. Ausnahmen gelten auf einigen Revieren wie dem Rhein und dem Bodensee. Zum Mieten verlangen Vercharterer häufig trotzdem einen Nachweis (z. B. Charterschein).',
+    a: 'Nein. Für Sportboote mit Verbrennungsmotor bis 15 PS (11,03 kW) ist in Deutschland kein amtlicher Sportbootführerschein vorgeschrieben. Bei Elektroantrieben liegt die Grenze niedriger – hier gilt die Pflicht bereits ab 7,5 kW (rund 10 PS). Ausnahmen gelten zudem auf einigen Revieren wie dem Rhein und dem Bodensee. Zum Mieten verlangen Vercharterer häufig trotzdem einen Nachweis (z. B. Charterschein).',
   },
   {
     q: 'Welches Funkzeugnis brauche ich für mein Boot?',
@@ -140,7 +140,7 @@ const faqSchema = {
         </table>
       </div>
       <p style="font-size:13px; color:#9CA3AF; line-height:1.6; margin-top:12px;">
-        * Die Führerscheinpflicht greift in Deutschland ab mehr als 15 PS (11,03 kW). Seit der Reform 2026 gilt diese Grenze technologieneutral – also auch für Elektroantriebe. Auf einzelnen Revieren (Rhein, Bodensee) gelten abweichende Regeln.
+        * Die Führerscheinpflicht greift in Deutschland ab mehr als 15 PS (11,03 kW) – bei Elektroantrieben bereits ab 7,5 kW (rund 10 PS). Eine Reform soll diese Grenze technologieneutral auf 11,03 kW vereinheitlichen, ist aber noch nicht in Kraft getreten. Auf einzelnen Revieren (Rhein, Bodensee) gelten abweichende Regeln.
       </p>
     </section>
 
@@ -258,9 +258,11 @@ const faqSchema = {
           { v: 'beides', label: 'Beides', sub: 'Binnen und Küste' },
           { v: 'bodensee', label: 'Bodensee', sub: 'eigene Regelung' },
         ]},
-        { id: 'motor', q: 'Wie stark ist der Antrieb deines Boots?', options: [
-          { v: 'unter15', label: 'Bis 15 PS', sub: 'höchstens 11,03 kW' },
-          { v: 'ueber15', label: 'Über 15 PS', sub: 'mehr als 11,03 kW' },
+        { id: 'motor', q: 'Wie ist dein Boot motorisiert?', options: [
+          { v: 'unter', label: 'Verbrenner bis 15 PS', sub: 'höchstens 11,03 kW' },
+          { v: 'ueber', label: 'Verbrenner über 15 PS', sub: 'mehr als 11,03 kW' },
+          { v: 'unter', label: 'Elektro bis 7,5 kW', sub: 'rund 10 PS' },
+          { v: 'ueber', label: 'Elektro über 7,5 kW', sub: 'mehr als 7,5 kW' },
           { v: 'segel', label: 'Segelboot ohne (Hilfs-)Motor', sub: '' },
         ]},
         { id: 'funk', q: 'Willst du eine UKW-Sprechfunkanlage bedienen?', options: [
@@ -348,12 +350,12 @@ const faqSchema = {
         const a = answers;
         if (a.revier === 'bodensee') {
           recs.push({ cat: 'Sportbootführerschein', name: 'Bodenseeschifferpatent', href: '/fuehrerscheine/', sub: 'Pflichtschein für den Bodensee (Motor ab 6 PS / Segel ab 12 m²). Boatpass-Modul in Vorbereitung.', soon: true });
-        } else if (a.motor === 'ueber15') {
+        } else if (a.motor === 'ueber') {
           if (a.revier === 'binnen') recs.push(FS.binnen);
           else if (a.revier === 'see') recs.push(FS.see);
           else if (a.revier === 'beides') { recs.push(FS.binnen); recs.push(FS.see); }
         } else {
-          recs.push({ cat: 'Sportbootführerschein', name: 'Kein Pflicht-Führerschein', href: '/fuehrerscheine/', sub: 'Bis 15 PS (11,03 kW) ist kein SBF vorgeschrieben. Auf Rhein/Bodensee gelten Ausnahmen; zum Mieten kann ein Charterschein nötig sein.', info: true });
+          recs.push({ cat: 'Sportbootführerschein', name: 'Kein Pflicht-Führerschein', href: '/fuehrerscheine/', sub: 'Unterhalb der Führerscheingrenze (15 PS bei Verbrenner, 7,5 kW bei Elektro) ist kein SBF vorgeschrieben. Auf Rhein/Bodensee gelten Ausnahmen; zum Mieten kann ein Charterschein nötig sein.', info: true });
         }
         if (a.funk === 'ja') {
           if (a.revier === 'binnen' || a.revier === 'bodensee') recs.push(FUNK.ubi);
