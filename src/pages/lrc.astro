@@ -14,6 +14,45 @@ const breadcrumbSchema = {
   ],
 };
 
+// Course-Schema: markiert die Seite eindeutig als Lernkurs für das LRC.
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "LRC Prüfungsvorbereitung – Long Range Certificate",
+  "description": "Vorbereitung auf die Prüfung zum Long Range Certificate (LRC), dem allgemeinen Funkbetriebszeugnis für den weltweiten Seefunk (UKW, Grenz-/Kurzwelle, Satellit) – mit dem amtlichen ELWIS-Fragenkatalog, Prüfungssimulation und Fehler-Training.",
+  "url": "https://boatpass.de/lrc/",
+  "inLanguage": "de",
+  "provider": {
+    "@type": "Organization",
+    "name": "Boatpass",
+    "url": "https://boatpass.de",
+  },
+  "educationalLevel": "Advanced",
+  "teaches": [
+    "Seefunk über UKW, Grenz- und Kurzwelle",
+    "Satellitenfunk im GMDSS (Inmarsat, EPIRB, SART)",
+    "Not-, Dringlichkeits- und Sicherheitsverkehr",
+    "Funkvorschriften und Seegebiete A1–A4",
+    "Seefunk-Englisch und Buchstabiertafel",
+  ],
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT12H",
+    "instructor": {
+      "@type": "Person",
+      "name": "Marius Gehler",
+    },
+  },
+  "offers": {
+    "@type": "Offer",
+    "category": "EducationApplication",
+    "price": "9.99",
+    "priceCurrency": "EUR",
+    "url": "https://play.google.com/store/apps/details?id=com.boatpass.app",
+  },
+};
+
 const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
   { name: 'UKW & Betriebsverfahren', desc: 'Seefunk, DSC, Sprechprozeduren & GMDSS-Überblick', count: 50, icon: 'microphone', color: '#EA580C', bg: 'rgba(234,88,12,0.10)' },
   { name: 'Grenz- & Kurzwelle', desc: 'MF/HF-Funk, NAVTEX & Übertragungsverfahren', count: 40, icon: 'wifi', color: '#7C3AED', bg: 'rgba(124,58,237,0.10)' },
@@ -31,6 +70,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
   hasAlternate={false}
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
@@ -59,6 +99,16 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
   </div>
 
   <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+
+    <!-- Answer-Snippet: kurze, zitierfähige Direktantwort für Suchmaschinen & KI -->
+    <section style="margin-bottom:48px;">
+      <div style="background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px;">
+        <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Auf den Punkt</div>
+        <p style="font-size:17px; color:#1A1F36; line-height:1.7; margin:0; font-weight:600;">
+          Das LRC (Long Range Certificate) ist das höchste Seefunkzeugnis der Sportschifffahrt und gilt weltweit für UKW, Grenz- und Kurzwelle sowie Satellitenfunk (alle Seegebiete A1–A4). Es baut auf dem SRC auf: In der Theorie wird ein Fragebogen mit 14 LRC-Fragen in 20 Minuten beantwortet – bestanden ab 11 richtigen Antworten. Wer kein SRC besitzt, bearbeitet zusätzlich den SRC-Fragebogen (24 Fragen). Dazu kommen Englisch-Diktat mit Übersetzung und ein praktischer Teil. Boatpass trainiert alle LRC-Inhalte mit Prüfungssimulation und Fehler-Training.
+        </p>
+      </div>
+    </section>
 
     <!-- Was ist LRC -->
     <section style="margin-bottom:48px;">
