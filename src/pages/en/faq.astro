@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 // FAQ grouped by topic: clearer for users + a clean H2 structure and thematic
 // keyword clusters for SEO. Each category has its own anchor (id) so Google can
 // pick it up as a standalone section.
-const categories: { id: string; title: string; faqs: { q: string; a: string }[] }[] = [
+const categories: { id: string; title: string; faqs: { q: string; a: string; related?: { label: string; href: string }[] }[] }[] = [
   {
     id: 'basics',
     title: 'Basics & Licenses',
@@ -20,10 +20,16 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Which radio certificates exist – and do I need one?',
         a: 'As soon as you operate a radio on board, you need the matching radio operator certificate. For inland radio (rivers, canals) that is the UBI (VHF radiotelephone certificate for inland waterways). For coastal sea radio it is the SRC (Short Range Certificate), and for worldwide sea radio including MF/HF and satellite it is the LRC (Long Range Certificate). These radio certificates are independent of the SBF and are offered as separate learning modules in Boatpass.',
+        related: [
+          { label: 'Compare all licenses', href: '/en/licenses/' },
+        ],
       },
       {
         q: 'Which license do I need for my waters?',
         a: 'Rule of thumb: for a motorboat over 15 HP you need the SBF Inland on inland waters and the SBF Coastal at the coast. If a radio is on board, add the matching radio certificate – UBI for inland, SRC for coastal, LRC for worldwide voyages. You\'ll find an overview of all licenses on the "Licenses" page.',
+        related: [
+          { label: 'All licenses at a glance', href: '/en/licenses/' },
+        ],
       },
     ],
   },
@@ -42,6 +48,9 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Does the boating license expire?',
         a: 'No. The Sportbootführerschein is valid indefinitely – you do not have to renew it, and there is no mandatory refresher. The sea radio certificates are also valid without a time limit. You should, however, always carry the original license on board.',
+        related: [
+          { label: 'Is the SBF valid abroad?', href: '/en/blog/sbf-valid-abroad/' },
+        ],
       },
     ],
   },
@@ -52,10 +61,16 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Up to how many HP may I drive a boat without a license?',
         a: 'On most German waterways you may drive motorboats up to 15 HP (11.03 kW) without a license – above that, the matching SBF is mandatory. Note: there are exceptions with stricter rules, for example on the Rhine and on Lake Constance (Bodensee). Even without a license, all traffic and safety rules on the water apply on board.',
+        related: [
+          { label: 'Boating without a license (15 HP)', href: '/en/blog/boating-without-license-15-hp/' },
+        ],
       },
       {
         q: 'What is the charter certificate (Charterbescheinigung)?',
         a: 'The Charterbescheinigung – colloquially the "charter license" – is a special arrangement for certain inland waters such as the Mecklenburg Lake District. After a short briefing (at least three hours) by the charter company, you may operate a houseboat or motorboat over 15 HP there without holding the full SBF. The certificate is only valid for the chartered boat on the designated waters and usually with a speed limit – it is not a full boating license.',
+        related: [
+          { label: 'Charter certificate – rent a boat without a license', href: '/en/blog/charter-certificate-rent-boat-without-license/' },
+        ],
       },
     ],
   },
@@ -124,6 +139,9 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'What is the blood alcohol limit on a boat?',
         a: 'On the water, the limit for recreational boat operators is generally 0.5 ‰ – the same as in road traffic. From 0.3 ‰ onward, operating the boat can already be a criminal offence if there are signs of impairment. Special rules apply on Lake Constance (Bodensee-Schifffahrts-Ordnung). Violations are punished with substantial fines, and high readings can cost you your license.',
+        related: [
+          { label: 'Blood alcohol limit on a boat', href: '/en/blog/blood-alcohol-limit-boat/' },
+        ],
       },
       {
         q: 'Which documents must I carry on board?',
@@ -132,10 +150,16 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Do I need a separate license for Lake Constance?',
         a: 'Yes. Lake Constance has its own license: the Bodensee-Schifferpatent. It is mandatory for motorboats with more than 6 HP (4.4 kW) and for sailboats with a sail area of 12 m² or more. The German SBF does not replace it on Lake Constance – anyone boating there regularly needs the Bodensee-Schifferpatent (category A for motor, category D for sail).',
+        related: [
+          { label: 'Lake Constance boat license explained', href: '/en/blog/lake-constance-boat-license/' },
+        ],
       },
       {
         q: 'Do I have to wear a life jacket on board?',
         a: 'There is generally no legal obligation for adults to wear a life jacket at all times on a recreational boat on most waters. However, it is always strongly recommended – a suitable, certified jacket should be within reach for every person on board. Make sure to choose the correct buoyancy class (in Newtons) for your waters.',
+        related: [
+          { label: 'Life jackets & buoyancy classes', href: '/en/blog/life-jacket-buoyancy-classes/' },
+        ],
       },
     ],
   },
@@ -205,6 +229,14 @@ const faqSchema = {
                 </summary>
                 <div class="px-6 pb-6 text-gray-600 leading-relaxed">
                   {faq.a}
+                  {faq.related && faq.related.length > 0 && (
+                    <div class="mt-4 pt-4 border-t border-gray-100 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+                      <span class="text-gray-400 font-semibold">Read more:</span>
+                      {faq.related.map((r) => (
+                        <a href={r.href} class="text-primary font-semibold hover:underline">{r.label} →</a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </details>
             ))}
