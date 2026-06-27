@@ -39,6 +39,14 @@ const steps = [
         </div>
       ))}
     </div>
+
+    {lang === 'de' && (
+      <div class="reveal-item process-link" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+        <a href="/sbf-pruefung-ablauf/">
+          Anmeldung, Unterlagen &amp; Prüfungstag: So läuft die Prüfung ab →
+        </a>
+      </div>
+    )}
   </div>
 </section>
 
@@ -71,6 +79,28 @@ const steps = [
     .steps-row { flex-direction: column; align-items: flex-start; }
     .steps-line { display: none; }
     .step-item { align-items: flex-start; text-align: left; padding: 0 0 24px 0; }
+  }
+  .process-link {
+    margin-top: 48px;
+  }
+  .process-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(51,102,255,0.16);
+    border-radius: 100px;
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #3366FF;
+    text-decoration: none;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  }
+  .process-link a:hover {
+    background: white;
+    border-color: rgba(51,102,255,0.35);
+    transform: translateY(-1px);
   }
 </style>
 
