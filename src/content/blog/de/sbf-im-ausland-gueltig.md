@@ -122,7 +122,7 @@ Auf Charteryachten in Italien ist ein VHF-Seefunkgerät Standard. Auch hier soll
 
 ## Das SRC – Warum es in fast jedem Revier Pflicht ist
 
-Der **SRC (Short Range Certificate)** ist das UKW-Seefunkzeugnis und berechtigt zur Bedienung von Seefunkgeräten auf Sportbooten. Viele unterschätzen seine Bedeutung – aber sobald ein Funkgerät an Bord ist und du es bedienst, brauchst du in den meisten Ländern diesen Schein.
+Der **[SRC (Short Range Certificate)](/src/)** ist das UKW-Seefunkzeugnis und berechtigt zur Bedienung von Seefunkgeräten auf Sportbooten. Viele unterschätzen seine Bedeutung – aber sobald ein Funkgerät an Bord ist und du es bedienst, brauchst du in den meisten Ländern diesen Schein.
 
 Auf Charteryachten ist ein UKW-Funkgerät immer vorhanden. Das Gerät für Notrufe und die tägliche Kommunikation mit Häfen, Schleusen und anderen Booten zu nutzen, ohne das SRC zu haben, ist in Kroatien, Italien und den meisten anderen europäischen Ländern nicht erlaubt.
 

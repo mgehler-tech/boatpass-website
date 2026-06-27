@@ -31,7 +31,11 @@ export default defineConfig({
         } else if (/^\/(sbf-binnen|sbf-see|sbf-kosten|sbf-pruefung-ablauf|sbf-binnen-pruefungsfragen|sbf-see-pruefungsfragen|fuehrerscheine|licenses)\/?$/.test(path)) {
           item.priority = 0.9;
           item.changefreq = 'monthly';
-        } else if (/^\/(src|ubi|faq)\/?$/.test(path)) {
+        } else if (/^\/(src|ubi|lrc|faq)\/?$/.test(path)) {
+          item.priority = 0.8;
+          item.changefreq = 'monthly';
+        } else if (path.startsWith('/tools/')) {
+          // Linkable Assets (Konfigurator etc.) – hoch priorisieren als Backlink-Magneten.
           item.priority = 0.8;
           item.changefreq = 'monthly';
         } else if (path.startsWith('/blog')) {
