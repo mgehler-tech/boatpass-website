@@ -36,6 +36,12 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
           {lang === 'de' ? 'Führerscheine' : 'Licenses'} <span style="font-size:10px;">▾</span>
         </a>
         <div class="nav-dropdown-menu">
+          {lang === 'de' && (
+            <>
+              <a href="/tools/welcher-bootsfuehrerschein/" class="nav-dropdown-item" style="font-weight:700; color:#3366FF;">Welcher Schein? →</a>
+              <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
+            </>
+          )}
           <a href="/sbf-binnen/" class="nav-dropdown-item">SBF Binnen</a>
           <a href="/sbf-see/" class="nav-dropdown-item">SBF See</a>
           <a href="/sbf-kosten/" class="nav-dropdown-item">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
@@ -98,6 +104,12 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
           <span class="accordion-chevron">▾</span>
         </button>
         <div class="mobile-accordion-body">
+          {lang === 'de' && (
+            <>
+              <a href="/tools/welcher-bootsfuehrerschein/" class="mobile-nav-sublink" style="font-weight:700; color:#3366FF;">Welcher Schein? →</a>
+              <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
+            </>
+          )}
           <a href="/sbf-binnen/" class="mobile-nav-sublink">SBF Binnen</a>
           <a href="/sbf-see/" class="mobile-nav-sublink">SBF See</a>
           <a href="/sbf-kosten/" class="mobile-nav-sublink">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
