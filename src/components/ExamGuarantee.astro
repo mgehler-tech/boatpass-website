@@ -1,0 +1,171 @@
+---
+import { useTranslations } from '../i18n/index';
+import Icon from './Icon.astro';
+import type { IconName } from '../icons';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+// "Katalog-Stand" wird beim Build aus dem aktuellen Datum gesetzt – so ist der
+// Stempel bei jedem Deploy ehrlich aktuell und veraltet nicht im Quelltext.
+const now = new Date();
+const monthsDe = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+const monthsEn = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const stand = lang === 'de'
+  ? `${monthsDe[now.getMonth()]} ${now.getFullYear()}`
+  : `${monthsEn[now.getMonth()]} ${now.getFullYear()}`;
+
+const pillars: { icon: IconName; title: string; desc: string }[] = [
+  { icon: 'shield', title: t.guarantee.p1Title, desc: t.guarantee.p1Desc },
+  { icon: 'refresh', title: t.guarantee.p2Title, desc: t.guarantee.p2Desc },
+  { icon: 'document', title: t.guarantee.p3Title, desc: t.guarantee.p3Desc },
+];
+---
+
+<section id="guarantee" class="max-w-6xl mx-auto px-6 py-24">
+  <div class="guarantee-card reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+
+    <!-- Header mit Stand-Stempel -->
+    <div class="guarantee-head">
+      <div style="flex:1; min-width:0;">
+        <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
+          {t.guarantee.chip}
+        </div>
+        <h2 style="font-size:38px; font-weight:900; letter-spacing:-1.6px; color:#1A1F36; line-height:1.12; margin-bottom:14px;">{t.guarantee.title}</h2>
+        <p style="font-size:16px; color:#6B7280; max-width:560px; line-height:1.65;">{t.guarantee.subtitle}</p>
+      </div>
+
+      <!-- Verifizierbarer Stand-Stempel -->
+      <div class="stand-stamp" role="img" aria-label={`${t.guarantee.standLabel}: ${stand}`}>
+        <div class="stand-ring">
+          <Icon name="shield" size={26} stroke="#3366FF" strokeWidth={1.75} />
+        </div>
+        <div style="font-size:11px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px;">{t.guarantee.standLabel}</div>
+        <div style="font-size:16px; font-weight:800; color:#1A1F36;">{stand}</div>
+      </div>
+    </div>
+
+    <!-- Drei Beweis-Säulen -->
+    <div class="pillar-grid">
+      {pillars.map(p => (
+        <div class="pillar">
+          <div style="width:48px; height:48px; border-radius:13px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+            <Icon name={p.icon} size={22} stroke="#3366FF" strokeWidth={1.75} />
+          </div>
+          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:8px; letter-spacing:-0.2px;">{p.title}</h3>
+          <p style="font-size:14px; color:#6B7280; line-height:1.65; margin:0;">{p.desc}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Quellen-Zeile als E-E-A-T-Trust-Signal -->
+    <div class="source-row">
+      <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; white-space:nowrap;">{t.guarantee.sourceLabel}</div>
+      <div class="source-links">
+        <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportschifffahrt-node.html" target="_blank" rel="noopener nofollow" class="source-link">ELWIS&nbsp;·&nbsp;Sportschifffahrt&nbsp;↗</a>
+        <span class="source-note">{t.guarantee.sourceNote}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .guarantee-card {
+    background: white;
+    border: 1px solid rgba(51,102,255,0.12);
+    border-radius: 24px;
+    padding: 44px;
+    box-shadow: 0 24px 60px rgba(26,31,54,0.06);
+  }
+  .guarantee-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+  .stand-stamp {
+    flex-shrink: 0;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+    background: linear-gradient(160deg, #F4F7FE 0%, #EAF0FC 100%);
+    border: 1px solid rgba(51,102,255,0.16);
+    border-radius: 18px;
+    padding: 22px 16px;
+  }
+  .stand-ring {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid rgba(51,102,255,0.22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+  }
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(51,102,255,0.10);
+  }
+  .source-row {
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(51,102,255,0.10);
+  }
+  .source-links {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    flex-wrap: wrap;
+    flex: 1;
+  }
+  .source-link {
+    font-size: 13px;
+    font-weight: 700;
+    color: #3366FF;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .source-link:hover { text-decoration: underline; }
+  .source-note {
+    font-size: 12px;
+    color: #9097A6;
+    line-height: 1.55;
+  }
+  @media (max-width: 820px) {
+    .guarantee-card { padding: 32px 24px; }
+    .guarantee-head { flex-direction: column-reverse; gap: 24px; }
+    .stand-stamp { flex-direction: row; width: auto; align-self: flex-start; text-align: left; padding: 14px 18px; }
+    .stand-ring { margin-bottom: 0; }
+    .pillar-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+</style>
+
+<script>
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        (e.target as HTMLElement).style.opacity = '1';
+        (e.target as HTMLElement).style.transform = 'translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('#guarantee .reveal-item').forEach(el => obs.observe(el));
+</script>
