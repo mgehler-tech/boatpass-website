@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
+import PracticeBridge from '../components/PracticeBridge.astro';
 import type { IconName } from '../icons';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
@@ -136,6 +137,9 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
         Der SBF See beinhaltet eine <strong>Navigationsaufgabe</strong> – das ist der anspruchsvollste Teil der Prüfung. Boatpass trainiert alle Fragentypen gezielt. Die amtliche Prüfungsgebühr beträgt 2026 <strong>148,38 €</strong> (Theorie + Praxis).
       </p>
     </section>
+
+    <!-- Praxis-Brücke: Kartenaufgaben digital meistern -->
+    <PracticeBridge variant="navigation" />
 
     <!-- Ablauf: Praxis & Anmeldung -->
     <section style="margin-bottom:48px;">

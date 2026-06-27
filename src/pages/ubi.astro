@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
+import PracticeBridge from '../components/PracticeBridge.astro';
 import type { IconName } from '../icons';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
@@ -127,6 +128,9 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
         </p>
       </div>
     </section>
+
+    <!-- Praxis-Brücke: Angst vorm Sprechfunk nehmen -->
+    <PracticeBridge variant="radio" />
 
     <!-- Kosten im Detail -->
     <section style="margin-bottom:48px;">
