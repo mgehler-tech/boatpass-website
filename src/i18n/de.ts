@@ -129,7 +129,7 @@ export const de = {
     bundleName: 'SBF-Bundle',
     bundleDesc: 'SBF Binnen + SBF See – beide Lizenzen in einem Kauf',
     bundlePrice: '€ 16,98',
-    bundleSave: 'Spare 3,00 €',
+    bundleSave: 'Spare € 3,00',
     bundleCta: 'Paket freischalten',
     soon1: 'Bodenseeschifferpatent',
     soonLabel: 'Bald verfügbar',
