@@ -23,12 +23,12 @@ const pageStand = lang === 'de'
 
 // Lizenz-Namen, Stände und ELWIS-Links sind amtlich verifiziert (Stand Juni 2026).
 // Verlinkt sind die kanonischen ELWIS-Seiten, die stets die gültige Fassung zeigen.
-const rows = [
+const rows: { key: LicenseKey; license: string; catalog: string; stand: string; next?: string; url: string }[] = [
   { key: 'binnen', license: 'SBF Binnen', catalog: t.catalogSources.binnenCat, stand: t.catalogSources.binnenStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html' },
   { key: 'see', license: 'SBF See', catalog: t.catalogSources.seeCat, stand: t.catalogSources.seeStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-neu-node.html' },
   { key: 'src', license: 'SRC', catalog: t.catalogSources.srcCat, stand: t.catalogSources.srcStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-SRC-2018.html' },
   { key: 'lrc', license: 'LRC', catalog: t.catalogSources.lrcCat, stand: t.catalogSources.lrcStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-LRC-2018.html' },
-  { key: 'ubi', license: 'UBI', catalog: t.catalogSources.ubiCat, stand: t.catalogSources.ubiStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html' },
+  { key: 'ubi', license: 'UBI', catalog: t.catalogSources.ubiCat, stand: t.catalogSources.ubiStand, next: t.catalogSources.ubiNext, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html' },
 ];
 
 const single = only ? rows.find(r => r.key === only) : null;
@@ -40,7 +40,10 @@ const single = only ? rows.find(r => r.key === only) : null;
       <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:4px 10px; border-radius:100px;">
         {t.catalogSources.chip}
       </span>
-      <span class="stand-pill">{single.stand}</span>
+      <span class="cat-single-pills">
+        <span class="stand-pill">{single.stand}</span>
+        {single.next && <span class="stand-pill stand-pill-next">{single.next}</span>}
+      </span>
     </div>
     <h3 class="cat-single-title">{t.catalogSources.singleTitle}</h3>
     <p class="cat-single-name">{single.catalog}</p>
@@ -78,7 +81,12 @@ const single = only ? rows.find(r => r.key === only) : null;
             <tr>
               <td><span class="lic-badge">{r.license}</span></td>
               <td class="cat-name">{r.catalog}</td>
-              <td><span class="stand-pill">{r.stand}</span></td>
+              <td>
+                <span class="cat-cell-pills">
+                  <span class="stand-pill">{r.stand}</span>
+                  {r.next && <span class="stand-pill stand-pill-next">{r.next}</span>}
+                </span>
+              </td>
               <td>
                 <a href={r.url} target="_blank" rel="noopener nofollow" class="src-link">{t.catalogSources.sourceCta}&nbsp;↗</a>
               </td>
@@ -94,7 +102,10 @@ const single = only ? rows.find(r => r.key === only) : null;
         <div class="cat-card">
           <div class="cat-card-top">
             <span class="lic-badge">{r.license}</span>
-            <span class="stand-pill">{r.stand}</span>
+            <span class="cat-card-pills">
+              <span class="stand-pill">{r.stand}</span>
+              {r.next && <span class="stand-pill stand-pill-next">{r.next}</span>}
+            </span>
           </div>
           <div class="cat-name" style="margin:10px 0 12px;">{r.catalog}</div>
           <a href={r.url} target="_blank" rel="noopener nofollow" class="src-link">{t.catalogSources.sourceCta}&nbsp;↗</a>
@@ -212,6 +223,24 @@ const single = only ? rows.find(r => r.key === only) : null;
     border-radius: 100px;
     padding: 4px 12px;
     white-space: nowrap;
+  }
+  /* Künftige Fassung (z. B. UBI ab 01.10.2026): bernsteinfarben, signalisiert "kommt noch". */
+  .stand-pill-next {
+    color: #B45309;
+    background: rgba(245,158,11,0.10);
+    border-color: rgba(245,158,11,0.30);
+  }
+  .cat-single-pills,
+  .cat-card-pills {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    justify-content: flex-end;
+  }
+  .cat-cell-pills {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 6px;
   }
   .src-link {
     font-size: 13px;
