@@ -258,6 +258,9 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
       <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:20px;">
         Der LRC-Fragenkatalog umfasst {categories.reduce((s, c) => s + c.count, 0)} Fragen in {categories.length} Themengebieten – übe gezielt nach Schwachstellen.
       </p>
+      <p style="font-size:14px; color:#9CA3AF; line-height:1.6; margin-top:-8px; margin-bottom:20px;">
+        Quelle: amtlicher Fragenkatalog auf <a href="https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
+      </p>
       <div style="display:flex; flex-direction:column; gap:10px;">
         {categories.map(c => (
           <div style="display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px;">
