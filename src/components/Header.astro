@@ -100,8 +100,11 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <!-- Führerscheine Accordion -->
       <div class="mobile-accordion">
         <button class="mobile-accordion-trigger mobile-nav-link w-full text-left" aria-expanded="false">
-          <span>{lang === 'de' ? 'Führerscheine' : 'Licenses'}</span>
-          <span class="accordion-chevron">▾</span>
+          <span class="mobile-accordion-label">
+            {lang === 'de' ? 'Führerscheine' : 'Licenses'}
+            <span class="mobile-accordion-hint">{lang === 'de' ? 'Untermenü' : 'Submenu'}</span>
+          </span>
+          <span class="accordion-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="mobile-accordion-body">
           {lang === 'de' && (
@@ -353,9 +356,35 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   .mobile-nav-sublink:hover { background: rgba(51,102,255,0.06); color: #1A1F36; }
 
   /* Accordion */
+  .mobile-accordion-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  /* Klar erkennbarer Hinweis, dass sich hier ein Untermenü öffnet */
+  .mobile-accordion-hint {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #3366FF;
+    background: rgba(51,102,255,0.10);
+    border-radius: 100px;
+    padding: 2px 8px;
+  }
   .accordion-chevron {
-    font-size: 12px;
-    transition: transform 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(51,102,255,0.10);
+    color: #3366FF;
+    font-size: 13px;
+    line-height: 1;
+    transition: transform 0.2s, background 0.2s, color 0.2s;
   }
   .mobile-accordion-body {
     display: none;
@@ -364,5 +393,12 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     padding-bottom: 4px;
   }
   .accordion-open .mobile-accordion-body { display: flex; }
-  .accordion-open .accordion-chevron { transform: rotate(180deg); }
+  .accordion-open .accordion-chevron {
+    transform: rotate(180deg);
+    background: #3366FF;
+    color: #fff;
+  }
+  .accordion-open .mobile-accordion-hint {
+    background: rgba(51,102,255,0.16);
+  }
 </style>
