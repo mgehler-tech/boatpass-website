@@ -165,9 +165,9 @@ export const en: Translations = {
     partnerNote: 'BoatPass does not replace your boating school. We take the theory off your plate so you can focus on what matters on the water – the practical side stays with the pros on site.',
   },
   catalogSources: {
-    chip: 'Source transparency',
-    title: 'Which license uses which question catalog?',
-    intro: 'Full transparency: for every license you can see the official question catalog, its current status, and a direct link to the official source. Check it yourself.',
+    chip: 'Always up to date',
+    title: 'You study the questions that actually come up – not last year\'s.',
+    intro: 'Printed textbooks fall behind with every catalog change. BoatPass doesn\'t: you study 1:1 with the official question catalog – and every change reaches you as an update. For every license you can see the official catalog, its current status and a direct link to the official source. Check it yourself.',
     colLicense: 'License',
     colCatalog: 'Official question catalog',
     colStand: 'Official status',
