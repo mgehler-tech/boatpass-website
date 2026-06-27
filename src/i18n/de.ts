@@ -100,7 +100,7 @@ export const de = {
     catalog1Themes: '7',
     catalog1Note: 'Mit Vorkenntnissen lernst du weniger – die App passt sich an',
     catalog2Name: 'SBF See',
-    catalog2Desc: 'Offizieller ELWIS-Fragenkatalog See · alle Kategorien · im Tageslimit testbar',
+    catalog2Desc: 'Offizieller Fragenkatalog See · alle Kategorien · im Tageslimit testbar',
     catalog2Questions: '420',
     catalog2Themes: '7',
     catalog2Highlight: 'inkl. 15 Navigationsaufgaben à 9 Fragen',
