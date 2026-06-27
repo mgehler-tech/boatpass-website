@@ -38,6 +38,12 @@ festlegt, wo wir *nicht* mehr investieren müssen:
 
 Alles Weitere in diesem Dokument adressiert **genau diese sechs Lücken**.
 
+> 🗓️ **Launch-Kontext:** Die App geht in **~2 Wochen** im Play Store live. Die
+> bestehenden Play-Store-Links (`com.boatpass.app`) bleiben daher unverändert.
+> `AggregateRating`/`Review` werden bewusst **erst nach dem Launch** ergänzt,
+> sobald echte Bewertungen vorliegen (siehe Kap. 3.2). Punkt 3 der Lückenliste
+> ist damit ein **Post-Launch-Schritt**, kein Quick Win.
+
 ---
 
 ## 1. KI-Optimierungs-Strategie (GEO – Generative Engine Optimization)
@@ -218,17 +224,18 @@ Die Behauptung „aktueller, amtlicher Fragenkatalog" muss maschinenlesbar beleg
 3. **Autor-Verifikation ausbauen:** `Person`-Schema von Marius Gehler um `knowsAbout`,
    ggf. `hasCredential` und `sameAs` (LinkedIn etc.) erweitern – siehe 3.3.
 
-### 3.2 `AggregateRating` / `Review` – das fehlende Testsieger-Signal
+### 3.2 `AggregateRating` / `Review` – das Testsieger-Signal (POST-LAUNCH)
 
-Aktuell existiert **kein** Rating-Schema. Das ist die größte Trust-Lücke, weil
-„Sterne" sowohl Rich Snippets als auch KI-Empfehlungen massiv beeinflussen.
+> ⏳ **Timing:** Die App ist noch nicht im Play Store (Launch in ~2 Wochen).
+> Solange es **keine echten Bewertungen** gibt, wird **kein** `AggregateRating`/
+> `Review`-Schema eingebaut. Erfundene oder geschätzte Sterne sind ein Google-
+> Verstoß **und** ein KI-Trust-Killer (Behauptung ohne auffindbare Bewertungen).
+> → Dieser Schritt wird **erst nach dem Launch** aktiviert, sobald die ersten
+> echten Play-Store-Bewertungen vorliegen und on-page eingebunden sind.
 
-> ⚠️ **Pflicht:** `AggregateRating` darf **nur echte, auf der Seite sichtbare**
-> Bewertungen abbilden (Google-Richtlinie + KI-Konsensprüfung). Quelle = echte
-> Play-Store-Bewertungen, die auch on-page eingebunden werden. **Niemals erfinden.**
-
-Erweiterung des bestehenden `MobileApplication`-Blocks in `src/components/SEO.astro`
-(echte Werte einsetzen):
+Sobald echte Bewertungen existieren: Erweiterung des bestehenden
+`MobileApplication`-Blocks in `src/components/SEO.astro` (nur **echte** Werte,
+die auch on-page sichtbar sind):
 
 ```json
 "aggregateRating": {
@@ -289,6 +296,9 @@ Auf die jeweilige Schein-Pillar-Seite:
 
 #### 3.3.2 `SoftwareApplication` mit Rating (Ergänzung/Alternative zur Startseite)
 
+> Der `aggregateRating`-Block unten erst **nach dem Launch** mit echten Werten
+> einsetzen (Kap. 3.2). Vor dem Launch das Snippet **ohne** `aggregateRating` nutzen.
+
 ```json
 {
   "@context": "https://schema.org",
@@ -330,7 +340,7 @@ Auf die jeweilige Schein-Pillar-Seite:
 }
 ```
 
-#### 3.3.4 `Product` mit Review (falls Bewertungen on-page eingebunden werden)
+#### 3.3.4 `Product` mit Review (POST-LAUNCH – nur mit echten, on-page sichtbaren Bewertungen)
 
 ```json
 {
@@ -437,9 +447,15 @@ beziehen sich auf den realen Stand in `src/`.
 ### Woche 1 – Technische GEO-Quick-Wins (hoher Impact, geringer Aufwand)
 1. **`public/llms.txt` deployen** *(in diesem Commit bereits angelegt – nur Werte prüfen & live)*.
 2. **`public/robots.txt` erweitern:** KI-Crawler explizit erlauben (GPTBot, OAI-SearchBot, ClaudeBot, anthropic-ai, PerplexityBot, Google-Extended, CCBot) *(in diesem Commit aktualisiert)*.
-3. **`AggregateRating` ergänzen** in `src/components/SEO.astro` (echte Play-Store-Werte) → sofortiges Rich-Snippet- & KI-Trust-Signal.
-4. **`Course`-Schema** auf `/sbf-binnen/` und `/sbf-see/` einbauen (Snippet 3.3.1).
-5. **Schema-Validierung** aller Seiten (validator.schema.org + Rich Results Test).
+3. **`Course`-Schema** auf `/sbf-binnen/` und `/sbf-see/` einbauen (Snippet 3.3.1).
+4. **Schema-Validierung** aller Seiten (validator.schema.org + Rich Results Test).
+5. **Play-Store-Check:** App-Listing live? (Launch in ~2 Wochen) – `downloadUrl`/
+   `sameAs` in `SEO.astro` zeigen bereits auf `com.boatpass.app`. Am Launch-Tag
+   verifizieren, dass der Link auflöst (sonst kurzzeitig 404 im Schema).
+
+> **`AggregateRating` ist bewusst NICHT in Woche 1** – siehe Kap. 3.2: erst
+> nach dem Launch, sobald echte Bewertungen existieren (eingeplant als Post-
+> Launch-Schritt, ca. Woche 4+).
 
 ### Woche 2 – On-Page-Faktendichte & Antwort-Optimierung
 6. **Answer-Snippet-Blöcke** (Kap. 1.3) an den Anfang aller 5 Pillar-Seiten + der Top-Blogposts setzen.
