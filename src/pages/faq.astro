@@ -1,61 +1,113 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-const faqs = [
+// FAQ thematisch gruppiert: bessere Übersicht für Nutzer + klare H2-Struktur
+// und thematische Keyword-Cluster für SEO. Jede Kategorie bekommt eine eigene
+// Sprungmarke (id), damit Google sie als eigenständigen Abschnitt erfassen kann.
+const categories: { id: string; title: string; faqs: { q: string; a: string }[] }[] = [
   {
-    q: 'Was ist der Sportbootführerschein (SBF)?',
-    a: 'Der Sportbootführerschein (SBF) ist die amtliche Fahrerlaubnis für Sportboote in Deutschland. Er ist Pflicht für Motorboote mit mehr als 15 PS (11 kW) auf Bundeswasserstraßen. Es gibt zwei Varianten: SBF Binnen für Binnengewässer und SBF See für Küstengewässer. Wer beide Scheine braucht, kann sie in einer kombinierten Prüfung ablegen.',
+    id: 'grundlagen',
+    title: 'Grundlagen & Lizenzen',
+    faqs: [
+      {
+        q: 'Was ist der Sportbootführerschein (SBF)?',
+        a: 'Der Sportbootführerschein (SBF) ist die amtliche Fahrerlaubnis für Sportboote in Deutschland. Er ist Pflicht für Motorboote mit mehr als 15 PS (11 kW) auf Bundeswasserstraßen. Es gibt zwei Varianten: SBF Binnen für Binnengewässer und SBF See für Küstengewässer. Wer beide Scheine braucht, kann sie in einer kombinierten Prüfung ablegen.',
+      },
+      {
+        q: 'Was ist der Unterschied zwischen SBF Binnen und SBF See?',
+        a: 'Der SBF Binnen berechtigt zur Fahrt auf Binnenschifffahrtsstraßen – also auf Flüssen, Kanälen und Binnenseen. Der SBF See gilt auf Seeschifffahrtsstraßen, also den Küstengewässern Deutschlands (Nord- und Ostsee). Wichtig: Beide Scheine sind getrennte Führerscheine mit eigener Prüfung. Wer beide Reviere befahren möchte, muss beide ablegen – oder die Kombination wählen.',
+      },
+      {
+        q: 'Welche Funkzeugnisse gibt es – und brauche ich eines?',
+        a: 'Sobald du eine Funkanlage an Bord bedienst, brauchst du das passende Sprechfunkzeugnis. Für den Binnenfunk (Flüsse, Kanäle) ist das das UBI (UKW-Sprechfunkzeugnis Binnenschifffahrt). Für den Seefunk im Küstenbereich gilt das SRC (Short Range Certificate), für den weltweiten Seefunk inklusive Grenz-/Kurzwelle und Satellit das LRC (Long Range Certificate). Diese Funkzeugnisse sind unabhängig vom SBF und werden in Boatpass als eigene Lernmodule angeboten.',
+      },
+      {
+        q: 'Welche Lizenz brauche ich für mein Revier?',
+        a: 'Faustregel: Für ein Motorboot über 15 PS brauchst du auf Binnengewässern den SBF Binnen, an der Küste den SBF See. Kommt eine Funkanlage dazu, ergänzt du sie um das passende Funkzeugnis – UBI im Binnenbereich, SRC an der Küste, LRC für weltweite Fahrt. Eine Übersicht aller Scheine findest du auf der Seite „Führerscheine“.',
+      },
+    ],
   },
   {
-    q: 'Was ist der Unterschied zwischen SBF Binnen und SBF See?',
-    a: 'Der SBF Binnen berechtigt zur Fahrt auf Binnenschifffahrtsstraßen – also auf Flüssen, Kanälen und Binnenseen. Der SBF See gilt auf Seeschifffahrtsstraßen, also den Küstengewässern Deutschlands (Nord- und Ostsee). Wichtig: Beide Scheine sind getrennte Führerscheine mit eigener Prüfung. Wer beide Reviere befahren möchte, muss beide ablegen – oder die Kombination wählen.',
+    id: 'pruefung',
+    title: 'Prüfung & Vorbereitung',
+    faqs: [
+      {
+        q: 'Wie läuft die SBF-Theorieprüfung ab?',
+        a: 'Beide Scheine haben eine schriftliche Theorieprüfung. Beim SBF Binnen besteht der Bogen aus 30 Fragen (7 Basisfragen + 23 spezifische Fragen), die in 45 Minuten beantwortet werden müssen. Bestanden ist, wer mindestens 5 von 7 Basisfragen und mindestens 18 von 23 spezifischen Fragen richtig hat. Der SBF See hat zusätzlich eine Navigationsaufgabe mit 9 Fragen (mind. 7 richtig), insgesamt 39 Fragen in 60 Minuten. Nach der Theorie folgt eine praktische Prüfung auf dem Wasser.',
+      },
+      {
+        q: 'Muss ich einen Kurs besuchen oder kann ich mich selbst vorbereiten?',
+        a: 'Ein Kurs ist nicht vorgeschrieben – du kannst dich vollständig auf eigene Faust vorbereiten. Die offiziellen Fragenkataloge sind öffentlich zugänglich, und Apps wie Boatpass ermöglichen ein strukturiertes Lernen ohne Fahrschule. Viele Prüflinge bestehen den theoretischen Teil ohne Kurs. Für die praktische Prüfung empfiehlt sich jedoch mindestens ein Übungstag auf dem Wasser.',
+      },
+      {
+        q: 'Wie lange dauert die Vorbereitung?',
+        a: 'Mit konsequentem Lernen (20–30 Minuten täglich) sind 4–6 Wochen für die Theorie realistisch. Wer gezielt mit dem offiziellen Fragenkatalog übt und Fehler systematisch aufarbeitet, kommt auch schneller ans Ziel. Die Boatpass-App zeigt dir deinen Fortschritt und trainiert gezielt deine Schwachstellen.',
+      },
+      {
+        q: 'Gilt der deutsche SBF auch im Ausland?',
+        a: 'Der SBF Binnen wird auf deutschen Binnenschifffahrtsstraßen anerkannt. Im Ausland gelten die jeweiligen nationalen Vorschriften – in vielen europäischen Ländern reicht der SBF aus, in anderen ist zusätzlich der ICC (International Certificate of Competence) notwendig, den du auf Basis deines deutschen Scheins beantragen kannst.',
+      },
+    ],
   },
   {
-    q: 'Wie läuft die SBF-Theorieprüfung ab?',
-    a: 'Beide Scheine haben eine schriftliche Theorieprüfung. Beim SBF Binnen besteht der Bogen aus 30 Fragen (7 Basisfragen + 23 spezifische Fragen), die in 45 Minuten beantwortet werden müssen. Bestanden ist, wer mindestens 5 von 7 Basisfragen und mindestens 18 von 23 spezifischen Fragen richtig hat. Der SBF See hat zusätzlich eine Navigationsaufgabe mit 9 Fragen (mind. 7 richtig), insgesamt 39 Fragen in 60 Minuten. Nach der Theorie folgt eine praktische Prüfung auf dem Wasser.',
+    id: 'fragenkatalog',
+    title: 'Fragenkataloge',
+    faqs: [
+      {
+        q: 'Wie viele Fragen hat der offizielle SBF-Fragenkatalog?',
+        a: 'Der amtliche SBF-Fragenkatalog wird von DSV und DMYV festgelegt und über ELWIS kostenlos veröffentlicht. Der Katalog Binnen umfasst unter Motor 72 Basisfragen und 181 spezifische Fragen (zusammen 253), plus 47 Segelfragen für den Geltungsbereich Segeln. Der Katalog See enthält 72 Basisfragen und 213 spezifische See-Fragen (zusammen 285). Boatpass enthält den vollständigen aktuellen Katalog für beide Scheine.',
+      },
+      {
+        q: 'Aus welchem Fragenkatalog lernen die Funkmodule (UBI, SRC, LRC)?',
+        a: 'Die Funkzeugnisse haben einen eigenen amtlichen Fragenkatalog – nicht den ELWIS/SBF-Katalog. Die Prüfungsfragen für die Seefunkzeugnisse SRC und LRC sowie für das Binnenfunkzeugnis UBI werden von der Bundesnetzagentur herausgegeben (zuständig u. a. die Außenstelle Hamburg für den Seefunk); die Prüfungen selbst nehmen die Ausschüsse von DSV und DMYV ab. Der aktuell gültige Katalog gilt seit der Funkschein-Reform vom 1. Oktober 2018. Boatpass enthält für jedes Funkmodul – UBI, SRC und LRC – den vollständigen offiziellen Katalog.',
+      },
+      {
+        q: 'Wie aktuell ist der Fragenkatalog in der App?',
+        a: 'Boatpass enthält für jede Lizenz den jeweils aktuellen amtlichen Fragenkatalog. Für SBF Binnen und SBF See ist das der über ELWIS veröffentlichte Katalog von DSV/DMYV; für die Funkmodule UBI, SRC und LRC der amtliche Funk-Fragenkatalog der Bundesnetzagentur. Sobald eine dieser Stellen ihren Katalog aktualisiert, ziehen wir die App zeitnah nach – du lernst also immer mit den Fragen, die auch in der echten Prüfung gestellt werden.',
+      },
+    ],
   },
   {
-    q: 'Muss ich einen Kurs besuchen oder kann ich mich selbst vorbereiten?',
-    a: 'Ein Kurs ist nicht vorgeschrieben – du kannst dich vollständig auf eigene Faust vorbereiten. Der offizielle ELWIS-Fragenkatalog ist öffentlich zugänglich, und Apps wie Boatpass ermöglichen ein strukturiertes Lernen ohne Fahrschule. Viele Prüflinge bestehen den theoretischen Teil ohne Kurs. Für die praktische Prüfung empfiehlt sich jedoch mindestens ein Übungstag auf dem Wasser.',
+    id: 'kosten',
+    title: 'Kosten',
+    faqs: [
+      {
+        q: 'Was kostet die SBF-Prüfung?',
+        a: 'Die amtlichen Prüfungsgebühren (Theorie + Praxis) liegen 2026 bei 130,78 € für den SBF Binnen und 148,38 € für den SBF See. Die kombinierte Prüfung Binnen + See kostet zusammen nur 178,61 € statt 279,16 €. Hinzu kommen optional Kursgebühren (Online-Kurse ab ca. 340 €). Mit der Boatpass-App lernst du die Theorie ohne teuren Vorbereitungskurs.',
+      },
+      {
+        q: 'Was kosten die Funkzeugnisse (UBI, SRC, LRC)?',
+        a: 'Die amtlichen Prüfungsgebühren (Zulassung, Prüfung und Erteilung) liegen beim UBI bei rund 109 €, beim SRC bei rund 128 € und beim LRC bei etwa 188–207 €. Ein Vorbereitungskurs ist freiwillig. In Boatpass lernst du die Theorie als Modul: UBI und SRC für je einmalig 7,99 €, LRC für einmalig 9,99 € – kein Abo.',
+      },
+      {
+        q: 'Ist die Boatpass-App kostenlos?',
+        a: 'Ja – die App ist kostenlos. Im kostenlosen Modus kannst du täglich 15 Lernfragen bearbeiten und die App kennenlernen. Der Vollzugang für den SBF (unbegrenzte Fragen, Prüfungssimulation, Fehler-Training) ist ein einmaliger Kauf für 9,99 € pro Katalog – oder beide SBF-Kataloge als Komplett-Paket für 16,98 € (du sparst 3 €). Die Funkmodule UBI, SRC und LRC schaltest du separat frei (ab 7,99 €). Kein Abo, keine versteckten Kosten.',
+      },
+    ],
   },
   {
-    q: 'Was kostet die SBF-Prüfung?',
-    a: 'Die amtlichen Prüfungsgebühren (Theorie + Praxis) liegen 2026 bei 130,78 € für den SBF Binnen und 148,38 € für den SBF See. Die kombinierte Prüfung Binnen + See kostet zusammen nur 178,61 € statt 279,16 €. Hinzu kommen optional Kursgebühren (Online-Kurse ab ca. 340 €). Mit der Boatpass-App lernst du die Theorie ohne teuren Vorbereitungskurs.',
-  },
-  {
-    q: 'Wie viele Fragen hat der offizielle Fragenkatalog?',
-    a: 'Der amtliche Fragenkatalog wird von DSV und DMYV festgelegt und über ELWIS kostenlos veröffentlicht. Der Katalog Binnen umfasst unter Motor 72 Basisfragen und 181 spezifische Fragen (zusammen 253), plus 47 Segelfragen für den Geltungsbereich Segeln. Der Katalog See enthält 72 Basisfragen und 213 spezifische See-Fragen (zusammen 285). Boatpass enthält den vollständigen aktuellen Katalog für beide Scheine.',
-  },
-  {
-    q: 'Wie lange dauert die Vorbereitung?',
-    a: 'Mit konsequentem Lernen (20–30 Minuten täglich) sind 4–6 Wochen für die Theorie realistisch. Wer gezielt mit dem offiziellen Fragenkatalog übt und Fehler systematisch aufarbeitet, kommt auch schneller ans Ziel. Die Boatpass-App zeigt dir deinen Fortschritt und trainiert gezielt deine Schwachstellen.',
-  },
-  {
-    q: 'Ist die Boatpass-App kostenlos?',
-    a: 'Ja – die App ist kostenlos. Im kostenlosen Modus kannst du täglich 15 Lernfragen bearbeiten und die App kennenlernen. Der Vollzugang (unbegrenzte Fragen, Prüfungssimulation, Fehler-Training) ist ein einmaliger Kauf für 9,99 € pro Katalog – oder beide Kataloge als Komplett-Paket für 16,98 € (du sparst 3 €). Kein Abo, keine versteckten Kosten.',
-  },
-  {
-    q: 'Auf welchen Geräten läuft die App?',
-    a: 'Boatpass ist aktuell für Android verfügbar (Google Play Store). Eine iOS-Version ist in Planung.',
-  },
-  {
-    q: 'Wie aktuell ist der Fragenkatalog in der App?',
-    a: 'Die App enthält immer den aktuellen amtlichen ELWIS-Fragenkatalog. Wenn ELWIS den Katalog aktualisiert, wird die App zeitnah nachgezogen – du lernst also immer mit den Fragen, die auch in der echten Prüfung gestellt werden.',
-  },
-  {
-    q: 'Gilt der deutsche SBF auch im Ausland?',
-    a: 'Der SBF Binnen wird auf deutschen Binnenschifffahrtsstraßen anerkannt. Im Ausland gelten die jeweiligen nationalen Vorschriften – in vielen europäischen Ländern reicht der SBF aus, in anderen ist zusätzlich der ICC (International Certificate of Competence) notwendig, den du auf Basis deines deutschen Scheins beantragen kannst.',
-  },
-  {
-    q: 'Kann ich die App offline nutzen?',
-    a: 'Ja – alle Fragen und Erklärungen sind nach dem Download offline verfügbar. Eine Internetverbindung ist nur für den initialen Download und eventuelle Katalog-Updates nötig.',
+    id: 'app',
+    title: 'Boatpass-App',
+    faqs: [
+      {
+        q: 'Auf welchen Geräten läuft die App?',
+        a: 'Boatpass ist aktuell für Android verfügbar (Google Play Store). Eine iOS-Version ist in Planung.',
+      },
+      {
+        q: 'Kann ich die App offline nutzen?',
+        a: 'Ja – alle Fragen und Erklärungen sind nach dem Download offline verfügbar. Eine Internetverbindung ist nur für den initialen Download und eventuelle Katalog-Updates nötig.',
+      },
+    ],
   },
 ];
+
+// Alle Fragen flach für das FAQPage-Schema (Rich Results in der Google-Suche).
+const allFaqs = categories.flatMap(c => c.faqs);
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": faqs.map(f => ({
+  "mainEntity": allFaqs.map(f => ({
     "@type": "Question",
     "name": f.q,
     "acceptedAnswer": { "@type": "Answer", "text": f.a },
@@ -64,27 +116,46 @@ const faqSchema = {
 ---
 
 <BaseLayout
-  title="FAQ – Häufige Fragen zum Sportbootführerschein"
-  description="Antworten auf die häufigsten Fragen rund um den Sportbootführerschein: Ablauf, Kosten, Unterschiede und die Boatpass-App."
+  title="FAQ – Häufige Fragen zum Sportbootführerschein & Funkzeugnissen"
+  description="Antworten auf die häufigsten Fragen rund um Sportbootführerschein (SBF Binnen & See) sowie die Funkzeugnisse UBI, SRC und LRC: Ablauf, Kosten, Fragenkataloge und die Boatpass-App."
   lang="de"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <div class="max-w-3xl mx-auto px-4 pt-24 pb-16">
     <h1 class="text-4xl font-bold text-text mb-4">Häufige Fragen</h1>
-    <p class="text-gray-500 text-xl mb-12">Alles rund um den Sportbootführerschein und die Boatpass-App</p>
+    <p class="text-gray-500 text-xl mb-8">Alles rund um den Sportbootführerschein, die Funkzeugnisse und die Boatpass-App</p>
 
-    <div class="space-y-4">
-      {faqs.map((faq) => (
-        <details class="bg-white border border-gray-100 rounded-2xl overflow-hidden group">
-          <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-text list-none">
-            {faq.q}
-            <span class="text-primary ml-4 transition-transform group-open:rotate-180">▼</span>
-          </summary>
-          <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-            {faq.a}
+    <!-- Kategorie-Navigation: Sprungmarken zu den Themenblöcken -->
+    <nav aria-label="FAQ-Kategorien" class="flex flex-wrap gap-2 mb-12">
+      {categories.map((cat) => (
+        <a
+          href={`#${cat.id}`}
+          class="text-sm font-semibold text-primary bg-primary/8 border border-primary/15 rounded-full px-4 py-2 hover:bg-primary/15 transition-colors"
+        >
+          {cat.title}
+        </a>
+      ))}
+    </nav>
+
+    <div class="space-y-12">
+      {categories.map((cat) => (
+        <section id={cat.id} class="scroll-mt-24">
+          <h2 class="text-2xl font-bold text-text mb-5">{cat.title}</h2>
+          <div class="space-y-4">
+            {cat.faqs.map((faq) => (
+              <details class="bg-white border border-gray-100 rounded-2xl overflow-hidden group">
+                <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-text list-none">
+                  <h3 class="font-semibold text-base m-0">{faq.q}</h3>
+                  <span class="text-primary ml-4 transition-transform group-open:rotate-180">▼</span>
+                </summary>
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
           </div>
-        </details>
+        </section>
       ))}
     </div>
   </div>
