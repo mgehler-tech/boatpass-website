@@ -92,17 +92,18 @@ const soonItems = [t.pricing.soon1];
             <span style="font-size:12.5px; color:#6B7280;">{t.pricing.catalog1Note}</span>
           </div>
 
-          <!-- CTAs -->
-          <div style="display:flex; flex-direction:column; gap:10px; margin-top:28px;">
+          <!-- Preis: immer sichtbar, Vollzugang als Einmalkauf -->
+          <div class="price-row" style="display:flex; align-items:baseline; gap:6px; margin-top:24px;">
+            <span style="font-size:36px; font-weight:900; color:#1A1F36; letter-spacing:-1.5px;">{t.pricing.price}</span>
+            <span style="font-size:13px; color:#6B7280; font-weight:500;">{lang === 'de' ? 'Einmalkauf' : 'one-time'}</span>
+          </div>
+
+          <!-- CTA: nur „Kostenlos starten“ -->
+          <div style="margin-top:16px;">
             <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
               class="cta-white-btn"
               style="display:block; text-align:center; padding:14px; border-radius:14px; font-size:15px; font-weight:700; text-decoration:none; background:#3366FF; color:white; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
               {t.pricing.ctaFree} →
-            </a>
-            <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-              class="cta-see-btn"
-              style="display:block; text-align:center; padding:12px; border-radius:14px; font-size:14px; font-weight:600; text-decoration:none; border:1px solid rgba(51,102,255,0.15); color:#1A1F36; background:white;">
-              {t.pricing.ctaUnlock} · {t.pricing.price}
             </a>
           </div>
         </div>
@@ -142,9 +143,9 @@ const soonItems = [t.pricing.soon1];
               <span style="font-size:13px; color:#6B7280; font-weight:500;">{lang === 'de' ? 'Einmalkauf' : 'one-time'}</span>
             </div>
             <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-              class="cta-see-btn"
-              style="display:block; text-align:center; padding:12px; border-radius:12px; font-size:14px; font-weight:700; text-decoration:none; border:1px solid rgba(51,102,255,0.15); color:#1A1F36; background:white;">
-              {t.pricing.ctaStore}
+              class="cta-white-btn"
+              style="display:block; text-align:center; padding:14px; border-radius:12px; font-size:15px; font-weight:700; text-decoration:none; background:#3366FF; color:white; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
+              {t.pricing.ctaFree} →
             </a>
           </div>
         </div>
@@ -204,7 +205,7 @@ const soonItems = [t.pricing.soon1];
           <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
             class="cta-white-btn"
             style="display:block; text-align:center; padding:14px 24px; border-radius:14px; font-size:15px; font-weight:700; text-decoration:none; background:white; color:#3366FF; box-shadow:0 8px 24px rgba(0,0,0,0.18); white-space:nowrap;">
-            {t.pricing.bundleCta} →
+            {t.pricing.ctaFree} →
           </a>
         </div>
       </div>
