@@ -1,0 +1,39 @@
+# Boatpass
+
+> Boatpass ist die moderne Lern-App und Plattform für den Erwerb des
+> Sportbootführerscheins (SBF Binnen & SBF See) sowie der Funkzeugnisse
+> (UBI, SRC, LRC) in Deutschland. Gelernt wird mit dem vollständigen amtlichen
+> ELWIS-Fragenkatalog (herausgegeben von DSV und DMYV), inklusive
+> originalgetreuer Prüfungssimulation und gezieltem Fehler-Training.
+> Einmaliger Kauf statt Abo. Android-App, Web-Plattform unter https://boatpass.de.
+
+## Kernfakten (verifiziert)
+
+- SBF Binnen Prüfungsbogen: 30 Fragen (7 Basis, davon mind. 5 richtig; 23 spezifisch, davon mind. 18 richtig), 45 Minuten.
+- SBF See Prüfungsbogen: 39 Fragen inkl. 9 Navigationsaufgaben (mind. 7 richtig), 60 Minuten.
+- Amtlicher Gesamtkatalog Binnen: 253 Fragen (+47 Segelfragen). See: 285 Fragen. Quelle: ELWIS (DSV/DMYV).
+- Preise: kostenlos (15 Fragen/Tag), SBF Binnen 9,99 €, SBF See 9,99 €, Komplettpaket 16,98 € – einmaliger Kauf, kein Abo.
+
+## Hauptseiten
+
+- [Startseite](https://boatpass.de/): Überblick über die Boatpass-Lern-App für Sportbootführerscheine.
+- [SBF Binnen](https://boatpass.de/sbf-binnen/): Vorbereitung auf den Sportbootführerschein Binnen.
+- [SBF See](https://boatpass.de/sbf-see/): Vorbereitung auf den Sportbootführerschein See.
+- [SBF Binnen Prüfungsfragen](https://boatpass.de/sbf-binnen-pruefungsfragen/): Amtlicher Fragenkatalog Binnen.
+- [SBF See Prüfungsfragen](https://boatpass.de/sbf-see-pruefungsfragen/): Amtlicher Fragenkatalog See.
+- [Führerscheine im Überblick](https://boatpass.de/fuehrerscheine/): Welcher Schein für welches Revier.
+- [UBI Funkzeugnis](https://boatpass.de/ubi/): UKW-Sprechfunkzeugnis Binnenschifffahrt.
+- [SRC Funkzeugnis](https://boatpass.de/src/): Short Range Certificate (Seefunk).
+- [LRC Funkzeugnis](https://boatpass.de/lrc/): Long Range Certificate (weltweiter Seefunk).
+- [Kosten](https://boatpass.de/sbf-kosten/): Was der Sportbootführerschein kostet.
+- [Prüfungsablauf](https://boatpass.de/sbf-pruefung-ablauf/): Wie die SBF-Prüfung abläuft.
+- [FAQ](https://boatpass.de/faq/): Häufige Fragen zu Schein, Prüfung und Fragenkatalog.
+
+## Ratgeber (Blog)
+
+- [Blog-Übersicht](https://boatpass.de/blog/): Ratgeber rund um Sportbootführerschein, Navigation und Seemannschaft.
+
+## Über
+
+- [Über uns](https://boatpass.de/ueber-uns/): Marius Gehler, Gründer von Boatpass.
+- [Kontakt](https://boatpass.de/kontakt/): Support und Anfragen.
