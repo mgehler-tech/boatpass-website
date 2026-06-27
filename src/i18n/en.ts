@@ -51,7 +51,7 @@ export const en: Translations = {
     },
     training: {
       title: 'Error training',
-      desc: 'Train your weak spots specifically. Only incorrectly answered questions – no time wasted on what you already know.',
+      desc: 'Train your weak spots specifically – only incorrectly answered questions. With a hit rate per category and learning stats, you always see where you stand.',
     },
     progress: {
       title: 'Progress & statistics',

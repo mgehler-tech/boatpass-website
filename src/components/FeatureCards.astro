@@ -10,13 +10,14 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
+// Bewusst auf die drei Lernmodi fokussiert – passend zur Überschrift
+// "Drei Wege zum Bestehen". Fortschritt/Statistik ist in die Fehler-Training-
+// Karte eingearbeitet; Katalog (CatalogSources) und Sprachen (TrustBar) stehen
+// bereits an anderer Stelle und werden hier nicht wiederholt.
 const features: { icon: IconName; title: string; desc: string }[] = [
   { icon: 'book', title: t.features.learn.title, desc: t.features.learn.desc },
   { icon: 'clipboard', title: t.features.exam.title, desc: t.features.exam.desc },
   { icon: 'target', title: t.features.training.title, desc: t.features.training.desc },
-  { icon: 'chart', title: t.features.progress.title, desc: t.features.progress.desc },
-  { icon: 'globe', title: t.features.languages.title, desc: t.features.languages.desc },
-  { icon: 'anchor', title: t.features.catalog.title, desc: t.features.catalog.desc },
 ];
 ---
 

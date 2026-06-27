@@ -49,7 +49,7 @@ export const de = {
     },
     training: {
       title: 'Fehler-Training',
-      desc: 'Trainiere gezielt deine Schwächen. Nur falsch beantwortete Fragen – kein Zeitverschwenden.',
+      desc: 'Trainiere gezielt deine Schwächen – nur falsch beantwortete Fragen. Mit Trefferquote je Kategorie und Lernstatistik siehst du jederzeit, wo du stehst.',
     },
     progress: {
       title: 'Fortschritt & Statistik',
