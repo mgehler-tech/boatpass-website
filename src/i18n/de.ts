@@ -171,6 +171,7 @@ export const de = {
     colStand: 'Amtlicher Stand',
     colSource: 'Offizielle Quelle',
     sourceCta: 'Bei ELWIS ansehen',
+    singleTitle: 'Womit du hier lernst – die amtliche Quelle',
     binnenCat: 'Fragen- und Antwortenkatalog · Binnenschifffahrtsstraßen',
     binnenStand: 'Stand 01.08.2023',
     seeCat: 'Fragen- und Antwortenkatalog · Seeschifffahrtsstraßen',

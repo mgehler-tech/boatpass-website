@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 import PracticeBridge from '../components/PracticeBridge.astro';
+import CatalogSources from '../components/CatalogSources.astro';
 import type { IconName } from '../icons';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
@@ -69,6 +70,11 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
       <p style="font-size:16px; color:#4B5563; line-height:1.75;">
         Das SRC ist für Segler und Motorbootfahrer <strong>Pflicht, sobald ein UKW-Seefunkgerät an Bord genutzt wird</strong> – auch im Küstenbereich. Es wird von den Prüfungsausschüssen des Deutschen Segler-Verbands (DSV) und des Deutschen Motoryachtverbands (DMYV) abgenommen, ist international anerkannt und zeitlich unbegrenzt gültig.
       </p>
+    </section>
+
+    <!-- Quellen-Transparenz: amtlicher Fragenkatalog -->
+    <section style="margin-bottom:48px;">
+      <CatalogSources lang="de" only="src" />
     </section>
 
     <!-- Wer braucht es -->

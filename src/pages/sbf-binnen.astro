@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
+import CatalogSources from '../components/CatalogSources.astro';
 import type { IconName } from '../icons';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
@@ -109,6 +110,11 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
       <p style="font-size:16px; color:#4B5563; line-height:1.75;">
         Das Mindestalter beträgt 16 Jahre. Der Schein wird vom DMYV abgenommen und ist unbegrenzt gültig.
       </p>
+    </section>
+
+    <!-- Quellen-Transparenz: amtlicher Fragenkatalog -->
+    <section style="margin-bottom:48px;">
+      <CatalogSources lang="de" only="binnen" />
     </section>
 
     <!-- Prüfungsaufbau -->

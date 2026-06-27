@@ -173,6 +173,7 @@ export const en: Translations = {
     colStand: 'Official status',
     colSource: 'Official source',
     sourceCta: 'View on ELWIS',
+    singleTitle: 'What you study here – the official source',
     binnenCat: 'Question & answer catalog · inland waterways',
     binnenStand: 'As of 01 Aug 2023',
     seeCat: 'Question & answer catalog · maritime waterways',

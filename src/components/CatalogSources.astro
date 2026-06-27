@@ -1,11 +1,15 @@
 ---
 import { useTranslations } from '../i18n/index';
 
+type LicenseKey = 'binnen' | 'see' | 'src' | 'lrc' | 'ubi';
+
 interface Props {
   lang: 'de' | 'en';
+  // Wenn gesetzt: kompakter Einzel-Block für genau eine Lizenz (für Lizenz-Seiten).
+  only?: LicenseKey;
 }
 
-const { lang } = Astro.props;
+const { lang, only } = Astro.props;
 const t = useTranslations(lang);
 
 // "Stand dieser Übersicht" wird beim Build aus dem aktuellen Datum gesetzt –
@@ -20,13 +24,32 @@ const pageStand = lang === 'de'
 // Lizenz-Namen, Stände und ELWIS-Links sind amtlich verifiziert (Stand Juni 2026).
 // Verlinkt sind die kanonischen ELWIS-Seiten, die stets die gültige Fassung zeigen.
 const rows = [
-  { license: 'SBF Binnen', catalog: t.catalogSources.binnenCat, stand: t.catalogSources.binnenStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html' },
-  { license: 'SBF See', catalog: t.catalogSources.seeCat, stand: t.catalogSources.seeStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-neu-node.html' },
-  { license: 'SRC', catalog: t.catalogSources.srcCat, stand: t.catalogSources.srcStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-SRC-2018.html' },
-  { license: 'LRC', catalog: t.catalogSources.lrcCat, stand: t.catalogSources.lrcStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-LRC-2018.html' },
-  { license: 'UBI', catalog: t.catalogSources.ubiCat, stand: t.catalogSources.ubiStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html' },
+  { key: 'binnen', license: 'SBF Binnen', catalog: t.catalogSources.binnenCat, stand: t.catalogSources.binnenStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html' },
+  { key: 'see', license: 'SBF See', catalog: t.catalogSources.seeCat, stand: t.catalogSources.seeStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-neu-node.html' },
+  { key: 'src', license: 'SRC', catalog: t.catalogSources.srcCat, stand: t.catalogSources.srcStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-SRC-2018.html' },
+  { key: 'lrc', license: 'LRC', catalog: t.catalogSources.lrcCat, stand: t.catalogSources.lrcStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-LRC-2018.html' },
+  { key: 'ubi', license: 'UBI', catalog: t.catalogSources.ubiCat, stand: t.catalogSources.ubiStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html' },
 ];
+
+const single = only ? rows.find(r => r.key === only) : null;
 ---
+
+{single ? (
+  <div class="cat-single">
+    <div class="cat-single-head">
+      <span style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:4px 10px; border-radius:100px;">
+        {t.catalogSources.chip}
+      </span>
+      <span class="stand-pill">{single.stand}</span>
+    </div>
+    <h3 class="cat-single-title">{t.catalogSources.singleTitle}</h3>
+    <p class="cat-single-name">{single.catalog}</p>
+    <a href={single.url} target="_blank" rel="noopener nofollow" class="src-link">{t.catalogSources.sourceCta}&nbsp;↗</a>
+    <p class="cat-single-foot">
+      <strong>{t.catalogSources.pageStandLabel}:</strong> {pageStand} · {t.catalogSources.disclaimer}
+    </p>
+  </div>
+) : (
 
 <section id="catalog-sources" class="max-w-6xl mx-auto px-6 py-20">
   <div class="reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; margin-bottom:32px; max-width:640px;">
@@ -88,8 +111,48 @@ const rows = [
     </div>
   </div>
 </section>
+)}
 
 <style>
+  /* Einzel-Lizenz-Block (für Lizenz-Seiten) */
+  .cat-single {
+    background: white;
+    border: 1px solid rgba(51,102,255,0.14);
+    border-radius: 18px;
+    padding: 26px 28px;
+    box-shadow: 0 16px 40px rgba(26,31,54,0.05);
+  }
+  .cat-single-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .cat-single-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: #1A1F36;
+    letter-spacing: -0.4px;
+    margin: 0 0 6px;
+  }
+  .cat-single-name {
+    font-size: 15px;
+    color: #4B5563;
+    line-height: 1.55;
+    margin: 0 0 14px;
+  }
+  .cat-single-foot {
+    font-size: 12px;
+    color: #9097A6;
+    line-height: 1.6;
+    margin: 16px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid rgba(51,102,255,0.08);
+  }
+  .cat-single-foot strong { color: #4B5563; }
+
   .cat-table-wrap {
     overflow-x: auto;
     border: 1px solid rgba(51,102,255,0.12);
