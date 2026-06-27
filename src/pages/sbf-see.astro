@@ -47,6 +47,46 @@ const faqSchema = {
   })),
 };
 
+// Course-Schema: markiert die Seite eindeutig als Lernkurs für den SBF See
+// (zusätzlich zur App-Auszeichnung). Alle Angaben spiegeln den Seiteninhalt.
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "SBF See Prüfungsvorbereitung",
+  "description": "Komplette Vorbereitung auf die theoretische Prüfung zum Sportbootführerschein See mit dem vollständigen amtlichen ELWIS-Fragenkatalog, Prüfungssimulation und gezieltem Training der Navigationsaufgabe (Kartenarbeit).",
+  "url": "https://boatpass.de/sbf-see/",
+  "inLanguage": "de",
+  "provider": {
+    "@type": "Organization",
+    "name": "Boatpass",
+    "url": "https://boatpass.de",
+  },
+  "educationalLevel": "Beginner",
+  "teaches": [
+    "Seeschifffahrtsrecht und Kollisionsverhütungsregeln",
+    "Schifffahrtszeichen und Lichterführung",
+    "Navigation und Seekartenarbeit",
+    "Gezeiten und Stromversatz",
+    "Amtlicher SBF-See-Fragenkatalog inkl. Navigationsaufgabe",
+  ],
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT15H",
+    "instructor": {
+      "@type": "Person",
+      "name": "Marius Gehler",
+    },
+  },
+  "offers": {
+    "@type": "Offer",
+    "category": "EducationApplication",
+    "price": "9.99",
+    "priceCurrency": "EUR",
+    "url": "https://play.google.com/store/apps/details?id=com.boatpass.app",
+  },
+};
+
 // Direktvergleich Binnen vs. See als Entscheidungshilfe
 const compare = [
   { label: 'Revier', binnen: 'Flüsse, Kanäle & Binnenseen', see: 'Küstengewässer Nord- & Ostsee' },
@@ -77,6 +117,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
