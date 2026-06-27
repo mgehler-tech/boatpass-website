@@ -96,12 +96,17 @@ const faqSchema = {
   <div style="max-width:760px; margin:0 auto; padding:48px 24px 90px;">
 
     <!-- Interaktiver Konfigurator -->
-    <div id="cfg" style="background:white; border:1px solid rgba(51,102,255,0.14); border-radius:20px; padding:28px 26px; box-shadow:0 10px 30px rgba(26,31,54,0.06);">
-      <div id="cfg-progress" style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;"></div>
-      <div id="cfg-question" style="font-size:22px; font-weight:800; color:#1A1F36; letter-spacing:-0.5px; margin-bottom:20px;"></div>
-      <div id="cfg-options" style="display:flex; flex-direction:column; gap:12px;"></div>
-      <div id="cfg-back" style="margin-top:20px; display:none;">
-        <button type="button" id="cfg-back-btn" style="background:none; border:none; color:#9CA3AF; font-size:14px; font-weight:600; cursor:pointer; padding:6px 0;">← Zurück</button>
+    <div id="cfg" class="cfg-card">
+      <div class="cfg-head">
+        <div id="cfg-progress" class="cfg-progress"></div>
+        <div id="cfg-progress-bar" class="cfg-progress-bar"><span></span></div>
+      </div>
+      <div id="cfg-question" class="cfg-question"></div>
+      <div id="cfg-options" class="cfg-options"></div>
+      <div id="cfg-back" class="cfg-back">
+        <button type="button" id="cfg-back-btn" class="cfg-back-btn">
+          <span class="cfg-back-arrow">←</span> Zurück
+        </button>
       </div>
     </div>
 
@@ -167,23 +172,81 @@ const faqSchema = {
 
   </div>
 
-  <style>
+  <!-- is:global, weil die Optionen & Ergebnis-Karten zur Laufzeit per JS erzeugt
+       werden. Astro-gescopte Styles (data-astro-*) greifen nur bei build-time
+       gerenderten Elementen und würden die dynamischen Buttons ungestylt lassen. -->
+  <style is:global>
+    .cfg-card {
+      background:#fff; border:1px solid rgba(51,102,255,0.12); border-radius:24px;
+      padding:32px 28px; box-shadow:0 18px 48px rgba(26,31,54,0.08);
+    }
+    @media (min-width:560px) { .cfg-card { padding:36px 36px; } }
+
+    .cfg-head { margin-bottom:22px; }
+    .cfg-progress {
+      font-size:12px; font-weight:800; color:#3366FF; text-transform:uppercase;
+      letter-spacing:1.5px; margin-bottom:10px;
+    }
+    .cfg-progress-bar {
+      height:6px; border-radius:100px; background:rgba(51,102,255,0.12); overflow:hidden;
+    }
+    .cfg-progress-bar > span {
+      display:block; height:100%; width:0%; border-radius:100px;
+      background:linear-gradient(90deg,#3366FF,#5B8CFF);
+      transition:width .35s cubic-bezier(.4,0,.2,1);
+    }
+    .cfg-question {
+      font-size:clamp(22px,3.2vw,28px); font-weight:800; color:#1A1F36;
+      letter-spacing:-0.6px; line-height:1.25; margin-bottom:22px;
+    }
+
+    .cfg-options { display:flex; flex-direction:column; gap:12px; }
     .cfg-opt {
-      display:flex; align-items:center; gap:14px; text-align:left; width:100%;
-      background:white; border:1.5px solid rgba(51,102,255,0.16); border-radius:14px;
-      padding:16px 18px; cursor:pointer; transition:border-color .15s, background .15s, transform .05s;
+      display:flex; align-items:center; gap:16px; text-align:left; width:100%;
+      background:#fff; border:1.5px solid rgba(51,102,255,0.14); border-radius:16px;
+      padding:18px 18px 18px 20px; cursor:pointer; position:relative;
+      transition:border-color .18s ease, background .18s ease, box-shadow .18s ease, transform .12s ease;
+      animation:cfgIn .3s ease both;
     }
-    .cfg-opt:hover { border-color:#3366FF; background:rgba(51,102,255,0.04); }
-    .cfg-opt:active { transform:scale(0.995); }
-    .cfg-opt-label { font-weight:700; color:#1A1F36; font-size:16px; }
-    .cfg-opt-sub { font-size:13px; color:#9CA3AF; margin-top:2px; }
-    .cfg-opt-arrow { margin-left:auto; color:#3366FF; font-weight:800; }
+    .cfg-opt:hover {
+      border-color:#3366FF; background:rgba(51,102,255,0.035);
+      box-shadow:0 10px 26px rgba(51,102,255,0.14); transform:translateY(-2px);
+    }
+    .cfg-opt:active { transform:translateY(0) scale(0.995); }
+    .cfg-opt-text { min-width:0; display:flex; flex-direction:column; }
+    .cfg-opt-label { font-weight:700; color:#1A1F36; font-size:16.5px; line-height:1.3; }
+    .cfg-opt-sub { font-size:13.5px; color:#9CA3AF; margin-top:3px; line-height:1.4; }
+    .cfg-opt-arrow {
+      margin-left:auto; flex:0 0 auto; display:inline-flex; align-items:center;
+      justify-content:center; width:34px; height:34px; border-radius:50%;
+      background:rgba(51,102,255,0.10); color:#3366FF; font-weight:800; font-size:17px;
+      transition:background .18s ease, color .18s ease, transform .18s ease;
+    }
+    .cfg-opt:hover .cfg-opt-arrow {
+      background:#3366FF; color:#fff; transform:translateX(3px);
+    }
+
+    @keyframes cfgIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { .cfg-opt { animation:none; } }
+
+    .cfg-back { margin-top:22px; display:none; }
+    .cfg-back-btn {
+      display:inline-flex; align-items:center; gap:7px; background:none; border:none;
+      color:#9CA3AF; font-size:14px; font-weight:600; cursor:pointer; padding:6px 2px;
+      transition:color .15s ease;
+    }
+    .cfg-back-btn:hover { color:#3366FF; }
+    .cfg-back-btn:hover .cfg-back-arrow { transform:translateX(-3px); }
+    .cfg-back-arrow { display:inline-block; transition:transform .15s ease; }
+
     .res-card {
-      display:block; background:white; border:1px solid rgba(51,102,255,0.16);
+      display:block; background:#fff; border:1px solid rgba(51,102,255,0.16);
       border-left:4px solid #3366FF; border-radius:16px; padding:20px 22px; text-decoration:none;
-      transition:border-color .15s, box-shadow .15s;
+      transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
     }
-    a.res-card:hover { border-left-color:#1A1F36; box-shadow:0 8px 22px rgba(51,102,255,0.12); }
+    a.res-card:hover {
+      border-left-color:#1A1F36; box-shadow:0 8px 22px rgba(51,102,255,0.12); transform:translateY(-2px);
+    }
   </style>
 
   <script is:inline define:vars={{ playStoreUrl }}>
@@ -226,6 +289,7 @@ const faqSchema = {
       const path = [];
 
       const elProgress = document.getElementById('cfg-progress');
+      const elProgressBar = document.querySelector('#cfg-progress-bar > span');
       const elQuestion = document.getElementById('cfg-question');
       const elOptions = document.getElementById('cfg-options');
       const elBackWrap = document.getElementById('cfg-back');
@@ -242,6 +306,9 @@ const faqSchema = {
         const step = STEPS.find(function (s) { return s.id === stepId; });
         const idx = steps.indexOf(step);
         elProgress.textContent = 'Frage ' + (idx + 1) + ' von ' + steps.length;
+        if (elProgressBar) {
+          elProgressBar.style.width = Math.round(((idx + 1) / steps.length) * 100) + '%';
+        }
         elQuestion.textContent = step.q;
         elOptions.innerHTML = '';
         step.options.forEach(function (opt) {
@@ -249,9 +316,9 @@ const faqSchema = {
           btn.type = 'button';
           btn.className = 'cfg-opt';
           btn.innerHTML =
-            '<div><div class="cfg-opt-label">' + opt.label + '</div>' +
-            (opt.sub ? '<div class="cfg-opt-sub">' + opt.sub + '</div>' : '') +
-            '</div><span class="cfg-opt-arrow">→</span>';
+            '<span class="cfg-opt-text"><span class="cfg-opt-label">' + opt.label + '</span>' +
+            (opt.sub ? '<span class="cfg-opt-sub">' + opt.sub + '</span>' : '') +
+            '</span><span class="cfg-opt-arrow" aria-hidden="true">→</span>';
           btn.addEventListener('click', function () { choose(stepId, opt.v); });
           elOptions.appendChild(btn);
         });
