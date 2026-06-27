@@ -15,6 +15,41 @@ const breadcrumbSchema = {
   ],
 };
 
+// FAQ-Schema spiegelt die sichtbaren Frage-Überschriften & Antworten dieser Seite
+// (Funkzeugnis-Cluster). Inhalte 1:1 aus dem On-Page-Text, damit Google-konform.
+const faqs = [
+  {
+    q: 'Was ist das UBI?',
+    a: 'Das UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk (UBI) ist die amtlich anerkannte Erlaubnis zum Bedienen und Beaufsichtigen einer Schiffsfunkstelle auf Binnenschifffahrtsstraßen. Die Prüfung wird von den Prüfungsausschüssen des Deutschen Segler-Verbands (DSV) abgenommen. Das Mindestalter beträgt 15 Jahre.',
+  },
+  {
+    q: 'Wer braucht das UBI?',
+    a: 'Das UBI benötigt jeder, der eine UKW-Sprechfunkanlage auf Binnenwasserstraßen betreibt – etwa Sportbootfahrer auf Rhein, Elbe oder Donau, Nutzer von AIS-Geräten mit Sendebetrieb sowie Charterer von Hausbooten und größeren Motorbooten.',
+  },
+  {
+    q: 'Was kostet das UBI?',
+    a: 'Die amtliche Gesamtprüfungsgebühr für das UBI beträgt rund 108,71 € (Zulassung 15,89 €, Prüfung Theorie & Praxis 70,03 €, Erteilung des Zeugnisses 22,79 €). Die Wiederholung von Theorie oder Praxis kostet 45,64 €. Das Boatpass UBI-Lernmodul kostet einmalig 7,99 €.',
+  },
+  {
+    q: 'Ist das UBI unabhängig vom SBF Binnen?',
+    a: 'Ja, das UBI ist unabhängig vom SBF Binnen und kann separat erworben werden. In der Praxis empfiehlt sich jedoch die gemeinsame Vorbereitung, da viele Binnenschiffer beide Zeugnisse benötigen.',
+  },
+  {
+    q: 'Wird die UBI-Prüfung für SRC- oder LRC-Inhaber verkürzt?',
+    a: 'Ja. Für Inhaber des SRC oder LRC sind die theoretische und die praktische UBI-Prüfung verkürzt – beide Prüfungen sind unter Umständen sogar an einem Tag möglich.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
 const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
   { name: 'Verkehrskreise', desc: 'Kanal- und Revierfunk, Streckenfunk auf Binnenwasserstraßen', count: 30, icon: 'wifi', color: '#7C3AED', bg: 'rgba(124,58,237,0.10)' },
   { name: 'Betriebsverfahren', desc: 'Gesprächsabwicklung, Prioritäten & Sprechprozeduren', count: 29, icon: 'microphone', color: '#EA580C', bg: 'rgba(234,88,12,0.10)' },
@@ -31,6 +66,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
   hasAlternate={false}
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
