@@ -102,7 +102,7 @@ export const en: Translations = {
     catalog1Themes: '7',
     catalog1Note: 'With prior knowledge you learn fewer – the app adapts',
     catalog2Name: 'SBF See',
-    catalog2Desc: 'Official question catalog · all categories · try within daily limit',
+    catalog2Desc: 'The license for coastal and sea waters',
     catalog2Questions: '420',
     catalog2Themes: '7',
     catalog2Highlight: 'incl. 15 navigation tasks × 9 questions',
