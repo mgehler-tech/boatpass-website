@@ -198,7 +198,7 @@ const soonItems = [t.pricing.soon1];
         </div>
 
         <div class="bundle-action">
-          <div style="display:flex; flex-direction:column; align-items:flex-end; line-height:1;">
+          <div class="bundle-price-block" style="display:flex; flex-direction:column; align-items:flex-end; line-height:1;">
             <span style="font-size:38px; font-weight:900; color:white; letter-spacing:-1.5px; white-space:nowrap;">{t.pricing.bundlePrice}</span>
             <span style="margin-top:8px; background:rgba(255,255,255,0.2); color:white; font-size:12px; font-weight:700; padding:4px 12px; border-radius:100px; white-space:nowrap;">{t.pricing.bundleSave}</span>
           </div>
@@ -500,7 +500,10 @@ const soonItems = [t.pricing.soon1];
   @media (max-width: 680px) {
     .paid-grid { grid-template-columns: 1fr; }
     .bundle-inner { flex-direction: column; align-items: flex-start; }
-    .bundle-action { width: 100%; justify-content: space-between; }
+    /* Auf schmalen Screens Preis und CTA untereinander stapeln, damit der
+       „Kostenlos starten“-Button nicht aus der Karte herausläuft. */
+    .bundle-action { width: 100%; flex-direction: column; align-items: stretch; gap: 18px; }
+    .bundle-price-block { align-items: flex-start !important; }
     .catalog-card.featured { padding: 24px; }
     /* Free-vs-Paid-Gegenüberstellung auf schmalen Screens untereinander stapeln,
        statt zwei zu enge Spalten nebeneinander zu quetschen. */
