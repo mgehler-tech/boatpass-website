@@ -6,6 +6,7 @@ tags: ["Sicherheit"]
 readingTime: 7
 lang: de
 author: "Marius Gehler"
+altSlug: "distress-signals-at-sea"
 ---
 
 Notsignale gehören zum Pflichtwissen jedes Sportbootfahrers – und sind regelmäßig Thema in der SBF-Theorieprüfung. Sie zeigen an, dass ein Fahrzeug in Not ist und Hilfe braucht. Welche Signale es gibt, was sie bedeuten und welche du selbst einsetzen darfst, erklärt dieser Artikel.

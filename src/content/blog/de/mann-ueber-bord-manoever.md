@@ -6,6 +6,7 @@ tags: ["Praxis"]
 readingTime: 6
 lang: de
 author: "Marius Gehler"
+altSlug: "man-overboard-maneuver"
 ---
 
 Das Mann-über-Bord-Manöver (kurz MOB) ist das komplexeste Pflichtmanöver in der praktischen Sportbootführerschein-Prüfung – und das, bei dem es im Ernstfall wirklich um etwas geht. In der Prüfung wird statt einer Person meist eine **Boje** oder ein Fender genutzt. Dieser Leitfaden zeigt den Ablauf Schritt für Schritt unter Motor.

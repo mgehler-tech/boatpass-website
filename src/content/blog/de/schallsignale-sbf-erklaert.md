@@ -6,6 +6,7 @@ tags: ["Sicherheit"]
 readingTime: 7
 lang: de
 author: "Marius Gehler"
+altSlug: "sound-signals-sbf-explained"
 ---
 
 Schallsignale sind ein Dauerbrenner in der SBF-Theorieprüfung – und eine beliebte Fehlerquelle. Der Grund: Auf den Seeschifffahrtsstraßen (KVR) bedeuten dieselben Tonfolgen teilweise etwas anderes als auf den Binnenschifffahrtsstraßen. Dieser Artikel sortiert die wichtigsten Signale sauber nach **See** und **Binnen** – und zeigt, wo die Verwechslungsfallen lauern.
