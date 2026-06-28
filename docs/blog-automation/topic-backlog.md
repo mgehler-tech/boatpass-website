@@ -10,7 +10,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] SBF im Ausland gültig? Führerscheinpflicht in Kroatien, Niederlande, Italien (2026-06-18: sbf-im-ausland-gueltig / sbf-valid-abroad)
 - [x] Promillegrenze auf dem Boot – was gilt für Sportbootführer? (2026-06-25: promillegrenze-boot / blood-alcohol-limit-boat)
 - [x] Die richtige Rettungsweste wählen – Auftriebsklassen erklärt (2026-06-26: rettungsweste-auftriebsklassen / life-jacket-buoyancy-classes)
-- [ ] UBI vs. SRC – welcher Funkschein für welches Boot?
+- [x] UBI vs. SRC – welcher Funkschein für welches Boot? (2026-06-28: ubi-vs-src-funkschein / ubi-vs-src-radio-licence)
 - [ ] Seekarte lesen lernen – Symbole, Tiefenangaben, Maßstäbe
 - [ ] Kompass, Missweisung und Deviation einfach erklärt
 - [ ] Anlegen und Ablegen – Hafenmanöver für Einsteiger
