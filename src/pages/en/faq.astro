@@ -25,6 +25,48 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
         q: 'Which license do I need for my waters?',
         a: 'Rule of thumb: for a motorboat over 15 HP you need the SBF Inland on inland waters and the SBF Coastal at the coast. If a radio is on board, add the matching radio certificate – UBI for inland, SRC for coastal, LRC for worldwide voyages. You\'ll find an overview of all licenses on the "Licenses" page.',
       },
+      {
+        q: 'Do I need the SBF Coastal or SBF Inland for the Baltic Sea?',
+        a: 'For the North Sea and Baltic Sea you need the SBF Coastal (See), because coastal waters are sea shipping waterways – the SBF Inland is not sufficient there. Important: the border between coastal and inland does not run along the coastline but at the river mouths. On the Elbe, for example, you need the SBF Coastal up to Hamburg and the SBF Inland above it. Lake Constance has its own rule (Bodensee-Schifferpatent). If you want to navigate both coastal and inland waters, take both licenses – cheapest as a combined exam.',
+      },
+      {
+        q: 'SRC or UBI – which radio certificate do I need?',
+        a: 'It depends on your waters. For coastal sea radio – a VHF marine radio with DSC – you need the SRC (Short Range Certificate). For inland radio on rivers and canals, the UBI (VHF radiotelephone certificate for inland waterways) applies. The SRC is not valid for inland radio, and the UBI is not valid for sea radio – if you navigate both, you need both certificates. In Boatpass you learn UBI and SRC as separate modules for a one-time €7.99 each.',
+      },
+      {
+        q: 'What is the difference between SRC and LRC?',
+        a: 'Both are sea radio certificates and differ mainly in range. The SRC (Short Range Certificate) covers VHF sea radio with DSC in the coastal area (sea area A1, about 35 nautical miles). The LRC (Long Range Certificate) additionally covers worldwide sea radio via MF/HF (medium and short wave) and satellite (sea areas A1–A4) – required for offshore and blue-water sailing. For coastal waters the SRC is enough; the LRC builds on it and is the choice for the open sea. In Boatpass both are available as separate modules (SRC €7.99, LRC €9.99).',
+      },
+    ],
+  },
+  {
+    id: 'requirements',
+    title: 'Requirements & Law',
+    faqs: [
+      {
+        q: 'What is the minimum age for the SBF?',
+        a: 'The minimum age for the SBF Inland and SBF Coastal under motor is 16 years each. For the SBF Inland under sail, 14 years is enough. You may register for the exam a little earlier (from about 15 years and 9 months) – you only need to reach the minimum age by the time the license is handed over. Even operating a license-free boat up to 15 HP requires you to be at least 16.',
+      },
+      {
+        q: 'Which documents do I need to register for the exam?',
+        a: 'To register with the examination board (DMYV or DSV) you need: the application for admission, a medical certificate for SBF applicants (vision, hearing and color test, valid for 12 months, approx. €30–65), a biometric passport photo (35 × 45 mm), proof of reliability (a copy of your car driving license or a police clearance certificate of type O), and the exam fee. No course attendance is required – you may register even after preparing solely with the Boatpass app.',
+      },
+      {
+        q: 'Do I even need a boating license? (The 15 HP rule)',
+        a: 'In Germany you may operate motorboats up to and including 15 HP (11.03 kW) from age 16 without a boating license – on both inland and sea shipping waterways. Only above 15 HP does the SBF become mandatory. Exceptions: Lake Constance (Bodensee-Schifferpatent) and the Rhine have lower limits, and individual zones (e.g. a section of the Spree in Berlin) require a license regardless of engine power. For the open sea or a charter abroad you almost always need the SBF Coastal.',
+      },
+      {
+        q: 'Does the 0.5 blood alcohol limit apply on a boat like in a car?',
+        a: 'No, not in that form. Recreational boats are not governed by road traffic law (StVG) but by the inland waterway rules (BinSchStrO) or the sea waterway rules (SeeSchStrO): the skipper must be fit to navigate at all times. Intoxication becomes a criminal offense under § 315a StGB – relative unfitness can already apply at low levels combined with signs of impairment, and absolute unfitness from 1.6 per mille. The safe rule: as a skipper you do not drink alcohol. The topic is also part of the official question catalog.',
+      },
+      {
+        q: 'How long is the boating license valid?',
+        a: 'The German boating license has no expiry – it is valid for life, with no renewal needed. Since 2018 it has been issued in credit-card format with the ICC (International Certificate of Competence) on the back, recognized in more than 30 countries including the main charter areas such as Croatia, Greece, Italy, Spain, and Turkey. Old paper licenses without an ICC can be converted to the new format via the DMYV or DSV.',
+      },
+      {
+        q: 'What is the charter certificate – and does it replace the SBF?',
+        a: 'The charter certificate (officially Charterbescheinigung) allows you to operate a rented boat without a boating license on certain designated inland waters – above all the Mecklenburg Lake District. Conditions: the boat is at most 15 m long and 12 km/h fast, the minimum age is usually 16, plus a 2–3 hour briefing by the rental company. Rules such as a night-travel ban and a no-go from wind force 4 apply. The charter certificate does not replace the SBF: it is valid only for the rented boat, only in the designated area, and not abroad.',
+      },
     ],
   },
   {
@@ -46,6 +88,18 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Is the German SBF valid abroad?',
         a: 'The SBF Inland is recognized on German inland waterways. Abroad, national regulations apply – in many European countries the SBF is sufficient, while others additionally require the ICC (International Certificate of Competence), which you can obtain based on your German license.',
+      },
+      {
+        q: 'How many mistakes are allowed in the SBF exam?',
+        a: 'For the SBF Inland you may answer at most 2 of 7 base questions and 5 of 23 specific questions incorrectly – you pass with at least 5 base and 18 specific questions correct. For the SBF Coastal the same applies to base and specific questions; additionally you must solve at least 7 of the 9 navigation tasks correctly (at most 2 mistakes). In the Boatpass exam simulation you instantly see whether you would have passed by these official criteria.',
+      },
+      {
+        q: 'What happens if I fail the SBF exam?',
+        a: 'You can retake the exam – failed parts are repeated individually. If you only failed the theory or only the practical, you repeat just that part; a part you have already passed usually does not have to be retaken. Retake fees in 2026 are roughly €37–49 for the theory and €57–75 for the practical, depending on the examination board. With the targeted error training in Boatpass you revise exactly the topics that tripped you up.',
+      },
+      {
+        q: 'How hard is the navigation task in the SBF Coastal exam?',
+        a: 'The navigation task is considered the most demanding part of the SBF Coastal by many, but it is very learnable. You work with an official training chart and solve 9 tasks covering courses (compass course, magnetic variation and deviation), position and distance fixing, and tides. At least 7 of the 9 tasks must be correct. With some practice using the chart, plotting dividers and the course triangle, the task becomes routine – Boatpass trains the related questions from the official catalog.',
       },
     ],
   },
@@ -74,6 +128,10 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'How much does the SBF cost?',
         a: 'The official exam fees (theory + practical) in 2026 are €130.78 for the SBF Inland and €148.38 for the SBF Coastal license. Taking both together as a combined exam costs just €178.61 instead of €279.16. Optional preparatory courses cost extra (online courses from around €340). With the Boatpass app, you can learn the theory without an expensive course.',
+      },
+      {
+        q: 'Do I save money with the combined Inland + Coastal exam?',
+        a: 'Yes. Taken separately, the official exam fees are €130.78 (Inland) and €148.38 (Coastal), €279.16 in total. The combined Inland + Coastal exam costs only €178.61 – you save around €100. This is possible because the 72 base questions are identical for both licenses and are examined only once. In Boatpass you learn both catalogs in the complete bundle for €16.98 instead of €19.98.',
       },
       {
         q: 'How much do the radio certificates (UBI, SRC, LRC) cost?',
