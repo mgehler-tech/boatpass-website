@@ -55,6 +55,39 @@ const courseSchema = {
   },
 };
 
+const faqs = [
+  {
+    q: 'Wie läuft die LRC-Prüfung ab?',
+    a: 'In der Theorie beantwortest du einen Fragebogen mit 14 LRC-Fragen in 20 Minuten – bestanden ab 11 richtigen Antworten. Wer noch kein SRC besitzt, bearbeitet zusätzlich den SRC-Fragebogen mit 24 Fragen. Dazu kommen ein Englisch-Diktat mit Übersetzung und ein praktischer Teil an den GMDSS-Geräten. Boatpass trainiert den amtlichen LRC-Fragenkatalog mit 76 Fragen.',
+  },
+  {
+    q: 'Was ist der Unterschied zwischen LRC und SRC?',
+    a: 'Das SRC gilt nur für den UKW-Seefunk im Küstenbereich (Seegebiet A1). Das LRC ist das höchste Seefunkzeugnis der Sportschifffahrt und gilt weltweit in allen Seegebieten A1–A4 – über UKW, Grenz- und Kurzwelle sowie über Satellit. Das LRC schließt den Funktionsumfang des SRC vollständig mit ein.',
+  },
+  {
+    q: 'Was kostet das LRC?',
+    a: 'Die amtliche Prüfungsgebühr für das LRC variiert je nach Verband und Bundesland und liegt bei rund 188–207 €. Ein optionaler Vorbereitungskurs kostet zusätzlich etwa 300–500 €, ist aber nicht vorgeschrieben. Diese Gebühren sind unabhängig vom Boatpass LRC-Lernmodul (einmalig 9,99 €).',
+  },
+  {
+    q: 'Ab welchem Alter kann ich das LRC machen?',
+    a: 'Den Antrag auf das LRC kannst du ab 18 Jahren stellen; am Prüfungstag musst du mindestens 17 Jahre und 9 Monate alt sein. Das LRC wird von den Prüfungsausschüssen des DSV und DMYV abgenommen und ist international anerkannt sowie zeitlich unbegrenzt gültig.',
+  },
+  {
+    q: 'Brauche ich erst das SRC, bevor ich das LRC mache?',
+    a: 'Nein. Wer kein SRC besitzt, bearbeitet in der LRC-Prüfung zusätzlich den SRC-Fragebogen mit 24 Fragen. Das LRC schließt den kompletten Funktionsumfang des SRC ein, du brauchst es also nicht vorab separat zu erwerben.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
 const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
   { name: 'UKW & Betriebsverfahren', desc: 'Seefunk, DSC, Sprechprozeduren & GMDSS-Überblick', count: 19, icon: 'microphone', color: '#EA580C', bg: 'rgba(234,88,12,0.10)' },
   { name: 'Grenz- & Kurzwelle', desc: 'MF/HF-Funk, NAVTEX & Übertragungsverfahren', count: 15, icon: 'wifi', color: '#7C3AED', bg: 'rgba(124,58,237,0.10)' },
@@ -73,6 +106,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
@@ -302,6 +336,19 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
         style="display:inline-flex; align-items:center; gap:8px; background:white; color:#3366FF; font-weight:700; font-size:14px; padding:12px 24px; border-radius:12px; text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,0.18);">
         ▶&nbsp;LRC-Modul in der App freischalten
       </a>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Häufige Fragen zum LRC</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <div style="font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</div>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
     </section>
 
     <!-- Interne Links -->
