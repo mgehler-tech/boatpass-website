@@ -55,6 +55,39 @@ const courseSchema = {
   },
 };
 
+const faqs = [
+  {
+    q: 'Wie läuft die SRC-Prüfung ab?',
+    a: 'Die theoretische SRC-Prüfung umfasst einen Fragebogen mit 24 Multiple-Choice-Fragen in 30 Minuten – bestanden ab 19 richtigen Antworten. Dazu kommen die schriftliche Aufnahme einer Not-, Dringlichkeits- oder Sicherheitsmeldung sowie ein praktischer Teil mit vier Aufgaben am DSC-Funkgerät. Geprüft wird aus dem amtlichen ELWIS-Fragenkatalog mit 180 Fragen, den Boatpass vollständig trainiert.',
+  },
+  {
+    q: 'Was kostet das SRC?',
+    a: 'Die amtliche Prüfungsgebühr für das SRC beträgt bei DSV/DMYV aktuell rund 127,88 € (Zulassung, Prüfung und Erteilung des Zeugnisses). Ein optionaler Vorbereitungskurs an einer Funkschule kostet zusätzlich etwa 250–350 €, ist aber nicht vorgeschrieben. Diese Gebühren sind unabhängig vom Boatpass SRC-Lernmodul (einmalig 7,99 €).',
+  },
+  {
+    q: 'SRC oder UBI – welches Funkzeugnis brauche ich?',
+    a: 'Das SRC ist das UKW-Seefunkzeugnis mit DSC für den Küstenbereich (Seegebiet A1), das UBI ist für den UKW-Sprechfunk auf Binnenschifffahrtsstraßen zuständig. Beide sind nicht gegenseitig anrechenbar. Wer auf hoher See außerhalb der UKW-Reichweite funken will, benötigt das umfangreichere LRC.',
+  },
+  {
+    q: 'Ab welchem Alter kann ich das SRC machen und wie lange ist es gültig?',
+    a: 'Zur SRC-Prüfung zugelassen wirst du ab 15 Jahren. Das SRC wird von den Prüfungsausschüssen des DSV und DMYV abgenommen, ist international anerkannt und zeitlich unbegrenzt gültig.',
+  },
+  {
+    q: 'Brauche ich für das SRC einen Funkkurs?',
+    a: 'Nein. Ein Vorbereitungskurs ist nicht vorgeschrieben – die Theorie kannst du eigenständig mit dem offiziellen Fragenkatalog lernen, zum Beispiel mit dem Boatpass SRC-Modul. Für den praktischen Teil empfiehlt sich vorab etwas Übung am DSC-Funkgerät.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
 const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
   { name: 'Betriebsverfahren', desc: 'Gesprächsabwicklung, Prioritäten & Sprechprozeduren', count: 48, icon: 'microphone', color: '#EA580C', bg: 'rgba(234,88,12,0.10)' },
   { name: 'DSC-Verfahren', desc: 'Digital Selective Calling, Notfall-DSC & Empfang', count: 38, icon: 'wifi', color: '#7C3AED', bg: 'rgba(124,58,237,0.10)' },
@@ -72,6 +105,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
@@ -309,6 +343,19 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
         style="display:inline-flex; align-items:center; gap:8px; background:white; color:#3366FF; font-weight:700; font-size:14px; padding:12px 24px; border-radius:12px; text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,0.18);">
         ▶&nbsp;SRC-Modul in der App freischalten
       </a>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Häufige Fragen zum SRC</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <div style="font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</div>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
     </section>
 
     <!-- Interne Links -->
