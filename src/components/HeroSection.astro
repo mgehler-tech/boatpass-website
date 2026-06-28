@@ -22,7 +22,7 @@ const [screenshot0, screenshot1, screenshot2, screenshot3] = lang === 'en'
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 ---
 
-<section style="position:relative; min-height:100vh; display:flex; align-items:center; padding: 100px 0 0; overflow:hidden; background:#F0F4FA;">
+<section class="hero-section" style="position:relative; min-height:100vh; display:flex; align-items:center; padding: 100px 0 0; overflow:hidden; background:#F0F4FA;">
 
   <!-- Background orbs -->
   <div style="position:absolute; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle,rgba(51,102,255,0.08),transparent 70%); top:-80px; right:-60px; pointer-events:none;"></div>
@@ -321,6 +321,15 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     }
     .phone-col {
       display: none;
+    }
+    /* Phone-Spalte ist hier ausgeblendet – ohne sie würde der kurze Text-Block
+       in der vollen Viewport-Höhe vertikal zentriert und dadurch weit vom Header
+       weggeschoben. Stattdessen den Inhalt oben andocken und die Höhe freigeben. */
+    .hero-section {
+      min-height: auto !important;
+      align-items: flex-start !important;
+      padding-top: 88px !important;
+      padding-bottom: 64px !important;
     }
   }
 </style>
