@@ -130,7 +130,7 @@ In Germany, the SRC is taken as a separate exam. It covers:
 - Distress, urgency, and safety communications
 - Standard VHF operating procedures
 
-The exam is manageable, and many skippers prepare for it alongside the [SBF coastal exam](/sbf-see/). If you are serious about chartering abroad, the SRC belongs on your list alongside the SBF See.
+The exam is manageable, and many skippers prepare for it alongside the [SBF coastal exam](/en/sbf-coastal/). If you are serious about chartering abroad, the SRC belongs on your list alongside the SBF Coastal.
 
 ## Getting the SRC: How Long Does It Take?
 
@@ -144,7 +144,7 @@ Key topics on the SRC exam include:
 - Practical procedures: MAYDAY, PAN PAN, SÉCURITÉ calls
 - Voice discipline and the international phonetic alphabet
 
-Many skippers sit the SRC alongside the [SBF coastal exam](/sbf-see/) at the same sailing school. Check with your school whether both exams can be taken at the same sitting – they often can, which saves a second trip.
+Many skippers sit the SRC alongside the [SBF coastal exam](/en/sbf-coastal/) at the same sailing school. Check with your school whether both exams can be taken at the same sitting – they often can, which saves a second trip.
 
 ## Documents Checklist
 
