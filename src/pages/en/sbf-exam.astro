@@ -1,0 +1,189 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import type { IconName } from '../../icons';
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boatpass.de/en/" },
+    { "@type": "ListItem", "position": 2, "name": "SBF Exam Process", "item": "https://boatpass.de/en/sbf-exam/" },
+  ],
+};
+
+const faqs = [
+  {
+    q: 'How does the SBF exam work?',
+    a: 'The SBF exam consists of a theory part and a practical part. In the theory you answer a multiple-choice paper (SBF Inland: 30 questions in 45 minutes; SBF Coastal: 39 questions incl. navigation task in 60 minutes). In the practical part you demonstrate maneuvers on the water such as coming alongside and casting off, turning and man-overboard, as well as the most important knots.',
+  },
+  {
+    q: 'Do I have to do theory and practice on the same day?',
+    a: 'That depends on the exam center. Theory and practice often take place on the same date, but they are separate exam parts. Both have to be passed in order to receive the license.',
+  },
+  {
+    q: 'What happens if I fail?',
+    a: 'You can retake the part you didn\'t pass. Exam fees apply again. With targeted preparation – exam simulation and mistake training – most candidates pass on the first attempt, however.',
+  },
+  {
+    q: 'What requirements do I need for the SBF exam?',
+    a: 'For the SBF Inland the minimum age is 16. You register with the responsible examination board (e.g. DMYV). A preparation course is not required – you can prepare entirely on your own.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<BaseLayout
+  title="SBF Exam Process – Theory & Practice Step by Step"
+  description="How does the German boating license exam work? Theory & practice: structure, questions, maneuvers, passing thresholds and requirements – Inland and Coastal."
+  lang="en"
+  altUrl="https://boatpass.de/sbf-pruefung-ablauf/"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
+  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        Boating License · Inland & Coastal
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+        The SBF exam –<br>how it works
+      </h1>
+      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto 36px;">
+        Theory and practice explained step by step: structure, questions, maneuvers and passing thresholds for SBF Inland and SBF Coastal. So you know exactly what to expect on exam day.
+      </p>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
+        ▶&nbsp;Prepare for the theory
+      </a>
+    </div>
+  </div>
+
+  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+
+    <!-- Scope note -->
+    <div style="display:flex; align-items:flex-start; gap:14px; background:rgba(51,102,255,0.05); border:1px solid rgba(51,102,255,0.16); border-radius:16px; padding:20px 22px; margin-bottom:48px;">
+      <span style="width:34px; height:34px; border-radius:10px; background:rgba(51,102,255,0.10); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <Icon name="document" size={18} stroke="#3366FF" strokeWidth={1.75} />
+      </span>
+      <div style="font-size:15px; color:#4B5563; line-height:1.7;">
+        <strong style="color:#1A1F36;">This page describes the process of the boating license exam – for <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none;">SBF Inland</a> and <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none;">SBF Coastal</a>.</strong>
+        The radio certificates have their own exam process – you'll find the structure and contents on the pages for <a href="/en/ubi/" style="color:#3366FF; text-decoration:none;">UBI</a>, <a href="/en/src/" style="color:#3366FF; text-decoration:none;">SRC</a> and <a href="/en/lrc/" style="color:#3366FF; text-decoration:none;">LRC</a>.
+      </div>
+    </div>
+
+    <!-- Overview -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">Theory and practice – two exam parts</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+        The <strong>boating license exam</strong> consists of two separate parts: a <strong>theory exam</strong> (multiple-choice paper) and a <strong>practical exam</strong> on the water. You have to pass both to receive the license. The exam is administered by a recognized examination board (e.g. DMYV).
+      </p>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+        A preparation course is <strong>not required</strong> – you can learn the theory independently with the official question catalog.
+      </p>
+    </section>
+
+    <!-- Theory -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">1. The theory exam</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        In the theory you answer a question paper from the official ELWIS catalog. The structure differs depending on the license:
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px;">
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">SBF Inland</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.7;">30 questions · 45 minutes<br>7 basic questions (at least 5 correct)<br>23 specific questions (at least 18 correct)</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">SBF Coastal</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.7;">39 questions · 60 minutes<br>30 standard questions like Inland<br>+ 9 navigation task questions (at least 7 correct)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Practice -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">2. The practical exam</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        In the practical part you show on the water that you can handle a boat safely. Typically tested are:
+      </p>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        {[
+          { icon: 'lifebuoy', title: 'Maneuvers', desc: 'Coming alongside and casting off, turning, stopping and the important man-overboard maneuver.' },
+          { icon: 'knot', title: 'Knots', desc: 'Applying the exam-relevant knots confidently and quickly (e.g. bowline, clove hitch, securing a cleat).' },
+          { icon: 'compass', title: 'Boat handling & safety', desc: 'Correct behavior on board, give-way rules and safe steering in the area.' },
+        ].map(f => (
+          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
+            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <Icon name={f.icon as IconName} size={21} stroke="#3366FF" strokeWidth={1.75} />
+            </span>
+            <div>
+              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
+              <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p style="font-size:15px; color:#6B7280; line-height:1.7; margin-top:20px;">
+        For the practical part, at least one day of practice on the water is recommended. The exact requirements can vary slightly depending on the examination board.
+      </p>
+    </section>
+
+    <!-- Requirements / Registration -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Requirements & registration</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Minimum age</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">16 years (SBF Inland)</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Registration</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">with the examination board (DMYV)</div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Course requirement</div>
+          <div style="font-size:15px; color:#4B5563; line-height:1.6;">none – self-study possible</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Frequently asked questions about the exam process</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <div style="font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</div>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Internal links -->
+    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
+      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Further reading</h2>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="/en/sbf-inland-exam-questions/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Practice SBF Inland exam questions</a>
+        <a href="/en/sbf-coastal-exam-questions/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Practice SBF Coastal exam questions</a>
+        <a href="/en/sbf-costs/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ What does the boating license cost?</a>
+        <a href="/en/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Frequently asked questions about the boating license</a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

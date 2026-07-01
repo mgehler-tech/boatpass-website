@@ -6,6 +6,7 @@ tags: ["Navigation"]
 readingTime: 7
 lang: de
 author: "Marius Gehler"
+altSlug: "tides-rule-of-twelfths"
 ---
 
 Wer auf Nord- oder Ostsee unterwegs ist, kommt an den Gezeiten nicht vorbei. Besonders im Wattenmeer entscheidet der richtige Zeitpunkt darüber, ob unter dem Kiel noch genug Wasser steht. Mit der **Zwölftelregel** lässt sich der Wasserstand zwischen Hoch- und Niedrigwasser einfach abschätzen – ganz ohne aufwendige Tabellen. So funktioniert sie.

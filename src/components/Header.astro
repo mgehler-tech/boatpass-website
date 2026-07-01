@@ -42,14 +42,14 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
               <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
             </>
           )}
-          <a href="/sbf-binnen/" class="nav-dropdown-item">SBF Binnen</a>
-          <a href="/sbf-see/" class="nav-dropdown-item">SBF See</a>
-          <a href="/sbf-kosten/" class="nav-dropdown-item">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
-          <a href="/sbf-pruefung-ablauf/" class="nav-dropdown-item">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
+          <a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a>
+          <a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a>
+          <a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
+          <a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="nav-dropdown-item">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
           <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
-          <a href="/ubi/" class="nav-dropdown-item">UBI</a>
-          <a href="/src/" class="nav-dropdown-item">SRC</a>
-          <a href="/lrc/" class="nav-dropdown-item">LRC</a>
+          <a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="nav-dropdown-item">UBI</a>
+          <a href={lang === 'de' ? '/src/' : '/en/src/'} class="nav-dropdown-item">SRC</a>
+          <a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="nav-dropdown-item">LRC</a>
           <span class="nav-dropdown-item nav-dropdown-soon">Bodenseeschifferpatent <span style="font-size:11px;color:#3366FF;">{lang === 'de' ? 'bald' : 'soon'}</span></span>
         </div>
       </div>
@@ -113,14 +113,14 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
               <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
             </>
           )}
-          <a href="/sbf-binnen/" class="mobile-nav-sublink">SBF Binnen</a>
-          <a href="/sbf-see/" class="mobile-nav-sublink">SBF See</a>
-          <a href="/sbf-kosten/" class="mobile-nav-sublink">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
-          <a href="/sbf-pruefung-ablauf/" class="mobile-nav-sublink">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
+          <a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a>
+          <a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a>
+          <a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
+          <a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="mobile-nav-sublink">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
           <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
-          <a href="/ubi/" class="mobile-nav-sublink">UBI</a>
-          <a href="/src/" class="mobile-nav-sublink">SRC</a>
-          <a href="/lrc/" class="mobile-nav-sublink">LRC</a>
+          <a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="mobile-nav-sublink">UBI</a>
+          <a href={lang === 'de' ? '/src/' : '/en/src/'} class="mobile-nav-sublink">SRC</a>
+          <a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="mobile-nav-sublink">LRC</a>
           <span class="mobile-nav-sublink" style="opacity:0.45; cursor:default;">Bodenseeschifferpatent <span style="font-size:11px;color:#3366FF;">{lang === 'de' ? 'bald' : 'soon'}</span></span>
         </div>
       </div>

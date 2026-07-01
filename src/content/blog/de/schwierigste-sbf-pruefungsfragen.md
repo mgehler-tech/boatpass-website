@@ -6,6 +6,7 @@ tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
 author: "Marius Gehler"
+altSlug: "hardest-sbf-exam-questions"
 ---
 
 Nicht alle Prüfungsfragen beim Sportbootführerschein sind gleich schwer. Einige Fragen werden von fast der Hälfte aller Prüflinge falsch beantwortet – obwohl sie mit der richtigen Vorbereitung machbar sind. Wir schauen uns an, welche Fragen die höchsten Fehlerquoten haben und wie du sie knacken kannst.

@@ -6,6 +6,7 @@ tags: ["Prüfungswissen"]
 readingTime: 6
 lang: de
 author: "Marius Gehler"
+altSlug: "boating-license-requirements"
 ---
 
 Bevor du die [SBF-Prüfung](/sbf-pruefung-ablauf/) ablegen kannst, musst du einige formale Voraussetzungen erfüllen und Unterlagen einreichen. Hier ist alles, was du wissen musst – von der Altersgrenze bis zur Prüfungsanmeldung.

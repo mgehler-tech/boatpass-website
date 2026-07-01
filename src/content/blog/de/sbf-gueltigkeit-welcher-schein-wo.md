@@ -6,6 +6,7 @@ tags: ["Führerschein-Vergleich"]
 readingTime: 7
 lang: de
 author: "Marius Gehler"
+altSlug: "sbf-validity-which-license-where"
 ---
 
 Eine der häufigsten Fragen rund um den Sportbootführerschein: Wo genau gilt mein Schein? Die Antwort ist nicht immer intuitiv – vor allem in den Flussmündungen an der Küste und im Ausland gibt es Stolperfallen. Hier ist die vollständige Übersicht. Wenn du nur schnell wissen willst, welchen Schein du für dein Vorhaben brauchst, nutze unseren [Bootsführerschein-Finder](/tools/welcher-bootsfuehrerschein/).
