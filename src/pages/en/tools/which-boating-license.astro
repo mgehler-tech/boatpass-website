@@ -1,0 +1,405 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boatpass.de/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Which boating licence do I need?", "item": "https://boatpass.de/en/tools/which-boating-license/" },
+  ],
+};
+
+const appSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Boating Licence Finder",
+  "url": "https://boatpass.de/en/tools/which-boating-license/",
+  "description": "Free interactive configurator: answer 3 questions about your waters, engine power and radio and instantly find out which German recreational boating licence and radio certificate you need.",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+  "publisher": { "@type": "Organization", "name": "Boatpass", "url": "https://boatpass.de" },
+};
+
+// Static, crawlable and citable decision logic – the same truth as the
+// interactive configurator, but reachable without JavaScript (important for AI crawlers).
+const decisionRows = [
+  { plan: 'Motorboat over 15 hp · inland waters', licence: 'SBF Inland', radio: 'UBI (only if a radio is on board)' },
+  { plan: 'Motorboat over 15 hp · coast (North/Baltic Sea)', licence: 'SBF Coastal', radio: 'SRC (coastal) or LRC (worldwide)' },
+  { plan: 'Motorboat over 15 hp · inland + coast', licence: 'SBF Inland + SBF Coastal (combined exam)', radio: 'UBI + SRC/LRC' },
+  { plan: 'Motorboat up to 15 hp / 11.03 kW (combustion) or up to 7.5 kW (electric)', licence: 'no SBF legally required*', radio: 'UBI/SRC only if a radio is on board' },
+  { plan: 'Sailing boat without (auxiliary) engine', licence: 'no SBF required*', radio: 'SRC only if a marine radio is on board' },
+  { plan: 'Lake Constance (engine from 6 hp or sail area from 12 m²)', licence: 'Bodenseeschifferpatent', radio: 'UBI if a radio is on board' },
+];
+
+const faqs = [
+  {
+    q: 'Which boating licence do I need for a motorboat over 15 hp?',
+    a: 'For a motorboat with more than 15 hp (11.03 kW) you need the SBF Inland on inland waters and the SBF Coastal on the coast (North and Baltic Sea). Anyone who wants to navigate both areas takes both licences – most affordably in a combined exam.',
+  },
+  {
+    q: 'Do I need a licence for a boat under 15 hp?',
+    a: 'No. For recreational boats with a combustion engine up to 15 hp (11.03 kW) no official recreational boating licence is required in Germany. For electric drives the limit is lower – the requirement already applies from 7.5 kW (around 10 hp). Exceptions also apply on some waters such as the Rhine and Lake Constance. For rentals, charter companies often still require proof (e.g. a charter certificate).',
+  },
+  {
+    q: 'Which radio certificate do I need for my boat?',
+    a: 'As soon as you operate a voice radio, you need the matching certificate: UBI for inland radio (rivers, canals), SRC (Short Range Certificate) for VHF marine radio in coastal areas and LRC (Long Range Certificate) for worldwide marine radio including MF/HF and satellite.',
+  },
+  {
+    q: 'Which licence applies on Lake Constance?',
+    a: 'On Lake Constance the Bodenseeschifferpatent applies. It is mandatory for motorboats from 6 hp and for sailing boats from 12 m² of sail area – the rules therefore differ from the rest of the inland area.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<BaseLayout
+  title="Which boating licence do I need? – free finder"
+  description="Answer 3 short questions about your waters, engine power and radio and instantly find out which recreational boating licence (SBF Inland, SBF Coastal) and radio certificate (UBI, SRC, LRC) you need."
+  lang="en"
+  hasAlternate={false}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(appSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
+  <div style="background:#F0F4FA; padding:100px 24px 56px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        Free finder
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+        Which boating licence<br>do I need?
+      </h1>
+      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:560px; margin:0 auto;">
+        Answer 3 short questions about your waters, engine power and radio – and
+        find out in 30 seconds which licence and radio certificate you really need.
+      </p>
+    </div>
+  </div>
+
+  <div style="max-width:760px; margin:0 auto; padding:48px 24px 90px;">
+
+    <!-- Interactive configurator -->
+    <div id="cfg" class="cfg-card">
+      <div class="cfg-head">
+        <div id="cfg-progress" class="cfg-progress"></div>
+        <div id="cfg-progress-bar" class="cfg-progress-bar"><span></span></div>
+      </div>
+      <div id="cfg-question" class="cfg-question"></div>
+      <div id="cfg-options" class="cfg-options"></div>
+      <div id="cfg-back" class="cfg-back">
+        <button type="button" id="cfg-back-btn" class="cfg-back-btn">
+          <span class="cfg-back-arrow">←</span> Back
+        </button>
+      </div>
+    </div>
+
+    <!-- Result -->
+    <div id="cfg-result" style="display:none; margin-top:24px;"></div>
+
+    <!-- Static decision table (always visible, no JS, AI-citable) -->
+    <section style="margin-top:64px;">
+      <h2 style="font-size:26px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:8px;">Decision guide at a glance</h2>
+      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:20px;">
+        Which boating licence and radio certificate for which plan – the most important cases as an overview.
+      </p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
+          <thead>
+            <tr style="background:rgba(26,31,54,0.04);">
+              <th style="text-align:left; padding:14px 16px; font-weight:800; color:#1A1F36;">Your plan</th>
+              <th style="text-align:left; padding:14px 16px; font-weight:800; color:#1A1F36;">Licence</th>
+              <th style="text-align:left; padding:14px 16px; font-weight:800; color:#1A1F36;">Radio certificate</th>
+            </tr>
+          </thead>
+          <tbody>
+            {decisionRows.map((row, i) => (
+              <tr style={`border-top:1px solid rgba(51,102,255,0.08);${i % 2 ? ' background:rgba(26,31,54,0.02);' : ''}`}>
+                <td style="padding:13px 16px; font-weight:600; color:#1A1F36;">{row.plan}</td>
+                <td style="padding:13px 16px; color:#4B5563;">{row.licence}</td>
+                <td style="padding:13px 16px; color:#4B5563;">{row.radio}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:13px; color:#9CA3AF; line-height:1.6; margin-top:12px;">
+        * In Germany the licence requirement applies from more than 15 hp (11.03 kW) – for electric drives already from 7.5 kW (around 10 hp). A reform aims to unify this limit technology-neutrally at 11.03 kW, but has not yet come into force. Different rules apply on individual waters (Rhine, Lake Constance).
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-top:56px;">
+      <h2 style="font-size:26px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Frequently asked questions</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <div style="font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</div>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Internal links -->
+    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
+      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">All licences in detail</h2>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Learn SBF Inland</a>
+        <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Learn SBF Coastal</a>
+        <a href="/en/ubi/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ UBI – VHF radio certificate for inland waters</a>
+        <a href="/en/src/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SRC – marine radio, coastal</a>
+        <a href="/en/lrc/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ LRC – marine radio, worldwide</a>
+        <a href="/en/licenses/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Overview of all boating licences</a>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- is:global, because the options & result cards are generated at runtime via JS.
+       Astro-scoped styles (data-astro-*) only apply to build-time rendered elements
+       and would leave the dynamic buttons unstyled. -->
+  <style is:global>
+    .cfg-card {
+      background:#fff; border:1px solid rgba(51,102,255,0.12); border-radius:24px;
+      padding:32px 28px; box-shadow:0 18px 48px rgba(26,31,54,0.08);
+    }
+    @media (min-width:560px) { .cfg-card { padding:36px 36px; } }
+
+    .cfg-head { margin-bottom:22px; }
+    .cfg-progress {
+      font-size:12px; font-weight:800; color:#3366FF; text-transform:uppercase;
+      letter-spacing:1.5px; margin-bottom:10px;
+    }
+    .cfg-progress-bar {
+      height:6px; border-radius:100px; background:rgba(51,102,255,0.12); overflow:hidden;
+    }
+    .cfg-progress-bar > span {
+      display:block; height:100%; width:0%; border-radius:100px;
+      background:linear-gradient(90deg,#3366FF,#5B8CFF);
+      transition:width .35s cubic-bezier(.4,0,.2,1);
+    }
+    .cfg-question {
+      font-size:clamp(22px,3.2vw,28px); font-weight:800; color:#1A1F36;
+      letter-spacing:-0.6px; line-height:1.25; margin-bottom:22px;
+    }
+
+    .cfg-options { display:flex; flex-direction:column; gap:12px; }
+    .cfg-opt {
+      display:flex; align-items:center; gap:16px; text-align:left; width:100%;
+      background:#fff; border:1.5px solid rgba(51,102,255,0.14); border-radius:16px;
+      padding:18px 18px 18px 20px; cursor:pointer; position:relative;
+      transition:border-color .18s ease, background .18s ease, box-shadow .18s ease, transform .12s ease;
+      animation:cfgIn .3s ease both;
+    }
+    .cfg-opt:hover {
+      border-color:#3366FF; background:rgba(51,102,255,0.035);
+      box-shadow:0 10px 26px rgba(51,102,255,0.14); transform:translateY(-2px);
+    }
+    .cfg-opt:active { transform:translateY(0) scale(0.995); }
+    .cfg-opt-text { min-width:0; display:flex; flex-direction:column; }
+    .cfg-opt-label { font-weight:700; color:#1A1F36; font-size:16.5px; line-height:1.3; }
+    .cfg-opt-sub { font-size:13.5px; color:#9CA3AF; margin-top:3px; line-height:1.4; }
+    .cfg-opt-arrow {
+      margin-left:auto; flex:0 0 auto; display:inline-flex; align-items:center;
+      justify-content:center; width:34px; height:34px; border-radius:50%;
+      background:rgba(51,102,255,0.10); color:#3366FF; font-weight:800; font-size:17px;
+      transition:background .18s ease, color .18s ease, transform .18s ease;
+    }
+    .cfg-opt:hover .cfg-opt-arrow {
+      background:#3366FF; color:#fff; transform:translateX(3px);
+    }
+
+    @keyframes cfgIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { .cfg-opt { animation:none; } }
+
+    .cfg-back { margin-top:22px; display:none; }
+    .cfg-back-btn {
+      display:inline-flex; align-items:center; gap:7px; background:none; border:none;
+      color:#9CA3AF; font-size:14px; font-weight:600; cursor:pointer; padding:6px 2px;
+      transition:color .15s ease;
+    }
+    .cfg-back-btn:hover { color:#3366FF; }
+    .cfg-back-btn:hover .cfg-back-arrow { transform:translateX(-3px); }
+    .cfg-back-arrow { display:inline-block; transition:transform .15s ease; }
+
+    .res-card {
+      display:block; background:#fff; border:1px solid rgba(51,102,255,0.16);
+      border-left:4px solid #3366FF; border-radius:16px; padding:20px 22px; text-decoration:none;
+      transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+    }
+    a.res-card:hover {
+      border-left-color:#1A1F36; box-shadow:0 8px 22px rgba(51,102,255,0.12); transform:translateY(-2px);
+    }
+  </style>
+
+  <script is:inline define:vars={{ playStoreUrl }}>
+    (function () {
+      const STEPS = [
+        { id: 'revier', q: 'Where do you want to sail?', options: [
+          { v: 'binnen', label: 'Inland waters', sub: 'rivers, canals & lakes' },
+          { v: 'see', label: 'Coast (North & Baltic Sea)', sub: 'maritime waterways' },
+          { v: 'beides', label: 'Both', sub: 'inland and coast' },
+          { v: 'bodensee', label: 'Lake Constance', sub: 'its own regulation' },
+        ]},
+        { id: 'motor', q: 'How is your boat powered?', options: [
+          { v: 'unter', label: 'Combustion up to 15 hp', sub: 'no more than 11.03 kW' },
+          { v: 'ueber', label: 'Combustion over 15 hp', sub: 'more than 11.03 kW' },
+          { v: 'unter', label: 'Electric up to 7.5 kW', sub: 'around 10 hp' },
+          { v: 'ueber', label: 'Electric over 7.5 kW', sub: 'more than 7.5 kW' },
+          { v: 'segel', label: 'Sailing boat without (auxiliary) engine', sub: '' },
+        ]},
+        { id: 'funk', q: 'Do you want to operate a VHF voice radio?', options: [
+          { v: 'nein', label: 'No', sub: 'no radio on board' },
+          { v: 'ja', label: 'Yes', sub: 'radio / DSC on board' },
+        ]},
+        { id: 'reichweite', q: 'How far do you sail at sea?',
+          when: function (a) { return a.funk === 'ja' && (a.revier === 'see' || a.revier === 'beides'); },
+          options: [
+            { v: 'kueste', label: 'Coastal', sub: 'up to ~35 nm (sea area A1)' },
+            { v: 'weltweit', label: 'Worldwide / offshore', sub: 'MF/HF & satellite' },
+          ]},
+      ];
+
+      const FS = {
+        binnen: { cat: 'Boating licence', name: 'SBF Inland', href: '/en/sbf-inland/', sub: 'Mandatory for motorboats over 15 hp on inland waters.' },
+        see: { cat: 'Boating licence', name: 'SBF Coastal', href: '/en/sbf-coastal/', sub: 'Mandatory for motorboats over 15 hp on the coast – with a navigation task.' },
+      };
+      const FUNK = {
+        ubi: { cat: 'Radio certificate', name: 'UBI', href: '/en/ubi/', sub: 'VHF voice radio certificate for inland shipping radio.' },
+        src: { cat: 'Radio certificate', name: 'SRC', href: '/en/src/', sub: 'VHF marine radio certificate with DSC for coastal areas.' },
+        lrc: { cat: 'Radio certificate', name: 'LRC', href: '/en/lrc/', sub: 'General operator certificate for worldwide marine radio.' },
+      };
+
+      const answers = {};
+      const path = [];
+
+      const elProgress = document.getElementById('cfg-progress');
+      const elProgressBar = document.querySelector('#cfg-progress-bar > span');
+      const elQuestion = document.getElementById('cfg-question');
+      const elOptions = document.getElementById('cfg-options');
+      const elBackWrap = document.getElementById('cfg-back');
+      const elBackBtn = document.getElementById('cfg-back-btn');
+      const elCfg = document.getElementById('cfg');
+      const elResult = document.getElementById('cfg-result');
+
+      function visibleSteps() {
+        return STEPS.filter(function (s) { return !s.when || s.when(answers); });
+      }
+
+      function render(stepId) {
+        const steps = visibleSteps();
+        const step = STEPS.find(function (s) { return s.id === stepId; });
+        const idx = steps.indexOf(step);
+        elProgress.textContent = 'Question ' + (idx + 1) + ' of ' + steps.length;
+        if (elProgressBar) {
+          elProgressBar.style.width = Math.round(((idx + 1) / steps.length) * 100) + '%';
+        }
+        elQuestion.textContent = step.q;
+        elOptions.innerHTML = '';
+        step.options.forEach(function (opt) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'cfg-opt';
+          btn.innerHTML =
+            '<span class="cfg-opt-text"><span class="cfg-opt-label">' + opt.label + '</span>' +
+            (opt.sub ? '<span class="cfg-opt-sub">' + opt.sub + '</span>' : '') +
+            '</span><span class="cfg-opt-arrow" aria-hidden="true">→</span>';
+          btn.addEventListener('click', function () { choose(stepId, opt.v); });
+          elOptions.appendChild(btn);
+        });
+        elBackWrap.style.display = path.length ? 'block' : 'none';
+      }
+
+      function choose(stepId, value) {
+        answers[stepId] = value;
+        path.push(stepId);
+        const steps = visibleSteps();
+        const step = STEPS.find(function (s) { return s.id === stepId; });
+        const next = steps[steps.indexOf(step) + 1];
+        if (next) { render(next.id); } else { showResult(); }
+      }
+
+      elBackBtn.addEventListener('click', function () {
+        const last = path.pop();
+        if (last) { delete answers[last]; }
+        elResult.style.display = 'none';
+        elCfg.style.display = 'block';
+        const steps = visibleSteps();
+        render(last || steps[0].id);
+      });
+
+      function compute() {
+        const recs = [];
+        const a = answers;
+        if (a.revier === 'bodensee') {
+          recs.push({ cat: 'Boating licence', name: 'Bodenseeschifferpatent', href: '/en/licenses/', sub: 'Mandatory licence for Lake Constance (engine from 6 hp / sail from 12 m²). Boatpass module in preparation.', soon: true });
+        } else if (a.motor === 'ueber') {
+          if (a.revier === 'binnen') recs.push(FS.binnen);
+          else if (a.revier === 'see') recs.push(FS.see);
+          else if (a.revier === 'beides') { recs.push(FS.binnen); recs.push(FS.see); }
+        } else {
+          recs.push({ cat: 'Boating licence', name: 'No mandatory licence', href: '/en/licenses/', sub: 'Below the licence threshold (15 hp for combustion, 7.5 kW for electric) no SBF is required. Exceptions apply on the Rhine/Lake Constance; a charter certificate may be needed for rentals.', info: true });
+        }
+        if (a.funk === 'ja') {
+          if (a.revier === 'binnen' || a.revier === 'bodensee') recs.push(FUNK.ubi);
+          else if (a.revier === 'see') recs.push(a.reichweite === 'weltweit' ? FUNK.lrc : FUNK.src);
+          else if (a.revier === 'beides') { recs.push(FUNK.ubi); recs.push(a.reichweite === 'weltweit' ? FUNK.lrc : FUNK.src); }
+        }
+        return recs;
+      }
+
+      function showResult() {
+        const recs = compute();
+        elCfg.style.display = 'none';
+        let html = '<div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Your recommendation</div>';
+        html += '<div style="display:flex; flex-direction:column; gap:14px;">';
+        recs.forEach(function (r) {
+          const tag = r.href && !r.info && !r.soon ? '<span style="margin-left:auto; color:#3366FF; font-weight:800; white-space:nowrap;">Learn more →</span>' : '';
+          const wrap = r.href ? 'a' : 'div';
+          const hrefAttr = r.href ? ' href="' + r.href + '"' : '';
+          html += '<' + wrap + hrefAttr + ' class="res-card">' +
+            '<div style="display:flex; align-items:center; gap:10px;">' +
+            '<div><div style="font-size:12px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:0.5px;">' + r.cat + '</div>' +
+            '<div style="font-size:20px; font-weight:900; color:#1A1F36; letter-spacing:-0.5px;">' + r.name + '</div></div>' + tag + '</div>' +
+            '<div style="font-size:14px; color:#6B7280; line-height:1.6; margin-top:8px;">' + r.sub + '</div>' +
+            '</' + wrap + '>';
+        });
+        html += '</div>';
+        html += '<div style="margin-top:22px; display:flex; flex-wrap:wrap; gap:12px;">' +
+          '<a href="' + playStoreUrl + '" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:15px; padding:14px 26px; border-radius:14px; text-decoration:none;">▶&nbsp;Start learning with Boatpass</a>' +
+          '<button type="button" id="cfg-restart" style="background:white; border:1.5px solid rgba(51,102,255,0.2); color:#3366FF; font-weight:700; font-size:15px; padding:14px 24px; border-radius:14px; cursor:pointer;">Start over</button>' +
+          '</div>';
+        elResult.innerHTML = html;
+        elResult.style.display = 'block';
+        document.getElementById('cfg-restart').addEventListener('click', function () {
+          for (const k in answers) delete answers[k];
+          path.length = 0;
+          elResult.style.display = 'none';
+          elCfg.style.display = 'block';
+          render(STEPS[0].id);
+        });
+        elResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
+      render(STEPS[0].id);
+    })();
+  </script>
+
+</BaseLayout>

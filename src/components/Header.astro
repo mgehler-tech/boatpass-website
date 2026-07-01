@@ -36,12 +36,8 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
           {lang === 'de' ? 'Führerscheine' : 'Licenses'} <span style="font-size:10px;">▾</span>
         </a>
         <div class="nav-dropdown-menu">
-          {lang === 'de' && (
-            <>
-              <a href="/tools/welcher-bootsfuehrerschein/" class="nav-dropdown-item" style="font-weight:700; color:#3366FF;">Welcher Schein? →</a>
-              <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
-            </>
-          )}
+          <a href={lang === 'de' ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/'} class="nav-dropdown-item" style="font-weight:700; color:#3366FF;">{lang === 'de' ? 'Welcher Schein? →' : 'Which licence? →'}</a>
+          <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
           <a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a>
           <a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a>
           <a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
@@ -107,12 +103,8 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
           <span class="accordion-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="mobile-accordion-body">
-          {lang === 'de' && (
-            <>
-              <a href="/tools/welcher-bootsfuehrerschein/" class="mobile-nav-sublink" style="font-weight:700; color:#3366FF;">Welcher Schein? →</a>
-              <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
-            </>
-          )}
+          <a href={lang === 'de' ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/'} class="mobile-nav-sublink" style="font-weight:700; color:#3366FF;">{lang === 'de' ? 'Welcher Schein? →' : 'Which licence? →'}</a>
+          <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
           <a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a>
           <a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a>
           <a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>

@@ -1,24 +1,39 @@
 ---
-// DE-only Teaser für den Bootsführerschein-Finder. Verlinkt bewusst nur auf die
-// Tool-Seite (/tools/welcher-bootsfuehrerschein/) statt den interaktiven
-// Konfigurator zu duplizieren – so bleibt die Entscheidungslogik eine einzige
-// Quelle der Wahrheit. Wird nur für lang === 'de' eingebunden (wie der
-// Header-Link), weil der Finder ausschließlich auf Deutsch existiert.
-const finderUrl = '/tools/welcher-bootsfuehrerschein/';
-const questions = ['Revier', 'Motorleistung', 'Funk'];
+// Teaser für den Bootsführerschein-Finder. Verlinkt bewusst nur auf die
+// Tool-Seite statt den interaktiven Konfigurator zu duplizieren – so bleibt die
+// Entscheidungslogik eine einzige Quelle der Wahrheit.
+interface Props {
+  lang: 'de' | 'en';
+}
+const { lang } = Astro.props;
+
+const finderUrl = lang === 'de' ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/';
+const questions = lang === 'de'
+  ? ['Revier', 'Motorleistung', 'Funk']
+  : ['Waters', 'Engine power', 'Radio'];
+const t = {
+  de: {
+    chip: 'Kostenloser Finder',
+    title: ['Welchen Bootsführerschein ', 'brauchst du wirklich?'],
+    sub: '3 kurze Fragen zu Revier, Motorleistung und Funk – und du weißt in 30 Sekunden, welcher Schein (SBF Binnen, SBF See) und welches Funkzeugnis (UBI, SRC, LRC) zu deinem Vorhaben passt.',
+    button: 'Finder starten',
+  },
+  en: {
+    chip: 'Free finder',
+    title: ['Which boating licence ', 'do you really need?'],
+    sub: '3 quick questions about your waters, engine power and radio – and in 30 seconds you’ll know which licence (SBF Inland, SBF Coastal) and radio certificate (UBI, SRC, LRC) fits your plans.',
+    button: 'Start finder',
+  },
+}[lang];
 ---
 
 <section id="finder-teaser" class="max-w-6xl mx-auto px-6 py-12 md:py-20">
   <a href={finderUrl} class="finder-card reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
     <div class="finder-orb"></div>
     <div class="finder-body">
-      <div class="finder-chip">Kostenloser Finder</div>
-      <h2 class="finder-title">Welchen Bootsführerschein <br>brauchst du wirklich?</h2>
-      <p class="finder-sub">
-        3 kurze Fragen zu Revier, Motorleistung und Funk – und du weißt in
-        30&nbsp;Sekunden, welcher Schein (SBF Binnen, SBF See) und welches
-        Funkzeugnis (UBI, SRC, LRC) zu deinem Vorhaben passt.
-      </p>
+      <div class="finder-chip">{t.chip}</div>
+      <h2 class="finder-title">{t.title[0]}<br>{t.title[1]}</h2>
+      <p class="finder-sub">{t.sub}</p>
       <div class="finder-steps">
         {questions.map((q, i) => (
           <>
@@ -30,7 +45,7 @@ const questions = ['Revier', 'Motorleistung', 'Funk'];
     </div>
     <div class="finder-action">
       <span class="finder-button">
-        Finder starten
+        {t.button}
         <span class="finder-button-arrow" aria-hidden="true">→</span>
       </span>
     </div>
