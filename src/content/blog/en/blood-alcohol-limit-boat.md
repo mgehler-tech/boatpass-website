@@ -87,7 +87,7 @@ The ELWIS question catalog – the official question bank for the **[SBF Binnen]
 
 The core answer for the exam: the skipper is at all times responsible for the safe operation of the vessel. If impaired by alcohol, drugs, or illness, they must not take or retain the helm – regardless of whether a specific BAC number is reached.
 
-For a broader overview of the most demanding topics in the exam, see our article on [common mistakes in the SBF exam](/blog/en/most-common-sbf-mistakes/).
+For a broader overview of the most demanding topics in the exam, see our article on [common mistakes in the SBF exam](/en/blog/most-common-sbf-mistakes/).
 
 ## Conclusion
 

@@ -93,7 +93,7 @@ Safety equipment is an explicit part of the ELWIS exam catalogue for the [SBF Se
 
 The key answer for the exam: For sea passages, the **150N class** according to EN ISO 12402 is the established standard. It must carry a CE mark and must be capable of turning an unconscious person face-up. A 50N buoyancy aid does not meet this standard and is not an adequate substitute on open water.
 
-If you are preparing for the SBF exam and want to avoid the most common mistakes candidates make, take a look at our article on the [most common SBF exam errors](/blog/en/most-common-sbf-mistakes/).
+If you are preparing for the SBF exam and want to avoid the most common mistakes candidates make, take a look at our article on the [most common SBF exam errors](/en/blog/most-common-sbf-mistakes/).
 
 ## Colour, Fit, and Additional Features
 

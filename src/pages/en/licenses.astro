@@ -3,49 +3,60 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import type { IconName } from '../../icons';
 
-// Detailseiten existieren nur auf Deutsch (Pattern: hasAlternate={false}) – daher verlinken die Karten dorthin
 const available = [
   {
     icon: 'waves' as IconName,
     title: 'SBF Inland',
     tag: 'Rivers, canals & lakes',
     desc: 'The boating license for inland waters – rivers, canals and lakes. Required for motorboats above 15 HP.',
-    href: '/sbf-binnen/',
+    href: '/en/sbf-inland/',
   },
   {
     icon: 'sailboat' as IconName,
     title: 'SBF Coastal',
     tag: 'North & Baltic Sea',
     desc: 'The license for coastal waters of the North and Baltic Sea. Its own exam with a navigation task.',
-    href: '/sbf-see/',
+    href: '/en/sbf-coastal/',
   },
   {
     icon: 'banknotes' as IconName,
     title: 'SBF Costs',
     tag: 'Fees & saving tips',
     desc: 'Exam fees, courses and practice at a glance – and how to save money while studying.',
-    href: '/sbf-kosten/',
+    href: '/en/sbf-costs/',
   },
   {
     icon: 'document' as IconName,
     title: 'Exam & Process',
     tag: 'Theory & practice',
     desc: 'How the theory and practical exams work, how to register and what counts on exam day.',
-    href: '/sbf-pruefung-ablauf/',
+    href: '/en/sbf-exam/',
   },
   {
     icon: 'phone' as IconName,
     title: 'UBI',
     tag: 'VHF radio (inland)',
     desc: 'The VHF radio certificate for inland navigation – now a module in the app, a one-time €7.99.',
-    href: '/ubi/',
+    href: '/en/ubi/',
+  },
+  {
+    icon: 'satellite' as IconName,
+    title: 'SRC',
+    tag: 'Marine radio (coastal)',
+    desc: 'Short Range Certificate – VHF marine radio with DSC for the coastal area. A module in the app, one-time €7.99.',
+    href: '/en/src/',
+  },
+  {
+    icon: 'globe' as IconName,
+    title: 'LRC',
+    tag: 'Marine radio (worldwide)',
+    desc: 'Long Range Certificate – the general operator\'s certificate for worldwide marine radio. A module in the app, one-time €9.99.',
+    href: '/en/lrc/',
   },
 ];
 
 const soon = [
-  { icon: 'satellite' as IconName, title: 'SRC', desc: 'Short Range Certificate – marine radio.', href: '/src/' },
-  { icon: 'anchor' as IconName, title: 'Bodensee Licence', desc: 'Mandatory licence for Lake Constance.', href: null },
-  { icon: 'globe' as IconName, title: 'LRC', desc: 'Long Range Certificate – worldwide marine radio.', href: null },
+  { icon: 'anchor' as IconName, title: 'Lake Constance Licence', desc: 'Mandatory licence for Lake Constance.', href: null },
 ];
 
 const breadcrumbSchema = {
@@ -62,7 +73,7 @@ const breadcrumbSchema = {
   title="Boating Licenses at a Glance – Which One Fits You? | Boatpass"
   description="All boating licenses at a glance: SBF Inland, SBF Coastal, costs and the exam process – plus the radio certificates UBI and SRC. Find the right license for you."
   lang="en"
-  hasAlternate={false}
+  altUrl="https://boatpass.de/fuehrerscheine/"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
