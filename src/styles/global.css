@@ -41,6 +41,22 @@
   }
 }
 
+/* Einheitliche, responsive Skala für die großen Sektions-Überschriften der
+   Startseite (Features, Ablauf, Preise). Ersetzt den bisher in jeder Komponente
+   hartkodierten 42px-Wert, der auf schmalen Screens unverändert groß blieb und
+   mit -2px zusätzlich zu eng lief. Die Größe skaliert jetzt sanft von 30px bis
+   42px mit, und die Laufweite ist in em (statt px) angegeben, damit sie bei
+   kleinerer Schrift proportional lockerer wird – die Überschrift wirkt so auf
+   dem Handy nicht mehr gequetscht. Werte des Corporate Designs (Farbe, Weight)
+   bleiben unverändert. */
+.section-display-title {
+  font-size: clamp(1.875rem, 5.2vw, 2.625rem); /* 30px … 42px */
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  color: var(--color-navy);
+}
+
 /* Bewegung reduzieren für Nutzer mit entsprechender Systemeinstellung
    (vestibuläre Beschwerden). Neutralisiert Animationen und Transitions,
    ohne Inhalte zu verbergen – Reveal-Elemente erscheinen dann sofort. */
