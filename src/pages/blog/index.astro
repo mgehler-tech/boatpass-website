@@ -230,25 +230,22 @@ const totalCount = posts.length;
   /* Themen-Cluster */
   .cluster { margin-bottom: 44px; }
   .cluster-head {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-areas: "dot title count" "desc desc desc";
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 4px 10px;
-    justify-content: start;
+    gap: 10px;
     margin-bottom: 18px;
   }
-  .cluster-dot { grid-area: dot; width: 12px; height: 12px; border-radius: 50%; }
+  .cluster-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
   .cluster-title {
-    grid-area: title;
     font-size: 22px; font-weight: 900; letter-spacing: -0.5px; color: #1A1F36;
   }
   .cluster-count {
-    grid-area: count;
-    font-size: 12px; font-weight: 800; color: #9CA3AF;
-    background: rgba(26,31,54,0.05); padding: 2px 9px; border-radius: 100px;
+    font-size: 12px; font-weight: 800; color: #9CA3AF; line-height: 1;
+    background: rgba(26,31,54,0.05); padding: 4px 8px; border-radius: 100px;
+    margin-left: -2px;
   }
-  .cluster-desc { grid-area: desc; font-size: 14px; color: #6B7280; }
+  .cluster-desc { flex-basis: 100%; margin-top: 2px; font-size: 14px; color: #6B7280; }
   .cluster-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch;
   }
