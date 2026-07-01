@@ -35,8 +35,9 @@ const altUrl = altUrlOverride ?? (lang === 'de'
 const xDefaultUrl = altUrlOverride
   ? (lang === 'de' ? canonical : altUrlOverride)
   : (hasAlternate ? 'https://boatpass.de/' : canonical);
-const resolvedOgImage = ogImage ?? (lang === 'en' ? '/images/og-image-en.png' : '/images/og-image.png');
+const resolvedOgImage = ogImage ?? (lang === 'en' ? '/images/og-image-en.jpg' : '/images/og-image.jpg');
 const ogImageAbs = resolvedOgImage.startsWith('http') ? resolvedOgImage : `https://boatpass.de${resolvedOgImage}`;
+const ogImageType = ogImageAbs.endsWith('.jpg') || ogImageAbs.endsWith('.jpeg') ? 'image/jpeg' : 'image/png';
 const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' || Astro.url.pathname === '/en';
 ---
 
@@ -56,6 +57,7 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' |
 <meta property="og:title" content={`${title} | Boatpass`} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImageAbs} />
+<meta property="og:image:type" content={ogImageType} />
 <meta property="og:image:alt" content={`${title} – Boatpass`} />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
