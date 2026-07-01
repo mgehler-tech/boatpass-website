@@ -53,6 +53,39 @@ const courseSchema = {
   },
 };
 
+const faqs = [
+  {
+    q: 'How many questions does the UBI exam have and how many do I need to get right?',
+    a: 'The theoretical UBI exam consists of a paper with 22 multiple-choice questions that you answer in 60 minutes – passed from 17 correct answers. Added to that is a practical part with mandatory tasks such as ATIS setup, equipment knowledge as well as distress, urgency and safety messages. Boatpass trains the complete official question catalog with 130 questions.',
+  },
+  {
+    q: 'What does the UBI cost?',
+    a: 'The official total fee for the UBI is €108.71, made up of admission (€15.89), the theory & practice exam (€70.03) and issuance of the certificate (€22.79). A retake of theory or practice costs €45.64. These official fees are independent of the Boatpass UBI learning module (one-time €7.99).',
+  },
+  {
+    q: 'Do I need a radio course for the UBI?',
+    a: 'No. A preparation course is not required – the official question catalog is freely available, so you can learn the theory independently, for example with the Boatpass UBI module. For the practical radio part, some prior practice on the device is advisable.',
+  },
+  {
+    q: 'From what age can I take the UBI?',
+    a: 'The minimum age for the UBI exam is 15. The UBI is independent of the SBF Inland and can be obtained separately.',
+  },
+  {
+    q: 'UBI or SRC – which radio certificate do I need?',
+    a: 'The UBI covers VHF radio on inland waterways, while the SRC covers VHF marine radio in the coastal area. The two are not mutually creditable. However, anyone who already holds a marine radio certificate (SRC or LRC) gets a shortened theoretical and practical UBI exam.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
 const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
   { name: 'Traffic circuits', desc: 'Channel and area radio, route radio on inland waterways', count: 30, icon: 'wifi', color: '#7C3AED', bg: 'rgba(124,58,237,0.10)' },
   { name: 'Operating procedures', desc: 'Call handling, priorities & speaking procedures', count: 29, icon: 'microphone', color: '#EA580C', bg: 'rgba(234,88,12,0.10)' },
@@ -76,6 +109,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
@@ -307,6 +341,19 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
         style="display:inline-flex; align-items:center; gap:8px; background:white; color:#3366FF; font-weight:700; font-size:14px; padding:12px 24px; border-radius:12px; text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,0.18);">
         ▶&nbsp;Unlock the UBI module in the app
       </a>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Frequently asked questions about the UBI</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <div style="font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</div>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
     </section>
 
     <!-- Internal links -->
