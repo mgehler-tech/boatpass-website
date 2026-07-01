@@ -19,7 +19,7 @@ const {
   description,
   lang,
   canonical = Astro.url.href,
-  ogImage = '/images/og-image.png',
+  ogImage,
   type = 'website',
   hasAlternate = true,
   altUrl: altUrlOverride,
@@ -35,7 +35,8 @@ const altUrl = altUrlOverride ?? (lang === 'de'
 const xDefaultUrl = altUrlOverride
   ? (lang === 'de' ? canonical : altUrlOverride)
   : (hasAlternate ? 'https://boatpass.de/' : canonical);
-const ogImageAbs = ogImage.startsWith('http') ? ogImage : `https://boatpass.de${ogImage}`;
+const resolvedOgImage = ogImage ?? (lang === 'en' ? '/images/og-image-en.png' : '/images/og-image.png');
+const ogImageAbs = resolvedOgImage.startsWith('http') ? resolvedOgImage : `https://boatpass.de${resolvedOgImage}`;
 const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' || Astro.url.pathname === '/en';
 ---
 
