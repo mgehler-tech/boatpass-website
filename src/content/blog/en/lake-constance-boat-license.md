@@ -17,7 +17,7 @@ Lake Constance is not an ordinary German inland waterway. It borders three count
 
 Instead of Germany's standard inland waterway regulations (BinSchStrO), the lake falls under the **Internationale Schifffahrtsordnung Bodensee (ISB)** – an international navigation code jointly developed by Germany, Austria, and Switzerland. The ISB sets out the rules of navigation, the types of watercraft permitted, and – crucially – which boating licenses are recognized on the lake.
 
-The outcome: the German **SBF Binnen** (inland boating license), which is valid on German inland waterways, is **not sufficient for Lake Constance**. A dedicated license – the Bodensee-Schifferpatent – is required instead.
+The outcome: the German [**SBF Binnen**](/en/sbf-inland/) (inland boating license), which is valid on German inland waterways, is **not sufficient for Lake Constance**. A dedicated license – the Bodensee-Schifferpatent – is required instead.
 
 ## What Is the Bodensee-Schifferpatent?
 

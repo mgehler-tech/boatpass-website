@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "sbf-pruefung-anmelden"
 ---
 
-You've studied the theory and practiced the maneuvers – now all that's left is registering for the exam. This often raises questions: Who do I register with? Which documents do I need? And what does it cost? This article walks you step by step through registering for the Sportbootführerschein exam.
+You've studied the theory and practiced the maneuvers – now all that's left is registering for the exam. This often raises questions: Who do I register with? Which documents do I need? And what does it cost? This article walks you step by step through registering for the [Sportbootführerschein exam](/en/sbf-exam/).
 
 ## Who Administers the Exam?
 

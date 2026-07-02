@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "ausweichregeln-vorfahrt-wasser"
 ---
 
-"Who has right of way here?" – on the water that question is misleading. Unlike road traffic, boats have **no right of way**. There are only give-way rules: one vessel must give way, the other holds her course. This article explains the key collision-avoidance rules (COLREG / KVR) – a central topic in every SBF exam.
+"Who has right of way here?" – on the water that question is misleading. Unlike road traffic, boats have **no right of way**. There are only give-way rules: one vessel must give way, the other holds her course. This article explains the key collision-avoidance rules (COLREG / KVR) – a central topic in every [SBF exam](/en/sbf-exam/).
 
 ## Right of Way? There Is None.
 

@@ -64,9 +64,9 @@ Most instructors recommend starting with **SBF Coastal** (harder), then the inla
 
 ## Which should you get?
 
-**Only planning to boat on German inland waterways?** → SBF Inland is sufficient
+**Only planning to boat on German inland waterways?** → [SBF Inland](/en/sbf-inland/) is sufficient
 
-**Planning coastal holidays in Croatia, Greece, or the Baltic?** → SBF Coastal
+**Planning coastal holidays in Croatia, Greece, or the Baltic?** → [SBF Coastal](/en/sbf-coastal/)
 
 **Want flexibility for both?** → Combined exam saves money and preparation time
 

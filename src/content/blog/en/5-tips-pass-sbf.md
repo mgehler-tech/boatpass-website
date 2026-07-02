@@ -13,7 +13,7 @@ The German boating license (Sportbootführerschein, SBF) is achievable for anyon
 
 ## Tip 1: Understand the exam structure – it matters more than you think
 
-The SBF Inland (Binnen) theory exam consists of **30 questions in 45 minutes** – but it's split into two blocks that you must pass **separately**:
+The [SBF Inland](/en/sbf-inland/) (Binnen) theory exam consists of **30 questions in 45 minutes** – but it's split into two blocks that you must pass **separately**:
 
 - **7 base questions** – you need at least **5 correct** answers
 - **23 specific inland questions** – you need at least **18 correct** answers

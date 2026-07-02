@@ -86,7 +86,7 @@ You must independently operate a boat and demonstrate several maneuvers:
 
 ## How long does preparation take?
 
-For SBF Inland, studying 30–45 minutes daily, **3–6 weeks** is realistic for most candidates. Candidates without prior nautical knowledge need extra time for the light signals and right-of-way rules categories. Knot practice requires daily physical repetition – no app can replace tying actual knots.
+For [SBF Inland](/en/sbf-inland/), studying 30–45 minutes daily, **3–6 weeks** is realistic for most candidates. Candidates without prior nautical knowledge need extra time for the light signals and right-of-way rules categories. Knot practice requires daily physical repetition – no app can replace tying actual knots.
 
 ## Summary
 

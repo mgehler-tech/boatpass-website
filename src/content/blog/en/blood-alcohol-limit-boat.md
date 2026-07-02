@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "promillegrenze-boot"
 ---
 
-Many recreational boaters assume the same alcohol rules apply on the water as on the road – meaning 0.5 per mille (0.05% BAC) is the magic threshold, and anything below is fine. That assumption is dangerously wrong. The legal framework for skippers on German waterways is structured differently from road traffic law, and in some respects it is stricter than people expect. Whether you're preparing for your [Sportbootführerschein](https://boatpass.de/sbf-see/) or already out on the water, knowing the rules can save you from serious consequences.
+Many recreational boaters assume the same alcohol rules apply on the water as on the road – meaning 0.5 per mille (0.05% BAC) is the magic threshold, and anything below is fine. That assumption is dangerously wrong. The legal framework for skippers on German waterways is structured differently from road traffic law, and in some respects it is stricter than people expect. Whether you're preparing for your [Sportbootführerschein](/en/sbf-coastal/) or already out on the water, knowing the rules can save you from serious consequences.
 
 ## Why the Car Rule Does Not Simply Apply on the Water
 
@@ -79,7 +79,7 @@ Alcohol is not the only substance that can impair a skipper. **Illegal drugs** a
 
 ## What the SBF Exam Tests on This Topic
 
-The ELWIS question catalog – the official question bank for the **[SBF Binnen](https://boatpass.de/sbf-binnen/)** and SBF See exams – includes questions on alcohol, fitness to operate, and the skipper's legal responsibilities. Typical exam questions cover:
+The ELWIS question catalog – the official question bank for the **[SBF Binnen](/en/sbf-inland/)** and [SBF See](/en/sbf-coastal/) exams – includes questions on alcohol, fitness to operate, and the skipper's legal responsibilities. Typical exam questions cover:
 
 - What are the skipper's obligations with regard to their own fitness to operate the vessel?
 - What must a skipper do if they realize they are no longer capable of operating the vessel safely?
@@ -95,4 +95,4 @@ The 0.5 per mille threshold from German road traffic law does not translate dire
 
 The simplest and safest rule remains: **As skipper, you do not drink.** Anyone who wants to relax with a drink passes the helm to a sober person in good time.
 
-If you're preparing for the [SBF exam](https://boatpass.de/sbf-pruefung-ablauf/), the **Boatpass app** gives you access to all questions from the official ELWIS catalog – including skipper duties, fitness to operate, and conduct on the water – in a dedicated practice and exam mode.
+If you're preparing for the [SBF exam](/en/sbf-exam/), the **Boatpass app** gives you access to all questions from the official ELWIS catalog – including skipper duties, fitness to operate, and conduct on the water – in a dedicated practice and exam mode.

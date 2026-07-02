@@ -72,4 +72,4 @@ Many people take both in combination, because the theory overlaps and the second
 
 ## Conclusion
 
-Up to 15 HP (11.03 kW) you can generally operate a boat in Germany without a license from age 16 – but Lake Constance, the Rhine and individual special zones have their own limits. As soon as you go for more power, the open sea, or a charter boat abroad, you need the Sportbootführerschein. Once you know the SBF is coming up, you can start for free in the Boatpass app with the official ELWIS question catalog and prepare specifically for the theory exam.
+Up to 15 HP (11.03 kW) you can generally operate a boat in Germany without a license from age 16 – but Lake Constance, the Rhine and individual special zones have their own limits. As soon as you go for more power, the open sea, or a charter boat abroad, you need the [Sportbootführerschein](/en/sbf-inland/). Once you know the SBF is coming up, you can start for free in the Boatpass app with the official ELWIS question catalog and prepare specifically for the theory exam.

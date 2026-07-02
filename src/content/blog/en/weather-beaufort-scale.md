@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "wetterkunde-beaufort"
 ---
 
-Weather is a safety factor at sea – and therefore a fixed part of the SBF See theory exam. You don't need to become a meteorologist, but you do need to understand the basics: estimating wind forces, telling a low from a high, and recognizing warning signs. This article explains the key topics concisely.
+Weather is a safety factor at sea – and therefore a fixed part of the [SBF See](/en/sbf-coastal/) theory exam. You don't need to become a meteorologist, but you do need to understand the basics: estimating wind forces, telling a low from a high, and recognizing warning signs. This article explains the key topics concisely.
 
 ## The Beaufort Scale
 
