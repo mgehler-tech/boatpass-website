@@ -122,9 +122,9 @@ const faqSchema = {
       </p>
       <div style="display:flex; flex-direction:column; gap:16px;">
         {[
-          { icon: 'lifebuoy', title: 'Manöver', desc: 'An- und Ablegen, Wenden, Aufstoppen und das wichtige Mann-über-Bord-Manöver.' },
-          { icon: 'knot', title: 'Knoten', desc: 'Die prüfungsrelevanten Knoten sicher und zügig anwenden (z. B. Palstek, Webeleinstek, Belegen einer Klampe).' },
-          { icon: 'compass', title: 'Bootsführung & Sicherheit', desc: 'Richtiges Verhalten an Bord, Ausweichregeln und sicheres Steuern im Revier.' },
+          { icon: 'lifebuoy', title: 'Manöver', desc: 'An- und Ablegen, Wenden, Aufstoppen und das wichtige Mann-über-Bord-Manöver.', href: '/blog/mann-ueber-bord-manoever/', linkText: 'Mann-über-Bord-Manöver Schritt für Schritt' },
+          { icon: 'knot', title: 'Knoten', desc: 'Die prüfungsrelevanten Knoten sicher und zügig anwenden (z. B. Palstek, Webeleinstek, Belegen einer Klampe).', href: '/blog/wichtigste-knoten-sbf/', linkText: 'Die wichtigsten Knoten für die SBF-Prüfung' },
+          { icon: 'compass', title: 'Bootsführung & Sicherheit', desc: 'Richtiges Verhalten an Bord, Ausweichregeln und sicheres Steuern im Revier.', href: '/blog/ausweichregeln-vorfahrt-wasser/', linkText: 'Ausweichregeln auf dem Wasser erklärt' },
         ].map(f => (
           <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
             <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
@@ -133,6 +133,7 @@ const faqSchema = {
             <div>
               <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
               <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>
+              <a href={f.href} style="display:inline-block; margin-top:8px; color:#3366FF; font-weight:600; font-size:14px; text-decoration:none;">→ {f.linkText}</a>
             </div>
           </div>
         ))}
@@ -182,6 +183,7 @@ const faqSchema = {
         <a href="/sbf-see-pruefungsfragen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See Prüfungsfragen üben</a>
         <a href="/sbf-kosten/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Was kostet der Sportbootführerschein?</a>
         <a href="/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Häufige Fragen zum Sportbootführerschein</a>
+        <a href="/blog/haeufigste-fehler-sbf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Die häufigsten Fehler in der SBF-Prüfung</a>
       </div>
     </section>
 

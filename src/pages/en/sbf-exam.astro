@@ -122,9 +122,9 @@ const faqSchema = {
       </p>
       <div style="display:flex; flex-direction:column; gap:16px;">
         {[
-          { icon: 'lifebuoy', title: 'Maneuvers', desc: 'Coming alongside and casting off, turning, stopping and the important man-overboard maneuver.' },
-          { icon: 'knot', title: 'Knots', desc: 'Applying the exam-relevant knots confidently and quickly (e.g. bowline, clove hitch, securing a cleat).' },
-          { icon: 'compass', title: 'Boat handling & safety', desc: 'Correct behavior on board, give-way rules and safe steering in the area.' },
+          { icon: 'lifebuoy', title: 'Maneuvers', desc: 'Coming alongside and casting off, turning, stopping and the important man-overboard maneuver.', href: '/en/blog/man-overboard-maneuver/', linkText: 'The man-overboard maneuver step by step' },
+          { icon: 'knot', title: 'Knots', desc: 'Applying the exam-relevant knots confidently and quickly (e.g. bowline, clove hitch, securing a cleat).', href: '/en/blog/most-important-knots-sbf/', linkText: 'The most important knots for the SBF exam' },
+          { icon: 'compass', title: 'Boat handling & safety', desc: 'Correct behavior on board, give-way rules and safe steering in the area.', href: '/en/blog/right-of-way-collision-rules/', linkText: 'Right-of-way and collision rules explained' },
         ].map(f => (
           <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
             <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
@@ -133,6 +133,7 @@ const faqSchema = {
             <div>
               <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
               <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>
+              <a href={f.href} style="display:inline-block; margin-top:8px; color:#3366FF; font-weight:600; font-size:14px; text-decoration:none;">→ {f.linkText}</a>
             </div>
           </div>
         ))}
@@ -182,6 +183,7 @@ const faqSchema = {
         <a href="/en/sbf-coastal-exam-questions/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Practice SBF Coastal exam questions</a>
         <a href="/en/sbf-costs/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ What does the boating license cost?</a>
         <a href="/en/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Frequently asked questions about the boating license</a>
+        <a href="/en/blog/most-common-sbf-mistakes/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ The most common SBF exam mistakes</a>
       </div>
     </section>
 

@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 // FAQ thematisch gruppiert: bessere Übersicht für Nutzer + klare H2-Struktur
 // und thematische Keyword-Cluster für SEO. Jede Kategorie bekommt eine eigene
 // Sprungmarke (id), damit Google sie als eigenständigen Abschnitt erfassen kann.
-const categories: { id: string; title: string; faqs: { q: string; a: string }[] }[] = [
+const categories: { id: string; title: string; faqs: { q: string; a: string; related?: { text: string; href: string }[] }[] }[] = [
   {
     id: 'grundlagen',
     title: 'Grundlagen & Lizenzen',
@@ -16,6 +16,7 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Was ist der Unterschied zwischen SBF Binnen und SBF See?',
         a: 'Der SBF Binnen berechtigt zur Fahrt auf Binnenschifffahrtsstraßen – also auf Flüssen, Kanälen und Binnenseen. Der SBF See gilt auf Seeschifffahrtsstraßen, also den Küstengewässern Deutschlands (Nord- und Ostsee). Wichtig: Beide Scheine sind getrennte Führerscheine mit eigener Prüfung. Wer beide Reviere befahren möchte, muss beide ablegen – oder die Kombination wählen.',
+        related: [{ text: 'SBF Binnen vs. SBF See im Vergleich', href: '/blog/sbf-binnen-vs-see/' }],
       },
       {
         q: 'Welche Funkzeugnisse gibt es – und brauche ich eines?',
@@ -28,6 +29,7 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Brauche ich für die Ostsee den SBF See oder den SBF Binnen?',
         a: 'An Nord- und Ostsee gilt der SBF See, denn die Küstengewässer sind Seeschifffahrtsstraßen – der SBF Binnen reicht dort nicht. Wichtig: Die Grenze zwischen See und Binnen verläuft nicht an der Küstenlinie, sondern an den Flussmündungen. Auf der Elbe brauchst du zum Beispiel bis Hamburg den SBF See, oberhalb den SBF Binnen. Für den Bodensee gilt eine eigene Regelung (Bodensee-Schifferpatent). Wer Küste und Binnen befahren möchte, macht beide Scheine – am günstigsten in der Kombiprüfung.',
+        related: [{ text: 'Bodensee-Schifferpatent: wann du es statt des SBF brauchst', href: '/blog/bodensee-schifferpatent/' }],
       },
       {
         q: 'SRC oder UBI – welches Funkzeugnis brauche ich?',
@@ -50,14 +52,17 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Welche Unterlagen brauche ich für die Prüfungsanmeldung?',
         a: 'Für die Anmeldung beim Prüfungsausschuss (DMYV oder DSV) brauchst du: den Antrag auf Zulassung zur Prüfung, ein ärztliches Zeugnis für Sportbootführerscheinbewerber (Seh-, Hör- und Farbtest, 12 Monate gültig, ca. 30–65 €), ein biometrisches Passfoto (35 × 45 mm), einen Zuverlässigkeitsnachweis (Kopie des Kfz-Führerscheins oder ein polizeiliches Führungszeugnis der Belegart O) sowie die Prüfungsgebühr. Ein Kursnachweis ist nicht nötig – du darfst dich auch nach reiner App-Vorbereitung mit Boatpass anmelden.',
+        related: [{ text: 'Schritt für Schritt zur SBF-Prüfungsanmeldung', href: '/blog/sbf-pruefung-anmelden/' }],
       },
       {
         q: 'Brauche ich überhaupt einen Bootsführerschein? (15-PS-Regel)',
         a: 'In Deutschland darfst du Motorboote bis einschließlich 15 PS (11,03 kW) ab 16 Jahren ohne Sportbootführerschein führen – auf Binnen- und Seeschifffahrtsstraßen. Erst über 15 PS wird der SBF Pflicht. Ausnahmen: Auf dem Bodensee (Bodensee-Schifferpatent) und auf dem Rhein gelten niedrigere Grenzen, und einzelne Zonen (z. B. ein Abschnitt der Spree in Berlin) verlangen unabhängig von der Motorleistung einen Schein. Fürs offene Meer oder einen Charter im Ausland brauchst du fast immer den SBF See.',
+        related: [{ text: 'Boot fahren ohne Führerschein bis 15 PS – die Regeln im Detail', href: '/blog/boot-fahren-ohne-fuehrerschein-15-ps/' }],
       },
       {
         q: 'Gilt auf dem Boot die 0,5-Promille-Grenze wie beim Auto?',
         a: 'Nein, nicht in dieser Form. Für Sportboote gilt nicht das StVG, sondern die Binnenschifffahrtsstraßen-Ordnung (BinSchStrO) bzw. die Seeschifffahrtsstraßen-Ordnung (SeeSchStrO): Der Schiffsführer muss jederzeit fahrtüchtig sein. Strafbar wird Trunkenheit über § 315a StGB – relative Fahruntüchtigkeit kann schon bei niedrigen Werten plus Ausfallerscheinungen vorliegen, absolute Fahruntüchtigkeit ab 1,6 Promille. Die sichere Regel lautet: Als Schiffsführer trinkst du keinen Alkohol. Das Thema ist auch Teil des amtlichen ELWIS-Fragenkatalogs.',
+        related: [{ text: 'Promillegrenze beim Bootfahren erklärt', href: '/blog/promillegrenze-boot/' }],
       },
       {
         q: 'Wie lange ist der Sportbootführerschein gültig?',
@@ -66,6 +71,7 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Was ist der Charterschein – und ersetzt er den SBF?',
         a: 'Der Charterschein (amtlich Charterbescheinigung) erlaubt es, auf bestimmten ausgewiesenen Binnengewässern – vor allem auf der Mecklenburgischen Seenplatte – ein gemietetes Boot ohne Sportbootführerschein zu führen. Voraussetzung: Das Boot ist maximal 15 m lang und 12 km/h schnell, das Mindestalter liegt meist bei 16 Jahren, dazu kommt eine 2- bis 3-stündige Einweisung durch den Vermieter. Es gelten Auflagen wie Nachtfahrverbot und Fahrverbot ab Windstärke 4. Der Charterschein ersetzt den SBF aber nicht: Er gilt nur fürs Mietboot, nur im ausgewiesenen Revier und nicht im Ausland.',
+        related: [{ text: 'Charterschein: Boot mieten ohne Führerschein', href: '/blog/charterschein-boot-mieten-ohne-fuehrerschein/' }],
       },
     ],
   },
@@ -76,18 +82,22 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Wie läuft die SBF-Theorieprüfung ab?',
         a: 'Beide Scheine haben eine schriftliche Theorieprüfung. Beim SBF Binnen besteht der Bogen aus 30 Fragen (7 Basisfragen + 23 spezifische Fragen), die in 45 Minuten beantwortet werden müssen. Bestanden ist, wer mindestens 5 von 7 Basisfragen und mindestens 18 von 23 spezifischen Fragen richtig hat. Der SBF See hat zusätzlich eine Navigationsaufgabe mit 9 Fragen (mind. 7 richtig), insgesamt 39 Fragen in 60 Minuten. Nach der Theorie folgt eine praktische Prüfung auf dem Wasser.',
+        related: [{ text: 'SBF-Prüfung: alles Wissenswerte auf einen Blick', href: '/blog/sbf-pruefung-alles-wissenswerte/' }],
       },
       {
         q: 'Muss ich einen Kurs besuchen oder kann ich mich selbst vorbereiten?',
         a: 'Ein Kurs ist nicht vorgeschrieben – du kannst dich vollständig auf eigene Faust vorbereiten. Die offiziellen Fragenkataloge sind öffentlich zugänglich, und Apps wie Boatpass ermöglichen ein strukturiertes Lernen ohne Fahrschule. Viele Prüflinge bestehen den theoretischen Teil ohne Kurs. Für die praktische Prüfung empfiehlt sich jedoch mindestens ein Übungstag auf dem Wasser.',
+        related: [{ text: 'Lern-App vs. Bootsschule im Vergleich', href: '/blog/sbf-app-vs-bootsschule/' }],
       },
       {
         q: 'Wie lange dauert die Vorbereitung?',
         a: 'Mit konsequentem Lernen (20–30 Minuten täglich) sind 4–6 Wochen für die Theorie realistisch. Wer gezielt mit dem offiziellen Fragenkatalog übt und Fehler systematisch aufarbeitet, kommt auch schneller ans Ziel. Die Boatpass-App zeigt dir deinen Fortschritt und trainiert gezielt deine Schwachstellen.',
+        related: [{ text: 'Wie lange dauert die SBF-Vorbereitung wirklich?', href: '/blog/sbf-vorbereitung-wie-lange/' }],
       },
       {
         q: 'Gilt der deutsche SBF auch im Ausland?',
         a: 'Der SBF Binnen wird auf deutschen Binnenschifffahrtsstraßen anerkannt. Im Ausland gelten die jeweiligen nationalen Vorschriften – in vielen europäischen Ländern reicht der SBF aus, in anderen ist zusätzlich der ICC (International Certificate of Competence) notwendig, den du auf Basis deines deutschen Scheins beantragen kannst.',
+        related: [{ text: 'SBF im Ausland: wo dein Schein gültig ist', href: '/blog/sbf-im-ausland-gueltig/' }],
       },
       {
         q: 'Wie viele Fehler darf man beim SBF haben?',
@@ -96,10 +106,15 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Was passiert, wenn ich durch die SBF-Prüfung falle?',
         a: 'Du kannst die Prüfung wiederholen – nicht bestandene Teile werden einzeln nachgeholt. Hast du nur die Theorie oder nur die Praxis nicht bestanden, wiederholst du auch nur diesen Teil; eine bereits bestandene Teilprüfung musst du in der Regel nicht erneut ablegen. Die Wiederholungsgebühren liegen 2026 je nach Prüfungsausschuss bei etwa 37–49 € für die Theorie und 57–75 € für die Praxis. Mit dem gezielten Fehler-Training in Boatpass bereitest du genau die Themen nach, an denen es gehakt hat.',
+        related: [{ text: 'Die häufigsten Fehler in der SBF-Prüfung – und wie du sie vermeidest', href: '/blog/haeufigste-fehler-sbf/' }],
       },
       {
         q: 'Wie schwer ist die Navigationsaufgabe beim SBF See?',
         a: 'Die Navigationsaufgabe gilt für viele als anspruchsvollster Teil des SBF See, ist aber gut lernbar. Du arbeitest mit einer amtlichen Übungsseekarte und löst 9 Aufgaben rund um Kurse (Kompasskurs, Missweisung und Deviation), Standort- und Distanzbestimmung sowie Gezeiten. Mindestens 7 der 9 Aufgaben müssen richtig sein. Mit etwas Übung an Kartenarbeit, Anlegezirkel und Kursdreieck wird die Aufgabe zur Routine – Boatpass trainiert die zugehörigen Fragen aus dem amtlichen Katalog.',
+        related: [
+          { text: 'Navigationsaufgaben beim SBF See erklärt', href: '/blog/sbf-see-navigationsaufgaben-erklaert/' },
+          { text: 'Kursumrechnung für die SBF-See-Prüfung', href: '/blog/kursumrechnung-sbf-see/' },
+        ],
       },
     ],
   },
@@ -110,6 +125,7 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Wie viele Fragen hat der offizielle SBF-Fragenkatalog?',
         a: 'Der amtliche SBF-Fragenkatalog wird von DSV und DMYV festgelegt und über ELWIS kostenlos veröffentlicht. Der Katalog Binnen umfasst unter Motor 72 Basisfragen und 181 spezifische Fragen (zusammen 253), plus 47 Segelfragen für den Geltungsbereich Segeln. Der Katalog See enthält 72 Basisfragen und 213 spezifische See-Fragen (zusammen 285). Boatpass enthält den vollständigen aktuellen Katalog für beide Scheine.',
+        related: [{ text: 'Die schwierigsten SBF-Prüfungsfragen im Check', href: '/blog/schwierigste-sbf-pruefungsfragen/' }],
       },
       {
         q: 'Aus welchem Fragenkatalog lernen die Funkmodule (UBI, SRC, LRC)?',
@@ -128,6 +144,7 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       {
         q: 'Was kostet die SBF-Prüfung?',
         a: 'Die amtlichen Prüfungsgebühren (Theorie + Praxis) liegen 2026 bei 130,78 € für den SBF Binnen und 148,38 € für den SBF See. Die kombinierte Prüfung Binnen + See kostet zusammen nur 178,61 € statt 279,16 €. Hinzu kommen optional Kursgebühren (Online-Kurse ab ca. 340 €). Mit der Boatpass-App lernst du die Theorie ohne teuren Vorbereitungskurs.',
+        related: [{ text: 'So sparst du beim Sportbootführerschein', href: '/blog/bootsfuehrerschein-kosten-sparen/' }],
       },
       {
         q: 'Spare ich Geld mit der Kombiprüfung Binnen + See?',
@@ -208,7 +225,14 @@ const faqSchema = {
                   <span class="text-primary ml-4 transition-transform group-open:rotate-180">▼</span>
                 </summary>
                 <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                  {faq.a}
+                  <p class="m-0">{faq.a}</p>
+                  {faq.related && (
+                    <div class="mt-3 flex flex-col gap-1.5">
+                      {faq.related.map((r) => (
+                        <a href={r.href} class="text-sm font-semibold text-primary hover:underline">→ {r.text}</a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </details>
             ))}
