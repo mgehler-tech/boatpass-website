@@ -11,12 +11,22 @@ interface Props {
 const { post, lang } = Astro.props;
 const { title, description, date, updated, readingTime, tags, author = 'Marius Gehler', image, altSlug } = post.data;
 
-// Verwandte Artikel: gleiche Sprache, gewichtet nach gemeinsamen Tags, dann nach Datum. Max. 3.
+// Verwandte Artikel: gleiche Sprache, gewichtet nach gemeinsamen Tags, dann nach einem
+// deterministischen Pair-Hash (statt Datum). Max. 3.
 // Cross-Linking zwischen Blogposts gegen "Sackgassen-Seiten" (verbessert Crawling/Indexierung).
+// Ein reiner Datums-Tiebreak hätte innerhalb eines Tags immer dieselben 3 neuesten Artikel
+// bevorzugt und ältere Artikel im selben Cluster komplett ohne eingehende Links gelassen.
+// Der Pair-Hash verteilt die "verwandten Artikel"-Slots stattdessen über das ganze Cluster.
+function pairHash(a: string, b: string): number {
+  let h = 0;
+  const s = a < b ? a + b : b + a;
+  for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) | 0;
+  return h;
+}
 const relatedCandidates = await getCollection('blog', (e) => e.data.lang === lang && e.id !== post.id);
 const relatedPosts = relatedCandidates
-  .map((p) => ({ p, shared: p.data.tags.filter((t) => tags.includes(t)).length }))
-  .sort((a, b) => b.shared - a.shared || b.p.data.date.getTime() - a.p.data.date.getTime())
+  .map((p) => ({ p, shared: p.data.tags.filter((t) => tags.includes(t)).length, mix: pairHash(post.id, p.id) }))
+  .sort((a, b) => b.shared - a.shared || a.mix - b.mix)
   .slice(0, 3)
   .map(({ p }) => ({
     title: p.data.title,

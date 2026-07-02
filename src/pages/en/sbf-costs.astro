@@ -168,7 +168,7 @@ const faqSchema = {
       <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">How to save on the boating license</h2>
       <div style="display:flex; flex-direction:column; gap:16px;">
         {[
-          { icon: 'phoneDevice', title: 'Learn the theory yourself', desc: 'The biggest cost block is the preparation course. With the official ELWIS catalog in the app you learn the theory independently – for a one-time €9.99 instead of several hundred euros in course fees.' },
+          { icon: 'phoneDevice', title: 'Learn the theory yourself', desc: 'The biggest cost block is the preparation course. With the official ELWIS catalog in the app you learn the theory independently – for a one-time €9.99 instead of several hundred euros in course fees. More saving tips in <a href="/en/blog/save-money-boating-license/" style="color:#3366FF; text-decoration:underline;">Save money on the boating license</a>.' },
           { icon: 'target', title: 'Practice targeted, not broad', desc: 'With exam simulation and mistake training you pass on the first attempt – a retake means paying fees all over again.' },
           { icon: 'users', title: 'Use the combined exam', desc: 'If you need Inland and Coastal, the combined exam saves money compared to two separate attempts.' },
         ].map(f => (
@@ -178,7 +178,7 @@ const faqSchema = {
             </span>
             <div>
               <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
-              <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>
+              <div style="font-size:15px; color:#6B7280; line-height:1.6;" set:html={f.desc} />
             </div>
           </div>
         ))}
@@ -205,6 +205,7 @@ const faqSchema = {
         <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Learn SBF Inland with Boatpass</a>
         <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Learn SBF Coastal with Boatpass</a>
         <a href="/en/sbf-exam/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF exam: how theory & practice work</a>
+        <a href="/en/blog/save-money-boating-license/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Save money on the boating license</a>
         <a href="/en/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Frequently asked questions about the boating license</a>
       </div>
     </section>
