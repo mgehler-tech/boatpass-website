@@ -56,9 +56,9 @@ const available = [
   },
 ];
 
-// "Bald"-Themen – Bodensee noch ohne eigene Seite (nicht klickbar)
+// "Bald"-Themen – Bodensee noch ohne eigene Produktseite, aber bereits im Blog erklärt
 const soon = [
-  { icon: 'anchor' as IconName, title: 'Bodenseeschifferpatent', desc: 'Pflichtschein für den Bodensee.', href: null },
+  { icon: 'anchor' as IconName, title: 'Bodenseeschifferpatent', desc: 'Pflichtschein für den Bodensee.', href: '/blog/bodensee-schifferpatent/' },
 ];
 
 const breadcrumbSchema = {
@@ -140,11 +140,11 @@ const breadcrumbSchema = {
         {soon.map(c => (
           c.href ? (
             <a href={c.href} class="license-card license-card-soon">
-              <span class="license-soon-badge">bald</span>
+              <span class="license-soon-badge">App bald</span>
               <div class="license-icon"><Icon name={c.icon} size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
               <div class="license-title">{c.title}</div>
               <div class="license-desc">{c.desc}</div>
-              <div class="license-link">Vorschau →</div>
+              <div class="license-link">Zum Artikel →</div>
             </a>
           ) : (
             <div class="license-card license-card-soon license-card-disabled">
@@ -155,6 +155,17 @@ const breadcrumbSchema = {
             </div>
           )
         ))}
+      </div>
+    </section>
+
+    <!-- Vergleich & Sonderfälle -->
+    <section style="margin-top:56px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
+      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Vergleich & Sonderfälle</h3>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="/blog/sbf-binnen-vs-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen vs. SBF See – was ist der Unterschied?</a>
+        <a href="/blog/boot-fahren-ohne-fuehrerschein-15-ps/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Boot fahren ohne Führerschein – die 15-PS-Regel</a>
+        <a href="/blog/charterschein-boot-mieten-ohne-fuehrerschein/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Charterschein: Boot mieten ohne Führerschein</a>
+        <a href="/blog/sbf-gueltigkeit-welcher-schein-wo/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF-Gültigkeit: Welcher Schein gilt wo?</a>
       </div>
     </section>
 

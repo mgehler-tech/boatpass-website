@@ -56,7 +56,7 @@ const available = [
 ];
 
 const soon = [
-  { icon: 'anchor' as IconName, title: 'Lake Constance Licence', desc: 'Mandatory licence for Lake Constance.', href: null },
+  { icon: 'anchor' as IconName, title: 'Lake Constance Licence', desc: 'Mandatory licence for Lake Constance.', href: '/en/blog/lake-constance-boat-license/' },
 ];
 
 const breadcrumbSchema = {
@@ -138,11 +138,11 @@ const breadcrumbSchema = {
         {soon.map(c => (
           c.href ? (
             <a href={c.href} class="license-card license-card-soon">
-              <span class="license-soon-badge">soon</span>
+              <span class="license-soon-badge">App soon</span>
               <div class="license-icon"><Icon name={c.icon} size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
               <div class="license-title">{c.title}</div>
               <div class="license-desc">{c.desc}</div>
-              <div class="license-link">Preview →</div>
+              <div class="license-link">Read the article →</div>
             </a>
           ) : (
             <div class="license-card license-card-soon license-card-disabled">
@@ -153,6 +153,17 @@ const breadcrumbSchema = {
             </div>
           )
         ))}
+      </div>
+    </section>
+
+    <!-- Comparisons & special cases -->
+    <section style="margin-top:56px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
+      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Comparisons & special cases</h3>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <a href="/en/blog/sbf-inland-vs-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Inland vs. SBF Coastal – what's the difference?</a>
+        <a href="/en/blog/boating-without-license-15-hp/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Boating without a license – the 15 HP rule explained</a>
+        <a href="/en/blog/charter-certificate-rent-boat-without-license/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Charter certificate: renting a boat without a license</a>
+        <a href="/en/blog/sbf-validity-which-license-where/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF validity: which license applies where?</a>
       </div>
     </section>
 

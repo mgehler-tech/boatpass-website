@@ -99,12 +99,12 @@ const compare = [
   { label: 'Minimum age', binnen: '16 years', see: '16 years' },
 ];
 
-const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & waterways regulations', count: 124, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
+const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string; href?: string }[] = [
+  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & waterways regulations', count: 124, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)', href: '/en/blog/right-of-way-collision-rules/' },
   { name: 'Navigation', desc: 'Charts, courses, positions & bearings', count: 52, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 39, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Signals & marks', desc: 'Sound signals, visual signals & flags', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
-  { name: 'Meteorology', desc: 'Wind, weather & forecasting', count: 6, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
+  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 39, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)', href: '/en/blog/life-jacket-buoyancy-classes/' },
+  { name: 'Signals & marks', desc: 'Sound signals, visual signals & flags', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)', href: '/en/blog/sound-signals-sbf-explained/' },
+  { name: 'Meteorology', desc: 'Wind, weather & forecasting', count: 6, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)', href: '/en/blog/weather-beaufort-scale/' },
   { name: 'General', desc: 'General fundamentals & seamanship', count: 4, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
   { name: 'Sailing', desc: 'Sailing-specific questions for the sailing scope', count: 47, icon: 'sailboat', color: '#0EA5E9', bg: 'rgba(14,165,233,0.10)' },
 ];
@@ -305,18 +305,21 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
         Source: official question catalog (DSV/DMYV) on <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
       </p>
       <div style="display:flex; flex-direction:column; gap:10px;">
-        {categories.map(c => (
-          <div style="display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px;">
-            <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
-              <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
-            </span>
-            <div style="flex:1; min-width:0;">
-              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
-              <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;">{c.desc}</div>
-            </div>
-            <span style="font-size:12px; font-weight:700; color:#6B7280; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} questions</span>
-          </div>
-        ))}
+        {categories.map(c => {
+          const Tag = c.href ? 'a' : 'div';
+          return (
+            <Tag href={c.href} style={`display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px; text-decoration:none;${c.href ? ' cursor:pointer;' : ''}`}>
+              <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
+                <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
+              </span>
+              <div style="flex:1; min-width:0;">
+                <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}{c.href && <span style="color:#3366FF;"> →</span>}</div>
+                <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;">{c.desc}</div>
+              </div>
+              <span style="font-size:12px; font-weight:700; color:#6B7280; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} questions</span>
+            </Tag>
+          );
+        })}
       </div>
     </section>
 
@@ -353,6 +356,9 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
         <a href="/en/blog/sbf-exam-everything-you-need-to-know/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF exam: everything you need to know</a>
         <a href="/en/blog/sbf-preparation-how-long/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ How long do I have to study for the SBF?</a>
         <a href="/en/blog/sbf-inland-vs-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Inland vs. SBF Coastal – what's the difference?</a>
+        <a href="/en/blog/most-common-sbf-mistakes/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ The most common mistakes in the SBF exam</a>
+        <a href="/en/blog/most-important-knots-sbf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ The most important knots for the boating license</a>
+        <a href="/en/blog/boating-without-license-15-hp/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Boating without a license – the 15 HP rule explained</a>
         <a href="/en/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Frequently asked questions about the boating license</a>
         <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Learn SBF Coastal with Boatpass</a>
       </div>

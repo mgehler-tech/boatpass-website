@@ -99,14 +99,14 @@ const compare = [
   { label: 'Minimum age', binnen: '16 years', see: '16 years' },
 ];
 
-const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & collision regulations', count: 130, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
-  { name: 'Navigation & charts', desc: 'Chartwork, courses, tides & current', count: 72, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 40, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Signals & marks', desc: 'Sound, visual and sea marks', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
-  { name: 'Meteorology', desc: 'Wind, weather, tide tables & forecasting', count: 10, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
+const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string; href?: string }[] = [
+  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & collision regulations', count: 130, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)', href: '/en/blog/right-of-way-collision-rules/' },
+  { name: 'Navigation & charts', desc: 'Chartwork, courses, tides & current', count: 72, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)', href: '/en/blog/course-conversion-sbf-coastal/' },
+  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 40, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)', href: '/en/blog/distress-signals-at-sea/' },
+  { name: 'Signals & marks', desc: 'Sound, visual and sea marks', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)', href: '/en/blog/sea-marks-lateral-system-explained/' },
+  { name: 'Meteorology', desc: 'Wind, weather, tide tables & forecasting', count: 10, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)', href: '/en/blog/weather-beaufort-scale/' },
   { name: 'General', desc: 'General fundamentals & seamanship', count: 5, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
-  { name: 'Navigation tasks', desc: '15 chart tasks of 9 questions each: courses, position, tides & current set', count: 135, icon: 'target', color: '#2563EB', bg: 'rgba(37,99,235,0.10)' },
+  { name: 'Navigation tasks', desc: '15 chart tasks of 9 questions each: courses, position, tides & current set', count: 135, icon: 'target', color: '#2563EB', bg: 'rgba(37,99,235,0.10)', href: '/en/blog/sbf-coastal-navigation-tasks-explained/' },
 ];
 
 const navPoints: { icon: IconName; title: string; desc: string }[] = [
@@ -336,18 +336,21 @@ const navPoints: { icon: IconName; title: string; desc: string }[] = [
         Source: official question catalog (DSV/DMYV) on <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-neu-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
       </p>
       <div style="display:flex; flex-direction:column; gap:10px;">
-        {categories.map(c => (
-          <div style="display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px;">
-            <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
-              <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
-            </span>
-            <div style="flex:1; min-width:0;">
-              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
-              <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;">{c.desc}</div>
-            </div>
-            <span style="font-size:12px; font-weight:700; color:#6B7280; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} questions</span>
-          </div>
-        ))}
+        {categories.map(c => {
+          const Tag = c.href ? 'a' : 'div';
+          return (
+            <Tag href={c.href} style={`display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px; text-decoration:none;${c.href ? ' cursor:pointer;' : ''}`}>
+              <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
+                <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
+              </span>
+              <div style="flex:1; min-width:0;">
+                <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}{c.href && <span style="color:#3366FF;"> →</span>}</div>
+                <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;">{c.desc}</div>
+              </div>
+              <span style="font-size:12px; font-weight:700; color:#6B7280; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} questions</span>
+            </Tag>
+          );
+        })}
       </div>
     </section>
 
@@ -383,6 +386,8 @@ const navPoints: { icon: IconName; title: string; desc: string }[] = [
         <a href="/en/sbf-exam/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF exam: how theory & practice work</a>
         <a href="/en/blog/sbf-inland-vs-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Inland vs. SBF Coastal – what's the difference?</a>
         <a href="/en/blog/sbf-preparation-how-long/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ How long do I have to study for the SBF?</a>
+        <a href="/en/blog/most-common-sbf-mistakes/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ The most common mistakes in the SBF exam</a>
+        <a href="/en/blog/sbf-valid-abroad/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Is the SBF valid abroad? Croatia, the Netherlands & Italy</a>
         <a href="/en/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Frequently asked questions about the boating license</a>
         <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Learn SBF Inland with Boatpass</a>
       </div>
