@@ -89,4 +89,4 @@ Five minutes a day beats one long session before the exam. Knots are pure practi
 
 ## Conclusion
 
-For the SBF See practical you must tie at least six of nine knots reliably and explain their purpose – the bowline, the round turn with two half hitches, and cleating a line are among the most important. With a piece of rope and a few minutes a day you'll have them down quickly. While you practice the hands-on part, you can train the theory in parallel in the Boatpass app with the official ELWIS question catalog – so you're ready for both parts of the exam.
+For the [SBF See](/en/sbf-coastal/) practical you must tie at least six of nine knots reliably and explain their purpose – the bowline, the round turn with two half hitches, and cleating a line are among the most important. With a piece of rope and a few minutes a day you'll have them down quickly. While you practice the hands-on part, you can train the theory in parallel in the Boatpass app with the official ELWIS question catalog – so you're ready for both parts of the exam.

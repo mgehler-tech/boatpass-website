@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "lichterfuehrung-erklaert"
 ---
 
-At night or in poor visibility you can only recognize other vessels by their lights – and you have to read from the light configuration what kind of vessel it is, where it's heading, and whether it might be restricted in maneuvering. Navigation lights are a core topic of the SBF See theory. Here's the overview, including the famous memory rhymes.
+At night or in poor visibility you can only recognize other vessels by their lights – and you have to read from the light configuration what kind of vessel it is, where it's heading, and whether it might be restricted in maneuvering. Navigation lights are a core topic of the [SBF See](/en/sbf-coastal/) theory. Here's the overview, including the famous memory rhymes.
 
 ## The Basic Lights and Their Arcs
 

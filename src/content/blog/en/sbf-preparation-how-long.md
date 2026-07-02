@@ -79,4 +79,4 @@ Book your exam date **before** you finish your study plan. A concrete deadline m
 
 ## Summary
 
-For SBF Inland, **4–5 weeks** at 30 minutes daily is realistic for most candidates without prior knowledge. The key is consistency, not intensity. Start today with 15 free questions in the Boatpass app – official ELWIS catalog, error tracking, exam simulation included.
+For [SBF Inland](/en/sbf-inland/), **4–5 weeks** at 30 minutes daily is realistic for most candidates without prior knowledge. The key is consistency, not intensity. Start today with 15 free questions in the Boatpass app – official ELWIS catalog, error tracking, exam simulation included.

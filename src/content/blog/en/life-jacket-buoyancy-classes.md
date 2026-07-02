@@ -83,7 +83,7 @@ On German **coastal shipping lanes** (SeeSchStrO) and on international waters (C
 
 ## Life Jackets in the German Boat Licence Exam (SBF)
 
-Safety equipment is an explicit part of the ELWIS exam catalogue for the [SBF See](https://boatpass.de/sbf-see/) (coastal licence) and the [SBF Binnen](https://boatpass.de/sbf-binnen/) (inland licence). Typical exam questions cover:
+Safety equipment is an explicit part of the ELWIS exam catalogue for the [SBF See](/en/sbf-coastal/) (coastal licence) and the [SBF Binnen](/en/sbf-inland/) (inland licence). Typical exam questions cover:
 
 - Which buoyancy class is required or recommended for sea passages?
 - What is the functional difference between a 50N buoyancy aid and a 150N life jacket?

@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "seezeichen-lateralsystem"
 ---
 
-Sea marks are the "road signs" on the water – and a fixed part of the SBF See theory exam. Once you understand the system, you can derive almost any mark from its logic. In this article we explain the lateral system, the cardinal system and the most important special marks so you'll recognize them confidently in the exam.
+Sea marks are the "road signs" on the water – and a fixed part of the [SBF See](/en/sbf-coastal/) theory exam. Once you understand the system, you can derive almost any mark from its logic. In this article we explain the lateral system, the cardinal system and the most important special marks so you'll recognize them confidently in the exam.
 
 ## IALA Region A: The German System
 

@@ -65,4 +65,4 @@ The charter certificate is ideal for a **one-off boating holiday** on the lake d
 
 ## Conclusion
 
-With the charter certificate you can take a boating holiday on the Mecklenburg Lake District without a Sportbootführerschein – the boat may be at most 15 m long and 12 km/h fast, there's a short briefing and clear conditions like the night-travel ban and the wind limit. For your own boat, the sea, or abroad, however, you need the proper SBF. If you want to take the license, you can start for free in the Boatpass app with the official ELWIS question catalog for the theory exam.
+With the charter certificate you can take a boating holiday on the Mecklenburg Lake District without a Sportbootführerschein – the boat may be at most 15 m long and 12 km/h fast, there's a short briefing and clear conditions like the night-travel ban and the wind limit. For your own boat, the sea, or abroad, however, you need the proper [SBF](/en/sbf-inland/). If you want to take the license, you can start for free in the Boatpass app with the official ELWIS question catalog for the theory exam.
