@@ -115,7 +115,7 @@ Sicherheitsausrüstung ist ausdrücklicher Bestandteil des ELWIS-Fragenkatalogs 
 
 Die Kernaussage für die Prüfung: Für Fahrten auf See ist die **150N-Klasse** nach EN ISO 12402 der übliche Standard. Sie muss CE-gekennzeichnet sein und soll eine bewusstlose Person in die Rückenlage drehen. Schwimmhilfen (50N) gelten nicht als vollwertige Rettungswesten für Seereisen.
 
-Mehr zu den typischen Fallstricken in der Prüfung findest du in unserem Artikel zu den [häufigsten Fehlern in der SBF-Prüfung](/blog/de/haeufigste-fehler-sbf/).
+Mehr zu den typischen Fallstricken in der Prüfung findest du in unserem Artikel zu den [häufigsten Fehlern in der SBF-Prüfung](/blog/haeufigste-fehler-sbf/).
 
 ## Fazit
 

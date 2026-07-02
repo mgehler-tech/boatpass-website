@@ -87,7 +87,7 @@ Das Thema Alkohol und Fahrtüchtigkeit taucht im ELWIS-Fragenkatalog für den [S
 
 Die Kernaussage für die Prüfung: Der Schiffsführer ist jederzeit für die sichere Führung des Fahrzeugs verantwortlich. Ist er durch Alkohol, Drogen oder Krankheit beeinträchtigt, darf er das Schiff nicht führen – unabhängig von einem konkreten Promillewert.
 
-Mehr zu den häufigsten Prüfungsthemen findest du in unserem Artikel zu den [schwierigsten SBF-Prüfungsfragen](/blog/de/schwierigste-sbf-pruefungsfragen/).
+Mehr zu den häufigsten Prüfungsthemen findest du in unserem Artikel zu den [schwierigsten SBF-Prüfungsfragen](/blog/schwierigste-sbf-pruefungsfragen/).
 
 ## Fazit
 
