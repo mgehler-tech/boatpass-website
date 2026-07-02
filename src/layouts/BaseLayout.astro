@@ -30,24 +30,16 @@ const { title, description, lang, ogImage, type, showCta = true, hasAlternate = 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <!-- Google Analytics 4 -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-3Y8BE0JR9B"></script>
+    <!-- Plausible Analytics (cookielos, DSGVO-konform, kein Consent nötig) -->
+    <script is:inline defer data-domain="boatpass.de" src="https://plausible.io/js/script.tagged-events.js"></script>
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-3Y8BE0JR9B', {
-        page_path: window.location.pathname,
-      });
+      window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };
 
       // Conversion Tracking: Play Store Klicks
-      document.addEventListener('click', function(e) {
+      document.addEventListener('click', function (e) {
         const link = e.target.closest('a');
         if (link && link.href && link.href.includes('play.google.com')) {
-          gtag('event', 'play_store_click', {
-            event_category: 'conversion',
-            event_label: window.location.pathname,
-          });
+          window.plausible('play_store_click', { props: { path: window.location.pathname } });
         }
       });
     </script>
