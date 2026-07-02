@@ -22,7 +22,7 @@ Both certificates are **independent of the German recreational boating license (
 
 ## What is the UBI?
 
-The **VHF radio operator's certificate for inland navigation (UBI)** authorizes you to operate and supervise a ship radio station on inland waterways. The exam is administered by the examination boards of the German Sailing Association (DSV).
+The **VHF radio operator's certificate for inland navigation (UBI)** authorizes you to operate and supervise a ship radio station on inland waterways. The exam is administered by the joint examination boards of the German Sailing Association (DSV) and the German Motor Yacht Association (DMYV).
 
 **UBI exam structure:**
 
@@ -57,7 +57,7 @@ If you obtain both certificates, you end up learning two different technical sys
 
 ## Where does the border between inland and maritime radio run?
 
-The border between inland waterways and maritime shipping routes is the same border that determines whether you need the inland SBF or the [coastal SBF](/en/sbf-coastal/). On the Elbe, for example, it does not run along the coastline but only starts above Hamburg; on the Trave it runs at the Hubbrücke in Lübeck. Roughly speaking: wherever the coastal SBF is required, the SRC is also the relevant radio certificate for operating a radio set, and wherever the inland SBF applies, the UBI is sufficient.
+The border between inland waterways and maritime shipping routes is the same border that determines whether you need the inland SBF or the [coastal SBF](/en/sbf-coastal/). On the Elbe, for example, it does not run along the coastline but only starts above Hamburg; on the Trave it runs at the Hubbrücke in Lübeck. The exact boundaries for the most important rivers are collected in our article [SBF Validity: Which License Applies Where?](/en/blog/sbf-validity-which-license-where/). Roughly speaking: wherever the coastal SBF is required, the SRC is also the relevant radio certificate for operating a radio set, and wherever the inland SBF applies, the UBI is sufficient.
 
 ## UBI or SRC: what do I need for my cruising area?
 
@@ -87,8 +87,6 @@ For both certificates, a preparation course is **not required**. The official qu
 ## Do I even need a UBI or SRC?
 
 You only need a radio operator's certificate if you actually operate a maritime or inland radio station **yourself**. If you never use a radio set of your own, you technically don't need one. In practice, though, things look different: on busy inland waterways such as the Rhine or the Elbe, radio is extremely useful for communicating with commercial shipping traffic, and many charter boats, especially along the coast, come standard with a VHF maritime radio set including DSC. Many charter companies therefore require a valid SRC from skippers before handing over a yacht equipped with radio gear. A radio certificate is also a major advantage in an emergency, so you can correctly issue a DSC alert and a Mayday call.
-
-The **AIS (Automatic Identification System)** is another area where the UBI matters: anyone using an AIS device on inland waterways in transmit mode, meaning not just passively receiving other vessels' data but actively sending their own position, needs the UBI for that as well. Pure reception without transmitting is possible without a certificate.
 
 It is also worth distinguishing between issuing an actual **distress call** and regular radio operation: anyone may issue a distress call in an acute emergency, even without a radio certificate, because in a genuine emergency, getting help quickly matters more than the formal authorization. For normal, everyday radio traffic outside of acute emergencies, however, you do need the appropriate certificate.
 

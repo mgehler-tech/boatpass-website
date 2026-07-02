@@ -22,7 +22,7 @@ Beide Zeugnisse sind **unabhängig vom Sportbootführerschein (SBF)** – du kan
 
 ## Was ist das UBI?
 
-Das **UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk (UBI)** berechtigt zum Bedienen und Beaufsichtigen einer Schiffsfunkstelle auf Binnenschifffahrtsstraßen. Die Prüfung nehmen die Prüfungsausschüsse des Deutschen Segler-Verbands (DSV) ab.
+Das **UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk (UBI)** berechtigt zum Bedienen und Beaufsichtigen einer Schiffsfunkstelle auf Binnenschifffahrtsstraßen. Die Prüfung nehmen die gemeinsamen Prüfungsausschüsse des Deutschen Segler-Verbands (DSV) und des Deutschen Motoryachtverbands (DMYV) ab.
 
 **Prüfungsaufbau UBI:**
 
@@ -87,8 +87,6 @@ Für beide Zeugnisse gilt: Ein Vorbereitungskurs ist **nicht verpflichtend**. Di
 ## Muss ich UBI oder SRC überhaupt machen?
 
 Ein Sprechfunkzeugnis brauchst du nur, wenn du tatsächlich eine Seefunkstelle beziehungsweise eine Binnenfunkstelle **selbst bedienst**. Wer ohne eigene Funkanlage unterwegs ist, kommt formal ohne aus. In der Praxis sieht das aber anders aus: Auf stark befahrenen Binnenwasserstraßen wie Rhein oder Elbe ist Funk für die Verständigung mit der Berufsschifffahrt äußerst hilfreich, und viele Charterboote, gerade an der Küste, sind serienmäßig mit einer UKW-Seefunkanlage inklusive DSC ausgestattet. Viele Vercharterer setzen daher ein gültiges SRC für Skipper voraus, bevor sie eine Yacht mit Funkanlage übergeben. Auch für den Notfall, um im Ernstfall einen korrekten DSC-Alarm und Mayday-Ruf abzusetzen, ist ein Funkzeugnis von großem Vorteil.
-
-Auch beim Thema **AIS (Automatic Identification System)** spielt das UBI eine Rolle: Wer ein AIS-Gerät auf Binnenwasserstraßen im Sendebetrieb nutzt, also nicht nur passiv andere Schiffe empfängt, sondern selbst Positionsdaten sendet, benötigt dafür ebenfalls das UBI. Reiner Empfang ohne eigenes Senden ist dagegen zeugnisfrei möglich.
 
 Wichtig ist außerdem der Unterschied zwischen der reinen **Notrufabsetzung** und dem regulären Funkbetrieb: Einen Notruf in einer akuten Seenot darf grundsätzlich jeder absetzen, auch ohne Funkzeugnis, denn in einer echten Gefahrenlage zählt die schnelle Hilfe mehr als die formale Berechtigung. Für den normalen Sprechfunkbetrieb im Alltag, also außerhalb akuter Notlagen, brauchst du dagegen das passende Zeugnis.
 
