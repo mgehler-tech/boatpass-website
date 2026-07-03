@@ -71,7 +71,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
           <li><a href={lang === 'de' ? '/impressum/' : '/en/legal/'} class="text-gray-500 hover:text-text transition-colors">{t.footer.imprint}</a></li>
         </ul>
         <div class="mt-4">
-          <a href={lang === 'de' ? '/en/' : '/'} class="text-sm text-primary hover:underline">{t.footer.switchLang}</a>
+          <a href={lang === 'de' ? '/en/' : '/'} class="footer-link text-sm text-primary hover:underline">{t.footer.switchLang}</a>
         </div>
       </div>
     </div>
@@ -81,3 +81,21 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     </div>
   </div>
 </footer>
+
+<style>
+  /* Touch-Flächen der Footer-Navigation auf dem Handy vergrößern
+     (WCAG 2.5.5 – mind. 44px). Die Links waren zuvor nur ~20px hohe Textzeilen
+     und dadurch – gerade wenn alle Spalten zu einer langen Einzelspalte stapeln –
+     schwer präzise zu treffen. display:flex macht die ganze Spaltenbreite tappbar
+     (langer Linktext bricht dabei sauber um), min-height sichert die 44px.
+     Greift nur unterhalb von 640px – das Desktop-Layout bleibt unverändert.
+     Reiner Layout-Feinschliff: Farben, Schrift und Branding bleiben unberührt. */
+  @media (max-width: 640px) {
+    footer ul a,
+    footer .footer-link {
+      display: flex;
+      align-items: center;
+      min-height: 44px;
+    }
+  }
+</style>
