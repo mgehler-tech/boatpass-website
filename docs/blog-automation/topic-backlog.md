@@ -11,7 +11,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Promillegrenze auf dem Boot – was gilt für Sportbootführer? (2026-06-25: promillegrenze-boot / blood-alcohol-limit-boat)
 - [x] Die richtige Rettungsweste wählen – Auftriebsklassen erklärt (2026-06-26: rettungsweste-auftriebsklassen / life-jacket-buoyancy-classes)
 - [x] UBI vs. SRC – welcher Funkschein für welches Boot? (2026-07-02: ubi-vs-src-funkschein / ubi-vs-src-radio-license)
-- [ ] Seekarte lesen lernen – Symbole, Tiefenangaben, Maßstäbe
+- [x] Seekarte lesen lernen – Symbole, Tiefenangaben, Maßstäbe (2026-07-03: seekarte-lesen-lernen / how-to-read-a-nautical-chart)
 - [ ] Kompass, Missweisung und Deviation einfach erklärt
 - [ ] Anlegen und Ablegen – Hafenmanöver für Einsteiger
 - [ ] Richtig ankern – Grundlagen, Ankerarten, häufige Fehler
