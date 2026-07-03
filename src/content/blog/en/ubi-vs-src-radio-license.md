@@ -19,7 +19,7 @@ Which certificate you need depends on your area of operation: inland waters or t
 
 ## UBI: The VHF Certificate for Inland Waterways
 
-The **UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk (UBI)**, roughly "VHF radio certificate for inland shipping radio," is the officially recognized authorization to operate and supervise a ship radio station on inland waterways. It is administered by the examination boards of the German Sailing Association (Deutscher Segler-Verband, DSV).
+The [**UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk (UBI)**](/en/ubi/), roughly "VHF radio certificate for inland shipping radio," is the officially recognized authorization to operate and supervise a ship radio station on inland waterways. It is administered by the examination boards of the German Sailing Association (Deutscher Segler-Verband, DSV).
 
 ### Who Needs the UBI?
 
@@ -45,7 +45,7 @@ The official total fee for the UBI is made up of three components: admission to 
 
 ## SRC: The Short Range Certificate for Coastal Radio
 
-The **Short Range Certificate (SRC)**, in German also referred to as a restricted radio operator's certificate, is the official authorization to participate in the worldwide maritime radio service (GMDSS) in the VHF band. It authorizes you to operate VHF marine radio equipment including **DSC** (Digital Selective Calling) in the coastal area, known as sea area A1.
+The [**Short Range Certificate (SRC)**](/en/src/), in German also referred to as a restricted radio operator's certificate, is the official authorization to participate in the worldwide maritime radio service (GMDSS) in the VHF band. It authorizes you to operate VHF marine radio equipment including **DSC** (Digital Selective Calling) in the coastal area, known as sea area A1.
 
 ### Who Needs the SRC?
 
@@ -93,7 +93,7 @@ In that case, it makes sense to get the SRC first, since its content is more ext
 
 ## What About Offshore? The LRC
 
-If you want to communicate beyond VHF range, for example on longer offshore passages, the SRC alone is not sufficient. That is where the **Long Range Certificate (LRC)** comes in, which additionally covers medium and short wave radio as well as satellite communication under GMDSS, and applies to sea areas A1 through A4. For most coastal areas of the North Sea and Baltic Sea, however, the SRC is entirely sufficient.
+If you want to communicate beyond VHF range, for example on longer offshore passages, the SRC alone is not sufficient. That is where the [**Long Range Certificate (LRC)**](/en/lrc/) comes in, which additionally covers medium and short wave radio as well as satellite communication under GMDSS, and applies to sea areas A1 through A4. For most coastal areas of the North Sea and Baltic Sea, however, the SRC is entirely sufficient.
 
 ## How to Prepare
 
