@@ -19,7 +19,7 @@ Welches Zeugnis du brauchst, hängt vom Fahrtgebiet ab: Binnengewässer oder Kü
 
 ## UBI: Das Sprechfunkzeugnis für die Binnenschifffahrt
 
-Das **UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk (UBI)** ist die amtlich anerkannte Erlaubnis zum Bedienen und Beaufsichtigen einer Schiffsfunkstelle auf Binnenschifffahrtsstraßen. Es wird von den Prüfungsausschüssen des Deutschen Segler-Verbands (DSV) abgenommen.
+Das [**UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk (UBI)**](/ubi/) ist die amtlich anerkannte Erlaubnis zum Bedienen und Beaufsichtigen einer Schiffsfunkstelle auf Binnenschifffahrtsstraßen. Es wird von den Prüfungsausschüssen des Deutschen Segler-Verbands (DSV) abgenommen.
 
 ### Wer braucht das UBI?
 
@@ -45,7 +45,7 @@ Die amtliche Gesamtgebühr für das UBI setzt sich aus drei Posten zusammen: Zul
 
 ## SRC: Das Kurzstreckenzeugnis für den Seefunk
 
-Das **Short Range Certificate (SRC)**, auf Deutsch auch als beschränkt gültiges Funkbetriebszeugnis bezeichnet, ist die amtliche Erlaubnis zur Teilnahme am weltweiten Seefunkdienst (GMDSS) im UKW-Bereich. Es berechtigt zur Bedienung von UKW-Seefunkanlagen inklusive **DSC** (Digital Selective Calling) im Küstenbereich, dem sogenannten Seegebiet A1.
+Das [**Short Range Certificate (SRC)**](/src/), auf Deutsch auch als beschränkt gültiges Funkbetriebszeugnis bezeichnet, ist die amtliche Erlaubnis zur Teilnahme am weltweiten Seefunkdienst (GMDSS) im UKW-Bereich. Es berechtigt zur Bedienung von UKW-Seefunkanlagen inklusive **DSC** (Digital Selective Calling) im Küstenbereich, dem sogenannten Seegebiet A1.
 
 ### Wer braucht das SRC?
 
@@ -93,7 +93,7 @@ In diesem Fall bietet es sich an, zuerst das SRC zu machen, da dessen Inhalte um
 
 ## Und wenn ich aufs offene Meer will? Das LRC
 
-Wer außerhalb der UKW-Reichweite funken will, etwa bei längeren Offshore-Passagen, kommt mit dem SRC allein nicht aus. Dafür gibt es das **Long Range Certificate (LRC)**, das zusätzlich Grenz- und Kurzwellenfunk sowie Satellitenfunk im Rahmen des GMDSS abdeckt und für die Seegebiete A1 bis A4 gilt. Für die meisten Küstenreviere in Nord- und Ostsee reicht das SRC jedoch völlig aus.
+Wer außerhalb der UKW-Reichweite funken will, etwa bei längeren Offshore-Passagen, kommt mit dem SRC allein nicht aus. Dafür gibt es das [**Long Range Certificate (LRC)**](/lrc/), das zusätzlich Grenz- und Kurzwellenfunk sowie Satellitenfunk im Rahmen des GMDSS abdeckt und für die Seegebiete A1 bis A4 gilt. Für die meisten Küstenreviere in Nord- und Ostsee reicht das SRC jedoch völlig aus.
 
 ## Wie du dich am besten vorbereitest
 
