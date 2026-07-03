@@ -1,0 +1,4 @@
+# Alte, flache Blog-URL-Struktur (/blog/de|en/<slug>) auf die aktuelle Struktur
+# umleiten. Rettet Link-Equity und beseitigt 404s aus dem Google-Index.
+/blog/de/*   /blog/:splat       301
+/blog/en/*   /en/blog/:splat    301

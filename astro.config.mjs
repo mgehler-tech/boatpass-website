@@ -24,7 +24,10 @@ export default defineConfig({
       serialize(item) {
         const url = item.url;
         const path = url.replace('https://boatpass.de', '').replace('/en', '');
-        item.lastmod = new Date().toISOString();
+        // Kein künstliches lastmod: `new Date()` bei jedem Build würde Google
+        // signalisieren, dass sich alle Seiten ständig ändern – ein unglaubwürdiges
+        // Freshness-Signal, das das Vertrauen in die Sitemap untergräbt. Lieber gar
+        // kein lastmod als ein falsches.
         if (path === '/' || path === '') {
           item.priority = 1.0;
           item.changefreq = 'weekly';
