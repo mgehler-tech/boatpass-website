@@ -36,9 +36,9 @@ Ein häufiger Fehler: Immer wieder Fragen üben, die man schon kann. Das fühlt 
 
 Die Kategorien, die bei SBF-Kandidaten am häufigsten Probleme machen:
 
-- **Lichterführung** – welches Licht zeigt welches Boot bei Nacht oder eingeschränkter Sicht? Rotes Licht = Backbord, grünes Licht = Steuerbord, weißes Licht = Heck. Diese Regeln klingen einfach, werden aber unter Prüfungsdruck oft verwechselt.
+- **[Lichterführung](/blog/lichterfuehrung-erklaert/)** – welches Licht zeigt welches Boot bei Nacht oder eingeschränkter Sicht? Rotes Licht = Backbord, grünes Licht = Steuerbord, weißes Licht = Heck. Diese Regeln klingen einfach, werden aber unter Prüfungsdruck oft verwechselt.
 - **Schallzeichen** – ein kurzer Ton bedeutet "ich weiche nach Steuerbord aus", zwei kurze Töne bedeuten "ich weiche nach Backbord aus". In der Prüfung kommen Varianten, die täuschend ähnlich wirken.
-- **Ausweich- und Vorfahrtsregeln** – wer muss ausweichen? Segelboote vor Motorbooten? Das stimmt nur teilweise – ein Motorboot, das einen engen Kanal durchfährt, hat andere Rechte als eines auf offener See.
+- **[Ausweich- und Vorfahrtsregeln](/blog/ausweichregeln-vorfahrt-wasser/)** – wer muss ausweichen? Segelboote vor Motorbooten? Das stimmt nur teilweise – ein Motorboot, das einen engen Kanal durchfährt, hat andere Rechte als eines auf offener See.
 
 **Was funktioniert:** Nutze ein System, das dir zeigt, welche Fragen du wiederholt falsch beantwortest, und bringe dir diese gezielt erneut. Das Fehler-Training in der Boatpass-App macht genau das automatisch.
 

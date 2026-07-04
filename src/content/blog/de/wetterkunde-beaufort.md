@@ -24,7 +24,7 @@ Einige Orientierungspunkte:
 - **8 Bft (stürmischer Wind):** Ab hier spricht man von **Sturm**, deutlich höhere Wellen mit Gischtstreifen.
 - **12 Bft (Orkan):** See vollständig weiß, Luft voller Schaum und Gischt.
 
-**Merke:** Starkwindwarnung ab **6 Bft**, Sturmwarnung ab **8 Bft**. Diese Schwellen solltest du auswendig kennen.
+**Merke:** Starkwindwarnung ab **6 Bft**, Sturmwarnung ab **8 Bft**. Diese Schwellen solltest du auswendig kennen – die Frage nach der Starkwindwarnung gehört zu den [schwierigsten SBF-Prüfungsfragen](/blog/schwierigste-sbf-pruefungsfragen/) überhaupt.
 
 ## Hoch und Tief
 

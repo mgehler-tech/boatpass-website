@@ -57,7 +57,7 @@ So praktisch die Charterbescheinigung ist – sie ist **kein Ersatz** für den S
 - im **Ausland** (z. B. für einen Charter in Kroatien)
 - für Boote, die **schneller als 12 km/h** oder **länger als 15 m** sind
 
-Sobald du regelmäßig fährst, ein eigenes Boot hast, aufs Meer willst oder im Ausland chartern möchtest, brauchst du den richtigen Sportbootführerschein.
+Sobald du regelmäßig fährst, ein eigenes Boot hast, aufs Meer willst oder im Ausland chartern möchtest, brauchst du den richtigen Sportbootführerschein. Ganz ohne jeden Schein darfst du dagegen nur Boote bis 15 PS führen – wie diese [15-PS-Regel](/blog/boot-fahren-ohne-fuehrerschein-15-ps/) genau funktioniert, erklären wir separat.
 
 ## Charterschein oder doch der SBF?
 

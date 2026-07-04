@@ -51,7 +51,7 @@ Der mit Abstand größte Hebel. Ein Theoriekurs bei einer Bootsschule kostet zwi
 
 Wichtig: Die Prüfung ist immer dieselbe – egal wie du dich vorbereitet hast. Du lernst mit einer App exakt die Fragen, die in der Prüfung drankommen, weil der Fragenkatalog öffentlich ist.
 
-Ein Theoriekurs ist keine Pflicht. Wer selbstdiszipliniert lernen kann, braucht ihn nicht.
+Ein Theoriekurs ist keine Pflicht. Wer selbstdiszipliniert lernen kann, braucht ihn nicht – die Vor- und Nachteile beider Wege vergleicht unser Beitrag [SBF App vs. Bootsschule](/blog/sbf-app-vs-bootsschule/).
 
 ## Tipp 3: Praxisstunde separat buchen
 

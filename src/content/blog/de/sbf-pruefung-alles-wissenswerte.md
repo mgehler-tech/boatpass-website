@@ -52,7 +52,7 @@ Du musst mehrere Seemannsknoten korrekt vorführen. Die wichtigsten:
 - **Achtknoten** – Stoppknoten
 - **Kreuzknoten** – zum Verbinden zweier Leinen
 
-Die Knotenprüfung ist kein Bonus – sie ist ein eigenständiger Prüfungsteil. Wer die Knoten nicht beherrscht, kann an dieser Stelle scheitern. Knoten sind die **häufigste Fehlerquelle** in der praktischen SBF-Prüfung.
+Die Knotenprüfung ist kein Bonus – sie ist ein eigenständiger Prüfungsteil. Wer die Knoten nicht beherrscht, kann an dieser Stelle scheitern. Knoten sind die **häufigste Fehlerquelle** in der praktischen SBF-Prüfung. Wie du die [wichtigsten Knoten für den Sportbootführerschein](/blog/wichtigste-knoten-sbf/) Schritt für Schritt lernst, zeigen wir in einem eigenen Beitrag.
 
 ### 3. Praktische Prüfung (auf dem Wasser)
 

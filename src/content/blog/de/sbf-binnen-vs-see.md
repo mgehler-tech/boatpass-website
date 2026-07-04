@@ -36,6 +36,8 @@ Der [SBF See](/sbf-see/) gilt auf den deutschen **Seeschifffahrtsstraßen** – 
 
 > **Wichtig:** Die beiden Scheine gelten **nicht füreinander**. Wer nur den SBF Binnen hat, darf nicht auf Seeschifffahrtsstraßen fahren – und umgekehrt.
 
+Wo genau die Grenze zwischen beiden verläuft – etwa an der Elbe, der Trave oder im Nord-Ostsee-Kanal –, erklärt unser Beitrag zur [SBF-Gültigkeit: Welcher Schein gilt wo?](/blog/sbf-gueltigkeit-welcher-schein-wo/)
+
 ## Unterschiede in der Prüfung
 
 | | SBF Binnen | SBF See |

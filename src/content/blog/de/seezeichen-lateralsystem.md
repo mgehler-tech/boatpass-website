@@ -87,7 +87,7 @@ Kardinalzeichen zeigen an, auf welcher Seite du eine Gefahrenstelle **gefahrlos 
 
 ## Kennungen: das Feuer „lesen"
 
-Viele Seezeichen tragen ein **Feuer** (Licht). Die Kennung beschreibt den Rhythmus und wird in der Seekarte abgekürzt:
+Viele Seezeichen tragen ein **Feuer** (Licht). Die Kennung beschreibt den Rhythmus und wird in der [Seekarte](/blog/seekarte-lesen-lernen/) abgekürzt:
 
 - **Fl (Blitz/Funkel):** kurze Lichtblitze, längere Dunkelphasen
 - **Oc (Unterbrochen):** überwiegend Licht, kurze Dunkelphasen
