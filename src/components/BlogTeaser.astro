@@ -19,9 +19,9 @@ const [featured, ...rest] = posts;
 ---
 
 <section class="max-w-6xl mx-auto px-6 py-12 md:py-20">
-  <div class="flex items-center justify-between mb-10">
+  <div class="blog-teaser-header">
     <h2 class="section-display-title">{t.blog.title}</h2>
-    <a href={getLocalizedPath(lang, '/blog/')} class="text-primary font-semibold text-sm hover:underline">
+    <a href={getLocalizedPath(lang, '/blog/')} class="blog-teaser-all">
       {t.blog.allArticles} →
     </a>
   </div>
@@ -37,6 +37,35 @@ const [featured, ...rest] = posts;
 </section>
 
 <style>
+  /* Kopfzeile der Blog-Sektion: lange Überschrift (z. B. "Tipps & Wissenswertes")
+     und der "Alle Artikel"-Link teilten sich zuvor eine starre Flex-Zeile ohne
+     Umbruch. Auf schmalen Screens quetschte das den Link in eine schmale Spalte
+     und riss die große Überschrift mitten im Wort um; items-center ließ den
+     kleinen Link zudem an einer mehrzeiligen Überschrift „schweben".
+     Jetzt: der Link bricht bei Platzmangel sauber unter die Überschrift, sitzt
+     sonst auf deren Grundlinie (baseline) und behält eine ausreichend große
+     Touch-Fläche (WCAG 2.5.5 – mind. 44px). Reiner Layout-Feinschliff. */
+  .blog-teaser-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 24px;
+    margin-bottom: 40px;
+  }
+  .blog-teaser-all {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .blog-teaser-all:hover { text-decoration: underline; }
+
   .blog-teaser-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
