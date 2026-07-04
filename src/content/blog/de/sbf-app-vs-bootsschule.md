@@ -111,4 +111,4 @@ Auch die **praktische Prüfung** ist identisch. Du musst Manöver auf dem Wasser
 
 ## Fazit
 
-Ein Theoriekurs ist keine Pflicht – und für die reine Prüfungsvorbereitung auch nicht nötig. Der offizielle Fragenkatalog ist öffentlich, und eine App mit Prüfungssimulation und Fehler-Training reicht aus, um die Theorie zu bestehen. Wer wenig Vorerfahrung hat, profitiert von einem Kurs – aber das ist eine persönliche Entscheidung, keine Voraussetzung.
+Ein Theoriekurs ist keine Pflicht – und für die reine Prüfungsvorbereitung auch nicht nötig. Der offizielle Fragenkatalog ist öffentlich, und eine App mit Prüfungssimulation und Fehler-Training reicht aus, um die Theorie zu bestehen. Wer wenig Vorerfahrung hat, profitiert von einem Kurs – aber das ist eine persönliche Entscheidung, keine Voraussetzung. Wie du bei der Vorbereitung zusätzlich Geld sparst, zeigen unsere [5 besten Spartipps für den Bootsführerschein](/blog/bootsfuehrerschein-kosten-sparen/).

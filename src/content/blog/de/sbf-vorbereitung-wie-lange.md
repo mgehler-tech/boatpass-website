@@ -55,7 +55,7 @@ Erfahrungsgemäß sind das die drei zeitintensivsten Bereiche:
 
 ### 1. Lichterführung (ca. 30–40% der Lernzeit)
 
-Welches Boot zeigt welches Licht, in welcher Situation? Das klingt einfach, aber die Variationen sind zahlreich: Motorboote in Fahrt, ankernde Boote, Segelboote, Schlepper, Fischereifahrzeuge – jedes hat andere Vorschriften. Dazu kommen Nacht- und Nebelsituationen.
+Welches Boot zeigt welches Licht, in welcher Situation? Das klingt einfach, aber die Variationen sind zahlreich: Motorboote in Fahrt, ankernde Boote, Segelboote, Schlepper, Fischereifahrzeuge – jedes hat andere Vorschriften. Dazu kommen Nacht- und Nebelsituationen. Einen kompletten Überblick gibt unser Beitrag [Lichterführung erklärt](/blog/lichterfuehrung-erklaert/).
 
 **Tipp:** Lerne Lichterführung mit Bildern, nicht mit Text. Die ELWIS-Symbole sind eindeutig – visualisiere jede Situation.
 
@@ -65,7 +65,7 @@ Wer weicht wem aus? Wann hast du Vorfahrt, wann nicht? Die Regeln klingen logisc
 
 ### 3. Seemannschaft und Knoten (praktisch)
 
-Knoten lassen sich nicht durch Lesen lernen – nur durch Üben. Kaufe dir ein 1-Meter-Seilstück und leg es auf den Schreibtisch. **Fünf Minuten täglich** reichen, um Palstek, Webleinstek und Achtknoten zuverlässig zu beherrschen.
+Knoten lassen sich nicht durch Lesen lernen – nur durch Üben. Kaufe dir ein 1-Meter-Seilstück und leg es auf den Schreibtisch. **Fünf Minuten täglich** reichen, um Palstek, Webleinstek und Achtknoten zuverlässig zu beherrschen. Welche Knoten geprüft werden und wofür sie dienen, findest du im Beitrag zu den [wichtigsten Knoten für den SBF](/blog/wichtigste-knoten-sbf/).
 
 ## Warum täglich lernen wichtiger ist als lange Einheiten
 

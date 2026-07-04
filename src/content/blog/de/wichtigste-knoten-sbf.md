@@ -15,7 +15,7 @@ Die Knoten sind für viele der praktische Teil mit dem größten „Aha-Effekt" 
 
 In der **SBF-See-Praxisprüfung** wird aus einer Liste von **neun Knoten** geprüft. Du musst in der Regel **mindestens sechs davon korrekt vorführen** und jeweils erklären, wofür der Knoten verwendet wird. Auch in der **SBF-Binnen-Praxis** (Antriebsart Motor) gehören das Belegen einer Klampe und einfache Knoten dazu.
 
-Der Prüfer sagt dir den Knoten an – du knüpfst ihn und nennst den Verwendungszweck. Geschwindigkeit ist zweitrangig; wichtiger ist, dass der Knoten **richtig** sitzt und du seine Funktion kennst.
+Der Prüfer sagt dir den Knoten an – du knüpfst ihn und nennst den Verwendungszweck. Geschwindigkeit ist zweitrangig; wichtiger ist, dass der Knoten **richtig** sitzt und du seine Funktion kennst. Die Knotenprüfung ist dabei nur einer von drei Prüfungsteilen – einen Überblick gibt der Beitrag [SBF Prüfung: Alles was du wissen musst](/blog/sbf-pruefung-alles-wissenswerte/).
 
 ## Die neun prüfungsrelevanten Knoten
 

@@ -29,7 +29,7 @@ Zum Vergleich: Beim Auto-Führerschein fallen rund 39 % durch die Theorieprüfun
 - **Starkwindwarnung:** Windstärke 6–7 Bft
 - **Sturmwarnung:** ab Windstärke 8 Bft
 
-**Tipp:** Merksatz: „Sechs und sieben – stark geblieben, acht und mehr – Sturm kommt her."
+**Tipp:** Merksatz: „Sechs und sieben – stark geblieben, acht und mehr – Sturm kommt her." Die komplette [Beaufort-Skala und Wetterkunde für den SBF See](/blog/wetterkunde-beaufort/) erklären wir in einem eigenen Beitrag.
 
 ### Schwerpunkt: Spezifische See-Fragen
 

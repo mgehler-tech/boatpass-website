@@ -60,6 +60,8 @@ Bestimmte Fahrzeuge führen zusätzliche **Rundumlichter**, an denen du ihren Zu
 - **Grün über Weiß – Fischer bei der Arbeit:** Schleppnetzfischer (Trawler).
 - **Rot über Weiß – Lotse heut Nacht:** Lotsenfahrzeug.
 
+Welches dieser Fahrzeuge bei einer Begegnung Vorrang hat und wer ausweichen muss, ergibt sich aus den [Ausweichregeln auf dem Wasser](/blog/ausweichregeln-vorfahrt-wasser/).
+
 ### Vor Anker
 
 Ein vor Anker liegendes Fahrzeug führt ein **weißes Rundumlicht** (Ankerlicht). Größere Fahrzeuge (ab 50 m) führen zwei – eines vorn, eines achtern, das vordere höher. So erkennst du nachts ein ankerndes Schiff an einem einzelnen weißen Rundumlicht ohne Fahrtlichter.

@@ -57,7 +57,7 @@ Der NOK verbindet Nord- und Ostsee und gehört zu den Seeschifffahrtsstraßen �
 | Müritz, Chiemsee, Bodensee* | SBF Binnen |
 | Berliner Gewässer (Havel, Spree) | SBF Binnen |
 
-*\*Für den Bodensee gilt eine eigene Regelung – dort ist das Bodenseeschifferpatent (BSP) erforderlich.*
+*\*Für den Bodensee gilt eine eigene Regelung – dort ist das [Bodenseeschifferpatent](/blog/bodensee-schifferpatent/) (BSP) erforderlich.*
 
 ## SBF im Ausland: Wo gilt der deutsche Schein?
 
@@ -81,6 +81,8 @@ Der ICC wird von über 30 Ländern offiziell anerkannt, darunter die wichtigsten
 | **Türkei** | Offiziell anerkannt |
 | **Niederlande** | Offiziell anerkannt |
 | **Karibik, Seychellen, Thailand** | Inoffiziell akzeptiert (reicht zum Chartern) |
+
+Welche Regeln in den beliebtesten Charterrevieren konkret gelten, zeigt der Beitrag [SBF im Ausland gültig? Kroatien, Niederlande & Italien](/blog/sbf-im-ausland-gueltig/).
 
 ### Lebenslang gültig
 

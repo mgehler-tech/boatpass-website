@@ -57,7 +57,7 @@ Hier sind alle Dokumente, die du brauchst:
 
 ## Wo melde ich mich an?
 
-Die Prüfung wird von den **Prüfungsausschüssen des DMYV und DSV** abgenommen – nicht von den Bootsschulen. Es gibt Prüfungsstandorte in ganz Deutschland.
+Die Prüfung wird von den **Prüfungsausschüssen des DMYV und DSV** abgenommen – nicht von den Bootsschulen. Es gibt Prüfungsstandorte in ganz Deutschland. Den kompletten Anmeldeablauf beschreiben wir Schritt für Schritt im Beitrag [SBF-Prüfung anmelden](/blog/sbf-pruefung-anmelden/).
 
 ### So läuft die Anmeldung ab:
 
