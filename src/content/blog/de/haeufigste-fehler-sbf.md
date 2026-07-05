@@ -74,7 +74,7 @@ Prüfungstermine beim DMYV und bei anerkannten Prüfungsausschüssen sind oft **
 
 Prüfe vor der Anmeldung außerdem, ob du alle [Voraussetzungen für den Sportbootführerschein](/blog/sportbootfuehrerschein-voraussetzungen/) erfüllst – vom Mindestalter bis zum ärztlichen Zeugnis.
 
-Die offizielle Prüfungsgebühr für den SBF Binnen liegt beim DMYV aktuell bei ca. **131 €** (Stand 05/2026).
+Die offizielle Prüfungsgebühr für den [SBF Binnen](/sbf-binnen/) liegt beim DMYV aktuell bei ca. **131 €** (Stand 05/2026).
 
 ## Fehler 6: Die Führerscheinpflicht falsch verstehen
 

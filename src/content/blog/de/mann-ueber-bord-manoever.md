@@ -56,7 +56,7 @@ Die Aufnahme erfolgt **nur bei stehendem Boot mit ausgekuppelter Maschine** – 
 
 ## So bereitest du dich vor
 
-Das MOB-Manöver lernst du auf dem Wasser – die Theorie dahinter (warum die Schraube weg muss, warum gegen Wind und Strom) gehört aber genauso ins Prüfungswissen und taucht in den Theoriefragen auf. Wie die gesamte Praxisprüfung abläuft, liest du in unserem Überblick [SBF Prüfung: so läuft sie ab](/sbf-pruefung-ablauf/). Welche Knoten du parallel sicher beherrschen musst, steht im Artikel zu den [wichtigsten Knoten](/blog/wichtigste-knoten-sbf/).
+Das MOB-Manöver lernst du auf dem Wasser – die Theorie dahinter (warum die Schraube weg muss, warum gegen Wind und Strom) gehört aber genauso ins Prüfungswissen und taucht in den Theoriefragen auf. Als Pflichtmanöver wird es sowohl beim [SBF Binnen](/sbf-binnen/) als auch beim [SBF See](/sbf-see/) verlangt. Wie die gesamte Praxisprüfung abläuft, liest du in unserem Überblick [SBF Prüfung: so läuft sie ab](/sbf-pruefung-ablauf/). Welche Knoten du parallel sicher beherrschen musst, steht im Artikel zu den [wichtigsten Knoten](/blog/wichtigste-knoten-sbf/).
 
 ## Fazit
 

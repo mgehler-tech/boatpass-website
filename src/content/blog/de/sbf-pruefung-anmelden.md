@@ -45,8 +45,8 @@ Welche Dokumente genau verlangt werden, hängt vom Verband und Prüfungsort ab. 
 
 ## Mindestalter
 
-- **SBF Binnen:** ab 16 Jahren (Antriebsart Motor), unter Segel teils ab 14
-- **SBF See:** ab 16 Jahren
+- **[SBF Binnen](/sbf-binnen/):** ab 16 Jahren (Antriebsart Motor), unter Segel teils ab 14
+- **[SBF See](/sbf-see/):** ab 16 Jahren
 
 Die Prüfung kannst du oft schon kurz **vor** Erreichen des Mindestalters ablegen – ausgehändigt wird der Führerschein dann zum Geburtstag.
 

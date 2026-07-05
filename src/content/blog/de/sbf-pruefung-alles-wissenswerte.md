@@ -86,7 +86,7 @@ Du musst ein Boot selbstständig führen und mehrere Manöver demonstrieren:
 
 ## Wie lange dauert die Vorbereitung?
 
-Für den SBF Binnen sind bei täglichem Lernen von 30–45 Minuten **3–6 Wochen** realistisch. Kandidaten ohne Vorwissen brauchen etwas länger für die nautischen Kategorien. Die Knotenprüfung erfordert tägliches Üben – am besten mit einem kurzen Seilstück auf dem Schreibtisch.
+Für den [SBF Binnen](/sbf-binnen/) sind bei täglichem Lernen von 30–45 Minuten **3–6 Wochen** realistisch. Kandidaten ohne Vorwissen brauchen etwas länger für die nautischen Kategorien. Wer den [SBF See](/sbf-see/) anstrebt, sollte wegen der zusätzlichen Navigationsaufgabe etwas mehr Zeit einplanen. Die Knotenprüfung erfordert tägliches Üben – am besten mit einem kurzen Seilstück auf dem Schreibtisch.
 
 ## Fazit
 
