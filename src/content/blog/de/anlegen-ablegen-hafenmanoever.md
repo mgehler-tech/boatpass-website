@@ -1,9 +1,9 @@
 ---
 title: "Anlegen und Ablegen – Hafenmanöver für Einsteiger"
-description: "An- und Ablegen sicher meistern: Wind, Strom und Ruderwirkung richtig einschätzen, Leinen und Fender clever einsetzen – die wichtigsten Hafenmanöver für die SBF-Praxisprüfung."
+description: "An- und Ablegen sicher meistern: Wind, Strom und Ruderwirkung richtig einschätzen, Leinen und Fender clever einsetzen für die SBF-Praxisprüfung."
 date: 2026-07-05
 tags: ["Praxis"]
-readingTime: 9
+readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "docking-undocking-harbor-maneuvers"
@@ -22,7 +22,7 @@ Bewertet wird dabei nicht Perfektion, sondern ein **nachvollziehbarer, ruhiger A
 Bevor du überhaupt ablegst, lohnt sich ein Blick auf die Kräfte, die dein Boot am Liegeplatz beeinflussen. Drei Faktoren spielen die größte Rolle:
 
 - **Wind:** Ein Sportboot bietet mit Aufbauten, Kajüte oder Bimini oft viel Angriffsfläche für den Wind. Schon mäßiger Wind kann das Boot spürbar vom Steg weg- oder dagegen drücken, besonders bei geringer Fahrt, wenn das Ruder noch wenig Wirkung entfaltet.
-- **Strom:** In Flüssen, aber auch an vielen Küsten- und Seeliegeplätzen mit Tidenhub oder Durchströmung, wirkt zusätzlich die Wasserströmung auf den Rumpf. Strom wirkt oft stärker als Wind, weil Wasser eine deutlich höhere Dichte hat als Luft.
+- **Strom:** In Flüssen, aber auch an vielen Küsten- und Seeliegeplätzen mit Tidenhub oder Durchströmung, wirkt zusätzlich die Wasserströmung auf den Rumpf. Wind und Strom müssen dabei beide situativ eingeschätzt werden: Je nach Bootstyp, etwa Tiefgang im Verhältnis zur Windangriffsfläche der Aufbauten, kann mal der eine, mal der andere Faktor überwiegen.
 - **Ruderwirkung und Propellerstrahl:** Erst mit Fahrt durchs Wasser entfaltet das Ruder seine volle Wirkung, weil der vom Propeller erzeugte Wasserstrom (Schraubenstrahl) am Ruderblatt vorbeiströmt und es anströmt. Bei sehr langsamer Fahrt oder im Stand reagiert das Boot deshalb träger auf Ruderausschläge.
 
 Wichtig ist, diese Kräfte **vor** dem Manöver einzuschätzen: Woher kommt der Wind, gibt es Strömung, und wie wirkt sich das auf den geplanten An- oder Ablegekurs aus? Wer sich vorher einen Plan macht, muss während des Manövers nur noch reagieren, statt gleichzeitig zu planen und zu steuern.
