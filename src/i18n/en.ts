@@ -33,7 +33,7 @@ export const en: Translations = {
   },
   trust: {
     catalog: 'Official question catalog',
-    current: 'Always up to date – updated when licenses change',
+    current: 'Always up to date – updated on license changes',
     oneTime: 'Start for free – no account needed',
     languages: 'Bilingual: DE & EN',
   },
