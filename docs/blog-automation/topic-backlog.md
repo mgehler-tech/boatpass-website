@@ -13,7 +13,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] UBI vs. SRC – welcher Funkschein für welches Boot? (2026-07-02: ubi-vs-src-funkschein / ubi-vs-src-radio-license)
 - [x] Seekarte lesen lernen – Symbole, Tiefenangaben, Maßstäbe (2026-07-03: seekarte-lesen-lernen / how-to-read-a-nautical-chart)
 - [x] Kompass, Missweisung und Deviation einfach erklärt (2026-07-04: kompass-missweisung-deviation-erklaert / compass-variation-deviation-explained)
-- [ ] Anlegen und Ablegen – Hafenmanöver für Einsteiger
+- [x] Anlegen und Ablegen – Hafenmanöver für Einsteiger (2026-07-05: anlegen-ablegen-hafenmanoever / docking-undocking-harbor-maneuvers)
 - [ ] Richtig ankern – Grundlagen, Ankerarten, häufige Fehler
 - [ ] Pyrotechnik an Bord – Fachkundenachweis (FKN) und Seenotsignalmittel
 - [ ] Erste Hilfe an Bord – die wichtigsten Maßnahmen auf dem Wasser
