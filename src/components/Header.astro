@@ -85,7 +85,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
   <!-- Mobile Menu Panel -->
   <div id="mobile-menu" class="mobile-menu-panel md:hidden" aria-hidden="true">
-    <nav class="px-5 py-4 flex flex-col gap-1">
+    <nav class="px-4 pt-3 pb-5 flex flex-col gap-0.5">
       <a href={`${getLocalizedPath(lang, '/')}#features`} class="mobile-nav-link">
         {lang === 'de' ? 'Features' : 'Features'}
       </a>
@@ -96,24 +96,27 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <!-- Führerscheine Accordion -->
       <div class="mobile-accordion">
         <button class="mobile-accordion-trigger mobile-nav-link w-full text-left" aria-expanded="false">
-          <span class="mobile-accordion-label">
-            {lang === 'de' ? 'Führerscheine' : 'Licenses'}
-            <span class="mobile-accordion-hint">{lang === 'de' ? 'Untermenü' : 'Submenu'}</span>
+          <span>{lang === 'de' ? 'Führerscheine' : 'Licenses'}</span>
+          <span class="accordion-chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </span>
-          <span class="accordion-chevron" aria-hidden="true">▾</span>
         </button>
         <div class="mobile-accordion-body">
-          <a href={lang === 'de' ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/'} class="mobile-nav-sublink" style="font-weight:700; color:#3366FF;">{lang === 'de' ? 'Welcher Schein? →' : 'Which licence? →'}</a>
-          <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
-          <a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a>
-          <a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a>
-          <a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
-          <a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="mobile-nav-sublink">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
-          <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
-          <a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="mobile-nav-sublink">UBI</a>
-          <a href={lang === 'de' ? '/src/' : '/en/src/'} class="mobile-nav-sublink">SRC</a>
-          <a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="mobile-nav-sublink">LRC</a>
-          <span class="mobile-nav-sublink" style="opacity:0.45; cursor:default;">Bodenseeschifferpatent <span style="font-size:11px;color:#3366FF;">{lang === 'de' ? 'bald' : 'soon'}</span></span>
+          <div class="mobile-subnav">
+            <a href={lang === 'de' ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/'} class="mobile-nav-sublink mobile-nav-sublink--cta">{lang === 'de' ? 'Welcher Schein? →' : 'Which licence? →'}</a>
+            <div class="mobile-divider"></div>
+            <a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a>
+            <a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a>
+            <a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
+            <a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="mobile-nav-sublink">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
+            <div class="mobile-divider"></div>
+            <a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="mobile-nav-sublink">UBI</a>
+            <a href={lang === 'de' ? '/src/' : '/en/src/'} class="mobile-nav-sublink">SRC</a>
+            <a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="mobile-nav-sublink">LRC</a>
+            <span class="mobile-nav-sublink mobile-nav-sublink--soon">Bodenseeschifferpatent <span class="soon-badge">{lang === 'de' ? 'bald' : 'soon'}</span></span>
+          </div>
         </div>
       </div>
 
@@ -124,13 +127,11 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
         {t.nav.faq}
       </a>
 
-      <div style="height:1px; background:rgba(51,102,255,0.10); margin:8px 0;"></div>
-
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        class="flex items-center justify-center gap-2 text-sm font-bold text-white py-3 rounded-xl"
-        style="background: #3366FF; box-shadow: 0 4px 14px rgba(51,102,255,0.25); text-decoration: none;">
-        {t.nav.getApp}
-      </a>
+      <div class="mobile-menu-footer">
+        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="mobile-cta-btn">
+          {t.nav.getApp}
+        </a>
+      </div>
     </nav>
   </div>
 </header>
@@ -176,7 +177,6 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   menu?.querySelectorAll('.mobile-accordion-trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
       const accordion = trigger.closest('.mobile-accordion');
-      const body = accordion?.querySelector('.mobile-accordion-body');
       const isOpen = accordion?.classList.contains('accordion-open');
       if (isOpen) {
         accordion?.classList.remove('accordion-open');
@@ -286,16 +286,18 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   /* Mobile Menu Panel */
   .mobile-menu-panel {
     position: fixed;
-    top: 64px; /* header height */
+    top: 64px;
     left: 0;
     right: 0;
-    background: white;
+    background: rgba(240,244,250,0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(51,102,255,0.10);
-    box-shadow: 0 8px 32px rgba(26,31,54,0.12);
-    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(26,31,54,0.10);
+    transform: translateY(-6px);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.22s cubic-bezier(0.4,0,0.2,1), opacity 0.22s;
+    transition: transform 0.24s cubic-bezier(0.4,0,0.2,1), opacity 0.24s;
     z-index: 49;
     max-height: calc(100vh - 64px);
     overflow-y: auto;
@@ -311,9 +313,10 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(26,31,54,0.35);
+    background: rgba(26,31,54,0.28);
     z-index: 48;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
   }
   .mobile-backdrop.open { display: block; }
 
@@ -322,75 +325,119 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
     color: #1A1F36;
     text-decoration: none;
-    padding: 12px 14px;
+    padding: 11px 12px;
     border-radius: 10px;
     background: none;
     border: none;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: background 0.15s, color 0.15s;
+    width: 100%;
+    letter-spacing: -0.1px;
   }
-  .mobile-nav-link:hover { background: rgba(51,102,255,0.06); }
+  .mobile-nav-link:hover { background: rgba(51,102,255,0.07); }
 
+  /* Accordion */
+  .accordion-chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgba(51,102,255,0.09);
+    color: #3366FF;
+    transition: transform 0.22s cubic-bezier(0.4,0,0.2,1), background 0.2s, color 0.2s;
+  }
+  .mobile-accordion-body {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s cubic-bezier(0.4,0,0.2,1);
+    overflow: hidden;
+  }
+  .mobile-accordion-body > .mobile-subnav {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    padding: 4px 0 6px 0;
+  }
+  .accordion-open .mobile-accordion-body {
+    grid-template-rows: 1fr;
+  }
+  .accordion-open .accordion-chevron {
+    transform: rotate(180deg);
+    background: #3366FF;
+    color: #fff;
+  }
+
+  /* Sublinks */
   .mobile-nav-sublink {
     display: block;
     font-size: 14px;
     font-weight: 500;
     color: #4B5563;
     text-decoration: none;
-    padding: 9px 14px 9px 28px;
+    padding: 9px 12px 9px 32px;
     border-radius: 8px;
-    transition: background 0.15s;
+    transition: background 0.15s, color 0.15s;
   }
-  .mobile-nav-sublink:hover { background: rgba(51,102,255,0.06); color: #1A1F36; }
-
-  /* Accordion */
-  .mobile-accordion-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+  .mobile-nav-sublink:hover { background: rgba(51,102,255,0.07); color: #1A1F36; }
+  .mobile-nav-sublink--cta {
+    font-weight: 700;
+    color: #3366FF;
   }
-  /* Klar erkennbarer Hinweis, dass sich hier ein Untermenü öffnet */
-  .mobile-accordion-hint {
+  .mobile-nav-sublink--cta:hover { color: #2952CC; }
+  .mobile-nav-sublink--soon {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+  }
+  .soon-badge {
     font-size: 11px;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
     color: #3366FF;
-    background: rgba(51,102,255,0.10);
+    background: rgba(51,102,255,0.12);
     border-radius: 100px;
-    padding: 2px 8px;
+    padding: 1px 7px;
+    margin-left: 4px;
   }
-  .accordion-chevron {
-    display: inline-flex;
+
+  /* Divider */
+  .mobile-divider {
+    height: 1px;
+    background: rgba(51,102,255,0.09);
+    margin: 3px 12px;
+  }
+
+  /* Footer with CTA */
+  .mobile-menu-footer {
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(51,102,255,0.09);
+  }
+  .mobile-cta-btn {
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: rgba(51,102,255,0.10);
-    color: #3366FF;
-    font-size: 13px;
-    line-height: 1;
-    transition: transform 0.2s, background 0.2s, color 0.2s;
-  }
-  .mobile-accordion-body {
-    display: none;
-    flex-direction: column;
-    gap: 2px;
-    padding-bottom: 4px;
-  }
-  .accordion-open .mobile-accordion-body { display: flex; }
-  .accordion-open .accordion-chevron {
-    transform: rotate(180deg);
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 12px;
     background: #3366FF;
-    color: #fff;
+    box-shadow: 0 4px 16px rgba(51,102,255,0.28);
+    transition: background 0.15s, box-shadow 0.15s, transform 0.15s;
+    letter-spacing: -0.1px;
   }
-  .accordion-open .mobile-accordion-hint {
-    background: rgba(51,102,255,0.16);
+  .mobile-cta-btn:hover {
+    background: #2952CC;
+    box-shadow: 0 6px 20px rgba(51,102,255,0.35);
+    transform: translateY(-1px);
   }
 </style>
