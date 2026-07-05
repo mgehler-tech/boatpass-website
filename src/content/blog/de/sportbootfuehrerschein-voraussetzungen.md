@@ -73,8 +73,8 @@ Die Prüfung wird von den **Prüfungsausschüssen des DMYV und DSV** abgenommen 
 
 | Prüfung | Gebühr |
 |---|---|
-| SBF Binnen (Theorie + Praxis) | ca. 131 € |
-| SBF See (Theorie + Praxis) | ca. 148 € |
+| [SBF Binnen](/sbf-binnen/) (Theorie + Praxis) | ca. 131 € |
+| [SBF See](/sbf-see/) (Theorie + Praxis) | ca. 148 € |
 | Kombi Binnen + See | ca. 179 € |
 | Wiederholungsprüfung Theorie | ca. 37–49 € |
 | Wiederholungsprüfung Praxis | ca. 57–75 € |

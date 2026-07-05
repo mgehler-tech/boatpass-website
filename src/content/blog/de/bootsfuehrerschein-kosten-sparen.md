@@ -108,7 +108,7 @@ Das ist weniger als die Hälfte dessen, was ein Komplettkurs bei einer Bootsschu
 Zu wenige Praxisstunden sind falsche Sparsamkeit. Wer bei der praktischen Prüfung durchfällt, zahlt die Prüfungsgebühr erneut (57–75 €) plus zusätzliche Übungsstunden. Eine Stunde mehr vorher ist günstiger als ein zweiter Anlauf.
 
 ### Navigationsbesteck (bei SBF See)
-Für die Navigationsaufgabe brauchst du Kursdreieck und Zirkel. Billige Sets funktionieren oft schlecht auf der Seekarte. Investiere in brauchbares Material – es kostet nur 10–20 € und du brauchst es auch in der Prüfung.
+Für die Navigationsaufgabe beim [SBF See](/sbf-see/) brauchst du Kursdreieck und Zirkel. Billige Sets funktionieren oft schlecht auf der Seekarte. Investiere in brauchbares Material – es kostet nur 10–20 € und du brauchst es auch in der Prüfung.
 
 ## Fazit
 
