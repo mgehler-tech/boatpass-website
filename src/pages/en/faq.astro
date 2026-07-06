@@ -53,11 +53,11 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       },
       {
         q: 'Do I even need a boating license? (The 15 HP rule)',
-        a: 'In Germany you may operate motorboats up to and including 15 HP (11.03 kW) from age 16 without a boating license – on both inland and sea shipping waterways. Only above 15 HP does the SBF become mandatory. Exceptions: Lake Constance (Bodensee-Schifferpatent) and the Rhine have lower limits, and individual zones (e.g. a section of the Spree in Berlin) require a license regardless of engine power. For the open sea or a charter abroad you almost always need the SBF Coastal.',
+        a: 'In Germany you may operate motorboats up to and including 15 HP (11.03 kW) from age 16 without a boating license – on both inland and sea shipping waterways. Only above 15 HP does the SBF become mandatory. Exceptions: <a href="/en/blog/lake-constance-boat-license/" style="color:#3366FF; text-decoration:underline;">Lake Constance (Bodensee-Schifferpatent)</a> and the Rhine have lower limits, and individual zones (e.g. a section of the Spree in Berlin) require a license regardless of engine power. For the open sea or a <a href="/en/blog/charter-certificate-rent-boat-without-license/" style="color:#3366FF; text-decoration:underline;">charter abroad</a> you almost always need the SBF Coastal.',
       },
       {
         q: 'Does the 0.5 blood alcohol limit apply on a boat like in a car?',
-        a: 'No, not in that form. Recreational boats are not governed by road traffic law (StVG) but by the inland waterway rules (BinSchStrO) or the sea waterway rules (SeeSchStrO): the skipper must be fit to navigate at all times. Intoxication becomes a criminal offense under § 315a StGB – relative unfitness can already apply at low levels combined with signs of impairment, and absolute unfitness from 1.6 per mille. The safe rule: as a skipper you do not drink alcohol. The topic is also part of the official question catalog.',
+        a: 'No, not in that form. Recreational boats are not governed by road traffic law (StVG) but by the inland waterway rules (BinSchStrO) or the sea waterway rules (SeeSchStrO): the skipper must be fit to navigate at all times. Intoxication becomes a criminal offense under § 315a StGB – relative unfitness can already apply at low levels combined with signs of impairment, and absolute unfitness from 1.6 per mille. The safe rule: as a skipper you do not drink alcohol. More in the <a href="/en/blog/blood-alcohol-limit-boat/" style="color:#3366FF; text-decoration:underline;">article on the blood alcohol limit on a boat</a>.',
       },
       {
         q: 'How long is the boating license valid?',
@@ -65,7 +65,7 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       },
       {
         q: 'What is the charter certificate – and does it replace the SBF?',
-        a: 'The charter certificate (officially Charterbescheinigung) allows you to operate a rented boat without a boating license on certain designated inland waters – above all the Mecklenburg Lake District. Conditions: the boat is at most 15 m long and 12 km/h fast, the minimum age is usually 16, plus a 2–3 hour briefing by the rental company. Rules such as a night-travel ban and a no-go from wind force 4 apply. The charter certificate does not replace the SBF: it is valid only for the rented boat, only in the designated area, and not abroad.',
+        a: 'The charter certificate (officially Charterbescheinigung) allows you to operate a rented boat without a boating license on certain designated inland waters – above all the Mecklenburg Lake District. Conditions: the boat is at most 15 m long and 12 km/h fast, the minimum age is usually 16, plus a 2–3 hour briefing by the rental company. Rules such as a night-travel ban and a no-go from wind force 4 apply. The charter certificate does not replace the SBF: it is valid only for the rented boat, only in the designated area, and not abroad. Details in the <a href="/en/blog/charter-certificate-rent-boat-without-license/" style="color:#3366FF; text-decoration:underline;">article on the charter certificate</a>.',
       },
     ],
   },
@@ -99,7 +99,7 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       },
       {
         q: 'How hard is the navigation task in the SBF Coastal exam?',
-        a: 'The navigation task is considered the most demanding part of the SBF Coastal by many, but it is very learnable. You work with an official training chart and solve 9 tasks covering courses (compass course, magnetic variation and deviation), position and distance fixing, and tides. At least 7 of the 9 tasks must be correct. With some practice using the chart, plotting dividers and the course triangle, the task becomes routine – Boatpass trains the related questions from the official catalog.',
+        a: 'The navigation task is considered the most demanding part of the SBF Coastal by many, but it is very learnable. You work with an official training chart and solve 9 tasks covering courses (<a href="/en/blog/compass-variation-deviation-explained/" style="color:#3366FF; text-decoration:underline;">compass course, magnetic variation and deviation</a>), position and distance fixing, and tides. At least 7 of the 9 tasks must be correct. With some practice using the chart, plotting dividers and the course triangle, the task becomes routine – Boatpass trains the related questions from the official catalog.',
       },
     ],
   },
@@ -168,7 +168,7 @@ const faqSchema = {
   "mainEntity": allFaqs.map(f => ({
     "@type": "Question",
     "name": f.q,
-    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+    "acceptedAnswer": { "@type": "Answer", "text": f.a.replace(/<[^>]+>/g, '') },
   })),
 };
 ---
@@ -207,9 +207,7 @@ const faqSchema = {
                   <h3 class="font-semibold text-base m-0">{faq.q}</h3>
                   <span class="text-primary ml-4 transition-transform group-open:rotate-180">▼</span>
                 </summary>
-                <div class="px-6 pb-6 text-gray-600 leading-relaxed">
-                  {faq.a}
-                </div>
+                <div class="px-6 pb-6 text-gray-600 leading-relaxed" set:html={faq.a} />
               </details>
             ))}
           </div>
