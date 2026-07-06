@@ -77,10 +77,14 @@ const features: { icon: IconName; title: string; desc: string }[] = [
   .feat-card:hover .feat-top-line {
     transform: scaleX(1);
   }
-  @media (max-width: 900px) {
-    .feat-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 600px) {
+  /* Genau drei Feature-Karten ("Drei Wege zum Bestehen"). Eine 2-Spalten-Stufe
+     ließe die dritte Karte allein in einer zweiten Reihe stehen – mit leerer
+     Zelle daneben (unsauberes, asymmetrisches Alignment). Deshalb bewusst die
+     symmetrische Leiter 3-spaltig → 1-spaltig, vereinheitlicht auf den im
+     restlichen Projekt genutzten 768px-Breakpoint (Hero, FinderTeaser,
+     BlogTeaser, CtaBanner). Gestapelt bekommt jede Karte so die volle Breite
+     und großzügigen Whitespace. Corporate Design (Farben, Weights) unberührt. */
+  @media (max-width: 768px) {
     .feat-grid { grid-template-columns: 1fr; }
   }
 </style>
