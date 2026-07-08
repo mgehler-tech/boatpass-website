@@ -7,6 +7,17 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "sbf-exam-everything-you-need-to-know"
+faq:
+  - question: "Ab welcher Motorleistung brauche ich einen Bootsführerschein?"
+    answer: "Auf Bundeswasserstraßen besteht Führerscheinpflicht für Boote mit mehr als 11,03 kW (15 PS) bei Verbrennungsmotoren; bei Elektromotoren liegt die Grenze bei 7,5 kW. Das Mindestalter für das selbstständige Führen eines Motorboots auf Binnenschifffahrtsstraßen beträgt 16 Jahre."
+  - question: "Aus welchen Teilen besteht die SBF-Prüfung?"
+    answer: "Aus drei Teilen, die alle bestanden werden müssen: der Theorieprüfung (30 Multiple-Choice-Fragen in 45 Minuten aus dem offiziellen ELWIS-Katalog), der Knotenprüfung und der praktischen Prüfung auf dem Wasser."
+  - question: "Wie viele Fragen muss ich bei der SBF-Theorieprüfung richtig beantworten?"
+    answer: "Die 30 Fragen teilen sich in 7 Basisfragen (mindestens 5 richtig) und 23 spezifische Fragen (mindestens 18 richtig). Beide Blöcke müssen die Mindestpunktzahl separat erreichen – man kann das eine nicht mit dem anderen ausgleichen."
+  - question: "Was kostet der SBF?"
+    answer: "Für den SBF Binnen rund 400–430 € gesamt (ca. 131 € Prüfungsgebühr plus Kurs), für den SBF See rund 520 €. Wer beide Scheine macht, spart mit der Kombiprüfung: Prüfungsgebühr ca. 179 € statt 279 € einzeln."
+  - question: "Wie lange dauert die Vorbereitung auf den SBF?"
+    answer: "Für den SBF Binnen sind bei täglich 30–45 Minuten Lernen etwa 3–6 Wochen realistisch. Für den SBF See solltest du wegen der zusätzlichen Navigationsaufgabe mehr Zeit einplanen. Die Knotenprüfung erfordert tägliches Üben."
 ---
 
 Der Sportbootführerschein (SBF) ist die offizielle Fahrerlaubnis für Sportboote in Deutschland. Diese Seite erklärt dir **alles**, was du vor der Prüfung wissen musst – mit korrekten Daten aus den offiziellen ELWIS- und DMYV-Regelwerken.

@@ -7,6 +7,15 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "sbf-inland-vs-coastal"
+faq:
+  - question: "Was ist der Unterschied zwischen SBF Binnen und SBF See?"
+    answer: "Der SBF Binnen gilt auf deutschen Binnenschifffahrtsstraßen – Flüssen, Kanälen und Seen. Der SBF See gilt auf Seeschifffahrtsstraßen, also Küstengewässern an Nord- und Ostsee sowie international. Die beiden Scheine gelten nicht füreinander."
+  - question: "Ist die Prüfung beim SBF See schwerer als beim SBF Binnen?"
+    answer: "Ja. Der SBF See enthält zusätzlich eine schriftliche Navigationsaufgabe: Du musst Kurse in eine Seekarte einzeichnen, Peilungen berechnen und mit dem Kompass umgehen. Das macht die SBF-See-Prüfung anspruchsvoller als die reine SBF-Binnen-Theorie."
+  - question: "Kann ich SBF Binnen und SBF See kombinieren?"
+    answer: "Ja. Bei einer Kombiprüfung an einem Tag zahlst du nur rund 179 € Prüfungsgebühr statt 279 € einzeln – eine Ersparnis von etwa 100 €. Die 72 Basisfragen sind bei beiden Scheinen identisch, du lernst sie also nur einmal."
+  - question: "Welchen Schein soll ich zuerst machen?"
+    answer: "Für Binnengewässer in Deutschland reicht der SBF Binnen, für Küstenurlaub brauchst du den SBF See. Willst du langfristig beides, empfehlen die meisten Bootsschulen, mit dem schwierigeren SBF See zu beginnen; der SBF Binnen fällt danach deutlich leichter."
 ---
 
 Wenn du anfängst, dich mit dem Sportbootführerschein zu beschäftigen, stößt du schnell auf die entscheidende Frage: Binnen oder See? Beide Scheine berechtigen zum Führen von Motorbooten – aber auf unterschiedlichen Gewässern. Hier ist alles, was du wissen musst.

@@ -7,6 +7,17 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "ubi-vs-src-radio-license"
+faq:
+  - question: "Was ist der Unterschied zwischen UBI und SRC?"
+    answer: "Der wichtigste Unterschied ist das Fahrtgebiet: Das UBI (UKW-Sprechfunkzeugnis für die Binnenschifffahrt) gilt auf Binnenschifffahrtsstraßen, das SRC (Short Range Certificate) für den Küstenbereich (Seegebiet A1). Beide Zeugnisse sind nicht gegenseitig anrechenbar."
+  - question: "Brauche ich für mein Boot überhaupt ein Funkzeugnis?"
+    answer: "Ja, sobald du eine UKW-Funkanlage an Bord bedienst. Der Sportbootführerschein allein reicht dafür nicht: Für Binnengewässer brauchst du das UBI, für den Küstenfunk das SRC. Beide sind eigenständige Qualifikationen, unabhängig vom SBF."
+  - question: "Wie läuft die UBI-Prüfung ab und was kostet sie?"
+    answer: "Die UBI-Theorie besteht aus 22 Multiple-Choice-Fragen in 60 Minuten (mindestens 17 richtig) plus einem praktischen Teil mit ATIS-Einstellung, Gerätekunde und Notmeldungen. Die amtliche Gesamtgebühr liegt laut DSV bei rund 109 €."
+  - question: "Wie läuft die SRC-Prüfung ab und was kostet sie?"
+    answer: "Die SRC-Theorie umfasst 24 Multiple-Choice-Fragen in 30 Minuten (mindestens 19 richtig), dazu ein praktischer Teil am DSC-Funkgerät und ein Englisch-Teil. Die amtliche Prüfungsgebühr bei DSV/DMYV liegt bei rund 128 €."
+  - question: "Brauche ich beide Funkzeugnisse – UBI und SRC?"
+    answer: "Das hängt vom Fahrtgebiet ab. Nur auf Binnengewässern reicht das UBI, nur an der Küste das SRC. Wer beide Reviere befährt, braucht beide Zeugnisse – dann lohnt es sich, zuerst das SRC zu machen, weil die UBI-Prüfung danach verkürzt ist."
 ---
 
 Sobald ein Funkgerät an Bord ist, reicht der Sportbootführerschein allein nicht mehr aus. Wer eine UKW-Funkanlage bedienen will, braucht dafür ein eigenes Funkzeugnis – und genau hier verwechseln viele angehende Skipper zwei Abkürzungen: **UBI** und **SRC**. Beide klingen ähnlich, regeln aber völlig unterschiedliche Reviere. Dieser Artikel erklärt, was hinter den beiden Zeugnissen steckt, wer welches braucht und wie du dich am besten vorbereitest.
