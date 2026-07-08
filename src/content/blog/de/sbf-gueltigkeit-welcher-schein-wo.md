@@ -7,6 +7,17 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "sbf-validity-which-license-where"
+faq:
+  - question: "Wo gilt der SBF Binnen und wo der SBF See?"
+    answer: "Der SBF Binnen gilt auf Binnenschifffahrtsstraßen (Flüsse, Kanäle und Seen im Landesinneren), der SBF See auf Seeschifffahrtsstraßen (Küstengewässer an Nord- und Ostsee sowie den Unterläufen bestimmter Flüsse). Die genaue Abgrenzung regelt § 1 der Seeschifffahrtsstraßen-Ordnung (SeeSchStrO)."
+  - question: "Bis wohin brauche ich auf der Elbe den SBF See?"
+    answer: "Von der Mündung bis zum Hamburger Hafen gilt der SBF See (Grenze bei Elbe-km 638,98 am rechten bzw. 633,35 am linken Ufer). Im Hamburger Hafen selbst werden beide Scheine akzeptiert, oberhalb gilt der SBF Binnen."
+  - question: "Gilt der deutsche Sportbootführerschein im Ausland?"
+    answer: "Ja. Seit 2018 wird der SBF im Scheckkartenformat mit dem ICC (International Certificate of Competence) gemäß UN-Resolution Nr. 40 ausgestellt. Der ICC wird von über 30 Ländern anerkannt, darunter Kroatien, Griechenland, Italien, Frankreich, Spanien und die Niederlande."
+  - question: "Wie lange ist der SBF gültig?"
+    answer: "Der deutsche SBF mit ICC ist lebenslang gültig – ohne Verlängerung oder Erneuerung. Das ist ein Vorteil gegenüber den Führerscheinen einiger anderer Länder, die regelmäßig erneuert werden müssen."
+  - question: "Wann brauche ich beide Scheine?"
+    answer: "Wenn du sowohl auf Küstengewässern als auch auf Binnengewässern fahren willst. Die Kombiprüfung spart dabei rund 100 € an Prüfungsgebühren, und die 72 Basisfragen sind bei beiden Scheinen identisch."
 ---
 
 Eine der häufigsten Fragen rund um den Sportbootführerschein: Wo genau gilt mein Schein? Die Antwort ist nicht immer intuitiv – vor allem in den Flussmündungen an der Küste und im Ausland gibt es Stolperfallen. Hier ist die vollständige Übersicht. Wenn du nur schnell wissen willst, welchen Schein du für dein Vorhaben brauchst, nutze unseren [Bootsführerschein-Finder](/tools/welcher-bootsfuehrerschein/).

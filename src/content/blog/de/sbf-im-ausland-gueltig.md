@@ -7,6 +7,15 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "sbf-valid-abroad"
+faq:
+  - question: "Gilt mein deutscher SBF in Kroatien, den Niederlanden und Italien?"
+    answer: "Ja. Alle drei Länder erkennen den deutschen ICC (auf der Rückseite des SBF im Scheckkartenformat) an. In der Regel brauchst du zusätzlich das SRC-Seefunkzeugnis; auf niederländischen Binnengewässern kann außerdem ein CEVNI-Nachweis nötig sein."
+  - question: "Was ist der ICC und brauche ich ihn fürs Ausland?"
+    answer: "Der ICC (International Certificate of Competence) basiert auf UNECE-Resolution Nr. 40 und steht auf der Rückseite des SBF im Scheckkartenformat. Er wird von den Unterzeichnerstaaten gegenseitig anerkannt. Alte Papierscheine enthalten keinen ICC und müssen beim DMYV oder DSV umgeschrieben werden."
+  - question: "Welche Dokumente brauche ich zum Chartern im Ausland?"
+    answer: "In der Regel: Personalausweis oder Reisepass (Original), SBF See mit ICC Coastal auf der Rückseite, das SRC (wenn ein Funkgerät an Bord ist) sowie die vom Charterer gestellten Papiere wie Zulassung, Versicherungsnachweis und landesspezifische Dokumente (z. B. die Vinjeta in Kroatien)."
+  - question: "Brauche ich im Ausland ein Funkzeugnis (SRC)?"
+    answer: "Auf Charteryachten ist ein UKW-Seefunkgerät praktisch immer vorhanden. Sobald du es bedienst, ist in Kroatien, Italien und den meisten anderen europäischen Ländern das SRC (Short Range Certificate) Pflicht."
 ---
 
 Der Sommerurlaub ist geplant, die Charteryacht gebucht – und dann die bange Frage: Reicht mein deutscher Sportbootführerschein im Ausland überhaupt? In den beliebtesten europäischen Segelrevieren – Kroatien, Niederlande, Italien – hast du als SBF-Inhaber grundsätzlich gute Karten. Aber jedes Land hat eigene Regeln, und wer unvorbereitet antritt, riskiert Ärger mit der Küstenwache. Dieser Artikel erklärt, was du wirklich wissen musst.
