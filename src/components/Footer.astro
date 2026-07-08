@@ -15,9 +15,9 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
 <footer style="background:#E8EDF6; border-top:1px solid rgba(51,102,255,0.10);" class="mt-12 sm:mt-24">
   <div class="max-w-6xl mx-auto px-6 py-8 sm:py-12">
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-6 sm:gap-8 sm:mb-8">
+    <div class="grid grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-6 sm:mb-8">
       <!-- Brand -->
-      <div>
+      <div class="col-span-2 lg:col-span-1">
         <span class="text-lg font-black" style="color:#1A1F36; display:inline-flex; align-items:center; gap:8px;"><Image src={appIcon} alt="Boatpass Logo" width={52} height={52} loading="lazy" style="width:26px;height:26px;border-radius:6px;" /> Boat<span style="color:#3366FF;">Pass</span></span>
         <p class="text-gray-500 text-sm mt-2">
           {lang === 'de'
