@@ -59,7 +59,7 @@ Mit dem Stopperstek schlägst du eine dünnere Leine an eine **dickere, unter Sp
 
 Der Palstek ist der **wichtigste Knoten an Bord**. Er bildet eine feste, sich **nicht zuziehende Schlaufe** und lässt sich auch nach starker Belastung wieder lösen. „Die Schlange kommt aus dem See, um den Baum herum und wieder in den See" ist die klassische Merkhilfe.
 
-**Verwendung:** feste Schlaufe, z. B. zum Festmachen über einen Poller oder als Rettungsschlaufe.
+**Verwendung:** feste Schlaufe, z. B. zum Festmachen über einen Poller, als Rettungsschlaufe oder zum Sichern der Ankerleine. Wie du Ankertyp und Ankerplatz richtig wählst, liest du im Artikel [Richtig ankern: Grundlagen, Ankerarten und die häufigsten Fehler](/blog/richtig-ankern-grundlagen-ankerarten-fehler/).
 
 ### 8. Schotstek
 

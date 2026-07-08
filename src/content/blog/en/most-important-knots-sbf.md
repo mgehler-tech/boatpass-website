@@ -59,7 +59,7 @@ With the rolling hitch you attach a thinner line to a **thicker line under tensi
 
 The bowline is the **most important knot on board**. It forms a fixed, **non-tightening loop** and can be undone even after heavy load. "The rabbit comes out of the hole, around the tree, and back down the hole" is the classic memory aid.
 
-**Use:** a fixed loop, e.g. for making fast over a bollard or as a rescue loop.
+**Use:** a fixed loop, e.g. for making fast over a bollard, as a rescue loop, or for securing an anchor rode. For choosing the right anchor type and anchorage, see [Anchoring basics: anchor types and the most common mistakes](/en/blog/anchoring-basics-anchor-types-mistakes/).
 
 ### 8. Sheet Bend
 

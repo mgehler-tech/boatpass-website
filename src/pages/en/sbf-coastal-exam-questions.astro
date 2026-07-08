@@ -15,12 +15,12 @@ const breadcrumbSchema = {
   ],
 };
 
-const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & collision regulations', count: 130, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
-  { name: 'Navigation & charts', desc: 'Chartwork, courses, tides & current', count: 72, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 40, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Signals & marks', desc: 'Sound, visual and sea marks', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
-  { name: 'Meteorology', desc: 'Wind, weather, tide tables & forecasting', count: 10, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
+const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string; link?: string }[] = [
+  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & collision regulations', count: 130, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)', link: '/en/blog/right-of-way-collision-rules/' },
+  { name: 'Navigation & charts', desc: 'Chartwork, courses, tides & current', count: 72, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)', link: '/en/blog/sbf-coastal-navigation-tasks-explained/' },
+  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 40, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)', link: '/en/blog/life-jacket-buoyancy-classes/' },
+  { name: 'Signals & marks', desc: 'Sound, visual and sea marks', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)', link: '/en/blog/sea-marks-lateral-system-explained/' },
+  { name: 'Meteorology', desc: 'Wind, weather, tide tables & forecasting', count: 10, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)', link: '/en/blog/weather-beaufort-scale/' },
   { name: 'General', desc: 'General fundamentals & seamanship', count: 5, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
 ];
 
@@ -191,7 +191,9 @@ const faqSchema = {
               <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
             </span>
             <div style="flex:1; min-width:0;">
-              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
+              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">
+                {c.link ? <a href={c.link} style="color:inherit; text-decoration:underline;">{c.name}</a> : c.name}
+              </div>
               <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;">{c.desc}</div>
             </div>
             <span style="font-size:12px; font-weight:700; color:#6B7280; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} questions</span>
@@ -208,6 +210,7 @@ const faqSchema = {
         <a href="/en/sbf-inland-exam-questions/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Practice SBF Inland exam questions</a>
         <a href="/en/sbf-exam/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF exam: how theory & practice work</a>
         <a href="/en/sbf-costs/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ What does the boating license cost?</a>
+        <a href="/en/blog/hardest-sbf-exam-questions/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ The hardest SBF exam questions</a>
       </div>
     </section>
 

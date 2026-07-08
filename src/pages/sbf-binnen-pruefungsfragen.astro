@@ -15,12 +15,12 @@ const breadcrumbSchema = {
   ],
 };
 
-const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'Schifffahrtsrecht', desc: 'Vorfahrtregeln, Lichterführung & Wasserstraßenordnung', count: 124, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
-  { name: 'Navigation', desc: 'Karten, Kurse, Positionen & Peilungen', count: 52, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Sicherheit', desc: 'Rettungsausrüstung, Notsignale & Sicherheitsverhalten', count: 39, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Signale & Zeichen', desc: 'Schallzeichen, Sichtzeichen & Flaggen', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
-  { name: 'Wetterkunde', desc: 'Wind, Wetter & Vorhersage', count: 5, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
+const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string; link?: string }[] = [
+  { name: 'Schifffahrtsrecht', desc: 'Vorfahrtregeln, Lichterführung & Wasserstraßenordnung', count: 124, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)', link: '/blog/ausweichregeln-vorfahrt-wasser/' },
+  { name: 'Navigation', desc: 'Karten, Kurse, Positionen & Peilungen', count: 52, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)', link: '/blog/kompass-missweisung-deviation-erklaert/' },
+  { name: 'Sicherheit', desc: 'Rettungsausrüstung, Notsignale & Sicherheitsverhalten', count: 39, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)', link: '/blog/rettungsweste-auftriebsklassen/' },
+  { name: 'Signale & Zeichen', desc: 'Schallzeichen, Sichtzeichen & Flaggen', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)', link: '/blog/schallsignale-sbf-erklaert/' },
+  { name: 'Wetterkunde', desc: 'Wind, Wetter & Vorhersage', count: 5, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)', link: '/blog/wetterkunde-beaufort/' },
   { name: 'Allgemein', desc: 'Allgemeine Grundlagen & Seemannschaft', count: 3, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
 ];
 
@@ -180,7 +180,9 @@ const faqSchema = {
               <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
             </span>
             <div style="flex:1; min-width:0;">
-              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
+              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">
+                {c.link ? <a href={c.link} style="color:inherit; text-decoration:underline;">{c.name}</a> : c.name}
+              </div>
               <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;">{c.desc}</div>
             </div>
             <span style="font-size:12px; font-weight:700; color:#6B7280; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} Fragen</span>
@@ -197,6 +199,7 @@ const faqSchema = {
         <a href="/sbf-see-pruefungsfragen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See Prüfungsfragen üben</a>
         <a href="/sbf-pruefung-ablauf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Prüfung: Ablauf von Theorie & Praxis</a>
         <a href="/sbf-kosten/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Was kostet der Sportbootführerschein?</a>
+        <a href="/blog/schwierigste-sbf-pruefungsfragen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Die schwierigsten SBF-Prüfungsfragen</a>
       </div>
     </section>
 
