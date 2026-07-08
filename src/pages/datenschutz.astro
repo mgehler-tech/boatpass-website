@@ -3,8 +3,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Datenschutzerklärung – Boatpass"
-  description="Datenschutzerklärung der Boatpass-Website gemäß DSGVO."
+  title="Datenschutzerklärung – BoatPass"
+  description="Datenschutzerklärung der BoatPass Android-App und Website gemäß DSGVO."
   lang="de"
   altUrl="https://boatpass.de/en/privacy/"
   showCta={false}
@@ -17,21 +17,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Datenschutz
       </div>
       <h1 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:12px;">Datenschutzerklärung</h1>
-      <p style="font-size:16px; color:#6B7280;">Informationen gemäß DSGVO zur Verarbeitung personenbezogener Daten.</p>
+      <p style="font-size:16px; color:#6B7280;">Diese Datenschutzerklärung gilt für die <strong style="color:#1A1F36;">BoatPass Android-App</strong> sowie die <strong style="color:#1A1F36;">Website boatpass.de</strong>. Zuletzt aktualisiert: Juli 2026.</p>
     </div>
 
-    <!-- 1. Verantwortlicher -->
+    <!-- 01 Verantwortlicher -->
     <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
       <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">01</div>
       <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Verantwortlicher</h2>
       <p style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:4px;">Marius Gehler</p>
       <p style="font-size:15px; color:#4B5563; line-height:1.7;">
         Blissestraße 56 · 10713 Berlin<br />
-        <a href="mailto:sbftestapp@gmail.com" style="color:#3366FF; text-decoration:none;">sbftestapp@gmail.com</a>
+        <a href="mailto:m.gehler@hotmail.de" style="color:#3366FF; text-decoration:none;">m.gehler@hotmail.de</a>
       </p>
     </div>
 
-    <!-- 2. Hosting -->
+    <!-- Section divider: Website -->
+    <div style="display:flex; align-items:center; gap:12px; margin:32px 0 20px;">
+      <span style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#9CA3AF; white-space:nowrap;">Website</span>
+      <div style="flex:1; height:1px; background:rgba(0,0,0,0.08);"></div>
+    </div>
+
+    <!-- 02 Hosting -->
     <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
       <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">02</div>
       <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Hosting</h2>
@@ -46,10 +52,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
 
-    <!-- 3. Analytics -->
+    <!-- 03 Analytics -->
     <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
       <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">03</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Analytics</h2>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Website-Analytics</h2>
       <p style="font-size:15px; color:#4B5563; line-height:1.7;">
         Diese Website verwendet <strong style="color:#1A1F36;">Plausible Analytics</strong> – ein datenschutzfreundliches Tool ohne Cookies und ohne Erhebung personenbezogener Daten. Es wird kein Consent-Banner benötigt.
       </p>
@@ -59,7 +65,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </a>
     </div>
 
-    <!-- 4. Kontaktformular -->
+    <!-- 04 Kontaktformular -->
     <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
       <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">04</div>
       <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Kontaktformular</h2>
@@ -71,23 +77,149 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
 
-    <!-- 5. Deine Rechte -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
+    <!-- Section divider: App -->
+    <div style="display:flex; align-items:center; gap:12px; margin:32px 0 20px;">
+      <span style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#9CA3AF; white-space:nowrap;">Android-App</span>
+      <div style="flex:1; height:1px; background:rgba(0,0,0,0.08);"></div>
+    </div>
+
+    <!-- 05 Lokale Datenspeicherung -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
       <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">05</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Deine Rechte</h2>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Grundsatz: Lokale Datenspeicherung</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        BoatPass speichert Lernfortschritt, Einstellungen und Kaufstatus <strong style="color:#1A1F36;">ausschließlich lokal auf deinem Gerät</strong>. Darüber hinaus werden Dienste von Google zur Analyse und Stabilitätsverbesserung eingesetzt, die im Folgenden beschrieben sind.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+        {[
+          'Lernfortschritt (beantwortete Fragen, Fehlerquoten, Streaks)',
+          'Einstellungen (Sprache, Benachrichtigungszeiten, Tagesziel)',
+          'Kaufstatus (welche Kataloge erworben wurden)',
+          'Prüfungshistorie (Ergebnisse vergangener Simulationsprüfungen)',
+        ].map(item => (
+          <div style="display:flex; align-items:flex-start; gap:10px;">
+            <span style="color:#3366FF; font-size:14px; flex-shrink:0; margin-top:2px;">·</span>
+            <span style="font-size:14px; color:#4B5563;">{item} – lokal im App-Speicher, verlässt dein Gerät nicht.</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 06 Firebase Analytics -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">06</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Firebase Analytics (Google LLC)</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
+        Wir nutzen <strong style="color:#1A1F36;">Firebase Analytics</strong> von Google LLC, um die Nutzung der App zu verstehen und zu verbessern. Dabei werden erhoben: aufgerufene Screens und Funktionen, Gerätetyp, Betriebssystemversion, Spracheinstellung, App-Version, Installationsquelle, Sitzungsdauer sowie die anonyme Werbe-ID (Android Advertising ID).
+      </p>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Google LLC fungiert als Auftragsverarbeiter gemäß Art. 28 DSGVO. Die IP-Adresse wird vor der Speicherung anonymisiert. Übermittlung in die USA auf Grundlage des EU-US Data Privacy Framework (Art. 45 DSGVO). Weitere Informationen: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:none;">firebase.google.com/support/privacy</a>
+      </p>
+      <div style="margin-top:12px; background:rgba(51,102,255,0.05); border-radius:10px; padding:12px 16px; font-size:13px; color:#4B5563; display:flex; flex-direction:column; gap:6px;">
+        <div><strong style="color:#1A1F36;">Speicherdauer:</strong> Ereignisdaten standardmäßig 2 Monate.</div>
+        <div><strong style="color:#1A1F36;">Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an App-Qualität).</div>
+        <div><strong style="color:#1A1F36;">Widerruf:</strong> App → Mehr → Datenschutz → Analytics deaktivieren.</div>
+      </div>
+    </div>
+
+    <!-- 07 Firebase Crashlytics -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">07</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Firebase Crashlytics (Google LLC)</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Wir nutzen <strong style="color:#1A1F36;">Firebase Crashlytics</strong>, um App-Abstürze zu erkennen und zu beheben. Bei einem Absturz werden automatisch Stack Trace, Fehlermeldung, Gerätezustand (Speicher, Betriebssystem, App-Version) sowie eine anonymisierte Installations-ID übermittelt. Keine personenbezogenen Nutzerdaten oder Lerninhalte werden übertragen.
+      </p>
+      <div style="margin-top:12px; background:rgba(51,102,255,0.05); border-radius:10px; padding:12px 16px; font-size:13px; color:#4B5563; display:flex; flex-direction:column; gap:6px;">
+        <div><strong style="color:#1A1F36;">Speicherdauer:</strong> 90 Tage.</div>
+        <div><strong style="color:#1A1F36;">Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO (technische Stabilität).</div>
+      </div>
+    </div>
+
+    <!-- 08 Firebase Remote Config -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">08</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Firebase Remote Config (Google LLC)</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Wir nutzen <strong style="color:#1A1F36;">Firebase Remote Config</strong>, um App-Konfigurationen (z.&nbsp;B. Feature-Flags) ohne App-Update anpassen zu können. Dabei werden keine personenbezogenen Daten übermittelt – lediglich eine anonyme Installations-ID zur Auslieferung der Konfiguration.
+      </p>
+      <div style="margin-top:12px; background:rgba(51,102,255,0.05); border-radius:10px; padding:12px 16px; font-size:13px; color:#4B5563;">
+        <strong style="color:#1A1F36;">Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. f DSGVO.
+      </div>
+    </div>
+
+    <!-- 09 Google Play Billing -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">09</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Google Play Billing</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Käufe in der App werden über <strong style="color:#1A1F36;">Google Play Billing</strong> abgewickelt. Dabei gelten die Datenschutzbestimmungen von Google (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:none;">policies.google.com/privacy</a>). Wir erhalten keine Zahlungsdaten; Google teilt uns lediglich mit, ob ein gültiger Kauf vorliegt.
+      </p>
+      <div style="margin-top:12px; background:rgba(51,102,255,0.05); border-radius:10px; padding:12px 16px; font-size:13px; color:#4B5563;">
+        <strong style="color:#1A1F36;">Rechtsgrundlage:</strong> Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).
+      </div>
+    </div>
+
+    <!-- 10 Benachrichtigungen -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">10</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Benachrichtigungen</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Wenn du Lern-Erinnerungen aktivierst, werden <strong style="color:#1A1F36;">lokale Benachrichtigungen</strong> auf deinem Gerät geplant. Es werden keine Push-Nachrichten über externe Server versendet. Du kannst die Berechtigung jederzeit in den Geräteeinstellungen widerrufen.
+      </p>
+    </div>
+
+    <!-- Section divider: Allgemein -->
+    <div style="display:flex; align-items:center; gap:12px; margin:32px 0 20px;">
+      <span style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#9CA3AF; white-space:nowrap;">Allgemein</span>
+      <div style="flex:1; height:1px; background:rgba(0,0,0,0.08);"></div>
+    </div>
+
+    <!-- 11 Datenweitergabe -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">11</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Datenweitergabe an Dritte</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Daten werden ausschließlich im Rahmen der oben beschriebenen Dienste weitergegeben: Google-Dienste (Firebase Analytics, Crashlytics, Remote Config, Google Play Billing), Netlify und Cloudflare für den Website-Betrieb sowie Formspree für das Kontaktformular. Eine darüber hinausgehende Weitergabe an Dritte findet nicht statt.
+      </p>
+    </div>
+
+    <!-- 12 Datenlöschung -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">12</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Datenlöschung</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Alle lokal in der App gespeicherten Daten werden gelöscht, wenn du die App deinstallierst. Du kannst den Lernfortschritt jederzeit manuell über <strong style="color:#1A1F36;">Mehr → Fortschritt zurücksetzen</strong> löschen. Da Firebase Analytics aggregierte und anonymisierte Daten verarbeitet, ist eine individuelle Identifikation und Löschung einzelner Datensätze technisch nicht möglich. Für sonstige Löschanfragen: <a href="mailto:m.gehler@hotmail.de" style="color:#3366FF; text-decoration:none; font-weight:600;">m.gehler@hotmail.de</a>
+      </p>
+    </div>
+
+    <!-- 13 Deine Rechte -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">13</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Deine Rechte (DSGVO)</h2>
       <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:16px;">
         Du hast gemäß DSGVO das Recht auf:
       </p>
       <div style="display:flex; flex-direction:column; gap:8px; margin-bottom:20px;">
-        {['Auskunft über gespeicherte Daten (Art. 15)', 'Berichtigung unrichtiger Daten (Art. 16)', 'Löschung deiner Daten (Art. 17)', 'Einschränkung der Verarbeitung (Art. 18)', 'Datenübertragbarkeit (Art. 20)', 'Widerspruch gegen die Verarbeitung (Art. 21)'].map(r => (
+        {[
+          'Auskunft über gespeicherte Daten (Art. 15)',
+          'Berichtigung unrichtiger Daten (Art. 16)',
+          'Löschung deiner Daten (Art. 17)',
+          'Einschränkung der Verarbeitung (Art. 18)',
+          'Datenübertragbarkeit (Art. 20)',
+          'Widerspruch gegen die Verarbeitung (Art. 21)',
+          'Beschwerde bei einer Aufsichtsbehörde (Art. 77)',
+        ].map(r => (
           <div style="display:flex; align-items:center; gap:10px;">
             <span style="color:#3366FF; font-size:14px; flex-shrink:0;">✓</span>
             <span style="font-size:14px; color:#4B5563;">{r}</span>
           </div>
         ))}
       </div>
+      <p style="font-size:14px; color:#6B7280; margin-bottom:8px;">
+        Zuständige Aufsichtsbehörde: Berliner Beauftragte für Datenschutz und Informationsfreiheit (BlnBDI), Friedrichstr. 219, 10969 Berlin.
+      </p>
       <p style="font-size:14px; color:#6B7280;">
-        Für alle Anfragen: <a href="mailto:sbftestapp@gmail.com" style="color:#3366FF; text-decoration:none; font-weight:600;">sbftestapp@gmail.com</a>
+        Für alle Anfragen: <a href="mailto:m.gehler@hotmail.de" style="color:#3366FF; text-decoration:none; font-weight:600;">m.gehler@hotmail.de</a>
       </p>
     </div>
 

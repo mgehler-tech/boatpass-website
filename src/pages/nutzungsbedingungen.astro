@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Nutzungsbedingungen – BoatPass"
+  description="Nutzungsbedingungen der BoatPass Android-App und Website."
+  lang="de"
+  altUrl="https://boatpass.de/en/terms/"
+  showCta={false}
+>
+  <div style="max-width:720px; margin:0 auto; padding:80px 24px 120px;">
+
+    <!-- Header -->
+    <div style="margin-bottom:48px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#3366FF; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
+        Rechtliches
+      </div>
+      <h1 style="font-size:42px; font-weight:900; letter-spacing:-2px; color:#1A1F36; line-height:1.1; margin-bottom:12px;">Nutzungsbedingungen</h1>
+      <p style="font-size:16px; color:#6B7280;">Gültig für die <strong style="color:#1A1F36;">BoatPass Android-App</strong> und die <strong style="color:#1A1F36;">Website boatpass.de</strong>. Zuletzt aktualisiert: Juli 2026.</p>
+    </div>
+
+    <!-- 01 Anbieter -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">01</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Anbieter</h2>
+      <p style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:4px;">Marius Gehler</p>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Blissestraße 56 · 10713 Berlin · Deutschland<br />
+        <a href="mailto:m.gehler@hotmail.de" style="color:#3366FF; text-decoration:none;">m.gehler@hotmail.de</a>
+      </p>
+    </div>
+
+    <!-- 02 Geltungsbereich -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">02</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Geltungsbereich</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Diese Nutzungsbedingungen gelten für die Nutzung der Android-App <strong style="color:#1A1F36;">BoatPass</strong> (Lern-App für den Sportbootführerschein) sowie der Website <strong style="color:#1A1F36;">boatpass.de</strong>. Mit der Nutzung der App oder der Website stimmst du diesen Bedingungen zu.
+      </p>
+    </div>
+
+    <!-- 03 Nutzungsvoraussetzungen -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">03</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Nutzungsvoraussetzungen</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Die App kann ab Android 8.0 kostenlos aus dem Google Play Store heruntergeladen werden. Für den Erwerb kostenpflichtiger Inhalte ist ein Google-Konto erforderlich.
+      </p>
+    </div>
+
+    <!-- 04 Kostenlose Nutzung & Käufe -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">04</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Kostenlose Nutzung &amp; Katalogkäufe</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:16px;">
+        BoatPass ist kostenlos herunterladbar. Einzelne Fragenkataloge sind als Einmalkauf erhältlich:
+      </p>
+      <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+        {[
+          ['SBF Binnen', 'Kostenlos mit Tageslimit (15 Fragen/Tag). Vollzugang (300 Fragen) per Einmalkauf.'],
+          ['SBF See', 'Vollzugang (285 Fragen, alle Modi) per Einmalkauf.'],
+          ['UKW-Sprechfunk (UBI)', 'Vollzugang (130 Fragen) per Einmalkauf.'],
+          ['Kurzstreckenzeugnis (SRC)', 'Vollzugang (180 Fragen) per Einmalkauf.'],
+          ['Langstreckenzeugnis (LRC)', 'Vollzugang (76 Fragen) per Einmalkauf.'],
+          ['Weitere Kataloge', 'Z.&nbsp;B. Bodenseeschifferpatent – in Vorbereitung.'],
+        ].map(([name, desc]) => (
+          <div style="display:flex; gap:12px; padding:12px 16px; background:rgba(51,102,255,0.03); border-radius:12px;">
+            <span style="font-size:14px; font-weight:700; color:#1A1F36; min-width:180px; flex-shrink:0;">{name}</span>
+            <span style="font-size:14px; color:#4B5563;" set:html={desc}></span>
+          </div>
+        ))}
+      </div>
+      <p style="font-size:14px; color:#6B7280; line-height:1.7;">
+        Preise und Umfang werden vor dem Kauf in der App und über Google Play angezeigt. Jeder Katalogkauf gilt nur für den jeweiligen Führerscheintyp.
+      </p>
+    </div>
+
+    <!-- 05 Widerrufsrecht -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">05</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Käufe, Widerrufsrecht &amp; Rückerstattungen</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
+        Käufe werden über Google Play abgewickelt.
+      </p>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
+        <strong style="color:#1A1F36;">Widerrufsrecht:</strong> Als Verbraucher in der EU steht dir grundsätzlich ein 14-tägiges Widerrufsrecht zu. Bei digitalen Inhalten (Fragenkatalogen), die nach dem Kauf sofort zugänglich gemacht werden, erlischt das Widerrufsrecht gemäß § 356 Abs. 5 BGB, sobald du der sofortigen Bereitstellung vor Ablauf der Widerrufsfrist ausdrücklich zugestimmt und bestätigt hast, dass du damit dein Widerrufsrecht verlierst. Diese Zustimmung wird im Rahmen des Google-Play-Kaufprozesses eingeholt.
+      </p>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Rückerstattungen richten sich nach den <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:none;">Rückgaberichtlinien von Google Play</a>. Bei weiteren Problemen: <a href="mailto:m.gehler@hotmail.de" style="color:#3366FF; text-decoration:none; font-weight:600;">m.gehler@hotmail.de</a>
+      </p>
+    </div>
+
+    <!-- 06 Fragenkatalog & Aktualität -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">06</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Fragenkatalog &amp; Aktualität</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Die Fragenkataloge basieren auf den offiziellen Prüfungsfragen der zuständigen Behörden (SBF Binnen: GDWS; SBF See: BSH; zuletzt aktualisiert August 2023, gültig für Prüfungsjahr 2026). Wir bemühen uns um aktuelle Inhalte, übernehmen jedoch keine Haftung für vollständige Übereinstimmung mit dem jeweils gültigen Prüfungsstand. <strong style="color:#1A1F36;">Die App dient der Lernunterstützung und ersetzt keine offizielle Prüfungsvorbereitung.</strong>
+      </p>
+    </div>
+
+    <!-- 07 Haftung -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">07</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Haftung</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
+        Wir haften unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für Vorsatz und grobe Fahrlässigkeit. Für leichte Fahrlässigkeit haften wir nur bei Verletzung einer wesentlichen Vertragspflicht (Kardinalpflicht), und auch dann nur in Höhe des vorhersehbaren, typischen Schadens. Eine weitergehende Haftung ist ausgeschlossen. Die Haftung nach dem Produkthaftungsgesetz bleibt unberührt.
+      </p>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Insbesondere wird keine Garantie dafür übernommen, dass die Nutzung der App zum Bestehen einer Prüfung führt.
+      </p>
+    </div>
+
+    <!-- 08 Änderungen -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">08</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Änderungen der Nutzungsbedingungen</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Wir behalten uns vor, diese Nutzungsbedingungen aus sachlichem Grund zu ändern (z.&nbsp;B. bei Änderungen der Rechtslage, neuen Funktionen oder geändertem Geschäftsmodell). Über wesentliche Änderungen informieren wir rechtzeitig innerhalb der App. Wenn du die App nach dem Inkrafttreten der geänderten Bedingungen weiter nutzt, gilt dies als Zustimmung.
+      </p>
+    </div>
+
+    <!-- 09 Anwendbares Recht -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">09</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Anwendbares Recht &amp; Gerichtsstand</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        Es gilt deutsches Recht. Gerichtsstand für Streitigkeiten mit Unternehmern ist Berlin. Für Verbraucher gelten die gesetzlichen Regelungen zum Gerichtsstand.
+      </p>
+    </div>
+
+  </div>
+</BaseLayout>
