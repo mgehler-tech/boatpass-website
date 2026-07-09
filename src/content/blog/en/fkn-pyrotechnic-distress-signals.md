@@ -43,7 +43,7 @@ Alongside the FKN there is also the broader **Sachkundenachweis (SKN)** for dist
 
 ## How to obtain the FKN
 
-The FKN is earned through an exam offered by water sports associations, boating schools and recognized training providers. It typically consists of a theoretical part, covering the legal basis, the categories and correct use of the signal devices, and a practical part, where safe handling of distress signals is practiced and demonstrated under supervision. Admission to the exam generally requires a minimum age of 16, often combined with holding a recreational boating license or a comparable qualification. Check directly with your boating school or water sports association for the exact admission requirements and available dates near you.
+The FKN is earned through an exam offered by water sports associations, boating schools and recognized training providers. It typically consists of a theoretical part, covering the legal basis, the categories and correct use of the signal devices, and a practical part, where safe handling of distress signals is practiced and demonstrated under supervision. Admission to the exam generally requires a minimum age of 16, and typically also holding a recreational boating license or a comparable qualification. Check directly with your boating school or water sports association for the exact admission requirements and available dates near you.
 
 Once you pass, the FKN is **valid indefinitely**. No refresher or renewal is required, so the certificate stays valid for life. That sets it apart from equipment like fire extinguishers or life rafts, which need regular servicing or inspection, while the FKN itself remains an unchanging qualification once earned.
 
