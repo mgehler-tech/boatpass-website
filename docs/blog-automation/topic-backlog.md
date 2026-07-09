@@ -15,7 +15,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Kompass, Missweisung und Deviation einfach erklärt (2026-07-04: kompass-missweisung-deviation-erklaert / compass-variation-deviation-explained)
 - [x] Anlegen und Ablegen – Hafenmanöver für Einsteiger (2026-07-05: anlegen-ablegen-hafenmanoever / docking-undocking-harbor-maneuvers)
 - [x] Richtig ankern – Grundlagen, Ankerarten, häufige Fehler (2026-07-06: richtig-ankern-grundlagen-ankerarten-fehler / anchoring-basics-anchor-types-mistakes)
-- [ ] Pyrotechnik an Bord – Fachkundenachweis (FKN) und Seenotsignalmittel
+- [x] Pyrotechnik an Bord – Fachkundenachweis (FKN) und Seenotsignalmittel (2026-07-09: fkn-pyrotechnik-seenotsignalmittel / fkn-pyrotechnic-distress-signals)
 - [x] Erste Hilfe an Bord – die wichtigsten Maßnahmen auf dem Wasser (2026-07-08: erste-hilfe-an-bord / first-aid-on-board)
 - [ ] Betonnung Nord- vs. Ostsee – Unterschiede im Lateralsystem
 - [ ] SBF mit eigenem Boot oder Charterboot – was passt zu wem?

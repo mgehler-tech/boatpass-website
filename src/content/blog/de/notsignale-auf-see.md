@@ -25,9 +25,9 @@ Pyrotechnische Seenotsignale erzeugen ein auffälliges optisches Signal. Sie sin
 
 Als Faustregel gilt: **Rote** Signale sind Lichtsignale für die Alarmierung und Nahbereichsmarkierung, **orangefarbene** Signale sind Rauchsignale für den Tag.
 
-### Wichtig: Sachkundenachweis für pyrotechnische Signalmittel
+### Wichtig: Fachkundenachweis für pyrotechnische Signalmittel
 
-Für den Erwerb und die Verwendung bestimmter pyrotechnischer Seenotsignale – insbesondere der roten Fallschirmrakete und der roten Handfackel – brauchst du in Deutschland den **Fachkundenachweis (FKN)**. Der ist nicht Teil des Sportbootführerscheins, wird aber oft direkt mitgemacht. Schwächere Signalmittel der niedrigsten Gefahrenklasse sind davon ausgenommen.
+Für den Erwerb und die Verwendung der **roten Fallschirmrakete** (Kategorie P2) brauchst du in Deutschland den **Fachkundenachweis (FKN)**. Der ist nicht Teil des Sportbootführerscheins, wird aber oft direkt mitgemacht. Die **rote Handfackel** und kleinere Rauchsignale zählen dagegen zur erlaubnisfreien Kategorie P1 und sind ab 18 Jahren ohne Nachweis erhältlich. Mehr zu den Kategorien, dem Erwerb des FKN und der richtigen Lagerung liest du im Artikel [FKN und Pyrotechnik an Bord](/blog/fkn-pyrotechnik-seenotsignalmittel/).
 
 ## Nicht-pyrotechnische Notsignale
 

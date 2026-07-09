@@ -27,7 +27,7 @@ A rule of thumb: **red** signals are light signals for alerting and close-range 
 
 ### Important: competence certificate for pyrotechnic signals
 
-To buy and use certain pyrotechnic distress signals in Germany – in particular the red parachute rocket and the red hand flare – you need the **competence certificate (Fachkundenachweis, FKN)**. It is not part of the boating license, but is often taken at the same time. Weaker signals of the lowest hazard class are exempt.
+To buy and use the **red parachute rocket** (category P2) in Germany, you need the **competence certificate (Fachkundenachweis, FKN)**. It is not part of the boating license, but is often taken at the same time. The **red hand flare** and smaller smoke signals, by contrast, fall under the permit-free category P1 and are available from age 18 without any certificate. For more on the categories, obtaining the FKN, and proper storage, see [Flares explained: the FKN certificate](/en/blog/fkn-pyrotechnic-distress-signals/).
 
 ## Non-pyrotechnic distress signals
 
