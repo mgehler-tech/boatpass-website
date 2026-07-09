@@ -268,6 +268,23 @@ const single = only ? rows.find(r => r.key === only) : null;
     align-items: flex-start;
     gap: 8px;
   }
+  /* Quell-Link in den mobilen Katalog-Karten: als einziges interaktives Element
+     der Karte braucht er eine ausreichend große Touch-Fläche (WCAG 2.5.5 –
+     mind. 44px). Als reine Textzeile war er nur ~16px hoch und damit auf dem
+     Handy schwer präzise zu treffen – dieselbe Behandlung, die Footer- und
+     Blog-Teaser-Links bereits erhalten haben. inline-flex hält die Fläche auf
+     die tatsächliche Linkbreite begrenzt (keine ganze Kartenbreite tappbar),
+     die symmetrischen negativen Ränder gleichen die zusätzliche Box-Höhe
+     optisch aus, damit der Whitespace ober- und unterhalb des Links dem
+     bisherigen Rhythmus der Karte entspricht. Nur mobile, Farben/Schrift des
+     Corporate Designs bleiben unberührt. */
+  .cat-card .src-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+  }
 
   .cat-foot { margin-top: 24px; }
   .validity-note {
