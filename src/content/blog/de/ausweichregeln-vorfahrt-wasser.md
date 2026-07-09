@@ -32,6 +32,8 @@ Welches Fahrzeug ausweichen muss, ergibt sich aus einer **Rangordnung**. Grundsa
 
 **Merkhilfe:** Ein Maschinenfahrzeug weicht dem Segler aus, der Segler dem Fischer, der Fischer dem Manövrierbehinderten – und alle dem Manövrierunfähigen.
 
+> **Hinweis SBF See:** KVR Regel 18d kennt zusätzlich das **tiefgangbehinderte Fahrzeug** (*vessel constrained by her draught* – drei rote Rundumlichter senkrecht). Andere Fahrzeuge dürfen seine sichere Durchfahrt nicht behindern. Es steht nicht formal in der Rangordnung oben, sondern ist eine eigenständige Sonderkategorie.
+
 ## Zwei Maschinenfahrzeuge
 
 ### Entgegengesetzte Kurse (von vorn)

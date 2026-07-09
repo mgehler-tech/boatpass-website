@@ -28,7 +28,7 @@ Der [SBF Binnen](/sbf-binnen/) gilt auf allen **deutschen Binnenschifffahrtsstra
 
 - Rhein, Elbe, Mosel, Donau, Weser, Oder
 - Havel, Spree, Müritz, Chiemsee
-- Nord-Ostsee-Kanal, Elbe-Lübeck-Kanal
+- Elbe-Lübeck-Kanal
 - Masurische Seen (Polen – hier gelten jedoch polnische Regeln)
 
 **Für wen:** Wer hauptsächlich in Deutschland auf Binnengewässern fahren möchte – Hausboottörns, Flussreisen, Seen in Brandenburg oder Bayern.
@@ -39,6 +39,7 @@ Der [SBF See](/sbf-see/) gilt auf den deutschen **Seeschifffahrtsstraßen** – 
 
 - Nordsee: Wattenmeer, Helgoland
 - Ostsee: Kieler Förde, Rügen, Usedom
+- **Nord-Ostsee-Kanal** (NOK, Brunsbüttel–Kiel) – Seeschifffahrtsstraße, kein Binnengewässer
 - International: Kroatische Küste, Griechische Inseln, Mallorca
 
 **Für wen:** Wer Küstenurlaub mit dem eigenen Boot plant oder Charterboote in Küstengebieten mieten möchte.

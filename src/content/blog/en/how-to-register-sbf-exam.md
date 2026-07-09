@@ -45,7 +45,7 @@ Exactly which documents are required depends on the association and exam locatio
 
 ## Minimum Age
 
-- **SBF Binnen:** from age 16 (engine), under sail in some cases from 14
+- **SBF Binnen:** from age 16
 - **SBF See:** from age 16
 
 You can often take the exam shortly **before** reaching the minimum age – the license is then issued on your birthday.

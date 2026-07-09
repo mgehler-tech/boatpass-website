@@ -89,7 +89,7 @@ Kardinalzeichen zeigen an, auf welcher Seite du eine Gefahrenstelle **gefahrlos 
 
 Viele Seezeichen tragen ein **Feuer** (Licht). Die Kennung beschreibt den Rhythmus und wird in der [Seekarte](/blog/seekarte-lesen-lernen/) abgekürzt:
 
-- **Fl (Blitz/Funkel):** kurze Lichtblitze, längere Dunkelphasen
+- **Fl (Blitz/Einzelblitz):** ein kurzer Blitz pro Periode, Dunkelphase überwiegt
 - **Oc (Unterbrochen):** überwiegend Licht, kurze Dunkelphasen
 - **Iso (Gleichtakt):** Hell- und Dunkelphasen gleich lang
 - **Q (Quick / Funkelfeuer):** schnelle Blitzfolge – typisch für **Kardinalzeichen**

@@ -32,6 +32,8 @@ Which vessel must give way follows a **hierarchy**. Principle: whoever can maneu
 
 **Memory aid:** a power-driven vessel gives way to a sailing vessel, the sailing vessel to a fishing vessel, the fishing vessel to one restricted in maneuvering – and everyone to a vessel not under command.
 
+> **Note for SBF See candidates:** COLREG Rule 18(d) also introduces the **vessel constrained by her draught** (three red all-round lights, vertical). Other vessels must not impede her safe passage. She is not ranked within the hierarchy above but is a separate special category.
+
 ## Two Power-Driven Vessels
 
 ### Head-On

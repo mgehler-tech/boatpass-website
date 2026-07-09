@@ -19,7 +19,7 @@ Valid on all German **inland waterways** – rivers, canals, and lakes officiall
 
 - Rhine, Elbe, Mosel, Danube, Weser
 - Havel, Spree, Müritz, Chiemsee
-- Nord-Ostsee-Kanal, Elbe-Lübeck-Kanal
+- Elbe-Lübeck-Kanal
 
 **Best for:** Houseboat trips in Germany, river cruising, lakes in Brandenburg or Bavaria.
 
@@ -29,6 +29,7 @@ Valid on German **coastal waterways** and coastal waters internationally:
 
 - North Sea: Wadden Sea, Helgoland
 - Baltic Sea: Kiel Fjord, Rügen, Usedom
+- **Nord-Ostsee-Kanal** (NOK, Brunsbüttel–Kiel) – classified as a coastal waterway (Seeschifffahrtsstraße), not inland
 - International: Croatian coast, Greek islands, Mallorca
 
 **Best for:** Coastal sailing holidays, chartering boats in Mediterranean or Baltic destinations.
