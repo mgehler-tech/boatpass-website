@@ -101,11 +101,11 @@ const compare = [
 ];
 
 const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'Schifffahrtsrecht', desc: 'Vorfahrtregeln, Lichterführung & Kollisionsverhütungsregeln', count: 130, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
-  { name: 'Navigation & Seekarte', desc: 'Kartenarbeit, Kurse, Gezeiten & Strom', count: 72, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Sicherheit', desc: 'Rettungsausrüstung, Notsignale & Sicherheitsverhalten', count: 40, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Signale & Zeichen', desc: 'Schall-, Sicht- und Seezeichen', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
-  { name: 'Wetterkunde', desc: 'Wind, Wetter, Gezeitentafel & Vorhersage', count: 10, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
+  { name: 'Schifffahrtsrecht', desc: '<a href="/blog/ausweichregeln-vorfahrt-wasser/" style="color:inherit; text-decoration:underline;">Vorfahrtregeln</a>, <a href="/blog/lichterfuehrung-erklaert/" style="color:inherit; text-decoration:underline;">Lichterführung</a> & Kollisionsverhütungsregeln', count: 130, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
+  { name: 'Navigation & Seekarte', desc: '<a href="/blog/seekarte-lesen-lernen/" style="color:inherit; text-decoration:underline;">Kartenarbeit</a>, <a href="/blog/kursumrechnung-sbf-see/" style="color:inherit; text-decoration:underline;">Kurse</a>, <a href="/blog/gezeiten-zwoelftelregel/" style="color:inherit; text-decoration:underline;">Gezeiten</a> & Strom', count: 72, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
+  { name: 'Sicherheit', desc: '<a href="/blog/rettungsweste-auftriebsklassen/" style="color:inherit; text-decoration:underline;">Rettungsausrüstung</a>, <a href="/blog/erste-hilfe-an-bord/" style="color:inherit; text-decoration:underline;">Erste Hilfe</a>, <a href="/blog/notsignale-auf-see/" style="color:inherit; text-decoration:underline;">Notsignale</a> & <a href="/blog/fkn-pyrotechnik-seenotsignalmittel/" style="color:inherit; text-decoration:underline;">Pyrotechnik</a> an Bord', count: 40, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
+  { name: 'Signale & Zeichen', desc: '<a href="/blog/schallsignale-sbf-erklaert/" style="color:inherit; text-decoration:underline;">Schallzeichen</a>, Sichtzeichen und <a href="/blog/seezeichen-lateralsystem/" style="color:inherit; text-decoration:underline;">Seezeichen</a>', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
+  { name: 'Wetterkunde', desc: 'Wind, <a href="/blog/wetterkunde-beaufort/" style="color:inherit; text-decoration:underline;">Wetter</a>, Gezeitentafel & Vorhersage', count: 10, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
   { name: 'Allgemein', desc: 'Allgemeine Grundlagen & Seemannschaft', count: 5, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
   { name: 'Navigationsaufgaben', desc: '15 Kartenaufgaben à 9 Fragen: Kurse, Standort, Gezeiten & Stromversatz', count: 135, icon: 'target', color: '#2563EB', bg: 'rgba(37,99,235,0.10)' },
 ];
@@ -201,7 +201,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
         </div>
         <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
           <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Praktische Manöver</div>
-          <div style="font-size:15px; color:#6B7280; line-height:1.65;">An- und Ablegen, Wenden, Aufstoppen und das Mann-über-Bord-Manöver.</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;"><a href="/blog/anlegen-ablegen-hafenmanoever/" style="color:inherit; text-decoration:underline;">An- und Ablegen</a>, Wenden, Aufstoppen und das <a href="/blog/mann-ueber-bord-manoever/" style="color:inherit; text-decoration:underline;">Mann-über-Bord-Manöver</a>.</div>
         </div>
         <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
           <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;"><a href="/blog/wichtigste-knoten-sbf/" style="color:inherit; text-decoration:underline;">Knoten</a></div>
@@ -316,7 +316,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
             </span>
             <div style="flex:1; min-width:0;">
               <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
-              <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;">{c.desc}</div>
+              <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;" set:html={c.desc} />
             </div>
             <span style="font-size:12px; font-weight:700; color:#6B7280; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} Fragen</span>
           </div>
@@ -356,6 +356,8 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
         <a href="/sbf-pruefung-ablauf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Prüfung: Ablauf von Theorie & Praxis</a>
         <a href="/blog/sbf-binnen-vs-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen vs. SBF See – was ist der Unterschied?</a>
         <a href="/blog/sbf-vorbereitung-wie-lange/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Wie lange muss ich für den SBF lernen?</a>
+        <a href="/blog/sbf-see-navigationsaufgaben-erklaert/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See Navigationsaufgaben erklärt – Aufbau & Tipps</a>
+        <a href="/blog/richtig-ankern-grundlagen-ankerarten-fehler/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Richtig ankern – Grundlagen, Ankerarten und häufige Fehler</a>
         <a href="/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Häufige Fragen zum Sportbootführerschein</a>
         <a href="/sbf-binnen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen lernen mit Boatpass</a>
       </div>

@@ -100,11 +100,11 @@ const compare = [
 ];
 
 const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & collision regulations', count: 130, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
-  { name: 'Navigation & charts', desc: 'Chartwork, courses, tides & current', count: 72, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 40, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Signals & marks', desc: 'Sound, visual and sea marks', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
-  { name: 'Meteorology', desc: 'Wind, weather, tide tables & forecasting', count: 10, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
+  { name: 'Maritime law', desc: '<a href="/en/blog/right-of-way-collision-rules/" style="color:inherit; text-decoration:underline;">Right-of-way rules</a>, <a href="/en/blog/navigation-lights-explained/" style="color:inherit; text-decoration:underline;">navigation lights</a> & collision regulations', count: 130, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
+  { name: 'Navigation & charts', desc: '<a href="/en/blog/how-to-read-a-nautical-chart/" style="color:inherit; text-decoration:underline;">Chartwork</a>, <a href="/en/blog/course-conversion-sbf-coastal/" style="color:inherit; text-decoration:underline;">courses</a>, <a href="/en/blog/tides-rule-of-twelfths/" style="color:inherit; text-decoration:underline;">tides</a> & current', count: 72, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
+  { name: 'Safety', desc: '<a href="/en/blog/life-jacket-buoyancy-classes/" style="color:inherit; text-decoration:underline;">Rescue equipment</a>, <a href="/en/blog/first-aid-on-board/" style="color:inherit; text-decoration:underline;">first aid</a>, <a href="/en/blog/distress-signals-at-sea/" style="color:inherit; text-decoration:underline;">distress signals</a> & <a href="/en/blog/fkn-pyrotechnic-distress-signals/" style="color:inherit; text-decoration:underline;">pyrotechnics</a> on board', count: 40, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
+  { name: 'Signals & marks', desc: '<a href="/en/blog/sound-signals-sbf-explained/" style="color:inherit; text-decoration:underline;">Sound signals</a>, visual and <a href="/en/blog/sea-marks-lateral-system-explained/" style="color:inherit; text-decoration:underline;">sea marks</a>', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
+  { name: 'Meteorology', desc: 'Wind, <a href="/en/blog/weather-beaufort-scale/" style="color:inherit; text-decoration:underline;">weather</a>, tide tables & forecasting', count: 10, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
   { name: 'General', desc: 'General fundamentals & seamanship', count: 5, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
   { name: 'Navigation tasks', desc: '15 chart tasks of 9 questions each: courses, position, tides & current set', count: 135, icon: 'target', color: '#2563EB', bg: 'rgba(37,99,235,0.10)' },
 ];
@@ -228,7 +228,7 @@ const navPoints: { icon: IconName; title: string; desc: string }[] = [
         </div>
         <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
           <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Practical maneuvers</div>
-          <div style="font-size:15px; color:#6B7280; line-height:1.65;">Coming alongside and casting off, turning, stopping and the man-overboard maneuver.</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;"><a href="/en/blog/docking-undocking-harbor-maneuvers/" style="color:inherit; text-decoration:underline;">Coming alongside and casting off</a>, turning, stopping and the <a href="/en/blog/man-overboard-maneuver/" style="color:inherit; text-decoration:underline;">man-overboard maneuver</a>.</div>
         </div>
         <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
           <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;"><a href="/en/blog/most-important-knots-sbf/" style="color:inherit; text-decoration:underline;">Knots</a></div>
@@ -343,7 +343,7 @@ const navPoints: { icon: IconName; title: string; desc: string }[] = [
             </span>
             <div style="flex:1; min-width:0;">
               <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
-              <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;">{c.desc}</div>
+              <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;" set:html={c.desc} />
             </div>
             <span style="font-size:12px; font-weight:700; color:#6B7280; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} questions</span>
           </div>
@@ -383,6 +383,7 @@ const navPoints: { icon: IconName; title: string; desc: string }[] = [
         <a href="/en/sbf-exam/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF exam: how theory & practice work</a>
         <a href="/en/blog/sbf-inland-vs-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Inland vs. SBF Coastal – what's the difference?</a>
         <a href="/en/blog/sbf-preparation-how-long/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ How long do I have to study for the SBF?</a>
+        <a href="/en/blog/sbf-coastal-navigation-tasks-explained/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Coastal navigation tasks explained – structure & tips</a>
         <a href="/en/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Frequently asked questions about the boating license</a>
         <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Learn SBF Inland with Boatpass</a>
       </div>

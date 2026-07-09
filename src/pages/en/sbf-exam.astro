@@ -122,9 +122,9 @@ const faqSchema = {
       </p>
       <div style="display:flex; flex-direction:column; gap:16px;">
         {[
-          { icon: 'lifebuoy', title: 'Maneuvers', desc: 'Coming alongside and casting off, turning, stopping and the important man-overboard maneuver.', href: null },
+          { icon: 'lifebuoy', title: 'Maneuvers', desc: '<a href="/en/blog/docking-undocking-harbor-maneuvers/" style="color:#3366FF; text-decoration:underline;">Coming alongside and casting off</a>, turning, stopping and the important <a href="/en/blog/man-overboard-maneuver/" style="color:#3366FF; text-decoration:underline;">man-overboard maneuver</a>.', href: null },
           { icon: 'knot', title: 'Knots', desc: 'Applying the exam-relevant knots confidently and quickly (e.g. bowline, clove hitch, securing a cleat).', href: '/en/blog/most-important-knots-sbf/' },
-          { icon: 'compass', title: 'Boat handling & safety', desc: 'Correct behavior on board, give-way rules and safe steering in the area.', href: null },
+          { icon: 'compass', title: 'Boat handling & safety', desc: 'Correct behavior on board, <a href="/en/blog/right-of-way-collision-rules/" style="color:#3366FF; text-decoration:underline;">give-way rules</a> and safe steering in the area.', href: null },
         ].map(f => (
           <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
             <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
@@ -134,7 +134,7 @@ const faqSchema = {
               <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">
                 {f.href ? <a href={f.href} style="color:inherit; text-decoration:underline;">{f.title}</a> : f.title}
               </div>
-              <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>
+              <div style="font-size:15px; color:#6B7280; line-height:1.6;" set:html={f.desc} />
             </div>
           </div>
         ))}
@@ -184,6 +184,9 @@ const faqSchema = {
         <a href="/en/sbf-coastal-exam-questions/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Practice SBF Coastal exam questions</a>
         <a href="/en/sbf-costs/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ What does the boating license cost?</a>
         <a href="/en/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Frequently asked questions about the boating license</a>
+        <a href="/en/blog/5-tips-pass-sbf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ 5 tips to pass the SBF exam on your first try</a>
+        <a href="/en/blog/how-to-register-sbf-exam/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ How to register for the SBF exam – step by step</a>
+        <a href="/en/blog/anchoring-basics-anchor-types-mistakes/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Anchoring basics – anchor types and common mistakes</a>
       </div>
     </section>
 
