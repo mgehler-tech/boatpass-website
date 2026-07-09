@@ -28,7 +28,7 @@ const t = {
 ---
 
 <section id="finder-teaser" class="max-w-6xl mx-auto px-6 py-12 md:py-20">
-  <a href={finderUrl} class="finder-card reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+  <a href={finderUrl} class="finder-card reveal-item" aria-label={lang === 'de' ? 'Welchen Bootsführerschein brauchst du wirklich? – Finder starten' : 'Which boating licence do you really need? – Start finder'} style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
     <div class="finder-orb"></div>
     <div class="finder-body">
       <div class="finder-chip">{t.chip}</div>
@@ -98,7 +98,7 @@ const t = {
     background: rgba(51, 102, 255, 0.08);
     border: 1px solid rgba(51, 102, 255, 0.18);
     color: #3366FF;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -137,7 +137,7 @@ const t = {
     background: rgba(51, 102, 255, 0.06);
     border: 1px solid rgba(51, 102, 255, 0.12);
     color: #3366FF;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
     padding: 6px 14px;
     border-radius: 100px;
@@ -198,15 +198,24 @@ const t = {
 </style>
 
 <script>
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        (e.target as HTMLElement).style.opacity = '1';
-        (e.target as HTMLElement).style.transform = 'translateY(0)';
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
+  const reduceMotionFinder = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  document.querySelectorAll('#finder-teaser .reveal-item').forEach(el => obs.observe(el));
+  if (reduceMotionFinder) {
+    document.querySelectorAll<HTMLElement>('#finder-teaser .reveal-item').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  } else {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          (e.target as HTMLElement).style.opacity = '1';
+          (e.target as HTMLElement).style.transform = 'translateY(0)';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('#finder-teaser .reveal-item').forEach(el => obs.observe(el));
+  }
 </script>
