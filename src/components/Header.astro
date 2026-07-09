@@ -17,12 +17,12 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
     <!-- Logo -->
     <a href={getLocalizedPath(lang, '/')} class="flex items-center gap-2 text-xl font-black" style="color: #1A1F36; letter-spacing: -0.5px; text-decoration: none;">
-      <Image src={appIcon} alt="Boatpass Logo" width={56} height={56} style="width: 28px; height: 28px; border-radius: 6px;" />
+      <Image src={appIcon} alt="" width={56} height={56} style="width: 28px; height: 28px; border-radius: 6px;" />
       Boat<span style="color: #3366FF;">Pass</span>
     </a>
 
     <!-- Links -->
-    <div class="hidden md:flex items-center gap-8">
+    <nav aria-label={lang === 'de' ? 'Hauptnavigation' : 'Main navigation'} class="hidden md:flex items-center gap-8">
       <a href={`${getLocalizedPath(lang, '/')}#features`} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
         {lang === 'de' ? 'Features' : 'Features'}
       </a>
@@ -32,22 +32,22 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
       <!-- Führerscheine / Licenses Dropdown -->
       <div class="nav-dropdown">
-        <a href={lang === 'de' ? '/fuehrerscheine/' : '/en/licenses/'} class="text-sm font-medium nav-link nav-dropdown-trigger" style="color: #6B7280; text-decoration:none; display:flex; align-items:center; gap:4px;">
-          {lang === 'de' ? 'Führerscheine' : 'Licenses'} <span style="font-size:10px;">▾</span>
+        <a id="licenses-trigger" href={lang === 'de' ? '/fuehrerscheine/' : '/en/licenses/'} class="text-sm font-medium nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" style="color: #6B7280; text-decoration:none; display:flex; align-items:center; gap:4px;">
+          {lang === 'de' ? 'Führerscheine' : 'Licenses'} <span aria-hidden="true" style="font-size:10px;">▾</span>
         </a>
-        <div class="nav-dropdown-menu">
-          <a href={lang === 'de' ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/'} class="nav-dropdown-item" style="font-weight:700; color:#3366FF;">{lang === 'de' ? 'Welcher Schein? →' : 'Which licence? →'}</a>
-          <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
-          <a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a>
-          <a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a>
-          <a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
-          <a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="nav-dropdown-item">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
-          <div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div>
-          <a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="nav-dropdown-item">UBI</a>
-          <a href={lang === 'de' ? '/src/' : '/en/src/'} class="nav-dropdown-item">SRC</a>
-          <a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="nav-dropdown-item">LRC</a>
-          <span class="nav-dropdown-item nav-dropdown-soon">Bodenseeschifferpatent <span style="font-size:11px;color:#3366FF;">{lang === 'de' ? 'bald' : 'soon'}</span></span>
-        </div>
+        <ul id="licenses-menu" class="nav-dropdown-menu">
+          <li><a href={lang === 'de' ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/'} class="nav-dropdown-item" style="font-weight:700; color:#3366FF;">{lang === 'de' ? 'Welcher Schein? →' : 'Which licence? →'}</a></li>
+          <li aria-hidden="true"><div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div></li>
+          <li><a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a></li>
+          <li><a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a></li>
+          <li><a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a></li>
+          <li><a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="nav-dropdown-item">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a></li>
+          <li aria-hidden="true"><div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div></li>
+          <li><a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="nav-dropdown-item">UBI</a></li>
+          <li><a href={lang === 'de' ? '/src/' : '/en/src/'} class="nav-dropdown-item">SRC</a></li>
+          <li><a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="nav-dropdown-item">LRC</a></li>
+          <li><span class="nav-dropdown-item nav-dropdown-soon">Bodenseeschifferpatent <span aria-hidden="true" style="font-size:12px;color:#3366FF;">{lang === 'de' ? 'bald' : 'soon'}</span></span></li>
+        </ul>
       </div>
 
       <a href={getLocalizedPath(lang, '/blog/')} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
@@ -56,7 +56,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <a href={getLocalizedPath(lang, '/faq/')} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
         {t.nav.faq}
       </a>
-    </div>
+    </nav>
 
     <!-- Right side -->
     <div class="flex items-center gap-3">
@@ -75,7 +75,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       </a>
 
       <!-- Hamburger Button (Mobile only) -->
-      <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-11 h-11 rounded-lg" style="background: rgba(51,102,255,0.06); border: 1px solid rgba(51,102,255,0.12);" aria-label="Menü öffnen" aria-expanded="false">
+      <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-11 h-11 rounded-lg" style="background: rgba(51,102,255,0.06); border: 1px solid rgba(51,102,255,0.12);" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobile-menu">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -85,7 +85,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
   <!-- Mobile Menu Panel -->
   <div id="mobile-menu" class="mobile-menu-panel md:hidden" aria-hidden="true">
-    <nav class="px-4 pt-3 pb-5 flex flex-col gap-0.5">
+    <nav aria-label={lang === 'de' ? 'Mobile Navigation' : 'Mobile navigation'} class="px-4 pt-3 pb-5 flex flex-col gap-0.5">
       <a href={`${getLocalizedPath(lang, '/')}#features`} class="mobile-nav-link">
         {lang === 'de' ? 'Features' : 'Features'}
       </a>
@@ -95,7 +95,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
       <!-- Führerscheine Accordion -->
       <div class="mobile-accordion">
-        <button class="mobile-accordion-trigger mobile-nav-link w-full text-left" aria-expanded="false">
+        <button class="mobile-accordion-trigger mobile-nav-link w-full text-left" aria-expanded="false" aria-controls="mobile-acc-body">
           <span>{lang === 'de' ? 'Führerscheine' : 'Licenses'}</span>
           <span class="accordion-chevron" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -103,7 +103,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
             </svg>
           </span>
         </button>
-        <div class="mobile-accordion-body">
+        <div id="mobile-acc-body" class="mobile-accordion-body">
           <div class="mobile-subnav">
             <a href={lang === 'de' ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/'} class="mobile-nav-sublink mobile-nav-sublink--cta">{lang === 'de' ? 'Welcher Schein? →' : 'Which licence? →'}</a>
             <div class="mobile-divider"></div>
@@ -140,10 +140,21 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 <div id="mobile-menu-backdrop" class="mobile-backdrop" aria-hidden="true"></div>
 
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
+  const btn = document.getElementById('mobile-menu-btn') as HTMLButtonElement | null;
   const menu = document.getElementById('mobile-menu');
   const backdrop = document.getElementById('mobile-menu-backdrop');
-  const lines = btn?.querySelectorAll('.hamburger-line');
+
+  // Alle sichtbaren fokussierbaren Elemente im Menü (collapsed Accordion-Inhalte ausgeschlossen)
+  function getFocusable(): HTMLElement[] {
+    if (!menu) return [];
+    return Array.from(
+      menu.querySelectorAll<HTMLElement>('a[href], button:not([disabled])')
+    ).filter(el => {
+      const body = el.closest<HTMLElement>('.mobile-accordion-body');
+      if (!body) return true;
+      return !!el.closest('.mobile-accordion')?.classList.contains('accordion-open');
+    });
+  }
 
   function openMenu() {
     menu?.classList.add('open');
@@ -151,6 +162,8 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     btn?.setAttribute('aria-expanded', 'true');
     menu?.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    // Fokus auf erstes Element setzen
+    requestAnimationFrame(() => getFocusable()[0]?.focus());
   }
 
   function closeMenu() {
@@ -159,16 +172,38 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     btn?.setAttribute('aria-expanded', 'false');
     menu?.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
+    // Fokus zurück auf Hamburger-Button
+    btn?.focus();
   }
 
   btn?.addEventListener('click', () => {
-    const isOpen = menu?.classList.contains('open');
-    isOpen ? closeMenu() : openMenu();
+    menu?.classList.contains('open') ? closeMenu() : openMenu();
   });
 
   backdrop?.addEventListener('click', closeMenu);
 
-  // Close on nav link click
+  // Escape schließt das Menü
+  document.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Escape' && menu?.classList.contains('open')) closeMenu();
+  });
+
+  // Focus-Trap innerhalb des mobilen Menüs
+  menu?.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key !== 'Tab') return;
+    const focusable = getFocusable();
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+
+  // Menü schließt bei Klick auf Link
   menu?.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
   });
@@ -187,6 +222,20 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       }
     });
   });
+
+  // Desktop Dropdown: aria-expanded per Fokus verwalten
+  const dropdownTrigger = document.getElementById('licenses-trigger');
+  const dropdownContainer = dropdownTrigger?.closest('.nav-dropdown');
+  if (dropdownContainer && dropdownTrigger) {
+    dropdownContainer.addEventListener('focusin', () => {
+      dropdownTrigger.setAttribute('aria-expanded', 'true');
+    });
+    dropdownContainer.addEventListener('focusout', (e: FocusEvent) => {
+      if (!dropdownContainer.contains(e.relatedTarget as Node)) {
+        dropdownTrigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 </script>
 
 <style>
@@ -247,6 +296,8 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     min-width: 150px;
     box-shadow: 0 8px 24px rgba(26,31,54,0.1);
     z-index: 100;
+    list-style: none;
+    margin: 0;
   }
   /* Unsichtbare Brücke über die 12px-Lücke, damit der Hover nicht abreißt */
   .nav-dropdown-menu::before {
@@ -257,7 +308,8 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     right: 0;
     height: 12px;
   }
-  .nav-dropdown:hover .nav-dropdown-menu { display: flex; flex-direction: column; gap: 2px; }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu { display: flex; flex-direction: column; gap: 2px; }
   .nav-dropdown-item {
     font-size: 14px;
     font-weight: 500;
@@ -398,7 +450,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     pointer-events: none;
   }
   .soon-badge {
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 700;
     color: #3366FF;
     background: rgba(51,102,255,0.12);

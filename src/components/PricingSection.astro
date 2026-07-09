@@ -512,15 +512,24 @@ const soonItems = [t.pricing.soon1];
 </style>
 
 <script>
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        (e.target as HTMLElement).style.opacity = '1';
-        (e.target as HTMLElement).style.transform = 'translateY(0)';
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
+  const reduceMotionPricing = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  document.querySelectorAll('#pricing .reveal-item').forEach(el => obs.observe(el));
+  if (reduceMotionPricing) {
+    document.querySelectorAll<HTMLElement>('#pricing .reveal-item').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  } else {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          (e.target as HTMLElement).style.opacity = '1';
+          (e.target as HTMLElement).style.transform = 'translateY(0)';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('#pricing .reveal-item').forEach(el => obs.observe(el));
+  }
 </script>

@@ -46,8 +46,11 @@ const { title, description, lang, ogImage, type, showCta = true, hasAlternate = 
     <SEO title={title} description={description} lang={lang} ogImage={ogImage} type={type} hasAlternate={hasAlternate} altUrl={altUrl} noindex={noindex} />
   </head>
   <body class="min-h-screen bg-background">
+    <a href="#main-content" class="skip-link">
+      {lang === 'de' ? 'Zum Hauptinhalt springen' : 'Skip to main content'}
+    </a>
     <Header lang={lang} />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     {showCta && <CtaBanner lang={lang} />}

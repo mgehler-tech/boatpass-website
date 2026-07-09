@@ -15,6 +15,25 @@
   --font-family-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
 }
 
+/* Skip-Link – normalerweise unsichtbar, erscheint bei Tastaturfokus */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  z-index: 9999;
+  border-radius: 0 0 8px 0;
+  text-decoration: none;
+  transition: top 0.1s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
 @layer base {
   body {
     background-color: var(--color-background);
