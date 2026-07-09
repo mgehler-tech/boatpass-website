@@ -35,7 +35,7 @@ Neben der Pyrotechnik kennt die KVR weitere anerkannte Notzeichen, die du ohne b
 
 - **Sprechfunk:** der gesprochene Notruf **„MAYDAY"** auf dem UKW-Seefunk-Notkanal (Kanal 16).
 - **DSC-Alarm:** der digitale Notalarm über eine UKW-Seefunkanlage mit DSC-Controller.
-- **SOS** als Morsezeichen (▬ ▬ ▬ ● ● ● ▬ ▬ ▬), gegeben mit beliebigem Signalmittel (z. B. Lampe).
+- **SOS** als Morsezeichen (**● ● ● ▬ ▬ ▬ ● ● ●**), gegeben mit beliebigem Signalmittel (z. B. Lampe).
 - **Dauerton** mit einem Schallsignalgerät (z. B. dem Nebelhorn).
 - **Flaggensignal „NC"** nach dem Internationalen Signalbuch.
 - Ein Signal aus einer **quadratischen Flagge** mit einem **Ball** (oder etwas Ballähnlichem) darüber oder darunter.

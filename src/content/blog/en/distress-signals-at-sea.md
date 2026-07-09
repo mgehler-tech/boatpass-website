@@ -35,7 +35,7 @@ Besides pyrotechnics, the COLREGs recognize further distress signals that you ma
 
 - **Voice radio:** the spoken distress call **"MAYDAY"** on the VHF marine distress channel (Channel 16).
 - **DSC alert:** the digital distress alert via a VHF marine radio with a DSC controller.
-- **SOS** in Morse code (▬ ▬ ▬ ● ● ● ▬ ▬ ▬), given with any signaling device (e.g. a lamp).
+- **SOS** in Morse code (**● ● ● ▬ ▬ ▬ ● ● ●**), given with any signaling device (e.g. a lamp).
 - **A continuous sound** with a sound-signaling device (e.g. the foghorn).
 - **Flag signal "NC"** from the International Code of Signals.
 - A signal consisting of a **square flag** with a **ball** (or anything resembling a ball) above or below it.

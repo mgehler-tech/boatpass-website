@@ -58,7 +58,8 @@ Bestimmte Fahrzeuge führen zusätzliche **Rundumlichter**, an denen du ihren Zu
 - **Rot über Rot – das Schiff ist tot:** zwei rote Rundumlichter übereinander = **manövrierunfähig** (z. B. Maschinenausfall).
 - **Rot – Weiß – Rot:** drei Rundumlichter (rot-weiß-rot senkrecht) = **manövrierbehindert** (z. B. beim Schleppen, Baggern).
 - **Grün über Weiß – Fischer bei der Arbeit:** Schleppnetzfischer (Trawler).
-- **Rot über Weiß – Lotse heut Nacht:** Lotsenfahrzeug.
+- **Rot über Weiß – Fischer ohne Netz:** Fischereifahrzeug, das nicht mit Schleppnetz fischt (KVR Regel 26c).
+- **Weiß über Rot – Lotse heut Nacht:** Lotsenfahrzeug (KVR Regel 29a).
 
 Welches dieser Fahrzeuge bei einer Begegnung Vorrang hat und wer ausweichen muss, ergibt sich aus den [Ausweichregeln auf dem Wasser](/blog/ausweichregeln-vorfahrt-wasser/).
 

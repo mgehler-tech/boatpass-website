@@ -58,7 +58,8 @@ Certain vessels carry additional **all-round lights** that tell you their status
 - **Red over red – the captain is dead:** two red all-round lights, one above the other = **not under command** (e.g. engine failure).
 - **Red – white – red:** three all-round lights (red-white-red, vertical) = **restricted in ability to maneuver** (e.g. towing, dredging).
 - **Green over white – fishing at night:** a trawler at work.
-- **Red over white – pilot in sight:** a pilot vessel.
+- **Red over white – fishing without trawl:** a fishing vessel not engaged in trawling (COLREG Rule 26c).
+- **White over red – pilot in sight:** a pilot vessel (COLREG Rule 29a).
 
 ### At Anchor
 
