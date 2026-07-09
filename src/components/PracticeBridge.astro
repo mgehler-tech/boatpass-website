@@ -61,8 +61,31 @@ const c = content[variant];
   </div>
 
   <!-- Ehrliche Abgrenzung: App bringt Verfahren/Schema, Praxis bleibt vor Ort -->
-  <div style="display:flex; align-items:flex-start; gap:14px; background:linear-gradient(160deg,#F4F7FE 0%,#EAF0FC 100%); border:1px solid rgba(51,102,255,0.16); border-radius:16px; padding:20px 24px;">
+  <div class="practice-note" style="display:flex; align-items:flex-start; gap:14px; background:linear-gradient(160deg,#F4F7FE 0%,#EAF0FC 100%); border:1px solid rgba(51,102,255,0.16); border-radius:16px; padding:20px 24px;">
     <span style="flex-shrink:0; margin-top:1px;"><Icon name="lifebuoy" size={20} stroke="#3366FF" strokeWidth={1.75} /></span>
-    <p style="font-size:14px; color:#4B5563; line-height:1.65; margin:0;">{c.reassure}</p>
+    <p class="practice-note-text" style="font-size:14px; color:#4B5563; line-height:1.65; margin:0;">{c.reassure}</p>
   </div>
 </section>
+
+<style>
+  @media (prefers-color-scheme: dark) {
+    section h2 { color: #E2E8F0 !important; }
+    section > p { color: #94A3B8 !important; }
+    /* Punkte-Karten */
+    section [style*="background:white"] {
+      background: #181E2E !important;
+      border-color: rgba(90, 120, 255, 0.12) !important;
+    }
+    section [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+    section [style*="color:#4B5563"]  { color: #94A3B8 !important; }
+    section [style*="background:rgba(51,102,255,0.08)"] {
+      background: rgba(90, 120, 255, 0.14) !important;
+    }
+    /* Hinweis-Box */
+    .practice-note {
+      background: rgba(90, 120, 255, 0.07) !important;
+      border-color: rgba(90, 120, 255, 0.18) !important;
+    }
+    .practice-note-text { color: #94A3B8 !important; }
+  }
+</style>

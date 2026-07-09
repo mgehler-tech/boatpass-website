@@ -98,4 +98,15 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       padding: 6px 0;
     }
   }
+
+  @media (prefers-color-scheme: dark) {
+    footer {
+      background: #0D1018 !important;
+      border-color: rgba(90, 120, 255, 0.12) !important;
+    }
+    /* Brand-Text (inline style color:#1A1F36) */
+    footer [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+    /* Copyright-Trennlinie */
+    footer .border-gray-200 { border-color: rgba(90, 120, 255, 0.10) !important; }
+  }
 </style>

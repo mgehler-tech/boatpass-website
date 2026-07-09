@@ -168,7 +168,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   </div>
 
   <!-- Wave bottom -->
-  <div style="position:absolute; bottom:-2px; left:0; right:0; height:80px; overflow:hidden; pointer-events:none;">
+  <div class="hero-wave" style="position:absolute; bottom:-2px; left:0; right:0; height:80px; overflow:hidden; pointer-events:none;">
     <svg style="width:200%; height:100%; animation:wave 12s linear infinite;" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#F0F4FA"/>
       <path d="M1440,40 C1680,80 1920,0 2160,40 C2400,80 2640,0 2880,40 L2880,80 L1440,80 Z" fill="#F0F4FA"/>
@@ -315,6 +315,31 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     transform: translateY(-2px);
     box-shadow: 0 12px 32px rgba(51,102,255,0.30) !important;
   }
+  @media (prefers-color-scheme: dark) {
+    .hero-section { background: #0F1117 !important; }
+    /* H1 */
+    .hero-section h1 { color: #E2E8F0 !important; }
+    /* Subline (animate-fade-up delay-2 Paragraph) */
+    .hero-section .delay-2 { color: #94A3B8 !important; }
+    /* Stats divider */
+    .hero-section .delay-4 { border-color: rgba(90, 120, 255, 0.14) !important; }
+    /* Stat numbers und Labels via inline-color override */
+    .hero-section .delay-4 [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+    .hero-section .delay-4 [style*="color:#6B7280"] { color: #94A3B8 !important; }
+    /* Phone frame */
+    .hero-section [style*="background:#ffffff"] { background: #181E2E !important; }
+    /* Phone banners */
+    .phone-banner {
+      background: #181E2E !important;
+      border-color: rgba(90, 120, 255, 0.12) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    }
+    .banner-title { color: #E2E8F0 !important; }
+    .banner-subtitle { color: #94A3B8 !important; }
+    /* Wave-Farbe muss die dunkle Page-Farbe haben, sonst sieht man eine helle Kurve */
+    .hero-wave path { fill: #0F1117 !important; }
+  }
+
   @media (max-width: 768px) {
     .hero-grid {
       grid-template-columns: 1fr !important;

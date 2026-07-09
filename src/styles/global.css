@@ -76,6 +76,21 @@
   color: var(--color-navy);
 }
 
+/* Dark Mode – native CSS-Variablen-Overrides. Mit <meta name="color-scheme" content="light dark">
+   im Head signalisieren wir, dass wir Dark Mode bewusst unterstützen – Chrome invertiert dann
+   NICHT mehr automatisch (Force Dark Mode), sondern nutzt diese Regeln. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: #0F1117;
+    --color-surface:    #181E2E;
+    --color-text:       #E2E8F0;
+    --color-navy:       #E2E8F0;
+    --color-muted:      #94A3B8;
+    --color-border:     rgba(100, 140, 255, 0.12);
+  }
+  body { background-color: #0F1117; }
+}
+
 /* Bewegung reduzieren für Nutzer mit entsprechender Systemeinstellung
    (vestibuläre Beschwerden). Neutralisiert Animationen und Transitions,
    ohne Inhalte zu verbergen – Reveal-Elemente erscheinen dann sofort. */

@@ -16,7 +16,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
     <!-- Logo -->
-    <a href={getLocalizedPath(lang, '/')} class="flex items-center gap-2 text-xl font-black" style="color: #1A1F36; letter-spacing: -0.5px; text-decoration: none;">
+    <a href={getLocalizedPath(lang, '/')} class="logo-link flex items-center gap-2 text-xl font-black" style="color: #1A1F36; letter-spacing: -0.5px; text-decoration: none;">
       <Image src={appIcon} alt="" width={56} height={56} style="width: 28px; height: 28px; border-radius: 6px;" />
       Boat<span style="color: #3366FF;">Pass</span>
     </a>
@@ -464,6 +464,76 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     height: 1px;
     background: rgba(51,102,255,0.09);
     margin: 3px 12px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    /* Header bar */
+    header {
+      background: rgba(10, 13, 20, 0.95) !important;
+      border-color: rgba(90, 120, 255, 0.14) !important;
+    }
+
+    /* Logo */
+    .logo-link { color: #E2E8F0 !important; }
+
+    /* Desktop nav links */
+    .nav-link { color: #94A3B8 !important; }
+    .nav-link:hover { color: #E2E8F0 !important; }
+
+    /* ── Lang-Switcher ─────────────────────────────────────────────────────
+       Das war der konkrete Nutzerbericht: DE/EN nicht unterscheidbar.
+       Lösung: aktive Pill bekommt soliden #3366FF-Hintergrund mit weißem Text,
+       inaktive Pill bleibt transparent-grau → klare visuelle Trennung. */
+    .lang-switcher {
+      background: rgba(90, 120, 255, 0.12) !important;
+      border-color: rgba(90, 120, 255, 0.24) !important;
+    }
+    .lang-option { color: #6B7280 !important; }
+    .lang-option:hover { color: #E2E8F0 !important; }
+    .lang-active {
+      background: #3366FF !important;
+      color: #ffffff !important;
+      box-shadow: 0 1px 6px rgba(51, 102, 255, 0.40) !important;
+    }
+
+    /* Hamburger-Striche: dunkelnavy wird auf Handy unsichtbar → hellgrau */
+    .hamburger-line { background: #C8D0E8 !important; }
+    #mobile-menu-btn {
+      background: rgba(90, 120, 255, 0.10) !important;
+      border-color: rgba(90, 120, 255, 0.18) !important;
+    }
+
+    /* Desktop Dropdown-Menü */
+    .nav-dropdown-menu {
+      background: #1A2140 !important;
+      border-color: rgba(90, 120, 255, 0.16) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+    }
+    .nav-dropdown-item { color: #B4BCDA !important; }
+    .nav-dropdown-item:hover {
+      background: rgba(90, 120, 255, 0.10) !important;
+      color: #E2E8F0 !important;
+    }
+
+    /* Mobiles Menü Panel */
+    .mobile-menu-panel {
+      background: rgba(10, 13, 20, 0.98) !important;
+      border-color: rgba(90, 120, 255, 0.12) !important;
+    }
+    .mobile-nav-link { color: #E2E8F0 !important; }
+    .mobile-nav-link:hover { background: rgba(90, 120, 255, 0.10) !important; }
+    .mobile-nav-sublink { color: #94A3B8 !important; }
+    .mobile-nav-sublink:hover {
+      background: rgba(90, 120, 255, 0.10) !important;
+      color: #E2E8F0 !important;
+    }
+    .mobile-divider { background: rgba(90, 120, 255, 0.10) !important; }
+    .accordion-chevron { background: rgba(90, 120, 255, 0.14) !important; }
+    .accordion-open .accordion-chevron { background: #3366FF !important; }
+    .soon-badge {
+      background: rgba(90, 120, 255, 0.20) !important;
+      color: #8BB4FF !important;
+    }
   }
 
   /* Footer with CTA */
