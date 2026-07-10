@@ -7,6 +7,15 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "how-to-register-sbf-exam"
+faq:
+  - question: "Wer nimmt die SBF-Prüfung ab?"
+    answer: "Die SBF-Prüfungen werden in Deutschland vom Deutschen Segler-Verband (DSV) und vom Deutschen Motoryachtverband (DMYV) organisiert. Beide sind vom Bundesministerium für Digitales und Verkehr mit der Abnahme der Sportbootführerschein-Prüfungen beauftragt; inhaltlich sind die Prüfungen identisch."
+  - question: "Welche Unterlagen brauche ich für die Anmeldung zur SBF-Prüfung?"
+    answer: "In der Regel ein ausgefülltes Antragsformular des zuständigen Verbands (DSV oder DMYV), ein biometrisches Passbild, ein ärztliches Zeugnis über Seh- und Hörvermögen, eine Kopie eines gültigen Personalausweises oder Reisepasses und – falls vorhanden – eine Kopie des Kfz-Führerscheins. Je nach Verband kann zusätzlich ein Auszug aus dem Fahreignungsregister nötig sein."
+  - question: "Kann ich mich ohne Bootsschule zur SBF-Prüfung anmelden?"
+    answer: "Ja. Du kannst dich als Direktbewerber ohne Bootsschule direkt bei einem Prüfungsausschuss von DSV oder DMYV anmelden. Das ist günstiger, du musst dich aber selbst um Termin, Unterlagen und die korrekte Anmeldung kümmern – sinnvoll, wenn du autodidaktisch mit App und Büchern gelernt hast."
+  - question: "Ab welchem Alter kann ich den SBF Binnen und SBF See machen?"
+    answer: "Der SBF Binnen und der SBF See sind jeweils ab 16 Jahren möglich. Die Prüfung kannst du oft schon kurz vor Erreichen des Mindestalters ablegen – ausgehändigt wird der Führerschein dann zum Geburtstag."
 ---
 
 Du hast die Theorie gelernt und die Praxis geübt – jetzt fehlt nur noch die Anmeldung zur Prüfung. Hier kommen oft Fragen auf: Bei wem melde ich mich an? Welche Unterlagen brauche ich? Und was kostet das? Dieser Artikel führt dich Schritt für Schritt durch die Anmeldung zur [Sportbootführerschein-Prüfung](/sbf-pruefung-ablauf/).
