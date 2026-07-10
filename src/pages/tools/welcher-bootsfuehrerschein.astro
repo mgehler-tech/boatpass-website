@@ -247,6 +247,32 @@ const faqSchema = {
     a.res-card:hover {
       border-left-color:#1A1F36; box-shadow:0 8px 22px rgba(51,102,255,0.12); transform:translateY(-2px);
     }
+
+    /* ── Dark Mode ─────────────────────────────────────────────── */
+    .cfg-restart-btn { background: white; }
+    html.dark .cfg-restart-btn {
+      background: #181E2E !important;
+      color: #6B9CFF !important;
+      border-color: rgba(90,120,255,0.25) !important;
+    }
+    html.dark div[style*="background:#F0F4FA"] { background: #0F1117 !important; }
+    html.dark h1[style*="color:#1A1F36"],
+    html.dark h2[style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+    html.dark p[style*="color:#6B7280"] { color: #94A3B8 !important; }
+    html.dark table[style*="background:white"] {
+      background: #181E2E !important;
+      border-color: rgba(90,120,255,0.14) !important;
+    }
+    html.dark th[style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+    html.dark td[style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+    html.dark div[style*="background:white"][style*="border-radius:16px"] {
+      background: #181E2E !important;
+      border-color: rgba(90,120,255,0.12) !important;
+    }
+    /* Broad catch for all inline-styled text on this page (incl. JS-generated result card) */
+    html.dark [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+    html.dark [style*="color:#6B7280"] { color: #94A3B8 !important; }
+    html.dark .cfg-opt-label { color: #E2E8F0 !important; }
   </style>
 
   <script is:inline define:vars={{ playStoreUrl }}>
@@ -384,7 +410,7 @@ const faqSchema = {
         html += '</div>';
         html += '<div style="margin-top:22px; display:flex; flex-wrap:wrap; gap:12px;">' +
           '<a href="' + playStoreUrl + '" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:15px; padding:14px 26px; border-radius:14px; text-decoration:none;">▶&nbsp;Jetzt mit Boatpass lernen</a>' +
-          '<button type="button" id="cfg-restart" style="background:white; border:1.5px solid rgba(51,102,255,0.2); color:#3366FF; font-weight:700; font-size:15px; padding:14px 24px; border-radius:14px; cursor:pointer;">Nochmal starten</button>' +
+          '<button type="button" id="cfg-restart" class="cfg-restart-btn" style="border:1.5px solid rgba(51,102,255,0.2); color:#3366FF; font-weight:700; font-size:15px; padding:14px 24px; border-radius:14px; cursor:pointer;">Nochmal starten</button>' +
           '</div>';
         elResult.innerHTML = html;
         elResult.style.display = 'block';
