@@ -69,7 +69,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
         </a>
       </div>
       <!-- Theme Toggle (Icon-Pill matching lang-switcher) -->
-      <button id="theme-toggle" class="theme-switcher" aria-label={lang === 'de' ? 'Design wechseln' : 'Toggle theme'}>
+      <button type="button" id="theme-toggle" class="theme-switcher" aria-pressed="false" aria-label={lang === 'de' ? 'Design wechseln' : 'Toggle theme'}>
         <span class="theme-option" id="theme-opt-light">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <circle cx="12" cy="12" r="5"/>
@@ -267,6 +267,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     const isDark = document.documentElement.classList.contains('dark');
     themeOptLight?.classList.toggle('theme-option-active', !isDark);
     themeOptDark?.classList.toggle('theme-option-active', isDark);
+    themeToggle?.setAttribute('aria-pressed', String(isDark));
   }
 
   themeToggle?.addEventListener('click', () => {
