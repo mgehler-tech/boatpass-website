@@ -270,8 +270,18 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     themeToggle?.setAttribute('aria-pressed', String(isDark));
   }
 
-  themeToggle?.addEventListener('click', () => {
-    const isDark = document.documentElement.classList.toggle('dark');
+  themeToggle?.addEventListener('click', (e) => {
+    const clicked = (e.target as Element).closest('#theme-opt-light, #theme-opt-dark');
+    let isDark: boolean;
+    if (clicked?.id === 'theme-opt-light') {
+      isDark = false;
+      document.documentElement.classList.remove('dark');
+    } else if (clicked?.id === 'theme-opt-dark') {
+      isDark = true;
+      document.documentElement.classList.add('dark');
+    } else {
+      isDark = document.documentElement.classList.toggle('dark');
+    }
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
     syncThemeToggle();
   });
