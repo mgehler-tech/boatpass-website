@@ -1,6 +1,6 @@
 ---
 title: "Betonnung Nord- vs. Ostsee: Unterschiede im Lateralsystem"
-description: "Warum die Richtung der Betonnung in der Nordsee anders funktioniert als in der Ostsee und wie du sie in der Seekarte sicher erkennst. Für die SBF-See-Prüfung erklärt."
+description: "Warum die Richtung der Betonnung in Nordsee und Ostsee unterschiedlich funktioniert und wie du sie in der Seekarte erkennst. Für die SBF-See-Prüfung erklärt."
 date: 2026-07-10
 tags: ["Navigation"]
 readingTime: 8
