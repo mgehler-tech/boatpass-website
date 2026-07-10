@@ -7,6 +7,15 @@ readingTime: 6
 lang: de
 author: "Marius Gehler"
 altSlug: "sbf-preparation-how-long"
+faq:
+  - question: "Wie lange dauert die Vorbereitung auf den SBF Binnen?"
+    answer: "Für den SBF Binnen mit Antriebsmaschine ist man bei täglich 30–45 Minuten Lernzeit realistisch in 3–6 Wochen prüfungsbereit. Schnelle Lerner mit technischem Vorwissen schaffen es in 2–3 Wochen, Gelegenheitslerner brauchen 6–8 Wochen. Das gilt nur für die Theorie – die praktische Prüfung erfordert separate Übungseinheiten auf dem Boot."
+  - question: "Welcher Lernstoff kostet beim SBF die meiste Zeit?"
+    answer: "Am zeitintensivsten ist die Lichterführung (ca. 30–40 % der Lernzeit), gefolgt vom Schifffahrtsrecht und den Ausweichregeln (ca. 20–30 %) sowie der Seemannschaft und den Knoten, die sich nur durch praktisches Üben lernen lassen."
+  - question: "Ist es besser, täglich kurz oder am Wochenende lange zu lernen?"
+    answer: "Täglich kurz zu lernen ist effektiver. Das Gehirn konsolidiert neues Wissen vor allem im Schlaf – 30 Minuten täglich über 30 Tage bringen mehr Behaltenseffekt als dieselbe Gesamtzeit an wenigen langen Wochenend-Einheiten."
+  - question: "Wann sollte ich die SBF-Prüfung anmelden?"
+    answer: "Am besten buchst du den Prüfungstermin, wenn du etwa 60–70 % des Stoffs beherrschst. Eine konkrete Deadline motiviert und verhindert das endlose Verschieben. Prüfungstermine beim DMYV sind oft 4–8 Wochen im Voraus ausgebucht, besonders im Frühjahr."
 ---
 
 Eine der häufigsten Fragen vor dem SBF: Wie lange muss ich eigentlich lernen? Die ehrliche Antwort: Es hängt stark von deinem Vorwissen und deiner Lerndisziplin ab. Hier sind realistische Schätzungen für verschiedene Lerntypen – ohne Beschönigung.

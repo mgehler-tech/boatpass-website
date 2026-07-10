@@ -7,6 +7,15 @@ readingTime: 6
 lang: de
 author: "Marius Gehler"
 altSlug: "boating-license-requirements"
+faq:
+  - question: "Welches Mindestalter gilt für den Sportbootführerschein?"
+    answer: "Der SBF Binnen unter Motor und der SBF See sind ab 16 Jahren möglich, der SBF Binnen unter Segel bereits ab 14 Jahren. Zur Prüfung anmelden kannst du dich schon mit 15 Jahren und 9 Monaten – bei der Aushändigung des Führerscheins musst du das Mindestalter aber erreicht haben."
+  - question: "Brauche ich ein ärztliches Zeugnis für den Sportbootführerschein?"
+    answer: "Ja. Du brauchst ein ärztliches Zeugnis für Sportbootführerscheinbewerber, das Seh-, Farbunterscheidungs- und Hörvermögen bestätigt. Ein Besuch beim Hausarzt reicht, das Zeugnis ist 12 Monate gültig und kostet je nach Arzt zwischen 30 und 65 €."
+  - question: "Welche Unterlagen brauche ich für die Anmeldung zur SBF-Prüfung?"
+    answer: "Du brauchst den Antrag auf Zulassung zur Prüfung (Formular vom DMYV oder DSV), das ausgefüllte ärztliche Zeugnis, ein biometrisches Passfoto (35 × 45 mm), eine Kopie des Kfz-Führerscheins oder ein polizeiliches Führungszeugnis sowie die Prüfungsgebühr. Bei Minderjährigen kommt eine Einverständniserklärung des Erziehungsberechtigten hinzu."
+  - question: "Muss ich für den Sportbootführerschein einen Kurs besuchen?"
+    answer: "Nein. Ein Nachweis über einen Kursbesuch ist keine Voraussetzung. Die Anmeldung über den Prüfungsausschuss von DMYV oder DSV steht jedem offen, der die formalen Voraussetzungen erfüllt – egal ob du einen Kurs besucht oder dich mit einer App vorbereitet hast."
 ---
 
 Bevor du die [SBF-Prüfung](/sbf-pruefung-ablauf/) ablegen kannst, musst du einige formale Voraussetzungen erfüllen und Unterlagen einreichen. Hier ist alles, was du wissen musst – von der Altersgrenze bis zur Prüfungsanmeldung.

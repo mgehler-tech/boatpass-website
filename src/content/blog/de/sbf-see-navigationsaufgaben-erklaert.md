@@ -7,6 +7,15 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "sbf-coastal-navigation-tasks-explained"
+faq:
+  - question: "Was ist die Navigationsaufgabe beim SBF See?"
+    answer: "Die Navigationsaufgabe ist ein eigenständiger Teil der SBF-See-Theorieprüfung. Zusätzlich zu den 30 Multiple-Choice-Fragen bearbeitest du eine Navigationsaufgabe mit 9 Teilfragen. Für die gesamte Theorieprüfung hast du 60 Minuten."
+  - question: "Wie viele Navigationsfragen muss ich beim SBF See richtig beantworten?"
+    answer: "Von den 9 Navigationsfragen musst du mindestens 7 richtig beantworten. Die Navigationsaufgabe wird getrennt gewertet – selbst wenn du alle anderen Fragen richtig hast, fällst du durch, wenn du weniger als 7 der 9 Navigationsfragen korrekt löst."
+  - question: "Welche Hilfsmittel darf ich zur SBF-See-Navigationsaufgabe mitbringen?"
+    answer: "Du brauchst ein Kursdreieck (Navigationsdreieck) zum Abtragen und Ablesen von Kursen, einen Zirkel oder Stechzirkel zum Messen von Distanzen, Bleistift und Radiergummi sowie einen einfachen Taschenrechner (kein Smartphone) für Zeit- und Geschwindigkeitsberechnungen."
+  - question: "Welche Seekarte wird bei der SBF-See-Prüfung verwendet?"
+    answer: "Allen Navigationsaufgaben liegt die Übungskarte D49 zugrunde – ein Seekartenausschnitt der Mündungen von Jade, Weser und Elbe. Sie ist die offizielle Grundlage für alle 15 Navigationsaufgaben im amtlichen ELWIS-Fragenkatalog."
 ---
 
 Die Navigationsaufgabe ist für viele Prüflinge die größte Hürde beim [Sportbootführerschein See](/sbf-see/). Sie unterscheidet den SBF See vom SBF Binnen – und erfordert ein grundlegendes Verständnis der Seekartenarbeit. In diesem Artikel erklären wir den genauen Aufbau, die Aufgabentypen und geben Tipps für die Vorbereitung.
