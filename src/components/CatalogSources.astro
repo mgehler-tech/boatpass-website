@@ -319,55 +319,44 @@ const single = only ? rows.find(r => r.key === only) : null;
     .cat-cards { display: flex; flex-direction: column; gap: 12px; }
   }
 
-  @media (prefers-color-scheme: dark) {
-    /* Einzelblock (Lizenz-Seiten) */
-    .cat-single {
-      background: #181E2E !important;
-      border-color: rgba(90, 120, 255, 0.14) !important;
-    }
-    .cat-single-title { color: #E2E8F0 !important; }
-    .cat-single-name  { color: #94A3B8 !important; }
-    .cat-single-note  { color: #94A3B8 !important; }
-    .cat-single-foot  { color: #6B7280 !important; border-color: rgba(90, 120, 255, 0.08) !important; }
-    .cat-single-foot strong { color: #94A3B8 !important; }
-
-    /* Desktop-Tabelle */
-    .cat-table-wrap {
-      background: #181E2E !important;
-      border-color: rgba(90, 120, 255, 0.12) !important;
-    }
-    .cat-table thead th {
-      background: rgba(255, 255, 255, 0.03) !important;
-      color: #6B7280 !important;
-      border-color: rgba(90, 120, 255, 0.10) !important;
-    }
-    .cat-table tbody td { border-color: rgba(90, 120, 255, 0.08) !important; }
-    .cat-name { color: #94A3B8 !important; }
-
-    /* Lizenz-Badge */
-    .lic-badge {
-      color: #C8D0E8 !important;
-      background: rgba(90, 120, 255, 0.12) !important;
-      border-color: rgba(90, 120, 255, 0.20) !important;
-    }
-
-    /* Mobile Karten */
-    .cat-card {
-      background: #181E2E !important;
-      border-color: rgba(90, 120, 255, 0.12) !important;
-    }
-
-    /* Fußnoten */
-    .validity-note {
-      color: #B4BCDA !important;
-      background: rgba(90, 120, 255, 0.06) !important;
-      border-color: rgba(90, 120, 255, 0.12) !important;
-    }
-    .issuer-note  { color: #94A3B8 !important; }
-    .page-stand   { color: #94A3B8 !important; }
-    .page-stand strong { color: #C8D0E8 !important; }
-    .disclaimer   { color: #6B7280 !important; }
+  html.dark .cat-single {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.14) !important;
   }
+  html.dark .cat-single-title { color: #E2E8F0 !important; }
+  html.dark .cat-single-name  { color: #94A3B8 !important; }
+  html.dark .cat-single-note  { color: #94A3B8 !important; }
+  html.dark .cat-single-foot  { color: #6B7280 !important; border-color: rgba(90, 120, 255, 0.08) !important; }
+  html.dark .cat-single-foot strong { color: #94A3B8 !important; }
+  html.dark .cat-table-wrap {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.12) !important;
+  }
+  html.dark .cat-table thead th {
+    background: rgba(255, 255, 255, 0.03) !important;
+    color: #6B7280 !important;
+    border-color: rgba(90, 120, 255, 0.10) !important;
+  }
+  html.dark .cat-table tbody td { border-color: rgba(90, 120, 255, 0.08) !important; }
+  html.dark .cat-name { color: #94A3B8 !important; }
+  html.dark .lic-badge {
+    color: #C8D0E8 !important;
+    background: rgba(90, 120, 255, 0.12) !important;
+    border-color: rgba(90, 120, 255, 0.20) !important;
+  }
+  html.dark .cat-card {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.12) !important;
+  }
+  html.dark .validity-note {
+    color: #B4BCDA !important;
+    background: rgba(90, 120, 255, 0.06) !important;
+    border-color: rgba(90, 120, 255, 0.12) !important;
+  }
+  html.dark .issuer-note  { color: #94A3B8 !important; }
+  html.dark .page-stand   { color: #94A3B8 !important; }
+  html.dark .page-stand strong { color: #C8D0E8 !important; }
+  html.dark .disclaimer   { color: #6B7280 !important; }
 </style>
 
 <script>

@@ -88,24 +88,20 @@ const features: { icon: IconName; title: string; desc: string }[] = [
     .feat-grid { grid-template-columns: 1fr; }
   }
 
-  @media (prefers-color-scheme: dark) {
-    .feat-card {
-      background: #181E2E !important;
-      border-color: rgba(90, 120, 255, 0.14) !important;
-    }
-    .feat-card:hover {
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
-      border-color: rgba(90, 120, 255, 0.26) !important;
-    }
-    .feat-card h3 { color: #E2E8F0 !important; }
-    .feat-card p  { color: #94A3B8 !important; }
-    /* Icon-Wrapper Hintergrund */
-    .feat-card [style*="background:rgba(51,102,255,0.08)"] {
-      background: rgba(90, 120, 255, 0.14) !important;
-    }
-    /* Abschnitts-Untertitel */
-    .section-header > p { color: #94A3B8 !important; }
+  html.dark .feat-card {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.14) !important;
   }
+  html.dark .feat-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+    border-color: rgba(90, 120, 255, 0.26) !important;
+  }
+  html.dark .feat-card h3 { color: #E2E8F0 !important; }
+  html.dark .feat-card p  { color: #94A3B8 !important; }
+  html.dark .feat-card [style*="background:rgba(51,102,255,0.08)"] {
+    background: rgba(90, 120, 255, 0.14) !important;
+  }
+  html.dark .section-header > p { color: #94A3B8 !important; }
 </style>
 
 <script>

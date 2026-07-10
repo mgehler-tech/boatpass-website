@@ -256,31 +256,28 @@ const searchText = `${title} ${description}`.toLowerCase();
     border-top: 1px solid rgba(26,31,54,0.06);
   }
 
-  @media (prefers-color-scheme: dark) {
-    .blog-featured {
-      background: #181E2E !important;
-      border-color: rgba(90, 120, 255, 0.12) !important;
-    }
-    .blog-featured:hover {
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
-      border-color: rgba(90, 120, 255, 0.22) !important;
-    }
-    .blog-compact {
-      background: #181E2E !important;
-      border-color: rgba(90, 120, 255, 0.10) !important;
-    }
-    .blog-compact:hover {
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
-      border-color: rgba(90, 120, 255, 0.20) !important;
-    }
-    .blog-featured-title,
-    .blog-compact-title,
-    .blog-author-name  { color: #E2E8F0 !important; }
-    .blog-featured-desc,
-    .blog-compact-desc,
-    .blog-author-sub   { color: #94A3B8 !important; }
-    .blog-compact-footer { border-color: rgba(90, 120, 255, 0.10) !important; }
-    /* "Neu"-Badge: navy-schwarz auf hell → bleibt lesbar als blaue Pill im Dark Mode */
-    .blog-tag-new { background: #2952CC !important; }
+  html.dark .blog-featured {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.12) !important;
   }
+  html.dark .blog-featured:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
+    border-color: rgba(90, 120, 255, 0.22) !important;
+  }
+  html.dark .blog-compact {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.10) !important;
+  }
+  html.dark .blog-compact:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+    border-color: rgba(90, 120, 255, 0.20) !important;
+  }
+  html.dark .blog-featured-title,
+  html.dark .blog-compact-title,
+  html.dark .blog-author-name  { color: #E2E8F0 !important; }
+  html.dark .blog-featured-desc,
+  html.dark .blog-compact-desc,
+  html.dark .blog-author-sub   { color: #94A3B8 !important; }
+  html.dark .blog-compact-footer { border-color: rgba(90, 120, 255, 0.10) !important; }
+  html.dark .blog-tag-new { background: #2952CC !important; }
 </style>

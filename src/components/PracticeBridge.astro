@@ -68,24 +68,20 @@ const c = content[variant];
 </section>
 
 <style>
-  @media (prefers-color-scheme: dark) {
-    section h2 { color: #E2E8F0 !important; }
-    section > p { color: #94A3B8 !important; }
-    /* Punkte-Karten */
-    section [style*="background:white"] {
-      background: #181E2E !important;
-      border-color: rgba(90, 120, 255, 0.12) !important;
-    }
-    section [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
-    section [style*="color:#4B5563"]  { color: #94A3B8 !important; }
-    section [style*="background:rgba(51,102,255,0.08)"] {
-      background: rgba(90, 120, 255, 0.14) !important;
-    }
-    /* Hinweis-Box */
-    .practice-note {
-      background: rgba(90, 120, 255, 0.07) !important;
-      border-color: rgba(90, 120, 255, 0.18) !important;
-    }
-    .practice-note-text { color: #94A3B8 !important; }
+  html.dark section h2 { color: #E2E8F0 !important; }
+  html.dark section > p { color: #94A3B8 !important; }
+  html.dark section [style*="background:white"] {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.12) !important;
   }
+  html.dark section [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+  html.dark section [style*="color:#4B5563"]  { color: #94A3B8 !important; }
+  html.dark section [style*="background:rgba(51,102,255,0.08)"] {
+    background: rgba(90, 120, 255, 0.14) !important;
+  }
+  html.dark .practice-note {
+    background: rgba(90, 120, 255, 0.07) !important;
+    border-color: rgba(90, 120, 255, 0.18) !important;
+  }
+  html.dark .practice-note-text { color: #94A3B8 !important; }
 </style>
