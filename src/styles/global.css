@@ -76,24 +76,19 @@
   color: var(--color-navy);
 }
 
-/* Dark Mode – native CSS-Variablen-Overrides. Mit <meta name="color-scheme" content="light dark">
-   im Head signalisieren wir, dass wir Dark Mode bewusst unterstützen – Chrome invertiert dann
-   NICHT mehr automatisch (Force Dark Mode), sondern nutzt diese Regeln. */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-background: #0F1117;
-    --color-surface:    #181E2E;
-    --color-text:       #E2E8F0;
-    --color-navy:       #E2E8F0;
-    --color-muted:      #94A3B8;
-    --color-border:     rgba(100, 140, 255, 0.12);
-  }
-  body { background-color: #0F1117; }
-  /* Hero-Akzent-Gradient auf hellerem Blau, damit es auf dunklem Hintergrund
-     gut erkennbar bleibt (WCAG-Kontrast ~4:1 statt ~1.8:1). */
-  .gradient-text {
-    background: linear-gradient(135deg, #6B9CFF 0%, #A0C4FF 100%);
-  }
+/* Dark Mode – class-based via html.dark. Init script in BaseLayout.astro sets the class
+   before first paint to avoid FOUC. Respects both system preference and manual toggle. */
+html.dark {
+  --color-background: #0F1117;
+  --color-surface:    #181E2E;
+  --color-text:       #E2E8F0;
+  --color-navy:       #E2E8F0;
+  --color-muted:      #94A3B8;
+  --color-border:     rgba(100, 140, 255, 0.12);
+}
+html.dark body { background-color: #0F1117; }
+html.dark .gradient-text {
+  background: linear-gradient(135deg, #6B9CFF 0%, #A0C4FF 100%);
 }
 
 /* Bewegung reduzieren für Nutzer mit entsprechender Systemeinstellung
