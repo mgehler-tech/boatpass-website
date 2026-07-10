@@ -19,7 +19,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <!-- Brand -->
       <div class="col-span-2 lg:col-span-1">
         <span class="text-lg font-black" style="color:#1A1F36; display:inline-flex; align-items:center; gap:8px;"><Image src={appIcon} alt="Boatpass Logo" width={52} height={52} loading="lazy" style="width:26px;height:26px;border-radius:6px;" /> Boat<span style="color:#3366FF;">Pass</span></span>
-        <p class="text-gray-500 text-sm mt-2">
+        <p class="text-muted text-sm mt-2">
           {lang === 'de'
             ? 'Die App für den Sportbootführerschein.'
             : 'The app for your boating license.'}
@@ -33,11 +33,11 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <div>
         <h3 class="font-semibold text-text mb-3 text-sm">{lang === 'de' ? 'Lizenzen' : 'Licenses'}</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="text-gray-500 hover:text-text transition-colors">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="text-gray-500 hover:text-text transition-colors">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a></li>
-          <li><a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="text-gray-500 hover:text-text transition-colors">UBI</a></li>
-          <li><a href={lang === 'de' ? '/src/' : '/en/src/'} class="text-gray-500 hover:text-text transition-colors">SRC</a></li>
-          <li><a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="text-gray-500 hover:text-text transition-colors">LRC</a></li>
+          <li><a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a></li>
+          <li><a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a></li>
+          <li><a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="text-muted hover:text-text transition-colors">UBI</a></li>
+          <li><a href={lang === 'de' ? '/src/' : '/en/src/'} class="text-muted hover:text-text transition-colors">SRC</a></li>
+          <li><a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="text-muted hover:text-text transition-colors">LRC</a></li>
         </ul>
       </div>
 
@@ -45,10 +45,10 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <div>
         <h3 class="font-semibold text-text mb-3 text-sm">{lang === 'de' ? 'Ratgeber' : 'Guides'}</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="text-gray-500 hover:text-text transition-colors">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="text-gray-500 hover:text-text transition-colors">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-binnen-pruefungsfragen/' : '/en/sbf-inland-exam-questions/'} class="text-gray-500 hover:text-text transition-colors">{lang === 'de' ? 'Prüfungsfragen Binnen' : 'Inland Exam Questions'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-see-pruefungsfragen/' : '/en/sbf-coastal-exam-questions/'} class="text-gray-500 hover:text-text transition-colors">{lang === 'de' ? 'Prüfungsfragen See' : 'Coastal Exam Questions'}</a></li>
+          <li><a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a></li>
+          <li><a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a></li>
+          <li><a href={lang === 'de' ? '/sbf-binnen-pruefungsfragen/' : '/en/sbf-inland-exam-questions/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'Prüfungsfragen Binnen' : 'Inland Exam Questions'}</a></li>
+          <li><a href={lang === 'de' ? '/sbf-see-pruefungsfragen/' : '/en/sbf-coastal-exam-questions/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'Prüfungsfragen See' : 'Coastal Exam Questions'}</a></li>
         </ul>
       </div>
 
@@ -56,10 +56,10 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <div>
         <h3 class="font-semibold text-text mb-3 text-sm">{lang === 'de' ? 'Seiten' : 'Pages'}</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href={getLocalizedPath(lang, '/blog/')} class="text-gray-500 hover:text-text transition-colors">{t.nav.blog}</a></li>
-          <li><a href={getLocalizedPath(lang, '/faq/')} class="text-gray-500 hover:text-text transition-colors">{t.nav.faq}</a></li>
-          <li><a href={lang === 'de' ? '/ueber-uns/' : '/en/about/'} class="text-gray-500 hover:text-text transition-colors">{t.nav.about}</a></li>
-          <li><a href={lang === 'de' ? '/kontakt/' : '/en/contact/'} class="text-gray-500 hover:text-text transition-colors">{t.nav.contact}</a></li>
+          <li><a href={getLocalizedPath(lang, '/blog/')} class="text-muted hover:text-text transition-colors">{t.nav.blog}</a></li>
+          <li><a href={getLocalizedPath(lang, '/faq/')} class="text-muted hover:text-text transition-colors">{t.nav.faq}</a></li>
+          <li><a href={lang === 'de' ? '/ueber-uns/' : '/en/about/'} class="text-muted hover:text-text transition-colors">{t.nav.about}</a></li>
+          <li><a href={lang === 'de' ? '/kontakt/' : '/en/contact/'} class="text-muted hover:text-text transition-colors">{t.nav.contact}</a></li>
         </ul>
       </div>
 
@@ -67,8 +67,8 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <div>
         <h3 class="font-semibold text-text mb-3 text-sm">{lang === 'de' ? 'Rechtliches' : 'Legal'}</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href={lang === 'de' ? '/datenschutz/' : '/en/privacy/'} class="text-gray-500 hover:text-text transition-colors">{t.footer.privacy}</a></li>
-          <li><a href={lang === 'de' ? '/impressum/' : '/en/legal/'} class="text-gray-500 hover:text-text transition-colors">{t.footer.imprint}</a></li>
+          <li><a href={lang === 'de' ? '/datenschutz/' : '/en/privacy/'} class="text-muted hover:text-text transition-colors">{t.footer.privacy}</a></li>
+          <li><a href={lang === 'de' ? '/impressum/' : '/en/legal/'} class="text-muted hover:text-text transition-colors">{t.footer.imprint}</a></li>
         </ul>
         <div class="mt-4">
           <a href={lang === 'de' ? '/en/' : '/'} class="footer-link text-sm text-primary hover:underline">{t.footer.switchLang}</a>
@@ -99,14 +99,10 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     }
   }
 
-  @media (prefers-color-scheme: dark) {
-    footer {
-      background: #0D1018 !important;
-      border-color: rgba(90, 120, 255, 0.12) !important;
-    }
-    /* Brand-Text (inline style color:#1A1F36) */
-    footer [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
-    /* Copyright-Trennlinie */
-    footer .border-gray-200 { border-color: rgba(90, 120, 255, 0.10) !important; }
+  html.dark footer {
+    background: #0D1018 !important;
+    border-color: rgba(90, 120, 255, 0.12) !important;
   }
+  html.dark footer [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+  html.dark footer .border-gray-200 { border-color: rgba(90, 120, 255, 0.10) !important; }
 </style>
