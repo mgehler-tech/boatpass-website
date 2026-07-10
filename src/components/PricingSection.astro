@@ -497,61 +497,47 @@ const soonItems = [t.pricing.soon1];
     gap: 24px;
   }
 
-  @media (prefers-color-scheme: dark) {
-    /* Weiße Karten → dunkle Oberfläche */
-    .catalog-card {
-      background: #181E2E !important;
-      border-color: rgba(90, 120, 255, 0.12) !important;
-    }
-    .catalog-card.featured { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3) !important; }
-
-    /* Free-vs-Paid Vergleich: linke (Free) Seite dunkel; rechte (Paid) behält Blau-Gradient */
-    .compare-bar {
-      background: #181E2E !important;
-      border-color: rgba(90, 120, 255, 0.14) !important;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25) !important;
-    }
-    .compare-free .compare-label { color: #E2E8F0 !important; }
-    .compare-free .compare-sub   { color: #94A3B8 !important; }
-    .compare-free .compare-feature { color: #B4BCDA !important; }
-    .compare-check-free { background: rgba(90, 120, 255, 0.14) !important; }
-
-    /* Coming-soon Bar */
-    .soon-bar {
-      background: #181E2E !important;
-      border-color: rgba(90, 120, 255, 0.08) !important;
-    }
-    .plus-circle { background: #1A2140 !important; }
-
-    /* Stat-Boxes und Stat-Pills (SBF Binnen) */
-    .stat-box {
-      background: #1A2140 !important;
-      border-color: rgba(90, 120, 255, 0.10) !important;
-    }
-    .stat-num { color: #E2E8F0 !important; }
-    .hero-stat {
-      background: #1A2140 !important;
-      border-color: rgba(90, 120, 255, 0.10) !important;
-    }
-    .hero-stat strong { color: #E2E8F0 !important; }
-
-    /* Lizenz-Verweiskarte */
-    .licenses-link-card {
-      background: #1A2140 !important;
-      border-color: rgba(90, 120, 255, 0.22) !important;
-    }
-    .licenses-link-card:hover {
-      background: #1E2842 !important;
-      border-color: rgba(90, 120, 255, 0.40) !important;
-    }
-
-    /* Inline-Farben für Text innerhalb von Pricing-Karten */
-    #pricing [style*="color:#1A1F36"]  { color: #E2E8F0 !important; }
-    #pricing [style*="color: #1A1F36"] { color: #E2E8F0 !important; }
-    #pricing [style*="color:#6B7280"]  { color: #94A3B8 !important; }
-    #pricing [style*="color: #6B7280"] { color: #94A3B8 !important; }
-    /* Grüne Freitest-Badge bleibt wie sie ist (Kontrast auf Grün-Hintergrund OK) */
+  html.dark .catalog-card {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.12) !important;
   }
+  html.dark .catalog-card.featured { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3) !important; }
+  html.dark .compare-bar {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.14) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25) !important;
+  }
+  html.dark .compare-free .compare-label { color: #E2E8F0 !important; }
+  html.dark .compare-free .compare-sub   { color: #94A3B8 !important; }
+  html.dark .compare-free .compare-feature { color: #B4BCDA !important; }
+  html.dark .compare-check-free { background: rgba(90, 120, 255, 0.14) !important; }
+  html.dark .soon-bar {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.08) !important;
+  }
+  html.dark .plus-circle { background: #1A2140 !important; }
+  html.dark .stat-box {
+    background: #1A2140 !important;
+    border-color: rgba(90, 120, 255, 0.10) !important;
+  }
+  html.dark .stat-num { color: #E2E8F0 !important; }
+  html.dark .hero-stat {
+    background: #1A2140 !important;
+    border-color: rgba(90, 120, 255, 0.10) !important;
+  }
+  html.dark .hero-stat strong { color: #E2E8F0 !important; }
+  html.dark .licenses-link-card {
+    background: #1A2140 !important;
+    border-color: rgba(90, 120, 255, 0.22) !important;
+  }
+  html.dark .licenses-link-card:hover {
+    background: #1E2842 !important;
+    border-color: rgba(90, 120, 255, 0.40) !important;
+  }
+  html.dark #pricing [style*="color:#1A1F36"]  { color: #E2E8F0 !important; }
+  html.dark #pricing [style*="color: #1A1F36"] { color: #E2E8F0 !important; }
+  html.dark #pricing [style*="color:#6B7280"]  { color: #94A3B8 !important; }
+  html.dark #pricing [style*="color: #6B7280"] { color: #94A3B8 !important; }
 
   @media (max-width: 680px) {
     .paid-grid { grid-template-columns: 1fr; }
