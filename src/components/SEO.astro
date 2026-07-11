@@ -1,4 +1,6 @@
 ---
+import type { AppRating } from '../lib/playstore';
+
 interface Props {
   title: string;
   description: string;
@@ -12,6 +14,7 @@ interface Props {
   altUrl?: string;
   /** Set true to keep a page out of the index (e.g. thin/duplicate pages). */
   noindex?: boolean;
+  appRating?: AppRating;
 }
 
 const {
@@ -24,6 +27,7 @@ const {
   hasAlternate = true,
   altUrl: altUrlOverride,
   noindex = false,
+  appRating,
 } = Astro.props;
 
 const altLang = lang === 'de' ? 'en' : 'de';
@@ -139,6 +143,15 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' |
         }
       ]
     },
+    ...(appRating && appRating.ratings > 0 ? {
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": appRating.score.toFixed(1),
+        "ratingCount": appRating.ratings,
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    } : {}),
     "description": description,
     "inLanguage": "de",
     "publisher": {

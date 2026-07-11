@@ -7,6 +7,9 @@ import CatalogSources from '../components/CatalogSources.astro';
 import PricingSection from '../components/PricingSection.astro';
 import BlogTeaser from '../components/BlogTeaser.astro';
 import FinderTeaser from '../components/FinderTeaser.astro';
+import { getPlayStoreRating } from '../lib/playstore';
+
+const appRating = await getPlayStoreRating();
 
 const websiteSchema = {
   "@context": "https://schema.org",
@@ -23,6 +26,7 @@ const websiteSchema = {
   title="Sportbootführerschein App – SBF Binnen & See lernen"
   description="Die beste SBF Lernapp für Sportbootführerschein Binnen und See. Offizielle ELWIS-Prüfungsfragen, Prüfungssimulation & Fehler-Training. Kostenlos starten."
   lang="de"
+  appRating={appRating}
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <HeroSection lang="de" />

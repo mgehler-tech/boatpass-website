@@ -7,12 +7,16 @@ import CatalogSources from '../../components/CatalogSources.astro';
 import PricingSection from '../../components/PricingSection.astro';
 import BlogTeaser from '../../components/BlogTeaser.astro';
 import FinderTeaser from '../../components/FinderTeaser.astro';
+import { getPlayStoreRating } from '../../lib/playstore';
+
+const appRating = await getPlayStoreRating();
 ---
 
 <BaseLayout
   title="Boating License App – Learn SBF Inland & Coastal"
   description="The best study app for the German boating license (SBF Inland & Coastal). Official ELWIS exam questions, exam simulation & mistake training. Start for free."
   lang="en"
+  appRating={appRating}
 >
   <HeroSection lang="en" />
   <TrustBar lang="en" />
