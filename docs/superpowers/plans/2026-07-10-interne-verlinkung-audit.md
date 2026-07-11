@@ -75,6 +75,28 @@ Komponenten-Änderung erfordern würden (Card-Komponenten ohne `href`-Slot) oder
 (b) redaktionelle Abwägung brauchen, *welcher* von mehreren passenden Artikeln
 an einer Stelle verlinkt werden soll, um Link-Dilution zu vermeiden.
 
+## Update 2026-07-11 – verbleibende Opportunities umgesetzt
+
+Alle sechs oben genannten „Verbleibende Opportunities" wurden umgesetzt, ohne
+Komponenten zu ändern (Text-Listenpunkte blieben unverändert; stattdessen
+wurden die Zielartikel in die bestehenden „Weiterführende Artikel"/„Related
+licenses"-Blöcke bzw. als Inline-Link in passende FAQ-Antworten eingefügt):
+
+| # | Ziel-Artikel | Datei(en) | Platzierung |
+|---|---|---|---|
+| 1 | `lichterfuehrung-erklaert` | `sbf-see.astro`, `sbf-binnen.astro` (+ EN) | Weiterführende Artikel |
+| 2 | `wetterkunde-beaufort` | `sbf-see.astro` (+ EN) | Weiterführende Artikel |
+| 3 | `gezeiten-zwoelftelregel`, `kursumrechnung-sbf-see` | `sbf-see.astro` (+ EN) | Weiterführende Artikel |
+| 4 | `seezeichen-lateralsystem` | zurückgestellt (Link-Dilution auf `sbf-see.astro` vermeiden) | – |
+| 5 | `rettungsweste-auftriebsklassen`, `erste-hilfe-an-bord`, `fkn-pyrotechnik-seenotsignalmittel` | `lrc.astro`, `src.astro`, `ubi.astro` (+ EN, inkl. `distress-signals-at-sea` EN-Parität) | Verwandte Führerscheine / Related licenses |
+| 6 | `sbf-gueltigkeit-welcher-schein-wo`, `sbf-im-ausland-gueltig` | `faq.astro` (+ EN) | Inline-Link in bestehenden FAQ-Antworten |
+
+`npm run build` lokal verifiziert (111 Seiten, keine Fehler). Punkt 4
+(`seezeichen-lateralsystem` / `betonnung-nordsee-ostsee-unterschiede`) bewusst
+zurückgestellt, um die „Weiterführende Artikel"-Liste auf `sbf-see.astro`
+nicht zu überladen (jetzt 13 Einträge) – guter Kandidat für die nächste Runde,
+z. B. auf `sbf-see-pruefungsfragen.astro`.
+
 ## Nicht verändert (bewusst)
 
 - Die Kategorie-Cluster auf `/blog/` und `/en/blog/` (`categoryMeta`) decken
