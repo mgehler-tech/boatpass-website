@@ -261,4 +261,16 @@ const breadcrumbSchema = {
   @media (max-width: 640px) {
     .license-grid { grid-template-columns: 1fr; }
   }
+
+  html.dark .license-card {
+    background: #181E2E;
+    border-color: rgba(90, 120, 255, 0.14);
+  }
+  html.dark .license-card:hover {
+    border-color: rgba(90, 120, 255, 0.32);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
+  }
+  html.dark .license-card-soon { background: rgba(24, 30, 46, 0.6); }
+  html.dark .license-title { color: #E2E8F0; }
+  html.dark .license-desc  { color: #94A3B8; }
 </style>
