@@ -127,6 +127,23 @@ html.dark [style*="border-color:rgba(51,102,255"],
 html.dark [style*="border-color: rgba(51,102,255"] {
   border-color: rgba(90, 120, 255, 0.18) !important;
 }
+/* Dark overlays on white → invert to light tints */
+html.dark [style*="background:rgba(0,0,0,0.04)"],
+html.dark [style*="background:rgba(0,0,0,0.05)"],
+html.dark [style*="background:rgba(0,0,0,0.08)"] {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+html.dark [style*="border:1px solid rgba(0,0,0,0.07)"],
+html.dark [style*="border: 1px solid rgba(0,0,0,0.07)"] {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+/* Navy tints used for table row striping → blue tints */
+html.dark [style*="background:rgba(26,31,54,0.02)"] { background: rgba(90, 120, 255, 0.03) !important; }
+html.dark [style*="background:rgba(26,31,54,0.04)"] { background: rgba(90, 120, 255, 0.06) !important; }
+/* Dot separators */
+html.dark [style*="background:#D1D5DB"] { background: rgba(90, 120, 255, 0.3) !important; }
+/* Remaining text colors */
+html.dark [style*="color:#374151"] { color: #94A3B8 !important; }
 
 html.dark .gradient-text {
   background: linear-gradient(135deg, #6B9CFF 0%, #A0C4FF 100%);
