@@ -127,6 +127,22 @@ html.dark [style*="border-color:rgba(51,102,255"],
 html.dark [style*="border-color: rgba(51,102,255"] {
   border-color: rgba(90, 120, 255, 0.18) !important;
 }
+/* border shorthand with blue rgba – cover all thickness/opacity variants */
+html.dark [style*="border:1px solid rgba(51,102,255"],
+html.dark [style*="border: 1px solid rgba(51,102,255"],
+html.dark [style*="border:1.5px solid rgba(51,102,255"],
+html.dark [style*="border: 1.5px solid rgba(51,102,255"] {
+  border-color: rgba(90, 120, 255, 0.20) !important;
+}
+html.dark [style*="border-top:1px solid rgba(51,102,255"],
+html.dark [style*="border-top: 1px solid rgba(51,102,255"] {
+  border-top-color: rgba(90, 120, 255, 0.14) !important;
+}
+/* Additional blue tint backgrounds not in 0.05/0.06/0.08 set */
+html.dark [style*="background:rgba(51,102,255,0.03)"],
+html.dark [style*="background:rgba(51,102,255,0.10)"] {
+  background: rgba(90, 120, 255, 0.08) !important;
+}
 /* Dark overlays on white → invert to light tints */
 html.dark [style*="background:rgba(0,0,0,0.04)"],
 html.dark [style*="background:rgba(0,0,0,0.05)"],
@@ -146,10 +162,12 @@ html.dark [style*="background:#D1D5DB"] { background: rgba(90, 120, 255, 0.3) !i
 html.dark [style*="color:#374151"] { color: #94A3B8 !important; }
 
 html.dark .gradient-text {
-  background: linear-gradient(135deg, #6B9CFF 0%, #A0C4FF 100%);
-  background-size: 200% auto;
+  background: linear-gradient(135deg, #7BACFF 0%, #B8D8FF 100%);
+  background-size: auto;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   background-clip: text;
+  animation: none;
 }
 
 /* Bewegung reduzieren für Nutzer mit entsprechender Systemeinstellung
