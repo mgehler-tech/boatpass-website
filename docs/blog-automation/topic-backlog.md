@@ -19,7 +19,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Erste Hilfe an Bord – die wichtigsten Maßnahmen auf dem Wasser (2026-07-08: erste-hilfe-an-bord / first-aid-on-board)
 - [x] Betonnung Nord- vs. Ostsee – Unterschiede im Lateralsystem (2026-07-10: betonnung-nordsee-ostsee-unterschiede / buoyage-north-sea-vs-baltic-sea)
 - [x] SBF mit eigenem Boot oder Charterboot – was passt zu wem? (2026-07-11: sbf-eigenes-boot-oder-charterboot / own-boat-or-charter-boat-sbf)
-- [ ] Motorboot oder Segelboot – welcher SBF und welche Praxis?
+- [x] Motorboot oder Segelboot – welcher SBF und welche Praxis? (2026-07-12: motorboot-oder-segelboot-welcher-sbf / motorboat-or-sailboat-which-sbf)
 - [ ] Brücken- und Durchfahrtshöhen auf Binnengewässern beachten
 - [ ] Boot trailern und slippen – was Sportbootfahrer wissen müssen
 - [ ] Boot einwintern – Checkliste fürs Winterlager
