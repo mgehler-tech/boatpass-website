@@ -273,7 +273,18 @@ const soonItems = [t.pricing.soon1];
     display: flex;
     flex-direction: column;
     gap: 0;
-    margin-bottom: 20px;
+    /* In der gleich hohen Karten-Zeile (ab 2 Spalten, ≥681px) trägt die
+       sekundäre "Weitere Lizenzen"-Karte weniger Inhalt als die daneben
+       stehende SBF-See-Karte. Bislang klebte die Lizenz-Liste oben und der
+       "Alle Lizenzen"-Link unten (margin-top:auto) – dazwischen blieb eine
+       große Leere, die Karte wirkte oberlastig. Die Liste jetzt vertikal
+       zentrieren (margin-top:auto): der Freiraum verteilt sich gleichmäßig
+       ober- und unterhalb, der CTA bleibt bündig am unteren Rand und damit
+       auf einer Linie mit dem CTA der SBF-See-Karte. Einspaltig (mobil) ist
+       kein Freiraum vorhanden – die auto-Ränder greifen dort nicht, das
+       Layout bleibt unverändert. Reiner Layout-Feinschliff. */
+    margin-top: auto;
+    margin-bottom: 0;
     border: 1px solid rgba(51,102,255,0.10);
     border-radius: 12px;
     overflow: hidden;
