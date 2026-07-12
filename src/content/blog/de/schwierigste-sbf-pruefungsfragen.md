@@ -7,6 +7,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "hardest-sbf-exam-questions"
+faq:
+  - question: "Wie hoch ist die Durchfallquote beim Sportbootführerschein?"
+    answer: "Laut DMYV und DSV liegt die Durchfallquote in der Theorie im Schnitt bei etwa 10–15 % und in der Praxis bei rund 5 %. Der SBF See fällt wegen der Navigationsaufgabe etwas höher aus als der SBF Binnen. Zum Vergleich: Beim Auto-Führerschein fallen rund 39 % durch die Theorieprüfung."
+  - question: "Welche ist die schwierigste Frage beim SBF See?"
+    answer: "Die höchste Fehlerquote (rund 39 %) hat die Frage zur Starkwindwarnung. Die richtige Antwort ist Windstärke 6 und 7 der Beaufort-Skala. Häufig wird sie mit der Sturmwarnung verwechselt, die erst ab Windstärke 8 gilt."
+  - question: "Welche Fragen sind beim SBF Binnen am schwierigsten?"
+    answer: "Am schwierigsten sind die Segelfragen: Die härteste SBF-Binnen-Frage betrifft Trimmfehler bei einer Jolle auf Amwindkursen mit einer Fehlerquote von rund 48 %. Wer den SBF Binnen nur unter Motor ablegt, muss die 47 Segelfragen im Katalog nicht beantworten."
+  - question: "Warum werden bestimmte SBF-Fragen so oft falsch beantwortet?"
+    answer: "Es gibt drei Hauptgründe: Verwechslungsgefahr bei ähnlichen Antwortmöglichkeiten (etwa bei Lichterführung und Schallsignalen), das Vermischen von Binnen- und See-Regeln beim gleichzeitigen Lernen beider Scheine sowie selten geübte Randfragen. Gezieltes Fehler-Training hilft, diese Fehler zu vermeiden."
 ---
 
 Nicht alle Prüfungsfragen beim Sportbootführerschein sind gleich schwer. Einige Fragen werden von fast der Hälfte aller Prüflinge falsch beantwortet – obwohl sie mit der richtigen Vorbereitung machbar sind. Wir schauen uns an, welche Fragen die höchsten Fehlerquoten haben und wie du sie knacken kannst.
