@@ -1,0 +1,81 @@
+name: AEO Autopilot (KI-Suchmaschinen-Optimierung)
+
+on:
+  schedule:
+    - cron: '0 7 * * 3,5'  # Mi + Fr 08:00 CET (= 07:00 UTC)
+  workflow_dispatch:        # auch manuell auslösbar
+
+jobs:
+  aeo:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: 'npm'
+
+      - name: Install Claude Code CLI
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Run AEO Agent
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIT_AUTHOR_NAME: 'AEO Autopilot'
+          GIT_AUTHOR_EMAIL: 'actions@github.com'
+          GIT_COMMITTER_NAME: 'AEO Autopilot'
+          GIT_COMMITTER_EMAIL: 'actions@github.com'
+        run: |
+          TODAY=$(date +%Y-%m-%d)
+          claude --dangerously-skip-permissions -p "
+          Du bist der AEO-Architekt (Answer Engine Optimization) für boatpass.de.
+          Deine Aufgabe: die Codebase so optimieren, dass boatpass.de von KI-Suchmaschinen
+          (ChatGPT, Perplexity, Claude, Gemini, Bing Copilot) gefunden, verstanden und als
+          zitierwürdige Quelle verwendet wird.
+
+          Das Fokus-Thema: SBF Binnen, SBF See, Funkzeugnis (UBI/SRC), Bootsführerschein.
+          Das Projektverzeichnis: $(pwd)
+
+          Lies zuerst docs/seo-automation/seo-playbook.md für Kontext zu Keywords.
+          Falls docs/aeo-automation/aeo-playbook.md existiert, lies es ebenfalls.
+
+          ## AEO-Schwachstellen (priorisiert A → F, wähle genau EINE):
+
+          A) Fehlende/veraltete public/llms.txt
+             Standard: # Seitenname, Kurzbeschreibung, ## Abschnitte mit Links + Beschreibung
+             aller wichtigen Seiten (Startseite, SBF Binnen, SBF See, Funkzeugnis, Blog).
+
+          B) robots.txt blockiert KI-Crawler
+             GPTBot, PerplexityBot, ClaudeBot, GoogleBot-Extended, CCBot müssen erlaubt sein.
+
+          C) Fehlende FAQ-Abschnitte mit direkten Antworten
+             KI bevorzugt: Frage als H3, Antwort im ersten Satz (<50 Wörter).
+             Typische Fragen: Was ist SBF Binnen/See? Was kostet er? Wie lange lernt man?
+
+          D) Fehlende HowTo-Schema JSON-LD
+             Seiten mit Schritt-für-Schritt-Anleitungen ohne HowTo-Schema ergänzen.
+
+          E) Fehlende Definitions-Boxen (Entity-Clarity)
+             Kernbegriffe (SBF Binnen, SBF See, Funkzeugnis, UBI, SRC) klar in 1-2 Sätzen
+             definieren, bevor Details folgen.
+
+          F) Schwache Autoren-Expertise-Signale (E-E-A-T)
+             Blog-Posts in src/content/blog/ auf fehlende credentials im Frontmatter prüfen.
+
+          ## Regeln:
+          - Genau EINE Schwachstelle beheben, vollständig.
+          - Keine Layout-Klassen (Tailwind) ändern.
+          - EN/DE-Parität: Falls de-Datei geändert, entsprechende en-Datei ebenfalls anpassen.
+          - npm ci && npm run build muss mit Exit Code 0 durchlaufen. Fehler selbst beheben.
+          - Branch erstellen: chore/aeo-${TODAY}-<kurzes-thema>
+          - Änderungen committen und pushen (git push origin <branch>).
+          - PR gegen main erstellen via: gh pr create --title 'chore(aeo): ...' --body '...'
+            PR-Body: Welches AEO-Problem behoben? Welche KI-Suchmaschinen profitieren?
+          "
