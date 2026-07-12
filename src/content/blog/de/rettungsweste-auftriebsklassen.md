@@ -7,6 +7,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "life-jacket-buoyancy-classes"
+faq:
+  - question: "Welche Auftriebsklassen für Rettungswesten gibt es?"
+    answer: "Die europäische Norm EN ISO 12402 definiert vier Klassen: 50N (Schwimmhilfe), 100N (Schwimmweste für ruhige Gewässer), 150N (Allzweck-Rettungsweste) und 275N (Leistungsweste für extreme Verhältnisse). Der Newton-Wert gibt die Auftriebskraft an – ein Newton hebt rechnerisch rund 100 Gramm aus dem Wasser."
+  - question: "Welche Rettungsweste ist für den SBF See vorgeschrieben oder empfohlen?"
+    answer: "Für Fahrten auf See ist die 150N-Klasse nach EN ISO 12402 der übliche Standard. Sie muss CE-gekennzeichnet sein und soll eine bewusstlose Person aus der Bauchlage auf den Rücken drehen, sodass das Gesicht über Wasser kommt. Für extreme Offshore-Bedingungen ist die 275N-Klasse die richtige Wahl."
+  - question: "Was ist der Unterschied zwischen einer Schwimmhilfe (50N) und einer Rettungsweste?"
+    answer: "Eine 50N-Schwimmhilfe unterstützt nur einen bewussten, aktiven Schwimmer und ist offiziell keine Rettungsweste. Sie dreht eine bewusstlose Person nicht eigenständig auf den Rücken. Erst Rettungswesten ab der 150N-Klasse sind dafür ausgelegt, das Gesicht einer bewusstlosen Person über Wasser zu halten."
+  - question: "Wann müssen Kinder an Bord eine Rettungsweste tragen?"
+    answer: "Nach der Binnenschifffahrtsstraßen-Ordnung (BinSchStrO) müssen Kinder auf dem Außendeck von Kleinfahrzeugen eine geeignete Schwimm- oder Rettungsweste tragen. Der Skipper ist dafür verantwortlich, dass Kinder an Bord eine passende Weste tragen."
 ---
 
 Eine Rettungsweste liegt im Schrank, ist zu warm, sitzt unbequem – und landet deshalb dort, wo sie am wenigsten hilft. Doch selbst wer die Weste konsequent trägt, hat sie oft ohne großes Nachdenken gekauft. Die Auftriebsklassen nach **EN ISO 12402** klingen technisch, sind aber die entscheidende Grundlage dafür, ob eine Weste im Ernstfall ihr Versprechen hält. Denn nicht jede Weste kann eine bewusstlose Person aus der Bauchlage drehen und das Gesicht über Wasser halten – und genau darauf kommt es an, wenn du nicht mehr selbst schwimmen kannst.

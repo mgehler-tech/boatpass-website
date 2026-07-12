@@ -7,6 +7,15 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "sound-signals-sbf-explained"
+faq:
+  - question: "Wie lang ist ein kurzer und ein langer Ton bei Schallsignalen?"
+    answer: "Ein kurzer Ton dauert etwa eine Sekunde, ein langer Ton etwa vier bis sechs Sekunden. Aus diesen beiden Bausteinen setzen sich alle Schallsignale beim SBF See und SBF Binnen zusammen."
+  - question: "Was bedeutet ein kurzer Ton beim Sportbootführerschein?"
+    answer: "Ein kurzer Ton bedeutet „Ich ändere meinen Kurs nach Steuerbord“, zwei kurze Töne „nach Backbord“ und drei kurze Töne „Ich arbeite mit Maschine rückwärts“. Diese Grundbedeutungen gelten auf See (KVR) wie auf Binnen."
+  - question: "Was ist der Unterschied zwischen fünf kurzen Tönen auf See und auf Binnen?"
+    answer: "Auf See sind mindestens fünf kurze Töne das Zweifel- bzw. Warnsignal („Ich verstehe deine Absicht nicht / Kollisionsgefahr“). Auf Binnenschifffahrtsstraßen bedeutet dieselbe Tonfolge dagegen „Ich kann nicht überholt werden“. Genau solche Abweichungen zwischen See und Binnen sind die häufigsten Prüfungsfehler."
+  - question: "Wie oft müssen Schallsignale bei verminderter Sicht gegeben werden?"
+    answer: "Bei verminderter Sicht durch Nebel, Regen oder Schnee sind die Signale Pflicht und werden mindestens alle zwei Minuten gegeben. Ein Maschinenfahrzeug mit Fahrt durchs Wasser gibt dabei einen langen Ton."
 ---
 
 Schallsignale sind ein Dauerbrenner in der SBF-Theorieprüfung – und eine beliebte Fehlerquelle. Der Grund: Auf den Seeschifffahrtsstraßen (KVR) bedeuten dieselben Tonfolgen teilweise etwas anderes als auf den Binnenschifffahrtsstraßen. Dieser Artikel sortiert die wichtigsten Signale sauber nach **See** und **Binnen** – und zeigt, wo die Verwechslungsfallen lauern.

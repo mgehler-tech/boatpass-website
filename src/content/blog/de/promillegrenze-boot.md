@@ -7,6 +7,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "blood-alcohol-limit-boat"
+faq:
+  - question: "Gilt auf dem Boot die 0,5-Promille-Grenze wie beim Auto?"
+    answer: "Nein. Das Straßenverkehrsgesetz mit seiner 0,5-Promille-Schwelle gilt für Sportboote nicht. Auf Bundeswasserstraßen greifen die BinSchStrO, auf Seeschifffahrtsstraßen die SeeSchStrO und international das KVR – sie verpflichten den Schiffsführer, jederzeit fahrtüchtig zu sein, kennen aber keine eins-zu-eins vergleichbare Bußgeld-Grenze."
+  - question: "Ab wie viel Promille gilt man auf dem Boot als absolut fahruntüchtig?"
+    answer: "Nach ständiger Rechtsprechung des BGH liegt die absolute Fahruntüchtigkeit bei 1,6 Promille – unabhängig davon, ob äußere Ausfallerscheinungen erkennbar sind. Bereits darunter kann relative Fahruntüchtigkeit vorliegen, wenn zusätzliche Anzeichen wie eine unsichere Fahrweise oder ein Unfall hinzukommen."
+  - question: "Welche Konsequenzen drohen bei Trunkenheit als Schiffsführer?"
+    answer: "Wer fahruntüchtig ein Boot führt und andere gefährdet, macht sich nach § 315a StGB strafbar – bei fahrlässiger Begehung droht Freiheitsstrafe bis zu zwei Jahren oder Geldstrafe. Hinzu kommen Bußgelder, der mögliche Entzug des Sportbootführerscheins (beim SBF See über das BSH) und der Verlust des Versicherungsschutzes."
+  - question: "Dürfen Mitfahrer auf dem Boot Alkohol trinken?"
+    answer: "Passagiere, die nicht das Boot führen, sind in der Regel an keine Promillegrenze gebunden. Wer aber später das Steuer übernehmen soll oder spontan die Schiffsführung übernimmt, wird rechtlich zum Schiffsführer und muss nüchtern bleiben."
 ---
 
 Viele Bootfahrer glauben, auf dem Wasser gelten dieselben Alkoholregeln wie im Auto – also ab 0,5 Promille droht ein Bußgeld, und darunter ist alles in Ordnung. Das ist ein gefährlicher Irrtum. Die Rechtslage für Schiffsführer auf deutschen Gewässern ist in einigen Punkten strenger, in anderen anders strukturiert als im Straßenverkehr. Wer seinen [Sportbootführerschein](https://boatpass.de/sbf-see/) hat und regelmäßig auf Flüssen, Seen oder der Küste unterwegs ist, sollte die Regeln genau kennen. Denn die Konsequenzen von Fehlverhalten reichen vom Bußgeld über strafrechtliche Folgen bis zum Entzug des Führerscheins.
