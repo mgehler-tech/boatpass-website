@@ -82,3 +82,37 @@ an einer Stelle verlinkt werden soll, um Link-Dilution zu vermeiden.
   Orphan-Risiko auf Blog-Ebene.
 - Das automatische „Verwandte Artikel"-System (`BlogLayout.astro`) ist
   korrekt implementiert und wurde nicht angefasst.
+
+## Re-Audit (2026-07-15) – Status: alle Lücken geschlossen
+
+Alle 6 „Verbleibende Opportunities" aus dem Audit vom 2026-07-10 wurden in der
+Zwischenzeit umgesetzt (siehe `sbf-see.astro` „Weiterführende Artikel":
+`lichterfuehrung-erklaert`, `wetterkunde-beaufort`, `gezeiten-zwoelftelregel`,
+`kursumrechnung-sbf-see`, `seezeichen-lateralsystem`; `sbf-binnen.astro`:
+`rettungsweste-auftriebsklassen`; `sbf-pruefung-ablauf.astro`:
+`erste-hilfe-an-bord`; `sbf-see.astro`: `fkn-pyrotechnik-seenotsignalmittel`;
+`faq.astro`: Inline-Links zu `sbf-gueltigkeit-welcher-schein-wo` und
+`sbf-im-ausland-gueltig`).
+
+Vollständige Prüfung aller 37 DE- und 37 EN-Blogartikel gegen die 12
+Haupt-Hub-Seiten (Homepage, `sbf-see`/`sbf-binnen`, `fuehrerscheine`, `lrc`,
+`src`, `ubi`, `sbf-kosten`, `faq`, `sbf-pruefung-ablauf`, beide
+`*-pruefungsfragen`-Seiten, Finder-Tool) sowie deren EN-Pendants ergab: **jeder
+einzelne Artikel hat mindestens einen kontextuellen Inbound-Link von einer
+Hub-Seite**, alle mit sprechenden Ankertexten (kein „hier klicken"). Neu seit
+dem letzten Audit hinzugekommene Artikel
+(`betonnung-nordsee-ostsee-unterschiede`, `sbf-eigenes-boot-oder-charterboot`,
+inkl. EN-Pendants) sind ebenfalls bereits verlinkt (`sbf-see.astro` bzw.
+`sbf-kosten.astro`).
+
+Zusätzlich geprüft und unauffällig:
+- `robots.txt` blockiert nichts; kein Blogpost trägt `draft`/`noindex` im
+  Frontmatter.
+- `/blog/`- und `/en/blog/`-Übersichten haben kein Slice/Limit – sie listen
+  weiterhin ausnahmslos alle Artikel.
+- `BlogTeaser.astro` (Homepage) zeigt die 3 neuesten Artikel plus Link zu
+  „Alle Artikel" – Homepage → `/blog/` → jeder Artikel bleibt in 2 Klicks
+  erreichbar.
+
+**Ergebnis:** Keine offenen Linking-Gaps und keine Orphan-Seiten gefunden.
+Keine Code-Änderung in diesem Durchgang nötig.
