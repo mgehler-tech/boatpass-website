@@ -40,13 +40,22 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
           <li aria-hidden="true"><div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div></li>
           <li><a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a></li>
           <li><a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="nav-dropdown-item">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a></li>
           <li aria-hidden="true"><div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div></li>
           <li><a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="nav-dropdown-item">UBI</a></li>
           <li><a href={lang === 'de' ? '/src/' : '/en/src/'} class="nav-dropdown-item">SRC</a></li>
           <li><a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="nav-dropdown-item">LRC</a></li>
           <li><span class="nav-dropdown-item nav-dropdown-soon">Bodenseeschifferpatent <span aria-hidden="true" style="font-size:12px;color:#3366FF;">{lang === 'de' ? 'bald' : 'soon'}</span></span></li>
+        </ul>
+      </div>
+
+      <!-- Ratgeber / Guides Dropdown -->
+      <div class="nav-dropdown">
+        <button id="guides-trigger" class="text-sm font-medium nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" style="color: #6B7280; background:none; border:none; cursor:pointer; display:flex; align-items:center; gap:4px; padding:0; font-family:inherit;">
+          {lang === 'de' ? 'Ratgeber' : 'Guides'} <span aria-hidden="true" style="font-size:10px;">▾</span>
+        </button>
+        <ul id="guides-menu" class="nav-dropdown-menu">
+          <li><a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a></li>
+          <li><a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="nav-dropdown-item">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a></li>
         </ul>
       </div>
 
@@ -130,13 +139,29 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
             <div class="mobile-divider"></div>
             <a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a>
             <a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a>
-            <a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
-            <a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="mobile-nav-sublink">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
             <div class="mobile-divider"></div>
             <a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="mobile-nav-sublink">UBI</a>
             <a href={lang === 'de' ? '/src/' : '/en/src/'} class="mobile-nav-sublink">SRC</a>
             <a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="mobile-nav-sublink">LRC</a>
             <span class="mobile-nav-sublink mobile-nav-sublink--soon">Bodenseeschifferpatent <span class="soon-badge">{lang === 'de' ? 'bald' : 'soon'}</span></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ratgeber / Guides Accordion -->
+      <div class="mobile-accordion">
+        <button class="mobile-accordion-trigger mobile-nav-link w-full text-left" aria-expanded="false" aria-controls="mobile-acc-guides-body">
+          <span>{lang === 'de' ? 'Ratgeber' : 'Guides'}</span>
+          <span class="accordion-chevron" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
+        <div id="mobile-acc-guides-body" class="mobile-accordion-body">
+          <div class="mobile-subnav">
+            <a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
+            <a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="mobile-nav-sublink">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
           </div>
         </div>
       </div>
@@ -245,18 +270,17 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   });
 
   // Desktop Dropdown: aria-expanded per Fokus verwalten
-  const dropdownTrigger = document.getElementById('licenses-trigger');
-  const dropdownContainer = dropdownTrigger?.closest('.nav-dropdown');
-  if (dropdownContainer && dropdownTrigger) {
-    dropdownContainer.addEventListener('focusin', () => {
-      dropdownTrigger.setAttribute('aria-expanded', 'true');
-    });
-    dropdownContainer.addEventListener('focusout', (e: FocusEvent) => {
-      if (!dropdownContainer.contains(e.relatedTarget as Node)) {
-        dropdownTrigger.setAttribute('aria-expanded', 'false');
-      }
+  function wireDropdown(triggerId: string) {
+    const trigger = document.getElementById(triggerId);
+    const container = trigger?.closest('.nav-dropdown');
+    if (!container || !trigger) return;
+    container.addEventListener('focusin', () => trigger.setAttribute('aria-expanded', 'true'));
+    container.addEventListener('focusout', (e: FocusEvent) => {
+      if (!container.contains(e.relatedTarget as Node)) trigger.setAttribute('aria-expanded', 'false');
     });
   }
+  wireDropdown('licenses-trigger');
+  wireDropdown('guides-trigger');
 
   // Theme toggle
   const themeToggle = document.getElementById('theme-toggle') as HTMLButtonElement | null;
