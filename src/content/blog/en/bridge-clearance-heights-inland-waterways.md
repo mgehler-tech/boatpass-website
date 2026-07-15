@@ -19,7 +19,7 @@ Here's the key thing to understand: this height is **not a fixed value** that's 
 
 ## Reference water levels: why the posted height isn't absolute
 
-To make clearance figures comparable and usable at all, many waterway authorities tie them to a defined **reference water level**. On some rivers, this reference is a statistically derived benchmark level against which the published clearance figures are calculated. If the actual water level is higher than this reference, the real available clearance is correspondingly lower than the posted value. If it's lower, you have more room to spare.
+To make clearance figures comparable and usable at all, many waterway authorities tie them to a defined **reference water level**, a set benchmark that the published clearance figures are based on. If the actual water level is higher than this reference, the real available clearance is correspondingly lower than the posted value. If it's lower, you have more room to spare.
 
 The exact reference used varies by waterway and is set and published by the responsible waterway authority. As a rule of thumb: never rely solely on a printed figure or a value from an old chart. Always cross-check it against the current water level before passing under a bridge where things might be tight.
 

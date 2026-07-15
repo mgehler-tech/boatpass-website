@@ -19,7 +19,7 @@ Wichtig zu verstehen: Diese Höhe ist **kein fester Wert**, der einmal gemessen 
 
 ## Der Bezugswasserstand: warum die angegebene Höhe nicht absolut ist
 
-Damit Angaben zur Durchfahrtshöhe überhaupt vergleichbar und nutzbar sind, beziehen sich viele Wasserstraßenverwaltungen auf einen festgelegten **Bezugswasserstand**. Auf einigen Flüssen wird dafür ein sogenannter gleichwertiger Wasserstand herangezogen, ein statistisch ermittelter Referenzpegel, auf den sich die veröffentlichten Höhenangaben beziehen. Liegt der tatsächliche Pegel höher als dieser Bezugswasserstand, ist die real verfügbare Durchfahrtshöhe entsprechend geringer als der angegebene Wert. Liegt er niedriger, hast du mehr Spielraum.
+Damit Angaben zur Durchfahrtshöhe überhaupt vergleichbar und nutzbar sind, beziehen sich viele Wasserstraßenverwaltungen auf einen festgelegten **Bezugswasserstand**, einen definierten Pegel, auf den sich die veröffentlichten Höhenangaben beziehen. Liegt der tatsächliche Pegel höher als dieser Bezugswasserstand, ist die real verfügbare Durchfahrtshöhe entsprechend geringer als der angegebene Wert. Liegt er niedriger, hast du mehr Spielraum.
 
 Die genaue Bezugsgröße unterscheidet sich je nach Wasserstraße und wird von der zuständigen Wasserstraßen- und Schifffahrtsverwaltung (WSV) festgelegt und veröffentlicht. Als Faustregel gilt: Verlass dich nie allein auf einen aufgedruckten oder in einer alten Karte verzeichneten Wert, sondern gleiche ihn immer mit dem aktuellen Pegelstand ab, bevor du unter einer Brücke hindurchfährst, bei der es knapp werden könnte.
 
