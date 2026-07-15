@@ -17,15 +17,39 @@ jobs:
           node-version: '24'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      - name: Install dependencies & build
+        run: npm ci && npm run build
 
-      - name: Build
-        run: npm run build
+      - name: Install Lighthouse & serve
+        run: npm install -g lighthouse serve
 
-      - name: Run Lighthouse CI
+      - name: Start local server
         run: |
-          npm install -g @lhci/cli
-          lhci autorun --config=.lighthouserc.js
-        env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          serve dist -l 8080 &
+          echo "SERVER_PID=$!" >> "$GITHUB_ENV"
+          sleep 3
+
+      - name: Run Lighthouse SEO checks
+        run: |
+          PAGES=("" "sbf-binnen" "sbf-see" "faq")
+          FAILED=0
+
+          for PAGE in "${PAGES[@]}"; do
+            URL="http://localhost:8080/${PAGE}"
+            LABEL="${PAGE:-home}"
+            OUT="/tmp/lh-${LABEL}.json"
+
+            echo ""
+            echo "── $URL"
+            lighthouse "$URL" \
+              --output=json \
+              --output-path="$OUT" \
+              --chrome-flags="--headless=new --no-sandbox --disable-gpu" \
+              --only-categories=seo \
+              --quiet 2>/dev/null
+
+            node scripts/lh-assert.mjs "$OUT" "$LABEL" || FAILED=1
+          done
+
+          kill "$SERVER_PID" 2>/dev/null || true
+          exit $FAILED
