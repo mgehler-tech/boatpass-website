@@ -7,6 +7,22 @@ readingTime: 6
 lang: de
 author: "Marius Gehler"
 altSlug: "man-overboard-maneuver"
+howTo:
+  name: "Mann-über-Bord-Manöver durchführen"
+  description: "So läuft das Mann-über-Bord-Manöver in der praktischen SBF-Prüfung Schritt für Schritt ab."
+  steps:
+    - name: "Kommando und Ruhe bewahren"
+      text: "Sobald der Prüfer „Mann über Bord!\" ruft, die Nerven behalten – ein klarer Kopf ist der erste Schritt."
+    - name: "Schub raus und Schraube wegdrehen"
+      text: "Schub herausnehmen und das Ruder hart auf die Seite des Verunglückten einschlagen, damit das Heck und die Schraube vom Verunglückten wegdrehen."
+    - name: "Verunglückten im Auge behalten"
+      text: "Den Verunglückten nicht aus den Augen lassen, idealerweise zeigt eine Person ununterbrochen mit ausgestrecktem Arm auf ihn."
+    - name: "Rettungsmittel werfen"
+      text: "Ein schwimmfähiges Rettungsmittel wie einen Rettungsring in die Nähe des Verunglückten werfen."
+    - name: "Aufstoppen und annähern"
+      text: "Kontrolliert gegen Wind und Strom annähern und auf Höhe des Verunglückten kursgerecht aufstoppen."
+    - name: "Aufnahme bei stehendem Boot"
+      text: "Erst bei stehendem Boot mit ausgekuppelter Maschine den Verunglückten an Bord holen."
 ---
 
 Das Mann-über-Bord-Manöver (kurz MOB) ist das komplexeste Pflichtmanöver in der praktischen Sportbootführerschein-Prüfung – und das, bei dem es im Ernstfall wirklich um etwas geht. In der Prüfung wird statt einer Person meist eine **Boje** oder ein Fender genutzt. Dieser Leitfaden zeigt den Ablauf Schritt für Schritt unter Motor.

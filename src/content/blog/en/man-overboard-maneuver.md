@@ -7,6 +7,22 @@ readingTime: 6
 lang: en
 author: "Marius Gehler"
 altSlug: "mann-ueber-bord-manoever"
+howTo:
+  name: "Perform the man-overboard maneuver"
+  description: "How the man-overboard maneuver in the practical SBF exam works, step by step."
+  steps:
+    - name: "Command and staying calm"
+      text: "As soon as the examiner calls \"Man overboard!\", keep your nerve – a clear head is the first step."
+    - name: "Throttle back and steer the propeller away"
+      text: "Take off the throttle and put the helm hard over towards the side of the casualty, so the stern and propeller swing away from them."
+    - name: "Keep the casualty in view"
+      text: "Don't take your eyes off the casualty, ideally one person points continuously at them with an outstretched arm."
+    - name: "Throw a lifesaving device"
+      text: "Throw a buoyant lifesaving device such as a lifebuoy close to the casualty."
+    - name: "Stop and approach"
+      text: "Approach in a controlled manner against wind and current and stop on course level with the casualty."
+    - name: "Recovery with the boat stopped"
+      text: "Only bring the casualty on board once the boat is stopped and the engine is out of gear."
 ---
 
 The man-overboard maneuver (MOB for short) is the most complex mandatory maneuver in the practical German boating license exam – and the one that really matters in an emergency. In the exam, a **buoy** or fender is usually used instead of a person. This guide walks you through the procedure step by step under engine power.

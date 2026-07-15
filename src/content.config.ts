@@ -30,6 +30,23 @@ const blog = defineCollection({
         }),
       )
       .optional(),
+    /**
+     * Optionale Schritt-für-Schritt-Anleitung für HowTo-JSON-LD (siehe BlogLayout).
+     * Nur setzen, wenn der Artikel einen einzelnen, klar abgegrenzten Ablauf beschreibt;
+     * die Schritte müssen den im Artikel sichtbaren Inhalt widerspiegeln.
+     */
+    howTo: z
+      .object({
+        name: z.string(),
+        description: z.string(),
+        steps: z.array(
+          z.object({
+            name: z.string(),
+            text: z.string(),
+          }),
+        ),
+      })
+      .optional(),
   }),
 });
 

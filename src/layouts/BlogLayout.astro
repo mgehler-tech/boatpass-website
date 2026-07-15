@@ -94,6 +94,23 @@ const faqSchema = faqEntries.length > 0
     }
   : null;
 
+// HowTo-Schema: nur wenn der Artikel eine Schritt-für-Schritt-Anleitung im Frontmatter hinterlegt hat.
+// Schritte spiegeln den sichtbaren Artikelinhalt wider (siehe post.data.howTo).
+const howTo = post.data.howTo;
+const howToSchema = howTo
+  ? {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": howTo.name,
+      "description": howTo.description,
+      "step": howTo.steps.map((s) => ({
+        "@type": "HowToStep",
+        "name": s.name,
+        "text": s.text,
+      })),
+    }
+  : null;
+
 const blogHref = lang === 'de' ? 'https://boatpass.de/blog/' : 'https://boatpass.de/en/blog/';
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -110,6 +127,7 @@ const breadcrumbSchema = {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   {faqSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+  {howToSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />}
   <article class="max-w-2xl mx-auto px-4 pt-24 pb-16">
 
     <!-- Back link -->

@@ -7,6 +7,24 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-pruefung-anmelden"
+howTo:
+  name: "Register for the SBF exam"
+  description: "How to register step by step for the German boating license (SBF) exam with DSV or DMYV."
+  steps:
+    - name: "Decide on the license"
+      text: "Inland, coastal, or both."
+    - name: "Choose your study path"
+      text: "Boating school, online course, or app self-study."
+    - name: "Get the medical certificate"
+      text: "Have a vision/hearing test done by a doctor."
+    - name: "Have a passport photo taken"
+      text: "A biometric passport photo for the later license."
+    - name: "Register"
+      text: "Through the boating school or directly with the examination board (DSV/DMYV)."
+    - name: "Confirm the date"
+      text: "Confirm the exam date and submit all documents in full."
+    - name: "Prepare"
+      text: "Master the theory, practice the maneuvers and knots."
 ---
 
 You've studied the theory and practiced the maneuvers – now all that's left is registering for the exam. This often raises questions: Who do I register with? Which documents do I need? And what does it cost? This article walks you step by step through registering for the [Sportbootführerschein exam](/en/sbf-exam/).
