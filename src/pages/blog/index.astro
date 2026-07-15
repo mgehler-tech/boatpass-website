@@ -230,23 +230,31 @@ const totalCount = posts.length;
 
   /* Themen-Cluster */
   .cluster { margin-bottom: 44px; }
+  /* Cluster-Kopf als CSS-Grid: Punkt, Titel und Anzahl teilen sich sauber eine
+     Zeile (an der Grundlinie zentriert), die Beschreibung spannt bündig darunter
+     über die volle Breite. Ersetzt das bisherige Flex-Layout mit Negativ-Rand-
+     Tricks (margin-left:-2px, flex-basis:100%, margin-top) und vereinheitlicht
+     den Aufbau mit dem englischen Blog. Abstände auf dem 4/8px-Raster. */
   .cluster-head {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: "dot title count" "desc desc desc";
     align-items: center;
-    gap: 10px;
+    gap: 4px 8px;
+    justify-content: start;
     margin-bottom: 18px;
   }
-  .cluster-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+  .cluster-dot { grid-area: dot; width: 12px; height: 12px; border-radius: 50%; }
   .cluster-title {
+    grid-area: title;
     font-size: 22px; font-weight: 900; letter-spacing: -0.5px; color: #1A1F36;
   }
   .cluster-count {
-    font-size: 12px; font-weight: 800; color: #9CA3AF; line-height: 1;
+    grid-area: count;
+    font-size: 12px; font-weight: 800; color: #9CA3AF;
     background: rgba(26,31,54,0.05); padding: 4px 8px; border-radius: 100px;
-    margin-left: -2px;
   }
-  .cluster-desc { flex-basis: 100%; margin-top: 2px; font-size: 14px; color: #6B7280; }
+  .cluster-desc { grid-area: desc; font-size: 14px; color: #6B7280; }
   .cluster-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch;
   }
