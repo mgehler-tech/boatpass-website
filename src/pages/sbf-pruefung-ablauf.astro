@@ -42,6 +42,32 @@ const faqSchema = {
     "acceptedAnswer": { "@type": "Answer", "text": f.a },
   })),
 };
+
+// HowTo-Schema: bildet die Schritt-für-Schritt-Anleitung dieser Seite ab
+// (Anmeldung → Theorieprüfung → praktische Prüfung), siehe BlogLayout für das gleiche Muster.
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "So läuft die Sportbootführerschein-Prüfung ab",
+  "description": "Schritt für Schritt zum Sportbootführerschein: Anmeldung beim Prüfungsausschuss, theoretische Prüfung und praktische Prüfung für SBF Binnen und SBF See.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Beim Prüfungsausschuss anmelden",
+      "text": "Melde dich beim zuständigen Prüfungsausschuss (z. B. DMYV) an. Für den SBF Binnen gilt ein Mindestalter von 16 Jahren. Ein Vorbereitungskurs ist nicht vorgeschrieben – du kannst dich vollständig selbst vorbereiten.",
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Theoretische Prüfung ablegen",
+      "text": "Beantworte den Multiple-Choice-Fragebogen aus dem amtlichen ELWIS-Katalog: SBF Binnen 30 Fragen in 45 Minuten (mind. 5 von 7 Basisfragen, mind. 18 von 23 spezifischen Fragen richtig), SBF See 39 Fragen inkl. Navigationsaufgabe in 60 Minuten.",
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Praktische Prüfung ablegen",
+      "text": "Zeige auf dem Wasser sicheres Bootsführen: An- und Ablegen, Wenden, Aufstoppen und das Mann-über-Bord-Manöver sowie die prüfungsrelevanten Knoten.",
+    },
+  ],
+};
 ---
 
 <BaseLayout
@@ -52,6 +78,7 @@ const faqSchema = {
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
