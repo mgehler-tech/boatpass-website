@@ -47,6 +47,11 @@ const authorRole = lang === 'de' ? 'Gründer & Entwickler von BoatPass' : 'Found
 const authorBio = lang === 'de'
   ? 'Marius hat BoatPass mit einem klaren Anspruch entwickelt: eine SBF-Lernapp, die sich am Handy wirklich gut anfühlt – schnell, aufgeräumt und mit dem vollständigen amtlichen ELWIS-Fragenkatalog.'
   : 'Marius built BoatPass with one clear goal: a boating-licence study app that feels genuinely good on your phone – fast, clean, and powered by the complete official ELWIS question catalog.';
+// E-E-A-T: Expertise-Signale für Suchmaschinen & KI-Crawler, spiegelt das Person-Schema von /ueber-uns/.
+const authorJobTitle = lang === 'de' ? 'Gründer & Entwickler' : 'Founder & Developer';
+const authorKnowsAbout = lang === 'de'
+  ? ['Sportbootführerschein', 'SBF Binnen', 'SBF See', 'Android-Entwicklung', 'ELWIS-Fragenkatalog']
+  : ['Sportbootführerschein', 'SBF Binnen', 'SBF See', 'Android development', 'ELWIS question catalog'];
 
 const articleSchema = {
   "@context": "https://schema.org",
@@ -59,6 +64,14 @@ const articleSchema = {
     "@type": "Person",
     "name": author,
     "url": "https://boatpass.de/ueber-uns/",
+    "jobTitle": authorJobTitle,
+    "image": `https://boatpass.de${authorPhoto}`,
+    "knowsAbout": authorKnowsAbout,
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Boatpass",
+      "url": "https://boatpass.de",
+    },
   },
   "publisher": {
     "@type": "Organization",
