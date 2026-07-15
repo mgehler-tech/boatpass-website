@@ -42,6 +42,32 @@ const faqSchema = {
     "acceptedAnswer": { "@type": "Answer", "text": f.a },
   })),
 };
+
+// HowTo schema: mirrors this page's step-by-step guide (registration → theory exam → practical exam),
+// same pattern as the German version and BlogLayout.
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How the German boating license (SBF) exam works",
+  "description": "Step by step to the German boating license: registration with the examination board, the theory exam and the practical exam for SBF Inland and SBF Coastal.",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Register with the examination board",
+      "text": "Register with the responsible examination board (e.g. DMYV). For the SBF Inland the minimum age is 16. A preparation course is not required – you can prepare entirely on your own.",
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Pass the theory exam",
+      "text": "Answer the multiple-choice paper from the official ELWIS catalog: SBF Inland 30 questions in 45 minutes (at least 5 of 7 basic and 18 of 23 specific questions correct), SBF Coastal 39 questions incl. navigation task in 60 minutes.",
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Pass the practical exam",
+      "text": "Show on the water that you can handle a boat safely: coming alongside and casting off, turning, stopping and the man-overboard maneuver, as well as the exam-relevant knots.",
+    },
+  ],
+};
 ---
 
 <BaseLayout
@@ -52,6 +78,7 @@ const faqSchema = {
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
