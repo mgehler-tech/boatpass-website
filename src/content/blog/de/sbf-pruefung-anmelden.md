@@ -16,6 +16,24 @@ faq:
     answer: "Ja. Du kannst dich als Direktbewerber ohne Bootsschule direkt bei einem Prüfungsausschuss von DSV oder DMYV anmelden. Das ist günstiger, du musst dich aber selbst um Termin, Unterlagen und die korrekte Anmeldung kümmern – sinnvoll, wenn du autodidaktisch mit App und Büchern gelernt hast."
   - question: "Ab welchem Alter kann ich den SBF Binnen und SBF See machen?"
     answer: "Der SBF Binnen und der SBF See sind jeweils ab 16 Jahren möglich. Die Prüfung kannst du oft schon kurz vor Erreichen des Mindestalters ablegen – ausgehändigt wird der Führerschein dann zum Geburtstag."
+howTo:
+  name: "Zur SBF-Prüfung anmelden"
+  description: "So meldest du dich Schritt für Schritt zur Sportbootführerschein-Prüfung bei DSV oder DMYV an."
+  steps:
+    - name: "Schein festlegen"
+      text: "Binnen, See oder beides."
+    - name: "Lernweg wählen"
+      text: "Bootsschule, Onlinekurs oder App-Selbststudium."
+    - name: "Ärztliches Zeugnis besorgen"
+      text: "Seh-/Hörtest beim Arzt durchführen lassen."
+    - name: "Passbild machen lassen"
+      text: "Biometrisches Passbild für den späteren Führerschein anfertigen lassen."
+    - name: "Anmeldung einreichen"
+      text: "Über die Bootsschule oder direkt beim Prüfungsausschuss (DSV/DMYV) anmelden."
+    - name: "Termin bestätigen"
+      text: "Prüfungstermin bestätigen und Unterlagen vollständig einreichen."
+    - name: "Vorbereiten"
+      text: "Theorie sicher beherrschen, Praxis und Knoten üben."
 ---
 
 Du hast die Theorie gelernt und die Praxis geübt – jetzt fehlt nur noch die Anmeldung zur Prüfung. Hier kommen oft Fragen auf: Bei wem melde ich mich an? Welche Unterlagen brauche ich? Und was kostet das? Dieser Artikel führt dich Schritt für Schritt durch die Anmeldung zur [Sportbootführerschein-Prüfung](/sbf-pruefung-ablauf/).
