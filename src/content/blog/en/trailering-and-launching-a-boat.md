@@ -20,6 +20,8 @@ Before you even set off, the combination of tow vehicle, hitch, and trailer has 
 - **Lights and registration plates.** The trailer needs working lights synchronized with the tow vehicle, plus its own registration plate. Check indicators, brake lights, and tail lights before every longer trip.
 - **Tyre condition and pressure.** Trailer tyres often sit unused for weeks, sometimes through an entire winter. Check tread depth, age, and pressure regularly, a blowout with a loaded boat trailer on the highway is one of the more dangerous breakdown situations you can face.
 
+These points might not seem directly related to boating itself, but a rig that isn't technically sound can leave you stranded before you even reach the water. If you're unsure whether your tow vehicle and trailer really are a safe match, have the combination checked by a qualified garage or at an official vehicle inspection before setting off on a longer trip.
+
 ## Securing the boat on the trailer
 
 A boat that shifts or comes loose on the trailer during transport is a serious hazard, both to you and to other road users. For safe transport:
@@ -38,6 +40,8 @@ Once you arrive at the water, good preparation decides whether launching goes sm
 - **Release the tie-down straps, leave the bow chain attached.** Undo all the straps that secured the boat during transport before you pull up to the ramp, but leave the bow safety attached until the actual moment of launch so the boat doesn't slide off the trailer early.
 - **Have fenders and dock lines ready** so you can tie the boat up at a dock or launch area right after it's in the water, without having to search for them afterward.
 - **Plan for a second person.** Launching with two people is much less stressful: one person handles the trailer, the other takes the boat once it's in the water. Launching solo is possible but takes more planning, for example a long line you attach to a cleat or ring before backing down the ramp.
+
+Especially at busy ramps, it's worth taking a moment to watch how other boaters are handling the queue. Seeing the order and pace at which other rigs are moving through helps you judge when it's your turn and keeps you from holding up the line unnecessarily.
 
 ## The actual launch sequence
 
@@ -69,6 +73,8 @@ A well-maintained trailer saves you a lot of hassle. That means regularly checki
 ## Keeping the legal side in mind
 
 Trailering itself is governed primarily by road traffic law, not by the Sportbootführerschein. Even so, before your first trip with a new rig you should look into the maximum speeds allowed for trailer combinations, the towing and tongue weight limits for your specific vehicle, and any local restrictions at particular launch ramps. Some ramps, for instance, are fee-based, open only at certain times, or reserved for club members. A quick look at the operator's website or a short question on site can save you an unpleasant surprise once you're there.
+
+It's also worth checking local signage before parking your rig away from the ramp itself. Many launch sites have dedicated parking areas for vehicles with a boat trailer attached, separate from regular car parking, since a car towing a trailer needs considerably more space than a single vehicle.
 
 ## Trailering and your SBF preparation
 
