@@ -21,7 +21,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] SBF mit eigenem Boot oder Charterboot – was passt zu wem? (2026-07-11: sbf-eigenes-boot-oder-charterboot / own-boat-or-charter-boat-sbf)
 - [x] Motorboot oder Segelboot – welcher SBF und welche Praxis? (2026-07-15: motorboot-oder-segelboot-welcher-sbf / motorboat-or-sailboat-which-sbf)
 - [x] Brücken- und Durchfahrtshöhen auf Binnengewässern beachten (2026-07-15: bruecken-durchfahrtshoehen-binnengewaesser / bridge-clearance-heights-inland-waterways)
-- [ ] Boot trailern und slippen – was Sportbootfahrer wissen müssen
+- [x] Boot trailern und slippen – was Sportbootfahrer wissen müssen (2026-07-16: boot-trailern-slippen / trailering-and-launching-a-boat)
 - [ ] Boot einwintern – Checkliste fürs Winterlager
 - [ ] Außenborder-Basiswartung – einfache Pflege für lange Lebensdauer
 - [ ] Sportküstenschifferschein (SKS) – die nächste Stufe nach dem SBF See
