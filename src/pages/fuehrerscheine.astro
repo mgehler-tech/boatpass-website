@@ -136,7 +136,7 @@ const breadcrumbSchema = {
       <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:28px;">
         Wir arbeiten an weiteren Lizenzen – Sprechfunkzeugnisse und Spezialscheine folgen.
       </p>
-      <div class="license-grid">
+      <div class:list={["license-grid", { "license-grid--single": soon.length === 1 }]}>
         {soon.map(c => (
           c.href ? (
             <a href={c.href} class="license-card license-card-soon">
@@ -180,6 +180,14 @@ const breadcrumbSchema = {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+  /* Eine einzelne "Bald"-Karte nicht in ein 2-Spalten-Raster zwingen – sonst
+     bleibt die zweite Zelle leer und die Sektion wirkt unfertig (asymmetrisches
+     Alignment neben der leeren Zelle). Bei genau einer Karte einspaltig und auf
+     die Breite einer regulären Lizenz-Karte begrenzt ((952px − 20px Gap)/2),
+     links ausgerichtet. Wächst die Liste, greift wieder das 2-Spalten-Raster;
+     schmaler als 466px schrumpft die Spalte automatisch auf die volle Breite
+     (Mobile unverändert). Reiner Layout-Feinschliff, Corporate Design unberührt. */
+  .license-grid--single { grid-template-columns: minmax(0, 466px); }
   .license-card {
     position: relative;
     display: flex;
