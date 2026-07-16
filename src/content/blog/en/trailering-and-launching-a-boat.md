@@ -2,8 +2,8 @@
 title: "Trailering and Launching a Boat – What Sport Boat Skippers Need to Know"
 description: "Trailer, tow vehicle, launch sequence: the essentials for transporting your boat safely on the road and getting it into the water without stress."
 date: 2026-07-16
-tags: ["Exam Knowledge"]
-readingTime: 10
+tags: ["Preparation"]
+readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "boot-trailern-slippen"
