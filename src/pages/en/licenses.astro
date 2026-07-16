@@ -134,7 +134,7 @@ const breadcrumbSchema = {
       <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:28px;">
         We're working on more catalogs – radio certificates and special licenses are on the way.
       </p>
-      <div class="license-grid">
+      <div class:list={["license-grid", { "license-grid--single": soon.length === 1 }]}>
         {soon.map(c => (
           c.href ? (
             <a href={c.href} class="license-card license-card-soon">
@@ -178,6 +178,14 @@ const breadcrumbSchema = {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
+  /* A lone "coming soon" card must not be forced into a 2-column grid – it would
+     leave the second cell empty and make the section look unfinished (asymmetric
+     alignment next to an empty cell). With exactly one card, use a single column
+     capped at a regular license card's width ((952px − 20px gap)/2), left-aligned.
+     If the list grows, the 2-column grid takes over again; below 466px the column
+     shrinks to full width automatically (mobile unchanged). Pure layout polish,
+     corporate design untouched. */
+  .license-grid--single { grid-template-columns: minmax(0, 466px); }
   .license-card {
     position: relative;
     display: flex;
