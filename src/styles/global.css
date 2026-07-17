@@ -76,6 +76,33 @@
   color: var(--color-navy);
 }
 
+/* Interne Weiterführungs-Link-Listen ("Weiterführende Artikel" / "Further reading")
+   am Fuß der Pillar-Seiten (SBF Binnen/See, Führerscheine u. a.). Bisher standen die
+   Links als reine 15px-Textzeilen mit nur 10px Abstand dicht gestapelt: auf dem Handy
+   zu kleine, zu eng beieinanderliegende Touch-Flächen (WCAG 2.5.5 – mind. 44px) und
+   optisch eine gedrängte Link-Wand ohne Gliederung. Jetzt bekommt jede Zeile eine
+   eigene, mind. 44px hohe Tap-Fläche; ein dezenter Trenner strukturiert die Liste und
+   ein Hover-Feedback macht das aktive Ziel klar – dieselbe Behandlung, die Footer-,
+   Katalog- und Blog-Teaser-Links bereits erhalten haben. Reiner Layout-Feinschliff:
+   Das Marken-Blau der Links (#3366FF) bleibt unverändert. */
+.related-links {
+  display: flex;
+  flex-direction: column;
+}
+.related-links a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 0;
+  transition: color 0.15s ease;
+}
+.related-links a + a {
+  border-top: 1px solid var(--color-border);
+}
+.related-links a:hover {
+  text-decoration: underline !important;
+}
+
 /* Dark Mode – class-based via html.dark. Init script in BaseLayout.astro sets the class
    before first paint to avoid FOUC. Respects both system preference and manual toggle. */
 html.dark {
