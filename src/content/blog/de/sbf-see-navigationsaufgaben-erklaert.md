@@ -112,7 +112,7 @@ Die Formel rwK → mwK → MgK (und umgekehrt) muss sitzen. Übe die Umrechnung 
 
 ### Mit der echten Seekarte üben
 
-Übe mit einem maßstabsgetreuen Ausdruck der D49 – nicht nur am Bildschirm. In der Prüfung arbeitest du auf Papier, und das Handling von Kursdreieck und Zirkel auf einer echten Karte fühlt sich anders an als digitales Üben.
+Übe mit einem maßstabsgetreuen Ausdruck der D49 – nicht nur am Bildschirm. In der Prüfung arbeitest du auf Papier, und das Handling von Kursdreieck und Zirkel auf einer echten Karte fühlt sich anders an als digitales Üben. Wie du eine Seekarte grundsätzlich liest, erklären wir Schritt für Schritt im Artikel [Seekarte lesen lernen](/blog/seekarte-lesen-lernen/).
 
 ### Schifffahrtszeichen systematisch lernen
 

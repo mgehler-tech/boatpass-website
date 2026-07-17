@@ -103,7 +103,7 @@ The formula rwK → mwK → MgK (and back) has to be solid. Practice the convers
 
 ### Practice with the real chart
 
-Practice with a to-scale printout of the D49 – not just on screen. In the exam you work on paper, and handling the course plotter and dividers on a real chart feels different from practicing digitally.
+Practice with a to-scale printout of the D49 – not just on screen. In the exam you work on paper, and handling the course plotter and dividers on a real chart feels different from practicing digitally. For the fundamentals of chart reading itself, see our step-by-step guide [How to read a nautical chart](/en/blog/how-to-read-a-nautical-chart/).
 
 ### Learn navigation marks systematically
 
