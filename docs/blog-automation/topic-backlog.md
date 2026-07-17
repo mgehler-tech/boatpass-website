@@ -23,7 +23,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Brücken- und Durchfahrtshöhen auf Binnengewässern beachten (2026-07-15: bruecken-durchfahrtshoehen-binnengewaesser / bridge-clearance-heights-inland-waterways)
 - [x] Boot trailern und slippen – was Sportbootfahrer wissen müssen (2026-07-16: boot-trailern-slippen / trailering-and-launching-a-boat)
 - [x] SBF-Binnen-Prüfung nicht bestanden – was jetzt zu tun ist (ad-hoc, SEO-Recherche: unterstützt die Pillar-Page /sbf-binnen/ mit einem bisher unabgedeckten Long-Tail-Thema; 2026-07-16: sbf-binnen-pruefung-nicht-bestanden / failed-sbf-inland-exam-what-to-do-next)
-- [ ] Boot einwintern – Checkliste fürs Winterlager
+- [x] Boot einwintern – Checkliste fürs Winterlager (2026-07-17: boot-einwintern-checkliste-winterlager / winterizing-a-boat-checklist-for-winter-storage)
 - [ ] Außenborder-Basiswartung – einfache Pflege für lange Lebensdauer
 - [ ] Sportküstenschifferschein (SKS) – die nächste Stufe nach dem SBF See
 - [ ] GPS, Plotter und Funkgerät an Bord – moderne Navigation verstehen
