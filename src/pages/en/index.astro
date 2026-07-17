@@ -10,6 +10,16 @@ import FinderTeaser from '../../components/FinderTeaser.astro';
 import { getPlayStoreRating } from '../../lib/playstore';
 
 const appRating = await getPlayStoreRating();
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Boatpass",
+  "alternateName": "Boatpass – German Boating License App",
+  "url": "https://boatpass.de/en/",
+  "inLanguage": "en-US",
+  "publisher": { "@type": "Organization", "name": "Boatpass", "url": "https://boatpass.de" },
+};
 ---
 
 <BaseLayout
@@ -18,6 +28,7 @@ const appRating = await getPlayStoreRating();
   lang="en"
   appRating={appRating}
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <HeroSection lang="en" />
   <TrustBar lang="en" />
   <FeatureCards lang="en" />
