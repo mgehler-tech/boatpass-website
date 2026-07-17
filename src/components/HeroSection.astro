@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
 import { useTranslations } from '../i18n/index';
 import screenshot0De from '../assets/images/app-screenshot.de.png';
 import screenshot1De from '../assets/images/app.screenshot.1.de.png';
@@ -65,10 +66,31 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <!-- CTAs -->
       <div class="animate-fade-up delay-3" style="display:flex; gap:14px; align-items:center; margin-bottom:52px; flex-wrap:wrap;">
         <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+          id="hero-cta-play"
           class="cta-primary"
           style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:15px; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
           ▶&nbsp;{t.hero.cta}
         </a>
+        <div id="hero-cta-ios" class="ios-badge"
+          style="display:none; align-items:center; gap:10px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); font-weight:700; font-size:15px; padding:13px 27px; border-radius:14px;">
+          <Icon name="phoneDevice" size={17} strokeWidth={2} />
+          {t.hero.ctaIos}
+        </div>
+        <script is:inline>
+          // Läuft während des Parsens, also vor dem ersten Paint – kein Umspringen sichtbar.
+          // iPadOS gibt sich seit iOS 13 als MacIntel aus, daher der maxTouchPoints-Check.
+          (function () {
+            var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+              (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            if (!isIos) return;
+            var play = document.getElementById('hero-cta-play');
+            var ios = document.getElementById('hero-cta-ios');
+            if (play && ios) {
+              play.style.display = 'none';
+              ios.style.display = 'inline-flex';
+            }
+          })();
+        </script>
         <a href="#features"
           style="color:#3366FF; font-size:15px; font-weight:600; text-decoration:none; display:flex; align-items:center; gap:6px; padding:14px 0;">
           {t.hero.ctaSecondary} →
@@ -178,6 +200,12 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 
 <style>
   #hero-accent { transition: opacity 0.3s ease; }
+
+  /* Eigene Blautöne statt #3366FF: Auf dem hellen Badge-Grund erreicht die
+     Akzentfarbe nur 3,8:1 und verfehlt AA für 15px-Fetttext. Hell braucht
+     dunkleres, Dunkel helleres Blau – eine feste Farbe kann beides nicht. */
+  .ios-badge { color: #1A44D4; }
+  :global(html.dark) .ios-badge { color: #5B8CFF; }
 
   .phone-slide {
     width: 100%;

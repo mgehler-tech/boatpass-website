@@ -15,6 +15,7 @@ export const en: Translations = {
     headlineAccent: 'Boating License.',
     subline: 'Study with the official question catalog – 3 learning modes, instant feedback, exam simulation. Start for free, no account needed.',
     cta: 'Free on Google Play',
+    ctaIos: 'iOS app coming soon',
     ctaSecondary: 'See features',
     stat1Num: 'Official',
     stat1Label: 'Licenses',
