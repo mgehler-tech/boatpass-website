@@ -2,7 +2,7 @@
 title: "Outboard Motor Basic Maintenance – Simple Care for a Longer Life"
 description: "Flushing, oil changes, spark plugs, anodes, and the propeller: the key maintenance steps for your outboard motor so it runs reliably and lasts for years."
 date: 2026-07-17
-tags: ["Exam Knowledge"]
+tags: ["Preparation"]
 readingTime: 9
 lang: en
 author: "Marius Gehler"
