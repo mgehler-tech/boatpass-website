@@ -68,10 +68,10 @@ Die Knotenprüfung ist kein Bonus – sie ist ein eigenständiger Prüfungsteil.
 ### 3. Praktische Prüfung (auf dem Wasser)
 
 Du musst ein Boot selbstständig führen und mehrere Manöver demonstrieren:
-- Anlegen und Ablegen (an einem Steg, Boje oder in einer Box)
+- [Anlegen und Ablegen](/blog/anlegen-ablegen-hafenmanoever/) (an einem Steg, Boje oder in einer Box)
 - Kurshalten und Steuern
-- **Boje-über-Bord-Manöver** (Person-über-Bord-Rettung)
-- Ankern und Aufnehmen des Ankers
+- **[Boje-über-Bord-Manöver](/blog/mann-ueber-bord-manoever/)** (Person-über-Bord-Rettung)
+- [Ankern](/blog/richtig-ankern-grundlagen-ankerarten-fehler/) und Aufnehmen des Ankers
 - Rückwärtsfahren
 
 ## Wie meldest du dich an?

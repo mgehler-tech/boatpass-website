@@ -57,10 +57,10 @@ The knot exam is a **standalone exam section** – not just a formality. Knots a
 ### 3. Practical exam (on the water)
 
 You must independently operate a boat and demonstrate several maneuvers:
-- Docking and undocking (at a jetty, buoy, or in a berth)
+- [Docking and undocking](/en/blog/docking-undocking-harbor-maneuvers/) (at a jetty, buoy, or in a berth)
 - Course keeping and steering
-- **Man-overboard drill** (recovering a floating object)
-- Anchoring and weighing anchor
+- **[Man-overboard drill](/en/blog/man-overboard-maneuver/)** (recovering a floating object)
+- [Anchoring](/en/blog/anchoring-basics-anchor-types-mistakes/) and weighing anchor
 - Reversing
 
 ## How to register
