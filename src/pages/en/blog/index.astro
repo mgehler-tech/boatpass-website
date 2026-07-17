@@ -288,6 +288,36 @@ const totalCount = posts.length;
     .cluster-grid { grid-template-columns: 1fr; }
     .blog-cta-block { padding: 28px 24px; }
   }
+
+  /* ── Dark Mode ──────────────────────────────────────────────────────────
+     The blog overview uses page-scoped classes with hard-coded light values –
+     unlike the content pages, whose inline styles are caught by the global
+     html.dark overrides in global.css. Without these rules the "Blog" heading
+     and the cluster titles stayed dark navy (#1A1F36) on a dark background and
+     were effectively invisible, while the search field and filter chips glared
+     as white surfaces against the dark page. The learning-path block already
+     uses a dark navy gradient, so it is intentionally left untouched. All
+     values come from the existing dark palette (global.css / components) –
+     the corporate blue (#3366FF) stays unchanged. */
+  html.dark .blog-hero h1 { color: #E2E8F0; }
+  html.dark .blog-hero p  { color: #94A3B8; }
+
+  html.dark .blog-search {
+    background: #181E2E;
+    border-color: rgba(90, 120, 255, 0.16);
+  }
+  html.dark .blog-search input { color: #E2E8F0; }
+  html.dark .cat-btn {
+    background: #181E2E;
+    border-color: rgba(90, 120, 255, 0.16);
+    color: #94A3B8;
+  }
+  html.dark .cat-count { background: rgba(255, 255, 255, 0.08); }
+
+  html.dark .cluster-title  { color: #E2E8F0; }
+  html.dark .cluster-count  { background: rgba(90, 120, 255, 0.12); color: #94A3B8; }
+  html.dark .cluster-desc   { color: #94A3B8; }
+  html.dark .blog-noresults { color: #94A3B8; }
 </style>
 
 <script>

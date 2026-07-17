@@ -296,6 +296,52 @@ const totalCount = posts.length;
     .cluster-grid { grid-template-columns: 1fr; }
     .blog-cta-block { padding: 28px 24px; }
   }
+
+  /* ── Dark Mode ──────────────────────────────────────────────────────────
+     Die Blog-Übersicht nutzt seiten-eigene Klassen mit fest kodierten Hell-
+     werten – anders als die Inhaltsseiten, deren Inline-Styles die globalen
+     html.dark-Overrides in global.css abfangen. Ohne diese Regeln blieben im
+     Dark Mode die "Blog"-Hauptüberschrift und die Cluster-Titel dunkelblau
+     (#1A1F36) auf dunklem Grund praktisch unsichtbar, während Suchfeld und
+     Filter-Chips als weiße Flächen aus der dunklen Seite herausstachen.
+     Alle Werte stammen aus der bestehenden Dark-Palette (global.css /
+     Komponenten) – das Corporate-Blau (#3366FF) bleibt unverändert. */
+  html.dark .blog-hero h1 { color: #E2E8F0; }
+  html.dark .blog-hero p  { color: #94A3B8; }
+
+  html.dark .start-block {
+    background: linear-gradient(135deg, #181E2E, #1A2140);
+    border-color: rgba(90, 120, 255, 0.14);
+  }
+  html.dark .start-step {
+    background: #1E2842;
+    border-color: rgba(90, 120, 255, 0.12);
+  }
+  html.dark .start-step:hover {
+    border-color: rgba(90, 120, 255, 0.45);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+  html.dark .start-title      { color: #E2E8F0; }
+  html.dark .start-step-title { color: #E2E8F0; }
+  html.dark .start-sub        { color: #94A3B8; }
+  html.dark .start-meta       { color: #6B7280; }
+
+  html.dark .blog-search {
+    background: #181E2E;
+    border-color: rgba(90, 120, 255, 0.16);
+  }
+  html.dark .blog-search input { color: #E2E8F0; }
+  html.dark .cat-btn {
+    background: #181E2E;
+    border-color: rgba(90, 120, 255, 0.16);
+    color: #94A3B8;
+  }
+  html.dark .cat-count { background: rgba(255, 255, 255, 0.08); }
+
+  html.dark .cluster-title  { color: #E2E8F0; }
+  html.dark .cluster-count  { background: rgba(90, 120, 255, 0.12); color: #94A3B8; }
+  html.dark .cluster-desc   { color: #94A3B8; }
+  html.dark .blog-noresults { color: #94A3B8; }
 </style>
 
 <script>
