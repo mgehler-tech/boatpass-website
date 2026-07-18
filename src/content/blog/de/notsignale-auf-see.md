@@ -53,7 +53,7 @@ Wer ein Notsignal wahrnimmt, ist zur **Hilfeleistung verpflichtet**, soweit er o
 
 In der Theorieprüfung geht es vor allem darum, die Signale zu **erkennen und ihrer Bedeutung zuzuordnen** – welche Farbe wofür steht und welches Signal du selbst geben darfst. Genau diese Fragen kannst du in der Boatpass-App gezielt üben, getrennt nach SBF Binnen und [SBF See](/sbf-see/).
 
-Die akustischen Pendants im normalen Fahrbetrieb – wer wann welchen Ton gibt – haben wir im Artikel [Schallsignale beim Sportbootführerschein](/blog/schallsignale-sbf-erklaert/) zusammengefasst. Und wie du im Ernstfall ein Mann-über-Bord-Manöver fährst, liest du in unserem [MOB-Leitfaden](/blog/mann-ueber-bord-manoever/).
+Die akustischen Pendants im normalen Fahrbetrieb – wer wann welchen Ton gibt – haben wir im Artikel [Schallsignale beim Sportbootführerschein](/blog/schallsignale-sbf-erklaert/) zusammengefasst. Und wie du im Ernstfall ein Mann-über-Bord-Manöver fährst, liest du in unserem [MOB-Leitfaden](/blog/mann-ueber-bord-manoever/). Neben den richtigen Signalen gehört im Notfall auch fundiertes Wissen über [Erste Hilfe an Bord](/blog/erste-hilfe-an-bord/) zur Grundausstattung jeder Crew.
 
 ## Fazit
 

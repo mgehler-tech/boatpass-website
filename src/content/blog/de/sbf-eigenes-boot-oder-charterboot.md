@@ -24,7 +24,7 @@ Ein eigenes Boot bedeutet vor allem eines: Du bist jederzeit spontan auf dem Was
 Diese Freiheit hat allerdings ihren Preis, und zwar nicht nur finanziell. Ein eigenes Boot bringt laufende Verantwortung mit sich:
 
 - **Liegeplatz:** Du brauchst einen festen oder saisonalen Liegeplatz, dessen Verfügbarkeit je nach Revier stark schwanken kann.
-- **Wartung und Pflege:** Motor, Rumpf, Elektrik und Sicherheitsausrüstung müssen regelmäßig geprüft und instand gehalten werden.
+- **[Wartung und Pflege](/blog/aussenborder-basiswartung/):** Motor, Rumpf, Elektrik und Sicherheitsausrüstung müssen regelmäßig geprüft und instand gehalten werden.
 - **Einwinterung:** Je nach Revier muss das Boot winterfest gemacht und eingelagert werden.
 - **Versicherung:** Eine Bootshaftpflicht ist dringend zu empfehlen, eine Kaskoversicherung schützt zusätzlich das eigene Boot.
 - **Wertentwicklung:** Wie bei jedem größeren Anschaffungsgegenstand spielt auch der spätere Wiederverkaufswert eine Rolle.

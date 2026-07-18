@@ -90,4 +90,4 @@ Wenn du dir trotzdem unsicher bist, beantwortet unser [Bootsführerschein-Finder
 
 ## Fazit
 
-Der wichtigste Unterschied ist der Geltungsbereich: Binnen für Flüsse und Seen in Deutschland, See für Küstengewässer national und international. Wer langfristig flexibel sein will, sollte die Kombiprüfung in Betracht ziehen – sie ist günstiger als beide Scheine separat.
+Der wichtigste Unterschied ist der Geltungsbereich: Binnen für Flüsse und Seen in Deutschland, See für Küstengewässer national und international. Wer langfristig flexibel sein will, sollte die Kombiprüfung in Betracht ziehen – sie ist günstiger als beide Scheine separat. Wer über den SBF See hinaus will, findet im [Sportküstenschifferschein (SKS)](/blog/sportkuestenschifferschein-sks/) die logische Weiterbildung für größere Reviere und anspruchsvollere Törns.

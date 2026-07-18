@@ -16,7 +16,7 @@ Few topics cause SBF Coastal (SBF See) candidates more stress than course conver
 Your magnetic compass on board does not point to geographic north. Two effects disturb it:
 
 - **Variation (Var):** The magnetic north pole is not at the geographic north pole. This deviation depends on location and is printed in the chart's compass rose.
-- **Deviation (Dev):** Your own vessel (engine, steel parts, electronics) deflects the compass needle further. Deviation depends on the ship and the heading and is read from a deviation table.
+- **Deviation (Dev):** Your own vessel (engine, steel parts, electronics) deflects the compass needle further. Deviation depends on the ship and the heading and is read from a deviation table. How both errors arise physically is explained in [Compass Variation and Deviation Explained](/en/blog/compass-variation-deviation-explained/).
 
 That is why we distinguish three courses:
 

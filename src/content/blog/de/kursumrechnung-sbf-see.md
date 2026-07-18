@@ -16,7 +16,7 @@ Kaum ein Thema kostet Prüflingen beim Sportbootführerschein See so viele Nerve
 Dein Magnetkompass an Bord zeigt nicht den geografischen Norden an, sondern wird von zwei Effekten gestört:
 
 - **Missweisung (MW):** Der magnetische Nordpol liegt nicht am geografischen Nordpol. Die Abweichung ist ortsabhängig und steht in der Kompassrose der Seekarte.
-- **Ablenkung (Abl), auch Deviation:** Das eigene Schiff (Motor, Stahlteile, Elektronik) lenkt die Kompassnadel zusätzlich ab. Die Ablenkung ist schiffs- und kursabhängig und steht in einer Ablenkungstabelle.
+- **Ablenkung (Abl), auch Deviation:** Das eigene Schiff (Motor, Stahlteile, Elektronik) lenkt die Kompassnadel zusätzlich ab. Die Ablenkung ist schiffs- und kursabhängig und steht in einer Ablenkungstabelle. Wie beide Fehler physikalisch entstehen, erklärt der Artikel [Missweisung und Deviation einfach erklärt](/blog/kompass-missweisung-deviation-erklaert/).
 
 Deshalb unterscheiden wir drei Kurse:
 

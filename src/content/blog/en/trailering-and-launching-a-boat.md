@@ -94,7 +94,7 @@ It's also worth checking local signage before parking your rig away from the ram
 
 ## Trailering and your SBF preparation
 
-The actual trailering and launching process isn't part of the theoretical Sportbootführerschein exam, but it's part of everyday boating life for many owners, particularly if you decide to go for [owning your own boat instead of chartering](/en/blog/own-boat-or-charter-boat-sbf/). Skippers who trailer their own boat also benefit from a solid grasp of basic maneuvers, such as [docking and undocking](/en/blog/docking-undocking-harbor-maneuvers/), since those skills come into play directly when launching and hauling out.
+The actual trailering and launching process isn't part of the theoretical Sportbootführerschein exam, but it's part of everyday boating life for many owners, particularly if you decide to go for [owning your own boat instead of chartering](/en/blog/own-boat-or-charter-boat-sbf/). Skippers who trailer their own boat also benefit from a solid grasp of basic maneuvers, such as [docking and undocking](/en/blog/docking-undocking-harbor-maneuvers/), since those skills come into play directly when launching and hauling out. Once you're on rivers and canals, it's also worth knowing how [bridge clearance heights](/en/blog/bridge-clearance-heights-inland-waterways/) change with water levels.
 
 For the theoretical exam itself, it's still worth training with the questions from the official catalog. With the [Boatpass app](/en/sbf-inland-exam-questions/) you can study the original SBF Inland and SBF Coastal exam questions and prepare realistically in exam mode, so you can focus fully on the practical side of boating, trailering and launching included, once the exam is behind you.
 

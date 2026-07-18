@@ -75,4 +75,4 @@ Most instructors recommend starting with **SBF Coastal** (harder), then the inla
 
 ## Summary
 
-The key difference is coverage: inland for German rivers and lakes, coastal for sea and international waters. Anyone planning to boat flexibly long-term should consider the combined exam – it's cheaper than taking them separately.
+The key difference is coverage: inland for German rivers and lakes, coastal for sea and international waters. Anyone planning to boat flexibly long-term should consider the combined exam – it's cheaper than taking them separately. Anyone who wants to go beyond the SBF Coastal will find the natural next step in the [Sports Coastal Skipper's License (SKS)](/en/blog/sks-coastal-skippers-license/).

@@ -24,7 +24,7 @@ Owning a boat means one thing above all: you're on the water spontaneously whene
 That freedom comes at a price, and not just a financial one. Owning a boat brings ongoing responsibility with it:
 
 - **Mooring:** you need a permanent or seasonal berth, and availability can vary sharply depending on the area.
-- **Maintenance and care:** engine, hull, electrics, and safety equipment all need regular checks and upkeep.
+- **[Maintenance and care](/en/blog/outboard-motor-basic-maintenance/):** engine, hull, electrics, and safety equipment all need regular checks and upkeep.
 - **Winter storage:** depending on the region, the boat has to be winterized and stored.
 - **Insurance:** boat liability insurance is strongly advisable, and hull insurance additionally protects the boat itself.
 - **Resale value:** as with any major purchase, eventual resale value matters too.
