@@ -7,6 +7,22 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "boot-trailern-slippen"
+howTo:
+  name: "The Launch Sequence: Getting Your Boat into the Water"
+  description: "How to launch your boat off the trailer in a controlled way, without unnecessarily blocking the ramp."
+  steps:
+    - name: "Back carefully down to the ramp"
+      text: "Back carefully down to the ramp until the trailer's wheels are just in the water."
+    - name: "Set the parking brake"
+      text: "Set the parking brake and switch off the tow vehicle's engine before getting out, especially on sloped ramps."
+    - name: "Release the bow safety chain"
+      text: "Release the bow safety chain while holding the boat with a line so it doesn't drift off uncontrolled."
+    - name: "Push or roll the boat off the trailer"
+      text: "Push or roll the boat gently off the trailer, depending on the roller setup and the ramp's slope this often happens almost by itself."
+    - name: "Tie up immediately"
+      text: "Tie up immediately once the boat is floating free, at a dock, a mooring buoy, or with the person waiting in the boat."
+    - name: "Clear the ramp promptly"
+      text: "Clear the ramp promptly with the trailer so the next person in line can launch, and only park the empty rig once you're clear of the ramp."
 ---
 
 Owning a boat trailer opens up freedoms a fixed berth doesn't offer: you can take your boat to different waters, store it at home over winter, and skip paying for a permanent mooring. But trailering also means taking on responsibility that goes beyond boat handling itself, from getting the road transport right to launching in a controlled way at the ramp. This article gives you a practical overview of what you should know about trailering and launching.

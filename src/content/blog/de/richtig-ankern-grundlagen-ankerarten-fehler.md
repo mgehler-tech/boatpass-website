@@ -7,6 +7,22 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "anchoring-basics-anchor-types-mistakes"
+howTo:
+  name: "Das Ankermanöver Schritt für Schritt"
+  description: "So ankerst du dein Sportboot sicher: Ankerplatz wählen, richtig anlaufen, fieren und den Halt prüfen."
+  steps:
+    - name: "Ankerplatz auswählen"
+      text: "Prüfe Wassertiefe, Grundbeschaffenheit laut Seekarte, Abstand zu anderen Booten, Untiefen und Hindernisse sowie den zu erwartenden Schwoiraum."
+    - name: "Gegen Wind oder Strom anlaufen"
+      text: "Nähere dich der gewählten Position langsam gegen die wirkende Kraft, meist Wind, teils Strom, damit der Anker beim Zurücktreiben sauber greifen kann."
+    - name: "Anker fieren, nicht werfen"
+      text: "Der Anker wird kontrolliert abgelassen, während das Boot noch minimal rückwärts treibt oder steht, statt ihn aus der Fahrt heraus über Bord zu werfen."
+    - name: "Ausreichend Kette oder Leine stecken"
+      text: "Lass genug Länge heraus, damit der Zugwinkel am Grund flach genug für sicheres Eingraben ist."
+    - name: "Anker eingraben lassen"
+      text: "Setze den Motor sachte rückwärts ein oder lass das Boot durch Wind bzw. Strom zurücktreiben, damit sich der Anker in den Grund zieht."
+    - name: "Halt prüfen"
+      text: "Peile zwei feste Landmarken oder beobachte per GPS, ob das Boot seine Position hält, statt weiter zu driften."
 ---
 
 Ankern gehört zu den Manövern, die auf den ersten Blick simpel wirken, in der Praxis aber häufig schiefgehen: Der Anker hält nicht, das Boot dreht in der Nacht plötzlich quer zum Nachbarn, oder die Kette rasselt viel zu kurz durch die Klüse. Dabei ist sicheres Ankern vor allem eine Frage der **Vorbereitung und der richtigen Menge Kette oder Leine**. Dieser Artikel erklärt dir die gängigen Ankerarten, wie ein Ankermanöver abläuft und welche Fehler du vermeiden solltest, damit die nächste Nacht vor Anker entspannt statt unruhig wird.

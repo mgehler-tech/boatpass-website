@@ -7,6 +7,22 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "richtig-ankern-grundlagen-ankerarten-fehler"
+howTo:
+  name: "The Anchoring Maneuver Step by Step"
+  description: "How to anchor your boat safely: choosing the spot, approaching correctly, lowering the anchor, and checking the hold."
+  steps:
+    - name: "Choose the anchorage"
+      text: "Check water depth, seabed type from the nautical chart, distance to other boats, shoals and obstacles, and the expected swinging circle."
+    - name: "Approach against wind or current"
+      text: "Move slowly toward the chosen spot against the acting force, usually wind, sometimes current, so the anchor can grip cleanly as the boat drifts back."
+    - name: "Lower the anchor, don't throw it"
+      text: "Pay the anchor out in a controlled way while the boat is drifting back slightly or standing still, rather than tossing it overboard while still under way."
+    - name: "Pay out enough chain or rode"
+      text: "Let out enough length so the angle of pull at the seabed is flat enough for the anchor to dig in securely."
+    - name: "Let the anchor dig in"
+      text: "Apply gentle reverse power, or let the boat drift back under wind or current, so the anchor sets into the bottom."
+    - name: "Check that it's holding"
+      text: "Take bearings on two fixed landmarks or watch your position on GPS to confirm the boat is holding station rather than continuing to drift."
 ---
 
 Anchoring looks simple at first glance, but in practice it often goes wrong: the anchor doesn't hold, the boat suddenly swings across a neighboring boat overnight, or the chain rattles out far too short. Safe anchoring is really a matter of **preparation and paying out the right amount of chain or rode**. This article explains the common anchor types, how an anchoring maneuver works, and which mistakes to avoid, so your next night at anchor is relaxed instead of restless.

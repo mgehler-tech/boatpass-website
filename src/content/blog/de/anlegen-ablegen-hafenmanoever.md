@@ -7,6 +7,20 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "docking-undocking-harbor-maneuvers"
+howTo:
+  name: "Anlegen am Steg: Schritt für Schritt"
+  description: "So legst du dein Sportboot sicher und kontrolliert am Steg an, für die praktische SBF-Prüfung und den Bootsalltag."
+  steps:
+    - name: "Frühzeitig vorbereiten"
+      text: "Fender an der Seite anbringen, an der du anlegen wirst, und Leinen klar zum Aufschießen bereitlegen, damit im entscheidenden Moment niemand danach suchen muss."
+    - name: "Mit wenig Fahrt anlaufen"
+      text: "Nähere dich dem Liegeplatz in einem flachen Winkel und mit reduzierter Geschwindigkeit. Lieber zu langsam als zu schnell anlaufen."
+    - name: "Fahrt rechtzeitig herausnehmen"
+      text: "Nimm den Schub so früh heraus, dass das Boot mit dem letzten Rest Fahrt gerade noch am Steg ankommt, ohne aufzusetzen."
+    - name: "Erste Leine fest machen"
+      text: "Mach zuerst die Leine fest, die das Boot in der aktuellen Wind- oder Stromlage am Steg hält, oft eine Vorleine oder Achterleine."
+    - name: "Weitere Leinen ergänzen"
+      text: "Erst wenn das Boot sicher am Steg liegt, machst du die übrigen Leinen fest und richtest die Fender endgültig aus."
 ---
 
 Kaum eine Situation sorgt bei Einsteigern für so viel Nervosität wie das An- und Ablegen: Auf engem Raum, oft mit Publikum am Steg, soll das Boot ruhig und kontrolliert an die gewünschte Stelle kommen. Dabei ist Hafenmanövrieren vor allem eines: **Physik und Vorbereitung**, keine Glückssache. Dieser Artikel zeigt dir, worauf es beim An- und Ablegen ankommt, welche Kräfte dabei wirken und wie du typische Fehler vermeidest, sowohl für die praktische SBF-Prüfung als auch für den Alltag am Steg.

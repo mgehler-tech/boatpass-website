@@ -7,6 +7,20 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "anlegen-ablegen-hafenmanoever"
+howTo:
+  name: "Docking at the Berth: Step by Step"
+  description: "How to dock your boat safely and under control, for the practical SBF exam and everyday boating."
+  steps:
+    - name: "Prepare early"
+      text: "Attach fenders on the side you will be docking against, and have lines ready to pay out, so nobody has to search for them at the critical moment."
+    - name: "Approach at low speed"
+      text: "Come in to the berth at a shallow angle and reduced speed. Better too slow than too fast."
+    - name: "Take off way in good time"
+      text: "Take the boat out of gear early enough that it arrives at the dock with just the last bit of way on, without hitting it."
+    - name: "Secure the first line"
+      text: "Make fast the line that holds the boat against the dock given the current wind or current situation, often a bow or stern line."
+    - name: "Add the remaining lines"
+      text: "Only once the boat lies securely at the dock, make fast the remaining lines and finally adjust the fenders."
 ---
 
 Few situations make beginners as nervous as docking and undocking: in a tight space, often with an audience on the pontoon, the boat is supposed to arrive calmly and under control exactly where it needs to be. Harbor maneuvering is really about one thing above all: **physics and preparation**, not luck. This article explains what matters when docking and undocking, which forces are at play, and how to avoid the typical mistakes, both for the practical part of the German boating license exam (SBF) and for everyday life at the dock.

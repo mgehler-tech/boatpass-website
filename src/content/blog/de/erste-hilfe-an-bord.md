@@ -7,6 +7,18 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "first-aid-on-board"
+howTo:
+  name: "Wiederbelebung an Bord"
+  description: "So reagierst du richtig, wenn eine Person an Bord nicht mehr normal atmet: Notruf, Herzdruckmassage und Beatmung."
+  steps:
+    - name: "Notruf veranlassen"
+      text: "Veranlasse den Notruf parallel zur Behandlung, wenn möglich durch eine zweite Person."
+    - name: "Herzdruckmassage beginnen"
+      text: "Drücke kräftig und schnell in der Mitte des Brustkorbs, mit etwa 100 bis 120 Kompressionen pro Minute und einer Drucktiefe von etwa 5 bis 6 Zentimetern bei Erwachsenen."
+    - name: "Beatmung ergänzen, wenn geübt"
+      text: "Wechsle im Verhältnis 30 Kompressionen zu 2 Beatmungen, bis professionelle Hilfe übernimmt oder die Person wieder normal atmet."
+    - name: "Defibrillator einsetzen, falls vorhanden"
+      text: "Setze einen an Bord oder in erreichbarer Nähe vorhandenen Defibrillator (AED) so früh wie möglich ein, das Gerät führt akustisch durch die Anwendung."
 ---
 
 Auf dem Wasser ist Hilfe oft weiter weg als an Land: kein Krankenwagen, der in wenigen Minuten da ist, sondern Funkkontakt, Anfahrtszeit und manchmal ein Rettungsboot, das erst noch auslaufen muss. Genau deshalb ist jeder Skipper in einem Notfall zunächst auf sich selbst gestellt. Dieser Artikel fasst zusammen, welche Erste-Hilfe-Grundlagen an Bord besonders wichtig sind und wie du in den häufigsten Notfallsituationen richtig reagierst.
