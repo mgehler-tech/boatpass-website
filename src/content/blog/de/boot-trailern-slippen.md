@@ -7,6 +7,22 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "trailering-and-launching-a-boat"
+howTo:
+  name: "Der Slipvorgang: Boot zu Wasser lassen"
+  description: "So lässt du dein Boot kontrolliert vom Trailer zu Wasser, ohne die Rampe unnötig zu blockieren."
+  steps:
+    - name: "Vorsichtig an die Rampe heranfahren"
+      text: "Fahre vorsichtig rückwärts an die Rampe heran, bis die Räder des Trailers gerade eben im Wasser stehen."
+    - name: "Feststellbremse setzen"
+      text: "Setze die Feststellbremse und schalte den Motor ab, bevor du aussteigst, insbesondere bei geneigten Rampen."
+    - name: "Sicherungskette am Bug lösen"
+      text: "Löse die Sicherungskette am Bug, während du das Boot mit einer Leine festhältst, damit es nicht unkontrolliert wegtreibt."
+    - name: "Boot vom Trailer schieben oder abrollen lassen"
+      text: "Schiebe das Boot vorsichtig vom Trailer oder lass es abrollen, je nach Rollenlager und Gefälle geht das oft fast von allein."
+    - name: "Sofort vertäuen"
+      text: "Vertäue das Boot sofort, sobald es frei schwimmt, an einem Steg, einer Boje oder mit der Person, die im Boot wartet."
+    - name: "Trailer zügig aus der Rampe fahren"
+      text: "Fahre den Trailer zügig aus der Rampe, damit die nächste Person mit ihrem Gespann slippen kann, und parke das leere Gespann erst danach."
 ---
 
 Ein eigener Bootstrailer eröffnet dir Freiheiten, die ein fester Liegeplatz nicht bietet: Du kannst dein Boot mit zu unterschiedlichen Gewässern nehmen, es zu Hause winterfest abstellen und musst keine dauerhafte Liegeplatzmiete zahlen. Doch wer trailert, übernimmt auch Verantwortung, die über das reine Bootfahren hinausgeht, vom rechtssicheren Transport auf der Straße bis zum kontrollierten Slippen am Gewässer. Dieser Artikel gibt dir einen praktischen Überblick über das, was du zum Thema Trailern und Slippen wissen solltest.

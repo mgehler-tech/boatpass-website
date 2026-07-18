@@ -7,6 +7,18 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "erste-hilfe-an-bord"
+howTo:
+  name: "Resuscitation on Board"
+  description: "What to do when a person on board isn't breathing normally: calling for help, chest compressions, and rescue breaths."
+  steps:
+    - name: "Call for help"
+      text: "Call for help, ideally in parallel with treatment, through a second person if one is available."
+    - name: "Start chest compressions"
+      text: "Press hard and fast in the center of the chest, at a rate of about 100 to 120 compressions per minute and a depth of about 5 to 6 centimeters for adults."
+    - name: "Add rescue breaths if trained to do so"
+      text: "Alternate 30 compressions with 2 breaths, until professional help takes over or the person starts breathing normally again."
+    - name: "Use a defibrillator if available"
+      text: "If a defibrillator (AED) is on board or nearby, use it as early as possible, the device will guide you through its use with voice prompts."
 ---
 
 On the water, help is often further away than on land: there's no ambulance arriving within minutes, only a radio call, a transit time, and sometimes a rescue boat that still has to get underway. That's exactly why, in an emergency, every skipper is initially on their own. This article summarizes the first aid basics that matter most on board and how to respond correctly in the most common emergencies.
