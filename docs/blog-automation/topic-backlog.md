@@ -25,7 +25,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] SBF-Binnen-Prüfung nicht bestanden – was jetzt zu tun ist (ad-hoc, SEO-Recherche: unterstützt die Pillar-Page /sbf-binnen/ mit einem bisher unabgedeckten Long-Tail-Thema; 2026-07-16: sbf-binnen-pruefung-nicht-bestanden / failed-sbf-inland-exam-what-to-do-next)
 - [x] Boot einwintern – Checkliste fürs Winterlager (2026-07-17: boot-einwintern-checkliste-winterlager / winterizing-a-boat-checklist-for-winter-storage)
 - [x] Außenborder-Basiswartung – einfache Pflege für lange Lebensdauer (2026-07-17: aussenborder-basiswartung / outboard-motor-basic-maintenance)
-- [ ] Sportküstenschifferschein (SKS) – die nächste Stufe nach dem SBF See
+- [x] Sportküstenschifferschein (SKS) – die nächste Stufe nach dem SBF See (2026-07-18: sportkuestenschifferschein-sks / sks-coastal-skippers-license)
 - [ ] GPS, Plotter und Funkgerät an Bord – moderne Navigation verstehen
 - [ ] Vorfahrt zwischen Motor- und Segelbooten – Sonderregeln
 - [ ] Schleppverband und besondere Fahrzeuge – Kennzeichnung erkennen
