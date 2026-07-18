@@ -55,7 +55,7 @@ Spread the above plan across 6–8 weeks. The key: study **at least 3 times per 
 
 Which vessel shows which light, in which situation? The combinations are numerous: motorboats underway, anchored vessels, sailboats, tugboats, fishing vessels – each has different requirements. Add night and reduced-visibility scenarios.
 
-**Tip:** Study light signals with visual diagrams, not text descriptions. The ELWIS symbols are unambiguous – visualize each scenario.
+**Tip:** Study [light signals](/en/blog/navigation-lights-explained/) with visual diagrams, not text descriptions. The ELWIS symbols are unambiguous – visualize each scenario.
 
 ### 2. Right-of-way rules (~20–30% of study time)
 
@@ -63,7 +63,7 @@ Who gives way to whom? When do you have right of way? The rules seem logical but
 
 ### 3. Seamanship and knots (practical)
 
-Knots cannot be learned by reading – only by physical practice. Buy a 1-meter piece of rope and put it on your desk. **Five minutes daily** is enough to reliably master the bowline, cleat hitch, and figure-eight knot.
+[Knots](/en/blog/most-important-knots-sbf/) cannot be learned by reading – only by physical practice. Buy a 1-meter piece of rope and put it on your desk. **Five minutes daily** is enough to reliably master the bowline, cleat hitch, and figure-eight knot.
 
 ## Why daily practice beats long sessions
 

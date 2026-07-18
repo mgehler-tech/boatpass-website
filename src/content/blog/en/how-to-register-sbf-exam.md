@@ -59,7 +59,7 @@ To register for the SBF exam you generally need:
 - If available: **a copy of a car driving license** – some eyesight tests/formalities may then be waived
 - Possibly **an extract from the driving aptitude register** (Flensburg), depending on the association and requirements
 
-Exactly which documents are required depends on the association and exam location. Your boating school or the examination board will give you the current list.
+Exactly [which documents are required](/en/blog/boating-license-requirements/) depends on the association and exam location. Your boating school or the examination board will give you the current list.
 
 ## Minimum Age
 

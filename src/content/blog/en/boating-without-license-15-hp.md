@@ -68,7 +68,7 @@ If you need the license, the choice depends on your waters:
 - **SBF Binnen** – for rivers, canals and lakes inland.
 - **SBF See** – for coastal waters and the sea.
 
-Many people take both in combination, because the theory overlaps and the second exam is then considerably cheaper. You can read more in our comparison of SBF Binnen and SBF See.
+Many people take both in combination, because the theory overlaps and the second exam is then considerably cheaper. You can read more in our [comparison of SBF Binnen and SBF See](/en/blog/sbf-inland-vs-coastal/).
 
 ## Conclusion
 

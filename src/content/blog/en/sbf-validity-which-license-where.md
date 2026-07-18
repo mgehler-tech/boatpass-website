@@ -57,7 +57,7 @@ The Kiel Canal connects the North and Baltic Seas and is part of the maritime wa
 | Müritz, Chiemsee, Lake Constance* | SBF Inland |
 | Berlin waters (Havel, Spree) | SBF Inland |
 
-*\*Lake Constance has its own regulation – there the Lake Constance Boating License (Bodenseeschifferpatent, BSP) is required.*
+*\*Lake Constance has its own regulation – there the [Lake Constance Boating License](/en/blog/lake-constance-boat-license/) (Bodenseeschifferpatent, BSP) is required.*
 
 ## SBF abroad: where is the German license valid?
 
@@ -94,4 +94,4 @@ The combined exam saves around €100 in exam fees – and the 72 basic question
 
 ## Conclusion
 
-The boundary between [SBF Coastal](/en/sbf-coastal/) and [SBF Inland](/en/sbf-inland/) runs at the river mouths – not along the coastline. Anyone navigating the Elbe up to Hamburg needs the SBF Coastal. Abroad, the German SBF with ICC is recognized in over 30 countries and valid for life. Anyone who wants to navigate flexibly on all waters should consider the combined exam.
+The boundary between [SBF Coastal](/en/sbf-coastal/) and [SBF Inland](/en/sbf-inland/) runs at the river mouths – not along the coastline. Anyone navigating the Elbe up to Hamburg needs the SBF Coastal. Abroad, [the German SBF with ICC is recognized in over 30 countries](/en/blog/sbf-valid-abroad/) and valid for life. Anyone who wants to navigate flexibly on all waters should consider the combined exam.

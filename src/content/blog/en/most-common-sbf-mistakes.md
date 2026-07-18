@@ -79,7 +79,7 @@ The official exam fee for [SBF Inland](/en/sbf-inland/) is approximately **€13
 
 Many believe small boats don't need a license. True – but only up to **11.03 kW (15 HP)** for combustion engines or **7.5 kW** for electric motors. Driving a more powerful boat without a license risks fines and insurance problems.
 
-The minimum age to independently operate a motorboat on German inland waterways is **16 years**.
+The [minimum age](/en/blog/boating-license-requirements/) to independently operate a motorboat on German inland waterways is **16 years**.
 
 ## Summary
 

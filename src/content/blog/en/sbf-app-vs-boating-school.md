@@ -100,7 +100,7 @@ You learn the theory exclusively with an app (like Boatpass) – directly from t
 ### App + self-study recommended if:
 - You can study independently with discipline
 - You want to work through the question catalog efficiently
-- You want to save money without sacrificing quality
+- You want to [save money](/en/blog/save-money-boating-license/) without sacrificing quality
 - You already have some experience on the water (e.g. as a passenger)
 
 ## What all three routes have in common

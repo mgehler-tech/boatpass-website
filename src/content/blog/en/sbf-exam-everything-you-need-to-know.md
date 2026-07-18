@@ -46,7 +46,7 @@ The 30 questions are split into two blocks that must **each** be passed separate
 
 ### 2. Knot exam
 
-You must correctly demonstrate several sailor's knots. The most important:
+You must correctly demonstrate several [sailor's knots](/en/blog/most-important-knots-sbf/). The most important:
 - **Bowline (Palstek)** – creates a fixed non-slipping loop
 - **Cleat hitch (Webleinstek)** – attaches line to a cleat or bollard
 - **Figure-eight knot (Achtknoten)** – stopper knot

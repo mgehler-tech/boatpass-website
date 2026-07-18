@@ -87,7 +87,7 @@ Cardinal marks tell you on which side you can **safely pass** a hazard. They are
 
 ## Light Characteristics: "Reading" the Light
 
-Many sea marks carry a **light**. The characteristic describes the rhythm and is abbreviated on the chart:
+Many sea marks carry a **light**. The characteristic describes the rhythm and is abbreviated on the [chart](/en/blog/how-to-read-a-nautical-chart/):
 
 - **Fl (Flashing):** short flashes of light, longer dark phases
 - **Oc (Occulting):** mostly light, short dark phases

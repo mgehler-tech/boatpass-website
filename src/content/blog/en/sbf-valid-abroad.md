@@ -84,7 +84,7 @@ The CEVNI exam tests the traffic rules that apply to European inland waterways: 
 
 The Ijsselmeer is a popular sailing area with well-known destinations – Enkhuizen, Hoorn, Medemblik, Lemmer. Be aware, however, that the open fetch creates short, steep chop that can make conditions uncomfortable, and shallow areas are frequent; keep an up-to-date chart on board.
 
-The **Waddenzee (Wadden Sea)** is one of the world's largest tidal flat ecosystems and a UNESCO World Heritage Site. Tidal flows govern everything here. Sailors who do not understand how to time the tides can find themselves stranded on a drying sandbank very quickly. The Waddenzee is rewarding but genuinely demanding. If you are not yet comfortable with tidal planning, brush up before you go.
+The **Waddenzee (Wadden Sea)** is one of the world's largest tidal flat ecosystems and a UNESCO World Heritage Site. Tidal flows govern everything here. Sailors who do not understand how to time the tides can find themselves stranded on a drying sandbank very quickly. The Waddenzee is rewarding but genuinely demanding. If you are not yet comfortable with [tidal planning](/en/blog/tides-rule-of-twelfths/), brush up before you go.
 
 ### Coastal and North Sea Routes
 

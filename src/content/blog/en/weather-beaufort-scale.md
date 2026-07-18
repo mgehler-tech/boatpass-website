@@ -24,7 +24,7 @@ A few reference points:
 - **8 Bft (gale):** from here it's called a **gale**, distinctly higher waves with streaks of spray.
 - **12 Bft (hurricane):** the sea is completely white, the air full of foam and spray.
 
-**Note:** strong-wind warning from **6 Bft**, gale warning from **8 Bft**. You should know these thresholds by heart.
+**Note:** strong-wind warning from **6 Bft**, gale warning from **8 Bft**. You should [know these thresholds by heart](/en/blog/hardest-sbf-exam-questions/).
 
 ## Highs and Lows
 

@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "sportbootfuehrerschein-voraussetzungen"
 ---
 
-Before you can sit the [SBF exam](/en/sbf-exam/), you have to meet a few formal requirements and submit some documents. Here's everything you need to know – from the age limit to exam registration.
+Before you can sit the [SBF exam](/en/sbf-exam/), you have to meet a few formal requirements and submit some documents. Here's everything you need to know – from the age limit to [exam registration](/en/blog/how-to-register-sbf-exam/).
 
 ## Minimum age
 
