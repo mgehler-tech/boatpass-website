@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "charterschein-boot-mieten-ohne-fuehrerschein"
 ---
 
-You want a boating holiday on the Müritz or the Mecklenburg Lake District – but without taking the Sportbootführerschein first? It's possible: with the **charter certificate**. Here's what the Charterbescheinigung allows, what the requirements are, and where its limits lie.
+You want a boating holiday on the Müritz or the Mecklenburg Lake District – but [without taking the Sportbootführerschein first](/en/blog/boating-without-license-15-hp/)? It's possible: with the **charter certificate**. Here's what the Charterbescheinigung allows, what the requirements are, and where its limits lie.
 
 ## What Is the Charter Certificate?
 

@@ -56,7 +56,7 @@ The missing masthead light is the decisive feature: if at night you see sideligh
 Certain vessels carry additional **all-round lights** that tell you their status. The classic mnemonics help:
 
 - **Red over red – the captain is dead:** two red all-round lights, one above the other = **not under command** (e.g. engine failure).
-- **Red – white – red:** three all-round lights (red-white-red, vertical) = **restricted in ability to maneuver** (e.g. towing, dredging).
+- **Red – white – red:** three all-round lights (red-white-red, vertical) = **[restricted in ability to maneuver](/en/blog/right-of-way-collision-rules/)** (e.g. towing, dredging).
 - **Green over white – fishing at night:** a trawler at work.
 - **Red over white – fishing without trawl:** a fishing vessel not engaged in trawling (COLREG Rule 26c).
 - **White over red – pilot in sight:** a pilot vessel (COLREG Rule 29a).

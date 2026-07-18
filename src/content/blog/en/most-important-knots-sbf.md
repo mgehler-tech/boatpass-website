@@ -13,7 +13,7 @@ For many, the knots are the part of the practical exam with the biggest "aha" mo
 
 ## How Many Knots Do You Need?
 
-In the **SBF See practical exam**, you're tested on a list of **nine knots**. You generally have to **demonstrate at least six of them correctly** and explain what each knot is used for. The **SBF Binnen practical** (engine) also includes cleating a line and basic knots.
+In the **SBF See [practical exam](/en/blog/sbf-exam-everything-you-need-to-know/)**, you're tested on a list of **nine knots**. You generally have to **demonstrate at least six of them correctly** and explain what each knot is used for. The **SBF Binnen practical** (engine) also includes cleating a line and basic knots.
 
 The examiner names the knot – you tie it and state its purpose. Speed is secondary; what matters is that the knot is **correct** and that you know its function.
 

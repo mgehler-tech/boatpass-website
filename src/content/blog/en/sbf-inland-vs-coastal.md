@@ -34,7 +34,7 @@ Valid on German **coastal waterways** and coastal waters internationally:
 
 **Best for:** Coastal sailing holidays, chartering boats in Mediterranean or Baltic destinations.
 
-> **Important:** The two licenses do **not** substitute for each other. SBF Inland only covers inland waterways; SBF Coastal only covers coastal waters.
+> **Important:** The two licenses do **not** substitute for each other. [SBF Inland only covers inland waterways](/en/blog/sbf-validity-which-license-where/); SBF Coastal only covers coastal waters.
 
 ## Exam differences
 

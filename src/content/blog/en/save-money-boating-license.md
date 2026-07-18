@@ -47,7 +47,7 @@ By far the biggest lever. A theory course at a boating school costs between €2
 | Online video course | €40–100 |
 | Learning app (e.g. Boatpass) | €7–12 |
 
-**Savings with an app vs. in-person course: €240–390**
+**Savings with an [app vs. in-person course](/en/blog/sbf-app-vs-boating-school/): €240–390**
 
 The key point: the exam is always the same – no matter how you prepared. With an app you learn exactly the questions that come up in the exam, because the question catalog is public.
 

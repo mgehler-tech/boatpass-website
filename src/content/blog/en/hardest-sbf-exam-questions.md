@@ -23,7 +23,7 @@ For comparison: around 39% fail the car driving license theory exam. So the boat
 
 > *"For which wind forces is a strong wind warning issued?"*
 
-**Correct answer:** Wind force 6 and 7 on the Beaufort scale.
+**Correct answer:** Wind force 6 and 7 on the [Beaufort scale](/en/blog/weather-beaufort-scale/).
 
 **Why so hard?** Many confuse the strong wind warning with the gale warning (from wind force 8). The distinction is:
 - **Strong wind warning:** wind force 6–7 Bft

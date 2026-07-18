@@ -36,9 +36,9 @@ A common mistake: studying questions you already know. It feels productive but d
 
 The categories that cause the most trouble for SBF candidates:
 
-- **Light signals (Lichterführung)** – Red = port side, green = starboard, white = stern. These rules seem simple but are frequently confused under pressure.
+- **[Light signals](/en/blog/navigation-lights-explained/) (Lichterführung)** – Red = port side, green = starboard, white = stern. These rules seem simple but are frequently confused under pressure.
 - **Sound signals (Schallzeichen)** – One short blast = "I'm altering course to starboard." Two short blasts = "I'm altering course to port." These are tested with variants that look nearly identical.
-- **Right-of-way rules** – Sailboats don't always have right of way. A sailboat with its engine on is treated as a motor vessel. Commercial shipping has priority on federal waterways.
+- **[Right-of-way rules](/en/blog/right-of-way-collision-rules/)** – Sailboats don't always have right of way. A sailboat with its engine on is treated as a motor vessel. Commercial shipping has priority on federal waterways.
 
 **What works:** Use a system that tracks which questions you get wrong repeatedly and shows them more often. The Boatpass error training does this automatically.
 
