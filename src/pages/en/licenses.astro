@@ -67,6 +67,39 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Licenses", "item": "https://boatpass.de/en/licenses/" },
   ],
 };
+
+const faqs = [
+  {
+    q: 'Which boating license do I need?',
+    a: "It depends on the waters and engine power: for rivers, canals and lakes above 15 HP you need the SBF Inland, for the North and Baltic Sea coast the SBF Coastal. If there's a radio on board, UBI, SRC or LRC may also apply depending on the area. The free finder above shows you the right combination in 3 questions.",
+  },
+  {
+    q: 'How much does a boating license cost?',
+    a: 'The official exam fees in 2026 are €130.78 for the SBF Inland and €148.38 for the SBF Coastal. A full preparation course usually adds €500–650 per license; learning the theory yourself – for example with Boatpass at €9.99 per catalog – saves most of that.',
+  },
+  {
+    q: 'Do I have to take a course for the boating license?',
+    a: "No, a course isn't required for the theory exam. The official ELWIS question catalog is freely available, so you can study on your own – for example with an app like Boatpass. For the practical exam, some hands-on practice on the water is still a good idea.",
+  },
+  {
+    q: 'Do I also need a radio certificate?',
+    a: 'Only if there is a radio on board: UBI covers inland waters, SRC covers short-range coastal radio, and LRC covers worldwide marine radio. Without a radio on board, no additional certificate is required.',
+  },
+  {
+    q: 'Can I operate a boat without a license at all?',
+    a: 'Yes, a charter certificate lets you operate a rented boat without an SBF on designated inland waters such as the Mecklenburg Lake District. Boats up to 15 HP can also be operated with no license at all.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
 ---
 
 <BaseLayout
@@ -76,6 +109,7 @@ const breadcrumbSchema = {
   altUrl="https://boatpass.de/fuehrerscheine/"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
@@ -152,6 +186,19 @@ const breadcrumbSchema = {
               <div class="license-desc">{c.desc}</div>
             </div>
           )
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-top:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Frequently asked questions about boating licenses</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
         ))}
       </div>
     </section>

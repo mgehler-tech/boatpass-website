@@ -69,6 +69,39 @@ const breadcrumbSchema = {
     { "@type": "ListItem", "position": 2, "name": "Führerscheine", "item": "https://boatpass.de/fuehrerscheine/" },
   ],
 };
+
+const faqs = [
+  {
+    q: 'Welchen Bootsführerschein brauche ich?',
+    a: 'Das hängt vom Revier und der Motorleistung ab: Auf Flüssen, Kanälen und Seen brauchst du ab 11,03 kW (15 PS) den SBF Binnen, auf Nord- und Ostsee den SBF See. Ist ein Funkgerät an Bord, kommt je nach Revier zusätzlich UBI, SRC oder LRC hinzu. Der kostenlose Finder oben zeigt dir in 3 Fragen die passende Kombination.',
+  },
+  {
+    q: 'Was kostet ein Bootsführerschein?',
+    a: 'Die amtlichen Prüfungsgebühren liegen 2026 bei 130,78 € für den SBF Binnen und 148,38 € für den SBF See. Mit komplettem Vorbereitungskurs kommen meist 500–650 € pro Schein dazu; wer die Theorie selbst lernt – etwa mit Boatpass für 9,99 € pro Katalog – spart den Großteil davon.',
+  },
+  {
+    q: 'Muss ich für den Bootsführerschein einen Kurs besuchen?',
+    a: 'Nein, ein Kurs ist für die Theorie nicht vorgeschrieben. Der amtliche ELWIS-Fragenkatalog ist frei zugänglich, sodass du eigenständig lernen kannst – etwa mit einer App wie Boatpass. Für die praktische Prüfung ist meist trotzdem etwas Übung auf dem Wasser sinnvoll.',
+  },
+  {
+    q: 'Brauche ich zusätzlich zum Bootsführerschein ein Funkzeugnis?',
+    a: 'Nur wenn ein Funkgerät an Bord ist: Auf Binnengewässern reicht dafür das UBI, auf See das SRC für Kurzstrecke oder das LRC für weltweiten Funk. Ohne Funkgerät an Bord ist kein zusätzliches Funkzeugnis nötig.',
+  },
+  {
+    q: 'Kann ich ein Boot auch ohne Führerschein fahren?',
+    a: 'Ja, mit dem Charterschein darfst du auf ausgewiesenen Binnengewässern wie der Mecklenburgischen Seenplatte ein gemietetes Boot ohne SBF führen. Ganz ohne jeden Schein sind zudem Boote bis 11,03 kW (15 PS) erlaubt.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
 ---
 
 <BaseLayout
@@ -78,6 +111,7 @@ const breadcrumbSchema = {
   altUrl="https://boatpass.de/en/licenses/"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
@@ -154,6 +188,19 @@ const breadcrumbSchema = {
               <div class="license-desc">{c.desc}</div>
             </div>
           )
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-top:48px;">
+      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Häufige Fragen zum Bootsführerschein</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
         ))}
       </div>
     </section>
