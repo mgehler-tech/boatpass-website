@@ -26,7 +26,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Boot einwintern – Checkliste fürs Winterlager (2026-07-17: boot-einwintern-checkliste-winterlager / winterizing-a-boat-checklist-for-winter-storage)
 - [x] Außenborder-Basiswartung – einfache Pflege für lange Lebensdauer (2026-07-17: aussenborder-basiswartung / outboard-motor-basic-maintenance)
 - [x] Sportküstenschifferschein (SKS) – die nächste Stufe nach dem SBF See (2026-07-18: sportkuestenschifferschein-sks / sks-coastal-skippers-license)
-- [ ] GPS, Plotter und Funkgerät an Bord – moderne Navigation verstehen
+- [x] GPS, Plotter und Funkgerät an Bord – moderne Navigation verstehen (2026-07-19: gps-kartenplotter-funkgeraet-moderne-navigation / gps-chartplotter-vhf-modern-navigation)
 - [ ] Vorfahrt zwischen Motor- und Segelbooten – Sonderregeln
 - [ ] Schleppverband und besondere Fahrzeuge – Kennzeichnung erkennen
 - [ ] Bootsversicherung für Sportboote – was ist sinnvoll?
