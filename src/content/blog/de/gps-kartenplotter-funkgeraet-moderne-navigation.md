@@ -59,7 +59,7 @@ Moderne Funkgeräte verfügen häufig über **DSC** (Digital Selective Calling),
 
 ## Was das für die SBF-Prüfung bedeutet
 
-Auch wenn GPS, Kartenplotter und AIS auf modernen Booten längst zum Alltag gehören, verlangt die praktische Kartenarbeit in der SBF-See-Prüfung weiterhin die klassische Arbeit mit Papierkarte, Kompass, Stechzirkel und Parallellineal. Der Grund ist einfach: Wer die Systematik von Kurs, Distanz und Position einmal von Hand verstanden hat, überträgt dieses Wissen mühelos auf jeden Kartenplotter, egal von welchem Hersteller, während der umgekehrte Weg deutlich schwerer fällt. Deshalb lohnt es sich, die Grundlagen aus den Artikeln zur [Seekarte](/blog/seekarte-lesen-lernen/) und zu [Kompass, Missweisung und Deviation](/blog/kompass-missweisung-deviation-erklaert/) sicher zu beherrschen, bevor du dich auf die Bequemlichkeit moderner Elektronik verlässt.
+Auch wenn GPS, Kartenplotter und AIS auf modernen Booten längst zum Alltag gehören, verlangt die [Navigationsaufgabe](/blog/sbf-see-navigationsaufgaben-erklaert/) in der SBF-See-Prüfung weiterhin die klassische Arbeit mit der Papierkarte, dem Kursdreieck und dem Zirkel. Der Grund ist einfach: Wer die Systematik von Kurs, Distanz und Position einmal von Hand verstanden hat, überträgt dieses Wissen mühelos auf jeden Kartenplotter, egal von welchem Hersteller, während der umgekehrte Weg deutlich schwerer fällt. Deshalb lohnt es sich, die Grundlagen aus den Artikeln zur [Seekarte](/blog/seekarte-lesen-lernen/) und zu [Kompass, Missweisung und Deviation](/blog/kompass-missweisung-deviation-erklaert/) sicher zu beherrschen, bevor du dich auf die Bequemlichkeit moderner Elektronik verlässt.
 
 ## So integrierst du moderne Navigation sinnvoll in deine Praxis
 
