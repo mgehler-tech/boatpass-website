@@ -45,6 +45,11 @@ jobs:
           Lies zuerst docs/seo-geo-strategie-2026.md vollständig. Dort stehen die
           strategischen Prioritäten, bereits umgesetzte Maßnahmen und die echten Lücken.
 
+          Falls docs/seo-automation/gsc-findings.md existiert, lies es ebenfalls: Es enthält
+          echte Search-Console-Daten (Striking-Distance-Keywords, CTR-Schwächen) und hat
+          Vorrang – wähle deine Schwachstelle bevorzugt so, dass sie eine dort gelistete
+          Seite oder Query stärkt.
+
           ## SEO-Schwachstellen (priorisiert A → D, wähle genau EINE):
 
           A) Fehlende oder nicht optimierte <title> bzw. <meta name='description'>
