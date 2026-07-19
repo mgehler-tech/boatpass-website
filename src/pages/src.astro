@@ -147,7 +147,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 
     <!-- Was ist SRC -->
     <section style="margin-bottom:48px;">
-      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">Was ist das SRC?</h2>
+      <h2 class="content-section-title" style="margin-bottom:16px;">Was ist das SRC?</h2>
       <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
         Das <strong>Short Range Certificate (SRC)</strong> – auf Deutsch <em>Beschränkt Gültiges Funkbetriebszeugnis</em> – ist die amtliche Erlaubnis zur Teilnahme am weltweiten Seefunkdienst (GMDSS) im <strong>UKW-Bereich</strong>. Es berechtigt zur Bedienung aller UKW-Seefunkanlagen inklusive DSC (Digital Selective Calling) mit einer Reichweite von rund <strong>35 Seemeilen</strong> (Seegebiet A1).
       </p>
@@ -163,7 +163,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 
     <!-- Wer braucht es -->
     <section style="margin-bottom:48px;">
-      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:16px;">Wer braucht das SRC?</h2>
+      <h2 class="content-section-title" style="margin-bottom:16px;">Wer braucht das SRC?</h2>
       <div style="display:flex; flex-direction:column; gap:12px;">
         {([
           { icon: 'sailboat', title: 'UKW-Funkgerät an Bord', desc: 'Segler und Motorbootfahrer mit fest eingebautem oder tragbarem UKW-Seefunkgerät (DSC) an Bord' },
@@ -189,7 +189,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 
     <!-- SRC vs UBI vs LRC -->
     <section style="margin-bottom:48px;">
-      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">SRC, UBI oder LRC – welches Funkzeugnis?</h2>
+      <h2 class="content-section-title" style="margin-bottom:20px;">SRC, UBI oder LRC – welches Funkzeugnis?</h2>
       <div class="funk-compare-grid">
         <div style="background:white; border:2px solid rgba(51,102,255,0.2); border-radius:16px; padding:24px;">
           <div style="font-weight:800; color:#1A1F36; margin-bottom:4px;">SRC</div>
@@ -227,7 +227,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 
     <!-- Prüfungsaufbau -->
     <section style="margin-bottom:48px;">
-      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">SRC-Prüfung: Aufbau & Inhalte</h2>
+      <h2 class="content-section-title" style="margin-bottom:20px;">SRC-Prüfung: Aufbau & Inhalte</h2>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:20px;">
         <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:24px;">
           <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Theorie</div>
@@ -255,7 +255,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 
     <!-- Kosten -->
     <section style="margin-bottom:48px;">
-      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:8px;">Was kostet das SRC?</h2>
+      <h2 class="content-section-title" style="margin-bottom:8px;">Was kostet das SRC?</h2>
       <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:24px;">
         Für die amtliche SRC-Prüfung fällt eine Gebühr für Zulassung, Prüfung und Erteilung des Zeugnisses an:
       </p>
@@ -282,7 +282,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 
     <!-- So hilft Boatpass beim SRC -->
     <section style="margin-bottom:48px;">
-      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">So hilft Boatpass beim SRC</h2>
+      <h2 class="content-section-title" style="margin-bottom:20px;">So hilft Boatpass beim SRC</h2>
       <div style="display:flex; flex-direction:column; gap:16px;">
         {([
           { icon: 'book', title: 'Vollständiger SRC-Fragenkatalog', desc: 'Alle offiziellen SRC-Fragen für den Küstenbereich – vollständig abgedeckt, immer aktuell.' },
@@ -305,7 +305,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 
     <!-- Lernen nach Kategorie -->
     <section style="margin-bottom:48px;">
-      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:8px;">Lernen nach Kategorie</h2>
+      <h2 class="content-section-title" style="margin-bottom:8px;">Lernen nach Kategorie</h2>
       <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:20px;">
         Der SRC-Fragenkatalog umfasst {categories.reduce((s, c) => s + c.count, 0)} Fragen in {categories.length} Themengebieten – übe gezielt nach Schwachstellen.
       </p>
@@ -347,7 +347,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 
     <!-- FAQ -->
     <section style="margin-bottom:48px;">
-      <h2 style="font-size:28px; font-weight:800; color:#1A1F36; letter-spacing:-1px; margin-bottom:20px;">Häufige Fragen zum SRC</h2>
+      <h2 class="content-section-title" style="margin-bottom:20px;">Häufige Fragen zum SRC</h2>
       <div style="display:flex; flex-direction:column; gap:14px;">
         {faqs.map(f => (
           <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">

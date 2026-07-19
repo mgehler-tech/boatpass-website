@@ -76,6 +76,25 @@
   color: var(--color-navy);
 }
 
+/* Sektions-Überschriften (H2) innerhalb der Inhalts-/Pillar-Seiten (SBF Binnen/See,
+   Führerscheine, Kosten, Prüfungsfragen u. a.). Bisher war in jeder dieser
+   Überschriften ein fester Wert hartkodiert (28px + letter-spacing:-1px), der auf
+   schmalen Screens unverändert groß und mit der px-Laufweite zusätzlich zu eng
+   blieb – dieselbe Schwäche, die für die großen Startseiten-Titel bereits mit
+   .section-display-title behoben wurde. Die Größe skaliert jetzt sanft von 22px
+   bis 28px mit, die Laufweite ist in em (statt px) angegeben und lockert damit
+   bei kleinerer Schrift proportional, und eine ruhige Zeilenhöhe verbessert die
+   Lesbarkeit mehrzeiliger Überschriften. Werte des Corporate Designs
+   (Navy-Farbe via --color-navy, Font-Weight 800) bleiben unverändert; die
+   Farbe über die Variable trägt zugleich den Dark-Mode korrekt mit. */
+.content-section-title {
+  font-size: clamp(1.375rem, 3.6vw, 1.75rem); /* 22px … 28px */
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+  color: var(--color-navy);
+}
+
 /* Interne Weiterführungs-Link-Listen ("Weiterführende Artikel" / "Further reading")
    am Fuß der Pillar-Seiten (SBF Binnen/See, Führerscheine u. a.). Bisher standen die
    Links als reine 15px-Textzeilen mit nur 10px Abstand dicht gestapelt: auf dem Handy
