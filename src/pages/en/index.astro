@@ -20,6 +20,39 @@ const websiteSchema = {
   "inLanguage": "en-US",
   "publisher": { "@type": "Organization", "name": "Boatpass", "url": "https://boatpass.de" },
 };
+
+const faqs = [
+  {
+    q: 'What is the German boating license (SBF)?',
+    a: 'The Sportbootführerschein (SBF) is Germany’s official license for powered recreational boats – issued as SBF Inland or SBF Coastal depending on the waters. It requires passing a theory and a practical exam based on the official ELWIS question catalog from DSV and DMYV.',
+  },
+  {
+    q: 'What’s the difference between SBF Inland and SBF Coastal?',
+    a: 'The SBF Inland covers inland waterways, while the SBF Coastal covers coastal and offshore waters. The SBF Coastal exam also includes a navigation task with 9 questions that isn’t part of the SBF Inland exam.',
+  },
+  {
+    q: 'How much does the German boating license cost?',
+    a: 'Official exam fees are €130.78 for the SBF Inland and €148.38 for the SBF Coastal. With a preparation course, total costs in 2026 are usually €500–650 per license – learning the theory yourself with an app saves the course fee.',
+  },
+  {
+    q: 'Do I also need a radio certificate like UBI or SRC?',
+    a: 'A radio certificate is only mandatory if you operate an onboard radio – UBI for inland waterways, SRC for maritime radio. Many recreational skippers without a radio only need the SBF itself.',
+  },
+  {
+    q: 'How do I prepare for the exam with Boatpass?',
+    a: 'With Boatpass you study the complete official ELWIS question catalog in the app, train your mistakes specifically, and simulate the real exam. It’s a one-time purchase instead of a subscription – starting at €9.99 per license.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
 ---
 
 <BaseLayout
@@ -29,6 +62,7 @@ const websiteSchema = {
   appRating={appRating}
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <HeroSection lang="en" />
   <TrustBar lang="en" />
   <FeatureCards lang="en" />
@@ -36,4 +70,21 @@ const websiteSchema = {
   <FinderTeaser lang="en" />
   <PricingSection lang="en" />
   <BlogTeaser lang="en" />
+
+  <div style="max-width:800px; margin:0 auto; padding:0 24px 100px;">
+    <section>
+      <h2 class="content-section-title" style="margin-bottom:20px;">Frequently Asked Questions</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
+      <p style="font-size:15px; color:#6B7280; line-height:1.7; margin-top:16px;">
+        Find more answers in the <a href="/en/faq/" style="color:#3366FF; text-decoration:underline;">German boating license FAQ</a>.
+      </p>
+    </section>
+  </div>
 </BaseLayout>
