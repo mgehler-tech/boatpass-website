@@ -20,6 +20,39 @@ const websiteSchema = {
   "inLanguage": "de-DE",
   "publisher": { "@type": "Organization", "name": "Boatpass", "url": "https://boatpass.de" },
 };
+
+const faqs = [
+  {
+    q: 'Was ist der Sportbootführerschein (SBF)?',
+    a: 'Der Sportbootführerschein (SBF) ist die amtliche Fahrerlaubnis für motorisierte Sportboote in Deutschland – je nach Revier als SBF Binnen oder SBF See. Nachgewiesen wird er in einer Theorie- und einer Praxisprüfung nach dem amtlichen ELWIS-Fragenkatalog von DSV und DMYV.',
+  },
+  {
+    q: 'Was ist der Unterschied zwischen SBF Binnen und SBF See?',
+    a: 'Der SBF Binnen berechtigt zum Führen von Sportbooten auf Binnenschifffahrtsstraßen, der SBF See auf Seeschifffahrtsstraßen und im Küstenbereich. Die Prüfung SBF See enthält zusätzlich eine Navigationsaufgabe mit 9 Fragen, die beim SBF Binnen entfällt.',
+  },
+  {
+    q: 'Was kostet der Sportbootführerschein?',
+    a: 'Die amtlichen Prüfungsgebühren liegen bei 130,78 € für den SBF Binnen und 148,38 € für den SBF See. Mit Vorbereitungskurs kommen 2026 meist 500–650 € pro Schein zusammen – wer die Theorie selbst mit einer App lernt, spart die Kursgebühr.',
+  },
+  {
+    q: 'Brauche ich zusätzlich ein Funkzeugnis wie UBI oder SRC?',
+    a: 'Ein Funkzeugnis ist nur Pflicht, wenn du eine Bordfunkanlage nutzt – UBI für Binnenschifffahrtsstraßen, SRC für den Seefunk. Viele Freizeitskipper ohne eigene Funkanlage kommen mit dem SBF allein aus.',
+  },
+  {
+    q: 'Wie bereite ich mich mit Boatpass auf die Prüfung vor?',
+    a: 'Mit Boatpass lernst du den vollständigen amtlichen ELWIS-Fragenkatalog in der App, trainierst gezielt deine Fehler und simulierst die echte Prüfung. Der Kauf ist einmalig statt im Abo – ab 9,99 € pro Schein.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
 ---
 
 <BaseLayout
@@ -29,6 +62,7 @@ const websiteSchema = {
   appRating={appRating}
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <HeroSection lang="de" />
   <TrustBar lang="de" />
   <FeatureCards lang="de" />
@@ -36,4 +70,21 @@ const websiteSchema = {
   <FinderTeaser lang="de" />
   <PricingSection lang="de" />
   <BlogTeaser lang="de" />
+
+  <div style="max-width:800px; margin:0 auto; padding:0 24px 100px;">
+    <section>
+      <h2 class="content-section-title" style="margin-bottom:20px;">Häufig gestellte Fragen</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
+      <p style="font-size:15px; color:#6B7280; line-height:1.7; margin-top:16px;">
+        Weitere Antworten findest du in den <a href="/faq/" style="color:#3366FF; text-decoration:underline;">häufigen Fragen zum Sportbootführerschein</a>.
+      </p>
+    </section>
+  </div>
 </BaseLayout>
