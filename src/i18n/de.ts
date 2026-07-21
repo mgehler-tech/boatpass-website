@@ -148,6 +148,7 @@ export const de = {
   footer: {
     privacy: 'Datenschutz',
     imprint: 'Impressum',
+    terms: 'Nutzungsbedingungen',
     contact: 'Kontakt',
     switchLang: 'English',
   },
