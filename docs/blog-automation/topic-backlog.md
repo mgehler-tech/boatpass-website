@@ -27,11 +27,12 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Außenborder-Basiswartung – einfache Pflege für lange Lebensdauer (2026-07-17: aussenborder-basiswartung / outboard-motor-basic-maintenance)
 - [x] Sportküstenschifferschein (SKS) – die nächste Stufe nach dem SBF See (2026-07-18: sportkuestenschifferschein-sks / sks-coastal-skippers-license)
 - [x] GPS, Plotter und Funkgerät an Bord – moderne Navigation verstehen (2026-07-19: gps-kartenplotter-funkgeraet-moderne-navigation / gps-chartplotter-vhf-modern-navigation)
-- [ ] Vorfahrt zwischen Motor- und Segelbooten – Sonderregeln (Hinweis: inhaltlich bereits weitgehend durch `ausweichregeln-vorfahrt-wasser` abgedeckt, siehe Rangordnung + Zwei-Segelfahrzeuge-Abschnitt; beim nächsten Zug prüfen, ob ein eigener Long-Tail-Fokus verbleibt, oder gegen ein neues Thema tauschen)
+- [x] Vorfahrt zwischen Motor- und Segelbooten – Sonderregeln (geprüft und getauscht: Thema deckt sich inhaltlich mit `ausweichregeln-vorfahrt-wasser` (Rangordnung + Zwei-Segelfahrzeuge-Abschnitt bereits vorhanden), kein eigenständiger Long-Tail-Fokus verblieb. Ersetzt am 2026-07-21 durch das Thema "Seewetterbericht und Wetterwarnungen richtig nutzen" unten.)
 - [x] Schleppverband und besondere Fahrzeuge – Kennzeichnung erkennen (2026-07-21: schleppverband-besondere-fahrzeuge-erkennen / towing-convoys-special-vessels-day-shapes)
-- [ ] Bootsversicherung für Sportboote – was ist sinnvoll?
+- [x] Bootsversicherung für Sportboote – was ist sinnvoll? (2026-07-21: bootsversicherung-sportboote-sinnvoll / boat-insurance-for-sportboats-what-makes-sense)
 - [ ] Wassersport-Reviere in Deutschland – wo darf ich mit dem SBF fahren?
 - [ ] Nebel, Sicht und Schallzeichen – richtig verhalten bei schlechter Sicht
 - [ ] Strömung und Tide praktisch nutzen – Törnplanung Grundlagen
+- [ ] Seewetterbericht und Wetterwarnungen richtig nutzen – Wetterdienste für Skipper
 
 ## Erledigt
