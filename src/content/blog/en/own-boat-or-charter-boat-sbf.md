@@ -26,7 +26,7 @@ That freedom comes at a price, and not just a financial one. Owning a boat bring
 - **Mooring:** you need a permanent or seasonal berth, and availability can vary sharply depending on the area.
 - **Maintenance and care:** engine, hull, electrics, and safety equipment all need regular checks and upkeep.
 - **Winter storage:** depending on the region, the boat has to be winterized and stored.
-- **Insurance:** boat liability insurance is strongly advisable, and hull insurance additionally protects the boat itself.
+- **Insurance:** boat liability insurance is strongly advisable, and hull insurance additionally protects the boat itself. For which boat insurance actually makes sense for your own boat, see [Boat Insurance for Sport Boats](/en/blog/boat-insurance-for-sportboats-what-makes-sense/).
 - **Resale value:** as with any major purchase, eventual resale value matters too.
 
 Anyone choosing to buy a boat should plan realistically for this effort, not just the purchase price. For an overview of the costs directly tied to the license itself, see [Save Money on Your Boating License](/en/blog/save-money-boating-license/); the purchase and running costs of the boat itself come on top and vary too much by boat type, age, and region to put a single figure on.

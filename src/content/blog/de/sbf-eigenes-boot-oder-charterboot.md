@@ -26,7 +26,7 @@ Diese Freiheit hat allerdings ihren Preis, und zwar nicht nur finanziell. Ein ei
 - **Liegeplatz:** Du brauchst einen festen oder saisonalen Liegeplatz, dessen Verfügbarkeit je nach Revier stark schwanken kann.
 - **Wartung und Pflege:** Motor, Rumpf, Elektrik und Sicherheitsausrüstung müssen regelmäßig geprüft und instand gehalten werden.
 - **Einwinterung:** Je nach Revier muss das Boot winterfest gemacht und eingelagert werden.
-- **Versicherung:** Eine Bootshaftpflicht ist dringend zu empfehlen, eine Kaskoversicherung schützt zusätzlich das eigene Boot.
+- **Versicherung:** Eine Bootshaftpflicht ist dringend zu empfehlen, eine Kaskoversicherung schützt zusätzlich das eigene Boot. Welche Bootsversicherung für dein eigenes Boot sinnvoll ist, erfährst du im Detail im Beitrag [Bootsversicherung für Sportboote](/blog/bootsversicherung-sportboote-sinnvoll/).
 - **Wertentwicklung:** Wie bei jedem größeren Anschaffungsgegenstand spielt auch der spätere Wiederverkaufswert eine Rolle.
 
 Wer sich für ein eigenes Boot entscheidet, sollte diesen Aufwand realistisch einplanen, nicht nur den Kaufpreis. Einen Überblick über die laufenden und einmaligen Kostenpunkte rund um den Führerschein selbst findest du im Beitrag [Bootsführerschein-Kosten sparen](/blog/bootsfuehrerschein-kosten-sparen/), die Anschaffungs- und Unterhaltskosten für das Boot selbst kommen je nach Bootstyp, Alter und Revier noch hinzu und lassen sich pauschal kaum beziffern.
