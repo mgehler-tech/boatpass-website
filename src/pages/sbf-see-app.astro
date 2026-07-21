@@ -1,0 +1,84 @@
+---
+import AppLandingPage from '../components/AppLandingPage.astro';
+import { appsForLicense } from '../data/apps';
+
+const apps = appsForLicense('sbf-see');
+
+const faqs = [
+  {
+    q: 'Welche App ist die beste für den SBF See?',
+    a: 'Wenn du nichts ausgeben willst: Sportbootführerschein See 2023 von Matthias Wimmer – 4,8 ★ bei 703 Bewertungen, komplett kostenlos, ohne Werbung. Wenn du Erklärungen zu den Antworten und einen begleitenden Onlinekurs willst: Bootspruefung.de. Wenn du SBF See mit weiteren Scheinen kombinierst und kein Abo möchtest: Boatpass.',
+  },
+  {
+    q: 'Decken die Apps auch die Navigationsaufgaben ab?',
+    a: 'Nicht alle. Die SBF-See-Prüfung enthält neben den Multiple-Choice-Fragen einen Navigationsteil mit Kartenarbeit, Kursberechnung und Standortbestimmung. Die kostenlose Wimmer-App deckt ihn nicht ab. Boatpass, Bootspruefung.de und SBF-Fragen behandeln die Navigationsaufgaben. Ein gedruckter Übungssatz mit der amtlichen Übungskarte ist trotzdem sinnvoll – in der Prüfung arbeitest du auf Papier.',
+  },
+  {
+    q: 'Wie viele Fragen hat die SBF-See-Prüfung?',
+    a: 'Der amtliche Fragenkatalog SBF See umfasst rund 280 Fragen. Im Prüfungsbogen beantwortest du 30 davon: 7 Basisfragen und 23 spezifische See-Fragen. Dazu kommt der Navigationsteil. Details zum Ablauf findest du auf unserer Seite zur SBF-Prüfung.',
+  },
+  {
+    q: 'Reicht eine App, um den SBF See zu bestehen?',
+    a: 'Für die Theorie ja, sofern du den kompletten Katalog durcharbeitest und die Navigationsaufgaben zusätzlich übst. Die praktische Prüfung – Manöver und Knoten – lernst du nur auf dem Wasser.',
+  },
+  {
+    q: 'Gibt es eine SBF-See-App für das iPhone?',
+    a: 'Ja: Bootspruefung.de und SBF-Fragen sind für iOS verfügbar. Die kostenlose Wimmer-App und Sailbyte gibt es nur für Android, Boatpass derzeit ebenfalls nur für Android.',
+  },
+  {
+    q: 'Funktionieren die Apps offline?',
+    a: 'SBF-Fragen und die Wimmer-App lernen vollständig offline. Bei Bootspruefung.de ist die vollständige Offline-Nutzung Teil der Pro-Version. Bei Sailbyte sind SBF See und Binnen offline nutzbar.',
+  },
+];
+
+const relatedLinks = [
+  { href: '/sbf-see/', label: 'SBF See – Prüfung, Kosten und Ablauf' },
+  { href: '/sbf-see-pruefungsfragen/', label: 'SBF-See-Prüfungsfragen im Überblick' },
+  { href: '/sbf-app/', label: 'Alle Bootsführerschein-Apps im Vergleich' },
+  { href: '/sbf-binnen-app/', label: 'SBF-Binnen-Apps im Vergleich' },
+  { href: '/blog/sbf-see-navigationsaufgaben-erklaert/', label: 'Navigationsaufgaben beim SBF See erklärt' },
+  { href: '/blog/sbf-binnen-vs-see/', label: 'SBF Binnen oder See – welcher Schein passt?' },
+];
+---
+
+<AppLandingPage
+  lang="de"
+  title="SBF-See-App: die besten Apps im Vergleich"
+  description="SBF-See-Apps für Android und iPhone im Vergleich: Preise, Fragenkataloge, Navigationsaufgaben und Bewertungen von Bootspruefung.de, SBF-Fragen, Sailbyte, Wimmer und Boatpass."
+  altUrl="https://boatpass.de/en/sbf-coastal-app/"
+  path="/sbf-see-app/"
+  breadcrumbName="SBF-See-Apps im Vergleich"
+  badge="Sportbootführerschein See"
+  h1="SBF-See-Apps im Vergleich"
+  heroIntro="Fünf Apps decken den amtlichen Fragenkatalog SBF See ab – zu sehr unterschiedlichen Preisen und mit unterschiedlicher Tiefe bei den Navigationsaufgaben. Hier stehen sie nebeneinander."
+  answer="Für den SBF See gibt es fünf brauchbare Lern-Apps. Kostenlos und sehr gut bewertet ist Sportbootführerschein See 2023 von Matthias Wimmer (4,8 ★, 703 Bewertungen), deckt aber die Navigationsaufgaben nicht ab. Bootspruefung.de, SBF-Fragen und Boatpass behandeln auch Kartenarbeit, Sailbyte arbeitet mit Monatsabo."
+  apps={apps}
+  tableCaption="Alle Apps, die den amtlichen Fragenkatalog SBF See abdecken – alphabetisch sortiert."
+  androidHeading="SBF-See-App für Android"
+  androidParagraphs={[
+    'Alle fünf Apps sind im Google Play Store verfügbar. Die meistgenutzte kostenlose Variante ist <strong>Sportbootführerschein See 2023</strong> von Matthias Wimmer mit über 100.000 Downloads und 4,8 ★ bei 703 Bewertungen – ohne Werbung, ohne In-App-Käufe, ohne Tracking. Sie arbeitet nach dem Karteikasten-Prinzip: Eine Frage gilt erst als erledigt, wenn du sie fünfmal richtig beantwortet hast.',
+    'Der entscheidende Haken: Die <strong>Navigationsaufgaben deckt sie nicht ab</strong>. Für Kursberechnung, Besteckrechnung und Kartenarbeit brauchst du zusätzliches Material – oder eine App, die den Teil enthält.',
+    'Boatpass gibt es ebenfalls im Play Store. Der SBF-See-Katalog kostet einmalig 9,99 €, im Paket mit SBF Binnen 16,98 €. Zum Ausprobieren ist die App kostenlos.',
+  ]}
+  iosHeading="SBF-See-App für iPhone und iPad"
+  iosParagraphs={[
+    'Für iOS bleiben zwei der fünf Apps übrig: <strong>Bootspruefung.de</strong> und <strong>SBF-Fragen</strong> vom Delius-Klasing-Verlag. Beide decken den vollständigen Katalog inklusive Navigationsteil ab.',
+    'Die kostenlose Wimmer-App, Sailbyte und <strong>Boatpass sind derzeit nicht im App Store</strong> – unsere iOS-Version ist in Arbeit. Wer auf dem iPhone lernen will, greift heute zu einer der beiden verfügbaren Apps.',
+  ]}
+  strengths={[
+    'Vollständiger amtlicher SBF-See-Katalog inklusive Navigationsaufgaben',
+    'Prüfungssimulation mit Bestehensgrenze und Zeitlimit',
+    'Fehler-Training für die Fragen, die du falsch beantwortet hast',
+    'Kombinierbar mit SBF Binnen, UBI, SRC und LRC in derselben App',
+    'Einmalig 9,99 € für den SBF-See-Katalog, kein Abo',
+  ]}
+  limitations={[
+    'Bisher nur für Android verfügbar',
+    'Kein SKS – wer den Sportküstenschifferschein anschließt, braucht eine zweite App',
+    'Nur 7 Bewertungen im Play Store, verglichen mit 703 bei der Wimmer-App',
+    'Kein Onlinekurs im Browser als Ergänzung',
+    'Ersetzt nicht die praktische Ausbildung und das Üben auf der Papierkarte',
+  ]}
+  faqs={faqs}
+  relatedLinks={relatedLinks}
+/>

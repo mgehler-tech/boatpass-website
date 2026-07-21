@@ -1,0 +1,87 @@
+---
+import AppLandingPage from '../../components/AppLandingPage.astro';
+import { LEARNING_APPS } from '../../data/apps';
+
+const faqs = [
+  {
+    q: 'Which boating licence app is best?',
+    a: 'It depends on what you need. For the widest licence coverage plus a companion online course, Bootspruefung.de is the safe pick. If you are taking a single licence and do not want to spend anything, the free apps by Matthias Wimmer are the best choice. If you are combining several licences – say SBF Binnen plus a radio certificate – and do not want a subscription, Boatpass fits, because all five catalogues sit in one app.',
+  },
+  {
+    q: 'Can I prepare for the German boating licence entirely with an app?',
+    a: 'The theory, yes. The official question catalogue is public and no theory course is required – you register directly with the examination board. No app replaces the practical exam: knots and manoeuvres have to be practised on the water, usually with a boating school.',
+  },
+  {
+    q: 'Are the questions in these apps the real exam questions?',
+    a: 'In every app compared here, yes. The catalogues for SBF Binnen, SBF See and the radio certificates are published officially, among others via elwis.de, and serious apps reproduce them one to one. Still check that the app states the current catalogue version.',
+  },
+  {
+    q: 'Free or paid – is the difference worth it?',
+    a: 'The free apps contain the complete question catalogue and are enough for pure memorisation. Paid versions typically add explanations for each answer, exam simulations on original papers, mistake training and progress statistics. If you want to understand rather than memorise, that is worth the money – if not, save it.',
+  },
+  {
+    q: 'Do I need an internet connection to study?',
+    a: 'Most apps work offline, in some cases only after buying the full version. With Bootspruefung.de, full offline availability is a Pro feature; with Sailbyte, SBF See and Binnen work offline while SKS does not.',
+  },
+  {
+    q: 'Are these apps available for iPhone?',
+    a: 'Not all of them. Bootspruefung.de and SBF-Fragen are available for both Android and iOS. The free Wimmer apps and Sailbyte are Android only. Boatpass is currently Android only; the iOS version is in progress.',
+  },
+  {
+    q: 'What does the German boating licence cost in total?',
+    a: 'The app is the smallest item. Expect official examination fees of roughly €100 to €190 depending on the licence, plus boating school costs if you take that route. Our costs page breaks it down.',
+  },
+];
+
+const relatedLinks = [
+  { href: '/en/sbf-coastal-app/', label: 'SBF See apps compared' },
+  { href: '/en/sbf-inland-app/', label: 'SBF Binnen apps compared' },
+  { href: '/en/radio-certificate-app/', label: 'Radio certificate apps for UBI, SRC and LRC' },
+  { href: '/en/sbf-app-free/', label: 'Free boating licence apps – what is actually free' },
+  { href: '/en/sbf-costs/', label: 'What does the German boating licence cost?' },
+  { href: '/en/blog/sbf-app-vs-boating-school/', label: 'App or boating school – what pays off?' },
+];
+---
+
+<AppLandingPage
+  lang="en"
+  title="German boating licence apps compared 2026"
+  description="Which app is worth it for the German Sportbootführerschein? Bootspruefung.de, SBF-Fragen, Sailbyte, Wimmer and Boatpass compared honestly – prices, licences, ratings."
+  altUrl="https://boatpass.de/sbf-app/"
+  path="/sbf-app/"
+  breadcrumbName="Boating licence apps compared"
+  badge="Vendor comparison 2026"
+  h1="German boating licence apps compared"
+  heroIntro="Six learning apps for the German Sportbootführerschein and the radio certificates – with real prices, ratings and licence coverage. Including an honest note on where our own app is not the best choice."
+  answer="Six learning apps matter for the German boating licence: Bootspruefung.de covers the most licences at seven, the Wimmer apps for SBF See and Binnen are completely free, SBF-Fragen comes from publisher Delius Klasing, Sailbyte runs on a subscription, and Boatpass bundles five catalogues in one app without a subscription."
+  apps={LEARNING_APPS}
+  tableCaption="All figures taken from the public Play Store listings and vendor websites, sorted alphabetically."
+  androidHeading="Boating licence apps for Android"
+  androidParagraphs={[
+    'Android has the widest choice – all six apps compared here are on Google Play. If you only need one licence and do not want to pay, the two apps by Matthias Wimmer are the obvious pick: <strong>Sportbootführerschein Binnen</strong> (4.9 ★ from 772 ratings) and <strong>Sportbootführerschein See 2023</strong> (4.8 ★ from 703 ratings), both entirely free, ad-free and without tracking.',
+    'If you need several licences it gets messy: with Wimmer and Sailbyte you install a separate app per licence, each with its own progress. Bootspruefung.de, SBF-Fragen and Boatpass keep everything in one install.',
+    'Check the catalogue version before you download. The official catalogues are updated periodically, and an app with outdated questions prepares you badly.',
+  ]}
+  iosHeading="Boating licence apps for iPhone and iPad"
+  iosParagraphs={[
+    'On iOS the field is much narrower. Available are <strong>Bootspruefung.de</strong> and <strong>SBF-Fragen</strong> from publisher Delius Klasing – both with the same feature set as on Android.',
+    'The free Wimmer apps and Sailbyte are Android only. <strong>Boatpass is also Android only so far</strong>; we are working on the iOS version. If you use an iPhone and want to start today, the two apps above are the realistic options.',
+    'Note: the App Store also lists an unrelated app called “BoatPass” from a US boat rental service in Florida. That is not us.',
+  ]}
+  strengths={[
+    'Five catalogues – SBF See, SBF Binnen, UBI, SRC and LRC – in a single app',
+    'One-off purchase instead of a subscription, permanent access',
+    'Exam simulation under real exam conditions',
+    'Mistake training: repeat exactly the questions you got wrong',
+    'Progress broken down by topic area',
+  ]}
+  limitations={[
+    'No SKS, no Lake Constance licence, no FKN pyrotechnics certificate',
+    'Android only so far, iOS version still in progress',
+    'Far younger and far less reviewed than Bootspruefung.de or SBF-Fragen',
+    'No companion online course in the browser',
+    'Does not replace practical training with a boating school',
+  ]}
+  faqs={faqs}
+  relatedLinks={relatedLinks}
+/>

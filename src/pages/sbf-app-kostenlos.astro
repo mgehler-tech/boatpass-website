@@ -1,0 +1,102 @@
+---
+import AppLandingPage from '../components/AppLandingPage.astro';
+import { LEARNING_APPS } from '../data/apps';
+
+const faqs = [
+  {
+    q: 'Gibt es eine wirklich kostenlose App für den Sportbootführerschein?',
+    a: 'Ja, sogar zwei. Sportbootführerschein Binnen und Sportbootführerschein See 2023 von Matthias Wimmer sind dauerhaft kostenlos, enthalten den vollständigen amtlichen Fragenkatalog, zeigen keine Werbung, betreiben kein Tracking und verlangen keine Berechtigungen. Es gibt keine Bezahlschranke und keine Testphase.',
+  },
+  {
+    q: 'Was ist bei Bootspruefung.de kostenlos?',
+    a: 'Alle amtlichen Prüfungsfragen für SBF Binnen, SBF See, Bodenseeschifferpatent, UBI, SRC, LRC und FKN lassen sich kostenlos üben, ebenso die Auswahl der passenden Scheinversion. Kostenpflichtig sind die Pro-Funktionen: Theorietexte zu allen Fragen, Knoten-Anleitungen, Musterfunksprüche, vollständige Offline-Nutzung, PDF-Downloads und Funktionen wie „Fragen merken".',
+  },
+  {
+    q: 'Was kann ich bei Boatpass kostenlos nutzen?',
+    a: 'Boatpass ist kostenlos herunterladbar und sofort nutzbar. Die kostenlose Version enthält tägliches Lernen aus allen Fragenkatalogen. Für unbegrenzten Zugriff und vollständige Prüfungssimulationen gibt es Einmalkäufe ab 7,99 € – kein Abo. Wenn du nur einen einzigen Schein machst und gar nichts ausgeben willst, sind die Wimmer-Apps die ehrlichere Empfehlung.',
+  },
+  {
+    q: 'Warum kosten manche Apps Geld, wenn die Fragen amtlich und frei sind?',
+    a: 'Der Fragenkatalog selbst ist öffentlich und kostenlos, unter anderem über elwis.de. Bezahlt wird für das Drumherum: Erklärungstexte, Prüfungssimulationen nach Original-Bögen, Fehler-Training, Fortschrittsstatistiken, Pflege bei Katalogänderungen und Support. Wie viel dir das wert ist, hängt davon ab, ob du verstehen oder nur auswendig lernen willst.',
+  },
+  {
+    q: 'Reicht eine kostenlose App zum Bestehen?',
+    a: 'Für die Theorie ja, wenn du diszipliniert den kompletten Katalog durcharbeitest. Zwei Einschränkungen: Die Wimmer-App für SBF See deckt die Navigationsaufgaben nicht ab, und für die Funkzeugnisse UBI, SRC und LRC gibt es keine dauerhaft komplett kostenlose App. Die praktische Prüfung ersetzt ohnehin keine App.',
+  },
+  {
+    q: 'Gibt es kostenlose SBF-Apps für iPhone?',
+    a: 'Die kostenlosen Wimmer-Apps gibt es nur für Android. Auf dem iPhone kommst du mit Bootspruefung.de am weitesten, weil dort alle amtlichen Prüfungsfragen kostenlos nutzbar sind – die Komfortfunktionen kosten aber.',
+  },
+  {
+    q: 'Was kostet der Sportbootführerschein am Ende trotzdem?',
+    a: 'Die amtlichen Gebühren fallen in jedem Fall an, unabhängig von der App. Je nach Schein liegen sie bei rund 100 bis 190 €, dazu kommen bei den meisten Kandidaten Kosten für die praktische Ausbildung. Eine Aufstellung findest du auf unserer Seite zu den SBF-Kosten.',
+  },
+];
+
+const relatedLinks = [
+  { href: '/sbf-kosten/', label: 'Was kostet der Sportbootführerschein?' },
+  { href: '/sbf-app/', label: 'Alle Bootsführerschein-Apps im Vergleich' },
+  { href: '/sbf-see-app/', label: 'SBF-See-Apps im Vergleich' },
+  { href: '/sbf-binnen-app/', label: 'SBF-Binnen-Apps im Vergleich' },
+  { href: '/blog/bootsfuehrerschein-kosten-sparen/', label: 'Beim Bootsführerschein sparen – die legalen Wege' },
+  { href: '/blog/sbf-app-vs-bootsschule/', label: 'App oder Bootsschule – was lohnt sich?' },
+];
+---
+
+<AppLandingPage
+  lang="de"
+  title="Kostenlose SBF-App: was wirklich gratis geht"
+  description="Welche Apps für den Sportbootführerschein sind wirklich kostenlos? Ehrlicher Überblick über Gratis-Umfang, Bezahlschranken und Einmalkäufe – inklusive der Alternativen zu Boatpass."
+  altUrl="https://boatpass.de/en/sbf-app-free/"
+  path="/sbf-app-kostenlos/"
+  breadcrumbName="Kostenlose SBF-Apps"
+  badge="Gratis lernen"
+  h1="Kostenlose SBF-Apps"
+  heroIntro={'„Kostenlos" heißt bei jeder App etwas anderes – von wirklich gratis bis Gratis-Häppchen mit Bezahlschranke. Hier steht, was du bei welcher App tatsächlich ohne Zahlung bekommst.'}
+  answer="Wirklich dauerhaft kostenlos sind die Apps Sportbootführerschein Binnen und Sportbootführerschein See 2023 von Matthias Wimmer: vollständiger amtlicher Fragenkatalog, keine Werbung, keine In-App-Käufe, kein Tracking. Bei Bootspruefung.de sind alle amtlichen Prüfungsfragen gratis nutzbar, Komfortfunktionen kosten. SBF-Fragen, Sailbyte und Boatpass zeigen kostenlos nur einen Teil."
+  apps={LEARNING_APPS}
+  tableCaption="Alle verglichenen Apps mit ihrem tatsächlichen Preismodell – alphabetisch sortiert."
+  androidHeading="Kostenlose SBF-Apps für Android"
+  androidParagraphs={[
+    'Die beiden dauerhaft kostenlosen Apps von <strong>Matthias Wimmer</strong> gibt es nur für Android – und sie sind der eigentliche Grund, warum diese Seite existiert. Beide haben über 100.000 Downloads, 4,9 ★ (Binnen, 772 Bewertungen) beziehungsweise 4,8 ★ (See, 703 Bewertungen), enthalten den vollständigen amtlichen Katalog und finanzieren sich über gar nichts: keine Werbung, keine In-App-Käufe, kein Nutzertracking.',
+    'Was du dort nicht bekommst: Erklärungstexte zu den Antworten, Navigationsaufgaben für den SBF See und die Funkzeugnisse UBI, SRC und LRC. Für alles davon brauchst du eine der Bezahl-Apps.',
+    '<strong>Bootspruefung.de</strong> ist der zweite Weg, ohne Zahlung weit zu kommen: Alle amtlichen Prüfungsfragen sind kostenlos nutzbar, quer über sieben Scheine. Erst Theorietexte, Offline-Nutzung und PDF-Downloads kosten.',
+  ]}
+  iosHeading="Kostenlose SBF-Apps für iPhone und iPad"
+  iosParagraphs={[
+    'Auf dem iPhone gibt es keine App, die den vollständigen Katalog dauerhaft gratis anbietet. Am weitesten kommst du mit <strong>Bootspruefung.de</strong>, weil dort die amtlichen Prüfungsfragen kostenlos bleiben.',
+    '<strong>SBF-Fragen</strong> vom Delius-Klasing-Verlag zeigt kostenlos eine Auswahl des Katalogs und Übungsbögen; die vollständigen Fragen kaufst du je Schein per In-App-Kauf.',
+    'Die kostenlosen Wimmer-Apps, Sailbyte und Boatpass sind nicht im App Store verfügbar.',
+  ]}
+  strengths={[
+    'Kostenlos herunterladbar und sofort nutzbar',
+    'Die kostenlose Version enthält tägliches Lernen aus allen fünf Fragenkatalogen',
+    'Kein Abo – Vollzugang per Einmalkauf ab 7,99 €, dauerhaft',
+    'Keine Werbung',
+    'Ein Kauf gilt für den jeweiligen Katalog dauerhaft, auch bei späteren Aktualisierungen',
+  ]}
+  limitations={[
+    'Nicht dauerhaft komplett kostenlos – das tägliche Lernkontingent ist begrenzt',
+    'Vollständige Prüfungssimulationen sind kostenpflichtig',
+    'Wer nur einen einzigen Schein macht und nichts zahlen will, fährt mit den Wimmer-Apps besser',
+    'Bisher nur für Android verfügbar',
+    'Kein SKS, kein Bodenseeschifferpatent, kein FKN',
+  ]}
+  faqs={faqs}
+  relatedLinks={relatedLinks}
+>
+  <section slot="after-table" style="margin-bottom:48px;">
+    <h2 class="content-section-title" style="margin-bottom:16px;">Was „kostenlos" bei welcher App bedeutet</h2>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+      Der amtliche Fragenkatalog ist öffentlich und kostenfrei zugänglich – unter anderem über
+      <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
+      Keine App hat daran ein Exklusivrecht. Bezahlt wird überall nur für die Aufbereitung.
+    </p>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      Daraus folgt eine unbequeme, aber ehrliche Empfehlung: <strong>Wenn du genau einen Schein machst,
+      diszipliniert lernst und keine Erklärungen brauchst, nimm eine der kostenlosen Wimmer-Apps.</strong>
+      Sinnvoll zahlen tust du erst, wenn du mehrere Kataloge kombinierst, Erklärungen zu den Antworten
+      willst oder unter echten Prüfungsbedingungen üben möchtest.
+    </p>
+  </section>
+</AppLandingPage>

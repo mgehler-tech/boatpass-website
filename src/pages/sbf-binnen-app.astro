@@ -1,0 +1,84 @@
+---
+import AppLandingPage from '../components/AppLandingPage.astro';
+import { appsForLicense } from '../data/apps';
+
+const apps = appsForLicense('sbf-binnen');
+
+const faqs = [
+  {
+    q: 'Welche App ist die beste für den SBF Binnen?',
+    a: 'Wenn du nichts zahlen willst: Sportbootführerschein Binnen von Matthias Wimmer – 4,9 ★ bei 772 Bewertungen, vollständig kostenlos, ohne Werbung und ohne Tracking. Wenn du Erklärungstexte und einen Onlinekurs dazu willst: Bootspruefung.de. Wenn du den SBF Binnen mit einem Funkzeugnis kombinierst und kein Abo möchtest: Boatpass.',
+  },
+  {
+    q: 'Enthalten die Apps auch die Segelzusatzfragen?',
+    a: 'Ja, alle hier verglichenen Apps decken neben den Basis- und Binnenerweiterungsfragen auch die Segelzusatzfragen ab. Die brauchst du nur, wenn du den SBF Binnen unter Segel machst – für die reine Motorvariante entfallen sie.',
+  },
+  {
+    q: 'Wie viele Fragen hat die SBF-Binnen-Prüfung?',
+    a: 'Der amtliche Katalog umfasst rund 250 Fragen, aufgeteilt in Basisfragen, Binnenerweiterungsfragen und Segelzusatzfragen. Im Prüfungsbogen beantwortest du 30 Fragen. Wer bereits den SBF See besitzt, muss nur noch die Binnen-spezifischen Fragen beantworten.',
+  },
+  {
+    q: 'Gibt es eine kostenlose SBF-Binnen-App für Android?',
+    a: 'Ja. Sportbootführerschein Binnen von Matthias Wimmer ist dauerhaft kostenlos, enthält den vollständigen amtlichen Katalog, zeigt keine Werbung, betreibt kein Tracking und verlangt keine Berechtigungen. Auch Bootspruefung.de lässt alle amtlichen Prüfungsfragen kostenlos üben – Theorietexte und Offline-Nutzung sind dort allerdings kostenpflichtig.',
+  },
+  {
+    q: 'Reicht eine App für den SBF Binnen aus?',
+    a: 'Für die Theorie ja – ein Kurs ist nicht vorgeschrieben, der Fragenkatalog ist amtlich veröffentlicht. Für die praktische Prüfung mit Manövern und Knoten brauchst du Übungsstunden auf dem Wasser.',
+  },
+  {
+    q: 'Gibt es eine SBF-Binnen-App fürs iPhone?',
+    a: 'Bootspruefung.de und SBF-Fragen sind für iOS verfügbar. Die kostenlose Wimmer-App und Sailbyte gibt es nur für Android. Boatpass ist derzeit ebenfalls nur für Android verfügbar, die iOS-Version ist in Arbeit.',
+  },
+];
+
+const relatedLinks = [
+  { href: '/sbf-binnen/', label: 'SBF Binnen – Prüfung, Kosten und Ablauf' },
+  { href: '/sbf-binnen-pruefungsfragen/', label: 'SBF-Binnen-Prüfungsfragen im Überblick' },
+  { href: '/sbf-app/', label: 'Alle Bootsführerschein-Apps im Vergleich' },
+  { href: '/sbf-see-app/', label: 'SBF-See-Apps im Vergleich' },
+  { href: '/blog/sbf-binnen-vs-see/', label: 'SBF Binnen oder See – welcher Schein passt?' },
+  { href: '/blog/sbf-binnen-pruefung-nicht-bestanden/', label: 'SBF-Binnen-Prüfung nicht bestanden – was jetzt?' },
+];
+---
+
+<AppLandingPage
+  lang="de"
+  title="SBF-Binnen-App: die besten Apps im Vergleich"
+  description="SBF-Binnen-Apps für Android und iPhone im Vergleich: Preise, Fragenkataloge, Segelzusatzfragen und Bewertungen von Bootspruefung.de, SBF-Fragen, Sailbyte, Wimmer und Boatpass."
+  altUrl="https://boatpass.de/en/sbf-inland-app/"
+  path="/sbf-binnen-app/"
+  breadcrumbName="SBF-Binnen-Apps im Vergleich"
+  badge="Sportbootführerschein Binnen"
+  h1="SBF-Binnen-Apps im Vergleich"
+  heroIntro="Fünf Apps decken den amtlichen Fragenkatalog SBF Binnen ab – von dauerhaft kostenlos bis Monatsabo. Hier stehen Preise, Bewertungen und Funktionsumfang nebeneinander."
+  answer="Für den SBF Binnen gibt es fünf brauchbare Lern-Apps. Am besten bewertet und dauerhaft kostenlos ist Sportbootführerschein Binnen von Matthias Wimmer (4,9 ★, 772 Bewertungen). Bootspruefung.de bietet zusätzlich Erklärungstexte und einen Onlinekurs, SBF-Fragen kommt vom Delius-Klasing-Verlag, Sailbyte kostet 4,79 € im Monat, und Boatpass bündelt fünf Kataloge ohne Abo."
+  apps={apps}
+  tableCaption="Alle Apps, die den amtlichen Fragenkatalog SBF Binnen abdecken – alphabetisch sortiert."
+  androidHeading="SBF-Binnen-App für Android"
+  androidParagraphs={[
+    'Im Google Play Store sind alle fünf Apps verfügbar. Die beste kostenlose Option ist <strong>Sportbootführerschein Binnen</strong> von Matthias Wimmer: über 100.000 Downloads, 4,9 ★ bei 772 Bewertungen, keine Werbung, keine In-App-Käufe, kein Tracking. Der komplette amtliche Katalog inklusive Segelzusatzfragen ist enthalten, gelernt wird nach dem Karteikasten-Prinzip.',
+    'Was ihr fehlt, sind Erklärungstexte zu den Antworten. Wer verstehen statt auswendig lernen will, ist mit <strong>Bootspruefung.de</strong> oder <strong>SBF-Fragen</strong> besser bedient – beide liefern Theorietexte zu den Fragen.',
+    'Boatpass findest du ebenfalls im Play Store. Der SBF-Binnen-Katalog kostet einmalig 9,99 €, zusammen mit SBF See 16,98 €. Antesten ist kostenlos.',
+  ]}
+  iosHeading="SBF-Binnen-App für iPhone und iPad"
+  iosParagraphs={[
+    'Auf dem iPhone stehen dir von den fünf Apps zwei zur Verfügung: <strong>Bootspruefung.de</strong> und <strong>SBF-Fragen</strong>. Beide enthalten den vollständigen Katalog inklusive Segelzusatzfragen.',
+    'Die kostenlose Wimmer-App und Sailbyte sind Android-exklusiv. <strong>Boatpass ist bisher nicht im App Store</strong> – die iOS-Version ist in Entwicklung. Wenn du heute auf dem iPhone starten willst, bleiben die beiden genannten Apps.',
+  ]}
+  strengths={[
+    'Vollständiger amtlicher SBF-Binnen-Katalog inklusive Segelzusatzfragen',
+    'Prüfungssimulation mit Zeitlimit und Bestehensgrenze',
+    'Fehler-Training für gezieltes Wiederholen',
+    'SBF Binnen, SBF See, UBI, SRC und LRC in einer App',
+    'Einmalig 9,99 € für den SBF-Binnen-Katalog, kein Abo',
+  ]}
+  limitations={[
+    'Bisher nur für Android verfügbar',
+    'Kein Bodenseeschifferpatent – dafür brauchst du Bootspruefung.de oder SBF-Fragen',
+    'Nur 7 Bewertungen im Play Store, verglichen mit 772 bei der Wimmer-App',
+    'Kein begleitender Onlinekurs im Browser',
+    'Ersetzt keine praktische Ausbildung in einer Bootsschule',
+  ]}
+  faqs={faqs}
+  relatedLinks={relatedLinks}
+/>

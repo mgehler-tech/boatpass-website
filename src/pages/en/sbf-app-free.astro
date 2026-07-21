@@ -1,0 +1,102 @@
+---
+import AppLandingPage from '../../components/AppLandingPage.astro';
+import { LEARNING_APPS } from '../../data/apps';
+
+const faqs = [
+  {
+    q: 'Is there a genuinely free app for the German boating licence?',
+    a: 'Yes, two of them. Sportbootführerschein Binnen and Sportbootführerschein See 2023 by Matthias Wimmer are permanently free, contain the full official question catalogue, show no ads, do no tracking and request no permissions. There is no paywall and no trial period.',
+  },
+  {
+    q: 'What is free at Bootspruefung.de?',
+    a: 'All official exam questions for SBF Binnen, SBF See, the Lake Constance licence, UBI, SRC, LRC and FKN can be practised free of charge, as can choosing the right licence variant. The paid Pro features are theory texts for every question, knot instructions, sample radio messages, full offline use, PDF downloads and functions such as bookmarking questions.',
+  },
+  {
+    q: 'What can I use for free in Boatpass?',
+    a: 'Boatpass is free to download and usable straight away. The free version includes daily practice from every question catalogue. Unlimited access and full exam simulations come via one-off purchases from €7.99 – no subscription. If you are taking a single licence and want to spend nothing at all, the Wimmer apps are the more honest recommendation.',
+  },
+  {
+    q: 'Why do some apps cost money when the questions are official and public?',
+    a: 'The catalogue itself is public and free, among others via elwis.de. What you pay for is everything around it: explanations, exam simulations on original papers, mistake training, progress statistics, maintenance when the catalogue changes, and support. Whether that is worth it depends on whether you want to understand or just memorise.',
+  },
+  {
+    q: 'Is a free app enough to pass?',
+    a: 'For the theory, yes, if you work through the entire catalogue with discipline. Two caveats: the Wimmer app for SBF See does not cover the navigation tasks, and for the radio certificates UBI, SRC and LRC no permanently free app exists. The practical exam is not replaced by any app.',
+  },
+  {
+    q: 'Are there free boating licence apps for iPhone?',
+    a: 'The free Wimmer apps are Android only. On iPhone you get furthest with Bootspruefung.de, because the official exam questions stay free there – the convenience features cost.',
+  },
+  {
+    q: 'What does the licence cost in the end anyway?',
+    a: 'The official fees apply regardless of which app you use. Depending on the licence they run to roughly €100 to €190, and most candidates add the cost of practical training. Our costs page breaks it down.',
+  },
+];
+
+const relatedLinks = [
+  { href: '/en/sbf-costs/', label: 'What does the German boating licence cost?' },
+  { href: '/en/sbf-app/', label: 'All boating licence apps compared' },
+  { href: '/en/sbf-coastal-app/', label: 'SBF See apps compared' },
+  { href: '/en/sbf-inland-app/', label: 'SBF Binnen apps compared' },
+  { href: '/en/blog/sbf-app-vs-boating-school/', label: 'App or boating school – what pays off?' },
+  { href: '/en/faq/', label: 'Frequently asked questions about German boating licences' },
+];
+---
+
+<AppLandingPage
+  lang="en"
+  title="Free boating licence app: what is actually free"
+  description="Which German boating licence apps are genuinely free? An honest overview of free tiers, paywalls and one-off purchases – including the alternatives to Boatpass."
+  altUrl="https://boatpass.de/sbf-app-kostenlos/"
+  path="/sbf-app-free/"
+  breadcrumbName="Free boating licence apps"
+  badge="Study for free"
+  h1="Free boating licence apps"
+  heroIntro={'“Free” means something different in every app – from genuinely free to a free taster behind a paywall. Here is what you actually get without paying.'}
+  answer="Genuinely and permanently free are the apps Sportbootführerschein Binnen and Sportbootführerschein See 2023 by Matthias Wimmer: full official question catalogue, no ads, no in-app purchases, no tracking. At Bootspruefung.de all official exam questions are free, while convenience features cost. SBF-Fragen, Sailbyte and Boatpass show only part for free."
+  apps={LEARNING_APPS}
+  tableCaption="All compared apps with their actual pricing model – sorted alphabetically."
+  androidHeading="Free boating licence apps for Android"
+  androidParagraphs={[
+    'The two permanently free apps by <strong>Matthias Wimmer</strong> exist only for Android – and they are the real reason this page exists. Both have over 100,000 downloads, 4.9 ★ (Binnen, 772 ratings) and 4.8 ★ (See, 703 ratings) respectively, contain the full official catalogue, and are funded by nothing at all: no ads, no in-app purchases, no user tracking.',
+    'What you do not get there: explanations for the answers, the navigation tasks for SBF See, and the radio certificates UBI, SRC and LRC. For any of those you need one of the paid apps.',
+    '<strong>Bootspruefung.de</strong> is the second way to get far without paying: all official exam questions are free to use, across seven licences. Only theory texts, offline use and PDF downloads cost money.',
+  ]}
+  iosHeading="Free boating licence apps for iPhone and iPad"
+  iosParagraphs={[
+    'On iPhone there is no app offering the full catalogue permanently for free. You get furthest with <strong>Bootspruefung.de</strong>, because the official exam questions stay free there.',
+    '<strong>SBF-Fragen</strong> from publisher Delius Klasing shows a subset of the catalogue and practice papers for free; the full questions are bought per licence via in-app purchase.',
+    'The free Wimmer apps, Sailbyte and Boatpass are not available in the App Store.',
+  ]}
+  strengths={[
+    'Free to download and usable straight away',
+    'The free version includes daily practice from all five question catalogues',
+    'No subscription – full access via one-off purchase from €7.99, permanently',
+    'No advertising',
+    'A purchase covers that catalogue permanently, including later updates',
+  ]}
+  limitations={[
+    'Not permanently free in full – the daily practice allowance is limited',
+    'Full exam simulations are paid',
+    'If you are taking a single licence and want to pay nothing, the Wimmer apps serve you better',
+    'Android only so far',
+    'No SKS, no Lake Constance licence, no FKN',
+  ]}
+  faqs={faqs}
+  relatedLinks={relatedLinks}
+>
+  <section slot="after-table" style="margin-bottom:48px;">
+    <h2 class="content-section-title" style="margin-bottom:16px;">What “free” means in each app</h2>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+      The official question catalogue is public and free to access, among others via
+      <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
+      No app holds an exclusive right to it. Everywhere, what you pay for is the presentation.
+    </p>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      That leads to an uncomfortable but honest recommendation: <strong>if you are taking exactly one licence,
+      studying with discipline and do not need explanations, take one of the free Wimmer apps.</strong>
+      Paying only starts to make sense when you combine several catalogues, want explanations for the answers,
+      or want to practise under real exam conditions.
+    </p>
+  </section>
+</AppLandingPage>

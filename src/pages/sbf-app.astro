@@ -1,0 +1,87 @@
+---
+import AppLandingPage from '../components/AppLandingPage.astro';
+import { LEARNING_APPS } from '../data/apps';
+
+const faqs = [
+  {
+    q: 'Welche SBF-App ist die beste?',
+    a: 'Das hängt davon ab, was du brauchst. Für die größte Scheinauswahl und einen begleitenden Onlinekurs ist Bootspruefung.de gesetzt. Wer nur einen einzigen Schein macht und keinen Cent ausgeben will, fährt mit den kostenlosen Apps von Matthias Wimmer am besten. Wer mehrere Scheine kombiniert – etwa SBF Binnen plus Funkzeugnis – und kein Abo möchte, ist bei Boatpass richtig, weil dort alle fünf Kataloge in einer App liegen.',
+  },
+  {
+    q: 'Kann ich den Sportbootführerschein komplett mit einer App lernen?',
+    a: 'Die Theorie ja. Der amtliche Fragenkatalog ist öffentlich, ein Theoriekurs ist nicht vorgeschrieben – du meldest dich direkt beim Prüfungsausschuss an. Die praktische Prüfung kannst du mit keiner App ersetzen: Knoten und Manöver musst du auf dem Wasser üben, in der Regel bei einer Bootsschule.',
+  },
+  {
+    q: 'Sind die Fragen in den Apps die echten Prüfungsfragen?',
+    a: 'Bei allen hier verglichenen Apps ja. Die Fragenkataloge für SBF Binnen, SBF See und die Funkzeugnisse werden amtlich veröffentlicht – unter anderem über elwis.de. Seriöse Apps übernehmen sie 1:1. Achte trotzdem darauf, dass die App den aktuellen Katalogstand nennt.',
+  },
+  {
+    q: 'Kostenlos oder bezahlt – lohnt sich der Unterschied?',
+    a: 'Die kostenlosen Apps enthalten den vollständigen Fragenkatalog und reichen zum reinen Auswendiglernen aus. Bezahlversionen bieten meist Erklärungstexte zu den Antworten, Prüfungssimulationen nach Original-Bögen, Fehler-Training und Fortschrittsstatistiken. Wenn du verstehen statt nur auswendig lernen willst, ist das den Betrag wert – wenn nicht, spar ihn dir.',
+  },
+  {
+    q: 'Brauche ich eine Internetverbindung zum Lernen?',
+    a: 'Die meisten Apps funktionieren offline, teilweise erst nach dem Kauf der Vollversion. Bei Bootspruefung.de ist die vollständige Offline-Verfügbarkeit ein Pro-Feature, bei Sailbyte funktionieren SBF See und Binnen offline, der SKS nicht.',
+  },
+  {
+    q: 'Gibt es die Apps auch für iPhone?',
+    a: 'Nicht alle. Bootspruefung.de und SBF-Fragen sind für Android und iOS verfügbar. Die kostenlosen Wimmer-Apps und Sailbyte gibt es derzeit nur für Android. Boatpass ist aktuell für Android verfügbar, die iOS-Version ist in Arbeit.',
+  },
+  {
+    q: 'Was kostet der Sportbootführerschein insgesamt?',
+    a: 'Die App ist der kleinste Posten. Rechne mit amtlichen Prüfungsgebühren von rund 100 bis 190 € je nach Schein, dazu je nach Weg Kosten für eine Bootsschule. Eine detaillierte Aufstellung findest du auf unserer Seite zu den SBF-Kosten.',
+  },
+];
+
+const relatedLinks = [
+  { href: '/sbf-see-app/', label: 'SBF-See-Apps im Vergleich' },
+  { href: '/sbf-binnen-app/', label: 'SBF-Binnen-Apps im Vergleich' },
+  { href: '/funkschein-app/', label: 'Funkschein-Apps für UBI, SRC und LRC' },
+  { href: '/sbf-app-kostenlos/', label: 'Kostenlose SBF-Apps – was wirklich gratis geht' },
+  { href: '/sbf-kosten/', label: 'Was kostet der Sportbootführerschein?' },
+  { href: '/blog/sbf-app-vs-bootsschule/', label: 'App oder Bootsschule – was lohnt sich?' },
+];
+---
+
+<AppLandingPage
+  lang="de"
+  title="Bootsführerschein-Apps im Vergleich 2026"
+  description="Welche App für den Sportbootführerschein taugt? Bootspruefung.de, SBF-Fragen, Sailbyte, Wimmer und Boatpass im ehrlichen Vergleich – Preise, Scheine, Bewertungen."
+  altUrl="https://boatpass.de/en/sbf-app/"
+  path="/sbf-app/"
+  breadcrumbName="SBF-Apps im Vergleich"
+  badge="Anbietervergleich 2026"
+  h1="Bootsführerschein-Apps im Vergleich"
+  heroIntro="Sechs Lern-Apps für den Sportbootführerschein und die Funkzeugnisse – mit echten Preisen, Bewertungen und Scheinabdeckung. Inklusive der ehrlichen Einordnung, wo unsere eigene App nicht die beste Wahl ist."
+  answer="Für den Sportbootführerschein gibt es sechs relevante Lern-Apps: Bootspruefung.de deckt mit sieben Scheinen am meisten ab, die Wimmer-Apps für SBF See und Binnen sind vollständig kostenlos, SBF-Fragen kommt vom Delius-Klasing-Verlag, Sailbyte arbeitet mit Abo, und Boatpass bündelt fünf Kataloge in einer App ohne Abo."
+  apps={LEARNING_APPS}
+  tableCaption="Alle Angaben aus den öffentlichen Play-Store-Listings und Anbieter-Websites, alphabetisch sortiert."
+  androidHeading="SBF-Apps für Android"
+  androidParagraphs={[
+    'Auf Android ist die Auswahl am größten – alle sechs verglichenen Apps sind im Google Play Store verfügbar. Wenn du nur einen Schein brauchst und nichts zahlen willst, sind die beiden Apps von Matthias Wimmer die naheliegende Wahl: <strong>Sportbootführerschein Binnen</strong> (4,9 ★ bei 772 Bewertungen) und <strong>Sportbootführerschein See 2023</strong> (4,8 ★ bei 703 Bewertungen), beide vollständig kostenlos, ohne Werbung und ohne Tracking.',
+    'Brauchst du mehrere Scheine, wird es unübersichtlich: Bei Wimmer und Sailbyte installierst du je Schein eine eigene App mit eigenem Fortschritt. Bootspruefung.de, SBF-Fragen und Boatpass bündeln dagegen alles in einer Installation.',
+    'Achte beim Download auf den Katalogstand. Die Fragenkataloge werden regelmäßig aktualisiert, und eine App mit veralteten Fragen bereitet dich schlecht vor.',
+  ]}
+  iosHeading="SBF-Apps für iPhone und iPad"
+  iosParagraphs={[
+    'Auf iOS ist das Feld deutlich schmaler. Verfügbar sind <strong>Bootspruefung.de</strong> und <strong>SBF-Fragen</strong> vom Delius-Klasing-Verlag – beide mit demselben Funktionsumfang wie unter Android.',
+    'Die kostenlosen Wimmer-Apps und Sailbyte gibt es derzeit nur für Android. Auch <strong>Boatpass ist bisher nur für Android verfügbar</strong>; an der iOS-Version arbeiten wir. Wenn du ein iPhone nutzt und heute anfangen willst, sind Bootspruefung.de oder SBF-Fragen die realistischen Optionen.',
+    'Hinweis: Im App Store gibt es eine gleichnamige App „BoatPass" eines US-Anbieters für Bootsvermietung in Florida. Die hat mit uns nichts zu tun.',
+  ]}
+  strengths={[
+    'Fünf Kataloge – SBF See, SBF Binnen, UBI, SRC und LRC – in einer einzigen App',
+    'Einmalkauf statt Abo, dauerhafter Zugriff',
+    'Prüfungssimulation unter echten Prüfungsbedingungen',
+    'Fehler-Training: gezielt die Fragen wiederholen, die du falsch hattest',
+    'Fortschritt nach Themengebiet aufgeschlüsselt',
+  ]}
+  limitations={[
+    'Kein SKS, kein Bodenseeschifferpatent, kein FKN-Pyroschein',
+    'Bisher nur für Android, iOS-Version noch in Arbeit',
+    'Deutlich jünger und weniger bewertet als Bootspruefung.de oder SBF-Fragen',
+    'Kein begleitender Onlinekurs im Browser',
+    'Ersetzt keine praktische Ausbildung in einer Bootsschule',
+  ]}
+  faqs={faqs}
+  relatedLinks={relatedLinks}
+/>

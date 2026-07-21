@@ -1,0 +1,84 @@
+---
+import { DATA_AS_OF_LABEL, LICENSE_LABELS, type LearningApp } from '../data/apps';
+
+interface Props {
+  apps: LearningApp[];
+  lang: 'de' | 'en';
+  /** Scheine, die in der Spalte „Scheine" gezeigt werden. Leer = alle der App. */
+  caption?: string;
+}
+
+const { apps, lang, caption } = Astro.props;
+
+const t = lang === 'de'
+  ? {
+      app: 'App', rating: 'Bewertung', price: 'Preis', licenses: 'Scheine',
+      offline: 'Offline', platforms: 'Plattformen', reviews: 'Bew.',
+      yes: 'Ja', no: 'Nein', partial: 'Teilweise', unknown: 'k. A.',
+      asOf: `Stand der Daten: ${DATA_AS_OF_LABEL.de}. Quellen: Play-Store-Listings und Anbieter-Websites.`,
+      ownHint: 'unsere App',
+    }
+  : {
+      app: 'App', rating: 'Rating', price: 'Price', licenses: 'Licences',
+      offline: 'Offline', platforms: 'Platforms', reviews: 'reviews',
+      yes: 'Yes', no: 'No', partial: 'Partly', unknown: 'n/a',
+      asOf: `Data as of ${DATA_AS_OF_LABEL.en}. Sources: Play Store listings and vendor websites.`,
+      ownHint: 'our app',
+    };
+
+function offlineLabel(value: LearningApp['offline']): string {
+  if (value === true) return t.yes;
+  if (value === false) return t.no;
+  if (value === 'partial') return t.partial;
+  return t.unknown;
+}
+
+function platformLabel(app: LearningApp): string {
+  const parts = [app.playUrl ? 'Android' : null, app.appStoreUrl ? 'iOS' : null].filter(Boolean);
+  return parts.length ? parts.join(' · ') : t.unknown;
+}
+---
+
+<div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; overflow-x:auto;">
+  <table style="width:100%; border-collapse:collapse; min-width:640px; font-size:14px;">
+    {caption && <caption style="caption-side:top; text-align:left; padding:18px 20px 0; font-size:13px; color:#6B7280;">{caption}</caption>}
+    <thead>
+      <tr>
+        {[t.app, t.rating, t.price, t.licenses, t.offline, t.platforms].map(h => (
+          <th scope="col" style="text-align:left; padding:14px 16px; font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; border-bottom:1px solid rgba(51,102,255,0.12); white-space:nowrap;">{h}</th>
+        ))}
+      </tr>
+    </thead>
+    <tbody>
+      {apps.map(app => (
+        <tr>
+          <th scope="row" style="text-align:left; padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; font-weight:700; color:#1A1F36;">
+            {app.name}
+            {app.isOwn && (
+              <span style="display:inline-block; margin-left:6px; font-size:11px; font-weight:700; color:#3366FF; background:rgba(51,102,255,0.08); border-radius:100px; padding:2px 8px; white-space:nowrap;">{t.ownHint}</span>
+            )}
+            <div style="font-size:12px; font-weight:500; color:#9CA3AF; margin-top:3px;">{app.vendor}</div>
+          </th>
+          <td style="padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; color:#4B5563;">
+            {app.rating
+              ? <span>{app.rating.toFixed(1).replace('.', lang === 'de' ? ',' : '.')} ★<br /><span style="font-size:12px; color:#9CA3AF;">{app.ratingCount?.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} {t.reviews}</span></span>
+              : <span style="color:#9CA3AF;">{t.unknown}</span>}
+            {app.downloads && <div style="font-size:12px; color:#9CA3AF; margin-top:4px;">{app.downloads}</div>}
+          </td>
+          <td style="padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; color:#4B5563;">{app.price[lang]}</td>
+          <td style="padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; color:#4B5563;">
+            {app.licenses.map(l => LICENSE_LABELS[l][lang]).join(', ')}
+            {!app.singleApp && (
+              <div style="font-size:12px; color:#9CA3AF; margin-top:4px;">
+                {lang === 'de' ? 'je Schein eine eigene App' : 'a separate app per licence'}
+              </div>
+            )}
+          </td>
+          <td style="padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; color:#4B5563;">{offlineLabel(app.offline)}</td>
+          <td style="padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; color:#4B5563; white-space:nowrap;">{platformLabel(app)}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+<p style="font-size:13px; color:#9CA3AF; line-height:1.6; margin-top:12px;">{t.asOf}</p>

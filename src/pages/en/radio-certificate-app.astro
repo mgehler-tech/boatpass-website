@@ -1,0 +1,87 @@
+---
+import AppLandingPage from '../../components/AppLandingPage.astro';
+import { LEARNING_APPS } from '../../data/apps';
+
+// Every app covering at least one of the three radio certificates.
+const apps = LEARNING_APPS.filter(app =>
+  app.licenses.some(l => l === 'ubi' || l === 'src' || l === 'lrc')
+);
+
+const faqs = [
+  {
+    q: 'Which app is best for the radio certificate?',
+    a: 'The field is smaller than for the boating licence: only three apps cover UBI, SRC and LRC at all. Bootspruefung.de adds sample radio messages, SBF-Fragen from publisher Delius Klasing uses a spaced-repetition box, and Boatpass bundles the three radio catalogues with SBF See and Binnen in one app. The free Wimmer apps and Sailbyte cover no radio certificates.',
+  },
+  {
+    q: 'UBI, SRC or LRC – which certificate do I need?',
+    a: 'UBI covers VHF radio on German inland waterways, SRC covers VHF marine radio in coastal waters, and LRC covers worldwide maritime radio including satellite communication. They are not mutually creditable, but holders of a maritime certificate get a shortened UBI exam.',
+  },
+  {
+    q: 'Can I practise the practical radio exam with an app?',
+    a: 'No. All three certificates include a practical part: operating the equipment, setting ATIS, and distress, urgency and safety messages. An app prepares the theory and familiarises you with the procedures – speaking on the radio has to be practised.',
+  },
+  {
+    q: 'Is there a free radio certificate app?',
+    a: 'With Bootspruefung.de all official exam questions – including UBI, SRC and LRC – are free to use; theory texts, sample radio messages and full offline use sit in the Pro version. SBF-Fragen and Boatpass show a subset for free, with the full catalogues paid. A permanently and completely free radio app, like the Wimmer apps for the boating licence, does not exist.',
+  },
+  {
+    q: 'How many questions does the UBI exam have?',
+    a: 'The official UBI catalogue holds 130 questions. The exam paper contains 22 multiple-choice questions in 60 minutes, passed from 17 correct answers, plus the practical part.',
+  },
+  {
+    q: 'Are the radio apps available for iPhone?',
+    a: 'Bootspruefung.de and SBF-Fragen are available for Android and iOS. Boatpass is currently Android only; the iOS version is in progress.',
+  },
+];
+
+const relatedLinks = [
+  { href: '/en/ubi/', label: 'UBI – VHF radio certificate for inland waters' },
+  { href: '/en/src/', label: 'SRC – Short Range Certificate' },
+  { href: '/en/lrc/', label: 'LRC – Long Range Certificate' },
+  { href: '/en/sbf-app/', label: 'All boating licence apps compared' },
+  { href: '/en/blog/ubi-vs-src-radio-license/', label: 'UBI or SRC – which radio certificate do you need?' },
+  { href: '/en/faq/', label: 'Frequently asked questions about German boating licences' },
+];
+---
+
+<AppLandingPage
+  lang="en"
+  title="Radio certificate app: learn UBI, SRC and LRC"
+  description="Apps for the German radio certificates UBI, SRC and LRC compared: question catalogues, prices, platforms and ratings from Bootspruefung.de, SBF-Fragen and Boatpass."
+  altUrl="https://boatpass.de/funkschein-app/"
+  path="/radio-certificate-app/"
+  breadcrumbName="Radio certificate apps compared"
+  badge="UBI · SRC · LRC"
+  h1="Radio certificate apps compared"
+  heroIntro="For the radio certificates the choice is far smaller than for the boating licence – only three apps cover UBI, SRC and LRC at all. Here they are side by side."
+  answer="Three learning apps cover the German radio certificates UBI, SRC and LRC: Bootspruefung.de with free official questions and sample radio messages in its Pro version, SBF-Fragen from publisher Delius Klasing with a spaced-repetition box, and Boatpass, which bundles all three radio catalogues with SBF See and Binnen in one app."
+  apps={apps}
+  tableCaption="Every app covering at least one of the radio certificates UBI, SRC or LRC – sorted alphabetically."
+  androidHeading="Radio certificate app for Android"
+  androidParagraphs={[
+    'All three apps are on Google Play. The difference lies less in the question catalogue – that is official and identical everywhere – than in what surrounds it: <strong>Bootspruefung.de</strong> supplies sample radio messages and theory texts in its Pro version, while <strong>SBF-Fragen</strong> relies on a spaced-repetition box with exam simulation on original papers.',
+    'The popular free apps by Matthias Wimmer cover <strong>no radio certificates</strong>, and neither does Sailbyte. Anyone studying for a radio certificate effectively has three options.',
+    'With Boatpass the radio modules cost €7.99 one-off (UBI and SRC) and €9.99 (LRC) – no subscription, permanent access.',
+  ]}
+  iosHeading="Radio certificate app for iPhone and iPad"
+  iosParagraphs={[
+    'On iOS, <strong>Bootspruefung.de</strong> and <strong>SBF-Fragen</strong> remain. Both cover UBI, SRC and LRC.',
+    '<strong>Boatpass is not currently in the App Store</strong> – the iOS version is in development. On iPhone the other two apps are today the only choice for a radio certificate.',
+  ]}
+  strengths={[
+    'UBI, SRC and LRC in the same app as SBF See and SBF Binnen',
+    'Complete official catalogues, including 130 UBI questions',
+    'Exam simulation with pass mark and time limit',
+    'Mistake training for the classic stumbling blocks in distress procedures',
+    '€7.99 one-off per radio module (LRC €9.99), no subscription',
+  ]}
+  limitations={[
+    'No FKN pyrotechnics certificate and no Lake Constance licence',
+    'Android only so far',
+    'No audio sample radio messages – the practical exam is practised on the equipment',
+    'Far fewer ratings than Bootspruefung.de and SBF-Fragen',
+    'Does not replace the practical part of the radio exam',
+  ]}
+  faqs={faqs}
+  relatedLinks={relatedLinks}
+/>

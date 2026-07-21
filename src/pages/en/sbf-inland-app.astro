@@ -1,0 +1,84 @@
+---
+import AppLandingPage from '../../components/AppLandingPage.astro';
+import { appsForLicense } from '../../data/apps';
+
+const apps = appsForLicense('sbf-binnen');
+
+const faqs = [
+  {
+    q: 'Which app is best for SBF Binnen?',
+    a: 'If you do not want to pay: Sportbootführerschein Binnen by Matthias Wimmer – 4.9 ★ from 772 ratings, completely free, no ads and no tracking. If you want explanations and a companion online course: Bootspruefung.de. If you are combining SBF Binnen with a radio certificate and do not want a subscription: Boatpass.',
+  },
+  {
+    q: 'Do the apps include the sailing supplement questions?',
+    a: 'Yes, every app compared here covers the basic questions, the inland supplement and the sailing supplement. You only need the sailing questions if you take SBF Binnen under sail – for the motor-only variant they do not apply.',
+  },
+  {
+    q: 'How many questions does the SBF Binnen exam have?',
+    a: 'The official catalogue holds roughly 250 questions across basic, inland supplement and sailing supplement sections. The exam paper contains 30 questions. If you already hold SBF See, only the inland-specific questions remain.',
+  },
+  {
+    q: 'Is there a free SBF Binnen app for Android?',
+    a: 'Yes. Sportbootführerschein Binnen by Matthias Wimmer is permanently free, contains the full official catalogue, shows no ads, does no tracking and requests no permissions. Bootspruefung.de also lets you practise all official exam questions for free – there, theory texts and offline use are the paid part.',
+  },
+  {
+    q: 'Is an app enough for SBF Binnen?',
+    a: 'For the theory, yes – no course is required and the catalogue is published officially. For the practical exam with manoeuvres and knots you need time on the water.',
+  },
+  {
+    q: 'Is there an SBF Binnen app for iPhone?',
+    a: 'Bootspruefung.de and SBF-Fragen are available for iOS. The free Wimmer app and Sailbyte are Android only. Boatpass is currently Android only too; the iOS version is in progress.',
+  },
+];
+
+const relatedLinks = [
+  { href: '/en/sbf-inland/', label: 'SBF Binnen – exam, costs and procedure' },
+  { href: '/en/sbf-inland-exam-questions/', label: 'SBF Binnen exam questions explained' },
+  { href: '/en/sbf-app/', label: 'All boating licence apps compared' },
+  { href: '/en/sbf-coastal-app/', label: 'SBF See apps compared' },
+  { href: '/en/blog/sbf-inland-vs-coastal/', label: 'SBF Binnen or See – which licence fits?' },
+  { href: '/en/sbf-costs/', label: 'What does the German boating licence cost?' },
+];
+---
+
+<AppLandingPage
+  lang="en"
+  title="SBF Binnen app: the best apps compared"
+  description="SBF Binnen apps for Android and iPhone compared: prices, question catalogues, sailing supplement questions and ratings from Bootspruefung.de, SBF-Fragen, Sailbyte, Wimmer and Boatpass."
+  altUrl="https://boatpass.de/sbf-binnen-app/"
+  path="/sbf-inland-app/"
+  breadcrumbName="SBF Binnen apps compared"
+  badge="Sportbootführerschein Binnen"
+  h1="SBF Binnen apps compared"
+  heroIntro="Five apps cover the official SBF Binnen question catalogue – from permanently free to a monthly subscription. Prices, ratings and features side by side."
+  answer="Five learning apps are worth considering for SBF Binnen. The best rated and permanently free is Sportbootführerschein Binnen by Matthias Wimmer (4.9 ★, 772 ratings). Bootspruefung.de adds explanations and an online course, SBF-Fragen comes from publisher Delius Klasing, Sailbyte costs €4.79 a month, and Boatpass bundles five catalogues without a subscription."
+  apps={apps}
+  tableCaption="Every app covering the official SBF Binnen question catalogue – sorted alphabetically."
+  androidHeading="SBF Binnen app for Android"
+  androidParagraphs={[
+    'All five apps are on Google Play. The strongest free option is <strong>Sportbootführerschein Binnen</strong> by Matthias Wimmer: over 100,000 downloads, 4.9 ★ from 772 ratings, no ads, no in-app purchases, no tracking. The full official catalogue including sailing supplement questions is there, learned on a spaced-repetition principle.',
+    'What it lacks is explanations for the answers. If you want to understand rather than memorise, <strong>Bootspruefung.de</strong> or <strong>SBF-Fragen</strong> serve you better – both supply theory texts alongside the questions.',
+    'Boatpass is on Google Play as well. The SBF Binnen catalogue costs €9.99 as a one-off, or €16.98 together with SBF See. Trying it is free.',
+  ]}
+  iosHeading="SBF Binnen app for iPhone and iPad"
+  iosParagraphs={[
+    'On iPhone, two of the five apps are available to you: <strong>Bootspruefung.de</strong> and <strong>SBF-Fragen</strong>. Both contain the full catalogue including sailing supplement questions.',
+    'The free Wimmer app and Sailbyte are Android exclusives. <strong>Boatpass is not in the App Store yet</strong> – the iOS version is in development. To start on an iPhone today, the two apps above are the choice.',
+  ]}
+  strengths={[
+    'Complete official SBF Binnen catalogue including sailing supplement questions',
+    'Exam simulation with time limit and pass mark',
+    'Mistake training for targeted repetition',
+    'SBF Binnen, SBF See, UBI, SRC and LRC in one app',
+    '€9.99 one-off for the SBF Binnen catalogue, no subscription',
+  ]}
+  limitations={[
+    'Android only so far',
+    'No Lake Constance licence – for that you need Bootspruefung.de or SBF-Fragen',
+    'Only 7 Play Store ratings, against 772 for the Wimmer app',
+    'No companion online course in the browser',
+    'Does not replace practical training with a boating school',
+  ]}
+  faqs={faqs}
+  relatedLinks={relatedLinks}
+/>

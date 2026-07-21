@@ -1,0 +1,87 @@
+---
+import AppLandingPage from '../components/AppLandingPage.astro';
+import { LEARNING_APPS } from '../data/apps';
+
+// Alle Apps, die mindestens eines der drei Funkzeugnisse abdecken.
+const apps = LEARNING_APPS.filter(app =>
+  app.licenses.some(l => l === 'ubi' || l === 'src' || l === 'lrc')
+);
+
+const faqs = [
+  {
+    q: 'Welche App ist die beste für den Funkschein?',
+    a: 'Das Feld ist kleiner als beim Sportbootführerschein: Nur drei Apps decken UBI, SRC und LRC ab. Bootspruefung.de bringt zusätzlich Musterfunksprüche mit, SBF-Fragen kommt vom Delius-Klasing-Verlag mit Karteikasten-System, und Boatpass bündelt die drei Funkkataloge mit SBF See und Binnen in einer App. Die kostenlosen Wimmer-Apps und Sailbyte decken keine Funkzeugnisse ab.',
+  },
+  {
+    q: 'UBI, SRC oder LRC – welches Funkzeugnis brauche ich?',
+    a: 'Das UBI ist für den UKW-Sprechfunk auf Binnenschifffahrtsstraßen, das SRC für den UKW-Seefunk im Küstenbereich und das LRC für den weltweiten Seefunk inklusive Satellitenkommunikation. Die Zeugnisse sind nicht gegenseitig anrechenbar, wer aber bereits ein Seefunkzeugnis besitzt, bekommt die UBI-Prüfung verkürzt.',
+  },
+  {
+    q: 'Kann ich die praktische Funkprüfung mit einer App üben?',
+    a: 'Nein. Alle drei Funkzeugnisse haben einen praktischen Teil: Gerätebedienung, ATIS-Einstellung sowie Not-, Dringlichkeits- und Sicherheitsmeldungen. Eine App bereitet den Theorieteil vor und macht dich mit den Sprechprozeduren vertraut – das Sprechen am Gerät musst du üben.',
+  },
+  {
+    q: 'Gibt es eine kostenlose Funkschein-App?',
+    a: 'Bei Bootspruefung.de sind alle amtlichen Prüfungsfragen – auch für UBI, SRC und LRC – kostenlos nutzbar; Theorietexte, Musterfunksprüche und die vollständige Offline-Nutzung stecken in der Pro-Version. SBF-Fragen und Boatpass zeigen kostenlos eine Auswahl, die vollständigen Kataloge sind kostenpflichtig. Eine dauerhaft komplett kostenlose Funkschein-App wie die Wimmer-Apps beim SBF gibt es nicht.',
+  },
+  {
+    q: 'Wie viele Fragen hat die UBI-Prüfung?',
+    a: 'Der amtliche UBI-Fragenkatalog umfasst 130 Fragen. Im Prüfungsbogen beantwortest du 22 Multiple-Choice-Fragen in 60 Minuten, bestanden ab 17 richtigen Antworten. Dazu kommt der praktische Teil.',
+  },
+  {
+    q: 'Gibt es die Funkschein-Apps auch für iPhone?',
+    a: 'Bootspruefung.de und SBF-Fragen sind für Android und iOS verfügbar. Boatpass gibt es derzeit nur für Android, die iOS-Version ist in Arbeit.',
+  },
+];
+
+const relatedLinks = [
+  { href: '/ubi/', label: 'UBI – UKW-Sprechfunkzeugnis Binnen' },
+  { href: '/src/', label: 'SRC – Kurzstreckenzeugnis für Seefunk' },
+  { href: '/lrc/', label: 'LRC – Langstreckenzeugnis für Seefunk' },
+  { href: '/sbf-app/', label: 'Alle Bootsführerschein-Apps im Vergleich' },
+  { href: '/blog/ubi-vs-src-funkschein/', label: 'UBI oder SRC – welches Funkzeugnis brauchst du?' },
+  { href: '/blog/notsignale-auf-see/', label: 'Notsignale auf See: was du kennen musst' },
+];
+---
+
+<AppLandingPage
+  lang="de"
+  title="Funkschein-App: UBI, SRC und LRC lernen"
+  description="Apps für die Funkzeugnisse UBI, SRC und LRC im Vergleich: Fragenkataloge, Preise, Plattformen und Bewertungen von Bootspruefung.de, SBF-Fragen und Boatpass."
+  altUrl="https://boatpass.de/en/radio-certificate-app/"
+  path="/funkschein-app/"
+  breadcrumbName="Funkschein-Apps im Vergleich"
+  badge="UBI · SRC · LRC"
+  h1="Funkschein-Apps im Vergleich"
+  heroIntro="Für die Funkzeugnisse ist die Auswahl deutlich kleiner als beim Sportbootführerschein – nur drei Apps decken UBI, SRC und LRC überhaupt ab. Hier stehen sie nebeneinander."
+  answer="Für die Funkzeugnisse UBI, SRC und LRC gibt es drei Lern-Apps: Bootspruefung.de mit kostenlosen amtlichen Fragen und Musterfunksprüchen in der Pro-Version, SBF-Fragen vom Delius-Klasing-Verlag mit Karteikasten-System, und Boatpass, das alle drei Funkkataloge zusammen mit SBF See und Binnen in einer App bündelt."
+  apps={apps}
+  tableCaption="Alle Apps, die mindestens eines der Funkzeugnisse UBI, SRC oder LRC abdecken – alphabetisch sortiert."
+  androidHeading="Funkschein-App für Android"
+  androidParagraphs={[
+    'Alle drei Apps sind im Google Play Store verfügbar. Der Unterschied liegt weniger im Fragenkatalog – der ist amtlich und überall gleich – als im Drumherum: <strong>Bootspruefung.de</strong> liefert in der Pro-Version Musterfunksprüche und Theorietexte, <strong>SBF-Fragen</strong> setzt auf ein Karteikasten-System mit Prüfungssimulation nach Original-Bögen.',
+    'Die beliebten kostenlosen Apps von Matthias Wimmer decken <strong>keine Funkzeugnisse</strong> ab, ebenso wenig Sailbyte. Wer den Funkschein lernen will, hat also faktisch drei Optionen.',
+    'Bei Boatpass kosten die Funkmodule einmalig 7,99 € (UBI und SRC) beziehungsweise 9,99 € (LRC) – kein Abo, dauerhafter Zugriff.',
+  ]}
+  iosHeading="Funkschein-App für iPhone und iPad"
+  iosParagraphs={[
+    'Auf iOS bleiben <strong>Bootspruefung.de</strong> und <strong>SBF-Fragen</strong>. Beide decken UBI, SRC und LRC ab.',
+    '<strong>Boatpass ist derzeit nicht im App Store verfügbar</strong> – die iOS-Version ist in Entwicklung. Auf dem iPhone sind die beiden anderen Apps aktuell die einzige Wahl für den Funkschein.',
+  ]}
+  strengths={[
+    'UBI, SRC und LRC in derselben App wie SBF See und SBF Binnen',
+    'Vollständige amtliche Fragenkataloge, unter anderem 130 UBI-Fragen',
+    'Prüfungssimulation mit Bestehensgrenze und Zeitlimit',
+    'Fehler-Training für die typischen Stolperstellen bei Notrufverfahren',
+    'Einmalig 7,99 € je Funkmodul (LRC 9,99 €), kein Abo',
+  ]}
+  limitations={[
+    'Kein FKN-Pyroschein und kein Bodenseeschifferpatent',
+    'Bisher nur für Android verfügbar',
+    'Keine Musterfunksprüche als Audio – die praktische Prüfung übst du am Gerät',
+    'Deutlich weniger Bewertungen als Bootspruefung.de und SBF-Fragen',
+    'Ersetzt nicht den praktischen Teil der Funkprüfung',
+  ]}
+  faqs={faqs}
+  relatedLinks={relatedLinks}
+/>

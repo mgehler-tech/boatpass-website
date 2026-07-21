@@ -1,0 +1,277 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
+import AppComparisonTable from './AppComparisonTable.astro';
+import { softwareApplicationSchema, type LearningApp } from '../data/apps';
+
+interface Faq { q: string; a: string }
+interface Link { href: string; label: string }
+
+interface Props {
+  lang: 'de' | 'en';
+  title: string;
+  description: string;
+  /** Absolute URL der Seite in der jeweils anderen Sprache */
+  altUrl: string;
+  /** Pfad dieser Seite, z. B. '/sbf-see-app/' – für Breadcrumb & Schema */
+  path: string;
+  breadcrumbName: string;
+  badge: string;
+  h1: string;
+  heroIntro: string;
+  /** Direktantwort in den ersten ~40 Wörtern – Zitat-Ziel für KI-Übersichten */
+  answer: string;
+  apps: LearningApp[];
+  tableCaption: string;
+  androidHeading: string;
+  androidParagraphs: string[];
+  iosHeading: string;
+  iosParagraphs: string[];
+  /** Was Boatpass kann – und was nicht */
+  strengths: string[];
+  limitations: string[];
+  faqs: Faq[];
+  relatedLinks: Link[];
+}
+
+const {
+  lang, title, description, altUrl, path, breadcrumbName,
+  badge, h1, heroIntro, answer, apps, tableCaption,
+  androidHeading, androidParagraphs, iosHeading, iosParagraphs,
+  strengths, limitations, faqs, relatedLinks,
+} = Astro.props;
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const base = lang === 'de' ? 'https://boatpass.de' : 'https://boatpass.de/en';
+const pageUrl = `https://boatpass.de${lang === 'de' ? '' : '/en'}${path}`;
+
+const t = lang === 'de'
+  ? {
+      home: 'Startseite',
+      answerLabel: 'Auf den Punkt',
+      comparison: 'Die Apps im Vergleich',
+      profiles: 'Die Apps im Einzelnen',
+      bestFor: 'Am besten geeignet für',
+      toStore: 'Im Play Store ansehen',
+      toWebsite: 'Zur Website',
+      strengthsTitle: 'Was Boatpass kann – und was nicht',
+      canTitle: 'Das kann Boatpass',
+      cantTitle: 'Das kann Boatpass nicht',
+      transparency: 'Transparenzhinweis',
+      transparencyText: 'Boatpass ist unsere eigene App. Genau deshalb nennen wir hier Preise, Funktionen und Bewertungen der Alternativen vollständig – auch dort, wo sie besser abschneiden. Die Angaben stammen aus den öffentlichen Play-Store-Listings und den Websites der Anbieter.',
+      faqTitle: 'Häufige Fragen',
+      relatedTitle: 'Passend dazu',
+      ctaTitle: 'Boatpass ausprobieren',
+      ctaText: 'Kostenlos starten, alle Kataloge antesten, danach je Schein einmalig freischalten – kein Abo.',
+      ctaButton: 'Boatpass im Play Store',
+    }
+  : {
+      home: 'Home',
+      answerLabel: 'In short',
+      comparison: 'The apps compared',
+      profiles: 'The apps in detail',
+      bestFor: 'Best suited for',
+      toStore: 'View on Play Store',
+      toWebsite: 'Visit website',
+      strengthsTitle: 'What Boatpass does – and what it does not',
+      canTitle: 'What Boatpass does',
+      cantTitle: 'What Boatpass does not do',
+      transparency: 'Transparency note',
+      transparencyText: 'Boatpass is our own app. That is precisely why we list the prices, features and ratings of the alternatives in full – including where they beat us. The figures come from the public Play Store listings and the vendors’ own websites.',
+      faqTitle: 'Frequently asked questions',
+      relatedTitle: 'Related pages',
+      ctaTitle: 'Try Boatpass',
+      ctaText: 'Start for free, sample every catalogue, then unlock each licence with a single payment – no subscription.',
+      ctaButton: 'Boatpass on Google Play',
+    };
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: t.home, item: `${base}/` },
+    { '@type': 'ListItem', position: 2, name: breadcrumbName, item: pageUrl },
+  ],
+};
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
+
+const itemListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: breadcrumbName,
+  itemListOrder: 'https://schema.org/ItemListUnordered',
+  numberOfItems: apps.length,
+  itemListElement: apps.map((app, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    item: softwareApplicationSchema(app, lang),
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} lang={lang} altUrl={altUrl}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(itemListSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
+  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        {badge}
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+        {h1}
+      </h1>
+      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto;">
+        {heroIntro}
+      </p>
+    </div>
+  </div>
+
+  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+
+    <!-- Direktantwort: zitierfähig für Suchmaschinen & KI-Übersichten -->
+    <section style="margin-bottom:48px;">
+      <div style="background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px;">
+        <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">{t.answerLabel}</div>
+        <p style="font-size:17px; color:#1A1F36; line-height:1.7; margin:0; font-weight:600;">
+          {answer}
+        </p>
+      </div>
+    </section>
+
+    <!-- Vergleichstabelle -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:20px;">{t.comparison}</h2>
+      <AppComparisonTable apps={apps} lang={lang} caption={tableCaption} />
+    </section>
+
+    <slot name="after-table" />
+
+    <!-- Kurzprofile -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:20px;">{t.profiles}</h2>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        {apps.map(app => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <h3 style="font-size:17px; font-weight:700; color:#1A1F36; margin-bottom:4px;">{app.name}</h3>
+            <div style="font-size:13px; color:#9CA3AF; margin-bottom:12px;">{app.vendor}</div>
+            <p style="font-size:15px; color:#6B7280; line-height:1.7; margin:0 0 12px;">{app.summary[lang]}</p>
+            <p style="font-size:14px; color:#4B5563; line-height:1.6; margin:0 0 14px;">
+              <strong style="color:#1A1F36;">{t.bestFor}:</strong> {app.bestFor[lang]}
+            </p>
+            <div style="display:flex; flex-wrap:wrap; gap:14px;">
+              {app.playUrl && (
+                <a href={app.playUrl} target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:none; font-size:14px; font-weight:600;">→ {t.toStore}</a>
+              )}
+              {app.website && (
+                <a href={app.website} target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:none; font-size:14px; font-weight:600;">→ {t.toWebsite}</a>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Android -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:16px;">{androidHeading}</h2>
+      {androidParagraphs.map(p => (
+        <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;" set:html={p} />
+      ))}
+    </section>
+
+    <!-- iOS -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:16px;">{iosHeading}</h2>
+      {iosParagraphs.map(p => (
+        <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;" set:html={p} />
+      ))}
+    </section>
+
+    <slot name="before-honesty" />
+
+    <!-- Was Boatpass kann – und was nicht -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:20px;">{t.strengthsTitle}</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px;">
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
+          <div style="font-size:13px; font-weight:700; color:#047857; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">{t.canTitle}</div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            {strengths.map(s => (
+              <div style="display:flex; align-items:flex-start; gap:10px;">
+                <span style="flex-shrink:0; margin-top:3px;"><Icon name="check" size={15} stroke="#047857" strokeWidth={2.5} /></span>
+                <span style="font-size:14px; color:#4B5563; line-height:1.6;">{s}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
+          <div style="font-size:13px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">{t.cantTitle}</div>
+          <div style="display:flex; flex-direction:column; gap:10px;">
+            {limitations.map(s => (
+              <div style="display:flex; align-items:flex-start; gap:10px;">
+                <span style="flex-shrink:0; margin-top:3px;"><Icon name="xmark" size={15} stroke="#9CA3AF" strokeWidth={2.5} /></span>
+                <span style="font-size:14px; color:#4B5563; line-height:1.6;">{s}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Transparenzhinweis -->
+    <section style="margin-bottom:48px;">
+      <div style="display:flex; align-items:flex-start; gap:12px; background:rgba(51,102,255,0.05); border:1px solid rgba(51,102,255,0.15); border-radius:14px; padding:20px;">
+        <span style="flex-shrink:0; margin-top:1px;"><Icon name="question" size={20} stroke="#3366FF" strokeWidth={1.75} /></span>
+        <p style="font-size:15px; color:#4B5563; line-height:1.7; margin:0;">
+          <strong style="color:#1A1F36;">{t.transparency}:</strong> {t.transparencyText}
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="margin-bottom:48px; background:linear-gradient(135deg,#3366FF,#1A44D4); border:1px solid rgba(255,255,255,0.15); border-radius:24px; padding:40px; box-shadow:0 20px 60px rgba(51,102,255,0.3);">
+      <h2 style="font-size:24px; font-weight:800; color:white; margin-bottom:12px;">{t.ctaTitle}</h2>
+      <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:24px;">{t.ctaText}</p>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:8px; background:white; color:#3366FF; font-weight:700; font-size:14px; padding:12px 24px; border-radius:12px; text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,0.18);">
+        ▶&nbsp;{t.ctaButton}
+      </a>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:20px;">{t.faqTitle}</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Interne Links -->
+    <section style="padding-top:32px; border-top:1px solid rgba(51,102,255,0.1);">
+      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">{t.relatedTitle}</h3>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        {relatedLinks.map(l => (
+          <a href={l.href} style="color:#3366FF; text-decoration:none; font-size:15px;">→ {l.label}</a>
+        ))}
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>
