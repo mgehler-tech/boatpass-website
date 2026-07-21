@@ -98,7 +98,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       </div>
 
       <!-- Stats -->
-      <div class="animate-fade-up delay-4" style="display:flex; gap:36px; padding-top:36px; border-top:1px solid rgba(51,102,255,0.10); flex-wrap:wrap;">
+      <div class="animate-fade-up delay-4 hero-stats" style="display:flex; gap:36px; padding-top:36px; border-top:1px solid rgba(51,102,255,0.10); flex-wrap:wrap;">
         <div>
           <div style="font-size:26px; font-weight:900; letter-spacing:-1px; color:#1A1F36;">{t.hero.stat1Num}</div>
           <div style="font-size:14px; color:#6B7280; margin-top:2px;">{t.hero.stat1Label}</div>
@@ -361,6 +361,24 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   html.dark .banner-title { color: #E2E8F0 !important; }
   html.dark .banner-subtitle { color: #94A3B8 !important; }
   html.dark .hero-wave path { fill: #0F1117 !important; }
+
+  /* Hero-Kennzahlen (Offiziell · 3 · Kostenlos) auf sehr schmalen Screens.
+     Die drei Blöcke passen inhaltlich in eine Zeile, doch der feste 36px-Gap
+     (2×) sprengte unterhalb von ~399px die Zeilenbreite – die dritte Zahl
+     ("Kostenlos"/"Free") brach als einzelner Orphan in eine zweite Reihe um und
+     ließ die Statistik-Zeile im wichtigsten Above-the-fold-Bereich unausgewogen
+     wirken (2+1 statt einer sauberen Reihe). Ab hier verteilen sich die drei
+     Werte per space-between gleichmäßig über die volle Textbreite und bleiben so
+     auf einer Linie; der reduzierte Gap dient nur noch als Mindestabstand. Greift
+     erst dort, wo sonst umgebrochen würde – breitere Screens bleiben unverändert
+     links ausgerichtet. Reiner Layout-Feinschliff: Farben, Schrift und die
+     Zahlen-/Label-Größen des Corporate Designs bleiben unberührt. */
+  @media (max-width: 400px) {
+    .hero-stats {
+      gap: 8px !important;
+      justify-content: space-between;
+    }
+  }
 
   @media (max-width: 768px) {
     .hero-grid {
