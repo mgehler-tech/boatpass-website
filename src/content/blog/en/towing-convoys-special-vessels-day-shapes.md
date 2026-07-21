@@ -9,7 +9,7 @@ author: "Marius Gehler"
 altSlug: "schleppverband-besondere-fahrzeuge-erkennen"
 ---
 
-Navigation lights are no help in broad daylight, since you only see them once it gets dark. Yet you still need to tell, in full daylight, whether the vessel ahead is an ordinary boat, part of a towing convoy, or a vessel restricted in her ability to maneuver. That is what **shapes** (day shapes) are for: simple black shapes hoisted on the mast or stay. This article explains the most important day shapes for pushed and towed convoys and for special vessels, a topic from the [International Regulations for Preventing Collisions at Sea](/blog/right-of-way-collision-rules/) that comes up in both the German [SBF Binnen](/sbf-binnen/) (inland waters) and [SBF See](/sbf-see/) (coastal waters) exams.
+Navigation lights are no help in broad daylight, since you only see them once it gets dark. Yet you still need to tell, in full daylight, whether the vessel ahead is an ordinary boat, part of a towing convoy, or a vessel restricted in her ability to maneuver. That is what **shapes** (day shapes) are for: simple black shapes hoisted on the mast or stay. This article explains the most important day shapes for pushed and towed convoys and for special vessels, a topic from the [International Regulations for Preventing Collisions at Sea](/en/blog/right-of-way-collision-rules/) that comes up in both the German [SBF Binnen](/en/sbf-inland/) (inland waters) and [SBF See](/en/sbf-coastal/) (coastal waters) exams.
 
 ## The four basic shapes
 
@@ -30,7 +30,7 @@ On inland waterways you regularly encounter **convoys**, meaning several craft t
 - **Towed convoy:** One or more craft are pulled behind a power-driven vessel on a towline, so the connection is not rigid but a rope.
 - **Vessels made fast alongside:** Two or more craft are firmly connected side by side, for example to maneuver together.
 
-For you as an observer, the key difference is how the formation appears at night: a rigidly coupled pushed convoy is treated under the collision regulations as **a single vessel** and therefore shows only one set of navigation lights. A towed convoy, on the other hand, consists of two separately recognizable units, the towing vessel and the vessel being towed, each showing its own lights. The article on [navigation lights](/blog/navigation-lights-explained/) explains those light combinations in detail.
+For you as an observer, the key difference is how the formation appears at night: a rigidly coupled pushed convoy is treated under the collision regulations as **a single vessel** and therefore shows only one set of navigation lights. A towed convoy, on the other hand, consists of two separately recognizable units, the towing vessel and the vessel being towed, each showing its own lights. The article on [navigation lights](/en/blog/navigation-lights-explained/) explains those light combinations in detail.
 
 On large inland waterways such as the Rhine, you regularly meet pushed convoys made up of several barges, which makes them noticeably longer and wider than a single cargo ship. For you as a recreational skipper, that means giving these convoys plenty of room and assuming they have very little room to maneuver, even in situations where you would formally be the stand-on vessel.
 
@@ -53,7 +53,7 @@ Two terms that are easy to mix up in the exam can be told apart clearly by their
 - **Not under command** (for example following an engine failure): **two black balls**, one above the other.
 - **Restricted in her ability to maneuver** (for example while dredging, sounding, or towing a heavy convoy): **three shapes** in a vertical line, in the order **ball – diamond – ball**.
 
-The mnemonic from the [navigation lights article](/blog/navigation-lights-explained/), where two red all-round lights at night mean not under command, carries over directly to the two balls by day. For a vessel restricted in her ability to maneuver, the diamond appears as the middle shape by day, just as a white light appears between the two red lights at night.
+The mnemonic from the [navigation lights article](/en/blog/navigation-lights-explained/), where two red all-round lights at night mean not under command, carries over directly to the two balls by day. For a vessel restricted in her ability to maneuver, the diamond appears as the middle shape by day, just as a white light appears between the two red lights at night.
 
 ### Dredging and diving operations
 
@@ -62,7 +62,7 @@ A vessel restricted in her ability to maneuver that is dredging or engaged in un
 - **Two balls**, one above the other, mark the side on which an obstruction exists, meaning the side you should avoid.
 - **Two diamonds**, one above the other, mark the side on which other vessels may safely pass.
 
-Important for the exam: these are not distress signals. They simply indicate that the vessel's ability to maneuver is restricted and that it therefore has priority over most other vessels, as described in the article on [right-of-way rules](/blog/right-of-way-collision-rules/).
+Important for the exam: these are not distress signals. They simply indicate that the vessel's ability to maneuver is restricted and that it therefore has priority over most other vessels, as described in the article on [right-of-way rules](/en/blog/right-of-way-collision-rules/).
 
 ## Vessels constrained by their draught
 
@@ -79,7 +79,7 @@ These two signals look similar at first glance but are easy to tell apart: a sin
 
 ## Day shapes and sound signals belong together
 
-Day shapes are only half the picture. In good visibility you see the shape, but in fog or heavy rain only your ears help. That is why exactly the same vessel categories, fishing vessels, vessels not under command, vessels restricted in their ability to maneuver, vessels constrained by draught, and vessels towing or pushing, give their own sound signal in restricted visibility, so they remain identifiable even without visual contact. The article on [sound signals for the SBF exam](/blog/sound-signals-sbf-explained/) explains how those signals are built and where the typical mix-ups between coastal and inland waters lie. Once you know the vessel categories from this article, the matching sound signals become much easier to remember.
+Day shapes are only half the picture. In good visibility you see the shape, but in fog or heavy rain only your ears help. That is why exactly the same vessel categories, fishing vessels, vessels not under command, vessels restricted in their ability to maneuver, vessels constrained by draught, and vessels towing or pushing, give their own sound signal in restricted visibility, so they remain identifiable even without visual contact. The article on [sound signals for the SBF exam](/en/blog/sound-signals-sbf-explained/) explains how those signals are built and where the typical mix-ups between coastal and inland waters lie. Once you know the vessel categories from this article, the matching sound signals become much easier to remember.
 
 ## How to approach this in the exam
 
