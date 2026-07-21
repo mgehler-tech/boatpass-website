@@ -79,7 +79,7 @@ export const LEARNING_APPS: LearningApp[] = [
     pricingModel: 'freemium-onetime',
     price: { de: '0 € / 7,99–16,98 € einmalig', en: '€0 / €7.99–16.98 one-off' },
     singleApp: true,
-    offline: null,
+    offline: true,
     examSimulation: true,
     isOwn: true,
     summary: {
