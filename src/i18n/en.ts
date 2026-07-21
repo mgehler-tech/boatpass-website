@@ -150,6 +150,7 @@ export const en: Translations = {
   footer: {
     privacy: 'Privacy',
     imprint: 'Imprint',
+    terms: 'Terms of Use',
     contact: 'Contact',
     switchLang: 'Deutsch',
   },
