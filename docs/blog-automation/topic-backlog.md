@@ -27,6 +27,10 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Außenborder-Basiswartung – einfache Pflege für lange Lebensdauer (2026-07-17: aussenborder-basiswartung / outboard-motor-basic-maintenance)
 - [x] Sportküstenschifferschein (SKS) – die nächste Stufe nach dem SBF See (2026-07-18: sportkuestenschifferschein-sks / sks-coastal-skippers-license)
 - [x] GPS, Plotter und Funkgerät an Bord – moderne Navigation verstehen (2026-07-19: gps-kartenplotter-funkgeraet-moderne-navigation / gps-chartplotter-vhf-modern-navigation)
+- [ ] Schifffahrtszeichen der Binnenschifffahrtsstraßen einfach erklärt – Tafelzeichen für die SBF-Binnen-Prüfung (Wettbewerber-Gap: eigenes Thema bei mehreren SBF-Anbietern (bootspruefung.de, bootsfuhrerschein.de) mit Bezug auf Anlage 7 BinSchStrO; bei boatpass bisher nirgends abgedeckt; stützt Pillar /sbf-binnen/)
+- [ ] Notruf per Funk richtig absetzen – MAYDAY, PAN PAN und DSC-Alarm Schritt für Schritt (Wettbewerber-Gap: praxisnahes Prüfungs- und Sicherheitsthema für UBI/SRC, mehrfach von ADAC Skipper, Ocean Signal, Rubicon3 behandelt; bei boatpass bisher nur zwei Sätze in „Notsignale auf See"; stützt /ubi/ und /src/)
+- [ ] Leuchtfeuer und Feuerkennungen lesen – Leuchttürme in der SBF-See-Prüfung (Wettbewerber-Gap: Kennungen wie Fl., Oc., Iso., Q. und Sektorenfeuer bisher nur am Rande in „Seekarte lesen lernen" erwähnt, kein eigener Artikel; klassisches Prüfungsthema; stützt /sbf-see/)
+- [ ] Sicherheitsausrüstung an Bord – Checkliste vor dem Ablegen (Wettbewerber-Gap: von ADAC Skipper, hansenautic und boote.com abgedeckt, bei boatpass fehlt eine eigene Checkliste; ergänzt die Artikel zu An-/Ablegen und Ankern für Einsteiger)
 - [ ] Vorfahrt zwischen Motor- und Segelbooten – Sonderregeln
 - [ ] Schleppverband und besondere Fahrzeuge – Kennzeichnung erkennen
 - [ ] Bootsversicherung für Sportboote – was ist sinnvoll?
