@@ -1,7 +1,9 @@
 ---
 import { Image } from 'astro:assets';
 import { useTranslations, getLocalizedPath } from '../i18n/index';
+import Icon from './Icon.astro';
 import appIcon from '../assets/images/app-icon.png';
+import type { IconName } from '../icons';
 
 interface Props {
   lang: 'de' | 'en';
@@ -10,6 +12,64 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const de = lang === 'de';
+
+/**
+ * Mega-Menü-Struktur. Zwei Spalten mit Gruppenüberschrift plus eine Promo-Kachel.
+ * Beschreibungen sind Teil der Navigation, nicht Deko: Sie machen die Einträge
+ * scanbar, sobald ein Menü mehr als eine Handvoll Ziele hat.
+ */
+interface MegaItem { href: string; label: string; desc: string; icon: IconName; soon?: boolean }
+interface MegaGroup { title: string; items: MegaItem[] }
+
+const licensesGroups: MegaGroup[] = [
+  {
+    title: de ? 'Sportbootführerscheine' : 'Boating licences',
+    items: [
+      { href: de ? '/sbf-binnen/' : '/en/sbf-inland/', label: de ? 'SBF Binnen' : 'SBF Inland', desc: de ? 'Flüsse, Seen und Kanäle' : 'Rivers, lakes and canals', icon: 'waves' },
+      { href: de ? '/sbf-see/' : '/en/sbf-coastal/', label: de ? 'SBF See' : 'SBF Coastal', desc: de ? 'Küstengewässer und Navigation' : 'Coastal waters and navigation', icon: 'anchor' },
+      { href: '', label: de ? 'Bodenseeschifferpatent' : 'Lake Constance licence', desc: de ? 'In Vorbereitung' : 'In preparation', icon: 'compass', soon: true },
+    ],
+  },
+  {
+    title: de ? 'Funkzeugnisse' : 'Radio certificates',
+    items: [
+      { href: de ? '/ubi/' : '/en/ubi/', label: 'UBI', desc: de ? 'UKW-Sprechfunk Binnen' : 'VHF radio, inland waters', icon: 'wifi' },
+      { href: de ? '/src/' : '/en/src/', label: 'SRC', desc: de ? 'Seefunk im Küstenbereich' : 'Marine radio, coastal', icon: 'satellite' },
+      { href: de ? '/lrc/' : '/en/lrc/', label: 'LRC', desc: de ? 'Weltweiter Seefunk' : 'Worldwide marine radio', icon: 'globe' },
+    ],
+  },
+];
+
+const guidesGroups: MegaGroup[] = [
+  {
+    title: de ? 'Vorbereitung' : 'Preparation',
+    items: [
+      { href: de ? '/sbf-kosten/' : '/en/sbf-costs/', label: de ? 'SBF Kosten' : 'SBF costs', desc: de ? 'Alle Gebühren im Überblick' : 'Every fee at a glance', icon: 'banknotes' },
+      { href: de ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/', label: de ? 'Prüfung & Ablauf' : 'Exam & process', desc: de ? 'Anmeldung bis Prüfungstag' : 'From registration to exam day', icon: 'clipboard' },
+      { href: de ? '/sbf-binnen-pruefungsfragen/' : '/en/sbf-inland-exam-questions/', label: de ? 'Prüfungsfragen Binnen' : 'Inland exam questions', desc: de ? 'Amtlicher Katalog erklärt' : 'Official catalogue explained', icon: 'book' },
+      { href: de ? '/sbf-see-pruefungsfragen/' : '/en/sbf-coastal-exam-questions/', label: de ? 'Prüfungsfragen See' : 'Coastal exam questions', desc: de ? 'Amtlicher Katalog erklärt' : 'Official catalogue explained', icon: 'document' },
+    ],
+  },
+  {
+    title: de ? 'App-Vergleich' : 'App comparison',
+    items: [
+      { href: de ? '/sbf-app/' : '/en/sbf-app/', label: de ? 'Alle Apps im Vergleich' : 'All apps compared', desc: de ? 'Sechs Apps nebeneinander' : 'Six apps side by side', icon: 'scale' },
+      { href: de ? '/sbf-see-app/' : '/en/sbf-coastal-app/', label: de ? 'SBF-See-Apps' : 'SBF See apps', desc: de ? 'Mit Navigationsaufgaben' : 'With navigation tasks', icon: 'sailboat' },
+      { href: de ? '/sbf-binnen-app/' : '/en/sbf-inland-app/', label: de ? 'SBF-Binnen-Apps' : 'SBF Binnen apps', desc: de ? 'Von gratis bis Monatsabo' : 'From free to monthly plans', icon: 'waves' },
+      { href: de ? '/funkschein-app/' : '/en/radio-certificate-app/', label: de ? 'Funkschein-Apps' : 'Radio certificate apps', desc: de ? 'UBI, SRC und LRC' : 'UBI, SRC and LRC', icon: 'microphone' },
+      { href: de ? '/sbf-app-kostenlos/' : '/en/sbf-app-free/', label: de ? 'Kostenlose Apps' : 'Free apps', desc: de ? 'Was wirklich gratis geht' : 'What is genuinely free', icon: 'creditCard' },
+    ],
+  },
+];
+
+const promo = {
+  href: de ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/',
+  eyebrow: de ? 'Tool' : 'Tool',
+  title: de ? 'Welcher Schein passt zu dir?' : 'Which licence fits you?',
+  desc: de ? 'Fünf Fragen, eine klare Empfehlung.' : 'Five questions, one clear answer.',
+  cta: de ? 'Jetzt herausfinden' : 'Find out now',
+};
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 border-b" style="background: rgba(240,244,250,0.85); backdrop-filter: blur(20px); border-color: rgba(51,102,255,0.10);">
@@ -35,17 +95,38 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
         <a id="licenses-trigger" href={lang === 'de' ? '/fuehrerscheine/' : '/en/licenses/'} class="text-sm font-medium nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" style="color: #6B7280; text-decoration:none; display:flex; align-items:center; gap:4px;">
           {lang === 'de' ? 'Führerscheine' : 'Licenses'} <span aria-hidden="true" style="font-size:10px;">▾</span>
         </a>
-        <ul id="licenses-menu" class="nav-dropdown-menu">
-          <li><a href={lang === 'de' ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/'} class="nav-dropdown-item" style="font-weight:700; color:#3366FF;">{lang === 'de' ? 'Welcher Schein? →' : 'Which licence? →'}</a></li>
-          <li aria-hidden="true"><div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div></li>
-          <li><a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a></li>
-          <li aria-hidden="true"><div style="height:1px; background:rgba(51,102,255,0.10); margin:4px 0;"></div></li>
-          <li><a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="nav-dropdown-item">UBI</a></li>
-          <li><a href={lang === 'de' ? '/src/' : '/en/src/'} class="nav-dropdown-item">SRC</a></li>
-          <li><a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="nav-dropdown-item">LRC</a></li>
-          <li><span class="nav-dropdown-item nav-dropdown-soon">Bodenseeschifferpatent&#8239;<span aria-hidden="true" style="font-size:12px;color:#3366FF;white-space:nowrap;">{lang === 'de' ? 'bald' : 'soon'}</span></span></li>
-        </ul>
+        <div id="licenses-menu" class="nav-mega">
+          <div class="nav-mega-cols">
+            {licensesGroups.map(group => (
+              <div class="nav-mega-col">
+                <div class="nav-mega-title">{group.title}</div>
+                {group.items.map(item => (item.soon ? (
+                  <span class="nav-mega-item nav-mega-item--soon">
+                    <span class="nav-mega-icon"><Icon name={item.icon} size={17} stroke="#9CA3AF" strokeWidth={1.75} /></span>
+                    <span class="nav-mega-text">
+                      <span class="nav-mega-label">{item.label}<span class="nav-mega-soon">{de ? 'bald' : 'soon'}</span></span>
+                      <span class="nav-mega-desc">{item.desc}</span>
+                    </span>
+                  </span>
+                ) : (
+                  <a href={item.href} class="nav-mega-item">
+                    <span class="nav-mega-icon"><Icon name={item.icon} size={17} stroke="#3366FF" strokeWidth={1.75} /></span>
+                    <span class="nav-mega-text">
+                      <span class="nav-mega-label">{item.label}</span>
+                      <span class="nav-mega-desc">{item.desc}</span>
+                    </span>
+                  </a>
+                )))}
+              </div>
+            ))}
+          </div>
+          <a href={promo.href} class="nav-mega-promo">
+            <span class="nav-mega-promo-eyebrow">{promo.eyebrow}</span>
+            <span class="nav-mega-promo-title">{promo.title}</span>
+            <span class="nav-mega-promo-desc">{promo.desc}</span>
+            <span class="nav-mega-promo-cta">{promo.cta} <span aria-hidden="true">→</span></span>
+          </a>
+        </div>
       </div>
 
       <!-- Ratgeber / Guides Dropdown -->
@@ -53,12 +134,30 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
         <button id="guides-trigger" class="text-sm font-medium nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" style="color: #6B7280; background:none; border:none; cursor:pointer; display:flex; align-items:center; gap:4px; padding:0; font-family:inherit;">
           {lang === 'de' ? 'Ratgeber' : 'Guides'} <span aria-hidden="true" style="font-size:10px;">▾</span>
         </button>
-        <ul id="guides-menu" class="nav-dropdown-menu">
-          <li><a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="nav-dropdown-item">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-app/' : '/en/sbf-app/'} class="nav-dropdown-item">{lang === 'de' ? 'SBF-Apps im Vergleich' : 'Apps Compared'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-app-kostenlos/' : '/en/sbf-app-free/'} class="nav-dropdown-item">{lang === 'de' ? 'Kostenlose SBF-Apps' : 'Free SBF Apps'}</a></li>
-        </ul>
+        <div id="guides-menu" class="nav-mega">
+          <div class="nav-mega-cols">
+            {guidesGroups.map(group => (
+              <div class="nav-mega-col">
+                <div class="nav-mega-title">{group.title}</div>
+                {group.items.map(item => (
+                  <a href={item.href} class="nav-mega-item">
+                    <span class="nav-mega-icon"><Icon name={item.icon} size={17} stroke="#3366FF" strokeWidth={1.75} /></span>
+                    <span class="nav-mega-text">
+                      <span class="nav-mega-label">{item.label}</span>
+                      <span class="nav-mega-desc">{item.desc}</span>
+                    </span>
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
+          <a href={promo.href} class="nav-mega-promo">
+            <span class="nav-mega-promo-eyebrow">{promo.eyebrow}</span>
+            <span class="nav-mega-promo-title">{promo.title}</span>
+            <span class="nav-mega-promo-desc">{promo.desc}</span>
+            <span class="nav-mega-promo-cta">{promo.cta} <span aria-hidden="true">→</span></span>
+          </a>
+        </div>
       </div>
 
       <a href={getLocalizedPath(lang, '/blog/')} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
@@ -164,8 +263,13 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
           <div class="mobile-subnav">
             <a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
             <a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="mobile-nav-sublink">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
-            <a href={lang === 'de' ? '/sbf-app/' : '/en/sbf-app/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF-Apps im Vergleich' : 'Apps Compared'}</a>
-            <a href={lang === 'de' ? '/sbf-app-kostenlos/' : '/en/sbf-app-free/'} class="mobile-nav-sublink">{lang === 'de' ? 'Kostenlose SBF-Apps' : 'Free SBF Apps'}</a>
+            <a href={lang === 'de' ? '/sbf-binnen-pruefungsfragen/' : '/en/sbf-inland-exam-questions/'} class="mobile-nav-sublink">{lang === 'de' ? 'Prüfungsfragen Binnen' : 'Inland Exam Questions'}</a>
+            <a href={lang === 'de' ? '/sbf-see-pruefungsfragen/' : '/en/sbf-coastal-exam-questions/'} class="mobile-nav-sublink">{lang === 'de' ? 'Prüfungsfragen See' : 'Coastal Exam Questions'}</a>
+            <a href={lang === 'de' ? '/sbf-app/' : '/en/sbf-app/'} class="mobile-nav-sublink">{lang === 'de' ? 'Alle Apps im Vergleich' : 'All Apps Compared'}</a>
+            <a href={lang === 'de' ? '/sbf-see-app/' : '/en/sbf-coastal-app/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF-See-Apps' : 'SBF See Apps'}</a>
+            <a href={lang === 'de' ? '/sbf-binnen-app/' : '/en/sbf-inland-app/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF-Binnen-Apps' : 'SBF Binnen Apps'}</a>
+            <a href={lang === 'de' ? '/funkschein-app/' : '/en/radio-certificate-app/'} class="mobile-nav-sublink">{lang === 'de' ? 'Funkschein-Apps' : 'Radio Certificate Apps'}</a>
+            <a href={lang === 'de' ? '/sbf-app-kostenlos/' : '/en/sbf-app-free/'} class="mobile-nav-sublink">{lang === 'de' ? 'Kostenlose Apps' : 'Free Apps'}</a>
           </div>
         </div>
       </div>
@@ -362,25 +466,30 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   .nav-link:hover { color: #1A1F36 !important; }
 
   .nav-dropdown { position: relative; }
-  .nav-dropdown-menu {
-    display: none;
+
+  /* Mega-Menü: zwei Spalten mit Gruppenüberschrift plus Promo-Kachel.
+     Statt display:none wird über opacity/visibility geblendet – nur so ist der
+     Auf- und Abbau animierbar. */
+  .nav-mega {
     position: absolute;
     top: calc(100% + 12px);
     left: 50%;
-    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    padding: 14px;
     background: white;
     border: 1px solid rgba(51,102,255,0.10);
-    border-radius: 12px;
-    padding: 8px;
-    min-width: 160px;
-    white-space: nowrap;
-    box-shadow: 0 8px 24px rgba(26,31,54,0.1);
+    border-radius: 18px;
+    box-shadow: 0 2px 4px rgba(26,31,54,0.04), 0 12px 32px rgba(26,31,54,0.10);
     z-index: 100;
-    list-style: none;
-    margin: 0;
+    max-width: calc(100vw - 32px);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-6px);
+    transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s;
   }
   /* Unsichtbare Brücke über die 12px-Lücke, damit der Hover nicht abreißt */
-  .nav-dropdown-menu::before {
+  .nav-mega::before {
     content: '';
     position: absolute;
     top: -12px;
@@ -388,21 +497,99 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     right: 0;
     height: 12px;
   }
-  .nav-dropdown:hover .nav-dropdown-menu,
-  .nav-dropdown:focus-within .nav-dropdown-menu { display: flex; flex-direction: column; gap: 2px; }
-  .nav-dropdown-item {
-    font-size: 14px;
-    font-weight: 500;
-    color: #4B5563;
-    text-decoration: none;
-    padding: 11px 14px;
-    border-radius: 8px;
-    transition: background 0.15s;
+  .nav-dropdown:hover .nav-mega,
+  .nav-dropdown:focus-within .nav-mega {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
   }
-  .nav-dropdown-item:hover { background: rgba(51,102,255,0.06); color: #1A1F36; }
+  @media (prefers-reduced-motion: reduce) {
+    .nav-mega { transition: opacity 0.01s, visibility 0.01s; transform: translateX(-50%); }
+    .nav-dropdown:hover .nav-mega,
+    .nav-dropdown:focus-within .nav-mega { transform: translateX(-50%); }
+  }
+
+  .nav-mega-cols { display: flex; gap: 8px; }
+  .nav-mega-col { display: flex; flex-direction: column; gap: 2px; width: 244px; }
+  .nav-mega-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9CA3AF;
+    padding: 6px 10px 8px;
+  }
+  .nav-mega-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 9px 10px;
+    border-radius: 11px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+  .nav-mega-item:hover { background: rgba(51,102,255,0.06); }
+  .nav-mega-icon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: rgba(51,102,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease;
+  }
+  .nav-mega-item:hover .nav-mega-icon { background: rgba(51,102,255,0.14); }
+  .nav-mega-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+  .nav-mega-label { font-size: 14px; font-weight: 600; color: #1A1F36; line-height: 1.35; }
+  .nav-mega-desc { font-size: 12px; color: #9097A6; line-height: 1.4; }
+
   /* "bald"-Einträge ohne Zielseite: sichtbar, aber nicht klickbar */
-  .nav-dropdown-soon { cursor: default; opacity: 0.55; }
-  .nav-dropdown-soon:hover { background: none; color: #4B5563; }
+  .nav-mega-item--soon { cursor: default; }
+  .nav-mega-item--soon:hover { background: none; }
+  .nav-mega-item--soon .nav-mega-icon { background: rgba(0,0,0,0.04); }
+  .nav-mega-item--soon .nav-mega-label { color: #9CA3AF; }
+  .nav-mega-soon {
+    margin-left: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #3366FF;
+    background: rgba(51,102,255,0.10);
+    border-radius: 100px;
+    padding: 2px 7px;
+    white-space: nowrap;
+  }
+
+  .nav-mega-promo {
+    display: flex;
+    flex-direction: column;
+    width: 196px;
+    padding: 18px;
+    border-radius: 14px;
+    background: linear-gradient(150deg, #3366FF, #1A44D4);
+    text-decoration: none;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+  }
+  .nav-mega-promo:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(51,102,255,0.32); }
+  .nav-mega-promo-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 10px;
+  }
+  .nav-mega-promo-title { font-size: 15px; font-weight: 700; color: white; line-height: 1.35; margin-bottom: 6px; }
+  .nav-mega-promo-desc { font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.5; margin-bottom: auto; }
+  .nav-mega-promo-cta { font-size: 12px; font-weight: 700; color: white; margin-top: 16px; }
+  /* Zwischen 768 und 900 px ist die Desktop-Navigation noch aktiv, das volle Panel
+     liefe aber seitlich aus dem Viewport – dort entfällt die Promo-Kachel. */
+  @media (max-width: 900px) {
+    .nav-mega-promo { display: none; }
+  }
 
   /* Hamburger lines */
   .hamburger-line {
@@ -609,16 +796,19 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     background: rgba(90, 120, 255, 0.10) !important;
     border-color: rgba(90, 120, 255, 0.18) !important;
   }
-  html.dark .nav-dropdown-menu {
+  html.dark .nav-mega {
     background: #1A2140 !important;
     border-color: rgba(90, 120, 255, 0.16) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5) !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 12px 40px rgba(0, 0, 0, 0.5) !important;
   }
-  html.dark .nav-dropdown-item { color: #B4BCDA !important; }
-  html.dark .nav-dropdown-item:hover {
-    background: rgba(90, 120, 255, 0.10) !important;
-    color: #E2E8F0 !important;
-  }
+  html.dark .nav-mega-title { color: #6B7280 !important; }
+  html.dark .nav-mega-label { color: #E2E8F0 !important; }
+  html.dark .nav-mega-desc { color: #8A93AD !important; }
+  html.dark .nav-mega-item:hover { background: rgba(90, 120, 255, 0.10) !important; }
+  html.dark .nav-mega-icon { background: rgba(90, 120, 255, 0.12) !important; }
+  html.dark .nav-mega-item:hover .nav-mega-icon { background: rgba(90, 120, 255, 0.20) !important; }
+  html.dark .nav-mega-item--soon .nav-mega-icon { background: rgba(255,255,255,0.05) !important; }
+  html.dark .nav-mega-item--soon .nav-mega-label { color: #6B7280 !important; }
   html.dark .mobile-menu-panel {
     background: rgba(10, 13, 20, 0.98) !important;
     border-color: rgba(90, 120, 255, 0.12) !important;
