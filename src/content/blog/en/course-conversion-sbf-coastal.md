@@ -7,6 +7,16 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "kursumrechnung-sbf-see"
+howTo:
+  name: "Convert a course for the SBF Coastal: CC, MC and TC"
+  description: "How to convert your compass course (CC) into the true course (TC) using deviation and variation, correctly and without mistakes, as required in the SBF Coastal navigation task."
+  steps:
+    - name: "Write down variation and deviation with their sign"
+      text: "Read the variation (from the chart's compass rose) and the deviation (from the deviation table for the current heading) and apply the sign: East is plus, West is minus."
+    - name: "Decide which direction you are converting"
+      text: "Decide whether you are converting from compass to chart (TC = CC + Deviation + Variation) or from chart to compass (CC = TC − Variation − Deviation)."
+    - name: "Apply the formula and check the result"
+      text: "Plug the signed values into the formula and calculate the result. If it exceeds 360°, subtract 360°; if it is negative, add 360°."
 ---
 
 Few topics cause SBF Coastal (SBF See) candidates more stress than course conversion. Yet behind it lies just one formula and a clear sign rule. Once you understand both, the course questions in the navigation task become quick and reliable. This article explains converting between **true course, magnetic course and compass course** step by step – including the offset for wind and current.

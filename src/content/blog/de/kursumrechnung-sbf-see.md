@@ -7,6 +7,16 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "course-conversion-sbf-coastal"
+howTo:
+  name: "Kurs beim SBF See umrechnen: MgK, mwK und rwK"
+  description: "So rechnest du den Magnetkompasskurs (MgK) mithilfe von Ablenkung und Missweisung fehlerfrei in den rechtweisenden Kurs (rwK) um, wie in der Navigationsaufgabe des SBF See gefordert."
+  steps:
+    - name: "Missweisung und Ablenkung mit Vorzeichen notieren"
+      text: "Lies Missweisung (aus der Kompassrose der Seekarte) und Ablenkung (aus der Ablenkungstabelle für den anliegenden Kurs) ab und setze sie mit Vorzeichen: Ost = plus, West = minus."
+    - name: "Richtung der Umrechnung festlegen"
+      text: "Entscheide, ob du vom Kompass zur Karte rechnest (rwK = MgK + Ablenkung + Missweisung) oder von der Karte zum Kompass (MgK = rwK − Missweisung − Ablenkung)."
+    - name: "Formel anwenden und Ergebnis prüfen"
+      text: "Setze die Werte mit ihrem Vorzeichen in die Formel ein und rechne das Ergebnis aus. Liegt es über 360°, ziehe 360° ab; ist es negativ, addiere 360°."
 ---
 
 Kaum ein Thema kostet Prüflingen beim Sportbootführerschein See so viele Nerven wie die Kursumrechnung. Dabei steckt dahinter nur eine einzige Formel und eine klare Vorzeichen-Regel. Wer beides verstanden hat, löst die Kursfragen der Navigationsaufgabe schnell und sicher. Dieser Artikel erklärt die Umrechnung von **rwK, mwK und MgK** Schritt für Schritt – inklusive Beschickung für Wind und Strom.
