@@ -7,6 +7,13 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "lake-constance-boat-license"
+faq:
+  - question: "Reicht der SBF Binnen oder SBF See für den Bodensee?"
+    answer: "Nein. Weder der SBF Binnen noch der SBF See berechtigen allein zur Fahrt mit einem führerscheinpflichtigen Motorboot auf dem Bodensee. Dort gilt die Internationale Schifffahrtsordnung Bodensee (ISB), die ein eigenes Patent verlangt – das Bodensee-Schifferpatent (BSP)."
+  - question: "Was ist das Bodensee-Schifferpatent?"
+    answer: "Das Bodensee-Schifferpatent (BSP) ist ein eigenständiger Führerschein ausschließlich für den Bodensee. Es existiert in mehreren Kategorien: A für Motorboote, B für Motorboote mit Schleppbetrieb und C für Segelboote mit Hilfsmotor. Für die meisten Freizeitkapitäne ist Kategorie A relevant."
+  - question: "Muss ich das BSP komplett neu machen, wenn ich schon den SBF habe?"
+    answer: "Nicht bei null: Inhaber des SBF Binnen oder SBF See bringen die nautischen Grundlagen bereits mit und können je nach Behörde von vereinfachten Prüfungsanforderungen profitieren. Zu lernen sind vor allem die bodenseespezifischen Regeln der ISB. Frag die zuständige Behörde vor der Anmeldung."
 ---
 
 Der Bodensee ist einer der schönsten Seen Europas – und ein Sonderfall in der deutschen Führerscheinlandschaft. Wer hier mit einem Motorboot fahren will, stößt auf einen Begriff, der vielen SBF-Absolventen zunächst unbekannt ist: das **Bodensee-Schifferpatent (BSP)**. Was steckt dahinter, und was bedeutet das für dich, wenn du bereits den Sportbootführerschein hast?

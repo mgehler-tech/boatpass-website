@@ -7,6 +7,13 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "boating-without-license-15-hp"
+faq:
+  - question: "Bis wie viel PS darf ich in Deutschland ohne Bootsführerschein fahren?"
+    answer: "In Deutschland gilt die 15-PS-Regel: Motorboote mit einer Nutzleistung bis einschließlich 15 PS (11,03 kW) darfst du ab 16 Jahren ohne amtlichen Sportbootführerschein führen – auf Binnen- wie Seeschifffahrtsstraßen. Erst oberhalb von 15 PS wird der SBF zur Pflicht. Auf Bodensee und Rhein gelten niedrigere Grenzen."
+  - question: "Ab wann brauche ich den Sportbootführerschein?"
+    answer: "Spätestens bei einer Motorleistung über 15 PS, beim Fahren auf dem Meer oder im Ausland – Charterfirmen im Mittelmeer verlangen meist den SBF See, oft zusätzlich das Funkzeugnis SRC – sowie in speziellen Befahrenszonen, in denen die Führerscheinpflicht unabhängig von der PS-Zahl gilt."
+  - question: "Brauche ich den SBF Binnen oder den SBF See?"
+    answer: "Das hängt vom Revier ab: Der SBF Binnen gilt für Flüsse, Kanäle und Seen im Inland, der SBF See für Küstengewässer und das Meer. Viele machen beide Scheine in Kombination, weil sich die Theorie überschneidet und die zweite Prüfung dadurch deutlich günstiger ausfällt."
 ---
 
 „Brauche ich überhaupt einen Bootsführerschein?" – das ist die erste Frage, die sich fast jeder am Anfang stellt. Die gute Nachricht: In Deutschland darfst du viele Motorboote ganz ohne Führerschein fahren. Die schlechte: Es gibt Ausnahmen, Sonderregeln und schnell erreichte Grenzen. Hier erfährst du genau, was erlaubt ist – und ab wann du den Sportbootführerschein (SBF) brauchst. Schneller Überblick gefällig? Unser [Bootsführerschein-Finder](/tools/welcher-bootsfuehrerschein/) sagt dir in drei Fragen, welchen Schein du brauchst.

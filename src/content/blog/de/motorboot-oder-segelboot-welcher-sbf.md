@@ -7,6 +7,13 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "motorboat-or-sailboat-which-sbf"
+faq:
+  - question: "Unterscheidet der SBF Binnen zwischen Motor und Segel?"
+    answer: "Ja. Der SBF Binnen hat zwei getrennte Geltungsbereiche: unter Motor und unter Segel. Für den Geltungsbereich Segeln kommen 47 zusätzliche Segelfragen und eine eigene praktische Prüfung hinzu. Das Mindestalter liegt unter Motor bei 16 Jahren, unter Segel bereits bei 14 Jahren."
+  - question: "Gilt der SBF See für Motor und Segel gemeinsam?"
+    answer: "Ja. Beim SBF See gibt es keine Aufteilung – der Schein deckt Motor- und Segelboote auf Seeschifffahrtsstraßen gemeinsam ab. Der Fragenkatalog umfasst 285 Fragen ohne gesonderten Segelblock, das Mindestalter liegt einheitlich bei 16 Jahren. Praktische Segelerfahrung sollte man trotzdem gezielt sammeln."
+  - question: "Lohnt es sich, Motor und Segel gemeinsam zu lernen?"
+    answer: "Wer sich noch nicht festlegen will oder ohnehin beides fahren möchte, spart mit einer gemeinsamen Vorbereitung eine spätere Zusatzprüfung samt neuer Anmeldung und Gebühr, zumal die Basisfragen identisch sind. Wer sicher nur Motorboot fährt, kann sich die 47 Segelfragen und die Segelpraxis sparen."
 ---
 
 Bevor du mit der Vorbereitung auf den Sportbootführerschein loslegst, stellt sich eine Grundsatzfrage: Willst du vor allem Motorboot fahren, willst du segeln, oder beides? Diese Entscheidung wirkt sich nicht nur auf den Führerschein selbst aus, sondern auch auf den Lernstoff, die praktische Prüfung und den Aufwand bis zur Prüfungsreife. Dieser Beitrag ordnet die Unterschiede, damit du gezielt planen kannst.
