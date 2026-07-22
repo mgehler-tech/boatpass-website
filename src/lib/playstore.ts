@@ -29,20 +29,29 @@ export async function getPlayStoreRating(appId = 'com.boatpass.app'): Promise<Ap
     }
 
     const html = await res.text();
-    const match = html.match(
-      /<script[^>]*ld\+json[^>]*>([\s\S]*?)<\/script>/,
-    );
-    if (!match) {
+    const blocks = [...html.matchAll(/<script[^>]*ld\+json[^>]*>([\s\S]*?)<\/script>/g)];
+    if (blocks.length === 0) {
       console.warn(`[playstore] kein ld+json-Block gefunden für ${appId} (Länge: ${html.length})`);
       return { score: 0, ratings: 0 };
     }
 
-    const data = JSON.parse(match[1]);
-    const rating = data?.aggregateRating;
+    let rating: { ratingValue?: unknown; ratingCount?: unknown } | undefined;
+    for (const block of blocks) {
+      try {
+        const data = JSON.parse(block[1]);
+        if (data?.aggregateRating) {
+          rating = data.aggregateRating;
+          break;
+        }
+      } catch {
+        // einzelner Block kaputt/kein JSON – nächsten Block probieren
+      }
+    }
+
     const score = Number(rating?.ratingValue);
     const ratings = Number(rating?.ratingCount);
     if (!Number.isFinite(score) || !Number.isFinite(ratings)) {
-      console.warn(`[playstore] aggregateRating fehlt/ungültig für ${appId}: ${JSON.stringify(rating)}`);
+      console.warn(`[playstore] aggregateRating fehlt/ungültig für ${appId} (${blocks.length} ld+json-Blöcke): ${JSON.stringify(rating)}`);
       return { score: 0, ratings: 0 };
     }
 
