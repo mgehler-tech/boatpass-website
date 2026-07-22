@@ -13,8 +13,11 @@ const t = useTranslations(lang);
 const year = new Date().getFullYear();
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 const appRating = getBoatpassRating();
-const ratingLabel = appRating
-  ? `${appRating.score.toFixed(1).replace('.', lang === 'de' ? ',' : '.')} · ${appRating.ratings.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} ${lang === 'de' ? 'Bewertungen' : 'reviews'}`
+const ratingScoreLabel = appRating
+  ? appRating.score.toFixed(1).replace('.', lang === 'de' ? ',' : '.')
+  : null;
+const ratingCountLabel = appRating
+  ? `${appRating.ratings.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} ${lang === 'de' ? 'Bewertungen' : 'reviews'}`
   : null;
 ---
 
@@ -32,10 +35,13 @@ const ratingLabel = appRating
         <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="inline-block mt-3">
           <img src={lang === 'de' ? '/images/google-play-badge-1_de_.png' : '/images/google-play-badge-2_en_.png'} alt={lang === 'de' ? 'Boatpass im Google Play Store herunterladen' : 'Download Boatpass on Google Play'} width="104" height="40" loading="lazy" class="h-10 w-auto" />
         </a>
-        {ratingLabel && (
-          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="footer-rating" aria-label={`${ratingLabel} – ${lang === 'de' ? 'im Google Play Store' : 'on Google Play'}`}>
-            <span class="footer-rating-stars" aria-hidden="true">★★★★★</span>
-            <span>{ratingLabel}</span>
+        {appRating && (
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="footer-rating" aria-label={`${ratingScoreLabel} · ${ratingCountLabel} – ${lang === 'de' ? 'im Google Play Store' : 'on Google Play'}`}>
+            <span class="footer-rating-top">
+              <span class="footer-rating-stars" aria-hidden="true">★★★★★</span>
+              <span class="footer-rating-score">{ratingScoreLabel}</span>
+            </span>
+            <span class="footer-rating-count">{ratingCountLabel}</span>
           </a>
         )}
         <p class="text-muted text-xs mt-2">
@@ -126,21 +132,37 @@ const ratingLabel = appRating
 
   .footer-rating {
     display: flex;
-    align-items: center;
-    gap: 6px;
+    flex-direction: column;
+    gap: 2px;
     margin-top: 10px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #4B5563;
     text-decoration: none;
     width: fit-content;
   }
-  .footer-rating:hover { color: #1A1F36; }
+  .footer-rating-top {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
   .footer-rating-stars {
     color: #FBBF24;
     letter-spacing: 1px;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1;
   }
-  html.dark .footer-rating { color: #94A3B8 !important; }
-  html.dark .footer-rating:hover { color: #E2E8F0 !important; }
+  .footer-rating-score {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1A1F36;
+    line-height: 1;
+  }
+  .footer-rating-count {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6B7280;
+  }
+  .footer-rating:hover .footer-rating-score { color: #3366FF; }
+  html.dark .footer-rating-score { color: #E2E8F0 !important; }
+  html.dark .footer-rating-count { color: #94A3B8 !important; }
+  html.dark .footer-rating:hover .footer-rating-score { color: #7C9CFF !important; }
 </style>
