@@ -104,8 +104,8 @@ const promo = {
                   <span class="nav-mega-item nav-mega-item--soon">
                     <span class="nav-mega-icon"><Icon name={item.icon} size={17} stroke="#9CA3AF" strokeWidth={1.75} /></span>
                     <span class="nav-mega-text">
-                      <span class="nav-mega-label">{item.label}<span class="nav-mega-soon">{de ? 'bald' : 'soon'}</span></span>
-                      <span class="nav-mega-desc">{item.desc}</span>
+                      <span class="nav-mega-label">{item.label}</span>
+                      <span class="nav-mega-desc">{item.desc}<span class="nav-mega-soon">{de ? 'bald' : 'soon'}</span></span>
                     </span>
                   </span>
                 ) : (
@@ -543,7 +543,7 @@ const promo = {
   .nav-mega-item:hover .nav-mega-icon { background: rgba(51,102,255,0.14); }
   .nav-mega-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
   .nav-mega-label { font-size: 14px; font-weight: 600; color: #1A1F36; line-height: 1.35; }
-  .nav-mega-desc { font-size: 12px; color: #9097A6; line-height: 1.4; }
+  .nav-mega-desc { font-size: 12px; color: #9097A6; line-height: 1.4; display: flex; flex-wrap: wrap; align-items: center; gap: 3px 6px; }
 
   /* "bald"-Einträge ohne Zielseite: sichtbar, aber nicht klickbar */
   .nav-mega-item--soon { cursor: default; }
@@ -551,7 +551,6 @@ const promo = {
   .nav-mega-item--soon .nav-mega-icon { background: rgba(0,0,0,0.04); }
   .nav-mega-item--soon .nav-mega-label { color: #9CA3AF; }
   .nav-mega-soon {
-    margin-left: 6px;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.04em;
