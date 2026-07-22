@@ -30,9 +30,12 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Vorfahrt zwischen Motor- und Segelbooten – Sonderregeln (geprüft und getauscht: Thema deckt sich inhaltlich mit `ausweichregeln-vorfahrt-wasser` (Rangordnung + Zwei-Segelfahrzeuge-Abschnitt bereits vorhanden), kein eigenständiger Long-Tail-Fokus verblieb. Ersetzt am 2026-07-21 durch das Thema "Seewetterbericht und Wetterwarnungen richtig nutzen" unten.)
 - [x] Schleppverband und besondere Fahrzeuge – Kennzeichnung erkennen (2026-07-21: schleppverband-besondere-fahrzeuge-erkennen / towing-convoys-special-vessels-day-shapes)
 - [x] Bootsversicherung für Sportboote – was ist sinnvoll? (2026-07-21: bootsversicherung-sportboote-sinnvoll / boat-insurance-for-sportboats-what-makes-sense)
-- [ ] Wassersport-Reviere in Deutschland – wo darf ich mit dem SBF fahren?
+- [x] Wassersport-Reviere in Deutschland – wo darf ich mit dem SBF fahren? (2026-07-22: wassersport-reviere-deutschland / boating-regions-in-germany)
 - [ ] Nebel, Sicht und Schallzeichen – richtig verhalten bei schlechter Sicht
 - [ ] Strömung und Tide praktisch nutzen – Törnplanung Grundlagen
 - [ ] Seewetterbericht und Wetterwarnungen richtig nutzen – Wetterdienste für Skipper
+- [ ] Bußgelder und Verstöße auf dem Wasser – die teuersten Fehler mit Konsequenzen
+- [ ] Verhalten nach einem Bootsunfall – Pflichten, Meldung, Beweissicherung
+- [ ] Kinder und Jugendliche am Steuer – ab wann dürfen sie ein Boot führen?
 
 ## Erledigt
