@@ -9,6 +9,11 @@
  * Play-Store-Listings und Anbieter-Websites.
  */
 
+export interface AppRating {
+  score: number;
+  ratings: number;
+}
+
 export type LicenseKey =
   | 'sbf-see'
   | 'sbf-binnen'
@@ -73,7 +78,7 @@ export const LEARNING_APPS: LearningApp[] = [
     appStoreUrl: null,
     website: 'https://boatpass.de/',
     rating: 5.0,
-    ratingCount: 7,
+    ratingCount: 8,
     downloads: '10+',
     licenses: ['sbf-see', 'sbf-binnen', 'ubi', 'src', 'lrc'],
     pricingModel: 'freemium-onetime',
@@ -263,6 +268,17 @@ export function appById(id: string): LearningApp {
   const app = LEARNING_APPS.find((a) => a.id === id);
   if (!app) throw new Error(`Unbekannte App-ID: ${id}`);
   return app;
+}
+
+/**
+ * Boatpass-Rating für die MobileApplication-Schema der Startseite.
+ * Manuell gepflegt statt per Live-Scraping (Google liefert Play-Store-Ratings
+ * an Datacenter-/CI-IPs wie GitHub Actions nicht zuverlässig aus – Stand DATA_AS_OF).
+ */
+export function getBoatpassRating(): AppRating | null {
+  const app = appById('boatpass');
+  if (!app.rating || !app.ratingCount) return null;
+  return { score: app.rating, ratings: app.ratingCount };
 }
 
 /** JSON-LD SoftwareApplication für eine App. aggregateRating nur, wenn Bewertungen vorliegen. */

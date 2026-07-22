@@ -7,9 +7,9 @@ import CatalogSources from '../../components/CatalogSources.astro';
 import PricingSection from '../../components/PricingSection.astro';
 import BlogTeaser from '../../components/BlogTeaser.astro';
 import FinderTeaser from '../../components/FinderTeaser.astro';
-import { getPlayStoreRating } from '../../lib/playstore';
+import { getBoatpassRating } from '../../data/apps';
 
-const appRating = await getPlayStoreRating();
+const appRating = getBoatpassRating();
 
 const websiteSchema = {
   "@context": "https://schema.org",

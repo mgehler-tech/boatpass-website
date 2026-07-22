@@ -1,6 +1,8 @@
-name: Daily rebuild (Play Store ratings)
+name: Build & deploy
 
 on:
+  push:
+    branches: [main]
   schedule:
     - cron: '0 5 * * *'  # jeden Morgen 5 Uhr UTC (= 6/7 Uhr DE)
   workflow_dispatch:      # auch manuell auslösbar
