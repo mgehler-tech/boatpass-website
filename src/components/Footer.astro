@@ -17,7 +17,7 @@ const ratingScoreLabel = appRating
   ? appRating.score.toFixed(1).replace('.', lang === 'de' ? ',' : '.')
   : null;
 const ratingCountLabel = appRating
-  ? `${appRating.ratings.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} ${lang === 'de' ? 'Bewertungen' : 'reviews'}`
+  ? `${appRating.ratings.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} ${lang === 'de' ? 'Bewertungen · Google Play' : 'reviews · Google Play'}`
   : null;
 ---
 
@@ -36,7 +36,7 @@ const ratingCountLabel = appRating
           <img src={lang === 'de' ? '/images/google-play-badge-1_de_.png' : '/images/google-play-badge-2_en_.png'} alt={lang === 'de' ? 'Boatpass im Google Play Store herunterladen' : 'Download Boatpass on Google Play'} width="104" height="40" loading="lazy" class="h-10 w-auto" />
         </a>
         {appRating && (
-          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="footer-rating" aria-label={`${ratingScoreLabel} · ${ratingCountLabel} – ${lang === 'de' ? 'im Google Play Store' : 'on Google Play'}`}>
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="footer-rating" aria-label={`${ratingScoreLabel} · ${ratingCountLabel}`}>
             <span class="footer-rating-top">
               <span class="footer-rating-stars" aria-hidden="true">★★★★★</span>
               <span class="footer-rating-score">{ratingScoreLabel}</span>
