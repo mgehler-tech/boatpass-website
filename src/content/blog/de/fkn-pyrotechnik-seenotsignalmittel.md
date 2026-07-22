@@ -7,6 +7,13 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "fkn-pyrotechnic-distress-signals"
+faq:
+  - question: "Was ist der Fachkundenachweis (FKN)?"
+    answer: "Der Fachkundenachweis (FKN) ist eine sprengstoffrechtliche Erlaubnis nach der 1. SprengV. Mit ihm darfst du bestimmte pyrotechnische Seenotsignalmittel erwerben, besitzen, transportieren und im Ernstfall einsetzen. Der FKN ist nicht Teil des Sportbootführerscheins, wird aber oft zusammen mit der SBF-Ausbildung angeboten."
+  - question: "Für welche Seenotsignalmittel brauche ich den FKN?"
+    answer: "Für die stärkeren Signalmittel der Kategorie P2, vor allem die rote Fallschirmsignalrakete. Die rote Handfackel und kleinere Rauchsignale der Kategorie P1 sind dagegen ab 18 Jahren ohne Nachweis erhältlich. Faustregel: Nahbereich ohne Nachweis (P1), größere Reichweite nur mit FKN (P2)."
+  - question: "Muss der FKN regelmäßig erneuert werden?"
+    answer: "Nein. Ist die Prüfung bestanden, gilt der FKN unbefristet – eine Auffrischung oder Verlängerung ist nicht vorgeschrieben. Die Pyrotechnik an Bord selbst musst du aber weiterhin regelmäßig auf Verfallsdatum und ordnungsgemäße Lagerung prüfen."
 ---
 
 Rote Fallschirmrakete, Handfackel und Rauchsignal gehören zur Standardausrüstung an Bord, doch nicht jedes Signalmittel darfst du einfach kaufen und mitführen. Für die stärkeren pyrotechnischen Seenotsignale brauchst du den **Fachkundenachweis (FKN)**. Dieser Artikel erklärt, was der FKN ist, welche Signalmittel dafür infrage kommen, wie du ihn erwirbst und wie du Pyrotechnik an Bord richtig lagerst und entsorgst.

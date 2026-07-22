@@ -7,6 +7,13 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "failed-sbf-inland-exam-what-to-do-next"
+faq:
+  - question: "Kann ich die SBF-Binnen-Prüfung wiederholen, wenn ich durchgefallen bin?"
+    answer: "Ja. Für den Sportbootführerschein Binnen gibt es keine gesetzliche Obergrenze an Versuchen – du kannst den nicht bestandenen Teil so oft wiederholen wie nötig. Die Wiederholung findet an einem späteren Termin statt, du musst dich beim Prüfungsausschuss neu anmelden und zahlst dafür eine eigene, meist geringere Gebühr."
+  - question: "Muss ich die ganze SBF-Binnen-Prüfung neu machen oder nur den nicht bestandenen Teil?"
+    answer: "In der Regel nur den nicht bestandenen Teil. Theorie (30 Multiple-Choice-Fragen) und Praxis werden beim SBF Binnen unabhängig voneinander bewertet. Ein bereits bestandener Teil bleibt aber nur befristet gültig – die Frist legt dein Prüfungsausschuss fest, deshalb solltest du den fehlenden Teil zeitnah nachholen."
+  - question: "Wie bereite ich mich nach einem nicht bestandenen Versuch gezielt vor?"
+    answer: "Analysiere zuerst ehrlich, woran es lag, und arbeite dann gezielt an deinen Schwachstellen, statt planlos den ganzen Fragenkatalog zu wiederholen. Für die Theorie helfen ein Fehler-Training und vollständige Probeprüfungen unter Zeitlimit, für die Praxis zusätzliches Üben der Manöver und Knoten auf dem Wasser."
 ---
 
 Du hast die [SBF-Binnen-Prüfung](/sbf-binnen/) nicht bestanden und fragst dich jetzt, wie es weitergeht? Die gute Nachricht zuerst: Das ist kein Beinbruch und erst recht nicht das Ende deines Weges zum Sportbootführerschein. Viele erfolgreiche Skipper haben einen Prüfungsteil beim ersten Anlauf nicht geschafft und sitzen heute trotzdem am Steuer. Dieser Artikel erklärt, wie die Wiederholung abläuft, was du jetzt konkret tun solltest und wie du dich gezielter vorbereitest, damit es beim nächsten Mal klappt.
