@@ -52,6 +52,7 @@ export async function getPlayStoreRating(appId = 'com.boatpass.app'): Promise<Ap
     const ratings = Number(rating?.ratingCount);
     if (!Number.isFinite(score) || !Number.isFinite(ratings)) {
       console.warn(`[playstore] aggregateRating fehlt/ungültig für ${appId} (${blocks.length} ld+json-Blöcke): ${JSON.stringify(rating)}`);
+      console.warn(`[playstore] DEBUG html.length=${html.length} enthältAggregateRatingString=${html.includes('aggregateRating')} enthältConsent=${html.includes('consent.google')} block0=${blocks[0]?.[1]?.slice(0, 500)}`);
       return { score: 0, ratings: 0 };
     }
 
