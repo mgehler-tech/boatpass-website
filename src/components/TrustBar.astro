@@ -10,8 +10,8 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 const appRating = getBoatpassRating();
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
-const ratingLabel = appRating
-  ? `${appRating.score.toFixed(1).replace('.', lang === 'de' ? ',' : '.')} ★ ${lang === 'de' ? 'bei Google Play' : 'on Google Play'} (${appRating.ratings})`
+const ratingScoreLabel = appRating
+  ? appRating.score.toFixed(1).replace('.', lang === 'de' ? ',' : '.')
   : null;
 
 const items = [
@@ -24,13 +24,15 @@ const items = [
 
 <div style="padding:14px 24px;">
   <div class="max-w-6xl mx-auto trust-inner">
-    {ratingLabel && (
+    {appRating && (
       <>
-        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="trust-item trust-rating">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
+        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="trust-rating-badge" aria-label={`${ratingScoreLabel} ★ (${appRating.ratings}) – ${lang === 'de' ? 'Bewertung bei Google Play' : 'rating on Google Play'}`}>
+          <img src="/images/google-play-icon.png" alt="" width="20" height="20" aria-hidden="true" />
+          <span class="trust-rating-score">{ratingScoreLabel}</span>
+          <svg width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
             <path d="M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z" fill="#FBBF24"/>
           </svg>
-          <span>{ratingLabel}</span>
+          <span class="trust-rating-count">({appRating.ratings})</span>
         </a>
         <div class="trust-sep" aria-hidden="true"></div>
       </>
@@ -77,14 +79,48 @@ const items = [
   html.dark .trust-item { color: #94A3B8 !important; }
   html.dark .trust-sep  { background: rgba(90, 120, 255, 0.12) !important; }
 
-  .trust-rating {
+  .trust-rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 12px;
+    padding: 6px 14px 6px 6px;
+    border-radius: 100px;
+    background: rgba(51,102,255,0.06);
+    border: 1px solid rgba(51,102,255,0.16);
     text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .trust-rating-badge img {
+    border-radius: 5px;
+    flex-shrink: 0;
+    display: block;
+  }
+  .trust-rating-score {
+    font-size: 13px;
     font-weight: 700;
     color: #1A1F36;
   }
-  .trust-rating:hover { color: #3366FF; }
-  html.dark .trust-rating { color: #E2E8F0 !important; }
-  html.dark .trust-rating:hover { color: #7C9CFF !important; }
+  .trust-rating-count {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6B7280;
+  }
+  .trust-rating-badge:hover {
+    background: rgba(51,102,255,0.10);
+    border-color: rgba(51,102,255,0.28);
+  }
+  html.dark .trust-rating-badge {
+    background: rgba(90,120,255,0.08) !important;
+    border-color: rgba(90,120,255,0.20) !important;
+  }
+  html.dark .trust-rating-badge:hover {
+    background: rgba(90,120,255,0.14) !important;
+    border-color: rgba(90,120,255,0.32) !important;
+  }
+  html.dark .trust-rating-score { color: #E2E8F0 !important; }
+  html.dark .trust-rating-count { color: #94A3B8 !important; }
 
   @media (max-width: 700px) {
     .trust-sep { display: none; }
