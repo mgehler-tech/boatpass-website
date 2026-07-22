@@ -150,10 +150,13 @@ const itemListSchema = {
       </div>
     </section>
 
-    <!-- Vergleichstabelle -->
+    <!-- Vergleichstabelle: bricht aus der 800px-Textspalte aus, weil sechs Spalten
+         dort nicht hineinpassen und sonst horizontal scrollen müssten. -->
     <section style="margin-bottom:48px;">
       <h2 class="content-section-title" style="margin-bottom:20px;">{t.comparison}</h2>
-      <AppComparisonTable apps={apps} lang={lang} caption={tableCaption} />
+      <div class="table-breakout">
+        <AppComparisonTable apps={apps} lang={lang} caption={tableCaption} />
+      </div>
     </section>
 
     <slot name="after-table" />
@@ -275,3 +278,15 @@ const itemListSchema = {
 
   </div>
 </BaseLayout>
+
+<style>
+  /* Ausbruch aus der 800px-Textspalte. Die Spalte bleibt für Fließtext richtig –
+     die Vergleichstabelle braucht aber rund 860px und würde sonst scrollen,
+     obwohl links und rechts Platz frei ist. Zentriert relativ zum Viewport,
+     weil die Elternspalte selbst zentriert ist. */
+  .table-breakout {
+    width: min(1120px, calc(100vw - 48px));
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+</style>
