@@ -66,11 +66,22 @@ const [featured, ...rest] = posts;
   }
   .blog-teaser-all:hover { text-decoration: underline; }
 
+  /* Featured-Karte (links) und die zwei gestapelten Kompakt-Karten (rechts)
+     teilen sich eine Zeile. Bislang stand die Featured-Karte per align-items:start
+     oben und behielt ihre kurze Eigenhöhe (~250px), während die rechte Spalte aus
+     zwei Karten fast doppelt so hoch ist (~530px). Darunter blieb ein großer,
+     unausgeglichener Leerraum – die untere Kante der beiden Spalten lief ausgefranst
+     auseinander. Mit stretch füllt die Featured-Karte die volle Zeilenhöhe; ihre
+     Fußzeile ist unten verankert (siehe .blog-featured in BlogCard.astro), sodass
+     beide Spalten bündig auf einer Linie abschließen – dieselbe „gleiche Höhe, CTA
+     unten"-Behandlung wie die .paid-card-Reihe im Preis-Abschnitt. Einspaltig (mobil)
+     steht jede Karte allein in ihrer Zeile, dort greift stretch nicht – das Layout
+     bleibt unverändert. Reiner Layout-Feinschliff: Corporate Design unberührt. */
   .blog-teaser-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
-    align-items: start;
+    align-items: stretch;
   }
   .blog-teaser-compact {
     display: flex;

@@ -101,8 +101,14 @@ const searchText = `${title} ${description}`.toLowerCase();
 
 <style>
   /* Featured */
+  /* Flex-Spalte über die volle Zeilenhöhe (vom stretch-Grid des BlogTeaser
+     vorgegeben): so schließt die Featured-Karte bündig mit der rechten
+     Kompakt-Spalte ab, statt kurz oben zu stehen und darunter Leerraum zu lassen.
+     Die Fußzeile wird per margin-top:auto nach unten verankert. */
   .blog-featured {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     background: white;
     border: 1px solid rgba(51,102,255,0.10);
     border-radius: 20px;
@@ -119,6 +125,9 @@ const searchText = `${title} ${description}`.toLowerCase();
     background: linear-gradient(90deg, #1A1F36, #3366FF);
   }
   .blog-featured-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     padding: 28px 28px 24px;
   }
   .blog-tags {
@@ -164,6 +173,7 @@ const searchText = `${title} ${description}`.toLowerCase();
     overflow: hidden;
   }
   .blog-featured-footer {
+    margin-top: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
