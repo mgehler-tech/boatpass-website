@@ -1,5 +1,6 @@
 ---
 import { useTranslations } from '../i18n/index';
+import { getBoatpassRating } from '../data/apps';
 
 interface Props {
   lang: 'de' | 'en';
@@ -7,6 +8,11 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const appRating = getBoatpassRating();
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const ratingLabel = appRating
+  ? `${appRating.score.toFixed(1).replace('.', lang === 'de' ? ',' : '.')} ★ ${lang === 'de' ? 'bei Google Play' : 'on Google Play'} (${appRating.ratings})`
+  : null;
 
 const items = [
   t.trust.catalog,
@@ -18,6 +24,17 @@ const items = [
 
 <div style="padding:14px 24px;">
   <div class="max-w-6xl mx-auto trust-inner">
+    {ratingLabel && (
+      <>
+        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="trust-item trust-rating">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
+            <path d="M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z" fill="#FBBF24"/>
+          </svg>
+          <span>{ratingLabel}</span>
+        </a>
+        <div class="trust-sep" aria-hidden="true"></div>
+      </>
+    )}
     {items.map((label, i) => (
       <>
         <div class="trust-item">
@@ -59,6 +76,15 @@ const items = [
   }
   html.dark .trust-item { color: #94A3B8 !important; }
   html.dark .trust-sep  { background: rgba(90, 120, 255, 0.12) !important; }
+
+  .trust-rating {
+    text-decoration: none;
+    font-weight: 700;
+    color: #1A1F36;
+  }
+  .trust-rating:hover { color: #3366FF; }
+  html.dark .trust-rating { color: #E2E8F0 !important; }
+  html.dark .trust-rating:hover { color: #7C9CFF !important; }
 
   @media (max-width: 700px) {
     .trust-sep { display: none; }
