@@ -33,6 +33,14 @@
 
 - [Welchen Bootsführerschein brauche ich?](https://boatpass.de/tools/welcher-bootsfuehrerschein/): Kostenloser Finder – 3 Fragen zu Revier, Motorleistung und Funk, dann die passende Lizenz (SBF Binnen/See, UBI, SRC, LRC) plus Entscheidungstabelle.
 
+## App-Vergleich
+
+- [Bootsführerschein-Apps im Vergleich](https://boatpass.de/sbf-app/): Ehrlicher Vergleich aller Lern-Apps für den Sportbootführerschein – Preise, Scheinabdeckung, Bewertungen, Android/iOS.
+- [SBF-Binnen-Apps im Vergleich](https://boatpass.de/sbf-binnen-app/): Welche App eignet sich am besten für den SBF Binnen.
+- [SBF-See-Apps im Vergleich](https://boatpass.de/sbf-see-app/): Welche App eignet sich am besten für den SBF See.
+- [Funkschein-Apps im Vergleich](https://boatpass.de/funkschein-app/): Lern-Apps für die Funkzeugnisse UBI, SRC und LRC im Vergleich.
+- [Kostenlose SBF-Apps](https://boatpass.de/sbf-app-kostenlos/): Was bei den SBF-Lern-Apps wirklich kostenlos ist – und wo die Grenzen liegen.
+
 ## Ratgeber (Blog)
 
 - [Blog-Übersicht](https://boatpass.de/blog/): Ratgeber rund um Sportbootführerschein, Navigation und Seemannschaft.
