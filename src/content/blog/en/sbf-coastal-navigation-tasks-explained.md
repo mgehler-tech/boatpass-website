@@ -1,6 +1,7 @@
 ---
 title: "SBF Coastal Navigation Tasks Explained – Structure, Task Types & Tips"
-description: "The navigation task is the most demanding part of the SBF Coastal exam. Here you'll learn how it's structured, which task types come up and how to prepare in a targeted way."
+seoTitle: "SBF Coastal Navigation Tasks Explained"
+description: "The navigation task is the toughest part of the SBF Coastal exam. How it is structured, which task types come up and how to prepare for them."
 date: 2026-06-03
 tags: ["Navigation"]
 readingTime: 9

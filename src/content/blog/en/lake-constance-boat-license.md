@@ -1,6 +1,7 @@
 ---
 title: "Lake Constance Boating License: When You Need It Instead of the SBF"
-description: "Lake Constance has its own international rules and requires a special boating license. Learn when the Bodensee-Schifferpatent applies and how it differs from the German SBF."
+seoTitle: "Lake Constance Boating License"
+description: "Lake Constance has its own rules and requires a special license. When the Bodensee-Schifferpatent applies and how it differs from the SBF."
 date: 2026-06-17
 tags: ["Exam Knowledge"]
 readingTime: 8

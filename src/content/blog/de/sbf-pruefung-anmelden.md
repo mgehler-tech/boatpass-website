@@ -1,6 +1,7 @@
 ---
 title: "SBF-Prüfung anmelden – Schritt für Schritt zu DSV & DMYV"
-description: "Wie meldest du dich zur Sportbootführerschein-Prüfung an? Prüfungsorganisationen DSV und DMYV, nötige Unterlagen, Ablauf und Kosten der Anmeldung – Schritt für Schritt erklärt."
+seoTitle: "SBF-Prüfung anmelden: DSV & DMYV"
+description: "Wie meldest du dich zur SBF-Prüfung an? Prüfungsorganisationen DSV und DMYV, nötige Unterlagen, Ablauf und Kosten – Schritt für Schritt erklärt."
 date: 2026-04-11
 tags: ["Vorbereitung"]
 readingTime: 7

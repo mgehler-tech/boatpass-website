@@ -1,5 +1,6 @@
 ---
 title: "Richtig ankern – Grundlagen, Ankerarten und häufige Fehler"
+seoTitle: "Richtig ankern: Ankerarten & Fehler"
 description: "Ankern lernen: welche Ankerarten es gibt, wie viel Kette oder Leine du steckst und welche Fehler beim Ankermanöver zu Dragen und Kollisionen führen."
 date: 2026-07-06
 tags: ["Praxis"]

@@ -1,6 +1,7 @@
 ---
 title: "Navigation Lights Explained – Which Lights Does a Boat Show at Night?"
-description: "Masthead light, sidelights, sternlight: how do you tell at night what kind of vessel is ahead? Navigation lights for the SBF See made simple – with the classic memory rhymes."
+seoTitle: "Navigation Lights Explained"
+description: "Masthead light, sidelights, sternlight: how do you tell at night what vessel is ahead? Navigation lights for the SBF made simple, with memory aids."
 date: 2026-05-26
 tags: ["Exam Knowledge"]
 readingTime: 8

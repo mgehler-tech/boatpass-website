@@ -1,5 +1,6 @@
 ---
 title: "Buoyage Direction: North Sea vs. Baltic Sea Differences"
+seoTitle: "Buoyage: North Sea vs. Baltic Sea"
 description: "Why the direction of buoyage works differently in the North Sea than in the Baltic, and how to read it on the chart. Explained for the SBF See exam."
 date: 2026-07-10
 tags: ["Navigation"]

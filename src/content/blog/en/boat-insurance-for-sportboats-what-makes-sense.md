@@ -1,6 +1,7 @@
 ---
 title: "Boat Insurance for Sport Boats – What Actually Makes Sense?"
-description: "Third-party liability, hull cover, personal accident: which insurance policies make sense for your sport boat, what marinas and charter companies require, and what to compare."
+seoTitle: "Boat Insurance for Sport Boats"
+description: "Third-party liability, hull cover, personal accident: which policies make sense for your sport boat and what marinas and charter companies require."
 date: 2026-07-21
 tags: ["Preparation"]
 readingTime: 9

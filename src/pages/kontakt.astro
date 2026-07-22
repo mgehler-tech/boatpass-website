@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Kontakt"
-  description="Kontaktiere das Boatpass-Team bei Fragen, Feedback oder technischen Problemen."
+  description="Fragen zur Boatpass-App, zum SBF-Fragenkatalog oder ein technisches Problem? So erreichst du uns – wir antworten in der Regel binnen 24 Stunden."
   lang="de"
   altUrl="https://boatpass.de/en/contact/"
   showCta={false}
@@ -46,6 +46,33 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         Absenden
       </button>
     </form>
+
+    <!-- Support-Selbsthilfe: beantwortet die Fragen, die uns am häufigsten per
+         Formular erreichen, und macht die Seite für Suchmaschinen mehr als ein
+         nacktes Formular. -->
+    <section style="margin-top:56px;">
+      <h2 style="font-size:22px; font-weight:900; letter-spacing:-0.02em; color:#1A1F36; margin-bottom:8px;">Vielleicht hilft das schon weiter</h2>
+      <p style="font-size:15px; color:#6B7280; margin-bottom:24px;">Diese vier Fragen erreichen uns am häufigsten – die Antwort steht meist schon auf der Website.</p>
+
+      <div style="display:grid; gap:16px;">
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; padding:20px 24px;">
+          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">Ich habe gekauft, sehe die Fragen aber nicht</h3>
+          <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">Der Kauf hängt am Google-Konto, nicht am Gerät. Öffne die App mit demselben Konto und tippe in den Einstellungen auf „Käufe wiederherstellen". Klappt das nicht, schreib uns mit deiner Bestellnummer aus der Play-Store-Bestätigungsmail.</p>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; padding:20px 24px;">
+          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">Ist der Fragenkatalog aktuell?</h3>
+          <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">Ja. Wir nutzen den amtlichen ELWIS-Katalog von DSV und DMYV und gleichen ihn regelmäßig ab. Welche Fragen in der Prüfung drankommen, steht auf den Seiten <a href="/sbf-binnen-pruefungsfragen/" style="color:#3366FF;">SBF Binnen Prüfungsfragen</a> und <a href="/sbf-see-pruefungsfragen/" style="color:#3366FF;">SBF See Prüfungsfragen</a>.</p>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; padding:20px 24px;">
+          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">Gibt es Boatpass für iPhone?</h3>
+          <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">Aktuell nur für Android. Eine iOS-Version ist in Arbeit – schreib uns gern, dann sagen wir dir zum Start Bescheid.</p>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; padding:20px 24px;">
+          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">Fragen zur Prüfung selbst</h3>
+          <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">Zu Anmeldung, Kosten und Ablauf beraten wir nicht individuell – das übernehmen DSV und DMYV. Das Wichtigste haben wir aber gesammelt: <a href="/sbf-pruefung-ablauf/" style="color:#3366FF;">Prüfungsablauf</a>, <a href="/sbf-kosten/" style="color:#3366FF;">Kosten</a>, <a href="/blog/promillegrenze-boot/" style="color:#3366FF;">Promillegrenze an Bord</a> und die <a href="/faq/" style="color:#3366FF;">häufigen Fragen</a>.</p>
+        </div>
+      </div>
+    </section>
   </div>
 
   <script>

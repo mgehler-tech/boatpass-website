@@ -1,6 +1,7 @@
 ---
 title: "Course Conversion for the SBF Coastal: True, Magnetic & Compass Course Explained"
-description: "Variation, deviation and the offset for wind and current made simple: convert true course, magnetic course and compass course without mistakes for the SBF See exam – with the sign rule and worked examples."
+seoTitle: "Course Conversion for the SBF Coastal"
+description: "Variation, deviation and offset made simple: convert true, magnetic and compass course without mistakes for the SBF exam – with the sign rule."
 date: 2026-06-05
 tags: ["Navigation"]
 readingTime: 8

@@ -1,6 +1,7 @@
 ---
 title: "Seekarte lesen lernen – Symbole, Tiefenangaben und Maßstäbe"
-description: "Seekartennull, Untiefen, Kompassrose und Maßstab: So liest du eine Seekarte richtig und sicher für den SBF See. Die wichtigsten Symbole und Begriffe verständlich erklärt."
+seoTitle: "Seekarte lesen: Symbole & Tiefen"
+description: "Seekartennull, Untiefen, Kompassrose und Maßstab: So liest du eine Seekarte sicher für den SBF See. Die wichtigsten Symbole verständlich erklärt."
 date: 2026-07-03
 tags: ["Navigation"]
 readingTime: 8

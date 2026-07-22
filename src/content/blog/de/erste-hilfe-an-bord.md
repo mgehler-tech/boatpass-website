@@ -1,5 +1,6 @@
 ---
 title: "Erste Hilfe an Bord: Die wichtigsten Maßnahmen auf dem Wasser"
+seoTitle: "Erste Hilfe an Bord: Das Wichtigste"
 description: "Erste Hilfe auf dem Boot: Notruf absetzen, stabile Seitenlage, Wiederbelebung und Sofortmaßnahmen bei Unterkühlung, Seekrankheit und Verletzungen an Bord."
 date: 2026-07-08
 tags: ["Sicherheit"]

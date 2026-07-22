@@ -1,5 +1,6 @@
 ---
 title: "Anchoring Basics – Anchor Types and Common Mistakes"
+seoTitle: "Anchoring Basics: Types and Mistakes"
 description: "How to anchor properly: which anchor types exist, how much chain or rode to pay out, and the mistakes that cause dragging anchors and collisions."
 date: 2026-07-06
 tags: ["Practice"]

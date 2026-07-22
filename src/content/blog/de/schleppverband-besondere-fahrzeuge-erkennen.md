@@ -1,5 +1,6 @@
 ---
 title: "Schleppverband und besondere Fahrzeuge – Signalkörper am Tag erkennen"
+seoTitle: "Schleppverband & Signalkörper am Tag"
 description: "Schubverband, Schleppverband und Sonderfahrzeuge: Bälle, Kegel, Raute und Zylinder als Signalkörper am Tag einfach erklärt, für SBF Binnen und SBF See."
 date: 2026-07-21
 tags: ["Prüfungswissen"]

@@ -35,14 +35,47 @@ const clusters = Object.entries(categoryMeta)
   .filter(c => c.posts.length > 0);
 
 const totalCount = posts.length;
+
+// CollectionPage + BreadcrumbList: ordnet die Übersichtsseite als Sammlung ein und
+// listet die Artikel maschinenlesbar auf – bisher trug sie nur das Organization-Schema.
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Boatpass Blog",
+  "description": "Ratgeber, Prüfungswissen und Praxistipps rund um den Sportbootführerschein.",
+  "url": "https://boatpass.de/blog/",
+  "inLanguage": "de-DE",
+  "isPartOf": { "@type": "WebSite", "name": "Boatpass", "url": "https://boatpass.de" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": totalCount,
+    "itemListElement": posts.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `https://boatpass.de/blog/${p.id.replace(/^de\//, '')}/`,
+      "name": p.data.title,
+    })),
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://boatpass.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://boatpass.de/blog/" },
+  ],
+};
 ---
 
 <BaseLayout
-  title="Blog – Tipps zum Sportbootführerschein"
-  description="Tipps, Guides und Wissenswertes rund um den SBF, die Prüfung und das Bootfahren in Deutschland."
+  title="SBF-Blog: Prüfungswissen & Ratgeber"
+  description={`Ratgeber zum Sportbootführerschein: ${totalCount} Artikel zu Prüfungswissen, Navigation, Kosten und Praxis – verständlich erklärt von der Boatpass-Redaktion.`}
   lang="de"
   showCta={false}
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <div class="max-w-6xl mx-auto px-6 pt-24 pb-16">
     <div class="blog-hero">
       <h1>Blog</h1>

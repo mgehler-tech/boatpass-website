@@ -33,14 +33,47 @@ const clusters = Object.entries(categoryMeta)
   .filter(c => c.posts.length > 0);
 
 const totalCount = posts.length;
+
+// CollectionPage + BreadcrumbList: marks the index as a collection and lists the
+// articles machine-readably – it previously carried only the Organization schema.
+const collectionSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Boatpass Blog",
+  "description": "Guides, exam knowledge and practical tips on the German boating license.",
+  "url": "https://boatpass.de/en/blog/",
+  "inLanguage": "en-US",
+  "isPartOf": { "@type": "WebSite", "name": "Boatpass", "url": "https://boatpass.de" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": totalCount,
+    "itemListElement": posts.map((p, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "url": `https://boatpass.de/en/blog/${p.id.replace(/^en\//, '')}/`,
+      "name": p.data.title,
+    })),
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boatpass.de/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://boatpass.de/en/blog/" },
+  ],
+};
 ---
 
 <BaseLayout
-  title="Blog – Boating License Tips"
-  description="Tips, guides and knowledge about the SBF boating exam in Germany."
+  title="Boating License Blog: Exam Guides"
+  description={`Guides on the German boating license: ${totalCount} articles on exam knowledge, navigation, costs and practice – explained in plain English.`}
   lang="en"
   showCta={false}
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <div class="max-w-6xl mx-auto px-6 pt-24 pb-16">
     <div class="blog-hero">
       <h1>Blog</h1>

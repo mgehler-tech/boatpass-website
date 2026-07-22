@@ -4,6 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import '../styles/global.css';
+// Preload des tatsächlich genutzten Font-Subsets: Inter wird per unicode-range in
+// sieben Subsets ausgeliefert, für DE/EN lädt der Browser nur "latin". Ohne Preload
+// entdeckt er die Datei erst nach dem CSS-Parsing – das kostet Zeit im kritischen Pfad.
+import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import type { AppRating } from '../data/apps';
 
 interface Props {
@@ -39,6 +43,8 @@ const { title, description, lang, ogImage, type, showCta = true, hasAlternate = 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
+    <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preconnect" href="https://plausible.io" crossorigin />
     <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=2" />

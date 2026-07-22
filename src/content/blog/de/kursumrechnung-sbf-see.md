@@ -1,6 +1,7 @@
 ---
 title: "Kursumrechnung beim SBF See: rwK, mwK & MgK einfach erklärt"
-description: "Missweisung, Ablenkung und Beschickung sicher umrechnen: So wandelst du beim SBF See rechtweisenden, missweisenden und Magnetkompasskurs fehlerfrei ineinander um – mit Vorzeichen-Regel und Rechenbeispiel."
+seoTitle: "Kursumrechnung SBF See: rwK, mwK, MgK"
+description: "Missweisung, Ablenkung und Beschickung sicher umrechnen: rwK, mwK und MgK beim SBF See fehlerfrei umwandeln – mit Vorzeichen-Regel und Beispiel."
 date: 2026-06-05
 tags: ["Navigation"]
 readingTime: 8

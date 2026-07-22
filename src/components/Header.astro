@@ -77,7 +77,8 @@ const promo = {
 
     <!-- Logo -->
     <a href={getLocalizedPath(lang, '/')} class="logo-link flex items-center gap-2 text-xl font-black" style="color: #1A1F36; letter-spacing: -0.5px; text-decoration: none;">
-      <Image src={appIcon} alt="" width={56} height={56} style="width: 28px; height: 28px; border-radius: 6px;" />
+      <!-- Immer above the fold: lazy-loading würde das Logo unnötig verzögern. -->
+      <Image src={appIcon} alt="" width={56} height={56} loading="eager" style="width: 28px; height: 28px; border-radius: 6px;" />
       Boat<span style="color: #3366FF;">Pass</span>
     </a>
 

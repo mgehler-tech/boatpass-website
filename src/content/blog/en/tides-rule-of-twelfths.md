@@ -1,6 +1,7 @@
 ---
 title: "Calculating Tides with the Rule of Twelfths – Simply Explained"
-description: "Tidal range, high and low water, depth under the keel: the rule of twelfths lets you reliably estimate the water level between tides. With a worked example for the SBF Coastal."
+seoTitle: "Tides: The Rule of Twelfths Explained"
+description: "Tidal range, high and low water, depth under the keel: the rule of twelfths lets you estimate water level between tides – with a worked example."
 date: 2026-06-02
 tags: ["Navigation"]
 readingTime: 7

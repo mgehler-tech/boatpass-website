@@ -1,6 +1,7 @@
 ---
 title: "Schallsignale beim Sportbootführerschein: See & Binnen im Überblick"
-description: "Ein kurzer Ton, ein langer Ton – was bedeutet was? Alle wichtigen Schallsignale für SBF See (KVR) und SBF Binnen, sauber getrennt und mit den typischen Verwechslungsfallen."
+seoTitle: "Schallsignale SBF: See & Binnen"
+description: "Ein kurzer Ton, ein langer Ton – was bedeutet was? Alle wichtigen Schallsignale für SBF See und Binnen, getrennt und mit den typischen Fallen."
 date: 2026-05-13
 tags: ["Sicherheit"]
 readingTime: 7

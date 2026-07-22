@@ -1,5 +1,6 @@
 ---
 title: "FKN und Pyrotechnik an Bord: Seenotsignalmittel erklärt"
+seoTitle: "FKN & Pyrotechnik: Seenotsignalmittel"
 description: "Fachkundenachweis (FKN), Kategorien P1 und P2, Lagerung und Verfallsdatum: Alles Wichtige zu pyrotechnischen Seenotsignalmitteln an Bord kompakt erklärt."
 date: 2026-07-09
 tags: ["Sicherheit"]

@@ -1,6 +1,7 @@
 ---
 title: "Man-Overboard Maneuver: How to Nail It in the SBF Practical Exam"
-description: "The man-overboard maneuver is mandatory in the practical SBF exam. Step by step: from the command and the crucial propeller protection to a controlled recovery against wind and current."
+seoTitle: "Man-Overboard Maneuver: SBF Practical"
+description: "The man-overboard maneuver is mandatory in the practical SBF exam. Step by step from the command and propeller protection to a controlled recovery."
 date: 2026-05-27
 tags: ["Practice"]
 readingTime: 6

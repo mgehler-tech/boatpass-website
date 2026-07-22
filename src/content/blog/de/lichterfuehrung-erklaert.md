@@ -1,6 +1,7 @@
 ---
 title: "Lichterführung erklärt – welche Lichter führt ein Boot nachts?"
-description: "Topplicht, Seitenlichter, Hecklicht: Wie erkennst du nachts, was für ein Fahrzeug vor dir liegt? Die Lichterführung für den SBF See verständlich erklärt – mit den klassischen Merksätzen."
+seoTitle: "Lichterführung: Bootslichter nachts"
+description: "Topplicht, Seitenlichter, Hecklicht: Wie erkennst du nachts, was für ein Fahrzeug vor dir liegt? Die Lichterführung für den SBF See mit Merksätzen."
 date: 2026-05-26
 tags: ["Prüfungswissen"]
 readingTime: 8

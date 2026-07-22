@@ -1,6 +1,7 @@
 ---
 title: "Distress Signals at Sea: The Ones You Need to Know"
-description: "Red parachute rocket, hand flare, Mayday and more: which distress signals exist, what they mean, and which ones you may use as a recreational boater – compact for the SBF exam."
+seoTitle: "Distress Signals at Sea Explained"
+description: "Red parachute rocket, hand flare, Mayday and more: which distress signals exist, what they mean and which ones you may use as a recreational boater."
 date: 2026-05-20
 tags: ["Safety"]
 readingTime: 7

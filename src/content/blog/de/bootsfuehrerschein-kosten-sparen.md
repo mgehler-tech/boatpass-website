@@ -1,5 +1,6 @@
 ---
 title: "Bootsführerschein Kosten sparen – die 5 besten Spartipps"
+seoTitle: "Bootsführerschein: 5 Spartipps"
 description: "Der Sportbootführerschein muss nicht teuer sein. Mit diesen 5 Spartipps zahlst du für SBF See und Binnen deutlich weniger – ohne auf Qualität zu verzichten."
 date: 2026-06-01
 tags: ["Vorbereitung"]

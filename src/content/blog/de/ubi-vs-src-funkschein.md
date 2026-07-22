@@ -1,5 +1,6 @@
 ---
 title: "UBI oder SRC – welcher Funkschein passt zu deinem Boot?"
+seoTitle: "UBI oder SRC: welcher Funkschein?"
 description: "UBI oder SRC? Wir erklären den Unterschied zwischen Binnenfunk und Seefunk, Prüfungsaufbau, Kosten und welches Sprechfunkzeugnis du wirklich brauchst."
 date: 2026-07-02
 tags: ["Prüfungswissen"]

@@ -1,6 +1,7 @@
 ---
 title: "Promillegrenze auf dem Boot – was Sportbootführer wissen müssen"
-description: "Gilt auf dem Boot die 0,5-Promille-Grenze wie beim Auto? Was sagen BinSchStrO und StGB? Alles zur Fahruntüchtigkeit, Konsequenzen und Regeln für den SBF Binnen und See."
+seoTitle: "Promillegrenze auf dem Boot"
+description: "Gilt auf dem Boot die 0,5-Promille-Grenze wie beim Auto? Was BinSchStrO und StGB sagen – Fahruntüchtigkeit, Konsequenzen und Regeln für den SBF."
 date: 2026-06-25
 tags: ["Prüfungswissen"]
 readingTime: 8

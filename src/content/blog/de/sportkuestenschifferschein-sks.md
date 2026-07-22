@@ -1,5 +1,6 @@
 ---
 title: "Sportküstenschifferschein (SKS) – die nächste Stufe nach dem SBF See"
+seoTitle: "Sportküstenschifferschein (SKS)"
 description: "Sportküstenschifferschein (SKS): Voraussetzungen, Seemeilen-Nachweis und Prüfungsablauf erklärt. So baust du nach dem SBF See sinnvoll weiter aus."
 date: 2026-07-18
 tags: ["Prüfungswissen"]

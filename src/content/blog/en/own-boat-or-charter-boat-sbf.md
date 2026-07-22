@@ -1,5 +1,6 @@
 ---
 title: "Own Boat or Charter Boat After the SBF – What Fits You?"
+seoTitle: "Own Boat or Charter Boat After the SBF"
 description: "Buy your own boat or keep chartering? A comparison of cost, effort, flexibility, and responsibility for new SBF holders and anyone still deciding."
 date: 2026-07-11
 tags: ["Preparation"]

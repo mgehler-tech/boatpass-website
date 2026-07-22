@@ -1,6 +1,7 @@
 ---
 title: "Bootsversicherung für Sportboote – was ist wirklich sinnvoll?"
-description: "Bootshaftpflicht, Kasko, Insassenunfall: Welche Versicherungen für dein Sportboot sinnvoll sind, was Vercharterer und Häfen verlangen und worauf du beim Vergleich achten solltest."
+seoTitle: "Bootsversicherung: Was ist sinnvoll?"
+description: "Bootshaftpflicht, Kasko, Insassenunfall: Welche Versicherungen für dein Sportboot sinnvoll sind und was Häfen und Vercharterer tatsächlich verlangen."
 date: 2026-07-21
 tags: ["Vorbereitung"]
 readingTime: 9

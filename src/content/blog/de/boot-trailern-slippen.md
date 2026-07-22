@@ -1,5 +1,6 @@
 ---
 title: "Boot trailern und slippen – was Sportbootfahrer wissen müssen"
+seoTitle: "Boot trailern & slippen: Anleitung"
 description: "Trailer, Zugfahrzeug, Slipvorgang: die wichtigsten Grundlagen, damit du dein Boot sicher zum Wasser transportierst und entspannt zu Wasser lässt."
 date: 2026-07-16
 tags: ["Vorbereitung"]

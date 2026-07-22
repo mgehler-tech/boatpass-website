@@ -1,6 +1,7 @@
 ---
 title: "Boot fahren ohne Führerschein – die 15-PS-Regel einfach erklärt"
-description: "Bis 15 PS darfst du in Deutschland ohne Führerschein Boot fahren – aber es gibt wichtige Ausnahmen. Alle Regeln zur Führerscheinfreiheit, Sonderregeln und ab wann du den SBF brauchst."
+seoTitle: "Boot fahren ohne Schein: 15-PS-Regel"
+description: "Bis 15 PS darfst du in Deutschland ohne Führerschein Boot fahren – mit wichtigen Ausnahmen. Alle Regeln und ab wann du den SBF wirklich brauchst."
 date: 2026-05-04
 tags: ["Führerschein-Vergleich"]
 readingTime: 7

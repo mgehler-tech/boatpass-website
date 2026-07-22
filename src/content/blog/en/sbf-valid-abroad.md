@@ -1,5 +1,6 @@
 ---
 title: "German Boat License Abroad: Croatia, Netherlands & Italy"
+seoTitle: "German Boat License Abroad: Where Valid"
 description: "Does your German SBF work in Croatia, the Netherlands, and Italy? ICC recognition, license requirements, and what documents to bring on your charter."
 date: 2026-06-18
 tags: ["Exam Knowledge"]

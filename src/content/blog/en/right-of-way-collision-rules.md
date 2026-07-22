@@ -1,6 +1,7 @@
 ---
 title: "Right of Way on the Water – Who Has to Give Way?"
-description: "On the water there is no 'right of way' – only give-way rules. Who must give way, who stands on? The COLREG basics for motor and sailing boats explained – with memory aids for the SBF exam."
+seoTitle: "Right of Way on the Water"
+description: "On the water there is no right of way, only give-way rules. Who gives way, who stands on? The COLREG basics with memory aids for the SBF exam."
 date: 2026-05-09
 tags: ["Exam Knowledge"]
 readingTime: 8

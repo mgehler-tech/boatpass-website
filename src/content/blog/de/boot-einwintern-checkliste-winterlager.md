@@ -1,6 +1,6 @@
 ---
 title: "Boot einwintern – Checkliste fürs Winterlager"
-description: "Motor, Wassersystem, Batterie und Rumpf richtig auf den Winter vorbereiten: die wichtigste Checkliste, damit dein Boot ohne Frostschäden durch die kalte Jahreszeit kommt."
+description: "Motor, Wassersystem, Batterie und Rumpf richtig einwintern: die Checkliste, damit dein Boot ohne Frostschäden durch die kalte Jahreszeit kommt."
 date: 2026-07-17
 tags: ["Vorbereitung"]
 readingTime: 8

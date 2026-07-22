@@ -1,6 +1,7 @@
 ---
 title: "Charterschein: Boot mieten ohne Führerschein – so geht's"
-description: "Mit dem Charterschein darfst du auf bestimmten Binnengewässern ein Boot ohne Sportbootführerschein mieten. Voraussetzungen, Gewässer, Regeln und Grenzen der Charterbescheinigung – kompakt erklärt."
+seoTitle: "Charterschein: Boot mieten ohne Schein"
+description: "Mit dem Charterschein mietest du auf bestimmten Binnengewässern ein Boot ohne SBF. Voraussetzungen, Gewässer, Regeln und Grenzen kompakt erklärt."
 date: 2026-06-02
 tags: ["Führerschein-Vergleich"]
 readingTime: 7

@@ -1,5 +1,6 @@
 ---
 title: "Motorboot oder Segelboot – welcher SBF und welche Praxis?"
+seoTitle: "Motorboot oder Segelboot: welcher SBF?"
 description: "Motor oder Segel für den Sportbootführerschein? Unterschiede bei Geltungsbereich, Theorie, Praxis und Lernaufwand – damit du die richtige Wahl triffst."
 date: 2026-07-15
 tags: ["Vorbereitung"]

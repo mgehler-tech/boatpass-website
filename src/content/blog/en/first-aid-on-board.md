@@ -1,5 +1,6 @@
 ---
 title: "First Aid on Board: The Most Important Measures on the Water"
+seoTitle: "First Aid on Board: The Essentials"
 description: "First aid on a boat: how to call for help, the recovery position, resuscitation, and immediate measures for hypothermia, seasickness, and injuries on board."
 date: 2026-07-08
 tags: ["Safety"]

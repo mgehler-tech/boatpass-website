@@ -1,5 +1,6 @@
 ---
 title: "The Hardest SBF Exam Questions – and How to Master Them"
+seoTitle: "The Hardest SBF Exam Questions"
 description: "Which boating license questions have the highest error rate, why they're so difficult, and how to answer them correctly anyway."
 date: 2026-05-18
 tags: ["Exam Knowledge"]

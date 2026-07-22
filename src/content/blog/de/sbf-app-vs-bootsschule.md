@@ -1,5 +1,6 @@
 ---
 title: "SBF App vs. Bootsschule – Lohnt sich ein Theoriekurs?"
+seoTitle: "SBF App vs. Bootsschule im Vergleich"
 description: "Kann man den Sportbootführerschein ohne Kurs bestehen? Kosten, Vor- und Nachteile von App-Lernen vs. Bootsschule im ehrlichen Vergleich."
 date: 2026-05-28
 tags: ["Vorbereitung"]

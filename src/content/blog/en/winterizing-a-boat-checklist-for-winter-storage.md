@@ -1,5 +1,6 @@
 ---
 title: "Winterizing a Boat – A Checklist for Winter Storage"
+seoTitle: "Winterizing a Boat: Checklist"
 description: "Engine, water system, battery, and hull: how to prepare your boat properly for winter storage and avoid costly frost damage before the next season."
 date: 2026-07-17
 tags: ["Preparation"]

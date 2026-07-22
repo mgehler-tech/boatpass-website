@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Contact"
-  description="Contact the Boatpass team with questions, feedback, or bug reports."
+  description="Questions about the Boatpass app, the SBF question catalog or a technical problem? Here is how to reach us – we usually reply within 24 hours."
   lang="en"
   altUrl="https://boatpass.de/kontakt/"
   showCta={false}
@@ -46,6 +46,32 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         Send
       </button>
     </form>
+
+    <!-- Self-service support: answers the questions that most often reach us via
+         the form, and gives the page substance beyond a bare form. -->
+    <section style="margin-top:56px;">
+      <h2 style="font-size:22px; font-weight:900; letter-spacing:-0.02em; color:#1A1F36; margin-bottom:8px;">This might already answer it</h2>
+      <p style="font-size:15px; color:#6B7280; margin-bottom:24px;">These four questions reach us most often – and the answer is usually already on the site.</p>
+
+      <div style="display:grid; gap:16px;">
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; padding:20px 24px;">
+          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">I bought the app but cannot see the questions</h3>
+          <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">Your purchase is tied to your Google account, not the device. Open the app with the same account and tap „Restore purchases" in the settings. If that fails, send us the order number from your Play Store confirmation email.</p>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; padding:20px 24px;">
+          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">Is the question catalog up to date?</h3>
+          <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">Yes. We use the official ELWIS catalog issued by DSV and DMYV and sync it regularly. See what comes up in the exam on <a href="/en/sbf-inland-exam-questions/" style="color:#3366FF;">SBF Inland exam questions</a> and <a href="/en/sbf-coastal-exam-questions/" style="color:#3366FF;">SBF Coastal exam questions</a>.</p>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; padding:20px 24px;">
+          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">Is Boatpass available for iPhone?</h3>
+          <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">Android only for now. An iOS version is in the works – write to us and we will let you know when it launches.</p>
+        </div>
+        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; padding:20px 24px;">
+          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">Questions about the exam itself</h3>
+          <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">We do not advise individually on registration, costs or scheduling – DSV and DMYV handle that. We have collected the essentials though: <a href="/en/sbf-exam/" style="color:#3366FF;">exam process</a>, <a href="/en/sbf-costs/" style="color:#3366FF;">costs</a>, <a href="/en/blog/blood-alcohol-limit-boat/" style="color:#3366FF;">blood alcohol limits on board</a> and the <a href="/en/faq/" style="color:#3366FF;">FAQ</a>.</p>
+        </div>
+      </div>
+    </section>
   </div>
 
   <script>

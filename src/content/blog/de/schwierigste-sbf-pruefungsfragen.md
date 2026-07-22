@@ -1,5 +1,6 @@
 ---
 title: "Die schwierigsten SBF-Prüfungsfragen – und wie du sie meisterst"
+seoTitle: "Die schwierigsten SBF-Prüfungsfragen"
 description: "Welche Fragen beim Sportbootführerschein die höchste Fehlerquote haben, warum sie so schwierig sind und wie du sie trotzdem richtig beantwortest."
 date: 2026-05-18
 tags: ["Prüfungswissen"]

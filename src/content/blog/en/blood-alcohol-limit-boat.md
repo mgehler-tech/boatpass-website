@@ -1,6 +1,7 @@
 ---
 title: "Blood Alcohol Limit on a Boat – What Skippers Need to Know"
-description: "Does the 0.5‰ car rule apply to boats in Germany? Learn the real legal limits for recreational skippers, the consequences of drunk boating, and what the SBF exam tests."
+seoTitle: "Blood Alcohol Limit on a Boat"
+description: "Does the 0.5 per mille car rule apply to boats in Germany? The real legal limits for skippers and what the SBF exam tests about drunk boating."
 date: 2026-06-25
 tags: ["Exam Knowledge"]
 readingTime: 8

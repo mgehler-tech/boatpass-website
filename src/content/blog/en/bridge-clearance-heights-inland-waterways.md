@@ -1,6 +1,7 @@
 ---
 title: "Bridge Clearance Heights on Inland Waterways – What You Need to Know"
-description: "Why bridge clearance depends on the water level, how to read clearance boards and signals correctly, and where to find current data for safe boating with the SBF Inland."
+seoTitle: "Bridge Clearance on Inland Waterways"
+description: "Why bridge clearance depends on the water level, how to read clearance boards correctly and where to find current data for the SBF Inland."
 date: 2026-07-15
 tags: ["Navigation"]
 readingTime: 9

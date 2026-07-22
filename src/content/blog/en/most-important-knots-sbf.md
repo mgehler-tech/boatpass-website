@@ -1,6 +1,7 @@
 ---
 title: "The Most Important Knots for the German Boating License – Step by Step"
-description: "Which knots you must master for the SBF See practical exam, what each one is used for, and how to practice them. All exam-relevant seamanship knots simply explained."
+seoTitle: "The Most Important Knots for the SBF"
+description: "Which knots you must master for the SBF practical exam, what each one is used for and how to practice them. All exam-relevant knots explained."
 date: 2026-05-21
 tags: ["Exam Knowledge"]
 readingTime: 8

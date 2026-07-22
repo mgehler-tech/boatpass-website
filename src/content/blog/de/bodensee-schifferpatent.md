@@ -1,6 +1,7 @@
 ---
 title: "Bodensee-Schifferpatent: Wann brauchst du es statt des SBF?"
-description: "Der Bodensee ist kein gewöhnliches Binnengewässer – hier gilt das Bodensee-Schifferpatent. Wann du es brauchst, wie es sich vom SBF unterscheidet und wie du es bekommst."
+seoTitle: "Bodensee-Schifferpatent statt SBF?"
+description: "Auf dem Bodensee gilt das Schifferpatent statt des SBF. Wann du es brauchst, wie es sich vom Sportbootführerschein unterscheidet und wie du es bekommst."
 date: 2026-06-17
 tags: ["Prüfungswissen"]
 readingTime: 8

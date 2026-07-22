@@ -1,6 +1,7 @@
 ---
 title: "Weather & the Beaufort Scale for the SBF See – Simply Explained"
-description: "Wind forces, highs and lows, weather signs: the key weather basics for the German coastal boating license. The Beaufort scale, the baric wind law and land/sea breezes explained simply."
+seoTitle: "Weather & the Beaufort Scale (SBF See)"
+description: "Wind forces, highs and lows, weather signs: the weather basics for the German coastal license. Beaufort scale and baric wind law explained simply."
 date: 2026-04-18
 tags: ["Exam Knowledge"]
 readingTime: 8

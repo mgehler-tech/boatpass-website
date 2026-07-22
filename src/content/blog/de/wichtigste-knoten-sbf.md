@@ -1,6 +1,7 @@
 ---
 title: "Die wichtigsten Knoten für den Sportbootführerschein – Schritt für Schritt"
-description: "Welche Knoten du für die SBF-See-Praxisprüfung beherrschen musst, wofür du sie brauchst und wie du sie übst. Alle prüfungsrelevanten Seemannsknoten einfach erklärt."
+seoTitle: "Die wichtigsten Knoten für den SBF"
+description: "Welche Knoten du für die SBF-Praxisprüfung beherrschen musst, wofür du sie brauchst und wie du sie übst. Alle prüfungsrelevanten Knoten erklärt."
 date: 2026-05-21
 tags: ["Prüfungswissen"]
 readingTime: 8

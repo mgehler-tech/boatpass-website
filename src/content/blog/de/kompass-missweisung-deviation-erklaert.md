@@ -1,5 +1,6 @@
 ---
 title: "Kompass, Missweisung und Deviation einfach erklärt"
+seoTitle: "Kompass: Missweisung & Deviation"
 description: "Warum zeigt der Bordkompass nicht exakt nach Norden? Missweisung und Deviation verständlich erklärt: Ursachen, Kompassrose und Deviationstabelle für den SBF See."
 date: 2026-07-04
 tags: ["Navigation"]

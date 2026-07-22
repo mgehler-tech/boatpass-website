@@ -1,6 +1,7 @@
 ---
 title: "Saving Money on Your Boating License – the 5 Best Tips"
-description: "The German boating license doesn't have to be expensive. With these 5 tips you'll pay significantly less for SBF Coastal and Inland – without cutting corners on quality."
+seoTitle: "Saving Money on Your Boating License"
+description: "The German boating license doesn't have to be expensive. With these 5 tips you'll pay noticeably less for SBF Coastal and Inland – without cutting quality."
 date: 2026-06-01
 tags: ["Preparation"]
 readingTime: 6

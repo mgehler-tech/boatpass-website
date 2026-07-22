@@ -1,5 +1,6 @@
 ---
 title: "SKS (Sportküstenschifferschein) – The Next Step After the SBF Coastal License"
+seoTitle: "SKS: Coastal Skipper License After SBF"
 description: "SKS coastal skipper's license explained: requirements, the 300 nautical mile logbook, and exam structure. How to build on your SBF See the right way."
 date: 2026-07-18
 tags: ["Exam Knowledge"]

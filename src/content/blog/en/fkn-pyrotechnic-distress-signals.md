@@ -1,5 +1,6 @@
 ---
 title: "Flares Explained: The FKN Certificate for Distress Signals"
+seoTitle: "FKN Certificate: Flares Explained"
 description: "FKN competence certificate, categories P1 and P2, storage and expiry dates: everything you need to know about pyrotechnic distress signals on board."
 date: 2026-07-09
 tags: ["Safety"]

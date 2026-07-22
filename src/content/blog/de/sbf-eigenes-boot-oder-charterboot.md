@@ -1,6 +1,7 @@
 ---
 title: "SBF mit eigenem Boot oder Charterboot – was passt zu wem?"
-description: "Eigenes Boot oder lieber chartern? Ein Vergleich von Kosten, Aufwand, Flexibilität und Verantwortung für frisch gebackene SBF-Inhaber und alle, die es werden wollen."
+seoTitle: "SBF: eigenes Boot oder Charterboot?"
+description: "Eigenes Boot oder lieber chartern? Kosten, Aufwand, Flexibilität und Verantwortung im Vergleich – für frisch gebackene SBF-Inhaber und Einsteiger."
 date: 2026-07-11
 tags: ["Vorbereitung"]
 readingTime: 9

@@ -6,6 +6,13 @@ const blog = defineCollection({
   loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/blog' }),
   schema: z.object({
     title: z.string(),
+    /**
+     * Kurzform des Titels für das <title>-Tag. Der H1-Titel darf länger und
+     * erzählerischer sein; Google schneidet die SERP-Anzeige aber bei ~60 Zeichen ab
+     * – inklusive des Suffixes " | Boatpass" (11 Zeichen). Also: max. 47 Zeichen.
+     * Nur setzen, wenn `title` zu lang ist; sonst wird `title` verwendet.
+     */
+    seoTitle: z.string().max(47).optional(),
     description: z.string(),
     date: z.date(),
     /** Datum der letzten inhaltlichen Aktualisierung (Frische-Signal für dateModified). */

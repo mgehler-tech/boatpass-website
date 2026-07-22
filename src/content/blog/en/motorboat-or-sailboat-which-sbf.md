@@ -1,5 +1,6 @@
 ---
 title: "Motorboat or Sailboat – Which SBF and Which Practical Training?"
+seoTitle: "Motorboat or Sailboat: Which SBF?"
 description: "Engine or sail for the German boating license? Differences in scope, theory, practical exam, and study effort, so you can make the right choice."
 date: 2026-07-15
 tags: ["Preparation"]

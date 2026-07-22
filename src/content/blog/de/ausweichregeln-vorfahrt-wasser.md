@@ -1,6 +1,7 @@
 ---
 title: "Ausweichregeln auf dem Wasser – wer muss ausweichen?"
-description: "Auf dem Wasser gibt es keine Vorfahrt, sondern Ausweichregeln. Wer ist ausweichpflichtig, wer Kurshalter? Die KVR-Grundregeln für Motor- und Segelboote einfach erklärt – mit Merksätzen für die SBF-Prüfung."
+seoTitle: "Ausweichregeln: Wer muss ausweichen?"
+description: "Auf dem Wasser gibt es keine Vorfahrt, sondern Ausweichregeln. Wer ist ausweichpflichtig, wer Kurshalter? Die KVR-Grundregeln mit Merksätzen für den SBF."
 date: 2026-05-09
 tags: ["Prüfungswissen"]
 readingTime: 8

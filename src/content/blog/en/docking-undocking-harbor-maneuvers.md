@@ -1,5 +1,6 @@
 ---
 title: "Docking and Undocking – Harbor Maneuvers for Beginners"
+seoTitle: "Docking and Undocking for Beginners"
 description: "Master docking and undocking with confidence: judge wind, current and rudder effect correctly, use lines and fenders wisely for the SBF practical exam."
 date: 2026-07-05
 tags: ["Practice"]

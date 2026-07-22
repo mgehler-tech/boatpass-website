@@ -1,6 +1,7 @@
 ---
 title: "Wetterkunde & Beaufort-Skala für den SBF See – einfach erklärt"
-description: "Windstärken, Hoch und Tief, Wetterzeichen: Die wichtigsten Grundlagen der Wetterkunde für den Sportbootführerschein See. Beaufort-Skala, barisches Windgesetz und Land-/Seewind verständlich erklärt."
+seoTitle: "Wetterkunde & Beaufort-Skala (SBF See)"
+description: "Windstärken, Hoch und Tief, Wetterzeichen: die Grundlagen der Wetterkunde für den SBF See. Beaufort-Skala und barisches Windgesetz einfach erklärt."
 date: 2026-04-18
 tags: ["Prüfungswissen"]
 readingTime: 8

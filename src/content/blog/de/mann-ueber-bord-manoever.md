@@ -1,6 +1,7 @@
 ---
 title: "Mann-über-Bord-Manöver: So gelingt es in der SBF-Praxisprüfung"
-description: "Das Mann-über-Bord-Manöver ist Pflicht in der praktischen SBF-Prüfung. Schritt für Schritt: vom Kommando über den wichtigen Schraubenschutz bis zur kontrollierten Aufnahme gegen Wind und Strom."
+seoTitle: "Mann-über-Bord-Manöver in der Praxis"
+description: "Das Mann-über-Bord-Manöver ist Pflicht in der praktischen SBF-Prüfung. Schritt für Schritt vom Kommando über den Schraubenschutz bis zur Aufnahme."
 date: 2026-05-27
 tags: ["Praxis"]
 readingTime: 6

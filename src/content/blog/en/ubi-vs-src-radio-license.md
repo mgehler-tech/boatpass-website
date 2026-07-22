@@ -1,5 +1,6 @@
 ---
 title: "UBI or SRC – Which German Radio License Do You Need?"
+seoTitle: "UBI or SRC: Which Radio License?"
 description: "UBI or SRC? We explain the difference between inland and coastal VHF radio licenses in Germany, exam structure, costs, and which certificate you actually need."
 date: 2026-07-02
 tags: ["Exam Knowledge"]

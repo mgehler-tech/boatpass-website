@@ -1,5 +1,6 @@
 ---
 title: "SBF-Binnen-Prüfung nicht bestanden – was jetzt zu tun ist"
+seoTitle: "SBF Binnen nicht bestanden: was tun?"
 description: "SBF Binnen durchgefallen? Kein Beinbruch: Wie die Wiederholungsprüfung abläuft, was du sofort tun solltest und wie du dich gezielt neu vorbereitest."
 date: 2026-07-16
 tags: ["Prüfungswissen"]

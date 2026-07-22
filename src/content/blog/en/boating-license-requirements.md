@@ -1,5 +1,6 @@
 ---
 title: "Boating License Requirements – What You Need to Register"
+seoTitle: "Boating License Requirements in Germany"
 description: "All the requirements for the German boating license: minimum age, medical certificate, documents and exam registration – explained step by step."
 date: 2026-04-15
 tags: ["Exam Knowledge"]

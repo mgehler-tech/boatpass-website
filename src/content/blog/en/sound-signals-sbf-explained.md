@@ -1,6 +1,7 @@
 ---
 title: "Sound Signals for the Boating License: Coastal & Inland Overview"
-description: "One short blast, one prolonged blast – what means what? All the important sound signals for SBF Coastal (COLREGs) and SBF Inland, cleanly separated and with the typical mix-up traps."
+seoTitle: "Sound Signals for the SBF Exam"
+description: "One short blast, one prolonged blast – what means what? The important sound signals for SBF Coastal and Inland, separated and with the usual traps."
 date: 2026-05-13
 tags: ["Safety"]
 readingTime: 7

@@ -1,5 +1,6 @@
 ---
 title: "Mit diesen 5 Tipps besteht du die SBF-Prüfung beim ersten Versuch"
+seoTitle: "SBF-Prüfung bestehen: 5 Tipps"
 description: "Fünf konkrete Tipps für die optimale SBF-Prüfungsvorbereitung – mit echten Fakten zu Prüfungsaufbau, Lernmethoden und dem richtigen Timing."
 date: 2026-04-29
 tags: ["Vorbereitung"]

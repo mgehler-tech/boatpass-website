@@ -1,5 +1,6 @@
 ---
 title: "Most Common Mistakes in the German Boating License Exam"
+seoTitle: "Most Common SBF Exam Mistakes"
 description: "The specific mistakes that cause most SBF candidates to fail – in theory, practical, and knot sections – and how to avoid them."
 date: 2026-05-12
 tags: ["Exam Knowledge"]

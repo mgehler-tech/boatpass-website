@@ -1,6 +1,7 @@
 ---
 title: "Boating Regions in Germany – Where Can You Sail with the SBF?"
-description: "Lake Constance, the Mecklenburg Lake District, the Baltic or the Rhine: an overview of Germany's most popular boating regions and which German boating license you need there."
+seoTitle: "Boating Regions in Germany"
+description: "Lake Constance, the Mecklenburg Lake District, the Baltic or the Rhine: Germany's most popular boating regions and which license you need there."
 date: 2026-07-22
 tags: ["Preparation"]
 readingTime: 9

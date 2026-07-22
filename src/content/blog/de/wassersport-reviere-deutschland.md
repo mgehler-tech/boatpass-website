@@ -1,6 +1,7 @@
 ---
 title: "Wassersport-Reviere in Deutschland – wo darfst du mit dem SBF fahren?"
-description: "Bodensee, Mecklenburgische Seenplatte, Ostsee oder Rhein: ein Überblick über die beliebtesten Wassersport-Reviere in Deutschland und welchen Sportbootführerschein du dort brauchst."
+seoTitle: "Wassersport-Reviere in Deutschland"
+description: "Bodensee, Mecklenburgische Seenplatte, Ostsee oder Rhein: die beliebtesten Wassersport-Reviere Deutschlands und welchen SBF du dort brauchst."
 date: 2026-07-22
 tags: ["Vorbereitung"]
 readingTime: 9

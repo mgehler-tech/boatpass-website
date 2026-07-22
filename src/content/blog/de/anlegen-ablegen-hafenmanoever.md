@@ -1,5 +1,6 @@
 ---
 title: "Anlegen und Ablegen – Hafenmanöver für Einsteiger"
+seoTitle: "Anlegen & Ablegen: Hafenmanöver"
 description: "An- und Ablegen sicher meistern: Wind, Strom und Ruderwirkung richtig einschätzen, Leinen und Fender clever einsetzen für die SBF-Praxisprüfung."
 date: 2026-07-05
 tags: ["Praxis"]

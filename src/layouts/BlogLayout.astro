@@ -9,7 +9,9 @@ interface Props {
 }
 
 const { post, lang } = Astro.props;
-const { title, description, date, updated, readingTime, tags, author = 'Marius Gehler', image, altSlug } = post.data;
+const { title, seoTitle, description, date, updated, readingTime, tags, author = 'Marius Gehler', image, altSlug } = post.data;
+// <title> nutzt die Kurzform (falls gesetzt), H1 und Schema behalten den vollen Titel.
+const metaTitle = seoTitle ?? title;
 
 // Verwandte Artikel: gleiche Sprache, gewichtet nach gemeinsamen Tags, dann nach Datum. Max. 3.
 // Cross-Linking zwischen Blogposts gegen "Sackgassen-Seiten" (verbessert Crawling/Indexierung).
@@ -58,6 +60,14 @@ const articleSchema = {
   "@type": "Article",
   "headline": title,
   "description": description,
+  // Google empfiehlt `image` für Article-Rich-Results. Wir nutzen die ohnehin
+  // generierte OG-Karte (1200×630), damit Bild und Social-Preview identisch sind.
+  "image": {
+    "@type": "ImageObject",
+    "url": ogImage.startsWith('http') ? ogImage : `https://boatpass.de${ogImage}`,
+    "width": 1200,
+    "height": 630,
+  },
   "datePublished": isoDate,
   "dateModified": isoModified,
   "author": {
@@ -136,7 +146,7 @@ const breadcrumbSchema = {
 };
 ---
 
-<BaseLayout title={title} description={description} lang={lang} type="article" hasAlternate={hasAlternate} altUrl={altUrl} ogImage={ogImage}>
+<BaseLayout title={metaTitle} description={description} lang={lang} type="article" hasAlternate={hasAlternate} altUrl={altUrl} ogImage={ogImage}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   {faqSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}

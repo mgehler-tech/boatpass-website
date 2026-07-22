@@ -1,6 +1,7 @@
 ---
 title: "Charter Certificate: Renting a Boat Without a License"
-description: "With the German charter certificate you can rent a boat on certain inland waters without a Sportbootführerschein. Requirements, waters, rules and limits of the Charterbescheinigung explained."
+seoTitle: "Charter Certificate: Rent Without a License"
+description: "The German charter certificate lets you rent a boat on certain inland waters without an SBF. Requirements, waters, rules and limits explained."
 date: 2026-06-02
 tags: ["License Comparison"]
 readingTime: 7

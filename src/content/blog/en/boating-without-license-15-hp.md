@@ -1,6 +1,7 @@
 ---
 title: "Boating Without a License – The 15-HP Rule Explained"
-description: "In Germany you can operate many motorboats up to 15 HP without a license – but there are important exceptions. All the rules on license-free boating and when you need the SBF."
+seoTitle: "Boating Without a License: 15-HP Rule"
+description: "In Germany you can operate many motorboats up to 15 HP without a license – with important exceptions. All the rules and when you need the SBF."
 date: 2026-05-04
 tags: ["License Comparison"]
 readingTime: 7

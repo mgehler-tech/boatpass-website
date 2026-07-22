@@ -1,6 +1,7 @@
 ---
 title: "Gezeiten berechnen mit der Zwölftelregel – einfach erklärt"
-description: "Tidenhub, Hoch- und Niedrigwasser, Wassertiefe unter dem Kiel: Mit der Zwölftelregel schätzt du den Wasserstand zwischen den Gezeiten zuverlässig ab. Mit Rechenbeispiel für den SBF See."
+seoTitle: "Zwölftelregel: Gezeiten berechnen"
+description: "Tidenhub, Hoch- und Niedrigwasser, Tiefe unter dem Kiel: Mit der Zwölftelregel schätzt du den Wasserstand ab – mit Rechenbeispiel für den SBF See."
 date: 2026-06-02
 tags: ["Navigation"]
 readingTime: 7
