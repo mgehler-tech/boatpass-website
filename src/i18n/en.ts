@@ -152,7 +152,6 @@ export const en: Translations = {
     imprint: 'Imprint',
     terms: 'Terms of Use',
     contact: 'Contact',
-    switchLang: 'Deutsch',
   },
   faq: {
     title: 'Frequently Asked Questions',
