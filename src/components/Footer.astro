@@ -63,9 +63,9 @@ const legalLinks: FooterLink[] = [
   { href: lang === 'de' ? '/nutzungsbedingungen/' : '/en/terms/', label: t.footer.terms, icon: 'document' },
 ];
 
-const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showChevron?: boolean }[] = [
-  { heading: lang === 'de' ? 'Lizenzen' : 'Licenses', icon: 'anchor', links: licenseLinks, showChevron: true },
-  { heading: lang === 'de' ? 'Ratgeber' : 'Guides', icon: 'book', links: guideLinks },
+const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showChevron?: boolean; hideOnMobile?: boolean }[] = [
+  { heading: lang === 'de' ? 'Lizenzen' : 'Licenses', icon: 'anchor', links: licenseLinks, showChevron: true, hideOnMobile: true },
+  { heading: lang === 'de' ? 'Ratgeber' : 'Guides', icon: 'book', links: guideLinks, hideOnMobile: true },
   { heading: 'BoatPass', icon: 'users', links: aboutLinks },
 ];
 
@@ -132,7 +132,7 @@ const stats: { icon: IconName; value: string; label: string }[] = [
     <!-- Link-Spalten -->
     <div class="footer-link-grid">
       {linkColumns.map((col) => (
-        <div class="footer-link-col">
+        <div class={`footer-link-col${col.hideOnMobile ? ' footer-link-col-hide-mobile' : ''}`}>
           <h3 class="footer-col-heading">
             <span class="footer-col-heading-icon"><Icon name={col.icon} size={15} strokeWidth={2} /></span>
             {col.heading}
@@ -309,6 +309,13 @@ const stats: { icon: IconName; value: string; label: string }[] = [
   }
   @media (min-width: 640px) {
     .footer-link-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  }
+
+  /* Lizenzen/Ratgeber sind auf dem Handy bereits über das Header-Menü und die
+     Startseite erreichbar – im Footer wirkten drei volle Spalten hier zu lang.
+     Auf dem Desktop bleibt der Platz vorhanden, dort bleiben alle drei Spalten. */
+  @media (max-width: 639px) {
+    .footer-link-col-hide-mobile { display: none; }
   }
 
   .footer-col-heading {
