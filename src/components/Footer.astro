@@ -1,8 +1,10 @@
 ---
 import { Image } from 'astro:assets';
+import Icon from './Icon.astro';
 import { useTranslations, getLocalizedPath } from '../i18n/index';
 import { getBoatpassRating } from '../data/apps';
 import appIcon from '../assets/images/app-icon.png';
+import type { IconName } from '../icons';
 
 interface Props {
   lang: 'de' | 'en';
@@ -13,134 +15,291 @@ const t = useTranslations(lang);
 const year = new Date().getFullYear();
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 const appRating = getBoatpassRating();
+const numberLocale = lang === 'de' ? 'de-DE' : 'en-GB';
 const ratingScoreLabel = appRating
   ? appRating.score.toFixed(1).replace('.', lang === 'de' ? ',' : '.')
   : null;
 const ratingCountLabel = appRating
-  ? `${appRating.ratings.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} ${lang === 'de' ? 'Bewertungen · Google Play' : 'reviews · Google Play'}`
+  ? `${appRating.ratings.toLocaleString(numberLocale)} ${lang === 'de' ? 'Bewertungen · Google Play' : 'reviews · Google Play'}`
   : null;
+
+interface FooterLink {
+  href: string;
+  label: string;
+  icon: IconName;
+  external?: boolean;
+  disabled?: boolean;
+}
+
+const licenseLinks: FooterLink[] = [
+  { href: lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/', label: lang === 'de' ? 'SBF Binnen' : 'SBF Inland', icon: 'waves' },
+  { href: lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/', label: lang === 'de' ? 'SBF See' : 'SBF Coastal', icon: 'sailboat' },
+  { href: lang === 'de' ? '/ubi/' : '/en/ubi/', label: 'UBI', icon: 'microphone' },
+  { href: lang === 'de' ? '/src/' : '/en/src/', label: 'SRC', icon: 'wifi' },
+  { href: lang === 'de' ? '/lrc/' : '/en/lrc/', label: 'LRC', icon: 'satellite' },
+];
+
+const guideLinks: FooterLink[] = [
+  { href: lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/', label: lang === 'de' ? 'SBF Kosten' : 'SBF Costs', icon: 'banknotes' },
+  { href: lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/', label: lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process', icon: 'clipboard' },
+  { href: lang === 'de' ? '/sbf-binnen-pruefungsfragen/' : '/en/sbf-inland-exam-questions/', label: lang === 'de' ? 'Prüfungsfragen Binnen' : 'Inland Exam Questions', icon: 'waves' },
+  { href: lang === 'de' ? '/sbf-see-pruefungsfragen/' : '/en/sbf-coastal-exam-questions/', label: lang === 'de' ? 'Prüfungsfragen See' : 'Coastal Exam Questions', icon: 'sailboat' },
+  { href: lang === 'de' ? '/sbf-app/' : '/en/sbf-app/', label: lang === 'de' ? 'SBF-Apps im Vergleich' : 'Apps Compared', icon: 'phoneDevice' },
+  { href: lang === 'de' ? '/sbf-app-kostenlos/' : '/en/sbf-app-free/', label: lang === 'de' ? 'Kostenlose SBF-Apps' : 'Free SBF Apps', icon: 'creditCard' },
+];
+
+const aboutLinks: FooterLink[] = [
+  { href: getLocalizedPath(lang, '/blog/'), label: t.nav.blog, icon: 'document' },
+  { href: getLocalizedPath(lang, '/faq/'), label: t.nav.faq, icon: 'question' },
+  { href: lang === 'de' ? '/ueber-uns/' : '/en/about/', label: t.nav.about, icon: 'lightbulb' },
+  { href: lang === 'de' ? '/kontakt/' : '/en/contact/', label: t.nav.contact, icon: 'envelope' },
+  { href: playStoreUrl, label: 'Play Store', icon: 'phoneDevice', external: true },
+  { href: '', label: lang === 'de' ? 'iOS-App (bald)' : 'iOS app (soon)', icon: 'phone', disabled: true },
+];
+
+const legalLinks: FooterLink[] = [
+  { href: lang === 'de' ? '/datenschutz/' : '/en/privacy/', label: t.footer.privacy, icon: 'lock' },
+  { href: lang === 'de' ? '/impressum/' : '/en/legal/', label: t.footer.imprint, icon: 'scale' },
+  { href: lang === 'de' ? '/nutzungsbedingungen/' : '/en/terms/', label: t.footer.terms, icon: 'document' },
+];
+
+const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showChevron?: boolean }[] = [
+  { heading: lang === 'de' ? 'Lizenzen' : 'Licenses', icon: 'anchor', links: licenseLinks, showChevron: true },
+  { heading: lang === 'de' ? 'Ratgeber' : 'Guides', icon: 'book', links: guideLinks },
+  { heading: 'BoatPass', icon: 'users', links: aboutLinks },
+];
+
+// Kataloggrößen kommen aus den Pricing-Strings, nicht hartkodiert –
+// bleibt automatisch korrekt, wenn sich ein Katalog ändert.
+const totalQuestions = [
+  t.pricing.catalog1Questions,
+  t.pricing.catalog2Questions,
+  t.pricing.catalog3Questions,
+  t.pricing.lrcQuestions,
+  t.pricing.srcQuestions,
+].reduce((sum, n) => sum + parseInt(n, 10), 0);
+const totalQuestionsLabel = `${Math.floor(totalQuestions / 100) * 100}+`.replace(
+  /\d+/,
+  (n) => parseInt(n, 10).toLocaleString(numberLocale)
+);
+
+const stats: { icon: IconName; value: string; label: string }[] = [
+  { icon: 'document', value: totalQuestionsLabel, label: lang === 'de' ? 'Prüfungsfragen' : 'Exam questions' },
+  { icon: 'shield', value: String(licenseLinks.length), label: lang === 'de' ? 'Lizenzen' : 'Licenses' },
+  ...(appRating
+    ? [{ icon: 'star' as IconName, value: ratingScoreLabel as string, label: lang === 'de' ? 'Durchschnittsbewertung' : 'Average rating' }]
+    : []),
+];
 ---
 
-<footer style="background:#E8EDF6; border-top:1px solid rgba(51,102,255,0.10);" class="mt-12 sm:mt-24">
-  <div class="max-w-6xl mx-auto px-6 py-8 sm:py-12">
-    <div class="grid grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-6 sm:mb-8">
-      <!-- Brand -->
-      <div class="col-span-2 lg:col-span-1">
-        <span class="text-lg font-black" style="color:#1A1F36; display:inline-flex; align-items:center; gap:8px;"><Image src={appIcon} alt="Boatpass Logo" width={52} height={52} loading="lazy" style="width:26px;height:26px;border-radius:6px;" /> Boat<span style="color:#3366FF;">Pass</span></span>
-        <p class="text-muted text-sm mt-2">
-          {lang === 'de'
-            ? 'Die App für den Sportbootführerschein.'
-            : 'The app for your boating license.'}
-        </p>
-        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="inline-block mt-3">
-          <img src={lang === 'de' ? '/images/google-play-badge-1_de_.png' : '/images/google-play-badge-2_en_.png'} alt={lang === 'de' ? 'Boatpass im Google Play Store herunterladen' : 'Download Boatpass on Google Play'} width="104" height="40" loading="lazy" class="h-10 w-auto" />
+<footer style="background:#E8EDF6; border-top:1px solid rgba(51,102,255,0.10);" class="mt-12 sm:mt-24 footer-root">
+  <div class="max-w-6xl mx-auto px-6 py-8 sm:py-12 footer-inner">
+
+    <!-- App-Promo-Karte -->
+    <div class="footer-app-card">
+      <div class="footer-app-card-main">
+        <Image src={appIcon} alt="Boatpass Logo" width={52} height={52} loading="lazy" class="footer-app-icon" />
+        <div>
+          <p class="footer-app-name">Boat<span class="text-primary">Pass</span></p>
+          <p class="footer-app-tagline">
+            {lang === 'de'
+              ? 'Die App für deinen Sportbootführerschein.'
+              : 'The app for your boating license.'}
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-app-card-cta">
+        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="footer-store-link">
+          <img src={lang === 'de' ? '/images/google-play-badge-1_de_.png' : '/images/google-play-badge-2_en_.png'} alt={lang === 'de' ? 'Boatpass im Google Play Store herunterladen' : 'Download Boatpass on Google Play'} width="120" height="46" loading="lazy" />
         </a>
         {appRating && (
           <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="footer-rating" aria-label={`${ratingScoreLabel} · ${ratingCountLabel}`}>
             <span class="footer-rating-top">
               <span class="footer-rating-stars" aria-hidden="true">★★★★★</span>
               <span class="footer-rating-score">{ratingScoreLabel}</span>
+              <span class="footer-rating-outof">{lang === 'de' ? 'von 5' : 'out of 5'}</span>
             </span>
             <span class="footer-rating-count">{ratingCountLabel}</span>
           </a>
         )}
-        <p class="text-muted text-xs mt-2">
+        <p class="footer-ios-note">
           {lang === 'de' ? 'iOS-App in Arbeit.' : 'iOS app in the works.'}
         </p>
       </div>
+    </div>
 
-      <!-- Lizenzen / Licenses -->
-      <div>
-        <h3 class="font-semibold text-text mb-3 text-sm">{lang === 'de' ? 'Lizenzen' : 'Licenses'}</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a></li>
-          <li><a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="text-muted hover:text-text transition-colors">UBI</a></li>
-          <li><a href={lang === 'de' ? '/src/' : '/en/src/'} class="text-muted hover:text-text transition-colors">SRC</a></li>
-          <li><a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="text-muted hover:text-text transition-colors">LRC</a></li>
-        </ul>
-      </div>
-
-      <!-- Ratgeber / Guides -->
-      <div>
-        <h3 class="font-semibold text-text mb-3 text-sm">{lang === 'de' ? 'Ratgeber' : 'Guides'}</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-binnen-pruefungsfragen/' : '/en/sbf-inland-exam-questions/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'Prüfungsfragen Binnen' : 'Inland Exam Questions'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-see-pruefungsfragen/' : '/en/sbf-coastal-exam-questions/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'Prüfungsfragen See' : 'Coastal Exam Questions'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-app/' : '/en/sbf-app/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'SBF-Apps im Vergleich' : 'Apps Compared'}</a></li>
-          <li><a href={lang === 'de' ? '/sbf-app-kostenlos/' : '/en/sbf-app-free/'} class="text-muted hover:text-text transition-colors">{lang === 'de' ? 'Kostenlose SBF-Apps' : 'Free SBF Apps'}</a></li>
-        </ul>
-      </div>
-
-      <!-- Links -->
-      <div>
-        <h3 class="font-semibold text-text mb-3 text-sm">{lang === 'de' ? 'Seiten' : 'Pages'}</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href={getLocalizedPath(lang, '/blog/')} class="text-muted hover:text-text transition-colors">{t.nav.blog}</a></li>
-          <li><a href={getLocalizedPath(lang, '/faq/')} class="text-muted hover:text-text transition-colors">{t.nav.faq}</a></li>
-          <li><a href={lang === 'de' ? '/ueber-uns/' : '/en/about/'} class="text-muted hover:text-text transition-colors">{t.nav.about}</a></li>
-          <li><a href={lang === 'de' ? '/kontakt/' : '/en/contact/'} class="text-muted hover:text-text transition-colors">{t.nav.contact}</a></li>
-        </ul>
-      </div>
-
-      <!-- Rechtliches -->
-      <div>
-        <h3 class="font-semibold text-text mb-3 text-sm">{lang === 'de' ? 'Rechtliches' : 'Legal'}</h3>
-        <ul class="space-y-2 text-sm">
-          <li><a href={lang === 'de' ? '/datenschutz/' : '/en/privacy/'} class="text-muted hover:text-text transition-colors">{t.footer.privacy}</a></li>
-          <li><a href={lang === 'de' ? '/impressum/' : '/en/legal/'} class="text-muted hover:text-text transition-colors">{t.footer.imprint}</a></li>
-          <li><a href={lang === 'de' ? '/nutzungsbedingungen/' : '/en/terms/'} class="text-muted hover:text-text transition-colors">{t.footer.terms}</a></li>
-        </ul>
-        <div class="mt-4">
-          <a href={lang === 'de' ? '/en/' : '/'} class="footer-link text-sm text-primary hover:underline">{t.footer.switchLang}</a>
+    <!-- Link-Spalten -->
+    <div class="footer-link-grid">
+      {linkColumns.map((col) => (
+        <div class="footer-link-col">
+          <h3 class="footer-col-heading">
+            <span class="footer-col-heading-icon"><Icon name={col.icon} size={15} strokeWidth={2} /></span>
+            {col.heading}
+          </h3>
+          <ul class="footer-link-list">
+            {col.links.map((link) => (
+              <li>
+                {link.disabled ? (
+                  <span class="footer-link-row footer-link-row-disabled">
+                    <Icon name={link.icon} size={15} strokeWidth={1.75} />
+                    <span>{link.label}</span>
+                  </span>
+                ) : (
+                  <a
+                    href={link.href}
+                    class="footer-link-row"
+                    target={link.external ? '_blank' : undefined}
+                    rel={link.external ? 'noopener noreferrer' : undefined}
+                  >
+                    <Icon name={link.icon} size={15} strokeWidth={1.75} />
+                    <span>{link.label}</span>
+                    {col.showChevron && <Icon name="chevronRight" size={14} strokeWidth={2} class="footer-link-chevron" />}
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
+      ))}
     </div>
 
-    <div class="border-t border-gray-200 pt-6 text-center text-gray-400 text-xs">
-      © {year} Boatpass. {lang === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
+    <!-- Kennzahlen -->
+    <div class="footer-stats">
+      {stats.map((stat, i) => (
+        <>
+          <div class="footer-stat">
+            <span class="footer-stat-icon"><Icon name={stat.icon} size={18} strokeWidth={1.75} /></span>
+            <span class="footer-stat-text">
+              <strong>{stat.value}</strong>
+              <span>{stat.label}</span>
+            </span>
+          </div>
+          {i < stats.length - 1 && <div class="footer-stat-sep" aria-hidden="true"></div>}
+        </>
+      ))}
     </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-row">
+        <p class="footer-copyright">
+          © {year} Boatpass. {lang === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
+        </p>
+        <a href={lang === 'de' ? '/en/' : '/'} class="footer-lang-switch">{t.footer.switchLang}</a>
+      </div>
+
+      <div class="footer-legal-row">
+        {legalLinks.map((link, i) => (
+          <>
+            <a href={link.href} class="footer-legal-link">{link.label}</a>
+            {i < legalLinks.length - 1 && <span class="footer-legal-sep" aria-hidden="true">·</span>}
+          </>
+        ))}
+      </div>
+
+      <p class="footer-madewith">
+        {lang === 'de' ? 'Entwickelt mit' : 'Made with'}
+        <Icon name="heart" size={13} stroke="none" class="footer-heart" />
+        {lang === 'de' ? 'in Deutschland' : 'in Germany'}
+      </p>
+    </div>
+
+    <Icon name="anchor" size={260} strokeWidth={0.6} class="footer-deco-anchor" />
   </div>
 </footer>
 
 <style>
-  /* Touch-Flächen der Footer-Navigation auf dem Handy vergrößern
-     (WCAG 2.5.5 – mind. 44px). Die Links waren zuvor nur ~20px hohe Textzeilen
-     und dadurch – gerade wenn alle Spalten zu einer langen Einzelspalte stapeln –
-     schwer präzise zu treffen. display:flex macht die ganze Spaltenbreite tappbar
-     (langer Linktext bricht dabei sauber um), min-height sichert die 44px.
-     Greift nur unterhalb von 640px – das Desktop-Layout bleibt unverändert.
-     Reiner Layout-Feinschliff: Farben, Schrift und Branding bleiben unberührt. */
-  @media (max-width: 640px) {
-    footer ul a,
-    footer .footer-link {
-      display: flex;
-      align-items: center;
-      min-height: 44px;
-      padding: 6px 0;
-    }
+  .footer-root {
+    position: relative;
+    overflow: hidden;
+  }
+  .footer-inner {
+    position: relative;
+    z-index: 1;
   }
 
-  html.dark footer {
-    background: #0D1018 !important;
-    border-color: rgba(90, 120, 255, 0.12) !important;
+  /* ── Decorative background anchor ── */
+  :global(.footer-deco-anchor) {
+    position: absolute;
+    right: -30px;
+    bottom: -30px;
+    color: #3366FF;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 0;
   }
-  html.dark footer [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
-  html.dark footer .border-gray-200 { border-color: rgba(90, 120, 255, 0.10) !important; }
+  html.dark :global(.footer-deco-anchor) { opacity: 0.08; }
+
+  /* ── App promo card ── */
+  .footer-app-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 32px;
+  }
+  @media (min-width: 640px) {
+    .footer-app-card {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  .footer-app-card-main {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .footer-app-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    flex-shrink: 0;
+  }
+  .footer-app-name {
+    font-size: 19px;
+    font-weight: 900;
+    color: var(--color-navy);
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .footer-app-tagline {
+    font-size: 13.5px;
+    color: var(--color-muted);
+    margin: 2px 0 0;
+  }
+  .footer-app-card-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  @media (min-width: 640px) {
+    .footer-app-card-cta { align-items: flex-end; }
+  }
+  .footer-store-link img {
+    display: block;
+    border-radius: 9px;
+  }
+  .footer-ios-note {
+    font-size: 12px;
+    color: var(--color-muted);
+    margin: 0;
+  }
 
   .footer-rating {
     display: flex;
     flex-direction: column;
     gap: 2px;
-    margin-top: 10px;
     text-decoration: none;
     width: fit-content;
   }
   .footer-rating-top {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     gap: 6px;
     white-space: nowrap;
   }
@@ -153,16 +312,208 @@ const ratingCountLabel = appRating
   .footer-rating-score {
     font-size: 14px;
     font-weight: 700;
-    color: #1A1F36;
+    color: var(--color-navy);
     line-height: 1;
+  }
+  .footer-rating-outof {
+    font-size: 12px;
+    color: var(--color-muted);
   }
   .footer-rating-count {
     font-size: 12px;
     font-weight: 500;
-    color: #6B7280;
+    color: var(--color-muted);
   }
-  .footer-rating:hover .footer-rating-score { color: #3366FF; }
-  html.dark .footer-rating-score { color: #E2E8F0 !important; }
-  html.dark .footer-rating-count { color: #94A3B8 !important; }
-  html.dark .footer-rating:hover .footer-rating-score { color: #7C9CFF !important; }
+  .footer-rating:hover .footer-rating-score { color: var(--color-primary); }
+
+  /* ── Link grid ── */
+  .footer-link-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+  @media (min-width: 640px) {
+    .footer-link-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  }
+
+  .footer-col-heading {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin: 0 0 8px;
+  }
+  .footer-col-heading-icon {
+    display: inline-flex;
+    color: var(--color-primary);
+  }
+
+  .footer-link-list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .footer-link-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 6px 0;
+    font-size: 14.5px;
+    color: var(--color-muted);
+    text-decoration: none;
+    border-top: 1px solid var(--color-border);
+    transition: color 0.15s ease;
+  }
+  .footer-link-list li:first-child .footer-link-row { border-top: none; }
+  .footer-link-row :global(svg:first-child) {
+    flex-shrink: 0;
+    color: var(--color-primary);
+    opacity: 0.7;
+  }
+  .footer-link-row span {
+    flex: 1;
+  }
+  :global(.footer-link-chevron) {
+    flex-shrink: 0;
+    color: var(--color-muted) !important;
+    opacity: 0.6;
+  }
+  a.footer-link-row:hover {
+    color: var(--color-text);
+  }
+  a.footer-link-row:hover :global(.footer-link-chevron) {
+    transform: translateX(2px);
+    opacity: 1;
+  }
+  .footer-link-row-disabled {
+    opacity: 0.55;
+    cursor: default;
+  }
+  .footer-link-row-disabled :global(svg) {
+    color: var(--color-muted) !important;
+  }
+
+  /* ── Stats bar ── */
+  .footer-stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 16px;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+  }
+  .footer-stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 130px;
+  }
+  .footer-stat-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(51, 102, 255, 0.08);
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+  .footer-stat-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+  }
+  .footer-stat-text strong {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--color-navy);
+  }
+  .footer-stat-text span {
+    font-size: 12.5px;
+    color: var(--color-muted);
+  }
+  .footer-stat-sep {
+    width: 1px;
+    align-self: stretch;
+    background: var(--color-border);
+    display: none;
+  }
+  @media (min-width: 500px) {
+    .footer-stat-sep { display: block; }
+  }
+
+  /* ── Bottom bar ── */
+  .footer-bottom {
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .footer-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .footer-copyright {
+    font-size: 12.5px;
+    color: var(--color-muted);
+    margin: 0;
+  }
+  .footer-lang-switch {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+  .footer-lang-switch:hover { text-decoration: underline; }
+
+  .footer-legal-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    font-size: 12.5px;
+  }
+  .footer-legal-link {
+    color: var(--color-muted);
+    text-decoration: none;
+    padding: 4px 0;
+  }
+  .footer-legal-link:hover { color: var(--color-text); text-decoration: underline; }
+  .footer-legal-sep {
+    color: var(--color-border);
+  }
+
+  .footer-madewith {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12.5px;
+    color: var(--color-muted);
+    margin: 0;
+  }
+  :global(.footer-heart) {
+    color: #3366FF;
+    fill: currentColor;
+  }
+
+  /* Touch-Flächen auf dem Handy: Link-Zeilen sind bereits über min-height:44px
+     in .footer-link-row abgedeckt (WCAG 2.5.5), unabhängig vom Breakpoint. */
+
+  html.dark .footer-root { background: #0D1018 !important; border-color: rgba(90, 120, 255, 0.12) !important; }
 </style>
