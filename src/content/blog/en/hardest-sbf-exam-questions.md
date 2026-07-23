@@ -73,7 +73,7 @@ Many questions have answer options that differ only in details. With navigation 
 
 ### 2. Mixing up inland and coastal rules
 
-Anyone learning both licenses at the same time easily confuses inland rules with coastal rules. Example: sound signals sometimes have different meanings on inland waterways than at sea.
+Anyone learning both licenses at the same time easily confuses inland rules with coastal rules. Example: [sound signals](/en/blog/sound-signals-sbf-explained/) sometimes have different meanings on inland waterways than at sea.
 
 ### 3. Rarely practiced edge-case questions
 

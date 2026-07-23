@@ -82,7 +82,7 @@ Viele Fragen haben Antwortmöglichkeiten, die sich nur in Details unterscheiden.
 
 ### 2. Binnen- und See-Regeln vermischen
 
-Wer beide Scheine gleichzeitig lernt, verwechselt leicht Binnen-Regeln mit See-Regeln. Beispiel: Schallsignale haben auf Binnenschifffahrtsstraßen teilweise andere Bedeutungen als auf See.
+Wer beide Scheine gleichzeitig lernt, verwechselt leicht Binnen-Regeln mit See-Regeln. Beispiel: [Schallsignale](/blog/schallsignale-sbf-erklaert/) haben auf Binnenschifffahrtsstraßen teilweise andere Bedeutungen als auf See.
 
 ### 3. Selten geübte Randfragen
 

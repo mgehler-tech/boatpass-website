@@ -96,7 +96,7 @@ If you combine SBF Binnen and See, you save, because parts of the exam and fees 
 4. **Have a passport photo taken.**
 5. **Register** through the boating school or directly with the examination board (DSV/DMYV).
 6. **Confirm the date** and submit all documents in full.
-7. **Prepare:** master the theory, practice the maneuvers and knots.
+7. **Prepare:** master the theory, practice the maneuvers and [knots](/en/blog/most-important-knots-sbf/).
 
 ## Conclusion
 

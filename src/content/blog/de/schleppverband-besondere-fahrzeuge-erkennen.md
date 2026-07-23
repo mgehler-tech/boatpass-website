@@ -65,7 +65,7 @@ Ein manövrierbehindertes Fahrzeug, das baggert oder Taucherarbeiten durchführt
 - **Zwei Bälle** übereinander zeigen die Seite an, auf der ein Hindernis liegt, also die Seite, die du meiden solltest.
 - **Zwei Rauten** übereinander zeigen die Seite an, auf der andere Fahrzeuge sicher passieren können.
 
-Wichtig für die Prüfung: Diese Signale sind keine Notsignale. Sie zeigen lediglich an, dass das Fahrzeug in seiner Manövrierfähigkeit eingeschränkt ist und deshalb Vorrang vor den meisten anderen Fahrzeugen hat, wie im Artikel zu den [Ausweichregeln](/blog/ausweichregeln-vorfahrt-wasser/) beschrieben.
+Wichtig für die Prüfung: Diese Signale sind keine [Notsignale](/blog/notsignale-auf-see/). Sie zeigen lediglich an, dass das Fahrzeug in seiner Manövrierfähigkeit eingeschränkt ist und deshalb Vorrang vor den meisten anderen Fahrzeugen hat, wie im Artikel zu den [Ausweichregeln](/blog/ausweichregeln-vorfahrt-wasser/) beschrieben.
 
 ## Tiefgangbehinderte Fahrzeuge
 

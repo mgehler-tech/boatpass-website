@@ -62,7 +62,7 @@ Individual practical lessons cost between €50 and €150 – significantly les
 - Casting off and coming alongside
 - Turning in a confined space
 - Man-overboard maneuver
-- Demonstrating knots (6 mandatory knots)
+- Demonstrating [knots](/en/blog/most-important-knots-sbf/) (6 mandatory knots)
 
 Many candidates manage with **1–2 practical lessons**, especially if they already have experience on the water (e.g. as a passenger).
 

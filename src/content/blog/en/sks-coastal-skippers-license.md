@@ -67,7 +67,7 @@ The practical exam takes a maximum of **30 minutes per candidate** and takes pla
 
 On top of that come further maneuver elements such as stopping precisely on course, tacking or turning in a tight space, navigating by shipping marks and landmarks, correctly putting on a life jacket or safety harness, and the appropriate sound signals for maneuvers.
 
-**Knot skills** are also part of the practical exam. You're tested on five knots out of a fixed set: figure-eight knot, reef knot, sheet bend, bowline, stopper knot, clove hitch, and round turn with two half hitches. If you don't practice these regularly, it's easy to lose valuable time in the exam, since they need to be tied correctly under mild time pressure.
+**[Knot skills](/en/blog/most-important-knots-sbf/)** are also part of the practical exam. You're tested on five knots out of a fixed set: figure-eight knot, reef knot, sheet bend, bowline, stopper knot, clove hitch, and round turn with two half hitches. If you don't practice these regularly, it's easy to lose valuable time in the exam, since they need to be tied correctly under mild time pressure.
 
 ## Deadlines: The Whole Exam Must Be Completed Within 24 Months
 

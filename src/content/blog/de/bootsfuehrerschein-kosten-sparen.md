@@ -62,7 +62,7 @@ Einzelne Praxisstunden kosten zwischen 50 und 150 € – deutlich weniger als e
 - An- und Ablegen
 - Wenden auf engem Raum
 - Mann-über-Bord-Manöver
-- Knoten vorführen (6 Pflichtknoten)
+- [Knoten](/blog/wichtigste-knoten-sbf/) vorführen (6 Pflichtknoten)
 
 Viele Prüflinge kommen mit **1–2 Praxisstunden** aus, besonders wenn sie bereits Erfahrung auf dem Wasser haben (z. B. als Mitfahrer).
 
