@@ -827,6 +827,17 @@ const promo = {
     background: rgba(90, 120, 255, 0.20) !important;
     color: #8BB4FF !important;
   }
+  /* Klassenbasierte Blau-Akzente (kein inline-style → vom globalen
+     Akzent-Override nicht erfasst): im Dark Mode auf den helleren Akzent
+     anheben, sonst matt/schwer erkennbar auf dunklem Grund. */
+  html.dark .nav-mega-soon {
+    background: rgba(90, 120, 255, 0.20) !important;
+    color: #8BB4FF !important;
+  }
+  html.dark .mobile-nav-sublink--cta { color: var(--color-accent-fg) !important; }
+  html.dark .mobile-nav-sublink--cta:hover { color: #8BB4FF !important; }
+  html.dark .accordion-chevron { color: var(--color-accent-fg) !important; }
+  html.dark .accordion-open .accordion-chevron { color: #fff !important; }
 
   /* Footer with CTA */
   .mobile-menu-footer {

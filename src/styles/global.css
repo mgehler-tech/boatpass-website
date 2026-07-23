@@ -125,12 +125,17 @@
 /* Dark Mode – class-based via html.dark. Init script in BaseLayout.astro sets the class
    before first paint to avoid FOUC. Respects both system preference and manual toggle. */
 html.dark {
+  color-scheme: dark;
   --color-background: #0F1117;
   --color-surface:    #181E2E;
   --color-text:       #E2E8F0;
   --color-navy:       #E2E8F0;
   --color-muted:      #94A3B8;
   --color-border:     rgba(100, 140, 255, 0.12);
+  /* Helleres Marken-Blau als Vordergrund-Akzent für den Dark Mode. Das
+     Original-Blau #3366FF erreicht auf #0F1117 nur ~3,6:1 und wirkt matt;
+     #6699FF liegt bei ~6,8:1 (AA für Text, weit über 3:1 für Grafik). */
+  --color-accent-fg:  #6699FF;
 }
 html.dark body { background-color: #0F1117; }
 
@@ -140,7 +145,7 @@ html.dark body { background-color: #0F1117; }
 html.dark [style*="background:white"],
 html.dark [style*="background: white"] {
   background: #181E2E !important;
-  border-color: rgba(90, 120, 255, 0.12) !important;
+  border-color: rgba(90, 120, 255, 0.18) !important;
 }
 html.dark [style*="background:#F0F4FA"],
 html.dark [style*="background: #F0F4FA"] {
@@ -149,7 +154,7 @@ html.dark [style*="background: #F0F4FA"] {
 html.dark [style*="background:#ffffff"],
 html.dark [style*="background: #ffffff"] {
   background: #181E2E !important;
-  border-color: rgba(90, 120, 255, 0.12) !important;
+  border-color: rgba(90, 120, 255, 0.18) !important;
 }
 html.dark [style*="background:rgba(51,102,255,0.05)"],
 html.dark [style*="background:rgba(51,102,255,0.06)"],
@@ -206,6 +211,36 @@ html.dark [style*="background:rgba(26,31,54,0.04)"] { background: rgba(90, 120, 
 html.dark [style*="background:#D1D5DB"] { background: rgba(90, 120, 255, 0.3) !important; }
 /* Remaining text colors */
 html.dark [style*="color:#374151"] { color: #94A3B8 !important; }
+
+/* ── Vordergrund-Akzent (Marken-Blau) für den Dark Mode ──────────────────────
+   Das Blau #3366FF ist projektweit hunderte Male hartkodiert – als Textfarbe
+   (Badges, Links, Chips), als Icon-Strich (stroke) und als SVG-Füllung (fill).
+   Der bisherige Dark Mode hat nur Flächen, Ränder und Fließtext umgesetzt, die
+   blauen Vordergrund-Akzente blieben #3366FF und erreichen auf dem dunklen Grund
+   nur ~3,6:1 – Icons und Formen wirken dadurch matt bis unsichtbar (auch, und
+   gerade, wenn das Handy den Dark Mode erzwingt). Zentral hier auf den helleren
+   Akzent (~6,8:1) angehoben, statt an hunderten Einzelstellen. Bewusst NUR die
+   Vordergrund-Nutzung (color/stroke/fill) – gefüllte blaue Flächen (Buttons via
+   background:#3366FF) bleiben unberührt, ihr weißer Text hat dort eigenen
+   Kontrast. */
+html.dark [style*="color:#3366FF"],
+html.dark [style*="color: #3366FF"],
+html.dark [style*="color:#2952CC"],
+html.dark [style*="color: #2952CC"],
+html.dark [style*="color:#1A44D4"],
+html.dark [style*="color: #1A44D4"] {
+  color: var(--color-accent-fg) !important;
+}
+html.dark [stroke="#3366FF"],
+html.dark [style*="stroke:#3366FF"],
+html.dark [style*="stroke: #3366FF"] {
+  stroke: var(--color-accent-fg) !important;
+}
+html.dark [fill="#3366FF"],
+html.dark [style*="fill:#3366FF"],
+html.dark [style*="fill: #3366FF"] {
+  fill: var(--color-accent-fg) !important;
+}
 
 html.dark .gradient-text {
   background: linear-gradient(135deg, #7BACFF 0%, #B8D8FF 100%);
