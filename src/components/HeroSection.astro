@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 import { useTranslations } from '../i18n/index';
+import { getBoatpassRating } from '../data/apps';
 import screenshot0De from '../assets/images/app-screenshot.de.png';
 import screenshot1De from '../assets/images/app.screenshot.1.de.png';
 import screenshot2De from '../assets/images/app.screenshot.2.de.png';
@@ -21,6 +22,14 @@ const [screenshot0, screenshot1, screenshot2, screenshot3] = lang === 'en'
   ? [screenshot0En, screenshot1En, screenshot2En, screenshot3En]
   : [screenshot0De, screenshot1De, screenshot2De, screenshot3De];
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+// Google-Play-Bewertung direkt am Haupt-CTA als Social Proof (Logo · Score · Sterne · Anzahl).
+const appRating = getBoatpassRating();
+const ratingScoreLabel = appRating
+  ? appRating.score.toFixed(1).replace('.', lang === 'de' ? ',' : '.')
+  : null;
+const fullStars = appRating ? Math.round(appRating.score) : 0;
+const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
 ---
 
 <section class="hero-section" style="position:relative; min-height:100vh; display:flex; align-items:center; padding: 100px 0 0; overflow:hidden; background:#F0F4FA;">
@@ -64,37 +73,56 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       </p>
 
       <!-- CTAs -->
-      <div class="animate-fade-up delay-3" style="display:flex; gap:14px; align-items:center; margin-bottom:52px; flex-wrap:wrap;">
-        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-          id="hero-cta-play"
-          class="cta-primary"
-          style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:15px; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
-          ▶&nbsp;{t.hero.cta}
-        </a>
-        <div id="hero-cta-ios" class="ios-badge"
-          style="display:none; align-items:center; gap:10px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); font-weight:700; font-size:15px; padding:13px 27px; border-radius:14px;">
-          <Icon name="phoneDevice" size={17} strokeWidth={2} />
-          {t.hero.ctaIos}
+      <div class="animate-fade-up delay-3" style="margin-bottom:52px;">
+        <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap;">
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+            id="hero-cta-play"
+            class="cta-primary"
+            style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:15px; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
+            ▶&nbsp;{t.hero.cta}
+          </a>
+          <div id="hero-cta-ios" class="ios-badge"
+            style="display:none; align-items:center; gap:10px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); font-weight:700; font-size:15px; padding:13px 27px; border-radius:14px;">
+            <Icon name="phoneDevice" size={17} strokeWidth={2} />
+            {t.hero.ctaIos}
+          </div>
+          <script is:inline>
+            // Läuft während des Parsens, also vor dem ersten Paint – kein Umspringen sichtbar.
+            // iPadOS gibt sich seit iOS 13 als MacIntel aus, daher der maxTouchPoints-Check.
+            (function () {
+              var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+              if (!isIos) return;
+              var play = document.getElementById('hero-cta-play');
+              var ios = document.getElementById('hero-cta-ios');
+              if (play && ios) {
+                play.style.display = 'none';
+                ios.style.display = 'inline-flex';
+              }
+            })();
+          </script>
+          <a href="#features"
+            style="color:#3366FF; font-size:15px; font-weight:600; text-decoration:none; display:flex; align-items:center; gap:6px; padding:14px 0;">
+            {t.hero.ctaSecondary} →
+          </a>
         </div>
-        <script is:inline>
-          // Läuft während des Parsens, also vor dem ersten Paint – kein Umspringen sichtbar.
-          // iPadOS gibt sich seit iOS 13 als MacIntel aus, daher der maxTouchPoints-Check.
-          (function () {
-            var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-              (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-            if (!isIos) return;
-            var play = document.getElementById('hero-cta-play');
-            var ios = document.getElementById('hero-cta-ios');
-            if (play && ios) {
-              play.style.display = 'none';
-              ios.style.display = 'inline-flex';
-            }
-          })();
-        </script>
-        <a href="#features"
-          style="color:#3366FF; font-size:15px; font-weight:600; text-decoration:none; display:flex; align-items:center; gap:6px; padding:14px 0;">
-          {t.hero.ctaSecondary} →
-        </a>
+
+        <!-- Google-Play-Bewertung direkt unter dem Haupt-CTA -->
+        {appRating && (
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="hero-rating"
+            aria-label={`${ratingScoreLabel} ${lang === 'de' ? 'von 5 Sternen' : 'out of 5 stars'} – ${appRating.ratings} ${ratingsLabel}, Google Play`}>
+            <img src="/images/google-play-icon.png" alt="" width="18" height="18" aria-hidden="true" class="hero-rating-logo" />
+            <span class="hero-rating-score">{ratingScoreLabel}</span>
+            <span class="hero-rating-stars" aria-hidden="true">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class={`hero-star${i < fullStars ? '' : ' hero-star--empty'}`}>
+                  <path d="M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z" fill="currentColor"/>
+                </svg>
+              ))}
+            </span>
+            <span class="hero-rating-count">{appRating.ratings} {ratingsLabel}</span>
+          </a>
+        )}
       </div>
 
       <!-- Stats -->
@@ -208,6 +236,36 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
      dunkleres, Dunkel helleres Blau – eine feste Farbe kann beides nicht. */
   .ios-badge { color: #1A44D4; }
   :global(html.dark) .ios-badge { color: #5B8CFF; }
+
+  /* Bewertungs-Zeile direkt unter dem Haupt-CTA: Play-Store-Logo · Score ·
+     Sterne · Anzahl. Verbindet das Rating als Social Proof mit dem Button. */
+  .hero-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    text-decoration: none;
+    width: fit-content;
+  }
+  .hero-rating-logo { border-radius: 5px; display: block; flex-shrink: 0; }
+  .hero-rating-score {
+    font-size: 15px;
+    font-weight: 800;
+    color: #1A1F36;
+    letter-spacing: -0.2px;
+  }
+  .hero-rating-stars { display: inline-flex; align-items: center; gap: 1px; }
+  .hero-star { color: #FBBF24; display: block; }
+  .hero-star--empty { color: #D1D5DB; }
+  .hero-rating-count {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6B7280;
+  }
+  .hero-rating:hover .hero-rating-count { text-decoration: underline; }
+  :global(html.dark) .hero-rating-score { color: #E2E8F0; }
+  :global(html.dark) .hero-rating-count { color: #94A3B8; }
+  :global(html.dark) .hero-star--empty { color: #3A4256; }
 
   .phone-slide {
     width: 100%;
