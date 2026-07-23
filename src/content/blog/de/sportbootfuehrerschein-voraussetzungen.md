@@ -17,6 +17,20 @@ faq:
     answer: "Du brauchst den Antrag auf Zulassung zur Prüfung (Formular vom DMYV oder DSV), das ausgefüllte ärztliche Zeugnis, ein biometrisches Passfoto (35 × 45 mm), eine Kopie des Kfz-Führerscheins oder ein polizeiliches Führungszeugnis sowie die Prüfungsgebühr. Bei Minderjährigen kommt eine Einverständniserklärung des Erziehungsberechtigten hinzu."
   - question: "Muss ich für den Sportbootführerschein einen Kurs besuchen?"
     answer: "Nein. Ein Nachweis über einen Kursbesuch ist keine Voraussetzung. Die Anmeldung über den Prüfungsausschuss von DMYV oder DSV steht jedem offen, der die formalen Voraussetzungen erfüllt – egal ob du einen Kurs besucht oder dich mit einer App vorbereitet hast."
+howTo:
+  name: "So meldest du dich zur SBF-Prüfung an"
+  description: "In fünf Schritten von der Terminsuche bis zur Anmeldebestätigung beim Prüfungsausschuss von DMYV oder DSV."
+  steps:
+    - name: "Prüfungstermin suchen"
+      text: "Auf der Website deines regionalen Prüfungsausschusses (z. B. DMYV-Prüfungszentrum NRW, Bayern, Schleswig-Holstein etc.) findest du die nächsten Termine."
+    - name: "Unterlagen zusammenstellen"
+      text: "Besorge alle Dokumente aus der Checkliste: Antrag auf Zulassung, ärztliches Zeugnis, Passfoto sowie Kopie des Kfz-Führerscheins oder polizeiliches Führungszeugnis."
+    - name: "Anmeldung einreichen"
+      text: "Reiche die Unterlagen per Post oder online ein – je nach Prüfungsausschuss meist ein bis zwei Wochen vor dem Prüfungstermin."
+    - name: "Prüfungsgebühr überweisen"
+      text: "Überweise die Gebühr zusammen mit der Anmeldung oder gemäß Anweisung des Prüfungsausschusses."
+    - name: "Bestätigung abwarten"
+      text: "Du erhältst eine Zulassung zur Prüfung – damit bist du angemeldet."
 ---
 
 Bevor du die [SBF-Prüfung](/sbf-pruefung-ablauf/) ablegen kannst, musst du einige formale Voraussetzungen erfüllen und Unterlagen einreichen. Hier ist alles, was du wissen musst – von der Altersgrenze bis zur Prüfungsanmeldung.

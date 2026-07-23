@@ -8,6 +8,20 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "5-tipps-sbf-bestehen"
+howTo:
+  name: "How to pass the SBF exam on your first try"
+  description: "Five concrete steps for optimal SBF exam preparation – from understanding the exam structure to booking your exam slot."
+  steps:
+    - name: "Understand the exam structure"
+      text: "The theory exam is split into base questions and specific questions that must each be passed separately – study both blocks evenly."
+    - name: "Practice under real exam conditions"
+      text: "Complete at least 3–5 full mock exams, timed and without looking anything up."
+    - name: "Train your weak spots"
+      text: "Focus on the questions you repeatedly get wrong instead of reviewing topics you already know."
+    - name: "Study daily instead of in blocks"
+      text: "Short, regular study sessions consolidate knowledge more reliably than rare long sessions."
+    - name: "Book your exam slot early"
+      text: "Book with the DMYV examination board a few weeks before your planned study finish date, since slots fill up in advance."
 ---
 
 The German boating license (Sportbootführerschein, SBF) is achievable for anyone – but the wrong preparation strategy can lead to failure even with enough study time. Here are five concrete tips that make the real difference.
