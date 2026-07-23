@@ -41,7 +41,7 @@ In narrow channels there are also overtaking signals: **▬ ▬ ●** ("I intend
 
 ### Signals in restricted visibility
 
-"Restricted visibility" means visibility limited by fog, rain, snow or "thick weather". These signals serve the single message "**I am here**" and are **mandatory** – they're given at least **every two minutes**:
+["Restricted visibility"](/en/blog/how-to-behave-in-restricted-visibility-fog/) means visibility limited by fog, rain, snow or "thick weather". These signals serve the single message "**I am here**" and are **mandatory** – they're given at least **every two minutes**:
 
 | Signal | Meaning |
 | --- | --- |
