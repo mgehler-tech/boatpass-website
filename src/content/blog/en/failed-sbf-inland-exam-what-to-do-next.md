@@ -8,6 +8,18 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-binnen-pruefung-nicht-bestanden"
+howTo:
+  name: "What to do after failing the SBF exam"
+  description: "Four steps to actively and effectively start preparing for your retake after a failed attempt."
+  steps:
+    - name: "Ask for feedback if you can"
+      text: "Ask the examination board or the examiner which theory topics gave you trouble, or which maneuver didn't quite meet the standard in the practical exam."
+    - name: "Sort out your retake date early"
+      text: "Since a passed part only stays valid for a limited time, it's worth arranging a new date sooner rather than putting the whole thing aside for a while."
+    - name: "Be honest about what went wrong"
+      text: "Was it a gap in your preparation on certain topics, nerves under time pressure, or just bad luck with the questions or maneuver you got? Your honest answer determines how you should prepare for the retake."
+    - name: "Don't just go back to studying at random"
+      text: "Clicking through more questions without knowing your actual weak spots wastes time. Targeted practice gets you much further than simply repeating what you already know."
 ---
 
 Didn't pass the [SBF Inland (SBF Binnen)](/en/sbf-inland/) exam and wondering what happens now? Here's the good news first: this isn't a disaster, and it's definitely not the end of your journey toward getting your boating license. Plenty of skippers who are out on the water today didn't pass one part of the exam on their first attempt. This article explains how a retake works, what to do right away, and how to prepare more effectively so it goes better next time.

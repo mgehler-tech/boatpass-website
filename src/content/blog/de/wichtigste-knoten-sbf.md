@@ -8,6 +8,28 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "most-important-knots-sbf"
+howTo:
+  name: "Die 9 prüfungsrelevanten Knoten für den SBF"
+  description: "Diese neun Knoten musst du für die SBF-See-Praxisprüfung sicher beherrschen und ihren Verwendungszweck erklären können."
+  steps:
+    - name: "Achtknoten"
+      text: "Stopperknoten, der verhindert, dass eine Leine durch einen Block oder eine Öse rutscht. Verwendung: als Endknoten am Tampen."
+    - name: "Kreuzknoten"
+      text: "Verbindet zwei gleich starke Leinen. Verwendung: zum Verbinden zweier gleich dicker Leinen, z. B. beim Reffen."
+    - name: "Webeleinstek"
+      text: "Schnell gelegter Festmacher an einem Poller, Pfahl oder einer Stange. Verwendung: Festmachen an einem Pfahl, Anschlagen von Fendern."
+    - name: "Webeleinstek auf Slip"
+      text: "Lässt sich durch Ziehen am losen Ende schnell wieder lösen. Verwendung: schnelles, lösbares Anschlagen, z. B. von Fendern."
+    - name: "Rundtörn mit zwei halben Schlägen"
+      text: "Sehr sicherer Festmacher, der auch bei wechselnder Belastung hält. Verwendung: Festmachen an Poller oder Ring, auch bei Strömung und Wind."
+    - name: "Stopperstek"
+      text: "Schlägt eine dünnere Leine an eine dickere, unter Spannung stehende Leine an. Verwendung: Zugentlastung, z. B. eine belastete Leine vorübergehend übernehmen."
+    - name: "Palstek"
+      text: "Der wichtigste Knoten an Bord – bildet eine feste, sich nicht zuziehende Schlaufe. Verwendung: feste Schlaufe, z. B. zum Festmachen über einen Poller oder als Rettungsschlaufe."
+    - name: "Schotstek"
+      text: "Verbindet zwei unterschiedlich dicke Leinen, dort wo der Kreuzknoten versagen würde. Verwendung: Verbinden zweier verschieden dicker Leinen."
+    - name: "Belegen einer Klampe"
+      text: "Die Leine wird in einer Acht um die Klampe geführt und mit einem Kopfschlag gesichert. Verwendung: Festmachen der Leine an einer Klampe am Boot oder Steg."
 ---
 
 Die Knoten sind für viele der praktische Teil mit dem größten „Aha-Effekt" – und der, den man am leichtesten unterschätzt. In der Praxisprüfung zum [Sportbootführerschein See](/sbf-see/) musst du Seemannsknoten nicht nur **knüpfen**, sondern auch ihren **Verwendungszweck** erklären. Hier bekommst du den Überblick über alle prüfungsrelevanten Knoten und wie du sie sicher beherrschst.

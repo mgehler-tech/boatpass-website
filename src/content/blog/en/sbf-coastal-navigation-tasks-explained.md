@@ -8,6 +8,18 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-see-navigationsaufgaben-erklaert"
+howTo:
+  name: "How to prepare for the navigation task"
+  description: "Four steps to prepare specifically for the SBF Coastal navigation task."
+  steps:
+    - name: "Work through all 15 tasks"
+      text: "There are exactly 15 navigation tasks in the official question catalog – anyone who has worked through all 15 cleanly at least once knows every task type and every difficulty that can come up in the exam."
+    - name: "Know the conversions by heart"
+      text: "The formula rwK → mwK → MgK (and back) has to be solid. The most common mistakes happen with the signs of variation and deviation."
+    - name: "Practice with the real chart"
+      text: "Practice with a to-scale printout of the D49, not just on screen – handling the course plotter and dividers on paper feels different."
+    - name: "Learn navigation marks systematically"
+      text: "Learn the most important symbols of Chart 1 / INT 1 – lighthouses, buoys, depth contours, wrecks and restricted areas."
 ---
 
 For many candidates, the navigation task is the biggest hurdle of the [SBF Coastal license](/en/sbf-coastal/). It's what sets the SBF Coastal apart from the SBF Inland – and it requires a basic understanding of working with a nautical chart. In this article we explain the exact structure, the task types and give tips for preparation.

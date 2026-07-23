@@ -8,6 +8,28 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "wichtigste-knoten-sbf"
+howTo:
+  name: "The 9 exam-relevant knots for the SBF"
+  description: "These nine knots you must be able to tie reliably and explain the purpose of for the SBF Coastal practical exam."
+  steps:
+    - name: "Figure-Eight Knot"
+      text: "A stopper knot that prevents a line from slipping through a block or eye. Use: as an end knot on a line so it doesn't run out."
+    - name: "Reef Knot (Square Knot)"
+      text: "Joins two lines of equal thickness. Use: joining two lines of the same diameter, e.g. when reefing."
+    - name: "Clove Hitch"
+      text: "A quickly made fastening to a bollard, post or rail. Use: making fast to a post, attaching fenders."
+    - name: "Clove Hitch on Slip"
+      text: "Can be released quickly by pulling the loose end. Use: quick, releasable attachment, e.g. of fenders."
+    - name: "Round Turn and Two Half Hitches"
+      text: "A very secure fastening that holds even under changing load. Use: making fast to a bollard or ring, even in current and wind."
+    - name: "Rolling Hitch"
+      text: "Attaches a thinner line to a thicker line under tension. Use: load relief, e.g. temporarily taking over a loaded line."
+    - name: "Bowline"
+      text: "The most important knot on board – forms a fixed, non-tightening loop. Use: a fixed loop, e.g. for making fast over a bollard or as a rescue loop."
+    - name: "Sheet Bend"
+      text: "Joins two lines of different thickness, where the reef knot would fail. Use: joining two lines of different diameter."
+    - name: "Cleating a Line"
+      text: "The line is led in a figure eight around the cleat and secured with a locking turn. Use: making the line fast to a cleat on the boat or dock."
 ---
 
 For many, the knots are the part of the practical exam with the biggest "aha" moment – and the one that's most easily underestimated. In the practical exam for the Sportbootführerschein See you must not only **tie** seamanship knots but also explain their **purpose**. Here's an overview of every exam-relevant knot and how to master it.

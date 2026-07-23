@@ -21,6 +21,16 @@ faq:
     answer: "Für den SBF Binnen sind bei täglich 30–45 Minuten Lernen etwa 3–6 Wochen realistisch. Für den SBF See solltest du wegen der zusätzlichen Navigationsaufgabe mehr Zeit einplanen. Die Knotenprüfung erfordert tägliches Üben."
   - question: "Was passiert, wenn ich einen Prüfungsteil nicht bestehe?"
     answer: "Du musst nur den nicht bestandenen Teil wiederholen, nicht die komplette Prüfung. Eine Wiederholung ist frühestens am Folgetag möglich, erfordert aber eine neue Anmeldung und eine eigene Gebühr beim Prüfungsausschuss. Die Anzahl der Versuche ist nicht begrenzt."
+howTo:
+  name: "Die drei Teile der SBF-Prüfung"
+  description: "Die SBF-Prüfung besteht aus drei Teilen, die alle bestanden werden müssen: Theorie, Knoten und Praxis."
+  steps:
+    - name: "Theorieprüfung"
+      text: "Multiple-Choice-Bogen mit 30 Fragen in 45 Minuten aus dem offiziellen ELWIS-Fragenkatalog, unterteilt in Basisfragen und spezifische Fragen, die beide separat bestanden werden müssen."
+    - name: "Knotenprüfung"
+      text: "Mehrere Seemannsknoten korrekt vorführen, u. a. Palstek, Webleinstek, Achtknoten und Kreuzknoten – ein eigenständiger Prüfungsteil, kein Bonus."
+    - name: "Praktische Prüfung (auf dem Wasser)"
+      text: "Ein Boot selbstständig führen und Manöver wie An- und Ablegen, Kurshalten, Boje-über-Bord, Ankern und Rückwärtsfahren demonstrieren."
 ---
 
 Der Sportbootführerschein (SBF) ist die offizielle Fahrerlaubnis für Sportboote in Deutschland. Diese Seite erklärt dir **alles**, was du vor der Prüfung wissen musst – mit korrekten Daten aus den offiziellen ELWIS- und DMYV-Regelwerken.

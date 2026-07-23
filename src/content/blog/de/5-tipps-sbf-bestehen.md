@@ -8,6 +8,20 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "5-tips-pass-sbf"
+howTo:
+  name: "So bestehst du die SBF-Prüfung beim ersten Versuch"
+  description: "Fünf konkrete Schritte für die optimale SBF-Prüfungsvorbereitung – vom Prüfungsaufbau bis zur Terminbuchung."
+  steps:
+    - name: "Prüfungsaufbau verstehen"
+      text: "Die Theorieprüfung ist in Basisfragen und spezifische Fragen aufgeteilt, die du separat bestehen musst – lerne beide Blöcke gleichmäßig."
+    - name: "Unter echten Prüfungsbedingungen üben"
+      text: "Absolviere mindestens 3–5 vollständige Probeprüfungen mit Zeitlimit und ohne Nachschlagen."
+    - name: "Gezielt Schwächen trainieren"
+      text: "Konzentriere dich auf die Fragen, die du wiederholt falsch beantwortest, statt bereits sichere Themen zu wiederholen."
+    - name: "Täglich statt in Blöcken lernen"
+      text: "Kurze, regelmäßige Lerneinheiten festigen Wissen zuverlässiger als seltene lange Sessions."
+    - name: "Prüfungstermin früh buchen"
+      text: "Buche den Termin beim DMYV-Prüfungsausschuss einige Wochen vor deinem geplanten Lernabschluss, bevor Termine ausgebucht sind."
 ---
 
 Der Sportbootführerschein (SBF) ist kein Hexenwerk – aber ohne die richtige Strategie kann die Prüfung trotzdem schief gehen. Diese fünf Tipps basieren auf dem, was Kandidaten wirklich stolpern lässt.

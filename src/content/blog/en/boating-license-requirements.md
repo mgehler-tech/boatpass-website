@@ -8,6 +8,20 @@ readingTime: 6
 lang: en
 author: "Marius Gehler"
 altSlug: "sportbootfuehrerschein-voraussetzungen"
+howTo:
+  name: "How to register for the SBF exam"
+  description: "Five steps from finding an exam date to receiving your registration confirmation from the DMYV or DSV examination board."
+  steps:
+    - name: "Find an exam date"
+      text: "On the website of your regional examination board (e.g. DMYV exam center NRW, Bavaria, Schleswig-Holstein, etc.) you'll find the next dates."
+    - name: "Gather the documents"
+      text: "Get all the documents from the checklist: application for admission, medical certificate, passport photo, and a copy of your car driving license or a certificate of good conduct."
+    - name: "Submit your registration"
+      text: "Submit the documents by post or online, depending on the examination board – usually one to two weeks before the exam date."
+    - name: "Transfer the exam fee"
+      text: "Pay the fee together with the registration or as instructed by the examination board."
+    - name: "Wait for confirmation"
+      text: "You'll receive an admission to the exam – with that you're registered."
 ---
 
 Before you can sit the [SBF exam](/en/sbf-exam/), you have to meet a few formal requirements and submit some documents. Here's everything you need to know – from the age limit to [exam registration](/en/blog/how-to-register-sbf-exam/).
