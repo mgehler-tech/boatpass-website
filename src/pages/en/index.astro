@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroSection from '../../components/HeroSection.astro';
-import TrustBar from '../../components/TrustBar.astro';
 import FeatureCards from '../../components/FeatureCards.astro';
 import PricingSection from '../../components/PricingSection.astro';
 import BlogTeaser from '../../components/BlogTeaser.astro';
@@ -55,7 +54,6 @@ const faqSchema = {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <HeroSection lang="en" />
-  <TrustBar lang="en" />
   <FeatureCards lang="en" />
   <FinderTeaser lang="en" />
   <PricingSection lang="en" withGuarantee />
