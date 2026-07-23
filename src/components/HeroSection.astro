@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 import { useTranslations } from '../i18n/index';
+import { getBoatpassRating } from '../data/apps';
 import screenshot0De from '../assets/images/app-screenshot.de.png';
 import screenshot1De from '../assets/images/app.screenshot.1.de.png';
 import screenshot2De from '../assets/images/app.screenshot.2.de.png';
@@ -21,6 +22,14 @@ const [screenshot0, screenshot1, screenshot2, screenshot3] = lang === 'en'
   ? [screenshot0En, screenshot1En, screenshot2En, screenshot3En]
   : [screenshot0De, screenshot1De, screenshot2De, screenshot3De];
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+// Google-Play-Bewertung direkt am Haupt-CTA als Social Proof (Logo · Score · Sterne · Anzahl).
+const appRating = getBoatpassRating();
+const ratingScoreLabel = appRating
+  ? appRating.score.toFixed(1).replace('.', lang === 'de' ? ',' : '.')
+  : null;
+const fullStars = appRating ? Math.round(appRating.score) : 0;
+const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
 ---
 
 <section class="hero-section" style="position:relative; min-height:100vh; display:flex; align-items:center; padding: 100px 0 0; overflow:hidden; background:#F0F4FA;">
@@ -36,7 +45,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   <div class="max-w-6xl mx-auto px-6 w-full hero-grid" style="position:relative; z-index:2;">
 
     <!-- Left: text -->
-    <div style="max-width:580px;">
+    <div style="max-width:640px;">
 
       <!-- Badge -->
       <div class="animate-fade-up" style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:28px;">
@@ -64,35 +73,73 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       </p>
 
       <!-- CTAs -->
-      <div class="animate-fade-up delay-3" style="display:flex; gap:14px; align-items:center; margin-bottom:52px; flex-wrap:wrap;">
-        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-          id="hero-cta-play"
-          class="cta-primary"
-          style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:15px; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
-          ▶&nbsp;{t.hero.cta}
-        </a>
-        <div id="hero-cta-ios" class="ios-badge"
-          style="display:none; align-items:center; gap:10px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); font-weight:700; font-size:15px; padding:13px 27px; border-radius:14px;">
-          <Icon name="phoneDevice" size={17} strokeWidth={2} />
-          {t.hero.ctaIos}
+      <div class="animate-fade-up delay-3" style="margin-bottom:52px;">
+        <div class="hero-cta-row">
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+            id="hero-cta-play"
+            class="cta-primary"
+            style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:15px; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
+            ▶&nbsp;{t.hero.cta}
+          </a>
+          <div id="hero-cta-ios" class="ios-badge"
+            style="display:none; align-items:center; gap:10px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); font-weight:700; font-size:15px; padding:13px 27px; border-radius:14px;">
+            <Icon name="phoneDevice" size={17} strokeWidth={2} />
+            {t.hero.ctaIos}
+          </div>
+
+          <!-- Offizielles "Jetzt bei Google Play"-Badge -->
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+            id="hero-gplay-badge" class="gplay-badge"
+            aria-label={lang === 'de' ? 'Boatpass bei Google Play herunterladen' : 'Get Boatpass on Google Play'}>
+            <img src="/images/google-play-icon.png" alt="" width="24" height="24" aria-hidden="true" class="gplay-badge-icon" />
+            <span class="gplay-badge-text">
+              <span class="gplay-badge-eyebrow">{lang === 'de' ? 'Jetzt bei' : 'Get it on'}</span>
+              <span class="gplay-badge-wordmark">Google Play</span>
+            </span>
+          </a>
+
+          {appRating && (
+            <>
+              <div class="hero-cta-divider" aria-hidden="true"></div>
+              <div class="hero-rating-block"
+                aria-label={`${ratingScoreLabel} ${lang === 'de' ? 'von 5 Sternen' : 'out of 5 stars'} – ${appRating.ratings} ${ratingsLabel}`}>
+                <div class="hero-rating-line">
+                  <span class="hero-rating-score">{ratingScoreLabel}</span>
+                  <span class="hero-rating-stars" aria-hidden="true">
+                    {Array.from({ length: 5 }).map((_, i) => (
+                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class={`hero-star${i < fullStars ? '' : ' hero-star--empty'}`}>
+                        <path d="M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z" fill="currentColor"/>
+                      </svg>
+                    ))}
+                  </span>
+                </div>
+                <span class="hero-rating-count">{appRating.ratings} {ratingsLabel}</span>
+              </div>
+            </>
+          )}
+
+          <script is:inline>
+            // Läuft während des Parsens, also vor dem ersten Paint – kein Umspringen sichtbar.
+            // iPadOS gibt sich seit iOS 13 als MacIntel aus, daher der maxTouchPoints-Check.
+            (function () {
+              var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+              if (!isIos) return;
+              var play = document.getElementById('hero-cta-play');
+              var ios = document.getElementById('hero-cta-ios');
+              var gplay = document.getElementById('hero-gplay-badge');
+              if (play && ios) {
+                play.style.display = 'none';
+                ios.style.display = 'inline-flex';
+              }
+              // Google-Play-Badge auf iOS ausblenden – dort führt es nicht zum Ziel.
+              if (gplay) gplay.style.display = 'none';
+            })();
+          </script>
         </div>
-        <script is:inline>
-          // Läuft während des Parsens, also vor dem ersten Paint – kein Umspringen sichtbar.
-          // iPadOS gibt sich seit iOS 13 als MacIntel aus, daher der maxTouchPoints-Check.
-          (function () {
-            var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-              (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-            if (!isIos) return;
-            var play = document.getElementById('hero-cta-play');
-            var ios = document.getElementById('hero-cta-ios');
-            if (play && ios) {
-              play.style.display = 'none';
-              ios.style.display = 'inline-flex';
-            }
-          })();
-        </script>
-        <a href="#features"
-          style="color:#3366FF; font-size:15px; font-weight:600; text-decoration:none; display:flex; align-items:center; gap:6px; padding:14px 0;">
+
+        <a href="#features" class="hero-secondary-link"
+          style="color:#3366FF; font-size:15px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin-top:20px;">
           {t.hero.ctaSecondary} →
         </a>
       </div>
@@ -208,6 +255,87 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
      dunkleres, Dunkel helleres Blau – eine feste Farbe kann beides nicht. */
   .ios-badge { color: #1A44D4; }
   :global(html.dark) .ios-badge { color: #5B8CFF; }
+
+  /* CTA-Reihe: blauer Button · "Jetzt bei Google Play"-Badge · Trenner ·
+     Bewertungsblock – als eine zusammenhängende Einheit (Design-Vorgabe). */
+  .hero-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  /* Offizielles schwarzes Google-Play-Badge (nachgebaut mit dem Play-Icon). */
+  .gplay-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    background: #000;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .gplay-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 26px rgba(0,0,0,0.28);
+  }
+  .gplay-badge-icon { display: block; flex-shrink: 0; }
+  .gplay-badge-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .gplay-badge-eyebrow {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    opacity: 0.9;
+  }
+  .gplay-badge-wordmark {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+  }
+
+  /* Vertikaler Trenner vor dem Bewertungsblock. */
+  .hero-cta-divider {
+    width: 1px;
+    align-self: stretch;
+    min-height: 42px;
+    background: rgba(26,31,54,0.12);
+    flex-shrink: 0;
+  }
+
+  /* Bewertung: Score + Sterne oben, Anzahl darunter. */
+  .hero-rating-block { display: flex; flex-direction: column; gap: 4px; }
+  .hero-rating-line { display: flex; align-items: center; gap: 8px; }
+  .hero-rating-score {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1A1F36;
+    letter-spacing: -0.3px;
+    line-height: 1;
+  }
+  .hero-rating-stars { display: inline-flex; align-items: center; gap: 2px; }
+  .hero-star { color: #FBBF24; display: block; }
+  .hero-star--empty { color: #D1D5DB; }
+  .hero-rating-count {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6B7280;
+    line-height: 1;
+  }
+  :global(html.dark) .gplay-badge { border-color: rgba(255,255,255,0.16); }
+  :global(html.dark) .hero-cta-divider { background: rgba(90,120,255,0.18); }
+  :global(html.dark) .hero-rating-score { color: #E2E8F0; }
+  :global(html.dark) .hero-rating-count { color: #94A3B8; }
+  :global(html.dark) .hero-star--empty { color: #3A4256; }
+
+  /* Auf schmalen Screens den Trenner ausblenden (die Reihe bricht dann um). */
+  @media (max-width: 520px) {
+    .hero-cta-row { gap: 14px; }
+    .hero-cta-divider { display: none; }
+  }
 
   .phone-slide {
     width: 100%;
