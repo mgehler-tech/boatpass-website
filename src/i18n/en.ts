@@ -114,6 +114,22 @@ export const en: Translations = {
     bundleCta: 'Unlock bundle',
     soon1: 'Bodenseeschifferpatent',
     soonLabel: 'Coming soon',
+    // Merged currency guarantee: "Included with every licence" + proof + trust bar
+    includedTitle: 'Included with every licence',
+    included: [
+      { label: 'Official question catalogue', sub: 'Straight from DSV & BMDV', icon: 'shield' },
+      { label: 'Lifetime updates', sub: 'No extra charge', icon: 'refresh' },
+      { label: 'Always up to date', sub: 'New questions included', icon: 'check' },
+      { label: 'Learn offline', sub: 'Available anywhere', icon: 'phoneDevice' },
+      { label: 'No subscription', sub: 'Pay once, keep forever', icon: 'lock' },
+    ],
+    proofText: 'Official ELWIS catalogue, 2026 edition – we ship every catalogue change automatically.',
+    proofCta: 'View all catalogues & sources',
+    trustPay: 'Secure payment',
+    trustPaySub: 'via Google Play',
+    trustRatingSub: 'on Google',
+    trustNoSub: 'No subscription',
+    trustNoSubSub: 'pay once, keep forever',
   },
   catalogSources: {
     chip: 'Always up to date',

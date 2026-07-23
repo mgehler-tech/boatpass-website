@@ -112,6 +112,22 @@ export const de = {
     bundleCta: 'Paket freischalten',
     soon1: 'Bodenseeschifferpatent',
     soonLabel: 'Bald verfügbar',
+    // Zusammengeführte Aktualitätsgarantie: "In jeder Lizenz enthalten" + Aktualitäts-Beweis + Trust-Leiste
+    includedTitle: 'In jeder Lizenz enthalten',
+    included: [
+      { label: 'Offizieller Fragenkatalog', sub: 'Direkt vom DSV & BMDV', icon: 'shield' },
+      { label: 'Lebenslange Updates', sub: 'Ohne Aufpreis', icon: 'refresh' },
+      { label: 'Aktualitätsgarantie', sub: 'Neue Fragen inklusive', icon: 'check' },
+      { label: 'Offline lernen', sub: 'Überall verfügbar', icon: 'phoneDevice' },
+      { label: 'Kein Abo, kein Risiko', sub: 'Einmal zahlen, für immer', icon: 'lock' },
+    ],
+    proofText: 'Amtlicher ELWIS-Katalog, Stand 2026 – bei jeder Katalog-Änderung aktualisieren wir automatisch.',
+    proofCta: 'Alle Kataloge & Quellen ansehen',
+    trustPay: 'Sicher bezahlen',
+    trustPaySub: 'über Google Play',
+    trustRatingSub: 'bei Google',
+    trustNoSub: 'Kein Abo',
+    trustNoSubSub: 'einmal zahlen, für immer',
   },
   catalogSources: {
     chip: 'Aktualitäts-Garantie',
