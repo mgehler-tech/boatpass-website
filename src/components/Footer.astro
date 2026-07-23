@@ -64,7 +64,7 @@ const legalLinks: FooterLink[] = [
 ];
 
 const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showChevron?: boolean; hideOnMobile?: boolean }[] = [
-  { heading: lang === 'de' ? 'Lizenzen' : 'Licenses', icon: 'anchor', links: licenseLinks, showChevron: true, hideOnMobile: true },
+  { heading: lang === 'de' ? 'Lizenzen' : 'Licenses', icon: 'anchor', links: licenseLinks, showChevron: true },
   { heading: lang === 'de' ? 'Ratgeber' : 'Guides', icon: 'book', links: guideLinks, hideOnMobile: true },
   { heading: 'BoatPass', icon: 'users', links: aboutLinks },
 ];
@@ -303,16 +303,17 @@ const stats: { icon: IconName; value: string; label: string }[] = [
   /* ── Link grid ── */
   .footer-link-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 28px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     margin-bottom: 28px;
   }
   @media (min-width: 640px) {
     .footer-link-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
   }
 
-  /* Lizenzen/Ratgeber sind auf dem Handy bereits über das Header-Menü und die
+  /* Ratgeber ist auf dem Handy bereits über das Header-Menü und die
      Startseite erreichbar – im Footer wirkten drei volle Spalten hier zu lang.
+     Lizenzen und BoatPass rutschen dadurch nebeneinander in ein 2er-Grid.
      Auf dem Desktop bleibt der Platz vorhanden, dort bleiben alle drei Spalten. */
   @media (max-width: 639px) {
     .footer-link-col-hide-mobile { display: none; }
