@@ -150,7 +150,6 @@ export const de = {
     imprint: 'Impressum',
     terms: 'Nutzungsbedingungen',
     contact: 'Kontakt',
-    switchLang: 'English',
   },
   faq: {
     title: 'Häufige Fragen',

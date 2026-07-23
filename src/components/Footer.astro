@@ -93,7 +93,7 @@ const stats: { icon: IconName; value: string; label: string }[] = [
 ---
 
 <footer style="background:#E8EDF6; border-top:1px solid rgba(51,102,255,0.10);" class="mt-12 sm:mt-24 footer-root">
-  <div class="max-w-6xl mx-auto px-6 py-8 sm:py-12 footer-inner">
+  <div class="max-w-6xl mx-auto px-6 py-8 sm:py-12">
 
     <!-- App-Promo-Karte -->
     <div class="footer-app-card">
@@ -181,12 +181,9 @@ const stats: { icon: IconName; value: string; label: string }[] = [
     </div>
 
     <div class="footer-bottom">
-      <div class="footer-bottom-row">
-        <p class="footer-copyright">
-          © {year} Boatpass. {lang === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
-        </p>
-        <a href={lang === 'de' ? '/en/' : '/'} class="footer-lang-switch">{t.footer.switchLang}</a>
-      </div>
+      <p class="footer-copyright">
+        © {year} Boatpass. {lang === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
+      </p>
 
       <div class="footer-legal-row">
         {legalLinks.map((link, i) => (
@@ -203,33 +200,10 @@ const stats: { icon: IconName; value: string; label: string }[] = [
         {lang === 'de' ? 'in Deutschland' : 'in Germany'}
       </p>
     </div>
-
-    <Icon name="anchor" size={260} strokeWidth={0.6} class="footer-deco-anchor" />
   </div>
 </footer>
 
 <style>
-  .footer-root {
-    position: relative;
-    overflow: hidden;
-  }
-  .footer-inner {
-    position: relative;
-    z-index: 1;
-  }
-
-  /* ── Decorative background anchor ── */
-  :global(.footer-deco-anchor) {
-    position: absolute;
-    right: -30px;
-    bottom: -30px;
-    color: #3366FF;
-    opacity: 0.05;
-    pointer-events: none;
-    z-index: 0;
-  }
-  html.dark :global(.footer-deco-anchor) { opacity: 0.08; }
-
   /* ── App promo card ── */
   .footer-app-card {
     display: flex;
@@ -462,25 +436,11 @@ const stats: { icon: IconName; value: string; label: string }[] = [
     flex-direction: column;
     gap: 12px;
   }
-  .footer-bottom-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
   .footer-copyright {
     font-size: 12.5px;
     color: var(--color-muted);
     margin: 0;
   }
-  .footer-lang-switch {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--color-primary);
-    text-decoration: none;
-  }
-  .footer-lang-switch:hover { text-decoration: underline; }
 
   .footer-legal-row {
     display: flex;
