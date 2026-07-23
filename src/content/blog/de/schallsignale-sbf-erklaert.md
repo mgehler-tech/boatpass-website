@@ -50,7 +50,7 @@ In engem Fahrwasser kommen zusätzlich Überholsignale dazu: **▬ ▬ ●** (�
 
 ### Signale bei verminderter Sicht
 
-„Verminderte Sicht" bedeutet Sichteinschränkung durch Nebel, Regen, Schnee oder „dickes Wetter". Diese Signale dienen der einzigen Aussage „**Ich bin hier**" und sind **Pflicht** – sie werden mindestens **alle zwei Minuten** gegeben:
+[„Verminderte Sicht"](/blog/verhalten-bei-verminderter-sicht-nebel/) bedeutet Sichteinschränkung durch Nebel, Regen, Schnee oder „dickes Wetter". Diese Signale dienen der einzigen Aussage „**Ich bin hier**" und sind **Pflicht** – sie werden mindestens **alle zwei Minuten** gegeben:
 
 | Signal | Bedeutung |
 | --- | --- |
