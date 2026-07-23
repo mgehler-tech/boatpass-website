@@ -170,7 +170,7 @@ const promo = {
     </nav>
 
     <!-- Right side -->
-    <div class="flex items-center gap-3">
+    <div class="header-actions flex items-center gap-3">
       <div class="lang-switcher">
         <a href="/" class={`lang-option${lang === 'de' ? ' lang-active' : ''}`}>
           DE
@@ -283,34 +283,6 @@ const promo = {
       </a>
 
       <div class="mobile-menu-footer">
-        <!-- Theme-Umschalter fürs Handy: der Desktop-Umschalter ist ≤768px
-             ausgeblendet, dadurch konnten mobile Nutzer eine vom Browser
-             erzwungene (oder gespeicherte) Dark-/Light-Wahl nicht überstimmen. -->
-        <div class="mobile-theme-row">
-          <span class="mobile-theme-label">{lang === 'de' ? 'Design' : 'Theme'}</span>
-          <button type="button" class="theme-switcher theme-switcher--mobile" aria-pressed="false" aria-label={lang === 'de' ? 'Design wechseln' : 'Toggle theme'}>
-            <span class="theme-option" data-theme="light">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="5"/>
-                <line x1="12" y1="1" x2="12" y2="3"/>
-                <line x1="12" y1="21" x2="12" y2="23"/>
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                <line x1="1" y1="12" x2="3" y2="12"/>
-                <line x1="21" y1="12" x2="23" y2="12"/>
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-              </svg>
-              <span class="theme-option-text">{lang === 'de' ? 'Hell' : 'Light'}</span>
-            </span>
-            <span class="theme-option" data-theme="dark">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-              </svg>
-              <span class="theme-option-text">{lang === 'de' ? 'Dunkel' : 'Dark'}</span>
-            </span>
-          </button>
-        </div>
         <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="mobile-cta-btn">
           {t.nav.getApp}
         </a>
@@ -793,36 +765,24 @@ const promo = {
     box-shadow: 0 1px 4px rgba(0,0,0,0.08);
   }
   .theme-option:not(.theme-option-active):hover { color: #1A1F36; }
-
-  /* Der Umschalter im Header ist nur auf Desktop sichtbar; das mobile Pendant
-     lebt im mobilen Menü und wird erst unterhalb des Breakpoints eingeblendet. */
-  .theme-switcher--mobile { display: none; }
-  @media (max-width: 768px) {
-    .theme-switcher { display: none; }
-    .theme-switcher.theme-switcher--mobile { display: inline-flex; }
+  /* Umschalter bleibt auch auf dem Handy sichtbar – direkt neben dem
+     Sprachwechsler im Header. So können Nutzer eine vom Browser erzwungene
+     oder gespeicherte Dark-/Light-Wahl jederzeit überstimmen, ohne erst das
+     Menü öffnen zu müssen. Auf schmalen Screens Abstände und Innenpaddings
+     straffen, damit die Kopfzeile (Logo · DE/EN · Design · Menü) nicht umbricht
+     und das Sprach-Pill nicht aufs Logo läuft. */
+  @media (max-width: 480px) {
+    .header-actions { gap: 8px; }
+    .theme-option { padding: 4px 7px; }
+    .lang-option { padding: 4px 9px; }
   }
-
-  /* Zeile "Design [ Hell | Dunkel ]" im mobilen Menü-Footer */
-  .mobile-theme-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 4px 12px 12px;
+  @media (max-width: 380px) {
+    .header-actions { gap: 6px; }
+    .theme-option { padding: 4px 6px; }
+    .lang-option { padding: 4px 7px; font-size: 13px; }
+    .logo-link { font-size: 1.05rem; gap: 6px; }
+    .logo-link :global(img) { width: 24px !important; height: 24px !important; }
   }
-  .mobile-theme-label {
-    font-size: 15px;
-    font-weight: 600;
-    color: #1A1F36;
-    letter-spacing: -0.1px;
-  }
-  .theme-switcher--mobile .theme-option {
-    gap: 7px;
-    padding: 7px 14px;
-    font-size: 13px;
-    font-weight: 600;
-  }
-  .theme-option-text { line-height: 1; }
-  html.dark .mobile-theme-label { color: #E2E8F0 !important; }
 
   /* ── Dark Mode (controlled by html.dark class) ─────────────── */
   html.dark header {
