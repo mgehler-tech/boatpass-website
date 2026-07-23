@@ -31,7 +31,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Schleppverband und besondere Fahrzeuge – Kennzeichnung erkennen (2026-07-21: schleppverband-besondere-fahrzeuge-erkennen / towing-convoys-special-vessels-day-shapes)
 - [x] Bootsversicherung für Sportboote – was ist sinnvoll? (2026-07-21: bootsversicherung-sportboote-sinnvoll / boat-insurance-for-sportboats-what-makes-sense)
 - [x] Wassersport-Reviere in Deutschland – wo darf ich mit dem SBF fahren? (2026-07-22: wassersport-reviere-deutschland / boating-regions-in-germany)
-- [ ] Nebel, Sicht und Schallzeichen – richtig verhalten bei schlechter Sicht
+- [x] Nebel, Sicht und Schallzeichen – richtig verhalten bei schlechter Sicht (2026-07-23: verhalten-bei-verminderter-sicht-nebel / how-to-behave-in-restricted-visibility-fog)
 - [ ] Strömung und Tide praktisch nutzen – Törnplanung Grundlagen
 - [ ] Seewetterbericht und Wetterwarnungen richtig nutzen – Wetterdienste für Skipper
 - [ ] Bußgelder und Verstöße auf dem Wasser – die teuersten Fehler mit Konsequenzen
