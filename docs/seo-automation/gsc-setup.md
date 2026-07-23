@@ -1,10 +1,18 @@
 # GSC Feedback Loop – Einrichtung
 
 Der Workflow `.github/workflows/gsc-feedback.yml` läuft jeden Montag 05:30 UTC,
-holt Search-Console-Daten der letzten 28 Tage (plus Vorperiode), schreibt
-priorisierte Findings nach `docs/seo-automation/gsc-findings.md` und reicht eine
-On-Page-Verbesserung als PR ein. SEO-Autopilot (Mo/Do) liest die Findings als
-Prioritätenliste.
+holt Search-Console-Daten der letzten 28 Tage (plus Vorperiode) via
+`scripts/fetch-gsc-data.mjs` und wertet sie mit `scripts/analyze-gsc-data.mjs`
+**deterministisch** aus: Striking-Distance, CTR-Schwächen, Bewegungen und
+Themen-Chancen landen in `docs/seo-automation/gsc-findings.md`, der Rohreport als
+Workflow-Artefakt (`gsc-report`, 90 Tage). Kein LLM, keine automatischen
+Code-Änderungen – die Bewertung und jede Umsetzung passieren manuell, damit der
+wöchentliche `git diff` der Findings aussagekräftig bleibt.
+
+> Der frühere Analyst-Schritt (Claude Code editiert Titel/Meta und öffnet PRs)
+> wurde entfernt: Er brauchte einen bezahlten `ANTHROPIC_API_KEY`, formulierte die
+> Findings jede Woche neu (Diff = Rauschen) und hätte laufende CTR-Messungen durch
+> ungefragte Title-Änderungen verfälscht.
 
 ## Einmalige Einrichtung (Service Account)
 
