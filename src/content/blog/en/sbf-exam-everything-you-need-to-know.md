@@ -21,6 +21,16 @@ faq:
     answer: "For SBF Inland, studying 30-45 minutes daily, 3-6 weeks is realistic. For SBF Coastal, plan extra time because of the added navigation task. The knot exam requires daily hands-on practice."
   - question: "What happens if I fail a part of the exam?"
     answer: "You only need to retake the part you failed, not the entire exam. A retake is possible at the earliest the next day, but requires a new registration and a separate fee with the examination board. There is no limit on the number of attempts."
+howTo:
+  name: "The three parts of the SBF exam"
+  description: "The SBF exam consists of three parts, all of which must be passed: theory, knots and practical."
+  steps:
+    - name: "Theory exam"
+      text: "Multiple choice, 30 questions in 45 minutes from the official ELWIS question catalog, split into base questions and specific questions that must each be passed separately."
+    - name: "Knot exam"
+      text: "Correctly demonstrate several sailor's knots, including the bowline, clove hitch, figure-eight knot and square knot – a standalone exam section, not a formality."
+    - name: "Practical exam (on the water)"
+      text: "Independently operate a boat and demonstrate maneuvers such as docking and undocking, course keeping, the man-overboard drill, anchoring and reversing."
 ---
 
 The German Sportbootführerschein (SBF) is the official license for operating motorboats in Germany. This guide covers everything you need to know before your exam – with accurate data from official ELWIS and DMYV sources.

@@ -15,6 +15,18 @@ faq:
     answer: "In der Regel nur den nicht bestandenen Teil. Theorie (30 Multiple-Choice-Fragen) und Praxis werden beim SBF Binnen unabhängig voneinander bewertet. Ein bereits bestandener Teil bleibt aber nur befristet gültig – die Frist legt dein Prüfungsausschuss fest, deshalb solltest du den fehlenden Teil zeitnah nachholen."
   - question: "Wie bereite ich mich nach einem nicht bestandenen Versuch gezielt vor?"
     answer: "Analysiere zuerst ehrlich, woran es lag, und arbeite dann gezielt an deinen Schwachstellen, statt planlos den ganzen Fragenkatalog zu wiederholen. Für die Theorie helfen ein Fehler-Training und vollständige Probeprüfungen unter Zeitlimit, für die Praxis zusätzliches Üben der Manöver und Knoten auf dem Wasser."
+howTo:
+  name: "Was du nach einer nicht bestandenen SBF-Prüfung tun solltest"
+  description: "Vier Schritte, um nach einem nicht bestandenen Versuch aktiv und gezielt in die Wiederholung zu starten."
+  steps:
+    - name: "Feedback einholen, wenn möglich"
+      text: "Frag beim Prüfungsausschuss oder bei der Prüferin bzw. dem Prüfer nach, in welchen Themenbereichen es bei der Theorie geharkt hat oder bei welchem Manöver es in der Praxis nicht gereicht hat."
+    - name: "Wiederholungstermin zeitnah klären"
+      text: "Da ein bestandener Teil nur befristet gültig bleibt, solltest du dich frühzeitig um einen neuen Termin kümmern, statt das Thema erst einmal beiseitezulegen."
+    - name: "Realistisch einschätzen, was gefehlt hat"
+      text: "War es mangelnde Vorbereitung, Nervosität unter Zeitdruck oder Pech bei den gezogenen Fragen bzw. dem geforderten Manöver? Die ehrliche Antwort entscheidet, wie du dich für die Wiederholung vorbereitest."
+    - name: "Nicht sofort wieder planlos weiterlernen"
+      text: "Wer einfach nur noch mehr Fragen durchklickt, ohne die eigenen Schwachstellen zu kennen, verschenkt Zeit. Gezieltes Training bringt deutlich mehr als reines Wiederholen des bereits Gekonnten."
 ---
 
 Du hast die [SBF-Binnen-Prüfung](/sbf-binnen/) nicht bestanden und fragst dich jetzt, wie es weitergeht? Die gute Nachricht zuerst: Das ist kein Beinbruch und erst recht nicht das Ende deines Weges zum Sportbootführerschein. Viele erfolgreiche Skipper haben einen Prüfungsteil beim ersten Anlauf nicht geschafft und sitzen heute trotzdem am Steuer. Dieser Artikel erklärt, wie die Wiederholung abläuft, was du jetzt konkret tun solltest und wie du dich gezielter vorbereitest, damit es beim nächsten Mal klappt.

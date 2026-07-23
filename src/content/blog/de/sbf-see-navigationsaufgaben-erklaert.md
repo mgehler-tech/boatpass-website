@@ -17,6 +17,18 @@ faq:
     answer: "Du brauchst ein Kursdreieck (Navigationsdreieck) zum Abtragen und Ablesen von Kursen, einen Zirkel oder Stechzirkel zum Messen von Distanzen, Bleistift und Radiergummi sowie einen einfachen Taschenrechner (kein Smartphone) für Zeit- und Geschwindigkeitsberechnungen."
   - question: "Welche Seekarte wird bei der SBF-See-Prüfung verwendet?"
     answer: "Allen Navigationsaufgaben liegt die Übungskarte D49 zugrunde – ein Seekartenausschnitt der Mündungen von Jade, Weser und Elbe. Sie ist die offizielle Grundlage für alle 15 Navigationsaufgaben im amtlichen ELWIS-Fragenkatalog."
+howTo:
+  name: "So bereitest du dich auf die Navigationsaufgabe vor"
+  description: "Vier Schritte zur gezielten Vorbereitung auf die SBF-See-Navigationsaufgabe."
+  steps:
+    - name: "Alle 15 Aufgaben durcharbeiten"
+      text: "Es gibt genau 15 Navigationsaufgaben im amtlichen Fragenkatalog – wer alle mindestens einmal sauber durchgearbeitet hat, kennt jeden Aufgabentyp und jede Schwierigkeit, die in der Prüfung vorkommen kann."
+    - name: "Umrechnungen auswendig können"
+      text: "Die Formel rwK → mwK → MgK (und umgekehrt) muss sitzen. Die häufigsten Fehler passieren bei den Vorzeichen von Missweisung und Ablenkung."
+    - name: "Mit der echten Seekarte üben"
+      text: "Übe mit einem maßstabsgetreuen Ausdruck der D49, nicht nur am Bildschirm – das Handling von Kursdreieck und Zirkel auf Papier fühlt sich anders an."
+    - name: "Schifffahrtszeichen systematisch lernen"
+      text: "Lerne die wichtigsten Zeichen der Karte 1 / INT 1 – Leuchtfeuer, Tonnen, Tiefenlinien, Wracks und Sperrgebiete."
 ---
 
 Die Navigationsaufgabe ist für viele Prüflinge die größte Hürde beim [Sportbootführerschein See](/sbf-see/). Sie unterscheidet den SBF See vom SBF Binnen – und erfordert ein grundlegendes Verständnis der Seekartenarbeit. In diesem Artikel erklären wir den genauen Aufbau, die Aufgabentypen und geben Tipps für die Vorbereitung.
