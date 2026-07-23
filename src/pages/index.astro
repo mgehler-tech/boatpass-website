@@ -3,7 +3,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/HeroSection.astro';
 import TrustBar from '../components/TrustBar.astro';
 import FeatureCards from '../components/FeatureCards.astro';
-import CatalogSources from '../components/CatalogSources.astro';
 import PricingSection from '../components/PricingSection.astro';
 import BlogTeaser from '../components/BlogTeaser.astro';
 import FinderTeaser from '../components/FinderTeaser.astro';
@@ -66,9 +65,8 @@ const faqSchema = {
   <HeroSection lang="de" />
   <TrustBar lang="de" />
   <FeatureCards lang="de" />
-  <CatalogSources lang="de" />
   <FinderTeaser lang="de" />
-  <PricingSection lang="de" />
+  <PricingSection lang="de" withGuarantee />
   <BlogTeaser lang="de" />
 
   <div style="max-width:800px; margin:0 auto; padding:0 24px 100px;">
