@@ -39,7 +39,9 @@ function platformLabel(app: LearningApp): string {
 }
 ---
 
-<div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; overflow-x:auto;">
+<!-- Desktop: Tabelle (ab 760px). Darunter würden sechs Spalten den Viewport
+     sprengen und horizontal scrollen – dort greift die Karten-Ansicht unten. -->
+<div class="cmp-table-wrap" style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; overflow-x:auto;">
   <table style="width:100%; border-collapse:collapse; min-width:640px; font-size:14px;">
     {caption && <caption style="caption-side:top; text-align:left; padding:18px 20px 0; font-size:13px; color:#6B7280;">{caption}</caption>}
     <thead>
@@ -81,4 +83,160 @@ function platformLabel(app: LearningApp): string {
     </tbody>
   </table>
 </div>
+
+<!-- Mobile: gestapelte Karten (unter 760px). Jede App wird zu einer eigenen
+     Karte mit Label-Wert-Zeilen, statt die sechsspaltige Tabelle horizontal
+     scrollen zu lassen – dieselbe Behandlung wie die Katalog-Tabelle
+     (CatalogSources.astro). Reiner Layout-Feinschliff, gleiche Daten. -->
+<div class="cmp-cards">
+  {caption && <p class="cmp-cards-caption">{caption}</p>}
+  {apps.map(app => (
+    <div class="cmp-card">
+      <div class="cmp-card-head">
+        <div class="cmp-card-name">
+          {app.name}
+          {app.isOwn && <span class="cmp-card-own">{t.ownHint}</span>}
+        </div>
+        <div class="cmp-card-vendor">{app.vendor}</div>
+      </div>
+      <dl class="cmp-card-rows">
+        <div class="cmp-card-row">
+          <dt>{t.rating}</dt>
+          <dd>
+            {app.rating
+              ? <span>{app.rating.toFixed(1).replace('.', lang === 'de' ? ',' : '.')} ★ <span class="cmp-card-sub">· {app.ratingCount?.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} {t.reviews}</span></span>
+              : <span class="cmp-card-muted">{t.unknown}</span>}
+            {app.downloads && <span class="cmp-card-sub"> · {app.downloads}</span>}
+          </dd>
+        </div>
+        <div class="cmp-card-row">
+          <dt>{t.price}</dt>
+          <dd>{app.price[lang]}</dd>
+        </div>
+        <div class="cmp-card-row">
+          <dt>{t.licenses}</dt>
+          <dd>
+            {app.licenses.map(l => LICENSE_LABELS[l][lang]).join(', ')}
+            {!app.singleApp && (
+              <span class="cmp-card-sub"> · {lang === 'de' ? 'je Schein eine eigene App' : 'a separate app per licence'}</span>
+            )}
+          </dd>
+        </div>
+        <div class="cmp-card-row">
+          <dt>{t.offline}</dt>
+          <dd>{offlineLabel(app.offline)}</dd>
+        </div>
+        <div class="cmp-card-row">
+          <dt>{t.platforms}</dt>
+          <dd>{platformLabel(app)}</dd>
+        </div>
+      </dl>
+    </div>
+  ))}
+</div>
+
 <p style="font-size:13px; color:#9CA3AF; line-height:1.6; margin-top:12px;">{t.asOf}</p>
+
+<style>
+  /* Karten-Ansicht standardmäßig aus; ab 760px zeigt die Tabelle, darunter
+     stapeln die Karten – exakt der Breakpoint der Katalog-Tabelle. */
+  .cmp-cards { display: none; }
+
+  @media (max-width: 760px) {
+    .cmp-table-wrap { display: none; }
+    .cmp-cards { display: flex; flex-direction: column; gap: 12px; }
+  }
+
+  .cmp-cards-caption {
+    font-size: 13px;
+    color: #6B7280;
+    line-height: 1.6;
+    margin: 0 0 4px;
+  }
+  .cmp-card {
+    background: white;
+    border: 1px solid rgba(51,102,255,0.12);
+    border-radius: 16px;
+    padding: 18px 20px;
+  }
+  .cmp-card-head {
+    padding-bottom: 14px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid rgba(51,102,255,0.08);
+  }
+  .cmp-card-name {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1A1F36;
+    letter-spacing: -0.2px;
+  }
+  .cmp-card-own {
+    font-size: 11px;
+    font-weight: 700;
+    color: #3366FF;
+    background: rgba(51,102,255,0.08);
+    border-radius: 100px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+  .cmp-card-vendor {
+    font-size: 12px;
+    font-weight: 500;
+    color: #9CA3AF;
+    margin-top: 4px;
+  }
+  .cmp-card-rows {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .cmp-card-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+  }
+  .cmp-card-row + .cmp-card-row {
+    border-top: 1px solid rgba(51,102,255,0.06);
+  }
+  .cmp-card-row dt {
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+  }
+  .cmp-card-row dd {
+    margin: 0;
+    text-align: right;
+    font-size: 14px;
+    color: #4B5563;
+    line-height: 1.5;
+  }
+  .cmp-card-sub { font-size: 12px; color: #9CA3AF; }
+  .cmp-card-muted { color: #9CA3AF; }
+
+  html.dark .cmp-card {
+    background: #181E2E !important;
+    border-color: rgba(90,120,255,0.12) !important;
+  }
+  html.dark .cmp-card-head { border-bottom-color: rgba(90,120,255,0.10) !important; }
+  html.dark .cmp-card-row + .cmp-card-row { border-top-color: rgba(90,120,255,0.08) !important; }
+  html.dark .cmp-card-name { color: #E2E8F0 !important; }
+  html.dark .cmp-card-vendor { color: #6B7280 !important; }
+  html.dark .cmp-card-row dt { color: #94A3B8 !important; }
+  html.dark .cmp-card-row dd { color: #B4BCDA !important; }
+  html.dark .cmp-card-sub,
+  html.dark .cmp-card-muted { color: #6B7280 !important; }
+  html.dark .cmp-card-own {
+    background: rgba(90,120,255,0.14) !important;
+    color: #8BB4FF !important;
+  }
+  html.dark .cmp-cards-caption { color: #94A3B8 !important; }
+</style>
