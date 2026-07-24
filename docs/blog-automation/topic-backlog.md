@@ -32,7 +32,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Bootsversicherung für Sportboote – was ist sinnvoll? (2026-07-21: bootsversicherung-sportboote-sinnvoll / boat-insurance-for-sportboats-what-makes-sense)
 - [x] Wassersport-Reviere in Deutschland – wo darf ich mit dem SBF fahren? (2026-07-22: wassersport-reviere-deutschland / boating-regions-in-germany)
 - [x] Nebel, Sicht und Schallzeichen – richtig verhalten bei schlechter Sicht (2026-07-23: verhalten-bei-verminderter-sicht-nebel / how-to-behave-in-restricted-visibility-fog)
-- [ ] Strömung und Tide praktisch nutzen – Törnplanung Grundlagen
+- [x] Strömung und Tide praktisch nutzen – Törnplanung Grundlagen (2026-07-24: stroemung-tide-toernplanung-grundlagen / using-currents-and-tides-for-trip-planning)
 - [ ] Seewetterbericht und Wetterwarnungen richtig nutzen – Wetterdienste für Skipper
 - [ ] Bußgelder und Verstöße auf dem Wasser – die teuersten Fehler mit Konsequenzen
 - [ ] Verhalten nach einem Bootsunfall – Pflichten, Meldung, Beweissicherung
