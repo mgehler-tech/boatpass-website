@@ -8,6 +8,20 @@ readingTime: 6
 lang: de
 author: "Marius Gehler"
 altSlug: "save-money-boating-license"
+howTo:
+  name: "Beim Bootsführerschein Kosten sparen"
+  description: "Fünf konkrete Schritte, mit denen du für SBF Binnen und SBF See deutlich weniger zahlst, ohne auf Qualität zu verzichten."
+  steps:
+    - name: "Kombiprüfung statt zwei einzelne Prüfungen wählen"
+      text: "Binnen und See an einem Tag prüfen lassen spart rund 100 € Prüfungsgebühr gegenüber zwei Einzelprüfungen."
+    - name: "Theorie mit App statt Bootsschule lernen"
+      text: "Eine Lern-App mit dem offiziellen ELWIS-Fragenkatalog kostet einen Bruchteil eines Präsenzkurses bei der Bootsschule."
+    - name: "Praxisstunde separat buchen"
+      text: "Statt eines Komplettpakets nur die tatsächlich benötigten praktischen Übungsstunden einzeln buchen."
+    - name: "Beim ersten Versuch bestehen"
+      text: "Mit Prüfungssimulation und gezieltem Fehler-Training die Kosten einer Wiederholungsprüfung vermeiden."
+    - name: "Anbieter für die Praxisausbildung vergleichen"
+      text: "Mindestens 2–3 Bootsschulen in der Region vergleichen, da die Praxiskosten stark variieren, während die Prüfungsgebühren überall gleich sind."
 ---
 
 Der Sportbootführerschein kostet je nach Weg zwischen 200 und 1.000 € – eine große Spanne (die [vollständige Kostenübersicht für 2026](/sbf-kosten/) zeigt alle Posten im Detail). Die Prüfungsgebühren sind für alle gleich, aber bei Theorievorbereitung und Praxisausbildung lässt sich einiges sparen. Hier sind die fünf Tipps, die den größten Unterschied machen.

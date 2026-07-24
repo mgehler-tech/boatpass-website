@@ -8,6 +8,22 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "outboard-motor-basic-maintenance"
+howTo:
+  name: "Außenborder richtig warten"
+  description: "Die wichtigsten Basiswartungsschritte für einen Außenborder, damit er zuverlässig läuft und lange hält."
+  steps:
+    - name: "Nach jeder Fahrt spülen und sichtprüfen"
+      text: "Kühlsystem mit Süßwasser durchspülen, Propeller und Unterwassergehäuse sichtprüfen und den Kühlwasserstrahl beim Start kontrollieren."
+    - name: "Motoröl und Filter wechseln"
+      text: "Bei Viertaktmotoren Wechselintervalle nach Herstellerangabe einhalten, Ölstand regelmäßig kontrollieren und auf Verunreinigungen achten."
+    - name: "Zündkerzen prüfen und wechseln"
+      text: "Zustand der Zündkerzen regelmäßig kontrollieren und Elektrodenabstand sowie Kerzentyp nach Herstellervorgabe einhalten."
+    - name: "Kraftstoffsystem sauber halten"
+      text: "Kraftstofffilter im Blick behalten, Leitungen und Anschlüsse kontrollieren und bei längeren Standzeiten einen Kraftstoffstabilisator erwägen."
+    - name: "Propeller und Opferanode kontrollieren"
+      text: "Propeller regelmäßig abnehmen und prüfen, die Opferanode rechtzeitig tauschen und das Getriebeöl im Unterwassergehäuse wechseln."
+    - name: "Schmierstellen und Anschlüsse pflegen"
+      text: "Schmiernippel fetten, Trimm- und Kippfunktion prüfen sowie Batterie- und Kabelanschlüsse auf Korrosion kontrollieren."
 ---
 
 Ein Außenborder ist robust gebaut, verzeiht aber Nachlässigkeit bei der Pflege nur begrenzt. Wer regelmäßig ein paar einfache Wartungsschritte einhält, verringert das Risiko eines Motorschadens deutlich, erhält den Wert seines Bootes und hat auf dem Wasser weniger böse Überraschungen. Dieser Artikel gibt dir einen praktischen Überblick über die wichtigsten Pflegepunkte, ersetzt aber nicht das Bedienungshandbuch deines Motors, das immer die verbindliche Grundlage für Intervalle und Vorgehensweisen ist.

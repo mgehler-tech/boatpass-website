@@ -8,6 +8,20 @@ readingTime: 6
 lang: en
 author: "Marius Gehler"
 altSlug: "bootsfuehrerschein-kosten-sparen"
+howTo:
+  name: "How to save money on a boating license"
+  description: "Five concrete steps to pay noticeably less for the SBF Inland and SBF Coastal licenses without cutting quality."
+  steps:
+    - name: "Take the combined exam instead of two separate ones"
+      text: "Taking the Inland and Coastal exams on the same day saves around €100 in exam fees compared to two separate exams."
+    - name: "Learn the theory with an app instead of a boating school"
+      text: "A learning app with the official ELWIS question catalog costs a fraction of an in-person course at a boating school."
+    - name: "Book practical training separately"
+      text: "Instead of a full package, book only the practical training hours you actually need."
+    - name: "Pass on the first attempt"
+      text: "Use exam simulation and targeted mistake training to avoid the cost of a repeat exam."
+    - name: "Compare providers for practical training"
+      text: "Compare at least 2-3 boating schools in your region, since practical training costs vary widely while exam fees are fixed."
 ---
 
 Depending on the route you take, the German boating license costs between €200 and €1,000 – a wide range (the [full 2026 cost overview](/en/sbf-costs/) breaks down every item in detail). The exam fees are the same for everyone, but there's plenty to save on theory preparation and practical training. Here are the five tips that make the biggest difference.
