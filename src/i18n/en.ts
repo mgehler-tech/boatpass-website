@@ -117,7 +117,7 @@ export const en: Translations = {
     // Pricing section redesign (home) – header, SBF cards, radio certs, catalogue note
     v2Chip: 'Current catalogues & future-proof',
     v2Title: 'Choose your licence',
-    v2Subtitle: 'All content is based on the official question catalogue. You get new questions automatically and for free.',
+    v2Subtitle: 'All content is based on the official question catalogue – valid for all 2026 exams. You get new questions automatically and for free.',
     v2MetaCatalogs: 'Current catalogues',
     v2MetaValid: 'Valid for all 2026 exams',
     guaranteeTitle: 'Always up to date',
