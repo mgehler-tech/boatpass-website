@@ -41,30 +41,18 @@ const funkCards = [
 ];
 ---
 
-<section id="pricing" class="px-6 py-12 md:py-20" style="text-align:center;">
+<section id="pricing" class="px-6 py-8 md:py-20" style="text-align:center;">
   <div class="max-w-6xl mx-auto">
   {withGuarantee ? (
     <div class="pv2-inner">
 
-      <!-- Header: Aussage + Meta + Aktualitätsgarantie-Karte -->
+      <!-- Header: eine Aussage im Fließtext (Aktualität steht dort, keine Doppelung) -->
       <div class="reveal-item pv2-header" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
         <div class="pv2-header-main">
           <span class="pv2-chip">{t.pricing.v2Chip}</span>
           <h2 class="section-display-title pv2-title">{t.pricing.v2Title}</h2>
           <p class="pv2-subtitle">{t.pricing.v2Subtitle}</p>
-          <div class="pv2-meta">
-            <span class="pv2-meta-item"><Icon name="refresh" size={15} stroke="#3366FF" strokeWidth={2} />{t.pricing.v2MetaCatalogs}</span>
-            <span class="pv2-meta-dot" aria-hidden="true"></span>
-            <span class="pv2-meta-item"><Icon name="check" size={15} stroke="#22C55E" strokeWidth={2.5} />{t.pricing.v2MetaValid}</span>
-          </div>
         </div>
-        <aside class="pv2-guarantee-card">
-          <span class="pv2-guarantee-icon"><Icon name="shield" size={20} stroke="#3366FF" strokeWidth={2} /></span>
-          <div>
-            <div class="pv2-guarantee-title">{t.pricing.guaranteeTitle}</div>
-            <p class="pv2-guarantee-text">{t.pricing.guaranteeText}</p>
-          </div>
-        </aside>
       </div>
 
       <!-- SBF-Karten -->

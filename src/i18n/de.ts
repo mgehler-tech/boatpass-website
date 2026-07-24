@@ -115,7 +115,7 @@ export const de = {
     // Redesign der Preis-Sektion (Startseite) – Header, SBF-Karten, Funk, Katalog-Hinweis
     v2Chip: 'Aktuelle Kataloge & zukunftssicher',
     v2Title: 'Wähle deine Lizenz',
-    v2Subtitle: 'Alle Inhalte basieren auf dem offiziellen Fragenkatalog. Neue Fragen bekommst du automatisch und kostenlos.',
+    v2Subtitle: 'Alle Inhalte basieren auf dem offiziellen Fragenkatalog – gültig für alle Prüfungen 2026. Neue Fragen bekommst du automatisch und kostenlos.',
     v2MetaCatalogs: 'Aktuelle Kataloge',
     v2MetaValid: 'Gültig für alle Prüfungen 2026',
     guaranteeTitle: 'Aktualitätsgarantie',
