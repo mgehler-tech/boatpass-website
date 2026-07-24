@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "verhalten-bei-verminderter-sicht-nebel"
 ---
 
-Fog banks often roll in surprisingly fast, and heavy rain or snowfall can cut visibility drastically within minutes. For the German SBF exam (Sportbootführerschein, the boating license), the topic of **restricted visibility** is a fixed part of the syllabus, and in practice it matters even more: if you do not know how to behave once you can barely see other vessels, or cannot see them at all, you are taking on serious risk. This article explains what restricted visibility means in legal terms, which rules apply at sea and on inland waterways, and how to behave correctly as a recreational skipper in practice.
+Fog banks often roll in surprisingly fast, and heavy rain or snowfall can cut visibility drastically within minutes. For the German [SBF exam](/en/sbf-exam/) (Sportbootführerschein, the boating license), the topic of **restricted visibility** is a fixed part of the syllabus, and in practice it matters even more: if you do not know how to behave once you can barely see other vessels, or cannot see them at all, you are taking on serious risk. This article explains what restricted visibility means in legal terms, which rules apply at sea and on inland waterways, and how to behave correctly as a recreational skipper in practice.
 
 ## What counts as "restricted visibility"?
 
@@ -71,7 +71,7 @@ These principles align with the general [right-of-way rules](/en/blog/right-of-w
 
 ## How this comes up in the exam
 
-The theory exam usually tests the underlying logic: what speed is required in restricted visibility, which sound signals must be given, and how a vessel that detects another only by radar or by ear should behave. Once you have internalized the core principles, safe speed, a heightened lookout, correct sound signals, and navigation lights even by day, you can work out most exam questions on the topic logically instead of memorizing isolated facts. With the Boatpass app you can train exactly these questions from the official ELWIS question catalog and immediately see which connections still need more practice.
+The theory exam usually tests the underlying logic: what speed is required in restricted visibility, which sound signals must be given, and how a vessel that detects another only by radar or by ear should behave. Once you have internalized the core principles, safe speed, a heightened lookout, correct sound signals, and navigation lights even by day, you can work out most exam questions on the topic logically instead of memorizing isolated facts. Restricted visibility is part of the official ELWIS catalog for both the [SBF Binnen](/en/sbf-inland/) (inland) and the [SBF See](/en/sbf-coastal/) (coastal) exam. With the Boatpass app you can train exactly these questions and immediately see which connections still need more practice.
 
 ## Conclusion
 

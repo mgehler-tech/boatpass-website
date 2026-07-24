@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "how-to-behave-in-restricted-visibility-fog"
 ---
 
-Nebelbänke ziehen oft überraschend schnell auf, und auch starker Regen oder Schneefall können die Sicht innerhalb weniger Minuten drastisch verschlechtern. Für die SBF-Prüfung ist das Thema **verminderte Sicht** ein fester Bestandteil, in der Praxis ist es sogar noch wichtiger: Wer nicht weiß, wie er sich verhalten muss, wenn er andere Fahrzeuge kaum noch oder gar nicht mehr sehen kann, geht ein erhebliches Risiko ein. Dieser Artikel erklärt, was verminderte Sicht rechtlich bedeutet, welche Regeln auf See und auf Binnenschifffahrtsstraßen gelten und wie du dich als Sportbootfahrer in der Praxis richtig verhältst.
+Nebelbänke ziehen oft überraschend schnell auf, und auch starker Regen oder Schneefall können die Sicht innerhalb weniger Minuten drastisch verschlechtern. Für die [SBF-Prüfung](/sbf-pruefung-ablauf/) ist das Thema **verminderte Sicht** ein fester Bestandteil, in der Praxis ist es sogar noch wichtiger: Wer nicht weiß, wie er sich verhalten muss, wenn er andere Fahrzeuge kaum noch oder gar nicht mehr sehen kann, geht ein erhebliches Risiko ein. Dieser Artikel erklärt, was verminderte Sicht rechtlich bedeutet, welche Regeln auf See und auf Binnenschifffahrtsstraßen gelten und wie du dich als Sportbootfahrer in der Praxis richtig verhältst.
 
 ## Was bedeutet „verminderte Sicht"?
 
@@ -71,7 +71,7 @@ Diese Prinzipien decken sich mit den allgemeinen [Ausweichregeln](/blog/ausweich
 
 ## So kommt das Thema in der Prüfung vor
 
-In der Theorieprüfung wird meist nach der grundsätzlichen Systematik gefragt: Welche Geschwindigkeit ist bei verminderter Sicht vorgeschrieben, welche Schallsignale sind zu geben, und wie verhält sich ein Fahrzeug, das ein anderes nur über Radar oder Gehör wahrnimmt. Wer die Grundprinzipien, sichere Geschwindigkeit, verstärkter Ausguck, korrekte Schallsignale und Lichterführung auch tagsüber, einmal verinnerlicht hat, kann die meisten Prüfungsfragen zum Thema logisch herleiten, statt einzelne Fakten auswendig zu lernen. Mit der Boatpass-App kannst du genau diese Fragen aus dem offiziellen ELWIS-Fragenkatalog gezielt trainieren und siehst sofort, welche Zusammenhänge noch nicht sicher sitzen.
+In der Theorieprüfung wird meist nach der grundsätzlichen Systematik gefragt: Welche Geschwindigkeit ist bei verminderter Sicht vorgeschrieben, welche Schallsignale sind zu geben, und wie verhält sich ein Fahrzeug, das ein anderes nur über Radar oder Gehör wahrnimmt. Wer die Grundprinzipien, sichere Geschwindigkeit, verstärkter Ausguck, korrekte Schallsignale und Lichterführung auch tagsüber, einmal verinnerlicht hat, kann die meisten Prüfungsfragen zum Thema logisch herleiten, statt einzelne Fakten auswendig zu lernen. Das Thema verminderte Sicht gehört sowohl beim [SBF Binnen](/sbf-binnen/) als auch beim [SBF See](/sbf-see/) zum Pflichtstoff des ELWIS-Fragenkatalogs. Mit der Boatpass-App kannst du genau diese Fragen gezielt trainieren und siehst sofort, welche Zusammenhänge noch nicht sicher sitzen.
 
 ## Fazit
 
