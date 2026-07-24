@@ -174,6 +174,7 @@ export const de = {
     disclaimer: 'Maßgeblich ist immer die amtliche Veröffentlichung – die verlinkten ELWIS-Seiten zeigen stets die aktuell gültige Fassung.',
   },
   blog: {
+    eyebrow: 'Ratgeber',
     title: 'Tipps & Wissenswertes',
     readMore: 'Weiterlesen',
     allArticles: 'Alle Artikel',
