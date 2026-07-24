@@ -57,7 +57,7 @@ Wo genau die Grenze zwischen beiden verläuft – etwa an der Elbe, der Trave od
 | Bestehensgrenze | 5/7 Basis + 18/23 spezifisch | 5/7 Basis + 18/23 spezifisch |
 | Schwerpunkte | Fahrregeln, Lichterführung, Schallzeichen, Binnenwasserstraßen | Navigation, Seekartenarbeit, Seerecht, Gezeiten |
 | Praktische Prüfung | Ja | Ja (auf Küstengewässer) |
-| Knotenprüfung | Ja | Ja |
+| [Knotenprüfung](/blog/wichtigste-knoten-sbf/) | Ja | Ja |
 
 Der **wesentliche Unterschied**: Der SBF See beinhaltet eine schriftliche **Navigationsaufgabe** – du musst Kurse auf einer Seekarte einzeichnen, Peilungen berechnen und mit dem Kompass umgehen. Das erfordert zusätzliches Üben und macht die SBF-See-Prüfung anspruchsvoller.
 

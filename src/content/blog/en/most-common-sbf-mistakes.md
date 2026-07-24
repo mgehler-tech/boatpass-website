@@ -46,7 +46,7 @@ Exam questions can be phrased differently than practice questions. Candidates wh
 
 Knots are the **number one failure point in the practical SBF exam**. Candidates practice them once or twice and assume they're fine – then under exam pressure, with nervous hands, things fall apart.
 
-Required knots include:
+[Required knots](/en/blog/most-important-knots-sbf/) include:
 - **Bowline (Palstek)** – creates a fixed loop, essential for mooring
 - **Cleat hitch (Webleinstek)** – attaches a line to a cleat or bollard
 - **Figure-eight (Achtknoten)** – stopper knot

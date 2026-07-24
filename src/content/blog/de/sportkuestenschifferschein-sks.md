@@ -67,7 +67,7 @@ Die praktische Prüfung dauert maximal **30 Minuten pro Prüfling** und findet a
 
 Dazu kommen weitere Manöverelemente wie kursgerechtes Aufstoppen, Wenden auf engem Raum, Fahren nach Schifffahrtszeichen und Landmarken, das korrekte Anlegen einer Rettungsweste oder eines Sicherheitsgurts sowie die passenden Manöverschallsignale.
 
-Auch **Knotenkunde** gehört zur Praxisprüfung. Geprüft werden fünf Knoten aus einem festen Repertoire: Achtknoten, Kreuzknoten, Schotstek, Palstek, Stopperstek, Webleinstek und der Rundtörn mit zwei halben Schlägen. Wer diese Knoten nicht regelmäßig übt, verliert in der Prüfung oft wertvolle Zeit, weil die korrekte Ausführung unter leichtem Zeitdruck erfolgen muss.
+Auch **[Knotenkunde](/blog/wichtigste-knoten-sbf/)** gehört zur Praxisprüfung. Geprüft werden fünf Knoten aus einem festen Repertoire: Achtknoten, Kreuzknoten, Schotstek, Palstek, Stopperstek, Webleinstek und der Rundtörn mit zwei halben Schlägen. Wer diese Knoten nicht regelmäßig übt, verliert in der Prüfung oft wertvolle Zeit, weil die korrekte Ausführung unter leichtem Zeitdruck erfolgen muss.
 
 ## Fristen: Die gesamte Prüfung muss innerhalb von 24 Monaten stehen
 

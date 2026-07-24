@@ -108,7 +108,7 @@ Du lernst die Theorie ausschließlich mit einer App (wie Boatpass) – direkt au
 
 Egal wie du die Theorie lernst – die **Prüfung ist immer dieselbe**. Derselbe Fragenkatalog, dieselben Bestehensregeln, derselbe Prüfungsausschuss. Es gibt keinen Bonus für den Besuch eines Kurses und keinen Nachteil, wenn du mit einer App gelernt hast.
 
-Auch die **praktische Prüfung** ist identisch. Du musst Manöver auf dem Wasser zeigen (An- und Ablegen, Wenden, Mann über Bord) und Knoten vorführen. Dafür brauchst du mindestens eine Übungseinheit auf dem Wasser – die kannst du bei jeder Bootsschule als Einzelstunde buchen, auch ohne deren Theoriekurs besucht zu haben.
+Auch die **praktische Prüfung** ist identisch. Du musst Manöver auf dem Wasser zeigen (An- und Ablegen, Wenden, Mann über Bord) und [Knoten](/blog/wichtigste-knoten-sbf/) vorführen. Dafür brauchst du mindestens eine Übungseinheit auf dem Wasser – die kannst du bei jeder Bootsschule als Einzelstunde buchen, auch ohne deren Theoriekurs besucht zu haben.
 
 ## Fazit
 

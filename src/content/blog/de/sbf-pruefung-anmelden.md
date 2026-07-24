@@ -107,7 +107,7 @@ Wenn du SBF Binnen und See kombinierst, sparst du, weil sich Teile der Prüfung 
 4. **Passbild** machen lassen.
 5. **Anmeldung** über die Bootsschule oder direkt beim Prüfungsausschuss (DSV/DMYV).
 6. **Termin bestätigen** und Unterlagen vollständig einreichen.
-7. **Vorbereiten:** Theorie sicher beherrschen, Praxis und Knoten üben.
+7. **Vorbereiten:** Theorie sicher beherrschen, Praxis und [Knoten](/blog/wichtigste-knoten-sbf/) üben.
 
 ## Fazit
 

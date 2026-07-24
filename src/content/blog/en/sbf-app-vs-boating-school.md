@@ -108,7 +108,7 @@ You learn the theory exclusively with an app (like Boatpass) – directly from t
 
 No matter how you learn the theory – the **exam is always the same**. The same question catalog, the same passing rules, the same examination board. There is no bonus for attending a course and no disadvantage if you learned with an app.
 
-The **practical exam** is identical too. You have to demonstrate maneuvers on the water (coming alongside and casting off, turning, man overboard) and show knots. For that you need at least one practice session on the water – which you can book at any boating school as a single lesson, even without having attended their theory course.
+The **practical exam** is identical too. You have to demonstrate maneuvers on the water (coming alongside and casting off, turning, man overboard) and show [knots](/en/blog/most-important-knots-sbf/). For that you need at least one practice session on the water – which you can book at any boating school as a single lesson, even without having attended their theory course.
 
 ## Conclusion
 

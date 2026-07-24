@@ -66,7 +66,7 @@ Die 30 Fragen sind in zwei Blöcke aufgeteilt, die **separat bestanden** werden 
 - **Seemannschaft** – Manöver, Ankertechnik, Sicherheitsausrüstung
 - **Wetterkunde** – Wetterlagen, Sturmsignale, Gefahrensituationen
 - **Motorenkunde** – Antrieb, Kraftstoffarten, Wartung
-- **Sicherheit** – Notsignale, Rettungsausrüstung, Verhalten bei Notfällen
+- **Sicherheit** – [Notsignale](/blog/notsignale-auf-see/), Rettungsausrüstung, Verhalten bei Notfällen
 
 ### 2. Knotenprüfung
 

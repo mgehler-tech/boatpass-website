@@ -63,7 +63,7 @@ With your own boat, you carry that responsibility continuously and independently
 
 ## Choosing a Cruising Area: It's Not Equally Easy Everywhere
 
-Whether buying or chartering are even equally viable options also depends on the cruising area you choose. In heavily touristic areas with many charter bases, for example along certain coastal stretches or on larger lake districts, you'll typically find a wide choice of charter boats in different sizes and fit-outs. In quieter or less touristic areas, the charter offering can be noticeably smaller, while free berths for an owned boat may be easier to find at the same time. It's worth checking the actual supply situation in your intended cruising area before deciding, not just your own preferences, for instance directly with local marinas, yacht clubs, or charter bases.
+Whether buying or chartering are even equally viable options also depends on the [cruising area](/en/blog/boating-regions-in-germany/) you choose. In heavily touristic areas with many charter bases, for example along certain coastal stretches or on larger lake districts, you'll typically find a wide choice of charter boats in different sizes and fit-outs. In quieter or less touristic areas, the charter offering can be noticeably smaller, while free berths for an owned boat may be easier to find at the same time. It's worth checking the actual supply situation in your intended cruising area before deciding, not just your own preferences, for instance directly with local marinas, yacht clubs, or charter bases.
 
 ## Who Fits What? Typical Profiles
 

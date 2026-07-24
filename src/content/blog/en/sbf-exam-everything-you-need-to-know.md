@@ -66,7 +66,7 @@ The 30 questions are split into two blocks that must **each** be passed separate
 - **Seamanship** – maneuvers, anchoring, safety equipment
 - **Weather** – weather patterns, storm signals, risk situations
 - **Engine knowledge** – propulsion, fuel types, basic maintenance
-- **Safety** – distress signals, rescue equipment, emergency procedures
+- **Safety** – [distress signals](/en/blog/distress-signals-at-sea/), rescue equipment, emergency procedures
 
 ### 2. Knot exam
 

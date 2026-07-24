@@ -63,7 +63,7 @@ A vessel restricted in her ability to maneuver that is dredging or engaged in un
 - **Two balls**, one above the other, mark the side on which an obstruction exists, meaning the side you should avoid.
 - **Two diamonds**, one above the other, mark the side on which other vessels may safely pass.
 
-Important for the exam: these are not distress signals. They simply indicate that the vessel's ability to maneuver is restricted and that it therefore has priority over most other vessels, as described in the article on [right-of-way rules](/en/blog/right-of-way-collision-rules/).
+Important for the exam: these are not [distress signals](/en/blog/distress-signals-at-sea/). They simply indicate that the vessel's ability to maneuver is restricted and that it therefore has priority over most other vessels, as described in the article on [right-of-way rules](/en/blog/right-of-way-collision-rules/).
 
 ## Vessels constrained by their draught
 

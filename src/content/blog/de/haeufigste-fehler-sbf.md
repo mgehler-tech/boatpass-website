@@ -46,7 +46,7 @@ Die Prüfungsfragen können leicht anders formuliert sein als beim Lernen – we
 
 Knoten sind die **Nummer-1-Fehlerquelle bei der praktischen Prüfung**. Viele Kandidaten üben sie kurz vor der Prüfung und denken, sie sitzen. Unter Prüfungsdruck, mit zitternden Händen, ist das plötzlich eine andere Geschichte.
 
-Die wichtigsten Knoten für die SBF-Prüfung:
+[Die wichtigsten Knoten für die SBF-Prüfung](/blog/wichtigste-knoten-sbf/):
 - **Palstek** – die "Rettungsschlinge", unverzichtbar
 - **Webleinstek** – zum Befestigen an einem Poller
 - **Achtknoten** – Stoppknoten, verhindert das Durchrutschen
