@@ -8,6 +8,22 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "aussenborder-basiswartung"
+howTo:
+  name: "How to maintain an outboard motor"
+  description: "The key basic maintenance steps for an outboard motor so it runs reliably and lasts for years."
+  steps:
+    - name: "Flush and inspect after every trip"
+      text: "Flush the cooling system with fresh water, visually inspect the propeller and lower unit, and check the cooling water stream (tell-tale) at startup."
+    - name: "Change the oil and filter"
+      text: "On four-stroke engines, follow the manufacturer's change intervals, check the oil level regularly, and watch for contamination."
+    - name: "Check and replace the spark plugs"
+      text: "Inspect the spark plugs regularly and follow the manufacturer's spec for electrode gap, replacement interval, and plug type."
+    - name: "Keep the fuel system clean"
+      text: "Keep an eye on the fuel filter, inspect fuel lines and connections, and consider a fuel stabilizer for longer storage periods."
+    - name: "Inspect the propeller and sacrificial anode"
+      text: "Remove and inspect the propeller regularly, replace the sacrificial anode in time, and change the gear oil in the lower unit."
+    - name: "Service lubrication points and connections"
+      text: "Grease the fittings, test the trim and tilt function, and check the battery and cable connections for corrosion."
 ---
 
 An outboard motor is built to take a beating, but it only tolerates neglect up to a point. Stick to a handful of simple maintenance habits and you significantly cut the risk of an engine failure, protect your boat's resale value, and reduce unpleasant surprises out on the water. This article gives you a practical overview of the most important care points, but it doesn't replace your engine's owner's manual, which always remains the authoritative source for intervals and procedures.

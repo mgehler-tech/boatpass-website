@@ -7,6 +7,20 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "winterizing-a-boat-checklist-for-winter-storage"
+howTo:
+  name: "Boot richtig einwintern"
+  description: "So bereitest du Motor, Wassersystem, Batterie, Rumpf und Lagerort deines Bootes für das Winterlager vor."
+  steps:
+    - name: "Motor winterfest machen"
+      text: "Kühlsystem entleeren oder mit Frostschutz füllen, Motoröl und Filter wechseln, Kraftstoffsystem vorbereiten und Zündkerzen bzw. Zylinder konservieren."
+    - name: "Wassersystem, Tank und Bilge entleeren"
+      text: "Frischwassertanks und Leitungen entleeren, Bilge trocken pumpen und Toilette bzw. Abwassertank frostsicher machen."
+    - name: "Batterie ausbauen und lagern"
+      text: "Batterie abklemmen oder ausbauen, kühl und frostfrei lagern und den Ladezustand regelmäßig mit einem Erhaltungsladegerät prüfen."
+    - name: "Rumpf, Deck und Ausrüstung vorbereiten"
+      text: "Rumpf reinigen, Antifouling prüfen, Deckluken und Dichtungen kontrollieren und lose Ausrüstung trocken einlagern."
+    - name: "Abdeckung und Lagerort wählen"
+      text: "Zwischen Wasser, Kran oder Trailer entscheiden, eine belüftete Persenning oder Halle wählen und das Gewicht auf Böcken richtig verteilen."
 ---
 
 Sobald die Temperaturen fallen und die Saison sich dem Ende zuneigt, beginnt für viele Bootsbesitzer die wichtigste Wartungsphase des Jahres: das Einwintern. Wer sein Boot gründlich auf die kalte Jahreszeit vorbereitet, erspart sich im Frühjahr teure Reparaturen durch Frostschäden, korrodierte Bauteile oder eine leere Batterie. Dieser Artikel gibt dir eine praktische Checkliste an die Hand, damit du nichts Wichtiges übersiehst, egal ob dein Boot im Wasser, an Land oder auf dem Trailer überwintert.

@@ -8,6 +8,20 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "boot-einwintern-checkliste-winterlager"
+howTo:
+  name: "How to winterize a boat"
+  description: "How to prepare your boat's engine, water system, battery, hull, and storage spot properly for winter storage."
+  steps:
+    - name: "Winterize the engine"
+      text: "Drain the cooling system or fill it with antifreeze, change the engine oil and filter, prepare the fuel system, and protect the spark plugs or cylinders."
+    - name: "Drain the water system, tank, and bilge"
+      text: "Drain freshwater tanks and lines, pump the bilge dry, and winterize the toilet or waste tank."
+    - name: "Remove and store the battery"
+      text: "Disconnect or remove the battery, store it somewhere cool and frost-free, and check its charge regularly with a trickle charger."
+    - name: "Prepare the hull, deck, and equipment"
+      text: "Clean the hull, check the antifouling coating, inspect hatches and seals, and store loose equipment somewhere dry."
+    - name: "Choose a cover and storage location"
+      text: "Decide between water, crane lift, or trailer, choose a ventilated cover or a heated hall, and distribute the weight evenly on stands."
 ---
 
 As temperatures drop and the season winds down, many boat owners face the most important maintenance phase of the year: winterizing. Prepare your boat thoroughly for the cold months and you save yourself expensive repairs come spring, from frost damage to corroded parts to a dead battery. This article gives you a practical checklist so you don't miss anything important, whether your boat spends the winter in the water, ashore, or on a trailer.
