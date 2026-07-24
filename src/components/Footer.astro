@@ -362,13 +362,27 @@ const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showC
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 8px;
+    /* Zeilenabstand (row-gap) klein halten, damit die auf 44px vergrößerten
+       Touch-Flächen die Zeile beim Umbruch auf dem Handy nicht auseinanderziehen;
+       Spaltenabstand (column-gap) trennt Link und "·" wie bisher. */
+    gap: 2px 8px;
     font-size: 12.5px;
+    /* Negative Ränder gleichen die zusätzliche Höhe der 44px-Touch-Flächen aus,
+       sodass der vertikale Rhythmus zur Copyright-/„Made with"-Zeile erhalten bleibt. */
+    margin: -10px 0;
   }
+  /* Rechtliche Links (Datenschutz · Impressum · Nutzungsbedingungen) sind echte
+     Navigationsziele und brauchen daher – wie die übrigen Footer-Links bereits –
+     eine ausreichend große Touch-Fläche (WCAG 2.5.5, mind. 44px). Als reine
+     Textzeile mit 4px-Padding waren sie nur ~25px hoch und auf dem Handy,
+     dicht an dicht mit nur 8px Abstand, leicht zu verfehlen. inline-flex begrenzt
+     die Fläche auf die tatsächliche Linkbreite (kein ganzflächiges Tappen). */
   .footer-legal-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
     color: var(--color-muted);
     text-decoration: none;
-    padding: 4px 0;
   }
   .footer-legal-link:hover { color: var(--color-text); text-decoration: underline; }
   .footer-legal-sep {
