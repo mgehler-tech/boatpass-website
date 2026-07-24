@@ -1,9 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 import { useTranslations, getLocalizedPath } from '../i18n/index';
 import { getBoatpassRating } from '../data/apps';
-import appIcon from '../assets/images/app-icon.png';
 import type { IconName } from '../icons';
 
 interface Props {
@@ -74,38 +72,21 @@ const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showC
 <footer style="background:#E8EDF6; border-top:1px solid rgba(51,102,255,0.10);" class="mt-12 sm:mt-24 footer-root">
   <div class="max-w-6xl mx-auto px-6 py-8 sm:py-12">
 
-    <!-- App-Promo-Karte -->
-    <div class="footer-app-card">
-      <div class="footer-app-card-main">
-        <Image src={appIcon} alt="Boatpass Logo" width={52} height={52} loading="lazy" class="footer-app-icon" />
-        <div>
-          <p class="footer-app-name">Boat<span class="text-primary">Pass</span></p>
-          <p class="footer-app-tagline">
-            {lang === 'de'
-              ? 'Die App für deinen Sportbootführerschein.'
-              : 'The app for your boating license.'}
-          </p>
-        </div>
-      </div>
-
-      <div class="footer-app-card-cta">
-        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="footer-store-link">
-          <img src={lang === 'de' ? '/images/google-play-badge-1_de_.png' : '/images/google-play-badge-2_en_.png'} alt={lang === 'de' ? 'Boatpass im Google Play Store herunterladen' : 'Download Boatpass on Google Play'} width="120" height="46" loading="lazy" />
+    <!-- Play-Store-Badge + Bewertung -->
+    <div class="footer-store">
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="footer-store-link">
+        <img src={lang === 'de' ? '/images/google-play-badge-1_de_.png' : '/images/google-play-badge-2_en_.png'} alt={lang === 'de' ? 'Boatpass im Google Play Store herunterladen' : 'Download Boatpass on Google Play'} width="135" height="52" loading="lazy" />
+      </a>
+      {appRating && (
+        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="footer-rating" aria-label={`${ratingScoreLabel} · ${ratingCountLabel}`}>
+          <span class="footer-rating-top">
+            <span class="footer-rating-stars" aria-hidden="true">★★★★★</span>
+            <span class="footer-rating-score">{ratingScoreLabel}</span>
+            <span class="footer-rating-outof">{lang === 'de' ? 'von 5' : 'out of 5'}</span>
+          </span>
+          <span class="footer-rating-count">{ratingCountLabel}</span>
         </a>
-        {appRating && (
-          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="footer-rating" aria-label={`${ratingScoreLabel} · ${ratingCountLabel}`}>
-            <span class="footer-rating-top">
-              <span class="footer-rating-stars" aria-hidden="true">★★★★★</span>
-              <span class="footer-rating-score">{ratingScoreLabel}</span>
-              <span class="footer-rating-outof">{lang === 'de' ? 'von 5' : 'out of 5'}</span>
-            </span>
-            <span class="footer-rating-count">{ratingCountLabel}</span>
-          </a>
-        )}
-        <p class="footer-ios-note">
-          {lang === 'de' ? 'iOS-App in Arbeit.' : 'iOS app in the works.'}
-        </p>
-      </div>
+      )}
     </div>
 
     <!-- Link-Spalten -->
@@ -167,64 +148,17 @@ const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showC
 </footer>
 
 <style>
-  /* ── App promo card ── */
-  .footer-app-card {
+  /* ── Play-Store-Badge + Bewertung ── */
+  .footer-store {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
-    padding: 24px;
-    margin-bottom: 32px;
-  }
-  @media (min-width: 640px) {
-    .footer-app-card {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-  .footer-app-card-main {
-    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 14px;
-  }
-  .footer-app-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    flex-shrink: 0;
-  }
-  .footer-app-name {
-    font-size: 19px;
-    font-weight: 900;
-    color: var(--color-navy);
-    letter-spacing: -0.02em;
-    margin: 0;
-  }
-  .footer-app-tagline {
-    font-size: 13.5px;
-    color: var(--color-muted);
-    margin: 2px 0 0;
-  }
-  .footer-app-card-cta {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start;
-  }
-  @media (min-width: 640px) {
-    .footer-app-card-cta { align-items: flex-end; }
+    gap: 16px 20px;
+    margin-bottom: 32px;
   }
   .footer-store-link img {
     display: block;
     border-radius: 9px;
-  }
-  .footer-ios-note {
-    font-size: 12px;
-    color: var(--color-muted);
-    margin: 0;
   }
 
   .footer-rating {
