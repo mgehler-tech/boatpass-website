@@ -2,7 +2,6 @@
 import { useTranslations } from '../i18n/index';
 import Icon from './Icon.astro';
 import type { IconName } from '../icons';
-import { getBoatpassRating } from '../data/apps';
 
 interface Props {
   lang: 'de' | 'en';
@@ -19,10 +18,6 @@ const de = lang === 'de';
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 
 const soonItems = [t.pricing.soon1];
-const appRating = getBoatpassRating();
-const ratingScoreLabel = appRating
-  ? appRating.score.toFixed(1).replace('.', de ? ',' : '.')
-  : null;
 
 // Daten für das Redesign (Startseite). "gültig seit"-Stempel + Katalog-Bezeichnung
 // kommen aus catalogSources (amtliche Quelle) – nichts doppelt gepflegt.
@@ -187,27 +182,6 @@ const funkCards = [
                 </span>
               </div>
             ))}
-          </div>
-        </div>
-
-        <div class="reveal-item pay-trust" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
-          <div class="pay-trust-item">
-            <span class="pay-trust-icon"><Icon name="lock" size={16} stroke="#3366FF" strokeWidth={2} /></span>
-            <span class="pay-trust-text"><strong>{t.pricing.trustPay}</strong><span>{t.pricing.trustPaySub}</span></span>
-          </div>
-          {appRating && (
-            <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="pay-trust-item pay-trust-rating"
-              aria-label={`${ratingScoreLabel} ★ – ${appRating.ratings} ${de ? 'Bewertungen bei Google' : 'ratings on Google'}`}>
-              <img src="/images/google-play-icon.png" alt="" width="20" height="20" aria-hidden="true" class="pay-trust-gp" />
-              <span class="pay-trust-text">
-                <strong>{ratingScoreLabel} <span class="pay-stars" aria-hidden="true">★★★★★</span></strong>
-                <span>{appRating.ratings} {de ? 'Bewertungen' : 'ratings'} · {t.pricing.trustRatingSub}</span>
-              </span>
-            </a>
-          )}
-          <div class="pay-trust-item">
-            <span class="pay-trust-icon"><Icon name="check" size={16} stroke="#3366FF" strokeWidth={2.5} /></span>
-            <span class="pay-trust-text"><strong>{t.pricing.trustNoSub}</strong><span>{t.pricing.trustNoSubSub}</span></span>
           </div>
         </div>
       </div>
