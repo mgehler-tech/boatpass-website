@@ -76,6 +76,81 @@
   color: var(--color-navy);
 }
 
+/* Einheitliches Eyebrow-Label für die Startseiten-Abschnitte (das kleine, blaue
+   Versalien-Chip über der großen Überschrift). Bisher war dieses Muster in
+   Features und Preisen inline hartkodiert, in Blog und FAQ fehlte es ganz –
+   dadurch begann nicht jeder Abschnitt sichtbar gleich. Als Klasse zentralisiert,
+   damit alle Abschnitte demselben, wiedererkennbaren Kopf-Muster folgen. Farben
+   und Maße entsprechen dem bestehenden Chip; der Dark-Mode-Akzent ist der bereits
+   projektweit genutzte hellere Blauton. */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(51, 102, 255, 0.08);
+  border: 1px solid rgba(51, 102, 255, 0.18);
+  color: #3366FF;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+html.dark .section-eyebrow {
+  background: rgba(90, 120, 255, 0.10);
+  border-color: rgba(90, 120, 255, 0.20);
+  color: var(--color-accent-fg);
+}
+
+/* Sichtbare Abschnittsgrenze auf schmalen Screens. Auf dem Handy stehen alle
+   Startseiten-Abschnitte auf demselben Grund (#F0F4FA) mit weißen Karten – ohne
+   Markierung verschwimmen sie zu einem gleichförmigen Strom, und man erkennt
+   nicht, wo ein neuer Abschnitt beginnt. Eine dezente, an den Rändern
+   auslaufende Linie am Abschnittsanfang macht die Grenze klar. Der 24px-Einzug
+   trifft die horizontale Innenabstand-Kante (px-6) der Abschnitte. Ab dem
+   md-Breakpoint sorgt die großzügige py-20-Rhythmik für die Trennung – dort ist
+   die Linie überflüssig und bleibt aus. */
+@media (max-width: 767px) {
+  .section-band {
+    position: relative;
+  }
+  .section-band::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 24px;
+    right: 24px;
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent,
+      rgba(51, 102, 255, 0.18) 22%,
+      rgba(51, 102, 255, 0.18) 78%,
+      transparent);
+  }
+  html.dark .section-band::before {
+    background: linear-gradient(90deg,
+      transparent,
+      rgba(100, 140, 255, 0.22) 22%,
+      rgba(100, 140, 255, 0.22) 78%,
+      transparent);
+  }
+}
+
+/* FAQ-Abschnitt der Startseite: eigene, responsive Vertikal-Rhythmik, damit er
+   dieselbe Trennlinie und denselben Abstand wie die übrigen Abschnitte bekommt
+   (vorher inline ohne oberen Abstand). */
+.home-faq {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+@media (min-width: 768px) {
+  .home-faq {
+    padding: 80px 24px;
+  }
+}
+
 /* Sektions-Überschriften (H2) innerhalb der Inhalts-/Pillar-Seiten (SBF Binnen/See,
    Führerscheine, Kosten, Prüfungsfragen u. a.). Bisher war in jeder dieser
    Überschriften ein fester Wert hartkodiert (28px + letter-spacing:-1px), der auf

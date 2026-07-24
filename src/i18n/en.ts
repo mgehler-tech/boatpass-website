@@ -176,6 +176,7 @@ export const en: Translations = {
     disclaimer: 'The official publication always prevails – the linked ELWIS pages always show the currently valid edition.',
   },
   blog: {
+    eyebrow: 'Guides',
     title: 'Tips & Knowledge',
     readMore: 'Read more',
     allArticles: 'All articles',

@@ -18,9 +18,12 @@ const posts = allPosts
 const [featured, ...rest] = posts;
 ---
 
-<section class="max-w-6xl mx-auto px-6 py-8 md:py-20">
+<section class="section-band max-w-6xl mx-auto px-6 py-14 md:py-20">
   <div class="blog-teaser-header">
-    <h2 class="section-display-title">{t.blog.title}</h2>
+    <div class="blog-teaser-heading">
+      <span class="section-eyebrow blog-teaser-eyebrow">{t.blog.eyebrow}</span>
+      <h2 class="section-display-title">{t.blog.title}</h2>
+    </div>
     <a href={getLocalizedPath(lang, '/blog/')} class="blog-teaser-all">
       {t.blog.allArticles} →
     </a>
@@ -52,6 +55,9 @@ const [featured, ...rest] = posts;
     justify-content: space-between;
     gap: 8px 24px;
     margin-bottom: 40px;
+  }
+  .blog-teaser-eyebrow {
+    margin-bottom: 14px;
   }
   .blog-teaser-all {
     flex-shrink: 0;
