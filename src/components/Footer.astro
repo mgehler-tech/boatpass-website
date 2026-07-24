@@ -69,27 +69,6 @@ const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showC
   { heading: 'BoatPass', icon: 'users', links: aboutLinks },
 ];
 
-// Kataloggrößen kommen aus den Pricing-Strings, nicht hartkodiert –
-// bleibt automatisch korrekt, wenn sich ein Katalog ändert.
-const totalQuestions = [
-  t.pricing.catalog1Questions,
-  t.pricing.catalog2Questions,
-  t.pricing.catalog3Questions,
-  t.pricing.lrcQuestions,
-  t.pricing.srcQuestions,
-].reduce((sum, n) => sum + parseInt(n, 10), 0);
-const totalQuestionsLabel = `${Math.floor(totalQuestions / 100) * 100}+`.replace(
-  /\d+/,
-  (n) => parseInt(n, 10).toLocaleString(numberLocale)
-);
-
-const stats: { icon: IconName; value: string; label: string }[] = [
-  { icon: 'document', value: totalQuestionsLabel, label: lang === 'de' ? 'Prüfungsfragen' : 'Exam questions' },
-  { icon: 'shield', value: String(licenseLinks.length), label: lang === 'de' ? 'Lizenzen' : 'Licenses' },
-  ...(appRating
-    ? [{ icon: 'star' as IconName, value: ratingScoreLabel as string, label: lang === 'de' ? 'Durchschnittsbewertung' : 'Average rating' }]
-    : []),
-];
 ---
 
 <footer style="background:#E8EDF6; border-top:1px solid rgba(51,102,255,0.10);" class="mt-12 sm:mt-24 footer-root">
@@ -161,22 +140,6 @@ const stats: { icon: IconName; value: string; label: string }[] = [
             ))}
           </ul>
         </div>
-      ))}
-    </div>
-
-    <!-- Kennzahlen -->
-    <div class="footer-stats">
-      {stats.map((stat, i) => (
-        <>
-          <div class="footer-stat">
-            <span class="footer-stat-icon"><Icon name={stat.icon} size={18} strokeWidth={1.75} /></span>
-            <span class="footer-stat-text">
-              <strong>{stat.value}</strong>
-              <span>{stat.label}</span>
-            </span>
-          </div>
-          {i < stats.length - 1 && <div class="footer-stat-sep" aria-hidden="true"></div>}
-        </>
       ))}
     </div>
 
@@ -379,61 +342,6 @@ const stats: { icon: IconName; value: string; label: string }[] = [
   }
   .footer-link-row-disabled :global(svg) {
     color: var(--color-muted) !important;
-  }
-
-  /* ── Stats bar ── */
-  .footer-stats {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-    justify-content: space-between;
-    gap: 16px;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
-    padding: 18px 20px;
-    margin-bottom: 28px;
-  }
-  .footer-stat {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-    min-width: 130px;
-  }
-  .footer-stat-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background: rgba(51, 102, 255, 0.08);
-    color: var(--color-primary);
-    flex-shrink: 0;
-  }
-  .footer-stat-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.25;
-  }
-  .footer-stat-text strong {
-    font-size: 17px;
-    font-weight: 800;
-    color: var(--color-navy);
-  }
-  .footer-stat-text span {
-    font-size: 12.5px;
-    color: var(--color-muted);
-  }
-  .footer-stat-sep {
-    width: 1px;
-    align-self: stretch;
-    background: var(--color-border);
-    display: none;
-  }
-  @media (min-width: 500px) {
-    .footer-stat-sep { display: block; }
   }
 
   /* ── Bottom bar ── */
