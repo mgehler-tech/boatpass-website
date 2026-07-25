@@ -34,6 +34,14 @@ export default defineConfig({
         } else if (/^\/(sbf-binnen|sbf-see|sbf-kosten|sbf-pruefung-ablauf|sbf-binnen-pruefungsfragen|sbf-see-pruefungsfragen|fuehrerscheine|licenses)\/?$/.test(path)) {
           item.priority = 0.9;
           item.changefreq = 'monthly';
+        } else if (/^\/sportbootfuehrerschein\/?$/.test(path) || /^\/boating-license\/?$/.test(path)) {
+          // Regionale Hub-Seiten: hohe Priorität als Pillar-Verteiler.
+          item.priority = 0.9;
+          item.changefreq = 'monthly';
+        } else if (/^\/sportbootfuehrerschein\/[^/]+\/?$/.test(path) || /^\/boating-license\/[^/]+\/?$/.test(path)) {
+          // Regionale Landingpages (Stadt-Seiten).
+          item.priority = 0.8;
+          item.changefreq = 'monthly';
         } else if (/^\/(src|ubi|lrc|faq)\/?$/.test(path)) {
           item.priority = 0.8;
           item.changefreq = 'monthly';

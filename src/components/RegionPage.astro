@@ -1,0 +1,262 @@
+---
+import type { Region } from '../data/regions';
+import { REGIONS } from '../data/regions';
+
+interface Props {
+  region: Region;
+  lang: 'de' | 'en';
+}
+
+const { region, lang } = Astro.props;
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+const isDE = lang === 'de';
+
+const cityName = region.name;
+const faqList = isDE ? region.faq : region.faqEn;
+const waterDesc = isDE ? region.waterDescription.de : region.waterDescription.en;
+const whyText = isDE ? region.whyThisRegion.de : region.whyThisRegion.en;
+const specialRulesText = region.specialRules
+  ? (isDE ? region.specialRules.de : region.specialRules.en)
+  : null;
+
+// Kosten-Daten (gleich wie sbf-binnen.astro)
+const examFee = region.recommendedLicense === 'SBF See' ? '148,38' : '130,78';
+const examFeeLabel = isDE ? 'Amtliche Prüfungsgebühr' : 'Official exam fee';
+const courseCostLabel = isDE ? 'Kompletter Kurs (optional)' : 'Full course (optional)';
+const boatpassLabel = isDE ? 'Theorie lernen mit Boatpass' : 'Study theory with Boatpass';
+
+// License recommendation text
+const licenseRecommendation = (() => {
+  if (region.recommendedLicense === 'SBF Binnen') {
+    return isDE
+      ? `Für ${cityName} empfehlen wir den <strong>SBF Binnen</strong>. Die lokalen Gewässer sind Binnenrevier – Flüsse, Kanäle und Seen. Der SBF Binnen ist Pflicht ab 11,03 kW (15 PS) Motorleistung.`
+      : `For ${cityName} we recommend the <strong>SBF Binnen</strong> (inland). The local waters are inland waterways – rivers, canals and lakes. The SBF Binnen is mandatory for engines above 11.03 kW (15 HP).`;
+  }
+  if (region.recommendedLicense === 'SBF See') {
+    return isDE
+      ? `Für ${cityName} empfehlen wir den <strong>SBF See</strong>. Die Küstengewässer erfordern den Seeschein – er ist Pflicht ab 11,03 kW (15 PS) auf See- und Küstengewässern.`
+      : `For ${cityName} we recommend the <strong>SBF See</strong> (coastal). The coastal waters require the sea license – mandatory for engines above 11.03 kW (15 HP) on sea and coastal waters.`;
+  }
+  return isDE
+    ? `Für ${cityName} empfehlen wir <strong>beide Scheine: SBF Binnen und SBF See</strong>. Die Region bietet sowohl Binnen- als auch Küstenrevier. Du kannst beide in einer kombinierten Prüfung ablegen – das spart Geld und Zeit.`
+    : `For ${cityName} we recommend <strong>both licenses: SBF Binnen and SBF See</strong>. The region offers both inland and coastal waters. You can take both in a combined exam – saving money and time.`;
+})();
+
+// Other regions for internal links (exclude current)
+const otherRegions = REGIONS.filter(r => r.slug !== region.slug);
+---
+
+<!-- Hero -->
+<div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
+  <div style="max-width:720px; margin:0 auto;">
+    <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+      {isDE ? `Sportbootführerschein ${cityName}` : `Boating License ${cityName}`}
+    </div>
+    <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+      {isDE
+        ? `Sportbootführerschein in ${cityName} – Gewässer, Prüfung & Vorbereitung`
+        : `Boating License in ${cityName} – Waters, Exam & Preparation`}
+    </h1>
+    <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:560px; margin:0 auto 36px;">
+      {isDE
+        ? `Alles zum Sportbootführerschein in ${cityName}: lokale Gewässer, Prüfungsorte und die beste Vorbereitung mit der Boatpass-App.`
+        : `Everything about the boating license in ${cityName}: local waters, exam locations and the best preparation with the Boatpass app.`}
+    </p>
+    <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+      style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
+      {isDE ? '▶ Kostenlos im Play Store' : '▶ Free on Google Play'}
+    </a>
+  </div>
+</div>
+
+<div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+
+  <!-- Answer-Snippet -->
+  <section style="margin-bottom:48px;">
+    <div style="background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px;">
+      <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">{isDE ? 'Auf den Punkt' : 'In a nutshell'}</div>
+      <p style="font-size:17px; color:#1A1F36; line-height:1.7; margin:0; font-weight:600;">
+        {isDE
+          ? `In ${cityName} (${region.state}) brauchst du den ${region.recommendedLicense} für motorisierte Sportboote ab 11,03 kW (15 PS). Die Prüfung wird vom ${region.examAuthority} abgenommen. Bereite dich mit dem vollständigen amtlichen ELWIS-Fragenkatalog in der Boatpass-App vor – mit Prüfungssimulation und Fehler-Training.`
+          : `In ${cityName} (${region.state}) you need the ${region.recommendedLicense} for motorised recreational boats above 11.03 kW (15 HP). The exam is administered by the ${region.examAuthority}. Prepare with the complete official ELWIS question catalogue in the Boatpass app – with exam simulation and mistake training.`}
+      </p>
+    </div>
+  </section>
+
+  <!-- Lokale Gewaesser -->
+  <section style="margin-bottom:48px;">
+    <h2 class="content-section-title" style="margin-bottom:16px;">
+      {isDE ? `Gewässer in ${cityName}` : `Waters in ${cityName}`}
+    </h2>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+      {waterDesc}
+    </p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px;">
+      {region.waters.map(w => (
+        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:16px 18px;">
+          <div style="font-size:15px; font-weight:700; color:#1A1F36;">{w}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Pruefung vor Ort -->
+  <section style="margin-bottom:48px;">
+    <h2 class="content-section-title" style="margin-bottom:16px;">
+      {isDE ? `Prüfung in ${cityName}` : `Exam in ${cityName}`}
+    </h2>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+      {isDE
+        ? `Die SBF-Prüfung in ${cityName} wird vom ${region.examAuthority} abgenommen. Die Theorieprüfung besteht aus 30 Multiple-Choice-Fragen in 45 Minuten. Danach folgt die praktische Prüfung auf dem Wasser.`
+        : `The boating exam in ${cityName} is administered by the ${region.examAuthority}. The theory exam consists of 30 multiple-choice questions in 45 minutes, followed by a practical exam on the water.`}
+    </p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
+      <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+        <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">{isDE ? 'Prüfungsstelle' : 'Exam Authority'}</div>
+        <div style="font-size:15px; color:#4B5563; line-height:1.6;">{region.examAuthority}</div>
+      </div>
+      <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+        <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">{isDE ? 'Empfohlener Schein' : 'Recommended License'}</div>
+        <div style="font-size:15px; color:#4B5563; line-height:1.6;">{region.recommendedLicense}</div>
+      </div>
+      <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
+        <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">{isDE ? 'Theorieprüfung' : 'Theory Exam'}</div>
+        <div style="font-size:15px; color:#4B5563; line-height:1.6;">{isDE ? '30 Fragen · 45 Min' : '30 questions · 45 min'}</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regionale Besonderheiten (wenn vorhanden) -->
+  {specialRulesText && (
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:16px;">
+        {isDE ? `Besonderheiten in ${cityName}` : `Special Rules in ${cityName}`}
+      </h2>
+      <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px 26px;">
+        <p style="font-size:16px; color:#4B5563; line-height:1.75; margin:0;">
+          {specialRulesText}
+        </p>
+      </div>
+    </section>
+  )}
+
+  <!-- Kosten-Ueberblick -->
+  <section style="margin-bottom:48px;">
+    <h2 class="content-section-title" style="margin-bottom:16px;">
+      {isDE ? `Was kostet der Sportbootführerschein in ${cityName}?` : `What does a boating license cost in ${cityName}?`}
+    </h2>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+      {isDE
+        ? `Fest ist nur die amtliche Prüfungsgebühr von ${examFee} € (Theorie + Praxis). Den größten Kostenblock macht der Vorbereitungskurs aus – wer die Theorie selbst mit dem offiziellen ELWIS-Katalog lernt, spart genau diesen Posten.`
+        : `The only fixed cost is the official exam fee of €${examFee} (theory + practice). The biggest expense is the preparation course – if you study the theory yourself with the official ELWIS catalogue, you save exactly that.`}
+    </p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:18px;">
+      <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
+        <div style="font-size:22px; font-weight:900; color:#1A1F36;">{examFee} €</div>
+        <div style="font-size:14px; color:#6B7280; line-height:1.55; margin-top:4px;">{examFeeLabel}</div>
+      </div>
+      <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
+        <div style="font-size:22px; font-weight:900; color:#1A1F36;">{isDE ? '≈ 500–650 €' : '≈ €500–650'}</div>
+        <div style="font-size:14px; color:#6B7280; line-height:1.55; margin-top:4px;">{courseCostLabel}</div>
+      </div>
+      <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
+        <div style="font-size:22px; font-weight:900; color:#3366FF;">{isDE ? 'ab 9,99 €' : 'from €9.99'}</div>
+        <div style="font-size:14px; color:#6B7280; line-height:1.55; margin-top:4px;">{boatpassLabel}</div>
+      </div>
+    </div>
+    <a href={isDE ? '/sbf-kosten/' : '/en/sbf-costs/'} style="display:inline-flex; align-items:center; gap:8px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">
+      {isDE ? 'Alle SBF-Kosten im Detail →' : 'All SBF costs in detail →'}
+    </a>
+  </section>
+
+  <!-- SBF Binnen oder See -->
+  <section style="margin-bottom:48px;">
+    <h2 class="content-section-title" style="margin-bottom:16px;">
+      {isDE ? `SBF Binnen oder See in ${cityName}?` : `SBF Inland or Coastal in ${cityName}?`}
+    </h2>
+    <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px 26px;">
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin:0 0 16px;" set:html={licenseRecommendation} />
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin:0;">
+        {whyText}
+      </p>
+    </div>
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
+      <a href={isDE ? '/sbf-binnen/' : '/en/sbf-inland/'} style="display:inline-flex; align-items:center; gap:8px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">
+        {isDE ? 'SBF Binnen im Detail →' : 'SBF Inland in detail →'}
+      </a>
+      <a href={isDE ? '/sbf-see/' : '/en/sbf-coastal/'} style="display:inline-flex; align-items:center; gap:8px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">
+        {isDE ? 'SBF See im Detail →' : 'SBF Coastal in detail →'}
+      </a>
+    </div>
+  </section>
+
+  <!-- Boatpass-App CTA -->
+  <section style="margin-bottom:48px;">
+    <div style="background:linear-gradient(160deg,#F4F7FE,#E8EDFF); border:1px solid rgba(51,102,255,0.14); border-radius:16px; padding:32px 28px; text-align:center;">
+      <h2 class="content-section-title" style="margin-bottom:12px;">
+        {isDE ? `In ${cityName} für den SBF lernen` : `Study for the boating license in ${cityName}`}
+      </h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:24px; max-width:560px; margin-left:auto; margin-right:auto;">
+        {isDE
+          ? 'Bereite dich mit dem vollständigen amtlichen ELWIS-Fragenkatalog vor. Prüfungssimulation, Fehler-Training und Fortschritt nach Kategorie – kostenlos starten.'
+          : 'Prepare with the complete official ELWIS question catalogue. Exam simulation, mistake training and progress by category – start for free.'}
+      </p>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
+        {isDE ? '▶ Jetzt kostenlos starten' : '▶ Start for free now'}
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section style="margin-bottom:48px;">
+    <h2 class="content-section-title" style="margin-bottom:20px;">
+      {isDE ? `Häufige Fragen zum SBF in ${cityName}` : `FAQ about the boating license in ${cityName}`}
+    </h2>
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      {faqList.map(f => (
+        <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+          <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
+          <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Interne Links -->
+  <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
+    <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">
+      {isDE ? 'Sportbootführerschein in anderen Städten' : 'Boating license in other cities'}
+    </h3>
+    <div class="related-links">
+      {otherRegions.map(r => (
+        <a href={isDE ? `/sportbootfuehrerschein/${r.slug}/` : `/en/boating-license/${r.slugEn}/`} style="color:#3366FF; text-decoration:none; font-size:15px;">
+          {isDE ? `→ Sportbootführerschein ${r.name}` : `→ Boating License ${r.name}`}
+        </a>
+      ))}
+    </div>
+    <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px; margin-top:24px;">
+      {isDE ? 'Weiterführende Artikel' : 'Further reading'}
+    </h3>
+    <div class="related-links">
+      <a href={isDE ? '/sbf-binnen/' : '/en/sbf-inland/'} style="color:#3366FF; text-decoration:none; font-size:15px;">
+        {isDE ? '→ SBF Binnen lernen mit Boatpass' : '→ Study SBF Inland with Boatpass'}
+      </a>
+      <a href={isDE ? '/sbf-see/' : '/en/sbf-coastal/'} style="color:#3366FF; text-decoration:none; font-size:15px;">
+        {isDE ? '→ SBF See lernen mit Boatpass' : '→ Study SBF Coastal with Boatpass'}
+      </a>
+      <a href={isDE ? '/sbf-kosten/' : '/en/sbf-costs/'} style="color:#3366FF; text-decoration:none; font-size:15px;">
+        {isDE ? '→ Was kostet der Sportbootführerschein?' : '→ What does the boating license cost?'}
+      </a>
+      <a href={isDE ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} style="color:#3366FF; text-decoration:none; font-size:15px;">
+        {isDE ? '→ SBF Prüfung: Ablauf von Theorie & Praxis' : '→ SBF Exam: Theory & Practice Process'}
+      </a>
+      <a href={isDE ? '/faq/' : '/en/faq/'} style="color:#3366FF; text-decoration:none; font-size:15px;">
+        {isDE ? '→ Häufige Fragen zum Sportbootführerschein' : '→ Boating License FAQ'}
+      </a>
+    </div>
+  </section>
+
+</div>

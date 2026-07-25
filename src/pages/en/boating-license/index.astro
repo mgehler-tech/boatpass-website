@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { REGIONS } from '../../../data/regions';
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boatpass.de/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Boating License", "item": "https://boatpass.de/en/boating-license/" },
+  ],
+};
+---
+
+<BaseLayout
+  title="Boating License by City"
+  description="German boating license by city: local waters, exam locations and preparation for Berlin, Hamburg, Munich, Cologne and more cities across Germany."
+  lang="en"
+  altUrl="https://boatpass.de/sportbootfuehrerschein/"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <!-- Hero -->
+  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        Boating License by Region
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+        German Boating License<br>by City
+      </h1>
+      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:560px; margin:0 auto 36px;">
+        Find all information about the German boating license in your region: local waters, exam locations, special rules and the best preparation.
+      </p>
+    </div>
+  </div>
+
+  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+
+    <!-- Intro -->
+    <section style="margin-bottom:48px;">
+      <div style="background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px;">
+        <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">In a nutshell</div>
+        <p style="font-size:17px; color:#1A1F36; line-height:1.7; margin:0; font-weight:600;">
+          The German boating license (Sportbootführerschein) is regulated nationally, but the waters, exam locations and regional specifics differ from city to city. Here you will find the most important information for each region at a glance.
+        </p>
+      </div>
+    </section>
+
+    <!-- Region Cards -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:20px;">All Cities at a Glance</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px;">
+        {REGIONS.map(r => (
+          <a href={`/en/boating-license/${r.slugEn}/`} style="display:block; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px; text-decoration:none; transition:box-shadow 0.2s ease, border-color 0.2s ease;">
+            <div style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:6px;">{r.name}</div>
+            <div style="font-size:13px; font-weight:600; color:#3366FF; margin-bottom:10px;">{r.state} · {r.recommendedLicense}</div>
+            <div style="font-size:14px; color:#6B7280; line-height:1.6; margin-bottom:12px;">
+              {r.waters.slice(0, 4).join(', ')}{r.waters.length > 4 ? ' etc.' : ''}
+            </div>
+            <span style="display:inline-flex; align-items:center; gap:6px; color:#3366FF; font-weight:700; font-size:14px;">
+              Learn more →
+            </span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="margin-bottom:48px;">
+      <div style="background:linear-gradient(160deg,#F4F7FE,#E8EDFF); border:1px solid rgba(51,102,255,0.14); border-radius:16px; padding:32px 28px; text-align:center;">
+        <h2 class="content-section-title" style="margin-bottom:12px;">Start studying for the boating license</h2>
+        <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:24px; max-width:560px; margin-left:auto; margin-right:auto;">
+          Prepare with the complete official ELWIS question catalogue. Exam simulation, mistake training and progress by category – start for free.
+        </p>
+        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+          style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
+          ▶ Free on Google Play
+        </a>
+      </div>
+    </section>
+
+    <!-- Internal Links -->
+    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
+      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Further reading</h3>
+      <div class="related-links">
+        <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Study SBF Inland with Boatpass</a>
+        <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Study SBF Coastal with Boatpass</a>
+        <a href="/en/sbf-costs/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ What does the boating license cost?</a>
+        <a href="/en/sbf-exam/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Exam: Theory & Practice Process</a>
+        <a href="/en/licenses/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ All German Boating Licenses Overview</a>
+        <a href="/en/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Boating License FAQ</a>
+      </div>
+    </section>
+
+  </div>
+</BaseLayout>

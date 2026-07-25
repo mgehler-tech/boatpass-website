@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import RegionPage from '../../../components/RegionPage.astro';
+import { REGIONS, getRegionBySlugEn } from '../../../data/regions';
+import type { Region } from '../../../data/regions';
+
+export function getStaticPaths() {
+  return REGIONS.map((r) => ({
+    params: { slug: r.slugEn },
+    props: { region: r },
+  }));
+}
+
+interface Props {
+  region: Region;
+}
+
+const { region } = Astro.props;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boatpass.de/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Boating License", "item": "https://boatpass.de/en/boating-license/" },
+    { "@type": "ListItem", "position": 3, "name": `${region.name}`, "item": `https://boatpass.de/en/boating-license/${region.slugEn}/` },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": region.faqEn.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const courseSchema = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": `Boating License ${region.name} – Exam Preparation`,
+  "description": `Preparation for the ${region.recommendedLicense} exam in ${region.name} with the complete official ELWIS question catalogue, exam simulation and mistake training.`,
+  "url": `https://boatpass.de/en/boating-license/${region.slugEn}/`,
+  "inLanguage": "en",
+  "provider": {
+    "@type": "Organization",
+    "name": "Boatpass",
+    "url": "https://boatpass.de",
+  },
+  "educationalLevel": "Beginner",
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "courseWorkload": "PT12H",
+  },
+  "offers": {
+    "@type": "Offer",
+    "category": "EducationApplication",
+    "price": "9.99",
+    "priceCurrency": "EUR",
+    "url": "https://play.google.com/store/apps/details?id=com.boatpass.app",
+  },
+};
+---
+
+<BaseLayout
+  title={region.seoTitleEn}
+  description={region.descriptionEn}
+  lang="en"
+  altUrl={`https://boatpass.de/sportbootfuehrerschein/${region.slug}/`}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
+
+  <RegionPage region={region} lang="en" />
+</BaseLayout>
