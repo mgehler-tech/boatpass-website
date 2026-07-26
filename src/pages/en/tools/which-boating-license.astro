@@ -65,6 +65,21 @@ const faqSchema = {
     "acceptedAnswer": { "@type": "Answer", "text": f.a },
   })),
 };
+
+// HowTo schema: the configurator is a step-by-step process
+// (3-4 questions → recommendation) – steps mirror STEPS in the script below.
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Which boating licence do I need? Find out in 3 steps",
+  "description": "Answer 3 short questions about your waters, engine power and radio and instantly find out which German recreational boating licence (SBF Inland/Coastal) and radio certificate (UBI/SRC/LRC) you need.",
+  "step": [
+    { "@type": "HowToStep", "name": "Choose your waters", "text": "State whether you want to boat on inland waters, on the coast (North/Baltic Sea), on both, or on Lake Constance." },
+    { "@type": "HowToStep", "name": "State your engine power", "text": "Choose whether your boat has a combustion engine up to or over 15 hp (11.03 kW), an electric drive up to or over 7.5 kW, or whether it is a sailing boat without an (auxiliary) engine." },
+    { "@type": "HowToStep", "name": "State your radio use", "text": "Say whether you want to operate a VHF marine radio on board. For marine radio, the finder also asks about range (coastal or worldwide)." },
+    { "@type": "HowToStep", "name": "Get your recommendation", "text": "You instantly get the matching combination of boating licence and radio certificate for your plans – with a direct link to the relevant detail page." },
+  ],
+};
 ---
 
 <BaseLayout
@@ -76,6 +91,7 @@ const faqSchema = {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(appSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 56px; text-align:center;">
