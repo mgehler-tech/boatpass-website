@@ -65,6 +65,21 @@ const faqSchema = {
     "acceptedAnswer": { "@type": "Answer", "text": f.a },
   })),
 };
+
+// HowTo-Schema: der Konfigurator ist eine Schritt-für-Schritt-Anleitung
+// (3-4 Fragen → Empfehlung) – Schritte spiegeln STEPS im Skript unten wider.
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Welchen Bootsführerschein brauche ich? In 3 Schritten herausfinden",
+  "description": "Beantworte 3 kurze Fragen zu Revier, Motorleistung und Funk und erfahre sofort, welchen Sportbootführerschein (SBF Binnen/See) und welches Funkzeugnis (UBI/SRC/LRC) du brauchst.",
+  "step": [
+    { "@type": "HowToStep", "name": "Revier wählen", "text": "Gib an, ob du auf Binnengewässern, an der Küste (Nord-/Ostsee), auf beiden Revieren oder auf dem Bodensee fahren möchtest." },
+    { "@type": "HowToStep", "name": "Motorisierung angeben", "text": "Wähle, ob dein Boot einen Verbrennungsmotor bis oder über 15 PS (11,03 kW) hat, einen Elektroantrieb bis oder über 7,5 kW, oder ob es ein Segelboot ohne (Hilfs-)Motor ist." },
+    { "@type": "HowToStep", "name": "Funknutzung angeben", "text": "Sag, ob du eine UKW-Sprechfunkanlage an Bord bedienen möchtest. Bei Seefunk fragt der Finder zusätzlich nach der Reichweite (küstennah oder weltweit)." },
+    { "@type": "HowToStep", "name": "Empfehlung erhalten", "text": "Du erhältst sofort die passende Kombination aus Sportbootführerschein und Funkzeugnis für dein Vorhaben – mit direktem Link zur jeweiligen Detailseite." },
+  ],
+};
 ---
 
 <BaseLayout
@@ -76,6 +91,7 @@ const faqSchema = {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(appSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 56px; text-align:center;">
