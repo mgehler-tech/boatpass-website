@@ -12,6 +12,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const boatSchoolUrl = 'https://www.google.com/maps/search/Bootsfahrschule/';
 const de = lang === 'de';
 
 /**
@@ -126,6 +127,13 @@ const promo = {
             <span class="nav-mega-promo-title">{promo.title}</span>
             <span class="nav-mega-promo-desc">{promo.desc}</span>
             <span class="nav-mega-promo-cta">{promo.cta} <span aria-hidden="true">→</span></span>
+          </a>
+          <a href={boatSchoolUrl} target="_blank" rel="noopener noreferrer" class="nav-mega-footer-link">
+            <span class="nav-mega-footer-icon">
+              <Icon name="mapPin" size={14} stroke="#3366FF" strokeWidth={1.75} />
+            </span>
+            {de ? 'Bootsfahrschule in deiner Nähe finden' : 'Find a boat school near you'}
+            <span aria-hidden="true" style="margin-left:auto; font-size:12px; opacity:0.5;">↗</span>
           </a>
         </div>
       </div>
@@ -246,6 +254,8 @@ const promo = {
             <a href={lang === 'de' ? '/src/' : '/en/src/'} class="mobile-nav-sublink">SRC</a>
             <a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="mobile-nav-sublink">LRC</a>
             <span class="mobile-nav-sublink mobile-nav-sublink--soon">Bodenseeschifferpatent <span class="soon-badge">{lang === 'de' ? 'bald' : 'soon'}</span></span>
+            <div class="mobile-divider"></div>
+            <a href={boatSchoolUrl} target="_blank" rel="noopener noreferrer" class="mobile-nav-sublink mobile-nav-sublink--cta">{de ? 'Fahrschule finden →' : 'Find a boat school →'}</a>
           </div>
         </div>
       </div>
@@ -482,6 +492,7 @@ const promo = {
     top: calc(100% + 12px);
     left: 50%;
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     padding: 14px;
     background: white;
@@ -595,6 +606,33 @@ const promo = {
      liefe aber seitlich aus dem Viewport – dort entfällt die Promo-Kachel. */
   @media (max-width: 900px) {
     .nav-mega-promo { display: none; }
+  }
+
+  .nav-mega-footer-link {
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3366FF;
+    text-decoration: none;
+    padding: 10px 14px;
+    margin: 2px -14px -14px;
+    border-top: 1px solid rgba(51,102,255,0.08);
+    border-radius: 0 0 14px 14px;
+    transition: background 0.15s ease;
+  }
+  .nav-mega-footer-link:hover { background: rgba(51,102,255,0.05); }
+  .nav-mega-footer-icon {
+    flex-shrink: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 7px;
+    background: rgba(51,102,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   /* Hamburger lines */
@@ -832,6 +870,12 @@ const promo = {
   html.dark .nav-mega-item:hover .nav-mega-icon { background: rgba(90, 120, 255, 0.20) !important; }
   html.dark .nav-mega-item--soon .nav-mega-icon { background: rgba(255,255,255,0.05) !important; }
   html.dark .nav-mega-item--soon .nav-mega-label { color: #6B7280 !important; }
+  html.dark .nav-mega-footer-link {
+    color: #7BA3FF !important;
+    border-color: rgba(90, 120, 255, 0.12) !important;
+  }
+  html.dark .nav-mega-footer-link:hover { background: rgba(90, 120, 255, 0.10) !important; }
+  html.dark .nav-mega-footer-icon { background: rgba(90, 120, 255, 0.15) !important; }
   html.dark .mobile-menu-panel {
     background: rgba(10, 13, 20, 0.98) !important;
     border-color: rgba(90, 120, 255, 0.12) !important;
