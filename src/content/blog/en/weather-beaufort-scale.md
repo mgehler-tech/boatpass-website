@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "wetterkunde-beaufort"
+faq:
+  - question: "At what Beaufort force does a strong-wind warning apply?"
+    answer: "A strong-wind warning applies from Beaufort force 6, and a gale warning from force 8. You should know these two thresholds by heart for the SBF See exam."
+  - question: "What does the baric wind law state?"
+    answer: "In the Northern Hemisphere, if you stand with your back to the wind, the low is to your left, slightly ahead, and the high to your right. The wind is deflected by the Earth's rotation, blowing counterclockwise around a low and clockwise around a high."
+  - question: "What's the difference between a sea breeze and a land breeze?"
+    answer: "A sea breeze forms during the day when the land heats up faster than the water and cooler air flows in from the sea onto the land. A land breeze forms at night when the land cools faster and the air flows from the land out to sea."
+  - question: "What does a falling barometer indicate?"
+    answer: "A falling barometer indicates dropping air pressure, which points to an approaching low and worsening weather, often with freshening wind."
 ---
 
 Weather is a safety factor at sea – and therefore a fixed part of the [SBF See](/en/sbf-coastal/) theory exam. You don't need to become a meteorologist, but you do need to understand the basics: estimating wind forces, telling a low from a high, and recognizing warning signs. This article explains the key topics concisely.

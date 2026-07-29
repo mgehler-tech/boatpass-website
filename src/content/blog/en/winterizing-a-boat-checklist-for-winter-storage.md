@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "boot-einwintern-checkliste-winterlager"
+faq:
+  - question: "When should I start winterizing my boat?"
+    answer: "Once sustained frost is likely, every system vulnerable to freezing should be drained or protected, many owners start as soon as overnight temperatures regularly hover around freezing. Starting too late risks residual water freezing before the job is finished."
+  - question: "What should I do with the engine before winter storage?"
+    answer: "On outboards and many inboards with raw-water cooling, the cooling system needs to be drained or flushed with antifreeze, and the engine oil and filter should be changed before storage. The fuel system should also be prepared, with the right amount of stabilizer depending on your engine and fuel type."
+  - question: "How should I store the battery over winter?"
+    answer: "Remove the battery or at least disconnect it, and store it somewhere cool, dry, and frost-free. Check the charge level regularly, since a battery left deeply discharged for months loses significant capacity."
+  - question: "What should I watch out for when covering the boat for storage?"
+    answer: "A well-fitted cover protects against rain, leaves, and UV exposure but needs enough ventilation to prevent condensation from building up underneath. A completely airtight cover with no ventilation encourages moisture and mildew inside."
 ---
 
 As temperatures drop and the season winds down, many boat owners face the most important maintenance phase of the year: winterizing. Prepare your boat thoroughly for the cold months and you save yourself expensive repairs come spring, from frost damage to corroded parts to a dead battery. This article gives you a practical checklist so you don't miss anything important, whether your boat spends the winter in the water, ashore, or on a trailer.

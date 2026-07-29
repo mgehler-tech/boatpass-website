@@ -8,6 +8,15 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "own-boat-or-charter-boat-sbf"
+faq:
+  - question: "Braucht man für ein Charterboot auch den Sportbootführerschein?"
+    answer: "Ja, mit einem regulären Sportbootführerschein hast du die formale Voraussetzung, ein entsprechendes Boot zu führen, egal ob es dir gehört oder du es chartest. Nur ohne jeglichen Sportbootführerschein kann auf bestimmten Binnengewässern stattdessen der separate Charterschein genutzt werden."
+  - question: "Welche laufenden Kosten bringt ein eigenes Boot mit sich?"
+    answer: "Dazu zählen Liegeplatz, Wartung und Pflege, Einwinterung, Versicherung und die spätere Wertentwicklung beim Wiederverkauf. Diese laufenden Fixkosten fallen unabhängig davon an, wie oft das Boot tatsächlich genutzt wird."
+  - question: "Für wen lohnt sich eher ein eigenes Boot statt Chartern?"
+    answer: "Ein eigenes Boot passt eher zu Leuten, die regelmäßig und spontan über viele Jahre fahren, ein festes Revier mit Liegeplatz haben und ihr Boot individuell ausstatten möchten. Wer dagegen nur im Urlaub fährt oder verschiedene Reviere kennenlernen will, ist mit Chartern meist besser bedient."
+  - question: "Gibt es Zwischenlösungen zwischen eigenem Boot und Charter?"
+    answer: "Ja, dazu zählen Bootsbeteiligungen, bei denen sich mehrere Personen ein Boot teilen, sowie Vercharterungsmodelle, bei denen Eigentümer ihr Boot in Zeiten der Nichtnutzung selbst vermieten. Solche Modelle können laufende Kosten senken, bringen aber eigene organisatorische Fragen mit sich."
 ---
 
 Der Sportbootführerschein ist bestanden oder steht kurz bevor, und jetzt stellt sich die nächste Frage: eigenes Boot kaufen oder lieber chartern? Beide Wege haben ihre Berechtigung, aber sie passen zu ganz unterschiedlichen Lebenssituationen. Dieser Beitrag ordnet die wichtigsten Unterschiede, damit du eine Entscheidung triffst, die zu deinem Fahrverhalten, deinem Budget und deiner Zeit passt.

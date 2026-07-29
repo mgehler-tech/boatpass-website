@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "most-common-sbf-mistakes"
+faq:
+  - question: "Was ist der häufigste Fehler in der SBF-Theorieprüfung?"
+    answer: "Lichterführung und Schallzeichen nur oberflächlich zu lernen ist die häufigste Fehlerquelle. Viele Details wirken ähnlich, haben aber unterschiedliche Bedeutungen, deshalb hilft nur das Verständnis der Logik dahinter statt reines Auswendiglernen."
+  - question: "Welcher Fehler kostet die meisten Kandidaten die praktische Prüfung?"
+    answer: "Vernachlässigte Knoten sind die Nummer-1-Fehlerquelle in der praktischen Prüfung. Wer Knoten wie Palstek, Webleinstek und Achtknoten nur kurz vor der Prüfung übt, scheitert unter Prüfungsdruck oft trotzdem."
+  - question: "Wie läuft die SBF-Prüfung ab?"
+    answer: "Sie besteht aus drei Teilen: einer schriftlichen Theorieprüfung mit 30 Multiple-Choice-Fragen in 45 Minuten ohne Hilfsmittel, einer Knotenprüfung sowie einer praktischen Prüfung mit Manövern wie Anlegen, Ablegen und Boje-über-Bord."
+  - question: "Ab welcher Motorleistung braucht man einen Sportbootführerschein?"
+    answer: "Ab einer Motorleistung von 11,03 kW, umgerechnet 15 PS, bei Verbrennungsmotoren beziehungsweise 7,5 kW bei Elektromotoren ist ein Führerschein Pflicht. Wer mit einem stärkeren Boot ohne Schein fährt, riskiert Bußgeld und Versicherungsprobleme."
 ---
 
 Jedes Jahr fallen viele SBF-Kandidaten bei der [SBF-Prüfung](/sbf-pruefung-ablauf/) durch – obwohl sie sich vorbereitet haben. Meistens stecken dieselben Fehler dahinter. Hier sind die häufigsten davon, konkret und mit Lösungen.

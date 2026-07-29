@@ -8,6 +8,15 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "5-tips-pass-sbf"
+faq:
+  - question: "Wie ist die SBF-Binnen-Theorieprüfung aufgebaut?"
+    answer: "Die Theorieprüfung besteht aus 30 Fragen in 45 Minuten, aufgeteilt in 7 Basisfragen mit mindestens 5 richtigen Antworten und 23 spezifische Binnenfragen mit mindestens 18 richtigen Antworten. Beide Blöcke müssen separat bestanden werden, ein Ausgleich zwischen den Blöcken ist nicht möglich."
+  - question: "Wie viele Probeprüfungen sollte ich vor der echten Prüfung machen?"
+    answer: "Mindestens 3 bis 5 vollständige Probeprüfungen unter realen Bedingungen, also mit einem Zeitlimit von 45 Minuten und ohne Nachschlagen. Das gewöhnt dich an den Zeitdruck und das fehlende sofortige Feedback der echten Prüfung."
+  - question: "Wie viel sollte ich täglich für den SBF lernen?"
+    answer: "Normale Lerner kommen mit rund 30 Minuten täglich über 4 bis 5 Wochen aus, Schnelllerner schaffen es in 2 bis 3 Wochen mit 45 bis 60 Minuten täglich. Tägliches, kurzes Lernen festigt Wissen zuverlässiger als seltene lange Lernblöcke am Wochenende."
+  - question: "Wann sollte ich meinen SBF-Prüfungstermin buchen?"
+    answer: "Am besten 4 bis 6 Wochen vor deinem geplanten Lernabschluss, da Termine beim DMYV-Prüfungsausschuss oder bei anerkannten Vereinen Wochen im Voraus ausgebucht sein können. Theorie, Praxis und Knotenprüfung lassen sich oft am gleichen Tag ablegen."
 howTo:
   name: "So bestehst du die SBF-Prüfung beim ersten Versuch"
   description: "Fünf konkrete Schritte für die optimale SBF-Prüfungsvorbereitung – vom Prüfungsaufbau bis zur Terminbuchung."

@@ -8,6 +8,15 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "docking-undocking-harbor-maneuvers"
+faq:
+  - question: "Welche Kräfte beeinflussen mein Boot beim An- und Ablegen?"
+    answer: "Vor allem Wind, Strömung und die Ruderwirkung, die erst mit ausreichender Fahrt durchs Wasser voll einsetzt. Bei geringer Fahrt reagiert das Boot träger auf das Ruder, weshalb Wind und Strom dann einen größeren Einfluss haben."
+  - question: "In welcher Reihenfolge löse ich beim Ablegen die Leinen?"
+    answer: "Zuerst wird meist die Leine gelöst, die das Ablegen am wenigsten unterstützt, während die Leine, die das Boot in die gewünschte Richtung vom Steg wegdreht, als letzte losgeworfen wird. Bei Wind oder Strom, die das Boot gegen den Steg drücken, kann rückwärtiges Ablegen mit zuerst abgedrehtem Heck sinnvoller sein."
+  - question: "Was ist ein Vorspring und ein Achterspring?"
+    answer: "Der Vorspring verläuft vom Bug schräg nach achtern zu einem Poller am Steg und verhindert, dass das Boot nach vorn wegtreibt, der Achterspring läuft vom Heck schräg nach vorn und verhindert ein Wegtreiben nach achtern. Beide Springleinen halten das Boot zusätzlich zu Vor- und Achterleine in Längsrichtung stabil, besonders bei Strömung oder wechselndem Wind."
+  - question: "Was ist der häufigste Fehler beim Anlegen?"
+    answer: "Zu viel Fahrt beim Anlegen ist die häufigste Ursache für harte Kontakte mit dem Steg. Im Zweifel solltest du lieber zu langsam anlaufen und notfalls noch einmal Gas geben, statt zu schnell zu sein."
 howTo:
   name: "Anlegen am Steg: Schritt für Schritt"
   description: "So legst du dein Sportboot sicher und kontrolliert am Steg an, für die praktische SBF-Prüfung und den Bootsalltag."

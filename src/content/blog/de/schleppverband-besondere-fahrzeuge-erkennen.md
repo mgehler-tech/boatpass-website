@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "towing-convoys-special-vessels-day-shapes"
+faq:
+  - question: "Was sind Signalkörper und wofür werden sie verwendet?"
+    answer: "Signalkörper, auch Tagzeichen genannt, sind einfache schwarze Formen wie Ball, Kegel, Zylinder und Raute, die tagsüber am Mast oder Want gesetzt werden. Sie zeigen bei Tageslicht an, um was für ein Fahrzeug es sich handelt, wenn Positionslichter nicht sichtbar sind."
+  - question: "Was ist der Unterschied zwischen Schubverband und Schleppverband bei den Signalkörpern?"
+    answer: "Ein starr gekoppelter Schubverband wird nach den Kollisionsverhütungsregeln wie ein einziges Fahrzeug behandelt und führt entsprechend nur eine einzige Lichter- beziehungsweise Signalkörper-Kombination. Ein Schleppverband besteht dagegen aus zwei getrennt erkennbaren Einheiten, die jeweils eigene Signalkörper zeigen."
+  - question: "Wann muss ein Schleppzug zusätzlich eine Raute führen?"
+    answer: "Überschreitet die Länge des Schleppzugs, gemessen vom Heck des schleppenden bis zum Ende des letzten geschleppten Fahrzeugs, 200 Meter, müssen sowohl das schleppende als auch das geschleppte Fahrzeug eine Raute führen. Das letzte geschleppte Fahrzeug führt die Raute zusätzlich an seinem äußersten Ende."
+  - question: "Wie unterscheidet man manövrierunfähig von manövrierbehindert am Signalkörper?"
+    answer: "Manövrierunfähige Fahrzeuge, etwa bei Maschinenausfall, führen zwei schwarze Bälle übereinander. Manövrierbehinderte Fahrzeuge, etwa beim Baggern oder Schleppen eines schweren Verbands, führen drei Signalkörper in der Reihenfolge Ball-Raute-Ball."
 ---
 
 Bei Tageslicht helfen dir keine Positionslichter weiter, denn die sieht man erst in der Dämmerung. Trotzdem musst du auch tagsüber erkennen können, ob vor dir ein normales Boot, ein Schleppzug oder ein manövrierbehindertes Fahrzeug fährt. Dafür gibt es die **Signalkörper**, auch Tagzeichen genannt: einfache schwarze Formen, die an Mast oder Want gesetzt werden. Dieser Artikel erklärt die wichtigsten Signalkörper für Schub- und Schleppverbände sowie für besondere Fahrzeuge, ein Thema aus den [Kollisionsverhütungsregeln](/blog/ausweichregeln-vorfahrt-wasser/), das sowohl im [SBF Binnen](/sbf-binnen/) als auch im [SBF See](/sbf-see/) geprüft wird.

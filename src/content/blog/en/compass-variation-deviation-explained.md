@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "kompass-missweisung-deviation-erklaert"
+faq:
+  - question: "What is the difference between variation and deviation?"
+    answer: "Variation is the difference between true north and magnetic north, caused by the magnetic north pole not sitting at the geographic north pole, and it is location-dependent. Deviation is the difference between magnetic north and compass north, caused by disturbing fields on board, and it depends on the boat and the heading being steered."
+  - question: "Why doesn't a boat compass point exactly north?"
+    answer: "Because two systematic errors shift the reading: variation, caused by the distance between the geographic and magnetic north poles, and deviation, caused by magnetic disturbing fields on board such as the engine, anchor chain, or electronics near the compass."
+  - question: "Where do you find the value for variation and for deviation?"
+    answer: "Variation is shown in the compass rose of the nautical chart for that chart section. Deviation is recorded in the boat's own deviation table, determined separately for each compass heading and valid only for that exact compass in that exact mounting position."
+  - question: "Why does deviation change with heading while variation doesn't?"
+    answer: "Deviation is caused by disturbing fields on board that rotate relative to the Earth's magnetic field as the boat turns, so it is heading-dependent. Variation, on the other hand, depends only on location on Earth and stays unchanged when the heading changes."
 ---
 
 The magnetic compass is one of the oldest navigation instruments there is, and it is still found on practically every boat today. Yet its needle almost never points exactly at the geographic north pole. Understanding why requires telling apart two concepts: **variation** and **deviation**. Both are foundational knowledge for the [SBF Coastal exam (SBF See)](/en/sbf-coastal/), the German powerboat licence for coastal waters, and the basis for every course conversion. This article explains how a magnetic compass works and where its two systematic errors come from.

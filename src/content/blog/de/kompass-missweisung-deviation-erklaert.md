@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "compass-variation-deviation-explained"
+faq:
+  - question: "Was ist der Unterschied zwischen Missweisung und Deviation?"
+    answer: "Missweisung ist der Unterschied zwischen rechtweisend Nord und missweisend Nord und entsteht, weil der magnetische Nordpol nicht am geografischen Nordpol liegt, sie ist ortsabhängig. Deviation ist der Unterschied zwischen missweisend Nord und Kompass Nord, entsteht durch Störfelder an Bord und ist vom Boot sowie vom gesteuerten Kurs abhängig."
+  - question: "Warum zeigt der Bootskompass nicht exakt nach Norden?"
+    answer: "Weil zwei systematische Fehler die Anzeige verschieben: die Missweisung durch den Abstand zwischen geografischem und magnetischem Nordpol, und die Deviation durch magnetische Störfelder an Bord wie Motor, Ankerkette oder Elektronik in Kompassnähe."
+  - question: "Wo finde ich den Wert für Missweisung und für Deviation?"
+    answer: "Die Missweisung steht in der Kompassrose der Seekarte für den jeweiligen Kartenausschnitt. Die Deviation steht in der bootseigenen Deviationstabelle, die für jeden Kompasskurs einzeln ermittelt wird und nur für genau diesen Kompass an genau diesem Einbauort gilt."
+  - question: "Warum ändert sich die Deviation mit dem gesteuerten Kurs, die Missweisung aber nicht?"
+    answer: "Die Deviation entsteht durch Störfelder an Bord, die sich bei einer Drehung des Bootes relativ zum Erdmagnetfeld anders ausrichten, deshalb ist sie kursabhängig. Die Missweisung hängt dagegen nur vom Ort auf der Erde ab und bleibt bei einem Kurswechsel unverändert."
 ---
 
 Der Magnetkompass ist eines der ältesten Navigationsinstrumente überhaupt, und er steckt bis heute in praktisch jedem Boot. Trotzdem zeigt seine Nadel fast nie exakt zum geografischen Nordpol. Wer verstehen will, warum das so ist, muss zwei Begriffe auseinanderhalten: **Missweisung** und **Deviation**. Beide sind Grundlagenwissen für den [SBF See](/sbf-see/) und die Basis für jede Kursumrechnung. Dieser Artikel erklärt, wie der Kompass funktioniert und woher seine beiden systematischen Fehler kommen.

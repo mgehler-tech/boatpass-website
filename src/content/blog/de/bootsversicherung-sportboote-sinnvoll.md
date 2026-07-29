@@ -8,6 +8,15 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "boat-insurance-for-sportboats-what-makes-sense"
+faq:
+  - question: "Ist eine Bootsversicherung in Deutschland gesetzlich vorgeschrieben?"
+    answer: "Nein, eine gesetzliche Pflicht zur Bootshaftpflichtversicherung gibt es in Deutschland nicht, anders als bei der Kfz-Haftpflicht für Autos. In der Praxis verlangen aber viele Häfen, Vereine und Vercharterer eine Haftpflichtversicherung als Voraussetzung."
+  - question: "Was deckt die Bootshaftpflichtversicherung ab?"
+    answer: "Sie greift, wenn du mit deinem Boot einen Schaden bei Dritten verursachst, etwa beim Anlegen einen anderen Bootsrumpf beschädigst oder eine Kollision verursachst. Wichtig beim Vergleich sind Deckungssumme, Geltungsbereich und ob mitversicherte Personen eingeschlossen sind."
+  - question: "Was ist der Unterschied zwischen Haftpflicht- und Kaskoversicherung?"
+    answer: "Die Haftpflicht deckt Schäden bei anderen ab, während die Kaskoversicherung das eigene Boot schützt, etwa bei Diebstahl, Sturmschäden, Feuer oder Grundberührung. Kasko ist freiwillig und lohnt sich vor allem bei höherwertigen Booten."
+  - question: "Brauche ich eine eigene Bootsversicherung, wenn ich nur chartere?"
+    answer: "In der Regel nicht, bei Charterbooten ist die Haftpflicht meist Teil des Chartervertrags, oft kombiniert mit einer Kaution für kleinere Schäden. Manche Vercharterer bieten zusätzlich eine Haftungsreduzierung an, die die Kaution im Schadenfall absenkt."
 ---
 
 Kaum hast du deinen [Sportbootführerschein](/sbf-pruefung-ablauf/) in der Tasche und ein eigenes Boot in Aussicht, taucht die nächste Frage auf: Welche Versicherung brauchst du eigentlich? Anders als beim Auto gibt es beim Boot keine bundesweite Versicherungspflicht, trotzdem lohnt sich ein genauer Blick, denn ein Schaden auf dem Wasser kann schnell teuer werden. Dieser Artikel gibt dir einen Überblick über die gängigen Bausteine und hilft dir einzuschätzen, was für deine Situation sinnvoll ist.

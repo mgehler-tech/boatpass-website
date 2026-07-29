@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "boot-trailern-slippen"
+faq:
+  - question: "What driving licence do I need to trailer a boat?"
+    answer: "In Germany, the licence category you need for your car-and-boat-trailer combination depends on the combined gross weight of tow vehicle and trailer, separate from the Sportbootführerschein. Check your personal licence category before your first trip, and check local road traffic rules wherever else you're towing."
+  - question: "How do I secure my boat properly on the trailer?"
+    answer: "The bow eye with its safety cable or chain holds the boat forward and should be pulled tight with no play, while additional tie-down straps at the stern stop the boat sliding backward or sideways. Loose items like fenders or a cover should be lashed down or removed before the drive."
+  - question: "What's the most common beginner mistake when launching?"
+    answer: "Forgetting to insert the drain plug before launching is one of the classic mistakes. Without it, water can flood in uncontrolled as soon as the boat floats."
+  - question: "What does the actual launch sequence look like?"
+    answer: "You back carefully down to the ramp until the trailer's wheels are just in the water, set the parking brake, release the bow safety chain while holding the boat with a line, then push or roll it gently off the trailer. Once it's floating free, tie up immediately and clear the ramp promptly with the trailer."
 howTo:
   name: "The Launch Sequence: Getting Your Boat into the Water"
   description: "How to launch your boat off the trailer in a controlled way, without unnecessarily blocking the ramp."

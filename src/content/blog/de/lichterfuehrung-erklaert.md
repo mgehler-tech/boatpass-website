@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "navigation-lights-explained"
+faq:
+  - question: "Welche Lichter führt ein Maschinenfahrzeug in Fahrt?"
+    answer: "Ein Maschinenfahrzeug in Fahrt führt Topplicht (weiß, vorn), Seitenlichter (grün Steuerbord, rot Backbord) und Hecklicht (weiß, achtern). Kleine Fahrzeuge unter 12 m dürfen Topplicht und Hecklicht zu einem weißen Rundumlicht zusammenfassen."
+  - question: "Woran erkennt man nachts ein Segelboot?"
+    answer: "Ein Segelboot unter Segeln führt Seitenlichter und Hecklicht, aber kein Topplicht. Das fehlende Topplicht ist das entscheidende Unterscheidungsmerkmal zum Maschinenfahrzeug."
+  - question: "Was bedeutet \"Rot über Rot – das Schiff ist tot\"?"
+    answer: "Zwei rote Rundumlichter übereinander zeigen an, dass ein Fahrzeug manövrierunfähig ist, zum Beispiel bei Maschinenausfall. Der Merkspruch hilft, sich diese Lichterkombination einzuprägen."
+  - question: "Wie erkennst du nachts, ob ein Boot auf dich zukommt oder wegfährt?"
+    answer: "Siehst du beide Seitenlichter (rot und grün) zusammen mit dem Topplicht, kommt das Boot direkt auf dich zu. Siehst du nur das weiße Hecklicht, fährt es von dir weg."
 ---
 
 Bei Nacht oder schlechter Sicht erkennst du andere Fahrzeuge nur an ihren Lichtern – und musst aus der Lichterführung ablesen, um was für ein Fahrzeug es sich handelt, wohin es fährt und ob es vielleicht manövrierbehindert ist. Die Lichterführung ist ein Kernthema der [SBF-See-Theorie](/sbf-see/). Hier bekommst du den Überblick, inklusive der berühmten Merksprüche.

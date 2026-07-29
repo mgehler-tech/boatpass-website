@@ -8,6 +8,15 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "boating-regions-in-germany"
+faq:
+  - question: "Welchen Führerschein brauche ich für die Mecklenburgische Seenplatte?"
+    answer: "Für die Mecklenburgische Seenplatte reicht der SBF Binnen, da es sich ausschließlich um Binnenschifffahrtsstraßen handelt."
+  - question: "Welcher Schein gilt auf dem Bodensee?"
+    answer: "Auf dem Bodensee gilt statt des SBF das Bodensee-Schifferpatent (BSP), das nach einer eigenen internationalen Vereinbarung zwischen Deutschland, Österreich und der Schweiz geregelt ist."
+  - question: "Brauche ich für die Ostsee den SBF See oder den SBF Binnen?"
+    answer: "Für die Ostsee ist der SBF See erforderlich, da es sich um Seeschifffahrtsstraßen handelt. Der geringere Tidenhub im Vergleich zur Nordsee macht sie für viele Einsteiger dennoch zugänglicher."
+  - question: "Was unterscheidet die Nordsee navigatorisch von der Ostsee?"
+    answer: "Die Nordsee, insbesondere das Wattenmeer, hat einen deutlich ausgeprägteren Tidenhub, wodurch sich Wassertiefen und Fahrrinnen im Tagesverlauf spürbar verändern. Das erfordert eine sorgfältigere Törnplanung als auf der Ostsee."
 ---
 
 Deutschland bietet eine überraschend große Bandbreite an Wassersport-Revieren, von ruhigen Seenplatten über belebte Flüsse bis zur tidenbeeinflussten Küste. Wer seinen [Sportbootführerschein](/sbf-pruefung-ablauf/) frisch in der Tasche hat, steht oft vor der Frage, welches Revier eigentlich zum eigenen Schein und zur eigenen Erfahrung passt. Dieser Artikel gibt dir einen Überblick über die bekanntesten Reviere und ordnet ein, welcher SBF dort jeweils gefragt ist.

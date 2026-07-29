@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "schleppverband-besondere-fahrzeuge-erkennen"
+faq:
+  - question: "What are day shapes and what are they used for?"
+    answer: "Day shapes are simple black forms such as balls, cones, cylinders, and diamonds, hoisted on the mast or stay during daylight. They show what kind of vessel is ahead when navigation lights are not visible."
+  - question: "What is the difference between pushed and towed convoys in terms of day shapes?"
+    answer: "A rigidly coupled pushed convoy is treated under the collision regulations as a single vessel and therefore shows only one set of lights or day shapes. A towed convoy, by contrast, consists of two separately recognizable units, each showing its own day shapes."
+  - question: "When must a tow show an additional diamond shape?"
+    answer: "If the length of the tow, measured from the stern of the towing vessel to the end of the last vessel towed, exceeds 200 meters, both the towing vessel and the vessel being towed must exhibit a diamond shape. The last vessel in the tow also carries the diamond at its after end."
+  - question: "How do you tell not under command from restricted in ability to maneuver by day shape?"
+    answer: "A vessel not under command, for example after an engine failure, shows two black balls one above the other. A vessel restricted in her ability to maneuver, for example while dredging or towing a heavy convoy, shows three shapes in the order ball-diamond-ball."
 ---
 
 Navigation lights are no help in broad daylight, since you only see them once it gets dark. Yet you still need to tell, in full daylight, whether the vessel ahead is an ordinary boat, part of a towing convoy, or a vessel restricted in her ability to maneuver. That is what **shapes** (day shapes) are for: simple black shapes hoisted on the mast or stay. This article explains the most important day shapes for pushed and towed convoys and for special vessels, a topic from the [International Regulations for Preventing Collisions at Sea](/en/blog/right-of-way-collision-rules/) that comes up in both the German [SBF Binnen](/en/sbf-inland/) (inland waters) and [SBF See](/en/sbf-coastal/) (coastal waters) exams.

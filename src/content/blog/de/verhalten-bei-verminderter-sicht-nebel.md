@@ -8,6 +8,15 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "how-to-behave-in-restricted-visibility-fog"
+faq:
+  - question: "Was bedeutet „verminderte Sicht” rechtlich?"
+    answer: "Verminderte Sicht liegt vor, wenn die Sichtweite durch Nebel, Regen, Schneefall oder ähnliche Ursachen nicht mehr ausreicht, um ein unerwartet auftauchendes Fahrzeug rechtzeitig zu erkennen und nach den normalen Ausweichregeln zu reagieren. Sie gilt unabhängig von Tageszeit und einer festen Meterzahl."
+  - question: "Welche Geschwindigkeit ist bei verminderter Sicht vorgeschrieben?"
+    answer: "Vorgeschrieben ist eine sichere Geschwindigkeit, bei der du rechtzeitig reagieren und notfalls rechtzeitig zum Stillstand kommen kannst. Ein Maschinenfahrzeug muss zudem seine Maschine für ein sofortiges Manöver bereithalten."
+  - question: "Müssen Navigationslichter bei Nebel auch tagsüber gesetzt werden?"
+    answer: "Ja. Bei verminderter Sicht müssen die Navigationslichter unabhängig von der Tageszeit gesetzt werden, egal ob dichter Nebel am Vormittag oder eine Schneeböe am Nachmittag herrscht."
+  - question: "Wie oft muss ein fahrendes Boot bei Nebel Schallsignale geben?"
+    answer: "Ein Fahrzeug in Fahrt gibt sein Schallsignal auf See mindestens alle zwei Minuten ab, ein Fahrzeug vor Anker läutet die Glocke in Abständen von höchstens einer Minute."
 ---
 
 Nebelbänke ziehen oft überraschend schnell auf, und auch starker Regen oder Schneefall können die Sicht innerhalb weniger Minuten drastisch verschlechtern. Für die [SBF-Prüfung](/sbf-pruefung-ablauf/) ist das Thema **verminderte Sicht** ein fester Bestandteil, in der Praxis ist es sogar noch wichtiger: Wer nicht weiß, wie er sich verhalten muss, wenn er andere Fahrzeuge kaum noch oder gar nicht mehr sehen kann, geht ein erhebliches Risiko ein. Dieser Artikel erklärt, was verminderte Sicht rechtlich bedeutet, welche Regeln auf See und auf Binnenschifffahrtsstraßen gelten und wie du dich als Sportbootfahrer in der Praxis richtig verhältst.

@@ -8,6 +8,15 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "aussenborder-basiswartung"
+faq:
+  - question: "How often should I flush my outboard after a trip?"
+    answer: "Flush it after every trip, especially after running in saltwater or brackish water, using clean fresh water on the cooling system. This clears salt residue and debris that would otherwise narrow the cooling passages and encourage corrosion."
+  - question: "How do I know if my outboard's water pump is working?"
+    answer: "At start-up, check whether the telltale stream, the small jet of water that usually exits near the engine housing, is flowing visibly. If it's missing or looks weak, treat that as a warning sign and have it checked promptly to avoid overheating."
+  - question: "How often do I need to change the oil on a four-stroke outboard?"
+    answer: "Reliable change intervals come only from your engine's owner's manual or service booklet, since they depend on the model, usage, and operating hours. Oil with a milky tint can indicate water intrusion and should be checked by a qualified workshop promptly."
+  - question: "How do I know if the sacrificial anode needs replacing?"
+    answer: "The anode protects the engine's metal parts from galvanic corrosion by wearing away preferentially itself, and needs replacing once a large portion of it has been consumed. How worn it already is is best judged by comparing it directly to a new one or having a qualified workshop assess it."
 ---
 
 An outboard motor is built to take a beating, but it only tolerates neglect up to a point. Stick to a handful of simple maintenance habits and you significantly cut the risk of an engine failure, protect your boat's resale value, and reduce unpleasant surprises out on the water. This article gives you a practical overview of the most important care points, but it doesn't replace your engine's owner's manual, which always remains the authoritative source for intervals and procedures.

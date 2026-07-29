@@ -8,6 +8,15 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "charterschein-boot-mieten-ohne-fuehrerschein"
+faq:
+  - question: "What is the charter certificate?"
+    answer: "The charter certificate, officially the Charterbescheinigung, lets you operate a rented boat on certain designated German inland waters without a Sportbootführerschein. You get a briefing from the rental company instead of weeks of training."
+  - question: "What are the requirements for the charter certificate?"
+    answer: "The boat must be no more than 15 meters long and no faster than 12 km/h, and the minimum age is generally 16 years. A roughly 2- to 3-hour theoretical and practical briefing by the rental company is also required."
+  - question: "Which waters is the charter certificate valid on?"
+    answer: "It is valid only on expressly approved inland waters, most importantly the Mecklenburg Lake District with the Müritz and the Kleinseenplatte. Parts of Brandenburg also have approved charter areas."
+  - question: "Where does the charter certificate reach its limits?"
+    answer: "It is not valid for your own boat, outside the designated inland waters, at sea, abroad, or for boats over 15 m or faster than 12 km/h. Anyone who sails regularly or wants to charter abroad needs the proper SBF Binnen or SBF See license."
 ---
 
 You want a boating holiday on the Müritz or the Mecklenburg Lake District – but [without taking the Sportbootführerschein first](/en/blog/boating-without-license-15-hp/)? It's possible: with the **charter certificate**. Here's what the Charterbescheinigung allows, what the requirements are, and where its limits lie.

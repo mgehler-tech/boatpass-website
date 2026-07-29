@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "buoyage-north-sea-vs-baltic-sea"
+faq:
+  - question: "Was bedeutet die Richtung der Betonnung „von See kommend“?"
+    answer: "Die Grundregel legt Backbordtonnen als rot und Steuerbordtonnen als grün fest, bezogen auf eine gedachte Fahrtrichtung von See kommend beziehungsweise flussaufwärts. Diese Richtung entspricht der Fahrt eines Schiffs, das von See her in einen Hafen, eine Flussmündung oder ein Revier einläuft."
+  - question: "Warum ist die Betonnungsrichtung in der Nordsee meist einfacher zu erkennen als in der Ostsee?"
+    answer: "Die Nordsee ist ein Gezeitenmeer mit deutlichem Tidenhub, sodass die Richtung von See kommend meist mit der natürlichen Strömungsrichtung zusammenfällt. Die Ostsee hat dagegen praktisch keine Gezeiten, weshalb an vielen Stellen die natürliche Orientierung fehlt."
+  - question: "Wie erkenne ich die Betonnungsrichtung, wenn sie nicht eindeutig ist?"
+    answer: "In Zweifelsfällen, etwa in der Ostsee, in Kanälen oder wo zwei Fahrwasser aufeinandertreffen, legt die zuständige Behörde die Richtung verbindlich fest und markiert sie in der amtlichen Seekarte mit einem eigenen Pfeilsymbol. Dieses Symbol zeigt die festgelegte Richtung unabhängig von deiner tatsächlichen Fahrtrichtung."
+  - question: "Wie verläuft die Betonnung am Nord-Ostsee-Kanal?"
+    answer: "Die Betonnung und Tonnennummerierung folgt einer festen Richtung von der Nordseeseite bei Brunsbüttel zur Ostseeseite bei Kiel. Fährst du von Kiel nach Brunsbüttel, fährst du gegen diese Richtung, dann liegen rote Tonnen auf deiner rechten und grüne auf deiner linken Seite."
 ---
 
 Rot backbord, grün steuerbord, wenn du von See kommst: Diese Grundregel des Lateralsystems sitzt bei den meisten SBF-See-Anwärtern schnell. Doch was heißt „von See kommend" eigentlich genau, wenn eine Fahrwasserkennzeichnung zwei Meeresteile miteinander verbindet oder gar keine Gezeiten existieren, an denen man sich orientieren kann? Genau hier unterscheiden sich Nordsee und Ostsee spürbar, und genau das wird in der Prüfung gerne abgefragt. Dieser Artikel erklärt, wie die Richtung der Betonnung tatsächlich festgelegt wird und warum du in der Ostsee öfter einen Blick auf die Seekarte werfen solltest als in der Nordsee.

@@ -8,6 +8,15 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "gps-chartplotter-vhf-modern-navigation"
+faq:
+  - question: "Ersetzt GPS die klassische Navigation mit Papierkarte und Kompass?"
+    answer: "Nein, GPS und Kartenplotter sind eine sinnvolle Ergänzung, aber kein Ersatz. Elektronik kann durch leere Akkus, defekte Sicherungen oder wegbrechende Satellitensignale ausfallen, weshalb du auch klassisch mit Karte, Kompass und Peilung navigieren können solltest."
+  - question: "Was ist der Unterschied zwischen Kurs über Grund und gesteuertem Kurs?"
+    answer: "Der Kompass zeigt den gesteuerten Kurs, also die Richtung, in die der Bug tatsächlich zeigt. Der Kurs über Grund (COG) aus dem GPS ist dagegen die Richtung, die du wegen Wind- und Strömungsversatz tatsächlich über den Meeresboden zurücklegst."
+  - question: "Was zeigt mir AIS und was nicht?"
+    answer: "AIS zeigt Position, Kurs, Fahrt und Namen anderer Schiffe an, die ein Signal senden, besonders wertvoll bei größeren Berufsschiffen. Es ersetzt aber nicht den Ausguck, da kleinere Sportboote ohne Transponder für dich unsichtbar bleiben."
+  - question: "Reicht der Sportbootführerschein zum Betrieb eines Funkgeräts?"
+    answer: "Nein, für den Betrieb eines Funkgeräts brauchst du zusätzlich ein eigenes Sprechfunkzeugnis, je nach Fahrtgebiet das UBI für Binnengewässer oder das SRC für Küstengewässer. Dieses Zeugnis ist unabhängig vom Sportbootführerschein zu erwerben."
 ---
 
 Kaum ein modernes Sportboot kommt heute noch ohne GPS-Empfänger, Kartenplotter oder Funkgerät aus. Diese Geräte machen das Fahren komfortabler und in vielen Situationen auch sicherer. Gleichzeitig ersetzen sie nicht das Grundwissen, das du für den [SBF See](/sbf-see/) lernst, sondern bauen darauf auf. Dieser Artikel erklärt, wie GPS, Kartenplotter, AIS und Funkgerät zusammenspielen, wo ihre Stärken und Grenzen liegen und wie sich moderne Elektronik sinnvoll in die klassische Navigation einfügt.

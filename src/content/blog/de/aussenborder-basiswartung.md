@@ -8,6 +8,15 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "outboard-motor-basic-maintenance"
+faq:
+  - question: "Wie oft sollte ich meinen Außenborder nach der Fahrt spülen?"
+    answer: "Nach jeder Fahrt, besonders nach Salzwasser oder brackigem Wasser, solltest du das Kühlsystem mit Süßwasser durchspülen. Das entfernt Salzrückstände und Ablagerungen, die sonst die Kühlkanäle verengen und Korrosion begünstigen."
+  - question: "Wie erkenne ich, ob die Kühlwasserpumpe meines Außenborders arbeitet?"
+    answer: "Beim Start solltest du prüfen, ob der Pilotstrahl, also der kleine Wasserstrahl am Motorgehäuse, sichtbar fließt. Bleibt er aus oder wirkt schwach, ist das ein Warnsignal, das du zeitnah abklären solltest, um Überhitzung zu vermeiden."
+  - question: "Wie oft muss ich das Motoröl bei einem Viertakt-Außenborder wechseln?"
+    answer: "Verlässliche Wechselintervalle findest du ausschließlich im Bedienungshandbuch oder Serviceheft deines Motors, da sie je nach Modell, Nutzungsintensität und Betriebsstunden variieren. Milchig verfärbtes Öl kann auf eingedrungenes Wasser hindeuten und sollte zeitnah von einer Fachwerkstatt geprüft werden."
+  - question: "Woran erkenne ich, ob die Opferanode getauscht werden muss?"
+    answer: "Die Anode schützt Metallteile des Motors vor galvanischer Korrosion, indem sie sich selbst bevorzugt abbaut, und muss ersetzt werden, wenn sie zu einem großen Teil abgetragen ist. Wie stark sie bereits verbraucht ist, lässt sich am besten durch Vergleich mit einer neuen Anode oder durch eine Fachwerkstatt beurteilen."
 ---
 
 Ein Außenborder ist robust gebaut, verzeiht aber Nachlässigkeit bei der Pflege nur begrenzt. Wer regelmäßig ein paar einfache Wartungsschritte einhält, verringert das Risiko eines Motorschadens deutlich, erhält den Wert seines Bootes und hat auf dem Wasser weniger böse Überraschungen. Dieser Artikel gibt dir einen praktischen Überblick über die wichtigsten Pflegepunkte, ersetzt aber nicht das Bedienungshandbuch deines Motors, das immer die verbindliche Grundlage für Intervalle und Vorgehensweisen ist.

@@ -8,6 +8,15 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "verhalten-bei-verminderter-sicht-nebel"
+faq:
+  - question: "What legally counts as \"restricted visibility\"?"
+    answer: "Restricted visibility exists when fog, rain, snowfall or similar causes reduce visibility so much that you can no longer spot an unexpectedly appearing vessel early enough to react under the normal steering and sailing rules. It applies regardless of the time of day and is not tied to one fixed distance."
+  - question: "What speed is required in restricted visibility?"
+    answer: "You must proceed at a safe speed that lets you react in time and, if necessary, come to a stop in time. A power-driven vessel must also keep her engines ready for immediate maneuver."
+  - question: "Do you need to show navigation lights in fog during the day?"
+    answer: "Yes. In restricted visibility, navigation lights must be shown regardless of the time of day, whether that means dense fog in the morning or a snow squall in the afternoon."
+  - question: "How often must a vessel underway sound signals in fog?"
+    answer: "A vessel underway sounds her signal at sea at intervals of not more than two minutes, while a vessel at anchor rings her bell at intervals of not more than one minute."
 ---
 
 Fog banks often roll in surprisingly fast, and heavy rain or snowfall can cut visibility drastically within minutes. For the German [SBF exam](/en/sbf-exam/) (Sportbootführerschein, the boating license), the topic of **restricted visibility** is a fixed part of the syllabus, and in practice it matters even more: if you do not know how to behave once you can barely see other vessels, or cannot see them at all, you are taking on serious risk. This article explains what restricted visibility means in legal terms, which rules apply at sea and on inland waterways, and how to behave correctly as a recreational skipper in practice.

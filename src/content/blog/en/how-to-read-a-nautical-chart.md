@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "seekarte-lesen-lernen"
+faq:
+  - question: "What is chart datum?"
+    answer: "Chart datum (CD) is the fixed reference level that all depth figures on a nautical chart are measured from. It is set deliberately low so that under normal conditions the actual water depth does not fall short of the charted figure."
+  - question: "Why do you measure distances on a nautical chart using the latitude scale?"
+    answer: "Because one arc minute of latitude equals exactly one nautical mile, while a minute of longitude covers a different distance depending on your latitude. Distances are always measured on the latitude scale at the side of the chart, level with the leg being measured."
+  - question: "What is the advantage of the Mercator projection?"
+    answer: "On a Mercator chart, a line of constant compass bearing appears as a straight line, which makes practical chart work much easier. The downside is that areas and distances become increasingly distorted toward the poles."
+  - question: "What does a compass rose on a nautical chart show?"
+    answer: "A compass rose shows the true north arrow and the variation that applies to that chart section, information you need for course conversion."
 ---
 
 At first glance, a nautical chart looks like an ordinary map with a few extra numbers scattered across it. In reality, it uses its own system of symbols that tells you everything you need for a safe passage: how deep the water is, where the dangers lie, and how to fix your position. For the German boating licence [SBF Coastal (SBF See)](/en/sbf-coastal/), reading a nautical chart is a fixed part of the exam material. This article explains the basics so you can find your way around any chart.

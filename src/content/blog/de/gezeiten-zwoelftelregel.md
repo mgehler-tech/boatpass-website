@@ -8,6 +8,15 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "tides-rule-of-twelfths"
+faq:
+  - question: "Was ist die Zwölftelregel?"
+    answer: "Die Zwölftelregel teilt den Tidenhub in zwölf gleiche Teile auf, um den Wasserstand zwischen Hoch- und Niedrigwasser abzuschätzen. Sie folgt der Reihenfolge 1 – 2 – 3 – 3 – 2 – 1 Zwölftel pro Stunde über die rund sechs Stunden zwischen den Wenden."
+  - question: "Wie berechne ich den Wasserstand mit der Zwölftelregel?"
+    answer: "Zunächst wird der Tidenhub, also die Differenz zwischen Hoch- und Niedrigwasserhöhe, durch zwölf geteilt. Dieser Wert wird dann für jede Stunde mit dem passenden Anteil aus der Reihenfolge 1 – 2 – 3 – 3 – 2 – 1 multipliziert und zur Niedrigwasserhöhe addiert bzw. beim Fallen abgezogen."
+  - question: "Wie berechne ich das Wasser unter dem Kiel?"
+    answer: "Die Wassertiefe ergibt sich aus der Kartentiefe bezogen auf Seekartennull plus der aktuellen Gezeitenhöhe, minus dem Tiefgang des Bootes. Dabei sollte immer eine Sicherheitsreserve eingeplant werden, da Wind und Luftdruck den realen Wasserstand von der Vorhersage abweichen lassen können."
+  - question: "Wie genau ist die Zwölftelregel?"
+    answer: "Sie ist eine Näherung, die einen gleichmäßigen, sinusähnlichen Tidenverlauf unterstellt und meist unter 2,5 % vom Tidenhub abweicht. Für Törnplanung und SBF-See-Prüfung reicht diese Genauigkeit aus, bei unregelmäßigem Tidenverlauf wie Doppelhochwasser stößt sie aber an ihre Grenzen."
 ---
 
 Wer auf Nord- oder Ostsee unterwegs ist, kommt an den Gezeiten nicht vorbei. Besonders im Wattenmeer entscheidet der richtige Zeitpunkt darüber, ob unter dem Kiel noch genug Wasser steht. Mit der **Zwölftelregel** lässt sich der Wasserstand zwischen Hoch- und Niedrigwasser einfach abschätzen – ganz ohne aufwendige Tabellen. So funktioniert sie.

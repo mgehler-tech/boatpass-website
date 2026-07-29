@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "sea-marks-lateral-system-explained"
+faq:
+  - question: "Welche Farbe hat ein Backbord-Seezeichen in Deutschland?"
+    answer: "In der IALA-Region A, zu der Deutschland gehört, ist ein Backbord-Fahrwasserzeichen rot mit einem roten liegenden Zylinder als Toppzeichen. Es begrenzt das Fahrwasser auf der linken Seite, wenn man von See kommend einläuft."
+  - question: "Wie erkennt man ein Nordkardinalzeichen?"
+    answer: "Ein Nordkardinalzeichen trägt zwei schwarze Kegel, die beide mit der Spitze nach oben zeigen, und ist oben schwarz, unten gelb gefärbt. Es zeigt an, dass sicheres Wasser nördlich des Zeichens liegt."
+  - question: "Was bedeutet eine gelbe Tonne mit einem Kreuz als Toppzeichen?"
+    answer: "Eine gelbe Tonne mit gelbem liegendem Kreuz ist ein Sonderzeichen und markiert besondere Bereiche wie Sperrgebiete, Messstationen oder Kabeltrassen, ohne eine eigentliche Navigationsbedeutung zu haben."
+  - question: "Was zeigt eine Q-Kennung (Quick) bei einem Seezeichen an?"
+    answer: "Eine Q-Kennung steht für eine schnelle Blitzfolge und ist typisch für Kardinalzeichen."
 ---
 
 Seezeichen sind die „Verkehrsschilder" auf dem Wasser – und ein fester Bestandteil der [SBF-See-Theorieprüfung](/sbf-see/). Wer das System einmal verstanden hat, kann fast jedes Zeichen aus der Logik ableiten. In diesem Artikel erklären wir das Lateralsystem, das Kardinalsystem und die wichtigsten Sonderzeichen so, dass du sie in der Prüfung sicher erkennst.

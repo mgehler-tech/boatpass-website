@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "sportkuestenschifferschein-sks"
+faq:
+  - question: "What is the SKS (Sportküstenschifferschein)?"
+    answer: "The SKS is a voluntary, officially recognized qualification that builds on the SBF See and is not a legally mandated license. It is administered by the examination boards of the DSV and DMYV and requires you to already hold the SBF See."
+  - question: "How many nautical miles do you need to log for the SKS?"
+    answer: "You need to prove at least 300 nautical miles sailed or motored in coastal waters, documented in a mileage logbook and confirmed by someone who holds at least the SKS. These miles can be logged before the actual course, or even before earning the SBF See."
+  - question: "What does the SKS theory exam consist of?"
+    answer: "The theory exam consists of a questionnaire with 30 free-text questions covering navigation, maritime law, meteorology and seamanship, plus a separate chart-based navigation task, each with 90 minutes to complete."
+  - question: "How far from the coast does the SKS qualify you to sail?"
+    answer: "The SKS qualifies you to operate power and sailing yachts in coastal waters up to 12 nautical miles from the mainland coast."
 ---
 
 Once you hold the [SBF See](/en/sbf-coastal/) and spend regular time on coastal waters, three letters tend to come up sooner or later: **SKS**, short for Sportküstenschifferschein, Germany's coastal skipper's license. Unlike the Sportbootführerschein, the SKS is not a legally mandated license but a voluntary, officially recognized qualification that matters most when chartering abroad and moving on to larger yachts and wider cruising grounds. This article explains what the SKS actually is, which requirements apply, and how the theory and practical exams are structured.

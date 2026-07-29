@@ -8,6 +8,15 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "bridge-clearance-heights-inland-waterways"
+faq:
+  - question: "Warum ist die Durchfahrtshöhe an Brücken nicht immer gleich?"
+    answer: "Weil sie vom aktuellen Wasserstand des Flusses oder Kanals abhängt. Steigt der Pegel, sinkt die verfügbare Höhe unter der Brücke, sinkt der Pegel, wird mehr Platz frei."
+  - question: "Was ist der Bezugswasserstand?"
+    answer: "Der Bezugswasserstand ist ein von der Wasserstraßen- und Schifffahrtsverwaltung festgelegter Pegel, auf den sich veröffentlichte Höhenangaben beziehen. Liegt der tatsächliche Pegel höher als dieser Bezugswert, ist die real verfügbare Durchfahrtshöhe entsprechend geringer."
+  - question: "Wo finde ich aktuelle Durchfahrtshöhen und Pegelstände?"
+    answer: "Aktuelle Werte liefern die Pegelstände der Wasserstraßen- und Schifffahrtsverwaltung, die Nachrichten für die Binnenschifffahrt (NfB) sowie die Elektronischen Wasserstraßen-Informationsdienste (ELWIS). Kartenwerke und Törnführer geben zumindest die Bezugswerte an."
+  - question: "Was mache ich, wenn ich mir bei einer Durchfahrt nicht sicher bin?"
+    answer: "Im Zweifel nicht durchfahren. Prüfe den aktuellen Pegelstand gegen den Bezugswert, fahre notfalls langsam heran und beobachte die Höhentafel, statt riskant auf Verdacht durchzufahren."
 ---
 
 Eine Brücke, die gestern noch problemlos Platz für deinen Mast bot, kann heute nach starkem Regen deutlich niedriger wirken. Der Grund: Die **Durchfahrtshöhe** an Brücken ist keine feste Zahl, sondern hängt vom aktuellen Wasserstand ab. Wer das nicht auf dem Schirm hat, riskiert eine böse Kollision mit der Brückenunterkante. Dieser Artikel erklärt, wie Durchfahrtshöhen entstehen, wie du sie unterwegs richtig einschätzt und was dabei für den [SBF Binnen](/sbf-binnen/) wichtig ist.

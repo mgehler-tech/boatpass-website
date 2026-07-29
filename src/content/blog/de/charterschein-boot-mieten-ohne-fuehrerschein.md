@@ -8,6 +8,15 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "charter-certificate-rent-boat-without-license"
+faq:
+  - question: "Was ist der Charterschein?"
+    answer: "Der Charterschein, amtlich Charterbescheinigung, erlaubt es dir, auf bestimmten ausgewiesenen Binnengewässern ein gemietetes Boot ohne Sportbootführerschein zu führen. Du bekommst dafür vom Vermieter eine Einweisung statt einer mehrwöchigen Ausbildung."
+  - question: "Welche Voraussetzungen gelten für den Charterschein?"
+    answer: "Das Boot darf maximal 15 Meter lang sein und höchstens 12 km/h fahren, das Mindestalter liegt in der Regel bei 16 Jahren. Außerdem ist eine etwa 2- bis 3-stündige theoretische und praktische Einweisung durch den Vermieter erforderlich."
+  - question: "Auf welchen Gewässern gilt der Charterschein?"
+    answer: "Der Charterschein gilt nur auf ausdrücklich zugelassenen Binnengewässern, allen voran die Mecklenburgische Seenplatte mit der Müritz und der Kleinseenplatte. Auch Teile Brandenburgs gehören zu den freigegebenen Charterrevieren."
+  - question: "Wo stößt der Charterschein an seine Grenzen?"
+    answer: "Der Charterschein gilt nicht für eigene Boote, außerhalb der ausgewiesenen Binnengewässer, auf dem Meer, im Ausland oder für Boote über 15 m Länge bzw. 12 km/h. Wer regelmäßig fährt oder ins Ausland chartern will, braucht den regulären SBF Binnen oder SBF See."
 ---
 
 Du willst einen Bootsurlaub auf der Müritz oder der Mecklenburgischen Seenplatte machen – aber ohne vorher den Sportbootführerschein zu machen? Das geht: mit dem **Charterschein**. Hier erfährst du, was die Charterbescheinigung erlaubt, welche Voraussetzungen gelten und wo ihre Grenzen liegen. Unsicher, ob du überhaupt einen Schein brauchst? Unser [Bootsführerschein-Finder](/tools/welcher-bootsfuehrerschein/) zeigt es dir in 30 Sekunden.

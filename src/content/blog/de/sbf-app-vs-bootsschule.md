@@ -8,6 +8,15 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "sbf-app-vs-boating-school"
+faq:
+  - question: "Braucht man für den Sportbootführerschein einen Theoriekurs?"
+    answer: "Nein, ein Theoriekurs ist nicht vorgeschrieben. Für die Zulassung zur SBF-Prüfung ist kein Nachweis über den Besuch eines Kurses erforderlich, du kannst dich vollständig selbst vorbereiten."
+  - question: "Was kostet die Vorbereitung mit App und Praxisstunde im Vergleich zum Präsenzkurs?"
+    answer: "Nach der Kostenübersicht im Artikel kostet Selbstlernen mit App und einzelner Praxisstunde insgesamt etwa 200 bis 260 Euro, ein Online-Kurs mit separater Praxis 240 bis 400 Euro und ein klassischer Präsenzkurs 400 bis 650 Euro."
+  - question: "Ist die Prüfung anders, wenn man mit einer App statt mit einem Kurs gelernt hat?"
+    answer: "Nein, die Prüfung ist immer dieselbe, mit demselben Fragenkatalog, denselben Bestehensregeln und demselben Prüfungsausschuss. Es gibt keinen Bonus für einen besuchten Kurs und keinen Nachteil für App-Lernen."
+  - question: "Für wen lohnt sich ein Präsenzkurs bei einer Bootsschule?"
+    answer: "Ein Präsenzkurs eignet sich besonders für alle ohne Vorerfahrung auf dem Wasser oder für Leute, die einen festen Rahmen zum Dranbleiben brauchen. Wer diszipliniert selbstständig lernen kann und Geld sparen will, ist mit App plus Selbstlernen oft besser bedient."
 ---
 
 Eine der ersten Fragen, wenn du dich für den [Sportbootführerschein](/fuehrerscheine/) entscheidest: Brauche ich einen Theoriekurs bei einer Bootsschule – oder reicht eine Lern-App? Die kurze Antwort: Ein Kurs ist **nicht vorgeschrieben**. Du kannst dich vollständig selbst vorbereiten. Die längere Antwort hängt davon ab, wie du am besten lernst und was dir dein Geld wert ist.

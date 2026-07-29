@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "weather-beaufort-scale"
+faq:
+  - question: "Ab welcher Beaufort-Stärke gilt eine Starkwindwarnung?"
+    answer: "Eine Starkwindwarnung gilt ab 6 Beaufort, eine Sturmwarnung ab 8 Beaufort. Diese beiden Schwellen solltest du für die SBF-See-Prüfung auswendig kennen."
+  - question: "Was besagt das barische Windgesetz?"
+    answer: "Auf der Nordhalbkugel liegt das Tief links, leicht vorne, wenn du dich mit dem Rücken zum Wind stellst, und das Hoch rechts. Der Wind wird durch die Erddrehung abgelenkt und weht gegen den Uhrzeigersinn um ein Tief, im Uhrzeigersinn um ein Hoch."
+  - question: "Was ist der Unterschied zwischen Seewind und Landwind?"
+    answer: "Der Seewind entsteht tagsüber, wenn sich das Land schneller erwärmt als das Wasser und kühlere Luft vom Meer aufs Land strömt. Der Landwind entsteht nachts, wenn das Land schneller abkühlt und die Luft vom Land aufs Meer strömt."
+  - question: "Was zeigt ein fallendes Barometer an?"
+    answer: "Ein fallendes Barometer zeigt sinkenden Luftdruck an, was auf ein nahendes Tief und sich verschlechterndes Wetter mit oft auffrischendem Wind hindeutet."
 ---
 
 Wetter ist auf See ein Sicherheitsfaktor – und deshalb fester Bestandteil der [SBF-See-Theorieprüfung](/sbf-see/). Du musst nicht Meteorologe werden, aber die Grundlagen verstehen: Windstärken einschätzen, ein Tief von einem Hoch unterscheiden und Warnzeichen erkennen. Dieser Artikel erklärt die wichtigsten Themen kompakt.

@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "first-aid-on-board"
+faq:
+  - question: "Wie setze ich an Bord richtig einen Notruf ab?"
+    answer: "Über Funk auf dem internationalen Not- und Anrufkanal UKW-Kanal 16 mit Schiffsname, Position, Art des Notfalls und Personenzahl, oder telefonisch über die europaweite Notrufnummer 112, sofern Mobilfunkempfang besteht. Gib deine Position so genau wie möglich an, etwa mit GPS-Koordinaten oder markanten Landmarken."
+  - question: "Was mache ich, wenn eine Person an Bord nicht mehr normal atmet?"
+    answer: "Notruf veranlassen, dann sofort mit Herzdruckmassage in der Mitte des Brustkorbs beginnen, mit 100 bis 120 Kompressionen pro Minute und etwa 5 bis 6 Zentimetern Drucktiefe bei Erwachsenen. Wenn geübt, im Wechsel 30 Kompressionen und 2 Beatmungen durchführen und einen vorhandenen Defibrillator so früh wie möglich einsetzen."
+  - question: "Was hilft bei Unterkühlung an Bord?"
+    answer: "Die Person aus Wind und Nässe bringen, nasse Kleidung durch trockene ersetzen und mit Decken oder Schlafsäcken isolieren, dabei Kopf und Rumpf besonders schützen. Vorsichtig und langsam erwärmen, keine Massage der Gliedmaßen, bei starker Unterkühlung oder Bewusstlosigkeit Notruf absetzen."
+  - question: "Was gehört in den Verbandskasten an Bord?"
+    answer: "Sterile Kompressen und Wundschnellverbände in verschiedenen Größen, ein Dreieckstuch, Einmalhandschuhe, eine Rettungsdecke, eine Verbandsschere sowie gegebenenfalls Mittel gegen Seekrankheit. Der Inhalt sollte regelmäßig auf Vollständigkeit und Haltbarkeit geprüft werden."
 howTo:
   name: "Wiederbelebung an Bord"
   description: "So reagierst du richtig, wenn eine Person an Bord nicht mehr normal atmet: Notruf, Herzdruckmassage und Beatmung."

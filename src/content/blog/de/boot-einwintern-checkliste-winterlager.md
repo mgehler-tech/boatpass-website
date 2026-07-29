@@ -7,6 +7,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "winterizing-a-boat-checklist-for-winter-storage"
+faq:
+  - question: "Wann sollte ich mit dem Einwintern meines Boots beginnen?"
+    answer: "Sobald mit dauerhaftem Frost zu rechnen ist, sollten alle frostgefährdeten Systeme entleert oder geschützt sein, viele beginnen bereits, wenn die Nachttemperaturen regelmäßig um den Gefrierpunkt liegen. Wer zu spät anfängt, riskiert, dass Restwasser schon gefroren ist, bevor die Arbeiten abgeschlossen sind."
+  - question: "Was muss ich am Motor vor dem Einwintern beachten?"
+    answer: "Bei Außenbordern und vielen Innenbordern mit Seewasserkühlung muss das Kühlsystem entleert oder mit Frostschutzmittel durchgespült werden, außerdem sollten Motoröl und Filter vor der Einlagerung gewechselt werden. Auch das Kraftstoffsystem sollte vorbereitet werden, wie viel Stabilisator sinnvoll ist, richtet sich nach Motor- und Kraftstofftyp."
+  - question: "Wie lagere ich die Batterie richtig über den Winter?"
+    answer: "Die Batterie sollte ausgebaut oder zumindest abgeklemmt und kühl, trocken und frostfrei gelagert werden. Der Ladezustand sollte regelmäßig geprüft werden, da eine über Monate tiefentladene Batterie deutlich an Kapazität verliert."
+  - question: "Worauf muss ich bei der Abdeckung des Boots während der Lagerung achten?"
+    answer: "Eine gut sitzende Persenning schützt vor Niederschlag, Laub und UV-Strahlung, muss aber ausreichend belüftet sein, damit sich darunter kein Kondenswasser staut. Eine komplett luftdichte Abdeckung ohne Belüftung begünstigt Feuchtigkeit und Schimmelbildung im Innenraum."
 ---
 
 Sobald die Temperaturen fallen und die Saison sich dem Ende zuneigt, beginnt für viele Bootsbesitzer die wichtigste Wartungsphase des Jahres: das Einwintern. Wer sein Boot gründlich auf die kalte Jahreszeit vorbereitet, erspart sich im Frühjahr teure Reparaturen durch Frostschäden, korrodierte Bauteile oder eine leere Batterie. Dieser Artikel gibt dir eine praktische Checkliste an die Hand, damit du nichts Wichtiges übersiehst, egal ob dein Boot im Wasser, an Land oder auf dem Trailer überwintert.
