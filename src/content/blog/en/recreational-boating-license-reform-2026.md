@@ -1,7 +1,7 @@
 ---
 title: "German Boating License Reform 2026: What's Changing and What Stays the Same"
 seoTitle: "German Boating License Reform 2026"
-description: "Germany is replacing the official Sportbootführerschein with association-issued certificates. Here's what the reform means, whether your license stays valid and what changes for electric motors."
+description: "The 2026 reform replaces Germany's Sportbootführerschein with association-issued certificates. What it means and whether your existing license stays valid."
 date: 2026-07-25
 tags: ["Exam Knowledge"]
 readingTime: 8
