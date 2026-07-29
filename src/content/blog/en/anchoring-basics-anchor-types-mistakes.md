@@ -8,6 +8,15 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "richtig-ankern-grundlagen-ankerarten-fehler"
+faq:
+  - question: "What anchor types are common for recreational boats?"
+    answer: "Common types include modern plow- or spade-type anchors that dig well into sand and mud, fluke-style four-armed anchors for rocky or weedy ground, and the classic fisherman's stock anchor. Which one works best depends on the seabed at the anchorage."
+  - question: "How much chain or rode should you pay out when anchoring?"
+    answer: "You should pay out significantly more chain or rode than the water depth alone suggests, so the angle of pull on the anchor stays flat enough for it to dig in securely. The right amount depends on water depth, seabed type, wind, and the length of your ground tackle, when in doubt, pay out more rather than less."
+  - question: "What is the most common anchoring mistake?"
+    answer: "The most common cause of a dragging anchor is not paying out enough chain or rode, which keeps the angle of pull too steep so the anchor never digs in properly. Ignoring the seabed type or underestimating the swinging circle also frequently causes problems."
+  - question: "How do you recognize a boat at anchor at night?"
+    answer: "A boat at anchor shows a white all-round light, the anchor light, instead of its usual running lights. Larger vessels of 50 meters or more carry two such lights, one forward and one aft."
 howTo:
   name: "The Anchoring Maneuver Step by Step"
   description: "How to anchor your boat safely: choosing the spot, approaching correctly, lowering the anchor, and checking the hold."

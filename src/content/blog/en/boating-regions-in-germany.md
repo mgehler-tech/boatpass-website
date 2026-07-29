@@ -8,6 +8,15 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "wassersport-reviere-deutschland"
+faq:
+  - question: "Which license do you need for the Mecklenburg Lake District?"
+    answer: "The SBF Inland is sufficient for the Mecklenburg Lake District, since the entire region consists of inland waterways."
+  - question: "Which license applies on Lake Constance?"
+    answer: "On Lake Constance, the Lake Constance Boating License (Bodenseeschifferpatent, BSP) applies instead of the SBF, governed by its own international agreement between Germany, Austria and Switzerland."
+  - question: "Do you need the SBF Coastal or SBF Inland for the Baltic Sea?"
+    answer: "The SBF Coastal is required for the Baltic Sea, since it counts as a maritime waterway. Its smaller tidal range compared with the North Sea still makes it more approachable for beginners."
+  - question: "How does the North Sea differ from the Baltic in navigational terms?"
+    answer: "The North Sea, especially the Wadden Sea, has a much more pronounced tidal range, so water depths and channels change noticeably over the course of a day. That makes careful trip planning more essential than on the Baltic."
 ---
 
 Germany offers a surprisingly wide range of boating regions, from calm lake districts to busy rivers and tidal coastlines. If you've just passed your [Sportbootführerschein](/en/sbf-exam/), the German sport boat license, you're often left wondering which region actually fits your license and your level of experience. This article walks you through the best-known regions and explains which license applies where.

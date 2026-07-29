@@ -8,6 +8,15 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-app-vs-bootsschule"
+faq:
+  - question: "Do you need a theory course to get the German boating license?"
+    answer: "No, a theory course is not required. To be admitted to the SBF exam, no proof of attending a course is needed, you can prepare entirely on your own."
+  - question: "How much does preparing with an app plus a practice lesson cost compared to an in-person course?"
+    answer: "According to the cost overview in the article, self-study with an app and a single practice lesson costs about 200 to 260 euros in total, an online course with separate practical training 240 to 400 euros, and a classic in-person course 400 to 650 euros."
+  - question: "Is the exam different if you studied with an app instead of a course?"
+    answer: "No, the exam is always the same, with the same question catalog, the same passing rules, and the same examination board. There is no bonus for attending a course and no disadvantage for learning with an app."
+  - question: "Who benefits most from an in-person course at a boating school?"
+    answer: "An in-person course suits people with no prior experience on the water, or those who need a fixed framework to stay on track. Anyone who can study independently with discipline and wants to save money is often better served by an app plus self-study."
 ---
 
 One of the first questions when you decide to get the [German boating license](/en/licenses/): do I need a theory course at a boating school – or is a learning app enough? The short answer: a course is **not required**. You can prepare entirely on your own. The longer answer depends on how you learn best and what your money is worth to you.

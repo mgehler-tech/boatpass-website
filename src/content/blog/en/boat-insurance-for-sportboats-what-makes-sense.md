@@ -8,6 +8,15 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "bootsversicherung-sportboote-sinnvoll"
+faq:
+  - question: "Is boat insurance legally required in Germany?"
+    answer: "No, there's no general legal requirement for third-party liability insurance on boats in Germany, unlike the mandatory liability insurance for cars. In practice, though, many marinas, clubs, and charter companies require proof of liability cover."
+  - question: "What does boat liability insurance cover?"
+    answer: "It kicks in when you cause damage to someone else with your boat, for example scraping another hull while docking or causing a collision. When comparing policies, the coverage limit, geographic scope, and whether co-insured persons are included matter most."
+  - question: "What's the difference between liability and hull insurance?"
+    answer: "Liability insurance covers damage to others, while hull insurance protects your own boat, for example against theft, storm damage, fire, or running aground. Hull cover is optional and tends to be worthwhile mainly for higher-value boats."
+  - question: "Do I need my own boat insurance if I only charter?"
+    answer: "Generally not, on charter boats liability cover is usually part of the charter contract, often combined with a security deposit for smaller damages. Some charter companies also offer an optional damage waiver that reduces your deposit exposure in case of a claim."
 ---
 
 You've just passed your [Sportbootführerschein](/en/sbf-exam/), the German sport boat license, and a boat of your own is within reach. The next question comes up quickly: what insurance do you actually need? Unlike cars, boats in Germany aren't subject to a nationwide compulsory insurance law, but that doesn't mean you should skip the question. A single incident on the water can get expensive fast. This article walks you through the common building blocks and helps you judge what fits your situation.

@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "seezeichen-lateralsystem"
+faq:
+  - question: "What color is a port-hand sea mark in Germany?"
+    answer: "In IALA Region A, which includes Germany, a port-hand channel mark is red with a red can-shaped topmark. It marks the port side of the channel as you enter from seaward."
+  - question: "How do you recognize a north cardinal mark?"
+    answer: "A north cardinal mark carries two black cones, both pointing up, colored black on top and yellow below. It indicates that safe water lies to the north of the mark."
+  - question: "What does a yellow buoy with a cross topmark mean?"
+    answer: "A yellow buoy with a yellow cross topmark is a special mark, used for areas such as restricted zones, measuring stations or cable routes, and has no specific navigational meaning."
+  - question: "What does a Q (Quick) light characteristic indicate on a sea mark?"
+    answer: "A Q characteristic is a rapid sequence of flashes and is typical of cardinal marks."
 ---
 
 Sea marks are the "road signs" on the water – and a fixed part of the [SBF See](/en/sbf-coastal/) theory exam. Once you understand the system, you can derive almost any mark from its logic. In this article we explain the lateral system, the cardinal system and the most important special marks so you'll recognize them confidently in the exam.

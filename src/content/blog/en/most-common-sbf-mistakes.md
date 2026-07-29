@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "haeufigste-fehler-sbf"
+faq:
+  - question: "What is the most common mistake in the SBF theory exam?"
+    answer: "Learning light and sound signals only superficially is the most common failure point. Many variations look similar but have different meanings, so understanding the underlying logic works better than memorizing lists."
+  - question: "Which mistake causes the most failures in the practical exam?"
+    answer: "Neglecting knots is the number one failure point in the practical exam. Candidates who only practice the bowline, cleat hitch, figure-eight, and square knot once or twice often struggle under exam pressure anyway."
+  - question: "What does the SBF exam consist of?"
+    answer: "It has three parts: a written theory exam with 30 multiple-choice questions in 45 minutes, a knot exam demonstrating the required knots correctly and quickly, and a practical exam with maneuvers like docking, undocking, and a man-overboard drill."
+  - question: "At what engine power do you need a boating license in Germany?"
+    answer: "A license is required above 11.03 kW, equivalent to 15 HP, for combustion engines, or 7.5 kW for electric motors. Operating a more powerful boat without a license risks fines and insurance problems."
 ---
 
 Many SBF candidates fail not because they didn't study, but because of avoidable, specific mistakes. Here are the most common ones, with concrete solutions.

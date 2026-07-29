@@ -8,6 +8,15 @@ readingTime: 6
 lang: de
 author: "Marius Gehler"
 altSlug: "save-money-boating-license"
+faq:
+  - question: "Wie viel kostet der Sportbootführerschein insgesamt?"
+    answer: "Je nach Weg zwischen 200 und 1.000 Euro, für den SBF Binnen liegt die Spanne bei 200 bis 650 Euro und für den SBF See bei 220 bis 700 Euro. Der größte variable Kostenpunkt ist die Theorievorbereitung."
+  - question: "Wie viel spare ich mit der Kombiprüfung Binnen und See?"
+    answer: "Die Kombiprüfung kostet 178,61 Euro statt 279,16 Euro für beide Prüfungen einzeln, das spart rund 100 Euro allein an Prüfungsgebühren. Zusätzlich lernst du die 72 identischen Basisfragen nur einmal statt zweimal."
+  - question: "Lohnt sich eine Lern-App statt eines Theoriekurses bei der Bootsschule?"
+    answer: "Ja, ein Präsenzkurs kostet 250 bis 400 Euro, während eine Lern-App mit dem vollständigen offiziellen ELWIS-Fragenkatalog nur 7 bis 12 Euro kostet. Die Prüfung ist dabei immer dieselbe, unabhängig davon, wie du dich vorbereitet hast."
+  - question: "Was kostet der günstigste Weg zum SBF See?"
+    answer: "Mit App, ärztlichem Zeugnis, Passfoto, einer Praxisstunde und der Prüfungsgebühr kommst du auf rund 280 Euro. Das ist weniger als die Hälfte dessen, was ein Komplettkurs bei einer Bootsschule kostet."
 ---
 
 Der Sportbootführerschein kostet je nach Weg zwischen 200 und 1.000 € – eine große Spanne (die [vollständige Kostenübersicht für 2026](/sbf-kosten/) zeigt alle Posten im Detail). Die Prüfungsgebühren sind für alle gleich, aber bei Theorievorbereitung und Praxisausbildung lässt sich einiges sparen. Hier sind die fünf Tipps, die den größten Unterschied machen.

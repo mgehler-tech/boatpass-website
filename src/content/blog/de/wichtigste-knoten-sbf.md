@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "most-important-knots-sbf"
+faq:
+  - question: "Wie viele Knoten muss ich für die SBF-See-Praxisprüfung können?"
+    answer: "Geprüft wird aus einer Liste von neun Knoten, von denen du in der Regel mindestens sechs korrekt vorführen und ihren Verwendungszweck erklären musst."
+  - question: "Welcher Knoten bildet eine feste, sich nicht zuziehende Schlaufe?"
+    answer: "Der Palstek bildet eine feste, sich nicht zuziehende Schlaufe und gilt als der wichtigste Knoten an Bord. Er lässt sich auch nach starker Belastung wieder lösen."
+  - question: "Wofür wird der Schotstek verwendet?"
+    answer: "Der Schotstek verbindet zwei unterschiedlich dicke Leinen, also dort, wo der Kreuzknoten versagen würde."
+  - question: "Wie belegt man eine Klampe richtig?"
+    answer: "Beim Belegen einer Klampe wird die Leine in einer Acht um die Klampe geführt und mit einem Kopfschlag gesichert. Falsch belegt rutscht oder klemmt die Leine."
 howTo:
   name: "Die 9 prüfungsrelevanten Knoten für den SBF"
   description: "Diese neun Knoten musst du für die SBF-See-Praxisprüfung sicher beherrschen und ihren Verwendungszweck erklären können."

@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "trailering-and-launching-a-boat"
+faq:
+  - question: "Welchen Führerschein brauche ich, um ein Boot zu trailern?"
+    answer: "Welche Fahrerlaubnisklasse du für dein Gespann aus Auto und Bootstrailer brauchst, richtet sich nach dem zulässigen Gesamtgewicht von Zugfahrzeug und Anhänger zusammen und ist unabhängig vom Sportbootführerschein. Informiere dich vor der ersten Fahrt genau über deine persönliche Fahrerlaubnisklasse."
+  - question: "Wie sichere ich mein Boot richtig auf dem Trailer?"
+    answer: "Der Bugbeschlag mit Sicherungsseil oder -kette hält das Boot nach vorne und sollte ohne Spiel fest angezogen sein, zusätzliche Spanngurte im Heckbereich verhindern ein Verrutschen nach hinten oder seitlich. Lose Teile wie Fender oder Persenning solltest du vor der Fahrt sichern oder abnehmen."
+  - question: "Was ist der häufigste Anfängerfehler beim Slippen?"
+    answer: "Den Ablaufstopfen im Rumpf vor dem Slippen zu vergessen ist einer der klassischsten Fehler überhaupt. Fehlt er, kann Wasser unkontrolliert ins Boot eindringen, sobald es schwimmt."
+  - question: "Wie läuft der Slipvorgang am Wasser ab?"
+    answer: "Du fährst vorsichtig rückwärts an die Rampe, bis die Trailerräder gerade im Wasser stehen, setzt die Feststellbremse, löst die Sicherungskette am Bug, während du das Boot mit einer Leine hältst, und schiebst oder rollst es dann vorsichtig vom Trailer. Sobald es frei schwimmt, vertäust du es sofort und fährst den Trailer zügig aus der Rampe."
 howTo:
   name: "Der Slipvorgang: Boot zu Wasser lassen"
   description: "So lässt du dein Boot kontrolliert vom Trailer zu Wasser, ohne die Rampe unnötig zu blockieren."

@@ -8,6 +8,15 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "bruecken-durchfahrtshoehen-binnengewaesser"
+faq:
+  - question: "Why does bridge clearance height change?"
+    answer: "It depends on the current water level of the river or canal. When the water level rises, the available clearance under the bridge drops, and when it falls, more room opens up."
+  - question: "What is a reference water level?"
+    answer: "It is a benchmark water level set by the responsible waterway authority that published clearance figures are based on. If the actual water level is higher than this reference, the real available clearance is lower than the posted value."
+  - question: "Where can I find current clearance heights and water levels?"
+    answer: "Current data is published by the federal waterway authority's water level service, notices to inland skippers, and the ELWIS electronic waterway information service. Charts and cruising guides at least list the reference values."
+  - question: "What should I do if I'm not sure a bridge will clear my boat?"
+    answer: "When in doubt, don't go under. Double-check the current water level against the reference value, approach slowly and observe the clearance board if needed, rather than risking a guess."
 ---
 
 A bridge that gave your mast plenty of clearance yesterday can look a lot lower today after heavy rain. The reason: **bridge clearance** on inland waterways isn't a fixed number, it depends on the current water level. If you don't keep that in mind, you risk a nasty collision with the underside of a bridge. This article explains how clearance heights come about, how to judge them correctly underway, and why they matter for the [SBF Inland (SBF Binnen)](/en/sbf-inland/) exam.

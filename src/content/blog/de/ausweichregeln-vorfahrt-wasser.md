@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "right-of-way-collision-rules"
+faq:
+  - question: "Gibt es auf dem Wasser eine Vorfahrt wie im Straßenverkehr?"
+    answer: "Nein, auf dem Wasser gibt es keine Vorfahrt, sondern nur Ausweich- und Kurshaltepflicht. Der Ausweichpflichtige muss frühzeitig und deutlich ausweichen, der Kurshalter muss Kurs und Geschwindigkeit beibehalten."
+  - question: "Welches Fahrzeug muss laut Rangordnung ausweichen?"
+    answer: "Grundsätzlich weicht ein Maschinenfahrzeug einem Segelfahrzeug aus, das Segelfahrzeug einem Fischereifahrzeug, das Fischereifahrzeug einem manövrierbehinderten Fahrzeug, und alle weichen einem manövrierunfähigen Fahrzeug aus. Wer leichter manövrieren kann, weicht also dem aus, der es schwerer hat."
+  - question: "Wer muss ausweichen, wenn sich zwei Motorboote kreuzen?"
+    answer: "Ausweichpflichtig ist, wer das andere Boot an Steuerbord hat, und sollte so ausweichen, dass er nach Möglichkeit hinter dem anderen Boot vorbeifährt. Kommt das andere Boot also von rechts, musst du ausweichen, während das andere Boot Kurshalter bleibt."
+  - question: "Wer muss beim Überholen ausweichen?"
+    answer: "Beim Überholen muss immer der Überholende ausweichen, unabhängig davon, ob es sich um ein Motor- oder Segelboot handelt. Überholer ist, wer sich einem anderen Fahrzeug aus einer Richtung von mehr als 22,5 Grad achterlicher als querab nähert."
 ---
 
 „Wer hat hier eigentlich Vorfahrt?" – diese Frage führt auf dem Wasser schnell in die Irre. Denn anders als im Straßenverkehr gibt es bei Booten **keine Vorfahrt**. Es gibt nur Ausweichregeln: Einer muss ausweichen, der andere hält Kurs. Dieser Artikel erklärt die wichtigsten Regeln der Kollisionsverhütung (KVR) – ein zentrales Thema in jeder [SBF-Prüfung](/sbf-pruefung-ablauf/), egal ob [SBF Binnen](/sbf-binnen/) oder [SBF See](/sbf-see/).

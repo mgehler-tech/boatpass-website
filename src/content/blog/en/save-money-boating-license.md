@@ -8,6 +8,15 @@ readingTime: 6
 lang: en
 author: "Marius Gehler"
 altSlug: "bootsfuehrerschein-kosten-sparen"
+faq:
+  - question: "How much does the German boating license cost in total?"
+    answer: "Depending on the route you take, between 200 and 1,000 euros, with SBF Inland ranging from 200 to 650 euros and SBF Coastal from 220 to 700 euros. Theory preparation is the biggest variable cost."
+  - question: "How much do I save with the combined Inland and Coastal exam?"
+    answer: "The combined exam costs 178.61 euros instead of 279.16 euros for both exams separately, saving around 100 euros on exam fees alone. You also only need to learn the 72 identical basic questions once instead of twice."
+  - question: "Is a learning app worth it compared to a boating school theory course?"
+    answer: "Yes, an in-person course costs between 250 and 400 euros, while a learning app with the complete official ELWIS question catalog costs only 7 to 12 euros. The exam itself is always the same, no matter how you prepared."
+  - question: "What does the cheapest route to the SBF Coastal cost?"
+    answer: "Using an app, a medical certificate, a passport photo, one practical lesson, and the exam fee, the total comes to around 280 euros. That's less than half of what a complete course at a boating school costs."
 ---
 
 Depending on the route you take, the German boating license costs between €200 and €1,000 – a wide range (the [full 2026 cost overview](/en/sbf-costs/) breaks down every item in detail). The exam fees are the same for everyone, but there's plenty to save on theory preparation and practical training. Here are the five tips that make the biggest difference.

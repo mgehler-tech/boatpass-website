@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "betonnung-nordsee-ostsee-unterschiede"
+faq:
+  - question: "What does the direction of buoyage \"from seaward\" mean?"
+    answer: "The basic rule sets port-hand marks as red and starboard-hand marks as green, relative to an assumed direction of travel from seaward or upstream. This direction matches a vessel entering a harbor, river mouth, or cruising area from the open sea."
+  - question: "Why is the direction of buoyage usually easier to read in the North Sea than in the Baltic?"
+    answer: "The North Sea is a tidal sea with a pronounced tidal range, so the direction from seaward usually coincides with the natural current. The Baltic Sea has virtually no tides, so that natural orientation is missing in many places."
+  - question: "How do I find the direction of buoyage when it isn't obvious?"
+    answer: "For ambiguous cases, such as in the Baltic, in canals, or where two channels meet, the responsible authority fixes the direction and marks it on the official chart with a dedicated arrow symbol. This symbol shows the defined direction regardless of which way you're actually sailing."
+  - question: "How does the buoyage run through the Kiel Canal?"
+    answer: "The buoyage and buoy numbering follow a fixed direction from the North Sea side at Brunsbüttel to the Baltic side at Kiel. If you sail from Kiel toward Brunsbüttel, you're moving against that direction, so the red buoys are on your right and the green ones on your left."
 ---
 
 Red to port, green to starboard, coming in from seaward: most SBF See candidates pick up this basic rule of the lateral system quickly. But what does "from seaward" actually mean when a channel connects two different sea areas, or when there are no tides to orient yourself by at all? This is exactly where the North Sea and the Baltic Sea differ noticeably, and it's a favorite topic in the exam. This article explains how the direction of buoyage is actually determined and why you should check the chart more often in the Baltic than in the North Sea.

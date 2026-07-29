@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "kursumrechnung-sbf-see"
+faq:
+  - question: "What is the formula for course conversion in the SBF Coastal exam?"
+    answer: "The formula is TC = CC + Deviation + Variation when converting from compass to chart. The other way round, from chart to compass, it is CC = TC − Variation − Deviation."
+  - question: "What does the East plus, West minus sign rule mean?"
+    answer: "Variation and deviation are plugged into the formula with a sign: values to the East count as positive, values to the West as negative. That way the result is correct automatically, no matter which direction you convert."
+  - question: "What is the difference between true, magnetic and compass course?"
+    answer: "True course is referenced to the geographic north pole, magnetic course to the magnetic north pole, and compass course is simply what your on-board compass reads. Deviation and variation are the corrections that connect them."
+  - question: "What is the offset for wind and current?"
+    answer: "The offset corrects for the set caused by wind (leeway) or current so you reach your actual course over ground. It is calculated using the same East-plus, West-minus sign logic as variation and deviation."
 howTo:
   name: "Convert a course for the SBF Coastal: CC, MC and TC"
   description: "How to convert your compass course (CC) into the true course (TC) using deviation and variation, correctly and without mistakes, as required in the SBF Coastal navigation task."

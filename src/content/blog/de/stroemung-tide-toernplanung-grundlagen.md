@@ -8,6 +8,15 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "using-currents-and-tides-for-trip-planning"
+faq:
+  - question: "Warum sollte ich bei der Törnplanung mit dem Strom fahren?"
+    answer: "Weil ein Gegenstrom die Fahrt deutlich verlangsamt und mehr Kraftstoff kostet, während ein Mitstrom dieselbe Strecke schneller zurücklegen lässt. Der Grundsatz lautet deshalb, den Start eines Törns so zu legen, dass der Strom in Fahrtrichtung läuft."
+  - question: "Was ist der Unterschied zwischen Tidenkalender und Stromatlas?"
+    answer: "Der Tidenkalender liefert Zeiten und Höhen von Hoch- und Niedrigwasser für einen Bezugsort, während der Stromatlas zeigt, wie sich Stromrichtung und -stärke über den Verlauf einer Tide verändern. Beide Werte hängen zusammen, verlaufen aber zeitlich nicht immer gleich."
+  - question: "Wie wirkt sich Strömung auf tidebeeinflussten Flüssen aus?"
+    answer: "Bei ablaufendem Wasser addieren sich Flussströmung und Ebbstrom, wodurch flussabwärts hohe Geschwindigkeiten über Grund entstehen. Bei auflaufendem Wasser wirkt der Flutstrom der Flussströmung entgegen und kann sie zeitweise sogar umkehren."
+  - question: "Welcher Planungsfehler wird bei Strömung und Tide häufig gemacht?"
+    answer: "Ein häufiger Fehler ist es, nur die Verhältnisse am eigenen Startpunkt zu betrachten, obwohl sich Tide und Strömung entlang einer längeren Strecke deutlich unterscheiden können. Auch das Vergessen von Reservezeit für Verzögerungen zählt zu den typischen Fehlern."
 ---
 
 Auf tidebeeinflussten Revieren wie Nord- und Ostsee, aber auch auf manchen Flüssen mit Gezeiteneinfluss, entscheidet die richtige Fahrtzeit oft darüber, ob ein Törn entspannt verläuft oder zur Zitterpartie wird. Wer Strömung und Tide bei der Planung berücksichtigt, spart nicht nur Sprit und Zeit, sondern reduziert auch das Risiko, an ungünstigen Stellen in Grundberührung oder gefährliche Verhältnisse zu geraten. Dieser Artikel zeigt, wie du als Sportbootführer die Grundlagen der Törnplanung mit Strömung und Tide praktisch angehst.

@@ -8,6 +8,15 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "stroemung-tide-toernplanung-grundlagen"
+faq:
+  - question: "Why should you time a trip to run with the current?"
+    answer: "Because an opposing current slows the passage down considerably and burns more fuel, while a following current covers the same distance faster. The rule of thumb is therefore to time your departure so the current runs in your direction of travel."
+  - question: "What's the difference between a tide table and a current atlas?"
+    answer: "A tide table gives the times and heights of high and low water for a reference port, while a current atlas shows how current direction and strength change over the course of a tide. The two are related but do not always run exactly in step."
+  - question: "How does current behave on tidal rivers?"
+    answer: "On the ebb, river current and the ebbing tidal stream add together, producing high speeds over ground heading downstream. On the flood, the incoming tidal stream works against the river current and can temporarily reverse it."
+  - question: "What planning mistake do skippers commonly make with current and tide?"
+    answer: "A common mistake is only considering conditions at the starting point, even though tide and current can differ considerably along a longer route. Forgetting to build in a time buffer for delays is another frequent error."
 ---
 
 On tidal waters such as the North Sea and the Baltic, and on some rivers with tidal influence, choosing the right departure time can be the difference between a relaxed trip and a stressful one. Recreational skippers who factor current and tide into their planning not only save fuel and time, they also cut the risk of running aground or ending up in dangerous conditions at the wrong spot. This article walks through the basics of trip planning with current and tide in mind, for anyone holding a German boating license (Sportbootführerschein, SBF) or planning to sail tidal waters.

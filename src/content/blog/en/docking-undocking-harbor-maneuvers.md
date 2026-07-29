@@ -8,6 +8,15 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "anlegen-ablegen-hafenmanoever"
+faq:
+  - question: "What forces affect my boat when docking or undocking?"
+    answer: "Mainly wind, current, and rudder effect, which only develops fully once the boat has way through the water. At low speed the boat reacts more sluggishly to the rudder, so wind and current have a bigger influence."
+  - question: "In what order should I release the lines when undocking?"
+    answer: "Usually the line that supports undocking the least is released first, while the line that swings the boat away from the dock in the desired direction is released last. If wind or current are pushing the boat against the dock, swinging the stern away first and undocking in reverse can work better."
+  - question: "What are forward and aft spring lines?"
+    answer: "The forward spring runs from the bow diagonally aft to a dock cleat and stops the boat from drifting forward, while the aft spring runs from the stern diagonally forward and stops it drifting backward. Together with the bow and stern lines, spring lines keep the boat stable lengthwise, especially in current or shifting wind."
+  - question: "What's the most common mistake when docking?"
+    answer: "Approaching with too much speed is the most common cause of hard contact with the dock. When in doubt, it's better to come in too slowly and give a short burst of throttle if needed, rather than coming in too fast."
 howTo:
   name: "Docking at the Berth: Step by Step"
   description: "How to dock your boat safely and under control, for the practical SBF exam and everyday boating."

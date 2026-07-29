@@ -8,6 +8,15 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "notsignale-auf-see"
+faq:
+  - question: "What pyrotechnic distress signals exist at sea?"
+    answer: "The main ones are the red parachute rocket for alerting from a long distance, the red hand flare for marking your position at close range, and the orange smoke signal for marking your position in daylight. All three may only be used in genuine distress."
+  - question: "Do you need a certificate to use distress signals?"
+    answer: "In Germany, the red parachute rocket (category P2) requires the competence certificate, the Fachkundenachweis (FKN). The red hand flare and smaller smoke signals fall under the permit-free category P1 and are available from age 18 without a certificate."
+  - question: "What non-pyrotechnic distress signals exist?"
+    answer: "These include the spoken MAYDAY call on Channel 16, the DSC alert, SOS in Morse code, a continuous sound from a sound-signaling device, the flag signal NC, and slowly raising and lowering outstretched arms. An EPIRB emergency beacon also counts."
+  - question: "What should you do if you see a distress signal?"
+    answer: "Anyone who notices a distress signal is obliged to render assistance, as far as they can do so without serious danger to their own boat and crew. At a minimum, you should relay the distress case by radio on Channel 16 or by phone to the maritime rescue coordination center."
 ---
 
 Distress signals are mandatory knowledge for every recreational boater – and a recurring topic in the SBF theory exam. They indicate that a vessel is in distress and needs help. This article explains which signals exist, what they mean, and which ones you may use yourself.

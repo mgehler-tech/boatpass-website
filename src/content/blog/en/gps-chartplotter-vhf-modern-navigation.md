@@ -8,6 +8,15 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "gps-kartenplotter-funkgeraet-moderne-navigation"
+faq:
+  - question: "Does GPS replace classic navigation with a paper chart and compass?"
+    answer: "No, GPS and chartplotters are a useful addition but not a substitute. Electronics can fail due to a flat battery, a blown fuse, or a dropped satellite signal, so you should still be able to navigate classically with a chart, compass, and bearings."
+  - question: "What is the difference between course over ground and heading?"
+    answer: "The compass shows your heading, the direction the bow is actually pointing. Course over ground (COG) from the GPS is the direction you actually travel over the seabed once wind and current drift are accounted for."
+  - question: "What does AIS show and what does it miss?"
+    answer: "AIS shows the position, course, speed, and name of other vessels that transmit a signal, which is especially valuable around larger commercial ships. It doesn't replace keeping a lookout, since smaller sport boats without a transponder remain invisible to you."
+  - question: "Is the Sportbootführerschein enough to operate a VHF radio?"
+    answer: "No, operating a radio also requires a separate radio operator's certificate, either the UBI for inland waterways or the SRC for coastal waters depending on your cruising area. This certificate must be obtained independently of the Sportbootführerschein."
 ---
 
 Hardly any modern sport boat goes without a GPS receiver, a chartplotter, or a VHF radio these days. These devices make boating more convenient and, in many situations, safer too. At the same time, they don't replace the fundamentals you learn for the [SBF See](/en/sbf-coastal/), Germany's Sportbootführerschein für See, the required license for skippering sport boats above a certain size on coastal waters; instead, they build on top of them. This article explains how GPS, chartplotters, AIS, and VHF radio work together, where their strengths and limits lie, and how modern electronics fit sensibly into classic navigation.

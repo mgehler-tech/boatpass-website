@@ -8,6 +8,15 @@ readingTime: 6
 lang: de
 author: "Marius Gehler"
 altSlug: "man-overboard-maneuver"
+faq:
+  - question: "Wie läuft das Mann-über-Bord-Manöver in der SBF-Praxisprüfung ab?"
+    answer: "Zuerst Schub raus und Ruder hart zur Seite des Verunglückten, damit die Schraube wegdreht, dann den Verunglückten ständig im Blick behalten, ein Rettungsmittel werfen, kontrolliert gegen Wind und Strom annähern und erst bei stehendem Boot aufnehmen. In der Prüfung wird meist eine Boje statt einer Person verwendet."
+  - question: "Warum muss das Ruder zur Seite des Verunglückten eingeschlagen werden?"
+    answer: "Damit dreht das Heck und mit ihm die Schraube vom Verunglückten weg, was der wichtigste Sicherheitsaspekt des gesamten Manövers ist. Die drehende Schraube darf niemals in die Nähe der Person geraten."
+  - question: "Warum nähert man sich beim MOB-Manöver gegen Wind und Strom an?"
+    answer: "Das Anfahren gegen Wind und Strom bremst das Boot ab und gibt die beste Kontrolle über die letzten Meter zum Verunglückten. So kann man auf seiner Höhe kursgerecht aufstoppen, ohne über ihn hinwegzufahren."
+  - question: "Wie viele Versuche hat man für Pflichtmanöver in der SBF-Prüfung?"
+    answer: "Für die meisten Pflichtmanöver, einschließlich des Mann-über-Bord-Manövers, gibt es in der Prüfung zwei Versuche. Trotzdem lohnt es sich, den Ablauf so zu verinnerlichen, dass er beim ersten Mal sitzt."
 howTo:
   name: "Mann-über-Bord-Manöver durchführen"
   description: "So läuft das Mann-über-Bord-Manöver in der praktischen SBF-Prüfung Schritt für Schritt ab."

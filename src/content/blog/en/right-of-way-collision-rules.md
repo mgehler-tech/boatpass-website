@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "ausweichregeln-vorfahrt-wasser"
+faq:
+  - question: "Is there a right of way on the water like in road traffic?"
+    answer: "No, on the water there is no right of way, only give-way and stand-on duties. The give-way vessel must take early and obvious action to keep clear, while the stand-on vessel must maintain her course and speed."
+  - question: "Which vessel has to give way according to the hierarchy?"
+    answer: "A power-driven vessel gives way to a sailing vessel, the sailing vessel to a fishing vessel, the fishing vessel to a vessel restricted in her ability to maneuver, and everyone gives way to a vessel not under command. In short, whoever can maneuver more easily gives way to whoever has it harder."
+  - question: "Who gives way when two motorboats cross paths?"
+    answer: "The vessel that has the other on her starboard side must give way, ideally passing behind the other vessel. So if the other boat comes from your right, you give way while it remains the stand-on vessel."
+  - question: "Who gives way when overtaking another boat?"
+    answer: "The overtaking vessel must always give way, regardless of whether it's a power or sailing vessel. You count as overtaking if you approach another vessel from a direction more than 22.5 degrees abaft her beam."
 ---
 
 "Who has right of way here?" – on the water that question is misleading. Unlike road traffic, boats have **no right of way**. There are only give-way rules: one vessel must give way, the other holds her course. This article explains the key collision-avoidance rules (COLREG / KVR) – a central topic in every [SBF exam](/en/sbf-exam/).

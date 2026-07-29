@@ -8,6 +8,15 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "gezeiten-zwoelftelregel"
+faq:
+  - question: "What is the rule of twelfths?"
+    answer: "The rule of twelfths divides the tidal range into twelve equal parts to estimate the water level between high and low water. It follows the sequence 1 – 2 – 3 – 3 – 2 – 1 twelfths per hour over the roughly six hours between turning points."
+  - question: "How do you calculate water level with the rule of twelfths?"
+    answer: "First divide the tidal range, the difference between high and low water height, by twelve. Then multiply that value by the matching share from the 1 – 2 – 3 – 3 – 2 – 1 sequence for each hour and add it to the low water height, or subtract it while the water is falling."
+  - question: "How do you calculate the water under the keel?"
+    answer: "Water depth equals the charted depth relative to chart datum plus the current tidal height, minus the boat's draft. Always build in a safety margin, since wind and air pressure can make the real water level deviate from the forecast."
+  - question: "How accurate is the rule of twelfths?"
+    answer: "It is an approximation that assumes a smooth, sine-like tidal curve and usually deviates by less than 2.5% of the tidal range. That accuracy is sufficient for passage planning and the SBF Coastal exam, but the rule reaches its limits in areas with irregular tidal patterns like double high waters."
 ---
 
 Anyone sailing the North Sea or Baltic can't avoid the tides. In the Wadden Sea in particular, the right timing decides whether there's still enough water under the keel. The **rule of twelfths** makes it easy to estimate the water level between high and low water – without complicated tables. Here's how it works.

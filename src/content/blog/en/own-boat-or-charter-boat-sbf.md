@@ -8,6 +8,15 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-eigenes-boot-oder-charterboot"
+faq:
+  - question: "Do you still need the SBF license to charter a boat?"
+    answer: "Yes, a regular Sportbootführerschein gives you the formal requirement to skipper the corresponding boat, whether it belongs to you or you are renting it. Only someone without any Sportbootführerschein can instead use the separate charter certificate on certain inland waters."
+  - question: "What ongoing costs come with owning a boat?"
+    answer: "These include mooring, maintenance and care, winter storage, insurance, and eventual resale value. These ongoing fixed costs apply regardless of how often the boat is actually used."
+  - question: "Who tends to benefit more from owning a boat rather than chartering?"
+    answer: "Owning a boat tends to suit people who go out regularly and spontaneously over many years, have a fixed cruising area with a berth, and want to fit out their boat to their own taste. Anyone who mainly goes out on holiday or wants to try different cruising areas is usually better served by chartering."
+  - question: "Are there middle options between owning and chartering?"
+    answer: "Yes, these include boat-sharing arrangements where several people share one boat, and owner-charter models where owners rent out their own boat during periods they are not using it. Such models can lower ongoing costs but bring their own organizational questions."
 ---
 
 You've passed the Sportbootführerschein, Germany's sport boat license, or you're about to, and now the next question comes up: buy your own boat, or keep chartering? Both paths have their place, but they suit very different lifestyles. This article sorts out the key differences so you can make a call that actually fits how you boat, your budget, and your time.

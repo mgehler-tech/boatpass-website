@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "sks-coastal-skippers-license"
+faq:
+  - question: "Was ist der Sportküstenschifferschein (SKS)?"
+    answer: "Der SKS ist eine freiwillige, amtlich anerkannte Zusatzqualifikation nach dem SBF See und kein gesetzlich vorgeschriebener Führerschein. Er wird von den Prüfungsausschüssen von DSV und DMYV abgenommen und setzt den Besitz des SBF See voraus."
+  - question: "Wie viele Seemeilen muss ich für den SKS nachweisen?"
+    answer: "Du musst mindestens 300 Seemeilen in Küstengewässern nachweisen, dokumentiert in einem Meilenbuch und bestätigt von einer Person mit mindestens SKS. Diese Meilen können auch vor dem eigentlichen Kurs gesammelt worden sein."
+  - question: "Woraus besteht die SKS-Theorieprüfung?"
+    answer: "Die Theorieprüfung besteht aus einem Fragebogen mit 30 Freitextfragen aus Navigation, Seerecht, Wetterkunde und Seemannschaft sowie einer separaten Kartenaufgabe, jeweils mit 90 Minuten Bearbeitungszeit."
+  - question: "Bis zu welcher Entfernung von der Küste berechtigt der SKS?"
+    answer: "Der SKS berechtigt zum Führen von Motor- und Segelyachten in Küstengewässern bis zu 12 Seemeilen Abstand von der Festlandküste."
 ---
 
 Wer den [SBF See](/sbf-see/) in der Tasche hat und regelmäßig an der Küste unterwegs ist, stößt früher oder später auf drei Buchstaben: **SKS**, den Sportküstenschifferschein. Anders als der Sportbootführerschein ist der SKS kein gesetzlich vorgeschriebener Schein, sondern eine freiwillige, amtlich anerkannte Zusatzqualifikation, die vor allem beim Chartern im Ausland und beim Übergang zu größeren Yachten und weiteren Revieren relevant wird. Dieser Artikel erklärt, was hinter dem SKS steckt, welche Voraussetzungen gelten und wie Theorie- und Praxisprüfung aufgebaut sind.

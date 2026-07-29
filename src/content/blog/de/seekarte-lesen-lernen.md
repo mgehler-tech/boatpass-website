@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "how-to-read-a-nautical-chart"
+faq:
+  - question: "Was bedeutet Seekartennull?"
+    answer: "Seekartennull (SKN) ist das Bezugsniveau, auf das sich alle Tiefenangaben einer Seekarte beziehen. Es liegt bewusst niedrig, damit die angegebene Tiefe unter normalen Bedingungen nicht unterschritten wird."
+  - question: "Warum misst man Entfernungen auf der Seekarte an der Breitenskala?"
+    answer: "Weil eine Bogenminute der geografischen Breite exakt einer Seemeile entspricht, während eine Bogenminute der Länge je nach Breitengrad unterschiedlich lang ist. Deshalb wird die Entfernung immer am seitlichen Kartenrand auf Höhe der gemessenen Strecke abgegriffen."
+  - question: "Was ist der Vorteil der Mercator-Projektion?"
+    answer: "Bei der Mercator-Projektion erscheint eine Linie mit konstantem Kompasskurs als gerade Strecke auf der Karte, was die praktische Kartenarbeit stark vereinfacht. Der Nachteil ist eine zunehmende Verzerrung von Flächen und Abständen zu den Polen hin."
+  - question: "Was zeigt eine Kompassrose auf der Seekarte?"
+    answer: "Eine Kompassrose zeigt den rechtweisenden Nordpfeil sowie die für den Kartenausschnitt geltende Missweisung, die für die Kursumrechnung benötigt wird."
 ---
 
 Eine Seekarte sieht auf den ersten Blick aus wie eine gewöhnliche Landkarte mit ein paar zusätzlichen Zahlen. Tatsächlich steckt darin ein eigenes Zeichensystem, das dir alles verrät, was du für eine sichere Fahrt brauchst: wie tief das Wasser ist, wo Gefahren lauern und wie du deine Position bestimmst. Für den [SBF See](/sbf-see/) gehört das Lesen einer Seekarte zum festen Prüfungsstoff. Dieser Artikel erklärt die Grundlagen, damit du dich auf jeder Karte zurechtfindest.

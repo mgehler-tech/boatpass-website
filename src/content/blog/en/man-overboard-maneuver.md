@@ -8,6 +8,15 @@ readingTime: 6
 lang: en
 author: "Marius Gehler"
 altSlug: "mann-ueber-bord-manoever"
+faq:
+  - question: "How does the man-overboard maneuver work in the SBF practical exam?"
+    answer: "First throttle back and put the helm hard over toward the casualty's side so the propeller swings away, then keep the casualty in sight, throw a lifesaving device, approach in a controlled way against wind and current, and only recover once the boat is stopped. In the exam a buoy is usually used instead of a person."
+  - question: "Why do you steer the helm toward the casualty's side?"
+    answer: "This swings the stern, and with it the propeller, away from the casualty, which is the single most important safety aspect of the whole maneuver. The turning propeller must never get near the person in the water."
+  - question: "Why do you approach against wind and current in the MOB maneuver?"
+    answer: "Approaching against wind and current slows the boat and gives the best control over the final meters toward the casualty. This lets you stop right on course level with them without overrunning them."
+  - question: "How many attempts do you get for mandatory maneuvers in the SBF exam?"
+    answer: "For most mandatory maneuvers, including the man-overboard maneuver, you get two attempts in the exam. Even so, it is worth internalizing the procedure so it works on the first try."
 howTo:
   name: "Perform the man-overboard maneuver"
   description: "How the man-overboard maneuver in the practical SBF exam works, step by step."

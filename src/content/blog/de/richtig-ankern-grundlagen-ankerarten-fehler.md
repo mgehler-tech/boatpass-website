@@ -8,6 +8,15 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "anchoring-basics-anchor-types-mistakes"
+faq:
+  - question: "Welche Ankerarten gibt es für Sportboote?"
+    answer: "Verbreitet sind Patentanker wie Bügel- oder Pflugscharanker, die sich gut in Sand und Schlick eingraben, Draggen (Vierarmanker) für felsigen oder verkrauteten Grund und der klassische Stockanker. Welcher Anker am besten passt, hängt von der Grundbeschaffenheit des Ankerplatzes ab."
+  - question: "Wie viel Kette oder Leine sollte man beim Ankern stecken?"
+    answer: "Es sollte deutlich mehr Kette oder Leine gesteckt werden, als die Wassertiefe allein vermuten lässt, damit der Zugwinkel am Anker flach genug für sicheres Eingraben bleibt. Wie viel im Einzelfall angemessen ist, hängt von Wassertiefe, Grundbeschaffenheit, Wind und der Länge des vorhandenen Geschirrs ab, im Zweifel lieber mehr stecken."
+  - question: "Was ist der häufigste Fehler beim Ankern?"
+    answer: "Der häufigste Grund für einen dragenden Anker ist zu wenig gesteckte Kette oder Leine, wodurch der Zugwinkel zu steil bleibt und der Anker sich nicht richtig eingräbt. Auch eine ignorierte Grundbeschaffenheit oder ein unterschätzter Schwoiraum führen häufig zu Problemen."
+  - question: "Wie erkennt man nachts ein vor Anker liegendes Boot?"
+    answer: "Ein vor Anker liegendes Boot führt ein weißes Rundumlicht, das Ankerlicht, anstelle der üblichen Fahrtlichter. Größere Fahrzeuge ab 50 m führen zwei solcher Lichter, eines vorn und eines achtern."
 howTo:
   name: "Das Ankermanöver Schritt für Schritt"
   description: "So ankerst du dein Sportboot sicher: Ankerplatz wählen, richtig anlaufen, fieren und den Halt prüfen."

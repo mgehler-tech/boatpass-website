@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "wichtigste-knoten-sbf"
+faq:
+  - question: "How many knots do you need to know for the SBF See practical exam?"
+    answer: "You're tested on a list of nine knots, and generally have to demonstrate at least six of them correctly and explain what each one is used for."
+  - question: "Which knot forms a fixed, non-tightening loop?"
+    answer: "The bowline forms a fixed, non-tightening loop and is considered the most important knot on board. It can be undone again even after heavy load."
+  - question: "What is the sheet bend used for?"
+    answer: "The sheet bend joins two lines of different thickness, in situations where the reef knot would fail."
+  - question: "How do you correctly cleat a line?"
+    answer: "To cleat a line correctly, you lead it in a figure eight around the cleat and secure it with a locking turn. Done wrong, the line slips or jams."
 howTo:
   name: "The 9 exam-relevant knots for the SBF"
   description: "These nine knots you must be able to tie reliably and explain the purpose of for the SBF Coastal practical exam."

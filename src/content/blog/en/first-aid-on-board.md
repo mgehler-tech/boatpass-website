@@ -8,6 +8,15 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "erste-hilfe-an-bord"
+faq:
+  - question: "How do you call for help on board?"
+    answer: "By radio on the international distress and calling channel VHF channel 16, giving the boat's name, position, nature of the emergency and number of people on board, or by phone via the Europe-wide emergency number 112 if you have mobile signal. Give your position as precisely as possible, for example with GPS coordinates or distinctive landmarks."
+  - question: "What do you do if someone on board isn't breathing normally?"
+    answer: "Call for help, then immediately start chest compressions in the center of the chest at 100 to 120 compressions per minute with a depth of about 5 to 6 centimeters for adults. If trained, alternate 30 compressions with 2 rescue breaths, and use a defibrillator as early as possible if one is available."
+  - question: "What helps with hypothermia on board?"
+    answer: "Get the person out of the wind and wet, replace wet clothing with dry clothing, and insulate them with blankets or sleeping bags, protecting the head and torso in particular. Rewarm slowly and carefully, avoid massaging the limbs, and call for help if hypothermia is severe or the person is unconscious."
+  - question: "What should be in a boat's first aid kit?"
+    answer: "Sterile compresses and adhesive dressings in various sizes, a triangular bandage, disposable gloves, an emergency blanket, bandage scissors, and seasickness medication if useful. Check the contents regularly for completeness and expiry dates."
 howTo:
   name: "Resuscitation on Board"
   description: "What to do when a person on board isn't breathing normally: calling for help, chest compressions, and rescue breaths."

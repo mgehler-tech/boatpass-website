@@ -8,6 +8,15 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "distress-signals-at-sea"
+faq:
+  - question: "Welche pyrotechnischen Notsignale gibt es auf See?"
+    answer: "Die wichtigsten sind die rote Fallschirmrakete für die Alarmierung über große Entfernung, die rote Handfackel zur Positionsmarkierung aus der Nähe und das orangefarbene Rauchsignal zur Positionsmarkierung bei Tag. Alle drei dürfen ausschließlich bei echter Seenot eingesetzt werden."
+  - question: "Braucht man für Notsignale einen Fachkundenachweis?"
+    answer: "Für die rote Fallschirmrakete (Kategorie P2) ist in Deutschland der Fachkundenachweis (FKN) erforderlich. Die rote Handfackel und kleinere Rauchsignale gehören zur erlaubnisfreien Kategorie P1 und sind ab 18 Jahren ohne Nachweis erhältlich."
+  - question: "Welche nicht-pyrotechnischen Notsignale gibt es?"
+    answer: "Dazu zählen der Sprechfunk-Notruf MAYDAY auf Kanal 16, der DSC-Alarm, SOS als Morsezeichen, Dauerton mit einem Schallsignalgerät, das Flaggensignal NC sowie das langsame Heben und Senken der ausgestreckten Arme. Auch eine Seenotfunkbake (EPIRB) zählt dazu."
+  - question: "Was muss man tun, wenn man ein Notsignal sieht?"
+    answer: "Wer ein Notsignal wahrnimmt, ist zur Hilfeleistung verpflichtet, soweit dies ohne ernste Gefahr für das eigene Boot und die eigene Besatzung möglich ist. Mindestens sollte der Seenotfall über Funk auf Kanal 16 oder telefonisch an die Seenotleitung gemeldet werden."
 ---
 
 Notsignale gehören zum Pflichtwissen jedes Sportbootfahrers – und sind regelmäßig Thema in der SBF-Theorieprüfung. Sie zeigen an, dass ein Fahrzeug in Not ist und Hilfe braucht. Welche Signale es gibt, was sie bedeuten und welche du selbst einsetzen darfst, erklärt dieser Artikel.

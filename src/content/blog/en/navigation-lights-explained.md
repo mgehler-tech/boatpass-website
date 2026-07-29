@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "lichterfuehrung-erklaert"
+faq:
+  - question: "What lights does a power-driven vessel show underway?"
+    answer: "A power-driven vessel underway shows a masthead light (white, forward), sidelights (green to starboard, red to port), and a sternlight (white, aft). Small vessels under 12 meters may combine the masthead and sternlight into a single white all-round light."
+  - question: "How do you recognize a sailing vessel at night?"
+    answer: "A sailing vessel under sail shows sidelights and a sternlight but no masthead light. That missing masthead light is the key feature that distinguishes it from a power-driven vessel."
+  - question: "What does \"red over red, the captain is dead\" mean?"
+    answer: "Two red all-round lights, one above the other, indicate that a vessel is not under command, for example after an engine failure. The rhyme is a memory aid for this light combination."
+  - question: "How can you tell at night if a boat is heading toward you or away?"
+    answer: "If you see both sidelights, red and green, together with the masthead light, the boat is heading straight toward you. If you only see the white sternlight, it is heading away from you."
 ---
 
 At night or in poor visibility you can only recognize other vessels by their lights – and you have to read from the light configuration what kind of vessel it is, where it's heading, and whether it might be restricted in maneuvering. Navigation lights are a core topic of the [SBF See](/en/sbf-coastal/) theory. Here's the overview, including the famous memory rhymes.

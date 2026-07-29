@@ -8,6 +8,15 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "5-tipps-sbf-bestehen"
+faq:
+  - question: "How is the SBF Inland theory exam structured?"
+    answer: "The exam has 30 questions in 45 minutes, split into 7 base questions requiring at least 5 correct answers and 23 inland-specific questions requiring at least 18 correct answers. Both blocks must be passed separately, so you cannot make up for a weak block with a strong one."
+  - question: "How many mock exams should I do before the real test?"
+    answer: "At least 3 to 5 full mock exams under real conditions, timed to 45 minutes and without looking anything up. This gets you used to the time pressure and the lack of immediate feedback in the actual exam."
+  - question: "How much should I study each day for the SBF?"
+    answer: "Average learners need about 30 minutes daily over 4 to 5 weeks, while fast learners can do it in 2 to 3 weeks with 45 to 60 minutes daily. Short, regular sessions consolidate knowledge better than one long session on the weekend."
+  - question: "When should I book my SBF exam slot?"
+    answer: "Book once you're roughly 60 to 70 percent prepared, since slots with DMYV and recognized clubs fill up weeks in advance, especially in spring before the boating season. Waiting until you feel fully ready can mean no available slots for up to 8 weeks."
 howTo:
   name: "How to pass the SBF exam on your first try"
   description: "Five concrete steps for optimal SBF exam preparation – from understanding the exam structure to booking your exam slot."
