@@ -1,0 +1,190 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  lang: 'de' | 'en';
+  variant: 'see' | 'binnen';
+}
+
+const { lang, variant } = Astro.props;
+
+interface City {
+  name: string;
+  query: string;
+}
+
+const coastalCities: City[] = [
+  { name: 'Hamburg', query: 'Bootsfahrschule Hamburg' },
+  { name: 'Kiel', query: 'Bootsfahrschule Kiel' },
+  { name: 'Rostock', query: 'Bootsfahrschule Rostock' },
+  { name: 'Lübeck', query: 'Bootsfahrschule Lübeck' },
+  { name: 'Flensburg', query: 'Bootsfahrschule Flensburg' },
+  { name: 'Bremerhaven', query: 'Bootsfahrschule Bremerhaven' },
+  { name: 'Stralsund', query: 'Bootsfahrschule Stralsund' },
+  { name: 'Wilhelmshaven', query: 'Bootsfahrschule Wilhelmshaven' },
+  { name: 'Cuxhaven', query: 'Bootsfahrschule Cuxhaven' },
+  { name: 'Greifswald', query: 'Bootsfahrschule Greifswald' },
+];
+
+const inlandCities: City[] = [
+  { name: 'Berlin', query: 'Bootsfahrschule Berlin' },
+  { name: 'München', query: 'Bootsfahrschule München' },
+  { name: 'Köln', query: 'Bootsfahrschule Köln' },
+  { name: 'Düsseldorf', query: 'Bootsfahrschule Düsseldorf' },
+  { name: 'Frankfurt', query: 'Bootsfahrschule Frankfurt am Main' },
+  { name: 'Stuttgart', query: 'Bootsfahrschule Stuttgart' },
+  { name: 'Hannover', query: 'Bootsfahrschule Hannover' },
+  { name: 'Dresden', query: 'Bootsfahrschule Dresden' },
+  { name: 'Leipzig', query: 'Bootsfahrschule Leipzig' },
+  { name: 'Nürnberg', query: 'Bootsfahrschule Nürnberg' },
+  { name: 'Duisburg', query: 'Bootsfahrschule Duisburg' },
+  { name: 'Potsdam', query: 'Bootsfahrschule Potsdam' },
+];
+
+const cities = variant === 'see' ? coastalCities : inlandCities;
+
+function mapsUrl(query: string): string {
+  return `https://www.google.com/maps/search/${encodeURIComponent(query)}`;
+}
+
+const t = {
+  de: {
+    title: variant === 'see'
+      ? 'Bootsfahrschule an der Küste finden'
+      : 'Bootsfahrschule in deiner Nähe finden',
+    intro: variant === 'see'
+      ? 'Für die praktische Prüfung brauchst du einen Übungstag auf dem Wasser. Hier findest du Bootsfahrschulen in den wichtigsten Küstenstädten – ein Klick öffnet die Suche direkt in Google Maps.'
+      : 'Für die praktische Prüfung brauchst du einen Übungstag auf dem Wasser. Hier findest du Bootsfahrschulen in den wichtigsten deutschen Städten – ein Klick öffnet die Suche direkt in Google Maps.',
+    note: 'BoatPass bereitet dich auf die Theorie vor. Für die praktische Ausbildung – Manöver, Knoten, Mann-über-Bord – empfehlen wir einen Übungstag bei einer lokalen Bootsfahrschule.',
+    open: 'In Google Maps öffnen',
+  },
+  en: {
+    title: variant === 'see'
+      ? 'Find a boat school on the coast'
+      : 'Find a boat school near you',
+    intro: variant === 'see'
+      ? 'For the practical exam you need a training day on the water. Here you\'ll find boat schools in the major coastal cities – one click opens the search in Google Maps.'
+      : 'For the practical exam you need a training day on the water. Here you\'ll find boat schools in the major German cities – one click opens the search in Google Maps.',
+    note: 'BoatPass prepares you for the theory. For practical training – maneuvers, knots, man overboard – we recommend a training day at a local boat school.',
+    open: 'Open in Google Maps',
+  },
+}[lang];
+---
+
+<section class="boat-school-finder" style="margin-bottom:48px;">
+  <h2 class="content-section-title" style="margin-bottom:16px;">{t.title}</h2>
+  <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">{t.intro}</p>
+
+  <div class="bsf-grid">
+    {cities.map(city => (
+      <a href={mapsUrl(city.query)} target="_blank" rel="noopener noreferrer" class="bsf-card" title={`${t.open}: ${city.name}`}>
+        <span class="bsf-icon">
+          <Icon name="mapPin" size={18} stroke="#3366FF" strokeWidth={1.75} />
+        </span>
+        <span class="bsf-name">{city.name}</span>
+        <span class="bsf-arrow" aria-hidden="true">
+          <Icon name="chevronRight" size={16} stroke="currentColor" strokeWidth={2} />
+        </span>
+      </a>
+    ))}
+  </div>
+
+  <div class="bsf-note">
+    <span style="flex-shrink:0; margin-top:1px;"><Icon name="lifebuoy" size={20} stroke="#3366FF" strokeWidth={1.75} /></span>
+    <p class="bsf-note-text">{t.note}</p>
+  </div>
+</section>
+
+<style>
+  .bsf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .bsf-card {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    border: 1px solid rgba(51, 102, 255, 0.10);
+    border-radius: 14px;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+    min-height: 44px;
+  }
+  .bsf-card:hover {
+    border-color: rgba(51, 102, 255, 0.30);
+    box-shadow: 0 4px 16px rgba(51, 102, 255, 0.10);
+    transform: translateY(-1px);
+  }
+
+  .bsf-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+    background: rgba(51, 102, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .bsf-name {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1A1F36;
+  }
+
+  .bsf-arrow {
+    color: #9CA3AF;
+    flex-shrink: 0;
+    transition: color 0.15s ease, transform 0.15s ease;
+  }
+  .bsf-card:hover .bsf-arrow {
+    color: #3366FF;
+    transform: translateX(2px);
+  }
+
+  .bsf-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: linear-gradient(160deg, #F4F7FE 0%, #EAF0FC 100%);
+    border: 1px solid rgba(51, 102, 255, 0.16);
+    border-radius: 16px;
+    padding: 20px 24px;
+  }
+  .bsf-note-text {
+    font-size: 14px;
+    color: #4B5563;
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Dark mode */
+  html.dark .bsf-card {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.12) !important;
+  }
+  html.dark .bsf-card:hover {
+    border-color: rgba(90, 120, 255, 0.30) !important;
+    box-shadow: 0 4px 16px rgba(90, 120, 255, 0.10) !important;
+  }
+  html.dark .bsf-name { color: #E2E8F0 !important; }
+  html.dark .bsf-arrow { color: #6B7280 !important; }
+  html.dark .bsf-card:hover .bsf-arrow { color: #5A78FF !important; }
+  html.dark .bsf-icon {
+    background: rgba(90, 120, 255, 0.14) !important;
+  }
+  html.dark .bsf-note {
+    background: rgba(90, 120, 255, 0.07) !important;
+    border-color: rgba(90, 120, 255, 0.18) !important;
+  }
+  html.dark .bsf-note-text { color: #94A3B8 !important; }
+  html.dark .boat-school-finder h2 { color: #E2E8F0 !important; }
+  html.dark .boat-school-finder > p { color: #94A3B8 !important; }
+</style>
