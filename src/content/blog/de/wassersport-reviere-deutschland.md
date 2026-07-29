@@ -23,7 +23,7 @@ Deutschland bietet eine überraschend große Bandbreite an Wassersport-Revieren,
 
 ## SBF Binnen oder SBF See – die Grundunterscheidung
 
-Bevor es um einzelne Reviere geht, kurz zur Grundregel: **SBF Binnen** gilt auf Binnenschifffahrtsstraßen, also auf Flüssen, Kanälen und Seen im Landesinneren. **SBF See** gilt auf Seeschifffahrtsstraßen, also an der Küste von Nord- und Ostsee sowie auf den Unterläufen einzelner Flüsse, die noch zu den Seeschifffahrtsstraßen zählen. Wo genau die Grenze zwischen beiden verläuft, zum Beispiel auf der Elbe oder der Trave, erklärt unser Artikel [SBF-Gültigkeit: Welcher Schein gilt wo?](/blog/sbf-gueltigkeit-welcher-schein-wo/) im Detail. Wenn du dir bei deinem konkreten Vorhaben unsicher bist, hilft dir unser [Bootsführerschein-Finder](/tools/welcher-bootsfuehrerschein/) mit wenigen Fragen weiter.
+Bevor es um einzelne Reviere geht, kurz zur Grundregel: Der **[SBF Binnen](/sbf-binnen/)** gilt auf Binnenschifffahrtsstraßen, also auf Flüssen, Kanälen und Seen im Landesinneren. Der **[SBF See](/sbf-see/)** gilt auf Seeschifffahrtsstraßen, also an der Küste von Nord- und Ostsee sowie auf den Unterläufen einzelner Flüsse, die noch zu den Seeschifffahrtsstraßen zählen. Wo genau die Grenze zwischen beiden verläuft, zum Beispiel auf der Elbe oder der Trave, erklärt unser Artikel [SBF-Gültigkeit: Welcher Schein gilt wo?](/blog/sbf-gueltigkeit-welcher-schein-wo/) im Detail. Wenn du dir bei deinem konkreten Vorhaben unsicher bist, hilft dir unser [Bootsführerschein-Finder](/tools/welcher-bootsfuehrerschein/) mit wenigen Fragen weiter.
 
 ## Beliebte Binnenreviere
 

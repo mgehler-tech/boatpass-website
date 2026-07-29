@@ -32,7 +32,7 @@ Aus diesen beiden Bausteinen setzen sich alle Schallsignale zusammen. Geübt wir
 
 ## Schallsignale auf See (KVR)
 
-Auf den Seeschifffahrtsstraßen gelten die **Kollisionsverhütungsregeln (KVR)**. Hier unterscheidet man Manöver- und Warnsignale (wenn Fahrzeuge einander in Sicht haben) und Signale bei verminderter Sicht.
+Auf den Seeschifffahrtsstraßen, also im Geltungsbereich des [SBF See](/sbf-see/), gelten die **Kollisionsverhütungsregeln (KVR)**. Hier unterscheidet man Manöver- und Warnsignale (wenn Fahrzeuge einander in Sicht haben) und Signale bei verminderter Sicht.
 
 ### Manöver- und Warnsignale (Fahrzeuge in Sicht)
 
@@ -63,7 +63,7 @@ Ein Fahrzeug **vor Anker** macht stattdessen auf sich aufmerksam, indem es die G
 
 ## Schallsignale auf Binnen (Binnenschifffahrtsstraßen)
 
-Auf den Binnenschifffahrtsstraßen gilt **nicht** die KVR, sondern die Binnenschifffahrtsstraßen-Ordnung. Für Kleinfahrzeuge sind diese Signale wichtig:
+Auf den Binnenschifffahrtsstraßen, also im Geltungsbereich des [SBF Binnen](/sbf-binnen/), gilt **nicht** die KVR, sondern die Binnenschifffahrtsstraßen-Ordnung. Für Kleinfahrzeuge sind diese Signale wichtig:
 
 | Signal | Bedeutung |
 | --- | --- |

@@ -29,7 +29,7 @@ howTo:
       text: "Setze die Werte mit ihrem Vorzeichen in die Formel ein und rechne das Ergebnis aus. Liegt es über 360°, ziehe 360° ab; ist es negativ, addiere 360°."
 ---
 
-Kaum ein Thema kostet Prüflingen beim Sportbootführerschein See so viele Nerven wie die Kursumrechnung. Dabei steckt dahinter nur eine einzige Formel und eine klare Vorzeichen-Regel. Wer beides verstanden hat, löst die Kursfragen der Navigationsaufgabe schnell und sicher. Dieser Artikel erklärt die Umrechnung von **rwK, mwK und MgK** Schritt für Schritt – inklusive Beschickung für Wind und Strom.
+Kaum ein Thema kostet Prüflingen beim [Sportbootführerschein See](/sbf-see/) so viele Nerven wie die Kursumrechnung. Dabei steckt dahinter nur eine einzige Formel und eine klare Vorzeichen-Regel. Wer beides verstanden hat, löst die Kursfragen der Navigationsaufgabe schnell und sicher. Dieser Artikel erklärt die Umrechnung von **rwK, mwK und MgK** Schritt für Schritt – inklusive Beschickung für Wind und Strom.
 
 ## Warum es überhaupt verschiedene Kurse gibt
 

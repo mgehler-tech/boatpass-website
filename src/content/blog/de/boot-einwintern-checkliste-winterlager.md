@@ -93,7 +93,7 @@ Eine gute Einwinterung endet nicht mit dem letzten Handgriff im Herbst, sondern 
 
 Das Einwintern selbst ist kein Prüfungsstoff der theoretischen Sportbootführerschein-Prüfung, gehört aber für viele Eigner ebenso zum Bootsalltag wie das [Trailern und Slippen](/blog/boot-trailern-slippen/) oder die Entscheidung zwischen [eigenem Boot und Charterboot](/blog/sbf-eigenes-boot-oder-charterboot/). Wer ein eigenes Boot besitzt, sollte die laufenden Kosten für Liegeplatz, Winterlager und Wartung von Anfang an realistisch einplanen, einen Überblick dazu findest du auf unserer Seite zu den [Kosten des Sportbootführerscheins](/sbf-kosten/).
 
-Für die theoretische Prüfung bleibt weiterhin das gezielte Üben der amtlichen Fragen der wichtigste Baustein. Mit der [Boatpass-App](/sbf-binnen-pruefungsfragen/) kannst du die Original-Prüfungsfragen zum SBF Binnen und SBF See lernen und im Prüfungsmodus testen, wie sicher du schon bist, bevor du dich dann in Ruhe um die praktischen Themen rund um dein Boot kümmerst.
+Für die theoretische Prüfung bleibt weiterhin das gezielte Üben der amtlichen Fragen der wichtigste Baustein. Mit der [Boatpass-App](/sbf-binnen-pruefungsfragen/) kannst du die Original-Prüfungsfragen zum [SBF Binnen](/sbf-binnen/) und [SBF See](/sbf-see/) lernen und im Prüfungsmodus testen, wie sicher du schon bist, bevor du dich dann in Ruhe um die praktischen Themen rund um dein Boot kümmerst.
 
 ## Fazit
 

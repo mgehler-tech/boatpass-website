@@ -23,7 +23,7 @@ Germany offers a surprisingly wide range of boating regions, from calm lake dist
 
 ## SBF Inland or SBF Coastal – the basic distinction
 
-Before getting into individual regions, here's the basic rule: the **SBF Inland** is valid on inland waterways, meaning rivers, canals and lakes away from the coast. The **SBF Coastal** is valid on maritime waterways, meaning the coastal waters of the North Sea and Baltic Sea as well as the lower reaches of certain rivers that still count as maritime waterways. For the exact boundary between the two, for example on the Elbe or the Trave, see our article [SBF Validity: Which License Is Valid Where?](/en/blog/sbf-validity-which-license-where/). If you're unsure which license fits your specific plans, our [licenses overview](/en/licenses/) can help you narrow it down.
+Before getting into individual regions, here's the basic rule: the **[SBF Inland](/en/sbf-inland/)** is valid on inland waterways, meaning rivers, canals and lakes away from the coast. The **[SBF Coastal](/en/sbf-coastal/)** is valid on maritime waterways, meaning the coastal waters of the North Sea and Baltic Sea as well as the lower reaches of certain rivers that still count as maritime waterways. For the exact boundary between the two, for example on the Elbe or the Trave, see our article [SBF Validity: Which License Is Valid Where?](/en/blog/sbf-validity-which-license-where/). If you're unsure which license fits your specific plans, our [licenses overview](/en/licenses/) can help you narrow it down.
 
 ## Popular inland regions
 

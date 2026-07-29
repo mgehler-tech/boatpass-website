@@ -23,7 +23,7 @@ All sound signals are made up of these two building blocks. What's tested is hea
 
 ## Sound signals at sea (COLREGs)
 
-On the maritime waterways the **Collision Regulations (COLREGs)** apply. Here a distinction is made between maneuvering and warning signals (when vessels are in sight of one another) and signals in restricted visibility.
+On the maritime waterways, the domain of the **[SBF Coastal](/en/sbf-coastal/)**, the **Collision Regulations (COLREGs)** apply. Here a distinction is made between maneuvering and warning signals (when vessels are in sight of one another) and signals in restricted visibility.
 
 ### Maneuvering and warning signals (vessels in sight)
 
@@ -54,7 +54,7 @@ A vessel **at anchor** instead draws attention to itself by ringing the bell (ab
 
 ## Sound signals on inland waters
 
-On the inland waterways the COLREGs do **not** apply, but rather the Inland Waterways Regulations. For small craft these signals are important:
+On the inland waterways, the domain of the **[SBF Inland](/en/sbf-inland/)**, the COLREGs do **not** apply, but rather the Inland Waterways Regulations. For small craft these signals are important:
 
 | Signal | Meaning |
 | --- | --- |

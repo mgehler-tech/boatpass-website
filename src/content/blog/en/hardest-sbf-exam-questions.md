@@ -36,7 +36,7 @@ For comparison: around 39% fail the car driving license theory exam. So the boat
 
 Of the 72 basic questions, only a single one appears in the top 30 hardest SBF Coastal questions. The remaining 29 come from the 213 specific coastal questions. This shows: the **coastal-specific topics** are the real sticking point.
 
-The hardest topic areas in the SBF Coastal:
+The hardest topic areas in the [SBF Coastal](/en/sbf-coastal/):
 
 | Topic area | Why it's difficult |
 |---|---|
@@ -52,7 +52,7 @@ The hardest topic areas in the SBF Coastal:
 
 The hardest SBF Inland question concerns trim errors on a dinghy on close-hauled courses – with an error rate of around 48%. Almost every second candidate answers it incorrectly.
 
-**Why?** The sailing questions (47 questions in the catalog) are generally the hardest in the SBF Inland. Anyone who takes the SBF Inland under engine only doesn't have to answer the sailing questions. But anyone who adds the sailing scope should practice this topic block especially intensively.
+**Why?** The sailing questions (47 questions in the catalog) are generally the hardest in the [SBF Inland](/en/sbf-inland/). Anyone who takes the SBF Inland under engine only doesn't have to answer the sailing questions. But anyone who adds the sailing scope should practice this topic block especially intensively.
 
 ### The typical problem areas in the SBF Inland
 

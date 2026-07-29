@@ -96,7 +96,7 @@ A few oversights show up again and again in practice:
 
 Caring for an outboard motor isn't part of the theoretical Sportbootführerschein (SBF) exam, but for most owners it's just as much a part of everyday boating as [winterizing in autumn](/en/blog/winterizing-a-boat-checklist-for-winter-storage/) or deciding between [owning your own boat and chartering](/en/blog/own-boat-or-charter-boat-sbf/). If you're considering your own boat with an outboard, it pays to plan realistically for ongoing maintenance costs from the start, our [full cost overview for the Sportbootführerschein](/en/sbf-costs/) gives you a starting point.
 
-For the theoretical exam itself, targeted practice with the official question catalog remains the most important building block. With the [Boatpass app](/en/sbf-inland-exam-questions/) you can study the original SBF Inland and SBF Coastal exam questions and test yourself in exam mode to see how ready you are, before turning your attention to the practical side of caring for your boat.
+For the theoretical exam itself, targeted practice with the official question catalog remains the most important building block. With the [Boatpass app](/en/sbf-inland-exam-questions/) you can study the original [SBF Inland](/en/sbf-inland/) and [SBF Coastal](/en/sbf-coastal/) exam questions and test yourself in exam mode to see how ready you are, before turning your attention to the practical side of caring for your boat.
 
 ## Conclusion
 

@@ -106,7 +106,7 @@ Auch beim Parken des Gespanns außerhalb der eigentlichen Rampe lohnt sich ein B
 
 Der eigentliche Trailer- und Slipvorgang ist kein Prüfungsstoff des theoretischen Sportbootführerscheins, gehört aber zum praktischen Alltag vieler Bootsbesitzer, gerade wenn du dich für die Anschaffung eines [eigenen Bootes statt eines Charterboots](/blog/sbf-eigenes-boot-oder-charterboot/) entscheidest. Wer sein Boot selbst trailert, profitiert außerdem von einem soliden Verständnis grundlegender Manöver, etwa dem sicheren [Anlegen und Ablegen](/blog/anlegen-ablegen-hafenmanoever/), da diese Fähigkeiten direkt beim Zuwasserlassen und Wiederaufnehmen gefragt sind.
 
-Für die theoretische Prüfung selbst lohnt sich weiterhin das gezielte Training der Fragen aus dem amtlichen Katalog. Mit der [Boatpass-App](/sbf-binnen-pruefungsfragen/) kannst du die Original-Prüfungsfragen zum SBF Binnen und SBF See lernen und dich im Prüfungsmodus realistisch auf den großen Tag vorbereiten, damit du dich anschließend voll auf die praktischen Seiten des Bootfahrens, inklusive Trailern und Slippen, konzentrieren kannst.
+Für die theoretische Prüfung selbst lohnt sich weiterhin das gezielte Training der Fragen aus dem amtlichen Katalog. Mit der [Boatpass-App](/sbf-binnen-pruefungsfragen/) kannst du die Original-Prüfungsfragen zum [SBF Binnen](/sbf-binnen/) und [SBF See](/sbf-see/) lernen und dich im Prüfungsmodus realistisch auf den großen Tag vorbereiten, damit du dich anschließend voll auf die praktischen Seiten des Bootfahrens, inklusive Trailern und Slippen, konzentrieren kannst.
 
 ## Fazit
 

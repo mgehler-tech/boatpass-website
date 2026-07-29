@@ -29,7 +29,7 @@ howTo:
       text: "Plug the signed values into the formula and calculate the result. If it exceeds 360°, subtract 360°; if it is negative, add 360°."
 ---
 
-Few topics cause SBF Coastal (SBF See) candidates more stress than course conversion. Yet behind it lies just one formula and a clear sign rule. Once you understand both, the course questions in the navigation task become quick and reliable. This article explains converting between **true course, magnetic course and compass course** step by step – including the offset for wind and current.
+Few topics cause [SBF Coastal](/en/sbf-coastal/) (SBF See) candidates more stress than course conversion. Yet behind it lies just one formula and a clear sign rule. Once you understand both, the course questions in the navigation task become quick and reliable. This article explains converting between **true course, magnetic course and compass course** step by step – including the offset for wind and current.
 
 ## Why there are different courses at all
 
