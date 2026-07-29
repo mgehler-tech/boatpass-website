@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 import CatalogSources from '../components/CatalogSources.astro';
+import BoatSchoolFinder from '../components/BoatSchoolFinder.astro';
 import type { IconName } from '../icons';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
@@ -216,6 +217,9 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
       </div>
       <a href="/sbf-pruefung-ablauf/" style="display:inline-flex; align-items:center; gap:8px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">Prüfungsablauf Schritt für Schritt →</a>
     </section>
+
+    <!-- Bootsfahrschule finden -->
+    <BoatSchoolFinder lang="de" variant="binnen" />
 
     <!-- Kosten kompakt -->
     <section style="margin-bottom:48px;">

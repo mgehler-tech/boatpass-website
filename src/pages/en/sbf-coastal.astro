@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import CatalogSources from '../../components/CatalogSources.astro';
+import BoatSchoolFinder from '../../components/BoatSchoolFinder.astro';
 import type { IconName } from '../../icons';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
@@ -247,6 +248,9 @@ const navPoints: { icon: IconName; title: string; desc: string }[] = [
       </div>
       <a href="/en/sbf-exam/" style="display:inline-flex; align-items:center; gap:8px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">Exam process step by step →</a>
     </section>
+
+    <!-- Find a boat school -->
+    <BoatSchoolFinder lang="en" variant="see" />
 
     <!-- Costs compact -->
     <section style="margin-bottom:48px;">
