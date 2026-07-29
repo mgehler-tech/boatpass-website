@@ -107,7 +107,7 @@ In beliebten Buchten liegen oft mehrere Boote gleichzeitig vor Anker, was ein pa
 
 ## Ankern als Teil deiner SBF-Vorbereitung
 
-Ankern zählt zwar nicht zu den klassischen Pflichtmanövern der praktischen Sportbootführerschein-Prüfung, wie sie im Überblick [SBF Prüfung: so läuft sie ab](/sbf-pruefung-ablauf/) beschrieben sind, gehört aber trotzdem zum soliden Grundwissen jedes Sportbootfahrers und taucht in der Theorie in Form von Fragen zu Seezeichen, Lichterführung und Verhalten am Ankerplatz auf. Wer die Zusammenhänge rund um Grundbeschaffenheit, Zugwinkel und Schwoiraum einmal verinnerlicht hat, ist im echten Bootsalltag deutlich entspannter unterwegs, ob beim Mittagsstopp in der Bucht oder beim Warten vor einer Schleuse.
+Ankern zählt zwar nicht zu den klassischen Pflichtmanövern der praktischen Prüfung zum [Bootsführerschein](/fuehrerscheine/), wie sie im Überblick [SBF Prüfung: so läuft sie ab](/sbf-pruefung-ablauf/) beschrieben sind, gehört aber trotzdem zum soliden Grundwissen jedes Sportbootfahrers und taucht in der Theorie in Form von Fragen zu Seezeichen, Lichterführung und Verhalten am Ankerplatz auf. Wer die Zusammenhänge rund um Grundbeschaffenheit, Zugwinkel und Schwoiraum einmal verinnerlicht hat, ist im echten Bootsalltag deutlich entspannter unterwegs, ob beim Mittagsstopp in der Bucht oder beim Warten vor einer Schleuse.
 
 Für das prüfungsrelevante An- und Ablegen am Steg findest du eine Schritt-für-Schritt-Anleitung im Artikel [Anlegen und Ablegen: Hafenmanöver für Einsteiger](/blog/anlegen-ablegen-hafenmanoever/), und welche Knoten dir helfen, das Ankergeschirr sicher zu belegen, steht im Beitrag zu den [wichtigsten Knoten für den SBF](/blog/wichtigste-knoten-sbf/).
 

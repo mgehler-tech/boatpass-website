@@ -45,7 +45,7 @@ Zum Vergleich: Beim Auto-Führerschein fallen rund 39 % durch die Theorieprüfun
 
 Von den 72 Basisfragen taucht nur eine einzige in den Top 30 der schwierigsten SBF-See-Fragen auf. Die restlichen 29 stammen aus den 213 spezifischen See-Fragen. Das zeigt: Die **See-spezifischen Themen** sind der eigentliche Knackpunkt.
 
-Die schwierigsten Themenbereiche beim SBF See:
+Die schwierigsten Themenbereiche beim [SBF See](/sbf-see/):
 
 | Themenbereich | Warum schwierig |
 |---|---|
@@ -61,7 +61,7 @@ Die schwierigsten Themenbereiche beim SBF See:
 
 Die schwierigste SBF-Binnen-Frage betrifft Trimmfehler bei einer Jolle auf Amwindkursen – mit einer Fehlerquote von rund 48 %. Fast jeder zweite Prüfling beantwortet sie falsch.
 
-**Warum?** Die Segelfragen (47 Fragen im Katalog) sind generell die schwierigsten im SBF Binnen. Wer den SBF Binnen nur unter Motor ablegt, muss die Segelfragen nicht beantworten. Aber wer den Geltungsbereich Segel dazunimmt, sollte diesen Themenblock besonders intensiv üben.
+**Warum?** Die Segelfragen (47 Fragen im Katalog) sind generell die schwierigsten im [SBF Binnen](/sbf-binnen/). Wer den SBF Binnen nur unter Motor ablegt, muss die Segelfragen nicht beantworten. Aber wer den Geltungsbereich Segel dazunimmt, sollte diesen Themenblock besonders intensiv üben.
 
 ### Die typischen Problemfelder beim SBF Binnen
 

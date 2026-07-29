@@ -37,7 +37,7 @@ Few situations make beginners as nervous as docking and undocking: in a tight sp
 
 ## Why docking and undocking are mandatory exam maneuvers
 
-Docking and undocking are maneuvers regularly required in the practical part of the German Sportbootführerschein (SBF) exam. The reason is obvious: hardly any other maneuver demands as much finesse in such a tight space, and hardly any other happens as often in everyday boating. If you can dock and undock confidently, you already have a large part of the practical exam under control, because the same basic principles repeat in almost every berthing maneuver.
+Docking and undocking are maneuvers regularly required in the practical part of the [boating license](/en/licenses/) exam. The reason is obvious: hardly any other maneuver demands as much finesse in such a tight space, and hardly any other happens as often in everyday boating. If you can dock and undock confidently, you already have a large part of the practical exam under control, because the same basic principles repeat in almost every berthing maneuver.
 
 What's being assessed is not perfection but a **calm, comprehensible sequence**: you demonstrate that you can judge the forces acting on the boat, steer with foresight, and, when in doubt, take a second, calmer approach rather than correcting frantically.
 

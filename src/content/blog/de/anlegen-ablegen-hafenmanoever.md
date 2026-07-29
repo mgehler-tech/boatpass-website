@@ -37,7 +37,7 @@ Kaum eine Situation sorgt bei Einsteigern für so viel Nervosität wie das An- u
 
 ## Warum An- und Ablegen zu den Pflichtmanövern gehört
 
-An- und Ablegen gehören zu den Manövern, die in der praktischen Sportbootführerschein-Prüfung regelmäßig verlangt werden. Der Grund liegt auf der Hand: Kaum ein anderes Manöver verlangt so viel Feingefühl auf engstem Raum, und kaum eines passiert im Bootsalltag so häufig. Wer sicher an- und ablegen kann, hat einen großen Teil der praktischen Prüfung schon im Griff, denn dieselben Grundprinzipien wiederholen sich bei fast jedem Liegeplatzmanöver.
+An- und Ablegen gehören zu den Manövern, die in der praktischen Prüfung zum [Bootsführerschein](/fuehrerscheine/) regelmäßig verlangt werden. Der Grund liegt auf der Hand: Kaum ein anderes Manöver verlangt so viel Feingefühl auf engstem Raum, und kaum eines passiert im Bootsalltag so häufig. Wer sicher an- und ablegen kann, hat einen großen Teil der praktischen Prüfung schon im Griff, denn dieselben Grundprinzipien wiederholen sich bei fast jedem Liegeplatzmanöver.
 
 Bewertet wird dabei nicht Perfektion, sondern ein **nachvollziehbarer, ruhiger Ablauf**: Du zeigst, dass du die wirkenden Kräfte einschätzt, das Boot vorausschauend steuerst und im Zweifel lieber einen zweiten Anlauf nimmst, statt hektisch zu korrigieren.
 

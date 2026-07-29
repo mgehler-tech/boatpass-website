@@ -94,7 +94,7 @@ A good winterizing job doesn't end with the last task in autumn, it also makes t
 
 Winterizing itself isn't part of the theoretical Sportbootführerschein (SBF) exam, but for many owners it's just as much a part of everyday boating life as [trailering and launching](/en/blog/trailering-and-launching-a-boat/) or deciding between [owning your own boat and chartering](/en/blog/own-boat-or-charter-boat-sbf/). If you own a boat, it pays to plan realistically for ongoing costs like a mooring, winter storage, and maintenance from the start, our [full cost overview for the Sportbootführerschein](/en/sbf-costs/) gives you a starting point.
 
-For the theoretical exam itself, targeted practice with the official question catalog remains the most important building block. With the [Boatpass app](/en/sbf-inland-exam-questions/) you can study the original SBF Inland and SBF Coastal exam questions and test yourself in exam mode to see how ready you are, before turning your attention to the practical side of owning a boat.
+For the theoretical exam itself, targeted practice with the official question catalog remains the most important building block. With the [Boatpass app](/en/sbf-inland-exam-questions/) you can study the original [SBF Inland](/en/sbf-inland/) and [SBF Coastal](/en/sbf-coastal/) exam questions and test yourself in exam mode to see how ready you are, before turning your attention to the practical side of owning a boat.
 
 ## Conclusion
 

@@ -96,7 +96,7 @@ Einige Versäumnisse tauchen in der Praxis immer wieder auf:
 
 Die praktische Pflege eines Außenborders ist kein Prüfungsstoff der theoretischen Sportbootführerschein-Prüfung, gehört für die meisten Eigner aber ebenso zum Bootsalltag wie das [Einwintern im Herbst](/blog/boot-einwintern-checkliste-winterlager/) oder die Entscheidung zwischen [eigenem Boot und Charterboot](/blog/sbf-eigenes-boot-oder-charterboot/). Wer sich für ein eigenes Boot mit Außenborder entscheidet, sollte die laufenden Wartungskosten von Anfang an realistisch einplanen, einen Überblick dazu findest du auf unserer Seite zu den [Kosten des Sportbootführerscheins](/sbf-kosten/).
 
-Für die theoretische Prüfung bleibt das gezielte Lernen der amtlichen Fragen weiterhin der wichtigste Baustein. Mit der [Boatpass-App](/sbf-binnen-pruefungsfragen/) kannst du die Original-Prüfungsfragen zum SBF Binnen und SBF See üben und im Prüfungsmodus testen, wie sicher du schon bist, bevor du dich in Ruhe der praktischen Pflege deines Bootes widmest.
+Für die theoretische Prüfung bleibt das gezielte Lernen der amtlichen Fragen weiterhin der wichtigste Baustein. Mit der [Boatpass-App](/sbf-binnen-pruefungsfragen/) kannst du die Original-Prüfungsfragen zum [SBF Binnen](/sbf-binnen/) und [SBF See](/sbf-see/) üben und im Prüfungsmodus testen, wie sicher du schon bist, bevor du dich in Ruhe der praktischen Pflege deines Bootes widmest.
 
 ## Fazit
 
