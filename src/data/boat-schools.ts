@@ -1,3 +1,11 @@
+export interface BoatSchool {
+  name: string;
+  address: string;
+  website: string;
+  phone?: string;
+  licenses: string[];
+}
+
 export interface BoatSchoolCity {
   slug: string;
   name: string;
@@ -7,6 +15,7 @@ export interface BoatSchoolCity {
   intro: { de: string; en: string };
   examInfo: { de: string; en: string };
   mapsQuery: string;
+  schools: BoatSchool[];
   faq: { q: { de: string; en: string }; a: { de: string; en: string } }[];
 }
 
@@ -29,6 +38,13 @@ export const cities: BoatSchoolCity[] = [
       en: 'Exams are held regularly by the DMYV and DSV in Berlin, including locations in Köpenick and Spandau.',
     },
     mapsQuery: 'Bootsfahrschule Berlin',
+    schools: [
+      { name: 'Bootsfahrschule Berlin', address: 'An der Havelschanze, 13587 Berlin-Spandau', website: 'https://bootsfahrschule.berlin/', phone: '030 86437089', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
+      { name: 'Skili Wassersport Berlin', address: 'Berlin-Spandau', website: 'https://skili.berlin/', licenses: ['SBF Binnen', 'SBF See', 'UBI', 'SRC'] },
+      { name: 'Bootsschule Röllinghoff', address: 'Berlin-Köpenick', website: 'https://www.bootsschule-berlin.de/', licenses: ['SBF Binnen', 'SBF See'] },
+      { name: 'Bootsschulung Berlin', address: 'Berlin-Köpenick, an der Dahme', website: 'https://bootsschulung.de/', licenses: ['SBF Binnen', 'SBF See'] },
+      { name: 'Nautik Bootsfahrschule', address: 'Am Pichelssee 19, 13595 Berlin-Spandau', website: 'https://www.motorbootfuehrerschein-berlin-brandenburg.de/', phone: '030 6920695', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
+    ],
     faq: [
       {
         q: { de: 'Wie viele Bootsfahrschulen gibt es in Berlin?', en: 'How many boat schools are there in Berlin?' },
@@ -62,6 +78,12 @@ export const cities: BoatSchoolCity[] = [
       en: 'The DMYV and DSV offer regular exams in Hamburg, including locations at Jungfernstieg and Hamburg-Harburg.',
     },
     mapsQuery: 'Bootsfahrschule Hamburg',
+    schools: [
+      { name: 'Mobile Bootsfahrschule Hamburg', address: 'Schwarzenbergstr. 95, 21073 Hamburg', website: 'https://www.mobile-bootsfahrschule.de/schulungsort-hamburg/', licenses: ['SBF Binnen', 'SBF See', 'SKS', 'SRC', 'UBI'] },
+      { name: 'Yachtschule Meridian', address: 'Hamburg-Rothenburgsort, an den Elbbrücken', website: 'https://yachtschule-meridian.de/', licenses: ['SBF Binnen', 'SBF See', 'SRC', 'UBI'] },
+      { name: 'Sportbootschule Nautilus', address: 'Hamburg', website: 'https://www.sportbootschule-nautilus.de/', licenses: ['SBF Binnen', 'SBF See', 'SRC', 'UBI', 'LRC'] },
+      { name: 'Yachtschule Buhlheller', address: 'Hamburg-Zentrum', website: 'https://buhlheller-yachting.de/', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
+    ],
     faq: [
       {
         q: { de: 'Brauche ich in Hamburg den SBF Binnen oder SBF See?', en: 'Do I need the SBF Inland or Coastal licence in Hamburg?' },
@@ -91,6 +113,12 @@ export const cities: BoatSchoolCity[] = [
       en: 'Exams are held regularly in Munich and surrounding areas, often directly at the lakes (e.g. Ammersee, Starnberger See).',
     },
     mapsQuery: 'Bootsfahrschule München',
+    schools: [
+      { name: 'Motorbootschule München', address: 'München / Starnberg', website: 'https://www.motorbootschule.com/', licenses: ['SBF Binnen', 'SBF See'] },
+      { name: 'ONWATER Bootsschule', address: 'München / Chiemsee', website: 'https://www.onwater.de/standorte/chiemsee', licenses: ['SBF Binnen', 'SBF See'] },
+      { name: 'Tokon Yachtschule', address: 'München', website: 'https://tokon-yachtschule.de/', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
+      { name: 'Weiss-Blau Segelschule', address: 'München', website: 'https://www.weiss-blau.de/', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
+    ],
     faq: [
       {
         q: { de: 'Kann ich mit dem Münchner Bootsführerschein auch am Chiemsee fahren?', en: 'Can I use my Munich boat licence on Chiemsee as well?' },
@@ -120,6 +148,12 @@ export const cities: BoatSchoolCity[] = [
       en: 'DMYV and DSV exams are held regularly in Cologne and the surrounding area.',
     },
     mapsQuery: 'Bootsfahrschule Köln',
+    schools: [
+      { name: 'Segeln macht Spaß', address: 'Rheinauhafen, Köln', website: 'https://segeln-macht-spass.de/', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
+      { name: 'PRIME YACHTING', address: 'Aachener Str. 1049, 50858 Köln', website: 'https://prime-yachting.de/standorte/sportbootschule-koeln/', phone: '0221 42353624', licenses: ['SBF Binnen', 'SBF See', 'SRC', 'UBI'] },
+      { name: 'nautiCLUB Bootsschule', address: 'Köln-Sülz / Rodenkirchen', website: 'https://nauticlub.de/standorte/bootsfuehrerschein-koeln/', licenses: ['SBF Binnen', 'SBF See'] },
+      { name: 'Bootsführerschein NRW', address: 'Höninger Weg 115, 50969 Köln', website: 'https://www.bootsfuehrerschein-nrw.de/', licenses: ['SBF Binnen', 'SBF See'] },
+    ],
     faq: [
       {
         q: { de: 'Darf ich auf dem Rhein bei Köln ohne Führerschein fahren?', en: 'Can I navigate the Rhine near Cologne without a licence?' },
@@ -149,6 +183,12 @@ export const cities: BoatSchoolCity[] = [
       en: 'Exams are offered regularly in Düsseldorf, often in conjunction with boat schools on the Rhine.',
     },
     mapsQuery: 'Bootsfahrschule Düsseldorf',
+    schools: [
+      { name: 'ONWATER Bootsschule', address: 'Medienhafen, Düsseldorf', website: 'https://www.onwater.de/standorte/d%C3%BCsseldorf', licenses: ['SBF Binnen', 'SBF See'] },
+      { name: 'nautiCLUB Düsseldorf', address: 'Düsseldorf-Zentrum / Medienhafen', website: 'https://nauticlub.de/standorte/bootsfuehrerschein-duesseldorf/', licenses: ['SBF Binnen', 'SBF See'] },
+      { name: 'Bootsschule Bothe', address: 'Düsseldorf', website: 'https://bootsschulebothe.de/bootsfuehrerschein-duesseldorf/', licenses: ['SBF Binnen', 'SBF See'] },
+      { name: 'Bootstrainer Düsseldorf', address: 'Düsseldorf', website: 'https://www.bootstrainer.de/', licenses: ['SBF Binnen', 'SBF See', 'SRC', 'UBI'] },
+    ],
     faq: [
       {
         q: { de: 'Was kostet der Bootsführerschein in Düsseldorf?', en: 'How much does a boat licence cost in Düsseldorf?' },
@@ -174,6 +214,12 @@ export const cities: BoatSchoolCity[] = [
       en: 'Exams are held regularly in Frankfurt and the surrounding area.',
     },
     mapsQuery: 'Bootsfahrschule Frankfurt am Main',
+    schools: [
+      { name: 'Aquafun Bootsschule Frankfurt', address: 'Frankfurt-Fechenheim, am Main', website: 'https://www.aquafun.de/bootsschulen/frankfurt/', licenses: ['SBF Binnen', 'SBF See'] },
+      { name: 'Segel-Center Frankfurt', address: 'Frankfurt am Main', website: 'https://www.segel-center-frankfurt.de/', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
+      { name: 'Boot-Fahrschulteam', address: 'Frankfurter Westhafen', website: 'https://www.boot-fahrschulteam.com/', licenses: ['SBF Binnen', 'SBF See'] },
+      { name: 'Sportbootschule Steiner', address: 'Maintal bei Frankfurt', website: 'https://sportbootschule-steiner.de/bootsfuehrerschein-frankfurt/', licenses: ['SBF Binnen', 'SBF See', 'SRC', 'UBI'] },
+    ],
     faq: [
       {
         q: { de: 'Was kostet der Bootsführerschein in Frankfurt?', en: 'How much does a boat licence cost in Frankfurt?' },
@@ -199,6 +245,11 @@ export const cities: BoatSchoolCity[] = [
       en: 'Exams are offered in Stuttgart and at Lake Constance.',
     },
     mapsQuery: 'Bootsfahrschule Stuttgart',
+    schools: [
+      { name: 'Sportbootschule Kolumbus', address: 'Stuttgart / Bad Cannstatt / Besigheim', website: 'https://www.sportbootschule-kolumbus.de/standorte/bootsfuehrerschein-stuttgart', licenses: ['SBF Binnen', 'SBF See', 'SRC', 'UBI'] },
+      { name: 'Sportbootschule Atlantik', address: 'Stuttgart / Esslingen / Ludwigsburg', website: 'https://www.sportbootschule-atlantik.de/', licenses: ['SBF Binnen', 'SBF See', 'SRC', 'UBI'] },
+      { name: 'Sportboot Service Stuttgart', address: 'Stuttgart', website: 'https://www.boot-online.net/', licenses: ['SBF Binnen', 'SBF See'] },
+    ],
     faq: [
       {
         q: { de: 'Brauche ich für den Bodensee ein extra Patent?', en: 'Do I need a special licence for Lake Constance?' },
@@ -224,6 +275,13 @@ export const cities: BoatSchoolCity[] = [
       en: 'The DMYV offers regular exams in Kiel, both for the coastal boat licence and radio certificates.',
     },
     mapsQuery: 'Bootsfahrschule Kiel',
+    schools: [
+      { name: 'Sportbootschule Mielke', address: 'Kiel', website: 'https://www.sportbootschule-mielke.de/', licenses: ['SBF Binnen', 'SBF See', 'SKS', 'SRC', 'UBI'] },
+      { name: 'Ostseewassersport Poseidon', address: 'Kiel', website: 'https://www.ostseewassersport.de/ausbildung-in-kiel/', licenses: ['SBF Binnen', 'SBF See', 'SRC'] },
+      { name: 'Bootsfahrschule Dietz', address: 'Kiel', website: 'https://yachtcharter-dietz.de/bootsfuehrerschein-kurse-in-kiel/', licenses: ['SBF Binnen', 'SBF See', 'SKS', 'SRC', 'UBI'] },
+      { name: 'Sportbootschule Kiel', address: 'Kiel', website: 'https://www.sportbootschule-kiel.eu/', licenses: ['SBF Binnen', 'SBF See', 'SRC'] },
+      { name: 'WSS Zwischen den Meeren', address: 'Kiel', website: 'https://wss-zwischen-den-meeren.de/', licenses: ['SBF Binnen', 'SBF See', 'SKS', 'SRC', 'UBI', 'LRC'] },
+    ],
     faq: [
       {
         q: { de: 'Welchen Führerschein brauche ich für die Kieler Förde?', en: 'Which licence do I need for Kiel Fjord?' },
@@ -249,6 +307,11 @@ export const cities: BoatSchoolCity[] = [
       en: 'Exams are held regularly in Rostock and Warnemünde.',
     },
     mapsQuery: 'Bootsfahrschule Rostock',
+    schools: [
+      { name: 'Baltic Sport Warnemünde', address: 'Am Strom 69, 18119 Rostock-Warnemünde', website: 'https://www.balticsport.de/', phone: '0381 5108488', licenses: ['SBF Binnen', 'SBF See', 'SKS', 'SRC', 'UBI'] },
+      { name: 'Wasport Bootsfahrschule', address: 'Hundsburgallee 8, 18106 Rostock', website: 'https://www.wasport.de/', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
+      { name: 'Renós Bootsschule / Wasser360', address: 'Rostock-Gehlsdorf', website: 'https://www.wasser360.de/', licenses: ['SBF Binnen', 'SBF See'] },
+    ],
     faq: [
       {
         q: { de: 'Was kostet der SBF See in Rostock?', en: 'How much does the SBF Coastal cost in Rostock?' },
@@ -274,6 +337,11 @@ export const cities: BoatSchoolCity[] = [
       en: 'Exams are offered in Bremen and Bremerhaven.',
     },
     mapsQuery: 'Bootsfahrschule Bremen',
+    schools: [
+      { name: 'Bremer Segelschule', address: 'Landrat-Christians-Str. 99, 28779 Bremen', website: 'https://www.bremer-segelschule.de/', phone: '0421 601655', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
+      { name: 'BOOTSAUSBILDUNG.com', address: 'Bremen', website: 'https://www.bootsausbildung.com/', licenses: ['SBF Binnen', 'SBF See', 'SRC', 'UBI'] },
+      { name: 'Bootsfahrschule Dietz', address: 'Bremen / Bremerhaven', website: 'https://www.bootsfahrschule-dietz.de/', licenses: ['SBF Binnen', 'SBF See'] },
+    ],
     faq: [
       {
         q: { de: 'Was kostet der Bootsführerschein in Bremen?', en: 'How much does a boat licence cost in Bremen?' },
@@ -299,6 +367,11 @@ export const cities: BoatSchoolCity[] = [
       en: 'Exams are held regularly in Hanover.',
     },
     mapsQuery: 'Bootsfahrschule Hannover',
+    schools: [
+      { name: 'Bootsfahrschule Hannover', address: 'Werftstraße 19, 30163 Hannover', website: 'https://www.bootsfahrschule-hannover.de/', phone: '0511 2625544', licenses: ['SBF Binnen', 'SBF See', 'SRC', 'UBI'] },
+      { name: 'Yachtfahrschule Hannover', address: 'Hannover', website: 'https://www.yachtfahrschule.de/', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
+      { name: 'Bootsfahrschule Yachthafen', address: 'Steinhuder Meer, Hannover Region', website: 'https://www.bootsfahrschule-yachthafen.de/', licenses: ['SBF Binnen', 'SBF See'] },
+    ],
     faq: [
       {
         q: { de: 'Was kostet der Bootsführerschein in Hannover?', en: 'How much does a boat licence cost in Hanover?' },
@@ -324,6 +397,11 @@ export const cities: BoatSchoolCity[] = [
       en: 'DMYV exams are held regularly in Dresden.',
     },
     mapsQuery: 'Bootsfahrschule Dresden',
+    schools: [
+      { name: 'Yachtschule Dresden', address: 'Tharandter Str. 45a, 01159 Dresden', website: 'https://www.yachtschule-dresden.de/', phone: '0351 4272888', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
+      { name: 'Skipper Akademie Dresden', address: 'Dresden', website: 'https://www.skipper-akademie.de/', licenses: ['SBF Binnen', 'SBF See', 'SRC'] },
+      { name: 'Bootsschule Dresden', address: 'Dresden', website: 'https://www.bootsschule-dresden.de/', licenses: ['SBF Binnen', 'SBF See'] },
+    ],
     faq: [
       {
         q: { de: 'Was kostet der Bootsführerschein in Dresden?', en: 'How much does a boat licence cost in Dresden?' },
@@ -349,6 +427,11 @@ export const cities: BoatSchoolCity[] = [
       en: 'Exams are offered in Lübeck and Travemünde.',
     },
     mapsQuery: 'Bootsfahrschule Lübeck',
+    schools: [
+      { name: 'Wasserfahrschule Travemünde', address: 'Travemünde, 23570 Lübeck', website: 'https://www.wasserfahrschule-travemuende.de/', phone: '04502 880033', licenses: ['SBF Binnen', 'SBF See', 'SKS', 'SRC'] },
+      { name: 'Aquafun Bootsschule Lübeck', address: 'Lübeck', website: 'https://www.aquafun-luebeck.de/', licenses: ['SBF Binnen', 'SBF See'] },
+      { name: 'Bootsfahrschule Dietz Lübeck', address: 'Lübeck / Travemünde', website: 'https://www.bootsfahrschule-dietz.de/', licenses: ['SBF Binnen', 'SBF See'] },
+    ],
     faq: [
       {
         q: { de: 'Was kostet der SBF See in Lübeck?', en: 'How much does the SBF Coastal cost in Lübeck?' },
