@@ -57,7 +57,7 @@ On 490 kHz, wind warnings, navigational warnings, and weather forecasts for the 
 
 **VHF marine radio** (voice radio) also regularly carries weather broadcasts. Alongside the official coast radio stations, there are private providers geared specifically toward recreational boaters, the best known on the German North Sea and Baltic coasts being **DP07**. Stations like this broadcast marine weather reports and gale warnings over VHF several times a day, receivable with an ordinary marine VHF radio on the relevant working channel for the area.
 
-The advantage over internet apps: VHF marine radio works even where mobile coverage is weak or absent, for example out on open water or in more remote areas. If your boat carries a VHF marine radio, it's worth knowing which channel in your cruising area carries the weather broadcasts, so you can tune in when needed.
+The advantage over internet apps: VHF marine radio works even where mobile coverage is weak or absent, for example out on open water or in more remote areas. If your boat carries a VHF marine radio, it's worth knowing which channel in your cruising area carries the weather broadcasts, so you can tune in when needed. To operate your own VHF marine radio, though, you need a radio operator's certificate – the [SRC](/en/src/) for coastal waters or the [UBI](/en/ubi/) for inland waters.
 
 ## General Weather Warnings for Inland Waters
 
