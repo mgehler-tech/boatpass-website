@@ -173,12 +173,12 @@ const itemListSchema = {
             <p style="font-size:14px; color:#4B5563; line-height:1.6; margin:0 0 14px;">
               <strong style="color:#1A1F36;">{t.bestFor}:</strong> {app.bestFor[lang]}
             </p>
-            <div style="display:flex; flex-wrap:wrap; gap:14px;">
+            <div class="app-profile-actions">
               {app.playUrl && (
-                <a href={app.playUrl} target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:none; font-size:14px; font-weight:600;">→ {t.toStore}</a>
+                <a href={app.playUrl} target="_blank" rel="noopener noreferrer" class="app-profile-link">→ {t.toStore}</a>
               )}
               {app.website && (
-                <a href={app.website} target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:none; font-size:14px; font-weight:600;">→ {t.toWebsite}</a>
+                <a href={app.website} target="_blank" rel="noopener noreferrer" class="app-profile-link">→ {t.toWebsite}</a>
               )}
             </div>
           </div>
@@ -289,4 +289,35 @@ const itemListSchema = {
     margin-left: 50%;
     transform: translateX(-50%);
   }
+
+  /* Aktions-Links der App-Kurzprofile ("→ Im Play Store ansehen" / "→ Zur
+     Website"). Als einzige interaktiven Elemente der Profil-Karte brauchen sie
+     eine ausreichend große Touch-Fläche (WCAG 2.5.5 – mind. 44px). Als reine
+     14px-Textzeile waren sie nur ~20px hoch und auf dem Handy schwer präzise zu
+     treffen – dieselbe 44px-Behandlung, die Footer-, Blog-Teaser-, Katalog- und
+     Finder-Links im Projekt bereits erhalten haben. inline-flex begrenzt die
+     Fläche auf die tatsächliche Linkbreite (keine ganze Kartenbreite tappbar);
+     die symmetrischen negativen Ränder gleichen die zusätzliche Box-Höhe
+     optisch aus, damit der vertikale Rhythmus der Karte erhalten bleibt. Reiner
+     Layout-Feinschliff: das Marken-Blau (#3366FF) bleibt unverändert. */
+  .app-profile-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    margin: -8px 0;
+  }
+  .app-profile-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: #3366FF;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: color 0.15s ease;
+  }
+  .app-profile-link:hover { text-decoration: underline; }
+  /* Als Klasse (statt inline-style) greift der globale Dark-Mode-Akzent-Override
+     nicht mehr – daher hier explizit auf den helleren Akzent anheben. */
+  html.dark .app-profile-link { color: var(--color-accent-fg) !important; }
 </style>
