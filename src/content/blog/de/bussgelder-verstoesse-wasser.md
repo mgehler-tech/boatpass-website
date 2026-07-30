@@ -12,7 +12,7 @@ faq:
   - question: "Gibt es einen einheitlichen Bußgeldkatalog für Sportboote?"
     answer: "Nein, einen bundesweit einheitlichen Bußgeldkatalog wie im Straßenverkehr gibt es für den Wassersport nicht. Grundlage sind die Binnenschifffahrtsstraßen-Ordnung (BinSchStrO) auf Bundeswasserstraßen, die Seeschifffahrtsstraßen-Ordnung (SeeSchStrO) an der Küste sowie ergänzende Verordnungen wie die Sportbootführerscheinverordnung (SpFV). Die konkrete Höhe eines Bußgelds hängt vom Einzelfall und der zuständigen Behörde ab."
   - question: "Ist Fahren ohne gültigen Sportbootführerschein eine Ordnungswidrigkeit?"
-    answer: "Ja. Nach § 4 der Sportbootführerscheinverordnung (SpFV) handelt ordnungswidrig, wer vorsätzlich oder fahrlässig ein Sportboot führt, obwohl er den dafür vorgeschriebenen Führerschein nicht besitzt. Zuständig für die Verfolgung ist die Generaldirektion Wasserstraßen und Schifffahrt (GDWS)."
+    answer: "Ja. Nach § 18 der Sportbootführerscheinverordnung (SpFV) in Verbindung mit § 3 bzw. § 4 SpFV handelt ordnungswidrig, wer vorsätzlich oder fahrlässig ein Sportboot führt, obwohl er den dafür vorgeschriebenen Führerschein nicht besitzt. Zuständig für die Verfolgung ist die Generaldirektion Wasserstraßen und Schifffahrt (GDWS)."
   - question: "Welche Pflichten habe ich nach einem Bootsunfall?"
     answer: "Nach § 1.16 BinSchStrO muss jeder Beteiligte nach einem Schiffsunfall die Folgen des Unfalls feststellen und die Feststellung seiner Person, seines Fahrzeugs sowie der Art seiner Beteiligung ermöglichen. Sind Menschen in Gefahr, ist jeder in der Nähe befindliche Schiffsführer zur unverzüglichen Hilfe verpflichtet, soweit das mit der Sicherheit des eigenen Fahrzeugs vereinbar ist. Wer trotzdem flieht, riskiert zusätzlich eine Strafbarkeit wegen unterlassener Hilfeleistung nach § 323c StGB."
   - question: "Kann das unerlaubte Einleiten von Öl oder Bilgenwasser eine Straftat sein?"
@@ -23,7 +23,7 @@ Ein vergessener Rettungsring, eine Kurve mit zu viel Tempo in der falschen Zone,
 
 ## Warum es keinen einheitlichen Bußgeldkatalog gibt
 
-Auf deutschen **Bundeswasserstraßen** (Flüsse, Kanäle, viele Binnenseen) gilt die **Binnenschifffahrtsstraßen-Ordnung (BinSchStrO)**, auf den **Seeschifffahrtsstraßen** an der Küste (etwa Elbe, Weser, Ems oder die Kieler Förde) die **Seeschifffahrtsstraßen-Ordnung (SeeSchStrO)**. Für Sportboote kommt zusätzlich die **Sportbootführerscheinverordnung (SpFV)** hinzu, die unter anderem regelt, wann ein Führerschein Pflicht ist. Auf internationalen Gewässern gilt das **Kollisionsverhütungsreglement (KVR)**.
+Auf deutschen **Bundeswasserstraßen** (Flüsse, Kanäle, viele Binnenseen) gilt die **Binnenschifffahrtsstraßen-Ordnung (BinSchStrO)**, auf den **Seeschifffahrtsstraßen** an der Küste (etwa Elbe, Weser, Ems oder die Kieler Förde) die **Seeschifffahrtsstraßen-Ordnung (SeeSchStrO)**. Für Sportboote kommt zusätzlich die **Sportbootführerscheinverordnung (SpFV)** hinzu, die unter anderem regelt, wann ein Führerschein Pflicht ist. Auf internationalen Gewässern gelten die **Kollisionsverhütungsregeln (KVR)**.
 
 Diese Regelwerke enthalten jeweils eigene Bußgeldvorschriften. Zuständig für die Verfolgung von Ordnungswidrigkeiten nach der SpFV ist die **Generaldirektion Wasserstraßen und Schifffahrt (GDWS)**, kontrolliert wird auf dem Wasser vor allem durch die **Wasserschutzpolizei**. Weil so viele unterschiedliche Behörden und Regelwerke beteiligt sind, gibt es keine einzelne Tabelle mit festen Beträgen für alle Verstöße, wie du sie vom Straßenverkehr kennst. Die Höhe eines Bußgelds hängt vom konkreten Verstoß, der Schwere im Einzelfall und der zuständigen Behörde ab.
 
@@ -39,7 +39,7 @@ Viele der folgenden Beispiele beginnen als Ordnungswidrigkeit, können sich aber
 
 ## Fahren ohne gültigen Sportbootführerschein
 
-Wer ein Sportboot führt, obwohl er den dafür vorgeschriebenen Führerschein nicht besitzt, handelt nach **§ 4 SpFV** ordnungswidrig, und zwar unabhängig davon, ob das vorsätzlich oder nur fahrlässig geschieht, etwa weil jemand die Fahrtüchtigkeitsgrenze seines Bootes falsch einschätzt. Das betrifft nicht nur Fahranfänger ganz ohne Schein, sondern auch Fälle, in denen der vorhandene Führerschein nicht zum gefahrenen Gewässer passt, etwa ein [SBF Binnen](/sbf-binnen/) auf Seeschifffahrtsstraßen, wo eigentlich der [SBF See](/sbf-see/) nötig wäre. Auch wer seinen Führerschein zwar besitzt, ihn aber nicht dabei hat, kann Ärger bekommen, wenn die Wasserschutzpolizei kontrolliert.
+Wer ein Sportboot führt, obwohl er den dafür vorgeschriebenen Führerschein nicht besitzt, handelt nach **§ 18 SpFV** in Verbindung mit der jeweiligen Erlaubnispflicht aus **§ 3 SpFV** (Binnenschifffahrtsstraßen) beziehungsweise **§ 4 SpFV** (Seeschifffahrtsstraßen) ordnungswidrig, und zwar unabhängig davon, ob das vorsätzlich oder nur fahrlässig geschieht, etwa weil jemand die Fahrtüchtigkeitsgrenze seines Bootes falsch einschätzt. Das betrifft nicht nur Fahranfänger ganz ohne Schein, sondern auch Fälle, in denen der vorhandene Führerschein nicht zum gefahrenen Gewässer passt, etwa ein [SBF Binnen](/sbf-binnen/) auf Seeschifffahrtsstraßen, wo eigentlich der [SBF See](/sbf-see/) nötig wäre. Auch wer seinen Führerschein zwar besitzt, ihn aber nicht dabei hat, kann Ärger bekommen, wenn die Wasserschutzpolizei kontrolliert.
 
 ## Alkohol und Fahrtüchtigkeit
 
