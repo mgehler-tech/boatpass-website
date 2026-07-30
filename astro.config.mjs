@@ -37,8 +37,7 @@ export default defineConfig({
         } else if (/^\/(src|ubi|lrc|faq)\/?$/.test(path)) {
           item.priority = 0.8;
           item.changefreq = 'monthly';
-        } else if (path.startsWith('/tools/')) {
-          // Linkable Assets (Konfigurator etc.) – hoch priorisieren als Backlink-Magneten.
+        } else if (path.startsWith('/tools/') || path.startsWith('/bootsfahrschulen') || path.startsWith('/boat-schools')) {
           item.priority = 0.8;
           item.changefreq = 'monthly';
         } else if (path.startsWith('/blog')) {

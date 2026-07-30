@@ -12,7 +12,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
-const boatSchoolUrl = 'https://www.google.com/maps/search/Bootsfahrschule/';
+const boatSchoolUrl = de ? '/bootsfahrschulen/' : '/en/boat-schools/';
 const de = lang === 'de';
 
 /**
@@ -128,12 +128,12 @@ const promo = {
             <span class="nav-mega-promo-desc">{promo.desc}</span>
             <span class="nav-mega-promo-cta">{promo.cta} <span aria-hidden="true">→</span></span>
           </a>
-          <a href={boatSchoolUrl} target="_blank" rel="noopener noreferrer" class="nav-mega-footer-link">
+          <a href={boatSchoolUrl} class="nav-mega-footer-link">
             <span class="nav-mega-footer-icon">
               <Icon name="mapPin" size={14} stroke="#3366FF" strokeWidth={1.75} />
             </span>
             {de ? 'Bootsfahrschule in deiner Nähe finden' : 'Find a boat school near you'}
-            <span aria-hidden="true" style="margin-left:auto; font-size:12px; opacity:0.5;">↗</span>
+            <span aria-hidden="true" style="margin-left:auto; font-size:12px; opacity:0.5;">→</span>
           </a>
         </div>
       </div>
@@ -255,7 +255,7 @@ const promo = {
             <a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="mobile-nav-sublink">LRC</a>
             <span class="mobile-nav-sublink mobile-nav-sublink--soon">Bodenseeschifferpatent <span class="soon-badge">{lang === 'de' ? 'bald' : 'soon'}</span></span>
             <div class="mobile-divider"></div>
-            <a href={boatSchoolUrl} target="_blank" rel="noopener noreferrer" class="mobile-nav-sublink mobile-nav-sublink--cta">{de ? 'Fahrschule finden →' : 'Find a boat school →'}</a>
+            <a href={boatSchoolUrl} class="mobile-nav-sublink mobile-nav-sublink--cta">{de ? 'Fahrschule finden →' : 'Find a boat school →'}</a>
           </div>
         </div>
       </div>
