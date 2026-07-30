@@ -89,17 +89,55 @@ const faqSchema = city.faq.length > 0 ? {
       </div>
     </section>
 
-    <!-- Find a boat school - Google Maps CTA -->
+    <!-- Boat Schools -->
     <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Find a Boat School</h2>
+      <h2 class="content-section-title" style="margin-bottom:16px;">Boat Schools in {city.name}</h2>
       <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
-        Use Google Maps to browse boat schools in {city.name}. Check reviews, opening hours and contact information to find the right school for your needs.
+        {city.schools.length > 0
+          ? `Here are ${city.schools.length} boat schools in ${city.name} that offer boat licence training.`
+          : `There are several boat schools in ${city.name} that prepare you for the boat licence exam.`}
       </p>
+
+      {city.schools.length > 0 && (
+        <div class="school-list">
+          {city.schools.map(school => (
+            <div class="school-card">
+              <div class="school-header">
+                <span class="school-icon">
+                  <Icon name="mapPin" size={18} stroke="#3366FF" strokeWidth={1.75} />
+                </span>
+                <div style="flex:1; min-width:0;">
+                  <h3 class="school-name">{school.name}</h3>
+                  <p class="school-address">{school.address}</p>
+                </div>
+              </div>
+              <div class="school-licenses">
+                {school.licenses.map(lic => (
+                  <span class="school-license-tag">{lic}</span>
+                ))}
+              </div>
+              <div class="school-actions">
+                <a href={school.website} target="_blank" rel="noopener noreferrer" class="school-link">
+                  <Icon name="globe" size={15} stroke="currentColor" strokeWidth={1.75} />
+                  Website
+                </a>
+                {school.phone && (
+                  <a href={`tel:${school.phone.replace(/\s/g, '')}`} class="school-link school-link-secondary">
+                    <Icon name="phone" size={15} stroke="currentColor" strokeWidth={1.75} />
+                    {school.phone}
+                  </a>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+
       <a href={mapsSearchUrl(city.mapsQuery)} target="_blank" rel="noopener noreferrer" class="maps-cta">
         <div style="flex:1; min-width:0;">
           <div style="font-size:12px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Google Maps</div>
-          <div style="font-size:21px; font-weight:900; color:white; letter-spacing:-0.5px; line-height:1.2;">View boat schools in {city.name}</div>
-          <div style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.5; margin-top:6px;">Browse schools on the map, compare reviews and find directions.</div>
+          <div style="font-size:21px; font-weight:900; color:white; letter-spacing:-0.5px; line-height:1.2;">More boat schools in {city.name}</div>
+          <div style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.5; margin-top:6px;">Browse all schools on the map, compare reviews and find directions.</div>
         </div>
         <span style="flex-shrink:0; background:white; color:#3366FF; font-weight:800; font-size:15px; padding:12px 22px; border-radius:12px; white-space:nowrap;">Open Map &rarr;</span>
       </a>
@@ -217,6 +255,88 @@ const faqSchema = city.faq.length > 0 ? {
     padding: 22px;
   }
 
+  .school-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .school-card {
+    background: white;
+    border: 1px solid rgba(51,102,255,0.10);
+    border-radius: 16px;
+    padding: 22px;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+  .school-card:hover {
+    border-color: rgba(51,102,255,0.25);
+    box-shadow: 0 4px 16px rgba(51,102,255,0.08);
+  }
+  .school-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .school-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    background: rgba(51,102,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .school-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1A1F36;
+    margin-bottom: 4px;
+  }
+  .school-address {
+    font-size: 14px;
+    color: #6B7280;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .school-licenses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .school-license-tag {
+    font-size: 12px;
+    font-weight: 600;
+    color: #3366FF;
+    background: rgba(51,102,255,0.06);
+    border: 1px solid rgba(51,102,255,0.12);
+    border-radius: 8px;
+    padding: 4px 10px;
+  }
+  .school-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .school-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3366FF;
+    text-decoration: none;
+  }
+  .school-link:hover {
+    text-decoration: underline;
+  }
+  .school-link-secondary {
+    color: #4B5563;
+  }
+
   @media (max-width: 640px) {
     .maps-cta {
       flex-direction: column;
@@ -246,6 +366,34 @@ const faqSchema = city.faq.length > 0 ? {
   }
   html.dark .info-card div:nth-child(2),
   html.dark .faq-item div {
+    color: #94A3B8 !important;
+  }
+  html.dark .school-card {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.14) !important;
+  }
+  html.dark .school-card:hover {
+    border-color: rgba(90, 120, 255, 0.30) !important;
+    box-shadow: 0 4px 16px rgba(90, 120, 255, 0.10) !important;
+  }
+  html.dark .school-name {
+    color: #E2E8F0 !important;
+  }
+  html.dark .school-address {
+    color: #94A3B8 !important;
+  }
+  html.dark .school-icon {
+    background: rgba(90, 120, 255, 0.14) !important;
+  }
+  html.dark .school-license-tag {
+    color: #7B9CFF !important;
+    background: rgba(90, 120, 255, 0.10) !important;
+    border-color: rgba(90, 120, 255, 0.20) !important;
+  }
+  html.dark .school-link {
+    color: #7B9CFF !important;
+  }
+  html.dark .school-link-secondary {
     color: #94A3B8 !important;
   }
 </style>
