@@ -1,0 +1,212 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Icon from '../../../components/Icon.astro';
+import { cities } from '../../../data/boat-schools';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boatpass.de/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Boat Schools", "item": "https://boatpass.de/en/boat-schools/" },
+  ],
+};
+
+const faqs = [
+  {
+    q: 'Do I need a boat school to get my German boat licence?',
+    a: 'No. A boat school is not legally required for the theory exam. The official ELWIS question catalogue is freely available, and you can prepare independently with an app like BoatPass. However, most candidates benefit from practical training at a boat school for the hands-on part of the exam.',
+  },
+  {
+    q: 'What does a boat school cost in Germany?',
+    a: 'Prices vary by city and licence type. A full course (theory + practical) typically costs between 400 and 800 euros on top of the official exam fees (around 130 euros for SBF Inland, 148 euros for SBF Coastal). By studying the theory yourself with BoatPass for 9.99 euros, you can save the largest portion of those course fees.',
+  },
+  {
+    q: 'How do I choose the right boat school?',
+    a: 'Look for a school that is certified by the DMYV or DSV, offers practical training on waterways you plan to use, and has flexible scheduling. Reviews on Google Maps are a good starting point. Many schools offer a free introductory session so you can see if the teaching style suits you.',
+  },
+  {
+    q: 'Can I learn theory with BoatPass and only do the practical at a school?',
+    a: 'Yes, and this is the most cost-effective approach. BoatPass covers the complete official ELWIS question catalogue with exam simulation and mistake training. You then book only the practical lessons at a boat school for the on-water manoeuvres and exam registration.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+---
+
+<BaseLayout
+  title="Boat Schools in Germany – Find One Near You"
+  description="Find a boat school in your city: Berlin, Hamburg, Munich, Cologne and more. Information about waterways, exam locations and costs for the German boat licence."
+  lang="en"
+  altUrl="https://boatpass.de/bootsfahrschulen/"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
+  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        Find a School
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+        Boat Schools<br>Near You
+      </h1>
+      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto;">
+        BoatPass covers the theory for your German boat licence. For practical training
+        and exam registration, you need a boat school. Find one in your city below.
+      </p>
+    </div>
+  </div>
+
+  <div style="max-width:1000px; margin:0 auto; padding:60px 24px 80px;">
+
+    <!-- Note box -->
+    <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px; margin-bottom:56px;">
+      <span style="flex-shrink:0; margin-top:2px;"><Icon name="book" size={22} stroke="#3366FF" strokeWidth={1.75} /></span>
+      <div>
+        <div style="font-size:14px; font-weight:700; color:#1A1F36; margin-bottom:6px;">BoatPass + Boat School = Ready for the exam</div>
+        <p style="font-size:15px; color:#6B7280; line-height:1.65; margin:0;">
+          <strong>BoatPass</strong> is your theory learning app: the complete official ELWIS question catalogue with exam simulation and mistake training.
+          A <strong>boat school</strong> provides practical training on the water, knot practice and helps with exam registration.
+          Together, they cover everything you need for your German boat licence.
+        </p>
+      </div>
+    </div>
+
+    <!-- City grid -->
+    <section style="margin-bottom:64px;">
+      <h2 class="content-section-title" style="margin-bottom:8px;">
+        Boat Schools by City
+      </h2>
+      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:28px;">
+        Select your city to find boat schools, waterway information, exam locations and costs.
+      </p>
+      <div class="school-grid">
+        {cities.map(city => (
+          <a href={`/en/boat-schools/${city.slug}/`} class="school-card">
+            <div class="school-icon"><Icon name="mapPin" size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
+            <div class="school-title">{city.name}</div>
+            <span class="school-tag">{city.state}</span>
+            <div class="school-desc">{city.waterways.en}</div>
+            <div class="school-link">Learn more &rarr;</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:20px;">Frequently Asked Questions</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Internal links -->
+    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.1);">
+      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Further reading</h3>
+      <div class="related-links">
+        <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Learn SBF Inland with BoatPass</a>
+        <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Learn SBF Coastal with BoatPass</a>
+        <a href="/en/sbf-costs/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; What does the boat licence cost?</a>
+        <a href="/en/sbf-exam/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF exam: how theory and practice work</a>
+        <a href="/en/licenses/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; All German boating licences at a glance</a>
+      </div>
+    </section>
+
+  </div>
+
+</BaseLayout>
+
+<style>
+  .school-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .school-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid rgba(51,102,255,0.10);
+    border-radius: 20px;
+    padding: 28px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .school-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(26,31,54,0.10);
+    border-color: rgba(51,102,255,0.28);
+  }
+  .school-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(51,102,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .school-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1A1F36;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+  .school-tag {
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 700;
+    color: #3366FF;
+    background: rgba(51,102,255,0.08);
+    border: 1px solid rgba(51,102,255,0.16);
+    padding: 4px 10px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+  }
+  .school-desc {
+    font-size: 15px;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex-grow: 1;
+  }
+  .school-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: #3366FF;
+  }
+
+  @media (max-width: 640px) {
+    .school-grid { grid-template-columns: 1fr; }
+  }
+
+  html.dark .school-card {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.14) !important;
+  }
+  html.dark .school-card:hover {
+    border-color: rgba(90, 120, 255, 0.32) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3) !important;
+  }
+  html.dark .school-title { color: #E2E8F0 !important; }
+  html.dark .school-desc  { color: #94A3B8 !important; }
+</style>

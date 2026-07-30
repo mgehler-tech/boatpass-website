@@ -1,0 +1,215 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { cities } from '../../data/boat-schools';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://boatpass.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Bootsfahrschulen", "item": "https://boatpass.de/bootsfahrschulen/" },
+  ],
+};
+
+const faqs = [
+  {
+    q: 'Brauche ich eine Bootsfahrschule, um den Sportbootführerschein zu machen?',
+    a: 'Nein, ein Fahrschulbesuch ist gesetzlich nicht vorgeschrieben. Du kannst die Theorie eigenständig lernen, z. B. mit der BoatPass-App. Für die praktische Prüfung empfiehlt sich jedoch eine Fahrschule, da du dort das Fahren auf dem Wasser, Manöver und Knoten unter Anleitung übst.',
+  },
+  {
+    q: 'Was kostet eine Bootsfahrschule?',
+    a: 'Ein Komplettkurs (Theorie + Praxis) kostet je nach Stadt und Umfang zwischen 400 und 800 Euro pro Schein. Die amtlichen Prüfungsgebühren kommen mit ca. 130 Euro (Binnen) bzw. 148 Euro (See) hinzu. Wer die Theorie selbst lernt, spart den größten Posten.',
+  },
+  {
+    q: 'Was ist der Unterschied zwischen Bootsfahrschule und BoatPass?',
+    a: 'BoatPass ist eine Lern-App für die theoretische Prüfungsvorbereitung mit dem offiziellen ELWIS-Fragenkatalog. Eine Bootsfahrschule bietet zusätzlich praktische Ausbildung auf dem Wasser und übernimmt oft die Prüfungsanmeldung. Beides ergänzt sich ideal.',
+  },
+  {
+    q: 'Wie finde ich eine gute Bootsfahrschule in meiner Stadt?',
+    a: 'Achte auf Bewertungen, Erfahrung und ob die Schule vom DMYV oder DSV anerkannt ist. Vergleiche Preise und frage nach, ob Praxisstunden auf dem Gewässer stattfinden, das du später befahren möchtest. Unsere Stadtseiten verlinken direkt auf Google Maps, um Fahrschulen in deiner Nähe zu finden.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+---
+
+<BaseLayout
+  title="Bootsfahrschulen in Deutschland – Fahrschule in deiner Nähe"
+  description="Finde eine Bootsfahrschule in deiner Stadt: Berlin, Hamburg, München, Köln und mehr. Infos zu Gewässern, Prüfungsorten und Kosten für den Sportbootführerschein."
+  lang="de"
+  altUrl="https://boatpass.de/en/boat-schools/"
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Hero -->
+  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        Fahrschule finden
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+        Bootsfahrschule<br>in deiner Nähe
+      </h1>
+      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto;">
+        Mit BoatPass lernst du die komplette Theorie für den Sportbootführerschein.
+        Für die praktische Ausbildung auf dem Wasser brauchst du eine Bootsfahrschule
+        – finde die passende in deiner Stadt.
+      </p>
+    </div>
+  </div>
+
+  <div style="max-width:1000px; margin:0 auto; padding:60px 24px 80px;">
+
+    <!-- Info-Box -->
+    <div style="display:flex; align-items:flex-start; gap:18px; background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px; margin-bottom:56px;">
+      <div>
+        <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Theorie + Praxis</div>
+        <p style="font-size:15px; color:#4B5563; line-height:1.7; margin:0;">
+          <strong>BoatPass</strong> = Theorie lernen (offizieller ELWIS-Fragenkatalog, Prüfungssimulation, Fehler-Training).
+          <strong>Bootsfahrschule</strong> = Praxisausbildung auf dem Wasser + Prüfungsanmeldung.
+          Beides zusammen ist der schnellste Weg zum Sportbootführerschein.
+        </p>
+      </div>
+    </div>
+
+    <!-- Städte-Grid -->
+    <section style="margin-bottom:64px;">
+      <h2 class="content-section-title" style="margin-bottom:8px;">
+        Bootsfahrschulen nach Stadt
+      </h2>
+      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:28px;">
+        Wähle deine Stadt und erfahre alles über Gewässer, Prüfungsorte und Bootsfahrschulen vor Ort.
+      </p>
+      <div class="city-grid">
+        {cities.map(city => (
+          <a href={`/bootsfahrschulen/${city.slug}/`} class="city-card">
+            <div class="city-icon">
+              <Icon name="mapPin" size={26} stroke="#3366FF" strokeWidth={1.75} />
+            </div>
+            <div class="city-name">{city.name}</div>
+            <span class="city-tag">{city.state}</span>
+            <div class="city-waterways">{city.waterways.de}</div>
+            <div class="city-link">Mehr erfahren &rarr;</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:20px;">Häufige Fragen zur Bootsfahrschule</h2>
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        {faqs.map(f => (
+          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
+            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Weiterführende Artikel -->
+    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.1);">
+      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Weiterführende Artikel</h3>
+      <div class="related-links">
+        <a href="/sbf-binnen/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF Binnen lernen mit BoatPass</a>
+        <a href="/sbf-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF See lernen mit BoatPass</a>
+        <a href="/sbf-kosten/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Was kostet der Sportbootführerschein?</a>
+        <a href="/sbf-pruefung-ablauf/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF Prüfung: Ablauf von Theorie & Praxis</a>
+        <a href="/fuehrerscheine/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Alle Bootsführerscheine im Überblick</a>
+      </div>
+    </section>
+
+  </div>
+
+</BaseLayout>
+
+<style>
+  .city-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .city-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid rgba(51,102,255,0.10);
+    border-radius: 20px;
+    padding: 28px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  .city-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(26,31,54,0.10);
+    border-color: rgba(51,102,255,0.28);
+  }
+  .city-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: rgba(51,102,255,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+  .city-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1A1F36;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+  .city-tag {
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: 700;
+    color: #3366FF;
+    background: rgba(51,102,255,0.08);
+    border: 1px solid rgba(51,102,255,0.16);
+    padding: 4px 10px;
+    border-radius: 100px;
+    margin-bottom: 12px;
+  }
+  .city-waterways {
+    font-size: 15px;
+    color: #6B7280;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex-grow: 1;
+  }
+  .city-link {
+    font-size: 14px;
+    font-weight: 700;
+    color: #3366FF;
+  }
+
+  @media (max-width: 640px) {
+    .city-grid { grid-template-columns: 1fr; }
+  }
+
+  html.dark .city-card {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.14) !important;
+  }
+  html.dark .city-card:hover {
+    border-color: rgba(90, 120, 255, 0.32) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3) !important;
+  }
+  html.dark .city-name { color: #E2E8F0 !important; }
+  html.dark .city-waterways { color: #94A3B8 !important; }
+</style>

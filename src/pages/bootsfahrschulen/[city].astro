@@ -1,0 +1,274 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { cities, mapsSearchUrl } from '../../data/boat-schools';
+import type { BoatSchoolCity } from '../../data/boat-schools';
+
+export function getStaticPaths() {
+  return cities.map(city => ({ params: { city: city.slug }, props: { city } }));
+}
+
+interface Props { city: BoatSchoolCity }
+const { city } = Astro.props;
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+const truncatedDesc = city.intro.de.length > 155
+  ? city.intro.de.slice(0, 155).replace(/\s+\S*$/, '') + '...'
+  : city.intro.de;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://boatpass.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Bootsfahrschulen", "item": "https://boatpass.de/bootsfahrschulen/" },
+    { "@type": "ListItem", "position": 3, "name": city.name, "item": `https://boatpass.de/bootsfahrschulen/${city.slug}/` },
+  ],
+};
+
+const faqSchema = city.faq.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": city.faq.map(f => ({
+    "@type": "Question",
+    "name": f.q.de,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a.de },
+  })),
+} : null;
+
+function licenceLabel(variant: 'coastal' | 'inland' | 'both'): string {
+  if (variant === 'coastal') return 'SBF See';
+  if (variant === 'inland') return 'SBF Binnen';
+  return 'SBF Binnen & SBF See';
+}
+
+function licenceDescription(variant: 'coastal' | 'inland' | 'both', name: string): string {
+  if (variant === 'coastal') {
+    return `Für die Küstengewässer rund um ${name} brauchst du den Sportbootführerschein See (SBF See). Er berechtigt zur Fahrt auf den Seeschifffahrtsstraßen von Nord- und Ostsee.`;
+  }
+  if (variant === 'inland') {
+    return `Für die Binnengewässer rund um ${name} brauchst du den Sportbootführerschein Binnen (SBF Binnen) ab 15 PS. Er gilt auf Flüssen, Kanälen und Seen in ganz Deutschland.`;
+  }
+  return `In ${name} sind sowohl Binnengewässer als auch Küstengewässer erreichbar. Für Flüsse und Seen brauchst du den SBF Binnen, für die Küste den SBF See. Viele Fahrschulen bieten die Kombination beider Scheine an.`;
+}
+
+function licenceLinks(variant: 'coastal' | 'inland' | 'both'): { href: string; label: string }[] {
+  if (variant === 'coastal') return [{ href: '/sbf-see/', label: 'SBF See im Detail' }];
+  if (variant === 'inland') return [{ href: '/sbf-binnen/', label: 'SBF Binnen im Detail' }];
+  return [
+    { href: '/sbf-binnen/', label: 'SBF Binnen im Detail' },
+    { href: '/sbf-see/', label: 'SBF See im Detail' },
+  ];
+}
+---
+
+<BaseLayout
+  title={`Bootsfahrschulen in ${city.name} | Sportbootführerschein ${city.name}`}
+  description={truncatedDesc}
+  lang="de"
+  altUrl={`https://boatpass.de/en/boat-schools/${city.slug}/`}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {faqSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+
+  <!-- Hero -->
+  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        {city.state}
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+        Bootsfahrschulen<br>in {city.name}
+      </h1>
+      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto;">
+        {city.intro.de}
+      </p>
+    </div>
+  </div>
+
+  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+
+    <!-- Gewässer -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:16px;">Gewässer in {city.name}</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        {city.waterways.de} – {licenceDescription(city.variant, city.name)}
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
+        <div class="info-card">
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Gewässer</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;">{city.waterways.de}</div>
+        </div>
+        <div class="info-card">
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Benötigter Schein</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;">{licenceLabel(city.variant)}</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:12px; margin-top:18px;">
+        {licenceLinks(city.variant).map(link => (
+          <a href={link.href} style="display:inline-flex; align-items:center; gap:8px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">{link.label} &rarr;</a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Bootsfahrschule finden -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:16px;">Bootsfahrschule finden</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        In {city.name} gibt es mehrere Bootsfahrschulen, die auf den Sportbootführerschein vorbereiten.
+        Finde eine Fahrschule in deiner Nähe direkt über Google Maps.
+      </p>
+      <a href={mapsSearchUrl(city.mapsQuery)} target="_blank" rel="noopener noreferrer" class="maps-cta">
+        <div style="flex:1; min-width:0;">
+          <div style="font-size:12px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Google Maps</div>
+          <div style="font-size:21px; font-weight:900; color:white; letter-spacing:-0.5px; line-height:1.2;">Bootsfahrschulen in {city.name}</div>
+          <div style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.5; margin-top:6px;">Fahrschulen, Bewertungen und Kontaktdaten auf Google Maps anzeigen.</div>
+        </div>
+        <span style="flex-shrink:0; background:white; color:#3366FF; font-weight:800; font-size:15px; padding:12px 22px; border-radius:12px; white-space:nowrap;">Karte öffnen &rarr;</span>
+      </a>
+    </section>
+
+    <!-- Prüfung -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:16px;">Prüfung in {city.name}</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        {city.examInfo.de}
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px;">
+        <div class="info-card">
+          <div style="font-size:22px; font-weight:900; color:#1A1F36;">
+            {city.variant === 'coastal' ? '148,38' : city.variant === 'inland' ? '130,78' : '178,61'} &euro;
+          </div>
+          <div style="font-size:14px; color:#6B7280; line-height:1.55; margin-top:4px;">
+            Amtliche Prüfungsgebühr {city.variant === 'both' ? '(Kombi)' : city.variant === 'coastal' ? '(See)' : '(Binnen)'}
+          </div>
+        </div>
+        <div class="info-card">
+          <div style="font-size:22px; font-weight:900; color:#3366FF;">ab 9,99 &euro;</div>
+          <div style="font-size:14px; color:#6B7280; line-height:1.55; margin-top:4px;">Theorie lernen mit BoatPass</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Theorie mit BoatPass -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:16px;">Theorie mit BoatPass lernen</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        Bereite dich eigenständig auf die Theorieprüfung vor – mit dem offiziellen ELWIS-Fragenkatalog,
+        Prüfungssimulation und gezieltem Fehler-Training. So sparst du den Theorie-Teil der Fahrschule
+        und lernst flexibel in deinem eigenen Tempo.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:24px;">
+        {([
+          { icon: 'book' as const, title: 'Offizieller ELWIS-Fragenkatalog', desc: `Alle amtlichen Prüfungsfragen für den ${licenceLabel(city.variant)} – immer aktuell.` },
+          { icon: 'target' as const, title: 'Prüfungssimulation', desc: 'Echte Prüfungsbedingungen mit Timer und separater Bestehensgrenze.' },
+          { icon: 'refresh' as const, title: 'Fehler-Training', desc: 'Nur die Fragen üben, die du noch nicht sicher kannst.' },
+        ]).map(f => (
+          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.1); border-radius:16px; padding:20px;">
+            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <Icon name={f.icon} size={21} stroke="#3366FF" strokeWidth={1.75} />
+            </span>
+            <div>
+              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
+              <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
+        &#9654;&nbsp;Kostenlos im Play Store
+      </a>
+    </section>
+
+    <!-- FAQ -->
+    {city.faq.length > 0 && (
+      <section style="margin-bottom:48px;">
+        <h2 class="content-section-title" style="margin-bottom:20px;">Häufige Fragen zu Bootsfahrschulen in {city.name}</h2>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          {city.faq.map(f => (
+            <div class="faq-item">
+              <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q.de}</h3>
+              <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a.de}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Interne Links -->
+    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.1);">
+      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Weiterführende Artikel</h3>
+      <div class="related-links">
+        <a href="/bootsfahrschulen/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Alle Bootsfahrschulen in Deutschland</a>
+        {city.variant !== 'coastal' && (
+          <a href="/sbf-binnen/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF Binnen lernen mit BoatPass</a>
+        )}
+        {city.variant !== 'inland' && (
+          <a href="/sbf-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF See lernen mit BoatPass</a>
+        )}
+        <a href="/sbf-kosten/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Was kostet der Sportbootführerschein?</a>
+        <a href="/sbf-pruefung-ablauf/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF Prüfung: Ablauf von Theorie & Praxis</a>
+        <a href="/fuehrerscheine/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Alle Bootsführerscheine im Überblick</a>
+      </div>
+    </section>
+
+  </div>
+
+</BaseLayout>
+
+<style>
+  .info-card {
+    background: white;
+    border: 1px solid rgba(51,102,255,0.12);
+    border-radius: 16px;
+    padding: 22px;
+  }
+  .maps-cta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: linear-gradient(135deg, #1A1F36, #3366FF);
+    border-radius: 18px;
+    padding: 24px 26px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(51,102,255,0.18);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .maps-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px rgba(51,102,255,0.28);
+  }
+  .faq-item {
+    background: white;
+    border: 1px solid rgba(51,102,255,0.08);
+    border-radius: 16px;
+    padding: 22px;
+  }
+
+  @media (max-width: 640px) {
+    .maps-cta {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+
+  html.dark .info-card {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.14) !important;
+  }
+  html.dark .info-card div[style*="color:#1A1F36"] {
+    color: #E2E8F0 !important;
+  }
+  html.dark .faq-item {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.14) !important;
+  }
+  html.dark .faq-item h3 {
+    color: #E2E8F0 !important;
+  }
+  html.dark .faq-item div {
+    color: #94A3B8 !important;
+  }
+</style>

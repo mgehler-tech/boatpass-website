@@ -1,5 +1,6 @@
 ---
 import Icon from './Icon.astro';
+import { cities as allCities, mapsSearchUrl } from '../data/boat-schools';
 
 interface Props {
   lang: 'de' | 'en';
@@ -10,14 +11,17 @@ const { lang, variant } = Astro.props;
 
 interface City {
   name: string;
+  slug?: string;
   query: string;
 }
 
+const knownSlugs = new Set(allCities.map(c => c.slug));
+
 const coastalCities: City[] = [
-  { name: 'Hamburg', query: 'Bootsfahrschule Hamburg' },
-  { name: 'Kiel', query: 'Bootsfahrschule Kiel' },
-  { name: 'Rostock', query: 'Bootsfahrschule Rostock' },
-  { name: 'Lübeck', query: 'Bootsfahrschule Lübeck' },
+  { name: 'Hamburg', slug: 'hamburg', query: 'Bootsfahrschule Hamburg' },
+  { name: 'Kiel', slug: 'kiel', query: 'Bootsfahrschule Kiel' },
+  { name: 'Rostock', slug: 'rostock', query: 'Bootsfahrschule Rostock' },
+  { name: 'Lübeck', slug: 'luebeck', query: 'Bootsfahrschule Lübeck' },
   { name: 'Flensburg', query: 'Bootsfahrschule Flensburg' },
   { name: 'Bremerhaven', query: 'Bootsfahrschule Bremerhaven' },
   { name: 'Stralsund', query: 'Bootsfahrschule Stralsund' },
@@ -27,14 +31,14 @@ const coastalCities: City[] = [
 ];
 
 const inlandCities: City[] = [
-  { name: 'Berlin', query: 'Bootsfahrschule Berlin' },
-  { name: 'München', query: 'Bootsfahrschule München' },
-  { name: 'Köln', query: 'Bootsfahrschule Köln' },
-  { name: 'Düsseldorf', query: 'Bootsfahrschule Düsseldorf' },
-  { name: 'Frankfurt', query: 'Bootsfahrschule Frankfurt am Main' },
-  { name: 'Stuttgart', query: 'Bootsfahrschule Stuttgart' },
-  { name: 'Hannover', query: 'Bootsfahrschule Hannover' },
-  { name: 'Dresden', query: 'Bootsfahrschule Dresden' },
+  { name: 'Berlin', slug: 'berlin', query: 'Bootsfahrschule Berlin' },
+  { name: 'München', slug: 'muenchen', query: 'Bootsfahrschule München' },
+  { name: 'Köln', slug: 'koeln', query: 'Bootsfahrschule Köln' },
+  { name: 'Düsseldorf', slug: 'duesseldorf', query: 'Bootsfahrschule Düsseldorf' },
+  { name: 'Frankfurt', slug: 'frankfurt', query: 'Bootsfahrschule Frankfurt am Main' },
+  { name: 'Stuttgart', slug: 'stuttgart', query: 'Bootsfahrschule Stuttgart' },
+  { name: 'Hannover', slug: 'hannover', query: 'Bootsfahrschule Hannover' },
+  { name: 'Dresden', slug: 'dresden', query: 'Bootsfahrschule Dresden' },
   { name: 'Leipzig', query: 'Bootsfahrschule Leipzig' },
   { name: 'Nürnberg', query: 'Bootsfahrschule Nürnberg' },
   { name: 'Duisburg', query: 'Bootsfahrschule Duisburg' },
@@ -43,8 +47,15 @@ const inlandCities: City[] = [
 
 const cities = variant === 'see' ? coastalCities : inlandCities;
 
-function mapsUrl(query: string): string {
-  return `https://www.google.com/maps/search/${encodeURIComponent(query)}`;
+function cityUrl(city: City): string {
+  if (city.slug && knownSlugs.has(city.slug)) {
+    return lang === 'de' ? `/bootsfahrschulen/${city.slug}/` : `/en/boat-schools/${city.slug}/`;
+  }
+  return mapsSearchUrl(city.query);
+}
+
+function isExternal(city: City): boolean {
+  return !city.slug || !knownSlugs.has(city.slug);
 }
 
 const t = {
@@ -53,8 +64,8 @@ const t = {
       ? 'Bootsfahrschule an der Küste finden'
       : 'Bootsfahrschule in deiner Nähe finden',
     intro: variant === 'see'
-      ? 'Für die praktische Prüfung brauchst du einen Übungstag auf dem Wasser. Hier findest du Bootsfahrschulen in den wichtigsten Küstenstädten – ein Klick öffnet die Suche direkt in Google Maps.'
-      : 'Für die praktische Prüfung brauchst du einen Übungstag auf dem Wasser. Hier findest du Bootsfahrschulen in den wichtigsten deutschen Städten – ein Klick öffnet die Suche direkt in Google Maps.',
+      ? 'Für die praktische Prüfung brauchst du einen Übungstag auf dem Wasser. Hier findest du Bootsfahrschulen in den wichtigsten Küstenstädten.'
+      : 'Für die praktische Prüfung brauchst du einen Übungstag auf dem Wasser. Hier findest du Bootsfahrschulen in den wichtigsten deutschen Städten.',
     note: 'BoatPass bereitet dich auf die Theorie vor. Für die praktische Ausbildung – Manöver, Knoten, Mann-über-Bord – empfehlen wir einen Übungstag bei einer lokalen Bootsfahrschule.',
     open: 'In Google Maps öffnen',
   },
@@ -63,8 +74,8 @@ const t = {
       ? 'Find a boat school on the coast'
       : 'Find a boat school near you',
     intro: variant === 'see'
-      ? 'For the practical exam you need a training day on the water. Here you\'ll find boat schools in the major coastal cities – one click opens the search in Google Maps.'
-      : 'For the practical exam you need a training day on the water. Here you\'ll find boat schools in the major German cities – one click opens the search in Google Maps.',
+      ? 'For the practical exam you need a training day on the water. Here you\'ll find boat schools in the major coastal cities.'
+      : 'For the practical exam you need a training day on the water. Here you\'ll find boat schools in the major German cities.',
     note: 'BoatPass prepares you for the theory. For practical training – maneuvers, knots, man overboard – we recommend a training day at a local boat school.',
     open: 'Open in Google Maps',
   },
@@ -77,7 +88,7 @@ const t = {
 
   <div class="bsf-grid">
     {cities.map(city => (
-      <a href={mapsUrl(city.query)} target="_blank" rel="noopener noreferrer" class="bsf-card" title={`${t.open}: ${city.name}`}>
+      <a href={cityUrl(city)} {...(isExternal(city) ? { target: '_blank', rel: 'noopener noreferrer' } : {})} class="bsf-card" title={`${t.open}: ${city.name}`}>
         <span class="bsf-icon">
           <Icon name="mapPin" size={18} stroke="#3366FF" strokeWidth={1.75} />
         </span>
