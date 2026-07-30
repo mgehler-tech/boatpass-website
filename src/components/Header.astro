@@ -12,8 +12,8 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
-const boatSchoolUrl = de ? '/bootsfahrschulen/' : '/en/boat-schools/';
 const de = lang === 'de';
+const boatSchoolUrl = de ? '/bootsfahrschulen/' : '/en/boat-schools/';
 
 /**
  * Mega-Menü-Struktur. Zwei Spalten mit Gruppenüberschrift plus eine Promo-Kachel.

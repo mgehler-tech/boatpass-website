@@ -1,0 +1,251 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Icon from '../../../components/Icon.astro';
+import { cities, mapsSearchUrl } from '../../../data/boat-schools';
+import type { BoatSchoolCity } from '../../../data/boat-schools';
+
+export function getStaticPaths() {
+  return cities.map(city => ({ params: { city: city.slug }, props: { city } }));
+}
+
+interface Props { city: BoatSchoolCity }
+
+const { city } = Astro.props;
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+const licenceTypes = city.variant === 'coastal'
+  ? [{ name: 'SBF Coastal', href: '/en/sbf-coastal/', desc: 'Required for coastal waters (North and Baltic Sea).' }]
+  : city.variant === 'inland'
+    ? [{ name: 'SBF Inland', href: '/en/sbf-inland/', desc: 'Required for rivers, canals and lakes above 15 HP.' }]
+    : [
+        { name: 'SBF Inland', href: '/en/sbf-inland/', desc: 'Required for rivers, canals and lakes above 15 HP.' },
+        { name: 'SBF Coastal', href: '/en/sbf-coastal/', desc: 'Required for coastal waters (North and Baltic Sea).' },
+      ];
+
+const truncatedDesc = city.intro.en.length > 155 ? city.intro.en.slice(0, 152) + '...' : city.intro.en;
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boatpass.de/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Boat Schools", "item": "https://boatpass.de/en/boat-schools/" },
+    { "@type": "ListItem", "position": 3, "name": city.name, "item": `https://boatpass.de/en/boat-schools/${city.slug}/` },
+  ],
+};
+
+const faqSchema = city.faq.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": city.faq.map(f => ({
+    "@type": "Question",
+    "name": f.q.en,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a.en },
+  })),
+} : null;
+---
+
+<BaseLayout
+  title={`Boat Schools in ${city.name} | German Boat Licence`}
+  description={truncatedDesc}
+  lang="en"
+  altUrl={`https://boatpass.de/bootsfahrschulen/${city.slug}/`}
+>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {faqSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
+
+  <!-- Hero -->
+  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
+    <div style="max-width:720px; margin:0 auto;">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
+        {city.state}
+      </div>
+      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
+        Boat Schools in {city.name}
+      </h1>
+      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto;">
+        {city.intro.en}
+      </p>
+    </div>
+  </div>
+
+  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+
+    <!-- Waterways -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:16px;">Waterways in {city.name}</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        {city.name} offers access to: <strong>{city.waterways.en}</strong>.
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
+        {licenceTypes.map(l => (
+          <a href={l.href} class="info-card" style="text-decoration:none;">
+            <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">{l.name}</div>
+            <div style="font-size:15px; color:#6B7280; line-height:1.65;">{l.desc}</div>
+            <div style="font-size:14px; font-weight:700; color:#3366FF; margin-top:10px;">View details &rarr;</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <!-- Find a boat school - Google Maps CTA -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:16px;">Find a Boat School</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        Use Google Maps to browse boat schools in {city.name}. Check reviews, opening hours and contact information to find the right school for your needs.
+      </p>
+      <a href={mapsSearchUrl(city.mapsQuery)} target="_blank" rel="noopener noreferrer" class="maps-cta">
+        <div style="flex:1; min-width:0;">
+          <div style="font-size:12px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Google Maps</div>
+          <div style="font-size:21px; font-weight:900; color:white; letter-spacing:-0.5px; line-height:1.2;">View boat schools in {city.name}</div>
+          <div style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.5; margin-top:6px;">Browse schools on the map, compare reviews and find directions.</div>
+        </div>
+        <span style="flex-shrink:0; background:white; color:#3366FF; font-weight:800; font-size:15px; padding:12px 22px; border-radius:12px; white-space:nowrap;">Open Map &rarr;</span>
+      </a>
+    </section>
+
+    <!-- Exams -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:16px;">Exams in {city.name}</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        {city.examInfo.en}
+      </p>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
+        <div class="info-card">
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Theory exam</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;">30 multiple-choice questions (SBF Inland: 45 min, SBF Coastal: 60 min incl. navigation).</div>
+        </div>
+        <div class="info-card">
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Practical exam</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;">On-water manoeuvres: docking, turning, stopping and man-overboard. Plus knots.</div>
+        </div>
+        <div class="info-card">
+          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Exam bodies</div>
+          <div style="font-size:15px; color:#6B7280; line-height:1.65;">Exams are administered by the DMYV (German Motor Yacht Association) or the DSV (German Sailing Association).</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Study with BoatPass CTA -->
+    <section style="margin-bottom:48px;">
+      <h2 class="content-section-title" style="margin-bottom:16px;">Study Theory with BoatPass</h2>
+      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+        You do not need a boat school for the theory exam. The official ELWIS question catalogue is freely available, and BoatPass puts it in your pocket: exam simulation, mistake training and progress tracking for just 9.99 euros per catalogue.
+      </p>
+      <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px; margin-bottom:20px;">
+        <span style="flex-shrink:0; margin-top:2px;"><Icon name="book" size={22} stroke="#3366FF" strokeWidth={1.75} /></span>
+        <div>
+          <div style="font-size:14px; font-weight:700; color:#1A1F36; margin-bottom:6px;">The smart split</div>
+          <p style="font-size:15px; color:#6B7280; line-height:1.65; margin:0;">
+            Study theory independently with <strong>BoatPass</strong> (from 9.99 euros), then book only the practical lessons at a <strong>boat school in {city.name}</strong>. This is the most cost-effective way to get your German boat licence.
+          </p>
+        </div>
+      </div>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
+        &#9654;&nbsp;Free on the Play Store
+      </a>
+    </section>
+
+    <!-- FAQ -->
+    {city.faq.length > 0 && (
+      <section style="margin-bottom:48px;">
+        <h2 class="content-section-title" style="margin-bottom:20px;">Frequently asked questions about {city.name}</h2>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          {city.faq.map(f => (
+            <div class="faq-item">
+              <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q.en}</h3>
+              <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a.en}</div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
+    <!-- Internal links -->
+    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.1);">
+      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Further reading</h3>
+      <div class="related-links">
+        <a href="/en/boat-schools/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; All boat school cities</a>
+        <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Learn SBF Inland with BoatPass</a>
+        <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Learn SBF Coastal with BoatPass</a>
+        <a href="/en/sbf-costs/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; What does the boat licence cost?</a>
+        <a href="/en/sbf-exam/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF exam: how theory and practice work</a>
+        <a href="/en/licenses/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; All German boating licences at a glance</a>
+      </div>
+    </section>
+
+  </div>
+
+</BaseLayout>
+
+<style>
+  .maps-cta {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: linear-gradient(135deg, #1A1F36, #3366FF);
+    border-radius: 18px;
+    padding: 24px 26px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(51,102,255,0.18);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .maps-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 36px rgba(51,102,255,0.25);
+  }
+
+  .info-card {
+    background: white;
+    border: 1px solid rgba(51,102,255,0.12);
+    border-radius: 16px;
+    padding: 22px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+  a.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 36px rgba(26,31,54,0.10);
+    border-color: rgba(51,102,255,0.28);
+  }
+
+  .faq-item {
+    background: white;
+    border: 1px solid rgba(51,102,255,0.08);
+    border-radius: 16px;
+    padding: 22px;
+  }
+
+  @media (max-width: 640px) {
+    .maps-cta {
+      flex-direction: column;
+      text-align: center;
+    }
+    .maps-cta span:last-child {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  html.dark .info-card {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.14) !important;
+  }
+  html.dark a.info-card:hover {
+    border-color: rgba(90, 120, 255, 0.32) !important;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3) !important;
+  }
+  html.dark .faq-item {
+    background: #181E2E !important;
+    border-color: rgba(90, 120, 255, 0.14) !important;
+  }
+  html.dark .info-card div:first-child,
+  html.dark .faq-item h3 {
+    color: #E2E8F0 !important;
+  }
+  html.dark .info-card div:nth-child(2),
+  html.dark .faq-item div {
+    color: #94A3B8 !important;
+  }
+</style>
