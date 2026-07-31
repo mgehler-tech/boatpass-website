@@ -319,22 +319,41 @@ const faqSchema = city.faq.length > 0 ? {
   .school-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
   }
+  /* Website and phone links on each school card as standalone, min. 44px tall
+     tap targets (WCAG 2.5.5). Previously they were thin 14px text lines with no
+     padding (~20px tall) – too small and easy to mis-tap on mobile. Rendered as
+     subtly outlined chip buttons, the card's two primary actions also stand out
+     more clearly. Brand blue (#3366FF) and the existing grey (#4B5563) unchanged. */
   .school-link {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 8px 16px;
     font-size: 14px;
     font-weight: 600;
     color: #3366FF;
     text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid rgba(51,102,255,0.16);
+    background: rgba(51,102,255,0.04);
+    transition: background-color 0.15s ease, border-color 0.15s ease;
   }
   .school-link:hover {
-    text-decoration: underline;
+    background: rgba(51,102,255,0.09);
+    border-color: rgba(51,102,255,0.28);
   }
   .school-link-secondary {
     color: #4B5563;
+    border-color: rgba(26,31,54,0.12);
+    background: rgba(26,31,54,0.02);
+  }
+  .school-link-secondary:hover {
+    background: rgba(26,31,54,0.05);
+    border-color: rgba(26,31,54,0.20);
   }
 
   @media (max-width: 640px) {
@@ -392,8 +411,20 @@ const faqSchema = city.faq.length > 0 ? {
   }
   html.dark .school-link {
     color: #7B9CFF !important;
+    border-color: rgba(90,120,255,0.22) !important;
+    background: rgba(90,120,255,0.08) !important;
+  }
+  html.dark .school-link:hover {
+    background: rgba(90,120,255,0.14) !important;
+    border-color: rgba(90,120,255,0.34) !important;
   }
   html.dark .school-link-secondary {
     color: #94A3B8 !important;
+    border-color: rgba(148,163,184,0.20) !important;
+    background: rgba(148,163,184,0.06) !important;
+  }
+  html.dark .school-link-secondary:hover {
+    background: rgba(148,163,184,0.10) !important;
+    border-color: rgba(148,163,184,0.30) !important;
   }
 </style>
