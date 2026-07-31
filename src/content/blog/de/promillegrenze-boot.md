@@ -14,7 +14,7 @@ faq:
   - question: "Ab wie viel Promille gilt man auf dem Boot als absolut fahruntüchtig?"
     answer: "Nach ständiger Rechtsprechung des BGH liegt die absolute Fahruntüchtigkeit bei 1,6 Promille – unabhängig davon, ob äußere Ausfallerscheinungen erkennbar sind. Bereits darunter kann relative Fahruntüchtigkeit vorliegen, wenn zusätzliche Anzeichen wie eine unsichere Fahrweise oder ein Unfall hinzukommen."
   - question: "Welche Konsequenzen drohen bei Trunkenheit als Schiffsführer?"
-    answer: "Wer fahruntüchtig ein Boot führt und andere gefährdet, macht sich nach § 315a StGB strafbar – bei fahrlässiger Begehung droht Freiheitsstrafe bis zu zwei Jahren oder Geldstrafe. Hinzu kommen Bußgelder, der mögliche Entzug des Sportbootführerscheins (beim SBF See über das BSH) und der Verlust des Versicherungsschutzes."
+    answer: "Wer fahruntüchtig ein Boot führt und andere gefährdet, macht sich nach § 315a StGB strafbar – bei fahrlässiger Begehung droht Freiheitsstrafe bis zu zwei Jahren oder Geldstrafe. Hinzu kommen Bußgelder, der mögliche Entzug des Sportbootführerscheins (seit der SpFV-Reform einheitlich durch die Generaldirektion Wasserstraßen und Schifffahrt, GDWS) und der Verlust des Versicherungsschutzes."
   - question: "Dürfen Mitfahrer auf dem Boot Alkohol trinken?"
     answer: "Passagiere, die nicht das Boot führen, sind in der Regel an keine Promillegrenze gebunden. Wer aber später das Steuer übernehmen soll oder spontan die Schiffsführung übernimmt, wird rechtlich zum Schiffsführer und muss nüchtern bleiben."
 ---
@@ -65,7 +65,7 @@ Wer beeinträchtigt ein Boot führt, riskiert mehreres gleichzeitig:
 
 **Strafrecht:** Bei einer Verurteilung nach § 315a StGB drohen Geldstrafe oder Freiheitsstrafe, je nach Schwere des Falles.
 
-**Führerscheinrechtliche Konsequenzen:** Ein Strafurteil wegen Trunkenheit beim Bootsführen kann auch zum **Entzug des Sportbootführerscheins** führen. Zuständig für den SBF See ist das **Bundesamt für Seeschifffahrt und Hydrographie (BSH)**. Darüber hinaus kann die Fahrerlaubnisbehörde bei begründeten Eignungszweifeln – ausgelöst durch ein Trunkenheitsdelikt auf dem Wasser – auch den **Kfz-Führerschein** überprüfen und gegebenenfalls entziehen.
+**Führerscheinrechtliche Konsequenzen:** Ein Strafurteil wegen Trunkenheit beim Bootsführen kann auch zum **Entzug des Sportbootführerscheins** führen. Seit der Zusammenlegung der See- und Binnen-Verordnung entscheidet darüber für beide Geltungsbereiche einheitlich die **Generaldirektion Wasserstraßen und Schifffahrt (GDWS)**. Darüber hinaus kann die Fahrerlaubnisbehörde bei begründeten Eignungszweifeln – ausgelöst durch ein Trunkenheitsdelikt auf dem Wasser – auch den **Kfz-Führerschein** überprüfen und gegebenenfalls entziehen.
 
 **Versicherung:** Die meisten **Haftpflicht- und Kaskoversicherungen für Sportboote** enthalten Klauseln, die Leistungen bei alkohol- oder drogenbedingten Unfällen ausschließen oder erheblich kürzen. Wer alkoholisiert einen Schaden verursacht, bleibt im schlimmsten Fall auf dem gesamten Schaden sitzen – und haftet dem Geschädigten gegenüber persönlich. Das gilt auch für Schäden an fremden Booten oder Anlagen.
 

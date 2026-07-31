@@ -56,7 +56,7 @@ Operating a boat while impaired exposes you to several simultaneous risks:
 
 **Criminal prosecution:** A conviction under § 315a StGB can result in fines or imprisonment, depending on the severity.
 
-**License consequences:** A conviction for drunk boating can lead to the **revocation of the Sportbootführerschein (SBF)**. For the SBF See, the responsible authority is the **Federal Maritime and Hydrographic Agency (BSH – Bundesamt für Seeschifffahrt und Hydrographie)**. Beyond that, the driver licensing authority may review – and potentially revoke – your **car driving license** if it concludes that a boating-related alcohol offense raises doubts about your general suitability as a driver.
+**License consequences:** A conviction for drunk boating can lead to the **revocation of the Sportbootführerschein (SBF)**. Since the inland and coastal license ordinances were merged into a single ordinance, the **Generaldirektion Wasserstraßen und Schifffahrt (GDWS)**, Germany's central inland waterways authority, decides on revocation for both the SBF Binnen and SBF See. Beyond that, the driver licensing authority may review – and potentially revoke – your **car driving license** if it concludes that a boating-related alcohol offense raises doubts about your general suitability as a driver.
 
 **Insurance consequences:** Most German **third-party liability and hull insurance policies for recreational boats** include clauses that exclude or severely reduce payouts if the skipper was under the influence at the time of an accident. In the worst case, you receive no compensation at all and remain personally liable for all damage caused to other boats, infrastructure, or third parties.
 
