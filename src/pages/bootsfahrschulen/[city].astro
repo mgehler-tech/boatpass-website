@@ -348,22 +348,42 @@ function licenceLinks(variant: 'coastal' | 'inland' | 'both'): { href: string; l
   .school-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
   }
+  /* Website- und Telefon-Link jeder Fahrschul-Karte als eigenständige, mind.
+     44px hohe Tap-Fläche (WCAG 2.5.5). Vorher waren es dünne 14px-Textzeilen
+     ohne Innenabstand (~20px hoch) – auf dem Handy zu klein und leicht zu
+     verfehlen. Als dezent umrandete Chip-Buttons treten die beiden Haupt-
+     Aktionen der Karte zugleich klarer hervor. Marken-Blau (#3366FF) und der
+     bestehende Grauton (#4B5563) bleiben unverändert. */
   .school-link {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 8px 16px;
     font-size: 14px;
     font-weight: 600;
     color: #3366FF;
     text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid rgba(51,102,255,0.16);
+    background: rgba(51,102,255,0.04);
+    transition: background-color 0.15s ease, border-color 0.15s ease;
   }
   .school-link:hover {
-    text-decoration: underline;
+    background: rgba(51,102,255,0.09);
+    border-color: rgba(51,102,255,0.28);
   }
   .school-link-secondary {
     color: #4B5563;
+    border-color: rgba(26,31,54,0.12);
+    background: rgba(26,31,54,0.02);
+  }
+  .school-link-secondary:hover {
+    background: rgba(26,31,54,0.05);
+    border-color: rgba(26,31,54,0.20);
   }
 
   @media (max-width: 640px) {
@@ -414,8 +434,20 @@ function licenceLinks(variant: 'coastal' | 'inland' | 'both'): { href: string; l
   }
   html.dark .school-link {
     color: #7B9CFF !important;
+    border-color: rgba(90,120,255,0.22) !important;
+    background: rgba(90,120,255,0.08) !important;
+  }
+  html.dark .school-link:hover {
+    background: rgba(90,120,255,0.14) !important;
+    border-color: rgba(90,120,255,0.34) !important;
   }
   html.dark .school-link-secondary {
     color: #94A3B8 !important;
+    border-color: rgba(148,163,184,0.20) !important;
+    background: rgba(148,163,184,0.06) !important;
+  }
+  html.dark .school-link-secondary:hover {
+    background: rgba(148,163,184,0.10) !important;
+    border-color: rgba(148,163,184,0.30) !important;
   }
 </style>
