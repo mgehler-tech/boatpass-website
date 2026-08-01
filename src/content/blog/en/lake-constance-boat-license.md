@@ -8,6 +8,13 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "bodensee-schifferpatent"
+faq:
+  - question: "Is the SBF Binnen or SBF See enough for Lake Constance?"
+    answer: "No. Neither the SBF Binnen nor the SBF See alone entitles you to operate a license-required motorboat on Lake Constance. The lake falls under the Internationale Schifffahrtsordnung Bodensee (ISB), which requires its own license – the Bodensee-Schifferpatent (BSP)."
+  - question: "What is the Bodensee-Schifferpatent?"
+    answer: "The Bodensee-Schifferpatent (BSP) is a standalone boating license valid only on Lake Constance. It comes in several categories: A for motorboats, B for motorboats with towing operations, and C for sailboats with an auxiliary engine. For most recreational boaters, Category A is the relevant one."
+  - question: "Do I have to start from scratch on the BSP if I already hold an SBF?"
+    answer: "Not from zero: holders of the SBF Binnen or SBF See already bring the nautical fundamentals with them and, depending on the authority, may benefit from simplified exam requirements. What mainly remains to be learned are the Lake Constance-specific ISB rules. Check with the relevant authority before you register."
 ---
 
 Lake Constance (Bodensee) is one of Europe's most beautiful lakes – and a special case when it comes to boating licenses. If you want to drive a motorboat on this large Alpine lake, you will quickly come across a term that surprises many SBF holders: the **Bodensee-Schifferpatent (BSP)**. What does it mean, and what does it imply for you if you already hold a German boating license?

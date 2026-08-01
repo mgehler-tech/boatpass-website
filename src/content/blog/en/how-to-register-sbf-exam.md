@@ -8,6 +8,15 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-pruefung-anmelden"
+faq:
+  - question: "Who administers the SBF exam?"
+    answer: "In Germany, the SBF exams are organized by the Deutscher Segler-Verband (DSV) and the Deutscher Motoryachtverband (DMYV). Both are appointed by the Federal Ministry for Digital and Transport (BMDV) to administer the recreational boating license exams; the exams themselves are identical in content."
+  - question: "Which documents do I need to register for the SBF exam?"
+    answer: "Usually a completed application form from the responsible association (DSV or DMYV), a biometric passport photo, a medical certificate of vision and hearing, a copy of a valid ID card or passport, and, if you have one, a copy of a car driving license. Depending on the association, an extract from the driving aptitude register may also be required."
+  - question: "Can I register for the SBF exam without a boating school?"
+    answer: "Yes. You can register as a direct applicant without a boating school, straight through a DSV or DMYV examination board. This is cheaper, but you have to arrange the date, documents and correct registration yourself – a sensible route if you studied entirely self-taught with an app and books."
+  - question: "From what age can I take the SBF Binnen and SBF See?"
+    answer: "Both the SBF Binnen and the SBF See are available from age 16. You can often take the exam shortly before reaching that minimum age – the license is then issued to you on your birthday."
 howTo:
   name: "Register for the SBF exam"
   description: "How to register step by step for the German boating license (SBF) exam with DSV or DMYV."

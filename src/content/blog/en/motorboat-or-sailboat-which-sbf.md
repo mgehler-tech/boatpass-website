@@ -8,6 +8,13 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "motorboot-oder-segelboot-welcher-sbf"
+faq:
+  - question: "Does the SBF Inland distinguish between engine and sail?"
+    answer: "Yes. The SBF Inland has two separate scopes: under engine and under sail. The sailing scope adds 47 additional sailing questions and its own practical exam. The minimum age is 16 under engine, but already 14 under sail."
+  - question: "Does the SBF Coastal cover engine and sail together?"
+    answer: "Yes. The SBF Coastal has no such split – the license covers motorboats and sailboats on sea waterways together. The question catalog contains 285 questions with no separate sailing block, and the minimum age is uniformly 16. You should still build up practical sailing experience deliberately."
+  - question: "Is it worth studying engine and sail together?"
+    answer: "If you're not ready to commit, or you want to run both anyway, preparing for both together saves you a later add-on exam along with a new registration and fee, especially since the base questions are identical. If you're certain you'll only run a motorboat, you can skip the 47 sailing questions and the sailing practical."
 ---
 
 Before you start preparing for the Sportbootführerschein, Germany's sport boat license, there's a basic question to settle: do you mainly want to run a motorboat, do you want to sail, or both? That choice affects more than just the license itself. It shapes how much you have to study, what the practical exam looks like, and how long it takes until you're exam-ready. This article sorts out the differences so you can plan with a clear picture.

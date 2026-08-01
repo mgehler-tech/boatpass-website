@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "promillegrenze-boot"
+faq:
+  - question: "Does the 0.5 per mille car limit apply on a boat?"
+    answer: "No. The Straßenverkehrsgesetz (StVG) with its 0.5 per mille threshold does not apply to recreational boats. On federal inland waterways the BinSchStrO applies, on coastal shipping lanes the SeeSchStrO, and on international waters the COLREGs – they require the skipper to be fit to operate the vessel at all times, but they don't contain a directly comparable fixed BAC threshold for fines."
+  - question: "At what blood alcohol level is a skipper considered absolutely incapable of operating a vessel?"
+    answer: "Under long-standing case law from Germany's Federal Court of Justice (BGH), absolute incapacity is set at 1.6 per mille – regardless of whether any external signs of impairment are visible. Even below that level, relative incapacity can apply if additional signs are present, such as unsafe handling of the vessel or an accident."
+  - question: "What consequences does a skipper face for operating a boat while drunk?"
+    answer: "Anyone who operates a boat while incapable and creates a danger for others commits a criminal offense under § 315a StGB – negligent conduct is punishable by up to two years imprisonment or a fine. Beyond that, you risk administrative fines, revocation of the Sportbootführerschein (since the inland and coastal ordinances were merged, the GDWS decides on revocation for both), and loss of insurance coverage."
+  - question: "Are passengers on a boat allowed to drink alcohol?"
+    answer: "Passengers who aren't operating the boat are generally not bound to any specific BAC limit. But anyone scheduled to take the helm later, or who spontaneously takes over, becomes the skipper in a legal sense and must stay sober."
 ---
 
 Many recreational boaters assume the same alcohol rules apply on the water as on the road – meaning 0.5 per mille (0.05% BAC) is the magic threshold, and anything below is fine. That assumption is dangerously wrong. The legal framework for skippers on German waterways is structured differently from road traffic law, and in some respects it is stricter than people expect. Whether you're preparing for your [Sportbootführerschein](/en/sbf-coastal/) or already out on the water, knowing the rules can save you from serious consequences.

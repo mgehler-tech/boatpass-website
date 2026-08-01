@@ -8,6 +8,17 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "ubi-vs-src-funkschein"
+faq:
+  - question: "What's the difference between UBI and SRC?"
+    answer: "The key difference is the area of operation: the UBI (VHF radio certificate for inland shipping) applies on inland waterways, while the SRC (Short Range Certificate) applies to coastal waters (sea area A1). The two certificates are not mutually creditable."
+  - question: "Do I need a radio certificate for my boat at all?"
+    answer: "Yes, as soon as you operate a VHF radio installation on board. The Sportbootführerschein alone is not enough: you need the UBI for inland waters and the SRC for coastal radio. Both are independent qualifications, separate from the SBF."
+  - question: "How does the UBI exam work, and what does it cost?"
+    answer: "The UBI theory exam consists of 22 multiple-choice questions in 60 minutes (at least 17 correct), plus a practical component covering ATIS setup, equipment knowledge, and distress messages. The official total fee is roughly 109 euros according to the DSV."
+  - question: "How does the SRC exam work, and what does it cost?"
+    answer: "The SRC theory exam consists of 24 multiple-choice questions in 30 minutes (at least 19 correct), plus a practical component on a DSC radio and an English-language component. The official exam fee through DSV/DMYV is roughly 128 euros."
+  - question: "Do I need both radio certificates – UBI and SRC?"
+    answer: "That depends on your area of operation. The UBI is enough if you only boat on inland waters, and the SRC if you only operate along the coast. If you cover both areas, you need both certificates – in that case it pays to get the SRC first, since it shortens the UBI exam afterward."
 ---
 
 The moment you have a VHF radio on board, the Sportbootführerschein (SBF) alone is not enough. Operating a VHF radio station in German waters requires its own certificate, and this is exactly where many aspiring skippers get confused between two abbreviations: **UBI** and **SRC**. They sound similar but cover completely different areas of operation. This article explains what each certificate actually is, who needs which one, and how to prepare.
