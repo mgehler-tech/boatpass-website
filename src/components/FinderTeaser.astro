@@ -107,10 +107,17 @@ const t = {
     margin-bottom: 16px;
   }
 
+  /* Karten-Überschrift flüssig statt hartkodiert: skaliert sanft von 26px bis
+     32px mit (clamp), sodass der abrupte Font-Sprung am 768px-Breakpoint
+     entfällt und die Größe auch dazwischen (Tablet) sauber mitwächst. Die
+     Laufweite ist in em (statt fester -1.5px) angegeben und lockert damit bei
+     kleinerer Schrift proportional – dieselbe Behandlung wie die bereits
+     zentralisierten .section-display-title / .content-section-title. Corporate
+     Design (Navy-Farbe, Font-Weight 900) bleibt unberührt. */
   .finder-title {
-    font-size: 32px;
+    font-size: clamp(1.625rem, 4.5vw, 2rem); /* 26px … 32px */
     font-weight: 900;
-    letter-spacing: -1.5px;
+    letter-spacing: -0.04em;
     color: #1A1F36;
     line-height: 1.15;
     margin-bottom: 14px;
@@ -200,10 +207,6 @@ const t = {
       text-align: left;
       padding: 36px 24px;
       gap: 28px;
-    }
-    .finder-title {
-      font-size: 26px;
-      letter-spacing: -1px;
     }
     .finder-title br {
       display: none;

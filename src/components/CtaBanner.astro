@@ -60,10 +60,16 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     max-width: 600px;
   }
 
+  /* Banner-Überschrift flüssig statt hartkodiert: skaliert sanft von 26px bis
+     32px mit (clamp), sodass der abrupte Font-Sprung am 768px-Breakpoint
+     entfällt und die Größe auch auf Tablets sauber mitwächst. Laufweite in em
+     (statt fester -1.5px), damit sie bei kleinerer Schrift proportional lockerer
+     wird – dieselbe Behandlung wie die zentralisierten Titel-Klassen. Corporate
+     Design (Weiß, Font-Weight 900) bleibt unberührt. */
   .cta-banner-title {
-    font-size: 32px;
+    font-size: clamp(1.625rem, 4.5vw, 2rem); /* 26px … 32px */
     font-weight: 900;
-    letter-spacing: -1.5px;
+    letter-spacing: -0.04em;
     color: #ffffff;
     line-height: 1.15;
     margin-bottom: 12px;
@@ -109,10 +115,6 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     }
     .cta-banner-text {
       text-align: center;
-    }
-    .cta-banner-title {
-      font-size: 26px;
-      letter-spacing: -1px;
     }
     .cta-banner-subtitle {
       font-size: 15px;
