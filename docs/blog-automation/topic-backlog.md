@@ -36,7 +36,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Sportbootführerschein-Reform 2026: Was sich ändert und was bleibt (2026-07-25: sportbootfuehrerschein-reform-2026 / recreational-boating-license-reform-2026)
 - [x] Seewetterbericht und Wetterwarnungen richtig nutzen – Wetterdienste für Skipper (2026-07-29: seewetterbericht-wetterwarnungen-wetterdienste-skipper / marine-weather-report-warnings-weather-services-for-skippers)
 - [x] Bußgelder und Verstöße auf dem Wasser – die teuersten Fehler mit Konsequenzen (2026-07-31: bussgelder-verstoesse-wasser / fines-violations-on-the-water)
-- [ ] Verhalten nach einem Bootsunfall – Pflichten, Meldung, Beweissicherung
+- [x] Verhalten nach einem Bootsunfall – Pflichten, Meldung, Beweissicherung (2026-08-01: verhalten-nach-bootsunfall-pflichten-meldung / conduct-after-a-boating-accident-duties-and-reporting)
 - [ ] Kinder und Jugendliche am Steuer – ab wann dürfen sie ein Boot führen?
 - [ ] Boot startklar machen im Frühjahr – Checkliste zum Saisonstart
 - [ ] Peilung und Kollisionskurs erkennen – CPA einfach erklärt für Sportbootfahrer
