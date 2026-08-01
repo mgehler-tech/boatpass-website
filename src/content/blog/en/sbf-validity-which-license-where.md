@@ -7,6 +7,17 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-gueltigkeit-welcher-schein-wo"
+faq:
+  - question: "Where is SBF Inland valid, and where is SBF Coastal valid?"
+    answer: "SBF Inland is valid on inland waterways (rivers, canals, and lakes inland), while SBF Coastal is valid on maritime waterways (coastal waters on the North and Baltic Sea, plus the lower reaches of certain rivers). The exact boundary is set by section 1 of the Maritime Traffic Regulations (Seeschifffahrtsstraßen-Ordnung, SeeSchStrO)."
+  - question: "Up to where on the Elbe do I need the SBF Coastal?"
+    answer: "From the mouth of the Elbe up to the Port of Hamburg, you need the SBF Coastal (the boundary is at Elbe km 638.98 on the right bank and km 633.35 on the left bank). In the Port of Hamburg itself, both licenses are accepted; above it, the SBF Inland applies."
+  - question: "Is the German boating license valid abroad?"
+    answer: "Yes. Since 2018 the SBF has been issued in credit-card format with the ICC (International Certificate of Competence) under UN Resolution No. 40 on the back. The ICC is recognized by over 30 countries, including Croatia, Greece, Italy, France, Spain, and the Netherlands."
+  - question: "How long is the SBF valid?"
+    answer: "The German SBF with ICC is valid for life – no renewal or re-issue needed. That's an advantage over the licenses of some other countries, which have to be renewed regularly."
+  - question: "When do I need both licenses?"
+    answer: "When you want to navigate both coastal and inland waters. The combined exam saves around €100 in exam fees, and the 72 basic questions are identical for both licenses."
 ---
 
 One of the most common questions around the German boating license: where exactly is my license valid? The answer isn't always intuitive – especially in the river estuaries on the coast and abroad there are pitfalls. Here's the complete overview. If you just want to quickly find out which license you need for your plans, see our [licenses overview](/en/licenses/).

@@ -8,6 +8,15 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "schallsignale-sbf-erklaert"
+faq:
+  - question: "How long is a short blast and a prolonged blast?"
+    answer: "A short blast lasts about one second, and a prolonged blast lasts about four to six seconds. All sound signals for both SBF Coastal and SBF Inland are built from these two building blocks."
+  - question: "What does a short blast mean on the boating license exam?"
+    answer: "A short blast means \"I am altering my course to starboard,\" two short blasts mean \"to port,\" and three short blasts mean \"I am operating astern propulsion.\" These basic meanings apply at sea (COLREGs) as well as on inland waters."
+  - question: "What's the difference between five short blasts at sea and on inland waters?"
+    answer: "At sea, at least five short blasts is the doubt/warning signal (\"I do not understand your intentions / risk of collision\"). On inland waterways, the same blast sequence instead means \"I cannot be overtaken.\" Differences like this between Coastal and Inland are the most common exam mistakes."
+  - question: "How often must sound signals be given in restricted visibility?"
+    answer: "In restricted visibility caused by fog, rain, or snow, these signals are mandatory and must be given at least every two minutes. A power-driven vessel making way through the water gives one prolonged blast."
 ---
 
 Sound signals are a perennial topic in the SBF theory exam – and a popular source of mistakes. The reason: on the maritime waterways (COLREGs) the same blast sequences sometimes mean something different than on the inland waterways. This article sorts the most important signals cleanly into **Coastal** and **Inland** – and shows where the mix-up traps lie.

@@ -8,6 +8,15 @@ readingTime: 6
 lang: en
 author: "Marius Gehler"
 altSlug: "sportbootfuehrerschein-voraussetzungen"
+faq:
+  - question: "What's the minimum age for the boating license?"
+    answer: "The SBF Inland under engine and the SBF Coastal are available from age 16, while the SBF Inland under sail is available from age 14. You can register for the exam as early as 15 years and 9 months, but you must have reached the minimum age by the time the license is handed over."
+  - question: "Do I need a medical certificate for the boating license?"
+    answer: "Yes. You need a medical certificate for boating license applicants confirming your eyesight, color vision and hearing. A visit to your GP is enough, the certificate is valid for 12 months, and it costs between about €30 and €65 depending on the doctor."
+  - question: "What documents do I need to register for the SBF exam?"
+    answer: "You need the application for admission to the exam (a form from the DMYV or DSV), the completed medical certificate, a biometric passport photo (35 × 45 mm), a copy of your car driving license or a police certificate of good conduct, and the exam fee. Minors also need a declaration of consent from a legal guardian."
+  - question: "Do I have to attend a course for the boating license?"
+    answer: "No. Proof of course attendance isn't a requirement. Registration through the DMYV or DSV examination board is open to anyone who meets the formal requirements – whether you took a course or prepared with an app."
 howTo:
   name: "How to register for the SBF exam"
   description: "Five steps from finding an exam date to receiving your registration confirmation from the DMYV or DSV examination board."

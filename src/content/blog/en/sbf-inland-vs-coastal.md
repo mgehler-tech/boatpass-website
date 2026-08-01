@@ -8,6 +8,15 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-binnen-vs-see"
+faq:
+  - question: "What's the difference between SBF Inland and SBF Coastal?"
+    answer: "SBF Inland is valid on German inland waterways – rivers, canals, and lakes. SBF Coastal is valid on coastal waterways, meaning the North Sea and Baltic coasts as well as international coastal waters. The two licenses do not substitute for each other."
+  - question: "Is the SBF Coastal exam harder than the SBF Inland exam?"
+    answer: "Yes. SBF Coastal includes an additional written navigation task: you have to plot courses on a nautical chart, calculate bearings, and work with a compass. That makes the SBF Coastal exam more demanding than the SBF Inland theory alone."
+  - question: "Can I combine SBF Inland and SBF Coastal?"
+    answer: "Yes. With a combined exam taken on the same day, you pay only about €179 in exam fees instead of €279 separately – a saving of around €100. The 72 base questions are identical for both licenses, so you only need to learn them once."
+  - question: "Which license should I get first?"
+    answer: "SBF Inland is enough for inland waters in Germany, while coastal holidays require SBF Coastal. If you want both long-term, most boating schools recommend starting with the harder SBF Coastal exam; SBF Inland becomes noticeably easier afterward."
 ---
 
 When you start researching the German boating license, you'll quickly hit the key question: inland (Binnen) or coastal (See)? Both licenses cover motorboats – but on different waters. Here's everything you need to decide.

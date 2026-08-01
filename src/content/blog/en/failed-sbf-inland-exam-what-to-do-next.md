@@ -8,6 +8,13 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-binnen-pruefung-nicht-bestanden"
+faq:
+  - question: "Can I retake the SBF Inland exam if I failed?"
+    answer: "Yes. There's no legal cap on the number of attempts for the SBF Inland – you can retake the part you failed as many times as needed. The retake happens at a later date, you have to register again with the examination board, and you pay a separate, usually lower fee for it."
+  - question: "Do I have to retake the whole SBF Inland exam or just the part I failed?"
+    answer: "Generally just the part you failed. For the SBF Inland, the theory exam (30 multiple-choice questions) and the practical exam are graded independently. However, a part you've already passed only stays valid for a limited time – the deadline is set by your examination board, so you should complete the missing part promptly."
+  - question: "How should I prepare after failing an attempt?"
+    answer: "First honestly analyze what went wrong, then work specifically on your weak spots instead of aimlessly working through the entire question catalog again. For the theory exam, mistake-tracking and full practice exams under a time limit help; for the practical exam, extra practice of the maneuvers and knots on the water helps."
 howTo:
   name: "What to do after failing the SBF exam"
   description: "Four steps to actively and effectively start preparing for your retake after a failed attempt."

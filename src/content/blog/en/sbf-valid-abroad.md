@@ -8,6 +8,15 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-im-ausland-gueltig"
+faq:
+  - question: "Is my German SBF valid in Croatia, the Netherlands, and Italy?"
+    answer: "Yes. All three countries recognise the German ICC (on the reverse of the credit-card-format SBF). You will generally also need the SRC radio operator's licence, and on Dutch inland waterways a CEVNI endorsement may be required as well."
+  - question: "What is the ICC, and do I need it abroad?"
+    answer: "The ICC (International Certificate of Competence) is based on UNECE Resolution No. 40 and appears on the reverse of the credit-card-format SBF. It is mutually recognised by signatory countries. Older paper licences don't include an ICC and need to be upgraded through the DMYV or DSV."
+  - question: "What documents do I need to charter a boat abroad?"
+    answer: "Generally: your passport or national ID (original), your SBF See with ICC Coastal on the reverse, the SRC (if there's a radio on board), plus documents provided by the charter company such as the boat registration, insurance document, and country-specific paperwork (for example the Vinjeta in Croatia)."
+  - question: "Do I need a radio licence (SRC) abroad?"
+    answer: "Charter yachts almost always have a VHF radio on board. As soon as you operate it, the SRC (Short Range Certificate) is required in Croatia, Italy, and most other European countries."
 ---
 
 You've booked the charter, packed your bags – and now you're wondering whether your German Sportbootführerschein (recreational boat licence) actually holds up abroad. Good news: in most European charter destinations, it does. But each country has its own rules, and the details matter more than you might expect. Here's what you need to know before you cast off.

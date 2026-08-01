@@ -8,6 +8,15 @@ readingTime: 6
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-vorbereitung-wie-lange"
+faq:
+  - question: "How long does it take to prepare for the SBF Inland exam?"
+    answer: "For SBF Inland with a motor vessel, studying 30–45 minutes daily, most candidates are realistically exam-ready in 3–6 weeks. Fast learners with technical background can manage it in 2–3 weeks, while casual learners need 6–8 weeks. This applies to the theory only – the practical exam requires separate on-water practice sessions."
+  - question: "Which SBF topics take the most time to learn?"
+    answer: "Light signals take the most time (about 30–40% of study time), followed by right-of-way rules (about 20–30%), and seamanship and knots, which can only be learned through hands-on practice."
+  - question: "Is it better to study a little every day or for long sessions on weekends?"
+    answer: "Studying a little every day is more effective. The brain consolidates new knowledge primarily during sleep – 30 minutes daily over 30 days produces better retention than the same total study time packed into a few long weekend sessions."
+  - question: "When should I book my SBF exam slot?"
+    answer: "It's best to book your exam date once you've covered roughly 60–70% of the material. A concrete deadline keeps you motivated and stops you from endlessly postponing. DMYV exam slots often fill up 4–8 weeks in advance, especially in spring."
 ---
 
 One of the most common questions before starting SBF prep: how long do I actually need to study? The honest answer depends on your prior knowledge and daily consistency. Here are realistic estimates – without sugarcoating.

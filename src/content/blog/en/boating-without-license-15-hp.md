@@ -8,6 +8,13 @@ readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "boot-fahren-ohne-fuehrerschein-15-ps"
+faq:
+  - question: "Up to how much horsepower can I operate a boat in Germany without a license?"
+    answer: "Germany's 15-HP rule lets you operate motorboats with an output up to and including 15 HP (11.03 kW) without an official Sportbootführerschein from age 16 – on both inland and coastal waterways. Only above 15 HP does the SBF become mandatory. Lake Constance and the Rhine have lower limits."
+  - question: "When do I need the Sportbootführerschein?"
+    answer: "At the latest, once your engine exceeds 15 HP, once you go out on the sea or abroad – Mediterranean charter companies usually require the SBF See, often plus the SRC radio certificate – or in special navigation zones where a license is required regardless of horsepower."
+  - question: "Do I need the SBF Inland or the SBF Coastal?"
+    answer: "It depends on where you're boating: the SBF Inland covers rivers, canals and lakes inland, while the SBF Coastal covers coastal waters and the sea. Many people get both together, since the theory overlaps and the second exam ends up considerably cheaper."
 ---
 
 "Do I even need a boating license?" – that's the first question almost everyone asks. The good news: in Germany you can operate many motorboats without any license at all. The catch: there are exceptions, special rules, and limits that are reached faster than you'd think. Here's exactly what's allowed – and when you need the German Sportbootführerschein (SBF).

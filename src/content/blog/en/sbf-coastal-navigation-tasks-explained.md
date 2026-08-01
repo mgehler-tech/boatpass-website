@@ -8,6 +8,15 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-see-navigationsaufgaben-erklaert"
+faq:
+  - question: "What is the navigation task in the SBF Coastal exam?"
+    answer: "The navigation task is a self-contained part of the SBF Coastal theory exam. In addition to the 30 multiple-choice questions, you work through one navigation task with 9 sub-questions. You have 60 minutes in total for the entire theory exam."
+  - question: "How many navigation questions do I need to answer correctly for the SBF Coastal?"
+    answer: "You need to answer at least 7 of the 9 navigation questions correctly. The navigation task is graded separately – even if you get every other question right, you fail if you solve fewer than 7 of the 9 navigation questions correctly."
+  - question: "Which tools am I allowed to bring to the SBF Coastal navigation task?"
+    answer: "You need a course plotter (navigation triangle) for plotting and reading off courses, dividers for measuring distances, a pencil and eraser, and a simple calculator (not a smartphone) for time and speed calculations."
+  - question: "Which nautical chart is used in the SBF Coastal exam?"
+    answer: "All navigation tasks are based on the training chart D49 – a chart excerpt of the mouths of the Jade, Weser and Elbe. It is the official basis for all 15 navigation tasks in the official ELWIS question catalog."
 howTo:
   name: "How to prepare for the navigation task"
   description: "Four steps to prepare specifically for the SBF Coastal navigation task."

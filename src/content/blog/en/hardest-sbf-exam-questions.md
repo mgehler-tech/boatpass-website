@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "schwierigste-sbf-pruefungsfragen"
+faq:
+  - question: "What's the failure rate for the German boating license?"
+    answer: "According to the DMYV and DSV, the theory exam has an average failure rate of about 10–15%, and the practical exam around 5%. The SBF Coastal runs slightly higher than the SBF Inland because of the navigation task. For comparison: around 39% fail the car driving license theory exam."
+  - question: "What's the hardest question in the SBF Coastal exam?"
+    answer: "The highest error rate (around 39%) belongs to the question about the strong wind warning. The correct answer is wind force 6 and 7 on the Beaufort scale. It's frequently confused with the gale warning, which only applies from wind force 8."
+  - question: "Which questions are hardest in the SBF Inland exam?"
+    answer: "The sailing questions are the hardest: the toughest SBF Inland question concerns trim errors on a dinghy on close-hauled courses, with an error rate of around 48%. Anyone who takes the SBF Inland under engine only doesn't have to answer the 47 sailing questions in the catalog."
+  - question: "Why are certain SBF questions answered incorrectly so often?"
+    answer: "There are three main reasons: the risk of confusion between similar answer options (for example with navigation lights and sound signals), mixing up inland and coastal rules when studying for both licenses at once, and rarely practiced edge-case questions. Targeted mistake training helps avoid these errors."
 ---
 
 Not all questions in the German boating license exam are equally hard. Some questions are answered incorrectly by almost half of all candidates – even though they're manageable with the right preparation. Let's look at which questions have the highest error rates and how you can crack them.

@@ -8,6 +8,15 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "rettungsweste-auftriebsklassen"
+faq:
+  - question: "What buoyancy classes exist for life jackets?"
+    answer: "The European standard EN ISO 12402 defines four classes: 50N (buoyancy aid), 100N (lifejacket for sheltered waters), 150N (all-purpose life jacket), and 275N (performance lifejacket for extreme conditions). The Newton value indicates the buoyancy force – one Newton supports roughly 100 grams against gravity."
+  - question: "Which life jacket is required or recommended for the SBF See?"
+    answer: "For sea passages, the 150N class according to EN ISO 12402 is the established standard. It must carry a CE mark and must be capable of turning an unconscious person from face-down to face-up so the face clears the water. For extreme offshore conditions, the 275N class is the right choice."
+  - question: "What is the difference between a buoyancy aid (50N) and a life jacket?"
+    answer: "A 50N buoyancy aid only supports a conscious, active swimmer and is not officially classed as a life jacket. It will not rotate an unconscious person face-up on its own. Only life jackets from the 150N class upward are designed to keep an unconscious person's face above water."
+  - question: "When do children on board have to wear a life jacket?"
+    answer: "Under the Inland Waterways Traffic Regulations (BinSchStrO), children on the open deck of small craft must wear a suitable life jacket or buoyancy aid. The skipper is responsible for making sure children on board wear a properly fitted jacket."
 ---
 
 A life jacket stowed below deck or left hanging in a locker saves nobody. Yet even boaters who do wear one often picked it without understanding what the label actually means. The buoyancy classes defined by **EN ISO 12402** sound technical, but they determine one crucial thing: whether your jacket will turn an unconscious person face-up in the water – or just keep them floating a few centimetres higher while waves roll over their face.

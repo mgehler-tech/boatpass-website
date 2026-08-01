@@ -8,6 +8,13 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "fkn-pyrotechnik-seenotsignalmittel"
+faq:
+  - question: "What is the FKN competence certificate?"
+    answer: "The Fachkundenachweis (FKN) is a permit under German explosives law (1. SprengV). It entitles you to acquire, possess, transport and, in an emergency, use certain pyrotechnic distress signals. The FKN is not part of the Sportbootführerschein, but it's often offered alongside SBF training."
+  - question: "Which distress signals require the FKN?"
+    answer: "The more powerful category P2 devices, above all the red parachute signal rocket. The red hand flare and smaller category P1 smoke signals, by contrast, can be bought from age 18 without any certificate. Rule of thumb: close range without a certificate (P1), longer range only with the FKN (P2)."
+  - question: "Does the FKN need to be renewed regularly?"
+    answer: "No. Once you pass the exam, the FKN is valid indefinitely – no refresher or renewal is required. You do, however, still need to regularly check the pyrotechnics on board for expiry dates and proper storage."
 ---
 
 Red parachute rockets, hand flares and smoke signals are standard safety gear on board, but you can't simply buy and carry every type. For the more powerful pyrotechnic distress signals, German law requires a **competence certificate, the Fachkundenachweis (FKN)**. This article explains what the FKN is, which signal devices it covers, how you obtain it, and how to store and dispose of pyrotechnics on board correctly.
