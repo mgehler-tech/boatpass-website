@@ -1,5 +1,45 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// FAQPage schema: mirrors the four visible self-service questions further down the page.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "I bought the app but cannot see the questions",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Your purchase is tied to your Google account, not the device. Open the app with the same account and tap „Restore purchases\" in the settings. If that fails, send us the order number from your Play Store confirmation email.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "Is the question catalog up to date?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. We use the official ELWIS catalog issued by DSV and DMYV and sync it regularly. See what comes up in the exam on SBF Inland exam questions and SBF Coastal exam questions.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "Is Boatpass available for iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Android only for now. An iOS version is in the works – write to us and we will let you know when it launches.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "Questions about the exam itself",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We do not advise individually on registration, costs or scheduling – DSV and DMYV handle that. We have collected the essentials though: exam process, costs, blood alcohol limits on board and the FAQ.",
+      },
+    },
+  ],
+};
 ---
 
 <BaseLayout
@@ -9,6 +49,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   altUrl="https://boatpass.de/kontakt/"
   showCta={false}
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <div style="max-width:600px; margin:0 auto; padding:80px 24px 120px;">
 
     <!-- Header -->

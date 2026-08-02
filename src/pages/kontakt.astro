@@ -1,5 +1,45 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// FAQPage-Schema: spiegelt die vier sichtbaren Selbsthilfe-Fragen unten auf der Seite.
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ich habe gekauft, sehe die Fragen aber nicht",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Kauf hängt am Google-Konto, nicht am Gerät. Öffne die App mit demselben Konto und tippe in den Einstellungen auf „Käufe wiederherstellen\". Klappt das nicht, schreib uns mit deiner Bestellnummer aus der Play-Store-Bestätigungsmail.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "Ist der Fragenkatalog aktuell?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Wir nutzen den amtlichen ELWIS-Katalog von DSV und DMYV und gleichen ihn regelmäßig ab. Welche Fragen in der Prüfung drankommen, steht auf den Seiten SBF Binnen Prüfungsfragen und SBF See Prüfungsfragen.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "Gibt es Boatpass für iPhone?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Aktuell nur für Android. Eine iOS-Version ist in Arbeit – schreib uns gern, dann sagen wir dir zum Start Bescheid.",
+      },
+    },
+    {
+      "@type": "Question",
+      "name": "Fragen zur Prüfung selbst",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Zu Anmeldung, Kosten und Ablauf beraten wir nicht individuell – das übernehmen DSV und DMYV. Das Wichtigste haben wir aber gesammelt: Prüfungsablauf, Kosten, Promillegrenze an Bord und die häufigen Fragen.",
+      },
+    },
+  ],
+};
 ---
 
 <BaseLayout
@@ -9,6 +49,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   altUrl="https://boatpass.de/en/contact/"
   showCta={false}
 >
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <div style="max-width:600px; margin:0 auto; padding:80px 24px 120px;">
 
     <!-- Header -->
