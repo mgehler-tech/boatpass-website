@@ -1,7 +1,7 @@
 ---
 title: "Kinder und Jugendliche am Steuer – ab wann dürfen sie ein Boot führen?"
 seoTitle: "Ab wann dürfen Kinder Boot fahren?"
-description: "Ruderboot, SUP, führerscheinfreier Motor oder Sportbootführerschein: Welches Mindestalter für Kinder und Jugendliche auf dem Wasser wirklich gilt – und worauf Eltern achten müssen."
+description: "Ruderboot, SUP, führerscheinfreier Motor oder Sportbootführerschein: Welches Mindestalter für Kinder und Jugendliche auf dem Wasser wirklich gilt."
 date: 2026-08-06
 tags: ["Prüfungswissen"]
 readingTime: 8
@@ -14,7 +14,7 @@ faq:
   - question: "Dürfen Kinder unter 16 Jahren ein Motorboot führen?"
     answer: "Grundsätzlich nicht. Sowohl für den Sportbootführerschein mit Antriebsmaschine als auch für führerscheinfreie Boote bis 15 PS (11,03 kW) gilt ein Mindestalter von 16 Jahren. Eine kleine Ausnahme gibt es auf Seeschifffahrtsstraßen für sehr schwache Motoren bis 5 PS (3,68 kW)."
   - question: "Ab welchem Alter kann man sich zur SBF-Prüfung anmelden?"
-    answer: "Die Anmeldung zur Prüfung ist schon mit 15 Jahren und 9 Monaten möglich. Ausgehändigt wird der Sportbootführerschein aber erst, wenn das jeweilige Mindestalter tatsächlich erreicht ist: 16 Jahre für SBF Binnen und SBF See unter Motor, 14 Jahre für SBF Binnen unter Segel. Minderjährige brauchen zusätzlich die Einverständniserklärung eines Erziehungsberechtigten."
+    answer: "Die Anmeldung zur Prüfung ist schon drei Monate vor dem jeweiligen Mindestalter möglich: für SBF Binnen und SBF See unter Motor also mit 15 Jahren und 9 Monaten, für SBF Binnen unter Segel bereits mit 13 Jahren und 9 Monaten. Ausgehändigt wird der Führerschein aber erst, wenn das Mindestalter tatsächlich erreicht ist. Minderjährige brauchen zusätzlich die Einverständniserklärung eines Erziehungsberechtigten."
   - question: "Was ist der DSV-Jugendsegelschein?"
     answer: "Der DSV-Jugendsegelschein (früher Jüngstensegelschein) ist ein vereinsinterner Schein des Deutschen Segler-Verbandes für Kinder von etwa 7 bis 14 Jahren. Er ist nicht amtlich, ersetzt also nicht den Sportbootführerschein, sondern dient als Ausbildungs- und Regattanachweis im Verein."
 ---
@@ -62,11 +62,11 @@ Auch bei Wassermotorrädern (Jetskis) ändert sich an den Altersregeln grundsät
 
 ## Sportbootführerschein: Wann dürfen Jugendliche sich anmelden?
 
-Wer den Sportbootführerschein (SBF) machen möchte, muss dafür nicht erst das volle Mindestalter erreicht haben. Zur **Prüfung anmelden** kannst du dich bereits mit **15 Jahren und 9 Monaten**. Der Führerschein selbst wird aber erst ausgehändigt, wenn das eigentliche Mindestalter erreicht ist:
+Wer den Sportbootführerschein (SBF) machen möchte, muss dafür nicht erst das volle Mindestalter erreicht haben. Zur **Prüfung anmelden** kannst du dich schon drei Monate vor dem jeweiligen Mindestalter. Der Führerschein selbst wird aber erst ausgehändigt, wenn das eigentliche Mindestalter erreicht ist:
 
-- **SBF Binnen unter Motor:** ab 16 Jahren
-- **SBF See:** ab 16 Jahren
-- **SBF Binnen unter Segel:** bereits ab 14 Jahren
+- **SBF Binnen unter Motor:** ab 16 Jahren, Anmeldung ab 15 Jahren und 9 Monaten
+- **SBF See:** ab 16 Jahren, Anmeldung ab 15 Jahren und 9 Monaten
+- **SBF Binnen unter Segel:** bereits ab 14 Jahren, Anmeldung ab 13 Jahren und 9 Monaten
 
 Alle Voraussetzungen für die Anmeldung, vom ärztlichen Zeugnis bis zur Einverständniserklärung, haben wir ausführlich in unserem Artikel zu den [Voraussetzungen für den Sportbootführerschein](/blog/sportbootfuehrerschein-voraussetzungen/) zusammengefasst. Wichtig für Familien: **Minderjährige** brauchen für die Anmeldung zusätzlich die schriftliche **Einverständniserklärung eines Erziehungsberechtigten**, einen eigenständigen Zuverlässigkeitsnachweis brauchen sie in der Regel nicht.
 
@@ -106,4 +106,4 @@ Fragen zum Mindestalter und zu den Voraussetzungen für den Sportbootführersche
 
 ## Fazit
 
-Wie früh Kinder ans Steuer dürfen, hängt entscheidend vom Bootstyp ab: Muskelbetriebene Boote wie Kanu, Kajak oder SUP sind ohne festes Mindestalter erlaubt, solange Schwimmfähigkeit, passende Rettungsweste und ausreichende Aufsicht gegeben sind. Bei Motorbooten gilt dagegen fast immer die 16-Jahre-Grenze, auch für führerscheinfreie Boote bis 15 PS. Wer früh mit der Vorbereitung starten will, kann sich schon mit 15 Jahren und 9 Monaten zur SBF-Prüfung anmelden und den Führerschein direkt mit Erreichen des Mindestalters in der Tasche haben. Bis dahin bleibt genug Zeit, um mit Vereinsscheinen, gut betreuten Ausflügen und der passenden Sicherheitsausrüstung erste, sichere Erfahrungen auf dem Wasser zu sammeln.
+Wie früh Kinder ans Steuer dürfen, hängt entscheidend vom Bootstyp ab: Muskelbetriebene Boote wie Kanu, Kajak oder SUP sind ohne festes Mindestalter erlaubt, solange Schwimmfähigkeit, passende Rettungsweste und ausreichende Aufsicht gegeben sind. Bei Motorbooten gilt dagegen fast immer die 16-Jahre-Grenze, auch für führerscheinfreie Boote bis 15 PS. Wer früh mit der Vorbereitung starten will, kann sich schon drei Monate vor dem jeweiligen Mindestalter zur SBF-Prüfung anmelden und den Führerschein direkt mit Erreichen des Mindestalters in der Tasche haben. Bis dahin bleibt genug Zeit, um mit Vereinsscheinen, gut betreuten Ausflügen und der passenden Sicherheitsausrüstung erste, sichere Erfahrungen auf dem Wasser zu sammeln.
