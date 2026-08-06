@@ -139,7 +139,7 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
         </div>
 
         <a href="#features" class="hero-secondary-link"
-          style="color:#3366FF; font-size:15px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin-top:20px;">
+          style="color:#3366FF; font-size:15px; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
           {t.hero.ctaSecondary} →
         </a>
       </div>
@@ -321,6 +321,24 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
     .hero-cta-row { gap: 14px; }
     .hero-cta-divider { display: none; }
   }
+
+  /* Sekundär-Link ("Mehr erfahren") ist ein echtes Sprungziel (#features) und
+     braucht – wie die übrigen Text-Links der Seite (Footer-Rechtslinks,
+     Blog-Teaser, Katalog-Karten) – eine ausreichend große Touch-Fläche
+     (WCAG 2.5.5, mind. 44px). Als reine 15px-Textzeile war er nur ~18px hoch und
+     damit im wichtigsten Above-the-fold-Bereich auf dem Handy schwer präzise zu
+     treffen. inline-flex begrenzt die Fläche auf die tatsächliche Linkbreite
+     (kein ganzflächiges Tappen). Der obere Abstand ist um die obere Hälfte der
+     vergrößerten Box reduziert und die zusätzliche Höhe unten per negativem Rand
+     ausgeglichen, sodass der bisherige 20px-Abstand zur CTA-Reihe und die
+     vertikale Zentrierung der Textspalte exakt erhalten bleiben. Corporate
+     Design (Akzentblau, Schrift) bleibt unberührt. */
+  .hero-secondary-link {
+    min-height: 44px;
+    margin-top: 7px;
+    margin-bottom: -13px;
+  }
+  .hero-secondary-link:hover { text-decoration: underline; }
 
   .phone-slide {
     width: 100%;
