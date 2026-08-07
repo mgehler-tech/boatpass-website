@@ -1,5 +1,5 @@
 ---
-import { DATA_AS_OF_LABEL, LICENSE_LABELS, type LearningApp } from '../data/apps';
+import { DATA_AS_OF_LABEL, LICENSE_LABELS, formatRating, type LearningApp } from '../data/apps';
 
 interface Props {
   apps: LearningApp[];
@@ -63,7 +63,7 @@ function platformLabel(app: LearningApp): string {
           </th>
           <td style="padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; color:#4B5563;">
             {app.rating
-              ? <span>{app.rating.toFixed(1).replace('.', lang === 'de' ? ',' : '.')} ★<br /><span style="font-size:12px; color:#9CA3AF;">{app.ratingCount?.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} {t.reviews}</span></span>
+              ? <span>{formatRating(app.rating).replace('.', lang === 'de' ? ',' : '.')} ★<br /><span style="font-size:12px; color:#9CA3AF;">{app.ratingCount?.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} {t.reviews}</span></span>
               : <span style="color:#9CA3AF;">{t.unknown}</span>}
             {app.downloads && <div style="font-size:12px; color:#9CA3AF; margin-top:4px;">{app.downloads}</div>}
           </td>
@@ -104,7 +104,7 @@ function platformLabel(app: LearningApp): string {
           <dt>{t.rating}</dt>
           <dd>
             {app.rating
-              ? <span>{app.rating.toFixed(1).replace('.', lang === 'de' ? ',' : '.')} ★ <span class="cmp-card-sub">· {app.ratingCount?.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} {t.reviews}</span></span>
+              ? <span>{formatRating(app.rating).replace('.', lang === 'de' ? ',' : '.')} ★ <span class="cmp-card-sub">· {app.ratingCount?.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} {t.reviews}</span></span>
               : <span class="cmp-card-muted">{t.unknown}</span>}
             {app.downloads && <span class="cmp-card-sub"> · {app.downloads}</span>}
           </dd>
