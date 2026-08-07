@@ -1,7 +1,7 @@
 ---
 title: "Verhalten nach einem Bootsunfall – Pflichten, Meldung und Beweissicherung"
 seoTitle: "Verhalten nach einem Bootsunfall"
-description: "Kollision, Grundberührung oder Personenschaden: Welche Pflichten nach einem Bootsunfall gelten, wann die Wasserschutzpolizei informiert werden muss und wie du Beweise richtig sicherst."
+description: "Welche Pflichten nach einem Bootsunfall gelten: wann die Wasserschutzpolizei zu informieren ist, wie du Beweise sicherst und was bei Personenschaden zählt."
 date: 2026-08-01
 tags: ["Prüfungswissen"]
 readingTime: 8

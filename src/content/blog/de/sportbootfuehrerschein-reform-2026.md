@@ -1,7 +1,7 @@
 ---
 title: "Sportbootführerschein-Reform 2026: Was sich ändert und was bleibt"
 seoTitle: "Sportbootführerschein-Reform 2026"
-description: "Die SBF-Reform 2026 ersetzt den amtlichen Sportbootführerschein durch Verbandsscheine. Was das bedeutet, ob dein Schein gültig bleibt und was bei E-Motoren neu ist."
+description: "Die SBF-Reform 2026 ersetzt den Sportbootführerschein durch Verbandsscheine. Was das bedeutet, ob dein Schein gültig bleibt und was bei E-Motoren neu ist."
 date: 2026-07-25
 tags: ["Prüfungswissen"]
 readingTime: 8

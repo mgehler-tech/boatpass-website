@@ -1,7 +1,7 @@
 ---
 title: "GPS, Kartenplotter und Funkgerät – moderne Navigation an Bord verstehen"
 seoTitle: "GPS, Kartenplotter & Funk an Bord"
-description: "GPS, Kartenplotter, AIS und Funkgerät: So funktioniert moderne Bordelektronik, wo ihre Grenzen liegen und warum die SBF-Prüfung trotzdem die Papierkarte verlangt."
+description: "GPS, Kartenplotter, AIS und Funkgerät: So funktioniert moderne Bordelektronik – und warum die SBF-Prüfung trotzdem die Papierkarte verlangt."
 date: 2026-07-19
 tags: ["Navigation"]
 readingTime: 9
