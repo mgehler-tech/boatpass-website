@@ -264,14 +264,19 @@ const breadcrumbSchema = {
   /* Themen-Cluster */
   .cluster { margin-bottom: 44px; }
   /* Cluster-Kopf als CSS-Grid: Punkt, Titel und Anzahl teilen sich sauber eine
-     Zeile (an der Grundlinie zentriert), die Beschreibung spannt bündig darunter
-     über die volle Breite. Ersetzt das bisherige Flex-Layout mit Negativ-Rand-
-     Tricks (margin-left:-2px, flex-basis:100%, margin-top) und vereinheitlicht
-     den Aufbau mit dem englischen Blog. Abstände auf dem 4/8px-Raster. */
+     Zeile (vertikal zentriert), die Beschreibung spannt bündig darunter über die
+     volle Breite. Die vierte, flexible Spalte (1fr) nimmt den freien Platz auf:
+     Ohne sie verteilte die volle Breite der über alle Spalten spannenden
+     Beschreibung sich auf die auto-Spalten von Punkt und Anzahl – der Punkt
+     bekam dadurch einen großen Abstand zum Titel und das Anzahl-Chip wurde auf
+     die ganze (aufgeblähte) Spaltenbreite gedehnt, statt seinen Inhalt zu
+     umschließen. Mit dem 1fr-Spacer bleiben Punkt, Titel und Anzahl
+     inhaltsbreit beisammen und das Chip umschließt sauber die Zahl.
+     Abstände auf dem 4/8px-Raster. */
   .cluster-head {
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-areas: "dot title count" "desc desc desc";
+    grid-template-columns: auto auto auto 1fr;
+    grid-template-areas: "dot title count ." "desc desc desc desc";
     align-items: center;
     gap: 4px 8px;
     justify-content: start;

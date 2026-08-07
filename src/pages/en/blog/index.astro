@@ -260,10 +260,18 @@ const breadcrumbSchema = {
 
   /* Topic clusters */
   .cluster { margin-bottom: 44px; }
+  /* Cluster head as a CSS grid: dot, title and count share one row (vertically
+     centred), the description spans the full width beneath. The fourth, flexible
+     (1fr) column soaks up the free space: without it the full width of the
+     description – which spans every column – was distributed onto the auto
+     columns of the dot and count, pushing the dot far from the title and
+     stretching the count chip across the whole (inflated) column instead of
+     hugging its number. The 1fr spacer keeps dot, title and count content-width
+     together and lets the chip wrap tightly around the count. */
   .cluster-head {
     display: grid;
-    grid-template-columns: auto auto auto;
-    grid-template-areas: "dot title count" "desc desc desc";
+    grid-template-columns: auto auto auto 1fr;
+    grid-template-areas: "dot title count ." "desc desc desc desc";
     align-items: center;
     gap: 4px 8px;
     justify-content: start;
