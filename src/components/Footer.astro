@@ -1,7 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import { useTranslations, getLocalizedPath } from '../i18n/index';
-import { getBoatpassRating } from '../data/apps';
+import { getBoatpassRating, formatRating } from '../data/apps';
 import type { IconName } from '../icons';
 
 interface Props {
@@ -15,7 +15,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 const appRating = getBoatpassRating();
 const numberLocale = lang === 'de' ? 'de-DE' : 'en-GB';
 const ratingScoreLabel = appRating
-  ? appRating.score.toFixed(1).replace('.', lang === 'de' ? ',' : '.')
+  ? formatRating(appRating.score).replace('.', lang === 'de' ? ',' : '.')
   : null;
 const ratingCountLabel = appRating
   ? `${appRating.ratings.toLocaleString(numberLocale)} ${lang === 'de' ? 'Bewertungen · Google Play' : 'reviews · Google Play'}`

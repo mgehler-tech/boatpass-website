@@ -77,8 +77,8 @@ export const LEARNING_APPS: LearningApp[] = [
     playUrl: 'https://play.google.com/store/apps/details?id=com.boatpass.app',
     appStoreUrl: null,
     website: 'https://boatpass.de/',
-    rating: 4.93,
-    ratingCount: 15,
+    rating: 4.95,
+    ratingCount: 20,
     downloads: '10+',
     licenses: ['sbf-see', 'sbf-binnen', 'ubi', 'src', 'lrc'],
     pricingModel: 'freemium-onetime',
@@ -275,6 +275,16 @@ export function appById(id: string): LearningApp {
  * Manuell gepflegt statt per Live-Scraping (Google liefert Play-Store-Ratings
  * an Datacenter-/CI-IPs wie GitHub Actions nicht zuverlässig aus – Stand DATA_AS_OF).
  */
+/**
+ * Formatiert einen Rating-Score mit bis zu zwei Nachkommastellen und schneidet
+ * überflüssige Nullen ab (4.95 → "4.95", 4.9 → "4.9", 5.0 → "5.0"). Punkt als
+ * Dezimaltrennzeichen; für die Anzeige ggf. per replace('.', ',') lokalisieren.
+ */
+export function formatRating(score: number): string {
+  const s = score.toFixed(2).replace(/0+$/, '').replace(/\.$/, '');
+  return s.includes('.') ? s : `${s}.0`;
+}
+
 export function getBoatpassRating(): AppRating | null {
   const app = appById('boatpass');
   if (!app.rating || !app.ratingCount) return null;
@@ -307,7 +317,7 @@ export function softwareApplicationSchema(app: LearningApp, lang: 'de' | 'en') {
       ? {
           aggregateRating: {
             '@type': 'AggregateRating',
-            ratingValue: app.rating.toFixed(1),
+            ratingValue: formatRating(app.rating),
             ratingCount: String(app.ratingCount),
             bestRating: '5',
             worstRating: '1',
