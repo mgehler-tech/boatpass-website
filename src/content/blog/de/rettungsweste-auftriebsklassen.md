@@ -1,7 +1,7 @@
 ---
 title: "Die richtige Rettungsweste wählen – Auftriebsklassen einfach erklärt"
 seoTitle: "Rettungsweste: Auftriebsklassen"
-description: "50N, 100N, 150N oder 275N? Wir erklären die vier Auftriebsklassen nach EN ISO 12402, ihre Unterschiede und welche Rettungsweste für welches Revier wirklich passt."
+description: "50N, 100N, 150N oder 275N? Die vier Auftriebsklassen nach EN ISO 12402 erklärt – und welche Rettungsweste für welches Revier wirklich passt."
 date: 2026-06-26
 tags: ["Prüfungswissen"]
 readingTime: 8

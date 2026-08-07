@@ -1,7 +1,7 @@
 ---
 title: "Bußgelder und Verstöße auf dem Wasser – die teuersten Fehler und ihre Folgen"
 seoTitle: "Bußgelder auf dem Wasser – Verstöße & Folgen"
-description: "Fahren ohne Führerschein, Alkohol, fehlende Kennzeichnung: Welche Verstöße auf dem Wasser besonders teuer werden und wann aus einem Bußgeld eine Straftat wird."
+description: "Fahren ohne Führerschein, Alkohol, fehlende Kennzeichnung: Welche Verstöße auf dem Wasser teuer werden und wann aus einem Bußgeld eine Straftat wird."
 date: 2026-07-31
 tags: ["Prüfungswissen"]
 readingTime: 8

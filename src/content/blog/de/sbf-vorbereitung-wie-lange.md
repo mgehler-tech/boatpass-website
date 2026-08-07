@@ -1,6 +1,6 @@
 ---
 title: "Wie lange dauert die Vorbereitung auf den SBF?"
-description: "Realistische Zeitplanung für den Sportbootführerschein – mit konkreten Wochenplänen für verschiedene Lerntypen und den Kategorien, die am meisten Zeit kosten."
+description: "Realistische Zeitplanung für den Sportbootführerschein: konkrete Wochenpläne für verschiedene Lerntypen und die Kategorien, die am meisten Zeit kosten."
 date: 2026-05-06
 tags: ["Vorbereitung"]
 readingTime: 6
