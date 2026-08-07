@@ -38,7 +38,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Bußgelder und Verstöße auf dem Wasser – die teuersten Fehler mit Konsequenzen (2026-07-31: bussgelder-verstoesse-wasser / fines-violations-on-the-water)
 - [x] Verhalten nach einem Bootsunfall – Pflichten, Meldung, Beweissicherung (2026-08-01: verhalten-nach-bootsunfall-pflichten-meldung / conduct-after-a-boating-accident-duties-and-reporting)
 - [x] Kinder und Jugendliche am Steuer – ab wann dürfen sie ein Boot führen? (2026-08-06: kinder-jugendliche-boot-fahren-mindestalter / minimum-age-children-boat-germany)
-- [ ] Boot startklar machen im Frühjahr – Checkliste zum Saisonstart
+- [x] Boot startklar machen im Frühjahr – Checkliste zum Saisonstart (2026-08-07: boot-startklar-machen-fruehjahr-checkliste-saisonstart / getting-your-boat-ready-spring-checklist-season-start)
 - [ ] Peilung und Kollisionskurs erkennen – CPA einfach erklärt für Sportbootfahrer
 - [ ] Sportbootführerschein verloren oder beschädigt – Ersatz beantragen, was zu tun ist
 - [ ] Gewitter und Blitzschlag auf dem Wasser – Verhalten und Vorsorge für Sportbootfahrer
