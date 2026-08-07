@@ -17,6 +17,20 @@ faq:
     answer: "Bei ablaufendem Wasser addieren sich Flussströmung und Ebbstrom, wodurch flussabwärts hohe Geschwindigkeiten über Grund entstehen. Bei auflaufendem Wasser wirkt der Flutstrom der Flussströmung entgegen und kann sie zeitweise sogar umkehren."
   - question: "Welcher Planungsfehler wird bei Strömung und Tide häufig gemacht?"
     answer: "Ein häufiger Fehler ist es, nur die Verhältnisse am eigenen Startpunkt zu betrachten, obwohl sich Tide und Strömung entlang einer längeren Strecke deutlich unterscheiden können. Auch das Vergessen von Reservezeit für Verzögerungen zählt zu den typischen Fehlern."
+howTo:
+  name: "Törnplanung mit Strömung und Tide vorbereiten"
+  description: "Fünf Schritte, um Strömung und Tide bei der Törnvorbereitung auf tidebeeinflussten Gewässern richtig einzubeziehen."
+  steps:
+    - name: "Revier und Strecke festlegen"
+      text: "Lege Revier und Strecke fest, inklusive möglicher Engstellen, Häfen und Ausweichmöglichkeiten."
+    - name: "Tidenkalender und Stromatlas heraussuchen"
+      text: "Besorge dir Tidenkalender und, falls vorhanden, Stromatlas für den Zeitraum des Törns."
+    - name: "Günstiges Stromfenster identifizieren"
+      text: "Identifiziere ein günstiges Stromfenster, das zur geplanten Strecke passt, und richte die Abfahrtszeit danach aus."
+    - name: "Alternativen und Pufferzeiten einplanen"
+      text: "Plane Alternativen und Pufferzeiten ein, falls sich die Abfahrt verzögert oder sich die Wetterlage ändert."
+    - name: "Aktuelle Vorhersage kurz vor Fahrtantritt prüfen"
+      text: "Prüfe die aktuelle Vorhersage kurz vor Fahrtantritt, da Wind und Luftdruck den tatsächlichen Wasserstand und die Stromverhältnisse gegenüber der Tabelle verschieben können."
 ---
 
 Auf tidebeeinflussten Revieren wie Nord- und Ostsee, aber auch auf manchen Flüssen mit Gezeiteneinfluss, entscheidet die richtige Fahrtzeit oft darüber, ob ein Törn entspannt verläuft oder zur Zitterpartie wird. Wer Strömung und Tide bei der Planung berücksichtigt, spart nicht nur Sprit und Zeit, sondern reduziert auch das Risiko, an ungünstigen Stellen in Grundberührung oder gefährliche Verhältnisse zu geraten. Dieser Artikel zeigt, wie du als Sportbootführer die Grundlagen der Törnplanung mit Strömung und Tide praktisch angehst.

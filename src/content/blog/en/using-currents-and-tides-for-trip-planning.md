@@ -17,6 +17,20 @@ faq:
     answer: "On the ebb, river current and the ebbing tidal stream add together, producing high speeds over ground heading downstream. On the flood, the incoming tidal stream works against the river current and can temporarily reverse it."
   - question: "What planning mistake do skippers commonly make with current and tide?"
     answer: "A common mistake is only considering conditions at the starting point, even though tide and current can differ considerably along a longer route. Forgetting to build in a time buffer for delays is another frequent error."
+howTo:
+  name: "Prepare a trip plan around current and tide"
+  description: "Five steps to factor current and tide correctly into trip preparation on tidal waters."
+  steps:
+    - name: "Define the cruising area and route"
+      text: "Define the cruising area and route, including possible narrow passages, harbors, and alternative stops."
+    - name: "Look up the tide table and current atlas"
+      text: "Look up the tide table and, if available, a current atlas for the period of your trip."
+    - name: "Identify a favorable current window"
+      text: "Identify a favorable current window that fits the planned route, and set your departure time around it."
+    - name: "Build in alternatives and buffer time"
+      text: "Build in alternatives and buffer time in case departure is delayed or the weather changes."
+    - name: "Check the latest forecast before departure"
+      text: "Check the latest forecast shortly before you set off, since wind and air pressure can shift the actual water level and current conditions away from the tabulated values."
 ---
 
 On tidal waters such as the North Sea and the Baltic, and on some rivers with tidal influence, choosing the right departure time can be the difference between a relaxed trip and a stressful one. Recreational skippers who factor current and tide into their planning not only save fuel and time, they also cut the risk of running aground or ending up in dangerous conditions at the wrong spot. This article walks through the basics of trip planning with current and tide in mind, for anyone holding a German boating license (Sportbootführerschein, SBF) or planning to sail tidal waters.
