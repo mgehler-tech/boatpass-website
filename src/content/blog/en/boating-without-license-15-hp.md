@@ -63,7 +63,7 @@ Important: the charter certificate is **not a substitute** for the SBF. It's onl
 At the latest, there's no way around the SBF in these cases:
 
 - **Engine power over 15 HP** – on inland or coastal waters.
-- **Boating on the sea / abroad** – most charter companies in the Mediterranean (e.g. Croatia) require the **SBF See**, often plus the SRC radio certificate.
+- **Boating on the sea / abroad** – most charter companies in the Mediterranean (e.g. Croatia) require the **SBF See**, often plus the [SRC radio certificate](/en/src/).
 - **Larger sailboats** on certain inland waters – here the **SBF Binnen under sail** may be required.
 - **Special navigation zones** where the license requirement applies regardless of horsepower.
 

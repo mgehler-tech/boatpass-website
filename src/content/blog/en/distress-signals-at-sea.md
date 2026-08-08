@@ -61,7 +61,7 @@ Anyone who notices a distress signal is **obliged to render assistance**, as far
 
 ## Learning distress signals properly
 
-The theory exam is mainly about **recognizing the signals and matching them to their meaning** – which color stands for what, and which signal you may give yourself. You can practice exactly these questions in the Boatpass app, separated by SBF Inland and [SBF Coastal](/en/sbf-coastal/).
+The theory exam is mainly about **recognizing the signals and matching them to their meaning** – which color stands for what, and which signal you may give yourself. You can practice exactly these questions in the Boatpass app, separated by [SBF Inland](/en/sbf-inland/) and [SBF Coastal](/en/sbf-coastal/).
 
 The acoustic counterparts in normal operation – who gives which sound and when – are summarized in our article on [sound signals for the boating license](/en/blog/sound-signals-sbf-explained/). And how to perform a man-overboard maneuver in an emergency is covered in our [MOB guide](/en/blog/man-overboard-maneuver/).
 
