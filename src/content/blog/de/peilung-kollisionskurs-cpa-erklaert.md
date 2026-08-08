@@ -25,7 +25,7 @@ Auf dem Wasser gibt es keine Ampeln, keine Fahrspuren und oft auch keinen Funkko
 
 Eine **Peilung** ist die Richtung zu einem Objekt, angegeben als Winkel. Auf dem Wasser peilst du zum Beispiel ein Leuchtfeuer, eine Landmarke oder ein anderes Fahrzeug. Dabei unterscheidet man zwei Arten:
 
-- **Rechtweisende Peilung:** der Winkel zum Objekt, gemessen vom geografischen Norden aus (0° bis 360°). Sie wird mit einem Handpeilkompass ermittelt und ist unabhängig vom eigenen Kurs.
+- **Rechtweisende Peilung:** der Winkel zum Objekt, gemessen vom geografischen Norden aus (0° bis 360°). Sie ist unabhängig vom eigenen Kurs. Mit dem Handpeilkompass misst du zunächst eine Kompasspeilung (bezogen auf den magnetischen Norden); um daraus die rechtweisende Peilung zu erhalten, korrigierst du sie um die Missweisung, wie in der [Kursumrechnung](/blog/kompass-missweisung-deviation-erklaert/) beschrieben.
 - **Seitenpeilung (relative Peilung):** der Winkel zum Objekt, gemessen von der eigenen Bugrichtung aus. Sie ändert sich, sobald du deinen eigenen Kurs änderst, auch wenn sich am tatsächlichen Kollisionsrisiko nichts geändert hat.
 
 Für die Frage „droht eine Kollision?" reicht in der Praxis oft schon die einfache Beobachtung, wie sich die Position des anderen Fahrzeugs relativ zu deinem eigenen Boot verschiebt.
@@ -48,7 +48,7 @@ Wähle einen festen Punkt an deinem eigenen Boot, etwa eine Reling, einen Want o
 
 ### Peilung mit dem Handpeilkompass
 
-Für eine genaue, rechtweisende Peilung nimmst du mit dem Handpeilkompass den Winkel zum anderen Fahrzeug. Wiederhole die Peilung nach ein bis zwei Minuten. Bleibt der abgelesene Wert nahezu gleich, während sich der Abstand verringert, besteht Kollisionsgefahr.
+Mit dem Handpeilkompass nimmst du den Winkel zum anderen Fahrzeug als Kompasspeilung. Für die reine Beurteilung der Kollisionsgefahr musst du diesen Wert nicht extra um die Missweisung korrigieren, denn es zählt nur, ob sich der abgelesene Winkel über die Zeit ändert. Wiederhole die Peilung nach ein bis zwei Minuten. Bleibt der abgelesene Wert nahezu gleich, während sich der Abstand verringert, besteht Kollisionsgefahr.
 
 ### Mehrfach peilen, nicht nur einmal
 

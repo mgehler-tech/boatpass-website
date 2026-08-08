@@ -25,7 +25,7 @@ On the water there are no traffic lights, no lanes, and often no radio contact w
 
 A **bearing** is the direction to an object, expressed as an angle. On the water you might take a bearing on a light, a landmark, or another vessel. There are two kinds:
 
-- **True bearing:** the angle to the object measured from geographic north (0° to 360°). It is taken with a handbearing compass and does not depend on your own heading.
+- **True bearing:** the angle to the object measured from geographic north (0° to 360°). It does not depend on your own heading. A handbearing compass first gives you a compass bearing (relative to magnetic north); to turn that into a true bearing you correct it for variation, as explained in [Compass, Variation and Deviation Explained](/en/blog/compass-variation-deviation-explained/).
 - **Relative bearing:** the angle to the object measured from your own bow direction. It changes as soon as you alter your own course, even if the actual collision risk has not changed at all.
 
 In practice, for the question "is a collision developing?", simply watching how the other vessel's position shifts relative to your own boat is often enough.
@@ -48,7 +48,7 @@ Pick a fixed point on your own boat, for example a rail, a stay, or a window fra
 
 ### Bearing with a handbearing compass
 
-For an accurate, true bearing, use a handbearing compass to take the angle to the other vessel. Repeat the bearing after one or two minutes. If the reading stays nearly the same while the distance shrinks, there is a risk of collision.
+Use a handbearing compass to take the angle to the other vessel as a compass bearing. For assessing collision risk alone, you don't need to correct that reading for variation, since all that matters is whether the angle you read changes over time. Repeat the bearing after one or two minutes. If the reading stays nearly the same while the distance shrinks, there is a risk of collision.
 
 ### Take several bearings, not just one
 
