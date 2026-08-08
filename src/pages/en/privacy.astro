@@ -17,7 +17,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         Privacy
       </div>
       <h1 style="font-size:clamp(30px,4.5vw,42px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:12px;">Privacy Policy</h1>
-      <p style="font-size:16px; color:#6B7280;">This privacy policy applies to the <strong style="color:#1A1F36;">BoatPass Android app</strong>, the <strong style="color:#1A1F36;">BoatPass iOS app</strong>, and the <strong style="color:#1A1F36;">website boatpass.de</strong>. Last updated: August 2026.</p>
+      <p style="font-size:16px; color:#6B7280; margin-bottom:20px;">This privacy policy applies to the <strong style="color:#1A1F36;">BoatPass Android app</strong>, the <strong style="color:#1A1F36;">BoatPass iOS app</strong>, and the <strong style="color:#1A1F36;">website boatpass.de</strong>. Last updated: August 2026.</p>
+
+      <!-- Jump nav -->
+      <nav aria-label="Sections" style="display:flex; flex-wrap:wrap; gap:8px;">
+        {[
+          ['#website', 'Website'],
+          ['#android', 'Android App'],
+          ['#ios', 'iOS App'],
+          ['#general', 'General'],
+        ].map(([href, label]) => (
+          <a href={href} style="font-size:13px; font-weight:600; color:#3366FF; background:rgba(51,102,255,0.06); border:1px solid rgba(51,102,255,0.15); padding:6px 14px; border-radius:100px; text-decoration:none; white-space:nowrap;">
+            {label}
+          </a>
+        ))}
+      </nav>
     </div>
 
     <!-- 01 Controller -->
@@ -32,7 +46,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
 
     <!-- Section divider: Website -->
-    <div style="display:flex; align-items:center; gap:12px; margin:32px 0 20px;">
+    <div id="website" style="display:flex; align-items:center; gap:12px; margin:32px 0 20px; scroll-margin-top:80px;">
       <span style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#9CA3AF; white-space:nowrap;">Website</span>
       <div style="flex:1; height:1px; background:rgba(0,0,0,0.08);"></div>
     </div>
@@ -78,7 +92,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
 
     <!-- Section divider: App -->
-    <div style="display:flex; align-items:center; gap:12px; margin:32px 0 20px;">
+    <div id="android" style="display:flex; align-items:center; gap:12px; margin:32px 0 20px; scroll-margin-top:80px;">
       <span style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#9CA3AF; white-space:nowrap;">Android App</span>
       <div style="flex:1; height:1px; background:rgba(0,0,0,0.08);"></div>
     </div>
@@ -169,7 +183,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
 
     <!-- Section divider: iOS -->
-    <div style="display:flex; align-items:center; gap:12px; margin:32px 0 20px;">
+    <div id="ios" style="display:flex; align-items:center; gap:12px; margin:32px 0 20px; scroll-margin-top:80px;">
       <span style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#9CA3AF; white-space:nowrap;">iOS App</span>
       <div style="flex:1; height:1px; background:rgba(0,0,0,0.08);"></div>
     </div>
@@ -272,7 +286,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
 
     <!-- Section divider: General -->
-    <div style="display:flex; align-items:center; gap:12px; margin:32px 0 20px;">
+    <div id="general" style="display:flex; align-items:center; gap:12px; margin:32px 0 20px; scroll-margin-top:80px;">
       <span style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#9CA3AF; white-space:nowrap;">General</span>
       <div style="flex:1; height:1px; background:rgba(0,0,0,0.08);"></div>
     </div>
