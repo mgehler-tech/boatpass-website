@@ -63,7 +63,7 @@ Wichtig: Die Charterbescheinigung ist **kein Ersatz** für den SBF. Sie gilt nur
 Spätestens in diesen Fällen führt am SBF kein Weg vorbei:
 
 - **Motorleistung über 15 PS** – auf Binnen- oder Seegewässern.
-- **Fahren auf dem Meer / im Ausland** – die meisten Charterfirmen im Mittelmeer (z. B. Kroatien) verlangen den **SBF See**, oft zusätzlich das Funkzeugnis SRC.
+- **Fahren auf dem Meer / im Ausland** – die meisten Charterfirmen im Mittelmeer (z. B. Kroatien) verlangen den **SBF See**, oft zusätzlich das [Funkzeugnis SRC](/src/).
 - **Größere Segelboote** auf bestimmten Binnengewässern – hier kann der **SBF Binnen unter Segel** vorgeschrieben sein.
 - **Spezielle Befahrenszonen**, in denen die Führerscheinpflicht unabhängig von der PS-Zahl gilt.
 
