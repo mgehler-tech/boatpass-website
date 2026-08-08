@@ -4,7 +4,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout
   title="Privacy Policy"
-  description="Privacy policy of the Boatpass Android app and website: which data we collect, how we process it and what rights you have under the GDPR."
+  description="Privacy policy of the Boatpass Android and iOS app and website: which data we collect, how we process it and what rights you have under the GDPR."
   lang="en"
   altUrl="https://boatpass.de/datenschutz/"
   showCta={false}
@@ -17,7 +17,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         Privacy
       </div>
       <h1 style="font-size:clamp(30px,4.5vw,42px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:12px;">Privacy Policy</h1>
-      <p style="font-size:16px; color:#6B7280;">This privacy policy applies to the <strong style="color:#1A1F36;">BoatPass Android app</strong> and the <strong style="color:#1A1F36;">website boatpass.de</strong>. Last updated: July 2026.</p>
+      <p style="font-size:16px; color:#6B7280;">This privacy policy applies to the <strong style="color:#1A1F36;">BoatPass Android app</strong>, the <strong style="color:#1A1F36;">BoatPass iOS app</strong>, and the <strong style="color:#1A1F36;">website boatpass.de</strong>. Last updated: August 2026.</p>
     </div>
 
     <!-- 01 Controller -->
@@ -168,33 +168,134 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </p>
     </div>
 
+    <!-- Section divider: iOS -->
+    <div style="display:flex; align-items:center; gap:12px; margin:32px 0 20px;">
+      <span style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#9CA3AF; white-space:nowrap;">iOS App</span>
+      <div style="flex:1; height:1px; background:rgba(0,0,0,0.08);"></div>
+    </div>
+
+    <!-- 11 Local data storage (iOS) -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">11</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Principle: Local Data Storage</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        BoatPass for iOS (bundle ID <code style="background:rgba(51,102,255,0.08); padding:1px 6px; border-radius:4px; font-size:13px;">com.boatpass.ios</code>) has <strong style="color:#1A1F36;">no login or account system</strong> – there is no registration and no collection of an email address or password. Learning progress, quiz answers, streak, and settings are stored <strong style="color:#1A1F36;">exclusively on your device</strong> (UserDefaults). There is no server of our own and no user account in the cloud.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:8px; margin-top:16px;">
+        {[
+          'Learning progress (answered questions, error rates, streak)',
+          'Quiz answers',
+          'Settings (language, notification times)',
+        ].map(item => (
+          <div style="display:flex; align-items:flex-start; gap:10px;">
+            <span style="color:#3366FF; font-size:14px; flex-shrink:0; margin-top:2px;">·</span>
+            <span style="font-size:14px; color:#4B5563;">{item} – stored locally, never leaves your device.</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- 12 Firebase Analytics (iOS) -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">12</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Firebase Analytics (Google LLC) – without advertising ID</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
+        We use <strong style="color:#1A1F36;">Firebase Analytics</strong> by Google LLC to understand and improve app usage. Data collected includes: screens and features accessed, device type, iOS version, language setting, app version, installation source, and session duration.
+      </p>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        On iOS we deliberately use the <strong style="color:#1A1F36;">FirebaseAnalyticsWithoutAdIdSupport</strong> module: <strong style="color:#1A1F36;">no advertising identifier (IDFA)</strong> is collected. Since no advertising ID is processed, no App Tracking Transparency (ATT) prompt is required. Google LLC acts as a data processor under Art. 28 GDPR. Data transfers to the USA are based on the EU-US Data Privacy Framework (Art. 45 GDPR). More info: <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:none;">firebase.google.com/support/privacy</a>
+      </p>
+      <div style="margin-top:12px; background:rgba(51,102,255,0.05); border-radius:10px; padding:12px 16px; font-size:13px; color:#4B5563; display:flex; flex-direction:column; gap:6px;">
+        <div><strong style="color:#1A1F36;">Retention:</strong> Event data stored for 2 months by default.</div>
+        <div><strong style="color:#1A1F36;">Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in app quality).</div>
+      </div>
+    </div>
+
+    <!-- 13 Firebase Crashlytics (iOS) -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">13</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Firebase Crashlytics (Google LLC)</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        We use <strong style="color:#1A1F36;">Firebase Crashlytics</strong> to detect and fix app crashes. On a crash, the following data is automatically transmitted: stack trace, error message, device state (memory, iOS version, app version), and an anonymised installation ID. No personal user data or learning content is transmitted.
+      </p>
+      <div style="margin-top:12px; background:rgba(51,102,255,0.05); border-radius:10px; padding:12px 16px; font-size:13px; color:#4B5563; display:flex; flex-direction:column; gap:6px;">
+        <div><strong style="color:#1A1F36;">Retention:</strong> 90 days.</div>
+        <div><strong style="color:#1A1F36;">Legal basis:</strong> Art. 6(1)(f) GDPR (technical stability).</div>
+      </div>
+    </div>
+
+    <!-- 14 Firebase Remote Config (iOS) -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">14</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Firebase Remote Config (Google LLC)</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        We use <strong style="color:#1A1F36;">Firebase Remote Config</strong> to adjust app configuration and content without requiring an app update. No personal data is transmitted – only an anonymous installation ID for configuration delivery.
+      </p>
+      <div style="margin-top:12px; background:rgba(51,102,255,0.05); border-radius:10px; padding:12px 16px; font-size:13px; color:#4B5563;">
+        <strong style="color:#1A1F36;">Legal basis:</strong> Art. 6(1)(f) GDPR.
+      </div>
+    </div>
+
+    <!-- 15 Network access: question corrections -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">15</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Network Access: Question Corrections</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        The app loads public corrections to exam questions from <code style="background:rgba(51,102,255,0.08); padding:1px 6px; border-radius:4px; font-size:13px;">cdn.boatpass.app/corrections.json</code>. No personal data is transmitted in this process.
+      </p>
+      <div style="margin-top:12px; background:rgba(51,102,255,0.05); border-radius:10px; padding:12px 16px; font-size:13px; color:#4B5563;">
+        <strong style="color:#1A1F36;">Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in accurate learning content).
+      </div>
+    </div>
+
+    <!-- 16 Apple StoreKit -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">16</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Apple StoreKit (In-App Purchases)</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        In-app purchases are processed via <strong style="color:#1A1F36;">Apple StoreKit</strong>. Apple's privacy policy applies (<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:none;">apple.com/legal/privacy</a>). We receive no payment data; Apple only informs us whether a valid purchase exists.
+      </p>
+      <div style="margin-top:12px; background:rgba(51,102,255,0.05); border-radius:10px; padding:12px 16px; font-size:13px; color:#4B5563;">
+        <strong style="color:#1A1F36;">Legal basis:</strong> Art. 6(1)(b) GDPR (contract performance).
+      </div>
+    </div>
+
+    <!-- 17 Notifications (iOS) -->
+    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">17</div>
+      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Notifications &amp; Other Permissions</h2>
+      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+        If you enable study reminders, <strong style="color:#1A1F36;">local notifications</strong> are scheduled on your device. You are asked for permission the first time; you can revoke it at any time in your device settings. No push messages are sent via external servers. The app does not request any further permissions – no location, no camera, no contacts, no photo access.
+      </p>
+    </div>
+
     <!-- Section divider: General -->
     <div style="display:flex; align-items:center; gap:12px; margin:32px 0 20px;">
       <span style="font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#9CA3AF; white-space:nowrap;">General</span>
       <div style="flex:1; height:1px; background:rgba(0,0,0,0.08);"></div>
     </div>
 
-    <!-- 11 Data sharing -->
+    <!-- 18 Data sharing -->
     <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">11</div>
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">18</div>
       <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Data Sharing</h2>
       <p style="font-size:15px; color:#4B5563; line-height:1.7;">
-        Data is shared only with the services described above: Google services (Firebase Analytics, Crashlytics, Remote Config, Google Play Billing), Netlify and Cloudflare for website operation, and Formspree for the contact form. No further sharing with third parties takes place.
+        Data is shared only with the services described above: Google services (Firebase Analytics, Crashlytics, Remote Config, Google Play Billing), Apple (StoreKit for in-app purchases), Netlify and Cloudflare for website operation, and Formspree for the contact form. No further sharing with third parties takes place.
       </p>
     </div>
 
-    <!-- 12 Data deletion -->
+    <!-- 19 Data deletion -->
     <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">12</div>
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">19</div>
       <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Data Deletion</h2>
       <p style="font-size:15px; color:#4B5563; line-height:1.7;">
         All locally stored app data is deleted when you uninstall the app. You can manually reset your learning progress at any time via <strong style="color:#1A1F36;">More → Reset Progress</strong>. Since Firebase Analytics processes aggregated and anonymised data, individual identification and deletion of specific records is technically not possible. For other deletion requests: <a href="mailto:support@boatpass.de" style="color:#3366FF; text-decoration:none; font-weight:600;">support@boatpass.de</a>
       </p>
     </div>
 
-    <!-- 13 Your rights -->
+    <!-- 20 Your rights -->
     <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
-      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">13</div>
+      <div style="font-size:11px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">20</div>
       <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Your Rights (GDPR)</h2>
       <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:16px;">
         Under GDPR you have the right to:
