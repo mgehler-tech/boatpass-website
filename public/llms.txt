@@ -53,3 +53,28 @@
 
 - [Über uns](https://boatpass.de/ueber-uns/): Marius Gehler, Gründer von Boatpass.
 - [Kontakt](https://boatpass.de/kontakt/): Support und Anfragen.
+
+## English Version
+
+> Boatpass also serves the German boating license (SBF Inland & Coastal) and
+> radio certificates (UBI, SRC, LRC) to an English-speaking audience under
+> the /en/ path. Same official ELWIS question catalog, exam simulation and
+> mistake training as the German site.
+
+- [Home (EN)](https://boatpass.de/en/): Overview of the Boatpass study app for the German boating license.
+- [SBF Inland (EN)](https://boatpass.de/en/sbf-inland/): Prep for the SBF Inland (German inland-waters boating license).
+- [SBF Coastal (EN)](https://boatpass.de/en/sbf-coastal/): Prep for the SBF Coastal (German coastal-waters boating license).
+- [SBF Inland Exam Questions (EN)](https://boatpass.de/en/sbf-inland-exam-questions/): Official ELWIS question catalog for SBF Inland.
+- [SBF Coastal Exam Questions (EN)](https://boatpass.de/en/sbf-coastal-exam-questions/): Official ELWIS question catalog for SBF Coastal.
+- [Licenses Overview (EN)](https://boatpass.de/en/licenses/): Which German boating license fits which waters.
+- [UBI Radio Certificate (EN)](https://boatpass.de/en/ubi/): VHF radio certificate for inland navigation.
+- [SRC Radio Certificate (EN)](https://boatpass.de/en/src/): Short Range Certificate (maritime radio).
+- [LRC Radio Certificate (EN)](https://boatpass.de/en/lrc/): Long Range Certificate (worldwide maritime radio).
+- [Costs (EN)](https://boatpass.de/en/sbf-costs/): What the German boating license costs.
+- [Exam Process (EN)](https://boatpass.de/en/sbf-exam/): How the SBF exam works, theory and practice.
+- [FAQ (EN)](https://boatpass.de/en/faq/): Common questions on license, exam and question catalog.
+- [Which Boating License? (EN)](https://boatpass.de/en/tools/which-boating-license/): Free finder tool – 3 questions, then the matching license.
+- [Boat Schools (EN)](https://boatpass.de/en/boat-schools/): Directory of German boat schools by city.
+- [Blog (EN)](https://boatpass.de/en/blog/): Guides on exam knowledge, navigation, costs and practice.
+- [About (EN)](https://boatpass.de/en/about/): Marius Gehler, founder of Boatpass.
+- [Contact (EN)](https://boatpass.de/en/contact/): Support and inquiries.
