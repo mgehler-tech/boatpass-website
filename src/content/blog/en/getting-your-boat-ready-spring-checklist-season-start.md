@@ -17,6 +17,26 @@ faq:
     answer: "Check life jackets for condition and correct size, distress signals for expiration dates, and the first aid kit for completeness and shelf life. A fire extinguisher and a working flashlight belong on the checklist too, if you carry them on board."
   - question: "What does the first outing of a new season involve?"
     answer: "A relaxed test run in familiar waters where the engine, steering, electronics, and all systems are tested under real conditions before a longer trip. That way, any issues surface while there's still time to fix them."
+howTo:
+  name: "Getting your boat ready in spring"
+  description: "How to systematically prepare your boat for the start of the season after winter storage, from the hull and engine to the first outing."
+  steps:
+    - name: "Check the hull and underwater areas"
+      text: "Check the hull for cracks and blisters, refresh the antifouling, and check the seacocks, through-hulls, and sacrificial anodes before the boat goes back in the water."
+    - name: "Get the engine ready"
+      text: "Check the oil level, spark plugs, fuel system, and cooling system, then start the engine carefully, ideally with an external water supply, for the first time."
+    - name: "Install and check the battery"
+      text: "Check the charge level, clean the terminals, and reconnect the battery securely to the boat's electrical system."
+    - name: "Check the water system, bilge, and interior"
+      text: "Flush the fresh water system, test the bilge and bilge pump, and check cushions and seals for moisture and mildew."
+    - name: "Refresh the safety gear"
+      text: "Check life jackets, distress signals, the first aid kit, and the fire extinguisher for condition and expiration dates."
+    - name: "Check electronics, navigation, and radio"
+      text: "Update the GPS and chartplotter, test the radio, and check the navigation lights and general electrical system."
+    - name: "Check paperwork and insurance"
+      text: "Confirm boat papers and registration are valid, review your insurance coverage, and sort out your slip and launch date early."
+    - name: "Use the first outing as a shakedown run"
+      text: "In calm weather and familiar waters, test all systems under real conditions before heading out on a longer trip."
 ---
 
 After months in winter storage, most boat owners want to cast off the moment the first warm days arrive. But launching a boat without checking it over first risks unpleasant surprises out on the water, from a weak battery to a leak that developed unnoticed during the off-season. This article gives you a practical checklist so your boat starts the new season safely and reliably.

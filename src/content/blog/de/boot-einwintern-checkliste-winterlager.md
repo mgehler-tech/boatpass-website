@@ -16,6 +16,20 @@ faq:
     answer: "Die Batterie sollte ausgebaut oder zumindest abgeklemmt und kühl, trocken und frostfrei gelagert werden. Der Ladezustand sollte regelmäßig geprüft werden, da eine über Monate tiefentladene Batterie deutlich an Kapazität verliert."
   - question: "Worauf muss ich bei der Abdeckung des Boots während der Lagerung achten?"
     answer: "Eine gut sitzende Persenning schützt vor Niederschlag, Laub und UV-Strahlung, muss aber ausreichend belüftet sein, damit sich darunter kein Kondenswasser staut. Eine komplett luftdichte Abdeckung ohne Belüftung begünstigt Feuchtigkeit und Schimmelbildung im Innenraum."
+howTo:
+  name: "Boot einwintern: Schritt für Schritt"
+  description: "So bereitest du Motor, Wassersystem, Batterie und Rumpf deines Boots richtig auf das Winterlager vor, damit nichts einfriert oder korrodiert."
+  steps:
+    - name: "Motor winterfest machen"
+      text: "Kühlsystem entleeren oder mit Frostschutz füllen, Motoröl und Filter wechseln, Kraftstoffsystem vorbereiten und Zündkerzen beziehungsweise Zylinder schützen."
+    - name: "Wassersystem, Tank und Bilge entleeren"
+      text: "Frischwassertanks und Leitungen entleeren, die Bilge trocken halten und Toilette beziehungsweise Abwassertank frostsicher machen."
+    - name: "Batterie richtig lagern"
+      text: "Batterie ausbauen oder abklemmen, kühl, trocken und frostfrei lagern und den Ladezustand regelmäßig prüfen."
+    - name: "Rumpf, Deck und Ausrüstung vorbereiten"
+      text: "Rumpf reinigen, Antifouling und Dichtungen prüfen und lose Ausrüstung wie Rettungswesten und Elektronik trocken einlagern."
+    - name: "Abdeckung und Lagerort wählen"
+      text: "Zwischen Wasser, Kran oder Trailer entscheiden, eine belüftete Persenning oder Halle wählen und auf gleichmäßige Gewichtsverteilung sowie Nagetierschutz achten."
 ---
 
 Sobald die Temperaturen fallen und die Saison sich dem Ende zuneigt, beginnt für viele Bootsbesitzer die wichtigste Wartungsphase des Jahres: das Einwintern. Wer sein Boot gründlich auf die kalte Jahreszeit vorbereitet, erspart sich im Frühjahr teure Reparaturen durch Frostschäden, korrodierte Bauteile oder eine leere Batterie. Dieser Artikel gibt dir eine praktische Checkliste an die Hand, damit du nichts Wichtiges übersiehst, egal ob dein Boot im Wasser, an Land oder auf dem Trailer überwintert.

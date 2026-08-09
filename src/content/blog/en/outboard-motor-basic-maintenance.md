@@ -17,6 +17,22 @@ faq:
     answer: "Reliable change intervals come only from your engine's owner's manual or service booklet, since they depend on the model, usage, and operating hours. Oil with a milky tint can indicate water intrusion and should be checked by a qualified workshop promptly."
   - question: "How do I know if the sacrificial anode needs replacing?"
     answer: "The anode protects the engine's metal parts from galvanic corrosion by wearing away preferentially itself, and needs replacing once a large portion of it has been consumed. How worn it already is is best judged by comparing it directly to a new one or having a qualified workshop assess it."
+howTo:
+  name: "Outboard motor basic maintenance, step by step"
+  description: "The key maintenance steps for your outboard motor, from flushing after every trip to checking the propeller and sacrificial anode."
+  steps:
+    - name: "Flush and inspect after every trip"
+      text: "Flush the cooling system with fresh water, give the motor a quick visual inspection, and check the telltale stream at start-up."
+    - name: "Check the engine oil and filter"
+      text: "Follow the manufacturer's change intervals, check the oil level regularly, and watch for contamination such as a milky tint."
+    - name: "Check and replace spark plugs"
+      text: "Check their condition regularly, follow the manufacturer's electrode gap and replacement interval, and always use the correct plug type."
+    - name: "Keep the fuel system clean"
+      text: "Keep an eye on the fuel filter, check the lines and connections, and consider a fuel stabilizer for longer periods of storage."
+    - name: "Check the propeller and sacrificial anode"
+      text: "Remove and inspect the propeller regularly, replace the sacrificial anode in time, and change the gear oil in the lower unit."
+    - name: "Follow the maintenance schedule and book inspections"
+      text: "Use the service book and manufacturer's schedule as your baseline, and schedule regular inspections with a qualified workshop."
 ---
 
 An outboard motor is built to take a beating, but it only tolerates neglect up to a point. Stick to a handful of simple maintenance habits and you significantly cut the risk of an engine failure, protect your boat's resale value, and reduce unpleasant surprises out on the water. This article gives you a practical overview of the most important care points, but it doesn't replace your engine's owner's manual, which always remains the authoritative source for intervals and procedures.
