@@ -17,6 +17,22 @@ faq:
     answer: "Verlässliche Wechselintervalle findest du ausschließlich im Bedienungshandbuch oder Serviceheft deines Motors, da sie je nach Modell, Nutzungsintensität und Betriebsstunden variieren. Milchig verfärbtes Öl kann auf eingedrungenes Wasser hindeuten und sollte zeitnah von einer Fachwerkstatt geprüft werden."
   - question: "Woran erkenne ich, ob die Opferanode getauscht werden muss?"
     answer: "Die Anode schützt Metallteile des Motors vor galvanischer Korrosion, indem sie sich selbst bevorzugt abbaut, und muss ersetzt werden, wenn sie zu einem großen Teil abgetragen ist. Wie stark sie bereits verbraucht ist, lässt sich am besten durch Vergleich mit einer neuen Anode oder durch eine Fachwerkstatt beurteilen."
+howTo:
+  name: "Außenborder-Basiswartung: Schritt für Schritt"
+  description: "Die wichtigsten Wartungsschritte für deinen Außenborder, von der Spülung nach jeder Fahrt bis zu Propeller und Opferanode."
+  steps:
+    - name: "Nach jeder Fahrt spülen und sichtprüfen"
+      text: "Kühlsystem mit Süßwasser durchspülen, Motor kurz sichtprüfen und den Kühlwasserstrahl beim Start kontrollieren."
+    - name: "Motoröl und Filter prüfen"
+      text: "Wechselintervalle nach Herstellerangabe einhalten, Ölstand regelmäßig kontrollieren und auf Verunreinigungen wie milchige Verfärbung achten."
+    - name: "Zündkerzen prüfen und wechseln"
+      text: "Zustand regelmäßig kontrollieren, Elektrodenabstand und Wechselintervall beachten und immer den passenden Kerzentyp verwenden."
+    - name: "Kraftstoffsystem sauber halten"
+      text: "Kraftstofffilter im Blick behalten, Leitungen und Anschlüsse kontrollieren und bei längeren Standzeiten einen Kraftstoffstabilisator erwägen."
+    - name: "Propeller und Opferanode kontrollieren"
+      text: "Propeller regelmäßig abnehmen und prüfen, die Opferanode rechtzeitig tauschen und das Getriebeöl im Unterwassergehäuse wechseln."
+    - name: "Wartungsplan einhalten und Inspektion einplanen"
+      text: "Serviceheft und Herstellerplan als Grundlage nutzen und regelmäßige Inspektionen bei einer Fachwerkstatt einplanen."
 ---
 
 Ein Außenborder ist robust gebaut, verzeiht aber Nachlässigkeit bei der Pflege nur begrenzt. Wer regelmäßig ein paar einfache Wartungsschritte einhält, verringert das Risiko eines Motorschadens deutlich, erhält den Wert seines Bootes und hat auf dem Wasser weniger böse Überraschungen. Dieser Artikel gibt dir einen praktischen Überblick über die wichtigsten Pflegepunkte, ersetzt aber nicht das Bedienungshandbuch deines Motors, das immer die verbindliche Grundlage für Intervalle und Vorgehensweisen ist.

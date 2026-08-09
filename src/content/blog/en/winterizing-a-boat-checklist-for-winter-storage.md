@@ -17,6 +17,20 @@ faq:
     answer: "Remove the battery or at least disconnect it, and store it somewhere cool, dry, and frost-free. Check the charge level regularly, since a battery left deeply discharged for months loses significant capacity."
   - question: "What should I watch out for when covering the boat for storage?"
     answer: "A well-fitted cover protects against rain, leaves, and UV exposure but needs enough ventilation to prevent condensation from building up underneath. A completely airtight cover with no ventilation encourages moisture and mildew inside."
+howTo:
+  name: "Winterizing a boat, step by step"
+  description: "How to properly prepare the engine, water system, battery, and hull of your boat for winter storage so nothing freezes or corrodes."
+  steps:
+    - name: "Winterize the engine"
+      text: "Drain the cooling system or fill it with antifreeze, change the engine oil and filter, prepare the fuel system, and protect the spark plugs or cylinders."
+    - name: "Drain the water system, tank, and bilge"
+      text: "Drain the fresh water tanks and lines, keep the bilge dry, and make the toilet or waste tank frost-proof."
+    - name: "Store the battery correctly"
+      text: "Remove or disconnect the battery, store it somewhere cool, dry, and frost-free, and check the charge level regularly."
+    - name: "Prepare the hull, deck, and gear"
+      text: "Clean the hull, check the antifouling and seals, and store loose gear like life jackets and electronics somewhere dry."
+    - name: "Choose a cover and storage location"
+      text: "Decide between storing in the water, on a crane, or on a trailer, choose a ventilated cover or a hall, and pay attention to even weight distribution and rodent protection."
 ---
 
 As temperatures drop and the season winds down, many boat owners face the most important maintenance phase of the year: winterizing. Prepare your boat thoroughly for the cold months and you save yourself expensive repairs come spring, from frost damage to corroded parts to a dead battery. This article gives you a practical checklist so you don't miss anything important, whether your boat spends the winter in the water, ashore, or on a trailer.

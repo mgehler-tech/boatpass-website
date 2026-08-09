@@ -17,6 +17,26 @@ faq:
     answer: "Rettungswesten auf Zustand und richtige Größe, Signalmittel auf Ablaufdatum sowie die Erste-Hilfe-Ausrüstung auf Vollständigkeit und Haltbarkeit prüfen. Auch Feuerlöscher und Handlampe gehören auf die Kontrollliste, falls an Bord vorhanden."
   - question: "Was gehört zur ersten Ausfahrt der neuen Saison?"
     answer: "Eine ruhige Probefahrt in vertrautem Revier, bei der Motor, Lenkung, Elektronik und alle Systeme unter realen Bedingungen getestet werden, bevor eine längere Tour ansteht. So fallen Mängel auf, während noch genug Zeit zum Nachbessern bleibt."
+howTo:
+  name: "Boot startklar machen im Frühjahr"
+  description: "So bereitest du dein Boot nach der Winterpause systematisch auf den Saisonstart vor, von Rumpf und Motor bis zur ersten Ausfahrt."
+  steps:
+    - name: "Rumpf und Unterwasserschiff kontrollieren"
+      text: "Rumpf auf Risse und Osmoseblasen prüfen, Antifouling auffrischen und Seeventile, Durchlässe sowie Opferanoden kontrollieren, bevor das Boot ins Wasser kommt."
+    - name: "Motor startklar machen"
+      text: "Ölstand, Zündkerzen, Kraftstoffsystem und Kühlsystem prüfen und den Motor vorsichtig, möglichst mit externer Wasserversorgung, zum ersten Mal starten."
+    - name: "Batterie einbauen und prüfen"
+      text: "Ladezustand kontrollieren, Pole reinigen und die Batterie fest und sicher wieder ans Bordnetz anschließen."
+    - name: "Wassersystem, Bilge und Innenausstattung prüfen"
+      text: "Frischwassersystem durchspülen, Bilge und Lenzpumpe testen sowie Polster und Dichtungen auf Feuchtigkeit und Schimmel kontrollieren."
+    - name: "Sicherheitsausrüstung auffrischen"
+      text: "Rettungswesten, Signalmittel, Erste-Hilfe-Ausrüstung und Feuerlöscher auf Zustand und Ablaufdatum prüfen."
+    - name: "Elektronik, Navigation und Funk prüfen"
+      text: "GPS und Kartenplotter aktualisieren, Funkgerät testen und Positionslichter sowie die Bordelektrik kontrollieren."
+    - name: "Papiere und Versicherung prüfen"
+      text: "Bootspapiere und Kennzeichen kontrollieren, den Versicherungsschutz überprüfen und den Liegeplatz beziehungsweise Slip-Termin rechtzeitig klären."
+    - name: "Erste Ausfahrt der Saison als Probefahrt nutzen"
+      text: "Bei ruhigem Wetter in vertrautem Revier alle Systeme unter realen Bedingungen testen, bevor eine längere Tour ansteht."
 ---
 
 Nach Monaten im Winterlager wollen die meisten Bootsbesitzer am liebsten sofort ablegen, sobald die ersten warmen Tage kommen. Wer sein Boot aber ungeprüft zu Wasser lässt, riskiert unangenehme Überraschungen mitten auf dem Wasser, von einer schwachen Batterie bis zu einem Leck, das sich in der Winterpause unbemerkt entwickelt hat. Dieser Artikel gibt dir eine praktische Checkliste an die Hand, damit dein Boot sicher und zuverlässig in die neue Saison startet.
