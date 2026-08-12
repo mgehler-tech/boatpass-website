@@ -78,7 +78,7 @@ export const LEARNING_APPS: LearningApp[] = [
     appStoreUrl: null,
     website: 'https://boatpass.de/',
     rating: 4.95,
-    ratingCount: 20,
+    ratingCount: 21,
     downloads: '10+',
     licenses: ['sbf-see', 'sbf-binnen', 'ubi', 'src', 'lrc'],
     pricingModel: 'freemium-onetime',
