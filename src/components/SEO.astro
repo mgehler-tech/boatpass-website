@@ -1,5 +1,5 @@
 ---
-import type { AppRating } from '../data/apps';
+import { formatRating, type AppRating } from '../data/apps';
 
 interface Props {
   title: string;
@@ -146,7 +146,7 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' |
     ...(appRating && appRating.ratings > 0 ? {
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": appRating.score.toFixed(1),
+        "ratingValue": formatRating(appRating.score),
         "ratingCount": appRating.ratings,
         "bestRating": "5",
         "worstRating": "1"
