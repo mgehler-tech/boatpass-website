@@ -92,7 +92,7 @@ Du lernst die Theorie ausschließlich mit einer App (wie Boatpass) – direkt au
 | Prüfungsgebühr (See) | 148 € | 148 € | 148 € |
 | **Gesamt (ca.)** | **400–650 €** | **240–400 €** | **200–260 €** |
 
-*(Beispielrechnung für den SBF See; für den SBF Binnen ist die Prüfungsgebühr mit 131 € rund 17 € niedriger. Preise variieren je nach Region und Anbieter. Stand: 2026.)*
+*(Beispielrechnung für den [SBF See](/sbf-see/); für den [SBF Binnen](/sbf-binnen/) ist die Prüfungsgebühr mit 131 € rund 17 € niedriger. Preise variieren je nach Region und Anbieter. Stand: 2026.)*
 
 ## Für wen lohnt sich welcher Weg?
 

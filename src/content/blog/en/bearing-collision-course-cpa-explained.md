@@ -19,7 +19,7 @@ faq:
     answer: "Rule 7 of the Collision Regulations requires every vessel to use all available means to determine whether risk of collision exists. If there is any doubt, such risk must be assumed to exist. A constant bearing combined with a decreasing distance is treated as a clear warning sign."
 ---
 
-On the water there are no traffic lights, no lanes, and often no radio contact with the other boat. Even so, you need to recognize early on whether two vessels are on a collision course. The key is a simple method that is centuries old: the bearing. This article explains what a bearing is, why a constant bearing is a warning sign, and what the term CPA has to do with it.
+On the water there are no traffic lights, no lanes, and often no radio contact with the other boat. Even so, you need to recognize early on whether two vessels are on a collision course. The key is a simple method that is centuries old: the bearing, a core part of the right-of-way rules for the [SBF Inland](/en/sbf-inland/) and the [SBF Coastal](/en/sbf-coastal/). This article explains what a bearing is, why a constant bearing is a warning sign, and what the term CPA has to do with it.
 
 ## What is a bearing?
 

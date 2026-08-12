@@ -33,7 +33,7 @@ howTo:
       text: "Erst wenn das Boot sicher am Steg liegt, machst du die übrigen Leinen fest und richtest die Fender endgültig aus."
 ---
 
-Kaum eine Situation sorgt bei Einsteigern für so viel Nervosität wie das An- und Ablegen: Auf engem Raum, oft mit Publikum am Steg, soll das Boot ruhig und kontrolliert an die gewünschte Stelle kommen. Dabei ist Hafenmanövrieren vor allem eines: **Physik und Vorbereitung**, keine Glückssache. Dieser Artikel zeigt dir, worauf es beim An- und Ablegen ankommt, welche Kräfte dabei wirken und wie du typische Fehler vermeidest, sowohl für die praktische SBF-Prüfung als auch für den Alltag am Steg.
+Kaum eine Situation sorgt bei Einsteigern für so viel Nervosität wie das An- und Ablegen: Auf engem Raum, oft mit Publikum am Steg, soll das Boot ruhig und kontrolliert an die gewünschte Stelle kommen. Dabei ist Hafenmanövrieren vor allem eines: **Physik und Vorbereitung**, keine Glückssache. Dieser Artikel zeigt dir, worauf es beim An- und Ablegen ankommt, welche Kräfte dabei wirken und wie du typische Fehler vermeidest, sowohl für die praktische Prüfung zum [SBF Binnen](/sbf-binnen/) oder [SBF See](/sbf-see/) als auch für den Alltag am Steg.
 
 ## Warum An- und Ablegen zu den Pflichtmanövern gehört
 

@@ -107,7 +107,7 @@ Popular bays often have several boats anchored at the same time, which calls for
 
 ## Anchoring as part of your SBF preparation
 
-Anchoring isn't one of the classic mandatory maneuvers in the practical part of the [boating license](/en/licenses/) exam, as described in the overview [SBF Exam: How It Works](/en/sbf-exam/), but it's still solid baseline knowledge for every recreational boater and shows up in the theory portion through questions on sea marks, navigation lights, and behavior at anchor. Once you've internalized the relationships between seabed type, angle of pull, and swinging circle, you'll be noticeably more relaxed in everyday boating, whether it's a lunch stop in a bay or waiting in front of a lock.
+Anchoring isn't one of the classic mandatory maneuvers in the practical part of the [boating license](/en/licenses/) exam, as described in the overview [SBF Exam: How It Works](/en/sbf-exam/), but it's still solid baseline knowledge for [SBF Inland](/en/sbf-inland/) and [SBF Coastal](/en/sbf-coastal/) boaters alike and shows up in the theory portion through questions on sea marks, navigation lights, and behavior at anchor. Once you've internalized the relationships between seabed type, angle of pull, and swinging circle, you'll be noticeably more relaxed in everyday boating, whether it's a lunch stop in a bay or waiting in front of a lock.
 
 For the exam-relevant task of docking and undocking, you'll find a step-by-step guide in the article [Docking and Undocking: Harbor Maneuvers for Beginners](/en/blog/docking-undocking-harbor-maneuvers/), and which knots can help you secure your ground tackle is covered in [The Most Important Knots for the SBF](/en/blog/most-important-knots-sbf/).
 

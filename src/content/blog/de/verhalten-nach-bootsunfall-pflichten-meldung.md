@@ -81,7 +81,7 @@ Die Feststellungspflicht zu missachten oder einen Unfall gar nicht zu melden, is
 
 ## So kommt das Thema in der SBF-Prüfung vor
 
-Das Verhalten nach einem Unfall gehört zu den rechtlichen Grundpflichten, die im theoretischen Teil des SBF Binnen und des SBF See regelmäßig geprüft werden, etwa im Zusammenhang mit der Feststellungspflicht, der Hilfeleistungspflicht und dem richtigen Absetzen eines Notrufs. Der [ELWIS-Fragenkatalog](/sbf-see-pruefungsfragen/) fragt dabei weniger nach Paragrafen als nach dem praktischen Verständnis, was im Ernstfall zu tun ist. Mit der **Boatpass-App** kannst du genau diese Fragen im Prüfungsmodus üben und bekommst direktes Feedback, wo noch Lücken bestehen, bevor es in der echten [SBF-Prüfung](/sbf-pruefung-ablauf/) darauf ankommt.
+Das Verhalten nach einem Unfall gehört zu den rechtlichen Grundpflichten, die im theoretischen Teil des [SBF Binnen](/sbf-binnen/) und des [SBF See](/sbf-see/) regelmäßig geprüft werden, etwa im Zusammenhang mit der Feststellungspflicht, der Hilfeleistungspflicht und dem richtigen Absetzen eines Notrufs. Der [ELWIS-Fragenkatalog](/sbf-see-pruefungsfragen/) fragt dabei weniger nach Paragrafen als nach dem praktischen Verständnis, was im Ernstfall zu tun ist. Mit der **Boatpass-App** kannst du genau diese Fragen im Prüfungsmodus üben und bekommst direktes Feedback, wo noch Lücken bestehen, bevor es in der echten [SBF-Prüfung](/sbf-pruefung-ablauf/) darauf ankommt.
 
 ## Fazit
 
