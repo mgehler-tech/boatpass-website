@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "schwierigste-sbf-pruefungsfragen"
 faq:
   - question: "What's the failure rate for the German boating license?"
-    answer: "According to the DMYV and DSV, the theory exam has an average failure rate of about 10–15%, and the practical exam around 5%. The SBF Coastal runs slightly higher than the SBF Inland because of the navigation task. For comparison: around 39% fail the car driving license theory exam."
+    answer: "DMYV and DSV don't publish official figures regularly; available data suggests a failure rate of around 5–10% in the theory exam and around 5% in the practical exam. The SBF Coastal runs slightly higher than the SBF Inland because of the navigation task. For comparison: over 40% currently fail the car driving license theory exam."
   - question: "What's the hardest question in the SBF Coastal exam?"
     answer: "The highest error rate (around 39%) belongs to the question about the strong wind warning. The correct answer is wind force 6 and 7 on the Beaufort scale. It's frequently confused with the gale warning, which only applies from wind force 8."
   - question: "Which questions are hardest in the SBF Inland exam?"
@@ -23,11 +23,13 @@ Not all questions in the German boating license exam are equally hard. Some ques
 
 ## How hard is the SBF exam really?
 
-According to the DMYV and DSV, the failure rate for the boating license averages around **10–15% in the theory exam** and roughly **5% in the practical exam**. The SBF Coastal has a slightly higher failure rate than the SBF Inland – mainly because of the navigation task.
+DMYV and DSV don't publish official figures regularly; available data suggests a failure rate of around **5–10% in the theory exam** and roughly **5% in the practical exam**. The SBF Coastal has a slightly higher failure rate than the SBF Inland – mainly because of the navigation task.
 
-For comparison: around 39% fail the car driving license theory exam. So the boating license is significantly more manageable – if you know the stumbling blocks.
+For comparison: over **40%** currently fail the car driving license theory exam (as of 2024, per TÜV-Verband), in some years nearly one in two. So the boating license is significantly more manageable – if you know the stumbling blocks.
 
 ## SBF Coastal: the questions with the highest error rate
+
+*The error rates below come from an analysis of exam data by the learning platform bootspruefung.de, not from an official DMYV or DSV statistic.*
 
 ### No. 1: Strong wind warning (error rate ~39%)
 
