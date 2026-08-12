@@ -738,14 +738,24 @@ const promo = {
     color: #fff;
   }
 
-  /* Sublinks */
+  /* Sublinks: die eigentlichen Navigationsziele im mobilen Menü (SBF Binnen/See,
+     Funkzeugnisse, Ratgeber-Links). Als reine 14px-Textzeile mit 11px-Padding
+     waren sie nur ~43px hoch und blieben damit knapp unter der 44px-Mindestgröße
+     für Touch-Flächen (WCAG 2.5.5), die der Rest der Seite bereits durchgängig
+     einhält (Footer-, Katalog-, Blog-Teaser-Links, Filter-Chips, Sprach-/Theme-
+     Umschalter). min-height:44px zieht die Tap-Fläche sauber auf das Raster; das
+     vertikale Padding ist entsprechend angepasst und die Zeile per Flexbox
+     zentriert, sodass der bisherige Rhythmus (32px-Einzug, 1px-Zeilenabstand)
+     erhalten bleibt. Corporate Design (Farben, Schrift) unberührt. */
   .mobile-nav-sublink {
-    display: block;
+    display: flex;
+    align-items: center;
+    min-height: 44px;
     font-size: 14px;
     font-weight: 500;
     color: #4B5563;
     text-decoration: none;
-    padding: 11px 12px 11px 32px;
+    padding: 8px 12px 8px 32px;
     border-radius: 8px;
     transition: background 0.15s, color 0.15s;
   }
