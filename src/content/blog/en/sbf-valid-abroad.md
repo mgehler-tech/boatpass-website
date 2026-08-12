@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "sbf-im-ausland-gueltig"
 faq:
   - question: "Is my German SBF valid in Croatia, the Netherlands, and Italy?"
-    answer: "Yes. All three countries recognise the German ICC (on the reverse of the credit-card-format SBF). You will generally also need the SRC radio operator's licence, and on Dutch inland waterways a CEVNI endorsement may be required as well."
+    answer: "Yes. All three countries recognise the German ICC (on the reverse of the credit-card-format SBF). You will generally also need the SRC radio operator's licence. On Dutch inland waterways, a licence is only required at all for boats over 15 m or capable of more than 20 km/h – the ICC Inland covers that, and it already includes CEVNI knowledge."
   - question: "What is the ICC, and do I need it abroad?"
     answer: "The ICC (International Certificate of Competence) is based on UNECE Resolution No. 40 and appears on the reverse of the credit-card-format SBF. It is mutually recognised by signatory countries. Older paper licences don't include an ICC and need to be upgraded through the DMYV or DSV."
   - question: "What documents do I need to charter a boat abroad?"
@@ -84,11 +84,11 @@ The Netherlands offers two very different environments for recreational boating:
 
 ### Inland Waterways and CEVNI
 
-On European inland waterways, the applicable regulatory framework is **CEVNI (Code Européen des Voies de la Navigation Intérieure)** – the European Code for Inland Waterways. Foreign skippers on Dutch inland waterways may need an **ICC Inland** as well as a **CEVNI endorsement** in addition to their national licence.
+On Dutch inland waterways, a licence is only required at all if your boat is longer than 15 m or capable of more than 20 km/h – below that, no licence is needed, Dutch or otherwise. Above that threshold, the Netherlands accepts the **ICC Inland** on the reverse of your SBF Binnen as equivalent proof; you generally don't need a separate Dutch vaarbewijs.
 
-The CEVNI exam tests the traffic rules that apply to European inland waterways: right-of-way rules, waterway signs, sound and light signals, and special situations such as ferry crossings and narrow channels. It can be taken as a supplementary exam alongside the German SBF Binnen at many recognised sailing schools.
+The **CEVNI** knowledge (Code Européen des Voies de la Navigation Intérieure – the traffic rules for European inland waterways) required to validate the "Inland" category on the ICC is already covered by the German SBF Binnen exam. DMYV and DSV issue the ICC Inland without a separate CEVNI test.
 
-**Important:** The exact thresholds – which boat lengths, speeds, or specific waterways trigger a licence requirement – can change. Before your trip, verify current Dutch regulations through the **ADAC Sportboot guide** or directly with the Dutch water authority (Rijkswaterstaat).
+**Important:** The exact thresholds – which boat lengths, speeds, or specific waterways trigger a licence requirement – can change, and charter companies sometimes have their own requirements. Before your trip, verify current Dutch regulations through the **ADAC Sportboot guide** or directly with the Dutch water authority (Rijkswaterstaat).
 
 ### Practical Notes on the Ijsselmeer and Waddenzee
 
@@ -110,8 +110,8 @@ Italy's approach to boat licence requirements is built less around engine size o
 
 Italian maritime law defines several zones for recreational boating:
 
-- **Within 1 nautical mile of the coast:** For some categories of small, low-powered craft, no formal licence may be required.
-- **1 to 12 nautical miles:** A valid boat licence is required for the vast majority of vessels, including all charter yachts.
+- **Within 6 nautical miles of the coast:** For some categories of small, low-powered craft, no formal licence may be required.
+- **6 to 12 nautical miles:** A valid boat licence is required for the vast majority of vessels, including all charter yachts.
 - **Beyond 12 nautical miles:** A licence is always required.
 
 If you are chartering along the Tuscan Archipelago, around Sardinia, Sicily, or the Amalfi Coast, you will almost certainly be sailing in zones where the **ICC Coastal** is mandatory. Essentially every charter route in Italy falls into this category.
@@ -180,6 +180,6 @@ Maritime regulations change. What is accurate today may be outdated after a new 
 
 ## Conclusion
 
-The German SBF See in card format with its ICC Coastal endorsement gives you a solid foundation for sailing across Europe. Croatia, the Netherlands, and Italy all recognise the ICC – but expect to need the SRC wherever a VHF radio is on board, and be aware that Dutch inland waterways may additionally require a CEVNI endorsement. Prepare your documents well in advance, double-check requirements before you travel, and then enjoy the sailing.
+The German SBF See in card format with its ICC Coastal endorsement gives you a solid foundation for sailing across Europe. Croatia, the Netherlands, and Italy all recognise the ICC – but expect to need the SRC wherever a VHF radio is on board. Prepare your documents well in advance, double-check requirements before you travel, and then enjoy the sailing.
 
 Still working towards your SBF? The **[Boatpass app](/)** trains you with the official ELWIS question catalogue in exam mode – so you can pass the licence exam and then put it to good use on the water.

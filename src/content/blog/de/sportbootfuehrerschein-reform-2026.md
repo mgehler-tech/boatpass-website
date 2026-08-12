@@ -18,7 +18,7 @@ faq:
   - question: "Gilt die 15-PS-Grenze weiterhin?"
     answer: "Ja, die Leistungsgrenze von 11,03 kW (15 PS) für die Führerscheinpflicht bleibt bestehen. Neu ist, dass diese Grenze künftig einheitlich für alle Antriebsarten gilt, also auch für Elektromotoren. Die bisherige niedrigere E-Motor-Grenze von 7,5 kW entfällt."
   - question: "Ab wann gelten die neuen Regeln?"
-    answer: "Die Sportschifffahrtsverordnung soll zu Beginn der Sportbootsaison 2026 in Kraft treten. Die Änderungen im Führerscheinwesen finden nach einer Übergangsfrist zum 01.01.2028 Anwendung."
+    answer: "Der ursprüngliche Zeitplan sah ein Inkrafttreten zu Beginn der Sportbootsaison 2026 vor. Dieser Termin wurde verfehlt, die Verordnung befindet sich weiterhin in der rechtlichen Prüfung, ein neuer verbindlicher Termin steht noch nicht fest. Als Zielkorridor für die Übergangsfrist im Führerscheinwesen wird derzeit der 01.01.2028 genannt."
 ---
 
 Die Bundesregierung plant die größte Änderung im deutschen Sportbootführerscheinwesen seit Jahrzehnten: Mit der neuen Sportschifffahrtsverordnung soll der amtliche Sportbootführerschein durch sogenannte Verbandsscheine ersetzt werden. Was das konkret für dich bedeutet, ob dein bestehender Schein gültig bleibt und welche Neuerungen bei Elektromotoren kommen, erfährst du hier.
@@ -33,12 +33,12 @@ Diese neuen Dokumente heißen **Verbandsscheine** und sind nicht mehr „amtlich
 
 ## Zeitplan und Übergangsfristen
 
-Das Bundesministerium für Verkehr (BMV) beabsichtigt, das Rechtsetzungsverfahren so abzuschließen, dass die neue Verordnung zu Beginn der Sportbootsaison 2026 in Kraft tritt. Die Änderungen im Führerscheinwesen sollen dann nach einer **Übergangsfrist zum 01.01.2028** Anwendung finden.
+Das Bundesministerium für Verkehr (BMV) hatte ursprünglich angestrebt, die neue Verordnung zu Beginn der Sportbootsaison 2026 in Kraft treten zu lassen. Dieser Termin ist inzwischen verstrichen: Die Verordnung befindet sich weiterhin in der rechtlichen Prüfung – unter anderem zur Frage der sogenannten Beleihung, also ob eine hoheitliche Aufgabe wie die Führerscheinausstellung ohne förmliche Beleihung an private Verbände übertragen werden darf. Ein neuer, verbindlicher Inkrafttretenstermin steht (Stand August 2026) noch nicht fest; als Zielkorridor für die Übergangsfrist im Führerscheinwesen wird derzeit der 01.01.2028 genannt.
 
-Konkret bedeutet das:
+Konkret bedeutet das aktuell:
 
-- **2026/2027:** Übergangsphase. Der aktuelle amtliche SBF ist weiterhin vollständig gültig und wird auch noch ausgestellt.
-- **Ab 01.01.2028:** Die neuen Regelungen greifen. Neue Scheine werden als Verbandsscheine ausgegeben.
+- **Bis auf Weiteres:** Der amtliche SBF ist unverändert vollständig gültig und wird weiterhin so ausgestellt wie bisher.
+- **Offen:** Wann und in welcher Form die Verbandsscheine tatsächlich eingeführt werden, steht noch nicht fest – auch DMYV und DSV warten selbst auf einen aktualisierten Zeitplan des Ministeriums.
 
 ## Bleibt mein bestehender Führerschein gültig?
 

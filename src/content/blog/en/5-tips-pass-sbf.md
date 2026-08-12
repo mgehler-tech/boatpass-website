@@ -30,7 +30,7 @@ howTo:
     - name: "Study daily instead of in blocks"
       text: "Short, regular study sessions consolidate knowledge more reliably than rare long sessions."
     - name: "Book your exam slot early"
-      text: "Book with the DMYV examination board a few weeks before your planned study finish date, since slots fill up in advance."
+      text: "Book with the DMYV examination board once you're roughly 60–70% prepared, since slots fill up in advance."
 ---
 
 The German boating license (Sportbootführerschein, SBF) is achievable for anyone – but the wrong preparation strategy can lead to failure even with enough study time. Here are five concrete tips that make the real difference.
@@ -89,7 +89,7 @@ Exam slots with DMYV (the official licensing authority) and recognized clubs fil
 2. Check available dates and registration deadlines (payment must arrive at least 7 days before the exam)
 3. Book when you're roughly 60–70% prepared – the deadline will motivate you to cover the rest
 
-The official exam fee for SBF Inland (DMYV) is currently around **€131** (as of 05/2026). Add course fees of approximately €265–299 for a total of around €400–430.
+The official exam fee for SBF Inland (DMYV) is currently around **€131** (as of 05/2026). Add course fees of approximately €370–520 for a total of around €500–650.
 
 ## Summary
 

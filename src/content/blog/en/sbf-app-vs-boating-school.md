@@ -33,7 +33,7 @@ This sets the SBF apart from the car driving license, where a certain number of 
 
 You attend a weekend or evening course at a local boating school. The theory is explained by the instructor, and practical exercises take place on the water.
 
-**Cost:** Between €300 and €650 (theory + practice + exam fee), depending on region and provider.
+**Cost:** Between €400 and €650 (theory + practice + exam fee), depending on region and provider.
 
 **Pros:**
 - A personal contact for your questions
@@ -51,7 +51,7 @@ You attend a weekend or evening course at a local boating school. The theory is 
 
 You learn the theory through an online platform with videos and exercises. You book the practical training separately at a boating school.
 
-**Cost:** Between €200 and €450 (online course from approx. €40–100, practice from €50–150, exam fee from €131).
+**Cost:** Between €240 and €400 (online course from approx. €40–100, practice from €50–150, exam fee from €148).
 
 **Pros:**
 - Flexible learning – whenever and wherever you want
@@ -68,7 +68,7 @@ You learn the theory through an online platform with videos and exercises. You b
 
 You learn the theory exclusively with an app (like Boatpass) – directly from the official ELWIS question catalog. For the practical exam you book a single lesson at a boating school.
 
-**Cost:** Between €160 and €260 (app one-time €7–12, practice lesson from €50–100, exam fee from €131).
+**Cost:** Between €200 and €260 (app one-time €7–12, practice lesson from €50–100, exam fee from €148).
 
 **Pros:**
 - By far the cheapest option
@@ -92,7 +92,7 @@ You learn the theory exclusively with an app (like Boatpass) – directly from t
 | Exam fee (Coastal) | €148 | €148 | €148 |
 | **Total (approx.)** | **€400–650** | **€240–400** | **€200–260** |
 
-*(Prices vary by region and provider. As of 2026.)*
+*(Example calculation for the SBF Coastal; for the SBF Inland the exam fee is about €17 lower at €131. Prices vary by region and provider. As of 2026.)*
 
 ## Which route suits whom?
 

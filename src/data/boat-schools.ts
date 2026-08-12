@@ -308,8 +308,8 @@ export const cities: BoatSchoolCity[] = [
     },
     mapsQuery: 'Bootsfahrschule Rostock',
     schools: [
-      { name: 'Baltic Sport Warnemünde', address: 'Am Strom 69, 18119 Rostock-Warnemünde', website: 'https://www.balticsport.de/', phone: '0381 5108488', licenses: ['SBF Binnen', 'SBF See', 'SKS', 'SRC', 'UBI'] },
-      { name: 'Wasport Bootsfahrschule', address: 'Hundsburgallee 8, 18106 Rostock', website: 'https://www.wasport.de/', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
+      { name: 'Baltic Sport Warnemünde', address: 'Am Bahnhof 3, 18119 Rostock-Warnemünde', website: 'https://www.balticsport.de/', phone: '0381 2009555', licenses: ['SBF Binnen', 'SBF See', 'SKS', 'SRC', 'UBI'] },
+      { name: 'Wasport Bootsfahrschule', address: 'Warnowufer 58, 18057 Rostock', website: 'https://www.wasport.de/', licenses: ['SBF Binnen', 'SBF See', 'SKS'] },
       { name: 'Renós Bootsschule / Wasser360', address: 'Rostock-Gehlsdorf', website: 'https://www.wasser360.de/', licenses: ['SBF Binnen', 'SBF See'] },
     ],
     faq: [
@@ -429,7 +429,7 @@ export const cities: BoatSchoolCity[] = [
     mapsQuery: 'Bootsfahrschule Lübeck',
     schools: [
       { name: 'Wasserfahrschule Travemünde', address: 'Travemünde, 23570 Lübeck', website: 'https://www.wasserfahrschule-travemuende.de/', phone: '04502 880033', licenses: ['SBF Binnen', 'SBF See', 'SKS', 'SRC'] },
-      { name: 'Aquafun Bootsschule Lübeck', address: 'Lübeck', website: 'https://www.aquafun-luebeck.de/', licenses: ['SBF Binnen', 'SBF See'] },
+      { name: 'Aquafun Bootsschule Lübeck', address: 'Lübeck', website: 'https://www.aquafun.de/bootsschulen/luebeck/', licenses: ['SBF Binnen', 'SBF See'] },
       { name: 'Bootsfahrschule Dietz Lübeck', address: 'Lübeck / Travemünde', website: 'https://www.bootsfahrschule-dietz.de/', licenses: ['SBF Binnen', 'SBF See'] },
     ],
     faq: [

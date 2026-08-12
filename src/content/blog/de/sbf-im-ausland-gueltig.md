@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "sbf-valid-abroad"
 faq:
   - question: "Gilt mein deutscher SBF in Kroatien, den Niederlanden und Italien?"
-    answer: "Ja. Alle drei Länder erkennen den deutschen ICC (auf der Rückseite des SBF im Scheckkartenformat) an. In der Regel brauchst du zusätzlich das SRC-Seefunkzeugnis; auf niederländischen Binnengewässern kann außerdem ein CEVNI-Nachweis nötig sein."
+    answer: "Ja. Alle drei Länder erkennen den deutschen ICC (auf der Rückseite des SBF im Scheckkartenformat) an. In der Regel brauchst du zusätzlich das SRC-Seefunkzeugnis. Auf niederländischen Binnengewässern ist ohnehin nur bei Booten über 15 m oder mehr als 20 km/h überhaupt eine Fahrerlaubnis nötig – der ICC Inland reicht dafür, die CEVNI-Kenntnisse sind darin bereits enthalten."
   - question: "Was ist der ICC und brauche ich ihn fürs Ausland?"
     answer: "Der ICC (International Certificate of Competence) basiert auf UNECE-Resolution Nr. 40 und steht auf der Rückseite des SBF im Scheckkartenformat. Er wird von den Unterzeichnerstaaten gegenseitig anerkannt. Alte Papierscheine enthalten keinen ICC und müssen beim DMYV oder DSV umgeschrieben werden."
   - question: "Welche Dokumente brauche ich zum Chartern im Ausland?"
@@ -86,11 +86,11 @@ Die Niederlande haben zwei Gesichter für Wassersportler: das dichte, weitverzwe
 
 ### Binnengewässer: CEVNI als Schlüssel
 
-Auf den europäischen Binnenschifffahrtsstraßen gilt das **CEVNI (Code Européen des Voies de la Navigation Intérieure)** – der Europäische Code für Binnenwasserstraßen. Für ausländische Bootsführer auf niederländischen Binnengewässern kann neben dem ICC Inland auch ein **CEVNI-Nachweis** erforderlich sein.
+Auf niederländischen Binnengewässern ist überhaupt nur dann eine Fahrerlaubnis nötig, wenn dein Boot länger als 15 m ist oder schneller als 20 km/h fahren kann – darunter reicht kein Führerschein, auch kein niederländischer. Oberhalb dieser Grenze akzeptieren die Niederlande den **ICC Inland** auf der Rückseite deines SBF Binnen als gleichwertigen Nachweis; einen zusätzlichen niederländischen Vaarbewijs brauchst du in der Regel nicht.
 
-Der CEVNI-Test prüft die Verkehrsregeln auf europäischen Binnenwasserstraßen: Ausweichregeln, Fahrwasserzeichen, Signale und Sondersituationen. Er kann als Zusatzprüfung zum SBF Binnen an anerkannten Bootsschulen abgelegt werden.
+Die **CEVNI-Kenntnisse** (Code Européen des Voies de la Navigation Intérieure – Verkehrsregeln auf europäischen Binnenwasserstraßen), die für die Gültigkeit der Kategorie „Inland" auf dem ICC nötig sind, deckt die deutsche SBF-Binnen-Prüfung bereits ab. DMYV und DSV stellen den ICC Inland ohne separate CEVNI-Zusatzprüfung aus.
 
-**Wichtig:** Die genauen Anforderungen – ab welcher Bootsgröße, welcher Geschwindigkeit oder welchem Gewässer ein Führerschein benötigt wird – können sich ändern. Prüfe vor jeder Reise die aktuellen niederländischen Vorschriften, z. B. über den **ADAC Sportboot-Reiseführer** oder direkt bei der niederländischen Wasserbehörde (Rijkswaterstaat).
+**Wichtig:** Die genauen Anforderungen – ab welcher Bootsgröße, welcher Geschwindigkeit oder welchem Gewässer eine Fahrerlaubnis benötigt wird – können sich ändern, und Chartergesellschaften stellen mitunter eigene Anforderungen. Prüfe vor jeder Reise die aktuellen niederländischen Vorschriften, z. B. über den **ADAC Sportboot-Reiseführer** oder direkt bei der niederländischen Wasserbehörde (Rijkswaterstaat).
 
 ### Praktische Tipps fürs Ijsselmeer und Wattenmeer
 
@@ -112,8 +112,8 @@ In Italien richtet sich die Führerscheinpflicht nicht allein nach Motorleistung
 
 Die italienische Seeschifffahrtsgesetzgebung kennt verschiedene Zonen:
 
-- **Bis 1 Seemeile vor der Küste:** Für bestimmte kleine, schwach motorisierte Boote kann das Fahren ohne formellen Führerschein möglich sein.
-- **1 bis 12 Seemeilen:** Hier ist für die überwiegende Mehrzahl der Fahrzeuge – und für alle Charteryachten – eine gültige Fahrerlaubnis Pflicht.
+- **Bis 6 Seemeilen vor der Küste:** Für bestimmte kleine, schwach motorisierte Boote kann das Fahren ohne formellen Führerschein möglich sein.
+- **6 bis 12 Seemeilen:** Hier ist für die überwiegende Mehrzahl der Fahrzeuge – und für alle Charteryachten – eine gültige Fahrerlaubnis Pflicht.
 - **Über 12 Seemeilen:** Immer Führerscheinpflicht.
 
 Für das Fahren im toskanischen Archipel, vor Sardinien, Sizilien oder an der Amalfiküste – also für praktisch jede Charterroute in Italien – bist du in Zonen unterwegs, in denen der **ICC Coastal** benötigt wird.
@@ -182,6 +182,6 @@ Bootfahrvorschriften im Ausland können sich ändern: neue Gesetze, veränderte 
 
 ## Fazit
 
-Mit dem deutschen SBF See im Scheckkartenformat und dem ICC Coastal auf der Rückseite bist du für die beliebtesten Segelreviere in Europa gut gerüstet. Kroatien, die Niederlande und Italien erkennen den ICC an – aber du brauchst in der Regel zusätzlich das SRC, und auf niederländischen Binnengewässern kann auch ein CEVNI-Nachweis nötig sein. Bereite deine Dokumente rechtzeitig vor, hole aktuelle Infos ein – und genieße dann unbeschwert deinen Törn auf den schönsten Gewässern Europas.
+Mit dem deutschen SBF See im Scheckkartenformat und dem ICC Coastal auf der Rückseite bist du für die beliebtesten Segelreviere in Europa gut gerüstet. Kroatien, die Niederlande und Italien erkennen den ICC an – aber du brauchst in der Regel zusätzlich das SRC. Bereite deine Dokumente rechtzeitig vor, hole aktuelle Infos ein – und genieße dann unbeschwert deinen Törn auf den schönsten Gewässern Europas.
 
 Du lernst noch für deinen SBF? Die **[Boatpass-App](/)** enthält den offiziellen ELWIS-Fragenkatalog mit Prüfungsmodus – ideal zum Vorbereiten, wo immer du gerade bist. So kommst du gut vorbereitet in die Prüfung und bald darauf auf das Wasser.

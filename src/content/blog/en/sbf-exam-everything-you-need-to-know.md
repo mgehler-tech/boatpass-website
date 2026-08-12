@@ -16,7 +16,7 @@ faq:
   - question: "How many questions do I need to answer correctly in the SBF theory exam?"
     answer: "The 30 questions split into 7 base questions (at least 5 correct) and 23 specific questions (at least 18 correct). Both blocks must reach their minimum score separately, a strong score in one cannot make up for a weak score in the other."
   - question: "What does the SBF cost?"
-    answer: "The 2026 exam fee is about €130.78 (SBF Inland), €148.38 (SBF Coastal), or €178.61 for the combined exam. Including a course, total costs are often €400-430 for SBF Inland and around €520 for SBF Coastal, depending on the boating school and region."
+    answer: "The 2026 exam fee is about €130.78 (SBF Inland), €148.38 (SBF Coastal), or €178.61 for the combined exam. Including a full course, total costs per license are often €500-650, depending on the boating school and region."
   - question: "How long does preparation for the SBF take?"
     answer: "For SBF Inland, studying 30-45 minutes daily, 3-6 weeks is realistic. For SBF Coastal, plan extra time because of the added navigation task. The knot exam requires daily hands-on practice."
   - question: "What happens if I fail a part of the exam?"
@@ -111,8 +111,8 @@ The examination board requires more than just the registration form:
 | Item | SBF Inland | SBF Coastal |
 |---|---|---|
 | Exam fee (DMYV) | €130.78 | €148.38 |
-| Course fee (typical) | ~€265–299 | ~€370 |
-| **Total** | **~€400–430** | **~€520** |
+| Course fee (typical) | ~€370–520 | ~€350–500 |
+| **Total** | **~€500–650** | **~€500–650** |
 
 *(As of 07/2026 – exam fees apply nationwide across DMYV/DSV committees, course fees vary by boating school and region. For a full breakdown and money-saving tips, see our [SBF cost overview](/en/sbf-costs/).)*
 

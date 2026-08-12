@@ -12,7 +12,7 @@ faq:
   - question: "Reicht der SBF Binnen oder SBF See für den Bodensee?"
     answer: "Nein. Weder der SBF Binnen noch der SBF See berechtigen allein zur Fahrt mit einem führerscheinpflichtigen Motorboot auf dem Bodensee. Dort gilt die Internationale Schifffahrtsordnung Bodensee (ISB), die ein eigenes Patent verlangt – das Bodensee-Schifferpatent (BSP)."
   - question: "Was ist das Bodensee-Schifferpatent?"
-    answer: "Das Bodensee-Schifferpatent (BSP) ist ein eigenständiger Führerschein ausschließlich für den Bodensee. Es existiert in mehreren Kategorien: A für Motorboote, B für Motorboote mit Schleppbetrieb und C für Segelboote mit Hilfsmotor. Für die meisten Freizeitkapitäne ist Kategorie A relevant."
+    answer: "Das Bodensee-Schifferpatent (BSP) ist ein eigenständiger Führerschein ausschließlich für den Bodensee. Es existiert in vier Kategorien: A für Motorboote, B für Fahrgastschiffe, C für Güterschiffe und D für Segelboote mit mehr als 12 m² Segelfläche. Für die meisten Freizeitkapitäne ist Kategorie A relevant."
   - question: "Muss ich das BSP komplett neu machen, wenn ich schon den SBF habe?"
     answer: "Nicht bei null: Inhaber des SBF Binnen oder SBF See bringen die nautischen Grundlagen bereits mit und können je nach Behörde von vereinfachten Prüfungsanforderungen profitieren. Zu lernen sind vor allem die bodenseespezifischen Regeln der ISB. Frag die zuständige Behörde vor der Anmeldung."
 ---
@@ -31,14 +31,15 @@ Das Ergebnis: Der SBF Binnen, der auf deutschen Binnenwasserstraßen gilt, ist f
 
 Das **Bodensee-Schifferpatent (BSP)** ist ein eigenständiger Führerschein, der ausschließlich zur Führung von Wasserfahrzeugen auf dem Bodensee berechtigt. Es existiert in mehreren Kategorien, die jeweils für unterschiedliche Fahrzeugarten gelten:
 
-- **Kategorie A**: Motorboote
-- **Kategorie B**: Motorboote mit Schleppbetrieb
-- **Kategorie C**: Segelboote mit Hilfsmotor
+- **Kategorie A**: Fahrzeuge mit mechanischem Antrieb über 4,4 kW (6 PS) – die klassischen Motorboote
+- **Kategorie B**: Fahrgastschiffe
+- **Kategorie C**: Güterschiffe und schwimmende Geräte mit eigenem Antrieb
+- **Kategorie D**: Segelboote mit mehr als 12 m² Segelfläche
 
-Für die meisten Freizeitkapitäne ist **Kategorie A** das Ziel – der Schein für Motorboote. Das Patent wird von den jeweils zuständigen nationalen Behörden ausgestellt:
+Für die meisten Freizeitkapitäne ist **Kategorie A** das Ziel – der Schein für Motorboote, Segler benötigen entsprechend **Kategorie D**. Das Patent wird von den jeweils zuständigen nationalen Behörden ausgestellt:
 
-- In **Baden-Württemberg**: Regierungspräsidium Freiburg oder Tübingen (je nach Zulassung)
-- In **Bayern**: das zuständige Landratsamt im Bodenseekreis
+- In **Baden-Württemberg**: Landratsamt Konstanz bzw. Landratsamt Bodenseekreis (Friedrichshafen)
+- In **Bayern**: das zuständige Landratsamt Lindau
 - In **Österreich**: die Bezirkshauptmannschaft Bregenz
 - In der **Schweiz**: die jeweiligen Kantone
 
@@ -82,7 +83,7 @@ Im Wasser musst du zeigen, dass du ein Motorboot sicher manövrieren kannst. Die
 
 ### Voraussetzungen
 
-- **Mindestalter**: 16 Jahre für Kategorie A
+- **Mindestalter**: 18 Jahre für Kategorie A, 14 Jahre für Kategorie D (Segeln)
 - **Erste-Hilfe-Nachweis** ist in der Regel Pflicht
 - **Sehvermögen und körperliche Tauglichkeit**: Anforderungen je nach Behörde, teils mit ärztlichem Attest
 

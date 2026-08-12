@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "hardest-sbf-exam-questions"
 faq:
   - question: "Wie hoch ist die Durchfallquote beim Sportbootführerschein?"
-    answer: "Laut DMYV und DSV liegt die Durchfallquote in der Theorie im Schnitt bei etwa 10–15 % und in der Praxis bei rund 5 %. Der SBF See fällt wegen der Navigationsaufgabe etwas höher aus als der SBF Binnen. Zum Vergleich: Beim Auto-Führerschein fallen rund 39 % durch die Theorieprüfung."
+    answer: "Amtliche Zahlen veröffentlichen DMYV und DSV nicht regelmäßig; verfügbare Daten deuten auf eine Durchfallquote von rund 5–10 % in der Theorie und rund 5 % in der Praxis hin. Der SBF See fällt wegen der Navigationsaufgabe etwas höher aus als der SBF Binnen. Zum Vergleich: Beim Auto-Führerschein fallen aktuell über 40 % durch die Theorieprüfung."
   - question: "Welche ist die schwierigste Frage beim SBF See?"
     answer: "Die höchste Fehlerquote (rund 39 %) hat die Frage zur Starkwindwarnung. Die richtige Antwort ist Windstärke 6 und 7 der Beaufort-Skala. Häufig wird sie mit der Sturmwarnung verwechselt, die erst ab Windstärke 8 gilt."
   - question: "Welche Fragen sind beim SBF Binnen am schwierigsten?"
@@ -23,11 +23,13 @@ Nicht alle Prüfungsfragen beim Sportbootführerschein sind gleich schwer. Einig
 
 ## Wie schwer ist die SBF-Prüfung wirklich?
 
-Die Durchfallquote beim Sportbootführerschein liegt laut DMYV und DSV im Schnitt bei etwa **10–15 % in der Theorie** und rund **5 % in der Praxis**. Der SBF See hat eine etwas höhere Durchfallquote als der SBF Binnen – vor allem wegen der Navigationsaufgabe.
+Amtliche Zahlen veröffentlichen DMYV und DSV nicht regelmäßig; verfügbare Daten deuten auf eine Durchfallquote von rund **5–10 % in der Theorie** und rund **5 % in der Praxis** hin. Der SBF See hat dabei eine etwas höhere Durchfallquote als der SBF Binnen – vor allem wegen der Navigationsaufgabe.
 
-Zum Vergleich: Beim Auto-Führerschein fallen rund 39 % durch die Theorieprüfung. Der Sportbootführerschein ist also deutlich machbarer – wenn man die Stolpersteine kennt.
+Zum Vergleich: Beim Auto-Führerschein fallen aktuell über **40 %** durch die Theorieprüfung (Stand 2024, TÜV-Verband), in einzelnen Jahren fast jeder Zweite. Der Sportbootführerschein ist also deutlich machbarer – wenn man die Stolpersteine kennt.
 
 ## SBF See: Die Fragen mit der höchsten Fehlerquote
+
+*Die folgenden Fehlerquoten stammen aus einer Auswertung von Prüfungsdaten der Lernplattform bootspruefung.de und nicht aus einer offiziellen DMYV- oder DSV-Statistik.*
 
 ### Platz 1: Starkwindwarnung (Fehlerquote ~39 %)
 

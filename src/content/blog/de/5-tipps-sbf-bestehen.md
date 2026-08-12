@@ -16,7 +16,7 @@ faq:
   - question: "Wie viel sollte ich täglich für den SBF lernen?"
     answer: "Normale Lerner kommen mit rund 30 Minuten täglich über 4 bis 5 Wochen aus, Schnelllerner schaffen es in 2 bis 3 Wochen mit 45 bis 60 Minuten täglich. Tägliches, kurzes Lernen festigt Wissen zuverlässiger als seltene lange Lernblöcke am Wochenende."
   - question: "Wann sollte ich meinen SBF-Prüfungstermin buchen?"
-    answer: "Am besten 4 bis 6 Wochen vor deinem geplanten Lernabschluss, da Termine beim DMYV-Prüfungsausschuss oder bei anerkannten Vereinen Wochen im Voraus ausgebucht sein können. Theorie, Praxis und Knotenprüfung lassen sich oft am gleichen Tag ablegen."
+    answer: "Am besten buchst du den Termin, wenn du etwa 60–70 % des Stoffs beherrschst, da Termine beim DMYV-Prüfungsausschuss oder bei anerkannten Vereinen oft 4 bis 8 Wochen im Voraus ausgebucht sind, besonders im Frühjahr. Theorie, Praxis und Knotenprüfung lassen sich oft am gleichen Tag ablegen."
 howTo:
   name: "So bestehst du die SBF-Prüfung beim ersten Versuch"
   description: "Fünf konkrete Schritte für die optimale SBF-Prüfungsvorbereitung – vom Prüfungsaufbau bis zur Terminbuchung."
@@ -30,7 +30,7 @@ howTo:
     - name: "Täglich statt in Blöcken lernen"
       text: "Kurze, regelmäßige Lerneinheiten festigen Wissen zuverlässiger als seltene lange Sessions."
     - name: "Prüfungstermin früh buchen"
-      text: "Buche den Termin beim DMYV-Prüfungsausschuss einige Wochen vor deinem geplanten Lernabschluss, bevor Termine ausgebucht sind."
+      text: "Buche den Termin beim DMYV-Prüfungsausschuss, sobald du etwa 60–70 % des Stoffs beherrschst, bevor Termine ausgebucht sind."
 ---
 
 Der Sportbootführerschein (SBF) ist kein Hexenwerk – aber ohne die richtige Strategie kann die Prüfung trotzdem schief gehen. Diese fünf Tipps basieren auf dem, was Kandidaten wirklich stolpern lässt.
@@ -82,14 +82,14 @@ Ein realistischer Zeitplan für den SBF Binnen:
 
 ## Tipp 5: Buche den Prüfungstermin früh – bevor du bereit bist
 
-Das klingt kontraproduktiv, ist aber psychologisch entscheidend: **Eine konkrete Deadline motiviert**. Prüfungstermine beim DMYV oder bei anerkannten Vereinen können Wochen im Voraus ausgebucht sein – wer zu lange wartet, hat plötzlich keine Wahl mehr beim Termin.
+Das klingt kontraproduktiv, ist aber psychologisch entscheidend: **Eine konkrete Deadline motiviert**. Prüfungstermine beim DMYV oder bei anerkannten Vereinen können 4 bis 8 Wochen im Voraus ausgebucht sein, besonders im Frühjahr – wer zu lange wartet, hat plötzlich keine Wahl mehr beim Termin.
 
 **Wie du vorgehst:**
 1. Prüfe die Prüfungstermine in deiner Region auf der Website des zuständigen DMYV-Prüfungsausschusses
-2. Buche einen Termin **4–6 Wochen** vor deinem geplanten Lernabschluss
+2. Buche einen Termin, sobald du etwa **60–70 %** des Stoffs beherrschst
 3. Plane Theorie, Praxis und Knotenprüfung – alle drei können oft am gleichen Tag abgelegt werden
 
-Die Prüfungsgebühr beim DMYV liegt für den SBF Binnen aktuell bei ca. **131 €** (Stand 05/2026). Dazu kommen Kursgebühren, falls du eine Bootsschule nutzt (ca. 265–299 €). Gesamtkosten also ca. 400–430 €.
+Die Prüfungsgebühr beim DMYV liegt für den SBF Binnen aktuell bei ca. **131 €** (Stand 05/2026). Dazu kommen Kursgebühren, falls du eine Bootsschule nutzt (ca. 370–520 €). Gesamtkosten also ca. 500–650 €.
 
 ## Fazit
 

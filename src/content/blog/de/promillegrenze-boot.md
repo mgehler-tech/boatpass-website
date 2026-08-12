@@ -12,7 +12,7 @@ faq:
   - question: "Gilt auf dem Boot die 0,5-Promille-Grenze wie beim Auto?"
     answer: "Nein. Das Straßenverkehrsgesetz mit seiner 0,5-Promille-Schwelle gilt für Sportboote nicht. Auf Bundeswasserstraßen greifen die BinSchStrO, auf Seeschifffahrtsstraßen die SeeSchStrO und international das KVR – sie verpflichten den Schiffsführer, jederzeit fahrtüchtig zu sein, kennen aber keine eins-zu-eins vergleichbare Bußgeld-Grenze."
   - question: "Ab wie viel Promille gilt man auf dem Boot als absolut fahruntüchtig?"
-    answer: "Nach ständiger Rechtsprechung des BGH liegt die absolute Fahruntüchtigkeit bei 1,6 Promille – unabhängig davon, ob äußere Ausfallerscheinungen erkennbar sind. Bereits darunter kann relative Fahruntüchtigkeit vorliegen, wenn zusätzliche Anzeichen wie eine unsichere Fahrweise oder ein Unfall hinzukommen."
+    answer: "Nach der Rechtsprechung der Oberlandesgerichte (z. B. OLG Karlsruhe) liegt die absolute Fahruntüchtigkeit eines Schiffsführers bei 1,1 Promille – unabhängig davon, ob äußere Ausfallerscheinungen erkennbar sind. Bereits darunter kann relative Fahruntüchtigkeit vorliegen, wenn zusätzliche Anzeichen wie eine unsichere Fahrweise oder ein Unfall hinzukommen."
   - question: "Welche Konsequenzen drohen bei Trunkenheit als Schiffsführer?"
     answer: "Wer fahruntüchtig ein Boot führt und andere gefährdet, macht sich nach § 315a StGB strafbar – bei fahrlässiger Begehung droht Freiheitsstrafe bis zu zwei Jahren oder Geldstrafe. Hinzu kommen Bußgelder, der mögliche Entzug des Sportbootführerscheins (seit der SpFV-Reform einheitlich durch die Generaldirektion Wasserstraßen und Schifffahrt, GDWS) und der Verlust des Versicherungsschutzes."
   - question: "Dürfen Mitfahrer auf dem Boot Alkohol trinken?"
@@ -35,7 +35,7 @@ Im deutschen Strafrecht unterscheidet man zwei Formen der Fahruntüchtigkeit, di
 
 **Relative Fahruntüchtigkeit** kann nach der Rechtsprechung bereits bei niedrigen Alkoholwerten vorliegen, wenn gleichzeitig **weitere Anzeichen für Beeinträchtigung** hinzukommen: eine auffällige oder unsichere Fahrweise, ein Unfall, Torkeln beim Ein- oder Aussteigen, verwaschene Sprache oder andere äußerlich erkennbare Symptome. In diesen Fällen reicht auch ein vergleichsweise niedriger Blutalkoholwert, um den Vorwurf der Fahrtuntüchtigkeit zu begründen.
 
-**Absolute Fahruntüchtigkeit** liegt nach ständiger Rechtsprechung des BGH bei **1,6 Promille** vor. Ab diesem Wert gilt jemand als absolut fahruntüchtig – völlig unabhängig davon, ob äußerliche Anzeichen erkennbar sind oder nicht. Diese Schwelle findet über die strafrechtlichen Normen auch auf Schiffsführer Anwendung.
+**Absolute Fahruntüchtigkeit** liegt für Schiffsführer nach der Rechtsprechung der Oberlandesgerichte (Schifffahrtsobergerichte, z. B. OLG Karlsruhe) bei **1,1 Promille** vor – niedriger als der für Kfz- und Fahrradfahrer geltende Wert von 1,6 Promille, da das Führen eines Boots vergleichbare oder höhere Anforderungen an Koordination und Reaktionsvermögen stellt. Ab diesem Wert gilt jemand als absolut fahruntüchtig – völlig unabhängig davon, ob äußerliche Anzeichen erkennbar sind oder nicht.
 
 Das ist ein wesentlicher Unterschied zum Auto: Im Kfz-Bereich gibt es bei **0,5 Promille** ein klar definiertes Ordnungswidrigkeitenrecht-Bußgeld, auch wenn keine Ausfallerscheinungen sichtbar sind. Eine vergleichbar einfache OWiG-Schwelle für Freizeitbootfahrer auf Bundeswasserstraßen gibt es in dieser Form nicht. Das bedeutet nicht, dass man auf dem Boot ungestraft mehr trinken darf – es bedeutet, dass schon bei niedrigem Pegel Probleme entstehen können, sobald eine unsichere Fahrweise erkennbar ist.
 
@@ -101,7 +101,7 @@ Mehr zu den häufigsten Prüfungsthemen findest du in unserem Artikel zu den [sc
 
 ## Fazit
 
-Die 0,5-Promille-Grenze aus dem Straßenverkehr gilt auf dem Boot nicht in derselben Form. Schiffsführer sind durch die Schifffahrtsordnungen (BinSchStrO, SeeSchStrO) und das Strafgesetzbuch (§ 315a StGB) verpflichtet, jederzeit fahrtüchtig zu sein. Nach der Rechtsprechung kann Fahruntüchtigkeit schon bei niedrigen Alkoholwerten festgestellt werden, wenn weitere Anzeichen hinzukommen; bei 1,6 Promille liegt absolute Fahruntüchtigkeit vor. Die Konsequenzen reichen von Bußgeldern über strafrechtliche Verurteilungen bis zum Entzug von Führerschein und Versicherungsschutz.
+Die 0,5-Promille-Grenze aus dem Straßenverkehr gilt auf dem Boot nicht in derselben Form. Schiffsführer sind durch die Schifffahrtsordnungen (BinSchStrO, SeeSchStrO) und das Strafgesetzbuch (§ 315a StGB) verpflichtet, jederzeit fahrtüchtig zu sein. Nach der Rechtsprechung kann Fahruntüchtigkeit schon bei niedrigen Alkoholwerten festgestellt werden, wenn weitere Anzeichen hinzukommen; bei 1,1 Promille liegt absolute Fahruntüchtigkeit vor. Die Konsequenzen reichen von Bußgeldern über strafrechtliche Verurteilungen bis zum Entzug von Führerschein und Versicherungsschutz.
 
 Die einfachste und sicherste Regel bleibt: **Als Schiffsführer trinkst du keinen Alkohol.** Wer entspannen und trinken möchte, gibt das Steuer rechtzeitig an eine nüchterne Person ab.
 

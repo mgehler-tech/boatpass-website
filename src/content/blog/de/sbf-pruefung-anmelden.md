@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "how-to-register-sbf-exam"
 faq:
   - question: "Wer nimmt die SBF-Prüfung ab?"
-    answer: "Die SBF-Prüfungen werden in Deutschland vom Deutschen Segler-Verband (DSV) und vom Deutschen Motoryachtverband (DMYV) organisiert. Beide sind vom Bundesministerium für Digitales und Verkehr mit der Abnahme der Sportbootführerschein-Prüfungen beauftragt; inhaltlich sind die Prüfungen identisch."
+    answer: "Die SBF-Prüfungen werden in Deutschland vom Deutschen Segler-Verband (DSV) und vom Deutschen Motoryachtverband (DMYV) organisiert. Beide sind vom Bundesministerium für Verkehr (BMV) mit der Abnahme der Sportbootführerschein-Prüfungen beauftragt; inhaltlich sind die Prüfungen identisch."
   - question: "Welche Unterlagen brauche ich für die Anmeldung zur SBF-Prüfung?"
     answer: "In der Regel ein ausgefülltes Antragsformular des zuständigen Verbands (DSV oder DMYV), ein biometrisches Passbild, ein ärztliches Zeugnis über Seh- und Hörvermögen, eine Kopie eines gültigen Personalausweises oder Reisepasses und – falls vorhanden – eine Kopie des Kfz-Führerscheins. Je nach Verband kann zusätzlich ein Auszug aus dem Fahreignungsregister nötig sein."
   - question: "Kann ich mich ohne Bootsschule zur SBF-Prüfung anmelden?"
@@ -46,7 +46,7 @@ Die SBF-Prüfungen werden in Deutschland von zwei beauftragten Verbänden organi
 - **DSV** – Deutscher Segler-Verband
 - **DMYV** – Deutscher Motoryachtverband
 
-Beide sind vom Bundesministerium für Digitales und Verkehr (BMDV) mit der Abnahme der Sportbootführerschein-Prüfungen beauftragt. Welcher Verband bei dir zuständig ist, hängt vom Prüfungsort und meist von deiner Bootsschule ab – inhaltlich sind die Prüfungen identisch.
+Beide sind vom Bundesministerium für Verkehr (BMV) mit der Abnahme der Sportbootführerschein-Prüfungen beauftragt. Welcher Verband bei dir zuständig ist, hängt vom Prüfungsort und meist von deiner Bootsschule ab – inhaltlich sind die Prüfungen identisch.
 
 ## Die zwei Wege zur Anmeldung
 

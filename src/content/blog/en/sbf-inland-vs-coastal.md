@@ -62,8 +62,8 @@ The **key difference**: SBF Coastal includes a **written navigation task** – y
 | | SBF Inland | SBF Coastal | Combined |
 |---|---|---|---|
 | DMYV exam fee | ~€131 | ~€148 | ~€179 |
-| Course fee (typical) | ~€265–299 | ~€370 | ~€470 |
-| **Total** | **~€400–430** | **~€520** | **~€650** |
+| Course fee (typical) | ~€370–520 | ~€350–500 | ~€470 |
+| **Total** | **~€500–650** | **~€500–650** | **~€650** |
 
 *(Source: DMYV, Nautigo, as of 05/2026 – prices vary by exam committee and provider)*
 
