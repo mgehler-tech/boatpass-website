@@ -61,10 +61,10 @@ const faqSchema = {
       <p style="font-size:16px; color:#6B7280;">Fragen, Feedback oder ein Bug gefunden? Wir freuen uns von dir zu hören.</p>
     </div>
 
-    <div id="success-msg" style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; border-radius:12px; padding:20px 24px; margin-bottom:24px; font-weight:500; font-size:1rem;">
+    <div id="success-msg" role="status" aria-live="polite" aria-atomic="true" style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; border-radius:12px; padding:20px 24px; margin-bottom:24px; font-weight:500; font-size:1rem;">
       ✓ Nachricht erfolgreich gesendet! Das Team meldet sich so schnell wie möglich bei dir.
     </div>
-    <div id="error-msg" style="display:none; background:#fef2f2; border:1px solid #fecaca; color:#991b1b; border-radius:12px; padding:16px 20px; margin-bottom:24px;"></div>
+    <div id="error-msg" role="alert" aria-live="assertive" aria-atomic="true" style="display:none; background:#fef2f2; border:1px solid #fecaca; color:#991b1b; border-radius:12px; padding:16px 20px; margin-bottom:24px;"></div>
 
     <form id="kontakt-form" class="space-y-6">
       <div>
