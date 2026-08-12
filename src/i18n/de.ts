@@ -206,6 +206,11 @@ export const de = {
     subtitle: 'Lade BoatPass kostenlos und starte heute mit dem offiziellen Fragenkatalog.',
     cta: 'Kostenlos im Play Store',
   },
+  blogInlineCta: {
+    title: 'Lieber am Handy lernen?',
+    subtitle: 'BoatPass bringt den offiziellen Fragenkatalog aufs Smartphone – kostenlos starten.',
+    cta: 'App ansehen',
+  },
 } as const;
 
 type Stringify<T> = T extends string

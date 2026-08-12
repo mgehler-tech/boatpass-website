@@ -1,0 +1,118 @@
+---
+import { Image } from 'astro:assets';
+import appIcon from '../assets/images/app-icon.png';
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+---
+
+<!--
+  Wird von BlogLayout per Skript nach der ersten H2 in .article-body eingefügt (nach dem
+  Intro, vor dem ersten Abschnitt). Startet "hidden": Ohne JS bliebe die Karte sonst am
+  ursprünglichen DOM-Ort direkt vor dem Footer stehen – doppelt zum CtaBanner darunter.
+  Grund für die Zwischenplatzierung: Artikel sind ~1.000-1.700 Wörter lang, der einzige
+  bisherige App-CTA sitzt als CtaBanner erst ganz am Ende der Seite. Leser, die vorher
+  abspringen, sehen nie einen Play-Store-Link.
+-->
+<aside id="blog-inline-cta" hidden aria-label={lang === 'de' ? 'App-Empfehlung' : 'App recommendation'}>
+  <Image src={appIcon} alt="" width={40} height={40} loading="lazy" class="blog-inline-cta-icon" />
+  <div class="blog-inline-cta-text">
+    <p class="blog-inline-cta-title">{t.blogInlineCta.title}</p>
+    <p class="blog-inline-cta-subtitle">{t.blogInlineCta.subtitle}</p>
+  </div>
+  <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="blog-inline" class="blog-inline-cta-button">
+    {t.blogInlineCta.cta}
+  </a>
+</aside>
+
+<script>
+  (function () {
+    const cta = document.getElementById('blog-inline-cta');
+    const article = document.querySelector('.article-body');
+    if (!cta || !article) return;
+    const firstHeading = article.querySelector('h2');
+    if (!firstHeading) return;
+    firstHeading.before(cta);
+    cta.hidden = false;
+  })();
+</script>
+
+<style>
+  #blog-inline-cta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 2em 0 2.2em;
+    padding: 18px 22px;
+    background: linear-gradient(135deg, rgba(51,102,255,0.06) 0%, rgba(26,68,212,0.06) 100%);
+    border: 1px solid rgba(51,102,255,0.16);
+    border-radius: 16px;
+  }
+  .blog-inline-cta-icon {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .blog-inline-cta-text {
+    flex: 1;
+    min-width: 160px;
+  }
+  .blog-inline-cta-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #1A1F36;
+    line-height: 1.3;
+    margin: 0 0 3px;
+  }
+  .blog-inline-cta-subtitle {
+    font-size: 13px;
+    font-weight: 500;
+    color: #6B7280;
+    line-height: 1.5;
+    margin: 0;
+  }
+  .blog-inline-cta-button {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    background: #3366FF;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 11px 20px;
+    border-radius: 100px;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(51,102,255,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .blog-inline-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(51,102,255,0.32);
+  }
+
+  @media (max-width: 520px) {
+    #blog-inline-cta {
+      flex-wrap: wrap;
+      padding: 16px 18px;
+    }
+    .blog-inline-cta-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  html.dark #blog-inline-cta {
+    background: linear-gradient(135deg, rgba(90,120,255,0.10) 0%, rgba(90,120,255,0.05) 100%);
+    border-color: rgba(90,120,255,0.22);
+  }
+  html.dark .blog-inline-cta-title { color: #E2E8F0; }
+  html.dark .blog-inline-cta-subtitle { color: #94A3B8; }
+</style>
