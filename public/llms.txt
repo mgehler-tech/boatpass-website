@@ -74,6 +74,11 @@
 - [Exam Process (EN)](https://boatpass.de/en/sbf-exam/): How the SBF exam works, theory and practice.
 - [FAQ (EN)](https://boatpass.de/en/faq/): Common questions on license, exam and question catalog.
 - [Which Boating License? (EN)](https://boatpass.de/en/tools/which-boating-license/): Free finder tool – 3 questions, then the matching license.
+- [Boating License Apps Compared (EN)](https://boatpass.de/en/sbf-app/): Honest comparison of all German boating-licence study apps – prices, licence coverage, ratings, Android/iOS.
+- [SBF Inland Apps Compared (EN)](https://boatpass.de/en/sbf-inland-app/): Which app suits SBF Inland exam prep best.
+- [SBF Coastal Apps Compared (EN)](https://boatpass.de/en/sbf-coastal-app/): Which app suits SBF Coastal exam prep best.
+- [Radio Certificate Apps Compared (EN)](https://boatpass.de/en/radio-certificate-app/): Study apps for the UBI, SRC and LRC radio certificates compared.
+- [Free Boating License Apps (EN)](https://boatpass.de/en/sbf-app-free/): What's actually free in SBF study apps – and where the limits are.
 - [Boat Schools (EN)](https://boatpass.de/en/boat-schools/): Directory of German boat schools by city.
 - [Blog (EN)](https://boatpass.de/en/blog/): Guides on exam knowledge, navigation, costs and practice.
 - [About (EN)](https://boatpass.de/en/about/): Marius Gehler, founder of Boatpass.
