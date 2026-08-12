@@ -208,4 +208,9 @@ export const en: Translations = {
     subtitle: 'Download BoatPass for free and start studying with the official question catalog today.',
     cta: 'Free on Google Play',
   },
+  blogInlineCta: {
+    title: 'Prefer studying on your phone?',
+    subtitle: 'BoatPass brings the official question catalog to your phone — start for free.',
+    cta: 'View the app',
+  },
 };

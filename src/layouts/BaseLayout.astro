@@ -54,11 +54,16 @@ const { title, description, lang, ogImage, type, showCta = true, hasAlternate = 
     <script is:inline>
       window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };
 
-      // Conversion Tracking: Play Store Klicks
+      // Conversion Tracking: Play Store Klicks. `position` identifiziert die
+      // CTA-Platzierung (data-cta-position, z. B. "blog-inline"/"bottom-banner"), damit
+      // sich Conversion-Beiträge einzelner CTA-Positionen in Plausible vergleichen lassen.
+      // Ungetaggte CTAs (Hero, Header, Pricing, …) fallen auf "other" zurück.
       document.addEventListener('click', function (e) {
         const link = e.target.closest('a');
         if (link && link.href && link.href.includes('play.google.com')) {
-          window.plausible('play_store_click', { props: { path: window.location.pathname } });
+          const positionEl = link.closest('[data-cta-position]');
+          const position = positionEl ? positionEl.getAttribute('data-cta-position') : 'other';
+          window.plausible('play_store_click', { props: { path: window.location.pathname, position: position } });
         }
       });
     </script>

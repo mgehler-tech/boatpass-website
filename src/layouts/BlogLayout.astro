@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import BlogInlineCta from '../components/BlogInlineCta.astro';
 import type { CollectionEntry } from 'astro:content';
 import { getCollection } from 'astro:content';
 
@@ -190,6 +191,8 @@ const breadcrumbSchema = {
     <div class="article-body">
       <slot />
     </div>
+
+    <BlogInlineCta lang={lang} />
 
     <!-- Verwandte Artikel: cross-linking zwischen Blogposts -->
     {relatedPosts.length > 0 && (
