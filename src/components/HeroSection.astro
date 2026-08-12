@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 import Icon from './Icon.astro';
 import { useTranslations } from '../i18n/index';
-import { getBoatpassRating } from '../data/apps';
+import { getBoatpassRating, formatRating } from '../data/apps';
 import screenshot0De from '../assets/images/app-screenshot.de.png';
 import screenshot1De from '../assets/images/app.screenshot.1.de.png';
 import screenshot2De from '../assets/images/app.screenshot.2.de.png';
@@ -26,7 +26,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 // Google-Play-Bewertung direkt am Haupt-CTA als Social Proof (Logo · Score · Sterne · Anzahl).
 const appRating = getBoatpassRating();
 const ratingScoreLabel = appRating
-  ? appRating.score.toFixed(1).replace('.', lang === 'de' ? ',' : '.')
+  ? formatRating(appRating.score).replace('.', lang === 'de' ? ',' : '.')
   : null;
 const fullStars = appRating ? Math.round(appRating.score) : 0;
 const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
