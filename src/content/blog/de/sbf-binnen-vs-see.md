@@ -66,8 +66,8 @@ Der **wesentliche Unterschied**: Der SBF See beinhaltet eine schriftliche **Navi
 | | SBF Binnen | SBF See | Kombi (See + Binnen) |
 |---|---|---|---|
 | Prüfungsgebühr DMYV | ca. 131 € | ca. 148 € | ca. 179 € |
-| Kurs (typisch) | ca. 265–299 € | ca. 370 € | ca. 470 € |
-| **Gesamt** | **ca. 400–430 €** | **ca. 520 €** | **ca. 650 €** |
+| Kurs (typisch) | ca. 370–520 € | ca. 350–500 € | ca. 470 € |
+| **Gesamt** | **ca. 500–650 €** | **ca. 500–650 €** | **ca. 650 €** |
 
 *(Quelle: DMYV, Nautigo Bootsschule, Stand 05/2026 – Preise je nach Prüfungsausschuss und Anbieter variabel)*
 

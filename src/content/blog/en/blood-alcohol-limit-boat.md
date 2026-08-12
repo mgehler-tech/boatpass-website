@@ -12,7 +12,7 @@ faq:
   - question: "Does the 0.5 per mille car limit apply on a boat?"
     answer: "No. The Straßenverkehrsgesetz (StVG) with its 0.5 per mille threshold does not apply to recreational boats. On federal inland waterways the BinSchStrO applies, on coastal shipping lanes the SeeSchStrO, and on international waters the COLREGs – they require the skipper to be fit to operate the vessel at all times, but they don't contain a directly comparable fixed BAC threshold for fines."
   - question: "At what blood alcohol level is a skipper considered absolutely incapable of operating a vessel?"
-    answer: "Under long-standing case law from Germany's Federal Court of Justice (BGH), absolute incapacity is set at 1.6 per mille – regardless of whether any external signs of impairment are visible. Even below that level, relative incapacity can apply if additional signs are present, such as unsafe handling of the vessel or an accident."
+    answer: "Under case law from Germany's regional higher courts (Oberlandesgerichte, e.g. OLG Karlsruhe), absolute incapacity for a vessel skipper is set at 1.1 per mille – regardless of whether any external signs of impairment are visible. Even below that level, relative incapacity can apply if additional signs are present, such as unsafe handling of the vessel or an accident."
   - question: "What consequences does a skipper face for operating a boat while drunk?"
     answer: "Anyone who operates a boat while incapable and creates a danger for others commits a criminal offense under § 315a StGB – negligent conduct is punishable by up to two years imprisonment or a fine. Beyond that, you risk administrative fines, revocation of the Sportbootführerschein (since the inland and coastal ordinances were merged, the GDWS decides on revocation for both), and loss of insurance coverage."
   - question: "Are passengers on a boat allowed to drink alcohol?"
@@ -35,9 +35,9 @@ German criminal law distinguishes two forms of incapacity to operate a vessel sa
 
 **Relative incapacity (relative Fahruntüchtigkeit)** can be established even at relatively low blood alcohol levels, provided that **additional signs of impairment** are present at the same time: erratic or unsafe handling of the vessel, an accident, unsteady movement, slurred speech, or other visible symptoms. In these cases, even a comparatively low BAC can support a criminal charge.
 
-**Absolute incapacity (absolute Fahruntüchtigkeit)** is established by case law of Germany's Federal Court of Justice (BGH) at **1.6 per mille**. From this threshold onward, someone is considered absolutely incapable of operating a vessel safely – regardless of whether any external signs of impairment are visible. No additional evidence of impaired behavior is needed.
+**Absolute incapacity (absolute Fahruntüchtigkeit)** is established by case law of Germany's regional higher courts (Oberlandesgerichte, e.g. OLG Karlsruhe) at **1.1 per mille** for vessel skippers – lower than the 1.6 per mille threshold that applies to car and bicycle operators, since operating a vessel demands comparable or higher coordination and reaction requirements. From this threshold onward, someone is considered absolutely incapable of operating a vessel safely – regardless of whether any external signs of impairment are visible. No additional evidence of impaired behavior is needed.
 
-This is an important difference from road traffic: in the car context, there is a clear administrative fine threshold at 0.5‰ even when no visible impairment exists. No equivalent simple lower threshold of that kind applies uniformly to all recreational boat operators on federal waterways. That does not mean you can drink more on a boat – it means that problems can arise from clearly visible impairment even at lower BAC levels, while the 1.6‰ mark acts as the bright line for absolute criminal incapacity.
+This is an important difference from road traffic: in the car context, there is a clear administrative fine threshold at 0.5‰ even when no visible impairment exists. No equivalent simple lower threshold of that kind applies uniformly to all recreational boat operators on federal waterways. That does not mean you can drink more on a boat – it means that problems can arise from clearly visible impairment even at lower BAC levels, while the 1.1‰ mark acts as the bright line for absolute criminal incapacity for skippers.
 
 ## What the Navigation Regulations Require
 
@@ -101,7 +101,7 @@ For a broader overview of the most demanding topics in the exam, see our article
 
 ## Conclusion
 
-The 0.5 per mille threshold from German road traffic law does not translate directly to the water. Skippers are bound by the navigation regulations (BinSchStrO, SeeSchStrO) and criminal law (§ 315a StGB) to be fit to operate their vessel at all times. Under German case law, incapacity can be established at lower BAC levels when visible impairment is present; at 1.6‰, absolute incapacity applies without any further evidence. The consequences range from administrative fines through criminal prosecution to loss of the boating license, the car driving license, and insurance coverage.
+The 0.5 per mille threshold from German road traffic law does not translate directly to the water. Skippers are bound by the navigation regulations (BinSchStrO, SeeSchStrO) and criminal law (§ 315a StGB) to be fit to operate their vessel at all times. Under German case law, incapacity can be established at lower BAC levels when visible impairment is present; at 1.1‰, absolute incapacity applies without any further evidence. The consequences range from administrative fines through criminal prosecution to loss of the boating license, the car driving license, and insurance coverage.
 
 The simplest and safest rule remains: **As skipper, you do not drink.** Anyone who wants to relax with a drink passes the helm to a sober person in good time.
 

@@ -16,7 +16,7 @@ faq:
   - question: "Wie viele Fragen muss ich bei der SBF-Theorieprüfung richtig beantworten?"
     answer: "Die 30 Fragen teilen sich in 7 Basisfragen (mindestens 5 richtig) und 23 spezifische Fragen (mindestens 18 richtig). Beide Blöcke müssen die Mindestpunktzahl separat erreichen – man kann das eine nicht mit dem anderen ausgleichen."
   - question: "Was kostet der SBF?"
-    answer: "Die Prüfungsgebühr liegt 2026 bei rund 130,78 € (SBF Binnen), 148,38 € (SBF See) bzw. 178,61 € für die Kombiprüfung. Mit Kurs kommen für den SBF Binnen insgesamt oft 400–430 € zusammen, für den SBF See rund 520 € – je nach Bootsschule und Region."
+    answer: "Die Prüfungsgebühr liegt 2026 bei rund 130,78 € (SBF Binnen), 148,38 € (SBF See) bzw. 178,61 € für die Kombiprüfung. Mit komplettem Kurs kommen pro Schein insgesamt oft 500–650 € zusammen – je nach Bootsschule und Region."
   - question: "Wie lange dauert die Vorbereitung auf den SBF?"
     answer: "Für den SBF Binnen sind bei täglich 30–45 Minuten Lernen etwa 3–6 Wochen realistisch. Für den SBF See solltest du wegen der zusätzlichen Navigationsaufgabe mehr Zeit einplanen. Die Knotenprüfung erfordert tägliches Üben."
   - question: "Was passiert, wenn ich einen Prüfungsteil nicht bestehe?"
@@ -111,8 +111,8 @@ Für die Zulassung zur Prüfung verlangt der Prüfungsausschuss mehr als nur das
 | Posten | SBF Binnen | SBF See |
 |---|---|---|
 | Prüfungsgebühr (DMYV) | 130,78 € | 148,38 € |
-| Kursgebühr (Bootsschule) | ca. 265–299 € | ca. 370 € |
-| **Gesamt** | **ca. 400–430 €** | **ca. 520 €** |
+| Kursgebühr (Bootsschule) | ca. 370–520 € | ca. 350–500 € |
+| **Gesamt** | **ca. 500–650 €** | **ca. 500–650 €** |
 
 *(Stand 07/2026 – Prüfungsgebühren gelten bundesweit für DMYV/DSV-Ausschüsse, Kursgebühren je nach Bootsschule und Region variabel. Eine vollständige Aufschlüsselung inklusive Spartipps findest du in unserer [Kostenübersicht zum Sportbootführerschein](/sbf-kosten/).)*
 

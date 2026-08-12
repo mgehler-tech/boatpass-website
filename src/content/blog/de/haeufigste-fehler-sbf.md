@@ -79,8 +79,8 @@ Prüfungstermine beim DMYV und bei anerkannten Prüfungsausschüssen sind oft **
 
 **Lösung:**
 1. Geh auf die Website des DMYV-Prüfungsausschusses in deiner Region
-2. Prüfe Termine und Fristen – die Anmeldung muss je nach Prüfungsausschuss oft **ein bis zwei Wochen vorher** mit Prüfungsgebühr eingehen
-3. Buche früh – der Termin motiviert und gibt dir eine konkrete Deadline
+2. Buche den Termin, sobald du etwa **60–70 %** des Stoffs beherrschst – der Termin motiviert und gibt dir eine konkrete Deadline
+3. Beachte: Die Anmeldung muss je nach Prüfungsausschuss oft **ein bis zwei Wochen vorher** mit Prüfungsgebühr eingehen
 
 Prüfe vor der Anmeldung außerdem, ob du alle [Voraussetzungen für den Sportbootführerschein](/blog/sportbootfuehrerschein-voraussetzungen/) erfüllst – vom Mindestalter bis zum ärztlichen Zeugnis.
 

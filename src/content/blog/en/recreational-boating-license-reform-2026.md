@@ -18,7 +18,7 @@ faq:
   - question: "Does the 15 HP threshold still apply?"
     answer: "Yes, the power threshold of 11.03 kW (15 HP) for the license requirement remains. What's new is that this limit will apply uniformly to all drive types, including electric motors. The previous lower electric motor limit of 7.5 kW is being removed."
   - question: "When do the new rules take effect?"
-    answer: "The Sportschifffahrtsverordnung (recreational boating regulation) is expected to come into force at the beginning of the 2026 boating season. The changes to the licensing system will apply after a transition period on 01.01.2028."
+    answer: "The original timeline expected the regulation to come into force at the beginning of the 2026 boating season. That date has passed – the regulation remains under legal review and no new binding date has been set. The transition period for the licensing system is currently targeted for around 01.01.2028."
 ---
 
 The German federal government is planning the biggest change to the country's recreational boating license system in decades. Under the new Sportschifffahrtsverordnung (recreational boating regulation), the official Sportbootführerschein will be replaced by certificates issued by recognized water sports associations. Here's what this means for you, whether your existing license stays valid and what's changing for electric motors.
@@ -33,12 +33,12 @@ These new documents are called **Verbandsscheine** (association certificates). T
 
 ## Timeline and transition periods
 
-The Federal Ministry of Transport (BMV) intends to complete the legislative process so that the new regulation enters into force at the beginning of the 2026 boating season. The changes to the licensing system will then apply after a **transition period on 01.01.2028**.
+The Federal Ministry of Transport (BMV) originally intended for the new regulation to enter into force at the beginning of the 2026 boating season. That date has since passed: the regulation remains under legal review – among other things over the question of whether a sovereign task like issuing licenses can be delegated to private associations without formal authorization (Beleihung). No new binding date has been set as of August 2026; the transition period for the licensing system is currently targeted for around 01.01.2028.
 
-In practical terms:
+In practical terms, right now:
 
-- **2026/2027:** Transition phase. The current official SBF remains fully valid and continues to be issued.
-- **From 01.01.2028:** The new rules take effect. New certificates will be issued as Verbandsscheine.
+- **For now:** The official SBF remains fully valid and continues to be issued exactly as before.
+- **Still open:** When and in what form the Verbandsscheine will actually be introduced is not yet settled – DMYV and DSV themselves are still waiting on an updated timeline from the ministry.
 
 ## Does my existing license remain valid?
 

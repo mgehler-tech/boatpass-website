@@ -33,7 +33,7 @@ Das unterscheidet den SBF vom Auto-Führerschein, bei dem eine bestimmte Anzahl 
 
 Du besuchst einen Wochenendkurs oder Abendkurs bei einer Bootsschule vor Ort. Die Theorie wird vom Ausbilder erklärt, praktische Übungen finden auf dem Wasser statt.
 
-**Kosten:** Zwischen 300 und 650 € (Theorie + Praxis + Prüfungsgebühr), je nach Region und Anbieter.
+**Kosten:** Zwischen 400 und 650 € (Theorie + Praxis + Prüfungsgebühr), je nach Region und Anbieter.
 
 **Vorteile:**
 - Persönlicher Ansprechpartner für Fragen
@@ -51,7 +51,7 @@ Du besuchst einen Wochenendkurs oder Abendkurs bei einer Bootsschule vor Ort. Di
 
 Du lernst die Theorie über eine Online-Plattform mit Videos und Übungen. Die praktische Ausbildung buchst du separat bei einer Bootsschule.
 
-**Kosten:** Zwischen 200 und 450 € (Online-Kurs ab ca. 40–100 €, Praxis ab 50–150 €, Prüfungsgebühr ab 131 €).
+**Kosten:** Zwischen 240 und 400 € (Online-Kurs ab ca. 40–100 €, Praxis ab 50–150 €, Prüfungsgebühr ab 148 €).
 
 **Vorteile:**
 - Flexibles Lernen – wann und wo du willst
@@ -68,7 +68,7 @@ Du lernst die Theorie über eine Online-Plattform mit Videos und Übungen. Die p
 
 Du lernst die Theorie ausschließlich mit einer App (wie Boatpass) – direkt aus dem offiziellen ELWIS-Fragenkatalog. Für die praktische Prüfung buchst du eine einzelne Fahrstunde bei einer Bootsschule.
 
-**Kosten:** Zwischen 160 und 260 € (App einmalig 7–12 €, Praxisstunde ab 50–100 €, Prüfungsgebühr ab 131 €).
+**Kosten:** Zwischen 200 und 260 € (App einmalig 7–12 €, Praxisstunde ab 50–100 €, Prüfungsgebühr ab 148 €).
 
 **Vorteile:**
 - Mit Abstand günstigste Option
@@ -92,7 +92,7 @@ Du lernst die Theorie ausschließlich mit einer App (wie Boatpass) – direkt au
 | Prüfungsgebühr (See) | 148 € | 148 € | 148 € |
 | **Gesamt (ca.)** | **400–650 €** | **240–400 €** | **200–260 €** |
 
-*(Preise variieren je nach Region und Anbieter. Stand: 2026.)*
+*(Beispielrechnung für den SBF See; für den SBF Binnen ist die Prüfungsgebühr mit 131 € rund 17 € niedriger. Preise variieren je nach Region und Anbieter. Stand: 2026.)*
 
 ## Für wen lohnt sich welcher Weg?
 

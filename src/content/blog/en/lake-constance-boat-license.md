@@ -12,7 +12,7 @@ faq:
   - question: "Is the SBF Binnen or SBF See enough for Lake Constance?"
     answer: "No. Neither the SBF Binnen nor the SBF See alone entitles you to operate a license-required motorboat on Lake Constance. The lake falls under the Internationale Schifffahrtsordnung Bodensee (ISB), which requires its own license – the Bodensee-Schifferpatent (BSP)."
   - question: "What is the Bodensee-Schifferpatent?"
-    answer: "The Bodensee-Schifferpatent (BSP) is a standalone boating license valid only on Lake Constance. It comes in several categories: A for motorboats, B for motorboats with towing operations, and C for sailboats with an auxiliary engine. For most recreational boaters, Category A is the relevant one."
+    answer: "The Bodensee-Schifferpatent (BSP) is a standalone boating license valid only on Lake Constance. It comes in four categories: A for motorboats, B for passenger vessels, C for cargo vessels, and D for sailboats with more than 12 m² of sail area. For most recreational boaters, Category A is the relevant one."
   - question: "Do I have to start from scratch on the BSP if I already hold an SBF?"
     answer: "Not from zero: holders of the SBF Binnen or SBF See already bring the nautical fundamentals with them and, depending on the authority, may benefit from simplified exam requirements. What mainly remains to be learned are the Lake Constance-specific ISB rules. Check with the relevant authority before you register."
 ---
@@ -31,14 +31,15 @@ The outcome: the German [**SBF Binnen**](/en/sbf-inland/) (inland boating licens
 
 The **Bodensee-Schifferpatent (BSP)** is a standalone boating license that authorizes its holder to operate watercraft specifically on Lake Constance. It comes in several categories, each covering a different type of vessel:
 
-- **Category A**: Motorboats
-- **Category B**: Motorboats with towing operations
-- **Category C**: Sailboats with auxiliary engine
+- **Category A**: vessels with mechanical propulsion over 4.4 kW (6 hp) – the classic motorboat license
+- **Category B**: passenger vessels
+- **Category C**: cargo vessels and self-propelled floating equipment
+- **Category D**: sailboats with more than 12 m² of sail area
 
-For most recreational boaters, **Category A** is the relevant one – the license for motorboats. The patent is issued by the competent national authorities:
+For most recreational boaters, **Category A** is the relevant one – the license for motorboats; sailors need **Category D** instead. The patent is issued by the competent national authorities:
 
-- In **Baden-Württemberg, Germany**: Regierungspräsidium Freiburg or Tübingen
-- In **Bavaria, Germany**: the relevant Landratsamt in the Lake Constance district
+- In **Baden-Württemberg, Germany**: Landratsamt Konstanz or Landratsamt Bodenseekreis (Friedrichshafen)
+- In **Bavaria, Germany**: Landratsamt Lindau
 - In **Austria**: Bezirkshauptmannschaft Bregenz
 - In **Switzerland**: the respective cantonal authorities
 
@@ -82,7 +83,7 @@ On the water, you need to demonstrate that you can maneuver a motorboat safely. 
 
 ### Prerequisites
 
-- **Minimum age**: 16 years for Category A
+- **Minimum age**: 18 years for Category A, 14 years for Category D (sailing)
 - **First aid certificate**: generally required
 - **Medical fitness**: requirements vary by authority; some require a medical certificate
 

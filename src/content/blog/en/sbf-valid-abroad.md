@@ -110,8 +110,8 @@ Italy's approach to boat licence requirements is built less around engine size o
 
 Italian maritime law defines several zones for recreational boating:
 
-- **Within 1 nautical mile of the coast:** For some categories of small, low-powered craft, no formal licence may be required.
-- **1 to 12 nautical miles:** A valid boat licence is required for the vast majority of vessels, including all charter yachts.
+- **Within 6 nautical miles of the coast:** For some categories of small, low-powered craft, no formal licence may be required.
+- **6 to 12 nautical miles:** A valid boat licence is required for the vast majority of vessels, including all charter yachts.
 - **Beyond 12 nautical miles:** A licence is always required.
 
 If you are chartering along the Tuscan Archipelago, around Sardinia, Sicily, or the Amalfi Coast, you will almost certainly be sailing in zones where the **ICC Coastal** is mandatory. Essentially every charter route in Italy falls into this category.

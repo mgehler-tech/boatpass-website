@@ -112,8 +112,8 @@ In Italien richtet sich die Führerscheinpflicht nicht allein nach Motorleistung
 
 Die italienische Seeschifffahrtsgesetzgebung kennt verschiedene Zonen:
 
-- **Bis 1 Seemeile vor der Küste:** Für bestimmte kleine, schwach motorisierte Boote kann das Fahren ohne formellen Führerschein möglich sein.
-- **1 bis 12 Seemeilen:** Hier ist für die überwiegende Mehrzahl der Fahrzeuge – und für alle Charteryachten – eine gültige Fahrerlaubnis Pflicht.
+- **Bis 6 Seemeilen vor der Küste:** Für bestimmte kleine, schwach motorisierte Boote kann das Fahren ohne formellen Führerschein möglich sein.
+- **6 bis 12 Seemeilen:** Hier ist für die überwiegende Mehrzahl der Fahrzeuge – und für alle Charteryachten – eine gültige Fahrerlaubnis Pflicht.
 - **Über 12 Seemeilen:** Immer Führerscheinpflicht.
 
 Für das Fahren im toskanischen Archipel, vor Sardinien, Sizilien oder an der Amalfiküste – also für praktisch jede Charterroute in Italien – bist du in Zonen unterwegs, in denen der **ICC Coastal** benötigt wird.

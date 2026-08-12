@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "sbf-pruefung-anmelden"
 faq:
   - question: "Who administers the SBF exam?"
-    answer: "In Germany, the SBF exams are organized by the Deutscher Segler-Verband (DSV) and the Deutscher Motoryachtverband (DMYV). Both are appointed by the Federal Ministry for Digital and Transport (BMDV) to administer the recreational boating license exams; the exams themselves are identical in content."
+    answer: "In Germany, the SBF exams are organized by the Deutscher Segler-Verband (DSV) and the Deutscher Motoryachtverband (DMYV). Both are appointed by the Federal Ministry of Transport (BMV) to administer the recreational boating license exams; the exams themselves are identical in content."
   - question: "Which documents do I need to register for the SBF exam?"
     answer: "Usually a completed application form from the responsible association (DSV or DMYV), a biometric passport photo, a medical certificate of vision and hearing, a copy of a valid ID card or passport, and, if you have one, a copy of a car driving license. Depending on the association, an extract from the driving aptitude register may also be required."
   - question: "Can I register for the SBF exam without a boating school?"
@@ -46,7 +46,7 @@ In Germany the SBF exams are organized by two appointed associations:
 - **DSV** – German Sailing Association (Deutscher Segler-Verband)
 - **DMYV** – German Motor Yachting Association (Deutscher Motoryachtverband)
 
-Both are appointed by the Federal Ministry for Digital and Transport (BMDV) to administer the recreational boating license exams. Which association is responsible for you depends on the exam location and usually on your boating school – the exams themselves are identical in content.
+Both are appointed by the Federal Ministry of Transport (BMV) to administer the recreational boating license exams. Which association is responsible for you depends on the exam location and usually on your boating school – the exams themselves are identical in content.
 
 ## The Two Routes to Registration
 
