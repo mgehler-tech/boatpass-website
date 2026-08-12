@@ -81,7 +81,7 @@ Ignoring the duty to establish the facts, or failing to report an accident at al
 
 ## How This Comes Up in the Exam
 
-Conduct after an accident is one of the basic legal duties regularly tested in the theory portion of both the SBF Binnen and SBF See exams, for example in connection with the duty to establish the facts, the duty to render assistance, and sending a proper distress call. The [official ELWIS question catalog](/en/sbf-coastal-exam-questions/) tests less about specific legal paragraphs and more about practical understanding of what to do in an emergency. With the **Boatpass app**, you can practice exactly these questions in exam mode and get immediate feedback on where gaps remain, before it counts in the real [SBF exam](/en/sbf-exam/).
+Conduct after an accident is one of the basic legal duties regularly tested in the theory portion of both the [SBF Inland](/en/sbf-inland/) and [SBF Coastal](/en/sbf-coastal/) exams, for example in connection with the duty to establish the facts, the duty to render assistance, and sending a proper distress call. The [official ELWIS question catalog](/en/sbf-coastal-exam-questions/) tests less about specific legal paragraphs and more about practical understanding of what to do in an emergency. With the **Boatpass app**, you can practice exactly these questions in exam mode and get immediate feedback on where gaps remain, before it counts in the real [SBF exam](/en/sbf-exam/).
 
 ## Conclusion
 

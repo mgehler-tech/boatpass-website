@@ -33,7 +33,7 @@ howTo:
       text: "Only once the boat lies securely at the dock, make fast the remaining lines and finally adjust the fenders."
 ---
 
-Few situations make beginners as nervous as docking and undocking: in a tight space, often with an audience on the pontoon, the boat is supposed to arrive calmly and under control exactly where it needs to be. Harbor maneuvering is really about one thing above all: **physics and preparation**, not luck. This article explains what matters when docking and undocking, which forces are at play, and how to avoid the typical mistakes, both for the practical part of the German boating license exam (SBF) and for everyday life at the dock.
+Few situations make beginners as nervous as docking and undocking: in a tight space, often with an audience on the pontoon, the boat is supposed to arrive calmly and under control exactly where it needs to be. Harbor maneuvering is really about one thing above all: **physics and preparation**, not luck. This article explains what matters when docking and undocking, which forces are at play, and how to avoid the typical mistakes, both for the practical exam for the [SBF Inland](/en/sbf-inland/) or [SBF Coastal](/en/sbf-coastal/) and for everyday life at the dock.
 
 ## Why docking and undocking are mandatory exam maneuvers
 

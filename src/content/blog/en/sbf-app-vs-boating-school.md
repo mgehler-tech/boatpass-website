@@ -92,7 +92,7 @@ You learn the theory exclusively with an app (like Boatpass) – directly from t
 | Exam fee (Coastal) | €148 | €148 | €148 |
 | **Total (approx.)** | **€400–650** | **€240–400** | **€200–260** |
 
-*(Example calculation for the SBF Coastal; for the SBF Inland the exam fee is about €17 lower at €131. Prices vary by region and provider. As of 2026.)*
+*(Example calculation for the [SBF Coastal](/en/sbf-coastal/); for the [SBF Inland](/en/sbf-inland/) the exam fee is about €17 lower at €131. Prices vary by region and provider. As of 2026.)*
 
 ## Which route suits whom?
 
