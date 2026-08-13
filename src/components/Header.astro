@@ -85,16 +85,16 @@ const promo = {
 
     <!-- Links -->
     <nav aria-label={lang === 'de' ? 'Hauptnavigation' : 'Main navigation'} class="hidden md:flex items-center gap-8">
-      <a href={`${getLocalizedPath(lang, '/')}#features`} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
+      <a href={`${getLocalizedPath(lang, '/')}#features`} class="text-sm font-medium nav-link" style="color: #4B5563; text-decoration: none;">
         {lang === 'de' ? 'Features' : 'Features'}
       </a>
-      <a href={`${getLocalizedPath(lang, '/')}#pricing`} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
+      <a href={`${getLocalizedPath(lang, '/')}#pricing`} class="text-sm font-medium nav-link" style="color: #4B5563; text-decoration: none;">
         {lang === 'de' ? 'Preise' : 'Pricing'}
       </a>
 
       <!-- Führerscheine / Licenses Dropdown -->
       <div class="nav-dropdown">
-        <a id="licenses-trigger" href={lang === 'de' ? '/fuehrerscheine/' : '/en/licenses/'} class="text-sm font-medium nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" style="color: #6B7280; text-decoration:none; display:flex; align-items:center; gap:4px;">
+        <a id="licenses-trigger" href={lang === 'de' ? '/fuehrerscheine/' : '/en/licenses/'} class="text-sm font-medium nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" style="color: #4B5563; text-decoration:none; display:flex; align-items:center; gap:4px;">
           {lang === 'de' ? 'Führerscheine' : 'Licenses'} <span aria-hidden="true" style="font-size:10px;">▾</span>
         </a>
         <div id="licenses-menu" class="nav-mega">
@@ -140,7 +140,7 @@ const promo = {
 
       <!-- Ratgeber / Guides Dropdown -->
       <div class="nav-dropdown">
-        <button id="guides-trigger" class="text-sm font-medium nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" style="color: #6B7280; background:none; border:none; cursor:pointer; display:flex; align-items:center; gap:4px; padding:0; font-family:inherit;">
+        <button id="guides-trigger" class="text-sm font-medium nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" style="color: #4B5563; background:none; border:none; cursor:pointer; display:flex; align-items:center; gap:4px; padding:0; font-family:inherit;">
           {lang === 'de' ? 'Ratgeber' : 'Guides'} <span aria-hidden="true" style="font-size:10px;">▾</span>
         </button>
         <div id="guides-menu" class="nav-mega">
@@ -169,10 +169,10 @@ const promo = {
         </div>
       </div>
 
-      <a href={getLocalizedPath(lang, '/blog/')} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
+      <a href={getLocalizedPath(lang, '/blog/')} class="text-sm font-medium nav-link" style="color: #4B5563; text-decoration: none;">
         {t.nav.blog}
       </a>
-      <a href={getLocalizedPath(lang, '/faq/')} class="text-sm font-medium nav-link" style="color: #6B7280; text-decoration: none;">
+      <a href={getLocalizedPath(lang, '/faq/')} class="text-sm font-medium nav-link" style="color: #4B5563; text-decoration: none;">
         {t.nav.faq}
       </a>
     </nav>
@@ -455,7 +455,7 @@ const promo = {
     gap: 4px;
     font-size: 14px;
     font-weight: 600;
-    color: #6B7280;
+    color: #4B5563;
     text-decoration: none;
     padding: 4px 10px;
     border-radius: 100px;
@@ -802,7 +802,7 @@ const promo = {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #6B7280;
+    color: #4B5563;
     padding: 4px 8px;
     border-radius: 100px;
     transition: color 0.15s, background 0.15s;
