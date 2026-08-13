@@ -8,6 +8,8 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "life-jacket-buoyancy-classes"
+image: "/images/blog/rettungsweste-auftriebsklassen.jpg"
+imageAlt: "Drei verschiedene Rettungswesten-Typen nebeneinander auf einem Bootsdeck: eine schwarze automatische Aufblasweste, eine blaue Feststoffweste und ein dunkelblauer aufblasbarer Rettungsgurt"
 faq:
   - question: "Welche Auftriebsklassen für Rettungswesten gibt es?"
     answer: "Die europäische Norm EN ISO 12402 definiert vier Klassen: 50N (Schwimmhilfe), 100N (Schwimmweste für ruhige Gewässer), 150N (Allzweck-Rettungsweste) und 275N (Leistungsweste für extreme Verhältnisse). Der Newton-Wert gibt die Auftriebskraft an – ein Newton hebt rechnerisch rund 100 Gramm aus dem Wasser."
