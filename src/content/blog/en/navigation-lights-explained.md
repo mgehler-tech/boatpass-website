@@ -8,6 +8,18 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "lichterfuehrung-erklaert"
+howTo:
+  name: "How to Learn Navigation Lights for the SBF Exam"
+  description: "Four steps to systematically learn boat navigation lights and recognize them in exam questions."
+  steps:
+    - name: "Master the basic lights"
+      text: "Master the basic lights first – masthead, sidelights, and sternlight – and their arcs."
+    - name: "Distinguish motor and sail"
+      text: "Distinguish power-driven from sailing vessels using the masthead light."
+    - name: "Learn the special lights"
+      text: "Learn the special lights last, using the common memory rhymes."
+    - name: "Practice with images"
+      text: "Practice recognizing light combinations using exam images from the viewing angle."
 faq:
   - question: "What lights does a power-driven vessel show underway?"
     answer: "A power-driven vessel underway shows a masthead light (white, forward), sidelights (green to starboard, red to port), and a sternlight (white, aft). Small vessels under 12 meters may combine the masthead and sternlight into a single white all-round light."

@@ -8,6 +8,18 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "marine-weather-report-warnings-weather-services-for-skippers"
+howTo:
+  name: "So nutzt du Wetterquellen für die Törnplanung"
+  description: "Vier Schritte, um Seewetterbericht, Warnungen und Wetter-Apps richtig in die Törnplanung einzubeziehen."
+  steps:
+    - name: "Tage vorher"
+      text: "Verschaffe dir mit der 5-Tage-Übersicht des DWD einen groben Überblick über die Wetterentwicklung und richte die Törnplanung grob daran aus."
+    - name: "Am Vorabend und Abfahrtstag"
+      text: "Prüfe den aktuellen Seewetterbericht und etwaige Warnungen für dein Revier, ergänzt um eine Wetter-App für den schnellen Überblick."
+    - name: "Unterwegs"
+      text: "Behalte NAVTEX-Meldungen oder UKW-Wetteransagen im Blick, besonders auf längeren Törns oder bei unsicherer Wetterlage."
+    - name: "Bei aufziehender Verschlechterung"
+      text: "Nimm eigene Beobachtungen wie fallenden Luftdruck oder aufziehende Bewölkung ernst und gleiche sie mit der aktuellen Warnlage ab."
 faq:
   - question: "Wo finde ich den offiziellen Seewetterbericht für Nord- und Ostsee?"
     answer: "Der Deutsche Wetterdienst (DWD) veröffentlicht den Seewetterbericht mehrmals täglich unter dwd.de/seewetter, außerdem per Newsletter, über NAVTEX, UKW-Seefunk und die DWD WarnWetter-App. Zusätzlich gibt es einmal täglich eine 5-Tage-Übersicht für Nord- und Ostsee."

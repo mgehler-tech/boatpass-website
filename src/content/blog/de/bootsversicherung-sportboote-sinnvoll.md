@@ -8,6 +8,20 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "boat-insurance-for-sportboats-what-makes-sense"
+howTo:
+  name: "So vergleichst du Bootsversicherungs-Angebote richtig"
+  description: "Fünf Schritte, um vor dem Abschluss einer Bootsversicherung die passende Police zu finden."
+  steps:
+    - name: "Bedarf klären"
+      text: "Kläre, wie oft und wo du unterwegs bist – Binnengewässer, Küste oder auch im Ausland."
+    - name: "Bootswert einschätzen"
+      text: "Schätze den Bootswert realistisch ein, das beeinflusst, ob sich eine Kaskoversicherung lohnt."
+    - name: "Bedingungen lesen"
+      text: "Lies Ausschlüsse, Selbstbeteiligung und Geltungsbereich genau, sie sind oft entscheidender als der reine Beitrag."
+    - name: "Mehrere Angebote einholen"
+      text: "Hol mehrere Angebote ein, die Bandbreite bei Leistungen und Konditionen am Bootsversicherungsmarkt ist größer als man denkt."
+    - name: "Bei Unsicherheit beraten lassen"
+      text: "Lass dich bei Unsicherheit von einem auf Wassersport spezialisierten Versicherungsmakler beraten."
 faq:
   - question: "Ist eine Bootsversicherung in Deutschland gesetzlich vorgeschrieben?"
     answer: "Nein, eine gesetzliche Pflicht zur Bootshaftpflichtversicherung gibt es in Deutschland nicht, anders als bei der Kfz-Haftpflicht für Autos. In der Praxis verlangen aber viele Häfen, Vereine und Vercharterer eine Haftpflichtversicherung als Voraussetzung."

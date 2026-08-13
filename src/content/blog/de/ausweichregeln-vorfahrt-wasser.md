@@ -8,6 +8,18 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "right-of-way-collision-rules"
+howTo:
+  name: "So gehst du bei Ausweichfragen in der SBF-Prüfung vor"
+  description: "Ein festes Schema für Ausweichfragen in der SBF-Prüfung – vom Fahrzeugtyp bis zur richtigen Ausweichregel."
+  steps:
+    - name: "Fahrzeugtypen bestimmen"
+      text: "Kläre, was du selbst bist und was der andere ist (Motor, Segel, Fischer …), und prüfe die Rangordnung."
+    - name: "Begegnungssituation bestimmen"
+      text: "Bei gleichem Fahrzeugtyp bestimmst du, ob die Begegnung entgegengesetzt, kreuzend oder ein Überholvorgang ist."
+    - name: "Regel anwenden"
+      text: "Wende die Steuerbord-Regel oder bei Seglern Luv weicht Lee an, um die Ausweichpflicht zu klären."
+    - name: "Im Zweifel ausweichen"
+      text: "Weiche im Zweifel aus – Sicherheit hat Vorrang vor Recht."
 faq:
   - question: "Gibt es auf dem Wasser eine Vorfahrt wie im Straßenverkehr?"
     answer: "Nein, auf dem Wasser gibt es keine Vorfahrt, sondern nur Ausweich- und Kurshaltepflicht. Der Ausweichpflichtige muss frühzeitig und deutlich ausweichen, der Kurshalter muss Kurs und Geschwindigkeit beibehalten."

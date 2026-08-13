@@ -8,6 +8,16 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "haeufigste-fehler-sbf"
+howTo:
+  name: "How to Register for the SBF Exam on Time"
+  description: "Three steps to avoid missing out on a fully booked SBF exam slot."
+  steps:
+    - name: "Find your exam committee"
+      text: "Check the DMYV exam committee website for your region."
+    - name: "Register in time"
+      text: "Register once you're roughly 60–70% prepared – the deadline will motivate you to cover the rest."
+    - name: "Watch the deadline"
+      text: "Note that depending on the examination board, fees must usually arrive one to two weeks before the exam."
 faq:
   - question: "What is the most common mistake in the SBF theory exam?"
     answer: "Learning light and sound signals only superficially is the most common failure point. Many variations look similar but have different meanings, so understanding the underlying logic works better than memorizing lists."

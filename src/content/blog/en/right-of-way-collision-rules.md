@@ -8,6 +8,18 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "ausweichregeln-vorfahrt-wasser"
+howTo:
+  name: "How to Approach Give-Way Questions in the SBF Exam"
+  description: "A fixed scheme for give-way questions in the SBF exam – from vessel type to the correct give-way rule."
+  steps:
+    - name: "Identify both vessel types"
+      text: "Work out what you are and what the other vessel is (power, sail, fishing …), then check the hierarchy."
+    - name: "Determine the encounter"
+      text: "For vessels of the same type, determine whether the encounter is head-on, crossing, or overtaking."
+    - name: "Apply the rule"
+      text: "Apply the starboard rule, or windward/leeward for sailing vessels, to work out who must give way."
+    - name: "When in doubt, give way"
+      text: "Give way when in doubt – safety comes before being right."
 faq:
   - question: "Is there a right of way on the water like in road traffic?"
     answer: "No, on the water there is no right of way, only give-way and stand-on duties. The give-way vessel must take early and obvious action to keep clear, while the stand-on vessel must maintain her course and speed."

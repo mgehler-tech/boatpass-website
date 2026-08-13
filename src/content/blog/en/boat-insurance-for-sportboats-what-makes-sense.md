@@ -8,6 +8,20 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "bootsversicherung-sportboote-sinnvoll"
+howTo:
+  name: "How to Compare Boat Insurance Offers"
+  description: "Five steps to find the right policy before committing to boat insurance."
+  steps:
+    - name: "Clarify your needs"
+      text: "Work out how often and where you travel – inland waters, coastal, or abroad."
+    - name: "Assess the boat's value"
+      text: "Assess the boat's value realistically, since this influences whether hull insurance makes sense."
+    - name: "Read the terms"
+      text: "Read the terms carefully – exclusions, deductibles, and geographic scope often matter more than the premium alone."
+    - name: "Get several quotes"
+      text: "Get several quotes, since the range of coverage and terms in the boat insurance market is wider than most people expect."
+    - name: "Get independent advice if unsure"
+      text: "Get advice from an insurance broker specializing in water sports if you're unsure, since they know the finer details of individual policies best."
 faq:
   - question: "Is boat insurance legally required in Germany?"
     answer: "No, there's no general legal requirement for third-party liability insurance on boats in Germany, unlike the mandatory liability insurance for cars. In practice, though, many marinas, clubs, and charter companies require proof of liability cover."

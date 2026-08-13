@@ -8,6 +8,16 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "most-common-sbf-mistakes"
+howTo:
+  name: "So meldest du dich rechtzeitig zur SBF-Prüfung an"
+  description: "Drei Schritte, um bei der SBF-Prüfungsanmeldung nicht an ausgebuchten Terminen zu scheitern."
+  steps:
+    - name: "Prüfungsausschuss finden"
+      text: "Geh auf die Website des DMYV-Prüfungsausschusses in deiner Region."
+    - name: "Rechtzeitig buchen"
+      text: "Buche den Termin, sobald du etwa 60–70 % des Stoffs beherrschst – das motiviert und gibt dir eine feste Deadline."
+    - name: "Fristen beachten"
+      text: "Beachte, dass die Anmeldung je nach Prüfungsausschuss oft ein bis zwei Wochen vorher mit Prüfungsgebühr eingehen muss."
 faq:
   - question: "Was ist der häufigste Fehler in der SBF-Theorieprüfung?"
     answer: "Lichterführung und Schallzeichen nur oberflächlich zu lernen ist die häufigste Fehlerquelle. Viele Details wirken ähnlich, haben aber unterschiedliche Bedeutungen, deshalb hilft nur das Verständnis der Logik dahinter statt reines Auswendiglernen."

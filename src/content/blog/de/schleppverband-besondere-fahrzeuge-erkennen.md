@@ -8,6 +8,18 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "towing-convoys-special-vessels-day-shapes"
+howTo:
+  name: "So erkennst du Signalkörper in der SBF-Prüfung"
+  description: "Ein festes Vorgehen, um Signalkörper wie Ball, Kegel, Zylinder und Raute in Prüfungsfragen sicher zuzuordnen."
+  steps:
+    - name: "Grundform erkennen"
+      text: "Bestimme die Grundform: Ball, Kegel, Zylinder oder Raute."
+    - name: "Anzahl und Reihenfolge zählen"
+      text: "Zähle Anzahl und Reihenfolge der Signalkörper, etwa ein Ball, zwei Bälle oder Ball-Raute-Ball."
+    - name: "Kontext einordnen"
+      text: "Ordne die Kombination einem Schleppverband, Fischereifahrzeug oder manövrierbehinderten Fahrzeug zu."
+    - name: "Konsequenz ableiten"
+      text: "Leite ab, wer nach den Ausweichregeln Vorrang hat und wie viel Abstand nötig ist."
 faq:
   - question: "Was sind Signalkörper und wofür werden sie verwendet?"
     answer: "Signalkörper, auch Tagzeichen genannt, sind einfache schwarze Formen wie Ball, Kegel, Zylinder und Raute, die tagsüber am Mast oder Want gesetzt werden. Sie zeigen bei Tageslicht an, um was für ein Fahrzeug es sich handelt, wenn Positionslichter nicht sichtbar sind."
