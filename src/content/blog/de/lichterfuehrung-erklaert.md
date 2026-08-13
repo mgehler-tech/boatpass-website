@@ -8,6 +8,8 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "navigation-lights-explained"
+image: "/images/blog/lichterfuehrung-erklaert.jpg"
+imageAlt: "Ein Boot bei Dämmerung auf ruhigem Wasser mit sichtbarem rotem Backbord-Seitenlicht, grünem Steuerbord-Seitenlicht und weißem Topplicht"
 howTo:
   name: "So lernst du die Lichterführung für den SBF See"
   description: "Vier Schritte, um die Lichterführung von Booten systematisch zu lernen und in Prüfungsfragen wiederzuerkennen."

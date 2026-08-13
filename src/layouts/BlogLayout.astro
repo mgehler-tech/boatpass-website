@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { post, lang } = Astro.props;
-const { title, seoTitle, description, date, updated, readingTime, tags, author = 'Marius Gehler', image, altSlug } = post.data;
+const { title, seoTitle, description, date, updated, readingTime, tags, author = 'Marius Gehler', image, imageAlt, altSlug } = post.data;
 // <title> nutzt die Kurzform (falls gesetzt), H1 und Schema behalten den vollen Titel.
 const metaTitle = seoTitle ?? title;
 
@@ -27,8 +27,11 @@ const relatedPosts = relatedCandidates
     href: (lang === 'de' ? '/blog/' : '/en/blog/') + p.id.replace(/^(de|en)\//, '') + '/',
   }));
 // Auto-generierte, gebrandete OG-Karte pro Artikel (siehe src/pages/og/blog/[...route].png.ts).
-// Frontmatter `image` überschreibt sie bei Bedarf.
+// Frontmatter `image` überschreibt sie bei Bedarf. Eigene Hero-Bilder werden als 1600×900
+// abgelegt (siehe Hero-<img> unten) – die generierte Karte ist immer 1200×630.
 const ogImage = image ?? `/og/blog/${post.id}.png`;
+const ogImageWidth = image ? 1600 : 1200;
+const ogImageHeight = image ? 900 : 630;
 // hreflang DE↔EN: nur wenn eine Übersetzung via altSlug verlinkt ist.
 const hasAlternate = !!altSlug;
 const altUrl = altSlug
@@ -66,8 +69,8 @@ const articleSchema = {
   "image": {
     "@type": "ImageObject",
     "url": ogImage.startsWith('http') ? ogImage : `https://boatpass.de${ogImage}`,
-    "width": 1200,
-    "height": 630,
+    "width": ogImageWidth,
+    "height": ogImageHeight,
   },
   "datePublished": isoDate,
   "dateModified": isoModified,
@@ -147,7 +150,7 @@ const breadcrumbSchema = {
 };
 ---
 
-<BaseLayout title={metaTitle} description={description} lang={lang} type="article" hasAlternate={hasAlternate} altUrl={altUrl} ogImage={ogImage}>
+<BaseLayout title={metaTitle} description={description} lang={lang} type="article" hasAlternate={hasAlternate} altUrl={altUrl} ogImage={ogImage} ogImageWidth={ogImageWidth} ogImageHeight={ogImageHeight}>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   {faqSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
@@ -186,6 +189,12 @@ const breadcrumbSchema = {
         )}
       </div>
     </header>
+
+    <!-- Hero-Bild: nur wenn der Artikel eines im Frontmatter hinterlegt hat -->
+    {image && (
+      <img src={image} alt={imageAlt ?? title} width="1600" height="900" loading="eager" decoding="async" fetchpriority="high"
+        style="width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:16px; margin-bottom:40px;" />
+    )}
 
     <!-- Content -->
     <div class="article-body">

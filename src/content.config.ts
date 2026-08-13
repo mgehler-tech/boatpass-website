@@ -18,6 +18,8 @@ const blog = defineCollection({
     /** Datum der letzten inhaltlichen Aktualisierung (Frische-Signal für dateModified). */
     updated: z.date().optional(),
     image: z.string().optional(),
+    /** Alt-Text für das Hero-Bild (siehe BlogLayout). Nur nötig, wenn `image` gesetzt ist. */
+    imageAlt: z.string().optional(),
     tags: z.array(z.string()).default([]),
     readingTime: z.number(),
     lang: z.enum(['de', 'en']),

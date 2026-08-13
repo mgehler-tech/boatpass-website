@@ -8,6 +8,8 @@ readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "boating-without-license-15-hp"
+image: "/images/blog/boot-fahren-ohne-fuehrerschein-15-ps.jpg"
+imageAlt: "Ein kleines offenes Motorboot mit Außenborder fährt auf einem ruhigen See vor grüner Hügellandschaft, der Fahrer steuert am Lenkrad"
 faq:
   - question: "Bis wie viel PS darf ich in Deutschland ohne Bootsführerschein fahren?"
     answer: "In Deutschland gilt die 15-PS-Regel: Motorboote mit einer Nutzleistung bis einschließlich 15 PS (11,03 kW) darfst du ab 16 Jahren ohne amtlichen Sportbootführerschein führen – auf Binnen- wie Seeschifffahrtsstraßen. Erst oberhalb von 15 PS wird der SBF zur Pflicht. Auf Bodensee und Rhein gelten niedrigere Grenzen."

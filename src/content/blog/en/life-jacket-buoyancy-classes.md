@@ -8,6 +8,8 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "rettungsweste-auftriebsklassen"
+image: "/images/blog/rettungsweste-auftriebsklassen.jpg"
+imageAlt: "Three different life jacket types side by side on a boat deck: a black automatic inflatable collar, a blue foam vest, and a dark blue inflatable belt pack"
 faq:
   - question: "What buoyancy classes exist for life jackets?"
     answer: "The European standard EN ISO 12402 defines four classes: 50N (buoyancy aid), 100N (lifejacket for sheltered waters), 150N (all-purpose life jacket), and 275N (performance lifejacket for extreme conditions). The Newton value indicates the buoyancy force – one Newton supports roughly 100 grams against gravity."
