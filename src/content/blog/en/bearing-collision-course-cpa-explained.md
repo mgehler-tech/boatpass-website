@@ -8,6 +8,18 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "peilung-kollisionskurs-cpa-erklaert"
+howTo:
+  name: "What to Do Once a Risk of Collision Is Identified"
+  description: "Four steps for responding to a constant bearing and an identified risk of collision on the water."
+  steps:
+    - name: "Determine who has to give way"
+      text: "Use the ranking of vessel types and the type of encounter to work out who must give way."
+    - name: "React early and clearly"
+      text: "Alter course or speed early and in a way that makes your intention unmistakable."
+    - name: "Stand on if that is your role"
+      text: "Maintain course and speed if you don't have to give way, unless a collision can only be avoided by taking action yourself."
+    - name: "Use sound signals when unclear"
+      text: "Use clear sound signals when the other vessel's intention is unclear."
 faq:
   - question: "What does a constant bearing on another boat mean?"
     answer: "If the bearing to an approaching vessel does not change noticeably over several minutes while the distance decreases, there is a risk of collision. This is one of the most important rules from the Collision Regulations (COLREGs)."

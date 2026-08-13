@@ -8,6 +8,18 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "schleppverband-besondere-fahrzeuge-erkennen"
+howTo:
+  name: "How to Approach Day-Shape Questions in the SBF Exam"
+  description: "A fixed routine to reliably identify day shapes like balls, cones, cylinders, and diamonds in exam questions."
+  steps:
+    - name: "Identify the basic shape"
+      text: "Determine the basic shape: ball, cone, cylinder, or diamond."
+    - name: "Count and order"
+      text: "Count and order the shapes, for example one ball, two balls, or ball-diamond-ball."
+    - name: "Place it in context"
+      text: "Place the combination in context as a towed convoy, fishing vessel, or vessel restricted in her ability to maneuver."
+    - name: "Work out the consequence"
+      text: "Work out who has priority under the right-of-way rules and how much clearance is needed."
 faq:
   - question: "What are day shapes and what are they used for?"
     answer: "Day shapes are simple black forms such as balls, cones, cylinders, and diamonds, hoisted on the mast or stay during daylight. They show what kind of vessel is ahead when navigation lights are not visible."

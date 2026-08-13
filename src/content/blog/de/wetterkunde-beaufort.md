@@ -8,6 +8,18 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "weather-beaufort-scale"
+howTo:
+  name: "So lernst du Wetterkunde für den SBF See"
+  description: "Vier Schritte, um die Wetterkunde-Themen der SBF-See-Prüfung systematisch zu lernen."
+  steps:
+    - name: "Beaufort-Schwellen lernen"
+      text: "Lerne die Beaufort-Schwellen auswendig: 6 Beaufort für Starkwind, 8 Beaufort für Sturm."
+    - name: "Hoch und Tief verstehen"
+      text: "Verstehe Hoch, Tief und Isobaren – enge Isobaren bedeuten viel Wind."
+    - name: "Windgesetz einprägen"
+      text: "Präge dir das barische Windgesetz sowie Land- und Seewind mit einer einfachen Skizze ein."
+    - name: "Wetterzeichen lernen"
+      text: "Lerne Wetterzeichen als Ursache-Wirkung-Paare, etwa fallender Druck als Zeichen für schlechtes Wetter."
 faq:
   - question: "Ab welcher Beaufort-Stärke gilt eine Starkwindwarnung?"
     answer: "Eine Starkwindwarnung gilt ab 6 Beaufort, eine Sturmwarnung ab 8 Beaufort. Diese beiden Schwellen solltest du für die SBF-See-Prüfung auswendig kennen."

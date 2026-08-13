@@ -8,6 +8,18 @@ readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "seewetterbericht-wetterwarnungen-wetterdienste-skipper"
+howTo:
+  name: "How to Use Weather Sources for Trip Planning"
+  description: "Four steps to correctly factor marine weather reports, warnings, and weather apps into your trip planning."
+  steps:
+    - name: "Days ahead"
+      text: "Get a rough sense of the developing weather from the DWD's 5-day outlook and align your trip planning broadly with it."
+    - name: "The evening before and on departure day"
+      text: "Check the current marine weather report and any warnings for your area, supplemented by a weather app for a quick overview."
+    - name: "Underway"
+      text: "Keep an eye on NAVTEX messages or VHF weather broadcasts, especially on longer passages or in unsettled weather."
+    - name: "When conditions start to deteriorate"
+      text: "Take your own observations, such as a falling barometer or thickening cloud, seriously and cross-check them against the current warning situation."
 faq:
   - question: "Where can I find the official marine weather report for the North Sea and Baltic Sea?"
     answer: "Germany's national weather service, the Deutscher Wetterdienst (DWD), publishes the marine weather report several times a day at dwd.de/seewetter, and also distributes it by newsletter, NAVTEX, VHF marine radio, and its WarnWetter app. It also issues a 5-day outlook for the North Sea and Baltic Sea once a day."

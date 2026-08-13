@@ -8,6 +8,18 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "navigation-lights-explained"
+howTo:
+  name: "So lernst du die Lichterführung für den SBF See"
+  description: "Vier Schritte, um die Lichterführung von Booten systematisch zu lernen und in Prüfungsfragen wiederzuerkennen."
+  steps:
+    - name: "Grundlichter beherrschen"
+      text: "Beherrsche zuerst sicher die Grundlichter Topplicht, Seitenlichter und Hecklicht mit ihren Sektoren."
+    - name: "Motor und Segel unterscheiden"
+      text: "Unterscheide Motor- und Segelfahrzeug anhand des Topplichts."
+    - name: "Sonderlichter lernen"
+      text: "Lerne zum Schluss die Sonderlichter mithilfe der gängigen Merksprüche."
+    - name: "Mit Bildern üben"
+      text: "Übe das Erkennen der Lichtkombinationen anhand von Prüfungsbildern aus der Perspektive."
 faq:
   - question: "Welche Lichter führt ein Maschinenfahrzeug in Fahrt?"
     answer: "Ein Maschinenfahrzeug in Fahrt führt Topplicht (weiß, vorn), Seitenlichter (grün Steuerbord, rot Backbord) und Hecklicht (weiß, achtern). Kleine Fahrzeuge unter 12 m dürfen Topplicht und Hecklicht zu einem weißen Rundumlicht zusammenfassen."

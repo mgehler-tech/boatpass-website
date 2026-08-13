@@ -8,6 +8,18 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "wetterkunde-beaufort"
+howTo:
+  name: "How to Learn Weather for the SBF See Exam"
+  description: "Four steps to systematically learn the weather topics covered in the SBF See exam."
+  steps:
+    - name: "Memorize the Beaufort thresholds"
+      text: "Memorize the Beaufort thresholds: force 6 for strong wind, force 8 for gale."
+    - name: "Understand highs and lows"
+      text: "Understand highs, lows, and isobars – close isobars mean strong wind."
+    - name: "Imprint the wind law"
+      text: "Imprint the baric wind law and land/sea breeze with a simple sketch."
+    - name: "Learn weather signs"
+      text: "Learn weather signs as cause-and-effect pairs, such as falling pressure signaling worsening weather."
 faq:
   - question: "At what Beaufort force does a strong-wind warning apply?"
     answer: "A strong-wind warning applies from Beaufort force 6, and a gale warning from force 8. You should know these two thresholds by heart for the SBF See exam."

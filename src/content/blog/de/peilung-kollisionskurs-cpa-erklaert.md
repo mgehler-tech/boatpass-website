@@ -8,6 +8,18 @@ readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "bearing-collision-course-cpa-explained"
+howTo:
+  name: "So reagierst du bei erkannter Kollisionsgefahr"
+  description: "Vier Schritte für den Umgang mit einer gleichbleibenden Peilung und erkannter Kollisionsgefahr auf dem Wasser."
+  steps:
+    - name: "Ausweichpflicht klären"
+      text: "Prüfe anhand der Rangordnung und der Begegnungssituation, wer ausweichen muss."
+    - name: "Frühzeitig und deutlich reagieren"
+      text: "Ändere Kurs oder Geschwindigkeit früh und so, dass deine Absicht eindeutig erkennbar ist."
+    - name: "Kurshalter bleiben"
+      text: "Behalte Kurs und Geschwindigkeit bei, wenn du nicht ausweichpflichtig bist, es sei denn, eine Kollision lässt sich nur noch durch eigenes Handeln vermeiden."
+    - name: "Bei Unklarheit Schallsignale einsetzen"
+      text: "Setze bei Unklarheit über die Absicht des anderen Fahrzeugs deutliche Schallsignale ein."
 faq:
   - question: "Was bedeutet gleichbleibende Peilung bei einem anderen Boot?"
     answer: "Wenn sich die Peilung zu einem sich näherndem Fahrzeug über mehrere Minuten hinweg nicht merklich ändert, während der Abstand kleiner wird, besteht Kollisionsgefahr. Das ist eine der wichtigsten Grundregeln aus den Kollisionsverhütungsregeln (KVR)."
