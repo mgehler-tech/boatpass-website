@@ -199,7 +199,7 @@ const faqSchema = {
     <div class="space-y-12">
       {categories.map((cat) => (
         <section id={cat.id} class="scroll-mt-24">
-          <h2 class="text-2xl font-bold text-text mb-5">{cat.title}</h2>
+          <h2 class="content-section-title mb-5">{cat.title}</h2>
           <div class="space-y-4">
             {cat.faqs.map((faq) => (
               <details class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden group">
