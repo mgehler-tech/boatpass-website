@@ -8,6 +8,8 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "lichterfuehrung-erklaert"
+image: "/images/blog/lichterfuehrung-erklaert.jpg"
+imageAlt: "A boat at dusk on calm water showing a red port sidelight, a green starboard sidelight, and a white masthead light"
 howTo:
   name: "How to Learn Navigation Lights for the SBF Exam"
   description: "Four steps to systematically learn boat navigation lights and recognize them in exam questions."
