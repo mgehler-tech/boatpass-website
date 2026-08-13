@@ -8,6 +8,8 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "wichtigste-knoten-sbf"
+image: "/images/blog/wichtigste-knoten-sbf.jpg"
+imageAlt: "Close-up of two hands tying a nautical knot into a rope, with a boat deck cleat visible in the background"
 faq:
   - question: "How many knots do you need to know for the SBF See practical exam?"
     answer: "You're tested on a list of nine knots, and generally have to demonstrate at least six of them correctly and explain what each one is used for."

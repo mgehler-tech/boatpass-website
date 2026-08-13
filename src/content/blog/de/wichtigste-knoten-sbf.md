@@ -8,6 +8,8 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "most-important-knots-sbf"
+image: "/images/blog/wichtigste-knoten-sbf.jpg"
+imageAlt: "Nahaufnahme von zwei Händen, die einen nautischen Knoten in ein Tau binden, im Hintergrund eine Klampe auf dem Bootsdeck"
 faq:
   - question: "Wie viele Knoten muss ich für die SBF-See-Praxisprüfung können?"
     answer: "Geprüft wird aus einer Liste von neun Knoten, von denen du in der Regel mindestens sechs korrekt vorführen und ihren Verwendungszweck erklären musst."
