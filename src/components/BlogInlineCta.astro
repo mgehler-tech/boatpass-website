@@ -26,9 +26,10 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     <p class="blog-inline-cta-title">{t.blogInlineCta.title}</p>
     <p class="blog-inline-cta-subtitle">{t.blogInlineCta.subtitle}</p>
   </div>
-  <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="blog-inline" class="blog-inline-cta-button">
+  <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="blog-inline" id="blog-inline-cta-play" class="blog-inline-cta-button">
     {t.blogInlineCta.cta}
   </a>
+  <span id="blog-inline-cta-ios" class="blog-inline-cta-ios-badge">{t.hero.ctaIos}</span>
 </aside>
 
 <script>
@@ -40,6 +41,24 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     if (!firstHeading) return;
     firstHeading.before(cta);
     cta.hidden = false;
+  })();
+</script>
+
+<script is:inline>
+  // Play Store hat kein iOS-Pendant (App noch nicht erschienen, siehe hero.ctaIos) –
+  // ohne diese Weiche landen iOS-Besucher:innen auf einer Store-Seite, die sie nicht
+  // installieren können. Gleiche Erkennung wie im Hero-CTA (HeroSection.astro), hier
+  // für die Mid-Article-CTA in Blogposts.
+  (function () {
+    var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (!isIos) return;
+    var play = document.getElementById('blog-inline-cta-play');
+    var ios = document.getElementById('blog-inline-cta-ios');
+    if (play && ios) {
+      play.style.display = 'none';
+      ios.style.display = 'inline-flex';
+    }
   })();
 </script>
 
@@ -98,14 +117,29 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     box-shadow: 0 8px 20px rgba(51,102,255,0.32);
   }
 
+  /* Startet ausgeblendet, das Inline-Script schaltet auf iOS um (siehe oben). */
+  .blog-inline-cta-ios-badge {
+    display: none;
+    flex-shrink: 0;
+    white-space: nowrap;
+    background: rgba(51,102,255,0.10);
+    border: 1px solid rgba(51,102,255,0.22);
+    color: #1A44D4;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 11px 20px;
+    border-radius: 100px;
+  }
+
   @media (max-width: 520px) {
     #blog-inline-cta {
       flex-wrap: wrap;
       padding: 16px 18px;
     }
-    .blog-inline-cta-button {
+    .blog-inline-cta-button, .blog-inline-cta-ios-badge {
       width: 100%;
       justify-content: center;
+      text-align: center;
     }
   }
 
@@ -115,4 +149,9 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   }
   html.dark .blog-inline-cta-title { color: #E2E8F0; }
   html.dark .blog-inline-cta-subtitle { color: #94A3B8; }
+  html.dark .blog-inline-cta-ios-badge {
+    background: rgba(90,120,255,0.14);
+    border-color: rgba(90,120,255,0.28);
+    color: #5B8CFF;
+  }
 </style>

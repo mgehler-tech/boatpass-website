@@ -1,4 +1,5 @@
 ---
+import Icon from './Icon.astro';
 import { useTranslations } from '../i18n/index';
 
 interface Props {
@@ -17,15 +18,37 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
       <p class="cta-banner-subtitle">{t.ctaBanner.subtitle}</p>
     </div>
     <div class="cta-banner-action">
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="bottom-banner" class="cta-banner-button">
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="bottom-banner" id="cta-banner-play" class="cta-banner-button">
         <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path d="M1.5 1.5L8.5 6L1.5 10.5V1.5Z" fill="#3366FF" stroke="#3366FF" stroke-width="1.5" stroke-linejoin="round"/>
         </svg>
         <span>{t.ctaBanner.cta}</span>
       </a>
+      <div id="cta-banner-ios" class="cta-banner-ios-badge">
+        <Icon name="phoneDevice" size={16} strokeWidth={2} />
+        <span>{t.hero.ctaIos}</span>
+      </div>
     </div>
   </div>
 </div>
+
+<script is:inline>
+  // Play Store hat kein iOS-Pendant (App noch nicht erschienen, siehe hero.ctaIos) –
+  // ohne diese Weiche landen iOS-Besucher:innen auf einer Store-Seite, die sie nicht
+  // installieren können. Gleiche Erkennung wie im Hero-CTA (HeroSection.astro), hier
+  // für den sitewide Bottom-Banner (auf jeder Seite via BaseLayout eingebunden).
+  (function () {
+    var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (!isIos) return;
+    var play = document.getElementById('cta-banner-play');
+    var ios = document.getElementById('cta-banner-ios');
+    if (play && ios) {
+      play.style.display = 'none';
+      ios.style.display = 'inline-flex';
+    }
+  })();
+</script>
 
 <style>
   .cta-banner-card {
@@ -106,6 +129,20 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   }
 
+  /* Startet ausgeblendet, das Inline-Script schaltet auf iOS um (siehe oben). */
+  .cta-banner-ios-badge {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 100px;
+  }
+
   @media (max-width: 768px) {
     .cta-banner-card {
       flex-direction: column;
@@ -119,7 +156,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     .cta-banner-subtitle {
       font-size: 15px;
     }
-    .cta-banner-button {
+    .cta-banner-button, .cta-banner-ios-badge {
       width: 100%;
       justify-content: center;
     }
