@@ -8,6 +8,8 @@ readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "kursumrechnung-sbf-see"
+image: "/images/blog/kursumrechnung-sbf-see.jpg"
+imageAlt: "Nautical chart on a chart table with a parallel course plotter, pencil, and a boat compass in morning light"
 faq:
   - question: "What is the formula for course conversion in the SBF Coastal exam?"
     answer: "The formula is TC = CC + Deviation + Variation when converting from compass to chart. The other way round, from chart to compass, it is CC = TC − Variation − Deviation."

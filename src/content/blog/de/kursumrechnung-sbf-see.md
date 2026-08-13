@@ -8,6 +8,8 @@ readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "course-conversion-sbf-coastal"
+image: "/images/blog/kursumrechnung-sbf-see.jpg"
+imageAlt: "Seekarte auf einem Kartentisch mit Kursdreieck-Lineal, Bleistift und Bootskompass in der Morgensonne"
 faq:
   - question: "Wie lautet die Formel für die Kursumrechnung beim SBF See?"
     answer: "Die Formel lautet rwK = MgK + Ablenkung + Missweisung, wenn du vom Kompass zur Karte rechnest. Umgekehrt, von der Karte zum Kompass, gilt MgK = rwK − Missweisung − Ablenkung."
