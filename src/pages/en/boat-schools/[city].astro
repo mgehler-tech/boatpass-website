@@ -64,7 +64,7 @@ const faqSchema = city.faq.length > 0 ? {
       <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
         Boat Schools in {city.name}
       </h1>
-      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto;">
+      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto;">
         {city.intro.en}
       </p>
     </div>
@@ -82,7 +82,7 @@ const faqSchema = city.faq.length > 0 ? {
         {licenceTypes.map(l => (
           <a href={l.href} class="info-card" style="text-decoration:none;">
             <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">{l.name}</div>
-            <div style="font-size:15px; color:#6B7280; line-height:1.65;">{l.desc}</div>
+            <div style="font-size:15px; color:#656B78; line-height:1.65;">{l.desc}</div>
             <div style="font-size:14px; font-weight:700; color:#3366FF; margin-top:10px;">View details &rarr;</div>
           </a>
         ))}
@@ -152,15 +152,15 @@ const faqSchema = city.faq.length > 0 ? {
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
         <div class="info-card">
           <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Theory exam</div>
-          <div style="font-size:15px; color:#6B7280; line-height:1.65;">30 multiple-choice questions (SBF Inland: 45 min, SBF Coastal: 60 min incl. navigation).</div>
+          <div style="font-size:15px; color:#656B78; line-height:1.65;">30 multiple-choice questions (SBF Inland: 45 min, SBF Coastal: 60 min incl. navigation).</div>
         </div>
         <div class="info-card">
           <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Practical exam</div>
-          <div style="font-size:15px; color:#6B7280; line-height:1.65;">On-water manoeuvres: docking, turning, stopping and man-overboard. Plus knots.</div>
+          <div style="font-size:15px; color:#656B78; line-height:1.65;">On-water manoeuvres: docking, turning, stopping and man-overboard. Plus knots.</div>
         </div>
         <div class="info-card">
           <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Exam bodies</div>
-          <div style="font-size:15px; color:#6B7280; line-height:1.65;">Exams are administered by the DMYV (German Motor Yacht Association) or the DSV (German Sailing Association).</div>
+          <div style="font-size:15px; color:#656B78; line-height:1.65;">Exams are administered by the DMYV (German Motor Yacht Association) or the DSV (German Sailing Association).</div>
         </div>
       </div>
     </section>
@@ -175,7 +175,7 @@ const faqSchema = city.faq.length > 0 ? {
         <span style="flex-shrink:0; margin-top:2px;"><Icon name="book" size={22} stroke="#3366FF" strokeWidth={1.75} /></span>
         <div>
           <div style="font-size:14px; font-weight:700; color:#1A1F36; margin-bottom:6px;">The smart split</div>
-          <p style="font-size:15px; color:#6B7280; line-height:1.65; margin:0;">
+          <p style="font-size:15px; color:#656B78; line-height:1.65; margin:0;">
             Study theory independently with <strong>BoatPass</strong> (from 9.99 euros), then book only the practical lessons at a <strong>boat school in {city.name}</strong>. This is the most cost-effective way to get your German boat licence.
           </p>
         </div>
@@ -194,7 +194,7 @@ const faqSchema = city.faq.length > 0 ? {
           {city.faq.map(f => (
             <div class="faq-item">
               <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q.en}</h3>
-              <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a.en}</div>
+              <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a.en}</div>
             </div>
           ))}
         </div>
@@ -298,7 +298,7 @@ const faqSchema = city.faq.length > 0 ? {
   }
   .school-address {
     font-size: 14px;
-    color: #6B7280;
+    color: #656B78;
     line-height: 1.5;
     margin: 0;
   }

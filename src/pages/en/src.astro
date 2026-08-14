@@ -121,7 +121,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
       <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
         Learn SRC –<br>Short Range Certificate
       </h1>
-      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto 36px;">
+      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto 36px;">
         The Short Range Certificate (SRC) is the most widely used marine radio certificate in recreational boating – mandatory for anyone who operates a VHF marine radio with DSC in the coastal area.
       </p>
 
@@ -283,21 +283,21 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
     <!-- Costs -->
     <section style="margin-bottom:48px;">
       <h2 class="content-section-title" style="margin-bottom:8px;">What does the SRC cost?</h2>
-      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:24px;">
+      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:24px;">
         For the official SRC exam there is a fee for admission, the exam and the issuance of the certificate:
       </p>
       <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; overflow:hidden;">
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:18px 24px; border-bottom:1px solid rgba(51,102,255,0.08);">
           <div>
             <div style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:2px;">Admission, exam & issuance</div>
-            <div style="font-size:13px; color:#6B7280; line-height:1.5;">Official fee via DSV / DMYV (theory + practice + certificate)</div>
+            <div style="font-size:13px; color:#656B78; line-height:1.5;">Official fee via DSV / DMYV (theory + practice + certificate)</div>
           </div>
           <div style="font-size:16px; font-weight:800; color:#1A1F36; white-space:nowrap;">approx. €128</div>
         </div>
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:18px 24px;">
           <div>
             <div style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:2px;">Preparation course (optional)</div>
-            <div style="font-size:13px; color:#6B7280; line-height:1.5;">Radio school with study material & practical training on the device</div>
+            <div style="font-size:13px; color:#656B78; line-height:1.5;">Radio school with study material & practical training on the device</div>
           </div>
           <div style="font-size:16px; font-weight:800; color:#1A1F36; white-space:nowrap;">approx. €250–350</div>
         </div>
@@ -323,7 +323,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
             </span>
             <div>
               <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
-              <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>
+              <div style="font-size:15px; color:#656B78; line-height:1.6;">{f.desc}</div>
             </div>
           </div>
         ))}
@@ -333,7 +333,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
     <!-- Learn by category -->
     <section style="margin-bottom:48px;">
       <h2 class="content-section-title" style="margin-bottom:8px;">Learn by category</h2>
-      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:20px;">
+      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:20px;">
         The SRC question catalog comprises {categories.reduce((s, c) => s + c.count, 0)} questions across {categories.length} topic areas – practice in a targeted way based on your weak spots.
       </p>
       <p style="font-size:14px; color:#9CA3AF; line-height:1.6; margin-top:-8px; margin-bottom:20px;">
@@ -349,7 +349,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
               <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
               <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;">{c.desc}</div>
             </div>
-            <span style="font-size:12px; font-weight:700; color:#6B7280; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} questions</span>
+            <span style="font-size:12px; font-weight:700; color:#656B78; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} questions</span>
           </div>
         ))}
       </div>
@@ -379,7 +379,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
         {faqs.map(f => (
           <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
             <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
           </div>
         ))}
       </div>

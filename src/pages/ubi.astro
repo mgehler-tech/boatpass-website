@@ -115,7 +115,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
       <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
         UBI lernen –<br>alles zum Sprechfunkzeugnis
       </h1>
-      <p style="font-size:18px; color:#6B7280; line-height:1.65; max-width:580px; margin:0 auto 36px;">
+      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto 36px;">
         Das UKW-Sprechfunkzeugnis für Binnenschifffahrt (UBI) ist Pflicht für jeden, der Funk an Bord bedienen will.
         Hier erfährst du alles zur Prüfung – und wie dich das Boatpass UBI-Modul optimal vorbereitet.
       </p>
@@ -224,7 +224,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
     <!-- Kosten im Detail -->
     <section style="margin-bottom:48px;">
       <h2 class="content-section-title" style="margin-bottom:8px;">Was kostet das UBI?</h2>
-      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:24px;">
+      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:24px;">
         Die amtliche Prüfungsgebühr setzt sich aus drei Posten zusammen. So viel zahlst du wofür:
       </p>
       <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; overflow:hidden;">
@@ -236,7 +236,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
           <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:18px 24px; border-bottom:1px solid rgba(51,102,255,0.08);">
             <div>
               <div style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:2px;">{row.label}</div>
-              <div style="font-size:13px; color:#6B7280; line-height:1.5;">{row.desc}</div>
+              <div style="font-size:13px; color:#656B78; line-height:1.5;">{row.desc}</div>
             </div>
             <div style="font-size:16px; font-weight:800; color:#1A1F36; white-space:nowrap;">{row.price}</div>
           </div>
@@ -267,7 +267,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
             </span>
             <div>
               <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
-              <div style="font-size:15px; color:#6B7280; line-height:1.6;">{f.desc}</div>
+              <div style="font-size:15px; color:#656B78; line-height:1.6;">{f.desc}</div>
             </div>
           </div>
         ))}
@@ -277,7 +277,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
     <!-- Lernen nach Kategorie -->
     <section style="margin-bottom:48px;">
       <h2 class="content-section-title" style="margin-bottom:8px;">Lernen nach Kategorie</h2>
-      <p style="font-size:16px; color:#6B7280; line-height:1.6; margin-bottom:20px;">
+      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:20px;">
         Der UBI-Fragenkatalog umfasst {categories.reduce((s, c) => s + c.count, 0)} Fragen in {categories.length} Themengebieten – übe gezielt nach Schwachstellen.
       </p>
       <p style="font-size:14px; color:#9CA3AF; line-height:1.6; margin-top:-8px; margin-bottom:20px;">
@@ -293,7 +293,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
               <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
               <div style="font-size:12px; color:#9CA3AF; line-height:1.4; margin-top:2px;">{c.desc}</div>
             </div>
-            <span style="font-size:12px; font-weight:700; color:#6B7280; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} Fragen</span>
+            <span style="font-size:12px; font-weight:700; color:#656B78; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} Fragen</span>
           </div>
         ))}
       </div>
@@ -323,7 +323,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
         {faqs.map(f => (
           <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
             <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#6B7280; line-height:1.7;">{f.a}</div>
+            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
           </div>
         ))}
       </div>
