@@ -74,11 +74,11 @@ const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showC
 
     <!-- Play-Store-Badge + Bewertung -->
     <div class="footer-store">
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="footer-store-link">
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="footer" class="footer-store-link">
         <img src={lang === 'de' ? '/images/google-play-badge-1_de_.png' : '/images/google-play-badge-2_en_.png'} alt={lang === 'de' ? 'Boatpass im Google Play Store herunterladen' : 'Download Boatpass on Google Play'} width="135" height="52" loading="lazy" />
       </a>
       {appRating && (
-        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="footer-rating" aria-label={`${ratingScoreLabel} · ${ratingCountLabel}`}>
+        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="footer" class="footer-rating" aria-label={`${ratingScoreLabel} · ${ratingCountLabel}`}>
           <span class="footer-rating-top">
             <span class="footer-rating-stars" aria-hidden="true">★★★★★</span>
             <span class="footer-rating-score">{ratingScoreLabel}</span>
@@ -111,6 +111,7 @@ const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showC
                     class="footer-link-row"
                     target={link.external ? '_blank' : undefined}
                     rel={link.external ? 'noopener noreferrer' : undefined}
+                    data-cta-position={link.href === playStoreUrl ? 'footer' : undefined}
                   >
                     <Icon name={link.icon} size={15} strokeWidth={1.75} />
                     <span>{link.label}</span>

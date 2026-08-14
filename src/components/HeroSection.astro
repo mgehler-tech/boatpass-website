@@ -75,7 +75,7 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
       <!-- CTAs -->
       <div class="animate-fade-up delay-3">
         <div class="hero-cta-row">
-          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="hero"
             id="hero-cta-play"
             class="cta-primary"
             style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:15px; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
@@ -88,7 +88,7 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
           </div>
 
           <!-- Offizielles "Jetzt bei Google Play"-Badge -->
-          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="hero-badge"
             id="hero-gplay-badge" class="gplay-badge"
             aria-label={lang === 'de' ? 'Boatpass bei Google Play herunterladen' : 'Get Boatpass on Google Play'}>
             <img src="/images/google-play-icon.png" alt="" width="24" height="24" aria-hidden="true" class="gplay-badge-icon" />
