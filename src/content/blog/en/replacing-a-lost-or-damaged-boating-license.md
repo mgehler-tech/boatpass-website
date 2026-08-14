@@ -17,6 +17,20 @@ faq:
     answer: "In practice, plan for roughly three to four weeks of processing time, depending on how quickly your original exam records can be located in the archive and how busy the examination committee currently is."
   - question: "Can I keep boating while I wait for the replacement to arrive?"
     answer: "If you can show that you hold the license but currently cannot present a valid certificate, DMYV or DSV can additionally issue a provisional Sportbootführerschein under Section 11 SpFV, which serves as a bridging document until the final replacement arrives."
+howTo:
+  name: "How to request a replacement Sportbootführerschein"
+  description: "How to request a replacement certificate for a lost or damaged Sportbootführerschein from DMYV or DSV."
+  steps:
+    - name: "Get the application form"
+      text: "Download the application form from the DMYV or DSV website, or apply directly through the Bundesportal."
+    - name: "Gather your documents"
+      text: "Prepare the completed application form, a current passport photo, a copy of your ID card or passport, and details about your original exam; add a copy of the police report if the certificate was stolen, or the damaged certificate itself if it was damaged."
+    - name: "Submit the application"
+      text: "Submit the application by post to DMYV or DSV, or online through the Bundesportal."
+    - name: "Pay the processing fee"
+      text: "Pay the processing fee, usually upon request from the association or together with the application."
+    - name: "Wait for your new card"
+      text: "Wait for the replacement certificate in credit-card format. Processing typically takes about three to four weeks."
 ---
 
 Your Sportbootführerschein, the official German recreational boating license, has gone missing from your wallet or come out of a downpour barely legible? No need to panic. There is a clearly defined procedure for exactly this situation, known as the **Ersatzausfertigung**, or replacement certificate. This article explains when you are entitled to one, which documents you need, how the process works with DMYV and DSV, and what to do if you need proof of your license on short notice.
