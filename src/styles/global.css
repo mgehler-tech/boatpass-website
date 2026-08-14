@@ -8,7 +8,7 @@
   --color-background: #F0F4FA;
   --color-surface:    #ffffff;
   --color-text:       #1A1F36;
-  --color-muted:      #6B7280;
+  --color-muted:      #656B78;
   --color-success:    #22C55E;
   --color-error:      #EF4444;
   --color-border:     rgba(51, 102, 255, 0.10);
@@ -245,10 +245,10 @@ html.dark [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
 html.dark [style*="color: #1A1F36"] { color: #E2E8F0 !important; }
 html.dark [style*="color:#4B5563"] { color: #94A3B8 !important; }
 html.dark [style*="color: #4B5563"] { color: #94A3B8 !important; }
-html.dark [style*="color:#6B7280"] { color: #94A3B8 !important; }
-html.dark [style*="color: #6B7280"] { color: #94A3B8 !important; }
+html.dark [style*="color:#656B78"] { color: #94A3B8 !important; }
+html.dark [style*="color: #656B78"] { color: #94A3B8 !important; }
 html.dark [style*="color:#9097A6"],
-html.dark [style*="color:#9CA3AF"] { color: #6B7280 !important; }
+html.dark [style*="color:#9CA3AF"] { color: #656B78 !important; }
 html.dark [style*="border-color:rgba(51,102,255"],
 html.dark [style*="border-color: rgba(51,102,255"] {
   border-color: rgba(90, 120, 255, 0.18) !important;
