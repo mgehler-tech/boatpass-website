@@ -17,6 +17,20 @@ faq:
     answer: "In der Praxis solltest du mit rund drei bis vier Wochen Bearbeitungszeit rechnen, je nachdem wie schnell sich die Prüfungsunterlagen aus dem Archiv zuordnen lassen und wie ausgelastet der Prüfungsausschuss aktuell ist."
   - question: "Darf ich mit dem Boot fahren, solange die Ersatzausfertigung noch nicht da ist?"
     answer: "Wenn du nachweislich im Besitz der Fahrerlaubnis bist, aber aktuell keinen gültigen Führerschein vorlegen kannst, kannst du bei DMYV oder DSV zusätzlich einen vorläufigen Sportbootführerschein nach Paragraf 11 SpFV beantragen, der als Übergangsnachweis dient, bis die endgültige Ersatzausfertigung vorliegt."
+howTo:
+  name: "Ersatzausfertigung für den Sportbootführerschein beantragen"
+  description: "So beantragst du bei DMYV oder DSV eine Ersatzausfertigung für deinen verlorenen oder beschädigten Sportbootführerschein."
+  steps:
+    - name: "Antragsformular besorgen"
+      text: "Lade das Antragsformular von der Website des DMYV oder DSV herunter oder stelle den Antrag direkt über das Bundesportal."
+    - name: "Unterlagen zusammenstellen"
+      text: "Halte ausgefülltes Antragsformular, aktuelles Passfoto, Kopie des Personalausweises oder Reisepasses sowie Angaben zur ursprünglichen Prüfung bereit, bei Diebstahl zusätzlich die Kopie der polizeilichen Anzeige, bei Beschädigung den alten Führerschein."
+    - name: "Antrag einreichen"
+      text: "Reiche den Antrag postalisch bei DMYV oder DSV ein oder stelle ihn online über das Bundesportal."
+    - name: "Bearbeitungsgebühr zahlen"
+      text: "Zahle die Bearbeitungsgebühr, meist nach Aufforderung durch den Verband oder direkt mit der Antragstellung."
+    - name: "Auf die neue Karte warten"
+      text: "Warte auf die Ersatzausfertigung im Scheckkartenformat. Die Bearbeitung dauert in der Regel etwa drei bis vier Wochen."
 ---
 
 Der Sportbootführerschein ist weg, im Portemonnaie verloren gegangen oder nach einem Regenguss kaum noch lesbar? Kein Grund zur Panik: Für genau diesen Fall gibt es ein geregeltes Verfahren, die sogenannte **Ersatzausfertigung**. Dieser Artikel erklärt, wann du Anspruch darauf hast, welche Unterlagen du brauchst, wie der Ablauf bei DMYV und DSV funktioniert und was du tust, wenn du kurzfristig einen Nachweis brauchst.
