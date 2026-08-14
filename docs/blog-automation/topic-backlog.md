@@ -41,7 +41,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Boot startklar machen im Frühjahr – Checkliste zum Saisonstart (2026-08-07: boot-startklar-machen-fruehjahr-checkliste-saisonstart / getting-your-boat-ready-spring-checklist-season-start)
 - [x] Peilung und Kollisionskurs erkennen – CPA einfach erklärt für Sportbootfahrer (2026-08-08: peilung-kollisionskurs-cpa-erklaert / bearing-collision-course-cpa-explained)
 - [x] Sportbootführerschein verloren oder beschädigt – Ersatz beantragen, was zu tun ist (2026-08-13: sportbootfuehrerschein-verloren-beschaedigt-ersatz / replacing-a-lost-or-damaged-boating-license)
-- [ ] Gewitter und Blitzschlag auf dem Wasser – Verhalten und Vorsorge für Sportbootfahrer
+- [x] Gewitter und Blitzschlag auf dem Wasser – Verhalten und Vorsorge für Sportbootfahrer (2026-08-14: gewitter-blitzschlag-wasser-verhalten-vorsorge / thunderstorms-lightning-on-the-water)
 - [ ] Wasserskifahren und Wakeboarden hinter dem Boot – Regeln, Beobachterpflicht und Kennzeichnung
 - [ ] Schleusenfahrt – Ablauf und Verhalten für Sportbootfahrer
 - [ ] Umweltschutz und Gewässerschutz beim Bootfahren – was Sportbootfahrer beachten müssen
