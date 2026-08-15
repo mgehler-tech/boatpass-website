@@ -164,24 +164,6 @@ const funkCards = [
         </div>
       )}
 
-      <!-- In jeder Lizenz enthalten + Trust-Leiste -->
-      <div class="guarantee-wrap">
-        <div class="reveal-item incl-strip" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
-          <div class="incl-title">{t.pricing.includedTitle}</div>
-          <div class="incl-grid">
-            {t.pricing.included.map(it => (
-              <div class="incl-item">
-                <span class="incl-icon"><Icon name={it.icon as IconName} size={18} stroke="#3366FF" strokeWidth={2} /></span>
-                <span class="incl-text">
-                  <span class="incl-label">{it.label}</span>
-                  <span class="incl-sub">{it.sub}</span>
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
     </div>
   ) : (
     <Fragment>
@@ -891,81 +873,6 @@ const funkCards = [
   html.dark .pv2-stamp-blue { background: rgba(90,120,255,0.14) !important; border-color: rgba(90,120,255,0.28) !important; color: #8BB4FF !important; }
   html.dark .pv2-stamp-amber { background: rgba(245,158,11,0.12) !important; border-color: rgba(245,158,11,0.3) !important; color: #FBBF24 !important; }
 
-  /* ── Enthalten-Leiste + Trust (aus #165, hier in voller Breite) ── */
-  .guarantee-wrap {
-    margin: 24px auto 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .incl-strip {
-    background: white;
-    border: 1px solid rgba(51,102,255,0.10);
-    border-radius: 24px;
-    padding: 26px 28px;
-    box-shadow: 0 8px 30px rgba(26,31,54,0.03);
-    text-align: left;
-  }
-  .incl-title {
-    font-size: 12px;
-    font-weight: 800;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: #1A1F36;
-    text-align: center;
-    margin-bottom: 22px;
-  }
-  .incl-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 18px 16px;
-  }
-  .incl-item { display: flex; align-items: flex-start; gap: 10px; }
-  .incl-icon {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 36px; height: 36px; border-radius: 10px;
-    background: rgba(51,102,255,0.08); flex-shrink: 0;
-  }
-  .incl-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-  .incl-label { font-size: 13.5px; font-weight: 700; color: #1A1F36; line-height: 1.25; }
-  .incl-sub { font-size: 12px; color: #656B78; line-height: 1.3; }
-
-  .pay-trust {
-    display: flex; align-items: center; justify-content: center; flex-wrap: wrap;
-    gap: 14px 30px;
-    background: white;
-    border: 1px solid rgba(51,102,255,0.10);
-    border-radius: 20px;
-    padding: 16px 24px;
-    box-shadow: 0 8px 30px rgba(26,31,54,0.02);
-  }
-  .pay-trust-item { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-  .pay-trust-icon {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 30px; height: 30px; border-radius: 8px;
-    background: rgba(51,102,255,0.08); flex-shrink: 0;
-  }
-  .pay-trust-gp { border-radius: 5px; display: block; flex-shrink: 0; }
-  .pay-trust-text { display: flex; flex-direction: column; line-height: 1.25; text-align: left; }
-  .pay-trust-text strong { font-size: 13.5px; font-weight: 800; color: #1A1F36; }
-  .pay-trust-text > span { font-size: 12px; color: #656B78; }
-  .pay-stars { color: #FBBF24; letter-spacing: 1px; font-size: 12px; }
-  .pay-trust-rating:hover .pay-trust-text > span { text-decoration: underline; }
-
-  html.dark .incl-strip,
-  html.dark .pay-trust {
-    background: #181E2E !important;
-    border-color: rgba(90,120,255,0.14) !important;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.25) !important;
-  }
-  html.dark .incl-title,
-  html.dark .incl-label,
-  html.dark .pay-trust-text strong { color: #E2E8F0 !important; }
-  html.dark .incl-sub,
-  html.dark .pay-trust-text > span { color: #94A3B8 !important; }
-  html.dark .incl-icon,
-  html.dark .pay-trust-icon { background: rgba(90,120,255,0.14) !important; }
-
   @media (max-width: 940px) {
     .pv2-cards { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
     /* Bis 768px greift .snap-row aus global.css und macht daraus eine
@@ -985,9 +892,6 @@ const funkCards = [
     .pv2-note-source { border-left: none; padding-left: 0; border-top: 1px solid rgba(51,102,255,0.12); padding-top: 16px; }
     html.dark .pv2-note-source { border-top-color: rgba(90,120,255,0.14) !important; }
   }
-  @media (max-width: 860px) {
-    .incl-grid { grid-template-columns: repeat(2, 1fr); }
-  }
   @media (max-width: 640px) {
     .pv2-funk-grid { grid-template-columns: 1fr; }
   }
@@ -1000,10 +904,6 @@ const funkCards = [
   @media (max-width: 768px) {
     .pv2-funk-grid { display: flex; gap: 14px; }
   }
-  @media (max-width: 460px) {
-    .incl-grid { grid-template-columns: 1fr; }
-  }
-
   @media (max-width: 680px) {
     .paid-grid { grid-template-columns: 1fr; }
     .bundle-inner { flex-direction: column; align-items: flex-start; }

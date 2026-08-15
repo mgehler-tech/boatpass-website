@@ -165,14 +165,6 @@ export const en: Translations = {
     noteTitle: 'About the catalogue dates',
     sourceTitle: 'Official source',
     // Merged currency guarantee: "Included with every licence" + proof + trust bar
-    includedTitle: 'Included with every licence & radio cert',
-    included: [
-      { label: 'Official question catalogue', sub: 'Published via ELWIS', icon: 'shield' },
-      { label: 'Explanation & mnemonic', sub: 'For every question', icon: 'check' },
-      { label: 'Exam simulation', sub: 'Official papers & random exam', icon: 'clipboard' },
-      { label: 'Learn offline', sub: 'Works without a connection', icon: 'phoneDevice' },
-      { label: 'No subscription', sub: 'One-off purchase per catalogue', icon: 'lock' },
-    ],
     proofText: 'Official ELWIS catalogue, 2026 edition – we ship every catalogue change automatically.',
     proofCta: 'View all catalogues & sources',
     trustPay: 'Secure payment',
