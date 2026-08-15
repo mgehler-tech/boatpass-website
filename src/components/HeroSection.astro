@@ -47,25 +47,33 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
     <!-- Left: text -->
     <div style="max-width:640px;">
 
-      <!-- Badge -->
+      <!-- Badge. Der Punkt ist statisch: Ein Puls imitiert eine Live-Statusanzeige,
+           hinter der hier nichts Veränderliches steht. -->
       <div class="animate-fade-up" style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:28px;">
-        <span class="animate-blink" style="width:6px;height:6px;background:#3366FF;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
+        <span style="width:6px;height:6px;background:#3366FF;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
         {t.hero.badge}
       </div>
 
-      <!-- H1 -->
-      <h1 class="animate-fade-up delay-1" style="font-size:clamp(40px,6vw,64px); font-weight:900; line-height:1.0; letter-spacing:-0.045em; color:#1A1F36; margin-bottom:22px;">
+      <!-- H1: konstant, mit dem Hauptsuchbegriff. -->
+      <h1 class="animate-fade-up delay-1 hero-h1" style="font-size:clamp(40px,6vw,64px); font-weight:900; line-height:1.0; letter-spacing:-0.045em; color:#1A1F36; margin-bottom:18px;">
         {t.hero.headline1}<br>
         {t.hero.headline2}<br>
-        <span
-          id="hero-accent"
-          class="gradient-text"
-          data-words={JSON.stringify(lang === 'de'
-            ? ['SBF Binnen.', 'SBF See.', 'UBI.', 'SRC.']
-            : ['Boating License.', 'SBF Inland.', 'SBF Coastal.']
-          )}
-        >{t.hero.headlineAccent}</span>
+        {t.hero.headlineAccent}
       </h1>
+
+      <!-- Lizenz-Zeile: übernimmt die Bewegung aus der bisherigen H1. Alle
+           Namen stehen dauerhaft lesbar da, es wandert nur die farbige
+           Hervorhebung – es verschwindet also kein Text mehr. -->
+      <p class="animate-fade-up delay-1 hero-licenses" aria-label={lang === 'de'
+          ? `Verfügbare Lizenzen: ${t.hero.licenses.join(', ')}`
+          : `Available licences: ${t.hero.licenses.join(', ')}`}>
+        {t.hero.licenses.map((name, i) => (
+          <>
+            {i > 0 && <span class="hero-lic-sep" aria-hidden="true">·</span>}
+            <span class="hero-lic" data-hero-lic>{name}</span>
+          </>
+        ))}
+      </p>
 
       <!-- Subline -->
       <p class="animate-fade-up delay-2" style="font-size:18px; color:#656B78; line-height:1.65; margin-bottom:40px; max-width:460px;">
@@ -153,9 +161,12 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
       <!-- Shadow -->
       <div style="position:absolute; bottom:-20px; left:50%; transform:translateX(-50%); width:200px; height:28px; background:radial-gradient(ellipse,rgba(26,31,54,0.15),transparent 70%); filter:blur(10px);"></div>
 
-      <!-- Mini banners cycling in sync -->
-      <!-- Banner 0: Streak -->
-      <div class="phone-banner" style="animation-delay:0s;">
+      <!-- Mini-Banner, im Takt der Slides. Die animation-delay-Werte müssen zur
+           Reihenfolge der Screenshots unten passen: Jedes Banner steht
+           gleichzeitig mit dem Screen im Bild, den es beschreibt.
+           0s Frage · -4s Startbildschirm · -8s Logbuch · -12s Prüfung -->
+      <!-- Banner: Streak (zum Startbildschirm) -->
+      <div class="phone-banner" style="animation-delay:-4s;">
         <div class="banner-icon-wrapper orange">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
             <path d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.048 8.287 8.287 0 0 0 9 9.6a8.983 8.983 0 0 1 3.361-6.867 8.21 8.21 0 0 0 3 2.48Z" />
@@ -168,8 +179,8 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
         </div>
       </div>
 
-      <!-- Banner 1: Logbuch -->
-      <div class="phone-banner" style="animation-delay:-4s;">
+      <!-- Banner: Logbuch -->
+      <div class="phone-banner" style="animation-delay:-8s;">
         <div class="banner-icon-wrapper blue">
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="1.5" y="6" width="2" height="4.5" rx="0.5" fill="#3366FF"/>
@@ -183,8 +194,8 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
         </div>
       </div>
 
-      <!-- Banner 2: Exam -->
-      <div class="phone-banner" style="animation-delay:-8s;">
+      <!-- Banner: Prüfung -->
+      <div class="phone-banner" style="animation-delay:-12s;">
         <div class="banner-icon-wrapper blue">
           <svg width="10" height="10" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.5 1.5L8.5 6L1.5 10.5V1.5Z" fill="#3366FF" stroke="#3366FF" stroke-width="1.5" stroke-linejoin="round"/>
@@ -196,8 +207,8 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
         </div>
       </div>
 
-      <!-- Banner 3: Leider falsch -->
-      <div class="phone-banner" style="animation-delay:-12s;">
+      <!-- Banner: Leider falsch (zur Frage) -->
+      <div class="phone-banner" style="animation-delay:0s;">
         <div class="banner-icon-wrapper red">
           <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.5 1.5L8.5 8.5M8.5 1.5L1.5 8.5" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
@@ -214,18 +225,19 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
         <div style="position:relative; border-radius:36px; overflow:hidden; line-height:0; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);">
           <!-- LCP-Kandidat: `loading="eager"` ist zwingend, sonst hebt Astros Default
                (loading="lazy") das fetchpriority="high" wieder auf. -->
-          <Image src={screenshot0} alt="Boatpass SBF Lernapp – Startbildschirm mit Lernfortschritt und Streak" class="phone-slide" style="animation-delay:0s;" width={480} quality={80} fetchpriority="high" loading="eager" />
-          <Image src={screenshot1} alt="Boatpass App – Logbuch mit Fortschritt je Kategorie" class="phone-slide" style="animation-delay:-4s;" width={480} quality={80} loading="lazy" />
-          <Image src={screenshot2} alt="Boatpass App – Prüfungsbereich mit Formkurve" class="phone-slide" style="animation-delay:-8s;" width={480} quality={80} loading="lazy" />
-          <Image src={screenshot3} alt="Boatpass App – Frage mit Erklärung und Merkhilfe" class="phone-slide" style="animation-delay:-12s;" width={480} quality={80} loading="lazy" />
+          <Image src={screenshot3} alt="Boatpass App – Frage mit Erklärung und Merkhilfe" class="phone-slide" style="animation-delay:0s;" width={480} quality={80} fetchpriority="high" loading="eager" />
+          <Image src={screenshot0} alt="Boatpass SBF Lernapp – Startbildschirm mit Lernfortschritt und Streak" class="phone-slide" style="animation-delay:-4s;" width={480} quality={80} loading="lazy" />
+          <Image src={screenshot1} alt="Boatpass App – Logbuch mit Fortschritt je Kategorie" class="phone-slide" style="animation-delay:-8s;" width={480} quality={80} loading="lazy" />
+          <Image src={screenshot2} alt="Boatpass App – Prüfungsbereich mit Formkurve" class="phone-slide" style="animation-delay:-12s;" width={480} quality={80} loading="lazy" />
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Wave bottom -->
+  <!-- Wave bottom. Statisch: Die Endlosschleife lief dauerhaft im Hintergrund,
+       ohne dass die Bewegung etwas aussagt – die Form allein trägt den Übergang. -->
   <div class="hero-wave" style="position:absolute; bottom:-2px; left:0; right:0; height:80px; overflow:hidden; pointer-events:none;">
-    <svg style="width:200%; height:100%; animation:wave 12s linear infinite;" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <svg style="width:100%; height:100%;" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,40 C240,80 480,0 720,40 C960,80 1200,0 1440,40 L1440,80 L0,80 Z" fill="#F0F4FA"/>
       <path d="M1440,40 C1680,80 1920,0 2160,40 C2400,80 2640,0 2880,40 L2880,80 L1440,80 Z" fill="#F0F4FA"/>
     </svg>
@@ -233,7 +245,39 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
 </section>
 
 <style>
-  #hero-accent { transition: opacity 0.3s ease; }
+  /* "Sportbootführerschein." ist rund 11 px breit je Schriftgrößen-Pixel und
+     passt ab 1024 px Viewport nicht mehr in die Textspalte. Ohne Silbentrennung
+     greift die globale h1-Regel `overflow-wrap: break-word` und trennt an
+     beliebiger Stelle ("Sportbootführersche/in."). Mit `hyphens: auto` und dem
+     gesetzten `lang` am <html> trennt der Browser stattdessen korrekt nach
+     Sprachwörterbuch. Die Schriftgröße bleibt dadurch unverändert. */
+  .hero-h1 { hyphens: auto; }
+
+  /* Lizenz-Zeile unter der H1. Trägt die Bewegung, die vorher in der
+     Überschrift saß: Alle Namen bleiben stehen, nur die Hervorhebung wandert. */
+  .hero-licenses {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    flex-wrap: wrap;
+    margin: 0 0 24px;
+  }
+  .hero-lic {
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    color: #7E8699;
+    transition: color 0.3s ease;
+  }
+  .hero-lic.is-active {
+    background: linear-gradient(90deg, #3366FF, #5B8CFF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-lic-sep { color: #C3C9D6; font-size: 13px; }
+  :global(html.dark) .hero-lic { color: #8590A8; }
+  :global(html.dark) .hero-lic-sep { color: #47506B; }
 
   /* Eigene Blautöne statt #3366FF: Auf dem hellen Badge-Grund erreicht die
      Akzentfarbe nur 3,8:1 und verfehlt AA für 15px-Fetttext. Hell braucht
@@ -444,19 +488,20 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
 </style>
 
 <script>
-  const el = document.getElementById('hero-accent') as HTMLElement | null;
-  if (el) {
-    const words: string[] = JSON.parse(el.dataset.words ?? '[]');
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (words.length > 1 && !prefersReducedMotion) {
+  // Hebt reihum eine Lizenz hervor. Anders als die frühere H1-Rotation wird
+  // kein Text ausgetauscht – alle Namen bleiben dauerhaft lesbar, es wechselt
+  // nur die Farbe. Für Screenreader ist die Zeile damit statisch.
+  const licenses = Array.from(
+    document.querySelectorAll<HTMLElement>('[data-hero-lic]')
+  );
+  if (licenses.length > 1) {
+    licenses[0].classList.add('is-active');
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       let i = 0;
       setInterval(() => {
-        el.style.opacity = '0';
-        setTimeout(() => {
-          i = (i + 1) % words.length;
-          el.textContent = words[i];
-          el.style.opacity = '1';
-        }, 300);
+        licenses[i].classList.remove('is-active');
+        i = (i + 1) % licenses.length;
+        licenses[i].classList.add('is-active');
       }, 2500);
     }
   }

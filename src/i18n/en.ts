@@ -9,10 +9,11 @@ export const en: Translations = {
     getApp: 'Get App',
   },
   hero: {
-    badge: 'Official licenses',
+    badge: 'Official ELWIS catalogue',
     headline1: 'The fastest way',
     headline2: 'to get your',
     headlineAccent: 'Boating License.',
+    licenses: ['SBF Inland', 'SBF Coastal', 'UBI', 'SRC', 'LRC'],
     subline: 'Study with the official question catalog – 3 learning modes, instant feedback, exam simulation. Start for free, no account needed.',
     cta: 'Free on Google Play',
     ctaIos: 'iOS app coming soon',

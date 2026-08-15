@@ -7,10 +7,23 @@ export const de = {
     getApp: 'App laden',
   },
   hero: {
-    badge: 'Offizielle Lizenzen',
+    // "Offizielle Lizenzen" war sachlich falsch: Boatpass vergibt keine
+    // Lizenzen, amtlich sind die Fragenkataloge.
+    badge: 'Amtlicher ELWIS-Katalog',
+    // Die H1 nennt den Hauptsuchbegriff und bleibt konstant. Vorher tauschte
+    // ein Intervall alle 2,5 s das letzte Wort ("SBF Binnen." / "SBF See." …),
+    // wodurch weder "Sportbootführerschein" darin vorkam noch die Überschrift
+    // für Screenreader stabil war. Die Rotation sitzt jetzt in `licenses`.
     headline1: 'Der schnellste',
     headline2: 'Weg zum',
-    headlineAccent: 'SBF Binnen.',
+    // Enthält nach "Sportboot" ein weiches Trennzeichen (U+00AD, unsichtbar).
+    // Das Wort ist rund 11 px breit je Schriftgrößen-Pixel und passt ab 1024 px
+    // Viewport nicht mehr in die Textspalte. Ohne vorgegebene Trennstelle greift
+    // die globale h1-Regel `overflow-wrap: break-word` und trennt mitten im Wort
+    // ("Sportbootführersche/in."). `hyphens: auto` genügt nicht, weil es vom
+    // Trennwörterbuch des Browsers abhängt, das nicht überall vorhanden ist.
+    headlineAccent: 'Sportboot­führerschein.',
+    licenses: ['SBF Binnen', 'SBF See', 'UBI', 'SRC', 'LRC'],
     subline: 'Lern mit dem offiziellen Fragenkatalog – 3 Lernmodi, sofortiges Feedback, Prüfungssimulation. Kostenlos starten, kein Account nötig.',
     cta: 'Kostenlos im Play Store',
     ctaIos: 'iOS-App kommt bald',
