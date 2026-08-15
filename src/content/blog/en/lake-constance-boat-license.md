@@ -15,6 +15,16 @@ faq:
     answer: "The Bodensee-Schifferpatent (BSP) is a standalone boating license valid only on Lake Constance. It comes in four categories: A for motorboats, B for passenger vessels, C for cargo vessels, and D for sailboats with more than 12 m² of sail area. For most recreational boaters, Category A is the relevant one."
   - question: "Do I have to start from scratch on the BSP if I already hold an SBF?"
     answer: "Not from zero: holders of the SBF Binnen or SBF See already bring the nautical fundamentals with them and, depending on the authority, may benefit from simplified exam requirements. What mainly remains to be learned are the Lake Constance-specific ISB rules. Check with the relevant authority before you register."
+howTo:
+  name: "How to Obtain the Bodensee-Schifferpatent"
+  description: "Step by step to the Bodensee-Schifferpatent: check the prerequisites, pass the theory exam on the Internationale Schifffahrtsordnung Bodensee, and pass the practical exam."
+  steps:
+    - name: "Check the prerequisites"
+      text: "Minimum age 18 for Category A (14 for Category D/sailing), a first aid certificate, and depending on the authority a medical certificate confirming fitness."
+    - name: "Pass the theory exam"
+      text: "Study the Internationale Schifffahrtsordnung Bodensee (ISB): navigation and right-of-way rules, buoyage and maritime signs, priority vessels, meteorology, and rules for water sports and nature reserves."
+    - name: "Pass the practical exam"
+      text: "Demonstrate safe motorboat maneuvering on the water, including Lake Constance-specific elements such as correct behavior around ferries and in harbor areas."
 ---
 
 Lake Constance (Bodensee) is one of Europe's most beautiful lakes – and a special case when it comes to boating licenses. If you want to drive a motorboat on this large Alpine lake, you will quickly come across a term that surprises many SBF holders: the **Bodensee-Schifferpatent (BSP)**. What does it mean, and what does it imply for you if you already hold a German boating license?
