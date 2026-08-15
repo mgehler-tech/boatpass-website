@@ -42,9 +42,12 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Peilung und Kollisionskurs erkennen – CPA einfach erklärt für Sportbootfahrer (2026-08-08: peilung-kollisionskurs-cpa-erklaert / bearing-collision-course-cpa-explained)
 - [x] Sportbootführerschein verloren oder beschädigt – Ersatz beantragen, was zu tun ist (2026-08-13: sportbootfuehrerschein-verloren-beschaedigt-ersatz / replacing-a-lost-or-damaged-boating-license)
 - [x] Gewitter und Blitzschlag auf dem Wasser – Verhalten und Vorsorge für Sportbootfahrer (2026-08-14: gewitter-blitzschlag-wasser-verhalten-vorsorge / thunderstorms-lightning-on-the-water)
-- [ ] Wasserskifahren und Wakeboarden hinter dem Boot – Regeln, Beobachterpflicht und Kennzeichnung
+- [x] Wasserskifahren und Wakeboarden hinter dem Boot – Regeln, Beobachterpflicht und Kennzeichnung (2026-08-15: wasserskifahren-wakeboarden-regeln-beobachterpflicht / water-skiing-wakeboarding-rules-observer-duty)
 - [ ] Schleusenfahrt – Ablauf und Verhalten für Sportbootfahrer
 - [ ] Umweltschutz und Gewässerschutz beim Bootfahren – was Sportbootfahrer beachten müssen
 - [ ] Sehtest für den Sportbootführerschein – Anforderungen und Ablauf
+- [ ] Seefunk und Sprechfunk richtig nutzen – Grundlagen, Notruf und Kanalbelegung für Einsteiger
+- [ ] Nachtfahrt mit dem Sportboot – Vorbereitung, Orientierung und Pflichten bei Dunkelheit
+- [ ] Wellen und Sog vom eigenen Boot – Rücksichtnahme und Haftung gegenüber anderen Wassernutzern
 
 ## Erledigt
