@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/HeroSection.astro';
-import FeatureCards from '../components/FeatureCards.astro';
+import LearningSteps from '../components/LearningSteps.astro';
+import FounderNote from '../components/FounderNote.astro';
+import Reviews from '../components/Reviews.astro';
 import PricingSection from '../components/PricingSection.astro';
+import CatalogSources from '../components/CatalogSources.astro';
 import BlogTeaser from '../components/BlogTeaser.astro';
 import FinderTeaser from '../components/FinderTeaser.astro';
 import { getBoatpassRating } from '../data/apps';
@@ -53,10 +56,19 @@ const faqSchema = {
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <!-- Reihenfolge: erst das Produkt, dann die Person dahinter, dann Belege,
+       dann der Preis. Der Führerschein-Finder stand bisher zwischen Features
+       und Preisen und unterbrach damit die Produktvorstellung; er sitzt jetzt
+       hinter der Kaufentscheidung, wo er als Umweg auch hingehört. -->
   <HeroSection lang="de" />
-  <FeatureCards lang="de" />
+  <LearningSteps lang="de" />
+  <FounderNote lang="de" />
+  <Reviews lang="de" />
+  <!-- withSourceNote={false}: Der Hinweisblock der Preis-Sektion wiederholt
+       genau das, was CatalogSections direkt darunter ausführlich zeigt. -->
+  <PricingSection lang="de" withGuarantee withSourceNote={false} />
+  <CatalogSources lang="de" />
   <FinderTeaser lang="de" />
-  <PricingSection lang="de" withGuarantee />
   <BlogTeaser lang="de" />
 
   <div class="home-faq section-band">

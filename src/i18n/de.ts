@@ -66,6 +66,37 @@ export const de = {
       desc: 'Trainiere gezielt deine Schwächen – nur falsch beantwortete Fragen. Mit Trefferquote je Kategorie und Lernstatistik siehst du jederzeit, wo du stehst.',
     },
   },
+  // Drei echte App-Screens statt Icon-Karten. Die Beschreibungen nennen
+  // bewusst Zahlen, die auf der jeweiligen Aufnahme auch zu sehen sind –
+  // sonst widerspricht der Text dem Bild daneben.
+  steps: {
+    title: 'Wie du lernst',
+    subtitle: 'Drei Screens aus der App – nicht nachgebaut, sondern aufgenommen.',
+    items: [
+      {
+        eyebrow: 'Frage verstehen',
+        title: 'Erklärung statt richtig/falsch',
+        desc: 'Zu jeder Antwort steht da, warum sie stimmt – dazu eine Merkhilfe, die den Satz für die Prüfung festklopft.',
+      },
+      {
+        eyebrow: 'Schwächen sehen',
+        title: 'Das Logbuch zeigt, wo es hakt',
+        desc: 'Fortschritt je Kategorie: 19 von 124 im Schifffahrtsrecht, 3 von 28 bei Signalen. Du siehst sofort, was noch fehlt.',
+      },
+      {
+        eyebrow: 'Prüfung simulieren',
+        title: 'Amtlicher Bogen oder Zufallsprüfung',
+        desc: '37 Fragen in 45 Minuten unter echten Bedingungen. Die Formkurve zeigt, ob du stabil über der Bestehensgrenze liegst.',
+      },
+    ],
+  },
+  founder: {
+    title: 'Hi, ich bin Marius.',
+    p1: 'Ich entwickle BoatPass allein, neben dem Beruf: Produkt, Design, Katalogpflege und Support. Deine Nachricht landet dadurch direkt bei mir und nicht in einem Ticket-System – meist antworte ich innerhalb weniger Stunden.',
+    p2: 'Die Fragen erfinde ich nicht: Sie stammen 1:1 aus dem amtlichen Katalog, den das Bundesministerium für Digitales und Verkehr über ELWIS veröffentlicht. Wenn dir in einer Erklärung ein Fehler auffällt, schreib mir – ich prüfe jede Meldung selbst und korrigiere sie im nächsten Update.',
+    cta: 'Warum ich BoatPass gebaut habe',
+    imageAlt: 'Marius Gehler, Entwickler von Boatpass, am Ruder eines Segelboots',
+  },
   pricing: {
     chip: 'Preise',
     title: 'Kostenlos starten. Nur zahlen, was du brauchst.',

@@ -10,9 +10,13 @@ interface Props {
   // Enthalten-Leiste, Trust-Leiste). Ohne den Prop (Lizenz-Seiten) bleibt das
   // bisherige, schlanke Preis-Layout unverändert.
   withGuarantee?: boolean;
+  // Der Hinweisblock unter den Karten wiederholt validityNote und issuerNote
+  // aus catalogSources. Steht CatalogSources ohnehin auf derselben Seite
+  // (Startseite), doppelt das nur – dann hier abschalten.
+  withSourceNote?: boolean;
 }
 
-const { lang, withGuarantee = false } = Astro.props;
+const { lang, withGuarantee = false, withSourceNote = true } = Astro.props;
 const t = useTranslations(lang);
 const de = lang === 'de';
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
@@ -139,22 +143,24 @@ const funkCards = [
       </div>
 
       <!-- Katalog-Hinweis + offizielle Quelle -->
-      <div class="reveal-item pv2-note" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
-        <div class="pv2-note-col">
-          <span class="pv2-note-icon"><Icon name="question" size={17} stroke="#3366FF" strokeWidth={2} /></span>
-          <div>
-            <div class="pv2-note-title">{t.pricing.noteTitle}</div>
-            <p class="pv2-note-text">{cs.validityNote}</p>
+      {withSourceNote && (
+        <div class="reveal-item pv2-note" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+          <div class="pv2-note-col">
+            <span class="pv2-note-icon"><Icon name="question" size={17} stroke="#3366FF" strokeWidth={2} /></span>
+            <div>
+              <div class="pv2-note-title">{t.pricing.noteTitle}</div>
+              <p class="pv2-note-text">{cs.validityNote}</p>
+            </div>
+          </div>
+          <div class="pv2-note-col pv2-note-source">
+            <span class="pv2-note-icon"><Icon name="document" size={17} stroke="#3366FF" strokeWidth={2} /></span>
+            <div>
+              <div class="pv2-note-title">{t.pricing.sourceTitle}</div>
+              <p class="pv2-note-text">{cs.issuerNote}</p>
+            </div>
           </div>
         </div>
-        <div class="pv2-note-col pv2-note-source">
-          <span class="pv2-note-icon"><Icon name="document" size={17} stroke="#3366FF" strokeWidth={2} /></span>
-          <div>
-            <div class="pv2-note-title">{t.pricing.sourceTitle}</div>
-            <p class="pv2-note-text">{cs.issuerNote}</p>
-          </div>
-        </div>
-      </div>
+      )}
 
       <!-- In jeder Lizenz enthalten + Trust-Leiste -->
       <div class="guarantee-wrap">

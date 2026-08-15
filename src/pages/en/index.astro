@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HeroSection from '../../components/HeroSection.astro';
-import FeatureCards from '../../components/FeatureCards.astro';
+import LearningSteps from '../../components/LearningSteps.astro';
+import FounderNote from '../../components/FounderNote.astro';
 import PricingSection from '../../components/PricingSection.astro';
+import CatalogSources from '../../components/CatalogSources.astro';
 import BlogTeaser from '../../components/BlogTeaser.astro';
 import FinderTeaser from '../../components/FinderTeaser.astro';
 import { getBoatpassRating } from '../../data/apps';
@@ -53,10 +55,15 @@ const faqSchema = {
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <!-- Gleiche Reihenfolge wie auf der deutschen Startseite, ohne die
+       Bewertungs-Sektion: Alle vorliegenden Rezensionen sind deutschsprachig,
+       und eine übersetzte Rezension wäre keine Rezension mehr. -->
   <HeroSection lang="en" />
-  <FeatureCards lang="en" />
+  <LearningSteps lang="en" />
+  <FounderNote lang="en" />
+  <PricingSection lang="en" withGuarantee withSourceNote={false} />
+  <CatalogSources lang="en" />
   <FinderTeaser lang="en" />
-  <PricingSection lang="en" withGuarantee />
   <BlogTeaser lang="en" />
 
   <div class="home-faq section-band">

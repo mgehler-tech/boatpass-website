@@ -56,6 +56,34 @@ export const en: Translations = {
       desc: 'Train your weak spots specifically – only incorrectly answered questions. With a hit rate per category and learning stats, you always see where you stand.',
     },
   },
+  steps: {
+    title: 'How you learn',
+    subtitle: 'Three screens from the app – captured, not recreated.',
+    items: [
+      {
+        eyebrow: 'Understand the question',
+        title: 'An explanation, not just right or wrong',
+        desc: 'Every answer comes with the reasoning behind it – plus a mnemonic that makes it stick for the exam.',
+      },
+      {
+        eyebrow: 'See your weak spots',
+        title: 'The logbook shows where it stalls',
+        desc: 'Progress per category: 19 of 124 in maritime law, 3 of 28 in signals. You see straight away what is still missing.',
+      },
+      {
+        eyebrow: 'Simulate the exam',
+        title: 'Official paper or random exam',
+        desc: '37 questions in 45 minutes under real conditions. The performance curve shows whether you stay above the pass mark.',
+      },
+    ],
+  },
+  founder: {
+    title: "Hi, I'm Marius.",
+    p1: 'I build BoatPass on my own, alongside my day job: product, design, catalogue maintenance and support. That means your message reaches me directly rather than a ticket system – and I usually reply within a few hours.',
+    p2: 'The questions are not my invention: they come 1:1 from the official catalogue published by the German Federal Ministry for Digital and Transport via ELWIS. If you spot a mistake in an explanation, write to me – I check every report myself and correct it in the next update.',
+    cta: 'Why I built BoatPass',
+    imageAlt: 'Marius Gehler, developer of Boatpass, at the helm of a sailing boat',
+  },
   pricing: {
     chip: 'Pricing',
     title: 'Start free. Pay only for what you need.',
