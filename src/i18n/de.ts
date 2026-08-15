@@ -27,7 +27,6 @@ export const de = {
     subline: 'Lern mit dem offiziellen Fragenkatalog – 3 Lernmodi, sofortiges Feedback, Prüfungssimulation. Kostenlos starten, kein Account nötig.',
     cta: 'Kostenlos im Play Store',
     ctaIos: 'iOS-App kommt bald',
-    ctaSecondary: 'Features ansehen',
     stat1Num: 'Offiziell',
     stat1Label: 'Lizenzen',
     stat2Num: '3',
