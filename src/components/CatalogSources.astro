@@ -7,9 +7,14 @@ interface Props {
   lang: 'de' | 'en';
   // Wenn gesetzt: kompakter Einzel-Block für genau eine Lizenz (für Lizenz-Seiten).
   only?: LicenseKey;
+  // Startseite: Tabelle hinter einem <details> verstecken. Die Aussage steht
+  // dort ohnehin im Text darüber – die fünf Katalogzeilen sind Beleg zum
+  // Nachschlagen, nicht Lesestoff. Auf den Lizenzseiten bleibt alles offen,
+  // dort ist die Übersicht der eigentliche Inhalt.
+  collapsible?: boolean;
 }
 
-const { lang, only } = Astro.props;
+const { lang, only, collapsible = false } = Astro.props;
 const t = useTranslations(lang);
 
 // "Stand dieser Übersicht" wird beim Build aus dem aktuellen Datum gesetzt –
@@ -65,6 +70,18 @@ const single = only ? rows.find(r => r.key === only) : null;
   </div>
 
   <div class="reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+    <details class:list={['cat-details', collapsible && 'cat-details--toggle']} open={!collapsible}>
+      <summary class="cat-summary">
+        <span class="cat-summary-label">
+          {lang === 'de'
+            ? `Alle ${rows.length} Kataloge mit Fassung und Quelle`
+            : `All ${rows.length} catalogues with edition and source`}
+        </span>
+        <span class="cat-summary-hint" aria-hidden="true">
+          {lang === 'de' ? 'Anzeigen' : 'Show'}
+        </span>
+      </summary>
+
     <!-- Desktop: Tabelle -->
     <div class="cat-table-wrap">
       <table class="cat-table">
@@ -122,11 +139,86 @@ const single = only ? rows.find(r => r.key === only) : null;
         <span class="disclaimer">{t.catalogSources.disclaimer}</span>
       </div>
     </div>
+    </details>
   </div>
 </section>
 )}
 
 <style>
+  /* Aufklapper. Auf den Lizenzseiten steht <details open> ohne collapsible –
+     dort ist der Balken unsichtbar und die Übersicht wie bisher offen. */
+  .cat-details[open] > .cat-summary { margin-bottom: 24px; }
+  .cat-details:not([open]) > .cat-summary { margin-bottom: 0; }
+
+  .cat-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    list-style: none;
+    cursor: pointer;
+    background: rgba(51, 102, 255, 0.05);
+    border: 1px solid rgba(51, 102, 255, 0.16);
+    border-radius: 14px;
+    padding: 16px 20px;
+    /* WCAG 2.5.5: sichere Treffergröße auch auf dem Handy */
+    min-height: 52px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+  }
+  .cat-summary::-webkit-details-marker { display: none; }
+  .cat-summary:hover {
+    background: rgba(51, 102, 255, 0.09);
+    border-color: rgba(51, 102, 255, 0.28);
+  }
+  .cat-summary:focus-visible {
+    outline: 2px solid #3366FF;
+    outline-offset: 2px;
+  }
+
+  .cat-summary-label {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1A1F36;
+    line-height: 1.4;
+  }
+  .cat-summary-hint {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #3366FF;
+  }
+  /* Chevron per CSS statt Inline-SVG – dreht sich beim Öffnen. */
+  .cat-summary-hint::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translate(-2px, -2px);
+    transition: transform 0.2s ease;
+  }
+  .cat-details[open] .cat-summary-hint::after {
+    transform: rotate(-135deg) translate(-2px, -2px);
+  }
+
+  /* Wenn die Übersicht dauerhaft offen steht (Lizenzseiten), trägt der Balken
+     nichts bei und würde nur eine Bedienung vortäuschen, die es nicht gibt. */
+  .cat-details[open]:not(.cat-details--toggle) > .cat-summary { display: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cat-summary, .cat-summary-hint::after { transition: none; }
+  }
+
+  html.dark .cat-summary {
+    background: rgba(90, 120, 255, 0.08) !important;
+    border-color: rgba(90, 120, 255, 0.2) !important;
+  }
+  html.dark .cat-summary-label { color: #E2E8F0 !important; }
+  html.dark .cat-summary-hint { color: #7FA0FF !important; }
+
   /* Einzel-Lizenz-Block (für Lizenz-Seiten) */
   .cat-single {
     background: white;
