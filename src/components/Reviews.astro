@@ -20,9 +20,9 @@ const score = rating ? formatRating(rating.score).replace('.', ',') : null;
     <p class="rv-sub">Unverändert aus dem Play Store übernommen, mit Datum und Sternzahl. Nachlesen kannst du sie dort selbst.</p>
   </div>
 
-  <div class="rv-grid">
+  <div class="rv-grid snap-row" data-snap-row="reviews" aria-label="Bewertungen von Lernenden">
     {REVIEWS_DE.map(r => (
-      <article class="rv reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+      <article class="rv snap-item reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
         <div class="rv-stars" aria-label={`${r.stars} von 5 Sternen`}>
           <span aria-hidden="true">{'★'.repeat(r.stars)}</span>
         </div>
@@ -38,6 +38,7 @@ const score = rating ? formatRating(rating.score).replace('.', ',') : null;
       </article>
     ))}
   </div>
+  <div class="snap-dots" data-snap-dots="reviews"></div>
 
   <div class="rv-foot">
     {rating && (
@@ -133,11 +134,25 @@ const score = rating ? formatRating(rating.score).replace('.', ',') : null;
   }
   .rv-link:hover { text-decoration: underline; }
 
+  /* Auf dem Handy seitlich wischbar statt vier Karten untereinander (1107 px).
+     Die Trennlinien der Grid-Ansicht werden hier zu Kartenrahmen, sonst
+     schwebten die Rezensionen ohne erkennbare Begrenzung nebeneinander. */
   @media (max-width: 768px) {
-    .rv-grid { grid-template-columns: 1fr; }
-    .rv { border-right: 0; padding: 24px 0 26px; }
+    /* display und gap lokal setzen – der komponentenlokale Selektor ist
+       spezifischer als die globale .snap-row-Utility (siehe LearningSteps). */
+    .rv-grid { display: flex; gap: 14px; border-top: 0; align-items: stretch; }
+    .rv {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(26, 31, 54, 0.12);
+      border-radius: 16px;
+      padding: 22px 22px 24px;
+      background: #fff;
+    }
+    .rv-text { flex: 1; }
     .rv-meta { flex-wrap: wrap; gap: 9px; }
     .rv-tag { margin-left: 0; }
+    html.dark .rv { background: #181E2E !important; }
   }
 
   html.dark .rv-sub { color: #94A3B8 !important; }
@@ -152,6 +167,10 @@ const score = rating ? formatRating(rating.score).replace('.', ',') : null;
 </style>
 
 <script>
+  import { initSnapDots } from '../scripts/snapDots';
+
+  initSnapDots('[data-snap-row="reviews"]');
+
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const items = document.querySelectorAll<HTMLElement>('.rv-head, .rv');
 

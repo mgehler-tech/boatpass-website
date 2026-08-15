@@ -47,9 +47,10 @@ const steps = t.steps.items.map((item, i) => ({ ...item, shot: shots[i], alt: al
     <p class="steps-sub">{t.steps.subtitle}</p>
   </div>
 
-  <div class="steps-grid">
+  <div class="steps-grid snap-row" data-snap-row="steps"
+    aria-label={de ? 'Drei Screens aus der App' : 'Three screens from the app'}>
     {steps.map(step => (
-      <div class="step reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+      <div class="step snap-item reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
         <div class="step-shot">
           <Image src={step.shot} alt={step.alt} width={520} quality={80} loading="lazy" />
         </div>
@@ -59,6 +60,7 @@ const steps = t.steps.items.map((item, i) => ({ ...item, shot: shots[i], alt: al
       </div>
     ))}
   </div>
+  <div class="snap-dots" data-snap-dots="steps"></div>
 </section>
 
 <style>
@@ -112,11 +114,17 @@ const steps = t.steps.items.map((item, i) => ({ ...item, shot: shots[i], alt: al
     line-height: 1.65;
   }
 
-  /* Drei gleichwertige Schritte: 3-spaltig oder gestapelt. Eine 2-Spalten-Stufe
-     ließe den dritten Screen allein mit leerer Zelle daneben stehen. */
+  /* Auf dem Handy laufen die drei Screens seitlich statt gestapelt: Untereinander
+     waren sie über 2000 px hoch, also rund ein Fünftel der ganzen Seite. Die
+     Regeln der Reihe stehen in global.css (.snap-row / .snap-item).
+     `display: grid` wird dort von `display: flex` überschrieben. */
   @media (max-width: 768px) {
-    .steps-grid { grid-template-columns: 1fr; gap: 40px; }
-    .step-shot { max-width: 320px; }
+    /* display und gap müssen hier stehen, nicht nur in .snap-row: Astro hängt
+       an komponentenlokale Selektoren ein data-astro-cid-Attribut, wodurch
+       .steps-grid spezifischer ist als die globale Utility-Klasse und deren
+       display:flex sonst überschreibt. */
+    .steps-grid { display: flex; gap: 14px; }
+    .step-shot { max-width: none; }
   }
 
   html.dark .steps-sub { color: #94A3B8 !important; }
@@ -129,6 +137,10 @@ const steps = t.steps.items.map((item, i) => ({ ...item, shot: shots[i], alt: al
 </style>
 
 <script>
+  import { initSnapDots } from '../scripts/snapDots';
+
+  initSnapDots('[data-snap-row="steps"]');
+
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (reduceMotion) {
