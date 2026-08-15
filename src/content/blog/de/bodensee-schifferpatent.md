@@ -15,6 +15,16 @@ faq:
     answer: "Das Bodensee-Schifferpatent (BSP) ist ein eigenständiger Führerschein ausschließlich für den Bodensee. Es existiert in vier Kategorien: A für Motorboote, B für Fahrgastschiffe, C für Güterschiffe und D für Segelboote mit mehr als 12 m² Segelfläche. Für die meisten Freizeitkapitäne ist Kategorie A relevant."
   - question: "Muss ich das BSP komplett neu machen, wenn ich schon den SBF habe?"
     answer: "Nicht bei null: Inhaber des SBF Binnen oder SBF See bringen die nautischen Grundlagen bereits mit und können je nach Behörde von vereinfachten Prüfungsanforderungen profitieren. Zu lernen sind vor allem die bodenseespezifischen Regeln der ISB. Frag die zuständige Behörde vor der Anmeldung."
+howTo:
+  name: "So bekommst du das Bodensee-Schifferpatent"
+  description: "Schritt für Schritt zum Bodensee-Schifferpatent: Voraussetzungen prüfen, Theorieprüfung zur Internationalen Schifffahrtsordnung Bodensee ablegen und die praktische Prüfung bestehen."
+  steps:
+    - name: "Voraussetzungen prüfen"
+      text: "Mindestalter 18 Jahre für Kategorie A (14 Jahre für Kategorie D/Segeln), Erste-Hilfe-Nachweis und je nach Behörde ein ärztliches Attest zur körperlichen Tauglichkeit."
+    - name: "Theoretische Prüfung ablegen"
+      text: "Lerne die Internationale Schifffahrtsordnung Bodensee (ISB): Fahr- und Ausweichregeln, Betonnung und Seezeichen, Vorrangfahrzeuge, Wetterkunde sowie Regelungen für Wassersport und Naturschutzgebiete."
+    - name: "Praktische Prüfung ablegen"
+      text: "Zeige auf dem Wasser sicheres Manövrieren eines Motorboots, inklusive bodenseespezifischer Elemente wie dem Verhalten gegenüber Fährschiffen und in Hafenbereichen."
 ---
 
 Der Bodensee ist einer der schönsten Seen Europas – und ein Sonderfall in der deutschen Führerscheinlandschaft. Wer hier mit einem Motorboot fahren will, stößt auf einen Begriff, der vielen SBF-Absolventen zunächst unbekannt ist: das **Bodensee-Schifferpatent (BSP)**. Was steckt dahinter, und was bedeutet das für dich, wenn du bereits den Sportbootführerschein hast?
