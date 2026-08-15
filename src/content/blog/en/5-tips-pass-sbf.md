@@ -64,7 +64,7 @@ The categories that cause the most trouble for SBF candidates:
 - **Sound signals (Schallzeichen)** – One short blast = "I'm altering course to starboard." Two short blasts = "I'm altering course to port." These are tested with variants that look nearly identical.
 - **[Right-of-way rules](/en/blog/right-of-way-collision-rules/)** – Sailboats don't always have right of way. A sailboat with its engine on is treated as a motor vessel. Commercial shipping has priority on federal waterways.
 
-**What works:** Use a system that tracks which questions you get wrong repeatedly and shows them more often. The Boatpass error training does this automatically.
+**What works:** Use a system that tracks which questions you get wrong repeatedly and shows them more often. The Boatpass mistake training does this automatically.
 
 ## Tip 4: Study daily, not in blocks
 
@@ -93,4 +93,4 @@ The official exam fee for SBF Inland (DMYV) is currently around **€131** (as o
 
 ## Summary
 
-With the right exam structure knowledge, daily practice, and targeted weak-spot training, the SBF is achievable for anyone – even without prior nautical knowledge. Start for free with the Boatpass app: 15 questions daily, official ELWIS catalog, error training included.
+With the right exam structure knowledge, daily practice, and targeted weak-spot training, the SBF is achievable for anyone – even without prior nautical knowledge. Start for free with the Boatpass app: 15 questions daily, official ELWIS catalog, mistake training included.

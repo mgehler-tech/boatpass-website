@@ -27,7 +27,7 @@ export const de = {
     phoneCard1Sub: 'Kategorie wählen',
     phoneCard2: 'Prüfungsmodus',
     phoneCard2Sub: '30 Fragen · 45 Min',
-    phoneCard3: 'Fehler-Training',
+    phoneCard3: 'Fehlertraining',
     phoneCard3Sub: '12 offene Fehler',
   },
   trust: {
@@ -39,7 +39,7 @@ export const de = {
   features: {
     chip: 'Features',
     title: 'Drei Wege zum Bestehen',
-    subtitle: 'Lernmodus, Prüfungssimulation und gezieltes Fehler-Training – alles in einer App.',
+    subtitle: 'Lernmodus, Prüfungssimulation und gezieltes Fehlertraining – alles in einer App.',
     learn: {
       title: 'Lernmodus',
       desc: 'Fragen nach Kategorie, Sofortfeedback mit Erklärung. Navigation, Schifffahrtsrecht, Sicherheit, Wetterkunde und mehr.',
@@ -49,7 +49,7 @@ export const de = {
       desc: 'Echte Prüfungsbedingungen: Zeitlimit, Bestehensgrenze, Feedback erst am Ende – genau wie in der echten Prüfung.',
     },
     training: {
-      title: 'Fehler-Training',
+      title: 'Fehlertraining',
       desc: 'Trainiere gezielt deine Schwächen – nur falsch beantwortete Fragen. Mit Trefferquote je Kategorie und Lernstatistik siehst du jederzeit, wo du stehst.',
     },
   },

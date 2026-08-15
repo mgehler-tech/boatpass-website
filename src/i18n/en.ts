@@ -29,7 +29,7 @@ export const en: Translations = {
     phoneCard1Sub: 'Choose category',
     phoneCard2: 'Exam mode',
     phoneCard2Sub: '30 questions · 45 min',
-    phoneCard3: 'Error training',
+    phoneCard3: 'Mistake training',
     phoneCard3Sub: '12 open errors',
   },
   trust: {
@@ -41,7 +41,7 @@ export const en: Translations = {
   features: {
     chip: 'Features',
     title: 'Three ways to pass',
-    subtitle: 'Study mode, exam simulation, and targeted error training – all in one app.',
+    subtitle: 'Study mode, exam simulation, and targeted mistake training – all in one app.',
     learn: {
       title: 'Study mode',
       desc: 'Questions by category with instant feedback and explanations. Navigation, maritime law, safety, weather, and more.',
@@ -51,7 +51,7 @@ export const en: Translations = {
       desc: 'Real exam conditions: time limit, pass threshold, feedback only at the end – exactly like the real exam.',
     },
     training: {
-      title: 'Error training',
+      title: 'Mistake training',
       desc: 'Train your weak spots specifically – only incorrectly answered questions. With a hit rate per category and learning stats, you always see where you stand.',
     },
   },

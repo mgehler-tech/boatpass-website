@@ -74,7 +74,7 @@ Du lernst die Theorie ausschließlich mit einer App (wie Boatpass) – direkt au
 - Mit Abstand günstigste Option
 - Maximale Flexibilität – lerne in 5-Minuten-Sessions oder in längeren Blöcken
 - Offizieller Fragenkatalog – du lernst genau die Fragen, die in der Prüfung drankommen
-- Fehler-Training – die App priorisiert Fragen, die du noch nicht kannst
+- Fehlertraining – die App priorisiert Fragen, die du noch nicht kannst
 - Prüfungssimulation unter echten Bedingungen
 
 **Nachteile:**
@@ -121,4 +121,4 @@ Auch die **praktische Prüfung** ist identisch. Du musst Manöver auf dem Wasser
 
 ## Fazit
 
-Ein Theoriekurs ist keine Pflicht – und für die reine Prüfungsvorbereitung auch nicht nötig. Der offizielle Fragenkatalog ist öffentlich, und eine App mit Prüfungssimulation und Fehler-Training reicht aus, um die Theorie zu bestehen. Wer wenig Vorerfahrung hat, profitiert von einem Kurs – aber das ist eine persönliche Entscheidung, keine Voraussetzung. Wie du bei der Vorbereitung zusätzlich Geld sparst, zeigen unsere [5 besten Spartipps für den Bootsführerschein](/blog/bootsfuehrerschein-kosten-sparen/).
+Ein Theoriekurs ist keine Pflicht – und für die reine Prüfungsvorbereitung auch nicht nötig. Der offizielle Fragenkatalog ist öffentlich, und eine App mit Prüfungssimulation und Fehlertraining reicht aus, um die Theorie zu bestehen. Wer wenig Vorerfahrung hat, profitiert von einem Kurs – aber das ist eine persönliche Entscheidung, keine Voraussetzung. Wie du bei der Vorbereitung zusätzlich Geld sparst, zeigen unsere [5 besten Spartipps für den Bootsführerschein](/blog/bootsfuehrerschein-kosten-sparen/).
