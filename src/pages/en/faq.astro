@@ -171,6 +171,15 @@ const faqSchema = {
     "acceptedAnswer": { "@type": "Answer", "text": f.a.replace(/<[^>]+>/g, '') },
   })),
 };
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boatpass.de/en/" },
+    { "@type": "ListItem", "position": 2, "name": "FAQ", "item": "https://boatpass.de/en/faq/" },
+  ],
+};
 ---
 
 <BaseLayout
@@ -179,6 +188,7 @@ const faqSchema = {
   lang="en"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
   <div class="max-w-3xl mx-auto px-4 pt-24 pb-16">
     <h1 class="section-display-title mb-4">Frequently Asked Questions</h1>
