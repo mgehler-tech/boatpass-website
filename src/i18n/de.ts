@@ -178,14 +178,6 @@ export const de = {
     noteTitle: 'Hinweis zu den Katalogdaten',
     sourceTitle: 'Offizielle Quelle',
     // Was in jedem Kauf steckt – einmal zentral statt in jeder Karte wiederholt
-    includedTitle: 'In jeder Lizenz & jedem Funkschein enthalten',
-    included: [
-      { label: 'Amtlicher Fragenkatalog', sub: 'Veröffentlicht über ELWIS', icon: 'shield' },
-      { label: 'Erklärung & Merkhilfe', sub: 'Zu jeder Frage', icon: 'check' },
-      { label: 'Prüfungssimulation', sub: 'Amtliche Bögen & Zufallsprüfung', icon: 'clipboard' },
-      { label: 'Offline lernen', sub: 'Ohne Verbindung nutzbar', icon: 'phoneDevice' },
-      { label: 'Kein Abo', sub: 'Einmalkauf je Katalog', icon: 'lock' },
-    ],
     proofText: 'Amtlicher ELWIS-Katalog, Stand 2026 – bei jeder Katalog-Änderung aktualisieren wir automatisch.',
     proofCta: 'Alle Kataloge & Quellen ansehen',
     trustPay: 'Sicher bezahlen',
