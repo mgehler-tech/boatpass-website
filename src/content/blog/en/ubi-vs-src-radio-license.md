@@ -117,4 +117,4 @@ If you're also preparing for the [SBF Binnen](/en/sbf-inland/) or the [SBF See](
 
 UBI and SRC are two separate radio certificates for different areas of operation: inland shipping for the UBI, coastal radio for the SRC. Both are independent of the Sportbootführerschein, have their own question catalogs, and their own exam requirements. If you only operate in one of the two areas, you only need the matching certificate. If you want to cover both, you benefit from the shortened UBI exam by getting the SRC first.
 
-The **Boatpass app** helps you prepare for both the UBI and the SRC with the complete official question catalogs, realistic exam simulation, and targeted error training, so you can walk into the exam confident and well prepared.
+The **Boatpass app** helps you prepare for both the UBI and the SRC with the complete official question catalogs, realistic exam simulation, and targeted mistake training, so you can walk into the exam confident and well prepared.

@@ -14,7 +14,7 @@ faq:
   - question: "Muss ich die ganze SBF-Binnen-Prüfung neu machen oder nur den nicht bestandenen Teil?"
     answer: "In der Regel nur den nicht bestandenen Teil. Theorie (30 Multiple-Choice-Fragen) und Praxis werden beim SBF Binnen unabhängig voneinander bewertet. Ein bereits bestandener Teil bleibt aber nur befristet gültig – die Frist legt dein Prüfungsausschuss fest, deshalb solltest du den fehlenden Teil zeitnah nachholen."
   - question: "Wie bereite ich mich nach einem nicht bestandenen Versuch gezielt vor?"
-    answer: "Analysiere zuerst ehrlich, woran es lag, und arbeite dann gezielt an deinen Schwachstellen, statt planlos den ganzen Fragenkatalog zu wiederholen. Für die Theorie helfen ein Fehler-Training und vollständige Probeprüfungen unter Zeitlimit, für die Praxis zusätzliches Üben der Manöver und Knoten auf dem Wasser."
+    answer: "Analysiere zuerst ehrlich, woran es lag, und arbeite dann gezielt an deinen Schwachstellen, statt planlos den ganzen Fragenkatalog zu wiederholen. Für die Theorie helfen ein Fehlertraining und vollständige Probeprüfungen unter Zeitlimit, für die Praxis zusätzliches Üben der Manöver und Knoten auf dem Wasser."
 howTo:
   name: "Was du nach einer nicht bestandenen SBF-Prüfung tun solltest"
   description: "Vier Schritte, um nach einem nicht bestandenen Versuch aktiv und gezielt in die Wiederholung zu starten."
@@ -75,7 +75,7 @@ Bei der Praxis hilft vor allem eines: mehrfach unter realistischen Bedingungen �
 
 Nach einem nicht bestandenen Versuch ist der wichtigste Schritt, nicht einfach genauso weiterzumachen wie vorher, sondern gezielter vorzugehen:
 
-- **Schwachstellen systematisch identifizieren.** Statt den gesamten Fragenkatalog erneut komplett durchzuarbeiten, konzentriere dich auf die Themenbereiche, in denen du wiederholt Fehler machst. Ein Fehler-Training, das dir automatisch häufiger die Fragen zeigt, die du falsch beantwortest, spart hier viel Zeit gegenüber wahllosem Wiederholen.
+- **Schwachstellen systematisch identifizieren.** Statt den gesamten Fragenkatalog erneut komplett durchzuarbeiten, konzentriere dich auf die Themenbereiche, in denen du wiederholt Fehler machst. Ein Fehlertraining, das dir automatisch häufiger die Fragen zeigt, die du falsch beantwortest, spart hier viel Zeit gegenüber wahllosem Wiederholen.
 - **Unter echten Prüfungsbedingungen üben.** Absolviere vor dem nächsten Termin mehrere vollständige Probeprüfungen mit Zeitlimit und ohne Nachschlagen, damit dich die Prüfungssituation selbst nicht mehr überrascht.
 - **Regelmäßig statt in großen Blöcken lernen.** Kurze, tägliche Lerneinheiten festigen Wissen zuverlässiger als seltene, dafür sehr lange Sessions. Weitere Tipps rund um Lernrhythmus und Prüfungsvorbereitung findest du im Artikel [Mit diesen 5 Tipps die SBF-Prüfung beim ersten Versuch bestehen](/blog/5-tipps-sbf-bestehen/), die genauso gut für die zweite Chance gelten.
 - **Praxis gezielt nachholen, nicht nur Theorie.** Ist der praktische Teil das Problem, hilft zusätzliches Üben auf dem Wasser mehr als noch mehr Theoriefragen zu wiederholen.
@@ -84,7 +84,7 @@ Mit der Boatpass-App kannst du den vollständigen amtlichen [ELWIS-Fragenkatalog
 
 ## Solltest du jetzt einen Kurs besuchen?
 
-Wenn du dich bisher allein auf die Theorie vorbereitet hast, fragst du dich nach einem nicht bestandenen Versuch vielleicht, ob eine Bootsschule die bessere Wahl für den zweiten Anlauf wäre. Das lässt sich nicht pauschal beantworten und hängt vor allem davon ab, woran es beim ersten Versuch gehapert hat. War es eher mangelnde Struktur beim Lernen oder fehlende Übung unter Zeitdruck, kann gezieltes Selbststudium mit Fehler-Training oft genauso gut oder sogar effizienter helfen wie ein kompletter Kurs. Ging es dagegen um die praktische Prüfung und dir fehlt es an Übung auf dem Wasser, kann ein Praxistag mit einer Fahrlehrerin oder einem Fahrlehrer sinnvoller sein als noch mehr Theorie zu wiederholen. Eine ausführliche Gegenüberstellung der beiden Wege findest du im Artikel [App oder Bootsschule – was passt zu dir?](/blog/sbf-app-vs-bootsschule/).
+Wenn du dich bisher allein auf die Theorie vorbereitet hast, fragst du dich nach einem nicht bestandenen Versuch vielleicht, ob eine Bootsschule die bessere Wahl für den zweiten Anlauf wäre. Das lässt sich nicht pauschal beantworten und hängt vor allem davon ab, woran es beim ersten Versuch gehapert hat. War es eher mangelnde Struktur beim Lernen oder fehlende Übung unter Zeitdruck, kann gezieltes Selbststudium mit Fehlertraining oft genauso gut oder sogar effizienter helfen wie ein kompletter Kurs. Ging es dagegen um die praktische Prüfung und dir fehlt es an Übung auf dem Wasser, kann ein Praxistag mit einer Fahrlehrerin oder einem Fahrlehrer sinnvoller sein als noch mehr Theorie zu wiederholen. Eine ausführliche Gegenüberstellung der beiden Wege findest du im Artikel [App oder Bootsschule – was passt zu dir?](/blog/sbf-app-vs-bootsschule/).
 
 ## Mit der Nervosität beim zweiten Versuch umgehen
 

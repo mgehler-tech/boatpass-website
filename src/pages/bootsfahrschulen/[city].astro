@@ -193,14 +193,14 @@ function licenceLinks(variant: 'coastal' | 'inland' | 'both'): { href: string; l
       <h2 class="content-section-title" style="margin-bottom:16px;">Theorie mit BoatPass lernen</h2>
       <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
         Bereite dich eigenständig auf die Theorieprüfung vor – mit dem offiziellen ELWIS-Fragenkatalog,
-        Prüfungssimulation und gezieltem Fehler-Training. So sparst du den Theorie-Teil der Fahrschule
+        Prüfungssimulation und gezieltem Fehlertraining. So sparst du den Theorie-Teil der Fahrschule
         und lernst flexibel in deinem eigenen Tempo.
       </p>
       <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:24px;">
         {([
           { icon: 'book' as const, title: 'Offizieller ELWIS-Fragenkatalog', desc: `Alle amtlichen Prüfungsfragen für den ${licenceLabel(city.variant)} – immer aktuell.` },
           { icon: 'target' as const, title: 'Prüfungssimulation', desc: 'Echte Prüfungsbedingungen mit Timer und separater Bestehensgrenze.' },
-          { icon: 'refresh' as const, title: 'Fehler-Training', desc: 'Nur die Fragen üben, die du noch nicht sicher kannst.' },
+          { icon: 'refresh' as const, title: 'Fehlertraining', desc: 'Nur die Fragen üben, die du noch nicht sicher kannst.' },
         ]).map(f => (
           <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.1); border-radius:16px; padding:20px;">
             <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">

@@ -64,7 +64,7 @@ Die Kategorien, die bei SBF-Kandidaten am häufigsten Probleme machen:
 - **Schallzeichen** – ein kurzer Ton bedeutet "ich weiche nach Steuerbord aus", zwei kurze Töne bedeuten "ich weiche nach Backbord aus". In der Prüfung kommen Varianten, die täuschend ähnlich wirken.
 - **[Ausweich- und Vorfahrtsregeln](/blog/ausweichregeln-vorfahrt-wasser/)** – wer muss ausweichen? Segelboote vor Motorbooten? Das stimmt nur teilweise – ein Motorboot, das einen engen Kanal durchfährt, hat andere Rechte als eines auf offener See.
 
-**Was funktioniert:** Nutze ein System, das dir zeigt, welche Fragen du wiederholt falsch beantwortest, und bringe dir diese gezielt erneut. Das Fehler-Training in der Boatpass-App macht genau das automatisch.
+**Was funktioniert:** Nutze ein System, das dir zeigt, welche Fragen du wiederholt falsch beantwortest, und bringe dir diese gezielt erneut. Das Fehlertraining in der Boatpass-App macht genau das automatisch.
 
 ## Tipp 4: Lerne täglich statt in Blöcken
 
@@ -93,4 +93,4 @@ Die Prüfungsgebühr beim DMYV liegt für den SBF Binnen aktuell bei ca. **131 �
 
 ## Fazit
 
-Mit dem richtigen Prüfungsverständnis, regelmäßigem Lernen und gezieltem Schwächentraining ist der [SBF Binnen](/sbf-binnen/) gut zu schaffen – auch ohne Vorwissen. Starte kostenlos mit der Boatpass-App: 15 Fragen täglich, offizieller ELWIS-Fragenkatalog, Fehler-Training inklusive.
+Mit dem richtigen Prüfungsverständnis, regelmäßigem Lernen und gezieltem Schwächentraining ist der [SBF Binnen](/sbf-binnen/) gut zu schaffen – auch ohne Vorwissen. Starte kostenlos mit der Boatpass-App: 15 Fragen täglich, offizieller ELWIS-Fragenkatalog, Fehlertraining inklusive.

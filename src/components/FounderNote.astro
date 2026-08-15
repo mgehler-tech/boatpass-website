@@ -1,0 +1,122 @@
+---
+// Persönliche Vorstellung direkt nach der Produktvorstellung. Stand bisher nur
+// unter "Über uns", wo sie kaum jemand erreicht.
+//
+// Der Text nennt bewusst nur Einlösbares: Alleinentwicklung, die reale
+// Antwortzeit und den amtlichen Katalog als Quelle. Keine Angaben über
+// Beteiligte, die es nicht gibt.
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const aboutUrl = lang === 'de' ? '/ueber-uns/' : '/en/about/';
+---
+
+<section class="section-band founder-band">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="founder reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+      <img
+        class="founder-photo"
+        src="/ueber-uns.webp"
+        alt={t.founder.imageAlt}
+        width="420"
+        height="420"
+        loading="lazy"
+        decoding="async"
+      />
+      <div class="founder-body">
+        <h2 class="founder-title">{t.founder.title}</h2>
+        <p class="founder-text">{t.founder.p1}</p>
+        <p class="founder-text">{t.founder.p2}</p>
+        <a class="founder-link" href={aboutUrl}>{t.founder.cta} →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .founder-band { padding: 56px 0 60px; }
+
+  .founder {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+
+  .founder-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center 35%;
+    border-radius: 18px;
+    display: block;
+  }
+
+  .founder-title {
+    font-size: clamp(1.5rem, 3.4vw, 1.75rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    color: #1A1F36;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .founder-text {
+    font-size: 15.5px;
+    color: #4B5563;
+    line-height: 1.72;
+    max-width: 60ch;
+    margin-bottom: 14px;
+  }
+
+  /* Textlink mit ausreichender Touch-Fläche (WCAG 2.5.5), wie die übrigen
+     Sekundärlinks der Seite. inline-flex begrenzt sie auf die Linkbreite. */
+  .founder-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: #3366FF;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: -10px;
+  }
+  .founder-link:hover { text-decoration: underline; }
+
+  @media (max-width: 768px) {
+    .founder { grid-template-columns: 1fr; gap: 24px; }
+    .founder-photo { max-width: 200px; }
+  }
+
+  html.dark .founder-title { color: #E2E8F0 !important; }
+  html.dark .founder-text { color: #94A3B8 !important; }
+</style>
+
+<script>
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = document.querySelectorAll<HTMLElement>('.founder-band .reveal-item');
+
+  if (reduce) {
+    items.forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  } else {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          (e.target as HTMLElement).style.opacity = '1';
+          (e.target as HTMLElement).style.transform = 'translateY(0)';
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    items.forEach(el => observer.observe(el));
+  }
+</script>

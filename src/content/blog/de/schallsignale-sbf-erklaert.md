@@ -88,7 +88,7 @@ Merke dir also immer zuerst: **Bin ich auf See oder auf Binnen?** Erst danach or
 
 ## So lernst du Schallsignale richtig
 
-Schallsignale sind reines Auswendiglernen mit Verständnis. Am besten prägst du dir die Logik ein (ein kurzer Ton = eine Kursänderung nach Steuerbord, zwei kurze = nach Backbord) und übst dann gezielt die Abweichungen zwischen See und Binnen. In der Boatpass-App kannst du genau diese Fragen wiederholt trainieren und dein [Fehler-Training](/sbf-see-pruefungsfragen/) auf die Signale ausrichten, die noch nicht sitzen.
+Schallsignale sind reines Auswendiglernen mit Verständnis. Am besten prägst du dir die Logik ein (ein kurzer Ton = eine Kursänderung nach Steuerbord, zwei kurze = nach Backbord) und übst dann gezielt die Abweichungen zwischen See und Binnen. In der Boatpass-App kannst du genau diese Fragen wiederholt trainieren und dein [Fehlertraining](/sbf-see-pruefungsfragen/) auf die Signale ausrichten, die noch nicht sitzen.
 
 Eng verwandt sind die optischen Pendants – die Lichter und Signale anderer Fahrzeuge. Wie du die nachts auseinanderhältst, liest du im Artikel [Lichterführung erklärt](/blog/lichterfuehrung-erklaert/). Und welche Töne im Notfall gelten, steht in unserem Beitrag zu den [Notsignalen auf See](/blog/notsignale-auf-see/).
 

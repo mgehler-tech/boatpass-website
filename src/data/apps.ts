@@ -88,7 +88,7 @@ export const LEARNING_APPS: LearningApp[] = [
     examSimulation: true,
     isOwn: true,
     summary: {
-      de: 'Deckt fünf Scheine – SBF See, SBF Binnen, UBI, SRC und LRC – in einer einzigen App ab. Freischaltung je Katalog per Einmalkauf, kein Abo. Mit Prüfungssimulation, Fehler-Training und Fortschritt nach Kategorie. Jung am Markt und entsprechend wenig bewertet.',
+      de: 'Deckt fünf Scheine – SBF See, SBF Binnen, UBI, SRC und LRC – in einer einzigen App ab. Freischaltung je Katalog per Einmalkauf, kein Abo. Mit Prüfungssimulation, Fehlertraining und Fortschritt nach Kategorie. Jung am Markt und entsprechend wenig bewertet.',
       en: 'Covers five licences – SBF See, SBF Binnen, UBI, SRC and LRC – in a single app. Each catalogue unlocks via one-off purchase, no subscription. Includes exam simulation, mistake training and per-category progress. New to the market and accordingly few ratings.',
     },
     bestFor: {

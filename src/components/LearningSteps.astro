@@ -1,0 +1,164 @@
+---
+// Drei echte App-Screens statt Icon-Karten (ersetzt FeatureCards auf der
+// Startseite). Die Aufnahmen sind dieselben, die auch im Hero laufen – hier
+// aber statisch, groß und mit der Aussage daneben, die sie belegen.
+//
+// Reihenfolge ist inhaltlich begründet und keine Dekoration: verstehen,
+// messen, prüfen. Deshalb tragen die Schritte Eyebrows und keine Nummern.
+import { Image } from 'astro:assets';
+import { useTranslations } from '../i18n/index';
+import screenshotQuestionDe from '../assets/images/app.screenshot.3.de.png';
+import screenshotLogDe from '../assets/images/app.screenshot.1.de.png';
+import screenshotExamDe from '../assets/images/app.screenshot.2.de.png';
+import screenshotQuestionEn from '../assets/images/app.screenshot.3.en.png';
+import screenshotLogEn from '../assets/images/app.screenshot.1.en.png';
+import screenshotExamEn from '../assets/images/app.screenshot.2.en.png';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const de = lang === 'de';
+
+const shots = de
+  ? [screenshotQuestionDe, screenshotLogDe, screenshotExamDe]
+  : [screenshotQuestionEn, screenshotLogEn, screenshotExamEn];
+
+const alts = de
+  ? [
+      'Boatpass App – Frage mit Erklärung und Merkhilfe',
+      'Boatpass App – Logbuch mit Fortschritt je Kategorie',
+      'Boatpass App – Prüfungsbereich mit Formkurve',
+    ]
+  : [
+      'Boatpass app – question with explanation and mnemonic',
+      'Boatpass app – logbook with progress per category',
+      'Boatpass app – exam area with performance curve',
+    ];
+
+const steps = t.steps.items.map((item, i) => ({ ...item, shot: shots[i], alt: alts[i] }));
+---
+
+<section id="features" class="max-w-6xl mx-auto px-6 py-14 md:py-20">
+  <div class="reveal-item steps-head" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+    <h2 class="section-display-title" style="margin-bottom:14px;">{t.steps.title}</h2>
+    <p class="steps-sub">{t.steps.subtitle}</p>
+  </div>
+
+  <div class="steps-grid snap-row" data-snap-row="steps"
+    aria-label={de ? 'Drei Screens aus der App' : 'Three screens from the app'}>
+    {steps.map(step => (
+      <div class="step snap-item reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+        <div class="step-shot">
+          <Image src={step.shot} alt={step.alt} width={520} quality={80} loading="lazy" />
+        </div>
+        <div class="step-eyebrow">{step.eyebrow}</div>
+        <h3 class="step-title">{step.title}</h3>
+        <p class="step-desc">{step.desc}</p>
+      </div>
+    ))}
+  </div>
+  <div class="snap-dots" data-snap-dots="steps"></div>
+</section>
+
+<style>
+  .steps-sub {
+    font-size: 16px;
+    color: #656B78;
+    max-width: 480px;
+    line-height: 1.65;
+    margin-bottom: 48px;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 34px;
+  }
+
+  /* Kein Kartenrahmen: Der Screenshot ist der Inhalt und trägt sich selbst.
+     Ein Rahmen darum würde nur die Optik erzeugen, die hier abgelöst wird. */
+  .step-shot {
+    border-radius: 18px;
+    overflow: hidden;
+    line-height: 0;
+    border: 1px solid rgba(26, 31, 54, 0.09);
+    box-shadow: 0 14px 34px rgba(26, 31, 54, 0.09);
+  }
+  .step-shot :global(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .step-eyebrow {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #3366FF;
+    margin: 22px 0 7px;
+  }
+  .step-title {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: -0.2px;
+    color: #1A1F36;
+    margin-bottom: 8px;
+  }
+  .step-desc {
+    font-size: 14px;
+    color: #656B78;
+    line-height: 1.65;
+  }
+
+  /* Auf dem Handy laufen die drei Screens seitlich statt gestapelt: Untereinander
+     waren sie über 2000 px hoch, also rund ein Fünftel der ganzen Seite. Die
+     Regeln der Reihe stehen in global.css (.snap-row / .snap-item).
+     `display: grid` wird dort von `display: flex` überschrieben. */
+  @media (max-width: 768px) {
+    /* display und gap müssen hier stehen, nicht nur in .snap-row: Astro hängt
+       an komponentenlokale Selektoren ein data-astro-cid-Attribut, wodurch
+       .steps-grid spezifischer ist als die globale Utility-Klasse und deren
+       display:flex sonst überschreibt. */
+    .steps-grid { display: flex; gap: 14px; }
+    .step-shot { max-width: none; }
+  }
+
+  html.dark .steps-sub { color: #94A3B8 !important; }
+  html.dark .step-title { color: #E2E8F0 !important; }
+  html.dark .step-desc { color: #94A3B8 !important; }
+  html.dark .step-shot {
+    border-color: rgba(90, 120, 255, 0.14) !important;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4) !important;
+  }
+</style>
+
+<script>
+  import { initSnapDots } from '../scripts/snapDots';
+
+  initSnapDots('[data-snap-row="steps"]');
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (reduceMotion) {
+    document.querySelectorAll<HTMLElement>('#features .reveal-item').forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  } else {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          (e.target as HTMLElement).style.opacity = '1';
+          (e.target as HTMLElement).style.transform = 'translateY(0)';
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('#features .reveal-item').forEach(el => observer.observe(el));
+  }
+</script>

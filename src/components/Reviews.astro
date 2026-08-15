@@ -1,0 +1,194 @@
+---
+// Echte Google-Play-Rezensionen. Vorerst nur auf der deutschen Startseite –
+// alle vorliegenden Texte sind deutschsprachig, und eine übersetzte Rezension
+// wäre keine Rezension mehr.
+//
+// Bewusst hauchdünne Trennlinien statt Karten mit Schatten, und
+// Buchstaben-Kreise statt Porträts: Fremde Profilbilder zu spiegeln ist
+// rechtlich unnötig heikel, Stockfotos wären das Gegenteil des Ziels.
+import { REVIEWS_DE, formatReviewDate } from '../data/reviews';
+import { getBoatpassRating, formatRating } from '../data/apps';
+
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const rating = getBoatpassRating();
+const score = rating ? formatRating(rating.score).replace('.', ',') : null;
+---
+
+<section class="max-w-6xl mx-auto px-6 py-14 md:py-20">
+  <div class="reveal-item rv-head" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+    <h2 class="section-display-title" style="margin-bottom:14px;">Was Lernende schreiben</h2>
+    <p class="rv-sub">Unverändert aus dem Play Store übernommen, mit Datum und Sternzahl. Nachlesen kannst du sie dort selbst.</p>
+  </div>
+
+  <div class="rv-grid snap-row" data-snap-row="reviews" aria-label="Bewertungen von Lernenden">
+    {REVIEWS_DE.map(r => (
+      <article class="rv snap-item reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+        <div class="rv-stars" aria-label={`${r.stars} von 5 Sternen`}>
+          <span aria-hidden="true">{'★'.repeat(r.stars)}</span>
+        </div>
+        <p class="rv-text">„{r.text}“</p>
+        <footer class="rv-meta">
+          <span class="rv-avatar" aria-hidden="true">{r.initials}</span>
+          <span class="rv-who">
+            <span class="rv-name">{r.name}</span>
+            <time class="rv-date" datetime={r.date}>{formatReviewDate(r.date)}</time>
+          </span>
+          {r.passed && <span class="rv-tag">{r.passed}</span>}
+        </footer>
+      </article>
+    ))}
+  </div>
+  <div class="snap-dots" data-snap-dots="reviews"></div>
+
+  <div class="rv-foot">
+    {rating && (
+      <p class="rv-agg">
+        <strong>{score}</strong> <span class="rv-star-inline" aria-hidden="true">★</span>
+        aus {rating.ratings} Bewertungen bei Google Play
+      </p>
+    )}
+    <a class="rv-link" href={playStoreUrl} target="_blank" rel="noopener noreferrer">
+      Alle Bewertungen ansehen →
+    </a>
+  </div>
+</section>
+
+<style>
+  .rv-sub {
+    font-size: 16px;
+    color: #656B78;
+    max-width: 520px;
+    line-height: 1.65;
+    margin-bottom: 40px;
+  }
+
+  .rv-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid rgba(26, 31, 54, 0.12);
+  }
+  .rv {
+    padding: 26px 30px 28px;
+    border-bottom: 1px solid rgba(26, 31, 54, 0.12);
+    border-right: 1px solid rgba(26, 31, 54, 0.12);
+  }
+  .rv:nth-child(2n) { border-right: 0; }
+
+  .rv-stars { color: #FBBF24; font-size: 14px; letter-spacing: 1px; }
+
+  .rv-text {
+    font-size: 15.5px;
+    line-height: 1.66;
+    color: #33384A;
+    margin: 11px 0 18px;
+  }
+
+  .rv-meta { display: flex; align-items: center; gap: 11px; }
+  .rv-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(51, 102, 255, 0.10);
+    color: #3366FF;
+    font-size: 13px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .rv-who { display: flex; flex-direction: column; }
+  .rv-name { font-size: 13.5px; font-weight: 700; color: #1A1F36; line-height: 1.3; }
+  .rv-date { font-size: 12.5px; color: #656B78; line-height: 1.3; }
+  .rv-tag {
+    margin-left: auto;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    background: rgba(95, 185, 139, 0.14);
+    color: #237551;
+    padding: 4px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+
+  .rv-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 22px;
+  }
+  .rv-agg { font-size: 14px; color: #656B78; }
+  .rv-agg strong { color: #1A1F36; font-size: 16px; }
+  .rv-star-inline { color: #FBBF24; }
+  .rv-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: #3366FF;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .rv-link:hover { text-decoration: underline; }
+
+  /* Auf dem Handy seitlich wischbar statt vier Karten untereinander (1107 px).
+     Die Trennlinien der Grid-Ansicht werden hier zu Kartenrahmen, sonst
+     schwebten die Rezensionen ohne erkennbare Begrenzung nebeneinander. */
+  @media (max-width: 768px) {
+    /* display und gap lokal setzen – der komponentenlokale Selektor ist
+       spezifischer als die globale .snap-row-Utility (siehe LearningSteps). */
+    .rv-grid { display: flex; gap: 14px; border-top: 0; align-items: stretch; }
+    .rv {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(26, 31, 54, 0.12);
+      border-radius: 16px;
+      padding: 22px 22px 24px;
+      background: #fff;
+    }
+    .rv-text { flex: 1; }
+    .rv-meta { flex-wrap: wrap; gap: 9px; }
+    .rv-tag { margin-left: 0; }
+    html.dark .rv { background: #181E2E !important; }
+  }
+
+  html.dark .rv-sub { color: #94A3B8 !important; }
+  html.dark .rv-grid { border-top-color: rgba(90, 120, 255, 0.16) !important; }
+  html.dark .rv { border-color: rgba(90, 120, 255, 0.16) !important; }
+  html.dark .rv:nth-child(2n) { border-right: 0 !important; }
+  html.dark .rv-text { color: #C7CEDE !important; }
+  html.dark .rv-name { color: #E2E8F0 !important; }
+  html.dark .rv-date, html.dark .rv-agg { color: #94A3B8 !important; }
+  html.dark .rv-agg strong { color: #E2E8F0 !important; }
+  html.dark .rv-avatar { background: rgba(90, 120, 255, 0.16) !important; color: #7FA0FF !important; }
+</style>
+
+<script>
+  import { initSnapDots } from '../scripts/snapDots';
+
+  initSnapDots('[data-snap-row="reviews"]');
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const items = document.querySelectorAll<HTMLElement>('.rv-head, .rv');
+
+  if (reduce) {
+    items.forEach(el => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    });
+  } else {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          (e.target as HTMLElement).style.opacity = '1';
+          (e.target as HTMLElement).style.transform = 'translateY(0)';
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    items.forEach(el => observer.observe(el));
+  }
+</script>

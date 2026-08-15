@@ -85,7 +85,7 @@ Klingt offensichtlich – aber eine **Wiederholungsprüfung** kostet erneut Geb�
 | Praxis erneut | ca. 57–75 € |
 | Zusätzliche Übungsstunden | 50–150 € |
 
-Wer durchfällt, zahlt schnell 100–200 € extra. Gezieltes Lernen mit Prüfungssimulation und Fehler-Training ist die beste Investition, um das zu vermeiden.
+Wer durchfällt, zahlt schnell 100–200 € extra. Gezieltes Lernen mit Prüfungssimulation und Fehlertraining ist die beste Investition, um das zu vermeiden.
 
 Die Durchfallquote liegt beim SBF bei nur 10–15 % in der Theorie – mit guter Vorbereitung bestehst du beim ersten Mal.
 

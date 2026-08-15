@@ -117,4 +117,4 @@ Wenn du dich zusätzlich auf den [SBF Binnen](https://boatpass.de/sbf-binnen/) o
 
 UBI und SRC sind zwei eigenständige Sprechfunkzeugnisse für unterschiedliche Fahrtgebiete: Binnenschifffahrt beim UBI, Küstenfunk beim SRC. Beide sind unabhängig vom Sportbootführerschein, haben eigene Fragenkataloge und eigene Prüfungsmodalitäten. Wer nur auf einem der beiden Reviere unterwegs ist, braucht auch nur das jeweils passende Zeugnis. Wer beide Fahrtgebiete abdecken will, profitiert von der verkürzten UBI-Prüfung, wenn zuerst das SRC erworben wird.
 
-Die **Boatpass-App** hilft dir bei der Vorbereitung auf UBI und SRC mit den vollständigen amtlichen Fragenkatalogen, Prüfungssimulation unter realistischen Bedingungen und gezieltem Fehler-Training, damit du sicher und gut vorbereitet in die Prüfung gehst.
+Die **Boatpass-App** hilft dir bei der Vorbereitung auf UBI und SRC mit den vollständigen amtlichen Fragenkatalogen, Prüfungssimulation unter realistischen Bedingungen und gezieltem Fehlertraining, damit du sicher und gut vorbereitet in die Prüfung gehst.

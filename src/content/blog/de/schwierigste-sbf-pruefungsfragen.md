@@ -16,7 +16,7 @@ faq:
   - question: "Welche Fragen sind beim SBF Binnen am schwierigsten?"
     answer: "Am schwierigsten sind die Segelfragen: Die härteste SBF-Binnen-Frage betrifft Trimmfehler bei einer Jolle auf Amwindkursen mit einer Fehlerquote von rund 48 %. Wer den SBF Binnen nur unter Motor ablegt, muss die 47 Segelfragen im Katalog nicht beantworten."
   - question: "Warum werden bestimmte SBF-Fragen so oft falsch beantwortet?"
-    answer: "Es gibt drei Hauptgründe: Verwechslungsgefahr bei ähnlichen Antwortmöglichkeiten (etwa bei Lichterführung und Schallsignalen), das Vermischen von Binnen- und See-Regeln beim gleichzeitigen Lernen beider Scheine sowie selten geübte Randfragen. Gezieltes Fehler-Training hilft, diese Fehler zu vermeiden."
+    answer: "Es gibt drei Hauptgründe: Verwechslungsgefahr bei ähnlichen Antwortmöglichkeiten (etwa bei Lichterführung und Schallsignalen), das Vermischen von Binnen- und See-Regeln beim gleichzeitigen Lernen beider Scheine sowie selten geübte Randfragen. Gezieltes Fehlertraining hilft, diese Fehler zu vermeiden."
 ---
 
 Nicht alle Prüfungsfragen beim Sportbootführerschein sind gleich schwer. Einige Fragen werden von fast der Hälfte aller Prüflinge falsch beantwortet – obwohl sie mit der richtigen Vorbereitung machbar sind. Wir schauen uns an, welche Fragen die höchsten Fehlerquoten haben und wie du sie knacken kannst.
@@ -96,7 +96,7 @@ Manche Fragen betreffen Spezialwissen, das im Alltag selten vorkommt – etwa De
 
 Übe nicht nur einzelne Fragen, sondern komplette Prüfungsbögen mit Zeitlimit. Unter Zeitdruck passieren die meisten Verwechslungsfehler – und genau das kannst du trainieren.
 
-### Fehler-Training nutzen
+### Fehlertraining nutzen
 
 Statt alle Fragen gleichmäßig zu wiederholen, konzentriere dich gezielt auf die Fragen, die du falsch beantwortet hast. Die Boatpass-App markiert automatisch deine Fehler und trainiert genau diese Fragen häufiger.
 
@@ -110,4 +110,4 @@ Wenn du beide Scheine gleichzeitig machst, trenne die Lernphasen. Eine Woche See
 
 ## Fazit
 
-Die schwierigsten SBF-Fragen betreffen bei den [SBF-See-Prüfungsfragen](/sbf-see-pruefungsfragen/) vor allem Wetterkunde, Lichterführung und Schallsignale – bei den [SBF-Binnen-Prüfungsfragen](/sbf-binnen-pruefungsfragen/) sind es die Segelfragen. Die Fehlerquoten (bis 48 %) zeigen, dass selbst engagierte Prüflinge an bestimmten Fragen scheitern. Der Schlüssel: Gezieltes Fehler-Training statt stumpfes Wiederholen aller Fragen. In der Boatpass-App werden genau die Fragen priorisiert, die du noch nicht sicher beherrschst.
+Die schwierigsten SBF-Fragen betreffen bei den [SBF-See-Prüfungsfragen](/sbf-see-pruefungsfragen/) vor allem Wetterkunde, Lichterführung und Schallsignale – bei den [SBF-Binnen-Prüfungsfragen](/sbf-binnen-pruefungsfragen/) sind es die Segelfragen. Die Fehlerquoten (bis 48 %) zeigen, dass selbst engagierte Prüflinge an bestimmten Fragen scheitern. Der Schlüssel: Gezieltes Fehlertraining statt stumpfes Wiederholen aller Fragen. In der Boatpass-App werden genau die Fragen priorisiert, die du noch nicht sicher beherrschst.

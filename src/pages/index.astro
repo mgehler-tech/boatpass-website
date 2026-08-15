@@ -1,8 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/HeroSection.astro';
-import FeatureCards from '../components/FeatureCards.astro';
+import LearningSteps from '../components/LearningSteps.astro';
+import FounderNote from '../components/FounderNote.astro';
+import Reviews from '../components/Reviews.astro';
 import PricingSection from '../components/PricingSection.astro';
+import CatalogSources from '../components/CatalogSources.astro';
 import BlogTeaser from '../components/BlogTeaser.astro';
 import FinderTeaser from '../components/FinderTeaser.astro';
 import { getBoatpassRating } from '../data/apps';
@@ -47,28 +50,44 @@ const faqSchema = {
 
 <BaseLayout
   title="Sportbootführerschein App: SBF Binnen & See"
-  description="Die beste SBF Lernapp für Sportbootführerschein Binnen und See. Offizielle ELWIS-Prüfungsfragen, Prüfungssimulation & Fehler-Training. Kostenlos starten."
+  description="Die beste SBF Lernapp für Sportbootführerschein Binnen und See. Offizielle ELWIS-Prüfungsfragen, Prüfungssimulation & Fehlertraining. Kostenlos starten."
   lang="de"
   appRating={appRating}
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <!-- Reihenfolge: erst das Produkt, dann die Person dahinter, dann Belege,
+       dann der Preis. Der Führerschein-Finder stand bisher zwischen Features
+       und Preisen und unterbrach damit die Produktvorstellung; er sitzt jetzt
+       hinter der Kaufentscheidung, wo er als Umweg auch hingehört. -->
   <HeroSection lang="de" />
-  <FeatureCards lang="de" />
+  <LearningSteps lang="de" />
+  <FounderNote lang="de" />
+  <Reviews lang="de" />
+  <!-- withSourceNote={false}: Der Hinweisblock der Preis-Sektion wiederholt
+       genau das, was CatalogSections direkt darunter ausführlich zeigt. -->
+  <PricingSection lang="de" withGuarantee withSourceNote={false} />
+  <CatalogSources lang="de" collapsible />
   <FinderTeaser lang="de" />
-  <PricingSection lang="de" withGuarantee />
   <BlogTeaser lang="de" />
 
   <div class="home-faq section-band">
     <section>
       <span class="section-eyebrow" style="margin-bottom:14px;">FAQ</span>
       <h2 class="section-display-title" style="margin-bottom:24px;">Häufig gestellte Fragen</h2>
+      <!-- Akkordeon wie auf /faq/. Ausgeschrieben brauchten die drei Antworten
+           auf dem Handy 1201 px, also 9 % der Seitenhöhe – gelesen werden sie
+           dort ohnehin gezielt und nicht am Stück. Die Antworten bleiben im
+           DOM, das FAQPage-Schema oben ist davon unberührt. -->
       <div style="display:flex; flex-direction:column; gap:14px;">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
-          </div>
+          <details class="faq-item home-faq-item">
+            <summary class="home-faq-q">
+              <h3>{f.q}</h3>
+              <span class="home-faq-icon" aria-hidden="true"></span>
+            </summary>
+            <div class="home-faq-a">{f.a}</div>
+          </details>
         ))}
       </div>
       <p style="font-size:15px; color:#656B78; line-height:1.7; margin-top:16px;">
@@ -77,3 +96,66 @@ const faqSchema = {
     </section>
   </div>
 </BaseLayout>
+
+<style is:global>
+  /* Akkordeon der Startseiten-FAQ. Übernimmt Rahmen und Radius von .faq-item
+     auf /faq/, damit beide Seiten gleich aussehen. */
+  .home-faq-item {
+    background: #fff;
+    border: 1px solid rgba(51, 102, 255, 0.08);
+    border-radius: 16px;
+    overflow: hidden;
+  }
+  .home-faq-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 22px;
+    cursor: pointer;
+    list-style: none;
+    /* WCAG 2.5.5: sichere Treffergröße */
+    min-height: 56px;
+  }
+  .home-faq-q::-webkit-details-marker { display: none; }
+  .home-faq-q h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1A1F36;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .home-faq-q:focus-visible { outline: 2px solid #3366FF; outline-offset: -2px; }
+
+  /* Chevron per CSS statt Zeichen: dreht beim Öffnen. */
+  .home-faq-icon {
+    width: 9px;
+    height: 9px;
+    flex-shrink: 0;
+    border-right: 2px solid #3366FF;
+    border-bottom: 2px solid #3366FF;
+    transform: rotate(45deg) translate(-2px, -2px);
+    transition: transform 0.2s ease;
+  }
+  .home-faq-item[open] .home-faq-icon {
+    transform: rotate(-135deg) translate(-2px, -2px);
+  }
+
+  .home-faq-a {
+    padding: 0 22px 22px;
+    font-size: 15px;
+    color: #656B78;
+    line-height: 1.7;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .home-faq-icon { transition: none; }
+  }
+
+  html.dark .home-faq-item {
+    background: #181E2E;
+    border-color: rgba(90, 120, 255, 0.12);
+  }
+  html.dark .home-faq-q h3 { color: #E2E8F0; }
+  html.dark .home-faq-a { color: #94A3B8; }
+</style>

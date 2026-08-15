@@ -389,3 +389,88 @@ html.dark .gradient-text {
 .gradient-bg {
   background: linear-gradient(135deg, #1A1F36, #3366FF);
 }
+
+/* ---------------------------------------------------------------------------
+   Wisch-Reihen für schmale Screens.
+
+   Gestapelte Karten fressen auf dem Handy enorm Höhe: Drei App-Screenshots
+   untereinander sind über 2000 px. Ab hier laufen sie stattdessen seitlich –
+   dasselbe Muster, das App Store, Play Store und die meisten App-Landingpages
+   auf dem Handy verwenden.
+
+   Zwei Details entscheiden darüber, ob es funktioniert:
+
+   1. Die Karten sind schmaler als der Viewport (`--snap-w`), damit der Rand
+      der nächsten sichtbar hervorlugt. Ohne diesen Hinweis übersieht ein
+      großer Teil der Nutzer alles ab der zweiten Karte.
+   2. Die Reihe zieht sich per negativem Rand bis an die Bildschirmkanten und
+      holt den Seiteneinzug als Padding zurück. Sonst kann die erste Karte
+      nicht mittig einrasten und die Reihe wirkt beschnitten.
+
+   Am Desktop greift nichts davon – dort bleibt das jeweilige Grid.
+--------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .snap-row {
+    --snap-w: 82%;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 14px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    /* Seiteneinzug (px-6 = 24px) ausgleichen und als Padding zurückgeben */
+    margin-inline: -24px;
+    padding-inline: 24px;
+    /* Platz für Karten-Badges, die über die Kante ragen (z. B. "Beliebteste Wahl") */
+    padding-block: 14px;
+    scrollbar-width: none;
+  }
+  .snap-row::-webkit-scrollbar { display: none; }
+
+  .snap-row > .snap-item {
+    flex: 0 0 var(--snap-w);
+    scroll-snap-align: center;
+    min-width: 0;
+  }
+
+  /* Sichtbarer Fokus, wenn die Reihe per Tastatur angesteuert wird. */
+  .snap-row:focus-visible {
+    outline: 2px solid #3366FF;
+    outline-offset: 4px;
+    border-radius: 8px;
+  }
+
+  .snap-dots {
+    display: flex;
+    justify-content: center;
+    gap: 7px;
+    margin-top: 14px;
+  }
+  .snap-dot {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 100px;
+    background: rgba(26, 31, 54, 0.18);
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease;
+  }
+  .snap-dot[aria-current="true"] {
+    width: 20px;
+    background: #3366FF;
+  }
+  .snap-dot:focus-visible { outline: 2px solid #3366FF; outline-offset: 3px; }
+  html.dark .snap-dot { background: rgba(226, 232, 240, 0.22); }
+  html.dark .snap-dot[aria-current="true"] { background: #5B8CFF; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .snap-dot { transition: none; }
+  }
+}
+
+/* Oberhalb des Umbruchs sind Reihe und Punkte wirkungslos bzw. unsichtbar. */
+@media (min-width: 769px) {
+  .snap-dots { display: none; }
+}
