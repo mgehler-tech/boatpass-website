@@ -122,8 +122,11 @@ const steps = t.steps.items.map((item, i) => ({ ...item, shot: shots[i], alt: al
     /* display und gap müssen hier stehen, nicht nur in .snap-row: Astro hängt
        an komponentenlokale Selektoren ein data-astro-cid-Attribut, wodurch
        .steps-grid spezifischer ist als die globale Utility-Klasse und deren
-       display:flex sonst überschreibt. */
-    .steps-grid { display: flex; gap: 14px; }
+       display:flex sonst überschreibt.
+       --snap-w schmaler als der globale Standard (82%): Es sind Hochkant-
+       Screens, deren Höhe an der Breite hängt – so nehmen sie deutlich
+       weniger vertikalen Platz ein. */
+    .steps-grid { display: flex; gap: 14px; --snap-w: 62%; }
     .step-shot { max-width: none; }
   }
 
