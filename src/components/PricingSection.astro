@@ -5,10 +5,10 @@ import type { IconName } from '../icons';
 
 interface Props {
   lang: 'de' | 'en';
-  // Startseite: zeigt das zusammengeführte Redesign (Header mit Aktualitätsgarantie,
-  // SBF-Karten mit "gültig seit"-Stempel, kompakte Funkscheine, Katalog-Hinweis,
-  // Enthalten-Leiste, Trust-Leiste). Ohne den Prop (Lizenz-Seiten) bleibt das
-  // bisherige, schlanke Preis-Layout unverändert.
+  // Startseite: zeigt das zusammengeführte Redesign (Header, SBF-Karten mit
+  // "gültig seit"-Stempel, kompakte Funkscheine, Katalog-Hinweis,
+  // Enthalten-Leiste). Ohne den Prop (Lizenz-Seiten) bleibt das bisherige,
+  // schlanke Preis-Layout unverändert.
   withGuarantee?: boolean;
   // Der Hinweisblock unter den Karten wiederholt validityNote und issuerNote
   // aus catalogSources. Steht CatalogSources ohnehin auf derselben Seite
