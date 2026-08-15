@@ -117,7 +117,7 @@ const howToSchema = {
         <div id="cfg-progress" class="cfg-progress"></div>
         <div id="cfg-progress-bar" class="cfg-progress-bar"><span></span></div>
       </div>
-      <div id="cfg-question" class="cfg-question"></div>
+      <div id="cfg-question" class="cfg-question" tabindex="-1" aria-live="polite"></div>
       <div id="cfg-options" class="cfg-options"></div>
       <div id="cfg-back" class="cfg-back">
         <button type="button" id="cfg-back-btn" class="cfg-back-btn">
@@ -127,7 +127,7 @@ const howToSchema = {
     </div>
 
     <!-- Result -->
-    <div id="cfg-result" style="display:none; margin-top:24px;"></div>
+    <div id="cfg-result" style="display:none; margin-top:24px;" tabindex="-1"></div>
 
     <!-- Static decision table (always visible, no JS, AI-citable) -->
     <section style="margin-top:64px;">
@@ -329,7 +329,12 @@ const howToSchema = {
         return STEPS.filter(function (s) { return !s.when || s.when(answers); });
       }
 
-      function render(stepId) {
+      // focusQuestion moves focus onto the question after the previously
+      // focused option button has been removed from the DOM by the innerHTML
+      // reset below – otherwise focus falls back to <body> and keyboard/
+      // screen-reader users lose their place at every step (WCAG 2.4.3, 4.1.3).
+      // The initial render on page load leaves focus untouched.
+      function render(stepId, focusQuestion) {
         const steps = visibleSteps();
         const step = STEPS.find(function (s) { return s.id === stepId; });
         const idx = steps.indexOf(step);
@@ -351,6 +356,7 @@ const howToSchema = {
           elOptions.appendChild(btn);
         });
         elBackWrap.style.display = path.length ? 'block' : 'none';
+        if (focusQuestion) { elQuestion.focus({ preventScroll: true }); }
       }
 
       function choose(stepId, value) {
@@ -359,7 +365,7 @@ const howToSchema = {
         const steps = visibleSteps();
         const step = STEPS.find(function (s) { return s.id === stepId; });
         const next = steps[steps.indexOf(step) + 1];
-        if (next) { render(next.id); } else { showResult(); }
+        if (next) { render(next.id, true); } else { showResult(); }
       }
 
       elBackBtn.addEventListener('click', function () {
@@ -368,7 +374,7 @@ const howToSchema = {
         elResult.style.display = 'none';
         elCfg.style.display = 'block';
         const steps = visibleSteps();
-        render(last || steps[0].id);
+        render(last || steps[0].id, true);
       });
 
       function compute() {
@@ -419,8 +425,9 @@ const howToSchema = {
           path.length = 0;
           elResult.style.display = 'none';
           elCfg.style.display = 'block';
-          render(STEPS[0].id);
+          render(STEPS[0].id, true);
         });
+        elResult.focus({ preventScroll: true });
         elResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
 
