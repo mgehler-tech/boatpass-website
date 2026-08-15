@@ -122,9 +122,9 @@ const funkCards = [
       <div class="reveal-item pv2-funk" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
         <div class="pv2-subheading" style="margin-bottom:6px;">{t.pricing.funkHeading}</div>
         <p class="pv2-funk-sub">{t.pricing.funkSubtitle}</p>
-        <div class="pv2-funk-grid">
+        <div class="pv2-funk-grid snap-row" data-snap-row="funk" aria-label={de ? 'Funkscheine' : 'Radio certificates'}>
           {funkCards.map(f => (
-            <a href={f.url} class="pv2-funk-card">
+            <a href={f.url} class="pv2-funk-card snap-item">
               <div class="pv2-funk-top">
                 <span class="pv2-tile pv2-tile-sm"><Icon name={f.icon} size={18} stroke="#3366FF" strokeWidth={1.75} /></span>
                 <span class="pv2-funk-abbr">{f.abbr}</span>
@@ -141,6 +141,7 @@ const funkCards = [
             </a>
           ))}
         </div>
+        <div class="snap-dots" data-snap-dots="funk"></div>
       </div>
 
       <!-- Katalog-Hinweis + offizielle Quelle -->
@@ -990,6 +991,15 @@ const funkCards = [
   @media (max-width: 640px) {
     .pv2-funk-grid { grid-template-columns: 1fr; }
   }
+
+  /* Funkscheine als Wisch-Reihe, gleicher Umbruch wie die übrigen Reihen.
+     Zwischen 641 und 768 px standen sie sonst zu dritt nebeneinander und
+     damit auf rund 220 px Breite gequetscht. display und gap müssen lokal
+     stehen, weil der komponentenlokale Selektor durch Astros data-astro-cid
+     spezifischer ist als die globale .snap-row-Utility. */
+  @media (max-width: 768px) {
+    .pv2-funk-grid { display: flex; gap: 14px; }
+  }
   @media (max-width: 460px) {
     .incl-grid { grid-template-columns: 1fr; }
   }
@@ -1008,6 +1018,7 @@ const funkCards = [
   import { initSnapDots } from '../scripts/snapDots';
 
   initSnapDots('[data-snap-row="pricing"]');
+  initSnapDots('[data-snap-row="funk"]');
 
   const reduceMotionPricing = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
