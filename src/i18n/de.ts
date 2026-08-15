@@ -76,7 +76,10 @@ export const de = {
     catalog1Name: 'SBF Binnen',
     catalog1Tagline: 'Die Einstiegslizenz für Binnengewässer',
     catalog1Questions: '300',
-    catalog1Themes: '7',
+    // 8, nicht 7: Die 300 Fragen sind der Katalog inkl. Segel-Geltungsbereich
+    // (253 Motor + 47 Segel). Dazu gehören 8 Kategorien – "Segeln" ist die achte.
+    // 7 Kategorien gelten nur für den Umfang ohne Segeln, dann sind es 253 Fragen.
+    catalog1Themes: '8',
     catalog1Note: 'Mit Vorkenntnissen lernst du weniger – die App passt sich an',
     catalog2Name: 'SBF See',
     catalog2Desc: 'Die Lizenz für Küsten- und Seegewässer',

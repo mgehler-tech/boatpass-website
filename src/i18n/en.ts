@@ -78,7 +78,10 @@ export const en: Translations = {
     catalog1Name: 'SBF Binnen',
     catalog1Tagline: 'The entry-level license for inland waters',
     catalog1Questions: '300',
-    catalog1Themes: '7',
+    // 8, not 7: the 300 questions are the catalogue including the sailing scope
+    // (253 engine + 47 sailing), which spans 8 categories – "Sailing" being the
+    // eighth. 7 applies only without sailing, and then it is 253 questions.
+    catalog1Themes: '8',
     catalog1Note: 'With prior knowledge you learn fewer – the app adapts',
     catalog2Name: 'SBF See',
     catalog2Desc: 'The license for coastal and sea waters',
