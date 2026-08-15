@@ -128,11 +128,14 @@ html.dark .section-eyebrow {
       rgba(51, 102, 255, 0.18) 78%,
       transparent);
   }
+  /* Dark Mode: Auf dem sehr dunklen Grund (#0F1117) verschwand die Linie bei
+     0.22 Deckkraft fast völlig. Helleres Blau und deutlich mehr Deckkraft
+     machen die Abschnittsgrenze klar erkennbar, ohne hart zu wirken. */
   html.dark .section-band::before {
     background: linear-gradient(90deg,
       transparent,
-      rgba(100, 140, 255, 0.22) 22%,
-      rgba(100, 140, 255, 0.22) 78%,
+      rgba(120, 155, 255, 0.42) 18%,
+      rgba(120, 155, 255, 0.42) 82%,
       transparent);
   }
 }
