@@ -12,7 +12,7 @@ faq:
   - question: "Brauche ich einen extra Schein, um jemanden beim Wasserskifahren zu ziehen?"
     answer: "Nein, einen eigenen Schein fürs Schleppen gibt es nicht. Du brauchst den regulären Sportbootführerschein für das jeweilige Boot und Gewässer, also SBF Binnen oder SBF See. Zusätzlich schreibt die Wasserskiverordnung auf Bundeswasserstraßen vor, dass eine weitere Person als Beobachter an Bord ist."
   - question: "Ist ein Beobachter beim Wasserskifahren gesetzlich vorgeschrieben?"
-    answer: "Auf Bundeswasserstraßen ja: Nach § 2 der Wasserskiverordnung (WasSkiV) darf der Bootsführer einen Wasserskiläufer nur schleppen, wenn eine weitere geeignete Person als Beobachter mitfährt, die den Läufer und die Strecke ständig im Blick behält."
+    answer: "Auf Bundeswasserstraßen ja: Nach § 3 der Wasserskiverordnung (WasSkiV) darf der Bootsführer einen Wasserskiläufer nur schleppen, wenn eine weitere geeignete Person als Beobachter mitfährt, die den Läufer und die Strecke ständig im Blick behält."
   - question: "Wo darf ich in Deutschland Wasserski fahren oder wakeboarden?"
     answer: "Nur auf dafür freigegebenen Flächen. Auf Bundeswasserstraßen sind das mit dem Kennzeichen E.17 markierte Strecken, auf Seeschifffahrtsstraßen Flächen außerhalb des Fahrwassers, sofern sie nicht extra gesperrt sind. Auf vielen Landesgewässern gelten zusätzlich lokale Vorgaben der zuständigen Behörde."
   - question: "Muss der Wasserskiläufer eine Rettungsweste tragen?"
@@ -41,7 +41,7 @@ Viele Seen und kleinere Gewässer unterliegen nicht der WasSkiV, sondern den Sch
 
 ## Die Beobachterpflicht: Warum ein zweiter Mann an Bord Pflicht ist
 
-Eine der wichtigsten Regeln beim Schleppen von Wasserskiläufern betrifft die Besatzung des Zugboots. Nach **§ 2 WasSkiV** darf der Bootsführer einen oder mehrere Wasserskiläufer nur schleppen, wenn eine weitere geeignete Person als **Beobachter** mit an Bord ist. Diese Person muss den Wasserskiläufer und die zu befahrende Strecke ständig im Blick behalten, um den Bootsführer rechtzeitig zu informieren, etwa wenn der Läufer stürzt oder sich Hindernisse nähern.
+Eine der wichtigsten Regeln beim Schleppen von Wasserskiläufern betrifft die Besatzung des Zugboots. Nach **§ 3 WasSkiV** darf der Bootsführer einen oder mehrere Wasserskiläufer nur schleppen, wenn eine weitere geeignete Person als **Beobachter** mit an Bord ist. Diese Person muss den Wasserskiläufer und die zu befahrende Strecke ständig im Blick behalten, um den Bootsführer rechtzeitig zu informieren, etwa wenn der Läufer stürzt oder sich Hindernisse nähern.
 
 Damit der Beobachter seiner Aufgabe nachkommen kann, muss das Boot ausreichend Platz bieten, sodass die Person sicher sitzen und den Skiläufer im Blick behalten kann, üblicherweise mit dem Rücken zur Fahrtrichtung des Bootes und dem Gesicht zum Geschleppten. Zusätzlich muss das Boot so ausgerüstet sein, dass ein gestürzter Wasserskiläufer im Notfall an Bord gerettet werden kann. Ein einzelner Bootsführer, der gleichzeitig steuert und über die Schulter nach hinten schaut, erfüllt diese Anforderung nicht und darf allein keinen Wasserskiläufer schleppen.
 

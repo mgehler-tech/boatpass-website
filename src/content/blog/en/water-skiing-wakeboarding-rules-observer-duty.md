@@ -12,7 +12,7 @@ faq:
   - question: "Do I need a special license to tow someone water skiing?"
     answer: "No, there's no separate license just for towing. You need the regular boating license for the boat and waterway you're on, either SBF Binnen (inland) or SBF See (coastal). On federal inland waterways, the Water Skiing Regulation also requires a second person on board as an observer."
   - question: "Is an observer legally required for water skiing in Germany?"
-    answer: "On federal inland waterways, yes. Under Section 2 of the Water Skiing Regulation (Wasserskiverordnung, WasSkiV), the skipper may only tow a water skier if a second suitable person is aboard as an observer who keeps the skier and the route in view at all times."
+    answer: "On federal inland waterways, yes. Under Section 3 of the Water Skiing Regulation (Wasserskiverordnung, WasSkiV), the skipper may only tow a water skier if a second suitable person is aboard as an observer who keeps the skier and the route in view at all times."
   - question: "Where in Germany am I allowed to water ski or wakeboard?"
     answer: "Only on areas specifically released for it. On federal inland waterways that means stretches marked with sign E.17. On coastal waterways it means areas outside the fairway, unless those areas have been specifically closed. Many state-regulated lakes add their own local rules on top."
   - question: "Does the water skier have to wear a life jacket?"
@@ -41,7 +41,7 @@ Many lakes and smaller waterways don't fall under the WasSkiV at all, but under 
 
 ## The Observer Duty: Why a Second Person on Board Is Mandatory
 
-One of the most important rules for towing water skiers concerns who's on the towing boat. Under **Section 2 of the WasSkiV**, the skipper may only tow one or more water skiers if a second suitable person is aboard as an **observer**. This person must keep the water skier and the route ahead in view at all times, so they can inform the skipper promptly, for example if the skier falls or an obstacle appears.
+One of the most important rules for towing water skiers concerns who's on the towing boat. Under **Section 3 of the WasSkiV**, the skipper may only tow one or more water skiers if a second suitable person is aboard as an **observer**. This person must keep the water skier and the route ahead in view at all times, so they can inform the skipper promptly, for example if the skier falls or an obstacle appears.
 
 For the observer to actually do this job, the boat has to offer enough space for that person to sit safely and keep the skier in view, usually facing backward relative to the boat's direction of travel, toward the person being towed. The boat also has to be equipped so a skier who has fallen can be rescued on board in an emergency. A single skipper who's steering and glancing over their shoulder at the same time doesn't meet this requirement and isn't allowed to tow a water skier alone.
 
