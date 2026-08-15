@@ -76,11 +76,20 @@ const score = rating ? formatRating(rating.score).replace('.', ',') : null;
 
   .rv-stars { color: #FBBF24; font-size: 14px; letter-spacing: 1px; }
 
+  /* Play-Store-Texte bleiben in der Datei wortgleich (siehe reviews.ts).
+     Angezeigt werden nur die ersten Zeilen – das spart Platz und hält die
+     Karten kompakt; der volle Text steht im Play Store ("Alle Bewertungen
+     ansehen"). Gekürzt wird per Zeilenbegrenzung, nicht am Datenbestand. */
   .rv-text {
     font-size: 15.5px;
     line-height: 1.66;
     color: #33384A;
     margin: 11px 0 18px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    overflow: hidden;
   }
 
   .rv-meta { display: flex; align-items: center; gap: 11px; }
