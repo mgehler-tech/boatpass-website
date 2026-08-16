@@ -273,6 +273,17 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
   .hero-lic-sep { color: #C3C9D6; font-size: 13px; }
   :global(html.dark) .hero-lic { color: #8590A8; }
   :global(html.dark) .hero-lic-sep { color: #47506B; }
+  /* Ohne diese Regel gewinnt `html.dark .hero-lic` (Spezifität 0,2,1) gegen
+     `.hero-lic.is-active` (0,2,0): color:#8590A8 überschreibt color:transparent,
+     der Farbverlauf wird vom grauen Textfüller verdeckt und die aktive Lizenz
+     ist im Dark Mode nicht mehr hervorgehoben. Etwas hellerer Verlauf für
+     ausreichend Kontrast auf dunklem Grund. */
+  :global(html.dark) .hero-lic.is-active {
+    background: linear-gradient(90deg, #5B8CFF, #8AB0FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 
   /* Eigene Blautöne statt #3366FF: Auf dem hellen Badge-Grund erreicht die
      Akzentfarbe nur 3,8:1 und verfehlt AA für 15px-Fetttext. Hell braucht
