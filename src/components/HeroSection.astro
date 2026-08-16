@@ -47,11 +47,24 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
     <!-- Left: text -->
     <div style="max-width:640px;">
 
-      <!-- Badge. Der Punkt ist statisch: Ein Puls imitiert eine Live-Statusanzeige,
-           hinter der hier nichts Veränderliches steht. -->
-      <div class="animate-fade-up" style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:28px;">
-        <span style="width:6px;height:6px;background:#3366FF;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
-        {t.hero.badge}
+      <!-- Badge: zeigt die Play-Store-Bewertung als stärkstes Vertrauenssignal
+           direkt vor der H1. Die Zahl kommt aus getBoatpassRating(), bleibt also
+           automatisch aktuell. Fällt auf den ELWIS-Badge zurück, falls einmal
+           keine Bewertung vorliegt. -->
+      <div class="animate-fade-up" style="display:inline-flex; align-items:center; gap:7px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:28px;">
+        {appRating ? (
+          <>
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="#FBBF24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
+              <path d="M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z"/>
+            </svg>
+            <span>{ratingScoreLabel} {t.hero.badgeStore}</span>
+          </>
+        ) : (
+          <>
+            <span style="width:6px;height:6px;background:#3366FF;border-radius:50%;display:inline-block;flex-shrink:0;"></span>
+            {t.hero.badge}
+          </>
+        )}
       </div>
 
       <!-- H1: konstant, mit dem Hauptsuchbegriff. -->

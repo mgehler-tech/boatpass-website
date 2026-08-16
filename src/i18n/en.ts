@@ -10,6 +10,7 @@ export const en: Translations = {
   },
   hero: {
     badge: 'Official ELWIS catalogue',
+    badgeStore: 'on Google Play',
     headline1: 'The fastest way',
     headline2: 'to get your',
     headlineAccent: 'Boating License.',

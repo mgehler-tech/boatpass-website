@@ -7,9 +7,13 @@ export const de = {
     getApp: 'App laden',
   },
   hero: {
-    // "Offizielle Lizenzen" war sachlich falsch: Boatpass vergibt keine
-    // Lizenzen, amtlich sind die Fragenkataloge.
+    // Fallback-Badge, falls keine Bewertung vorliegt. Im Normalfall zeigt der
+    // Badge die Play-Store-Bewertung (siehe badgeStore).
     badge: 'Amtlicher ELWIS-Katalog',
+    // Store-Zusatz hinter der Bewertungszahl im Hero-Badge. Eigene Zeichenkette,
+    // damit sie sich beim iOS-Launch leicht auf "bei Google Play & App Store"
+    // erweitern lässt.
+    badgeStore: 'bei Google Play',
     // Die H1 nennt den Hauptsuchbegriff und bleibt konstant. Vorher tauschte
     // ein Intervall alle 2,5 s das letzte Wort ("SBF Binnen." / "SBF See." …),
     // wodurch weder "Sportbootführerschein" darin vorkam noch die Überschrift
