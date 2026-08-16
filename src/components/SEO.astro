@@ -51,14 +51,18 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' |
 
 <title>{title} | Boatpass</title>
 <meta name="description" content={description} />
-<link rel="canonical" href={canonical} />
+{!noindex && <link rel="canonical" href={canonical} />}
 <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
 <meta name="theme-color" content="#3366FF" />
 
-<!-- hreflang -->
-<link rel="alternate" hreflang={lang} href={canonical} />
-{hasAlternate && <link rel="alternate" hreflang={altLang} href={altUrl} />}
-<link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
+<!-- hreflang: nur auf indexierbaren Seiten sinnvoll, da sonst auf URLs verweisend,
+     die selbst nicht indexiert werden (z.B. hätte die 404-Seite sonst einen
+     Canonical/hreflang auf die nicht existierende URL https://boatpass.de/404/) -->
+{!noindex && <>
+  <link rel="alternate" hreflang={lang} href={canonical} />
+  {hasAlternate && <link rel="alternate" hreflang={altLang} href={altUrl} />}
+  <link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
+</>}
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="Boatpass" />
@@ -69,7 +73,7 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' |
 <meta property="og:image:alt" content={`${title} – Boatpass`} />
 <meta property="og:image:width" content={String(ogImageWidth)} />
 <meta property="og:image:height" content={String(ogImageHeight)} />
-<meta property="og:url" content={canonical} />
+{!noindex && <meta property="og:url" content={canonical} />}
 <meta property="og:type" content={type} />
 <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
 {hasAlternate && <meta property="og:locale:alternate" content={lang === 'de' ? 'en_US' : 'de_DE'} />}
