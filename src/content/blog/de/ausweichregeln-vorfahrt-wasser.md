@@ -56,6 +56,8 @@ Welches Fahrzeug ausweichen muss, ergibt sich aus einer **Rangordnung**. Grundsa
 
 > **Hinweis SBF See:** KVR Regel 18d kennt zusätzlich das **tiefgangbehinderte Fahrzeug** (*vessel constrained by her draught* – drei rote Rundumlichter senkrecht). Andere Fahrzeuge dürfen seine sichere Durchfahrt nicht behindern. Es steht nicht formal in der Rangordnung oben, sondern ist eine eigenständige Sonderkategorie.
 
+> **Sonderfall Zugboot:** Außerhalb der allgemeinen Rangordnung gilt auf Seeschifffahrtsstraßen eine eigene Regel für Zugboote, die Wasserskiläufer oder Wassersportanhänge schleppen: Sie müssen grundsätzlich allen anderen Fahrzeugen ausweichen. Details dazu im Artikel [Wasserskifahren und Wakeboarden: Regeln, Beobachterpflicht und Kennzeichnung](/blog/wasserskifahren-wakeboarden-regeln-beobachterpflicht/).
+
 ## Zwei Maschinenfahrzeuge
 
 ### Entgegengesetzte Kurse (von vorn)

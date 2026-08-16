@@ -56,6 +56,8 @@ Which vessel must give way follows a **hierarchy**. Principle: whoever can maneu
 
 > **Note for SBF See candidates:** COLREG Rule 18(d) also introduces the **vessel constrained by her draught** (three red [all-round lights](/en/blog/navigation-lights-explained/), vertical). Other vessels must not impede her safe passage. She is not ranked within the hierarchy above but is a separate special category.
 
+> **Special case, towing vessel:** Outside the general hierarchy, German maritime shipping regulations set a separate rule for boats towing water skiers or inflatable towables: they must generally give way to all other vessels. Details in [Water Skiing and Wakeboarding: Rules, Observer Duty, and Markings](/en/blog/water-skiing-wakeboarding-rules-observer-duty/).
+
 ## Two Power-Driven Vessels
 
 ### Head-On
