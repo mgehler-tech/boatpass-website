@@ -35,7 +35,7 @@ The European standard **EN ISO 12402** addresses both aspects. It sets minimum b
 
 ### 50N – Buoyancy Aid
 
-The 50N class is not a life jacket in the regulatory sense; it is a **buoyancy aid**. It is designed for competent swimmers engaged in active water sports on calm, sheltered water – kayaking, dinghy sailing, stand-up paddleboarding, or surfing. These aids fit closely, allow a wide range of movement, and do not impede paddling or climbing.
+The 50N class is not a life jacket in the regulatory sense; it is a **buoyancy aid**. It is designed for competent swimmers engaged in active water sports on calm, sheltered water – kayaking, dinghy sailing, stand-up paddleboarding, or surfing. These aids fit closely, allow a wide range of movement, and do not impede paddling or climbing. [Water skiing and wakeboarding behind a boat](/en/blog/water-skiing-wakeboarding-rules-observer-duty/) is another activity where this kind of buoyancy aid is standard practice.
 
 **What it does:** Supports a conscious, active swimmer at the surface and helps them recover after a capsize in calm conditions.
 

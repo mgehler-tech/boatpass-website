@@ -35,7 +35,7 @@ Die europäische Norm **EN ISO 12402** definiert vier Leistungsstufen. Sie ist h
 
 ### 50N – Schwimmhilfe
 
-Die 50N-Klasse ist offiziell keine Rettungsweste, sondern eine **Schwimmhilfe** (Buoyancy Aid). Sie ist für aktive Wassersportler in ruhigem Wasser gedacht: Kajakfahren, Dinghy-Segeln, Stand-Up-Paddling oder Surfen. Die Weste liegt eng am Körper, lässt breite Bewegungsfreiheit und behindert das Paddeln oder Klettern an Bord kaum.
+Die 50N-Klasse ist offiziell keine Rettungsweste, sondern eine **Schwimmhilfe** (Buoyancy Aid). Sie ist für aktive Wassersportler in ruhigem Wasser gedacht: Kajakfahren, Dinghy-Segeln, Stand-Up-Paddling oder Surfen. Die Weste liegt eng am Körper, lässt breite Bewegungsfreiheit und behindert das Paddeln oder Klettern an Bord kaum. Auch beim [Wasserskifahren und Wakeboarden hinter dem Boot](/blog/wasserskifahren-wakeboarden-regeln-beobachterpflicht/) ist eine solche Auftriebshilfe in der Praxis Standard.
 
 **Was sie leistet:** Sie unterstützt einen bewussten, aktiven Schwimmer beim Auftauchen und Halten der Wasseroberfläche. Solange du ansprechbar und handlungsfähig bist, erfüllt sie ihren Zweck gut.
 
