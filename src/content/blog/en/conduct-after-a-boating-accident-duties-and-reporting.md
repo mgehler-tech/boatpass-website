@@ -17,6 +17,22 @@ faq:
     answer: "Useful evidence includes photos of the damage and the accident scene, your GPS position, contact details of everyone involved and any witnesses, and a prompt logbook entry with date, time, weather, and a factual account of what happened. The more precise the documentation, the easier it is to sort things out with insurers or authorities later."
   - question: "How quickly do I have to report an accident to my boat insurer?"
     answer: "Under Section 30 of the German Insurance Contract Act (VVG), you must notify your insurer of an insured event without undue delay. Don't wait until you're back at your home marina or until the season ends, report the accident as soon as reasonably possible, even informally by phone or email at first."
+howTo:
+  name: "What to do after a boating accident"
+  description: "The right order of steps after an accident on the water, from first aid to notifying your insurer."
+  steps:
+    - name: "Stop and render assistance"
+      text: "Stop the boat, assess injuries and damage, and give first aid if anyone is hurt – everyone's safety always comes first."
+    - name: "Exchange identity and contact details"
+      text: "Exchange name, address, official registration number, and boat insurance details with everyone involved, and note down any witnesses, as required by the duty to establish the facts."
+    - name: "Notify the water police if needed"
+      text: "Call the water police (Wasserschutzpolizei) if anyone is injured, damage is significant, there's an environmental risk, or fault is disputed, using the emergency number 110 if necessary."
+    - name: "Preserve evidence"
+      text: "Photograph the damage and the accident scene, note the GPS position and everyone's contact details, and make a prompt logbook entry with what happened, the weather, and the time."
+    - name: "Check the boat's seaworthiness"
+      text: "Inspect the hull, rudder, and drive before continuing, and call for help rather than risk further damage with an impaired boat."
+    - name: "Notify your insurer without delay"
+      text: "Report the accident to your boat insurer without undue delay, informally by phone or email at first if needed."
 ---
 
 A collision with another boat, a grounding, or a fall on board: boating accidents rarely happen dramatically, but they happen. Knowing what to do in the moment, rather than figuring it out afterward, protects you, everyone else involved, and potentially your insurance cover as well. This article explains what duties apply after an accident on the water, when and how to report it, and what matters when it comes to preserving evidence.
