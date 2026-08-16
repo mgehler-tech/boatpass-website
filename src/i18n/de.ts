@@ -93,7 +93,7 @@ export const de = {
     eyebrow: 'Persönlich entwickelt',
     title: 'Hi, ich bin Marius.',
     role: 'Gründer & Entwickler von BoatPass',
-    intro: 'Ich entwickle BoatPass selbst – von der App bis zu den amtlichen ELWIS-Fragen. Wenn du mir schreibst, landet deine Nachricht direkt bei mir.',
+    intro: 'Ich entwickle BoatPass selbst und pflege die amtlichen ELWIS-Fragen direkt in die App ein. Wenn du mir schreibst, landet deine Nachricht direkt bei mir.',
     chip1: 'Amtliche Fragen',
     chip2: 'Persönlicher Support',
     cta: 'Warum ich BoatPass gebaut habe',

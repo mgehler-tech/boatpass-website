@@ -80,7 +80,7 @@ export const en: Translations = {
     eyebrow: 'Personally built',
     title: "Hi, I'm Marius.",
     role: 'Founder & developer of BoatPass',
-    intro: 'I build BoatPass myself – from the app to the official ELWIS questions. When you write to me, your message reaches me directly.',
+    intro: 'I build BoatPass myself and bring the official ELWIS questions straight into the app. When you write to me, your message reaches me directly.',
     chip1: 'Official questions',
     chip2: 'Personal support',
     cta: 'Why I built BoatPass',
