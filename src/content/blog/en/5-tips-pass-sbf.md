@@ -1,7 +1,7 @@
 ---
 title: "5 Tips to Pass Your German Boating License Exam First Try"
 seoTitle: "5 Tips to Pass the SBF Exam First Try"
-description: "Five concrete strategies for the SBF exam – with real facts about the exam format, scoring, and the most effective preparation methods."
+description: "Five concrete strategies for the SBF exam – with real facts about the exam format, scoring, and the most effective preparation methods to pass."
 date: 2026-04-29
 tags: ["Preparation"]
 readingTime: 7

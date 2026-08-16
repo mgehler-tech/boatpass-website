@@ -1,7 +1,7 @@
 ---
 title: "Magnetic Compass, Variation and Deviation Explained Simply"
 seoTitle: "Compass Variation & Deviation Explained"
-description: "Why doesn't a boat compass point exactly north? Variation and deviation explained clearly: causes, compass rose and deviation table for the SBF Coastal exam."
+description: "Why doesn't a boat compass point exactly north? Variation and deviation explained: causes, compass rose and deviation table for the SBF Coastal exam."
 date: 2026-07-04
 tags: ["Navigation"]
 readingTime: 8

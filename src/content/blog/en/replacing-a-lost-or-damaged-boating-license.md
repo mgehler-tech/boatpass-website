@@ -1,7 +1,7 @@
 ---
 title: "Lost or Damaged Boating License – How to Get a Replacement"
 seoTitle: "Lost Boating License? Get a Replacement"
-description: "Lost or damaged your Sportbootführerschein? Here's how to request a replacement (Ersatzausfertigung) from DMYV or DSV: documents, process, costs, and timing."
+description: "Lost or damaged your Sportbootführerschein? Here's how to request a replacement (Ersatzausfertigung) from DMYV or DSV: documents, process, and costs."
 date: 2026-08-13
 tags: ["Exam Knowledge"]
 readingTime: 9

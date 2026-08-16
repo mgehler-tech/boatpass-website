@@ -1,7 +1,7 @@
 ---
 title: "Boot startklar machen im Frühjahr – Checkliste zum Saisonstart"
 seoTitle: "Boot startklar machen: Frühjahrs-Checkliste"
-description: "Rumpf, Motor, Batterie und Sicherheitsausrüstung: die Checkliste für den Saisonstart, damit dein Boot nach der Winterpause sicher und zuverlässig wieder ins Wasser kommt."
+description: "Rumpf, Motor, Batterie und Sicherheitsausrüstung: die Checkliste für den Saisonstart, damit dein Boot nach der Winterpause sicher wieder ins Wasser kommt."
 date: 2026-08-07
 tags: ["Vorbereitung"]
 readingTime: 9

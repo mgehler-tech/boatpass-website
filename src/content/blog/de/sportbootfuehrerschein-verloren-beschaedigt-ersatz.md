@@ -1,7 +1,7 @@
 ---
 title: "Sportbootführerschein verloren oder beschädigt – so bekommst du Ersatz"
 seoTitle: "SBF verloren? So bekommst du Ersatz"
-description: "Sportbootführerschein verloren oder beschädigt? So beantragst du die Ersatzausfertigung bei DMYV oder DSV: Unterlagen, Ablauf, Kosten und Bearbeitungsdauer."
+description: "Sportbootführerschein verloren oder beschädigt? So beantragst du die Ersatzausfertigung bei DMYV oder DSV: Unterlagen, Ablauf, Kosten und Dauer."
 date: 2026-08-13
 tags: ["Prüfungswissen"]
 readingTime: 9
