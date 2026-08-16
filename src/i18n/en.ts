@@ -10,6 +10,7 @@ export const en: Translations = {
   },
   hero: {
     badge: 'Official ELWIS catalogue',
+    badgeStore: 'on Google Play',
     headline1: 'The fastest way',
     headline2: 'to get your',
     headlineAccent: 'Boating License.',
@@ -77,9 +78,12 @@ export const en: Translations = {
     ],
   },
   founder: {
+    eyebrow: 'Personally built',
     title: "Hi, I'm Marius.",
-    p1: 'I build BoatPass on my own, alongside my day job: product, design, catalogue maintenance and support. That means your message reaches me directly rather than a ticket system – and I usually reply within a few hours.',
-    p2: 'The questions are not my invention: they come 1:1 from the official catalogue published by the German Federal Ministry for Digital and Transport via ELWIS. If you spot a mistake in an explanation, write to me – I check every report myself and correct it in the next update.',
+    role: 'Founder & developer of BoatPass',
+    intro: 'I build BoatPass myself and bring the official ELWIS questions straight into the app. When you write to me, your message reaches me directly.',
+    chip1: 'Official questions',
+    chip2: 'Personal support',
     cta: 'Why I built BoatPass',
     imageAlt: 'Marius Gehler, developer of Boatpass, at the helm of a sailing boat',
   },

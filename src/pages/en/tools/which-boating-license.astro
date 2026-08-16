@@ -1,7 +1,22 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations } from '../../../i18n/index';
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+// Prices for the result upselling, pulled centrally from the pricing source so
+// they never drift from the pricing section. SBF Inland/Coastal share the
+// generic catalogue price (t.pricing.price).
+const t = useTranslations('en');
+const P = {
+  binnen: t.pricing.price,
+  see: t.pricing.price,
+  ubi: t.pricing.ubiPrice,
+  src: t.pricing.srcPrice,
+  lrc: t.pricing.lrcPrice,
+  bundle: t.pricing.bundlePrice,
+  bundleSave: t.pricing.bundleSave,
+};
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -273,9 +288,81 @@ const howToSchema = {
     a.res-card:hover {
       border-left-color:#1A1F36; box-shadow:0 8px 22px rgba(51,102,255,0.12); transform:translateY(-2px);
     }
+
+    /* Result price (upselling): right of the licence name. */
+    .res-price { text-align:right; }
+    .res-price-num {
+      font-size:20px; font-weight:900; color:#1A1F36; letter-spacing:-0.5px; line-height:1; white-space:nowrap;
+    }
+    .res-price-note { font-size:11px; font-weight:600; color:#9CA3AF; margin-top:4px; white-space:nowrap; }
+    .res-tag {
+      display:inline-block; font-size:12px; font-weight:700; color:#9CA3AF;
+      background:rgba(26,31,54,0.05); padding:5px 11px; border-radius:100px; white-space:nowrap;
+    }
+    .res-learn { display:inline-block; margin-top:12px; color:#3366FF; font-weight:800; font-size:14px; }
+
+    /* Bundle tip below the result cards. */
+    .res-bundle {
+      display:flex; align-items:flex-start; gap:10px; margin-top:14px;
+      background:rgba(51,102,255,0.06); border:1px solid rgba(51,102,255,0.16);
+      border-radius:14px; padding:14px 16px; font-size:14px; color:#1A1F36; line-height:1.55;
+    }
+    .res-bundle strong { font-weight:800; }
+    .res-bundle-icon { flex:0 0 auto; font-size:16px; line-height:1.4; }
+
+    /* ── Dark Mode ─────────────────────────────────────────────── */
+    .cfg-restart-btn { background: white; }
+    html.dark .cfg-restart-btn {
+      background: #181E2E !important;
+      color: #6B9CFF !important;
+      border-color: rgba(90,120,255,0.25) !important;
+    }
+    html.dark div[style*="background:#F0F4FA"] { background: #0F1117 !important; }
+    html.dark h1[style*="color:#1A1F36"],
+    html.dark h2[style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+    html.dark p[style*="color:#656B78"] { color: #94A3B8 !important; }
+    html.dark table[style*="background:white"] {
+      background: #181E2E !important;
+      border-color: rgba(90,120,255,0.14) !important;
+    }
+    html.dark th[style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+    html.dark td[style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+    html.dark div[style*="background:white"][style*="border-radius:16px"] {
+      background: #181E2E !important;
+      border-color: rgba(90,120,255,0.12) !important;
+    }
+    /* Broad catch for all inline-styled text on this page (incl. JS-generated result card) */
+    html.dark [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
+    html.dark [style*="color:#656B78"] { color: #94A3B8 !important; }
+    html.dark .cfg-opt-label { color: #E2E8F0 !important; }
+    html.dark .cfg-card {
+      background: #181E2E !important;
+      border-color: rgba(90, 120, 255, 0.14) !important;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.3) !important;
+    }
+    html.dark .cfg-question { color: #E2E8F0 !important; }
+    html.dark .cfg-opt {
+      background: #1E2540 !important;
+      border-color: rgba(90, 120, 255, 0.16) !important;
+    }
+    html.dark .cfg-opt:hover {
+      background: rgba(90, 120, 255, 0.10) !important;
+      border-color: rgba(90, 120, 255, 0.35) !important;
+    }
+    html.dark .res-card {
+      background: #1E2540 !important;
+      border-color: rgba(90, 120, 255, 0.16) !important;
+    }
+    html.dark .res-price-num { color:#E2E8F0 !important; }
+    html.dark .res-price-note { color:#94A3B8 !important; }
+    html.dark .res-tag { background:rgba(90,120,255,0.12); color:#94A3B8; }
+    html.dark .res-learn { color:#6B9CFF !important; }
+    html.dark .res-bundle {
+      background:rgba(90,120,255,0.10); border-color:rgba(90,120,255,0.22); color:#E2E8F0;
+    }
   </style>
 
-  <script is:inline define:vars={{ playStoreUrl }}>
+  <script is:inline define:vars={{ playStoreUrl, P }}>
     (function () {
       const STEPS = [
         { id: 'revier', q: 'Where do you want to sail?', options: [
@@ -304,13 +391,13 @@ const howToSchema = {
       ];
 
       const FS = {
-        binnen: { cat: 'Boating licence', name: 'SBF Inland', href: '/en/sbf-inland/', sub: 'Mandatory for motorboats over 15 hp on inland waters.' },
-        see: { cat: 'Boating licence', name: 'SBF Coastal', href: '/en/sbf-coastal/', sub: 'Mandatory for motorboats over 15 hp on the coast – with a navigation task.' },
+        binnen: { key: 'binnen', cat: 'Boating licence', name: 'SBF Inland', href: '/en/sbf-inland/', price: P.binnen, sub: 'Mandatory for motorboats over 15 hp on inland waters.' },
+        see: { key: 'see', cat: 'Boating licence', name: 'SBF Coastal', href: '/en/sbf-coastal/', price: P.see, sub: 'Mandatory for motorboats over 15 hp on the coast – with a navigation task.' },
       };
       const FUNK = {
-        ubi: { cat: 'Radio certificate', name: 'UBI', href: '/en/ubi/', sub: 'VHF voice radio certificate for inland shipping radio.' },
-        src: { cat: 'Radio certificate', name: 'SRC', href: '/en/src/', sub: 'VHF marine radio certificate with DSC for coastal areas.' },
-        lrc: { cat: 'Radio certificate', name: 'LRC', href: '/en/lrc/', sub: 'General operator certificate for worldwide marine radio.' },
+        ubi: { key: 'ubi', cat: 'Radio certificate', name: 'UBI', href: '/en/ubi/', price: P.ubi, sub: 'VHF voice radio certificate for inland shipping radio.' },
+        src: { key: 'src', cat: 'Radio certificate', name: 'SRC', href: '/en/src/', price: P.src, sub: 'VHF marine radio certificate with DSC for coastal areas.' },
+        lrc: { key: 'lrc', cat: 'Radio certificate', name: 'LRC', href: '/en/lrc/', price: P.lrc, sub: 'General operator certificate for worldwide marine radio.' },
       };
 
       const answers = {};
@@ -403,21 +490,47 @@ const howToSchema = {
         let html = '<div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Your recommendation</div>';
         html += '<div style="display:flex; flex-direction:column; gap:14px;">';
         recs.forEach(function (r) {
-          const tag = r.href && !r.info && !r.soon ? '<span style="margin-left:auto; color:#3366FF; font-weight:800; white-space:nowrap;">Learn more →</span>' : '';
+          // Right column: price (purchasable licence) or status tag (no purchase / soon).
+          let aside;
+          if (r.price) {
+            aside = '<div class="res-price"><div class="res-price-num">' + r.price + '</div>' +
+              '<div class="res-price-note">one-time in Boatpass</div></div>';
+          } else if (r.soon) {
+            aside = '<span class="res-tag">Coming to Boatpass</span>';
+          } else {
+            aside = '<span class="res-tag">No purchase needed</span>';
+          }
+          const learn = r.href && !r.info && !r.soon
+            ? '<span class="res-learn">Learn more →</span>' : '';
           const wrap = r.href ? 'a' : 'div';
           const hrefAttr = r.href ? ' href="' + r.href + '"' : '';
           html += '<' + wrap + hrefAttr + ' class="res-card">' +
-            '<div style="display:flex; align-items:center; gap:10px;">' +
-            '<div><div style="font-size:12px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:0.5px;">' + r.cat + '</div>' +
-            '<div style="font-size:20px; font-weight:900; color:#1A1F36; letter-spacing:-0.5px;">' + r.name + '</div></div>' + tag + '</div>' +
+            '<div style="display:flex; align-items:flex-start; gap:12px;">' +
+            '<div style="min-width:0;"><div style="font-size:12px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:0.5px;">' + r.cat + '</div>' +
+            '<div style="font-size:20px; font-weight:900; color:#1A1F36; letter-spacing:-0.5px;">' + r.name + '</div></div>' +
+            '<div style="margin-left:auto; flex:0 0 auto;">' + aside + '</div></div>' +
             '<div style="font-size:14px; color:#656B78; line-height:1.6; margin-top:8px;">' + r.sub + '</div>' +
+            learn +
             '</' + wrap + '>';
         });
         html += '</div>';
+
+        // Bundle upselling: if both SBF Inland and SBF Coastal are recommended,
+        // the SBF bundle is cheaper than buying both licences separately.
+        const hasBinnen = recs.some(function (r) { return r.key === 'binnen'; });
+        const hasSee = recs.some(function (r) { return r.key === 'see'; });
+        if (hasBinnen && hasSee) {
+          html += '<div class="res-bundle">' +
+            '<span class="res-bundle-icon" aria-hidden="true">💡</span>' +
+            '<span>Tip: get both together in the <strong>SBF bundle for ' + P.bundle + '</strong> – ' + P.bundleSave + ' vs. buying separately.</span>' +
+            '</div>';
+        }
+
         html += '<div style="margin-top:22px; display:flex; flex-wrap:wrap; gap:12px;">' +
           '<a href="' + playStoreUrl + '" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:15px; padding:14px 26px; border-radius:14px; text-decoration:none;">▶&nbsp;Start learning with Boatpass</a>' +
-          '<button type="button" id="cfg-restart" style="background:white; border:1.5px solid rgba(51,102,255,0.2); color:#3366FF; font-weight:700; font-size:15px; padding:14px 24px; border-radius:14px; cursor:pointer;">Start over</button>' +
+          '<button type="button" id="cfg-restart" class="cfg-restart-btn" style="border:1.5px solid rgba(51,102,255,0.2); color:#3366FF; font-weight:700; font-size:15px; padding:14px 24px; border-radius:14px; cursor:pointer;">Start over</button>' +
           '</div>';
+        html += '<p style="font-size:12.5px; color:#9CA3AF; line-height:1.6; margin-top:14px;">Prices are for full access to the respective Boatpass learning catalogue (one-time purchase, no subscription). Official exam and administrative fees are not included.</p>';
         elResult.innerHTML = html;
         elResult.style.display = 'block';
         document.getElementById('cfg-restart').addEventListener('click', function () {

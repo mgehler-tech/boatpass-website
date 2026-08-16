@@ -7,9 +7,13 @@ export const de = {
     getApp: 'App laden',
   },
   hero: {
-    // "Offizielle Lizenzen" war sachlich falsch: Boatpass vergibt keine
-    // Lizenzen, amtlich sind die Fragenkataloge.
+    // Fallback-Badge, falls keine Bewertung vorliegt. Im Normalfall zeigt der
+    // Badge die Play-Store-Bewertung (siehe badgeStore).
     badge: 'Amtlicher ELWIS-Katalog',
+    // Store-Zusatz hinter der Bewertungszahl im Hero-Badge. Eigene Zeichenkette,
+    // damit sie sich beim iOS-Launch leicht auf "bei Google Play & App Store"
+    // erweitern lässt.
+    badgeStore: 'bei Google Play',
     // Die H1 nennt den Hauptsuchbegriff und bleibt konstant. Vorher tauschte
     // ein Intervall alle 2,5 s das letzte Wort ("SBF Binnen." / "SBF See." …),
     // wodurch weder "Sportbootführerschein" darin vorkam noch die Überschrift
@@ -90,9 +94,12 @@ export const de = {
     ],
   },
   founder: {
+    eyebrow: 'Persönlich entwickelt',
     title: 'Hi, ich bin Marius.',
-    p1: 'Ich entwickle BoatPass allein, neben dem Beruf: Produkt, Design, Katalogpflege und Support. Deine Nachricht landet dadurch direkt bei mir und nicht in einem Ticket-System – meist antworte ich innerhalb weniger Stunden.',
-    p2: 'Die Fragen erfinde ich nicht: Sie stammen 1:1 aus dem amtlichen Katalog, den das Bundesministerium für Digitales und Verkehr über ELWIS veröffentlicht. Wenn dir in einer Erklärung ein Fehler auffällt, schreib mir – ich prüfe jede Meldung selbst und korrigiere sie im nächsten Update.',
+    role: 'Gründer & Entwickler von BoatPass',
+    intro: 'Ich entwickle BoatPass selbst und pflege die amtlichen ELWIS-Fragen direkt in die App ein. Wenn du mir schreibst, landet deine Nachricht direkt bei mir.',
+    chip1: 'Amtliche Fragen',
+    chip2: 'Persönlicher Support',
     cta: 'Warum ich BoatPass gebaut habe',
     imageAlt: 'Marius Gehler, Entwickler von Boatpass, am Ruder eines Segelboots',
   },
