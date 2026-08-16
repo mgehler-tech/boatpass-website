@@ -54,7 +54,17 @@ const aboutUrl = lang === 'de' ? '/ueber-uns/' : '/en/about/';
 </section>
 
 <style>
-  .founder-band { padding: 56px 0 60px; }
+  /* Vertikaler Rhythmus wie alle übrigen Startseiten-Abschnitte (py-14 md:py-20):
+     56px auf dem Handy, 80px ab dem md-Breakpoint. Vorher stand hier ein fester,
+     asymmetrischer Wert (56px oben / 60px unten), der auf keinem Breakpoint mitwuchs –
+     auf dem Desktop wirkte der Abschnitt dadurch zwischen den 80px-Nachbarn
+     (LearningSteps darüber, Reviews darunter) sichtbar gequetscht, und die 60px
+     lagen neben dem projektweiten 56/80-Raster. Jetzt symmetrisch und auf dem
+     8px-Raster. */
+  .founder-band { padding: 56px 0; }
+  @media (min-width: 768px) {
+    .founder-band { padding: 80px 0; }
+  }
 
   /* Eine ruhige Karte statt eines dichten Textblocks: rahmt die persönliche
      Vorstellung ein und hebt sie klar vom Abschnittsgrund ab. */
