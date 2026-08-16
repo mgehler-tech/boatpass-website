@@ -9,8 +9,6 @@ export const en: Translations = {
     getApp: 'Get App',
   },
   hero: {
-    badge: 'Official ELWIS catalogue',
-    badgeStore: 'on Google Play',
     headline1: 'The fastest way',
     headline2: 'to get your',
     headlineAccent: 'Boating License.',
@@ -78,7 +76,6 @@ export const en: Translations = {
     ],
   },
   founder: {
-    eyebrow: 'Personally built',
     title: "Hi, I'm Marius.",
     role: 'Founder & developer of BoatPass',
     intro: 'I build BoatPass myself and bring the official ELWIS questions straight into the app. When you write to me, your message reaches me directly.',
