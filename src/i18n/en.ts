@@ -76,7 +76,6 @@ export const en: Translations = {
     ],
   },
   founder: {
-    eyebrow: 'Personally built',
     title: "Hi, I'm Marius.",
     role: 'Founder & developer of BoatPass',
     intro: 'I build BoatPass myself and bring the official ELWIS questions straight into the app. When you write to me, your message reaches me directly.',

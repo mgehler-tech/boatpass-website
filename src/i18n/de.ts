@@ -87,7 +87,6 @@ export const de = {
     ],
   },
   founder: {
-    eyebrow: 'Persönlich entwickelt',
     title: 'Hi, ich bin Marius.',
     role: 'Gründer & Entwickler von BoatPass',
     intro: 'Ich entwickle BoatPass selbst und pflege die amtlichen ELWIS-Fragen direkt in die App ein. Wenn du mir schreibst, landet deine Nachricht direkt bei mir.',
