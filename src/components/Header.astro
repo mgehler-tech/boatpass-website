@@ -224,7 +224,7 @@ const promo = {
   </nav>
 
   <!-- Mobile Menu Panel -->
-  <div id="mobile-menu" class="mobile-menu-panel md:hidden" aria-hidden="true">
+  <div id="mobile-menu" class="mobile-menu-panel md:hidden" aria-hidden="true" inert>
     <nav aria-label={lang === 'de' ? 'Mobile Navigation' : 'Mobile navigation'} class="px-4 pt-3 pb-5 flex flex-col gap-0.5">
       <a href={`${getLocalizedPath(lang, '/')}#features`} class="mobile-nav-link">
         {lang === 'de' ? 'Features' : 'Features'}
@@ -326,6 +326,7 @@ const promo = {
     backdrop?.classList.add('open');
     btn?.setAttribute('aria-expanded', 'true');
     menu?.setAttribute('aria-hidden', 'false');
+    menu?.removeAttribute('inert');
     document.body.style.overflow = 'hidden';
     // Fokus auf erstes Element setzen
     requestAnimationFrame(() => getFocusable()[0]?.focus());
@@ -336,6 +337,7 @@ const promo = {
     backdrop?.classList.remove('open');
     btn?.setAttribute('aria-expanded', 'false');
     menu?.setAttribute('aria-hidden', 'true');
+    menu?.setAttribute('inert', '');
     document.body.style.overflow = '';
     // Fokus zurück auf Hamburger-Button
     btn?.focus();
