@@ -84,4 +84,29 @@ test.describe('License Finder full flow → Recommendation → Next step', () =>
     await recommendationLinks.first().click();
     await expect(page).toHaveURL(new RegExp(`${firstHref}$`));
   });
+
+  // Anyone boating both inland and coastal waters needs both licences, which
+  // is also the only path that surfaces the SBF-Bundle upsell — a distinct,
+  // revenue-relevant branch of the configurator that the single-licence
+  // flow above never exercises.
+  test('choosing both regions recommends both licences with the bundle upsell', async ({ page }) => {
+    await page.goto('/tools/welcher-bootsfuehrerschein/');
+
+    await page.locator('.cfg-opt', { hasText: 'Beides' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Verbrenner über 15 PS' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Nein' }).click();
+
+    const result = page.locator('#cfg-result');
+    await expect(result).toBeVisible();
+
+    const recommendationLinks = result.locator('a.res-card');
+    await expect(recommendationLinks).toHaveCount(2);
+    await expect(recommendationLinks.filter({ hasText: 'SBF Binnen' })).toHaveAttribute('href', '/sbf-binnen/');
+    await expect(recommendationLinks.filter({ hasText: 'SBF See' })).toHaveAttribute('href', '/sbf-see/');
+
+    await expect(result.locator('.res-bundle')).toBeVisible();
+
+    const playCta = result.locator('a[href*="play.google.com"]');
+    await expect(playCta).toHaveAttribute('href', PLAY_STORE_URL);
+  });
 });
