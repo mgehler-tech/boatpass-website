@@ -3,8 +3,9 @@ title: "Boating Without a License – The 15-HP Rule Explained"
 seoTitle: "Boating Without a License: 15-HP Rule"
 description: "In Germany you can operate many motorboats up to 15 HP without a license – with important exceptions. All the rules and when you need the SBF."
 date: 2026-05-04
+updated: 2026-08-17
 tags: ["License Comparison"]
-readingTime: 7
+readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "boot-fahren-ohne-fuehrerschein-15-ps"
@@ -17,6 +18,8 @@ faq:
     answer: "At the latest, once your engine exceeds 15 HP, once you go out on the sea or abroad – Mediterranean charter companies usually require the SBF See, often plus the SRC radio certificate – or in special navigation zones where a license is required regardless of horsepower."
   - question: "Do I need the SBF Inland or the SBF Coastal?"
     answer: "It depends on where you're boating: the SBF Inland covers rivers, canals and lakes inland, while the SBF Coastal covers coastal waters and the sea. Many people get both together, since the theory overlaps and the second exam ends up considerably cheaper."
+  - question: "Does the 15-HP rule also apply to electric motors?"
+    answer: "Not yet. Electric drives have had a lower threshold since 2023: a license becomes mandatory at a continuous output of just 7.5 kW (about 10 HP). A planned reform is meant to align this to a uniform 15 HP (11.03 kW) for all propulsion types, but no binding date for that change has been set yet."
 ---
 
 "Do I even need a boating license?" – that's the first question almost everyone asks. The good news: in Germany you can operate many motorboats without any license at all. The catch: there are exceptions, special rules, and limits that are reached faster than you'd think. Here's exactly what's allowed – and when you need the German Sportbootführerschein (SBF).
@@ -52,6 +55,12 @@ The 15-HP rule refers to **engine power**. Separate rules apply to sailboats dep
 
 Individual stretches have their own rules. A well-known example is the **Spree-Oder waterway in Berlin** between Kanzleramtssteg and Oberbaumbrücke: there, operating a recreational boat requires a license regardless of engine power. You'll find such local rules in the respective navigation regulations.
 
+### Electric Motors: Still a Separate Limit
+
+The 15-HP rule historically applies to combustion engines. **Electric drives** have had a lower threshold since 2023: a license is required once continuous output reaches **7.5 kW (about 10 HP)**, independent of the 15-HP rule for combustion engines. So an electric boat above 7.5 kW needs a license today even though a combustion-powered boat of comparable output would still be license-free.
+
+A planned reform is set to change this: under the new Sportschifffahrtsverordnung, a uniform 15-HP (11.03 kW) limit is meant to apply to all propulsion types, so more powerful electric boats would become license-free too. No binding date for this has been set yet – see our article on the [German boating license reform 2026](/en/blog/recreational-boating-license-reform-2026/) for the current status.
+
 ## The Charter Certificate: Exception for Rental Boats
 
 There's another way to operate a more powerful boat **without a Sportbootführerschein**: the **charter certificate** (Charterbescheinigung).
@@ -67,6 +76,7 @@ At the latest, there's no way around the SBF in these cases:
 - **Engine power over 15 HP** – on inland or coastal waters.
 - **Boating on the sea / abroad** – most charter companies in the Mediterranean (e.g. Croatia) require the **SBF See**, often plus the [SRC radio certificate](/en/src/).
 - **Larger sailboats** on certain inland waters – here the **SBF Binnen under sail** may be required.
+- **Electric drive over 7.5 kW** – the license requirement kicks in here below the 15-HP threshold that applies to combustion engines.
 - **Special navigation zones** where the license requirement applies regardless of horsepower.
 
 In practice, the 15-HP limit is reached faster than many expect: even an average motorboat or a slightly stronger inflatable with an outboard exceeds it.
@@ -82,4 +92,4 @@ Many people take both in combination, because the theory overlaps and the second
 
 ## Conclusion
 
-Up to 15 HP (11.03 kW) you can generally operate a boat in Germany without a license from age 16 – but Lake Constance, the Rhine and individual special zones have their own limits. As soon as you go for more power, the open sea, or a charter boat abroad, you need the [Sportbootführerschein](/en/sbf-inland/). Once you know the SBF is coming up, you can start for free in the Boatpass app with the official ELWIS question catalog and prepare specifically for the theory exam.
+Up to 15 HP (11.03 kW) you can generally operate a boat in Germany without a license from age 16 – but Lake Constance, the Rhine, individual special zones and electric drives over 7.5 kW all have their own, lower limits. As soon as you go for more power, the open sea, or a charter boat abroad, you need the [Sportbootführerschein](/en/sbf-inland/). If in doubt, check your engine's rated output and the rules for your specific waters before you head out. Once you know the SBF is coming up, you can start for free in the Boatpass app with the official ELWIS question catalog and prepare specifically for the theory exam.
