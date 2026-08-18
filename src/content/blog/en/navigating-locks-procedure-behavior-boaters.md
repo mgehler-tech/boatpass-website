@@ -17,6 +17,20 @@ faq:
     answer: "Commercial vessels generally have priority, regardless of the size of the boats involved. Recreational boats usually enter last and have to follow the instructions of the lock personnel, who coordinate the whole process."
   - question: "How does a self-service lock work?"
     answer: "At the waiting position, you register for locking through a push button or lever. A light signal shows when entry is cleared. Once all boats have moored inside, the skipper who entered first typically triggers the actual locking process using a lever inside the chamber. Once the water level has equalized, the gates open and you leave the chamber on the green signal."
+howTo:
+  name: "How to Navigate a Lock with a Recreational Boat"
+  description: "The full procedure for locking through, from approach to exit — reading the signals, mooring correctly, and behaving safely inside the chamber."
+  steps:
+    - name: "Read the signals and respect priority"
+      text: "Approach at reduced speed, wait on a red light, and generally give commercial vessels priority."
+    - name: "Prepare at the waiting position"
+      text: "Rig fenders on both sides, keep lines ready at bow and stern, and wait at marked waiting positions for a green light."
+    - name: "Enter the chamber and moor up"
+      text: "On green, steer at moderate speed to your assigned position, moor up, and stay aboard the boat."
+    - name: "Keep lines running freely"
+      text: "Never make a line fast around a bollard or ring; pay it out loosely by hand and switch off the engine."
+    - name: "Exit on green"
+      text: "Only release the lines once the water level has fully equalized and the exit signal is green, then start the engine and leave the chamber at moderate speed."
 ---
 
 You're approaching a lock, the gates are still closed, and a light signal is flashing in a color combination you can't immediately place. For many newcomers, the first lock passage with their own boat is one of the more unsettling moments on inland waterways. In reality, a lock transit follows a clear, consistent procedure every time. This article walks you through it step by step: how to read the signals, how to behave, and what matters inside the chamber.
