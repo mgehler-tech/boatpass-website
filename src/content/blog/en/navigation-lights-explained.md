@@ -3,8 +3,9 @@ title: "Navigation Lights Explained – Which Lights Does a Boat Show at Night?"
 seoTitle: "Navigation Lights Explained"
 description: "Masthead light, sidelights, sternlight: how do you tell at night what vessel is ahead? Navigation lights for the SBF made simple, with memory aids."
 date: 2026-05-26
+updated: 2026-08-18
 tags: ["Exam Knowledge"]
-readingTime: 8
+readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "lichterfuehrung-erklaert"
@@ -31,9 +32,11 @@ faq:
     answer: "Two red all-round lights, one above the other, indicate that a vessel is not under command, for example after an engine failure. The rhyme is a memory aid for this light combination."
   - question: "How can you tell at night if a boat is heading toward you or away?"
     answer: "If you see both sidelights, red and green, together with the masthead light, the boat is heading straight toward you. If you only see the white sternlight, it is heading away from you."
+  - question: "How far must a boat's lights be visible?"
+    answer: "On vessels under 12 m in length, the masthead light must be visible for at least 2 nautical miles, sidelights for at least 1 nautical mile, and the sternlight and any all-round light for at least 2 nautical miles (COLREG Rule 22)."
 ---
 
-At night or in poor visibility you can only recognize other vessels by their lights – and you have to read from the light configuration what kind of vessel it is, where it's heading, and whether it might be restricted in maneuvering. Navigation lights are a core topic of the [SBF See](/en/sbf-coastal/) theory. Here's the overview, including the famous memory rhymes.
+At night or in poor visibility you can only recognize other vessels by their lights – and you have to read from the light configuration what kind of vessel it is, where it's heading, and whether it might be restricted in maneuvering. Navigation lights are a core topic of the [SBF See](/en/sbf-coastal/) theory, and picture questions on this topic regularly trip up candidates in the exam. Here's the overview, including the famous memory rhymes.
 
 ## The Basic Lights and Their Arcs
 
@@ -80,14 +83,25 @@ The missing masthead light is the decisive feature: if at night you see sideligh
 Certain vessels carry additional **all-round lights** that tell you their status. The classic mnemonics help:
 
 - **Red over red – the captain is dead:** two red all-round lights, one above the other = **not under command** (e.g. engine failure).
-- **Red – white – red:** three all-round lights (red-white-red, vertical) = **[restricted in ability to maneuver](/en/blog/right-of-way-collision-rules/)** (e.g. towing, dredging).
+- **Red – white – red:** three all-round lights (red-white-red, vertical) = **[restricted in ability to maneuver](/en/blog/right-of-way-collision-rules/)** (e.g. towing, dredging). A towing convoy carries its own extra lights on the tug and, where relevant, on the tow – see [Towing Convoys and Special Vessels](/en/blog/towing-convoys-special-vessels-day-shapes/) for the details.
 - **Green over white – fishing at night:** a trawler at work.
 - **Red over white – fishing without trawl:** a fishing vessel not engaged in trawling (COLREG Rule 26c).
 - **White over red – pilot in sight:** a pilot vessel (COLREG Rule 29a).
 
 ### At Anchor
 
-A vessel at anchor shows a **white all-round light** (anchor light). Larger vessels (50 m and over) carry two – one forward, one aft, the forward one higher. So at night you recognize an anchored ship by a single white all-round light without running lights.
+A vessel at anchor under 50 m in length shows a single **white all-round light** (anchor light) wherever it can best be seen. Larger vessels (50 m and over) carry two – one forward, one aft, the forward one higher. So at night you recognize an anchored ship by a single white all-round light without running lights (COLREG Rule 30).
+
+## Visibility Range of the Lights
+
+Color and arc aren't the only things that matter – the **minimum visibility range** is exam material too (COLREG Rule 22). For recreational boats **under 12 m in length**:
+
+- **Masthead light:** at least 2 nautical miles
+- **Sidelights:** at least 1 nautical mile
+- **Sternlight:** at least 2 nautical miles
+- **White, red, green, or yellow all-round light:** at least 2 nautical miles
+
+From 12 m upward the requirements increase: the masthead light must then be visible for 3 or 5 nautical miles depending on vessel size, and sidelights for at least 2 nautical miles. For the SBF exam, the values for boats under 12 m are usually what you need, since most recreational boats fall into that category.
 
 ## How to Learn Navigation Lights
 
@@ -98,4 +112,6 @@ A vessel at anchor shows a **white all-round light** (anchor light). Larger vess
 
 ## Conclusion
 
-Navigation lights can be derived from a few building blocks: masthead light (225°, forward), sidelights (green/red, 112.5° each) and sternlight (135°, aft). The masthead light distinguishes motor from sail, and the rhymes ("red over red – the captain is dead") help with the special lights. With the typical exam images in the Boatpass app you can train recognizing light combinations specifically with the official ELWIS catalog.
+Navigation lights can be derived from a few building blocks: masthead light (225°, forward), sidelights (green/red, 112.5° each) and sternlight (135°, aft). The masthead light distinguishes motor from sail, the minimum visibility ranges are fixed exam material, and the rhymes ("red over red – the captain is dead") help with the special lights. Once these building blocks are second nature, you'll also recognize unfamiliar light combinations reliably in the exam.
+
+The Boatpass app gives you the typical exam images straight from the official ELWIS question catalog, lets you practice them in exam mode under realistic conditions, and shows you right away which light combinations still trip you up.
