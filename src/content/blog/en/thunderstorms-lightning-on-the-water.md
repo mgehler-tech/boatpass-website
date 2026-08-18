@@ -98,7 +98,7 @@ If lightning strikes near or directly on your boat, it can have consequences eve
 
 ## Thunderstorm Behavior and the SBF Exam
 
-Thunderstorms aren't a standalone exam topic with fixed memorization points the way the Beaufort scale or navigation lights are. But they fall under the broader area of **weather knowledge** and **good seamanship**, both of which play a role in the theory part of the SBF exam. If you can read weather signs like falling pressure or towering cloud formations, and you know how warning levels in marine weather reports work, you're well prepared both for the exam and for actual conditions on the water. You can practice the relevant weather questions from the [official ELWIS question catalog](/en/sbf-coastal-exam-questions/) in the Boatpass app.
+Thunderstorms aren't a standalone exam topic with fixed memorization points the way the Beaufort scale or navigation lights are. But they fall under the broader area of **weather knowledge** and **good seamanship**, both of which play a role in the theory part of the [SBF Coastal](/en/sbf-coastal/) exam. If you can read weather signs like falling pressure or towering cloud formations, and you know how warning levels in marine weather reports work, you're well prepared both for the exam and for actual conditions on the water. You can practice the relevant weather questions from the [official ELWIS question catalog](/en/sbf-coastal-exam-questions/) in the Boatpass app.
 
 ## Conclusion
 

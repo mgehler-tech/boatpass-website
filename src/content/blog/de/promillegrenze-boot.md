@@ -19,7 +19,7 @@ faq:
     answer: "Passagiere, die nicht das Boot führen, sind in der Regel an keine Promillegrenze gebunden. Wer aber später das Steuer übernehmen soll oder spontan die Schiffsführung übernimmt, wird rechtlich zum Schiffsführer und muss nüchtern bleiben."
 ---
 
-Viele Bootfahrer glauben, auf dem Wasser gelten dieselben Alkoholregeln wie im Auto – also ab 0,5 Promille droht ein Bußgeld, und darunter ist alles in Ordnung. Das ist ein gefährlicher Irrtum. Die Rechtslage für Schiffsführer auf deutschen Gewässern ist in einigen Punkten strenger, in anderen anders strukturiert als im Straßenverkehr. Wer seinen [Sportbootführerschein](https://boatpass.de/sbf-see/) hat und regelmäßig auf Flüssen, Seen oder der Küste unterwegs ist, sollte die Regeln genau kennen. Denn die Konsequenzen von Fehlverhalten reichen vom Bußgeld über strafrechtliche Folgen bis zum Entzug des Führerscheins.
+Viele Bootfahrer glauben, auf dem Wasser gelten dieselben Alkoholregeln wie im Auto – also ab 0,5 Promille droht ein Bußgeld, und darunter ist alles in Ordnung. Das ist ein gefährlicher Irrtum. Die Rechtslage für Schiffsführer auf deutschen Gewässern ist in einigen Punkten strenger, in anderen anders strukturiert als im Straßenverkehr. Wer seinen [Sportbootführerschein](/sbf-see/) hat und regelmäßig auf Flüssen, Seen oder der Küste unterwegs ist, sollte die Regeln genau kennen. Denn die Konsequenzen von Fehlverhalten reichen vom Bußgeld über strafrechtliche Folgen bis zum Entzug des Führerscheins.
 
 ## Warum die Auto-Regel nicht direkt gilt
 
@@ -89,7 +89,7 @@ Auch **Medikamente** können die Fahrtüchtigkeit mindern. Wer starke Schmerzmit
 
 ## In der SBF-Prüfung
 
-Das Thema Alkohol und Fahrtüchtigkeit taucht im ELWIS-Fragenkatalog für den [SBF Binnen](https://boatpass.de/sbf-binnen/) und den SBF See auf. Typische Prüfungsfragen drehen sich darum:
+Das Thema Alkohol und Fahrtüchtigkeit taucht im ELWIS-Fragenkatalog für den [SBF Binnen](/sbf-binnen/) und den [SBF See](/sbf-see/) auf. Typische Prüfungsfragen drehen sich darum:
 
 - Welche Pflichten hat der Schiffsführer hinsichtlich seiner eigenen Fahrtüchtigkeit?
 - Was hat ein Schiffsführer zu tun, wenn er merkt, dass er nicht mehr sicher fahren kann?
@@ -105,4 +105,4 @@ Die 0,5-Promille-Grenze aus dem Straßenverkehr gilt auf dem Boot nicht in derse
 
 Die einfachste und sicherste Regel bleibt: **Als Schiffsführer trinkst du keinen Alkohol.** Wer entspannen und trinken möchte, gibt das Steuer rechtzeitig an eine nüchterne Person ab.
 
-Wenn du dich auf die [SBF-Prüfung](https://boatpass.de/sbf-pruefung-ablauf/) vorbereitest, hilft dir die **Boatpass-App** mit allen Prüfungsfragen aus dem offiziellen ELWIS-Fragenkatalog – auch zu Schiffsführerpflichten, Fahrtüchtigkeit und Verhaltensregeln auf dem Wasser, im Prüfungsmodus trainierbar.
+Wenn du dich auf die [SBF-Prüfung](/sbf-pruefung-ablauf/) vorbereitest, hilft dir die **Boatpass-App** mit allen Prüfungsfragen aus dem offiziellen ELWIS-Fragenkatalog – auch zu Schiffsführerpflichten, Fahrtüchtigkeit und Verhaltensregeln auf dem Wasser, im Prüfungsmodus trainierbar.

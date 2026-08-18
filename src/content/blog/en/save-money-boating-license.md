@@ -117,7 +117,7 @@ That's less than half of what a complete course at a boating school costs.
 ### Practice lessons
 Too few practice lessons is false economy. Anyone who fails the practical exam pays the exam fee again (€57–75) plus additional practice lessons. One extra lesson beforehand is cheaper than a second attempt.
 
-### Navigation tools (for SBF Coastal)
+### Navigation tools (for [SBF Coastal](/en/sbf-coastal/))
 For the navigation task you need a course plotter and dividers. Cheap sets often perform poorly on the nautical chart. Invest in usable equipment – it only costs €10–20 and you'll need it in the exam too.
 
 ## Conclusion

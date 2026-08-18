@@ -117,7 +117,7 @@ Eine Rettungsweste ist kein Kaufen-und-Vergessen-Produkt. Wer sie braucht, brauc
 
 ## Rettungswesten in der SBF-Prüfung
 
-Sicherheitsausrüstung ist ausdrücklicher Bestandteil des ELWIS-Fragenkatalogs für den [SBF See](https://boatpass.de/sbf-see/) und den [SBF Binnen](https://boatpass.de/sbf-binnen/). Typische Prüfungsfragen drehen sich um:
+Sicherheitsausrüstung ist ausdrücklicher Bestandteil des ELWIS-Fragenkatalogs für den [SBF See](/sbf-see/) und den [SBF Binnen](/sbf-binnen/). Typische Prüfungsfragen drehen sich um:
 
 - Welche Auftriebsklasse ist für Fahrten auf See vorgeschrieben oder empfohlen?
 - Was unterscheidet eine Schwimmhilfe (50N) von einer Rettungsweste (150N)?
@@ -135,4 +135,4 @@ Die vier Klassen nach EN ISO 12402 – 50N, 100N, 150N und 275N – sind klar na
 
 Genauso wichtig wie die richtige Klasse: die Weste tragen – und bei aufblasbaren Modellen regelmäßig warten.
 
-Wenn du dich auf die [SBF-Prüfung](https://boatpass.de/sbf-pruefung-ablauf/) vorbereitest, hilft dir die **Boatpass-App** mit allen Fragen aus dem offiziellen ELWIS-Fragenkatalog – auch zu Sicherheitsausrüstung, Rettungsmitteln und Schiffsführerpflichten, im Prüfungsmodus trainierbar.
+Wenn du dich auf die [SBF-Prüfung](/sbf-pruefung-ablauf/) vorbereitest, hilft dir die **Boatpass-App** mit allen Fragen aus dem offiziellen ELWIS-Fragenkatalog – auch zu Sicherheitsausrüstung, Rettungsmitteln und Schiffsführerpflichten, im Prüfungsmodus trainierbar.

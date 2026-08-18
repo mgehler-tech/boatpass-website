@@ -82,7 +82,7 @@ By the way: for most mandatory maneuvers you get **two attempts** in the exam. E
 
 ## How to prepare
 
-You learn the MOB maneuver on the water – but the theory behind it (why the propeller has to be steered away, why against wind and current) is just as much part of the exam knowledge and shows up in the theory questions. For how the entire practical exam works, read our overview [SBF exam: how it works](/en/sbf-exam/). The knots you also need to master are covered in our article on the [most important knots](/en/blog/most-important-knots-sbf/).
+You learn the MOB maneuver on the water – but the theory behind it (why the propeller has to be steered away, why against wind and current) is just as much part of the exam knowledge and shows up in the theory questions. As a mandatory maneuver it's required for both the [SBF Inland](/en/sbf-inland/) and the [SBF Coastal](/en/sbf-coastal/). For how the entire practical exam works, read our overview [SBF exam: how it works](/en/sbf-exam/). The knots you also need to master are covered in our article on the [most important knots](/en/blog/most-important-knots-sbf/).
 
 ## Conclusion
 

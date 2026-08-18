@@ -73,8 +73,8 @@ Exactly [which documents are required](/en/blog/boating-license-requirements/) d
 
 ## Minimum Age
 
-- **SBF Binnen:** from age 16
-- **SBF See:** from age 16
+- **[SBF Binnen](/en/sbf-inland/):** from age 16
+- **[SBF See](/en/sbf-coastal/):** from age 16
 
 You can often take the exam shortly **before** reaching the minimum age – the license is then issued on your birthday.
 
