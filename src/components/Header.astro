@@ -272,15 +272,15 @@ const promo = {
         </button>
         <div id="mobile-acc-guides-body" class="mobile-accordion-body">
           <div class="mobile-subnav">
-            <a href={lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Kosten' : 'SBF Costs'}</a>
-            <a href={lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'} class="mobile-nav-sublink">{lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process'}</a>
-            <a href={lang === 'de' ? '/sbf-binnen-pruefungsfragen/' : '/en/sbf-inland-exam-questions/'} class="mobile-nav-sublink">{lang === 'de' ? 'Prüfungsfragen Binnen' : 'Inland Exam Questions'}</a>
-            <a href={lang === 'de' ? '/sbf-see-pruefungsfragen/' : '/en/sbf-coastal-exam-questions/'} class="mobile-nav-sublink">{lang === 'de' ? 'Prüfungsfragen See' : 'Coastal Exam Questions'}</a>
-            <a href={lang === 'de' ? '/sbf-app/' : '/en/sbf-app/'} class="mobile-nav-sublink">{lang === 'de' ? 'Alle Apps im Vergleich' : 'All Apps Compared'}</a>
-            <a href={lang === 'de' ? '/sbf-see-app/' : '/en/sbf-coastal-app/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF-See-Apps' : 'SBF See Apps'}</a>
-            <a href={lang === 'de' ? '/sbf-binnen-app/' : '/en/sbf-inland-app/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF-Binnen-Apps' : 'SBF Binnen Apps'}</a>
-            <a href={lang === 'de' ? '/funkschein-app/' : '/en/radio-certificate-app/'} class="mobile-nav-sublink">{lang === 'de' ? 'Funkschein-Apps' : 'Radio Certificate Apps'}</a>
-            <a href={lang === 'de' ? '/sbf-app-kostenlos/' : '/en/sbf-app-free/'} class="mobile-nav-sublink">{lang === 'de' ? 'Kostenlose Apps' : 'Free Apps'}</a>
+            {guidesGroups.map((group, i) => (
+              <>
+                {i > 0 && <div class="mobile-divider"></div>}
+                <div class="mobile-subnav-heading">{group.title}</div>
+                {group.items.map(item => (
+                  <a href={item.href} class="mobile-nav-sublink">{item.label}</a>
+                ))}
+              </>
+            ))}
           </div>
         </div>
       </div>
@@ -782,6 +782,18 @@ const promo = {
     margin-left: 4px;
   }
 
+  /* Gruppenüberschrift innerhalb eines Accordion-Blocks. Spiegelt die
+     .nav-mega-title des Desktop-Mega-Menüs: teilt lange Link-Listen (Ratgeber)
+     in scanbare Cluster, statt sie als flache Wand auszugeben. */
+  .mobile-subnav-heading {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #9CA3AF;
+    padding: 8px 12px 3px 32px;
+  }
+
   /* Divider */
   .mobile-divider {
     height: 1px;
@@ -899,6 +911,7 @@ const promo = {
     background: rgba(90, 120, 255, 0.10) !important;
     color: #E2E8F0 !important;
   }
+  html.dark .mobile-subnav-heading { color: #656B78 !important; }
   html.dark .mobile-divider { background: rgba(90, 120, 255, 0.10) !important; }
   html.dark .accordion-chevron { background: rgba(90, 120, 255, 0.14) !important; }
   html.dark .accordion-open .accordion-chevron { background: #3366FF !important; }
