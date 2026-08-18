@@ -31,7 +31,7 @@ faq:
     answer: "The overtaking vessel must always give way, regardless of whether it's a power or sailing vessel. You count as overtaking if you approach another vessel from a direction more than 22.5 degrees abaft her beam."
 ---
 
-"Who has right of way here?" – on the water that question is misleading. Unlike road traffic, boats have **no right of way**. There are only give-way rules: one vessel must give way, the other holds her course. This article explains the key collision-avoidance rules (COLREG / KVR) – a central topic in every [SBF exam](/en/sbf-exam/).
+"Who has right of way here?" – on the water that question is misleading. Unlike road traffic, boats have **no right of way**. There are only give-way rules: one vessel must give way, the other holds her course. This article explains the key collision-avoidance rules (COLREG / KVR) – a central topic in every [SBF exam](/en/sbf-exam/), whether [SBF Inland](/en/sbf-inland/) or [SBF Coastal](/en/sbf-coastal/).
 
 ## Right of Way? There Is None.
 

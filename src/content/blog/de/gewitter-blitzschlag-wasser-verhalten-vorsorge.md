@@ -98,7 +98,7 @@ Schlägt ein Blitz in der Nähe oder direkt in dein Boot ein, kann das auch dann
 
 ## Gewitterverhalten und die SBF-Prüfung
 
-Gewitter sind kein eigenständiges Prüfungsthema mit festen Merksätzen, wie es etwa die Beaufort-Skala oder die Lichterführung sind. Sie gehören aber zum größeren Themenfeld der **Wetterkunde** und der **guten Seemannschaft**, die im theoretischen Teil der SBF-Prüfung eine Rolle spielen. Wer Wetterzeichen wie fallenden Luftdruck oder aufziehende Wolkentürme deuten kann und weiß, wie Warnstufen im Seewetterbericht funktionieren, ist für die Prüfung wie für die Praxis gleichermaßen gut vorbereitet. Die entsprechenden Wetterkunde-Fragen aus dem [ELWIS-Fragenkatalog](/sbf-see-pruefungsfragen/) kannst du in der Boatpass-App gezielt üben.
+Gewitter sind kein eigenständiges Prüfungsthema mit festen Merksätzen, wie es etwa die Beaufort-Skala oder die Lichterführung sind. Sie gehören aber zum größeren Themenfeld der **Wetterkunde** und der **guten Seemannschaft**, die im theoretischen Teil der Prüfung zum [SBF See](/sbf-see/) eine Rolle spielen. Wer Wetterzeichen wie fallenden Luftdruck oder aufziehende Wolkentürme deuten kann und weiß, wie Warnstufen im Seewetterbericht funktionieren, ist für die Prüfung wie für die Praxis gleichermaßen gut vorbereitet. Die entsprechenden Wetterkunde-Fragen aus dem [ELWIS-Fragenkatalog](/sbf-see-pruefungsfragen/) kannst du in der Boatpass-App gezielt üben.
 
 ## Fazit
 

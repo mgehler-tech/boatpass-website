@@ -97,8 +97,8 @@ The exam is administered by the **examination boards of the DMYV and DSV** – n
 
 | Exam | Fee |
 |---|---|
-| SBF Inland (theory + practice) | approx. €131 |
-| SBF Coastal (theory + practice) | approx. €148 |
+| [SBF Inland](/en/sbf-inland/) (theory + practice) | approx. €131 |
+| [SBF Coastal](/en/sbf-coastal/) (theory + practice) | approx. €148 |
 | Combined Inland + Coastal | approx. €179 |
 | Theory retake | approx. €37–49 |
 | Practice retake | approx. €57–75 |
