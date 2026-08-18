@@ -17,6 +17,20 @@ faq:
     answer: "Die Berufsschifffahrt hat grundsätzlich Vorrang, unabhängig von der Größe der beteiligten Fahrzeuge. Sportboote fahren in der Regel als Letzte ein und müssen sich den Anweisungen des Schleusenpersonals unterordnen, das den Ablauf koordiniert."
   - question: "Wie funktioniert eine Selbstbedienungsschleuse?"
     answer: "An der Warteposition meldest du dich über einen Taster oder Hebel zur Schleusung an. Ein Lichtsignal zeigt an, wann die Einfahrt freigegeben ist. Nachdem alle Boote festgemacht haben, löst der zuerst eingefahrene Bootsführer über einen Hebel in der Kammer den eigentlichen Schleusungsvorgang aus. Nach dem Wasserstandsausgleich öffnen sich die Tore und du verlässt die Kammer bei grünem Signal."
+howTo:
+  name: "So durchfährst du eine Schleuse mit dem Sportboot"
+  description: "Der Ablauf einer Schleusenfahrt von der Anfahrt bis zur Ausfahrt – Signale lesen, richtig festmachen und sicher verhalten in der Kammer."
+  steps:
+    - name: "Signale lesen und Vorrang beachten"
+      text: "Nähere dich mit reduzierter Geschwindigkeit, warte bei rotem Licht und lasse der Berufsschifffahrt grundsätzlich den Vorrang."
+    - name: "An der Wartestelle vorbereiten"
+      text: "Bringe Fender an beiden Seiten aus, lege Leinen an Bug und Heck griffbereit und warte an markierten Wartestellen auf grünes Licht."
+    - name: "In die Kammer einfahren und festmachen"
+      text: "Fahre bei Grün mit moderater Fahrt zur zugewiesenen Position, mache fest und verlasse das Boot nicht."
+    - name: "Leinen locker nachführen"
+      text: "Belege die Leine niemals fest an Pollern oder Ringen, sondern führe sie locker per Hand nach und stelle den Motor ab."
+    - name: "Bei Grün ausfahren"
+      text: "Löse die Leinen erst nach vollständigem Wasserstandsausgleich und grünem Ausfahrtssignal, starte den Motor und verlasse die Kammer mit mäßiger Fahrt."
 ---
 
 Vor dir liegt eine Schleuse, die Tore sind noch geschlossen, ein Lichtsignal blinkt in einer Farbkombination, die du nicht sofort einordnen kannst. Für viele Neulinge ist die erste Schleusenfahrt mit dem eigenen Boot eine der größten Unsicherheiten auf Binnengewässern. Dabei folgt eine Schleusung einem klaren, immer gleichen Ablauf. Dieser Artikel erklärt Schritt für Schritt, wie du dich richtig verhältst, wie du die Signale liest und worauf es in der Kammer ankommt.
