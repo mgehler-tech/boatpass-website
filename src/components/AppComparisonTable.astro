@@ -59,19 +59,19 @@ function platformLabel(app: LearningApp): string {
             {app.isOwn && (
               <span style="display:inline-block; margin-left:6px; font-size:11px; font-weight:700; color:#3366FF; background:rgba(51,102,255,0.08); border-radius:100px; padding:2px 8px; white-space:nowrap;">{t.ownHint}</span>
             )}
-            <div style="font-size:12px; font-weight:500; color:#9CA3AF; margin-top:3px;">{app.vendor}</div>
+            <div style="font-size:12px; font-weight:500; color:#656B78; margin-top:3px;">{app.vendor}</div>
           </th>
           <td style="padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; color:#4B5563;">
             {app.rating
-              ? <span>{formatRating(app.rating).replace('.', lang === 'de' ? ',' : '.')} ★<br /><span style="font-size:12px; color:#9CA3AF;">{app.ratingCount?.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} {t.reviews}</span></span>
-              : <span style="color:#9CA3AF;">{t.unknown}</span>}
-            {app.downloads && <div style="font-size:12px; color:#9CA3AF; margin-top:4px;">{app.downloads}</div>}
+              ? <span>{formatRating(app.rating).replace('.', lang === 'de' ? ',' : '.')} ★<br /><span style="font-size:12px; color:#656B78;">{app.ratingCount?.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} {t.reviews}</span></span>
+              : <span style="color:#656B78;">{t.unknown}</span>}
+            {app.downloads && <div style="font-size:12px; color:#656B78; margin-top:4px;">{app.downloads}</div>}
           </td>
           <td style="padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; color:#4B5563;">{app.price[lang]}</td>
           <td style="padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; color:#4B5563;">
             {app.licenses.map(l => LICENSE_LABELS[l][lang]).join(', ')}
             {!app.singleApp && (
-              <div style="font-size:12px; color:#9CA3AF; margin-top:4px;">
+              <div style="font-size:12px; color:#656B78; margin-top:4px;">
                 {lang === 'de' ? 'je Schein eine eigene App' : 'a separate app per licence'}
               </div>
             )}
@@ -135,7 +135,7 @@ function platformLabel(app: LearningApp): string {
   ))}
 </div>
 
-<p style="font-size:13px; color:#9CA3AF; line-height:1.6; margin-top:12px;">{t.asOf}</p>
+<p style="font-size:13px; color:#656B78; line-height:1.6; margin-top:12px;">{t.asOf}</p>
 
 <style>
   /* Karten-Ansicht standardmäßig aus; ab 760px zeigt die Tabelle, darunter
@@ -186,7 +186,7 @@ function platformLabel(app: LearningApp): string {
   .cmp-card-vendor {
     font-size: 12px;
     font-weight: 500;
-    color: #9CA3AF;
+    color:#656B78;
     margin-top: 4px;
   }
   .cmp-card-rows {
@@ -219,8 +219,8 @@ function platformLabel(app: LearningApp): string {
     color: #4B5563;
     line-height: 1.5;
   }
-  .cmp-card-sub { font-size: 12px; color: #9CA3AF; }
-  .cmp-card-muted { color: #9CA3AF; }
+  .cmp-card-sub { font-size: 12px; color:#656B78; }
+  .cmp-card-muted { color:#656B78; }
 
   html.dark .cmp-card {
     background: #181E2E !important;

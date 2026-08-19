@@ -170,7 +170,7 @@ const howToSchema = {
           </tbody>
         </table>
       </div>
-      <p style="font-size:13px; color:#9CA3AF; line-height:1.6; margin-top:12px;">
+      <p style="font-size:13px; color:#656B78; line-height:1.6; margin-top:12px;">
         * Die Führerscheinpflicht greift in Deutschland ab mehr als 15 PS (11,03 kW) – bei Elektroantrieben bereits ab 7,5 kW (rund 10 PS). Eine Reform soll diese Grenze technologieneutral auf 11,03 kW vereinheitlichen, ist aber noch nicht in Kraft getreten. Auf einzelnen Revieren (Rhein, Bodensee) gelten abweichende Regeln.
       </p>
     </section>
@@ -256,7 +256,7 @@ const howToSchema = {
     .cfg-opt:active { transform:translateY(0) scale(0.995); }
     .cfg-opt-text { min-width:0; display:flex; flex-direction:column; }
     .cfg-opt-label { font-weight:700; color:#1A1F36; font-size:16.5px; line-height:1.3; }
-    .cfg-opt-sub { font-size:13.5px; color:#9CA3AF; margin-top:3px; line-height:1.4; }
+    .cfg-opt-sub { font-size:13.5px; color:#656B78; margin-top:3px; line-height:1.4; }
     .cfg-opt-arrow {
       margin-left:auto; flex:0 0 auto; display:inline-flex; align-items:center;
       justify-content:center; width:34px; height:34px; border-radius:50%;
@@ -273,7 +273,7 @@ const howToSchema = {
     .cfg-back { margin-top:22px; display:none; }
     .cfg-back-btn {
       display:inline-flex; align-items:center; gap:7px; background:none; border:none;
-      color:#9CA3AF; font-size:14px; font-weight:600; cursor:pointer; padding:6px 2px;
+      color:#656B78; font-size:14px; font-weight:600; cursor:pointer; padding:6px 2px;
       transition:color .15s ease;
     }
     .cfg-back-btn:hover { color:#3366FF; }
@@ -294,9 +294,9 @@ const howToSchema = {
     .res-price-num {
       font-size:20px; font-weight:900; color:#1A1F36; letter-spacing:-0.5px; line-height:1; white-space:nowrap;
     }
-    .res-price-note { font-size:11px; font-weight:600; color:#9CA3AF; margin-top:4px; white-space:nowrap; }
+    .res-price-note { font-size:11px; font-weight:600; color:#656B78; margin-top:4px; white-space:nowrap; }
     .res-tag {
-      display:inline-block; font-size:12px; font-weight:700; color:#9CA3AF;
+      display:inline-block; font-size:12px; font-weight:700; color:#656B78;
       background:rgba(26,31,54,0.05); padding:5px 11px; border-radius:100px; white-space:nowrap;
     }
     .res-learn { display:inline-block; margin-top:12px; color:#3366FF; font-weight:800; font-size:14px; }
@@ -507,7 +507,7 @@ const howToSchema = {
           const hrefAttr = r.href ? ' href="' + r.href + '"' : '';
           html += '<' + wrap + hrefAttr + ' class="res-card">' +
             '<div style="display:flex; align-items:flex-start; gap:12px;">' +
-            '<div style="min-width:0;"><div style="font-size:12px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:0.5px;">' + r.cat + '</div>' +
+            '<div style="min-width:0;"><div style="font-size:12px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:0.5px;">' + r.cat + '</div>' +
             '<div style="font-size:20px; font-weight:900; color:#1A1F36; letter-spacing:-0.5px;">' + r.name + '</div></div>' +
             '<div style="margin-left:auto; flex:0 0 auto;">' + aside + '</div></div>' +
             '<div style="font-size:14px; color:#656B78; line-height:1.6; margin-top:8px;">' + r.sub + '</div>' +
@@ -531,7 +531,7 @@ const howToSchema = {
           '<a href="' + playStoreUrl + '" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:15px; padding:14px 26px; border-radius:14px; text-decoration:none;">▶&nbsp;Jetzt mit Boatpass lernen</a>' +
           '<button type="button" id="cfg-restart" class="cfg-restart-btn" style="border:1.5px solid rgba(51,102,255,0.2); color:#3366FF; font-weight:700; font-size:15px; padding:14px 24px; border-radius:14px; cursor:pointer;">Nochmal starten</button>' +
           '</div>';
-        html += '<p style="font-size:12.5px; color:#9CA3AF; line-height:1.6; margin-top:14px;">Preise gelten für den Vollzugang im jeweiligen Boatpass-Lernkatalog (Einmalkauf, kein Abo). Amtliche Prüfungs- und Verwaltungsgebühren sind nicht enthalten.</p>';
+        html += '<p style="font-size:12.5px; color:#656B78; line-height:1.6; margin-top:14px;">Preise gelten für den Vollzugang im jeweiligen Boatpass-Lernkatalog (Einmalkauf, kein Abo). Amtliche Prüfungs- und Verwaltungsgebühren sind nicht enthalten.</p>';
         elResult.innerHTML = html;
         elResult.style.display = 'block';
         document.getElementById('cfg-restart').addEventListener('click', function () {

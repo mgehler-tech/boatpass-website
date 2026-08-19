@@ -250,8 +250,7 @@ html.dark [style*="color:#4B5563"] { color: #94A3B8 !important; }
 html.dark [style*="color: #4B5563"] { color: #94A3B8 !important; }
 html.dark [style*="color:#656B78"] { color: #94A3B8 !important; }
 html.dark [style*="color: #656B78"] { color: #94A3B8 !important; }
-html.dark [style*="color:#9097A6"],
-html.dark [style*="color:#9CA3AF"] { color: #656B78 !important; }
+html.dark [style*="color:#9097A6"] { color: #656B78 !important; }
 html.dark [style*="border-color:rgba(51,102,255"],
 html.dark [style*="border-color: rgba(51,102,255"] {
   border-color: rgba(90, 120, 255, 0.18) !important;

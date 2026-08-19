@@ -178,13 +178,13 @@ const breadcrumbSchema = {
           <span style="font-size:14px; font-weight:600; color:#1A1F36;">{author}</span>
         </a>
         <span style="width:3px; height:3px; border-radius:50%; background:#D1D5DB;"></span>
-        <span style="font-size:14px; color:#9CA3AF;">{formattedDate}</span>
+        <span style="font-size:14px; color:#656B78;">{formattedDate}</span>
         <span style="width:3px; height:3px; border-radius:50%; background:#D1D5DB;"></span>
-        <span style="font-size:14px; color:#9CA3AF;">{readingTime} {lang === 'de' ? 'Min. Lesezeit' : 'min read'}</span>
+        <span style="font-size:14px; color:#656B78;">{readingTime} {lang === 'de' ? 'Min. Lesezeit' : 'min read'}</span>
         {formattedUpdated && (
           <>
             <span style="width:3px; height:3px; border-radius:50%; background:#D1D5DB;"></span>
-            <span style="font-size:14px; color:#9CA3AF;">{lang === 'de' ? `Aktualisiert: ${formattedUpdated}` : `Updated: ${formattedUpdated}`}</span>
+            <span style="font-size:14px; color:#656B78;">{lang === 'de' ? `Aktualisiert: ${formattedUpdated}` : `Updated: ${formattedUpdated}`}</span>
           </>
         )}
       </div>
@@ -211,7 +211,7 @@ const breadcrumbSchema = {
           {relatedPosts.map(r => (
             <a href={r.href} style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 20px; background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; text-decoration:none;">
               <span style="font-size:16px; font-weight:700; color:#1A1F36; line-height:1.35;">{r.title}</span>
-              <span style="font-size:13px; color:#9CA3AF; white-space:nowrap; flex-shrink:0;">{r.readingTime} {lang === 'de' ? 'Min.' : 'min'} →</span>
+              <span style="font-size:13px; color:#656B78; white-space:nowrap; flex-shrink:0;">{r.readingTime} {lang === 'de' ? 'Min.' : 'min'} →</span>
             </a>
           ))}
         </div>
@@ -224,7 +224,7 @@ const breadcrumbSchema = {
       <div>
         <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">{lang === 'de' ? 'Über den Autor' : 'About the author'}</div>
         <a href={lang === 'de' ? '/ueber-uns/' : '/en/about/'} rel="author" style="font-size:17px; font-weight:800; color:#1A1F36; text-decoration:none;">{author}</a>
-        <div style="font-size:14px; font-weight:600; color:#9CA3AF; margin-bottom:8px;">{authorRole}</div>
+        <div style="font-size:14px; font-weight:600; color:#656B78; margin-bottom:8px;">{authorRole}</div>
         <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">{authorBio}</p>
       </div>
     </div>
