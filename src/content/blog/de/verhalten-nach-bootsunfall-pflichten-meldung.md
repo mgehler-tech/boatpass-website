@@ -17,6 +17,22 @@ faq:
     answer: "Sinnvoll sind Fotos von Schäden und der Unfallstelle, die Position per GPS, Kontaktdaten aller Beteiligten und möglicher Zeugen sowie ein zeitnaher Eintrag im Bordbuch mit Datum, Uhrzeit, Wetter und Hergang. Je genauer die Dokumentation, desto einfacher die spätere Klärung mit Versicherung oder Behörden."
   - question: "Wie schnell muss ich meiner Bootsversicherung einen Unfall melden?"
     answer: "Nach Paragraf 30 Versicherungsvertragsgesetz (VVG) muss der Versicherungsfall der Versicherung unverzüglich angezeigt werden, das heißt ohne schuldhaftes Zögern. Warte damit nicht bis zur Rückkehr in den Heimathafen, sondern melde den Unfall so bald wie möglich, auch formlos per Telefon oder E-Mail vorab."
+howTo:
+  name: "Richtig verhalten nach einem Bootsunfall"
+  description: "Die richtige Reihenfolge nach einem Unfall auf dem Wasser: von der ersten Hilfeleistung bis zur Meldung an die Versicherung."
+  steps:
+    - name: "Anhalten und Hilfe leisten"
+      text: "Boot stoppen, Personen- und Sachschäden feststellen und bei Verletzten Erste Hilfe leisten – die Sicherheit aller Beteiligten hat immer Vorrang."
+    - name: "Identität und Kontaktdaten austauschen"
+      text: "Name, Adresse, amtliches Kennzeichen und Bootsversicherung der Beteiligten austauschen sowie mögliche Zeugen notieren, wie es die Feststellungspflicht vorschreibt."
+    - name: "Bei Bedarf die Wasserschutzpolizei informieren"
+      text: "Bei Verletzten, erheblichem Sachschaden, Umweltgefährdung oder strittiger Schuldfrage die Wasserschutzpolizei verständigen, notfalls über Notruf 110."
+    - name: "Beweise sichern"
+      text: "Fotos von Schäden und Unfallstelle machen, GPS-Position und Kontaktdaten aller Beteiligten notieren und einen zeitnahen Bordbuch-Eintrag mit Hergang, Wetter und Uhrzeit anlegen."
+    - name: "Boot auf Seetüchtigkeit prüfen"
+      text: "Vor der Weiterfahrt Rumpf, Ruder und Antrieb kontrollieren und im Zweifel Hilfe anfordern statt mit einem beschädigten Boot ein zusätzliches Risiko einzugehen."
+    - name: "Versicherung unverzüglich informieren"
+      text: "Den Unfall der eigenen Bootsversicherung ohne schuldhaftes Zögern melden, notfalls zunächst formlos per Telefon oder E-Mail."
 ---
 
 Ein Zusammenstoß mit einem anderen Boot, eine Grundberührung oder ein Sturz an Bord: Bootsunfälle passieren selten dramatisch, aber sie passieren. Wer in dem Moment weiß, was zu tun ist, statt es erst hinterher herauszufinden, schützt sich selbst, andere Beteiligte und im Zweifel auch seinen Versicherungsschutz. Dieser Artikel erklärt, welche Pflichten nach einem Unfall auf dem Wasser gelten, wann und wie du ihn melden musst und worauf es bei der Beweissicherung ankommt.
