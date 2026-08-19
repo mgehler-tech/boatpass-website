@@ -42,12 +42,12 @@ export interface Review {
 }
 
 /** Stand der Erhebung aus der Play Console. */
-export const REVIEWS_AS_OF = '2026-08-15';
+export const REVIEWS_AS_OF = '2026-08-18';
 
 /**
- * Auswahl für die Startseite. Bewusst vier Stimmen, die jeweils etwas
+ * Auswahl für die Startseite. Bewusst mehrere Stimmen, die jeweils etwas
  * anderes belegen: bestandene Prüfung, Qualität der Erklärungen, Lernalltag,
- * Preis und Zweisprachigkeit.
+ * Preis und Zweisprachigkeit, Merkhilfen und Abgrenzung zur Konkurrenz.
  */
 export const REVIEWS_DE: Review[] = [
   {
@@ -80,6 +80,22 @@ export const REVIEWS_DE: Review[] = [
     name: 'Kristina G.',
     initials: 'KG',
     date: '2026-08-02',
+    stars: 5,
+  },
+  {
+    text: 'Geile App hab meine SBF See nun endlich ! Hat Spaß gemacht zu lernen damit',
+    name: 'Sofie R.',
+    initials: 'SR',
+    date: '2026-08-02',
+    stars: 5,
+    passed: 'SBF See bestanden',
+  },
+  {
+    text: 'Sehr übersichtliche App zur Vorbereitung auf die SBF-Theorie, vor allem die Merkhilfen und kurzen Erklärungen beim Fragenkatalog sind sehr hilfreich und heben die App deutlich von der Konkurrenz ab! Bei mir funktioniert auch der Dark-Mode einwandfrei. Würde mich freuen, wenn es bald auch noch eine SKS-Version gäbe!',
+    excerpt: 'Sehr übersichtliche App zur Vorbereitung auf die SBF-Theorie, vor allem die Merkhilfen und kurzen Erklärungen beim Fragenkatalog sind sehr hilfreich und heben die App deutlich von der Konkurrenz ab!',
+    name: 'Fe L.',
+    initials: 'FL',
+    date: '2026-08-18',
     stars: 5,
   },
 ];
