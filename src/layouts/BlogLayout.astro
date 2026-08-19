@@ -203,6 +203,23 @@ const breadcrumbSchema = {
 
     <BlogInlineCta lang={lang} />
 
+    <!-- FAQ: macht die im Frontmatter hinterlegten Fragen/Antworten sichtbar,
+         statt sie nur unsichtbar im FAQPage-Schema zu verstecken (Rich-Results-
+         Konformität + zitierfähiger Direktantwort-Block für KI-Crawler). -->
+    {faqEntries.length > 0 && (
+      <section style="margin-top:48px;">
+        <h2 class="content-section-title" style="margin-bottom:20px;">{lang === 'de' ? 'Häufige Fragen' : 'Frequently asked questions'}</h2>
+        <div style="display:flex; flex-direction:column; gap:14px;">
+          {faqEntries.map(f => (
+            <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
+              <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.question}</h3>
+              <p style="font-size:15px; color:#656B78; line-height:1.7; margin:0;">{f.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
+
     <!-- Verwandte Artikel: cross-linking zwischen Blogposts -->
     {relatedPosts.length > 0 && (
       <section style="margin-top:48px;">
