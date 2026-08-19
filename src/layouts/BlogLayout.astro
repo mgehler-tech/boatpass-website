@@ -59,9 +59,14 @@ const authorKnowsAbout = lang === 'de'
   ? ['Sportbootführerschein', 'SBF Binnen', 'SBF See', 'Android-Entwicklung', 'ELWIS-Fragenkatalog']
   : ['Sportbootführerschein', 'SBF Binnen', 'SBF See', 'Android development', 'ELWIS question catalog'];
 
+// BlogPosting statt des generischen Article: präziserer Untertyp für Blog-Inhalte
+// (Google dokumentiert BlogPosting explizit für Blogartikel), behält aber die volle
+// Article-Rich-Result-Eignung. timeRequired/articleSection/keywords sind von Google
+// empfohlene Felder – wir speisen sie aus vorhandenem Frontmatter (readingTime, tags),
+// ohne neue Inhalte zu erfinden.
 const articleSchema = {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "headline": title,
   "description": description,
   // Google empfiehlt `image` für Article-Rich-Results. Wir nutzen die ohnehin
@@ -101,6 +106,10 @@ const articleSchema = {
     "@id": Astro.url.href,
   },
   "inLanguage": lang === 'de' ? 'de-DE' : 'en-US',
+  // Lesezeit als ISO-8601-Dauer (readingTime ist im Frontmatter Pflichtfeld).
+  "timeRequired": `PT${readingTime}M`,
+  // Thematische Einordnung aus den Artikel-Tags (nur wenn vorhanden).
+  ...(tags.length > 0 ? { "articleSection": tags[0], "keywords": tags.join(', ') } : {}),
 };
 
 // FAQPage-Schema: nur wenn der Artikel FAQ-Paare im Frontmatter hinterlegt hat.
