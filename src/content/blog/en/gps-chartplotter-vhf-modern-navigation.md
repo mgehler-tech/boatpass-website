@@ -1,7 +1,7 @@
 ---
 title: "GPS, Chartplotters, and VHF Radio: Understanding Modern Onboard Navigation"
 seoTitle: "GPS, Chartplotters & VHF on Board"
-description: "GPS, chartplotter, AIS, and VHF radio: how modern onboard electronics work – and why the SBF exam still relies on the paper chart."
+description: "GPS, chartplotter, AIS, and VHF radio: how modern onboard electronics work – and why the SBF exam still relies on the paper chart and dividers."
 date: 2026-07-19
 tags: ["Navigation"]
 readingTime: 9

@@ -1,7 +1,7 @@
 ---
 title: "Seezeichen & Lateralsystem erklärt – Tonnen, Kardinalzeichen & Co."
 seoTitle: "Seezeichen & Lateralsystem erklärt"
-description: "Rote und grüne Tonnen, Kardinalzeichen, Kennungen: Das Seezeichen-System für den SBF See erklärt – Lateral-, Kardinal- und Sonderzeichen."
+description: "Rote und grüne Tonnen, Kardinalzeichen, Kennungen: Das Seezeichen-System für den SBF See erklärt – Lateral-, Kardinal- und Sonderzeichen verständlich."
 date: 2026-05-31
 tags: ["Prüfungswissen"]
 readingTime: 8

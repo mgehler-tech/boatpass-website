@@ -1,7 +1,7 @@
 ---
 title: "Failed the SBF Inland Exam? Here's What to Do Next"
 seoTitle: "Failed the SBF Inland Exam? What Now"
-description: "Didn't pass the SBF Inland (SBF Binnen) exam? It's not the end of the road: how the retake works, what to do right away, and how to prepare more effectively."
+description: "Didn't pass the SBF Inland (SBF Binnen) exam? It's not the end of the road: how the retake works, what to do right away, and how to prepare better."
 date: 2026-07-16
 tags: ["Exam Knowledge"]
 readingTime: 8
