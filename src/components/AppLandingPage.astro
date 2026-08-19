@@ -168,7 +168,7 @@ const itemListSchema = {
         {apps.map(app => (
           <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
             <h3 style="font-size:17px; font-weight:700; color:#1A1F36; margin-bottom:4px;">{app.name}</h3>
-            <div style="font-size:13px; color:#9CA3AF; margin-bottom:12px;">{app.vendor}</div>
+            <div style="font-size:13px; color:#656B78; margin-bottom:12px;">{app.vendor}</div>
             <p style="font-size:15px; color:#656B78; line-height:1.7; margin:0 0 12px;">{app.summary[lang]}</p>
             <p style="font-size:14px; color:#4B5563; line-height:1.6; margin:0 0 14px;">
               <strong style="color:#1A1F36;">{t.bestFor}:</strong> {app.bestFor[lang]}
@@ -220,7 +220,7 @@ const itemListSchema = {
           </div>
         </div>
         <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:22px;">
-          <div style="font-size:13px; font-weight:700; color:#9CA3AF; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">{t.cantTitle}</div>
+          <div style="font-size:13px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">{t.cantTitle}</div>
           <div style="display:flex; flex-direction:column; gap:10px;">
             {limitations.map(s => (
               <div style="display:flex; align-items:flex-start; gap:10px;">
