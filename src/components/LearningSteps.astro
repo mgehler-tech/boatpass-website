@@ -1,17 +1,22 @@
 ---
 // Vier echte App-Screens als Produktkarten (ersetzt die frei stehenden
-// Screenshots auf der Startseite). Jede Funktion sitzt jetzt in einer eigenen
-// Karte mit Rahmen und klarer Hierarchie: Nummern-Badge → Titel → Beschreibung
-// → Screenshot. Die Aufnahme belegt, wovon der Text darüber spricht, und
-// verankert die Karte optisch unten.
+// Screenshots auf der Startseite). Jede Funktion sitzt in einer eigenen Karte
+// mit Nummern-Badge, Titel, Beschreibung und großem App-Screenshot.
 //
 // Reihenfolge ist inhaltlich begründet und keine Dekoration: starten,
 // verstehen, messen, prüfen. Deshalb tragen die Karten fortlaufende Nummern.
 //
-// Auf dem Handy laufen die Karten als horizontaler Snap-Slider (die nächste
-// Karte lugt bewusst hervor); ab dem md-Breakpoint stehen sie als 4er-Grid.
-// Die Slider-Mechanik (.snap-row / .snap-item / .snap-dots) kommt aus
-// global.css – hier nur die karten-spezifischen Maße darüber gelegt.
+// Zwei getrennte Layouts:
+//  • Handy (≤768px): vertikale Karten als horizontaler Snap-Slider – Badge,
+//    Titel, Beschreibung, darunter der komplette Screenshot. Die nächste Karte
+//    lugt bewusst hervor. Mechanik (.snap-row / .snap-item / .snap-dots) aus
+//    global.css.
+//  • Desktop (≥769px): 2×2-Grid, alle vier Schritte gleichzeitig sichtbar.
+//    Innerhalb jeder Karte steht der Text links, der große Screenshot rechts.
+//    Kein Slider, keine Dots – der Platz auf dem PC wird genutzt.
+//
+// Der Screenshot wird in beiden Layouts vollständig gezeigt (kein enger
+// Anschnitt), er ist der visuelle Hero jeder Karte.
 import { Image } from 'astro:assets';
 import { useTranslations } from '../i18n/index';
 import screenshotHomeDe from '../assets/images/app.screenshot.0.de.png';
@@ -61,68 +66,94 @@ const steps = t.steps.items.map((item, i) => ({
 const titleParts = t.steps.title.split('BoatPass');
 ---
 
-<section id="features" class="section-band learning-steps max-w-6xl mx-auto px-6 py-14 md:py-20">
-  <!-- Sehr dezente nautische Wellenlinien, rein dekorativ (oben rechts). -->
-  <svg class="ls-waves" viewBox="0 0 420 260" fill="none" aria-hidden="true" focusable="false">
-    <path d="M-20 40 C 60 10, 140 70, 220 40 S 380 10, 460 40" />
-    <path d="M-20 80 C 60 50, 140 110, 220 80 S 380 50, 460 80" />
-    <path d="M-20 120 C 60 90, 140 150, 220 120 S 380 90, 460 120" />
-    <path d="M-20 160 C 60 130, 140 190, 220 160 S 380 130, 460 160" />
-  </svg>
+<section id="features" class="section-band learning-steps">
+  <div class="ls-inner">
+    <!-- Sehr dezente nautische Wellenlinien, rein dekorativ. -->
+    <svg class="ls-waves ls-waves-tr" viewBox="0 0 420 260" fill="none" aria-hidden="true" focusable="false">
+      <path d="M-20 40 C 60 10, 140 70, 220 40 S 380 10, 460 40" />
+      <path d="M-20 80 C 60 50, 140 110, 220 80 S 380 50, 460 80" />
+      <path d="M-20 120 C 60 90, 140 150, 220 120 S 380 90, 460 120" />
+      <path d="M-20 160 C 60 130, 140 190, 220 160 S 380 130, 460 160" />
+    </svg>
+    <svg class="ls-waves ls-waves-bl" viewBox="0 0 420 260" fill="none" aria-hidden="true" focusable="false">
+      <path d="M-20 40 C 60 10, 140 70, 220 40 S 380 10, 460 40" />
+      <path d="M-20 80 C 60 50, 140 110, 220 80 S 380 50, 460 80" />
+      <path d="M-20 120 C 60 90, 140 150, 220 120 S 380 90, 460 120" />
+    </svg>
 
-  <div class="reveal-item steps-head" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
-    <h2 class="section-display-title steps-title">
-      {titleParts[0]}<span class="ls-accent">BoatPass</span>{titleParts[1]}
-    </h2>
-    <p class="steps-sub">{t.steps.subtitle}</p>
-  </div>
+    <div class="reveal-item steps-head">
+      <h2 class="steps-title">
+        {titleParts[0]}<span class="ls-accent">BoatPass</span>{titleParts[1]}
+      </h2>
+      <p class="steps-sub">{t.steps.subtitle}</p>
+    </div>
 
-  <div class="steps-grid snap-row" data-snap-row="steps"
-    aria-label={de ? 'Vier Screens aus der App' : 'Four screens from the app'}>
-    {steps.map(step => (
-      <div class="step snap-item reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
-        <div class="step-badge">{step.num}</div>
-        <h3 class="step-title">{step.title}</h3>
-        <p class="step-desc">{step.desc}</p>
-        <div class="step-shot">
-          <Image src={step.shot} alt={step.alt} width={520} quality={80} loading="lazy" />
+    <div class="steps-grid snap-row" data-snap-row="steps"
+      aria-label={de ? 'Vier Screens aus der App' : 'Four screens from the app'}>
+      {steps.map(step => (
+        <div class="step snap-item reveal-item">
+          <div class="step-text">
+            <div class="step-badge">{step.num}</div>
+            <h3 class="step-title">{step.title}</h3>
+            <p class="step-desc">{step.desc}</p>
+          </div>
+          <div class="step-shot">
+            <Image src={step.shot} alt={step.alt} width={480} quality={80} loading="lazy" />
+          </div>
         </div>
-      </div>
-    ))}
+      ))}
+    </div>
+    <div class="snap-dots" data-snap-dots="steps"></div>
   </div>
-  <div class="snap-dots" data-snap-dots="steps"></div>
 </section>
 
 <style>
-  .learning-steps {
+  .learning-steps { position: relative; }
+  .ls-inner {
     position: relative;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding: 56px 24px;
     overflow: hidden;
   }
 
-  /* Dekolinien: nur ganz leicht sichtbar, oben rechts, hinter den Inhalten. */
+  /* Reveal-Animation (Kopf + Karten). Klassenbasiert, damit der Hover-Effekt
+     auf Desktop nicht mit inline gesetzten Transforms kollidiert. */
+  .reveal-item {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal-item.is-visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-item { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* Dekolinien: nur ganz leicht sichtbar, hinter den Inhalten. */
   .ls-waves {
     position: absolute;
-    top: 8px;
-    right: -40px;
     width: 320px;
     height: auto;
     z-index: 0;
     pointer-events: none;
-    color: rgba(51, 102, 255, 0.10);
+    color: rgba(51, 102, 255, 0.09);
   }
-  .ls-waves path {
-    stroke: currentColor;
-    stroke-width: 1.5;
-    fill: none;
-  }
+  .ls-waves path { stroke: currentColor; stroke-width: 1.5; fill: none; }
+  .ls-waves-tr { top: 8px; right: -40px; }
+  .ls-waves-bl { display: none; }
   html.dark .ls-waves { color: rgba(120, 155, 255, 0.12); }
 
-  /* Inhalte über den Dekolinien. */
   .steps-head,
   .steps-grid,
   .snap-dots { position: relative; z-index: 1; }
 
+  /* Überschrift: eigene Skala (mobil 28px, Desktop bis 52px), Akzentwort blau. */
   .steps-title {
+    font-size: 28px;
+    line-height: 32px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--color-navy);
     margin-bottom: 16px;
   }
   .ls-accent { color: #3366FF; }
@@ -130,34 +161,20 @@ const titleParts = t.steps.title.split('BoatPass');
 
   .steps-sub {
     font-size: 16px;
+    line-height: 26px;
     color: #656B78;
     max-width: 480px;
-    line-height: 1.65;
     margin-bottom: 28px;
   }
+  html.dark .steps-sub { color: #94A3B8; }
 
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 26px;
-  }
-
-  /* Produktkarte: heller Grund, feiner Rahmen, sehr dezenter Schatten. Der
-     Screenshot sitzt unten und schließt die Karte optisch ab – deshalb ist die
-     Karte ein Flex-Container und die Aufnahme wird per margin-top:auto nach
-     unten gedrückt, damit alle Karten trotz unterschiedlich langer Texte auf
-     gleicher Höhe „enden". */
+  /* ---- Karte: gemeinsame Optik (Layout je Breite unten) ---- */
   .step {
-    display: flex;
-    flex-direction: column;
     background: #FFFFFF;
     border: 1px solid #E7EDF7;
     border-radius: 28px;
-    box-shadow: 0 8px 30px rgba(15, 23, 46, 0.06);
-    padding: 24px 20px 0;
     overflow: hidden;
   }
-
   .step-badge {
     display: inline-flex;
     align-items: center;
@@ -170,81 +187,16 @@ const titleParts = t.steps.title.split('BoatPass');
     font-size: 18px;
     font-weight: 700;
     line-height: 1;
-    margin-bottom: 16px;
   }
-
   .step-title {
-    font-size: 18px;
-    line-height: 24px;
     font-weight: 700;
     letter-spacing: -0.2px;
     color: var(--color-navy);
-    margin-bottom: 16px;
   }
-  .step-desc {
-    font-size: 16px;
-    line-height: 28px;
-    color: #656B78;
-    margin-bottom: 20px;
-  }
-
-  /* Screenshot als eingebettetes Produkt-Preview: volle Kartenbreite, oben
-     abgerundet, unten vom Kartenrand beschnitten. Feste Höhe zeigt den oberen,
-     aussagekräftigen Teil des Hochkant-Screens. */
-  .step-shot {
-    margin-top: auto;
-    height: 260px;
-    overflow: hidden;
-    border-radius: 20px 20px 0 0;
-    border: 1px solid rgba(26, 31, 54, 0.08);
-    border-bottom: none;
-    line-height: 0;
-  }
-  .step-shot :global(img) {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  /* Handy: horizontaler Slider statt Grid. Feste Kartenbreite (304px) mit
-     Peek der nächsten Karte; Karten rasten linksbündig ein (start), damit die
-     erste Karte am Rand steht und die nächste rechts hervorlugt. Die
-     Grundmechanik (Flex, Snap, Rand-Ausgleich) steht in global.css unter
-     .snap-row; hier nur Breite, Abstand und Ausrichtung überschrieben. */
-  @media (max-width: 768px) {
-    .steps-grid {
-      display: flex;
-      gap: 16px;
-    }
-    .steps-grid .step {
-      flex: 0 0 304px;
-      min-height: 520px;
-      scroll-snap-align: start;
-    }
-  }
-
-  /* Sehr kleine Geräte (≈360px): Karte etwas schmaler, Abstand minimal enger. */
-  @media (max-width: 360px) {
-    .steps-grid { gap: 14px; }
-    .steps-grid .step { flex-basis: 292px; }
-  }
-
-  /* Größere Handys (≈414–430px): Karte darf leicht wachsen, Peek bleibt. */
-  @media (min-width: 414px) and (max-width: 768px) {
-    .steps-grid .step { flex-basis: 312px; }
-  }
-
-  /* Aktiver Punkt im Marken-Blau, inaktiv im hellen Blau der Vorgaben –
-     scoped auf diese Reihe, damit andere Snap-Reihen unverändert bleiben. */
-  .snap-dots :global(.snap-dot::after) { background: #D8E3F8; }
-  .snap-dots :global(.snap-dot[aria-current="true"]::after) { background: #3366FF; }
-
-  /* Dark Mode: Karte, Rahmen, Badge und Text auf den dunklen Grund anheben. */
-  html.dark .steps-sub { color: #94A3B8; }
+  .step-desc { color: #656B78; }
   html.dark .step {
     background: #181E2E;
     border-color: rgba(90, 120, 255, 0.14);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   }
   html.dark .step-badge {
     background: rgba(90, 120, 255, 0.12);
@@ -252,9 +204,148 @@ const titleParts = t.steps.title.split('BoatPass');
   }
   html.dark .step-title { color: #E2E8F0; }
   html.dark .step-desc { color: #94A3B8; }
-  html.dark .step-shot { border-color: rgba(90, 120, 255, 0.14); }
+
+  /* App-Screenshot – vollständig sichtbar, als eingebettetes Produkt-Preview. */
+  .step-shot {
+    overflow: hidden;
+    line-height: 0;
+    background: #FFFFFF;
+  }
+  .step-shot :global(img) { width: 100%; height: auto; display: block; }
+
+  /* ===================================================================
+     HANDY (≤768px): vertikale Karten, horizontaler Snap-Slider.
+     =================================================================== */
+  @media (max-width: 768px) {
+    .steps-grid { display: flex; gap: 16px; }
+
+    .steps-grid .step {
+      flex: 0 0 304px;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 20px 0;
+      box-shadow: 0 8px 30px rgba(15, 23, 46, 0.06);
+      scroll-snap-align: start;
+    }
+    html.dark .steps-grid .step { box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4); }
+
+    .step-badge { margin-bottom: 16px; }
+    .step-title { font-size: 18px; line-height: 24px; margin-bottom: 16px; }
+    .step-desc { font-size: 16px; line-height: 28px; margin-bottom: 20px; }
+
+    /* Ganzer Screenshot: keine feste Höhe, natürliche Proportion. Er sitzt am
+       Kartenende (margin-top:auto), oben abgerundet, unten von der Kartenkante
+       sauber abgeschlossen. */
+    .step-shot {
+      margin-top: auto;
+      border-radius: 18px 18px 0 0;
+      border: 1px solid rgba(26, 31, 54, 0.08);
+      border-bottom: none;
+    }
+    html.dark .step-shot { border-color: rgba(90, 120, 255, 0.14); }
+  }
+
+  @media (max-width: 360px) {
+    .steps-grid { gap: 14px; }
+    .steps-grid .step { flex-basis: 292px; }
+  }
+  @media (min-width: 414px) and (max-width: 768px) {
+    .steps-grid .step { flex-basis: 312px; }
+  }
+
+  /* Dots (nur Handy): aktiv Marken-Blau, inaktiv helles Blau der Vorgaben. */
+  .snap-dots :global(.snap-dot::after) { background: #D8E3F8; }
+  .snap-dots :global(.snap-dot[aria-current="true"]::after) { background: #3366FF; }
   html.dark .snap-dots :global(.snap-dot::after) { background: rgba(226, 232, 240, 0.22); }
   html.dark .snap-dots :global(.snap-dot[aria-current="true"]::after) { background: #5B8CFF; }
+
+  /* ===================================================================
+     DESKTOP (≥769px): 2×2-Grid, Karte horizontal (Text links / Screen rechts).
+     =================================================================== */
+  @media (min-width: 769px) {
+    .learning-steps { background: linear-gradient(180deg, #F8FBFF 0%, #F4F8FF 100%); }
+    html.dark .learning-steps { background: transparent; }
+
+    .ls-inner {
+      max-width: 1200px;
+      padding: 72px 24px 88px;
+    }
+
+    .steps-head { text-align: center; max-width: 850px; margin-inline: auto; }
+    .steps-title { font-size: 46px; line-height: 52px; letter-spacing: -0.025em; }
+    .steps-sub {
+      font-size: 18px;
+      line-height: 30px;
+      max-width: 780px;
+      margin-inline: auto;
+      margin-bottom: 48px;
+    }
+
+    .ls-waves-tr { top: 24px; right: -20px; width: 360px; }
+    .ls-waves-bl { display: block; bottom: 32px; left: -60px; width: 320px; transform: scaleX(-1); }
+
+    /* Ein Schritt pro Reihe bis der Platz für zwei reicht. */
+    .steps-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+
+    /* Karte: Text links, großer Screenshot rechts unten verankert. */
+    .step {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      column-gap: 20px;
+      align-items: stretch;
+      min-height: 460px;
+      padding: 28px 20px 20px 28px;
+      box-shadow: 0 12px 40px rgba(15, 23, 46, 0.06);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, opacity 0.6s ease;
+    }
+    .step-text { align-self: start; max-width: 260px; }
+    .step-badge { margin-bottom: 22px; }
+    .step-title { font-size: 22px; line-height: 28px; margin-bottom: 16px; }
+    .step-desc { font-size: 16px; line-height: 26px; max-width: 220px; }
+
+    /* Reduzierter Geräte-Screen: rechts, unten bündig, komplett sichtbar. */
+    .step-shot {
+      align-self: end;
+      justify-self: end;
+      width: 200px;
+      border-radius: 22px;
+      border: 1px solid rgba(15, 23, 46, 0.10);
+      box-shadow: 0 8px 24px rgba(15, 23, 46, 0.08);
+    }
+    html.dark .step-shot {
+      border-color: rgba(90, 120, 255, 0.16);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    }
+
+    /* Zurückhaltender Premium-Hover. */
+    .step.is-visible:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 48px rgba(15, 23, 46, 0.10);
+      border-color: #D7E4FF;
+    }
+    html.dark .step.is-visible:hover {
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.5);
+      border-color: rgba(90, 120, 255, 0.30);
+    }
+  }
+
+  /* Einspaltige Zwischenstufe (Tablet/kleiner Laptop): Karten mittig und in
+     Kartenbreite halten, sonst zerreißt eine volle Reihenbreite den Inhalt in
+     Text ganz links und Screen ganz rechts mit großer Leere dazwischen. */
+  @media (min-width: 769px) and (max-width: 1023px) {
+    .steps-grid { max-width: 600px; margin-inline: auto; }
+  }
+
+  /* Zwei Spalten, sobald der Platz reicht. */
+  @media (min-width: 1024px) {
+    .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  }
+  @media (min-width: 1280px) {
+    .ls-inner { max-width: 1200px; padding: 96px 32px 112px; }
+    .steps-title { font-size: 52px; line-height: 60px; }
+    .steps-grid { gap: 24px; }
+    .step { min-height: 480px; }
+  }
 </style>
 
 <script>
@@ -262,24 +353,21 @@ const titleParts = t.steps.title.split('BoatPass');
 
   initSnapDots('[data-snap-row="steps"]');
 
+  const els = document.querySelectorAll('#features .reveal-item');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   if (reduceMotion) {
-    document.querySelectorAll<HTMLElement>('#features .reveal-item').forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-    });
+    els.forEach(el => el.classList.add('is-visible'));
   } else {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          (e.target as HTMLElement).style.opacity = '1';
-          (e.target as HTMLElement).style.transform = 'translateY(0)';
+          e.target.classList.add('is-visible');
           observer.unobserve(e.target);
         }
       });
     }, { threshold: 0.1 });
 
-    document.querySelectorAll('#features .reveal-item').forEach(el => observer.observe(el));
+    els.forEach(el => observer.observe(el));
   }
 </script>
