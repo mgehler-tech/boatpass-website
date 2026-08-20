@@ -55,28 +55,24 @@ export const en: Translations = {
     },
   },
   steps: {
-    title: 'How you learn',
-    subtitle: 'Start, understand, measure, test – the four places you spend your time.',
+    title: 'How you learn with BoatPass',
+    subtitle: 'Four clear steps to your exam – from your first study block to a confident exam simulation.',
     items: [
       {
-        eyebrow: 'Start every day',
-        title: "One tap and you're in",
-        desc: '53 of 300 questions done, daily goal reached, streak secured. The home screen always shows you exactly where to pick up.',
+        title: 'Start every day',
+        desc: 'BoatPass shows you right away where it makes sense to carry on – no searching around.',
       },
       {
-        eyebrow: 'Understand the question',
-        title: 'An explanation, not just right or wrong',
-        desc: 'Every answer comes with the reasoning behind it – plus a mnemonic that makes it stick for the exam.',
+        title: 'Understand the questions',
+        desc: 'Not just right or wrong: explanations and mnemonics make the material click.',
       },
       {
-        eyebrow: 'See your weak spots',
-        title: 'The logbook shows where it stalls',
-        desc: 'Progress per category: 19 of 124 in maritime law, 3 of 28 in signals. You see straight away what is still missing.',
+        title: 'See your progress',
+        desc: 'In the logbook you see at a glance which topics you have already mastered.',
       },
       {
-        eyebrow: 'Simulate the exam',
-        title: 'Official paper or random exam',
-        desc: '37 questions in 45 minutes under real conditions. The performance curve shows whether you stay above the pass mark.',
+        title: 'Pass the exam',
+        desc: 'With realistic exam simulations and a performance curve, you know when you are ready.',
       },
     ],
   },
