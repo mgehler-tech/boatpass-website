@@ -17,6 +17,20 @@ faq:
     answer: "Yes, an in-person course costs between 250 and 400 euros, while a learning app with the complete official ELWIS question catalog costs only 7 to 12 euros. The exam itself is always the same, no matter how you prepared."
   - question: "What does the cheapest route to the SBF Coastal cost?"
     answer: "Using an app, a medical certificate, a passport photo, one practical lesson, and the exam fee, the total comes to around 280 euros. That's less than half of what a complete course at a boating school costs."
+howTo:
+  name: "Saving money on your boating license: the 5 best tips"
+  description: "Five concrete steps to pay noticeably less for theory, practical training and the exam when getting your German boating license."
+  steps:
+    - name: "Take the combined exam instead of two separate exams"
+      text: "Take the Inland and Coastal exam on the same day: the combined exam costs €178.61 instead of €279.16 for both licenses separately, and you only learn the 72 identical basic questions once."
+    - name: "Learn theory with an app instead of a boating school"
+      text: "A learning app with the complete ELWIS question catalog costs €7–12 instead of €250–400 for an in-person course – the exam itself is exactly the same either way."
+    - name: "Book practical lessons separately"
+      text: "Instead of a full package from a boating school, book just the practical training separately for €50–150 rather than a pricier combined theory-and-practice package."
+    - name: "Pass on the first attempt"
+      text: "Prepare with exam simulation and mistake training to avoid a €100–200 retake covering theory and practical fees again."
+    - name: "Compare providers for practical training"
+      text: "Compare at least 2–3 boating schools in your region, since practical training – unlike the fixed exam fee – varies considerably by region and provider."
 ---
 
 Depending on the route you take, the German boating license costs between €200 and €1,000 – a wide range (the [full 2026 cost overview](/en/sbf-costs/) breaks down every item in detail). The exam fees are the same for everyone, but there's plenty to save on theory preparation and practical training. Here are the five tips that make the biggest difference.
