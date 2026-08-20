@@ -258,7 +258,7 @@ const breadcrumbSchema = {
     <!-- Pillar-/Führerschein-Seiten (zweisprachig) -->
     <div style="margin-top:32px; padding:24px; background:rgba(51,102,255,0.04); border:1px solid rgba(51,102,255,0.12); border-radius:16px;">
       <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">{lang === 'de' ? 'Führerschein-Seiten' : 'Licence pages'}</div>
-      <div style="display:flex; flex-wrap:wrap; gap:10px;">
+      <div class="licence-pills" style="display:flex; flex-wrap:wrap; gap:10px;">
         {lang === 'de' ? (
           <>
             <a href="/sbf-binnen/" style="font-size:14px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.12); padding:8px 16px; border-radius:100px; text-decoration:none;">SBF Binnen lernen</a>
@@ -291,6 +291,20 @@ const breadcrumbSchema = {
     font-size: 17px;
     line-height: 1.75;
     color: #4B5563;
+  }
+
+  /* Führerschein-/Licence-Pills am Artikelfuß: ausreichend große Touch-Fläche
+     (WCAG 2.5.5 – mind. 44px). Die Chips standen bisher als reine 8px-Padding-
+     Links (~33px hoch) dicht gedrängt – auf dem Handy zu kleine, zu eng
+     beieinanderliegende Tap-Ziele. Jetzt bekommt jeder Chip die projektweit
+     genutzte 44px-Mindesthöhe (wie .cat-btn / .blog-search der Blog-Übersicht
+     und .related-links der Pillar-Seiten), vertikal zentriert. Reiner Layout-
+     Feinschliff: das inline gesetzte Marken-Blau und die Chip-Optik bleiben
+     unverändert. */
+  .licence-pills a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
   }
 
   /* Paragraphs */
