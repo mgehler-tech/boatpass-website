@@ -732,7 +732,18 @@ const funkCards = [
   html.dark #pricing [style*="color: #656B78"] { color: #94A3B8 !important; }
 
   /* ============ Redesign (Startseite / withGuarantee) ============ */
-  .pv2-inner { max-width: 1060px; margin: 0 auto; }
+  /* Inhaltsspalte des Preis-Abschnitts auf die Spalte der übrigen
+     Startseiten-Abschnitte bringen. Reviews, Fragenkataloge und Blog-Teaser
+     tragen `max-w-6xl mx-auto px-6` an der Section selbst: Der Innenabstand
+     liegt damit INNERHALB der 1152px – ihre Inhaltskante sitzt bei
+     1152 − 2 × 24 = 1104px. Hier steht `px-6` dagegen außerhalb der 1152px,
+     sodass die zusätzliche 1060px-Grenze die Spalte 44px schmaler machte und
+     alles (Überschrift, Karten, Fußnote) 22px nach innen rückte – auf breiten
+     Screens ein sichtbarer Versatz in der sonst durchgehenden linken Kante.
+     1104px stellt die gemeinsame Kante wieder her. Unterhalb von 1104px
+     Spaltenbreite greift die Grenze ohnehin nicht – Handy und Tablet bleiben
+     unverändert. */
+  .pv2-inner { max-width: 1104px; margin: 0 auto; }
 
   .pv2-header { position: relative; margin-bottom: 44px; }
   .pv2-header-main { max-width: 620px; }
