@@ -1,7 +1,7 @@
 ---
 title: "Navigating Locks: Procedure and Behavior for Recreational Boaters"
 seoTitle: "Navigating Locks: Procedure & Behavior"
-description: "Locking through with a recreational boat in Germany: reading the signal lights, behavior in the chamber, self-service locks, and what to know for the SBF Inland exam."
+description: "Locking through with a recreational boat in Germany: signal lights, behavior in the chamber, self-service locks, and what you need for the SBF Inland exam."
 date: 2026-08-16
 tags: ["Exam Knowledge"]
 readingTime: 9
