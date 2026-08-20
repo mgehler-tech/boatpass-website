@@ -205,13 +205,28 @@ const titleParts = t.steps.title.split('BoatPass');
   html.dark .step-title { color: #E2E8F0; }
   html.dark .step-desc { color: #94A3B8; }
 
-  /* App-Screenshot – vollständig sichtbar, als eingebettetes Produkt-Preview. */
+  /* App-Screenshot als reduzierter Geräte-Rahmen: eine dünne, einheitliche
+     Bezel rundum fasst die vier unterschiedlichen App-Screens gleich ein, damit
+     sie wie dasselbe Gerät wirken. Der fast schwarze Rahmen liest sich auf der
+     weißen Karte wie ein Handy und ist auf der dunklen Karte dunkler als diese –
+     in beiden Modi klar erkennbar. */
   .step-shot {
-    overflow: hidden;
     line-height: 0;
-    background: #FFFFFF;
+    background: #0B1220;
+    padding: 8px;
+    border-radius: 30px;
+    box-shadow: 0 10px 26px rgba(15, 23, 46, 0.14);
   }
-  .step-shot :global(img) { width: 100%; height: auto; display: block; }
+  .step-shot :global(img) {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 22px;
+  }
+  html.dark .step-shot {
+    background: #0A0E18;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5), inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+  }
 
   /* ===================================================================
      HANDY (≤768px): vertikale Karten, horizontaler Snap-Slider.
@@ -233,16 +248,12 @@ const titleParts = t.steps.title.split('BoatPass');
     .step-title { font-size: 18px; line-height: 24px; margin-bottom: 16px; }
     .step-desc { font-size: 16px; line-height: 28px; margin-bottom: 20px; }
 
-    /* Ganzer Screenshot: keine feste Höhe, natürliche Proportion. Er sitzt am
-       Kartenende (margin-top:auto), oben abgerundet, unten von der Kartenkante
-       sauber abgeschlossen. */
+    /* Gerät schwebt am Kartenende, mit etwas Luft zur Unterkante. Rahmen-Optik
+       kommt aus der gemeinsamen .step-shot-Regel. */
     .step-shot {
       margin-top: auto;
-      border-radius: 18px 18px 0 0;
-      border: 1px solid rgba(26, 31, 54, 0.08);
-      border-bottom: none;
+      margin-bottom: 20px;
     }
-    html.dark .step-shot { border-color: rgba(90, 120, 255, 0.14); }
   }
 
   @media (max-width: 360px) {
@@ -298,23 +309,18 @@ const titleParts = t.steps.title.split('BoatPass');
       box-shadow: 0 12px 40px rgba(15, 23, 46, 0.06);
       transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, opacity 0.6s ease;
     }
-    .step-text { align-self: start; max-width: 260px; }
+    /* Text vertikal zentriert – füllt die hohe Karte ruhiger, statt oben zu
+       kleben und unten links viel Leerraum zu lassen. */
+    .step-text { align-self: center; max-width: 260px; }
     .step-badge { margin-bottom: 22px; }
     .step-title { font-size: 22px; line-height: 28px; margin-bottom: 16px; }
     .step-desc { font-size: 16px; line-height: 26px; max-width: 220px; }
 
-    /* Reduzierter Geräte-Screen: rechts, unten bündig, komplett sichtbar. */
+    /* Gerät rechts, unten bündig, komplett sichtbar. Rahmen aus .step-shot. */
     .step-shot {
       align-self: end;
       justify-self: end;
-      width: 200px;
-      border-radius: 22px;
-      border: 1px solid rgba(15, 23, 46, 0.10);
-      box-shadow: 0 8px 24px rgba(15, 23, 46, 0.08);
-    }
-    html.dark .step-shot {
-      border-color: rgba(90, 120, 255, 0.16);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+      width: 210px;
     }
 
     /* Zurückhaltender Premium-Hover. */
