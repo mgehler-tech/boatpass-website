@@ -1,10 +1,11 @@
 ---
 title: "Kursumrechnung beim SBF See: rwK, mwK & MgK einfach erklärt"
 seoTitle: "Kursumrechnung SBF See: rwK, mwK, MgK"
-description: "Missweisung, Ablenkung und Beschickung sicher umrechnen: rwK, mwK und MgK beim SBF See fehlerfrei umwandeln – mit Vorzeichen-Regel und Beispiel."
+description: "rwK, mwK und MgK sicher umrechnen: Formel, Vorzeichen-Regel Ost/West und drei Rechenbeispiele für die SBF-See-Navigationsaufgabe – inklusive Beschickung."
 date: 2026-06-05
+updated: 2026-08-20
 tags: ["Navigation"]
-readingTime: 8
+readingTime: 9
 lang: de
 author: "Marius Gehler"
 altSlug: "course-conversion-sbf-coastal"
@@ -19,6 +20,8 @@ faq:
     answer: "rwK ist der rechtweisende Kurs bezogen auf den geografischen Nordpol, mwK der missweisende Kurs bezogen auf den magnetischen Nordpol, und MgK die Anzeige deines Bordkompasses. Zwischen ihnen liegen die Korrekturen für Missweisung und Ablenkung."
   - question: "Was ist die Beschickung für Wind und Strom?"
     answer: "Die Beschickung korrigiert den Versatz durch Wind (Abdrift) oder Strom, damit der tatsächlich gefahrene Kurs über Grund (KüG) erreicht wird. Sie wird nach derselben Ost-plus-West-minus-Logik wie Missweisung und Ablenkung verrechnet."
+  - question: "Wie viele der Navigationsfragen muss ich beim SBF See richtig lösen?"
+    answer: "Die Navigationsaufgabe umfasst 9 Teilfragen, von denen du mindestens 7 richtig beantworten musst. Sie wird getrennt vom übrigen Fragenkatalog gewertet, die Kursumrechnung ist einer von mehreren möglichen Aufgabentypen darin."
 howTo:
   name: "Kurs beim SBF See umrechnen: MgK, mwK und rwK"
   description: "So rechnest du den Magnetkompasskurs (MgK) mithilfe von Ablenkung und Missweisung fehlerfrei in den rechtweisenden Kurs (rwK) um, wie in der Navigationsaufgabe des SBF See gefordert."
@@ -31,7 +34,7 @@ howTo:
       text: "Setze die Werte mit ihrem Vorzeichen in die Formel ein und rechne das Ergebnis aus. Liegt es über 360°, ziehe 360° ab; ist es negativ, addiere 360°."
 ---
 
-Kaum ein Thema kostet Prüflingen beim [Sportbootführerschein See](/sbf-see/) so viele Nerven wie die Kursumrechnung. Dabei steckt dahinter nur eine einzige Formel und eine klare Vorzeichen-Regel. Wer beides verstanden hat, löst die Kursfragen der Navigationsaufgabe schnell und sicher. Dieser Artikel erklärt die Umrechnung von **rwK, mwK und MgK** Schritt für Schritt – inklusive Beschickung für Wind und Strom.
+Kaum ein Thema kostet Prüflingen beim [Sportbootführerschein See](/sbf-see/) so viele Nerven wie die Kursumrechnung. Dabei steckt dahinter nur eine einzige Formel und eine klare Vorzeichen-Regel. Wer beides verstanden hat, löst die Kursfragen der Navigationsaufgabe schnell und sicher – und das lohnt sich: Von den 9 Teilfragen der Navigationsaufgabe musst du mindestens 7 richtig lösen, sonst fällst du durch, selbst mit perfektem Ergebnis im restlichen Fragenkatalog. Dieser Artikel erklärt die Umrechnung von **rwK, mwK und MgK** Schritt für Schritt – inklusive Beschickung für Wind und Strom und drei durchgerechneten Beispielen.
 
 ## Warum es überhaupt verschiedene Kurse gibt
 
@@ -107,6 +110,16 @@ Der Kurs, den du tatsächlich über Grund machst, heißt **Kurs über Grund (Kü
 
 Auch hier gilt die Ost-plus-West-minus-Logik für die Richtung der Versetzung. Wichtig fürs Verständnis: Missweisung und Ablenkung sind **Kompassfehler**, Wind und Strom sind **äußere Kräfte** – beides wird aber nach demselben Vorzeichen-Prinzip verrechnet.
 
+## Rechenbeispiel 3: Kurs über Grund mit Beschickung
+
+Du steuerst einen rechtweisenden Kurs von **rwK = 090°**. Die Strömung versetzt dich mit einer Beschickung von **4° W**.
+
+1. Vorzeichen setzen: Beschickung = −4°
+2. KüG = rwK + Beschickung
+3. KüG = 090° + (−4°) = **086°**
+
+Dein tatsächlicher Kurs über Grund beträgt also **086°**, obwohl du 090° gesteuert hast – die Strömung hat dich um 4° nach Westen versetzt. Genau dasselbe Vorzeichen-Prinzip (Ost +, West −) gilt hier wie bei Missweisung und Ablenkung, nur dass die Beschickung zwischen rwK und KüG wirkt, nicht zwischen Karte und Kompass.
+
 ## Die häufigsten Fehler – und wie du sie vermeidest
 
 - **Vorzeichen vertauscht:** Schreibe MW und Abl immer zuerst mit Vorzeichen auf, bevor du rechnest. Ost +, West −.
@@ -116,7 +129,7 @@ Auch hier gilt die Ost-plus-West-minus-Logik für die Richtung der Versetzung. W
 
 ## So übst du es richtig
 
-Die Kursumrechnung ist reine Routine – sie muss sitzen, bis du sie ohne Nachdenken kannst. Am besten rechnest du Dutzende Varianten mit wechselnden Vorzeichen durch, bis die Formel automatisch abläuft. Genau dafür kannst du in der [Boatpass-App den Navigationsteil](/sbf-see-pruefungsfragen/) getrennt vom restlichen Fragenkatalog trainieren – mit echten Aufgaben wie in der Prüfung.
+Die Kursumrechnung ist reine Routine – sie muss sitzen, bis du sie ohne Nachdenken kannst. Am besten rechnest du Dutzende Varianten mit wechselnden Vorzeichen durch, bis die Formel automatisch abläuft. Genau dafür kannst du in der [Boatpass-App den Navigationsteil](/sbf-see-pruefungsfragen/) getrennt vom restlichen Fragenkatalog trainieren: mit echten Aufgaben wie in der Prüfung, sofortiger Auswertung und der Möglichkeit, gezielt die Aufgabentypen zu wiederholen, bei denen du noch unsicher bist.
 
 Wie die Kursumrechnung in die komplette Navigationsaufgabe eingebettet ist, liest du im Überblicksartikel [SBF See Navigationsaufgaben erklärt](/blog/sbf-see-navigationsaufgaben-erklaert/). Und wenn du noch unsicher bist, ob der SBF See überhaupt der richtige Schein für dich ist, hilft dir der Vergleich [SBF Binnen vs. SBF See](/blog/sbf-binnen-vs-see/).
 

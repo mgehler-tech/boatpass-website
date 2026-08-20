@@ -1,10 +1,11 @@
 ---
 title: "Course Conversion for the SBF Coastal: True, Magnetic & Compass Course Explained"
 seoTitle: "Course Conversion for the SBF Coastal"
-description: "Variation, deviation and offset made simple: convert true, magnetic and compass course without mistakes for the SBF exam – with the sign rule."
+description: "True, magnetic and compass course made simple: the formula, the East/West sign rule and three worked examples for the SBF Coastal navigation task."
 date: 2026-06-05
+updated: 2026-08-20
 tags: ["Navigation"]
-readingTime: 8
+readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "kursumrechnung-sbf-see"
@@ -19,6 +20,8 @@ faq:
     answer: "True course is referenced to the geographic north pole, magnetic course to the magnetic north pole, and compass course is simply what your on-board compass reads. Deviation and variation are the corrections that connect them."
   - question: "What is the offset for wind and current?"
     answer: "The offset corrects for the set caused by wind (leeway) or current so you reach your actual course over ground. It is calculated using the same East-plus, West-minus sign logic as variation and deviation."
+  - question: "How many of the navigation task questions do I need to get right for the SBF Coastal?"
+    answer: "The navigation task has 9 sub-questions, and you need at least 7 correct to pass. It is graded separately from the rest of the question catalogue, and course conversion is one of several task types it can include."
 howTo:
   name: "Convert a course for the SBF Coastal: CC, MC and TC"
   description: "How to convert your compass course (CC) into the true course (TC) using deviation and variation, correctly and without mistakes, as required in the SBF Coastal navigation task."
@@ -31,7 +34,7 @@ howTo:
       text: "Plug the signed values into the formula and calculate the result. If it exceeds 360°, subtract 360°; if it is negative, add 360°."
 ---
 
-Few topics cause [SBF Coastal](/en/sbf-coastal/) (SBF See) candidates more stress than course conversion. Yet behind it lies just one formula and a clear sign rule. Once you understand both, the course questions in the navigation task become quick and reliable. This article explains converting between **true course, magnetic course and compass course** step by step – including the offset for wind and current.
+Few topics cause [SBF Coastal](/en/sbf-coastal/) (SBF See) candidates more stress than course conversion. Yet behind it lies just one formula and a clear sign rule. Once you understand both, the course questions in the navigation task become quick and reliable – and that pays off: the navigation task has 9 sub-questions, and you need at least 7 correct to pass, even with a perfect score on the rest of the exam. This article explains converting between **true course, magnetic course and compass course** step by step, including the offset for wind and current and three fully worked examples.
 
 ## Why there are different courses at all
 
@@ -109,6 +112,16 @@ The course you actually make over the seabed is the **course over ground (COG)**
 
 The East-plus, West-minus logic applies here too for the direction of the set. One thing to keep clear: variation and deviation are **compass errors**, while wind and current are **external forces** – but both are handled with the same sign principle.
 
+## Worked example 3: course over ground with an offset
+
+You are steering a true course of **TC = 090°**. The current sets you off with an offset of **4° W**.
+
+1. Apply the sign: offset = −4°
+2. COG = TC + offset
+3. COG = 090° + (−4°) = **086°**
+
+Your actual course over ground is therefore **086°**, even though you steered 090° – the current has set you 4° to the west. The same sign principle (East +, West −) applies here as with variation and deviation, except the offset acts between TC and COG, not between chart and compass.
+
 ## The most common mistakes – and how to avoid them
 
 - **Signs swapped:** Always write variation and deviation with their sign first, before you calculate. East +, West −.
@@ -118,7 +131,9 @@ The East-plus, West-minus logic applies here too for the direction of the set. O
 
 ## How to practise it properly
 
-Course conversion is pure routine – it has to be second nature, so you can do it without thinking. The best approach is to work through dozens of variants with changing signs until the formula runs automatically. If you are still deciding which licence fits you, the comparison [SBF Inland vs. Coastal](/en/blog/sbf-inland-vs-coastal/) helps, and you will find every German boating licence side by side on the [licences overview](/en/licenses/).
+Course conversion is pure routine – it has to be second nature, so you can do it without thinking. The best approach is to work through dozens of variants with changing signs until the formula runs automatically. In the [Boatpass app you can train the navigation section](/en/sbf-coastal-exam-questions/) separately from the rest of the question catalogue: with real tasks just like in the exam, immediate feedback, and the option to specifically repeat the task types you are still unsure about.
+
+To see how course conversion fits into the complete navigation task, read the overview article [SBF Coastal Navigation Tasks Explained](/en/blog/sbf-coastal-navigation-tasks-explained/). And if you are still deciding which licence fits you, the comparison [SBF Inland vs. Coastal](/en/blog/sbf-inland-vs-coastal/) helps, or browse every German boating licence on the [licences overview](/en/licenses/).
 
 ## Conclusion
 
