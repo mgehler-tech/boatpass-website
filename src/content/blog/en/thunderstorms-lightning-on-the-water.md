@@ -17,6 +17,22 @@ faq:
     answer: "Head for the nearest safe harbor or a sheltered bay, put on life jackets, secure loose gear, and avoid contact with metal fittings such as the rail, shrouds, or mast while the storm passes. Stay as low in the boat as you can and don't go into the water."
   - question: "Can lightning damage my boat even if no one on board is hurt?"
     answer: "Yes. A lightning strike can damage electronics, the compass, and the electrical system even when nobody on board is injured. After a strike, check the compass, navigation equipment, and hull for damage, and have it inspected by a professional if you're unsure."
+howTo:
+  name: "How to react correctly to a thunderstorm on the water"
+  description: "From the first warning signs to the checks after a nearby lightning strike: how recreational skippers prepare for a thunderstorm and behave safely on board."
+  steps:
+    - name: "Spot the warning signs"
+      text: "Watch for towering cumulonimbus clouds, a sky that darkens quickly, a falling barometer, freshening or shifting wind, and distant rumbles of thunder."
+    - name: "Estimate the distance with the 30-30 rule"
+      text: "Count the seconds between the flash and the thunder and divide by three. If fewer than 30 seconds pass between them, act promptly."
+    - name: "Head for a safe harbor and put on life jackets"
+      text: "Set a course for the nearest safe harbor or a sheltered bay and put on life jackets before conditions deteriorate."
+    - name: "Prepare the boat"
+      text: "Secure loose gear, bring in fishing rods, keep portable electronics away from antennas, and brief everyone on board."
+    - name: "Keep clear of metal fittings during the storm"
+      text: "Avoid contact with the rail, shrouds, mast, and other conductive parts, stay as low in the boat as you can, and don't go into the water."
+    - name: "Check the boat and electronics after a nearby strike"
+      text: "Check the compass against known reference points, inspect GPS, radio, and the electrical system for damage, and look over the hull and fittings for scorch marks."
 ---
 
 A glassy-calm lake, hardly any wind, and suddenly a dark wall of cloud builds on the horizon. Thunderstorms are one of the weather situations you need to take especially seriously on the water, because you're usually the most exposed point for a long way around, and there's no building nearby to duck into. This article explains how to spot an approaching thunderstorm early, how to prepare yourself and your boat, and how to behave on board once a storm is on top of you.
