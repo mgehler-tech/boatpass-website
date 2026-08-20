@@ -17,6 +17,22 @@ faq:
     answer: "Bei der Mercator-Projektion erscheint eine Linie mit konstantem Kompasskurs als gerade Strecke auf der Karte, was die praktische Kartenarbeit stark vereinfacht. Der Nachteil ist eine zunehmende Verzerrung von Flächen und Abständen zu den Polen hin."
   - question: "Was zeigt eine Kompassrose auf der Seekarte?"
     answer: "Eine Kompassrose zeigt den rechtweisenden Nordpfeil sowie die für den Kartenausschnitt geltende Missweisung, die für die Kursumrechnung benötigt wird."
+howTo:
+  name: "Kurs und Distanz auf der Seekarte abgreifen"
+  description: "So arbeitest du mit Stechzirkel und Kursdreieck auf der Seekarte: Kurslinie legen, rechtweisenden Kurs ablesen, Distanz in Seemeilen messen und die eigene Position eintragen – die Kartenarbeit der SBF-See-Navigationsaufgabe."
+  steps:
+    - name: "Passenden Kartenmaßstab wählen"
+      text: "Nimm für die Törnplanung eine Übersichts- oder Küstenkarte und für Hafenansteuerungen und enge Fahrwasser eine Hafen- oder Detailkarte, in der einzelne Tonnen und Untiefen groß genug dargestellt sind."
+    - name: "Start- und Zielpunkt eintragen"
+      text: "Bestimme beide Punkte über Breite und Länge und markiere sie mit einem Bleistift auf der Karte, damit du sie später korrigieren oder ergänzen kannst."
+    - name: "Kurslinie legen und rechtweisenden Kurs ablesen"
+      text: "Verbinde beide Punkte mit dem Parallellineal oder Kursdreieck und wandere parallel zur nächstgelegenen Kompassrose. Dort liest du am äußeren Ring den rechtweisenden Kurs (rwK) ab."
+    - name: "Distanz an der Breitenskala messen"
+      text: "Greif die Strecke mit dem Stechzirkel ab und übertrage sie auf die Breitenskala am seitlichen Kartenrand, auf Höhe der gemessenen Strecke. Eine Bogenminute Breite entspricht genau einer Seemeile."
+    - name: "Tiefen entlang der Kurslinie prüfen"
+      text: "Kontrolliere Tiefenangaben, Tiefenlinien und eingezeichnete Untiefen oder Wracks entlang der Kurslinie. Die Kartentiefe bezieht sich auf Seekartennull, im Tidenrevier addierst du die aktuelle Gezeitenhöhe hinzu."
+    - name: "Eigene Position mit Uhrzeit eintragen"
+      text: "Trage die gefahrene Position mit Datum, Uhrzeit und möglichst der Koppelposition aus Kurs, Fahrt und vergangener Zeit ein, damit während und nach der Fahrt nachvollziehbar bleibt, wo du warst."
 ---
 
 Eine Seekarte sieht auf den ersten Blick aus wie eine gewöhnliche Landkarte mit ein paar zusätzlichen Zahlen. Tatsächlich steckt darin ein eigenes Zeichensystem, das dir alles verrät, was du für eine sichere Fahrt brauchst: wie tief das Wasser ist, wo Gefahren lauern und wie du deine Position bestimmst. Für den [SBF See](/sbf-see/) gehört das Lesen einer Seekarte zum festen Prüfungsstoff. Dieser Artikel erklärt die Grundlagen, damit du dich auf jeder Karte zurechtfindest.

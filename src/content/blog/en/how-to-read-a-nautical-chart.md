@@ -17,6 +17,22 @@ faq:
     answer: "On a Mercator chart, a line of constant compass bearing appears as a straight line, which makes practical chart work much easier. The downside is that areas and distances become increasingly distorted toward the poles."
   - question: "What does a compass rose on a nautical chart show?"
     answer: "A compass rose shows the true north arrow and the variation that applies to that chart section, information you need for course conversion."
+howTo:
+  name: "Plot a course and measure distance on a nautical chart"
+  description: "How to work a nautical chart with dividers and a parallel ruler: draw the course line, read off the true course, measure the distance in nautical miles and plot your own position – the chart work tested in the SBF Coastal navigation task."
+  steps:
+    - name: "Pick the right chart scale"
+      text: "Use an overview or coastal chart for passage planning, and a harbour or approach chart for entering ports and narrow channels, where individual buoys and shoals are drawn large enough to be usable."
+    - name: "Plot the start and end point"
+      text: "Fix both points by latitude and longitude and mark them on the chart in pencil, so you can correct or extend them later."
+    - name: "Draw the course line and read off the true course"
+      text: "Join both points with the parallel ruler or plotting triangle and walk it, parallel, to the nearest compass rose. Read the true course off the outer ring there."
+    - name: "Measure the distance on the latitude scale"
+      text: "Pick up the leg with the dividers and transfer it to the latitude scale at the side margin, level with the leg you measured. One arc minute of latitude equals exactly one nautical mile."
+    - name: "Check the depths along the course line"
+      text: "Check the depth figures, depth contours and any charted shoals or wrecks along the course line. Charted depths refer to chart datum; in tidal waters you add the current tidal height."
+    - name: "Plot your own position with the time"
+      text: "Record your position with the date, time and, ideally, your dead-reckoning position from course, speed and elapsed time, so it stays traceable during and after the passage where you were."
 ---
 
 At first glance, a nautical chart looks like an ordinary map with a few extra numbers scattered across it. In reality, it uses its own system of symbols that tells you everything you need for a safe passage: how deep the water is, where the dangers lie, and how to fix your position. For the German boating licence [SBF Coastal (SBF See)](/en/sbf-coastal/), reading a nautical chart is a fixed part of the exam material. This article explains the basics so you can find your way around any chart.
