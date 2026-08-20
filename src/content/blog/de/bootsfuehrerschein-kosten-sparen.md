@@ -17,6 +17,20 @@ faq:
     answer: "Ja, ein Präsenzkurs kostet 250 bis 400 Euro, während eine Lern-App mit dem vollständigen offiziellen ELWIS-Fragenkatalog nur 7 bis 12 Euro kostet. Die Prüfung ist dabei immer dieselbe, unabhängig davon, wie du dich vorbereitet hast."
   - question: "Was kostet der günstigste Weg zum SBF See?"
     answer: "Mit App, ärztlichem Zeugnis, Passfoto, einer Praxisstunde und der Prüfungsgebühr kommst du auf rund 280 Euro. Das ist weniger als die Hälfte dessen, was ein Komplettkurs bei einer Bootsschule kostet."
+howTo:
+  name: "Beim Bootsführerschein sparen: die 5 besten Tipps"
+  description: "Fünf konkrete Schritte, mit denen du beim Sportbootführerschein deutlich weniger für Theorie, Praxis und Prüfung bezahlst."
+  steps:
+    - name: "Kombiprüfung statt zwei einzelne Prüfungen"
+      text: "Lege Binnen- und See-Prüfung an einem Tag ab: Die Kombiprüfung kostet 178,61 € statt 279,16 € für beide Scheine einzeln und du lernst die 72 identischen Basisfragen nur einmal."
+    - name: "Theorie mit App statt Bootsschule lernen"
+      text: "Eine Lern-App mit dem vollständigen ELWIS-Fragenkatalog kostet 7–12 € statt 250–400 € für einen Präsenzkurs – die Prüfung selbst ist in jedem Fall dieselbe."
+    - name: "Praxisstunde separat buchen"
+      text: "Statt eines Komplettpakets bei der Bootsschule buchst du nur die praktische Ausbildung separat für 50–150 € statt für ein teureres Theorie-Praxis-Paket."
+    - name: "Beim ersten Versuch bestehen"
+      text: "Bereite dich mit Prüfungssimulation und Fehlertraining gezielt vor, um die 100–200 € teure Wiederholungsprüfung aus Theorie- und Praxisgebühren zu vermeiden."
+    - name: "Anbieter für die Praxisausbildung vergleichen"
+      text: "Vergleiche mindestens 2–3 Bootsschulen in deiner Region, da die Praxisausbildung – anders als die feste Prüfungsgebühr – stark nach Region und Anbieter variiert."
 ---
 
 Der Sportbootführerschein kostet je nach Weg zwischen 200 und 1.000 € – eine große Spanne (die [vollständige Kostenübersicht für 2026](/sbf-kosten/) zeigt alle Posten im Detail). Die Prüfungsgebühren sind für alle gleich, aber bei Theorievorbereitung und Praxisausbildung lässt sich einiges sparen. Hier sind die fünf Tipps, die den größten Unterschied machen.
