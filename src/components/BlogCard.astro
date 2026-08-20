@@ -36,10 +36,26 @@ const categoryColors: Record<string, string> = {
   'Sicherheit': '#F97316', 'Safety': '#F97316',
   'Praxis': '#E11D48', 'Practice': '#E11D48',
 };
+// Schriftfarbe der Kategorie-Chips. Die Akzentfarbe oben taugt als Fläche
+// (Icon-Kachel, Farbbalken), nicht als Schrift auf ihrer eigenen 8%-Tönung:
+// #0EA5E9 kam dort auf 2,56:1, #F97316 auf 2,58:1, #00A878 auf 2,80:1 – WCAG 2.2
+// AA verlangt für die 12px-Chipschrift 4,5:1 (SC 1.4.3). Diese Werte halten den
+// Farbton der Kategorie und erreichen ≥5:1, hell auf der weißen Karte, dunkel
+// auf der Karte #181E2E.
+const categoryInk: Record<string, { light: string; dark: string }> = {
+  'Prüfungswissen': { light: '#1C55FF', dark: '#678DFF' }, 'Exam Knowledge': { light: '#1C55FF', dark: '#678DFF' },
+  'Vorbereitung': { light: '#007856', dark: '#00AA79' }, 'Preparation': { light: '#007856', dark: '#00AA79' },
+  'Führerschein-Vergleich': { light: '#7C3AED', dark: '#A67AF3' }, 'License Comparison': { light: '#7C3AED', dark: '#A67AF3' },
+  'Navigation': { light: '#0A719F', dark: '#0EA5E9' },
+  'Sicherheit': { light: '#B14B05', dark: '#F97316' }, 'Safety': { light: '#B14B05', dark: '#F97316' },
+  'Praxis': { light: '#C91A40', dark: '#EB6280' }, 'Practice': { light: '#C91A40', dark: '#EB6280' },
+};
 const category = tags[0] ?? '';
 const defaultIcon = categoryIcons['Prüfungswissen']!;
 const iconPaths = category ? (categoryIcons[category] ?? defaultIcon) : defaultIcon;
 const accent = categoryColors[category] ?? '#3366FF';
+const ink = categoryInk[category] ?? categoryInk['Prüfungswissen']!;
+const tagStyle = `--tag-ink:${ink.light}; --tag-ink-dark:${ink.dark}; background:${accent}14; border-color:${accent}26`;
 // "Neu"-Badge für Artikel der letzten 21 Tage
 const isNew = (Date.now() - date.getTime()) < 21 * 24 * 60 * 60 * 1000;
 const searchText = `${title} ${description}`.toLowerCase();
@@ -51,7 +67,7 @@ const searchText = `${title} ${description}`.toLowerCase();
     <div class="blog-featured-body">
       <div class="blog-tags">
         {tags.slice(0, 2).map(tag => (
-          <span class="blog-tag" style={`color:${accent}; background:${accent}14; border-color:${accent}26`}>{tag}</span>
+          <span class="blog-tag" style={tagStyle}>{tag}</span>
         ))}
         {isNew && <span class="blog-tag-new">{lang === 'de' ? 'Neu' : 'New'}</span>}
       </div>
@@ -80,7 +96,7 @@ const searchText = `${title} ${description}`.toLowerCase();
              aria-hidden="true"
              set:html={iconPaths} />
       </div>
-      {category && <span class="blog-tag" style={`color:${accent}; background:${accent}14; border-color:${accent}26`}>{category}</span>}
+      {category && <span class="blog-tag" style={tagStyle}>{category}</span>}
       {isNew && <span class="blog-tag-new">{lang === 'de' ? 'Neu' : 'New'}</span>}
     </div>
     <div class="blog-compact-body">
@@ -139,7 +155,7 @@ const searchText = `${title} ${description}`.toLowerCase();
     font-size: 12px;
     font-weight: 700;
     background: rgba(51,102,255,0.08);
-    color: #3366FF;
+    color: var(--tag-ink, #1C55FF);
     border: 1px solid rgba(51,102,255,0.15);
     padding: 2px 9px;
     border-radius: 100px;
@@ -289,5 +305,6 @@ const searchText = `${title} ${description}`.toLowerCase();
   html.dark .blog-compact-desc,
   html.dark .blog-author-sub   { color: #94A3B8 !important; }
   html.dark .blog-compact-footer { border-color: rgba(90, 120, 255, 0.10) !important; }
+  html.dark .blog-tag { color: var(--tag-ink-dark, #678DFF) !important; }
   html.dark .blog-tag-new { background: #2952CC !important; }
 </style>
