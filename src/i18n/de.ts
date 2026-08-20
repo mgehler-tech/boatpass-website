@@ -62,32 +62,28 @@ export const de = {
       desc: 'Trainiere gezielt deine Schwächen – nur falsch beantwortete Fragen. Mit Trefferquote je Kategorie und Lernstatistik siehst du jederzeit, wo du stehst.',
     },
   },
-  // Drei echte App-Screens statt Icon-Karten. Die Beschreibungen nennen
-  // bewusst Zahlen, die auf der jeweiligen Aufnahme auch zu sehen sind –
-  // sonst widerspricht der Text dem Bild daneben.
+  // Vier echte App-Screens als Produktkarten. Jede Karte trägt einen
+  // Nummern-Badge (01–04) und führt vom Titel über die Beschreibung zum
+  // Screenshot – die Aufnahme belegt, wovon der Text spricht.
   steps: {
-    title: 'Wie du lernst',
-    subtitle: 'Starten, verstehen, messen, prüfen – die vier Bereiche, in denen du dich bewegst.',
+    title: 'Wie du mit BoatPass lernst',
+    subtitle: 'Vier klare Schritte bis zur Prüfung – vom ersten Lernblock bis zur sicheren Prüfungssimulation.',
     items: [
       {
-        eyebrow: 'Jeden Tag starten',
-        title: 'Ein Tipp – und du bist dran',
-        desc: '53 von 300 Fragen geschafft, Tagesziel erreicht, Streak gesichert. Der Startbildschirm zeigt dir immer genau, wo du weitermachst.',
+        title: 'Jeden Tag starten',
+        desc: 'BoatPass zeigt dir direkt, womit du sinnvoll weitermachst – ohne langes Suchen.',
       },
       {
-        eyebrow: 'Frage verstehen',
-        title: 'Erklärung statt richtig/falsch',
-        desc: 'Zu jeder Antwort steht da, warum sie stimmt – dazu eine Merkhilfe, die den Satz für die Prüfung festklopft.',
+        title: 'Fragen verstehen',
+        desc: 'Nicht nur richtig oder falsch: Erklärungen und Merkhilfen machen den Stoff verständlich.',
       },
       {
-        eyebrow: 'Schwächen sehen',
-        title: 'Das Logbuch zeigt, wo es hakt',
-        desc: 'Fortschritt je Kategorie: 19 von 124 im Schifffahrtsrecht, 3 von 28 bei Signalen. Du siehst sofort, was noch fehlt.',
+        title: 'Fortschritt sehen',
+        desc: 'Im Logbuch erkennst du auf einen Blick, welche Themen du schon beherrschst.',
       },
       {
-        eyebrow: 'Prüfung simulieren',
-        title: 'Amtlicher Bogen oder Zufallsprüfung',
-        desc: '37 Fragen in 45 Minuten unter echten Bedingungen. Die Formkurve zeigt, ob du stabil über der Bestehensgrenze liegst.',
+        title: 'Prüfung bestehen',
+        desc: 'Mit realistischen Prüfungssimulationen und Formkurve weißt du, wann du bereit bist.',
       },
     ],
   },
