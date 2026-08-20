@@ -17,6 +17,20 @@ faq:
     answer: "Die Wassertiefe ergibt sich aus der Kartentiefe bezogen auf Seekartennull plus der aktuellen Gezeitenhöhe, minus dem Tiefgang des Bootes. Dabei sollte immer eine Sicherheitsreserve eingeplant werden, da Wind und Luftdruck den realen Wasserstand von der Vorhersage abweichen lassen können."
   - question: "Wie genau ist die Zwölftelregel?"
     answer: "Sie ist eine Näherung, die einen gleichmäßigen, sinusähnlichen Tidenverlauf unterstellt und meist unter 2,5 % vom Tidenhub abweicht. Für Törnplanung und SBF-See-Prüfung reicht diese Genauigkeit aus, bei unregelmäßigem Tidenverlauf wie Doppelhochwasser stößt sie aber an ihre Grenzen."
+howTo:
+  name: "Wasserstand mit der Zwölftelregel berechnen"
+  description: "So schätzt du mit der Zwölftelregel den Wasserstand zwischen Niedrig- und Hochwasser ab und ermittelst daraus das Wasser unter dem Kiel – so wie es die SBF-See-Prüfung und die Törnplanung verlangen."
+  steps:
+    - name: "Hoch- und Niedrigwasserzeiten und -höhen ablesen"
+      text: "Entnimm dem Gezeitenkalender oder der Tidentafel für dein Revier die Zeiten und Höhen von Niedrig- und Hochwasser, zum Beispiel Niedrigwasser 08:00 Uhr mit 1,0 m und Hochwasser 14:00 Uhr mit 4,0 m."
+    - name: "Tidenhub bestimmen und durch zwölf teilen"
+      text: "Zieh die Niedrigwasserhöhe von der Hochwasserhöhe ab, um den Tidenhub zu erhalten (4,0 m − 1,0 m = 3,0 m). Teile ihn durch zwölf; das ergibt ein Zwölftel, hier 0,25 m."
+    - name: "Zwölftel für die vergangenen Stunden addieren"
+      text: "Zähle die Anteile der Merkfolge 1 – 2 – 3 – 3 – 2 – 1 für die seit der Wende vergangenen Stunden zusammen. Drei Stunden nach Niedrigwasser sind das 1 + 2 + 3 = 6 Zwölftel."
+    - name: "Wasserstand ausrechnen"
+      text: "Multipliziere die Anzahl der Zwölftel mit dem Wert eines Zwölftels (6 × 0,25 m = 1,5 m) und addiere das Ergebnis zur Niedrigwasserhöhe: 1,0 m + 1,5 m = 2,5 m über Seekartennull. Bei fallendem Wasser ziehst du den Betrag stattdessen von der Hochwasserhöhe ab."
+    - name: "Wasser unter dem Kiel prüfen"
+      text: "Rechne Kartentiefe plus Gezeitenhöhe minus Tiefgang deines Bootes. Plane zusätzlich eine Sicherheitsreserve ein, weil Wind und Luftdruck den realen Wasserstand von der Vorhersage abweichen lassen können."
 ---
 
 Wer auf Nord- oder Ostsee unterwegs ist, kommt an den Gezeiten nicht vorbei. Besonders im Wattenmeer entscheidet der richtige Zeitpunkt darüber, ob unter dem Kiel noch genug Wasser steht. Mit der **Zwölftelregel** lässt sich der Wasserstand zwischen Hoch- und Niedrigwasser einfach abschätzen – ganz ohne aufwendige Tabellen. So funktioniert sie.

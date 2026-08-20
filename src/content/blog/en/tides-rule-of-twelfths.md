@@ -17,6 +17,20 @@ faq:
     answer: "Water depth equals the charted depth relative to chart datum plus the current tidal height, minus the boat's draft. Always build in a safety margin, since wind and air pressure can make the real water level deviate from the forecast."
   - question: "How accurate is the rule of twelfths?"
     answer: "It is an approximation that assumes a smooth, sine-like tidal curve and usually deviates by less than 2.5% of the tidal range. That accuracy is sufficient for passage planning and the SBF Coastal exam, but the rule reaches its limits in areas with irregular tidal patterns like double high waters."
+howTo:
+  name: "Calculate the water level with the rule of twelfths"
+  description: "How to estimate the water level between low and high water with the rule of twelfths and derive the water under your keel from it – as required for passage planning and the SBF Coastal exam."
+  steps:
+    - name: "Look up the times and heights of high and low water"
+      text: "Take the times and heights of low and high water for your area from the tide tables, for example low water at 08:00 with 1.0 m and high water at 14:00 with 4.0 m."
+    - name: "Work out the tidal range and divide it by twelve"
+      text: "Subtract the low water height from the high water height to get the tidal range (4.0 m − 1.0 m = 3.0 m). Divide it by twelve to get one twelfth, here 0.25 m."
+    - name: "Add up the twelfths for the hours elapsed"
+      text: "Add the shares from the sequence 1 – 2 – 3 – 3 – 2 – 1 for the hours that have passed since the turning point. Three hours after low water that is 1 + 2 + 3 = 6 twelfths."
+    - name: "Calculate the water level"
+      text: "Multiply the number of twelfths by the value of one twelfth (6 × 0.25 m = 1.5 m) and add the result to the low water height: 1.0 m + 1.5 m = 2.5 m above chart datum. While the water is falling, subtract the amount from the high water height instead."
+    - name: "Check the water under the keel"
+      text: "Take the charted depth plus the tidal height minus your boat's draft. Add a safety margin on top, because wind and air pressure can make the real water level deviate from the forecast."
 ---
 
 Anyone sailing the North Sea or Baltic can't avoid the tides. In the Wadden Sea in particular, the right timing decides whether there's still enough water under the keel. The **rule of twelfths** makes it easy to estimate the water level between high and low water – without complicated tables. Here's how it works.
