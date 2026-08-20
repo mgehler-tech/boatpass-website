@@ -233,16 +233,21 @@ const titleParts = t.steps.title.split('BoatPass');
     .step-title { font-size: 18px; line-height: 24px; margin-bottom: 16px; }
     .step-desc { font-size: 16px; line-height: 28px; margin-bottom: 20px; }
 
-    /* Ganzer Screenshot: keine feste Höhe, natürliche Proportion. Er sitzt am
-       Kartenende (margin-top:auto), oben abgerundet, unten von der Kartenkante
-       sauber abgeschlossen. */
+    /* Ganzer Screenshot als freischwebende, rundum abgerundete Kachel mit
+       weichem Schatten – nicht mehr an die Kartenkante bleedend. So wirken die
+       Ränder in Light und Dark sauber, statt dass die dunkle Kartenecke den
+       hellen Screenshot anschneidet. */
     .step-shot {
       margin-top: auto;
-      border-radius: 18px 18px 0 0;
-      border: 1px solid rgba(26, 31, 54, 0.08);
-      border-bottom: none;
+      margin-bottom: 20px;
+      border-radius: 20px;
+      border: 1px solid rgba(15, 23, 46, 0.10);
+      box-shadow: 0 10px 26px rgba(15, 23, 46, 0.10);
     }
-    html.dark .step-shot { border-color: rgba(90, 120, 255, 0.14); }
+    html.dark .step-shot {
+      border-color: rgba(255, 255, 255, 0.10);
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+    }
   }
 
   @media (max-width: 360px) {
