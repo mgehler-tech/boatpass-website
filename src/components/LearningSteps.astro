@@ -1,15 +1,18 @@
 ---
-// Drei echte App-Screens statt Icon-Karten (ersetzt FeatureCards auf der
+// Vier echte App-Screens statt Icon-Karten (ersetzt FeatureCards auf der
 // Startseite). Die Aufnahmen sind dieselben, die auch im Hero laufen – hier
 // aber statisch, groß und mit der Aussage daneben, die sie belegen.
 //
-// Reihenfolge ist inhaltlich begründet und keine Dekoration: verstehen,
-// messen, prüfen. Deshalb tragen die Schritte Eyebrows und keine Nummern.
+// Reihenfolge ist inhaltlich begründet und keine Dekoration: starten,
+// verstehen, messen, prüfen. Deshalb tragen die Schritte Eyebrows und keine
+// Nummern.
 import { Image } from 'astro:assets';
 import { useTranslations } from '../i18n/index';
+import screenshotHomeDe from '../assets/images/app.screenshot.0.de.png';
 import screenshotQuestionDe from '../assets/images/app.screenshot.3.de.png';
 import screenshotLogDe from '../assets/images/app.screenshot.1.de.png';
 import screenshotExamDe from '../assets/images/app.screenshot.2.de.png';
+import screenshotHomeEn from '../assets/images/app.screenshot.0.en.png';
 import screenshotQuestionEn from '../assets/images/app.screenshot.3.en.png';
 import screenshotLogEn from '../assets/images/app.screenshot.1.en.png';
 import screenshotExamEn from '../assets/images/app.screenshot.2.en.png';
@@ -23,16 +26,18 @@ const t = useTranslations(lang);
 const de = lang === 'de';
 
 const shots = de
-  ? [screenshotQuestionDe, screenshotLogDe, screenshotExamDe]
-  : [screenshotQuestionEn, screenshotLogEn, screenshotExamEn];
+  ? [screenshotHomeDe, screenshotQuestionDe, screenshotLogDe, screenshotExamDe]
+  : [screenshotHomeEn, screenshotQuestionEn, screenshotLogEn, screenshotExamEn];
 
 const alts = de
   ? [
+      'Boatpass App – Startbildschirm mit Tagesziel, Streak und Lernmodi',
       'Boatpass App – Frage mit Erklärung und Merkhilfe',
       'Boatpass App – Logbuch mit Fortschritt je Kategorie',
       'Boatpass App – Prüfungsbereich mit Formkurve',
     ]
   : [
+      'Boatpass app – home screen with daily goal, streak and study modes',
       'Boatpass app – question with explanation and mnemonic',
       'Boatpass app – logbook with progress per category',
       'Boatpass app – exam area with performance curve',
@@ -48,7 +53,7 @@ const steps = t.steps.items.map((item, i) => ({ ...item, shot: shots[i], alt: al
   </div>
 
   <div class="steps-grid snap-row" data-snap-row="steps"
-    aria-label={de ? 'Drei Screens aus der App' : 'Three screens from the app'}>
+    aria-label={de ? 'Vier Screens aus der App' : 'Four screens from the app'}>
     {steps.map(step => (
       <div class="step snap-item reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
         <div class="step-shot">
@@ -74,8 +79,8 @@ const steps = t.steps.items.map((item, i) => ({ ...item, shot: shots[i], alt: al
 
   .steps-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 34px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 26px;
   }
 
   /* Kein Kartenrahmen: Der Screenshot ist der Inhalt und trägt sich selbst.
