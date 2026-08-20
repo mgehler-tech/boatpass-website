@@ -56,8 +56,13 @@ export const en: Translations = {
   },
   steps: {
     title: 'How you learn',
-    subtitle: 'Understand, measure, test – the three places you spend your time.',
+    subtitle: 'Start, understand, measure, test – the four places you spend your time.',
     items: [
+      {
+        eyebrow: 'Start every day',
+        title: "One tap and you're in",
+        desc: '53 of 300 questions done, daily goal reached, streak secured. The home screen always shows you exactly where to pick up.',
+      },
       {
         eyebrow: 'Understand the question',
         title: 'An explanation, not just right or wrong',

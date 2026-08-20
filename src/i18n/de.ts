@@ -67,8 +67,13 @@ export const de = {
   // sonst widerspricht der Text dem Bild daneben.
   steps: {
     title: 'Wie du lernst',
-    subtitle: 'Verstehen, messen, prüfen – die drei Bereiche, in denen du dich bewegst.',
+    subtitle: 'Starten, verstehen, messen, prüfen – die vier Bereiche, in denen du dich bewegst.',
     items: [
+      {
+        eyebrow: 'Jeden Tag starten',
+        title: 'Ein Tipp – und du bist dran',
+        desc: '53 von 300 Fragen geschafft, Tagesziel erreicht, Streak gesichert. Der Startbildschirm zeigt dir immer genau, wo du weitermachst.',
+      },
       {
         eyebrow: 'Frage verstehen',
         title: 'Erklärung statt richtig/falsch',
