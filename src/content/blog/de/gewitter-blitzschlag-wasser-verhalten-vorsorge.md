@@ -17,6 +17,22 @@ faq:
     answer: "Steuere den nächstgelegenen sicheren Hafen oder eine geschützte Bucht an, ziehe Rettungswesten an, sichere lose Gegenstände und meide während des Gewitters den Kontakt mit Metallteilen wie Reling, Want oder Mast. Bleib möglichst tief im Boot und geh nicht ins Wasser."
   - question: "Kann ein Blitz mein Boot beschädigen, auch wenn ich unverletzt bleibe?"
     answer: "Ja. Ein Blitzeinschlag kann Elektronik, Kompass und elektrische Anlagen beschädigen, selbst wenn niemand an Bord verletzt wird. Nach einem Einschlag solltest du Kompass, Navigationsgeräte und den Rumpf auf Schäden prüfen, im Zweifel fachkundig untersuchen lassen."
+howTo:
+  name: "Richtig auf ein Gewitter auf dem Wasser reagieren"
+  description: "Von den ersten Warnzeichen bis zur Kontrolle nach einem nahen Blitzeinschlag: so bereitest du dich als Sportbootfahrer auf ein Gewitter vor und verhältst dich sicher."
+  steps:
+    - name: "Warnzeichen erkennen"
+      text: "Auf turmartig aufragende Cumulonimbus-Wolken, schnell dunkler werdenden Himmel, fallendes Barometer, auffrischenden oder drehenden Wind und fernes Donnergrollen achten."
+    - name: "Entfernung mit der 30-30-Regel abschätzen"
+      text: "Sekunden zwischen Blitz und Donner zählen und durch drei teilen. Liegen weniger als 30 Sekunden dazwischen, zügig reagieren."
+    - name: "Sicheren Hafen ansteuern und Rettungswesten anziehen"
+      text: "Kurs auf den nächsten sicheren Hafen oder eine geschützte Bucht nehmen und Rettungswesten anziehen, bevor sich die Bedingungen verschlechtern."
+    - name: "Boot vorbereiten"
+      text: "Lose Gegenstände sichern, Angeln einholen, nicht fest verbaute Elektronik von Antennen fernhalten und die Besatzung informieren."
+    - name: "Während des Gewitters Abstand zu Metallteilen halten"
+      text: "Kontakt mit Reling, Wanten, Mast und anderen leitfähigen Bauteilen meiden, möglichst tief im Boot bleiben und nicht ins Wasser gehen."
+    - name: "Nach einem nahen Einschlag Boot und Elektronik prüfen"
+      text: "Kompass gegen bekannte Referenzpunkte prüfen, GPS, Funkgerät und Bordelektrik auf Schäden kontrollieren und Rumpf sowie Beschläge auf Schmauchspuren untersuchen."
 ---
 
 Ein spiegelglatter See, kaum Wind, und plötzlich türmt sich am Horizont eine dunkle Wolkenwand auf. Gewitter gehören zu den Wetterlagen, die auf dem Wasser besonders ernst zu nehmen sind, denn du bist meist der exponierteste Punkt weit und breit und hast keine Möglichkeit, dich schnell in ein Gebäude zu flüchten. Dieser Artikel zeigt, wie du ein aufziehendes Gewitter frühzeitig erkennst, wie du dich und dein Boot richtig vorbereitest und wie du dich während eines Gewitters an Bord verhältst.
