@@ -73,6 +73,19 @@ const score = rating ? formatRating(rating.score).replace('.', ',') : null;
     border-right: 1px solid rgba(26, 31, 54, 0.12);
   }
   .rv:nth-child(2n) { border-right: 0; }
+  /* Ungerade Anzahl Rezensionen (aktuell 7): die letzte Karte steht allein in
+     der linken Spalte einer neuen Reihe. Ohne diese Regel bliebe ihr
+     border-right als senkrechter Trenner stehen, der ins leere rechte
+     Rasterfeld hinabläuft – ein sichtbar unsauberer, „dangling" Strich. Auf der
+     letzten Karte entfällt der rechte Rand daher; bei gerader Anzahl liegt sie
+     ohnehin rechts (border-right bereits via :nth-child(2n) entfernt), die Regel
+     bleibt dann wirkungslos. Bewusst nur im 2-Spalten-Raster (≥769px): unter
+     768px ist die Reihe eine Wisch-Leiste, in der jede Karte einen vollen Rahmen
+     trägt – dort muss der rechte Rand bleiben. Reiner Alignment-Feinschliff,
+     keine Farb-/Markenänderung. */
+  @media (min-width: 769px) {
+    .rv:last-child { border-right: 0; }
+  }
 
   .rv-stars { color: #FBBF24; font-size: 14px; letter-spacing: 1px; }
 
