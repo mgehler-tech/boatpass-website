@@ -327,7 +327,22 @@ const breadcrumbSchema = {
     .start-block { padding: 24px; }
     .start-grid { grid-template-columns: 1fr; }
     .cluster-grid { grid-template-columns: 1fr; }
-    .blog-cta-block { padding: 28px 24px; }
+    /* Give the blog overview's footer app-CTA the same mobile treatment as the
+       site-wide CtaBanner: stack the block, centre the text and let the button
+       fill the full width. It was the only one of the prominent CTAs missing a
+       mobile rule (Hero, CtaBanner and FinderTeaser all stack and go full-width
+       on phones) – the narrow, content-width button stayed pinned to the left
+       under the wrapped text (frayed alignment and a smaller touch target than
+       needed). Now identical to the mobile rule in CtaBanner.astro. Pure layout
+       polish, brand colours untouched. */
+    .blog-cta-block {
+      padding: 28px 24px;
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+      gap: 20px;
+    }
+    .blog-cta-btn { width: 100%; }
   }
 
   /* ── Dark Mode ──────────────────────────────────────────────────────────

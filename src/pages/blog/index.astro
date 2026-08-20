@@ -332,7 +332,23 @@ const breadcrumbSchema = {
     .start-block { padding: 24px; }
     .start-grid { grid-template-columns: 1fr; }
     .cluster-grid { grid-template-columns: 1fr; }
-    .blog-cta-block { padding: 28px 24px; }
+    /* App-CTA am Fuß der Blog-Übersicht auf dem Handy wie der siteweite
+       CtaBanner behandeln: Block stapeln, Text zentrieren und den Button auf
+       volle Breite ziehen. Bisher fehlte als einzigem der prominenten CTAs die
+       Mobil-Behandlung (Hero, CtaBanner und FinderTeaser stapeln auf dem Handy
+       und ziehen den Button voll breit) – der schmale, inhaltsbreite Button
+       blieb links unter dem umgebrochenen Text hängen (ausgefranstes Alignment
+       und eine kleinere Touch-Fläche als nötig). Jetzt identisch zur
+       Mobil-Regel in CtaBanner.astro. Reiner Layout-Feinschliff, Markenfarben
+       unberührt. */
+    .blog-cta-block {
+      padding: 28px 24px;
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+      gap: 20px;
+    }
+    .blog-cta-btn { width: 100%; }
   }
 
   /* ── Dark Mode ──────────────────────────────────────────────────────────
