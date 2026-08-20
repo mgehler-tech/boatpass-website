@@ -563,7 +563,10 @@ const promo = {
   .nav-mega-item:hover .nav-mega-icon { background: rgba(51,102,255,0.14); }
   .nav-mega-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
   .nav-mega-label { font-size: 14px; font-weight: 600; color: #1A1F36; line-height: 1.35; }
-  .nav-mega-desc { font-size: 12px; color: #9097A6; line-height: 1.4; display: flex; flex-wrap: wrap; align-items: center; gap: 3px 6px; }
+  /* #6E7686 statt #9097A6: Kontrast auf Weiß lag bei 2.93:1 und riss die
+     WCAG-2.2-AA-Mindestanforderung für Fließtext (4.5:1, SC 1.4.3) deutlich.
+     #6E7686 erreicht 4.57:1 bei minimal abweichendem Blaugrau-Ton. */
+  .nav-mega-desc { font-size: 12px; color: #6E7686; line-height: 1.4; display: flex; flex-wrap: wrap; align-items: center; gap: 3px 6px; }
 
   /* "bald"-Einträge ohne Zielseite: sichtbar, aber nicht klickbar */
   .nav-mega-item--soon { cursor: default; }
