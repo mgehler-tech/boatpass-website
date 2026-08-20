@@ -444,6 +444,24 @@ const single = only ? rows.find(r => r.key === only) : null;
     background: #181E2E !important;
     border-color: rgba(90, 120, 255, 0.12) !important;
   }
+  /* Die Fassungs-Pillen behielten im Dark Mode ihre für den hellen Grund
+     gewählten Töne (#047857 grün, #B45309 bernstein). Auf der dunklen Karte
+     (#181E2E) erreichen sie damit nur 2,59:1 bzw. 2,79:1 – deutlich unter der
+     WCAG-2.2-AA-Mindestanforderung für Fließtext (4,5:1, SC 1.4.3); im Light
+     Mode liegen dieselben Pillen bei 4,99:1 bzw. 4,65:1. Hellere Töne derselben
+     Farbfamilie stellen die Lesbarkeit her (6,90:1 bzw. 7,79:1), die etwas
+     kräftigere Tönung und Randfarbe hält die Pillenform auf dem dunklen Grund
+     sichtbar – dasselbe Muster wie bei .lic-badge. */
+  html.dark .stand-pill {
+    color: #34D399 !important;
+    background: rgba(16, 185, 129, 0.14) !important;
+    border-color: rgba(16, 185, 129, 0.30) !important;
+  }
+  html.dark .stand-pill-next {
+    color: #FBBF24 !important;
+    background: rgba(245, 158, 11, 0.14) !important;
+    border-color: rgba(245, 158, 11, 0.32) !important;
+  }
   html.dark .validity-note {
     color: #B4BCDA !important;
     background: rgba(90, 120, 255, 0.06) !important;
