@@ -421,6 +421,11 @@ html.dark .gradient-text {
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    /* Nur horizontal pannen: eine vertikale Wischgeste wird nicht mehr
+       mehrdeutig als Karussell-Scroll interpretiert, sondern geht direkt an
+       die Seite. Verhindert das Stocken/Zucken beim vertikalen Scrollen über
+       dem Slider. Pinch-Zoom bleibt für die Barrierefreiheit erhalten. */
+    touch-action: pan-x pinch-zoom;
     /* Seiteneinzug (px-6 = 24px) ausgleichen und als Padding zurückgeben */
     margin-inline: -24px;
     padding-inline: 24px;
