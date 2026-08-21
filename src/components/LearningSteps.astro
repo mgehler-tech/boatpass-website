@@ -249,10 +249,15 @@ const titleParts = t.steps.title.split('BoatPass');
     .step-desc { font-size: 16px; line-height: 28px; margin-bottom: 20px; }
 
     /* Gerät schwebt am Kartenende, mit etwas Luft zur Unterkante. Rahmen-Optik
-       kommt aus der gemeinsamen .step-shot-Regel. */
+       kommt aus der gemeinsamen .step-shot-Regel. Breite begrenzt und
+       zentriert, damit der hohe Screenshot (Verhältnis ~2,2) die Karte mobil
+       nicht fast bildschirmfüllend macht. */
     .step-shot {
       margin-top: auto;
       margin-bottom: 20px;
+      width: 196px;
+      max-width: 72%;
+      margin-inline: auto;
     }
   }
 
