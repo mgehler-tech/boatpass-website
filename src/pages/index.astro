@@ -5,7 +5,6 @@ import LearningSteps from '../components/LearningSteps.astro';
 import FounderNote from '../components/FounderNote.astro';
 import Reviews from '../components/Reviews.astro';
 import PricingSection from '../components/PricingSection.astro';
-import CatalogSources from '../components/CatalogSources.astro';
 import BlogTeaser from '../components/BlogTeaser.astro';
 import FinderTeaser from '../components/FinderTeaser.astro';
 import { getBoatpassRating } from '../data/apps';
@@ -64,10 +63,11 @@ const faqSchema = {
   <LearningSteps lang="de" />
   <FounderNote lang="de" />
   <Reviews lang="de" />
-  <!-- withSourceNote={false}: Der Hinweisblock der Preis-Sektion wiederholt
-       genau das, was CatalogSections direkt darunter ausführlich zeigt. -->
-  <PricingSection lang="de" withGuarantee withSourceNote={false} />
-  <CatalogSources lang="de" collapsible />
+  <!-- withProof: die amtlichen Quellen ("Nachprüfen") laufen jetzt als
+       dritte Unter-Gruppe INNERHALB der Preis-Sektion – eine Band statt
+       zwei Sektionen. withSourceNote bleibt aus, sonst stünde der Hinweis
+       doppelt (kurz oben, ausführlich im eingebetteten Quellen-Block). -->
+  <PricingSection lang="de" withGuarantee withSourceNote={false} withProof />
   <FinderTeaser lang="de" />
   <BlogTeaser lang="de" />
 

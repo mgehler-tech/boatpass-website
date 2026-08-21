@@ -12,9 +12,14 @@ interface Props {
   // Nachschlagen, nicht Lesestoff. Auf den Lizenzseiten bleibt alles offen,
   // dort ist die Übersicht der eigentliche Inhalt.
   collapsible?: boolean;
+  // Eingebettet: gibt den Block OHNE eigene <section>/Band-Hülle und ohne
+  // Section-Chip/-Titel aus, damit er als Unter-Gruppe innerhalb der
+  // Preis-Sektion (#pricing) auf der Startseite laufen kann. Die Überschrift
+  // rückt dann auf die Ebene der übrigen Unter-Überschriften (SBF, Funk).
+  embedded?: boolean;
 }
 
-const { lang, only, collapsible = false } = Astro.props;
+const { lang, only, collapsible = false, embedded = false } = Astro.props;
 const t = useTranslations(lang);
 
 // "Stand dieser Übersicht" wird beim Build aus dem aktuellen Datum gesetzt –
@@ -37,6 +42,13 @@ const rows: { key: LicenseKey; license: string; catalog: string; stand: string; 
 ];
 
 const single = only ? rows.find(r => r.key === only) : null;
+
+// Eingebettet läuft der Block als schlichtes <div> ohne Band/Chrome; sonst
+// bleibt er die eigenständige Section mit Band und Section-Titel.
+const Wrapper = embedded ? 'div' : 'section';
+const wrapperProps = embedded
+  ? { class: 'cat-embedded reveal-item', style: 'opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;' }
+  : { id: 'catalog-sources', class: 'section-band max-w-6xl mx-auto px-6 py-12 md:py-20' };
 ---
 
 {single ? (
@@ -60,16 +72,23 @@ const single = only ? rows.find(r => r.key === only) : null;
   </div>
 ) : (
 
-<section id="catalog-sources" class="section-band max-w-6xl mx-auto px-6 py-12 md:py-20">
-  <div class="reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; margin-bottom:32px; max-width:640px;">
-    <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
-      {t.catalogSources.chip}
+<Wrapper {...wrapperProps}>
+  {embedded ? (
+    <div class="cat-embedded-head">
+      <div class="cat-embedded-title">{t.catalogSources.title}</div>
+      <p class="cat-embedded-intro">{t.catalogSources.intro}</p>
     </div>
-    <h2 class="section-display-title" style="margin-bottom:14px;">{t.catalogSources.title}</h2>
-    <p style="font-size:16px; color:#656B78; line-height:1.65;">{t.catalogSources.intro}</p>
-  </div>
+  ) : (
+    <div class="reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; margin-bottom:32px; max-width:640px;">
+      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#3366FF; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
+        {t.catalogSources.chip}
+      </div>
+      <h2 class="section-display-title" style="margin-bottom:14px;">{t.catalogSources.title}</h2>
+      <p style="font-size:16px; color:#656B78; line-height:1.65;">{t.catalogSources.intro}</p>
+    </div>
+  )}
 
-  <div class="reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+  <div class:list={[!embedded && 'reveal-item']} style={embedded ? undefined : 'opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;'}>
     <details class:list={['cat-details', collapsible && 'cat-details--toggle']} open={!collapsible}>
       <summary class="cat-summary">
         <span class="cat-summary-label">
@@ -141,10 +160,33 @@ const single = only ? rows.find(r => r.key === only) : null;
     </div>
     </details>
   </div>
-</section>
+</Wrapper>
 )}
 
 <style>
+  /* Eingebettet in die Preis-Sektion (Startseite): der Block läuft als
+     dritte Unter-Gruppe nach SBF und Funk. Überschrift auf Unter-Überschrift-
+     Ebene (wie .pv2-subheading), kein Section-Chip, kein eigenes Band. Der
+     44px-Abstand nach oben entspricht dem Rhythmus zwischen den Gruppen. */
+  .cat-embedded { margin-top: 44px; text-align: left; }
+  .cat-embedded-head { margin-bottom: 22px; }
+  .cat-embedded-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #1A1F36;
+    letter-spacing: -0.3px;
+    margin: 0 0 6px;
+  }
+  .cat-embedded-intro {
+    font-size: 14px;
+    color: #656B78;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 640px;
+  }
+  html.dark .cat-embedded-title { color: #E2E8F0 !important; }
+  html.dark .cat-embedded-intro { color: #94A3B8 !important; }
+
   /* Aufklapper. Auf den Lizenzseiten steht <details open> ohne collapsible –
      dort ist der Balken unsichtbar und die Übersicht wie bisher offen. */
   .cat-details[open] > .cat-summary { margin-bottom: 24px; }
