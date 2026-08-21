@@ -15,6 +15,14 @@
   --font-family-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
 }
 
+/* Sprungziele von In-Page-Ankern (#features, #pricing, FAQ-Kategorien …) dürfen
+   nicht unter dem fixierten Header verschwinden. scroll-padding-top hält beim
+   Sprung Abstand zur Header-Höhe (h-16 = 64px) plus etwas Luft, sodass die
+   Überschrift des Zielabschnitts nicht angeschnitten wird. */
+html {
+  scroll-padding-top: 5rem;
+}
+
 /* Skip-Link – normalerweise unsichtbar, erscheint bei Tastaturfokus */
 .skip-link {
   position: absolute;
