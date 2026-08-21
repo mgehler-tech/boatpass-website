@@ -55,21 +55,25 @@ const faqSchema = {
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  <!-- Reihenfolge: erst das Produkt, dann die Person dahinter, dann Belege,
-       dann der Preis. Der Führerschein-Finder stand bisher zwischen Features
-       und Preisen und unterbrach damit die Produktvorstellung; er sitzt jetzt
-       hinter der Kaufentscheidung, wo er als Umweg auch hingehört. -->
+  <!-- Reihenfolge folgt der Nutzerfrage, nicht der Produktlogik: Was gibt es
+       (Hero) → wie lernt es sich (LearningSteps) → welchen Schein brauche ich
+       überhaupt (Finder) → kann ich dem trauen (Reviews, Gründer) → was kostet
+       es (Preis). Der Finder stand vorher auf Platz 6, hinter der Preistabelle –
+       also erst NACH den Preisen für sechs Schein-Varianten, obwohl er genau die
+       Frage davor beantwortet. Er sitzt jetzt vor der Kaufentscheidung. Der
+       Gründer-Block rückt hinter die Bewertungen, wo Vertrauen nach dem
+       Produktbeweis besser trägt. Der Blog-Teaser (interne Weglinks) wandert
+       ans Seitenende hinter die FAQ, damit vor dem Preis kein Absprung liegt. -->
   <HeroSection lang="de" />
   <LearningSteps lang="de" />
-  <FounderNote lang="de" />
+  <FinderTeaser lang="de" />
   <Reviews lang="de" />
+  <FounderNote lang="de" />
   <!-- withProof: die amtlichen Quellen ("Nachprüfen") laufen jetzt als
        dritte Unter-Gruppe INNERHALB der Preis-Sektion – eine Band statt
        zwei Sektionen. withSourceNote bleibt aus, sonst stünde der Hinweis
        doppelt (kurz oben, ausführlich im eingebetteten Quellen-Block). -->
   <PricingSection lang="de" withGuarantee withSourceNote={false} withProof />
-  <FinderTeaser lang="de" />
-  <BlogTeaser lang="de" />
 
   <div class="home-faq section-band">
     <section>
@@ -95,6 +99,9 @@ const faqSchema = {
       </p>
     </section>
   </div>
+  <!-- Blog-Teaser bewusst nach der FAQ, am Seitenende: reiner SEO-/Weiterlese-
+       Wert, der die Kaufentscheidung nicht mehr unterbricht. -->
+  <BlogTeaser lang="de" />
 </BaseLayout>
 
 <style is:global>
