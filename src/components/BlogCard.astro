@@ -4,10 +4,9 @@ import type { CollectionEntry } from 'astro:content';
 interface Props {
   post: CollectionEntry<'blog'>;
   lang: 'de' | 'en';
-  featured?: boolean;
 }
 
-const { post, lang, featured = false } = Astro.props;
+const { post, lang } = Astro.props;
 const { title, description, date, readingTime, tags, author } = post.data;
 const slug = post.id.replace(`${lang}/`, '');
 const href = lang === 'de' ? `/blog/${slug}/` : `/en/blog/${slug}/`;
@@ -61,96 +60,35 @@ const isNew = (Date.now() - date.getTime()) < 21 * 24 * 60 * 60 * 1000;
 const searchText = `${title} ${description}`.toLowerCase();
 ---
 
-{featured ? (
-  <a href={href} class="blog-featured group" aria-label={title} data-tags={tags.join(',')} data-search={searchText}>
-    <div class="blog-featured-bar" style={`background:linear-gradient(90deg,#1A1F36,${accent})`}></div>
-    <div class="blog-featured-body">
-      <div class="blog-tags">
-        {tags.slice(0, 2).map(tag => (
-          <span class="blog-tag" style={tagStyle}>{tag}</span>
-        ))}
-        {isNew && <span class="blog-tag-new">{lang === 'de' ? 'Neu' : 'New'}</span>}
-      </div>
-      <h3 class="blog-featured-title group-hover:text-primary transition-colors">{title}</h3>
-      <p class="blog-featured-desc">{description}</p>
-      <div class="blog-featured-footer">
-        <div class="blog-author">
-          <img class="blog-avatar" src={authorPhoto} alt={author} width="32" height="32" loading="lazy" decoding="async" />
-          <span class="blog-author-meta">
-            <span class="blog-author-name">{author}</span>
-            <span class="blog-author-sub">{formattedDate} · {readingTime} {lang === 'de' ? 'Min lesen' : 'min read'}</span>
-          </span>
-        </div>
-        <span class="blog-cta">{lang === 'de' ? 'Weiterlesen' : 'Read more'} →</span>
-      </div>
+<a href={href} class="blog-compact group" aria-label={title} data-tags={tags.join(',')} data-search={searchText}>
+  <div class="blog-compact-head">
+    <div class="blog-icon" style={`background:${accent}`}>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+           viewBox="0 0 24 24" fill="none"
+           stroke="white" stroke-width="1.75"
+           stroke-linecap="round" stroke-linejoin="round"
+           aria-hidden="true"
+           set:html={iconPaths} />
     </div>
-  </a>
-) : (
-  <a href={href} class="blog-compact group" aria-label={title} data-tags={tags.join(',')} data-search={searchText}>
-    <div class="blog-compact-head">
-      <div class="blog-icon" style={`background:${accent}`}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-             viewBox="0 0 24 24" fill="none"
-             stroke="white" stroke-width="1.75"
-             stroke-linecap="round" stroke-linejoin="round"
-             aria-hidden="true"
-             set:html={iconPaths} />
-      </div>
-      {category && <span class="blog-tag" style={tagStyle}>{category}</span>}
-      {isNew && <span class="blog-tag-new">{lang === 'de' ? 'Neu' : 'New'}</span>}
+    {category && <span class="blog-tag" style={tagStyle}>{category}</span>}
+    {isNew && <span class="blog-tag-new">{lang === 'de' ? 'Neu' : 'New'}</span>}
+  </div>
+  <div class="blog-compact-body">
+    <h3 class="blog-compact-title group-hover:text-primary transition-colors">{title}</h3>
+    <p class="blog-compact-desc">{description}</p>
+  </div>
+  <div class="blog-compact-footer">
+    <div class="blog-author">
+      <img class="blog-avatar" src={authorPhoto} alt={author} width="32" height="32" loading="lazy" decoding="async" />
+      <span class="blog-author-meta">
+        <span class="blog-author-name">{author}</span>
+        <span class="blog-author-sub">{formattedDate} · {readingTime} {lang === 'de' ? 'Min' : 'min'}</span>
+      </span>
     </div>
-    <div class="blog-compact-body">
-      <h3 class="blog-compact-title group-hover:text-primary transition-colors">{title}</h3>
-      <p class="blog-compact-desc">{description}</p>
-    </div>
-    <div class="blog-compact-footer">
-      <div class="blog-author">
-        <img class="blog-avatar" src={authorPhoto} alt={author} width="32" height="32" loading="lazy" decoding="async" />
-        <span class="blog-author-meta">
-          <span class="blog-author-name">{author}</span>
-          <span class="blog-author-sub">{formattedDate} · {readingTime} {lang === 'de' ? 'Min' : 'min'}</span>
-        </span>
-      </div>
-    </div>
-  </a>
-)}
+  </div>
+</a>
 
 <style>
-  /* Featured */
-  /* Flex-Spalte über die volle Zeilenhöhe (vom stretch-Grid des BlogTeaser
-     vorgegeben): so schließt die Featured-Karte bündig mit der rechten
-     Kompakt-Spalte ab, statt kurz oben zu stehen und darunter Leerraum zu lassen.
-     Die Fußzeile wird per margin-top:auto nach unten verankert. */
-  .blog-featured {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    background: white;
-    border: 1px solid rgba(51,102,255,0.10);
-    border-radius: 20px;
-    overflow: hidden;
-    text-decoration: none;
-    transition: box-shadow 0.2s, border-color 0.2s;
-  }
-  .blog-featured:hover {
-    box-shadow: 0 12px 40px rgba(26,31,54,0.08);
-    border-color: rgba(51,102,255,0.18);
-  }
-  .blog-featured-bar {
-    height: 3px;
-    background: linear-gradient(90deg, #1A1F36, #3366FF);
-  }
-  .blog-featured-body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 28px 28px 24px;
-  }
-  .blog-tags {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 12px;
-  }
   .blog-tag {
     font-size: 12px;
     font-weight: 700;
@@ -170,32 +108,6 @@ const searchText = `${title} ${description}`.toLowerCase();
     padding: 2px 9px;
     border-radius: 100px;
   }
-  .blog-featured-title {
-    font-size: 20px;
-    font-weight: 900;
-    color: #1A1F36;
-    letter-spacing: -0.3px;
-    line-height: 1.25;
-    margin-bottom: 10px;
-  }
-  .blog-featured-desc {
-    font-size: 14px;
-    color: #656B78;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  .blog-featured-footer {
-    margin-top: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .blog-cta { font-size: 13px; font-weight: 700; color: #3366FF; white-space: nowrap; }
-
   /* Shared author block */
   .blog-author {
     display: flex;
@@ -282,14 +194,6 @@ const searchText = `${title} ${description}`.toLowerCase();
     border-top: 1px solid rgba(26,31,54,0.06);
   }
 
-  html.dark .blog-featured {
-    background: #181E2E !important;
-    border-color: rgba(90, 120, 255, 0.12) !important;
-  }
-  html.dark .blog-featured:hover {
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
-    border-color: rgba(90, 120, 255, 0.22) !important;
-  }
   html.dark .blog-compact {
     background: #181E2E !important;
     border-color: rgba(90, 120, 255, 0.10) !important;
@@ -298,10 +202,8 @@ const searchText = `${title} ${description}`.toLowerCase();
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
     border-color: rgba(90, 120, 255, 0.20) !important;
   }
-  html.dark .blog-featured-title,
   html.dark .blog-compact-title,
   html.dark .blog-author-name  { color: #E2E8F0 !important; }
-  html.dark .blog-featured-desc,
   html.dark .blog-compact-desc,
   html.dark .blog-author-sub   { color: #94A3B8 !important; }
   html.dark .blog-compact-footer { border-color: rgba(90, 120, 255, 0.10) !important; }
