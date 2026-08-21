@@ -14,8 +14,6 @@ const allPosts = await getCollection('blog', entry => entry.data.lang === lang);
 const posts = allPosts
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
   .slice(0, 3);
-
-const [featured, ...rest] = posts;
 ---
 
 <section class="section-band max-w-6xl mx-auto px-6 py-14 md:py-20">
@@ -30,12 +28,7 @@ const [featured, ...rest] = posts;
   </div>
 
   <div class="blog-teaser-grid">
-    {featured && <BlogCard post={featured} lang={lang} featured={true} />}
-    {rest.length > 0 && (
-      <div class="blog-teaser-compact">
-        {rest.map(post => <BlogCard post={post} lang={lang} featured={false} />)}
-      </div>
-    )}
+    {posts.map(post => <BlogCard post={post} lang={lang} />)}
   </div>
 </section>
 
@@ -72,29 +65,34 @@ const [featured, ...rest] = posts;
   }
   .blog-teaser-all:hover { text-decoration: underline; }
 
-  /* Featured-Karte (links) und die zwei gestapelten Kompakt-Karten (rechts)
-     teilen sich eine Zeile. Bislang stand die Featured-Karte per align-items:start
-     oben und behielt ihre kurze Eigenhöhe (~250px), während die rechte Spalte aus
-     zwei Karten fast doppelt so hoch ist (~530px). Darunter blieb ein großer,
-     unausgeglichener Leerraum – die untere Kante der beiden Spalten lief ausgefranst
-     auseinander. Mit stretch füllt die Featured-Karte die volle Zeilenhöhe; ihre
-     Fußzeile ist unten verankert (siehe .blog-featured in BlogCard.astro), sodass
-     beide Spalten bündig auf einer Linie abschließen – dieselbe „gleiche Höhe, CTA
-     unten"-Behandlung wie die .paid-card-Reihe im Preis-Abschnitt. Einspaltig (mobil)
-     steht jede Karte allein in ihrer Zeile, dort greift stretch nicht – das Layout
-     bleibt unverändert. Reiner Layout-Feinschliff: Corporate Design unberührt. */
+  /* Drei gleichwertige Artikel-Karten in einer Reihe – dasselbe Raster, das die
+     Blog-Übersicht (.cluster-grid in pages/blog/index.astro) für dieselben Karten
+     bereits verwendet.
+
+     Vorher stand hier eine große Featured-Karte links neben zwei gestapelten
+     Kompakt-Karten. Weil die rechte Spalte (zwei Karten + Lücke) rund 504px hoch
+     ist, die Featured-Karte mit ihrem Inhalt aber nur etwa 250px braucht, klaffte
+     zwischen Beschreibung und Fußzeile ein leeres Feld von ~250px. Füllen ließ es
+     sich nicht: Die Artikel haben kein Titelbild (nur 10 von 69 setzen `image`),
+     und die Featured-Karte war mit 544px ohnehin exakt so breit wie eine
+     Kompakt-Karte – also nicht größer, nur leerer.
+
+     Eine Sonderrolle gibt der Inhalt auch nicht her: Die drei Karten zeigen die
+     drei neuesten Artikel, durchweg vom selben Autor, aus derselben Woche und alle
+     mit „Neu"-Badge. Als gleichwertige Reihe fluchten sie oben wie unten, der
+     Abschnitt folgt demselben Kartenraster wie Features und Preise, und die
+     farbigen Kategorie-Icons erscheinen jetzt auf allen drei Karten – auf der
+     Featured-Karte fehlten sie ganz. Breakpoints wie in der Blog-Übersicht. */
   .blog-teaser-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     align-items: stretch;
   }
-  .blog-teaser-compact {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  @media (max-width: 900px) {
+    .blog-teaser-grid { grid-template-columns: repeat(2, 1fr); }
   }
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
     .blog-teaser-grid { grid-template-columns: 1fr; }
   }
 </style>
