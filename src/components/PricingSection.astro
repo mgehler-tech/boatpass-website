@@ -31,29 +31,18 @@ const soonItems = [t.pricing.soon1];
 // Daten für das Redesign (Startseite). "gültig seit"-Stempel + Katalog-Bezeichnung
 // kommen aus catalogSources (amtliche Quelle) – nichts doppelt gepflegt.
 const cs = t.catalogSources;
-const sbfCards = [
-  {
-    name: t.pricing.catalog1Name, icon: 'waves' as IconName,
-    stamp: cs.binnenStand, cat: cs.binnenCat,
-    questions: t.pricing.catalog1Questions, themes: t.pricing.catalog1Themes,
-  },
-  {
-    name: t.pricing.catalog2Name, icon: 'anchor' as IconName,
-    stamp: cs.seeStand, cat: cs.seeCat,
-    questions: t.pricing.catalog2Questions, themes: t.pricing.catalog2Themes,
-  },
-];
-// Mobile-Redesign: Binnen und See sind Varianten derselben Familie und werden
-// über einen Tab-Switch umgeschaltet (statt zweier Karussell-Karten). Nur die
-// entscheidungsrelevanten Felder je Variante – Details liegen hinter dem Link.
+// Binnen und See sind Varianten derselben Familie. Auf Mobile per Tab-Switch,
+// auf Desktop als linke/rechte Karte um das mittige Bundle. Nur die
+// entscheidungsrelevanten Felder – Details liegen hinter dem Link.
 const sbfVariants = [
   { tab: de ? 'Binnen' : 'Inland', name: t.pricing.catalog1Name, icon: 'waves' as IconName, questions: t.pricing.catalog1Questions, url: de ? '/sbf-binnen/' : '/en/sbf-inland/' },
   { tab: de ? 'See' : 'Coastal', name: t.pricing.catalog2Name, icon: 'anchor' as IconName, questions: t.pricing.catalog2Questions, url: de ? '/sbf-see/' : '/en/sbf-coastal/' },
 ];
+const funkOnce = de ? 'einmalig' : 'one-time';
 const funkCards = [
-  { abbr: 'SRC', name: de ? 'Seefunk (Küste)' : 'Sea radio (coastal)', stamp: cs.srcStand, next: null as string | null, price: t.pricing.srcPrice, url: de ? '/src/' : '/en/src/', icon: 'satellite' as IconName },
-  { abbr: 'LRC', name: de ? 'Seefunk (weltweit)' : 'Sea radio (worldwide)', stamp: cs.lrcStand, next: null as string | null, price: t.pricing.lrcPrice, url: de ? '/lrc/' : '/en/lrc/', icon: 'globe' as IconName },
-  { abbr: 'UBI', name: de ? 'UKW-Sprechfunk Binnen' : 'VHF radio, inland', stamp: cs.ubiStand, next: cs.ubiNext, price: t.pricing.ubiPrice, url: de ? '/ubi/' : '/en/ubi/', icon: 'wifi' as IconName },
+  { abbr: 'SRC', name: de ? 'Seefunk (Küste)' : 'Sea radio (coastal)', price: t.pricing.srcPrice, url: de ? '/src/' : '/en/src/', icon: 'satellite' as IconName },
+  { abbr: 'UBI', name: de ? 'Binnenfunk' : 'Inland radio', price: t.pricing.ubiPrice, url: de ? '/ubi/' : '/en/ubi/', icon: 'wifi' as IconName },
+  { abbr: 'LRC', name: de ? 'Seefunk (weltweit)' : 'Sea radio (worldwide)', price: t.pricing.lrcPrice, url: de ? '/lrc/' : '/en/lrc/', icon: 'globe' as IconName },
 ];
 ---
 
@@ -73,62 +62,58 @@ const funkCards = [
 
       <!-- SBF-Karten -->
       <div class="reveal-item pv2-subheading" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">{t.pricing.sbfHeading}</div>
-      <div class="pv2-cards snap-row" data-snap-row="pricing" aria-label={de ? 'Lizenzen im Vergleich' : 'Licences compared'}>
-        {sbfCards.map(card => (
-          <div class="reveal-item pv2-card snap-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+      <!-- Desktop (≥769px): drei Karten – Binnen | Bundle (mittig, hervorgehoben)
+           | See. Reihenfolge im DOM Binnen, See, Bundle; per `order` sitzt das
+           Bundle visuell in der Mitte. Auf Mobile ist diese Reihe ausgeblendet
+           (dann greift der Tab-Switch unten). -->
+      <div class="pv2-cards">
+        {sbfVariants.map((v, i) => (
+          <div class="reveal-item pv2-card pv2-sbf-card-d" style={`order:${i === 0 ? 1 : 3}; opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;`}>
             <div class="pv2-card-top">
-              <span class="pv2-tile"><Icon name={card.icon} size={24} stroke="#3366FF" strokeWidth={1.75} /></span>
+              <span class="pv2-tile"><Icon name={v.icon} size={24} stroke="#3366FF" strokeWidth={1.75} /></span>
               <div class="pv2-card-heading">
-                <div class="pv2-card-name">{card.name}</div>
-                <span class="pv2-stamp">{card.stamp}</span>
+                <div class="pv2-card-name">{v.name}</div>
+                <span class="pv2-stamp">{t.pricing.currentCatalog}</span>
               </div>
             </div>
-            <div class="pv2-card-cat">{card.cat}</div>
-            <div class="pv2-card-stats">
-              <span class="pv2-statline"><Icon name="document" size={15} stroke="#3366FF" strokeWidth={2} /><strong>{card.questions}</strong> {t.pricing.questionsUnit}</span>
-              <span class="pv2-statline"><Icon name="clipboard" size={15} stroke="#3366FF" strokeWidth={2} /><strong>{card.themes}</strong> {t.pricing.themesUnit}</span>
-            </div>
+            <div class="pv2-sbf-q"><Icon name="document" size={15} stroke="#3366FF" strokeWidth={2} /><strong>{v.questions}</strong> {t.pricing.questionsUnit}</div>
             <div class="pv2-price">
               <span class="pv2-price-num">{t.pricing.price}</span>
-              <span class="pv2-price-sub">{de ? 'Einmalkauf' : 'one-time'}</span>
+              <span class="pv2-price-sub">{t.pricing.priceNote}</span>
             </div>
             <ul class="pv2-features">
-              {t.pricing.cardFeatures.map(f => (
+              {t.pricing.cardFeatures.slice(0, 3).map(f => (
                 <li><span class="pv2-check"><Icon name="check" size={12} stroke="#3366FF" strokeWidth={3} /></span>{f}</li>
               ))}
             </ul>
             <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="pv2-cta cta-white-btn">{t.pricing.ctaFree} →</a>
+            <a href={v.url} class="pv2-details">{t.pricing.detailsLink} →</a>
           </div>
         ))}
 
-        <!-- Bundle (hervorgehoben) -->
-        <div class="reveal-item pv2-card pv2-card-bundle snap-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+        <!-- Bundle: mittig, hervorgehoben, zentrierter Inhalt -->
+        <div class="reveal-item pv2-card pv2-card-bundle pv2-bundle-d" style="order:2; opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
           <span class="pv2-popular">★ {t.pricing.popular}</span>
-          <div class="pv2-card-top">
-            <span class="pv2-tile"><Icon name="scale" size={24} stroke="#3366FF" strokeWidth={1.75} /></span>
-            <div class="pv2-card-heading">
-              <div class="pv2-card-name">{t.pricing.bundleName}</div>
-              <span class="pv2-stamp pv2-stamp-blue">{de ? 'Binnen + See' : 'Inland + Coastal'}</span>
+          <svg class="pv2-bundle-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+            <path d="M12 2l2.4 6.3L21 9l-5 4.2L17.6 20 12 16.4 6.4 20 8 13.2 3 9l6.6-.7L12 2z" />
+          </svg>
+          <div class="pv2-bundle-c">
+            <span class="pv2-bundle-icons">
+              <span class="pv2-tile"><Icon name="waves" size={24} stroke="#3366FF" strokeWidth={1.75} /></span>
+              <span class="pv2-plus">+</span>
+              <span class="pv2-tile"><Icon name="anchor" size={24} stroke="#3366FF" strokeWidth={1.75} /></span>
+            </span>
+            <div class="pv2-card-name pv2-bundle-title">{de ? 'Binnen + See' : 'Inland + Coastal'}</div>
+            <div class="pv2-bundle-tag">{t.pricing.bundleTagline}</div>
+            <div class="pv2-bundle-price-d">
+              <span class="pv2-price-num pv2-bundle-num">{t.pricing.bundlePrice}</span>
+              <span class="pv2-strike">{de ? 'statt' : 'instead of'} {t.pricing.bundleStrike}</span>
+              <span class="pv2-save-text">{t.pricing.bundleSave}</span>
             </div>
           </div>
-          <div class="pv2-card-cat">{t.pricing.bundleInclusive}</div>
-          <div class="pv2-card-stats">
-            <span class="pv2-statline"><Icon name="document" size={15} stroke="#3366FF" strokeWidth={2} /><strong>{de ? 'Alle' : 'All'}</strong> {t.pricing.questionsUnit}</span>
-            <span class="pv2-statline"><Icon name="clipboard" size={15} stroke="#3366FF" strokeWidth={2} /><strong>{de ? 'Alle' : 'All'}</strong> {t.pricing.themesUnit}</span>
-          </div>
-          <div class="pv2-price">
-            <span class="pv2-price-num">{t.pricing.bundlePrice}</span>
-            <span class="pv2-save">{t.pricing.bundleSave}</span>
-          </div>
-          <ul class="pv2-features">
-            {t.pricing.bundleFeatures.map(f => (
-              <li><span class="pv2-check pv2-check-bundle"><Icon name="check" size={12} stroke="#3366FF" strokeWidth={3} /></span>{f}</li>
-            ))}
-          </ul>
-          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="pv2-cta pv2-cta-bundle cta-white-btn">{t.pricing.ctaFree} →</a>
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="pv2-cta pv2-cta-bundle cta-white-btn">{t.pricing.bundleChoose} →</a>
         </div>
       </div>
-      <div class="snap-dots" data-snap-dots="pricing"></div>
 
       <!-- Mobile: SBF als Tab-Switch (Binnen/See) statt Karussell. Eine kompakte
            Karte, umgeschaltet per Switch; das Bundle bekommt einen eigenen
@@ -183,7 +168,7 @@ const funkCards = [
               <div class="pv2-card-name">{de ? 'Binnen + See' : 'Inland + Coastal'}</div>
             </div>
           </div>
-          <div class="pv2-card-cat pv2-bundle-cat">{t.pricing.bundleInclusive}</div>
+          <div class="pv2-card-cat pv2-bundle-cat">{t.pricing.bundleTagline}</div>
           <div class="pv2-bundle-price">
             <span class="pv2-price-num">{t.pricing.bundlePrice}</span>
             <span class="pv2-strike">{t.pricing.bundleStrike}</span>
@@ -193,10 +178,12 @@ const funkCards = [
         </div>
       </div>
 
-      <!-- Funkscheine (kompakt) -->
+      <!-- Funkscheine: Desktop Kopf links + drei Karten rechts, Mobile Slider. -->
       <div class="reveal-item pv2-funk" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
-        <div class="pv2-subheading" style="margin-bottom:6px;">{t.pricing.funkHeading}</div>
-        <p class="pv2-funk-sub">{t.pricing.funkSubtitle}</p>
+        <div class="pv2-funk-head">
+          <div class="pv2-subheading">{t.pricing.funkHeading}</div>
+          <p class="pv2-funk-sub">{t.pricing.funkSubtitle}</p>
+        </div>
         <div class="pv2-funk-grid snap-row" data-snap-row="funk" aria-label={de ? 'Funkscheine' : 'Radio certificates'}>
           {funkCards.map(f => (
             <a href={f.url} class="pv2-funk-card snap-item">
@@ -204,15 +191,13 @@ const funkCards = [
                 <span class="pv2-tile pv2-tile-sm"><Icon name={f.icon} size={18} stroke="#3366FF" strokeWidth={1.75} /></span>
                 <span class="pv2-funk-abbr">{f.abbr}</span>
               </div>
-              <div class="pv2-funk-stamps">
-                <span class="pv2-stamp pv2-stamp-sm">{f.stamp}</span>
-                {f.next && <span class="pv2-stamp pv2-stamp-sm pv2-stamp-amber">{f.next}</span>}
-              </div>
+              <span class="pv2-stamp pv2-stamp-sm">{t.pricing.currentCatalog}</span>
               <div class="pv2-funk-name">{f.name}</div>
-              <div class="pv2-funk-bottom">
+              <div class="pv2-funk-price-row">
                 <span class="pv2-funk-price">{f.price}</span>
-                <span class="pv2-funk-more">{t.pricing.funkMore} →</span>
+                <span class="pv2-funk-once">{funkOnce}</span>
               </div>
+              <span class="pv2-funk-more">{t.pricing.funkMore} →</span>
             </a>
           ))}
         </div>
@@ -963,6 +948,57 @@ const funkCards = [
   html.dark .pv2-stamp-blue { background: rgba(90,120,255,0.14) !important; border-color: rgba(90,120,255,0.28) !important; color: #8BB4FF !important; }
   html.dark .pv2-stamp-amber { background: rgba(245,158,11,0.12) !important; border-color: rgba(245,158,11,0.3) !important; color: #FBBF24 !important; }
 
+  /* ---- Vereinfachte Karten: gemeinsame Bausteine (Desktop + Mobile) ---- */
+  .pv2-sbf-q { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #656B78; }
+  .pv2-sbf-q strong { color: #1A1F36; font-weight: 800; }
+  .pv2-details {
+    display: block; text-align: center; margin-top: 12px;
+    font-size: 14px; font-weight: 700; color: #3366FF; text-decoration: none;
+  }
+  .pv2-details:hover { text-decoration: underline; }
+  .pv2-bundle-icons { display: inline-flex; align-items: center; gap: 6px; }
+  .pv2-plus { font-size: 16px; font-weight: 800; color: #3366FF; }
+  .pv2-strike { font-size: 14px; color: #94A3B8; text-decoration: line-through; }
+  html.dark .pv2-sbf-q { color: #94A3B8 !important; }
+  html.dark .pv2-sbf-q strong { color: #E2E8F0 !important; }
+  html.dark .pv2-plus { color: #8BB4FF !important; }
+  html.dark .pv2-strike { color: #64748B !important; }
+
+  /* ---- Desktop-Bundle: mittige, hervorgehobene Karte mit zentriertem Inhalt ---- */
+  /* Kein overflow:hidden – sonst würde das „Beliebt"-Badge (top:-13px)
+     abgeschnitten. Der Deko-Stern bleibt stattdessen innerhalb der Karte. */
+  .pv2-bundle-d { text-align: center; }
+  .pv2-bundle-c { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .pv2-bundle-d .pv2-bundle-icons { margin-bottom: 16px; }
+  .pv2-bundle-d .pv2-tile { width: 52px; height: 52px; }
+  .pv2-bundle-title { font-size: 24px; margin-bottom: 8px; }
+  .pv2-bundle-tag { font-size: 13.5px; color: #656B78; line-height: 1.5; max-width: 250px; margin-bottom: 18px; }
+  .pv2-bundle-price-d { display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 22px; }
+  .pv2-bundle-num { font-size: 40px; }
+  .pv2-save-text { font-size: 14px; font-weight: 700; color: #059669; }
+  .pv2-bundle-star {
+    position: absolute; top: 44px; right: 14px; width: 104px; height: 104px; z-index: 0;
+    color: rgba(51,102,255,0.07); pointer-events: none;
+  }
+  html.dark .pv2-bundle-tag { color: #94A3B8 !important; }
+  html.dark .pv2-save-text { color: #4ADE80 !important; }
+  html.dark .pv2-bundle-star { color: rgba(120,155,255,0.10); }
+
+  /* ---- Funkscheine: neue Kartenoptik + Desktop-Kopf links ---- */
+  .pv2-funk-head { text-align: left; }
+  .pv2-funk-head .pv2-subheading { margin-bottom: 8px; }
+  /* Badge hugt den Text, statt in der Flex-Spalte auf volle Kartenbreite zu ziehen. */
+  .pv2-funk-card .pv2-stamp { align-self: flex-start; }
+  .pv2-funk-price-row { display: flex; flex-direction: column; gap: 1px; margin-top: 2px; }
+  .pv2-funk-once { font-size: 12px; font-weight: 500; color: #656B78; }
+  .pv2-funk-more { margin-top: 2px; }
+  html.dark .pv2-funk-once { color: #94A3B8 !important; }
+
+  @media (min-width: 941px) {
+    .pv2-funk { display: grid; grid-template-columns: 236px 1fr; gap: 32px; align-items: center; }
+    .pv2-funk-sub { margin: 0; }
+  }
+
   @media (max-width: 940px) {
     .pv2-cards { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; }
     /* Bis 768px greift .snap-row aus global.css und macht daraus eine
@@ -1079,7 +1115,6 @@ const funkCards = [
 <script>
   import { initSnapDots } from '../scripts/snapDots';
 
-  initSnapDots('[data-snap-row="pricing"]');
   initSnapDots('[data-snap-row="funk"]');
 
   // Mobile SBF-Tab-Switch: Binnen/See umschalten (Panels per [hidden] toggeln).

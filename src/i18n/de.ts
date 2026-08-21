@@ -169,11 +169,12 @@ export const de = {
     sbfHeading: 'SBF – Sportbootführerscheine',
     cardFeatures: ['Amtlicher Fragenkatalog', 'Erklärung & Merkhilfe zu jeder Frage', 'Prüfungssimulation', 'Offline lernen'],
     bundleFeatures: ['Alles aus Binnen', 'Alles aus See', 'inkl. 15 Navigationsaufgaben', 'Offline lernen'],
-    popular: 'Beliebteste Wahl',
+    popular: 'Beliebt',
     bundleInclusive: '720 Fragen aus beiden Katalogen',
     // Mobile-Redesign SBF: Tab-Switch (Binnen/See) + kompakte Einzelkarte + eigenes Bundle
     currentCatalog: 'Aktueller Katalog',
     priceNote: 'einmalig · kein Abo',
+    bundleTagline: 'Beide Fragenkataloge inkl. aller Lernfunktionen',
     detailsLink: 'Details ansehen',
     bundleStrike: '€ 19,98',
     bundleChoose: 'Bundle wählen',

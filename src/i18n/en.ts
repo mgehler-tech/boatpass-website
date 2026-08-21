@@ -158,11 +158,12 @@ export const en: Translations = {
     sbfHeading: 'SBF – Boating licences',
     cardFeatures: ['Official question catalogue', 'Explanation & mnemonic for every question', 'Exam simulation', 'Learn offline'],
     bundleFeatures: ['Everything from Inland', 'Everything from Coastal', 'incl. 15 navigation tasks', 'Learn offline'],
-    popular: 'Most popular',
+    popular: 'Popular',
     bundleInclusive: '720 questions from both catalogues',
     // Mobile redesign SBF: tab switch (inland/coastal) + compact single card + own bundle
     currentCatalog: 'Current catalogue',
     priceNote: 'one-time · no subscription',
+    bundleTagline: 'Both question catalogues incl. all study features',
     detailsLink: 'View details',
     bundleStrike: '€19.98',
     bundleChoose: 'Choose bundle',
