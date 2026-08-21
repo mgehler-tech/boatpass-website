@@ -418,15 +418,17 @@ html.dark .gradient-text {
     flex-wrap: nowrap;
     gap: 14px;
     overflow-x: auto;
+    /* `overflow-x: auto` erzwingt laut Spec ein berechnetes `overflow-y: auto`,
+       wodurch die Reihe selbst zusätzlich vertikal scrollbar wird – ein
+       diagonaler Wisch ließ die Karten spürbar hoch/runter zappeln. `hidden`
+       nimmt der Reihe die vertikale Scroll-Eigenschaft (kein Zappeln); eine
+       vertikale Wischgeste scrollt dadurch wie gewohnt die Seite. Das
+       „Beliebteste Wahl"-Badge ragt nur 13px hoch und bleibt dank
+       `padding-block: 14px` innerhalb der Box, wird also nicht abgeschnitten. */
+    overflow-y: hidden;
     overscroll-behavior-x: contain;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    /* Nur horizontal wischen. `overflow-x: auto` erzwingt laut Spec ein
-       berechnetes `overflow-y: auto`, wodurch die Reihe zusätzlich vertikal
-       scrollbar wird – ein diagonaler Wisch lässt die Karten dann spürbar
-       hoch/runter zappeln. `pan-x` gibt vertikale Gesten an die Seite zurück
-       (normales Scrollen), `pinch-zoom` bleibt für Barrierefreiheit erhalten. */
-    touch-action: pan-x pinch-zoom;
     /* Seiteneinzug (px-6 = 24px) ausgleichen und als Padding zurückgeben */
     margin-inline: -24px;
     padding-inline: 24px;
