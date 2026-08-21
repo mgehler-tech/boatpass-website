@@ -160,6 +160,12 @@ export const en: Translations = {
     bundleFeatures: ['Everything from Inland', 'Everything from Coastal', 'incl. 15 navigation tasks', 'Learn offline'],
     popular: 'Most popular',
     bundleInclusive: '720 questions from both catalogues',
+    // Mobile redesign SBF: tab switch (inland/coastal) + compact single card + own bundle
+    currentCatalog: 'Current catalogue',
+    priceNote: 'one-time · no subscription',
+    detailsLink: 'View details',
+    bundleStrike: '€19.98',
+    bundleChoose: 'Choose bundle',
     funkHeading: 'Radio certificates',
     funkSubtitle: 'Unlocked separately – no boating licence required.',
     funkMore: 'Learn more',

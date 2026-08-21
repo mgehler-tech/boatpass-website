@@ -43,6 +43,13 @@ const sbfCards = [
     questions: t.pricing.catalog2Questions, themes: t.pricing.catalog2Themes,
   },
 ];
+// Mobile-Redesign: Binnen und See sind Varianten derselben Familie und werden
+// über einen Tab-Switch umgeschaltet (statt zweier Karussell-Karten). Nur die
+// entscheidungsrelevanten Felder je Variante – Details liegen hinter dem Link.
+const sbfVariants = [
+  { tab: de ? 'Binnen' : 'Inland', name: t.pricing.catalog1Name, icon: 'waves' as IconName, questions: t.pricing.catalog1Questions, url: de ? '/sbf-binnen/' : '/en/sbf-inland/' },
+  { tab: de ? 'See' : 'Coastal', name: t.pricing.catalog2Name, icon: 'anchor' as IconName, questions: t.pricing.catalog2Questions, url: de ? '/sbf-see/' : '/en/sbf-coastal/' },
+];
 const funkCards = [
   { abbr: 'SRC', name: de ? 'Seefunk (Küste)' : 'Sea radio (coastal)', stamp: cs.srcStand, next: null as string | null, price: t.pricing.srcPrice, url: de ? '/src/' : '/en/src/', icon: 'satellite' as IconName },
   { abbr: 'LRC', name: de ? 'Seefunk (weltweit)' : 'Sea radio (worldwide)', stamp: cs.lrcStand, next: null as string | null, price: t.pricing.lrcPrice, url: de ? '/lrc/' : '/en/lrc/', icon: 'globe' as IconName },
@@ -122,6 +129,69 @@ const funkCards = [
         </div>
       </div>
       <div class="snap-dots" data-snap-dots="pricing"></div>
+
+      <!-- Mobile: SBF als Tab-Switch (Binnen/See) statt Karussell. Eine kompakte
+           Karte, umgeschaltet per Switch; das Bundle bekommt einen eigenen
+           Platz darunter. Nur ≤768px sichtbar – Desktop behält das 3er-Grid. -->
+      <div class="pv2-sbf-m reveal-item" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+        <div class="pv2-switch" role="tablist" aria-label={de ? 'SBF-Variante wählen' : 'Choose SBF variant'}>
+          {sbfVariants.map((v, i) => (
+            <button type="button" class:list={["pv2-switch-btn", { "is-active": i === 0 }]} role="tab"
+              id={`pv2-tab-${i}`} aria-controls={`pv2-panel-${i}`} aria-selected={i === 0 ? 'true' : 'false'}
+              tabindex={i === 0 ? 0 : -1} data-variant={i}>
+              <Icon name={v.icon} size={18} stroke="currentColor" strokeWidth={1.75} />
+              <span>{v.tab}</span>
+            </button>
+          ))}
+        </div>
+
+        {sbfVariants.map((v, i) => (
+          <div class="pv2-sbf-panel" id={`pv2-panel-${i}`} role="tabpanel" aria-labelledby={`pv2-tab-${i}`} hidden={i !== 0}>
+            <div class="pv2-sbf-card">
+              <div class="pv2-card-top">
+                <span class="pv2-tile"><Icon name={v.icon} size={24} stroke="#3366FF" strokeWidth={1.75} /></span>
+                <div class="pv2-card-heading">
+                  <div class="pv2-card-name">{v.name}</div>
+                  <span class="pv2-stamp">{t.pricing.currentCatalog}</span>
+                </div>
+              </div>
+              <div class="pv2-sbf-q"><Icon name="document" size={15} stroke="#3366FF" strokeWidth={2} /><strong>{v.questions}</strong> {t.pricing.questionsUnit}</div>
+              <div class="pv2-price">
+                <span class="pv2-price-num">{t.pricing.price}</span>
+                <span class="pv2-price-sub">{t.pricing.priceNote}</span>
+              </div>
+              <ul class="pv2-features">
+                {t.pricing.cardFeatures.slice(0, 3).map(f => (
+                  <li><span class="pv2-check"><Icon name="check" size={12} stroke="#3366FF" strokeWidth={3} /></span>{f}</li>
+                ))}
+              </ul>
+              <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="pv2-cta cta-white-btn">{t.pricing.ctaFree} →</a>
+              <a href={v.url} class="pv2-details">{t.pricing.detailsLink} →</a>
+            </div>
+          </div>
+        ))}
+
+        <div class="pv2-bundle-m">
+          <span class="pv2-popular">★ {t.pricing.popular}</span>
+          <div class="pv2-card-top">
+            <span class="pv2-bundle-icons">
+              <span class="pv2-tile pv2-tile-sm"><Icon name="waves" size={18} stroke="#3366FF" strokeWidth={1.75} /></span>
+              <span class="pv2-plus">+</span>
+              <span class="pv2-tile pv2-tile-sm"><Icon name="anchor" size={18} stroke="#3366FF" strokeWidth={1.75} /></span>
+            </span>
+            <div class="pv2-card-heading">
+              <div class="pv2-card-name">{de ? 'Binnen + See' : 'Inland + Coastal'}</div>
+            </div>
+          </div>
+          <div class="pv2-card-cat pv2-bundle-cat">{t.pricing.bundleInclusive}</div>
+          <div class="pv2-bundle-price">
+            <span class="pv2-price-num">{t.pricing.bundlePrice}</span>
+            <span class="pv2-strike">{t.pricing.bundleStrike}</span>
+            <span class="pv2-save-green">{t.pricing.bundleSave}</span>
+          </div>
+          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="pv2-cta pv2-cta-bundle cta-white-btn">{t.pricing.bundleChoose} →</a>
+        </div>
+      </div>
 
       <!-- Funkscheine (kompakt) -->
       <div class="reveal-item pv2-funk" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
@@ -932,6 +1002,78 @@ const funkCards = [
     .catalog-card.featured { padding: 24px; }
     .compare-bar { grid-template-columns: 1fr; }
   }
+
+  /* ============ Mobile-Redesign SBF (Tab-Switch statt Karussell) ============
+     Nur ≤768px aktiv. Desktop (≥769px) behält unverändert das 3er-Grid mit
+     Binnen-, See- und Bundle-Karte; dieser Block bleibt dort ausgeblendet. */
+  .pv2-sbf-m { display: none; }
+
+  @media (max-width: 768px) {
+    /* Altes SBF-Karussell samt Punkten auf Mobile ersetzen */
+    .pv2-cards { display: none !important; }
+    .snap-dots[data-snap-dots="pricing"] { display: none; }
+
+    .pv2-sbf-m { display: block; }
+
+    /* Segmentierter Umschalter Binnen | See */
+    .pv2-switch {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4px;
+      background: #EEF2FB; border: 1px solid rgba(51,102,255,0.12);
+      border-radius: 14px; padding: 4px; margin-bottom: 16px;
+    }
+    .pv2-switch-btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 11px 12px; border: 0; border-radius: 10px; background: transparent;
+      font-size: 15px; font-weight: 700; color: #656B78; cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .pv2-switch-btn.is-active { background: #FFFFFF; color: #3366FF; box-shadow: 0 2px 8px rgba(26,31,54,0.10); }
+    .pv2-switch-btn:focus-visible { outline: 2px solid #3366FF; outline-offset: 2px; }
+
+    .pv2-sbf-card {
+      text-align: left; background: #FFFFFF; border: 1px solid rgba(51,102,255,0.10);
+      border-radius: 22px; padding: 24px; box-shadow: 0 8px 30px rgba(26,31,54,0.05);
+    }
+    .pv2-sbf-q { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #656B78; }
+    .pv2-sbf-q strong { color: #1A1F36; font-weight: 800; }
+    .pv2-details {
+      display: block; text-align: center; margin-top: 12px;
+      font-size: 14px; font-weight: 700; color: #3366FF; text-decoration: none;
+    }
+
+    /* Bundle als eigener Verkaufsplatz unter der SBF-Karte */
+    .pv2-bundle-m {
+      position: relative; text-align: left; margin-top: 16px;
+      background: #FFFFFF; border: 1.5px solid rgba(51,102,255,0.45);
+      border-radius: 22px; padding: 24px; box-shadow: 0 12px 40px rgba(51,102,255,0.14);
+    }
+    .pv2-bundle-icons { display: inline-flex; align-items: center; gap: 6px; }
+    .pv2-plus { font-size: 16px; font-weight: 800; color: #3366FF; }
+    .pv2-bundle-cat { min-height: 0; margin-bottom: 14px; }
+    .pv2-bundle-price {
+      display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+      padding-top: 16px; border-top: 1px solid rgba(51,102,255,0.08); margin-bottom: 16px;
+    }
+    .pv2-strike { font-size: 14px; color: #94A3B8; text-decoration: line-through; }
+    .pv2-save-green {
+      font-size: 12.5px; font-weight: 700; color: #059669;
+      background: #ECFDF5; border: 1px solid #A7F3D0; padding: 3px 10px; border-radius: 100px;
+    }
+
+    /* Dark Mode für die neuen Mobile-Elemente */
+    html.dark .pv2-switch { background: #1A2140; border-color: rgba(90,120,255,0.14); }
+    html.dark .pv2-switch-btn { color: #94A3B8; }
+    html.dark .pv2-switch-btn.is-active { background: #242C46; color: #8BB4FF; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
+    html.dark .pv2-sbf-card,
+    html.dark .pv2-bundle-m { background: #181E2E; box-shadow: 0 8px 30px rgba(0,0,0,0.25); }
+    html.dark .pv2-sbf-card { border-color: rgba(90,120,255,0.14); }
+    html.dark .pv2-bundle-m { border-color: rgba(90,120,255,0.5); }
+    html.dark .pv2-sbf-q { color: #94A3B8; }
+    html.dark .pv2-sbf-q strong { color: #E2E8F0; }
+    html.dark .pv2-plus { color: #8BB4FF; }
+    html.dark .pv2-strike { color: #64748B; }
+    html.dark .pv2-save-green { background: rgba(34,197,94,0.12); border-color: rgba(34,197,94,0.3); color: #4ADE80; }
+  }
 </style>
 
 <script>
@@ -939,6 +1081,37 @@ const funkCards = [
 
   initSnapDots('[data-snap-row="pricing"]');
   initSnapDots('[data-snap-row="funk"]');
+
+  // Mobile SBF-Tab-Switch: Binnen/See umschalten (Panels per [hidden] toggeln).
+  document.querySelectorAll<HTMLElement>('.pv2-sbf-m').forEach(root => {
+    const btns = Array.from(root.querySelectorAll<HTMLButtonElement>('.pv2-switch-btn'));
+    const panels = Array.from(root.querySelectorAll<HTMLElement>('.pv2-sbf-panel'));
+    if (!btns.length) return;
+
+    const select = (idx: number) => {
+      btns.forEach((b, i) => {
+        const active = i === idx;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-selected', active ? 'true' : 'false');
+        b.tabIndex = active ? 0 : -1;
+      });
+      panels.forEach((p, i) => { p.hidden = i !== idx; });
+    };
+
+    btns.forEach((btn, i) => btn.addEventListener('click', () => select(i)));
+
+    // Pfeiltasten für die Tabliste (ARIA-Konvention).
+    root.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      const current = btns.findIndex(b => b.classList.contains('is-active'));
+      const next = e.key === 'ArrowRight'
+        ? (current + 1) % btns.length
+        : (current - 1 + btns.length) % btns.length;
+      select(next);
+      btns[next].focus();
+    });
+  });
 
   const reduceMotionPricing = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 

@@ -171,6 +171,12 @@ export const de = {
     bundleFeatures: ['Alles aus Binnen', 'Alles aus See', 'inkl. 15 Navigationsaufgaben', 'Offline lernen'],
     popular: 'Beliebteste Wahl',
     bundleInclusive: '720 Fragen aus beiden Katalogen',
+    // Mobile-Redesign SBF: Tab-Switch (Binnen/See) + kompakte Einzelkarte + eigenes Bundle
+    currentCatalog: 'Aktueller Katalog',
+    priceNote: 'einmalig · kein Abo',
+    detailsLink: 'Details ansehen',
+    bundleStrike: '€ 19,98',
+    bundleChoose: 'Bundle wählen',
     funkHeading: 'Funkscheine',
     funkSubtitle: 'Einzeln freischaltbar – auch ohne Sportbootführerschein.',
     funkMore: 'Mehr erfahren',
