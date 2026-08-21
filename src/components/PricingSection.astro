@@ -94,9 +94,6 @@ const funkCards = [
         <!-- Bundle: mittig, hervorgehoben, zentrierter Inhalt -->
         <div class="reveal-item pv2-card pv2-card-bundle pv2-bundle-d" style="order:2; opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
           <span class="pv2-popular">★ {t.pricing.popular}</span>
-          <svg class="pv2-bundle-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
-            <path d="M12 2l2.4 6.3L21 9l-5 4.2L17.6 20 12 16.4 6.4 20 8 13.2 3 9l6.6-.7L12 2z" />
-          </svg>
           <div class="pv2-bundle-c">
             <span class="pv2-bundle-icons">
               <span class="pv2-tile"><Icon name="waves" size={24} stroke="#3366FF" strokeWidth={1.75} /></span>
@@ -112,6 +109,9 @@ const funkCards = [
             </div>
           </div>
           <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="pv2-cta pv2-cta-bundle cta-white-btn">{t.pricing.bundleChoose} →</a>
+          <!-- Reserviert exakt die Höhe des „Details ansehen"-Links der
+               Seitenkarten, damit die CTAs auf Desktop auf gleicher Höhe liegen. -->
+          <span class="pv2-details" aria-hidden="true" style="visibility:hidden">{t.pricing.detailsLink} →</span>
         </div>
       </div>
 
@@ -965,10 +965,8 @@ const funkCards = [
   html.dark .pv2-strike { color: #64748B !important; }
 
   /* ---- Desktop-Bundle: mittige, hervorgehobene Karte mit zentriertem Inhalt ---- */
-  /* Kein overflow:hidden – sonst würde das „Beliebt"-Badge (top:-13px)
-     abgeschnitten. Der Deko-Stern bleibt stattdessen innerhalb der Karte. */
   .pv2-bundle-d { text-align: center; }
-  .pv2-bundle-c { position: relative; z-index: 1; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .pv2-bundle-c { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; }
   .pv2-bundle-d .pv2-bundle-icons { margin-bottom: 16px; }
   .pv2-bundle-d .pv2-tile { width: 52px; height: 52px; }
   .pv2-bundle-title { font-size: 24px; margin-bottom: 8px; }
@@ -976,13 +974,8 @@ const funkCards = [
   .pv2-bundle-price-d { display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 22px; }
   .pv2-bundle-num { font-size: 40px; }
   .pv2-save-text { font-size: 14px; font-weight: 700; color: #059669; }
-  .pv2-bundle-star {
-    position: absolute; top: 44px; right: 14px; width: 104px; height: 104px; z-index: 0;
-    color: rgba(51,102,255,0.07); pointer-events: none;
-  }
   html.dark .pv2-bundle-tag { color: #94A3B8 !important; }
   html.dark .pv2-save-text { color: #4ADE80 !important; }
-  html.dark .pv2-bundle-star { color: rgba(120,155,255,0.10); }
 
   /* ---- Funkscheine: neue Kartenoptik + Desktop-Kopf links ---- */
   .pv2-funk-head { text-align: left; }
