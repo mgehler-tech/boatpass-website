@@ -4,7 +4,6 @@ import HeroSection from '../../components/HeroSection.astro';
 import LearningSteps from '../../components/LearningSteps.astro';
 import FounderNote from '../../components/FounderNote.astro';
 import PricingSection from '../../components/PricingSection.astro';
-import CatalogSources from '../../components/CatalogSources.astro';
 import BlogTeaser from '../../components/BlogTeaser.astro';
 import FinderTeaser from '../../components/FinderTeaser.astro';
 import { getBoatpassRating } from '../../data/apps';
@@ -61,8 +60,10 @@ const faqSchema = {
   <HeroSection lang="en" />
   <LearningSteps lang="en" />
   <FounderNote lang="en" />
-  <PricingSection lang="en" withGuarantee withSourceNote={false} />
-  <CatalogSources lang="en" collapsible />
+  <!-- withProof: the official sources ("verify it yourself") now run as a
+       third sub-group INSIDE the pricing section – one band instead of two
+       sections. withSourceNote stays off to avoid duplicating the note. -->
+  <PricingSection lang="en" withGuarantee withSourceNote={false} withProof />
   <FinderTeaser lang="en" />
   <BlogTeaser lang="en" />
 

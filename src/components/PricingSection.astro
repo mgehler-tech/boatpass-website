@@ -1,6 +1,7 @@
 ---
 import { useTranslations } from '../i18n/index';
 import Icon from './Icon.astro';
+import CatalogSources from './CatalogSources.astro';
 import type { IconName } from '../icons';
 
 interface Props {
@@ -14,9 +15,13 @@ interface Props {
   // aus catalogSources. Steht CatalogSources ohnehin auf derselben Seite
   // (Startseite), doppelt das nur – dann hier abschalten.
   withSourceNote?: boolean;
+  // Startseite: die frühere eigenständige "Nachprüfen"-Sektion (amtliche
+  // Quellen) läuft als dritte Unter-Gruppe direkt in dieser Band – ohne
+  // Section-Seam dazwischen. Nur mit withGuarantee sinnvoll.
+  withProof?: boolean;
 }
 
-const { lang, withGuarantee = false, withSourceNote = true } = Astro.props;
+const { lang, withGuarantee = false, withSourceNote = true, withProof = false } = Astro.props;
 const t = useTranslations(lang);
 const de = lang === 'de';
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
@@ -163,6 +168,10 @@ const funkCards = [
           </div>
         </div>
       )}
+
+      <!-- Amtliche Quellen als dritte Unter-Gruppe (früher eigene Sektion).
+           Läuft in derselben Band, ein durchgehender linker Rand. -->
+      {withProof && <CatalogSources lang={lang} collapsible embedded />}
 
     </div>
   ) : (
