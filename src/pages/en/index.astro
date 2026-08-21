@@ -56,16 +56,17 @@ const faqSchema = {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <!-- Gleiche Reihenfolge wie auf der deutschen Startseite, ohne die
        Bewertungs-Sektion: Alle vorliegenden Rezensionen sind deutschsprachig,
-       und eine übersetzte Rezension wäre keine Rezension mehr. -->
+       und eine übersetzte Rezension wäre keine Rezension mehr. Der Finder rückt
+       vor die Kaufentscheidung (beantwortet "welchen Schein brauche ich"), der
+       Gründer-Block dahinter, der Blog-Teaser ans Seitenende hinter die FAQ. -->
   <HeroSection lang="en" />
   <LearningSteps lang="en" />
+  <FinderTeaser lang="en" />
   <FounderNote lang="en" />
   <!-- withProof: the official sources ("verify it yourself") now run as a
        third sub-group INSIDE the pricing section – one band instead of two
        sections. withSourceNote stays off to avoid duplicating the note. -->
   <PricingSection lang="en" withGuarantee withSourceNote={false} withProof />
-  <FinderTeaser lang="en" />
-  <BlogTeaser lang="en" />
 
   <div class="home-faq section-band">
     <section>
@@ -88,6 +89,9 @@ const faqSchema = {
       </p>
     </section>
   </div>
+  <!-- Blog-Teaser bewusst nach der FAQ, am Seitenende: reiner SEO-/Weiterlese-
+       Wert, der die Kaufentscheidung nicht mehr unterbricht. -->
+  <BlogTeaser lang="en" />
 </BaseLayout>
 
 <style is:global>
