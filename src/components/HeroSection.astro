@@ -250,11 +250,16 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
     flex-wrap: wrap;
     margin: 0 0 24px;
   }
+  /* #7E8699 erreichte auf dem hellen Seitengrund (#F0F4FA) nur 3,3:1 und
+     verfehlte damit WCAG AA (4.5:1) für die Lizenz-Namen unter der H1 –
+     dieselbe Kontrastschwäche, die für .ios-badge oben bereits behoben wurde.
+     #656B78 ist das im Projekt etablierte Muted-Grau (u. a. im Absatz direkt
+     darunter) und erreicht hier 4,84:1. */
   .hero-lic {
     font-size: 15px;
     font-weight: 800;
     letter-spacing: -0.2px;
-    color: #7E8699;
+    color: #656B78;
     transition: color 0.3s ease;
   }
   .hero-lic.is-active {
