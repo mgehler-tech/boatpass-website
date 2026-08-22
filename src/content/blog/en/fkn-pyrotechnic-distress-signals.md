@@ -15,6 +15,18 @@ faq:
     answer: "The more powerful category P2 devices, above all the red parachute signal rocket. The red hand flare and smaller category P1 smoke signals, by contrast, can be bought from age 18 without any certificate. Rule of thumb: close range without a certificate (P1), longer range only with the FKN (P2)."
   - question: "Does the FKN need to be renewed regularly?"
     answer: "No. Once you pass the exam, the FKN is valid indefinitely – no refresher or renewal is required. You do, however, still need to regularly check the pyrotechnics on board for expiry dates and proper storage."
+howTo:
+  name: "How to use a pyrotechnic distress signal correctly in an emergency"
+  description: "How to ignite and hold a pyrotechnic distress signal (such as a hand flare or parachute rocket) safely when it really counts."
+  steps:
+    - name: "Read the instructions in advance"
+      text: "Read the device's usage instructions before the trip, not for the first time in an emergency under stress."
+    - name: "Mind the wind direction"
+      text: "Ignite the device to leeward, with the wind carrying sparks or smoke away from your own body and boat."
+    - name: "Keep it pointed away from your body"
+      text: "Hold your arm and the device away from your body and face, down or to the side as instructed on the packaging."
+    - name: "Dispose of it safely after use"
+      text: "Let the burnt-out casing cool down, then dispose of it properly instead of throwing it in household waste."
 ---
 
 Red parachute rockets, hand flares and smoke signals are standard safety gear on board, but you can't simply buy and carry every type. For the more powerful pyrotechnic distress signals, German law requires a **competence certificate, the Fachkundenachweis (FKN)**. This article explains what the FKN is, which signal devices it covers, how you obtain it, and how to store and dispose of pyrotechnics on board correctly.
