@@ -130,13 +130,13 @@ const faqSchema = {
   <div style="max-width:1000px; margin:0 auto; padding:60px 24px 80px;">
 
     <!-- Finder banner -->
-    <a href="/en/tools/which-boating-license/" style="display:flex; align-items:center; gap:18px; background:linear-gradient(135deg,#1A1F36,#3366FF); border-radius:18px; padding:24px 26px; text-decoration:none; margin-bottom:56px; box-shadow:0 10px 30px rgba(51,102,255,0.18);">
+    <a href="/en/tools/which-boating-license/" class="finder-banner" style="display:flex; align-items:center; gap:18px; background:linear-gradient(135deg,#1A1F36,#3366FF); border-radius:18px; padding:24px 26px; text-decoration:none; margin-bottom:56px; box-shadow:0 10px 30px rgba(51,102,255,0.18);">
       <div style="flex:1; min-width:0;">
         <div style="font-size:12px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Free finder</div>
         <div style="font-size:21px; font-weight:900; color:white; letter-spacing:-0.5px; line-height:1.2;">Not sure which licence you need?</div>
         <div style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.5; margin-top:6px;">Answer 3 questions – instantly find the right licence and matching radio certificate.</div>
       </div>
-      <span style="flex-shrink:0; background:white; color:#3366FF; font-weight:800; font-size:15px; padding:12px 22px; border-radius:12px; white-space:nowrap;">Start finder →</span>
+      <span class="finder-banner-cta" style="flex-shrink:0; background:white; color:#3366FF; font-weight:800; font-size:15px; padding:12px 22px; border-radius:12px; white-space:nowrap;">Start finder →</span>
     </a>
 
     <!-- Available -->
@@ -325,6 +325,27 @@ const faqSchema = {
 
   @media (max-width: 640px) {
     .license-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Stack the finder banner on narrow screens. As a rigid flex row the
+     fixed-width, nowrap button squeezed the 21px heading ("Not sure which
+     licence you need?") into a cramped, multi-line column and sat unbalanced
+     beside it. From the project-wide 768px breakpoint the banner now stacks to
+     a column with a full-width button below – the same treatment as the home
+     page finder teaser and CTA banner. Overrides use !important because the base
+     values are set as inline styles. Pure layout polish; corporate design
+     (colours, gradient, font weights) untouched. */
+  @media (max-width: 768px) {
+    .finder-banner {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 20px !important;
+    }
+    .finder-banner-cta {
+      text-align: center !important;
+      padding-top: 14px !important;
+      padding-bottom: 14px !important;
+    }
   }
 
   html.dark .license-card {
