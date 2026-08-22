@@ -15,6 +15,18 @@ faq:
     answer: "Für die stärkeren Signalmittel der Kategorie P2, vor allem die rote Fallschirmsignalrakete. Die rote Handfackel und kleinere Rauchsignale der Kategorie P1 sind dagegen ab 18 Jahren ohne Nachweis erhältlich. Faustregel: Nahbereich ohne Nachweis (P1), größere Reichweite nur mit FKN (P2)."
   - question: "Muss der FKN regelmäßig erneuert werden?"
     answer: "Nein. Ist die Prüfung bestanden, gilt der FKN unbefristet – eine Auffrischung oder Verlängerung ist nicht vorgeschrieben. Die Pyrotechnik an Bord selbst musst du aber weiterhin regelmäßig auf Verfallsdatum und ordnungsgemäße Lagerung prüfen."
+howTo:
+  name: "Pyrotechnisches Signalmittel im Ernstfall richtig anwenden"
+  description: "So zündest und hältst du ein pyrotechnisches Seenotsignalmittel (z. B. Handfackel oder Fallschirmrakete) sicher, wenn es im Notfall wirklich darauf ankommt."
+  steps:
+    - name: "Anleitung vorher lesen"
+      text: "Die Gebrauchsanweisung des Signalmittels schon vor dem Törn durchlesen, nicht erst im Notfall unter Stress."
+    - name: "Windrichtung beachten"
+      text: "Das Signalmittel in Lee zünden, also mit dem Wind vom eigenen Körper und Boot weg."
+    - name: "Arm und Signalmittel wegstrecken"
+      text: "Arm und Signalmittel beim Zünden vom Körper und Gesicht weg nach unten oder zur Seite ausgestreckt halten, wie in der Anleitung vorgegeben."
+    - name: "Nach dem Abbrennen sicher entsorgen"
+      text: "Ausgebrannte Hülsen abkühlen lassen und anschließend fachgerecht entsorgen, nicht über den Hausmüll."
 ---
 
 Rote Fallschirmrakete, Handfackel und Rauchsignal gehören zur Standardausrüstung an Bord, doch nicht jedes Signalmittel darfst du einfach kaufen und mitführen. Für die stärkeren pyrotechnischen Seenotsignale brauchst du den **Fachkundenachweis (FKN)**. Dieser Artikel erklärt, was der FKN ist, welche Signalmittel dafür infrage kommen, wie du ihn erwirbst und wie du Pyrotechnik an Bord richtig lagerst und entsorgst.
