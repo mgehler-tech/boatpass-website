@@ -958,11 +958,18 @@ const funkCards = [
   .pv2-details:hover { text-decoration: underline; }
   .pv2-bundle-icons { display: inline-flex; align-items: center; gap: 6px; }
   .pv2-plus { font-size: 16px; font-weight: 800; color: #3366FF; }
-  .pv2-strike { font-size: 14px; color: #94A3B8; text-decoration: line-through; }
+  /* #656B78 statt #94A3B8: Kontrast auf Weiß lag bei 2.56:1 und riss die
+     WCAG-2.2-AA-Mindestanforderung für Fließtext (4.5:1, SC 1.4.3) deutlich.
+     #656B78 (5.35:1) ist der Muted-Text-Ton, den .pv2-price-sub daneben
+     bereits nutzt. */
+  .pv2-strike { font-size: 14px; color: #656B78; text-decoration: line-through; }
   html.dark .pv2-sbf-q { color: #94A3B8 !important; }
   html.dark .pv2-sbf-q strong { color: #E2E8F0 !important; }
   html.dark .pv2-plus { color: #8BB4FF !important; }
-  html.dark .pv2-strike { color: #64748B !important; }
+  /* #64748B erreichte auf dem dunklen Kartenhintergrund nur 3.49:1 – ebenfalls
+     unter 4.5:1. #94A3B8 (6.48:1) ist der im Dark Mode durchgängig verwendete
+     Muted-Text-Ton (siehe .pv2-sbf-q, .pv2-price-sub etc.). */
+  html.dark .pv2-strike { color: #94A3B8 !important; }
 
   /* ---- Desktop-Bundle: mittige, hervorgehobene Karte mit zentriertem Inhalt ---- */
   .pv2-bundle-d { text-align: center; }
@@ -1083,7 +1090,8 @@ const funkCards = [
       display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
       padding-top: 16px; border-top: 1px solid rgba(51,102,255,0.08); margin-bottom: 16px;
     }
-    .pv2-strike { font-size: 14px; color: #94A3B8; text-decoration: line-through; }
+    /* Kontrast-Fix, siehe Begründung bei der Basisregel .pv2-strike oben. */
+    .pv2-strike { font-size: 14px; color: #656B78; text-decoration: line-through; }
     .pv2-save-green {
       font-size: 12.5px; font-weight: 700; color: #059669;
       background: #ECFDF5; border: 1px solid #A7F3D0; padding: 3px 10px; border-radius: 100px;
@@ -1100,7 +1108,7 @@ const funkCards = [
     html.dark .pv2-sbf-q { color: #94A3B8; }
     html.dark .pv2-sbf-q strong { color: #E2E8F0; }
     html.dark .pv2-plus { color: #8BB4FF; }
-    html.dark .pv2-strike { color: #64748B; }
+    html.dark .pv2-strike { color: #94A3B8; }
     html.dark .pv2-save-green { background: rgba(34,197,94,0.12); border-color: rgba(34,197,94,0.3); color: #4ADE80; }
   }
 </style>
