@@ -951,8 +951,17 @@ const funkCards = [
   /* ---- Vereinfachte Karten: gemeinsame Bausteine (Desktop + Mobile) ---- */
   .pv2-sbf-q { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #656B78; }
   .pv2-sbf-q strong { color: #1A1F36; font-weight: 800; }
+  /* Sekundär-Link unter dem CTA. Als reine Textzeile war die Tap-Fläche nur
+     ~19px hoch – direkt unter dem großen CTA ein Ziel, das auf dem Handy leicht
+     verfehlt wird (WCAG 2.5.5, mind. 44px). flex + min-height:44px gibt dieselbe
+     ausreichend große Fläche, die Footer-, Related-, Founder- und Review-Links
+     bereits haben; margin-top:4px fängt die zusätzliche Höhe im vorhandenen
+     Rhythmus wieder auf. Der versteckte Platzhalter der Bundle-Karte nutzt
+     dieselbe Klasse und hält damit die Desktop-CTA-Ausrichtung unverändert.
+     Marken-Blau (#3366FF) bleibt unberührt. */
   .pv2-details {
-    display: block; text-align: center; margin-top: 12px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 44px; text-align: center; margin-top: 4px;
     font-size: 14px; font-weight: 700; color: #3366FF; text-decoration: none;
   }
   .pv2-details:hover { text-decoration: underline; }
@@ -1073,7 +1082,8 @@ const funkCards = [
     .pv2-sbf-q { display: flex; align-items: center; gap: 8px; font-size: 14px; color: #656B78; }
     .pv2-sbf-q strong { color: #1A1F36; font-weight: 800; }
     .pv2-details {
-      display: block; text-align: center; margin-top: 12px;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 44px; text-align: center; margin-top: 4px;
       font-size: 14px; font-weight: 700; color: #3366FF; text-decoration: none;
     }
 
