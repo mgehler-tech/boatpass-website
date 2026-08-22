@@ -16,6 +16,20 @@ faq:
     answer: "Täglich kurz zu lernen ist effektiver. Das Gehirn konsolidiert neues Wissen vor allem im Schlaf – 30 Minuten täglich über 30 Tage bringen mehr Behaltenseffekt als dieselbe Gesamtzeit an wenigen langen Wochenend-Einheiten."
   - question: "Wann sollte ich die SBF-Prüfung anmelden?"
     answer: "Am besten buchst du den Prüfungstermin, wenn du etwa 60–70 % des Stoffs beherrschst. Eine konkrete Deadline motiviert und verhindert das endlose Verschieben. Prüfungstermine beim DMYV sind oft 4–8 Wochen im Voraus ausgebucht, besonders im Frühjahr."
+howTo:
+  name: "SBF-Vorbereitung in 5 Wochen: der Lernplan für Normallerner"
+  description: "So verteilst du den Lernstoff für den Sportbootführerschein realistisch auf 5 Wochen, ohne Vorwissen und mit 30 Minuten Lernzeit täglich."
+  steps:
+    - name: "Woche 1: Navigation und Fahrregeln"
+      text: "Starte mit dem größten Lernblock: Navigation und Fahrregeln bilden die Grundlage für alle weiteren Kategorien und werden am Anfang der Prüfungsvorbereitung am besten gefestigt."
+    - name: "Woche 2: Lichterführung und Schallzeichen"
+      text: "Widme dich der schwierigsten Kategorie, solange die Motivation noch hoch ist. Lerne Lichterführung mit Bildern statt mit reinem Text, um die vielen Situationen zu unterscheiden."
+    - name: "Woche 3: Seemannschaft und Motorenkunde"
+      text: "Übe parallel täglich fünf Minuten Knoten und arbeite die Grundlagen der Motorenkunde durch, die in der Prüfung meist als Basisfragen abgefragt werden."
+    - name: "Woche 4: Wetterkunde und Sicherheit"
+      text: "Schließe die inhaltliche Vorbereitung mit Wetterkunde und Sicherheitsausrüstung ab, bevor du in die Prüfungssimulation startest."
+    - name: "Woche 5: Probeprüfungen und Schwachstellen schließen"
+      text: "Absolviere mehrere vollständige Probeprüfungen unter Zeitdruck und wiederhole gezielt die Fragen, die du am häufigsten falsch beantwortest."
 ---
 
 Eine der häufigsten Fragen vor dem SBF: Wie lange muss ich eigentlich lernen? Die ehrliche Antwort: Es hängt stark von deinem Vorwissen und deiner Lerndisziplin ab. Hier sind realistische Schätzungen für verschiedene Lerntypen – ohne Beschönigung.

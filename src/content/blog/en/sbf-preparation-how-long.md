@@ -17,6 +17,20 @@ faq:
     answer: "Studying a little every day is more effective. The brain consolidates new knowledge primarily during sleep – 30 minutes daily over 30 days produces better retention than the same total study time packed into a few long weekend sessions."
   - question: "When should I book my SBF exam slot?"
     answer: "It's best to book your exam date once you've covered roughly 60–70% of the material. A concrete deadline keeps you motivated and stops you from endlessly postponing. DMYV exam slots often fill up 4–8 weeks in advance, especially in spring."
+howTo:
+  name: "SBF exam prep in 5 weeks: the study plan for average learners"
+  description: "How to realistically spread SBF exam preparation across 5 weeks with no prior knowledge and 30 minutes of study time daily."
+  steps:
+    - name: "Week 1: Navigation and waterway rules"
+      text: "Start with the largest content block: navigation and waterway rules form the foundation for every other category and stick best when tackled early."
+    - name: "Week 2: Light signals and sound signals"
+      text: "Tackle the hardest category while motivation is still high. Study light signals with visual diagrams rather than plain text to tell the many situations apart."
+    - name: "Week 3: Seamanship and engine knowledge"
+      text: "Practice knots for five minutes daily alongside the basics of engine knowledge, which the exam usually covers as base questions."
+    - name: "Week 4: Weather and safety"
+      text: "Finish the content prep with weather knowledge and safety equipment before moving into exam simulations."
+    - name: "Week 5: Mock exams and closing gaps"
+      text: "Complete several full mock exams under time pressure and specifically repeat the questions you get wrong most often."
 ---
 
 One of the most common questions before starting SBF prep: how long do I actually need to study? The honest answer depends on your prior knowledge and daily consistency. Here are realistic estimates – without sugarcoating.
