@@ -45,9 +45,12 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Wasserskifahren und Wakeboarden hinter dem Boot – Regeln, Beobachterpflicht und Kennzeichnung (2026-08-15: wasserskifahren-wakeboarden-regeln-beobachterpflicht / water-skiing-wakeboarding-rules-observer-duty)
 - [x] Schleusenfahrt – Ablauf und Verhalten für Sportbootfahrer (2026-08-16: schleusenfahrt-ablauf-verhalten-sportbootfahrer / navigating-locks-procedure-behavior-boaters)
 - [x] Umweltschutz und Gewässerschutz beim Bootfahren – was Sportbootfahrer beachten müssen (2026-08-18: umweltschutz-gewaesserschutz-bootfahren / environmental-protection-boating-water-conservation)
-- [ ] Sehtest für den Sportbootführerschein – Anforderungen und Ablauf
+- [x] Sehtest für den Sportbootführerschein – Anforderungen und Ablauf (2026-08-22: sehtest-sportbootfuehrerschein-anforderungen-ablauf / eyesight-test-boating-license-requirements-process)
 - [ ] Seefunk und Sprechfunk richtig nutzen – Grundlagen, Notruf und Kanalbelegung für Einsteiger
 - [ ] Nachtfahrt mit dem Sportboot – Vorbereitung, Orientierung und Pflichten bei Dunkelheit
 - [ ] Wellen und Sog vom eigenen Boot – Rücksichtnahme und Haftung gegenüber anderen Wassernutzern
+- [ ] Verkehrstrennungsgebiete auf See – Verhalten und Regeln für Sportbootfahrer
+- [ ] Boots-Übernahmecheck vor der ersten Fahrt – Charterboot oder eigenes Boot sicher prüfen
+- [ ] Sportbootführerschein trotz gesundheitlicher Einschränkung – was das ärztliche Zeugnis wirklich bedeutet
 
 ## Erledigt
