@@ -88,6 +88,18 @@ const faqSchema = {
   })),
 };
 
+// DefinedTerm-Schema: maschinenlesbare Kurzdefinition für Entity-Clarity bei
+// KI-Suchmaschinen. Spiegelt den Text aus dem "Was ist das SRC?"-Abschnitt.
+const definedTermSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "SRC",
+  "alternateName": "Short Range Certificate",
+  "description": "Das Short Range Certificate (SRC) ist die amtliche Erlaubnis zur Teilnahme am weltweiten Seefunkdienst (GMDSS) im UKW-Bereich. Es berechtigt zur Bedienung aller UKW-Seefunkanlagen inklusive DSC mit einer Reichweite von rund 35 Seemeilen.",
+  "url": "https://boatpass.de/src/",
+  "inLanguage": "de",
+};
+
 const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
   { name: 'Betriebsverfahren', desc: 'Gesprächsabwicklung, Prioritäten & Sprechprozeduren', count: 48, icon: 'microphone', color: '#EA580C', bg: 'rgba(234,88,12,0.10)' },
   { name: 'DSC-Verfahren', desc: 'Digital Selective Calling, Notfall-DSC & Empfang', count: 38, icon: 'wifi', color: '#7C3AED', bg: 'rgba(124,58,237,0.10)' },
@@ -106,6 +118,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">

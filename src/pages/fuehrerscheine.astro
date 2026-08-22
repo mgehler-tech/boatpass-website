@@ -102,6 +102,17 @@ const faqSchema = {
     "acceptedAnswer": { "@type": "Answer", "text": f.a },
   })),
 };
+
+// DefinedTerm-Schema: maschinenlesbare Kurzdefinition für Entity-Clarity bei
+// KI-Suchmaschinen. Spiegelt den Text aus dem "Was ist ein Funkzeugnis?"-Abschnitt.
+const definedTermSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Funkzeugnis",
+  "description": "Ein Funkzeugnis ist der amtliche Nachweis, der zum Betrieb von Seefunk- oder Binnenfunkanlagen an Bord berechtigt – anders als der Bootsführerschein wird es nur benötigt, wenn tatsächlich ein Funkgerät an Bord ist. In Deutschland gibt es drei Funkzeugnisse: UBI, SRC und LRC.",
+  "url": "https://boatpass.de/fuehrerscheine/",
+  "inLanguage": "de",
+};
 ---
 
 <BaseLayout
@@ -112,6 +123,7 @@ const faqSchema = {
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">

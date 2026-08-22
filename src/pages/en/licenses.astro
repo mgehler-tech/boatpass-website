@@ -100,6 +100,18 @@ const faqSchema = {
     "acceptedAnswer": { "@type": "Answer", "text": f.a },
   })),
 };
+
+// DefinedTerm schema: machine-readable short definition for entity clarity
+// with AI search engines. Mirrors the text of the "What is a radio certificate?" section.
+const definedTermSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "Radio certificate",
+  "alternateName": "Funkzeugnis",
+  "description": "A radio certificate is the official qualification required to operate marine or inland radio equipment on board – unlike the boating license itself, it's only needed if a radio is actually installed on board. Germany has three radio certificates: UBI, SRC and LRC.",
+  "url": "https://boatpass.de/en/licenses/",
+  "inLanguage": "en",
+};
 ---
 
 <BaseLayout
@@ -110,6 +122,7 @@ const faqSchema = {
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">

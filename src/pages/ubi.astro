@@ -87,6 +87,18 @@ const faqSchema = {
   })),
 };
 
+// DefinedTerm-Schema: maschinenlesbare Kurzdefinition für Entity-Clarity bei
+// KI-Suchmaschinen. Spiegelt den Text aus dem "Was ist das UBI?"-Abschnitt.
+const definedTermSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "UBI",
+  "alternateName": "UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk",
+  "description": "Das UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk (UBI) ist die amtliche bzw. amtlich anerkannte Erlaubnis zum Bedienen und Beaufsichtigen einer Schiffsfunkstelle auf Binnenschifffahrtsstraßen.",
+  "url": "https://boatpass.de/ubi/",
+  "inLanguage": "de",
+};
+
 const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
   { name: 'Verkehrskreise', desc: 'Kanal- und Revierfunk, Streckenfunk auf Binnenwasserstraßen', count: 30, icon: 'wifi', color: '#7C3AED', bg: 'rgba(124,58,237,0.10)' },
   { name: 'Betriebsverfahren', desc: 'Gesprächsabwicklung, Prioritäten & Sprechprozeduren', count: 29, icon: 'microphone', color: '#EA580C', bg: 'rgba(234,88,12,0.10)' },
@@ -105,6 +117,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
