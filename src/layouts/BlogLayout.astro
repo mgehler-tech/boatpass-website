@@ -14,12 +14,49 @@ const { title, seoTitle, description, date, updated, readingTime, tags, author =
 // <title> nutzt die Kurzform (falls gesetzt), H1 und Schema behalten den vollen Titel.
 const metaTitle = seoTitle ?? title;
 
-// Verwandte Artikel: gleiche Sprache, gewichtet nach gemeinsamen Tags, dann nach Datum. Max. 3.
+// Verwandte Artikel: gleiche Sprache. Gewichtet nach gemeinsamen Tags, dann nach
+// thematischer Titel-/Slug-Überschneidung, zuletzt nach Datum. Max. 3.
 // Cross-Linking zwischen Blogposts gegen "Sackgassen-Seiten" (verbessert Crawling/Indexierung).
+// Hintergrund: Jeder Artikel trägt derzeit nur einen Tag, dadurch ist die Tag-Übereinstimmung
+// immer 0 oder 1 und der Block fiel faktisch auf reine Datums-Sortierung zurück (die drei
+// jüngsten Artikel desselben Tags, unabhängig vom Thema). Ein zusätzlicher Score aus
+// gemeinsamen Schlagwörtern in Titel und Slug bringt jetzt die thematisch passendsten
+// Nachbarartikel nach vorne und stärkt so die internen Themen-Cluster (SBF Binnen, SBF See,
+// Funkzeugnis) für Crawler und Leser.
+const RELATED_STOPWORDS = new Set([
+  // DE
+  'der', 'die', 'das', 'und', 'oder', 'ein', 'eine', 'einen', 'einem', 'einer', 'eines',
+  'im', 'in', 'am', 'an', 'auf', 'aus', 'bei', 'beim', 'mit', 'von', 'vom', 'vor', 'fuer',
+  'zum', 'zur', 'den', 'dem', 'des', 'ist', 'sind', 'wie', 'was', 'wer', 'wo', 'wann',
+  'warum', 'ueber', 'unter', 'nach', 'als', 'auch', 'nicht', 'man', 'dein', 'deine', 'sich',
+  'mehr', 'pro', 'bis', 'ohne', 'gegen', 'werden', 'muss', 'musst', 'kann', 'sowie',
+  // EN
+  'the', 'and', 'for', 'with', 'from', 'are', 'was', 'were', 'how', 'what', 'who', 'where',
+  'when', 'why', 'your', 'you', 'not', 'more', 'about', 'into', 'than', 'then', 'that', 'this',
+  'these', 'those', 'its', 'without', 'against', 'need', 'must', 'can',
+]);
+const normalizeToken = (s: string) =>
+  s.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss');
+const relatedTokens = (title: string, id: string) =>
+  new Set(
+    normalizeToken(`${title} ${id.replace(/^(de|en)\//, '').replace(/-/g, ' ')}`)
+      .replace(/[^a-z0-9]+/g, ' ')
+      .split(' ')
+      .filter((w) => w.length > 2 && !RELATED_STOPWORDS.has(w))
+  );
+const selfTokens = relatedTokens(title, post.id);
 const relatedCandidates = await getCollection('blog', (e) => e.data.lang === lang && e.id !== post.id);
 const relatedPosts = relatedCandidates
-  .map((p) => ({ p, shared: p.data.tags.filter((t) => tags.includes(t)).length }))
-  .sort((a, b) => b.shared - a.shared || b.p.data.date.getTime() - a.p.data.date.getTime())
+  .map((p) => {
+    const candTokens = relatedTokens(p.data.title, p.id);
+    let overlap = 0;
+    for (const t of candTokens) if (selfTokens.has(t)) overlap++;
+    return { p, shared: p.data.tags.filter((t) => tags.includes(t)).length, overlap };
+  })
+  .sort(
+    (a, b) =>
+      b.shared - a.shared || b.overlap - a.overlap || b.p.data.date.getTime() - a.p.data.date.getTime()
+  )
   .slice(0, 3)
   .map(({ p }) => ({
     title: p.data.title,
