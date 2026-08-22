@@ -49,6 +49,18 @@ const faqSchema = {
   })),
 };
 
+// DefinedTerm-Schema: maschinenlesbare Kurzdefinition für Entity-Clarity bei
+// KI-Suchmaschinen. Spiegelt den Text aus dem "Was ist der SBF Binnen?"-Abschnitt.
+const definedTermSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "SBF Binnen",
+  "alternateName": "Sportbootführerschein Binnen",
+  "description": "Der Sportbootführerschein Binnen (SBF Binnen) ist die amtliche Fahrerlaubnis für Motorboote auf deutschen Binnenschifffahrtsstraßen – Flüsse, Kanäle und Binnenseen. Er ist Pflicht für Boote mit mehr als 11,03 kW (15 PS) Motorleistung.",
+  "url": "https://boatpass.de/sbf-binnen/",
+  "inLanguage": "de",
+};
+
 // Course-Schema: markiert die Seite eindeutig als Lernkurs für den SBF Binnen
 // (zusätzlich zur App-Auszeichnung). Alle Angaben spiegeln den Seiteninhalt.
 const courseSchema = {
@@ -120,6 +132,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">

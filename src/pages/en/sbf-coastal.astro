@@ -49,6 +49,18 @@ const faqSchema = {
   })),
 };
 
+// DefinedTerm schema: machine-readable short definition for entity clarity
+// with AI search engines. Mirrors the text of the "What is the SBF Coastal?" section.
+const definedTermSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "SBF Coastal",
+  "alternateName": "German coastal boating license",
+  "description": "The coastal boating license (SBF Coastal) permits navigation on maritime waterways – the North and Baltic Sea within the 3-nautical-mile zone. It is the prerequisite for operating recreational boats in the German coastal area.",
+  "url": "https://boatpass.de/en/sbf-coastal/",
+  "inLanguage": "en",
+};
+
 // Course schema: clearly marks the page as a learning course for the SBF Coastal
 // (in addition to the app markup). All details mirror the page content.
 const courseSchema = {
@@ -126,6 +138,7 @@ const navPoints: { icon: IconName; title: string; desc: string }[] = [
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">

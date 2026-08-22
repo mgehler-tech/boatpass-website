@@ -50,6 +50,18 @@ const faqSchema = {
   })),
 };
 
+// DefinedTerm-Schema: maschinenlesbare Kurzdefinition für Entity-Clarity bei
+// KI-Suchmaschinen. Spiegelt den Text aus dem "Was ist der SBF See?"-Abschnitt.
+const definedTermSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "SBF See",
+  "alternateName": "Sportbootführerschein See",
+  "description": "Der Sportbootführerschein See (SBF See) berechtigt zur Fahrt auf Seeschifffahrtsstraßen – Nord- und Ostsee innerhalb der 3-Seemeilen-Zone. Er ist die Voraussetzung für das Führen von Sportbooten im deutschen Küstenbereich.",
+  "url": "https://boatpass.de/sbf-see/",
+  "inLanguage": "de",
+};
+
 // Course-Schema: markiert die Seite eindeutig als Lernkurs für den SBF See
 // (zusätzlich zur App-Auszeichnung). Alle Angaben spiegeln den Seiteninhalt.
 const courseSchema = {
@@ -121,6 +133,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">

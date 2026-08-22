@@ -49,6 +49,18 @@ const faqSchema = {
   })),
 };
 
+// DefinedTerm schema: machine-readable short definition for entity clarity
+// with AI search engines. Mirrors the text of the "What is the SBF Inland?" section.
+const definedTermSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "SBF Inland",
+  "alternateName": "German inland boating license",
+  "description": "The inland boating license (SBF Inland) is the official permit for motorboats on German inland waterways – rivers, canals and inland lakes. It is mandatory for boats with more than 11.03 kW (15 HP) of engine power.",
+  "url": "https://boatpass.de/en/sbf-inland/",
+  "inLanguage": "en",
+};
+
 // Course schema: clearly marks the page as a learning course for the SBF Inland
 // (in addition to the app markup). All details mirror the page content.
 const courseSchema = {
@@ -120,6 +132,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
