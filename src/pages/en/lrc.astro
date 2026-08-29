@@ -87,6 +87,18 @@ const faqSchema = {
   })),
 };
 
+// DefinedTerm schema: machine-readable short definition for entity clarity
+// with AI search engines. Mirrors the text of the "What is the LRC?" section.
+const definedTermSchema = {
+  "@context": "https://schema.org",
+  "@type": "DefinedTerm",
+  "name": "LRC",
+  "alternateName": "Long Range Certificate",
+  "description": "The Long Range Certificate (LRC) is the official authorization for unrestricted participation in the worldwide maritime radio service within the GMDSS. It permits radio via VHF, MF and HF as well as via satellite and is the highest marine radio certificate in recreational boating.",
+  "url": "https://boatpass.de/en/lrc/",
+  "inLanguage": "en",
+};
+
 const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
   { name: 'VHF & operating procedures', desc: 'Marine radio, DSC, speaking procedures & GMDSS overview', count: 19, icon: 'microphone', color: '#EA580C', bg: 'rgba(234,88,12,0.10)' },
   { name: 'MF & HF', desc: 'MF/HF radio, NAVTEX & transmission procedures', count: 15, icon: 'wifi', color: '#7C3AED', bg: 'rgba(124,58,237,0.10)' },
@@ -112,6 +124,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
   <!-- Hero -->
   <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
