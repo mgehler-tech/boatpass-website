@@ -236,6 +236,11 @@ const rowB = [...REVIEWS_DE.slice(half), ...REVIEWS_DE.slice(0, half)];
       flex-direction: column;
       gap: 16px;
       margin-top: 4px;
+      /* Die Reihen sind per width:max-content absichtlich breiter als der
+         Container (siehe .rv-row) – ohne overflow:hidden bläht das den
+         gesamten Dokument-scrollWidth auf und macht die komplette Seite
+         horizontal wegscrollbar (weit über die Karten hinaus, bis ins Leere). */
+      overflow: hidden;
       /* weiche Kanten: Chips faden am Rand ein/aus statt hart abzuschneiden */
       -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
               mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
