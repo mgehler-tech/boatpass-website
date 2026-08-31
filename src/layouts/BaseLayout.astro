@@ -75,7 +75,7 @@ const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, sh
     <a href="#main-content" class="skip-link">
       {lang === 'de' ? 'Zum Hauptinhalt springen' : 'Skip to main content'}
     </a>
-    <Header lang={lang} />
+    <Header lang={lang} altUrl={altUrl} hasAlternate={hasAlternate} />
     <main id="main-content">
       <slot />
     </main>
