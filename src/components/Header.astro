@@ -7,13 +7,28 @@ import type { IconName } from '../icons';
 
 interface Props {
   lang: 'de' | 'en';
+  altUrl?: string;
+  hasAlternate?: boolean;
 }
 
-const { lang } = Astro.props;
+const { lang, altUrl, hasAlternate = true } = Astro.props;
 const t = useTranslations(lang);
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 const de = lang === 'de';
 const boatSchoolUrl = de ? '/bootsfahrschulen/' : '/en/boat-schools/';
+
+// Der Sprachwechsler muss auf der aktuellen Seite bleiben statt auf die
+// Startseite zu springen. Ohne explizites altUrl (z. B. abweichende Slugs bei
+// Blogposts) greift dieselbe Pfad-Heuristik wie in SEO.astro für hreflang.
+// altUrl ist dort eine absolute URL (fürs hreflang-Tag) – für einen anklickbaren
+// Link wird sie wie jeder andere interne Link im Header auf einen relativen Pfad
+// gekürzt, statt einen vollen Origin-Wechsel auszulösen.
+const currentPath = Astro.url.pathname;
+const otherLangPath = hasAlternate
+  ? (altUrl ?? (de ? `/en${currentPath}` : currentPath.replace(/^\/en/, ''))).replace(/^https:\/\/boatpass\.de/, '')
+  : (de ? '/en/' : '/');
+const deHref = de ? currentPath : otherLangPath;
+const enHref = de ? otherLangPath : currentPath;
 
 /**
  * Mega-Menü-Struktur. Zwei Spalten mit Gruppenüberschrift plus eine Promo-Kachel.
@@ -180,10 +195,10 @@ const promo = {
     <!-- Right side -->
     <div class="header-actions flex items-center gap-3">
       <div class="lang-switcher">
-        <a href="/" class={`lang-option${lang === 'de' ? ' lang-active' : ''}`}>
+        <a href={deHref} class={`lang-option${lang === 'de' ? ' lang-active' : ''}`}>
           DE
         </a>
-        <a href="/en/" class={`lang-option${lang === 'en' ? ' lang-active' : ''}`}>
+        <a href={enHref} class={`lang-option${lang === 'en' ? ' lang-active' : ''}`}>
           EN
         </a>
       </div>
