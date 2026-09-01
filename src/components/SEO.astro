@@ -51,14 +51,20 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' |
 
 <title>{title} | Boatpass</title>
 <meta name="description" content={description} />
-<link rel="canonical" href={canonical} />
+{!noindex && <link rel="canonical" href={canonical} />}
 <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large, max-snippet:-1'} />
 <meta name="theme-color" content="#3366FF" />
 
-<!-- hreflang -->
-<link rel="alternate" hreflang={lang} href={canonical} />
-{hasAlternate && <link rel="alternate" hreflang={altLang} href={altUrl} />}
-<link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
+<!-- hreflang: nicht auf noindex-Seiten (z.B. 404), die keine indexierbare, erreichbare
+     Alternativ-URL haben – ein Canonical/hreflang auf eine nicht existierende URL wäre
+     widersprüchlich zu "noindex" und für Crawler irreführend. -->
+{!noindex && (
+  <>
+    <link rel="alternate" hreflang={lang} href={canonical} />
+    {hasAlternate && <link rel="alternate" hreflang={altLang} href={altUrl} />}
+    <link rel="alternate" hreflang="x-default" href={xDefaultUrl} />
+  </>
+)}
 
 <!-- Open Graph -->
 <meta property="og:site_name" content="Boatpass" />
