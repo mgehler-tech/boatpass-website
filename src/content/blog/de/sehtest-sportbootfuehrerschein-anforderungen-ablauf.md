@@ -82,7 +82,7 @@ Plane für den gesamten Termin nicht viel Zeit ein, die Untersuchung selbst daue
 
 Die Kosten für das ärztliche Zeugnis liegen je nach Arztpraxis meist zwischen **30 und 65 Euro**. Führst du den Sehtest zuvor kostenlos beim Optiker durch, sparst du dir gegebenenfalls einen Teil der Untersuchungszeit beim Arzt, die Gesamtkosten hängen aber weiterhin von der jeweiligen Praxis ab. Am besten fragst du vorab telefonisch nach dem Preis.
 
-Das ärztliche Zeugnis ist **12 Monate ab Ausstellungsdatum gültig**. Lass es also nicht zu früh ausstellen, sonst läuft es ab, bevor du zur Prüfung antrittst, und du musst den Termin wiederholen. Ein guter Zeitpunkt ist etwa zwei bis drei Monate vor dem geplanten Prüfungstermin. Machst du sowohl den SBF Binnen als auch den SBF See innerhalb dieses Gültigkeitszeitraums, kannst du dasselbe Zeugnis für beide Anmeldungen verwenden.
+Das ärztliche Zeugnis ist **12 Monate ab Ausstellungsdatum gültig**. Lass es also nicht zu früh ausstellen, sonst läuft es ab, bevor du zur Prüfung antrittst, und du musst den Termin wiederholen. Ein guter Zeitpunkt ist etwa zwei bis drei Monate vor dem geplanten Prüfungstermin. Machst du sowohl den [SBF Binnen](/sbf-binnen/) als auch den [SBF See](/sbf-see/) innerhalb dieses Gültigkeitszeitraums, kannst du dasselbe Zeugnis für beide Anmeldungen verwenden.
 
 ## Was passiert bei unzureichender Sehschärfe?
 
@@ -109,4 +109,4 @@ Der Sehtest selbst ist keine Prüfungsfrage im theoretischen Teil, er ist eine f
 
 ## Fazit
 
-Der Sehtest für den Sportbootführerschein ist unkompliziert, aber verbindlich: Du brauchst eine Sehschärfe von mindestens 0,8, mit oder ohne Sehhilfe, und ausreichendes Farbunterscheidungsvermögen. Den Sehtest kann ein Optiker durchführen, das amtliche ärztliche Zeugnis muss aber ein Arzt ausstellen, ein Besuch beim Hausarzt reicht dafür aus. Wer den Termin rechtzeitig plant und bei bekannten Einschränkungen offen mit dem Arzt spricht, hat diesen Teil der Zulassungsvoraussetzungen schnell erledigt und kann sich ganz auf die inhaltliche Prüfungsvorbereitung konzentrieren.
+Der Sehtest für den [Sportbootführerschein](/fuehrerscheine/) ist unkompliziert, aber verbindlich: Du brauchst eine Sehschärfe von mindestens 0,8, mit oder ohne Sehhilfe, und ausreichendes Farbunterscheidungsvermögen. Den Sehtest kann ein Optiker durchführen, das amtliche ärztliche Zeugnis muss aber ein Arzt ausstellen, ein Besuch beim Hausarzt reicht dafür aus. Wer den Termin rechtzeitig plant und bei bekannten Einschränkungen offen mit dem Arzt spricht, hat diesen Teil der Zulassungsvoraussetzungen schnell erledigt und kann sich ganz auf die inhaltliche Prüfungsvorbereitung konzentrieren.

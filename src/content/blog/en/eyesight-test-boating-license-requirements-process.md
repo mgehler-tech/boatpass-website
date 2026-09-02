@@ -82,7 +82,7 @@ Don't expect the appointment to take long, the examination itself usually takes 
 
 The cost of the medical certificate is usually **between €30 and €65**, depending on the doctor's practice. If you have the eye test done for free at an optician beforehand, you may reduce the time needed at the doctor's office, but the overall cost still depends on the individual practice. It's best to ask about the price by phone beforehand.
 
-The medical certificate is **valid for 12 months from the date it was issued**. So don't have it issued too early, or it may expire before you actually sit the exam, forcing you to repeat the appointment. A good time to get it is around two to three months before your planned exam date. If you take both the SBF Inland and SBF Coastal exams within this validity period, you can use the same certificate for both registrations.
+The medical certificate is **valid for 12 months from the date it was issued**. So don't have it issued too early, or it may expire before you actually sit the exam, forcing you to repeat the appointment. A good time to get it is around two to three months before your planned exam date. If you take both the [SBF Inland](/en/sbf-inland/) and [SBF Coastal](/en/sbf-coastal/) exams within this validity period, you can use the same certificate for both registrations.
 
 ## What happens if your visual acuity isn't sufficient?
 
@@ -109,4 +109,4 @@ The eye test itself isn't an exam question in the theory portion, it's a formal 
 
 ## Conclusion
 
-The eye test for the boating license is straightforward but mandatory: you need a visual acuity of at least 0.8, with or without a visual aid, and adequate color discrimination. An optician can carry out the eye test, but the official medical certificate must be issued by a doctor, a visit to your GP is enough. Anyone who plans the appointment in good time and speaks openly with the doctor about known impairments can quickly get this part of the admission requirements out of the way and focus fully on preparing for the exam content.
+The eye test for the [German boating license](/en/licenses/) is straightforward but mandatory: you need a visual acuity of at least 0.8, with or without a visual aid, and adequate color discrimination. An optician can carry out the eye test, but the official medical certificate must be issued by a doctor, a visit to your GP is enough. Anyone who plans the appointment in good time and speaks openly with the doctor about known impairments can quickly get this part of the admission requirements out of the way and focus fully on preparing for the exam content.
