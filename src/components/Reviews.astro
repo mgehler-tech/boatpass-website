@@ -13,14 +13,11 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 const rating = getBoatpassRating();
 const score = rating ? formatRating(rating.score).replace('.', ',') : null;
 
-// Desktop-Marquee (≥769px): zwei Reihen, die in Gegenrichtung endlos laufen.
-// Zweite Reihe rotiert, damit nicht beide Reihen dieselbe Rezension
-// übereinander zeigen. Die sichtbare Bewegung ersetzt das statische Raster,
-// das auf großen Screens leblos wirkte – die Karten selbst bleiben im
-// bestehenden Marken-Stil (dünner Rand, 16px-Radius, keine Schlagschatten).
-const half = Math.ceil(REVIEWS_DE.length / 2);
+// Desktop-Marquee (≥769px): eine einzige Reihe, die in eine Richtung endlos
+// läuft. Die sichtbare Bewegung ersetzt das statische Raster, das auf großen
+// Screens leblos wirkte – die Karten selbst bleiben im bestehenden Marken-Stil
+// (dünner Rand, 16px-Radius, keine Schlagschatten).
 const rowA = REVIEWS_DE;
-const rowB = [...REVIEWS_DE.slice(half), ...REVIEWS_DE.slice(0, half)];
 ---
 
 <section class="section-band max-w-6xl mx-auto px-6 py-14 md:py-20">
@@ -50,30 +47,12 @@ const rowB = [...REVIEWS_DE.slice(half), ...REVIEWS_DE.slice(0, half)];
   <div class="snap-dots" data-snap-dots="reviews"></div>
 
   {/* Desktop-Marquee – nur ≥769px und ohne Reduced-Motion sichtbar (rein per
-     CSS umgeschaltet). Die geklonte zweite Hälfte jeder Reihe trägt
-     aria-hidden, damit Screenreader jede Rezension nur einmal vorlesen. */}
+     CSS umgeschaltet). Die geklonte zweite Hälfte der Reihe trägt aria-hidden,
+     damit Screenreader jede Rezension nur einmal vorlesen. */}
   <div class="rv-marquee" aria-hidden="true">
     <div class="rv-row">
       {[...rowA, ...rowA].map((r, i) => (
         <article class="rv-chip" aria-hidden={i >= rowA.length ? 'true' : undefined}>
-          <div class="rv-stars" role="img" aria-label={`${r.stars} von 5 Sternen`}>
-            <span aria-hidden="true">{'★'.repeat(r.stars)}</span>
-          </div>
-          <p class="rv-text">„{r.excerpt ?? r.text}“</p>
-          <footer class="rv-meta">
-            <span class="rv-avatar" aria-hidden="true">{r.initials}</span>
-            <span class="rv-who">
-              <span class="rv-name">{r.name}</span>
-              <time class="rv-date" datetime={r.date}>{formatReviewDate(r.date)}</time>
-            </span>
-            {r.passed && <span class="rv-tag">{r.passed}</span>}
-          </footer>
-        </article>
-      ))}
-    </div>
-    <div class="rv-row rv-row-rev">
-      {[...rowB, ...rowB].map((r, i) => (
-        <article class="rv-chip" aria-hidden={i >= rowB.length ? 'true' : undefined}>
           <div class="rv-stars" role="img" aria-label={`${r.stars} von 5 Sternen`}>
             <span aria-hidden="true">{'★'.repeat(r.stars)}</span>
           </div>
@@ -248,8 +227,7 @@ const rowB = [...REVIEWS_DE.slice(half), ...REVIEWS_DE.slice(0, half)];
     gap: 16px;
     animation: rv-marq 58s linear infinite;
   }
-  .rv-row-rev { animation-direction: reverse; animation-duration: 70s; }
-  /* Maus über der Leiste hält beide Reihen an – zum Lesen einer Rezension. */
+  /* Maus über der Leiste hält die Reihe an – zum Lesen einer Rezension. */
   .rv-marquee:hover .rv-row { animation-play-state: paused; }
   @keyframes rv-marq { to { transform: translateX(-50%); } }
 
