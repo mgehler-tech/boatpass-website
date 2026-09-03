@@ -42,7 +42,7 @@ export interface Review {
 }
 
 /** Stand der Erhebung aus der Play Console. */
-export const REVIEWS_AS_OF = '2026-08-18';
+export const REVIEWS_AS_OF = '2026-09-03';
 
 /**
  * Auswahl für die Startseite. Bewusst mehrere Stimmen, die jeweils etwas
