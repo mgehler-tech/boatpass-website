@@ -101,6 +101,12 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     flex-shrink: 0;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    /* Mind. 44px hohe Tap-Fläche (WCAG 2.5.5), wie alle übrigen interaktiven
+       Elemente der Seite (Footer-, Header-, Preis-CTAs). Bisher ergab
+       padding:11px + 14px-Text nur ~39px – die einzige App-CTA im Fließtext
+       jedes Blogposts blieb damit unter dem projektweiten 44px-Raster. */
+    min-height: 44px;
     white-space: nowrap;
     background: #3366FF;
     color: white;
@@ -120,6 +126,12 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   /* Startet ausgeblendet, das Inline-Script schaltet auf iOS um (siehe oben). */
   .blog-inline-cta-ios-badge {
     display: none;
+    /* align-items/justify-content + min-height halten das iOS-Pendant auf
+       dieselbe 44px-Tap-Fläche wie der Play-Store-Button (WCAG 2.5.5); das
+       Inline-Script schaltet display auf inline-flex. */
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
     flex-shrink: 0;
     white-space: nowrap;
     background: rgba(51,102,255,0.10);
