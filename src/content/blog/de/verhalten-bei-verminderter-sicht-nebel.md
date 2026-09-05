@@ -17,6 +17,22 @@ faq:
     answer: "Ja. Bei verminderter Sicht müssen die Navigationslichter unabhängig von der Tageszeit gesetzt werden, egal ob dichter Nebel am Vormittag oder eine Schneeböe am Nachmittag herrscht."
   - question: "Wie oft muss ein fahrendes Boot bei Nebel Schallsignale geben?"
     answer: "Ein Fahrzeug in Fahrt gibt sein Schallsignal auf See mindestens alle zwei Minuten ab, ein Fahrzeug vor Anker läutet die Glocke in Abständen von höchstens einer Minute."
+howTo:
+  name: "Richtig bei verminderter Sicht und Nebel verhalten"
+  description: "Von der Einschätzung der Sichtverhältnisse bis zum sicheren Liegeplatz: so verhältst du dich als Sportbootfahrer richtig, wenn Nebel, Regen oder Schneefall die Sicht einschränken."
+  steps:
+    - name: "Verminderte Sicht erkennen"
+      text: "Prüfen, ob die Sicht durch Nebel, Regen, Schneefall oder Dunst so weit eingeschränkt ist, dass ein unerwartet auftauchendes Fahrzeug nicht mehr rechtzeitig erkannt werden kann – unabhängig von Tageszeit und fester Meterzahl."
+    - name: "Geschwindigkeit anpassen und Ausguck verstärken"
+      text: "Auf eine sichere Geschwindigkeit reduzieren, bei der ein rechtzeitiges Stoppen möglich bleibt, den Motor drosseln und mit Augen, Ohren sowie Radar oder AIS (falls vorhanden) verstärkt Ausguck halten."
+    - name: "Vorgeschriebene Schallsignale geben"
+      text: "Als Fahrzeug in Fahrt auf See mindestens alle zwei Minuten das Schallsignal geben, vor Anker die Glocke höchstens im Minutenabstand läuten."
+    - name: "Navigationslichter auch tagsüber setzen"
+      text: "Die Positionslichter setzen, sobald die Sicht eingeschränkt ist – unabhängig davon, ob es sich um dichten Vormittagsnebel oder eine Schneeböe am Nachmittag handelt."
+    - name: "Ohne Radar rechtzeitig einen sicheren Liegeplatz ansteuern"
+      text: "Auf Binnenschifffahrtsstraßen ohne geeignetes Radar frühzeitig einen sicheren Liegeplatz anlaufen und dort festmachen oder ankern, statt die Fahrt unsicher fortzusetzen."
+    - name: "Position dokumentieren und wachsam bleiben"
+      text: "Position, Kurs und Geschwindigkeit regelmäßig im Kartenplotter oder per Koppelnavigation eintragen und bekannte Landmarken sowie Betonnung zur Orientierung nutzen."
 ---
 
 Nebelbänke ziehen oft überraschend schnell auf, und auch starker Regen oder Schneefall können die Sicht innerhalb weniger Minuten drastisch verschlechtern. Für die [SBF-Prüfung](/sbf-pruefung-ablauf/) ist das Thema **verminderte Sicht** ein fester Bestandteil, in der Praxis ist es sogar noch wichtiger: Wer nicht weiß, wie er sich verhalten muss, wenn er andere Fahrzeuge kaum noch oder gar nicht mehr sehen kann, geht ein erhebliches Risiko ein. Dieser Artikel erklärt, was verminderte Sicht rechtlich bedeutet, welche Regeln auf See und auf Binnenschifffahrtsstraßen gelten und wie du dich als Sportbootfahrer in der Praxis richtig verhältst.
