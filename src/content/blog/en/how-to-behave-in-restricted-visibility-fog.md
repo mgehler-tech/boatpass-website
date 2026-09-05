@@ -17,6 +17,22 @@ faq:
     answer: "Yes. In restricted visibility, navigation lights must be shown regardless of the time of day, whether that means dense fog in the morning or a snow squall in the afternoon."
   - question: "How often must a vessel underway sound signals in fog?"
     answer: "A vessel underway sounds her signal at sea at intervals of not more than two minutes, while a vessel at anchor rings her bell at intervals of not more than one minute."
+howTo:
+  name: "How to behave in restricted visibility and fog"
+  description: "From assessing the visibility conditions to reaching a safe mooring: how to behave correctly as a recreational skipper when fog, rain, or snow reduce visibility."
+  steps:
+    - name: "Recognize restricted visibility"
+      text: "Check whether fog, rain, snowfall, or haze reduce visibility so much that an unexpectedly appearing vessel can no longer be spotted in time – regardless of the time of day or a fixed distance in meters."
+    - name: "Adjust speed and keep a heightened lookout"
+      text: "Reduce to a safe speed that still allows you to stop in time, throttle back the engine, and keep a heightened lookout using sight, hearing, and radar or AIS if available."
+    - name: "Sound the required signals"
+      text: "As a vessel underway at sea, sound your signal at intervals of not more than two minutes; at anchor, ring the bell at intervals of not more than one minute."
+    - name: "Show navigation lights, even during the day"
+      text: "Show your navigation lights as soon as visibility is restricted, whether that means dense fog in the morning or a snow squall in the afternoon."
+    - name: "Without radar, head for a safe mooring in good time"
+      text: "On inland waterways without suitable radar, head for a safe mooring or anchorage early and make fast there rather than continuing an uncertain passage."
+    - name: "Log your position and stay alert"
+      text: "Regularly record your position, course, and speed on a chartplotter or by dead reckoning, and use known landmarks and buoyage to stay oriented."
 ---
 
 Fog banks often roll in surprisingly fast, and heavy rain or snowfall can cut visibility drastically within minutes. For the German [SBF exam](/en/sbf-exam/) (Sportbootführerschein, the boating license), the topic of **restricted visibility** is a fixed part of the syllabus, and in practice it matters even more: if you do not know how to behave once you can barely see other vessels, or cannot see them at all, you are taking on serious risk. This article explains what restricted visibility means in legal terms, which rules apply at sea and on inland waterways, and how to behave correctly as a recreational skipper in practice.
