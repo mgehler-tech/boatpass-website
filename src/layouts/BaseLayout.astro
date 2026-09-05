@@ -23,9 +23,12 @@ interface Props {
   altUrl?: string;
   noindex?: boolean;
   appRating?: AppRating;
+  /** Override für Astro.url.pathname, s. Header.astro. Nötig für Seiten wie 404.astro,
+   * die unter keiner echten Route erreichbar sind. */
+  currentPath?: string;
 }
 
-const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, showCta = true, hasAlternate = true, altUrl, noindex = false, appRating } = Astro.props;
+const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, showCta = true, hasAlternate = true, altUrl, noindex = false, appRating, currentPath } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -75,7 +78,7 @@ const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, sh
     <a href="#main-content" class="skip-link">
       {lang === 'de' ? 'Zum Hauptinhalt springen' : 'Skip to main content'}
     </a>
-    <Header lang={lang} altUrl={altUrl} hasAlternate={hasAlternate} />
+    <Header lang={lang} altUrl={altUrl} hasAlternate={hasAlternate} currentPath={currentPath} />
     <main id="main-content">
       <slot />
     </main>

@@ -9,9 +9,13 @@ interface Props {
   lang: 'de' | 'en';
   altUrl?: string;
   hasAlternate?: boolean;
+  /** Override für Astro.url.pathname. Nötig für die 404-Seite: die ist unter
+   * keiner echten Route erreichbar, "auf der aktuellen Seite bleiben" ergäbe
+   * dort einen Link auf /404/ – eine URL ohne Inhalt. */
+  currentPath?: string;
 }
 
-const { lang, altUrl, hasAlternate = true } = Astro.props;
+const { lang, altUrl, hasAlternate = true, currentPath: currentPathOverride } = Astro.props;
 const t = useTranslations(lang);
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 const de = lang === 'de';
@@ -23,7 +27,7 @@ const boatSchoolUrl = de ? '/bootsfahrschulen/' : '/en/boat-schools/';
 // altUrl ist dort eine absolute URL (fürs hreflang-Tag) – für einen anklickbaren
 // Link wird sie wie jeder andere interne Link im Header auf einen relativen Pfad
 // gekürzt, statt einen vollen Origin-Wechsel auszulösen.
-const currentPath = Astro.url.pathname;
+const currentPath = currentPathOverride ?? Astro.url.pathname;
 const otherLangPath = hasAlternate
   ? (altUrl ?? (de ? `/en${currentPath}` : currentPath.replace(/^\/en/, ''))).replace(/^https:\/\/boatpass\.de/, '')
   : (de ? '/en/' : '/');
