@@ -71,7 +71,7 @@ As soon as you sail regularly, own a boat, want to go to sea, or want to charter
 
 ## Charter Certificate or the SBF After All?
 
-The charter certificate is ideal for a **one-off boating holiday** on the lake district. But anyone who wants to sail more often is better served long-term by the **SBF Binnen** (inland) or **SBF See** (coastal): the license is valid indefinitely, nationwide and – with the ICC endorsement – abroad too. The theory for it can now be learned conveniently via app.
+The charter certificate is ideal for a **one-off boating holiday** on the lake district. But anyone who wants to sail more often is better served long-term by the **[SBF Binnen](/en/sbf-inland/)** (inland) or **[SBF See](/en/sbf-coastal/)** (coastal): the license is valid indefinitely, nationwide and – with the ICC endorsement – abroad too. The theory for it can now be learned conveniently via app.
 
 ## Conclusion
 

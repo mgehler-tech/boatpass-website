@@ -98,7 +98,7 @@ There is no single, legally mandated minimum equipment list for pyrotechnic sign
 
 The FKN itself is a separate exam and not part of the theoretical question catalog for the recreational boating license. Distress signals are, however, a fixed part of the SBF exam syllabus: you need to know which signal stands for what, and what the color and type of a signal mean. We've covered these distress-signal basics, independent of FKN categorization, in detail in the article [Distress Signals at Sea](/en/blog/distress-signals-at-sea/).
 
-You can practice the relevant exam questions on onboard safety and distress signals with the official ELWIS question catalog in the Boatpass app, split by SBF Inland and [SBF Coastal](/en/sbf-coastal/). That gives you solid SBF theory preparation, even though the FKN comes as a separate step.
+You can practice the relevant exam questions on onboard safety and distress signals with the official ELWIS question catalog in the Boatpass app, split by [SBF Inland](/en/sbf-inland/) and [SBF Coastal](/en/sbf-coastal/). That gives you solid SBF theory preparation, even though the FKN comes as a separate step.
 
 ## Common misconceptions about the FKN
 

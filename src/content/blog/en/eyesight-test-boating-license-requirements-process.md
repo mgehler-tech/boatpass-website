@@ -105,7 +105,7 @@ If you don't pass the theory or practical exam on your first attempt, you genera
 
 ## Eyesight and the SBF exam
 
-The eye test itself isn't an exam question in the theory portion, it's a formal admission requirement. Still, good eyesight is closely linked to the exam material: if you can't reliably tell lights, buoys, and signals apart, you'll also find it harder to connect the corresponding questions from the official question catalog with your own perception. With the **Boatpass app**, you can practice the official exam questions on navigation lights, buoyage, and signals in exam mode and immediately see where you still have gaps in your knowledge, independent of the eye test but with the same goal: staying safe on the water.
+The eye test itself isn't an exam question in the theory portion, it's a formal admission requirement. Still, good eyesight is closely linked to the exam material: if you can't reliably tell lights, buoys, and signals apart, you'll also find it harder to connect the corresponding questions from the official [question catalog](/en/sbf-coastal-exam-questions/) with your own perception. With the **Boatpass app**, you can practice the official exam questions on navigation lights, buoyage, and signals in exam mode and immediately see where you still have gaps in your knowledge, independent of the eye test but with the same goal: staying safe on the water.
 
 ## Conclusion
 
