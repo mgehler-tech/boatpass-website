@@ -63,7 +63,7 @@ Small boats with no engine or very low-powered motors generally do not require a
 
 ## Does the German SBF Suffice?
 
-Short answer: **No**. Neither the SBF Binnen nor the SBF See entitles you to operate a license-required motorboat on Lake Constance.
+Short answer: **No**. Neither the [SBF Binnen](/en/sbf-inland/) nor the [SBF See](/en/sbf-coastal/) entitles you to operate a license-required motorboat on Lake Constance.
 
 The SBF Binnen applies to German inland waterways but not to Lake Constance, since the lake falls under the ISB rather than German national inland regulations. The SBF See is designed for coastal and sea waters – Lake Constance is neither.
 

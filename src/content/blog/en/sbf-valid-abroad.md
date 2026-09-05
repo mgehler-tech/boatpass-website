@@ -130,7 +130,7 @@ Charter yachts in Italy are routinely fitted with VHF radios. As in Croatia, you
 
 ## The SRC: Why You Almost Always Need It
 
-The **SRC (Short Range Certificate)** is the VHF radio operator's licence for recreational boaters. It is often treated as a secondary concern after the boat licence itself – but in practice, it is just as important for chartering abroad.
+The **[SRC (Short Range Certificate)](/en/src/)** is the VHF radio operator's licence for recreational boaters. It is often treated as a secondary concern after the boat licence itself – but in practice, it is just as important for chartering abroad.
 
 Every charter yacht comes with a VHF set fitted as standard. Using it without an SRC – for routine harbour communication, weather reports, or emergencies – is not permitted in Croatia, Italy, or most other European countries.
 

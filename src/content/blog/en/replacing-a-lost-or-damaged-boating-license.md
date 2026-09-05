@@ -52,7 +52,7 @@ In both cases the application process is essentially the same; only the supporti
 
 ## Who issues the replacement?
 
-The two associations licensed by the federal government are responsible, the same bodies that administer exams and issue official [SBF Coastal](/en/sbf-coastal/) and SBF Inland certificates: the **Deutscher Motoryachtverband e.V. (DMYV)** and the **Deutscher Segler-Verband e.V. (DSV)**. You submit your application to either association. Both offer a downloadable application form on their websites.
+The two associations licensed by the federal government are responsible, the same bodies that administer exams and issue official [SBF Coastal](/en/sbf-coastal/) and [SBF Inland](/en/sbf-inland/) certificates: the **Deutscher Motoryachtverband e.V. (DMYV)** and the **Deutscher Segler-Verband e.V. (DSV)**. You submit your application to either association. Both offer a downloadable application form on their websites.
 
 For some years now, the application can also be submitted electronically through the **Bundesportal** (verwaltung.bund.de), the federal government's online administrative portal, as part of the digitalization of administrative services for recreational and leisure boating. The paper-based application directly with DMYV or DSV remains available as well, if you prefer that route.
 

@@ -86,7 +86,7 @@ In practice, the 15-HP limit is reached faster than many expect: even an average
 If you need the license, the choice depends on your waters:
 
 - **SBF Binnen** – for rivers, canals and lakes inland.
-- **SBF See** – for coastal waters and the sea.
+- **[SBF See](/en/sbf-coastal/)** – for coastal waters and the sea.
 
 Many people take both in combination, because the theory overlaps and the second exam is then considerably cheaper. You can read more in our [comparison of SBF Binnen and SBF See](/en/blog/sbf-inland-vs-coastal/).
 
