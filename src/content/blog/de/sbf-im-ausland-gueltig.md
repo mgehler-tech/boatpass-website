@@ -30,7 +30,7 @@ Seit der Umstellung des deutschen Sportbootführerscheins auf das **Scheckkarten
 Der ICC wird in zwei Ausprägungen ausgestellt:
 
 - **„Coastal" (Küstengewässer):** entspricht dem deutschen SBF See
-- **„Inland" (Binnengewässer):** entspricht dem deutschen SBF Binnen
+- **„Inland" (Binnengewässer):** entspricht dem deutschen [SBF Binnen](/sbf-binnen/)
 
 Wer also den SBF See besitzt, hat auf der Rückseite den ICC Coastal – und der ist das Dokument, das in den meisten internationalen Charterrevieren gefordert wird.
 

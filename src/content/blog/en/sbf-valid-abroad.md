@@ -30,7 +30,7 @@ When Germany switched the Sportbootführerschein to the **credit-card format**, 
 The ICC comes in two endorsed variants:
 
 - **"Coastal"** – corresponds to the German SBF See (sea/coastal licence)
-- **"Inland"** – corresponds to the German SBF Binnen (inland waterways licence)
+- **"Inland"** – corresponds to the German [SBF Binnen](/en/sbf-inland/) (inland waterways licence)
 
 For most charter destinations – Croatia, the Italian coast, the Greek islands – the ICC Coastal is what authorities will ask to see.
 

@@ -39,7 +39,7 @@ Depending on the route you take, the German boating license costs between €200
 
 Before we get to the saving tips, here's the current cost breakdown for 2026:
 
-| Item | SBF Inland | SBF Coastal | Combined |
+| Item | [SBF Inland](/en/sbf-inland/) | SBF Coastal | Combined |
 |---|---|---|---|
 | Exam fee (DMYV) | €130.78 | €148.38 | €178.61 |
 | Theory preparation | €0–400 | €0–400 | €0–450 |

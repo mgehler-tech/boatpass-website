@@ -39,7 +39,7 @@ Der Sportbootführerschein kostet je nach Weg zwischen 200 und 1.000 € – ein
 
 Bevor wir zu den Spartipps kommen, hier die aktuelle Kostenaufstellung für 2026:
 
-| Posten | SBF Binnen | SBF See | Kombi |
+| Posten | [SBF Binnen](/sbf-binnen/) | SBF See | Kombi |
 |---|---|---|---|
 | Prüfungsgebühr (DMYV) | 130,78 € | 148,38 € | 178,61 € |
 | Theorievorbereitung | 0–400 € | 0–400 € | 0–450 € |
