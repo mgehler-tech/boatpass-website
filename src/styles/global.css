@@ -203,6 +203,24 @@ html.dark .section-eyebrow {
   text-decoration: underline !important;
 }
 
+/* ── Vordergrund-Akzent (Marken-Blau) im Light Mode ──────────────────────────
+   #3366FF ist projektweit hunderte Male inline als Textfarbe hartkodiert
+   (Fließtext-Links, "Weiterführende Artikel"-Listen, Badges/Chips). Auf reinem
+   Weiß erreicht es knapp AA (~4,68:1), auf dem hellblauen Seitenhintergrund
+   (#F0F4FA) und den helleren Chip-Tönen (u. a. #EFF3FF, #E1E9FA) fällt es aber
+   auf 3,84–4,24:1 – WCAG 2.2 AA verlangt 4.5:1 für Fließtext. Zentral auf den
+   bereits an anderer Stelle projektweit genutzten dunkleren Marken-Ton
+   (--color-primary-dark, ~6:1 auf diesen Hintergründen) angehoben, statt an
+   hunderten Einzelstellen; deckt sich mit der Kontrast-Korrektur, die
+   .section-eyebrow bereits für dasselbe Muster erhalten hat. Bewusst nur die
+   Textfarbe (style="color:…") – gefüllte blaue Buttons (background:#3366FF)
+   und SVG-Icons (stroke/fill) bleiben unberührt, sie sind von diesem Fehler
+   nicht betroffen. */
+[style*="color:#3366FF"],
+[style*="color: #3366FF"] {
+  color: var(--color-primary-dark) !important;
+}
+
 /* Dark Mode – class-based via html.dark. Init script in BaseLayout.astro sets the class
    before first paint to avoid FOUC. Respects both system preference and manual toggle. */
 html.dark {
