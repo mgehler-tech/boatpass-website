@@ -5,7 +5,7 @@ description: "Does your German SBF work in Croatia, the Netherlands, and Italy? 
 date: 2026-06-18
 updated: 2026-09-07
 tags: ["Exam Knowledge"]
-readingTime: 11
+readingTime: 12
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-im-ausland-gueltig"
