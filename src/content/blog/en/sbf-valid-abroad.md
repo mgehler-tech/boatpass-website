@@ -3,20 +3,25 @@ title: "German Boat License Abroad: Croatia, Netherlands & Italy"
 seoTitle: "German Boat License Abroad: Where Valid"
 description: "Does your German SBF work in Croatia, the Netherlands, and Italy? ICC recognition, license requirements, and what documents to bring on your charter."
 date: 2026-06-18
+updated: 2026-09-07
 tags: ["Exam Knowledge"]
-readingTime: 9
+readingTime: 11
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-im-ausland-gueltig"
 faq:
   - question: "Is my German SBF valid in Croatia, the Netherlands, and Italy?"
-    answer: "Yes. All three countries recognise the German ICC (on the reverse of the credit-card-format SBF). You will generally also need the SRC radio operator's licence. On Dutch inland waterways, a licence is only required at all for boats over 15 m or capable of more than 20 km/h – the ICC Inland covers that, and it already includes CEVNI knowledge."
+    answer: "Yes. All three countries accept the German ICC (on the reverse of the credit-card-format SBF) on charter boats. You will generally also need the SRC radio operator's licence. On Dutch inland waterways, a licence is only required at all for boats over 15 m or capable of more than 20 km/h – the ICC Inland covers that, and it already includes CEVNI knowledge."
   - question: "What is the ICC, and do I need it abroad?"
-    answer: "The ICC (International Certificate of Competence) is based on UNECE Resolution No. 40 and appears on the reverse of the credit-card-format SBF. It is mutually recognised by signatory countries. Older paper licences don't include an ICC and need to be upgraded through the DMYV or DSV."
+    answer: "The ICC (International Certificate of Competence) is based on UNECE Resolution No. 40 and appears on the reverse of the credit-card-format SBF. It is mutually recognised by signatory countries and accepted in practice by many more. Older paper licences don't include an ICC and need to be upgraded through the DMYV or DSV."
   - question: "What documents do I need to charter a boat abroad?"
     answer: "Generally: your passport or national ID (original), your SBF See with ICC Coastal on the reverse, the SRC (if there's a radio on board), plus documents provided by the charter company such as the boat registration, insurance document, and country-specific paperwork (for example the Vinjeta in Croatia)."
   - question: "Do I need a radio licence (SRC) abroad?"
     answer: "Charter yachts almost always have a VHF radio on board. As soon as you operate it, the SRC (Short Range Certificate) is required in Croatia, Italy, and most other European countries."
+  - question: "Does Croatia have a licence-free rule like Germany's 15 hp exemption?"
+    answer: "No. Croatia has no general licence exemption for small engines; the requirement effectively starts at the first horsepower. The only real exception is unmanned rental boats up to 5 m in length and 5 kW of engine power, which anyone 18 or older may operate without a licence within 500 m of the shore."
+  - question: "At what point do I actually need a licence in Italy?"
+    answer: "Under Article 39 of the Codice della Nautica da Diporto (Legislative Decree 171/2005), a licence is mandatory once engine power exceeds 30 kW (40.8 hp), or once you sail more than 6 nautical miles from the coast, regardless of engine power. Since charter boats almost always exceed 30 kW, you need the ICC Coastal in practice on nearly every charter route."
 ---
 
 You've booked the charter, packed your bags – and now you're wondering whether your German Sportbootführerschein (recreational boat licence) actually holds up abroad. Good news: in most European charter destinations, it does. But each country has its own rules, and the details matter more than you might expect. Here's what you need to know before you cast off.
@@ -36,7 +41,7 @@ For most charter destinations – Croatia, the Italian coast, the Greek islands 
 
 ### Still Using the Old Paper Format?
 
-If your German boat licence is an older paper document, it does **not include an ICC**. You can upgrade to the card format through the **DMYV (Deutschen Motoryachtverband)** or the **DSV (Deutschen Segler-Verband)**. It is a straightforward process – don't leave it until two days before departure.
+If your German boat licence is an older paper document, it does **not include an ICC**. You can upgrade to the card format through the **DMYV (Deutschen Motoryachtverband)** or the **DSV (Deutschen Segler-Verband)**. The re-issue fee is around 42.66 EUR, plus a passport photo and proof of identity. Processing typically takes a few weeks, so check with your association for the exact requirements – don't leave it until two days before departure.
 
 ### Valid for Life
 
@@ -55,7 +60,7 @@ Croatia is a signatory to UNECE Resolution No. 40 and formally recognises the Ge
 
 ### How Checks Work
 
-Croatian coastguard and maritime authorities conduct regular inspections both at sea and in marinas. Beyond checking your licence and SRC, they will want to see the **Vinjeta** – a state tourism charge that applies to charter boats navigating Croatian waters. Charter companies typically arrange the Vinjeta, but confirm it is paid and on board when you pick up the boat.
+Croatian coastguard and maritime authorities conduct regular inspections both at sea and in marinas. Beyond checking your licence and SRC, they will want to see proof of the **Vinjeta** – actually two separate fees paid at the harbour master's office: an annual **navigation safety fee** (independent of how long you stay) and, for boats 7 m and longer where the crew sleeps aboard, an additional **accommodation tax**, charged per person per day (as of 2026: around 1.33 EUR per person/day, or alternatively tiered by boat length and length of stay). Children up to 12 and people with a disability rating of 70% or more are exempt from the accommodation tax. Charter companies typically arrange both fees, but confirm they are paid and on board when you pick up the boat.
 
 **Documents to keep at hand:**
 
@@ -70,7 +75,7 @@ Keep everything in a **waterproof document holder**. Copies are frequently not a
 
 ### Small Boats, Different Rules?
 
-Croatia does have exemptions for very small, low-powered craft. For a standard charter yacht of around 8–10 metres and above, however, you will not get around needing an SBF See + ICC Coastal + SRC. If you are planning to hire an unusual vessel type, check directly with the charter company or the ADAC before departure.
+Unlike Germany, Croatia has **no general licence exemption for small engines**: as soon as a boat has a combustion engine, a licence is required in principle, effectively starting at the first horsepower. The only real exception applies to unmanned rental boats up to 5 m in length and 5 kW of engine power, which anyone 18 or older may operate without a licence within 500 m of the shore, think of the small motorised dinghies you can rent by the hour at a beach. If you're used to Germany's licence-free rule up to 15 hp (see our [article on licence-free boating in Germany](/en/blog/boating-without-license-15-hp/)), don't assume it carries over to Croatia. For a standard charter yacht of around 8–10 metres and above, you will not get around needing an SBF See + ICC Coastal + SRC. If you are planning to hire an unusual vessel type, check directly with the charter company before departure.
 
 ### Missing Documents: Fines and Insurance Risk
 
@@ -104,17 +109,16 @@ If you venture onto the open North Sea, treat it with respect. Strong tidal curr
 
 ## Italy: Zone-Based Licence Rules
 
-Italy's approach to boat licence requirements is built less around engine size or vessel type, and more around **how far from the coast you are sailing**.
+Italy's licence requirement depends on two independent factors: **engine power** and **distance from the coast**.
 
-### Italy's Coastal Zones
+### When Do You Actually Need a Licence in Italy?
 
-Italian maritime law defines several zones for recreational boating:
+Under **Article 39 of the Codice della Nautica da Diporto** (Legislative Decree 171/2005), a licence is mandatory when either of these applies:
 
-- **Within 6 nautical miles of the coast:** For some categories of small, low-powered craft, no formal licence may be required.
-- **6 to 12 nautical miles:** A valid boat licence is required for the vast majority of vessels, including all charter yachts.
-- **Beyond 12 nautical miles:** A licence is always required.
+- **Engine power exceeds 30 kW (40.8 hp)**, or displacement exceeds 750 cc (more for diesel engines): a licence is always required, no matter how close to shore you stay.
+- **You sail more than 6 nautical miles from the coast:** a licence is required regardless of engine power.
 
-If you are chartering along the Tuscan Archipelago, around Sardinia, Sicily, or the Amalfi Coast, you will almost certainly be sailing in zones where the **ICC Coastal** is mandatory. Essentially every charter route in Italy falls into this category.
+Only boats that both stay within 6 nautical miles **and** have no more than 30 kW/40.8 hp of power can be operated licence-free. Since charter boats are almost always more powerful than that, a licence requirement applies in practice to virtually every charter route, the Tuscan Archipelago, Sardinia, Sicily, the Amalfi Coast included, and you will need the **ICC Coastal**. Italy has not formally signed UNECE Resolution No. 40, but accepts the ICC in practice, particularly on non-Italian-flagged charter boats. If in doubt about a specific boat, a quick check with the charter company is worthwhile.
 
 ### Adriatic vs. Tyrrhenian: Two Very Different Seas
 
@@ -156,6 +160,10 @@ Key topics on the SRC exam include:
 
 Many skippers sit the SRC alongside the [SBF coastal exam](/en/sbf-coastal/) at the same sailing school. Check with your school whether both exams can be taken at the same sitting – they often can, which saves a second trip.
 
+## Lost or Damaged Your Licence Abroad?
+
+A soaked or lost licence mid-charter is a common headache – spray, a bag left behind, a theft. Without a valid original, many countries won't let the charter continue, and you risk trouble during an inspection. Before you leave, photograph both sides of your SBF and store the images somewhere you can access them without the original (cloud storage, for example) so you at least have proof on hand in an emergency. A replacement can't be issued abroad, though – it has to be requested from the DMYV or DSV back in Germany. Our [article on replacing a lost or damaged boating licence](/en/blog/replacing-a-lost-or-damaged-boating-license/) walks through exactly how that works and what it costs.
+
 ## Documents Checklist
 
 Before you leave the dock, run through the following:
@@ -180,6 +188,6 @@ Maritime regulations change. What is accurate today may be outdated after a new 
 
 ## Conclusion
 
-The German SBF See in card format with its ICC Coastal endorsement gives you a solid foundation for sailing across Europe. Croatia, the Netherlands, and Italy all recognise the ICC – but expect to need the SRC wherever a VHF radio is on board. Prepare your documents well in advance, double-check requirements before you travel, and then enjoy the sailing.
+The German SBF See in card format with its ICC Coastal endorsement gives you a solid foundation for sailing across Europe. Croatia and the Netherlands formally recognise the ICC, and Italy accepts it in practice – on charter yachts in all three countries, expect to also need the SRC wherever a VHF radio is on board. Prepare your documents well in advance, double-check requirements before you travel, and then enjoy the sailing.
 
 Still working towards your SBF? The **[Boatpass app](/)** trains you with the official ELWIS question catalogue in exam mode – so you can pass the licence exam and then put it to good use on the water.
