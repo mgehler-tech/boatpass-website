@@ -19,7 +19,7 @@ faq:
   - question: "Do I need a radio licence (SRC) abroad?"
     answer: "Charter yachts almost always have a VHF radio on board. As soon as you operate it, the SRC (Short Range Certificate) is required in Croatia, Italy, and most other European countries."
   - question: "Does Croatia have a licence-free rule like Germany's 15 hp exemption?"
-    answer: "No. Croatia has no general licence exemption for small engines; the requirement effectively starts at the first horsepower. The only real exception is unmanned rental boats up to 5 m in length and 5 kW of engine power, which anyone 18 or older may operate without a licence within 500 m of the shore."
+    answer: "No. Croatia has no general licence exemption for small engines. Under Croatian maritime law, any vessel over 2.5 m in hull length or over 5 kW of engine power counts as a 'brodica' (motorboat) and generally requires a licence. A widely circulated claim that unmanned rental boats up to 5 m and 5 kW can be operated licence-free by anyone 18+ was only a 2022 ministry proposal that was never enacted into law."
   - question: "At what point do I actually need a licence in Italy?"
     answer: "Under Article 39 of the Codice della Nautica da Diporto (Legislative Decree 171/2005), a licence is mandatory once engine power exceeds 30 kW (40.8 hp), or once you sail more than 6 nautical miles from the coast, regardless of engine power. Since charter boats almost always exceed 30 kW, you need the ICC Coastal in practice on nearly every charter route."
 ---
@@ -75,7 +75,7 @@ Keep everything in a **waterproof document holder**. Copies are frequently not a
 
 ### Small Boats, Different Rules?
 
-Unlike Germany, Croatia has **no general licence exemption for small engines**: as soon as a boat has a combustion engine, a licence is required in principle, effectively starting at the first horsepower. The only real exception applies to unmanned rental boats up to 5 m in length and 5 kW of engine power, which anyone 18 or older may operate without a licence within 500 m of the shore, think of the small motorised dinghies you can rent by the hour at a beach. If you're used to Germany's licence-free rule up to 15 hp (see our [article on licence-free boating in Germany](/en/blog/boating-without-license-15-hp/)), don't assume it carries over to Croatia. For a standard charter yacht of around 8–10 metres and above, you will not get around needing an SBF See + ICC Coastal + SRC. If you are planning to hire an unusual vessel type, check directly with the charter company before departure.
+Unlike Germany, Croatia has **no general licence exemption for small engines**. Croatian maritime law defines a "brodica" (motorboat) as any vessel over 2.5 m in hull length or with more than 5 kW of engine power, and a licence is generally required for one. Genuinely licence-free craft are therefore limited to things like canoes, pedal boats, and very small electric tenders below that threshold. You will sometimes see German-language travel blogs and rental sites claim that unmanned rental boats up to 5 m and 5 kW can be operated licence-free by anyone 18 or older within 500 m of shore, but that was only a 2022 proposal from the Croatian maritime ministry that was never published in the Narodne novine (the official gazette) and never became law. Don't rely on it, check with the rental operator or harbour master's office if in doubt. If you're used to Germany's licence-free rule up to 15 hp (see our [article on licence-free boating in Germany](/en/blog/boating-without-license-15-hp/)), don't assume it carries over to Croatia. For a standard charter yacht of around 8–10 metres and above, you will not get around needing an SBF See + ICC Coastal + SRC.
 
 ### Missing Documents: Fines and Insurance Risk
 
@@ -115,7 +115,7 @@ Italy's licence requirement depends on two independent factors: **engine power**
 
 Under **Article 39 of the Codice della Nautica da Diporto** (Legislative Decree 171/2005), a licence is mandatory when either of these applies:
 
-- **Engine power exceeds 30 kW (40.8 hp)**, or displacement exceeds 750 cc (more for diesel engines): a licence is always required, no matter how close to shore you stay.
+- **Engine power exceeds 30 kW (40.8 hp)**, or displacement exceeds thresholds that vary by engine type: a licence is always required, no matter how close to shore you stay.
 - **You sail more than 6 nautical miles from the coast:** a licence is required regardless of engine power.
 
 Only boats that both stay within 6 nautical miles **and** have no more than 30 kW/40.8 hp of power can be operated licence-free. Since charter boats are almost always more powerful than that, a licence requirement applies in practice to virtually every charter route, the Tuscan Archipelago, Sardinia, Sicily, the Amalfi Coast included, and you will need the **ICC Coastal**. Italy has not formally signed UNECE Resolution No. 40, but accepts the ICC in practice, particularly on non-Italian-flagged charter boats. If in doubt about a specific boat, a quick check with the charter company is worthwhile.
@@ -148,7 +148,7 @@ The exam is manageable, and many skippers prepare for it alongside the [SBF coas
 
 ## Getting the SRC: How Long Does It Take?
 
-If you do not yet hold an SRC, the natural question is: how much work is this? The answer: less than you might think. The SRC exam in Germany covers a theoretical element (GMDSS principles, frequencies, procedures) and a practical element at a VHF set. Many candidates prepare in a few days of focused study, and the exam itself typically takes an afternoon.
+If you do not yet hold an SRC, the natural question is: how much work is this? The answer: less than you might think. The SRC exam in Germany covers a theoretical element (GMDSS principles, frequencies, procedures) and a practical element at a VHF set. Many candidates prepare in a few days of focused study.
 
 Key topics on the SRC exam include:
 
