@@ -80,3 +80,35 @@ test.describe('Mobile Navigation → SBF See → Play Store CTA', () => {
     await expect(cta).toHaveAttribute('href', PLAY_STORE_URL);
   });
 });
+
+// The desktop and EN specs both cover the License Finder, but until now no
+// spec exercised it under a touch viewport — the one place most visitors
+// actually reach this tool from. The `.cfg-opt` buttons are plain buttons
+// with no desktop-only interaction (unlike the mega menu's hover), so this
+// mainly guards against a mobile-only layout regression hiding the options
+// or the result panel off-screen.
+test.describe('Mobile License Finder full flow → Recommendation → Next step', () => {
+  test.use({ ...iPhone13 });
+
+  test('completing the configurator yields a recommendation with a working next step', async ({ page }) => {
+    await page.goto('/tools/welcher-bootsfuehrerschein/');
+
+    await page.locator('.cfg-opt', { hasText: 'Küste (Nord- & Ostsee)' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Verbrenner über 15 PS' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Ja' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Küstennah' }).click();
+
+    const result = page.locator('#cfg-result');
+    await expect(result).toBeVisible();
+
+    const recommendationLinks = result.locator('a.res-card');
+    await expect(recommendationLinks).toHaveCount(2);
+
+    const playCta = result.locator('a[href*="play.google.com"]');
+    await expect(playCta).toHaveAttribute('href', PLAY_STORE_URL);
+
+    const firstHref = await recommendationLinks.first().getAttribute('href');
+    await recommendationLinks.first().click();
+    await expect(page).toHaveURL(new RegExp(`${firstHref}$`));
+  });
+});
