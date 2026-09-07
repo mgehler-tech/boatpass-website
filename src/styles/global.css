@@ -89,7 +89,10 @@
   gap: 6px;
   background: rgba(51, 102, 255, 0.08);
   border: 1px solid rgba(51, 102, 255, 0.18);
-  color: #3366FF;
+  /* var(--color-primary) selbst erreicht auf dem Chip-Hintergrund nur 3.84:1
+     (WCAG-AA-Fließtext braucht 4.5:1) – der bereits vorhandene dunklere Marken-
+     Blauton besteht den Kontrast-Check, ohne dass der Chip weniger blau wirkt. */
+  color: var(--color-primary-dark);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
