@@ -1,7 +1,7 @@
 ---
 title: "Eyesight Test for the German Boating License – Requirements and Process"
 seoTitle: "Eyesight Test for the Boating License"
-description: "How strict is the eyesight test for the German boating license really? Visual acuity requirements, color vision, process, cost, and what happens with poor eyesight."
+description: "How strict is the eyesight test for the German boating license? Visual acuity, color vision, process, cost, and what happens if you fail it."
 date: 2026-08-22
 tags: ["Exam Knowledge"]
 readingTime: 8

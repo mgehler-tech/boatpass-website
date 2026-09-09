@@ -13,6 +13,8 @@ export interface BoatSchoolCity {
   variant: 'coastal' | 'inland' | 'both';
   waterways: { de: string; en: string };
   intro: { de: string; en: string };
+  /** Handgeschriebene Meta-Description (140–155 Zeichen, CTA) – ersetzt das harte Abschneiden von `intro`. */
+  metaDescription: { de: string; en: string };
   examInfo: { de: string; en: string };
   mapsQuery: string;
   schools: BoatSchool[];
@@ -32,6 +34,10 @@ export const cities: BoatSchoolCity[] = [
     intro: {
       de: 'Berlin ist eine der wasserreichsten Städte Europas. Über 180 Kilometer Wasserstraßen, Dutzende Seen und ein dichtes Kanalnetz machen die Hauptstadt zu einem erstklassigen Revier für Motorboot- und Segelfahrer. Der Sportbootführerschein Binnen ist hier ab 15 PS Pflicht.',
       en: 'Berlin is one of Europe\'s most water-rich cities. Over 180 kilometres of waterways, dozens of lakes and a dense canal network make the capital an excellent area for motorboat and sailing enthusiasts. The inland boat licence is required here for engines above 15 HP.',
+    },
+    metaDescription: {
+      de: 'Bootsfahrschulen in Berlin im Vergleich: SBF-Binnen-Kurse für Spree, Havel und Wannsee, Prüfungstermine bei DMYV & DSV. Jetzt Fahrschule finden.',
+      en: 'Boat schools in Berlin compared: inland boating licence courses for the Spree, Havel and Wannsee, plus exam dates. Find your boat school now.',
     },
     examInfo: {
       de: 'Prüfungen finden regelmäßig beim DMYV und DSV in Berlin statt, unter anderem in Köpenick und Spandau.',
@@ -73,6 +79,10 @@ export const cities: BoatSchoolCity[] = [
       de: 'Hamburg verbindet Binnengewässer und Seefahrt wie kaum eine andere Stadt. Auf der Alster segeln Hunderte Boote, über die Elbe erreicht man direkt die Nordsee. In Hamburgs zahlreichen Bootsfahrschulen kannst du sowohl den SBF Binnen als auch den SBF See machen.',
       en: 'Hamburg connects inland waterways and seafaring like few other cities. Hundreds of boats sail on the Alster, and the Elbe provides direct access to the North Sea. In Hamburg\'s numerous boat schools, you can take both the inland and coastal boat licence.',
     },
+    metaDescription: {
+      de: 'Bootsfahrschulen in Hamburg: SBF Binnen & SBF See für Elbe, Alster und Nordsee-Zugang. Prüfungstermine, Kosten und Kurse im Überblick – jetzt vergleichen.',
+      en: 'Boat schools in Hamburg: inland and coastal licence courses for the Elbe, Alster and North Sea access. Exam dates and costs – compare schools now.',
+    },
     examInfo: {
       de: 'Der DMYV und DSV bieten regelmäßig Prüfungen in Hamburg an, unter anderem am Jungfernstieg und in Hamburg-Harburg.',
       en: 'The DMYV and DSV offer regular exams in Hamburg, including locations at Jungfernstieg and Hamburg-Harburg.',
@@ -107,6 +117,10 @@ export const cities: BoatSchoolCity[] = [
     intro: {
       de: 'München und Oberbayern bieten mit Ammersee, Starnberger See, Chiemsee und Tegernsee einige der schönsten Binnenreviere Deutschlands. Die Isar selbst ist nicht schiffbar, doch die umliegenden Seen sind ein Paradies für Motorboot- und Segelbegeisterte.',
       en: 'Munich and Upper Bavaria offer some of Germany\'s most beautiful inland waterways with Ammersee, Starnberger See, Chiemsee and Tegernsee. The Isar itself is not navigable, but the surrounding lakes are a paradise for motorboat and sailing enthusiasts.',
+    },
+    metaDescription: {
+      de: 'Bootsfahrschulen in München: SBF-Binnen-Kurse für Isar, Ammersee, Starnberger See und Chiemsee. Prüfungstermine und Kosten im Vergleich – jetzt finden.',
+      en: 'Boat schools in Munich: inland licence courses for the Isar, Ammersee, Starnberger See and Chiemsee. Exam dates and costs – find a school now.',
     },
     examInfo: {
       de: 'Prüfungen finden regelmäßig in München und Umgebung statt, oft direkt an den Seen (z. B. Ammersee, Starnberger See).',
@@ -143,6 +157,10 @@ export const cities: BoatSchoolCity[] = [
       de: 'Der Rhein ist eine der meistbefahrenen Wasserstraßen Europas – und Köln liegt mittendrin. Bootsfahrschulen in Köln bieten Ausbildung am Rhein und auf umliegenden Seen. Der SBF Binnen ist hier Pflicht ab 15 PS.',
       en: 'The Rhine is one of Europe\'s busiest waterways – and Cologne sits right in the middle. Boat schools in Cologne offer training on the Rhine and surrounding lakes. The inland boat licence is required here above 15 HP.',
     },
+    metaDescription: {
+      de: 'Bootsfahrschulen in Köln: SBF-Binnen-Kurse für Rhein, Fühlinger See und Altarme. Prüfungstermine bei DMYV & DSV im Überblick – jetzt Fahrschule finden.',
+      en: 'Boat schools in Cologne: inland licence courses for the Rhine, Fühlinger See and its side channels. Exam dates and costs – find a school now.',
+    },
     examInfo: {
       de: 'DMYV- und DSV-Prüfungen finden regelmäßig in Köln und Umgebung statt.',
       en: 'DMYV and DSV exams are held regularly in Cologne and the surrounding area.',
@@ -178,6 +196,10 @@ export const cities: BoatSchoolCity[] = [
       de: 'Düsseldorf ist als Standort der boot – der weltweit größten Wassersportmesse – ein Zentrum der Bootsszene. Der Rhein und umliegende Seen bieten vielfältige Möglichkeiten zum Bootfahren. Zahlreiche Fahrschulen bereiten hier auf den SBF Binnen vor.',
       en: 'Düsseldorf, home of boot – the world\'s largest water sports fair – is a centre of the boating scene. The Rhine and surrounding lakes offer diverse boating opportunities. Numerous schools prepare students for the inland boat licence here.',
     },
+    metaDescription: {
+      de: 'Bootsfahrschulen in Düsseldorf: SBF-Binnen-Kurse für Rhein, Unterbacher See und Elbsee. Prüfungstermine und Kosten im Vergleich – jetzt Schule finden.',
+      en: 'Boat schools in Düsseldorf: inland licence courses for the Rhine, Unterbacher See and Elbsee. Exam dates and costs compared – find a school now.',
+    },
     examInfo: {
       de: 'Prüfungen werden regelmäßig in Düsseldorf angeboten, oft in Verbindung mit Fahrschulen am Rhein.',
       en: 'Exams are offered regularly in Düsseldorf, often in conjunction with boat schools on the Rhine.',
@@ -208,6 +230,10 @@ export const cities: BoatSchoolCity[] = [
     intro: {
       de: 'Frankfurt liegt direkt am Main, der eine der wichtigsten Binnenwasserstraßen Deutschlands ist. Über den Rhein-Main-Donau-Kanal ist Frankfurt mit einem europaweiten Wasserstraßennetz verbunden. Der SBF Binnen ist hier ab 15 PS Pflicht.',
       en: 'Frankfurt sits directly on the Main, one of Germany\'s most important inland waterways. Via the Rhine-Main-Danube Canal, Frankfurt is connected to a Europe-wide waterway network. The inland boat licence is required here above 15 HP.',
+    },
+    metaDescription: {
+      de: 'Bootsfahrschulen in Frankfurt am Main: SBF-Binnen-Kurse für Main und Rhein-Main-Donau-Kanal. Prüfungstermine und Kosten – jetzt Fahrschule finden.',
+      en: 'Boat schools in Frankfurt am Main: inland licence courses for the Main and the Rhine-Main-Danube canal. Exam dates and costs – find a school now.',
     },
     examInfo: {
       de: 'Prüfungen finden regelmäßig in Frankfurt und Umgebung statt.',
@@ -240,6 +266,10 @@ export const cities: BoatSchoolCity[] = [
       de: 'Stuttgart liegt am Neckar und ist Ausgangspunkt für Touren zum Bodensee – einem der beliebtesten Binnenreviere Deutschlands. Bootsfahrschulen in Stuttgart bieten Kurse für SBF Binnen, oft auch mit Praxisausbildung am Bodensee.',
       en: 'Stuttgart sits on the Neckar and is a starting point for trips to Lake Constance – one of Germany\'s most popular inland waterways. Boat schools in Stuttgart offer inland licence courses, often with practical training at Lake Constance.',
     },
+    metaDescription: {
+      de: 'Bootsfahrschulen in Stuttgart: SBF-Binnen-Kurse für Neckar, Max-Eyth-See und den nahen Bodensee. Prüfungstermine und Kosten – jetzt Schule finden.',
+      en: 'Boat schools in Stuttgart: inland licence courses for the Neckar, Max-Eyth-See and nearby Lake Constance. Exam dates and costs – find a school now.',
+    },
     examInfo: {
       de: 'Prüfungen werden in Stuttgart und am Bodensee angeboten.',
       en: 'Exams are offered in Stuttgart and at Lake Constance.',
@@ -269,6 +299,10 @@ export const cities: BoatSchoolCity[] = [
     intro: {
       de: 'Kiel ist Deutschlands Segelhauptstadt – die Kieler Woche ist das größte Segelevent der Welt. Die Kieler Förde und der Nord-Ostsee-Kanal bieten beste Bedingungen für den SBF See. Zahlreiche Fahrschulen bilden hier für die Küstengewässer aus.',
       en: 'Kiel is Germany\'s sailing capital – Kiel Week is the world\'s largest sailing event. The Kiel Fjord and the Kiel Canal offer ideal conditions for the coastal boat licence. Numerous schools train students for coastal waters here.',
+    },
+    metaDescription: {
+      de: 'Bootsfahrschulen in Kiel: SBF-See-Kurse für Kieler Förde, Ostsee und den Nord-Ostsee-Kanal. Prüfungstermine bei DSV & DMYV – jetzt Fahrschule finden.',
+      en: 'Boat schools in Kiel: coastal licence courses for the Kiel Fjord, Baltic Sea and Kiel Canal. Exam dates and costs compared – find a school now.',
     },
     examInfo: {
       de: 'Der DMYV bietet regelmäßig Prüfungen in Kiel an, sowohl für SBF See als auch für Funkzeugnisse.',
@@ -302,6 +336,10 @@ export const cities: BoatSchoolCity[] = [
       de: 'Rostock mit dem Seebad Warnemünde ist das Tor zur Ostsee in Mecklenburg-Vorpommern. Die Stadt bietet ideale Bedingungen für den SBF See und über die Warnow auch Zugang zum Binnenschifffahrtsnetz der Mecklenburgischen Seenplatte.',
       en: 'Rostock with its seaside resort Warnemünde is the gateway to the Baltic Sea in Mecklenburg-Vorpommern. The city offers ideal conditions for the coastal boat licence and via the Warnow, access to the inland waterway network of the Mecklenburg Lake District.',
     },
+    metaDescription: {
+      de: 'Bootsfahrschulen in Rostock: SBF-See-Kurse für Ostsee, Warnow und Warnemünde. Prüfungstermine und Kosten im Vergleich – jetzt Fahrschule finden.',
+      en: 'Boat schools in Rostock: coastal licence courses for the Baltic Sea, Warnow river and Warnemünde. Exam dates, costs and contacts – find a school now.',
+    },
     examInfo: {
       de: 'Prüfungen finden regelmäßig in Rostock und Warnemünde statt.',
       en: 'Exams are held regularly in Rostock and Warnemünde.',
@@ -331,6 +369,10 @@ export const cities: BoatSchoolCity[] = [
     intro: {
       de: 'Bremen liegt an der Weser und ist über Bremerhaven direkt mit der Nordsee verbunden. Die Hansestadt bietet Ausbildung für SBF Binnen und SBF See – ideal für alle, die sowohl auf Binnengewässern als auch auf See fahren möchten.',
       en: 'Bremen sits on the Weser and is directly connected to the North Sea via Bremerhaven. The Hanseatic city offers training for both inland and coastal boat licences – ideal for those who want to navigate both inland waters and the sea.',
+    },
+    metaDescription: {
+      de: 'Bootsfahrschulen in Bremen: SBF Binnen & SBF See für Weser, Werdersee und Nordsee-Zugang über Bremerhaven. Prüfungstermine – jetzt Schule finden.',
+      en: 'Boat schools in Bremen: inland and coastal licence courses for the Weser, Werdersee and North Sea access via Bremerhaven. Find a school now.',
     },
     examInfo: {
       de: 'Prüfungen werden in Bremen und Bremerhaven angeboten.',
@@ -362,6 +404,10 @@ export const cities: BoatSchoolCity[] = [
       de: 'Hannover liegt am Mittellandkanal – der längsten künstlichen Wasserstraße Deutschlands. Das Steinhuder Meer, Niedersachsens größter See, ist nur 30 km entfernt. Die Region bietet abwechslungsreiche Reviere für den SBF Binnen.',
       en: 'Hanover sits on the Mittelland Canal – Germany\'s longest artificial waterway. The Steinhuder Meer, Lower Saxony\'s largest lake, is only 30 km away. The region offers diverse areas for the inland boat licence.',
     },
+    metaDescription: {
+      de: 'Bootsfahrschulen in Hannover: SBF-Binnen-Kurse für Mittellandkanal, Maschsee und Steinhuder Meer. Prüfungstermine und Kosten – jetzt Schule finden.',
+      en: 'Boat schools in Hanover: inland licence courses for the Mittelland Canal, Maschsee and Steinhuder Meer. Exam dates and costs – find a school now.',
+    },
     examInfo: {
       de: 'Prüfungen finden regelmäßig in Hannover statt.',
       en: 'Exams are held regularly in Hanover.',
@@ -392,6 +438,10 @@ export const cities: BoatSchoolCity[] = [
       de: 'Dresden liegt an der Elbe und ist Ausgangspunkt für Touren durch die Sächsische Schweiz. Die Talsperren der Umgebung bieten zusätzliche Reviere für Motorboot- und Segelausbildung. Der SBF Binnen ist ab 15 PS Pflicht.',
       en: 'Dresden sits on the Elbe and is a starting point for tours through Saxon Switzerland. The surrounding reservoirs offer additional areas for motorboat and sailing training. The inland boat licence is required above 15 HP.',
     },
+    metaDescription: {
+      de: 'Bootsfahrschulen in Dresden: SBF-Binnen-Kurse für Elbe und die Talsperren im Umland. Prüfungstermine bei DMYV & DSV im Überblick – jetzt Schule finden.',
+      en: 'Boat schools in Dresden: inland boating licence courses for the Elbe and nearby reservoirs. Exam dates and costs compared – find a school now.',
+    },
     examInfo: {
       de: 'DMYV-Prüfungen finden regelmäßig in Dresden statt.',
       en: 'DMYV exams are held regularly in Dresden.',
@@ -421,6 +471,10 @@ export const cities: BoatSchoolCity[] = [
     intro: {
       de: 'Lübeck liegt an der Trave mit direktem Zugang zur Ostsee über Travemünde. Der Elbe-Lübeck-Kanal verbindet die Hansestadt mit dem Binnenwasserstraßennetz. Für die Ostsee brauchst du den SBF See.',
       en: 'Lübeck sits on the Trave with direct access to the Baltic Sea via Travemünde. The Elbe-Lübeck Canal connects the Hanseatic city to the inland waterway network. For the Baltic Sea, you need the coastal boat licence.',
+    },
+    metaDescription: {
+      de: 'Bootsfahrschulen in Lübeck: SBF-See-Kurse für Trave, Lübecker Bucht und Ostsee. Prüfungstermine und Kosten im Vergleich – jetzt Fahrschule finden.',
+      en: 'Boat schools in Lübeck: coastal licence courses for the Trave, Lübeck Bay and Baltic Sea. Exam dates and costs compared – find a school now.',
     },
     examInfo: {
       de: 'Prüfungen werden in Lübeck und Travemünde angeboten.',

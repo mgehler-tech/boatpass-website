@@ -1,7 +1,7 @@
 ---
 title: "Schleusenfahrt – Ablauf und Verhalten für Sportbootfahrer"
 seoTitle: "Schleusenfahrt: Ablauf & Verhalten"
-description: "Schleuse fahren mit dem Sportboot: Signale richtig lesen, Verhalten in der Kammer, Selbstbedienungsschleusen und was du für die SBF-Binnen-Prüfung wissen musst."
+description: "Schleuse fahren mit dem Sportboot: Signale lesen, Verhalten in der Kammer, Selbstbedienungsschleusen und was du für die SBF-Binnen-Prüfung wissen musst."
 date: 2026-08-16
 tags: ["Prüfungswissen"]
 readingTime: 9

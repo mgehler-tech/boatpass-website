@@ -1,7 +1,7 @@
 ---
 title: "UBI-Fragenkatalog 2026: Das ändert sich zum 1. Oktober"
 seoTitle: "UBI-Fragenkatalog 2026: das ändert sich"
-description: "Neuer UBI-Fragenkatalog ab 1. Oktober 2026: VDES statt MIB, aktualisierte Rechtsbezüge und neue Sprechfunktafel. Was sich ändert und wie du dich vorbereitest."
+description: "Neuer UBI-Fragenkatalog ab 1. Oktober 2026: VDES statt MIB, aktualisierte Rechtsbezüge, neue Sprechfunktafel. Was sich ändert und wie du dich vorbereitest."
 date: 2026-09-09
 tags: ["Prüfungswissen"]
 readingTime: 7
