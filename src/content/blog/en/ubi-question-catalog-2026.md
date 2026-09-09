@@ -1,7 +1,7 @@
 ---
 title: "UBI Question Catalog 2026: What Changes on October 1"
 seoTitle: "UBI Question Catalog 2026: Changes"
-description: "New UBI question catalog from 1 October 2026: VDES instead of MIB, updated legal references, and a new radio procedure table. What changes and how to prepare."
+description: "New UBI question catalog from 1 October 2026: VDES replaces MIB, updated legal references and a new radio table. What changes and how to prepare."
 date: 2026-09-09
 tags: ["Exam Knowledge"]
 readingTime: 7

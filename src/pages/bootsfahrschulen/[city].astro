@@ -13,10 +13,6 @@ const { city } = Astro.props;
 
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 
-const truncatedDesc = city.intro.de.length > 155
-  ? city.intro.de.slice(0, 155).replace(/\s+\S*$/, '') + '...'
-  : city.intro.de;
-
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -65,7 +61,7 @@ function licenceLinks(variant: 'coastal' | 'inland' | 'both'): { href: string; l
 
 <BaseLayout
   title={`Bootsfahrschulen in ${city.name} – SBF-Kurse`}
-  description={truncatedDesc}
+  description={city.metaDescription.de}
   lang="de"
   altUrl={`https://boatpass.de/en/boat-schools/${city.slug}/`}
 >

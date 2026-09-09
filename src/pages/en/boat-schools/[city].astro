@@ -23,8 +23,6 @@ const licenceTypes = city.variant === 'coastal'
         { name: 'SBF Coastal', href: '/en/sbf-coastal/', desc: 'Required for coastal waters (North and Baltic Sea).' },
       ];
 
-const truncatedDesc = city.intro.en.length > 155 ? city.intro.en.slice(0, 152) + '...' : city.intro.en;
-
 const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -48,7 +46,7 @@ const faqSchema = city.faq.length > 0 ? {
 
 <BaseLayout
   title={`Boat Schools in ${city.name} – SBF Courses`}
-  description={truncatedDesc}
+  description={city.metaDescription.en}
   lang="en"
   altUrl={`https://boatpass.de/bootsfahrschulen/${city.slug}/`}
 >
