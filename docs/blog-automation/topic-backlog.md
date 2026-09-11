@@ -48,7 +48,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Sehtest für den Sportbootführerschein – Anforderungen und Ablauf (2026-08-22: sehtest-sportbootfuehrerschein-anforderungen-ablauf / eyesight-test-boating-license-requirements-process)
 - [x] Neuer UBI-Fragenkatalog 2026 – was sich zum 1.10.2026 ändert (VDES statt MIB, neue Sprechfunktafel) (2026-09-09: ubi-fragenkatalog-2026 / ubi-question-catalog-2026)
 - [ ] Seefunk und Sprechfunk richtig nutzen – Grundlagen, Notruf und Kanalbelegung für Einsteiger
-- [ ] Nachtfahrt mit dem Sportboot – Vorbereitung, Orientierung und Pflichten bei Dunkelheit
+- [x] Nachtfahrt mit dem Sportboot – Vorbereitung, Orientierung und Pflichten bei Dunkelheit (2026-09-11: nachtfahrt-sportboot / boating-at-night)
 - [ ] Wellen und Sog vom eigenen Boot – Rücksichtnahme und Haftung gegenüber anderen Wassernutzern
 - [ ] Verkehrstrennungsgebiete auf See – Verhalten und Regeln für Sportbootfahrer
 - [ ] Boots-Übernahmecheck vor der ersten Fahrt – Charterboot oder eigenes Boot sicher prüfen
