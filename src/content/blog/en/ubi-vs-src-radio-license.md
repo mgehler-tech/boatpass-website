@@ -109,7 +109,7 @@ If you want to communicate beyond VHF range, for example on longer offshore pass
 
 ## How to Prepare
 
-Neither exam requires a mandatory course, and the official question catalogs are freely accessible and can be studied independently. Still, it helps to bring some structure to your preparation: work through the topic blocks one at a time, repeatedly practice the questions you tend to get wrong, and don't neglect the practical component (operating the equipment, transmitting a distress call), since it is graded just as rigorously as the theory.
+Neither exam requires a mandatory course, and the official question catalogs are freely accessible and can be studied independently. Still, it helps to bring some structure to your preparation: work through the topic blocks one at a time, repeatedly practice the questions you tend to get wrong, and don't neglect the practical component (operating the equipment, transmitting a distress call), since it is graded just as rigorously as the theory. A revised question catalog takes effect for the UBI on October 1, 2026 – see what's changing in the [UBI question catalog 2026](/en/blog/ubi-question-catalog-2026/) article.
 
 If you're also preparing for the [SBF Binnen](/en/sbf-inland/) or the [SBF See](/en/sbf-coastal/), it's worth bundling your radio and boating license preparation, since some topics such as distress signals and emergency conduct overlap. You can read more in our article on [distress signals at sea](/en/blog/distress-signals-at-sea/).
 
