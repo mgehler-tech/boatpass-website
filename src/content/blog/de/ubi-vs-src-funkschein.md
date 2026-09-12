@@ -109,7 +109,7 @@ Wer außerhalb der UKW-Reichweite funken will, etwa bei längeren Offshore-Passa
 
 ## Wie du dich am besten vorbereitest
 
-Für beide Prüfungen ist kein verpflichtender Kurs vorgeschrieben, die offiziellen Fragenkataloge sind frei zugänglich und lassen sich eigenständig lernen. Sinnvoll ist trotzdem, sich Struktur zu geben: die Themenblöcke einzeln durcharbeiten, typische Fehler wiederholt üben und den praktischen Teil (Gerätebedienung, Notrufabsetzung) nicht zu kurz kommen zu lassen, denn der wird in der Prüfung genauso bewertet wie die Theorie.
+Für beide Prüfungen ist kein verpflichtender Kurs vorgeschrieben, die offiziellen Fragenkataloge sind frei zugänglich und lassen sich eigenständig lernen. Sinnvoll ist trotzdem, sich Struktur zu geben: die Themenblöcke einzeln durcharbeiten, typische Fehler wiederholt üben und den praktischen Teil (Gerätebedienung, Notrufabsetzung) nicht zu kurz kommen zu lassen, denn der wird in der Prüfung genauso bewertet wie die Theorie. Für das UBI gilt ab dem 1. Oktober 2026 ein überarbeiteter Fragenkatalog – was sich darin ändert, liest du im Artikel zum [UBI-Fragenkatalog 2026](/blog/ubi-fragenkatalog-2026/).
 
 Wenn du dich zusätzlich auf den [SBF Binnen](https://boatpass.de/sbf-binnen/) oder den [SBF See](https://boatpass.de/sbf-see/) vorbereitest, lohnt es sich, Funk- und Führerscheinprüfung zeitlich zu bündeln, da sich einige Themen wie Notsignale und Verhalten im Seenotfall inhaltlich berühren. Mehr dazu findest du auch in unserem Artikel zu den [Notsignalen auf See](/blog/notsignale-auf-see/).
 

@@ -114,6 +114,6 @@ Ab 12 m Länge steigen die Anforderungen: Das Topplicht muss dann je nach Fahrze
 
 ## Fazit
 
-Die Lichterführung lässt sich aus wenigen Bausteinen ableiten: Topplicht (225°, vorn), Seitenlichter (grün/rot, je 112,5°) und Hecklicht (135°, achtern). Das Topplicht unterscheidet Motor von Segel, die Mindesttragweiten sind fester Prüfungsstoff, und die Merksprüche („Rot über Rot – das Schiff ist tot") helfen bei den Sonderlichtern. Wer die Bausteine einmal sitzen hat, erkennt auch ungewohnte Lichterkombinationen in der Prüfung sicher wieder.
+Die Lichterführung lässt sich aus wenigen Bausteinen ableiten: Topplicht (225°, vorn), Seitenlichter (grün/rot, je 112,5°) und Hecklicht (135°, achtern). Das Topplicht unterscheidet Motor von Segel, die Mindesttragweiten sind fester Prüfungsstoff, und die Merksprüche („Rot über Rot – das Schiff ist tot") helfen bei den Sonderlichtern. Wer die Bausteine einmal sitzen hat, erkennt auch ungewohnte Lichterkombinationen in der Prüfung sicher wieder. Wie du dieses Wissen bei einer echten [Nachtfahrt mit dem Sportboot](/blog/nachtfahrt-sportboot/) in der Praxis anwendest, liest du im zugehörigen Artikel.
 
 In der Boatpass-App findest du die typischen Prüfungsbilder direkt aus dem offiziellen ELWIS-Fragenkatalog, kannst sie im Prüfungsmodus unter realen Bedingungen üben und siehst sofort, welche Lichterkombinationen dir noch Schwierigkeiten machen.

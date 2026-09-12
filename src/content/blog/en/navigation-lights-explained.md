@@ -112,6 +112,6 @@ From 12 m upward the requirements increase: the masthead light must then be visi
 
 ## Conclusion
 
-Navigation lights can be derived from a few building blocks: masthead light (225°, forward), sidelights (green/red, 112.5° each) and sternlight (135°, aft). The masthead light distinguishes motor from sail, the minimum visibility ranges are fixed exam material, and the rhymes ("red over red – the captain is dead") help with the special lights. Once these building blocks are second nature, you'll also recognize unfamiliar light combinations reliably in the exam.
+Navigation lights can be derived from a few building blocks: masthead light (225°, forward), sidelights (green/red, 112.5° each) and sternlight (135°, aft). The masthead light distinguishes motor from sail, the minimum visibility ranges are fixed exam material, and the rhymes ("red over red – the captain is dead") help with the special lights. Once these building blocks are second nature, you'll also recognize unfamiliar light combinations reliably in the exam. To see how this knowledge applies on an actual [night passage](/en/blog/boating-at-night/), check out the companion article.
 
 The Boatpass app gives you the typical exam images straight from the official ELWIS question catalog, lets you practice them in exam mode under realistic conditions, and shows you right away which light combinations still trip you up.
