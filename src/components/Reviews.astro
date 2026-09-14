@@ -173,7 +173,10 @@ const rowA = REVIEWS_DE;
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    color: #3366FF;
+    /* #3366FF erreicht auf dem Seitenhintergrund (#F0F4FA) nur 4.24:1 – WCAG-AA
+       für Fließtext braucht 4.5:1 (SC 1.4.3). Derselbe dunklere Marken-Blauton
+       wie bei .section-eyebrow besteht den Kontrast-Check. */
+    color: var(--color-primary-dark);
     font-size: 15px;
     font-weight: 600;
     text-decoration: none;
@@ -273,6 +276,11 @@ const rowA = REVIEWS_DE;
   html.dark .rv-date, html.dark .rv-agg { color: #94A3B8 !important; }
   html.dark .rv-agg strong { color: #E2E8F0 !important; }
   html.dark .rv-avatar { background: rgba(90, 120, 255, 0.16) !important; color: #7FA0FF !important; }
+  /* Fehlten bisher: .rv-link (#3366FF auf Dunkel nur ~3.6:1) und .rv-tag
+     (#237551 auf der halbtransparenten Grün-Fläche über dunkler Karte nur
+     ~2.3:1) – beide rissen WCAG-AA (4.5:1) im Dark Mode deutlich. */
+  html.dark .rv-link { color: var(--color-accent-fg) !important; }
+  html.dark .rv-tag { background: rgba(95, 185, 139, 0.22) !important; color: #6FDBA8 !important; }
 </style>
 
 <script>

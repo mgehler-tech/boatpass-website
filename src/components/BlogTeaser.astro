@@ -59,11 +59,17 @@ const posts = allPosts
     min-height: 44px;
     font-size: 14px;
     font-weight: 600;
-    color: var(--color-primary);
+    /* --color-primary (#3366FF) erreicht auf dem Seitenhintergrund (#F0F4FA)
+       nur 4.24:1 – WCAG-AA für Fließtext braucht 4.5:1 (SC 1.4.3). Derselbe
+       dunklere Marken-Blauton wie bei .section-eyebrow besteht den Check. */
+    color: var(--color-primary-dark);
     text-decoration: none;
     white-space: nowrap;
   }
   .blog-teaser-all:hover { text-decoration: underline; }
+  /* Fehlte bisher komplett: ohne Override blieb der Link auf dem dunklen
+     Kartenhintergrund beim helleren Marken-Blau (~3.6:1, siehe global.css). */
+  html.dark .blog-teaser-all { color: var(--color-accent-fg) !important; }
 
   /* Drei gleichwertige Artikel-Karten in einer Reihe – dasselbe Raster, das die
      Blog-Übersicht (.cluster-grid in pages/blog/index.astro) für dieselben Karten
