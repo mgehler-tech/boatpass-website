@@ -470,9 +470,13 @@ const wrapperProps = embedded
     background: #181E2E !important;
     border-color: rgba(90, 120, 255, 0.12) !important;
   }
+  /* #656B78 (das Light-Mode-Grau) erreicht auf der dunklen Kartenfläche nur
+     2,87:1 – deutlich unter der WCAG-2.2-AA-Mindestanforderung für Fließtext
+     (4,5:1, SC 1.4.3). #94A3B8 – im selben Dark-Mode bereits für .cat-name
+     und .cat-embedded-intro verwendet – erreicht 5,98:1. */
   html.dark .cat-table thead th {
     background: rgba(255, 255, 255, 0.03) !important;
-    color: #656B78 !important;
+    color: #94A3B8 !important;
     border-color: rgba(90, 120, 255, 0.10) !important;
   }
   html.dark .cat-table tbody td { border-color: rgba(90, 120, 255, 0.08) !important; }
