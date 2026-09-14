@@ -80,3 +80,33 @@ test.describe('Mobile Navigation → SBF See → Play Store CTA', () => {
     await expect(cta).toHaveAttribute('href', PLAY_STORE_URL);
   });
 });
+
+// The License Finder configurator is pure click interaction (no hover), so it
+// was assumed to "just work" on mobile and shipped with no dedicated coverage
+// — unlike the desktop flow in conversion-journeys.spec.ts. That is the exact
+// gap this file exists to close for the other journeys.
+test.describe('Mobile License Finder full flow → Recommendation → Next step', () => {
+  test.use({ ...iPhone13 });
+
+  test('completing the configurator yields a recommendation with a working next step', async ({ page }) => {
+    await page.goto('/tools/welcher-bootsfuehrerschein/');
+
+    await page.locator('.cfg-opt', { hasText: 'Küste (Nord- & Ostsee)' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Verbrenner über 15 PS' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Ja' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Küstennah' }).click();
+
+    const result = page.locator('#cfg-result');
+    await expect(result).toBeVisible();
+
+    const recommendationLinks = result.locator('a.res-card');
+    await expect(recommendationLinks).toHaveCount(2);
+
+    const playCta = result.locator('a[href*="play.google.com"]');
+    await expect(playCta).toHaveAttribute('href', PLAY_STORE_URL);
+
+    const firstHref = await recommendationLinks.first().getAttribute('href');
+    await recommendationLinks.first().click();
+    await expect(page).toHaveURL(new RegExp(`${firstHref}$`));
+  });
+});
