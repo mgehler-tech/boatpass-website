@@ -3,67 +3,79 @@ title: "Blood Alcohol Limit on a Boat – What Skippers Need to Know"
 seoTitle: "Blood Alcohol Limit on a Boat"
 description: "Does the 0.5 per mille car rule apply to boats in Germany? The real legal limits for skippers and what the SBF exam tests about drunk boating."
 date: 2026-06-25
+updated: 2026-09-14
 tags: ["Exam Knowledge"]
-readingTime: 8
+readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "promillegrenze-boot"
 faq:
   - question: "Does the 0.5 per mille car limit apply on a boat?"
-    answer: "No. The Straßenverkehrsgesetz (StVG) with its 0.5 per mille threshold does not apply to recreational boats. On federal inland waterways the BinSchStrO applies, on coastal shipping lanes the SeeSchStrO, and on international waters the COLREGs – they require the skipper to be fit to operate the vessel at all times, but they don't contain a directly comparable fixed BAC threshold for fines."
+    answer: "Structurally yes, on a different legal basis: § 1.02 BinSchStrO and § 3 SeeSchStrO prohibit operating a boat at 0.5 per mille blood alcohol or 0.25 mg/l breath alcohol or above, as an administrative offense – similar in structure to § 24a StVG for cars, but a separate set of rules with its own fine schedule. From 1.1 per mille onward it becomes a criminal offense."
   - question: "At what blood alcohol level is a skipper considered absolutely incapable of operating a vessel?"
-    answer: "Under case law from Germany's regional higher courts (Oberlandesgerichte, e.g. OLG Karlsruhe), absolute incapacity for a vessel skipper is set at 1.1 per mille – regardless of whether any external signs of impairment are visible. Even below that level, relative incapacity can apply if additional signs are present, such as unsafe handling of the vessel or an accident."
+    answer: "Under case law from Germany's regional higher courts (Oberlandesgerichte, e.g. OLG Karlsruhe), absolute incapacity for a vessel skipper is set at 1.1 per mille – regardless of whether any external signs of impairment are visible. From around 0.3 per mille, relative incapacity can already apply if additional signs are present, such as unsafe handling of the vessel or an accident."
+  - question: "What fine can you get for drinking and operating a boat?"
+    answer: "Between 0.5 and 1.09 per mille it's an administrative offense: on inland waterways, fines typically range from 350 to 2,500 euros, and on coastal shipping lanes from 750 to 2,500 euros, depending on the case and authority. From 1.1 per mille, or with visible impairment at a lower level, it becomes a criminal offense under § 316 or § 315a StGB."
   - question: "What consequences does a skipper face for operating a boat while drunk?"
-    answer: "Anyone who operates a boat while incapable and creates a danger for others commits a criminal offense under § 315a StGB – negligent conduct is punishable by up to two years imprisonment or a fine. Beyond that, you risk administrative fines, revocation of the Sportbootführerschein (since the inland and coastal ordinances were merged, the GDWS decides on revocation for both), and loss of insurance coverage."
+    answer: "Anyone who is incapable of safely operating a vessel commits a criminal offense under § 316 StGB, even if nothing happens; if there is a concrete danger to others, the stricter § 315a StGB applies instead – negligent conduct under § 315a is punishable by up to two years imprisonment or a fine. Beyond that, you risk administrative fines, revocation of the Sportbootführerschein (since the inland and coastal ordinances were merged, the GDWS decides on revocation for both), and loss of insurance coverage."
   - question: "Are passengers on a boat allowed to drink alcohol?"
-    answer: "Passengers who aren't operating the boat are generally not bound to any specific BAC limit. But anyone scheduled to take the helm later, or who spontaneously takes over, becomes the skipper in a legal sense and must stay sober."
+    answer: "Passengers who aren't operating the boat are generally not bound to any specific BAC limit. But anyone scheduled to take the helm later, or who spontaneously takes over, becomes the skipper in a legal sense and must stay sober. On commercial passenger vessels, the crew on duty is held to a 0.0 per mille limit."
 ---
 
-Many recreational boaters assume the same alcohol rules apply on the water as on the road – meaning 0.5 per mille (0.05% BAC) is the magic threshold, and anything below is fine. That assumption is dangerously wrong. The legal framework for skippers on German waterways is structured differently from road traffic law, and in some respects it is stricter than people expect. Whether you're preparing for your [Sportbootführerschein](/en/sbf-coastal/) or already out on the water, knowing the rules can save you from serious consequences.
+Many recreational boaters assume that either the exact same alcohol rules apply on the water as on the road, or that there's no fixed limit at all on a boat. Neither is quite right. German law does set a specific limit for skippers, structured similarly to the road traffic rule but resting on separate legislation – and past a certain point it becomes a criminal offense regardless of road traffic law. Whether you're preparing for your [Sportbootführerschein](/en/sbf-coastal/) or already out on the water, knowing the rules can save you from serious consequences.
 
-## Why the Car Rule Does Not Simply Apply on the Water
+## The 0.5 Per Mille Limit on the Water
 
 In German road traffic, the rules are straightforward: the **Straßenverkehrsgesetz (StVG)** sets a hard threshold at **0.5 per mille (‰)** for an administrative offense (Ordnungswidrigkeit). Novice drivers and those under 21 must stay at 0.0‰.
 
-Recreational boats in Germany are governed by entirely different legislation. Vessels on federal inland waterways fall under the **Binnenschifffahrtsstraßen-Ordnung (BinSchStrO)**, boats on coastal shipping lanes fall under the **Seeschifffahrtsstraßen-Ordnung (SeeSchStrO)**, and vessels on international waters follow the **International Regulations for Preventing Collisions at Sea (COLREGs)**. None of these contain a simple table that maps a BAC number to a fixed fine in the same way the German car rules do.
+The StVG itself does not apply to recreational boats. But the water has its own fixed number: the **Binnenschifffahrtsstraßen-Ordnung (BinSchStrO)** prohibits, under § 1.02, operating a vessel on federal inland waterways with **0.5 per mille or more blood alcohol** (or 0.25 mg/l or more breath alcohol). Vessels on coastal shipping lanes are bound by the same figure under § 3 of the **Seeschifffahrtsstraßen-Ordnung (SeeSchStrO)**. On international waters (open Baltic Sea, North Sea beyond the coastal shipping lanes), the **International Regulations for Preventing Collisions at Sea (COLREGs)** apply; they don't state a fixed number, but they do require the skipper to operate the vessel safely at all times.
 
-The key thresholds for criminal liability come instead from the **Strafgesetzbuch (StGB)** – Germany's criminal code.
+Crossing the 0.5 per mille limit on inland waterways or coastal shipping lanes is, first, an **administrative offense** – similar in principle to the car rule, just under separate legislation with its own fine schedule instead of the StVG. From **1.1 per mille** onward it becomes a criminal offense regardless of the administrative fine (see below).
+
+## What the Fine Actually Costs
+
+The amount follows the current fine schedule for shipping and varies by waterway and case:
+
+- **Inland waterways:** fines between 0.5 and 1.09 per mille typically range from **350 to 2,500 euros**.
+- **Coastal shipping lanes:** the usual range is **750 to 2,500 euros**.
+
+The exact amount depends on the responsible water police authority, the specific BAC level, and any prior offenses. For other costly violations on the water – from boating without a license to leaving the scene of an accident – see our article on [fines and violations on the water](/en/blog/fines-violations-on-the-water/).
 
 ## Relative and Absolute Incapacity to Operate a Vessel
 
-German criminal law distinguishes two forms of incapacity to operate a vessel safely:
+Once the alcohol level goes well beyond the 0.5 per mille administrative offense, you leave the realm of fines and enter criminal law. German criminal law distinguishes two forms of incapacity to operate a vessel safely:
 
-**Relative incapacity (relative Fahruntüchtigkeit)** can be established even at relatively low blood alcohol levels, provided that **additional signs of impairment** are present at the same time: erratic or unsafe handling of the vessel, an accident, unsteady movement, slurred speech, or other visible symptoms. In these cases, even a comparatively low BAC can support a criminal charge.
+**Relative incapacity (relative Fahruntüchtigkeit)** can be established under case law from **around 0.3 per mille**, provided that **additional signs of impairment** are present at the same time: erratic or unsafe handling of the vessel, an accident, unsteady movement, slurred speech, or other visible symptoms. In these cases, even a comparatively low BAC can support a criminal charge.
 
-**Absolute incapacity (absolute Fahruntüchtigkeit)** is established by case law of Germany's regional higher courts (Oberlandesgerichte, e.g. OLG Karlsruhe) at **1.1 per mille** for vessel skippers – lower than the 1.6 per mille threshold that applies to car and bicycle operators, since operating a vessel demands comparable or higher coordination and reaction requirements. From this threshold onward, someone is considered absolutely incapable of operating a vessel safely – regardless of whether any external signs of impairment are visible. No additional evidence of impaired behavior is needed.
+**Absolute incapacity (absolute Fahruntüchtigkeit)** is established by case law of Germany's regional higher courts (Oberlandesgerichte, e.g. OLG Karlsruhe, which lowered its earlier threshold from 1.3 to **1.1 per mille** in 2020) for vessel skippers – lower than the 1.6 per mille threshold that applies to car and bicycle operators, since operating a vessel demands comparable or higher coordination and reaction requirements. From this threshold onward, someone is considered absolutely incapable of operating a vessel safely – regardless of whether any external signs of impairment are visible.
 
-This is an important difference from road traffic: in the car context, there is a clear administrative fine threshold at 0.5‰ even when no visible impairment exists. No equivalent simple lower threshold of that kind applies uniformly to all recreational boat operators on federal waterways. That does not mean you can drink more on a boat – it means that problems can arise from clearly visible impairment even at lower BAC levels, while the 1.1‰ mark acts as the bright line for absolute criminal incapacity for skippers.
+## What the Navigation Regulations Additionally Require
 
-## What the Navigation Regulations Require
+Beyond the fixed BAC number, the **BinSchStrO** requires the skipper (Schiffsführer) under § 1.02 to ensure at all times that they are capable of safely fulfilling their duties. This expressly includes the skipper's own fitness to operate the vessel and applies even below 0.5 per mille, for example in cases of exhaustion or medication.
 
-The **BinSchStrO** requires the skipper (Schiffsführer) under § 1.02 to ensure at all times that they are capable of safely fulfilling their duties. This expressly includes the skipper's own fitness to operate the vessel. A skipper who is impaired by alcohol or drugs violates this obligation – regardless of whether a specific BAC threshold is formally crossed.
+For **professional mariners**, the rules are considerably stricter: on commercial **passenger vessels** and when transporting dangerous goods, the crew on watch during the voyage must stay at a **0.0 per mille limit**.
 
-For **professional mariners** (commercial passenger vessels, ferries, commercial shipping on federal waterways), the rules are considerably stricter. Professional vessel operators are required to maintain a much higher standard of sobriety while on duty.
+## The Criminal Law Dimension – § 316 and § 315a StGB
 
-The **SeeSchStrO** contains comparable obligations for the coastal shipping lanes along Germany's coastline: the rivers Elbe, Weser, and Ems in their lower reaches, the Kiel Fjord, the Greifswald Bodden, and other coastal fairways. There too, the skipper must be fully fit to operate the vessel.
+A skipper who is incapable of safely operating a vessel, whether relatively (from around 0.3 per mille with visible impairment) or absolutely (from 1.1 per mille), already commits a criminal offense under **§ 316 of the StGB** ("Trunkenheit im Verkehr", driving under the influence) – even if nothing happens and nobody is concretely endangered. Mere incapacity while operating the boat is enough.
 
-On **international waters** (open Baltic Sea, North Sea beyond the coastal shipping lanes), the COLREGs apply. The COLREGs require the skipper to take all available means to determine the risk of collision and to maneuver safely – which presupposes an unimpaired skipper.
+If a **concrete danger to other people or property of significant value** is added, for example because another boat narrowly avoids a collision, the stricter **§ 315a of the StGB** ("Endangering Rail, Vessel and Air Traffic") applies instead and takes precedence over § 316.
 
-## The Criminal Law Dimension – § 315a StGB
-
-If a skipper operates a vessel while incapable due to alcohol or drugs and thereby creates a concrete danger for other people or property of significant value, they commit a criminal offense under **§ 315a of the StGB** ("Endangering Rail, Vessel and Air Traffic"). This provision explicitly covers vessel traffic and is designed to protect other water users.
-
-For the negligent form – where the skipper could and should have recognized the danger but failed to – the penalty is **imprisonment of up to two years or a fine**. Deliberate endangerment carries higher penalties.
+For the negligent form under § 315a – where the skipper could and should have recognized the danger but failed to – the penalty is **imprisonment of up to two years or a fine**. Deliberate endangerment carries a penalty of up to five years. § 316 itself carries **imprisonment of up to one year or a fine**, for both deliberate and negligent conduct.
 
 If an accident occurs and someone is injured, additional offenses come into play: **§ 229 StGB** (negligent bodily harm) or, in the worst case, **§ 222 StGB** (negligent homicide).
+
+## How a Check Works in Practice
+
+The water police carry out random checks or stop boats after noticing erratic handling. The first step is usually a voluntary **breathalyzer test** with a handheld device that measures breath alcohol in mg/l (the 0.25 mg/l mark corresponds to the 0.5 per mille limit under the BinSchStrO and SeeSchStrO). If the reading is borderline, there are signs of a criminal offense, or the breath test is refused, a **blood test** can be ordered, which is admissible as evidence in court. Where clear impairment is visible, police also document the skipper's outward condition – gait, speech, coordination – as evidence of relative incapacity.
 
 ## Consequences at a Glance
 
 Operating a boat while impaired exposes you to several simultaneous risks:
 
-**Administrative sanctions:** Violations of the shipping regulations can be sanctioned with fines by the waterway authorities (Wasser- und Schifffahrtsbehörden). The exact amounts depend on the specific waterway, the authority, and the circumstances.
+**Administrative sanctions:** From 0.5 per mille, fines apply under the inland or coastal shipping fine schedule (see above), issued by the waterway authorities (Wasser- und Schifffahrtsbehörden).
 
-**Criminal prosecution:** A conviction under § 315a StGB can result in fines or imprisonment, depending on the severity.
+**Criminal prosecution:** From 0.3 per mille with visible impairment, or from 1.1 per mille, a conviction under § 316 StGB is possible; with a concrete danger to others, § 315a StGB applies – with fines or imprisonment depending on the severity.
 
 **License consequences:** A conviction for drunk boating can lead to the **revocation of the Sportbootführerschein (SBF)**. Since the inland and coastal license ordinances were merged into a single ordinance, the **Generaldirektion Wasserstraßen und Schifffahrt (GDWS)**, Germany's central inland waterways authority, decides on revocation for both the SBF Binnen and SBF See. Beyond that, the driver licensing authority may review – and potentially revoke – your **car driving license** if it concludes that a boating-related alcohol offense raises doubts about your general suitability as a driver.
 
@@ -83,7 +95,7 @@ The practical solution for group outings is the same as on the road: designate a
 
 ## Drugs and Medication – Also Relevant on the Water
 
-Alcohol is not the only substance that can impair a skipper. **Illegal drugs** are treated the same way as alcohol under § 315a StGB – and for certain controlled substances, even trace amounts detected in a blood test can be sufficient to result in prosecution, without needing to establish a specific threshold.
+Alcohol is not the only substance that can impair a skipper. **Illegal drugs** are treated the same way as alcohol under §§ 316 and 315a StGB – and for certain controlled substances, even trace amounts detected in a blood test can be sufficient to result in prosecution, without needing to establish a specific threshold.
 
 **Prescription and over-the-counter medications** can also impair the ability to operate a vessel. Strong painkillers, antihistamines, sedatives, sleeping pills, and certain heart medications all carry warnings about impaired driving and operating machinery. That warning applies to boats as well. If in doubt, consult the prescribing physician or pharmacist before taking the helm.
 
@@ -101,7 +113,7 @@ For a broader overview of the most demanding topics in the exam, see our article
 
 ## Conclusion
 
-The 0.5 per mille threshold from German road traffic law does not translate directly to the water. Skippers are bound by the navigation regulations (BinSchStrO, SeeSchStrO) and criminal law (§ 315a StGB) to be fit to operate their vessel at all times. Under German case law, incapacity can be established at lower BAC levels when visible impairment is present; at 1.1‰, absolute incapacity applies without any further evidence. The consequences range from administrative fines through criminal prosecution to loss of the boating license, the car driving license, and insurance coverage.
+On the water, a fixed 0.5 per mille (or 0.25 mg/l breath alcohol) threshold applies as an administrative offense under the BinSchStrO or SeeSchStrO, with fines typically between 350 and 2,500 euros. From around 0.3 per mille with visible impairment, or at the latest from 1.1 per mille, it becomes a criminal offense under § 316 StGB, and under the stricter § 315a StGB if others are concretely endangered. The consequences range from administrative fines through criminal prosecution to loss of the boating license, the car driving license, and insurance coverage.
 
 The simplest and safest rule remains: **As skipper, you do not drink.** Anyone who wants to relax with a drink passes the helm to a sober person in good time.
 
