@@ -49,7 +49,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Neuer UBI-Fragenkatalog 2026 – was sich zum 1.10.2026 ändert (VDES statt MIB, neue Sprechfunktafel) (2026-09-09: ubi-fragenkatalog-2026 / ubi-question-catalog-2026)
 - [x] Seefunk und Sprechfunk richtig nutzen – Grundlagen, Notruf und Kanalbelegung für Einsteiger (2026-09-16: seefunk-grundlagen-einsteiger / marine-radio-basics-beginners)
 - [x] Nachtfahrt mit dem Sportboot – Vorbereitung, Orientierung und Pflichten bei Dunkelheit (2026-09-11: nachtfahrt-sportboot / boating-at-night)
-- [ ] Wellen und Sog vom eigenen Boot – Rücksichtnahme und Haftung gegenüber anderen Wassernutzern
+- [x] Wellen und Sog vom eigenen Boot – Rücksichtnahme und Haftung gegenüber anderen Wassernutzern (2026-09-17: wellen-sog-haftung / boat-wake-wash-liability)
 - [ ] Verkehrstrennungsgebiete auf See – Verhalten und Regeln für Sportbootfahrer
 - [ ] Boots-Übernahmecheck vor der ersten Fahrt – Charterboot oder eigenes Boot sicher prüfen
 - [ ] Sportbootführerschein trotz gesundheitlicher Einschränkung – was das ärztliche Zeugnis wirklich bedeutet
