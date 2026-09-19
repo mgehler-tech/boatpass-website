@@ -286,8 +286,9 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
         Binnen und See sind zwei eigenständige Scheine. Wer beide Reviere befahren will, kann sie in einer
         <strong>kombinierten Prüfung</strong> günstiger zusammen ablegen (rund 178,61 € statt zweimal einzeln).
       </p>
+      <!-- min-width aktiviert das horizontale Scrollen des overflow-x-Wrappers auf schmalen Screens (wie AppComparisonTable/CatalogSources). Ohne min-width wurde die Tabelle stattdessen auf Handybreite gequetscht: die drei Spalten brachen mehrzeilig um und wurden unleserlich. -->
       <div style="overflow-x:auto;">
-        <table style="width:100%; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
+        <table style="width:100%; min-width:640px; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
           <thead>
             <tr style="background:rgba(26,31,54,0.04);">
               <th style="text-align:left; padding:14px 18px; font-weight:700; color:#1A1F36;"></th>

@@ -286,8 +286,9 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
         Inland and Coastal are two separate licenses. Anyone who wants to navigate both areas can take them together more cheaply in a
         <strong>combined exam</strong> (around €178.61 instead of twice separately).
       </p>
+      <!-- min-width activates the overflow-x wrapper's horizontal scroll on narrow screens (like AppComparisonTable/CatalogSources). Without it the table was squeezed to phone width instead, crushing the three columns into unreadable multi-line cells. -->
       <div style="overflow-x:auto;">
-        <table style="width:100%; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
+        <table style="width:100%; min-width:640px; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
           <thead>
             <tr style="background:rgba(26,31,54,0.04);">
               <th style="text-align:left; padding:14px 18px; font-weight:700; color:#1A1F36;"></th>
