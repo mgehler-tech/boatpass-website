@@ -60,7 +60,7 @@ Even outside designated protected zones, keep a good distance from reed beds and
 
 ## Noise and Wash
 
-Water conservation isn't just about substances entering the water, it also covers noise and wake. Many nature reserves and residential waterside areas have speed limits that, alongside safety, also protect shorelines and wildlife from excessive wash and noise. Slow down in good time as you approach shorelines, reed zones, or designated quiet areas, even without an explicit sign requiring it.
+Water conservation isn't just about substances entering the water, it also covers noise and wake. Many nature reserves and residential waterside areas have speed limits that, alongside safety, also protect shorelines and wildlife from excessive wash and noise. Slow down in good time as you approach shorelines, reed zones, or designated quiet areas, even without an explicit sign requiring it. Excessive wake isn't just an environmental issue either, it can also raise questions of liability, as explained in our article on [boat wake and suction](/en/blog/boat-wake-wash-liability/).
 
 ## Being Considerate of Water Birds and Wildlife
 
