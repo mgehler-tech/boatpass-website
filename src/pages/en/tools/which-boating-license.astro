@@ -150,8 +150,9 @@ const howToSchema = {
       <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:20px;">
         Which boating licence and radio certificate for which plan – the most important cases as an overview.
       </p>
+      <!-- min-width activates the overflow-x wrapper's horizontal scroll on narrow screens (like AppComparisonTable/CatalogSources). Without it the table was squeezed to phone width instead, crushing the three columns into unreadable multi-line cells. -->
       <div style="overflow-x:auto;">
-        <table style="width:100%; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
+        <table style="width:100%; min-width:640px; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
           <thead>
             <tr style="background:rgba(26,31,54,0.04);">
               <th style="text-align:left; padding:14px 16px; font-weight:800; color:#1A1F36;">Your plan</th>

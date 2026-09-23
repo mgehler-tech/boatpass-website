@@ -88,8 +88,9 @@ const faqSchema = {
     <!-- Cost table -->
     <section style="margin-bottom:48px;">
       <h2 class="content-section-title" style="margin-bottom:20px;">The individual cost items</h2>
+      <!-- min-width activates the overflow-x wrapper's horizontal scroll on narrow screens (like AppComparisonTable/CatalogSources). Without it the table was squeezed to phone width instead, crushing the three columns into unreadable multi-line cells. -->
       <div style="overflow-x:auto;">
-        <table style="width:100%; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
+        <table style="width:100%; min-width:640px; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
           <thead>
             <tr style="background:rgba(26,31,54,0.04);">
               <th style="text-align:left; padding:14px 16px; font-weight:700; color:#1A1F36;">Cost item</th>
