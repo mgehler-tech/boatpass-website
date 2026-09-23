@@ -29,7 +29,7 @@ It is worth knowing that VHF works **line of sight**, meaning roughly as far as 
 
 ## Marine Radio and Inland Radio: Two Separate Worlds
 
-Before we get to channels, a fundamental distinction: **marine (sea) radio** and **inland waterway radio** are two separate radio services with their own rules, channels, and certificates. For marine radio you usually need the **SRC**, for inland radio the **UBI**. Both are independent qualifications, separate from the Sportbootführerschein (the German recreational boating license). Which certificate suits your area is covered in detail in our article [UBI or SRC](/en/blog/ubi-vs-src-radio-license/).
+Before we get to channels, a fundamental distinction: **marine (sea) radio** and **inland waterway radio** are two separate radio services with their own rules, channels, and certificates. For marine radio you usually need the [SRC](/en/src/), for inland radio the [UBI](/en/ubi/). Both are independent qualifications, separate from the Sportbootführerschein (the German recreational boating license). Which certificate suits your area is covered in detail in our article [UBI or SRC](/en/blog/ubi-vs-src-radio-license/).
 
 This post focuses on the basics of **marine VHF**, because that is where DSC and the internationally standardized distress procedures matter most. Much of it will also help you make sense of inland radio.
 

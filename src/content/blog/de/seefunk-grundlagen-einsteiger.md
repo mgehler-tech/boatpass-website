@@ -29,7 +29,7 @@ Wichtig zu wissen: UKW funkt **quasi-optisch**, also ungefähr so weit, wie die 
 
 ## Seefunk und Binnenfunk: zwei getrennte Welten
 
-Bevor es um Kanäle geht, ein grundlegender Unterschied: **Seefunk** und **Binnenfunk** sind zwei eigene Funkdienste mit eigenen Regeln, eigenen Kanälen und eigenen Zeugnissen. Für den Seefunk brauchst du in der Regel das **SRC**, für den Binnenfunk das **UBI**. Beide sind eigenständige Qualifikationen, unabhängig vom Sportbootführerschein. Welches Zeugnis zu deinem Revier passt, erklärt unser Artikel [UBI oder SRC](/blog/ubi-vs-src-funkschein/) im Detail.
+Bevor es um Kanäle geht, ein grundlegender Unterschied: **Seefunk** und **Binnenfunk** sind zwei eigene Funkdienste mit eigenen Regeln, eigenen Kanälen und eigenen Zeugnissen. Für den Seefunk brauchst du in der Regel das [SRC](/src/), für den Binnenfunk das [UBI](/ubi/). Beide sind eigenständige Qualifikationen, unabhängig vom Sportbootführerschein. Welches Zeugnis zu deinem Revier passt, erklärt unser Artikel [UBI oder SRC](/blog/ubi-vs-src-funkschein/) im Detail.
 
 Dieser Beitrag konzentriert sich auf die Grundlagen des **UKW-Seefunks**, weil dort DSC und die international einheitlichen Notrufverfahren am wichtigsten sind. Vieles davon hilft dir aber auch, den Binnenfunk besser einzuordnen.
 
