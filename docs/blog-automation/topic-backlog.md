@@ -50,7 +50,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Seefunk und Sprechfunk richtig nutzen – Grundlagen, Notruf und Kanalbelegung für Einsteiger (2026-09-16: seefunk-grundlagen-einsteiger / marine-radio-basics-beginners)
 - [x] Nachtfahrt mit dem Sportboot – Vorbereitung, Orientierung und Pflichten bei Dunkelheit (2026-09-11: nachtfahrt-sportboot / boating-at-night)
 - [x] Wellen und Sog vom eigenen Boot – Rücksichtnahme und Haftung gegenüber anderen Wassernutzern (2026-09-17: wellen-sog-haftung / boat-wake-wash-liability)
-- [ ] Verkehrstrennungsgebiete auf See – Verhalten und Regeln für Sportbootfahrer
+- [x] Verkehrstrennungsgebiete auf See – Verhalten und Regeln für Sportbootfahrer (2026-09-24: verkehrstrennungsgebiete-see / traffic-separation-schemes-at-sea)
 - [ ] Boots-Übernahmecheck vor der ersten Fahrt – Charterboot oder eigenes Boot sicher prüfen
 - [ ] Sportbootführerschein trotz gesundheitlicher Einschränkung – was das ärztliche Zeugnis wirklich bedeutet
 - [ ] Funkzeugnis LRC (Long Range Certificate) – wann reicht das SRC nicht mehr aus? (GSC: Query "funkschein lrc", 20 Impr./Pos. 73, unbesetzt – Ergänzung zu ubi-vs-src-funkschein)
