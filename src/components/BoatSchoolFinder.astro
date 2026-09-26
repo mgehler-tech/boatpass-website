@@ -110,7 +110,13 @@ const t = {
   .bsf-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+    /* 16px-Gutter auf dem 8px-Raster – bringt die Städte-Kacheln auf dieselbe
+       Rhythmik wie alle benachbarten Karten-Grids der Pillar-Seiten (SBF Binnen/
+       See, in die dieser Finder eingebettet ist), die durchgängig gap:16px nutzen.
+       Der bisherige 10px-Wert lag neben dem Raster und ließ die Kacheln auf ein und
+       derselben Seite enger stehen als die übrigen Karten – ein sichtbarer Bruch im
+       Abstands-Rhythmus. Reiner Layout-Feinschliff, keine Farb-/Markenänderung. */
+    gap: 16px;
     margin-bottom: 18px;
   }
 
