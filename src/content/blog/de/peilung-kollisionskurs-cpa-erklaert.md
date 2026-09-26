@@ -46,7 +46,7 @@ Für die Frage „droht eine Kollision?" reicht in der Praxis oft schon die einf
 
 Nähert sich ein anderes Fahrzeug und die Peilung zu ihm ändert sich über mehrere Minuten hinweg **nicht merklich**, während der Abstand kleiner wird, befindet ihr euch auf Kollisionskurs. Ändert sich die Peilung dagegen deutlich (das Fahrzeug „wandert" nach vorn oder achtern), wird es voraussichtlich vor oder hinter dir vorbeifahren.
 
-Diese Regel ist keine bloße Faustformel, sondern direkt aus den **Kollisionsverhütungsregeln (KVR)** abgeleitet. Regel 7 der KVR verlangt, mit allen verfügbaren Mitteln laufend zu prüfen, ob Kollisionsgefahr besteht. Ausdrücklich heißt es dort sinngemäß: Bestehen Zweifel, ob Kollisionsgefahr besteht, ist anzunehmen, dass sie besteht. Die Beobachtung der Peilung ist eines der wichtigsten Mittel, um diese Einschätzung zu treffen, gerade wenn kein Radar oder AIS an Bord ist.
+Diese Regel ist keine bloße Faustformel, sondern direkt aus den [**Kollisionsverhütungsregeln (KVR)**](/blog/kollisionsverhuetungsregeln-kvr-ueberblick/) abgeleitet. Regel 7 der KVR verlangt, mit allen verfügbaren Mitteln laufend zu prüfen, ob Kollisionsgefahr besteht. Ausdrücklich heißt es dort sinngemäß: Bestehen Zweifel, ob Kollisionsgefahr besteht, ist anzunehmen, dass sie besteht. Die Beobachtung der Peilung ist eines der wichtigsten Mittel, um diese Einschätzung zu treffen, gerade wenn kein Radar oder AIS an Bord ist.
 
 Diese Ausweichregeln, die sich aus einer erkannten Kollisionsgefahr ergeben, sind ein eigenes großes Thema. Wer wem ausweichen muss und welche Regeln bei kreuzenden oder entgegengesetzten Kursen gelten, erklärt der Artikel [Ausweichregeln auf dem Wasser: wer muss ausweichen?](/blog/ausweichregeln-vorfahrt-wasser/).
 

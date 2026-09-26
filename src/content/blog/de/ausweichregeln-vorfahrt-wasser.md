@@ -31,7 +31,7 @@ faq:
     answer: "Beim Überholen muss immer der Überholende ausweichen, unabhängig davon, ob es sich um ein Motor- oder Segelboot handelt. Überholer ist, wer sich einem anderen Fahrzeug aus einer Richtung von mehr als 22,5 Grad achterlicher als querab nähert."
 ---
 
-„Wer hat hier eigentlich Vorfahrt?" – diese Frage führt auf dem Wasser schnell in die Irre. Denn anders als im Straßenverkehr gibt es bei Booten **keine Vorfahrt**. Es gibt nur Ausweichregeln: Einer muss ausweichen, der andere hält Kurs. Dieser Artikel erklärt die wichtigsten Regeln der Kollisionsverhütung (KVR) – ein zentrales Thema in jeder [SBF-Prüfung](/sbf-pruefung-ablauf/), egal ob [SBF Binnen](/sbf-binnen/) oder [SBF See](/sbf-see/).
+„Wer hat hier eigentlich Vorfahrt?" – diese Frage führt auf dem Wasser schnell in die Irre. Denn anders als im Straßenverkehr gibt es bei Booten **keine Vorfahrt**. Es gibt nur Ausweichregeln: Einer muss ausweichen, der andere hält Kurs. Dieser Artikel erklärt die wichtigsten Regeln der [Kollisionsverhütung (KVR)](/blog/kollisionsverhuetungsregeln-kvr-ueberblick/) – ein zentrales Thema in jeder [SBF-Prüfung](/sbf-pruefung-ablauf/), egal ob [SBF Binnen](/sbf-binnen/) oder [SBF See](/sbf-see/).
 
 ## Vorfahrt? Gibt es nicht.
 

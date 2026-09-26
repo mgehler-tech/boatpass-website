@@ -33,7 +33,7 @@ Many SBF candidates fail not because they didn't study, but because of avoidable
 
 ## Mistake 1: Learning light signals and sound signals superficially
 
-This is the **most common failure point in the theory exam**. Light and sound signals have many variations that look similar but have different meanings.
+This is the **most common failure point in the theory exam**. [Light signals](/en/blog/navigation-lights-explained/) and sound signals have many variations that look similar but have different meanings.
 
 **Light signals – what you need to know:**
 - Red sidelight = **port** (left side)
