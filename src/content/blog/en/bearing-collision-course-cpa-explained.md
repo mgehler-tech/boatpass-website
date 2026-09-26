@@ -46,7 +46,7 @@ In practice, for the question "is a collision developing?", simply watching how 
 
 If another vessel is approaching and the bearing to it does **not change noticeably** over several minutes while the distance is decreasing, you are on a collision course. If the bearing changes clearly instead (the vessel appears to "move" forward or aft), it will likely pass ahead of or behind you.
 
-This is not just a rule of thumb; it comes directly from the **Collision Regulations (COLREGs)**. Rule 7 requires every vessel to use all available means to continuously determine whether risk of collision exists. It states that if there is any doubt, such risk must be assumed to exist. Watching the bearing is one of the most important tools for making that judgment, especially when no radar or AIS is on board.
+This is not just a rule of thumb; it comes directly from the [**Collision Regulations (COLREGs)**](/en/blog/colregs-collision-regulations-overview/). Rule 7 requires every vessel to use all available means to continuously determine whether risk of collision exists. It states that if there is any doubt, such risk must be assumed to exist. Watching the bearing is one of the most important tools for making that judgment, especially when no radar or AIS is on board.
 
 The avoidance rules that follow once a risk of collision has been identified are a large topic of their own. Who has to give way and which rules apply on crossing or reciprocal courses is explained in the article [Right of Way on the Water: Who Has to Give Way?](/en/blog/right-of-way-collision-rules/).
 

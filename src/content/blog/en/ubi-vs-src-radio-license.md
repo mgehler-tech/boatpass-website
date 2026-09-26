@@ -57,7 +57,7 @@ The official total fee for the UBI is made up of three components: admission to 
 
 ## SRC: The Short Range Certificate for Coastal Radio
 
-The [**Short Range Certificate (SRC)**](/en/src/), in German also referred to as a restricted radio operator's certificate, is the official authorization to participate in the worldwide maritime radio service (GMDSS) in the VHF band. It authorizes you to operate VHF marine radio equipment including **DSC** (Digital Selective Calling) in the coastal area, known as sea area A1.
+The [**Short Range Certificate (SRC)**](/en/src/), in German also referred to as a restricted radio operator's certificate, is the official authorization to participate in the [worldwide maritime radio service (GMDSS)](/en/blog/marine-radio-basics-beginners/) in the VHF band. It authorizes you to operate VHF marine radio equipment including **DSC** (Digital Selective Calling) in the coastal area, known as sea area A1.
 
 ### Who Needs the SRC?
 

@@ -31,7 +31,7 @@ howTo:
       text: "Learn the most important symbols of Chart 1 / INT 1 – lighthouses, buoys, depth contours, wrecks and restricted areas."
 ---
 
-For many candidates, the navigation task is the biggest hurdle of the [SBF Coastal license](/en/sbf-coastal/). It's what sets the SBF Coastal apart from the SBF Inland – and it requires a basic understanding of working with a nautical chart. In this article we explain the exact structure, the task types and give tips for preparation.
+For many candidates, the navigation task is the biggest hurdle of the [SBF Coastal license](/en/sbf-coastal/). It's what sets the SBF Coastal apart from the SBF Inland – and it requires a basic understanding of [working with a nautical chart](/en/blog/how-to-read-a-nautical-chart/). In this article we explain the exact structure, the task types and give tips for preparation.
 
 ## What is the navigation task?
 

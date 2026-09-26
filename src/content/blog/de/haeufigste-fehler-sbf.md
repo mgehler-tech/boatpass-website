@@ -33,7 +33,7 @@ Jedes Jahr fallen viele SBF-Kandidaten bei der [SBF-Prüfung](/sbf-pruefung-abla
 
 ## Fehler 1: Lichterführung und Schallzeichen nur oberflächlich lernen
 
-Das ist die **häufigste Fehlerquelle in der Theorieprüfung**. Lichterführung und Schallzeichen sind komplex, weil viele Details ähnlich wirken, aber unterschiedliche Bedeutungen haben.
+Das ist die **häufigste Fehlerquelle in der Theorieprüfung**. [Lichterführung](/blog/lichterfuehrung-erklaert/) und Schallzeichen sind komplex, weil viele Details ähnlich wirken, aber unterschiedliche Bedeutungen haben.
 
 **Lichterführung – was du wissen musst:**
 - Rotes Seitenlicht = **Backbord** (linke Seite)

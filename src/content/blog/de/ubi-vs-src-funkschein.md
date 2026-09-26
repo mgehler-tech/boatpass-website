@@ -57,7 +57,7 @@ Die amtliche Gesamtgebühr für das UBI setzt sich aus drei Posten zusammen: Zul
 
 ## SRC: Das Kurzstreckenzeugnis für den Seefunk
 
-Das [**Short Range Certificate (SRC)**](/src/), auf Deutsch auch als beschränkt gültiges Funkbetriebszeugnis bezeichnet, ist die amtliche Erlaubnis zur Teilnahme am weltweiten Seefunkdienst (GMDSS) im UKW-Bereich. Es berechtigt zur Bedienung von UKW-Seefunkanlagen inklusive **DSC** (Digital Selective Calling) im Küstenbereich, dem sogenannten Seegebiet A1.
+Das [**Short Range Certificate (SRC)**](/src/), auf Deutsch auch als beschränkt gültiges Funkbetriebszeugnis bezeichnet, ist die amtliche Erlaubnis zur Teilnahme am [weltweiten Seefunkdienst (GMDSS)](/blog/seefunk-grundlagen-einsteiger/) im UKW-Bereich. Es berechtigt zur Bedienung von UKW-Seefunkanlagen inklusive **DSC** (Digital Selective Calling) im Küstenbereich, dem sogenannten Seegebiet A1.
 
 ### Wer braucht das SRC?
 
