@@ -17,6 +17,18 @@ faq:
     answer: "Die KVR bestehen aus 41 Regeln in sechs Teilen: A Allgemeines, B Ausweich- und Fahrregeln, C Lichter und Signalkörper, D Schall- und Lichtsignale, E Befreiungen und F Überprüfung der Einhaltung. Dazu kommen vier Anlagen, unter anderem mit den Notzeichen."
   - question: "Welche KVR-Regeln sind für den SBF See am wichtigsten?"
     answer: "Besonders prüfungsrelevant sind die Grundpflichten Ausguck (Regel 5) und sichere Geschwindigkeit (Regel 6), die Ausweichregeln 12 bis 18, das Verhalten bei verminderter Sicht (Regel 19) sowie Lichter, Signalkörper und Schallsignale in den Teilen C und D."
+howTo:
+  name: "So lernst du die KVR am besten"
+  description: "Vier Schritte, mit denen sich die Kollisionsverhütungsregeln für den SBF See strukturiert lernen lassen."
+  steps:
+    - name: "Mit den Grundpflichten starten"
+      text: "Ausguck, sichere Geschwindigkeit und gute Seemannschaft sind die Basis für alles andere."
+    - name: "Die Ausweichregeln an Situationen üben"
+      text: "Zeichne dir Begegnungen auf oder nutze Prüfungsbilder und entscheide jeweils, wer ausweicht."
+    - name: "Lichter und Signalkörper in Gruppen lernen"
+      text: "Erst die Grundlichter, dann die Sonderfälle mit Merksprüchen."
+    - name: "Schallsignale laut mitzählen"
+      text: "Kurze und lange Töne prägen sich über das Hören besser ein."
 ---
 
 Wer den Sportbootführerschein See macht, stößt früher oder später auf drei Buchstaben: **KVR**. Die Kollisionsverhütungsregeln sind das Regelwerk, das auf See festlegt, wer ausweicht, welche Lichter ein Fahrzeug führt und was ein bestimmtes Schallsignal bedeutet. Viele Einzelthemen der Theorieprüfung stammen direkt daraus. Dieser Überblick zeigt dir, wie die KVR aufgebaut sind, wo sie gelten und welche Regeln du wirklich kennen musst, mit Verweisen auf unsere ausführlichen Artikel zu den einzelnen Bereichen.

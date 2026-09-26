@@ -17,6 +17,18 @@ faq:
     answer: "The COLREGs consist of 41 rules in six parts: A General, B Steering and Sailing Rules, C Lights and Shapes, D Sound and Light Signals, E Exemptions, and F Verification of Compliance. There are also four annexes, including one on distress signals."
   - question: "Which COLREGs rules matter most for the SBF Coastal?"
     answer: "Especially exam-relevant are the basic duties of lookout (Rule 5) and safe speed (Rule 6), the give-way rules 12 to 18, conduct in restricted visibility (Rule 19), and lights, shapes, and sound signals in Parts C and D."
+howTo:
+  name: "How to Learn the COLREGs Best"
+  description: "Four steps for structuring your study of the collision regulations for the SBF Coastal exam."
+  steps:
+    - name: "Start with the basic duties"
+      text: "Lookout, safe speed, and good seamanship are the foundation for everything else."
+    - name: "Practice the give-way rules on situations"
+      text: "Sketch encounters or use exam images and decide each time who gives way."
+    - name: "Learn lights and shapes in groups"
+      text: "First the basic lights, then the special cases with memory aids."
+    - name: "Count sound signals out loud"
+      text: "Short and long blasts stick better when you hear them."
 ---
 
 Anyone taking the Sportbootführerschein See (the German coastal recreational boating license, SBF Coastal) will sooner or later run into three letters: **KVR**. The Kollisionsverhütungsregeln, known internationally as the **COLREGs**, are the rulebook that decides at sea who gives way, which lights a vessel shows, and what a particular sound signal means. Many individual topics of the theory exam come straight from them. This overview shows you how the COLREGs are structured, where they apply, and which rules you really need to know, with links to our detailed articles on each area.
