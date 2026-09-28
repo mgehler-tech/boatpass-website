@@ -64,6 +64,7 @@ const t = lang === 'de'
       ctaTitle: 'Boatpass ausprobieren',
       ctaText: 'Kostenlos starten, alle Kataloge antesten, danach je Schein einmalig freischalten – kein Abo.',
       ctaButton: 'Boatpass im Play Store',
+      ctaIos: 'iOS-App kommt bald',
     }
   : {
       home: 'Home',
@@ -83,6 +84,7 @@ const t = lang === 'de'
       ctaTitle: 'Try Boatpass',
       ctaText: 'Start for free, sample every catalogue, then unlock each licence with a single payment – no subscription.',
       ctaButton: 'Boatpass on Google Play',
+      ctaIos: 'iOS app coming soon',
     };
 
 const breadcrumbSchema = {
@@ -248,9 +250,14 @@ const itemListSchema = {
       <h2 style="font-size:24px; font-weight:800; color:white; margin-bottom:12px;">{t.ctaTitle}</h2>
       <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:24px;">{t.ctaText}</p>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
+        data-cta-position="app-landing-cta" id="app-landing-cta-play"
         style="display:inline-flex; align-items:center; gap:8px; background:white; color:#3366FF; font-weight:700; font-size:14px; padding:12px 24px; border-radius:12px; text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,0.18);">
         ▶&nbsp;{t.ctaButton}
       </a>
+      <span id="app-landing-cta-ios" class="app-landing-cta-ios-badge">
+        <Icon name="phoneDevice" size={15} strokeWidth={2} />
+        {t.ctaIos}
+      </span>
     </section>
 
     <!-- FAQ -->
@@ -278,6 +285,24 @@ const itemListSchema = {
 
   </div>
 </BaseLayout>
+
+<script is:inline>
+  // Play Store hat kein iOS-Pendant (App noch nicht erschienen, siehe t.ctaIos) –
+  // ohne diese Weiche landen iOS-Besucher:innen auf einer Store-Seite, die sie nicht
+  // installieren können. Gleiche Erkennung wie im Hero-CTA (HeroSection.astro), hier
+  // für die Abschluss-CTA der App-Vergleichsseiten (sbf-app, sbf-binnen-app, …).
+  (function () {
+    var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (!isIos) return;
+    var play = document.getElementById('app-landing-cta-play');
+    var ios = document.getElementById('app-landing-cta-ios');
+    if (play && ios) {
+      play.style.display = 'none';
+      ios.style.display = 'inline-flex';
+    }
+  })();
+</script>
 
 <style>
   /* Ausbruch aus der 800px-Textspalte. Die Spalte bleibt für Fließtext richtig –
@@ -320,4 +345,19 @@ const itemListSchema = {
   /* Als Klasse (statt inline-style) greift der globale Dark-Mode-Akzent-Override
      nicht mehr – daher hier explizit auf den helleren Akzent anheben. */
   html.dark .app-profile-link { color: var(--color-accent-fg) !important; }
+
+  /* Startet ausgeblendet, das Inline-Script oben schaltet auf iOS um. Gleiche
+     Behandlung wie .cta-banner-ios-badge / .blog-inline-cta-ios-badge. */
+  .app-landing-cta-ios-badge {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.14);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 12px;
+  }
 </style>
