@@ -9,10 +9,12 @@ const { defaultBrowserType, ...iPhone13 } = devices['iPhone 13'];
  * BoatPass has no iOS app yet (see hero.ctaIos / "iOS-App kommt bald"), so a
  * Play Store link is a dead end for iOS visitors. The Hero CTA already swapped
  * to a "coming soon" state on iOS; the sitewide bottom banner (CtaBanner,
- * present on every page) and the blog mid-article CTA (BlogInlineCta) did not,
- * so iOS visitors landing anywhere but the homepage still got sent to a store
- * page they can't install from. This guards that both now match the Hero's
- * device-aware behaviour.
+ * present on every page), the blog mid-article CTA (BlogInlineCta) and the
+ * closing CTA on the app comparison pages (AppLandingPage — sbf-app,
+ * sbf-binnen-app, sbf-see-app, funkschein-app, sbf-app-kostenlos and their
+ * /en/ counterparts) did not, so iOS visitors landing anywhere but the
+ * homepage still got sent to a store page they can't install from. This
+ * guards that all of them now match the Hero's device-aware behaviour.
  */
 test.describe('iOS visitors see "coming soon" instead of a dead Play Store link', () => {
   test.use({ ...iPhone13 });
@@ -30,6 +32,13 @@ test.describe('iOS visitors see "coming soon" instead of a dead Play Store link'
     await expect(page.locator('#blog-inline-cta-play')).toBeHidden();
     await expect(page.locator('#blog-inline-cta-ios')).toBeVisible();
   });
+
+  test('app comparison page closing CTA deflects to the iOS badge', async ({ page }) => {
+    await page.goto('/sbf-app/');
+
+    await expect(page.locator('#app-landing-cta-play')).toBeHidden();
+    await expect(page.locator('#app-landing-cta-ios')).toBeVisible();
+  });
 });
 
 test.describe('Non-iOS visitors keep the working Play Store CTA', () => {
@@ -45,5 +54,10 @@ test.describe('Non-iOS visitors keep the working Play Store CTA', () => {
     await expect(page.locator('#blog-inline-cta-play')).toBeVisible();
     await expect(page.locator('#blog-inline-cta-play')).toHaveAttribute('href', PLAY_STORE_URL);
     await expect(page.locator('#blog-inline-cta-ios')).toBeHidden();
+
+    await page.goto('/sbf-app/');
+    await expect(page.locator('#app-landing-cta-play')).toBeVisible();
+    await expect(page.locator('#app-landing-cta-play')).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator('#app-landing-cta-ios')).toBeHidden();
   });
 });
