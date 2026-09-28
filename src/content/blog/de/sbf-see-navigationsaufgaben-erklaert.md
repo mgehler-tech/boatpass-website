@@ -3,6 +3,7 @@ title: "SBF See Navigationsaufgaben erklärt – Aufbau, Aufgabentypen & Tipps"
 seoTitle: "SBF See Navigationsaufgaben erklärt"
 description: "Die Navigationsaufgabe ist der anspruchsvollste Teil der SBF-See-Prüfung. Aufbau, Aufgabentypen und wie du dich gezielt darauf vorbereitest."
 date: 2026-06-03
+updated: 2026-09-28
 tags: ["Navigation"]
 readingTime: 9
 lang: de
@@ -63,7 +64,9 @@ Die 15 möglichen Teilfragen decken diese Bereiche ab:
 - **Missweisender Kurs (mwK):** Der rwK korrigiert um die Missweisung – die Abweichung zwischen geografischem und magnetischem Nordpol. Die Missweisung steht in der Seekarte (Kompassrose).
 - **Magnetkompasskurs (MgK):** Der mwK korrigiert um die Ablenkung (Deviation) – die schiffseigene magnetische Störung. Die Deviation entnimmst du einer schiffsbezogenen Tabelle.
 
-Die Umrechnungsformel: **rwK = MgK + Ablenkung + Missweisung** (oder umgekehrt, je nach Fragestellung).
+Die Umrechnungsformel: **rwK = MgK + Ablenkung + Missweisung** (oder umgekehrt, je nach Fragestellung). Werte **östlich** von Nord zählst du positiv, Werte **westlich** von Nord negativ.
+
+**Rechenbeispiel:** Du liest von der Seekarte einen rwK von 090° ab. Die Missweisung beträgt 2° West (–2°), die Deviation laut Tabelle 1° Ost (+1°). Gesucht ist der MgK, nach dem du tatsächlich steuerst. Umgestellt gilt: MgK = rwK – Ablenkung – Missweisung = 090° – 1° – (–2°) = **091°**. In der Prüfung lohnt es sich, die Formel immer als Gedankenstütze an den Kartenrand zu schreiben, bevor du rechnest.
 
 ### 2. Peilungen
 
@@ -91,6 +94,8 @@ Die **Besteckversetzung (BV)** ist der Vektor vom Koppelort zur tatsächlich beo
 - **Geschwindigkeit:** Distanz geteilt durch Zeit (in Knoten – Seemeilen pro Stunde)
 - **Zeit:** Distanz geteilt durch Geschwindigkeit
 - **Distanz:** Geschwindigkeit mal Zeit
+
+**Rechenbeispiel:** Dein Boot legt zwischen zwei Positionen auf der Karte eine gemessene Strecke von 4,5 sm zurück und braucht dafür laut Bordzeit 18 Minuten. Geschwindigkeit = Distanz ÷ Zeit = 4,5 sm ÷ (18/60 h) = **15 Knoten**. Denk daran, Minuten immer erst in Stunden umzurechnen, bevor du teilst – das ist die häufigste Fehlerquelle in dieser Aufgabe.
 
 ### 8. Schifffahrtszeichen beschreiben
 
@@ -133,4 +138,4 @@ Die Fragen zu Schifffahrtszeichen und Seekarteneinträgen sind reine Wissensfrag
 
 ## Fazit
 
-Die Navigationsaufgabe beim SBF See ist anspruchsvoll, aber beherrschbar. Es gibt genau 15 Aufgaben im amtlichen Fragenkatalog, und die Aufgabentypen wiederholen sich. Wer alle 15 Aufgaben durcharbeitet, die Umrechnungsformeln beherrscht und mit der echten Seekarte D49 übt, ist gut vorbereitet. In der Boatpass-App kannst du die Navigationsfragen gezielt trainieren – getrennt vom restlichen Fragenkatalog.
+Die Navigationsaufgabe beim SBF See ist anspruchsvoll, aber beherrschbar. Es gibt genau 15 Aufgaben im amtlichen Fragenkatalog, und die Aufgabentypen wiederholen sich. Wer alle 15 Aufgaben durcharbeitet, die Umrechnungsformeln beherrscht und mit der echten Seekarte D49 übt, ist gut vorbereitet. Wenn dir die Vorzeichen bei Missweisung und Ablenkung noch unsicher sind, lohnt sich ein Blick in unseren Artikel zur [Kursumrechnung beim SBF See](/blog/kursumrechnung-sbf-see/) mit weiteren Rechenbeispielen. In der Boatpass-App kannst du die Navigationsfragen im Prüfungsmodus gezielt trainieren – getrennt vom restlichen Fragenkatalog, mit direkter Rückmeldung, welche Aufgabentypen noch wackeln.

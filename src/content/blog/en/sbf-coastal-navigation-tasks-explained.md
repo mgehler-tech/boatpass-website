@@ -3,6 +3,7 @@ title: "SBF Coastal Navigation Tasks Explained – Structure, Task Types & Tips"
 seoTitle: "SBF Coastal Navigation Tasks Explained"
 description: "The navigation task is the toughest part of the SBF Coastal exam. How it is structured, which task types come up and how to prepare for them."
 date: 2026-06-03
+updated: 2026-09-28
 tags: ["Navigation"]
 readingTime: 9
 lang: en
@@ -63,7 +64,9 @@ The 15 possible sub-questions cover these areas:
 - **Magnetic course (mwK):** The true course corrected for variation – the difference between the geographic and magnetic North Pole. The variation is given on the chart (compass rose).
 - **Compass course (MgK):** The magnetic course corrected for deviation – the ship's own magnetic disturbance. You take the deviation from a ship-specific table.
 
-The conversion formula: **rwK = MgK + deviation + variation** (or the reverse, depending on the question).
+The conversion formula: **rwK = MgK + deviation + variation** (or the reverse, depending on the question). Values **east** of north count as positive, values **west** of north as negative.
+
+**Worked example:** You read a true course (rwK) of 090° off the chart. The variation is 2° West (–2°), and the deviation from the table is 1° East (+1°). You need the MgK to actually steer by. Rearranged: MgK = rwK – deviation – variation = 090° – 1° – (–2°) = **091°**. In the exam it helps to write the formula in the margin of the chart before you start calculating.
 
 ### 2. Bearings
 
@@ -91,6 +94,8 @@ The **set and drift (BV)** is the vector from the dead-reckoning position to the
 - **Speed:** distance divided by time (in knots – nautical miles per hour)
 - **Time:** distance divided by speed
 - **Distance:** speed times time
+
+**Worked example:** Between two positions on the chart your boat covers a measured distance of 4.5 NM in 18 minutes according to the ship's clock. Speed = distance ÷ time = 4.5 NM ÷ (18/60 h) = **15 knots**. Always convert minutes to hours before you divide – that's the most common mistake in this type of question.
 
 ### 8. Describe a navigation mark
 
@@ -133,4 +138,4 @@ The questions on navigation marks and chart entries are pure knowledge questions
 
 ## Conclusion
 
-The navigation task in the SBF Coastal is demanding but manageable. There are exactly 15 tasks in the official question catalog, and the task types repeat. Anyone who works through all 15 tasks, masters the conversion formulas and practices with the real D49 chart is well prepared. In the Boatpass app you can train the navigation questions in a targeted way – separately from the rest of the question catalog.
+The navigation task in the SBF Coastal is demanding but manageable. There are exactly 15 tasks in the official question catalog, and the task types repeat. Anyone who works through all 15 tasks, masters the conversion formulas and practices with the real D49 chart is well prepared. If the signs for variation and deviation still feel shaky, check out our article on [course conversion for the SBF Coastal](/en/blog/course-conversion-sbf-coastal/) for more worked examples. In the Boatpass app you can train the navigation questions in exam mode – separately from the rest of the question catalog, with direct feedback on which task types still need work.
