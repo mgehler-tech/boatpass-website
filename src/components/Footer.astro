@@ -69,7 +69,7 @@ const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showC
 
 ---
 
-<footer style="background:#E8EDF6; border-top:1px solid rgba(51,102,255,0.10);" class="mt-12 sm:mt-24 footer-root">
+<footer style="background:var(--footer-bg, #E8EDF6); border-top:1px solid var(--footer-border, rgba(51,102,255,0.10));" class="mt-12 sm:mt-24 footer-root">
   <div class="max-w-6xl mx-auto px-6 py-8 sm:py-12">
 
     <!-- Play-Store-Badge + Bewertung -->
@@ -339,5 +339,10 @@ const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showC
   /* Touch-Flächen auf dem Handy: Link-Zeilen sind bereits über min-height:44px
      in .footer-link-row abgedeckt (WCAG 2.5.5), unabhängig vom Breakpoint. */
 
-  html.dark .footer-root { background: #0D1018 !important; border-color: rgba(90, 120, 255, 0.12) !important; }
+  :global(html.dark body:not(.page-home)) .footer-root { background: #0D1018 !important; border-color: rgba(90, 120, 255, 0.12) !important; }
+
+  /* Startseite: Icons in Druckfarbe statt Markenblau, passend zum Papiergrund. */
+  :global(html body.page-home) .footer-col-heading-icon,
+  :global(html body.page-home) .footer-link-row :global(svg:first-child) { color: var(--ink-2); }
+  :global(html body.page-home) .footer-col-heading { color: var(--ink); }
 </style>

@@ -1,0 +1,273 @@
+---
+/**
+ * Eine echte Prüfungsfrage aus der App zum direkten Ausprobieren – gestaltet
+ * wie ein Prüfungsbogen: Kästchen a–d, beim Antworten wird angekreuzt.
+ *
+ * Funktioniert ohne JavaScript: Die Antworten sind native Radio-Buttons, die
+ * Auswertung zeigt CSS über :has(). Das kleine Skript unten ergänzt nur die
+ * Ansage für Screenreader (aria-live) und setzt data-answered als Fallback
+ * für Browser ohne :has().
+ */
+import { SAMPLE_QUESTION } from '../data/sampleQuestions';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+const { lang } = Astro.props;
+const de = lang === 'de';
+const q = SAMPLE_QUESTION[lang];
+const letters = ['a', 'b', 'c', 'd'];
+const ui = de
+  ? { hint: 'Kreuz eine Antwort an.', right: 'Richtig.', wrong: 'Leider falsch.', tag: 'richtig', mnemonic: 'Merkhilfe', outro: 'Erklärung und Merkhilfe gibt es in der App zu jeder Frage.' }
+  : { hint: 'Tick an answer.', right: 'Correct.', wrong: 'Incorrect.', tag: 'correct', mnemonic: 'Mnemonic', outro: 'The app has an explanation and mnemonic for every question.' };
+---
+
+<div class="qs" data-sample-question>
+  <div class="qs-head">
+    <span class="qs-label">{q.label}</span>
+  </div>
+
+  <fieldset class="qs-set">
+    <legend class="qs-q">{q.question}</legend>
+    <p class="qs-hint" aria-hidden="true">{ui.hint}</p>
+    {q.answers.map((a, i) => (
+      <label class="qs-opt">
+        <input class="qs-input" type="radio" name={`qs-${lang}`} value={letters[i]}
+          data-correct={a.correct ? 'true' : undefined} />
+        <span class="qs-box" aria-hidden="true">{letters[i]}</span>
+        <span class="qs-text">{a.text}</span>
+        {a.correct && <span class="qs-tag">{ui.tag}</span>}
+      </label>
+    ))}
+  </fieldset>
+
+  <div class="qs-fb">
+    <p class="qs-verdict qs-verdict--right">{ui.right}</p>
+    <p class="qs-verdict qs-verdict--wrong">{ui.wrong}</p>
+    <p class="qs-expl">{q.explanation}</p>
+    <p class="qs-mnemonic"><span class="qs-mnemonic-label">{ui.mnemonic}</span>{q.mnemonic}</p>
+    <p class="qs-outro">{ui.outro}</p>
+  </div>
+  <p class="qs-live" aria-live="polite"></p>
+</div>
+
+<style>
+  .qs {
+    position: relative;
+    background: var(--sheet);
+    border: 1px solid var(--rule-2);
+    border-radius: 3px;
+    box-shadow: 0 1px 0 var(--rule), 0 22px 40px -24px rgba(15, 27, 42, 0.45);
+    color: var(--ink);
+    text-align: left;
+  }
+  :global(html.dark) .qs { box-shadow: 0 22px 40px -20px rgba(0, 0, 0, 0.7); }
+
+  .qs-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 20px 11px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .qs-label {
+    font-size: 12px;
+    font-weight: 650;
+    font-stretch: 88%;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-2);
+  }
+
+  .qs-set { border: 0; margin: 0; padding: 18px 20px 20px; min-width: 0; }
+  /* float + width: macht aus der Sonder-Box <legend> einen normalen Block,
+     sonst ignoriert sie Abstände und Breite. */
+  .qs-q {
+    float: left;
+    width: 100%;
+    padding: 0;
+    font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.65rem);
+    font-weight: 720;
+    font-stretch: 90%;
+    line-height: 1.16;
+    letter-spacing: -0.01em;
+    text-wrap: pretty;
+  }
+  .qs-hint {
+    clear: both;
+    padding-top: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--magenta);
+  }
+  .qs:has(.qs-input:checked) .qs-hint,
+  .qs[data-answered] .qs-hint { visibility: hidden; }
+
+  /* „richtig"-Marke an der richtigen Antwort, sichtbar nach dem Ankreuzen –
+     damit die Auflösung nicht allein an der Farbe hängt. */
+  .qs-tag {
+    display: none;
+    margin-left: auto;
+    align-self: center;
+    flex-shrink: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--starboard);
+  }
+  .qs:has(.qs-input:checked) .qs-tag,
+  .qs[data-answered] .qs-tag { display: inline; }
+
+  .qs-opt {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 11px 12px 11px 10px;
+    margin: 0 -10px;
+    border-radius: 4px;
+    cursor: pointer;
+    border-top: 1px solid var(--rule);
+    transition: background-color 0.15s ease;
+  }
+  .qs-opt:first-of-type { border-top: 0; }
+  .qs-opt:hover { background: var(--water-1); }
+  .qs-input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+  .qs-input:focus-visible + .qs-box { outline: 2px solid var(--action); outline-offset: 3px; }
+
+  /* Ankreuz-Kästchen wie auf dem amtlichen Bogen. */
+  .qs-box {
+    position: relative;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    margin-top: 1px;
+    border: 1.5px solid var(--ink);
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 700;
+    font-stretch: 90%;
+    color: var(--ink-2);
+    background: var(--sheet);
+  }
+  .qs-text { font-size: 16px; line-height: 1.45; padding-top: 2px; }
+
+  /* Angekreuzt: zwei Striche über dem Buchstaben. */
+  .qs-input:checked + .qs-box { color: transparent; }
+  .qs-input:checked + .qs-box::before,
+  .qs-input:checked + .qs-box::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 30px;
+    height: 2.5px;
+    border-radius: 2px;
+    background: var(--ink);
+  }
+  .qs-input:checked + .qs-box::before { transform: translate(-50%, -50%) rotate(45deg); }
+  .qs-input:checked + .qs-box::after { transform: translate(-50%, -50%) rotate(-45deg); }
+
+  /* Auswertung – :has() ohne JS, [data-answered] als Fallback. */
+  .qs-fb, .qs-verdict { display: none; }
+  .qs:has(.qs-input:checked) .qs-fb,
+  .qs[data-answered] .qs-fb { display: block; }
+  .qs:has(.qs-input[data-correct]:checked) .qs-verdict--right,
+  .qs[data-answered="right"] .qs-verdict--right { display: block; }
+  .qs:has(.qs-input:not([data-correct]):checked) .qs-verdict--wrong,
+  .qs[data-answered="wrong"] .qs-verdict--wrong { display: block; }
+
+  /* Richtige Antwort nach dem Ankreuzen immer grün (Steuerbord), die falsch
+     gewählte rot (Backbord) – plus Text, nicht nur Farbe. */
+  .qs:has(.qs-input:checked) .qs-opt:has(.qs-input[data-correct]),
+  .qs[data-answered] .qs-opt.is-correct {
+    background: color-mix(in srgb, var(--starboard) 11%, var(--sheet));
+    box-shadow: inset 3px 0 0 var(--starboard);
+  }
+  .qs-opt:has(.qs-input:not([data-correct]):checked),
+  .qs-opt.is-wrong-choice {
+    background: color-mix(in srgb, var(--port) 9%, var(--sheet));
+    box-shadow: inset 3px 0 0 var(--port);
+  }
+  .qs:has(.qs-input:checked) .qs-opt:has(.qs-input[data-correct]) .qs-box,
+  .qs[data-answered] .qs-opt.is-correct .qs-box { border-color: var(--starboard); }
+
+  .qs-fb {
+    border-top: 1px solid var(--rule);
+    padding: 16px 20px 20px;
+    animation: qs-in 0.28s ease-out;
+  }
+  @keyframes qs-in { from { opacity: 0; transform: translateY(-4px); } }
+  .qs-verdict {
+    font-size: 17px;
+    font-weight: 750;
+    font-stretch: 90%;
+    margin-bottom: 6px;
+  }
+  .qs-verdict--right { color: var(--starboard); }
+  .qs-verdict--wrong { color: var(--port); }
+  .qs-expl { font-size: 15px; line-height: 1.55; color: var(--ink-2); margin-bottom: 12px; }
+
+  /* Merkhilfe wie in der App: Sandgelb, kursiv – hier als Textmarker. */
+  .qs-mnemonic {
+    font-size: 15px;
+    line-height: 1.5;
+    font-style: italic;
+    color: var(--ink);
+    background: var(--land);
+    padding: 10px 12px;
+    border-radius: 2px;
+  }
+  .qs-mnemonic-label {
+    display: block;
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--land-ink);
+    margin-bottom: 2px;
+  }
+  .qs-outro { font-size: 13.5px; color: var(--ink-2); margin-top: 12px; }
+
+  .qs-live {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .qs-fb { animation: none; }
+    .qs-opt { transition: none; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-sample-question]').forEach(root => {
+    const live = root.querySelector<HTMLElement>('.qs-live');
+    const opts = Array.from(root.querySelectorAll<HTMLElement>('.qs-opt'));
+    root.addEventListener('change', e => {
+      const input = e.target as HTMLInputElement;
+      if (!input.matches('.qs-input')) return;
+      const right = input.dataset.correct === 'true';
+      root.dataset.answered = right ? 'right' : 'wrong';
+      opts.forEach(o => {
+        const i = o.querySelector<HTMLInputElement>('.qs-input');
+        o.classList.toggle('is-correct', i?.dataset.correct === 'true');
+        o.classList.toggle('is-wrong-choice', !!i && i.checked && i.dataset.correct !== 'true');
+      });
+      const verdict = root.querySelector(right ? '.qs-verdict--right' : '.qs-verdict--wrong')?.textContent ?? '';
+      const expl = root.querySelector('.qs-expl')?.textContent ?? '';
+      if (live) live.textContent = `${verdict} ${expl}`;
+    });
+  });
+</script>

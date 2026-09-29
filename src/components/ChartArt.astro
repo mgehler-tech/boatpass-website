@@ -1,0 +1,203 @@
+---
+/**
+ * Ausschnitt einer Seekarte als Bildgrund – reine Dekoration (aria-hidden).
+ *
+ * Gezeichnet nach Seekarten-Konventionen statt mit generischer Deko:
+ * Land in Sandgelb, Flachwasser in zwei Blaustufen, Tiefenlinien (2, 5, 10,
+ * 20 m), kursive Lotungen mit tiefgestellten Dezimetern, ein Leuchtfeuer mit
+ * Magenta-Lichtschein und Kennung, zwei Lateraltonnen und eine Kompassrose
+ * mit rechtweisender und missweisender Teilung. Alle Farben kommen aus den
+ * Variablen in global.css und tragen so auch den Dark Mode (Nachtpalette).
+ *
+ * Die Geometrie entsteht hier im Build aus wenigen Stützpunkten – kein
+ * JavaScript im Browser.
+ */
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+
+type Pt = [number, number];
+
+/** Weiche Kurve durch alle Punkte (Catmull-Rom als kubische Béziers). */
+function smooth(points: Pt[]): string {
+  let d = `M${points[0][0]},${points[0][1]}`;
+  for (let i = 0; i < points.length - 1; i++) {
+    const p0 = points[i - 1] ?? points[i];
+    const p1 = points[i];
+    const p2 = points[i + 1];
+    const p3 = points[i + 2] ?? p2;
+    const c1: Pt = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6];
+    const c2: Pt = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += ` C${c1[0].toFixed(1)},${c1[1].toFixed(1)} ${c2[0].toFixed(1)},${c2[1].toFixed(1)} ${p2[0]},${p2[1]}`;
+  }
+  return d;
+}
+
+// Küste von oben (Mitte) nach rechts; Land liegt oben rechts.
+const coast: Pt[] = [
+  [430, -12], [438, 30], [462, 52], [455, 86], [478, 108], [516, 114], [538, 146],
+  [530, 182], [556, 206], [598, 212], [622, 244], [612, 282], [646, 302], [690, 296],
+  [722, 322], [762, 326], [812, 352],
+];
+
+// Tiefenlinie: Küste seewärts (nach links unten) versetzt, mit leichtem,
+// festem Versatz je Punkt, damit die Linien nicht parallel wirken.
+const wobble = [0, 3, -4, 5, -2, 4, -5, 2, 6, -3, 4, -6, 3, -2, 5, -4, 0];
+function contour(dist: number, amp: number): Pt[] {
+  return coast.map(([x, y], i) => {
+    const w = wobble[i] * amp;
+    return [Math.round(x - dist * 0.62 + w), Math.round(y + dist * 0.8 - w * 0.4)];
+  });
+}
+const c2 = contour(22, 0.6);
+const c5 = contour(58, 1.1);
+const c10 = contour(122, 1.8);
+const c20 = contour(220, 2.6);
+
+// Flächen landwärts einer Linie: Linie + Ecke oben rechts schließen.
+const shoreward = (pts: Pt[]) => `${smooth(pts)} L812,-12 Z`;
+
+// Lotungen: [x, y, Meter, Dezimeter?] – flach an der Küste, tief draußen.
+const soundings: [number, number, string, string?][] = [
+  [402, 70, '1', '8'], [436, 150, '2', '4'], [482, 188, '1', '6'], [520, 248, '3'],
+  [566, 268, '2', '7'], [600, 330, '4', '2'], [660, 350, '3', '5'], [742, 372, '4'],
+  [360, 128, '5'], [392, 214, '6', '4'], [446, 292, '7'], [512, 330, '8', '5'],
+  [566, 398, '9'], [632, 420, '11'], [300, 60, '9', '2'], [318, 250, '12'],
+  [380, 352, '14'], [462, 408, '13', '6'], [530, 470, '17'], [612, 506, '19'],
+  [226, 150, '16'], [236, 330, '19'], [290, 452, '22'], [372, 520, '24'],
+  [150, 262, '23'], [142, 440, '27'], [214, 574, '28'], [460, 590, '26'],
+  [90, 110, '25'], [60, 360, '31'], [700, 600, '23'], [760, 470, '18'],
+  [120, 640, '30'], [300, 690, '29'], [470, 720, '27'], [560, 640, '24'],
+  [640, 760, '26'], [760, 700, '22'], [200, 800, '33'], [380, 860, '31'],
+  [540, 830, '28'], [720, 850, '27'], [60, 760, '34'],
+];
+
+// Kompassrose: Mittelpunkt und Radien.
+const rose = { cx: 690, cy: 520, r: 150 };
+const outerTicks = Array.from({ length: 360 }, (_, deg) => {
+  const len = deg % 10 === 0 ? 11 : deg % 5 === 0 ? 7 : 4;
+  return { deg, len };
+});
+const outerLabels = Array.from({ length: 12 }, (_, i) => i * 30);
+// Missweisende Teilung, um die Missweisung gedreht (rein zeichnerisch).
+const variation = -4;
+const innerR = 96;
+const innerTicks = Array.from({ length: 180 }, (_, i) => {
+  const deg = i * 2;
+  return { deg, len: deg % 10 === 0 ? 7 : 3.5 };
+});
+const innerLabels = Array.from({ length: 12 }, (_, i) => i * 30);
+---
+
+<svg class:list={['chart-art', className]} viewBox="0 0 800 900" preserveAspectRatio="xMaxYMin slice"
+  aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <!-- Wasser-Tiefenstufen -->
+  <path class="ca-w1" d={shoreward(c5)} />
+  <path class="ca-w2" d={shoreward(c2)} />
+
+  <!-- Tiefenlinien -->
+  <path class="ca-contour" d={smooth(c2)} />
+  <path class="ca-contour" d={smooth(c5)} />
+  <path class="ca-contour ca-contour--dash" d={smooth(c10)} />
+  <path class="ca-contour ca-contour--dot" d={smooth(c20)} />
+
+  <!-- Land -->
+  <path class="ca-land" d={`${smooth(coast)} L812,-12 Z`} />
+
+  <!-- Leitlinie ins Fahrwasser -->
+  <path class="ca-track" d="M232,612 L552,238" />
+  <text class="ca-note" x="404" y="440" transform="rotate(-49.4 404 440)">040°</text>
+
+  <!-- Lateraltonnen: rot (Backbord, Stumpftonne), grün (Steuerbord, Spitztonne) -->
+  <g class="ca-buoy">
+    <rect class="ca-port" x="494" y="254" width="9" height="11" rx="1" />
+    <path class="ca-starboard" d="M548,300 l6,-12 l6,12 Z" />
+  </g>
+
+  <!-- Leuchtfeuer mit Lichtschein und Kennung -->
+  <g class="ca-light">
+    <path class="ca-flare" d="M606,216 C596,228 578,246 566,262 C578,256 596,240 610,222 Z" />
+    <circle class="ca-light-dot" cx="608" cy="214" r="3.2" />
+    <text class="ca-note ca-note--light" x="620" y="206">Fl(3)15s</text>
+  </g>
+
+  <!-- Lotungen -->
+  <g class="ca-soundings">
+    {soundings.map(([x, y, m, dm]) => (
+      <text x={x} y={y}>{m}{dm && <tspan class="ca-dm" dy="3">{dm}</tspan>}</text>
+    ))}
+  </g>
+
+  <!-- Kompassrose -->
+  <g class="ca-rose">
+    <circle cx={rose.cx} cy={rose.cy} r={rose.r} />
+    <circle cx={rose.cx} cy={rose.cy} r={rose.r - 12} />
+    {outerTicks.map(t => (
+      <line x1={rose.cx} y1={rose.cy - rose.r + 12} x2={rose.cx} y2={rose.cy - rose.r + 12 + t.len}
+        transform={`rotate(${t.deg} ${rose.cx} ${rose.cy})`} />
+    ))}
+    {outerLabels.map(deg => (
+      <text class="ca-rose-label" x={rose.cx} y={rose.cy - rose.r + 34}
+        transform={`rotate(${deg} ${rose.cx} ${rose.cy})`}>{String(deg).padStart(3, '0')}</text>
+    ))}
+    <g transform={`rotate(${variation} ${rose.cx} ${rose.cy})`}>
+      <circle cx={rose.cx} cy={rose.cy} r={innerR} />
+      {innerTicks.map(t => (
+        <line x1={rose.cx} y1={rose.cy - innerR} x2={rose.cx} y2={rose.cy - innerR + t.len}
+          transform={`rotate(${t.deg} ${rose.cx} ${rose.cy})`} />
+      ))}
+      {innerLabels.map(deg => (
+        <text class="ca-rose-label ca-rose-label--sm" x={rose.cx} y={rose.cy - innerR + 18}
+          transform={`rotate(${deg} ${rose.cx} ${rose.cy})`}>{deg}</text>
+      ))}
+      <line x1={rose.cx} y1={rose.cy - innerR + 22} x2={rose.cx} y2={rose.cy + innerR - 22} />
+      <line x1={rose.cx - innerR + 22} y1={rose.cy} x2={rose.cx + innerR - 22} y2={rose.cy} />
+    </g>
+    <!-- Nordstern der rechtweisenden Rose -->
+    <path class="ca-rose-star" d={`M${rose.cx},${rose.cy - rose.r - 22} l5,14 l-5,-4 l-5,4 Z`} />
+  </g>
+</svg>
+
+<style>
+  .chart-art { display: block; width: 100%; height: 100%; }
+  .ca-w1 { fill: var(--water-1); }
+  .ca-w2 { fill: var(--water-2); }
+  .ca-land { fill: var(--land); stroke: var(--ink); stroke-width: 1.1; stroke-linejoin: round; }
+  .ca-contour { fill: none; stroke: var(--contour); stroke-width: 1; }
+  .ca-contour--dash { stroke-dasharray: 6 4; }
+  .ca-contour--dot { stroke-dasharray: 1.5 4; stroke-linecap: round; }
+  .ca-track { fill: none; stroke: var(--ink); stroke-width: 1; stroke-dasharray: 10 6; opacity: 0.55; }
+  .ca-note {
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 500;
+    fill: var(--ink-2);
+    letter-spacing: 0.02em;
+  }
+  .ca-note--light { fill: var(--magenta); font-weight: 600; }
+  .ca-port { fill: var(--port); }
+  .ca-starboard { fill: var(--starboard); }
+  .ca-buoy rect, .ca-buoy path { stroke: var(--ink); stroke-width: 0.8; }
+  .ca-flare { fill: var(--magenta); opacity: 0.55; }
+  .ca-light-dot { fill: var(--magenta); }
+  .ca-soundings text {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: 450;
+    fill: var(--ink-2);
+    opacity: 0.8;
+  }
+  .ca-soundings .ca-dm { font-size: 8.5px; }
+  .ca-rose circle, .ca-rose line { fill: none; stroke: var(--magenta); stroke-width: 0.8; }
+  .ca-rose { opacity: 0.7; }
+  .ca-rose-label {
+    font-size: 9px;
+    font-weight: 600;
+    fill: var(--magenta);
+    text-anchor: middle;
+    letter-spacing: 0.04em;
+  }
+  .ca-rose-label--sm { font-size: 7.5px; font-weight: 500; }
+  .ca-rose-star { fill: var(--magenta); }
+</style>

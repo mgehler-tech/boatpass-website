@@ -2,6 +2,9 @@
 // Teaser für den Bootsführerschein-Finder. Verlinkt bewusst nur auf die
 // Tool-Seite statt den interaktiven Konfigurator zu duplizieren – so bleibt die
 // Entscheidungslogik eine einzige Quelle der Wahrheit.
+//
+// Gestaltet als Formular-Ausschnitt auf Flachwasser-Blau: die drei Fragen des
+// Finders als leere Zeilen zum Ausfüllen. Die ganze Fläche ist ein Link.
 interface Props {
   lang: 'de' | 'en';
 }
@@ -15,231 +18,134 @@ const t = {
   de: {
     chip: 'Kostenloser Finder',
     title: ['Welchen Bootsführerschein ', 'brauchst du wirklich?'],
-    sub: '3 kurze Fragen zu Revier, Motorleistung und Funk – und du weißt in 30 Sekunden, welcher Schein (SBF Binnen, SBF See) und welches Funkzeugnis (UBI, SRC, LRC) zu deinem Vorhaben passt.',
+    sub: '3 kurze Fragen zu Revier, Motorleistung und Funk – und du weißt in 30 Sekunden, welcher Schein (SBF Binnen, SBF See) und welches Funkzeugnis (UBI, SRC, LRC) zu deinem Vorhaben passt.',
     button: 'Finder starten',
   },
   en: {
     chip: 'Free finder',
     title: ['Which boating licence ', 'do you really need?'],
-    sub: '3 quick questions about your waters, engine power and radio – and in 30 seconds you’ll know which licence (SBF Inland, SBF Coastal) and radio certificate (UBI, SRC, LRC) fits your plans.',
+    sub: '3 quick questions about your waters, engine power and radio – and in 30 seconds you’ll know which licence (SBF Inland, SBF Coastal) and radio certificate (UBI, SRC, LRC) fits your plans.',
     button: 'Start finder',
   },
 }[lang];
 ---
 
-<section id="finder-teaser" class="section-band max-w-6xl mx-auto px-6 py-14 md:py-20">
-  <a href={finderUrl} class="finder-card reveal-item" aria-label={lang === 'de' ? 'Welchen Bootsführerschein brauchst du wirklich? – Finder starten' : 'Which boating licence do you really need? – Start finder'} style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
-    <div class="finder-orb"></div>
-    <div class="finder-body">
-      <div class="finder-chip">{t.chip}</div>
-      <h2 class="finder-title">{t.title[0]}<br>{t.title[1]}</h2>
-      <p class="finder-sub">{t.sub}</p>
-      <div class="finder-steps">
-        {questions.map((q, i) => (
-          <>
-            {i > 0 && <span class="finder-step-arrow" aria-hidden="true">→</span>}
-            <span class="finder-step">{q}</span>
-          </>
-        ))}
+<section id="finder-teaser" class="ft">
+  <a href={finderUrl} class="ft-link" aria-label={lang === 'de' ? 'Welchen Bootsführerschein brauchst du wirklich? – Finder starten' : 'Which boating licence do you really need? – Start finder'}>
+    <svg class="ft-contours" viewBox="0 0 600 400" preserveAspectRatio="xMaxYMid slice" aria-hidden="true" focusable="false">
+      <path d="M620,40 C520,60 470,20 400,70 S300,160 250,230 S180,330 120,420" />
+      <path d="M620,110 C540,120 500,90 450,140 S360,220 320,280 S260,370 220,420" />
+      <path d="M620,190 C560,190 540,170 500,210 S430,270 400,320 S360,390 340,420" />
+      <path class="ft-dash" d="M620,270 C580,270 570,250 550,280 S500,340 480,380 S470,410 460,420" />
+    </svg>
+    <div class="ft-inner">
+      <div class="ft-copy">
+        <p class="ft-label">{t.chip}</p>
+        <h2 class="display ft-title">{t.title[0]}<br>{t.title[1]}</h2>
+        <p class="ft-sub">{t.sub}</p>
       </div>
-    </div>
-    <div class="finder-action">
-      <span class="finder-button">
+      <ol class="ft-form" aria-hidden="true">
+        {questions.map((q, i) => (
+          <li class="ft-row">
+            <span class="ft-row-num">{i + 1}</span>
+            <span class="ft-row-q">{q}</span>
+            <span class="ft-row-line"></span>
+          </li>
+        ))}
+      </ol>
+      <span class="ft-button">
         {t.button}
-        <span class="finder-button-arrow" aria-hidden="true">→</span>
+        <span class="ft-button-arrow" aria-hidden="true">→</span>
       </span>
     </div>
   </a>
 </section>
 
 <style>
-  .finder-card {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-    background: #ffffff;
-    border: 1px solid rgba(51, 102, 255, 0.14);
-    border-radius: 28px;
-    padding: 44px 48px;
-    text-decoration: none;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 18px 44px rgba(26, 31, 54, 0.07);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-  .finder-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 56px rgba(51, 102, 255, 0.16);
-    border-color: rgba(51, 102, 255, 0.28);
-  }
-
-  /* Decorative orb */
-  .finder-orb {
+  .ft { background: var(--water-1); border-block: 1px solid var(--ink); color: var(--ink); }
+  .ft-link { position: relative; display: block; overflow: hidden; color: inherit; text-decoration: none; }
+  /* Tiefenlinien nur in der rechten Hälfte, hinter den Formularzeilen –
+     nie durch den Fließtext. */
+  .ft-contours {
     position: absolute;
-    top: -120px;
-    right: -80px;
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(51, 102, 255, 0.10), transparent 70%);
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
     pointer-events: none;
   }
-
-  .finder-body {
-    position: relative;
-    max-width: 620px;
+  .ft-contours path { fill: none; stroke: var(--contour); stroke-width: 1; opacity: 0.75; }
+  @media (max-width: 899px) {
+    .ft-contours { width: 100%; height: 42%; top: auto; bottom: 0; }
   }
+  .ft-contours .ft-dash { stroke-dasharray: 7 5; }
 
-  .finder-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(51, 102, 255, 0.08);
-    border: 1px solid rgba(51, 102, 255, 0.18);
-    color: #3366FF;
-    font-size: 13px;
+  .ft-inner {
+    position: relative;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 56px 24px 60px;
+    display: grid;
+    grid-template-areas: "copy" "form" "button";
+    gap: 28px;
+  }
+  .ft-copy { grid-area: copy; }
+  .ft-form { grid-area: form; }
+  .ft-button { grid-area: button; justify-self: start; }
+  .ft-label {
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    padding: 5px 12px;
-    border-radius: 100px;
-    margin-bottom: 16px;
-  }
-
-  /* Karten-Überschrift flüssig statt hartkodiert: skaliert sanft von 26px bis
-     32px mit (clamp), sodass der abrupte Font-Sprung am 768px-Breakpoint
-     entfällt und die Größe auch dazwischen (Tablet) sauber mitwächst. Die
-     Laufweite ist in em (statt fester -1.5px) angegeben und lockert damit bei
-     kleinerer Schrift proportional – dieselbe Behandlung wie die bereits
-     zentralisierten .section-display-title / .content-section-title. Corporate
-     Design (Navy-Farbe, Font-Weight 900) bleibt unberührt. */
-  .finder-title {
-    font-size: clamp(1.625rem, 4.5vw, 2rem); /* 26px … 32px */
-    font-weight: 900;
-    letter-spacing: -0.04em;
-    color: #1A1F36;
-    line-height: 1.15;
+    color: var(--ink-2);
     margin-bottom: 14px;
-    overflow-wrap: break-word;
-    hyphens: auto;
   }
+  .ft-title { font-size: clamp(2.2rem, 1.5rem + 2.8vw, 3.9rem); margin-bottom: 18px; hyphens: manual; }
+  .ft-sub { font-size: 16.5px; line-height: 1.55; color: var(--ink-2); max-width: 34em; }
 
-  .finder-sub {
+  .ft-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 52px;
+    padding: 0 24px;
+    border-radius: 8px;
+    background: var(--ink);
+    color: var(--paper);
     font-size: 16px;
-    color: #656B78;
-    line-height: 1.65;
-    margin-bottom: 20px;
-  }
-
-  .finder-steps {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  .finder-step {
-    display: inline-flex;
-    align-items: center;
-    background: rgba(51, 102, 255, 0.06);
-    border: 1px solid rgba(51, 102, 255, 0.12);
-    color: #3366FF;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 6px 14px;
-    border-radius: 100px;
-  }
-  .finder-step-arrow {
-    color:#656B78;
     font-weight: 700;
   }
+  .ft-button-arrow { display: inline-block; transition: transform 0.2s ease; }
+  .ft-link:hover .ft-button-arrow { transform: translateX(4px); }
+  .ft-link:focus-visible { outline: 2px solid var(--action); outline-offset: -6px; }
 
-  .finder-action {
-    position: relative;
-    flex-shrink: 0;
+  /* Drei leere Formularzeilen: Frage, Linie zum Ausfüllen. */
+  .ft-form { list-style: none; margin: 0; padding: 0; align-self: center; }
+  .ft-row {
+    display: grid;
+    grid-template-columns: 34px auto 1fr;
+    align-items: end;
+    gap: 14px;
+    padding: 18px 0 10px;
   }
-  .finder-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: linear-gradient(135deg, #1A1F36, #3366FF);
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 700;
-    padding: 16px 30px;
-    border-radius: 100px;
-    box-shadow: 0 8px 22px rgba(51, 102, 255, 0.22);
-    transition: transform 0.2s ease;
-  }
-  .finder-button-arrow {
-    display: inline-block;
-    transition: transform 0.2s ease;
-  }
-  .finder-card:hover .finder-button-arrow {
-    transform: translateX(4px);
-  }
-
-  html.dark .finder-card {
-    background: #181E2E !important;
-    border-color: rgba(90, 120, 255, 0.14) !important;
-    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35) !important;
-  }
-  html.dark .finder-card:hover {
-    box-shadow: 0 24px 56px rgba(90, 120, 255, 0.14) !important;
-    border-color: rgba(90, 120, 255, 0.30) !important;
-  }
-  html.dark .finder-title { color: #E2E8F0 !important; }
-  html.dark .finder-sub   { color: #94A3B8 !important; }
-  html.dark .finder-chip {
-    background: rgba(90, 120, 255, 0.10) !important;
-    border-color: rgba(90, 120, 255, 0.20) !important;
-  }
-  html.dark .finder-step {
-    background: rgba(90, 120, 255, 0.08) !important;
-    border-color: rgba(90, 120, 255, 0.14) !important;
-  }
-  html.dark .finder-step-arrow { color: #656B78 !important; }
+  .ft-row-num { font-size: 14px; font-style: italic; font-weight: 600; color: var(--magenta); }
+  .ft-row-q { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.2rem); font-weight: 720; font-stretch: 80%; line-height: 1; }
+  .ft-row-line { border-bottom: 1.5px solid var(--ink); margin-bottom: 4px; min-width: 40px; }
 
   @media (max-width: 768px) {
-    .finder-card {
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      padding: 36px 24px;
-      gap: 28px;
+    .ft-title br { display: none; }
+    .ft-button { width: 100%; justify-content: center; justify-self: stretch; }
+  }
+  @media (min-width: 900px) {
+    .ft-inner {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      grid-template-areas: "copy form" "button form";
+      column-gap: 72px;
+      row-gap: 32px;
+      padding: 88px 40px 92px;
     }
-    .finder-title br {
-      display: none;
-    }
-    .finder-action {
-      width: 100%;
-    }
-    .finder-button {
-      width: 100%;
-      justify-content: center;
-    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ft-button-arrow { transition: none; }
   }
 </style>
-
-<script>
-  const reduceMotionFinder = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (reduceMotionFinder) {
-    document.querySelectorAll<HTMLElement>('#finder-teaser .reveal-item').forEach(el => {
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
-    });
-  } else {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          (e.target as HTMLElement).style.opacity = '1';
-          (e.target as HTMLElement).style.transform = 'translateY(0)';
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('#finder-teaser .reveal-item').forEach(el => obs.observe(el));
-  }
-</script>

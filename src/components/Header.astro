@@ -92,7 +92,9 @@ const promo = {
 };
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 border-b" style="background: rgba(240,244,250,0.85); backdrop-filter: blur(20px); border-color: rgba(51,102,255,0.10);">
+<!-- Fläche und Linie über Variablen: Die Startseite (body.page-home) setzt ihren
+     Papierton, alle anderen Seiten bleiben beim bisherigen Blaugrau. -->
+<header class="site-header fixed top-0 left-0 right-0 z-50 border-b" style="background: var(--header-bg, rgba(240,244,250,0.85)); backdrop-filter: blur(20px); border-color: var(--header-border, rgba(51,102,255,0.10));">
   <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
     <!-- Logo -->
@@ -228,7 +230,7 @@ const promo = {
         </span>
       </button>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        class="hidden md:inline-flex items-center gap-2 text-sm font-bold text-white px-5 py-2.5 rounded-full"
+        class="header-cta hidden md:inline-flex items-center gap-2 text-sm font-bold text-white px-5 py-2.5 rounded-full"
         style="background: #3366FF; box-shadow: 0 4px 14px rgba(51,102,255,0.25); text-decoration: none;">
         {t.nav.getApp}
       </a>
@@ -502,6 +504,10 @@ const promo = {
   }
 
   .nav-link:hover { color: #1A1F36 !important; }
+
+  /* Wortmarke schmal gesetzt (Breitenachse von Archivo): hält die Kopfzeile auf
+     schmalen Handys frei, auch neben Sprach- und Design-Umschalter. */
+  .logo-link { font-stretch: 80%; }
 
   .nav-dropdown { position: relative; }
 
@@ -868,8 +874,45 @@ const promo = {
     .logo-link :global(img) { width: 24px !important; height: 24px !important; }
   }
 
+  /* ── Startseite: Papier-/Druckfarben-Welt ─────────────────────
+     `html body.page-home` statt `body.page-home`: eine Stufe spezifischer als
+     die `html.dark …`-Regeln weiter unten, damit die Startseite in beiden
+     Modi ihre eigenen Farben behält (die Variablen tragen den Dark Mode). */
+  :global(html body.page-home) .logo-link { letter-spacing: -0.01em !important; color: var(--ink) !important; }
+  :global(html body.page-home) .logo-link span { color: var(--action) !important; }
+  :global(html body.page-home) .nav-link { color: var(--ink-2) !important; }
+  :global(html body.page-home) .nav-link:hover { color: var(--ink) !important; }
+  :global(html body.page-home) .header-cta {
+    background: var(--action) !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    transition: background-color 0.15s ease;
+  }
+  :global(html body.page-home) .header-cta:hover { background: var(--action-hover) !important; }
+  :global(html body.page-home) .lang-switcher,
+  :global(html body.page-home) .theme-switcher {
+    background: transparent;
+    border-color: var(--rule-2);
+    border-radius: 8px;
+  }
+  :global(html body.page-home) .lang-option,
+  :global(html body.page-home) .theme-option { border-radius: 5px; }
+  :global(html body.page-home) .lang-active,
+  :global(html body.page-home) .theme-option-active {
+    background: var(--ink) !important;
+    color: var(--paper) !important;
+    box-shadow: none !important;
+  }
+  :global(html body.page-home) #mobile-menu-btn {
+    background: transparent !important;
+    border-color: var(--rule-2) !important;
+    border-radius: 8px !important;
+  }
+  :global(html body.page-home) .hamburger-line { background: var(--ink) !important; }
+  :global(html body.page-home) .mobile-menu-panel { background: color-mix(in srgb, var(--paper) 97%, transparent) !important; }
+
   /* ── Dark Mode (controlled by html.dark class) ─────────────── */
-  html.dark header {
+  :global(html.dark body:not(.page-home)) header {
     background: rgba(10, 13, 20, 0.95) !important;
     border-color: rgba(90, 120, 255, 0.14) !important;
   }

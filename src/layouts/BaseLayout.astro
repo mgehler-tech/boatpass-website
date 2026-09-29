@@ -4,10 +4,11 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import '../styles/global.css';
-// Preload des tatsächlich genutzten Font-Subsets: Inter wird per unicode-range in
-// sieben Subsets ausgeliefert, für DE/EN lädt der Browser nur "latin". Ohne Preload
-// entdeckt er die Datei erst nach dem CSS-Parsing – das kostet Zeit im kritischen Pfad.
-import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
+// Preload des tatsächlich genutzten Font-Subsets: Archivo wird per unicode-range in
+// mehreren Subsets ausgeliefert, für DE/EN lädt der Browser nur "latin". Ohne Preload
+// entdeckt er die Datei erst nach dem CSS-Parsing – das kostet Zeit im kritischen Pfad,
+// und die schmale Überschrift im Hero würde sichtbar aus der breiten Ersatzschrift umbrechen.
+import archivoLatin from '@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2?url';
 import type { AppRating } from '../data/apps';
 
 interface Props {
@@ -26,9 +27,11 @@ interface Props {
   /** Override für Astro.url.pathname, s. Header.astro. Nötig für Seiten wie 404.astro,
    * die unter keiner echten Route erreichbar sind. */
   currentPath?: string;
+  /** Zusätzliche Klasse am <body>, z. B. `page-home` für die Farbwelt der Startseite. */
+  bodyClass?: string;
 }
 
-const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, showCta = true, hasAlternate = true, altUrl, noindex = false, appRating, currentPath } = Astro.props;
+const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, showCta = true, hasAlternate = true, altUrl, noindex = false, appRating, currentPath, bodyClass } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -48,7 +51,7 @@ const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, sh
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="color-scheme" content="light dark" />
-    <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={archivoLatin} as="font" type="font/woff2" crossorigin />
     <link rel="preconnect" href="https://plausible.io" crossorigin />
     <link rel="icon" href="/favicon.ico?v=2" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2" />
@@ -74,7 +77,7 @@ const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, sh
     </script>
     <SEO title={title} description={description} lang={lang} ogImage={ogImage} ogImageWidth={ogImageWidth} ogImageHeight={ogImageHeight} type={type} hasAlternate={hasAlternate} altUrl={altUrl} noindex={noindex} appRating={appRating} />
   </head>
-  <body class="min-h-screen bg-background">
+  <body class:list={['min-h-screen bg-background', bodyClass]}>
     <a href="#main-content" class="skip-link">
       {lang === 'de' ? 'Zum Hauptinhalt springen' : 'Skip to main content'}
     </a>

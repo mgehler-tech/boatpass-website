@@ -1,5 +1,10 @@
 @import "tailwindcss";
-@import "@fontsource-variable/inter";
+/* Archivo mit Breiten- und Gewichtsachse (wdth 62–125 %, wght 100–900).
+   Die Breitenachse trägt die Typo-Hierarchie: schmal und kräftig für
+   Überschriften (wie Beschriftungen auf Seekarten und Schifffahrtszeichen),
+   normale Breite für Fließtext. Kursiv nur für Karten-Annotationen. */
+@import "@fontsource-variable/archivo/wdth.css";
+@import "@fontsource-variable/archivo/wdth-italic.css";
 
 @theme {
   --color-primary:    #3366FF;
@@ -12,8 +17,91 @@
   --color-success:    #22C55E;
   --color-error:      #EF4444;
   --color-border:     rgba(51, 102, 255, 0.10);
-  --font-family-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  --font-family-sans: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
 }
+
+/* ── Seekarte & Prüfungsbogen ─────────────────────────────────────────────
+   Farbwelt der Startseite (siehe DESIGN.md). Abgeleitet aus Seekarten-
+   Konventionen: Papier, Druckfarbe, Wasser-Tiefenstufen, Land, Magenta für
+   Annotationen, Backbord-Rot/Steuerbord-Grün für falsch/richtig. Die Werte
+   sind auf WCAG AA geprüft (Fließtext ≥ 4,5:1 auf dem jeweiligen Grund). */
+:root {
+  --paper:      #F5F3EC;
+  --paper-2:    #ECE8DC;
+  --sheet:      #FFFEFA;
+  --ink:        #0F1B2A;
+  --ink-2:      #4A5668;
+  --rule:       rgba(15, 27, 42, 0.14);
+  --rule-2:     rgba(15, 27, 42, 0.28);
+  --water-1:    #E1ECF3;
+  --water-2:    #C8DDEC;
+  --contour:    #8CB3D1;
+  --land:       #EADBA8;
+  --land-ink:   #5B4B16;
+  --action:     #2556D6;
+  --action-hover: #1B45B5;
+  --link:       #1F4DC4;
+  --magenta:    #A3246C;
+  --port:       #B8322B;
+  --starboard:  #1B7A4C;
+  --stamp:      #3D3A9E;
+}
+html.dark {
+  --paper:      #0B1118;
+  --paper-2:    #101923;
+  --sheet:      #141E2A;
+  --ink:        #E8ECF1;
+  --ink-2:      #A5B0BF;
+  --rule:       rgba(232, 236, 241, 0.14);
+  --rule-2:     rgba(232, 236, 241, 0.3);
+  --water-1:    #0F2130;
+  --water-2:    #143049;
+  --contour:    #2F5A7C;
+  --land:       #3B3423;
+  --land-ink:   #E6D6A0;
+  --action:     #3566E0;
+  --action-hover: #4A78EC;
+  --link:       #8FB0FF;
+  --magenta:    #E07AB6;
+  --port:       #F07A70;
+  --starboard:  #62C997;
+  --stamp:      #A9A6FF;
+}
+
+/* Startseite: eigener Papiergrund. Header und Footer lesen ihre Fläche aus
+   Variablen, damit sie auf der Startseite zum Papier passen und auf den
+   übrigen Seiten beim bisherigen Blaugrau bleiben. */
+body.page-home,
+html.dark body.page-home {
+  background-color: var(--paper);
+  color: var(--ink);
+  --header-bg: color-mix(in srgb, var(--paper) 90%, transparent);
+  --header-border: var(--rule);
+  --footer-bg: var(--paper-2);
+  --footer-border: var(--rule);
+}
+
+/* Karten-Randskala: die abwechselnd gefüllte Minuten-Leiste am Rand jeder
+   Seekarte, hier als Abschnittsgrenze. Feine Zehntel-Striche oben, volle
+   Minuten-Balken unten. Rein dekorativ. */
+.chart-rule {
+  height: 11px;
+  border-block: 1px solid var(--ink);
+  background:
+    repeating-linear-gradient(90deg, var(--ink) 0 1px, transparent 1px 12px) top left / 100% 4px no-repeat,
+    repeating-linear-gradient(90deg, var(--ink) 0 60px, transparent 60px 120px) bottom left / 100% 5px no-repeat;
+}
+
+/* Schmal-fette Überschriften (Breitenachse), wie Beschriftungen auf Karten
+   und Schildern. Ersetzt auf der Startseite das enge Inter-900. */
+.display {
+  font-stretch: 76%;
+  font-weight: 780;
+  letter-spacing: -0.012em;
+  line-height: 0.96;
+  text-wrap: balance;
+}
+.num { font-variant-numeric: tabular-nums lining-nums; }
 
 /* Skip-Link – normalerweise unsichtbar, erscheint bei Tastaturfokus */
 .skip-link {

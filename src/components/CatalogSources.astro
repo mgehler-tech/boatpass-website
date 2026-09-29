@@ -1,7 +1,6 @@
 ---
 import { useTranslations } from '../i18n/index';
-
-type LicenseKey = 'binnen' | 'see' | 'src' | 'lrc' | 'ubi';
+import { CATALOG_URLS, type LicenseKey } from '../data/catalogs';
 
 interface Props {
   lang: 'de' | 'en';
@@ -34,11 +33,11 @@ const pageStand = lang === 'de'
 // Lizenz-Namen, Stände und ELWIS-Links sind amtlich verifiziert (Stand Juni 2026).
 // Verlinkt sind die kanonischen ELWIS-Seiten, die stets die gültige Fassung zeigen.
 const rows: { key: LicenseKey; license: string; catalog: string; stand: string; next?: string; url: string }[] = [
-  { key: 'binnen', license: 'SBF Binnen', catalog: t.catalogSources.binnenCat, stand: t.catalogSources.binnenStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html' },
-  { key: 'see', license: 'SBF See', catalog: t.catalogSources.seeCat, stand: t.catalogSources.seeStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-neu-node.html' },
-  { key: 'src', license: 'SRC', catalog: t.catalogSources.srcCat, stand: t.catalogSources.srcStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-SRC-2018.html' },
-  { key: 'lrc', license: 'LRC', catalog: t.catalogSources.lrcCat, stand: t.catalogSources.lrcStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-LRC-2018.html' },
-  { key: 'ubi', license: 'UBI', catalog: t.catalogSources.ubiCat, stand: t.catalogSources.ubiStand, next: t.catalogSources.ubiNext, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html' },
+  { key: 'binnen', license: 'SBF Binnen', catalog: t.catalogSources.binnenCat, stand: t.catalogSources.binnenStand, url: CATALOG_URLS.binnen },
+  { key: 'see', license: 'SBF See', catalog: t.catalogSources.seeCat, stand: t.catalogSources.seeStand, url: CATALOG_URLS.see },
+  { key: 'src', license: 'SRC', catalog: t.catalogSources.srcCat, stand: t.catalogSources.srcStand, url: CATALOG_URLS.src },
+  { key: 'lrc', license: 'LRC', catalog: t.catalogSources.lrcCat, stand: t.catalogSources.lrcStand, url: CATALOG_URLS.lrc },
+  { key: 'ubi', license: 'UBI', catalog: t.catalogSources.ubiCat, stand: t.catalogSources.ubiStand, next: t.catalogSources.ubiNext, url: CATALOG_URLS.ubi },
 ];
 
 const single = only ? rows.find(r => r.key === only) : null;

@@ -1,6 +1,8 @@
 ---
+// Die drei neuesten Ratgeber-Artikel als Inhaltsverzeichnis: Kategorie,
+// Titel, Kurzbeschreibung, Datum – mit Haarlinien statt Karten und ohne
+// Icon-Kacheln. Die Blog-Übersicht nutzt weiterhin BlogCard.
 import { getCollection } from 'astro:content';
-import BlogCard from './BlogCard.astro';
 import { useTranslations, getLocalizedPath } from '../i18n/index';
 
 interface Props {
@@ -13,92 +15,105 @@ const t = useTranslations(lang);
 const allPosts = await getCollection('blog', entry => entry.data.lang === lang);
 const posts = allPosts
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3);
+  .slice(0, 3)
+  .map(post => {
+    const slug = post.id.replace(`${lang}/`, '');
+    return {
+      href: lang === 'de' ? `/blog/${slug}/` : `/en/blog/${slug}/`,
+      title: post.data.title,
+      description: post.data.description,
+      category: post.data.tags[0] ?? '',
+      date: post.data.date,
+      readingTime: post.data.readingTime,
+    };
+  });
+const fmt = (d: Date) => d.toLocaleDateString(lang === 'de' ? 'de-DE' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 ---
 
-<section class="section-band max-w-6xl mx-auto px-6 py-14 md:py-20">
-  <div class="blog-teaser-header">
-    <div class="blog-teaser-heading">
-      <span class="section-eyebrow blog-teaser-eyebrow">{t.blog.eyebrow}</span>
-      <h2 class="section-display-title">{t.blog.title}</h2>
-    </div>
-    <a href={getLocalizedPath(lang, '/blog/')} class="blog-teaser-all">
-      {t.blog.allArticles} →
-    </a>
-  </div>
-
-  <div class="blog-teaser-grid">
-    {posts.map(post => <BlogCard post={post} lang={lang} />)}
+<section class="bt">
+  <div class="bt-inner">
+    <header class="bt-head">
+      <h2 class="display bt-title">{t.blog.title}</h2>
+      <a href={getLocalizedPath(lang, '/blog/')} class="bt-all">{t.blog.allArticles} <span aria-hidden="true">→</span></a>
+    </header>
+    <ol class="bt-list">
+      {posts.map(post => (
+        <li class="bt-item">
+          <a href={post.href} class="bt-link">
+            {post.category && <span class="bt-cat">{post.category}</span>}
+            <h3 class="bt-item-title">{post.title}</h3>
+            <p class="bt-desc">{post.description}</p>
+            <span class="bt-meta">
+              <time datetime={post.date.toISOString()}>{fmt(post.date)}</time> · {post.readingTime} {lang === 'de' ? 'Min.' : 'min'}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ol>
   </div>
 </section>
 
 <style>
-  /* Kopfzeile der Blog-Sektion: lange Überschrift (z. B. "Tipps & Wissenswertes")
-     und der "Alle Artikel"-Link teilten sich zuvor eine starre Flex-Zeile ohne
-     Umbruch. Auf schmalen Screens quetschte das den Link in eine schmale Spalte
-     und riss die große Überschrift mitten im Wort um; items-center ließ den
-     kleinen Link zudem an einer mehrzeiligen Überschrift „schweben".
-     Jetzt: der Link bricht bei Platzmangel sauber unter die Überschrift, sitzt
-     sonst auf deren Grundlinie (baseline) und behält eine ausreichend große
-     Touch-Fläche (WCAG 2.5.5 – mind. 44px). Reiner Layout-Feinschliff. */
-  .blog-teaser-header {
+  .bt { color: var(--ink); border-top: 1px solid var(--ink); }
+  .bt-inner { max-width: 1200px; margin-inline: auto; padding: 64px 24px 56px; }
+  .bt-head {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
     justify-content: space-between;
     gap: 8px 24px;
-    margin-bottom: 40px;
+    margin-bottom: 28px;
   }
-  .blog-teaser-eyebrow {
-    margin-bottom: 14px;
-  }
-  .blog-teaser-all {
-    flex-shrink: 0;
+  .bt-title { font-size: clamp(2.3rem, 1.6rem + 2.8vw, 3.8rem); }
+  .bt-all {
     display: inline-flex;
     align-items: center;
+    gap: 6px;
     min-height: 44px;
-    font-size: 14px;
-    font-weight: 600;
-    /* --color-primary (#3366FF) erreicht auf dem Seitenhintergrund (#F0F4FA)
-       nur 4.24:1 – WCAG-AA für Fließtext braucht 4.5:1 (SC 1.4.3). Derselbe
-       dunklere Marken-Blauton wie bei .section-eyebrow besteht den Check. */
-    color: var(--color-primary-dark);
-    text-decoration: none;
+    color: var(--link);
+    font-size: 15px;
+    font-weight: 650;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
     white-space: nowrap;
   }
-  .blog-teaser-all:hover { text-decoration: underline; }
-  /* Fehlte bisher komplett: ohne Override blieb der Link auf dem dunklen
-     Kartenhintergrund beim helleren Marken-Blau (~3.6:1, siehe global.css). */
-  html.dark .blog-teaser-all { color: var(--color-accent-fg) !important; }
 
-  /* Drei gleichwertige Artikel-Karten in einer Reihe – dasselbe Raster, das die
-     Blog-Übersicht (.cluster-grid in pages/blog/index.astro) für dieselben Karten
-     bereits verwendet.
-
-     Vorher stand hier eine große Featured-Karte links neben zwei gestapelten
-     Kompakt-Karten. Weil die rechte Spalte (zwei Karten + Lücke) rund 504px hoch
-     ist, die Featured-Karte mit ihrem Inhalt aber nur etwa 250px braucht, klaffte
-     zwischen Beschreibung und Fußzeile ein leeres Feld von ~250px. Füllen ließ es
-     sich nicht: Die Artikel haben kein Titelbild (nur 10 von 69 setzen `image`),
-     und die Featured-Karte war mit 544px ohnehin exakt so breit wie eine
-     Kompakt-Karte – also nicht größer, nur leerer.
-
-     Eine Sonderrolle gibt der Inhalt auch nicht her: Die drei Karten zeigen die
-     drei neuesten Artikel, durchweg vom selben Autor, aus derselben Woche und alle
-     mit „Neu"-Badge. Als gleichwertige Reihe fluchten sie oben wie unten, der
-     Abschnitt folgt demselben Kartenraster wie Features und Preise, und die
-     farbigen Kategorie-Icons erscheinen jetzt auf allen drei Karten – auf der
-     Featured-Karte fehlten sie ganz. Breakpoints wie in der Blog-Übersicht. */
-  .blog-teaser-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    align-items: stretch;
+  .bt-list { list-style: none; margin: 0; padding: 0; display: grid; }
+  .bt-item { border-top: 2px solid var(--ink); }
+  .bt-link { display: block; padding: 16px 0 26px; color: inherit; text-decoration: none; }
+  .bt-cat {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--magenta);
   }
-  @media (max-width: 900px) {
-    .blog-teaser-grid { grid-template-columns: repeat(2, 1fr); }
+  .bt-item-title {
+    font-size: clamp(1.3rem, 1.15rem + 0.5vw, 1.55rem);
+    font-weight: 720;
+    font-stretch: 86%;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    text-wrap: pretty;
   }
-  @media (max-width: 600px) {
-    .blog-teaser-grid { grid-template-columns: 1fr; }
+  .bt-link:hover .bt-item-title { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  .bt-desc {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-2);
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .bt-meta { font-size: 13px; color: var(--ink-2); }
+
+  @media (min-width: 800px) {
+    .bt-inner { padding: 96px 40px 88px; }
+    .bt-list { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px; }
   }
 </style>
