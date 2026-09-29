@@ -4,7 +4,7 @@ seoTitle: "Boat Handover Check: Checklist"
 description: "Taking over a charter boat or your own boat? Use this checklist to inspect papers, safety gear, engine and pre-existing damage before you cast off."
 date: 2026-09-29
 tags: ["Preparation"]
-readingTime: 8
+readingTime: 9
 lang: en
 author: "Marius Gehler"
 altSlug: "boots-uebernahmecheck-charterboot-eigenes-boot"
@@ -19,7 +19,7 @@ faq:
     answer: "Yes. When you buy a used boat or start after a long period of storage, a structured check of papers, equipment and engine is worthwhile. The main difference is that there is no charter company protocol, so you take care of the documentation yourself."
 ---
 
-You passed your Sportbootführerschein (the German recreational boating license, SBF), the boat is waiting at the dock, and everyone is excited. This is exactly the moment when mistakes happen: you want to cast off and simply take the boat as it is. A structured **handover check** rarely takes more than an hour and saves you trouble, disputes over damage and, in the worst case, dangerous situations on the water. This article shows what to look at, whether you charter or take over your own boat.
+You passed your Sportbootführerschein (the German recreational boating license, SBF), the boat is waiting at the dock, and everyone is excited. This is exactly the moment when mistakes happen: you want to cast off and simply take the boat as it is. A structured **handover check** usually does not take long and saves you trouble, disputes over damage and, in the worst case, dangerous situations on the water. This article shows what to look at, whether you charter or take over your own boat.
 
 ## Why the handover check matters
 

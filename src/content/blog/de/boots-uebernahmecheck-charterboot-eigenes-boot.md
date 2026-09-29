@@ -19,7 +19,7 @@ faq:
     answer: "Ja. Auch beim Kauf eines gebrauchten Bootes oder nach längerer Standzeit lohnt sich ein strukturierter Check von Papieren, Ausrüstung und Technik. Der Unterschied liegt vor allem darin, dass es kein Übergabeprotokoll eines Vercharterers gibt und du selbst für die Dokumentation sorgst."
 ---
 
-Der Sportbootführerschein ist bestanden, das Boot steht am Steg, und alle sind voller Vorfreude. Genau in diesem Moment werden Fehler gemacht: Man will endlich ablegen und nimmt das Boot einfach so, wie es ist. Ein strukturierter **Übernahmecheck** dauert selten länger als eine Stunde und erspart dir Ärger, Streit um Schäden und im schlimmsten Fall gefährliche Situationen auf dem Wasser. Dieser Beitrag zeigt, worauf du bei einem Charterboot und beim eigenen Boot achten solltest.
+Der Sportbootführerschein ist bestanden, das Boot steht am Steg, und alle sind voller Vorfreude. Genau in diesem Moment werden Fehler gemacht: Man will endlich ablegen und nimmt das Boot einfach so, wie es ist. Ein strukturierter **Übernahmecheck** dauert meist nicht lange und erspart dir Ärger, Streit um Schäden und im schlimmsten Fall gefährliche Situationen auf dem Wasser. Dieser Beitrag zeigt, worauf du bei einem Charterboot und beim eigenen Boot achten solltest.
 
 ## Warum der Übernahmecheck so wichtig ist
 
