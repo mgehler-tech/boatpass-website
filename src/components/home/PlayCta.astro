@@ -1,0 +1,39 @@
+---
+// Haupt-CTA der Startseite: Play-Store-Link mit Plausible-Position.
+// Auf iOS-Geräten (Klasse `h-ios` aus HomeBoot) ersetzt ein Status-Badge
+// den Link – die App ist dort noch nicht erschienen.
+import Icon from '../Icon.astro';
+import { useTranslations } from '../../i18n/index';
+
+interface Props {
+  lang: 'de' | 'en';
+  /** data-cta-position für das Plausible-Event play_store_click */
+  position: string;
+  label?: string;
+  class?: string;
+  /** Basis für stabile IDs (Tests): ergibt `${id}-play` und `${id}-ios`. */
+  id?: string;
+}
+
+const { lang, position, label, class: className, id } = Astro.props;
+const t = useTranslations(lang);
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+---
+
+<a
+  id={id ? `${id}-play` : undefined}
+  href={playStoreUrl}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={['h-btn', 'h-play-only', className]}
+  data-cta-position={position}
+>
+  <span class="h-btn-mark"><img src="/images/google-play-icon.png" alt="" width="20" height="20" /></span>
+  <span>{label ?? t.hero.cta}</span>
+  <Icon name="chevronRight" size={18} strokeWidth={2.25} class="h-btn-arrow" />
+  <span class="sr-only">{t.home.newTab}</span>
+</a>
+<span id={id ? `${id}-ios` : undefined} class:list={['h-ios-badge', className]}>
+  <Icon name="phoneDevice" size={18} strokeWidth={2} />
+  {t.hero.ctaIos}
+</span>

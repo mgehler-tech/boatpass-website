@@ -19,8 +19,20 @@ const { defaultBrowserType, ...iPhone13 } = devices['iPhone 13'];
 test.describe('iOS visitors see "coming soon" instead of a dead Play Store link', () => {
   test.use({ ...iPhone13 });
 
-  test('bottom banner CTA deflects to the iOS badge', async ({ page }) => {
+  test('homepage hero and closing CTAs deflect to the iOS badge', async ({ page }) => {
     await page.goto('/');
+
+    await expect(page.locator('#hero-cta-play')).toBeHidden();
+    await expect(page.locator('#hero-cta-ios')).toBeVisible();
+    await expect(page.locator('#final-cta-play')).toBeHidden();
+    await expect(page.locator('#final-cta-ios')).toBeVisible();
+    await expect(page.locator('#pricing a[href*="play.google.com"]:visible')).toHaveCount(0);
+  });
+
+  test('bottom banner CTA deflects to the iOS badge', async ({ page }) => {
+    // Die Startseite hat einen eigenen Abschluss-CTA (s. o.); der sitewide
+    // Banner steht auf allen übrigen Seiten.
+    await page.goto('/sbf-binnen/');
 
     await expect(page.locator('#cta-banner-play')).toBeHidden();
     await expect(page.locator('#cta-banner-ios')).toBeVisible();
@@ -42,10 +54,14 @@ test.describe('iOS visitors see "coming soon" instead of a dead Play Store link'
 });
 
 test.describe('Non-iOS visitors keep the working Play Store CTA', () => {
-  test('bottom banner and blog CTA still link to the app listing', async ({ page }) => {
+  test('homepage, bottom banner and blog CTAs still link to the app listing', async ({ page }) => {
     const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 
     await page.goto('/');
+    await expect(page.locator('#hero-cta-play')).toBeVisible();
+    await expect(page.locator('#hero-cta-ios')).toBeHidden();
+
+    await page.goto('/sbf-binnen/');
     await expect(page.locator('#cta-banner-play')).toBeVisible();
     await expect(page.locator('#cta-banner-play')).toHaveAttribute('href', PLAY_STORE_URL);
     await expect(page.locator('#cta-banner-ios')).toBeHidden();

@@ -1,0 +1,161 @@
+---
+// Amtliche Kataloge als „Logbuch": je Lizenz der Katalog, seine gültige
+// Fassung und der direkte Link zu ELWIS. Daten aus data/catalogs.ts – dieselbe
+// Quelle wie CatalogSources auf den Lizenzseiten.
+import SplitText from './SplitText.astro';
+import { useTranslations } from '../../i18n/index';
+import { catalogRows, catalogPageStand } from '../../data/catalogs';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const cs = t.catalogSources;
+const h = t.home;
+const rows = catalogRows(lang);
+const pageStand = catalogPageStand(lang);
+---
+
+<section id="kataloge" class="hc h-section h-graticule" aria-labelledby="hc-title">
+  <div class="h-container">
+    <div class="hc-head">
+      <p class="h-eyebrow" data-reveal>{h.catalogsEyebrow}</p>
+      <SplitText as="h2" id="hc-title" class="h-display" text={h.catalogsTitle} />
+      <p class="h-lede" data-reveal>{cs.intro}</p>
+    </div>
+
+    <div class="hc-ledger">
+      <div class="hc-cols" aria-hidden="true">
+        <span>{cs.colLicense}</span>
+        <span>{cs.colCatalog}</span>
+        <span>{cs.colStand}</span>
+        <span>{cs.colSource}</span>
+      </div>
+      <ul class="hc-rows">
+        {rows.map(r => (
+          <li class="hc-row" data-reveal>
+            <span class="hc-lic">{r.license}</span>
+            <span class="hc-cat">{r.catalog}</span>
+            <span class="hc-stand">
+              <span class="hc-stamp">{r.stand}</span>
+              {r.next && <span class="hc-stamp hc-stamp--next">{r.next}</span>}
+            </span>
+            <a class="hc-src" href={r.url} target="_blank" rel="noopener nofollow">
+              {cs.sourceCta}<span aria-hidden="true">&nbsp;↗</span>
+              <span class="sr-only"> – {r.license} {h.newTab}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="hc-notes" data-reveal>
+      <p>{cs.validityNote}</p>
+      <p>{cs.issuerNote}</p>
+      <p class="hc-meta"><strong>{cs.pageStandLabel}:</strong> {pageStand} · {cs.disclaimer}</p>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .hc {
+    background-color: var(--h-paper-2);
+    border-block: 1px solid var(--h-line);
+  }
+  .hc-head { max-width: 780px; }
+
+  .hc-ledger {
+    margin-top: clamp(48px, 6vw, 72px);
+    border-radius: 28px;
+    background: var(--h-card);
+    border: 1px solid var(--h-line);
+    overflow: hidden;
+  }
+  .hc-cols { display: none; }
+  .hc-rows { margin: 0; padding: 0; list-style: none; }
+  .hc-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding: 22px 22px 20px;
+  }
+  .hc-row + .hc-row { border-top: 1px solid var(--h-line); }
+  .hc-lic {
+    font-family: var(--h-display);
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: -0.02em;
+    color: var(--h-ink);
+  }
+  .hc-cat { font-size: 15px; line-height: 1.5; color: var(--h-text); }
+  .hc-stand { display: flex; flex-wrap: wrap; gap: 6px; }
+  .hc-stamp {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px dashed var(--h-line-2);
+    font-size: 13px;
+    font-weight: 650;
+    font-variant-numeric: tabular-nums;
+    color: var(--h-text);
+    white-space: nowrap;
+  }
+  .hc-stamp--next {
+    border-style: solid;
+    border-color: color-mix(in srgb, var(--h-beacon) 55%, transparent);
+    background: var(--h-beacon-wash);
+    color: var(--h-beacon-ink);
+  }
+  .hc-src {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    justify-self: start;
+    color: var(--h-blue-ink);
+    font-size: 15px;
+    font-weight: 650;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  }
+  .hc-src:hover { text-decoration-color: currentColor; }
+
+  @media (min-width: 900px) {
+    .hc-cols,
+    .hc-row {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1.6fr) minmax(0, 1fr) 170px;
+      gap: 24px;
+      align-items: center;
+      padding: 0 32px;
+    }
+    .hc-cols {
+      padding-block: 16px;
+      background: var(--h-paper);
+      border-bottom: 1px solid var(--h-line-2);
+      font-size: 11.5px;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--h-muted);
+    }
+    .hc-row { padding-block: 20px; transition: background-color 0.25s ease; }
+    .hc-row:hover { background: var(--h-blue-wash); }
+    .hc-src { justify-self: end; }
+  }
+
+  .hc-notes {
+    display: grid;
+    gap: 12px;
+    max-width: 880px;
+    margin-top: 28px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--h-muted);
+  }
+  .hc-notes p { margin: 0; }
+  .hc-meta strong { color: var(--h-ink); }
+</style>

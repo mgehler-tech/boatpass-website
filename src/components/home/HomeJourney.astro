@@ -1,0 +1,316 @@
+---
+// Lernweg – vier Etappen als Kurslinie. Reihenfolge ist inhaltlich begründet
+// (starten, verstehen, messen, prüfen), deshalb nummeriert.
+//
+// Desktop (≥1024px): links die Etappen an einer durchgehenden Kurslinie,
+// rechts ein mitlaufendes Handy (CSS sticky), dessen Screen zur jeweils
+// aktiven Etappe wechselt. Etappe 02 enthält das interaktive Quiz.
+// Darunter: jede Etappe mit eigenem Screenshot direkt unter dem Text.
+// Die Aktivierung läuft über home-motion.ts (IntersectionObserver) und
+// funktioniert auch bei reduzierter Bewegung – dann ohne Übergänge.
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import SplitText from './SplitText.astro';
+import QuizDemo from './QuizDemo.astro';
+import { useTranslations } from '../../i18n/index';
+import shotHomeDe from '../../assets/images/app.screenshot.0.de.png';
+import shotQuestionDe from '../../assets/images/app.screenshot.3.de.png';
+import shotLogDe from '../../assets/images/app.screenshot.1.de.png';
+import shotExamDe from '../../assets/images/app.screenshot.2.de.png';
+import shotHomeEn from '../../assets/images/app.screenshot.0.en.png';
+import shotQuestionEn from '../../assets/images/app.screenshot.3.en.png';
+import shotLogEn from '../../assets/images/app.screenshot.1.en.png';
+import shotExamEn from '../../assets/images/app.screenshot.2.en.png';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const h = t.home;
+const de = lang === 'de';
+
+const shots = de
+  ? [shotHomeDe, shotQuestionDe, shotLogDe, shotExamDe]
+  : [shotHomeEn, shotQuestionEn, shotLogEn, shotExamEn];
+
+const alts = de
+  ? [
+      'Boatpass App – Startbildschirm mit Tagesziel, Streak und Lernmodi',
+      'Boatpass App – Frage mit Erklärung und Merkhilfe',
+      'Boatpass App – Logbuch mit Fortschritt je Kategorie',
+      'Boatpass App – Prüfungsbereich mit Formkurve',
+    ]
+  : [
+      'Boatpass app – home screen with daily goal, streak and study modes',
+      'Boatpass app – question with explanation and mnemonic',
+      'Boatpass app – logbook with progress per category',
+      'Boatpass app – exam area with performance curve',
+    ];
+
+const steps = t.steps.items.map((item, i) => ({
+  ...item,
+  num: String(i + 1).padStart(2, '0'),
+  shot: shots[i],
+  alt: alts[i],
+  chips: h.journeyChips[i],
+}));
+const total = String(steps.length).padStart(2, '0');
+---
+
+<section id="features" class="hj h-section" aria-labelledby="hj-title">
+  <div class="h-container">
+    <header class="hj-head">
+      <p class="h-eyebrow" data-reveal>{h.journeyEyebrow}</p>
+      <SplitText as="h2" id="hj-title" class="h-display" text={h.journeyTitle} />
+      <p class="h-lede" data-reveal>{t.steps.subtitle}</p>
+    </header>
+
+    <div class="hj-grid" data-journey>
+      <div class="hj-track">
+        <div class="hj-line" aria-hidden="true"><span class="hj-line-fill" data-journey-fill></span></div>
+        <ol class="hj-steps">
+          {steps.map((step, i) => (
+            <li class:list={['hj-step', { 'hj-step--quiz': i === 1 }]} data-journey-step={i} data-journey-title={step.title}>
+              <div class="hj-body">
+                <span class="hj-marker" aria-hidden="true">
+                  <span class="hj-marker-num">{step.num}</span>
+                </span>
+                <p class="hj-kicker">{h.journeyStage} {step.num}</p>
+                <h3 class="hj-title">{step.title}</h3>
+                <p class="hj-desc">{step.desc}</p>
+                <ul class="h-chips hj-chips">
+                  {step.chips.map(chip => (
+                    <li class="h-chip"><Icon name="check" size={14} strokeWidth={2.75} />{chip}</li>
+                  ))}
+                </ul>
+                {i === 1 && <QuizDemo lang={lang} />}
+                <figure class="hj-shot">
+                  <div class="h-phone hj-shot-phone">
+                    <div class="h-phone-screen">
+                      <Image src={step.shot} alt={step.alt} widths={[240, 480]} sizes="220px" quality={78} loading="lazy" />
+                    </div>
+                  </div>
+                </figure>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="hj-stage">
+        <div class="hj-stage-sticky">
+          <div class="hj-stage-panel h-graticule" aria-hidden="true">
+            <span class="hj-stage-num h-num" data-stage-num>01</span>
+          </div>
+          <div class="h-phone hj-phone">
+            <div class="h-phone-screen">
+              {steps.map((step, i) => (
+                <Image
+                  src={step.shot}
+                  alt={step.alt}
+                  widths={[300, 600]}
+                  sizes="300px"
+                  quality={80}
+                  loading="lazy"
+                  class:list={['hj-screen', { 'is-active': i === 0 }]}
+                  data-journey-screen={i}
+                />
+              ))}
+            </div>
+          </div>
+          <p class="hj-stage-cap" aria-hidden="true">
+            <span class="h-num" data-stage-cap-num>01</span> / {total}
+            <span class="hj-stage-cap-sep">·</span>
+            <span data-stage-cap-title>{steps[0].title}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .hj { background: var(--h-paper); }
+  .hj-head { max-width: 760px; }
+
+  .hj-grid {
+    position: relative;
+    margin-top: clamp(56px, 7vw, 96px);
+  }
+
+  /* ── Kurslinie ── */
+  .hj-track { position: relative; padding-left: 64px; }
+  .hj-line {
+    position: absolute;
+    left: 21px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: repeating-linear-gradient(to bottom, var(--h-line-2) 0 6px, transparent 6px 12px);
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+            mask-image: linear-gradient(to bottom, transparent, #000 6%, #000 94%, transparent);
+  }
+  .hj-line-fill {
+    position: absolute;
+    inset: 0;
+    background: var(--h-blue);
+    transform-origin: top center;
+    transform: scaleY(var(--hj-progress, 0));
+  }
+
+  .hj-steps { margin: 0; padding: 0; list-style: none; }
+  .hj-step { position: relative; }
+  .hj-step + .hj-step { margin-top: 88px; }
+
+  .hj-body { position: relative; }
+  .hj-marker {
+    position: absolute;
+    left: -64px;
+    top: -4px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--h-paper);
+    border: 2px solid var(--h-line-2);
+    color: var(--h-muted);
+    font-size: 13px;
+    font-weight: 750;
+    font-variant-numeric: tabular-nums;
+    transition: background-color 0.4s ease, border-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  }
+  .hj-step.is-done .hj-marker,
+  .hj-step.is-active .hj-marker {
+    border-color: var(--h-blue);
+    background: var(--h-blue);
+    color: #fff;
+  }
+  .hj-step.is-active .hj-marker { box-shadow: 0 0 0 7px var(--h-blue-wash); }
+
+  /* Schmale Handys: Kurslinie enger an den Rand, damit Quiz und Chips Platz haben. */
+  @media (max-width: 639px) {
+    .hj-track { padding-left: 46px; }
+    .hj-line { left: 16px; }
+    .hj-marker { left: -46px; top: -2px; width: 34px; height: 34px; font-size: 12px; }
+    .hj-step.is-active .hj-marker { box-shadow: 0 0 0 5px var(--h-blue-wash); }
+  }
+
+  .hj-kicker {
+    margin: 0 0 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--h-blue-ink);
+  }
+  .hj-title {
+    margin: 0;
+    font-family: var(--h-display);
+    font-weight: 560;
+    font-size: clamp(1.9rem, 3.6vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--h-ink);
+  }
+  .hj-desc {
+    margin: 16px 0 22px;
+    max-width: 46ch;
+    font-size: 17px;
+    line-height: 1.62;
+    color: var(--h-muted);
+  }
+
+  /* Screenshot je Etappe (nur unter 1024px). */
+  .hj-shot { margin: 32px 0 0; }
+  .hj-shot-phone { --pw: 220px; }
+  /* Mit JS zeigt Etappe 02 das Quiz – derselbe Inhalt wie ihr Screenshot. */
+  .h-js .hj-step--quiz .hj-shot { display: none; }
+
+  .hj-stage { display: none; }
+
+  @media (min-width: 1024px) {
+    .hj-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: clamp(40px, 5vw, 88px);
+      margin-top: 8px;
+    }
+    .hj-track { padding-left: 76px; }
+    .hj-line { left: 25px; }
+    .hj-marker { left: -76px; width: 52px; height: 52px; font-size: 14px; top: -8px; }
+
+    .hj-step {
+      min-height: 86vh;
+      display: flex;
+      align-items: center;
+      padding-block: 8vh;
+    }
+    .hj-step + .hj-step { margin-top: 0; }
+    .hj-step--quiz { min-height: 110vh; }
+    .hj-shot { display: none; }
+
+    .hj-stage { display: block; position: relative; }
+    .hj-stage-sticky {
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      height: calc(100svh - 64px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+    }
+    .hj-stage-panel {
+      position: absolute;
+      inset: 7% 0;
+      border-radius: 36px;
+      background-color: var(--h-card);
+      border: 1px solid var(--h-line);
+      overflow: hidden;
+    }
+    .hj-stage-num {
+      position: absolute;
+      top: -0.12em;
+      left: 0.08em;
+      font-family: var(--h-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(160px, 17vw, 260px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--h-blue-wash);
+      color: color-mix(in srgb, var(--h-blue) 10%, transparent);
+      user-select: none;
+    }
+    .hj-phone {
+      --pw: min(290px, calc((100svh - 64px) * 0.34));
+      position: relative;
+      z-index: 1;
+    }
+    .hj-screen {
+      clip-path: inset(100% 0 0 0);
+      transition: clip-path 0.9s var(--h-ease);
+    }
+    .hj-screen.is-prev { clip-path: inset(0 0 0 0); transition: none; z-index: 1; }
+    .hj-screen.is-active { clip-path: inset(0 0 0 0); z-index: 2; }
+
+    .hj-stage-cap {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: 13px;
+      font-weight: 650;
+      color: var(--h-muted);
+    }
+    .hj-stage-cap .h-num { color: var(--h-blue-ink); font-weight: 750; }
+    .hj-stage-cap-sep { margin: 0 6px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hj-screen, .hj-marker { transition: none !important; }
+  }
+</style>

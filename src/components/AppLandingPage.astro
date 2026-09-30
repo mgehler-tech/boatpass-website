@@ -289,7 +289,7 @@ const itemListSchema = {
 <script is:inline>
   // Play Store hat kein iOS-Pendant (App noch nicht erschienen, siehe t.ctaIos) –
   // ohne diese Weiche landen iOS-Besucher:innen auf einer Store-Seite, die sie nicht
-  // installieren können. Gleiche Erkennung wie im Hero-CTA (HeroSection.astro), hier
+  // installieren können. Gleiche Erkennung wie auf der Startseite (home/HomeBoot.astro), hier
   // für die Abschluss-CTA der App-Vergleichsseiten (sbf-app, sbf-binnen-app, …).
   (function () {
     var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||

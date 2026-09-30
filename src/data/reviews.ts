@@ -13,8 +13,9 @@
  *    der volle `text` gezeigt.
  * 2. `name` ist auf Vorname plus Initial gekürzt. Die vollen Anzeigenamen
  *    stehen öffentlich im Play Store, die Kurzform ist aber datensparsamer.
- * 3. Keine Profilbilder übernehmen – die Sektion zeigt Buchstaben-Kreise,
- *    wie der Play Store sie bei Nutzern ohne Bild selbst verwendet.
+ * 3. Keine Profilbilder übernehmen. Die Startseite (home/HomeReviews.astro)
+ *    zeigt bewusst gar keine Avatare, nur Name, Datum und Sterne. `initials`
+ *    bleibt für andere Darstellungen erhalten.
  * 4. `passed` nur setzen, wenn die Person das Bestehen selbst geschrieben hat.
  *
  * Google Play vergibt keine Permalinks auf einzelne Rezensionen; verlinkbar

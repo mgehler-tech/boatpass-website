@@ -8,14 +8,15 @@ import { test, expect } from '@playwright/test';
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 
 test.describe('Homepage → Play Store CTA', () => {
-  test('hero CTA and Google Play badge link to the app listing', async ({ page }) => {
+  test('hero and closing CTAs link to the app listing', async ({ page }) => {
     await page.goto('/');
     const heroCta = page.locator('#hero-cta-play');
+    await expect(heroCta).toBeVisible();
     await expect(heroCta).toHaveAttribute('href', PLAY_STORE_URL);
     await expect(heroCta).toHaveAttribute('target', '_blank');
 
-    const gplayBadge = page.locator('#hero-gplay-badge');
-    await expect(gplayBadge).toHaveAttribute('href', PLAY_STORE_URL);
+    const finalCta = page.locator('#final-cta-play');
+    await expect(finalCta).toHaveAttribute('href', PLAY_STORE_URL);
   });
 });
 

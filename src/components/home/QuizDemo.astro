@@ -1,0 +1,303 @@
+---
+// „Probier's aus": eine echte Frage aus der App, so beantwortet und erklärt,
+// wie es die App tut – mit Erklärung und Merkhilfe. Frage, Antworten,
+// Erklärung und Merkhilfe stehen wortgleich auf dem jeweiligen Screenshot
+// (DE: Wimpel-Frage, EN: Segeltrimm-Frage).
+//
+// Ohne JavaScript bleibt der Block ausgeblendet (.h-js-only) – der Lernweg
+// funktioniert dann mit Text und Screenshot allein.
+import Icon from '../Icon.astro';
+import { useTranslations } from '../../i18n/index';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const q = useTranslations(lang).home.quiz;
+const keys = ['A', 'B', 'C', 'D'];
+const qid = `hq-question-${lang}`;
+---
+
+<div
+  class="hq h-js-only"
+  data-quiz
+  data-correct={q.correct}
+  data-right={q.right}
+  data-wrong={q.wrong}
+  data-correct-is={q.correctIs}
+>
+  <div class="hq-head">
+    <span class="hq-label"><Icon name="lightbulb" size={15} strokeWidth={2} />{q.label}</span>
+    <span class="hq-source">{q.source}</span>
+  </div>
+
+  <p class="hq-question" id={qid}>{q.question}</p>
+
+  <div class="hq-answers" role="group" aria-labelledby={qid}>
+    {q.answers.map((answer, i) => (
+      <button type="button" class="hq-answer" data-answer={i} aria-pressed="false">
+        <span class="hq-key" aria-hidden="true">
+          <span class="hq-key-letter">{keys[i]}</span>
+          <Icon name="check" size={16} strokeWidth={3} class="hq-key-ok" />
+          <Icon name="xmark" size={16} strokeWidth={3} class="hq-key-no" />
+        </span>
+        <span class="hq-text" data-answer-text>{answer}</span>
+      </button>
+    ))}
+  </div>
+
+  <p class="hq-hint">{q.hint}</p>
+
+  <div class="hq-feedback" data-feedback inert>
+    <div class="hq-feedback-inner">
+      <div class="hq-feedback-body">
+        <p class="hq-verdict" data-verdict></p>
+        <p class="hq-expl" data-explanation>{q.explanation}</p>
+        <div class="hq-mnemo">
+          <span class="hq-mnemo-label"><Icon name="lightbulb" size={15} strokeWidth={2} />{q.mnemonicLabel}</span>
+          <p>{q.mnemonic}</p>
+        </div>
+        <button type="button" class="hq-retry" data-retry>
+          <Icon name="refresh" size={15} strokeWidth={2} />{q.retry}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <p class="sr-only" aria-live="polite" data-status></p>
+</div>
+
+<style is:global>
+  .hq {
+    margin-top: 32px;
+    max-width: 540px;
+    padding: 22px;
+    border-radius: 26px;
+    background: var(--h-card);
+    border: 1px solid var(--h-line);
+    box-shadow: 0 30px 60px -40px rgba(14, 26, 58, 0.35);
+  }
+  .h-js .hq { display: block; }
+  @media (max-width: 639px) {
+    .hq { padding: 16px; border-radius: 22px; }
+    .hq-answer { gap: 11px; padding: 10px 12px 10px 10px; font-size: 15px; grid-template-columns: 30px minmax(0, 1fr); }
+    .hq-key { width: 30px; height: 30px; }
+    .hq-feedback-body { padding: 14px 14px 16px; }
+  }
+
+  .hq-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 14px;
+  }
+  .hq-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 6px 12px 6px 10px;
+    border-radius: 999px;
+    background: var(--h-beacon-wash);
+    color: var(--h-beacon-ink);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .hq-source { font-size: 12.5px; font-weight: 600; color: var(--h-muted); }
+
+  .hq-question {
+    margin: 18px 0 16px;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--h-ink);
+  }
+
+  .hq-answers { display: grid; gap: 10px; }
+  .hq-answer {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    min-height: 58px;
+    padding: 11px 16px 11px 12px;
+    border-radius: 16px;
+    border: 1.5px solid var(--h-line-2);
+    background: var(--h-card);
+    color: var(--h-text);
+    font: inherit;
+    font-size: 15.5px;
+    line-height: 1.4;
+    text-align: left;
+    cursor: pointer;
+    transition:
+      border-color 0.2s ease,
+      background-color 0.2s ease,
+      opacity 0.3s ease,
+      transform 0.3s var(--h-ease);
+  }
+  .hq-answer:hover:not([aria-disabled='true']) {
+    border-color: var(--h-blue);
+    background: var(--h-blue-wash);
+  }
+  .hq-answer:active:not([aria-disabled='true']) { transform: scale(0.985); }
+  .hq-answer:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
+  .hq-answer[aria-disabled='true'] { cursor: default; }
+
+  .hq-key {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--h-paper);
+    color: var(--h-muted);
+    font-size: 14px;
+    font-weight: 750;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .hq-key > * { grid-area: 1 / 1; }
+  .hq-key-ok, .hq-key-no { opacity: 0; transform: scale(0.4); transition: opacity 0.25s ease, transform 0.35s var(--h-ease); }
+
+  .hq-answer.is-correct { border-color: var(--h-stbd); background: var(--h-stbd-wash); }
+  .hq-answer.is-correct .hq-key { background: var(--h-stbd); color: #fff; }
+  .hq-answer.is-correct .hq-key-letter { opacity: 0; }
+  .hq-answer.is-correct .hq-key-ok { opacity: 1; transform: none; }
+
+  .hq-answer.is-wrong { border-color: var(--h-port); background: var(--h-port-wash); }
+  .hq-answer.is-wrong .hq-key { background: var(--h-port); color: #fff; }
+  .hq-answer.is-wrong .hq-key-letter { opacity: 0; }
+  .hq-answer.is-wrong .hq-key-no { opacity: 1; transform: none; }
+
+  .hq-answer.is-dim { opacity: 0.5; }
+
+  .hq-hint {
+    margin: 14px 2px 0;
+    font-size: 13.5px;
+    color: var(--h-muted);
+  }
+  .hq[data-state] .hq-hint { display: none; }
+
+  /* Aufklappen über grid-template-rows 0fr → 1fr: echte Höhe, kein Sprung. */
+  .hq-feedback {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.55s var(--h-ease);
+  }
+  .hq[data-state] .hq-feedback { grid-template-rows: 1fr; }
+  .hq-feedback-inner { overflow: hidden; min-height: 0; }
+  .hq-feedback-body {
+    margin-top: 16px;
+    padding: 16px 18px 18px;
+    border-radius: 18px;
+    border-left: 4px solid var(--h-port);
+    background: var(--h-port-wash);
+  }
+  .hq[data-state='right'] .hq-feedback-body {
+    border-left-color: var(--h-stbd);
+    background: var(--h-stbd-wash);
+  }
+  .hq-verdict {
+    margin: 0 0 6px;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--h-port-ink);
+  }
+  .hq[data-state='right'] .hq-verdict { color: var(--h-stbd-ink); }
+  .hq-expl { margin: 0; font-size: 15px; line-height: 1.6; color: var(--h-text); }
+
+  .hq-mnemo { margin-top: 14px; }
+  .hq-mnemo-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 7px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--h-beacon-ink);
+  }
+  .hq-mnemo-label svg { color: var(--h-beacon); }
+  .hq-mnemo p {
+    margin: 0;
+    padding: 11px 14px;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--h-beacon) 45%, transparent);
+    background: var(--h-beacon-wash);
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--h-text);
+  }
+
+  .hq-retry {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    margin-top: 10px;
+    padding: 0 4px;
+    border: 0;
+    background: none;
+    color: var(--h-blue-ink);
+    font: inherit;
+    font-size: 14.5px;
+    font-weight: 650;
+    cursor: pointer;
+  }
+  .hq-retry:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hq-feedback, .hq-answer, .hq-key, .hq-key-ok, .hq-key-no { transition: none; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-quiz]').forEach((quiz) => {
+    const correct = Number(quiz.dataset.correct);
+    const answers = Array.from(quiz.querySelectorAll<HTMLButtonElement>('[data-answer]'));
+    const feedback = quiz.querySelector<HTMLElement>('[data-feedback]');
+    const verdict = quiz.querySelector<HTMLElement>('[data-verdict]');
+    const status = quiz.querySelector<HTMLElement>('[data-status]');
+    const explanation = quiz.querySelector<HTMLElement>('[data-explanation]')?.textContent ?? '';
+    const retry = quiz.querySelector<HTMLButtonElement>('[data-retry]');
+    if (!feedback || !verdict || !status || !retry || Number.isNaN(correct)) return;
+
+    const textOf = (btn: HTMLButtonElement) =>
+      btn.querySelector('[data-answer-text]')?.textContent?.trim() ?? '';
+
+    answers.forEach((btn, i) => {
+      btn.addEventListener('click', () => {
+        if (quiz.dataset.state) return;
+        const right = i === correct;
+        quiz.dataset.state = right ? 'right' : 'wrong';
+        answers.forEach((other, j) => {
+          other.setAttribute('aria-disabled', 'true');
+          if (j === correct) other.classList.add('is-correct');
+          else if (j === i) other.classList.add('is-wrong');
+          else other.classList.add('is-dim');
+        });
+        btn.setAttribute('aria-pressed', 'true');
+        verdict.textContent = right ? quiz.dataset.right ?? '' : quiz.dataset.wrong ?? '';
+        feedback.inert = false;
+        status.textContent = right
+          ? `${quiz.dataset.right} ${explanation}`
+          : `${quiz.dataset.wrong}. ${quiz.dataset.correctIs} ${textOf(answers[correct])} ${explanation}`;
+      });
+    });
+
+    retry.addEventListener('click', () => {
+      delete quiz.dataset.state;
+      answers.forEach((btn) => {
+        btn.classList.remove('is-correct', 'is-wrong', 'is-dim');
+        btn.removeAttribute('aria-disabled');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      feedback.inert = true;
+      status.textContent = '';
+      answers[0]?.focus();
+    });
+  });
+</script>

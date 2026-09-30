@@ -1,0 +1,26 @@
+---
+// Läuft synchron als erstes Element in <main>, also vor dem ersten Paint des
+// Hero. Setzt drei Klassen am <html>:
+//   h-js      JavaScript ist an (Quiz & Co. werden eingeblendet)
+//   h-ios     iPhone/iPad – Play-Store-CTAs weichen dem „kommt bald"-Status
+//   h-motion  Bewegung erlaubt – home.css setzt die Startzustände der Reveals
+// Sicherung: Meldet sich das Bewegungs-Skript (Klasse h-ready) nicht binnen
+// 3 s, fällt h-motion weg und alles steht statisch da.
+---
+
+<script is:inline>
+  (function () {
+    var d = document.documentElement;
+    d.classList.add('h-js');
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) {
+      d.classList.add('h-ios');
+    }
+    if (window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+      d.classList.add('h-motion');
+      setTimeout(function () {
+        if (!d.classList.contains('h-ready')) d.classList.remove('h-motion');
+      }, 3000);
+    }
+  })();
+</script>

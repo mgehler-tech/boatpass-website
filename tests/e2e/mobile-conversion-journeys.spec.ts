@@ -17,13 +17,13 @@ const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.boatpa
 test.describe('Mobile Homepage → Play Store CTA', () => {
   test.use({ ...iPhone13 });
 
-  test('hero CTA and Google Play badge link to the app listing', async ({ page }) => {
+  test('hero and closing CTAs link to the app listing', async ({ page }) => {
     await page.goto('/');
     const heroCta = page.locator('#hero-cta-play');
     await expect(heroCta).toHaveAttribute('href', PLAY_STORE_URL);
 
-    const gplayBadge = page.locator('#hero-gplay-badge');
-    await expect(gplayBadge).toHaveAttribute('href', PLAY_STORE_URL);
+    const finalCta = page.locator('#final-cta-play');
+    await expect(finalCta).toHaveAttribute('href', PLAY_STORE_URL);
   });
 });
 

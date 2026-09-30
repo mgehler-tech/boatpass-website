@@ -1,12 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import HeroSection from '../../components/HeroSection.astro';
-import LearningSteps from '../../components/LearningSteps.astro';
-import FounderNote from '../../components/FounderNote.astro';
-import PricingSection from '../../components/PricingSection.astro';
-import BlogTeaser from '../../components/BlogTeaser.astro';
-import FinderTeaser from '../../components/FinderTeaser.astro';
+import HomeBoot from '../../components/home/HomeBoot.astro';
+import HomeHero from '../../components/home/HomeHero.astro';
+import HomeJourney from '../../components/home/HomeJourney.astro';
+import HomeFounder from '../../components/home/HomeFounder.astro';
+import HomePricing from '../../components/home/HomePricing.astro';
+import HomeCatalogs from '../../components/home/HomeCatalogs.astro';
+import HomeGuide from '../../components/home/HomeGuide.astro';
+import HomeFinalCta from '../../components/home/HomeFinalCta.astro';
 import { getBoatpassRating } from '../../data/apps';
+import '../../styles/home.css';
+import frauncesLatin from '@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2?url';
+import frauncesLatinItalic from '@fontsource-variable/fraunces/files/fraunces-latin-wght-italic.woff2?url';
 
 const appRating = getBoatpassRating();
 
@@ -51,108 +56,29 @@ const faqSchema = {
   description="The best study app for the German boating license (SBF Inland & Coastal): official ELWIS exam questions, exam simulation & mistake training. Free start."
   lang="en"
   appRating={appRating}
+  showCta={false}
 >
+  <Fragment slot="head">
+    <link rel="preload" href={frauncesLatin} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={frauncesLatinItalic} as="font" type="font/woff2" crossorigin />
+  </Fragment>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  <!-- Gleiche Reihenfolge wie auf der deutschen Startseite, ohne die
-       Bewertungs-Sektion: Alle vorliegenden Rezensionen sind deutschsprachig,
-       und eine übersetzte Rezension wäre keine Rezension mehr. Der Finder rückt
-       vor die Kaufentscheidung (beantwortet "welchen Schein brauche ich"), der
-       Gründer-Block dahinter, der Blog-Teaser ans Seitenende hinter die FAQ. -->
-  <HeroSection lang="en" />
-  <LearningSteps lang="en" />
-  <FinderTeaser lang="en" />
-  <FounderNote lang="en" />
-  <!-- withProof: the official sources ("verify it yourself") now run as a
-       third sub-group INSIDE the pricing section – one band instead of two
-       sections. withSourceNote stays off to avoid duplicating the note. -->
-  <PricingSection lang="en" withGuarantee withSourceNote={false} withProof />
-
-  <div class="home-faq section-band">
-    <section>
-      <span class="section-eyebrow" style="margin-bottom:14px;">FAQ</span>
-      <h2 class="section-display-title" style="margin-bottom:24px;">Frequently Asked Questions</h2>
-      <!-- Akkordeon wie auf der deutschen Startseite und auf /faq/. -->
-      <div style="display:flex; flex-direction:column; gap:14px;">
-        {faqs.map(f => (
-          <details class="faq-item home-faq-item">
-            <summary class="home-faq-q">
-              <h3>{f.q}</h3>
-              <span class="home-faq-icon" aria-hidden="true"></span>
-            </summary>
-            <div class="home-faq-a">{f.a}</div>
-          </details>
-        ))}
-      </div>
-      <p style="font-size:15px; color:#656B78; line-height:1.7; margin-top:16px;">
-        Find more answers in the <a href="/en/faq/" style="color:#2952CC; text-decoration:underline;">German boating license FAQ</a>.
-      </p>
-    </section>
+  <HomeBoot />
+  <!-- Same route as the German home page, without the reviews section: every
+       review we have is in German, and a translated review is no longer a
+       review. -->
+  <div class="home">
+    <HomeHero lang="en" />
+    <HomeJourney lang="en" />
+    <HomeFounder lang="en" />
+    <HomePricing lang="en" />
+    <HomeCatalogs lang="en" />
+    <HomeGuide lang="en" faqs={faqs} />
+    <HomeFinalCta lang="en" />
   </div>
-  <!-- Blog-Teaser bewusst nach der FAQ, am Seitenende: reiner SEO-/Weiterlese-
-       Wert, der die Kaufentscheidung nicht mehr unterbricht. -->
-  <BlogTeaser lang="en" />
 </BaseLayout>
 
-<style is:global>
-  /* Akkordeon der Startseiten-FAQ. Übernimmt Rahmen und Radius von .faq-item
-     auf /faq/, damit beide Seiten gleich aussehen. */
-  .home-faq-item {
-    background: #fff;
-    border: 1px solid rgba(51, 102, 255, 0.08);
-    border-radius: 16px;
-    overflow: hidden;
-  }
-  .home-faq-q {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 20px 22px;
-    cursor: pointer;
-    list-style: none;
-    /* WCAG 2.5.5: sichere Treffergröße */
-    min-height: 56px;
-  }
-  .home-faq-q::-webkit-details-marker { display: none; }
-  .home-faq-q h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #1A1F36;
-    margin: 0;
-    line-height: 1.4;
-  }
-  .home-faq-q:focus-visible { outline: 2px solid #3366FF; outline-offset: -2px; }
-
-  /* Chevron per CSS statt Zeichen: dreht beim Öffnen. */
-  .home-faq-icon {
-    width: 9px;
-    height: 9px;
-    flex-shrink: 0;
-    border-right: 2px solid #3366FF;
-    border-bottom: 2px solid #3366FF;
-    transform: rotate(45deg) translate(-2px, -2px);
-    transition: transform 0.2s ease;
-  }
-  .home-faq-item[open] .home-faq-icon {
-    transform: rotate(-135deg) translate(-2px, -2px);
-  }
-
-  .home-faq-a {
-    padding: 0 22px 22px;
-    font-size: 15px;
-    color: #656B78;
-    line-height: 1.7;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .home-faq-icon { transition: none; }
-  }
-
-  html.dark .home-faq-item {
-    background: #181E2E;
-    border-color: rgba(90, 120, 255, 0.12);
-  }
-  html.dark .home-faq-q h3 { color: #E2E8F0; }
-  html.dark .home-faq-a { color: #94A3B8; }
-</style>
+<script>
+  import '../../scripts/home-motion';
+</script>

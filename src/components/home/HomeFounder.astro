@@ -1,0 +1,157 @@
+---
+// Gründer – ein Gesicht hinter der App. Beide Fotos sind die, die auch auf
+// „Über uns" stehen; keine Angaben über Beteiligte, die es nicht gibt.
+import Icon from '../Icon.astro';
+import SplitText from './SplitText.astro';
+import { useTranslations } from '../../i18n/index';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const h = t.home;
+const aboutUrl = lang === 'de' ? '/ueber-uns/' : '/en/about/';
+const contactUrl = lang === 'de' ? '/kontakt/' : '/en/contact/';
+---
+
+<section class="hf h-section h-deep" aria-labelledby="hf-title">
+  <div class="hf-bg h-graticule" aria-hidden="true"></div>
+
+  <div class="h-container hf-grid">
+    <div class="hf-media">
+      <figure class="hf-portrait" data-hf-portrait>
+        <img
+          src="/ueber-uns-hero.webp"
+          alt={h.founderPortraitAlt}
+          width="1000"
+          height="1250"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+      <figure class="hf-inset" data-reveal>
+        <img
+          src="/ueber-uns.webp"
+          alt={h.founderInsetAlt}
+          width="1000"
+          height="750"
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </div>
+
+    <div class="hf-copy">
+      <p class="h-eyebrow" data-reveal>{h.founderEyebrow}</p>
+      <SplitText as="h2" id="hf-title" class="h-display hf-title" text={h.founderTitle} />
+      <p class="hf-role" data-reveal>{t.founder.role}</p>
+      <p class="hf-intro" data-reveal>{t.founder.intro}</p>
+      <ul class="hf-points" data-reveal>
+        <li><Icon name="check" size={16} strokeWidth={2.75} />{t.founder.chip1}</li>
+        <li><Icon name="check" size={16} strokeWidth={2.75} />{t.founder.chip2}</li>
+      </ul>
+      <div class="hf-links" data-reveal>
+        <a class="h-link" href={aboutUrl}>{t.founder.cta}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a>
+        <a class="h-link" href={contactUrl}>{h.founderContact}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .hf { overflow: clip; }
+  .hf-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    -webkit-mask-image: radial-gradient(90% 70% at 25% 50%, #000 20%, transparent 80%);
+            mask-image: radial-gradient(90% 70% at 25% 50%, #000 20%, transparent 80%);
+  }
+  .hf-grid {
+    position: relative;
+    display: grid;
+    gap: 72px;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .hf-grid { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: clamp(56px, 7vw, 112px); }
+  }
+
+  .hf-media { position: relative; max-width: 480px; margin-right: 40px; }
+  .hf-portrait {
+    margin: 0;
+    aspect-ratio: 4 / 5;
+    border-radius: 28px;
+    overflow: hidden;
+    background: var(--h-deep-2);
+  }
+  .hf-portrait img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 22%;
+    display: block;
+  }
+  .hf-inset {
+    position: absolute;
+    right: -40px;
+    bottom: -36px;
+    width: 52%;
+    margin: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 6px solid var(--h-deep);
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.7);
+    transform: rotate(3deg);
+  }
+  .hf-inset img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    display: block;
+  }
+
+  .hf-title { font-size: clamp(2.6rem, 6vw, 5.2rem); }
+  .hf-role {
+    margin: 18px 0 0;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--h-on-deep-muted);
+  }
+  .hf-intro {
+    margin: 28px 0 0;
+    max-width: 34ch;
+    font-family: var(--h-display);
+    font-weight: 400;
+    font-size: clamp(1.35rem, 2.1vw, 1.75rem);
+    line-height: 1.42;
+    letter-spacing: -0.01em;
+    color: var(--h-on-deep);
+  }
+  .hf-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 28px;
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .hf-points li {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--h-on-deep);
+  }
+  .hf-points svg { color: var(--h-beacon); }
+  .hf-links { display: flex; flex-wrap: wrap; gap: 4px 28px; margin-top: 26px; }
+  .hf .h-link { color: #fff; text-decoration-color: rgba(255, 255, 255, 0.35); }
+  .hf .h-link:hover { text-decoration-color: #fff; }
+</style>

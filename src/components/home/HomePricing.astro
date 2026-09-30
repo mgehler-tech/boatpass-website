@@ -1,0 +1,547 @@
+---
+// Lizenzen & Preise. Alle Zahlen und Preise kommen aus i18n/pricing – nichts
+// ist hier hart kodiert. Aufbau: erst das Modell (kostenlos → Vollzugang),
+// dann die SBF-Karten (Binnen · Bundle · See), dann die Funkscheine als
+// Preisliste, dann was in jeder Lizenz steckt.
+import Icon from '../Icon.astro';
+import SplitText from './SplitText.astro';
+import PlayCta from './PlayCta.astro';
+import { useTranslations } from '../../i18n/index';
+import type { IconName } from '../../icons';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const p = t.pricing;
+const h = t.home;
+const de = lang === 'de';
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const finderUrl = de ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/';
+
+const sbf = [
+  { name: p.catalog1Name, tagline: p.catalog1Tagline, questions: p.catalog1Questions, themes: p.catalog1Themes, highlight: null, url: de ? '/sbf-binnen/' : '/en/sbf-inland/', icon: 'waves' as IconName },
+  { name: p.catalog2Name, tagline: p.catalog2Desc, questions: p.catalog2Questions, themes: p.catalog2Themes, highlight: p.catalog2Highlight, url: de ? '/sbf-see/' : '/en/sbf-coastal/', icon: 'anchor' as IconName },
+];
+
+// DOM-Reihenfolge = sichtbare Reihenfolge (Binnen · Bundle · See), damit die
+// Tab-Reihenfolge der Anordnung folgt.
+const cards = [
+  { kind: 'single' as const, ...sbf[0] },
+  { kind: 'bundle' as const },
+  { kind: 'single' as const, ...sbf[1] },
+];
+
+const funk = [
+  { abbr: 'SRC', name: de ? 'Seefunk (Küste)' : 'Sea radio (coastal)', questions: p.srcQuestions, price: p.srcPrice, url: de ? '/src/' : '/en/src/', icon: 'satellite' as IconName },
+  { abbr: 'UBI', name: de ? 'Binnenfunk' : 'Inland radio', questions: p.catalog3Questions, price: p.ubiPrice, url: de ? '/ubi/' : '/en/ubi/', icon: 'wifi' as IconName },
+  { abbr: 'LRC', name: de ? 'Seefunk (weltweit)' : 'Sea radio (worldwide)', questions: p.lrcQuestions, price: p.lrcPrice, url: de ? '/lrc/' : '/en/lrc/', icon: 'globe' as IconName },
+];
+
+const includedIcons: IconName[] = ['document', 'lightbulb', 'clipboard', 'phoneDevice'];
+const once = de ? 'einmalig' : 'one-time';
+---
+
+<section id="pricing" class="hp h-section" aria-labelledby="hp-title">
+  <div class="h-container">
+    <header class="hp-head">
+      <p class="h-eyebrow" data-reveal>{h.pricingEyebrow}</p>
+      <SplitText as="h2" id="hp-title" class="h-display" text={h.pricingTitle} />
+      <p class="h-lede" data-reveal>{p.subtitle}</p>
+    </header>
+
+    <!-- Modell: kostenlos starten → bei Bedarf einmalig freischalten -->
+    <div class="hp-model" data-reveal>
+      <div class="hp-plan hp-plan--free">
+        <p class="hp-plan-label">{p.freeLabel}</p>
+        <p class="hp-plan-price h-num">{h.freePrice}</p>
+        <p class="hp-plan-sub">{p.compareFreeSub}</p>
+        <ul class="hp-plan-list">
+          {p.freeFeatures.map(f => <li><Icon name="check" size={15} strokeWidth={2.75} />{f}</li>)}
+        </ul>
+        <PlayCta lang={lang} position="pricing" label={p.ctaFree} id="pricing-cta" />
+      </div>
+      <div class="hp-plan-link" aria-hidden="true"><Icon name="chevronRight" size={20} strokeWidth={2.25} /></div>
+      <div class="hp-plan hp-plan--full">
+        <p class="hp-plan-label">{p.comparePaidLabel}</p>
+        <p class="hp-plan-price h-num"><span class="hp-plan-from">{h.fullFrom}</span> {h.fullPrice} <span class="hp-plan-unit">{h.fullUnit}</span></p>
+        <p class="hp-plan-sub">{p.comparePaidSub}</p>
+        <ul class="hp-plan-list">
+          {p.comparePaidFeatures.map(f => <li><Icon name="check" size={15} strokeWidth={2.75} />{f}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    <!-- SBF -->
+    <h3 class="hp-group" data-reveal>{p.sbfHeading}</h3>
+    <div class="hp-cards">
+      {cards.map(card => card.kind === 'bundle' ? (
+          <article class="hp-card hp-card--bundle" data-reveal>
+            <div class="hp-card-top">
+              <span class="hp-bundle-tiles">
+                <span class="hp-tile"><Icon name="waves" size={22} strokeWidth={1.75} /></span>
+                <span class="hp-plus" aria-hidden="true">+</span>
+                <span class="hp-tile"><Icon name="anchor" size={22} strokeWidth={1.75} /></span>
+              </span>
+              <span class="hp-badge">{p.bundleLabel}</span>
+            </div>
+            <h4 class="hp-card-name">{h.bundleName}</h4>
+            <p class="hp-card-tag">{p.bundleTagline}</p>
+            <p class="hp-bundle-inc"><Icon name="document" size={15} strokeWidth={2} />{p.bundleInclusive}</p>
+            <ul class="hp-bundle-list">
+              {p.bundleFeatures.map(f => <li><Icon name="check" size={14} strokeWidth={2.75} />{f}</li>)}
+            </ul>
+            <p class="hp-price">
+              <span class="hp-price-num h-num">{p.bundlePrice}</span>
+              <span class="hp-price-sub">
+                <s class="h-num">{p.bundleStrike}</s>
+                <strong>{p.bundleSave}</strong>
+              </span>
+            </p>
+            <div class="hp-card-actions">
+              <a class="h-btn h-play-only" href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="pricing-bundle">
+                {p.bundleChoose}<Icon name="chevronRight" size={18} strokeWidth={2.25} class="h-btn-arrow" />
+                <span class="sr-only">{h.newTab}</span>
+              </a>
+            </div>
+          </article>
+      ) : (
+          <article class="hp-card" data-reveal>
+            <div class="hp-card-top">
+              <span class="hp-tile"><Icon name={card.icon} size={22} strokeWidth={1.75} /></span>
+              <span class="hp-stamp">{p.currentCatalog}</span>
+            </div>
+            <h4 class="hp-card-name">{card.name}</h4>
+            <p class="hp-card-tag">{card.tagline}</p>
+            <dl class="hp-stats">
+              <div><dt>{p.questionsUnit}</dt><dd class="h-num">{card.questions}</dd></div>
+              <div><dt>{p.themesUnit}</dt><dd class="h-num">{card.themes}</dd></div>
+            </dl>
+            {card.highlight && <p class="hp-card-note"><Icon name="compass" size={15} strokeWidth={2} />{card.highlight}</p>}
+            <p class="hp-price"><span class="hp-price-num h-num">{p.price}</span><span class="hp-price-sub">{p.priceNote}</span></p>
+            <div class="hp-card-actions">
+              <a class="h-btn h-btn--quiet h-play-only" href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="pricing-card">
+                {p.ctaFree}<span class="sr-only"> – {card.name} {h.newTab}</span>
+              </a>
+              <a class="h-link" href={card.url}>{p.detailsLink}<span class="sr-only">: {card.name}</span><Icon name="chevronRight" size={15} strokeWidth={2.25} /></a>
+            </div>
+          </article>
+      ))}
+    </div>
+
+    <!-- Funkscheine als Preisliste -->
+    <div class="hp-funk">
+      <div class="hp-funk-head" data-reveal>
+        <h3 class="hp-group hp-group--inline">{p.funkHeading}</h3>
+        <p class="hp-funk-sub">{p.funkSubtitle}</p>
+      </div>
+      <ul class="hp-rates">
+        {funk.map(f => (
+          <li data-reveal>
+            <a class="hp-rate" href={f.url}>
+              <span class="hp-tile hp-tile--sm"><Icon name={f.icon} size={18} strokeWidth={1.75} /></span>
+              <span class="hp-rate-abbr">{f.abbr}</span>
+              <span class="hp-rate-name">{f.name}</span>
+              <span class="hp-rate-q"><span class="h-num">{f.questions}</span> {h.funkQuestions}</span>
+              <span class="hp-rate-price"><span class="h-num">{f.price}</span> <span class="hp-rate-once">{once}</span></span>
+              <span class="hp-rate-go" aria-hidden="true"><Icon name="chevronRight" size={18} strokeWidth={2.25} /></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- In jeder Lizenz enthalten + Vertrauen -->
+    <div class="hp-included" data-reveal>
+      <p class="hp-included-title">{h.included}</p>
+      <ul class="hp-included-list">
+        {p.cardFeatures.map((f, i) => (
+          <li><span class="hp-tile hp-tile--sm"><Icon name={includedIcons[i]} size={18} strokeWidth={1.75} /></span>{f}</li>
+        ))}
+      </ul>
+      <ul class="hp-trust">
+        <li><strong>{p.trustPay}</strong> {p.trustPaySub}</li>
+        <li><strong>{p.trustNoSub}</strong> · {p.trustNoSubSub}</li>
+        <li><strong>{p.guaranteeTitle}:</strong> {p.guaranteeText}</li>
+      </ul>
+    </div>
+
+    <a class="hp-finder" href={finderUrl} data-reveal>
+      <span class="hp-finder-icon"><Icon name="compass" size={24} strokeWidth={1.75} /></span>
+      <span class="hp-finder-text">
+        <strong>{h.finderTitle}</strong>
+        <span>{h.finderText}</span>
+      </span>
+      <span class="hp-finder-cta">{h.finderCta}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></span>
+    </a>
+  </div>
+</section>
+
+<style is:global>
+  .hp { background: var(--h-paper); }
+  .hp-head { max-width: 820px; }
+
+  /* ── Modell ── */
+  .hp-model {
+    display: grid;
+    gap: 16px;
+    margin-top: clamp(48px, 6vw, 72px);
+  }
+  @media (min-width: 900px) {
+    .hp-model { grid-template-columns: 1fr auto 1fr; align-items: stretch; gap: 0; }
+  }
+  .hp-plan {
+    padding: clamp(24px, 3vw, 36px);
+    border-radius: 28px;
+    border: 1px solid var(--h-line);
+    background: var(--h-card);
+  }
+  .hp-plan--full {
+    background: var(--h-deep);
+    border-color: transparent;
+    color: var(--h-on-deep);
+  }
+  html.dark .hp-plan--full { background: #121A31; border-color: rgba(148, 170, 255, 0.16); }
+  .hp-plan-link {
+    display: none;
+    align-self: center;
+    width: 48px;
+    height: 48px;
+    margin: 0 -12px;
+    z-index: 1;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--h-paper);
+    border: 1px solid var(--h-line-2);
+    color: var(--h-blue-ink);
+  }
+  @media (min-width: 900px) { .hp-plan-link { display: grid; } }
+
+  .hp-plan-label {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--h-blue-ink);
+  }
+  .hp-plan--full .hp-plan-label { color: var(--h-beacon); }
+  .hp-plan-price {
+    margin: 14px 0 6px;
+    font-family: var(--h-display);
+    font-weight: 540;
+    font-size: clamp(2.6rem, 4.5vw, 3.6rem);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--h-ink);
+  }
+  .hp-plan--full .hp-plan-price { color: #fff; }
+  .hp-plan-from, .hp-plan-unit {
+    font-family: var(--h-sans);
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: var(--h-muted);
+  }
+  .hp-plan--full .hp-plan-from, .hp-plan--full .hp-plan-unit { color: var(--h-on-deep-muted); }
+  .hp-plan-sub { margin: 0; font-size: 15px; color: var(--h-muted); }
+  .hp-plan--full .hp-plan-sub { color: var(--h-on-deep-muted); }
+  .hp-plan-list {
+    display: grid;
+    gap: 10px;
+    margin: 22px 0 26px;
+    padding: 0;
+    list-style: none;
+  }
+  .hp-plan--full .hp-plan-list { margin-bottom: 0; }
+  .hp-plan-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 15.5px;
+    font-weight: 550;
+    line-height: 1.45;
+  }
+  .hp-plan-list svg { flex-shrink: 0; margin-top: 3px; color: var(--h-stbd); }
+  .hp-plan--full .hp-plan-list svg { color: var(--h-beacon); }
+
+  /* ── Gruppen-Überschriften ── */
+  .hp-group {
+    margin: clamp(64px, 8vw, 104px) 0 24px;
+    font-size: 13px;
+    font-weight: 750;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--h-muted);
+  }
+  .hp-group--inline { margin: 0; }
+
+  /* ── SBF-Karten ── */
+  .hp-cards { display: grid; gap: 18px; }
+  @media (min-width: 1024px) {
+    .hp-cards { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; }
+  }
+  .hp-card {
+    display: flex;
+    flex-direction: column;
+    padding: 28px;
+    border-radius: 28px;
+    background: var(--h-card);
+    border: 1px solid var(--h-line);
+    transition: transform 0.45s var(--h-ease), box-shadow 0.45s var(--h-ease), border-color 0.3s ease;
+  }
+  .hp-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--h-blue) 40%, transparent);
+    box-shadow: 0 30px 60px -36px rgba(14, 26, 58, 0.35);
+  }
+  .hp-card-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .hp-tile {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: var(--h-blue-wash);
+    color: var(--h-blue);
+    flex-shrink: 0;
+  }
+  .hp-tile--sm { width: 38px; height: 38px; border-radius: 12px; }
+  .hp-stamp {
+    padding: 5px 10px;
+    border-radius: 999px;
+    border: 1px dashed var(--h-line-2);
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--h-muted);
+  }
+  .hp-card-name {
+    margin: 22px 0 6px;
+    font-family: var(--h-display);
+    font-weight: 560;
+    font-size: 34px;
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+    color: var(--h-ink);
+  }
+  .hp-card-tag { margin: 0; font-size: 15px; line-height: 1.5; color: var(--h-muted); }
+  .hp-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 22px 0 0;
+    padding: 16px 0;
+    border-block: 1px solid var(--h-line);
+  }
+  .hp-stats div { display: flex; flex-direction: column-reverse; gap: 2px; }
+  .hp-stats dt { font-size: 13px; font-weight: 600; color: var(--h-muted); }
+  .hp-stats dd { margin: 0; font-size: 28px; font-weight: 750; letter-spacing: -0.02em; color: var(--h-ink); }
+  .hp-card-note {
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+    margin: 14px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--h-text);
+  }
+  .hp-card-note svg { flex-shrink: 0; margin-top: 2px; color: var(--h-blue); }
+
+  .hp-price {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 10px;
+    margin: auto 0 0;
+    padding-top: 22px;
+  }
+  .hp-price-num {
+    font-family: var(--h-display);
+    font-weight: 560;
+    font-size: 40px;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--h-ink);
+  }
+  .hp-price-sub { display: inline-flex; flex-wrap: wrap; gap: 4px 10px; font-size: 14px; font-weight: 550; color: var(--h-muted); }
+  .hp-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 20px;
+    margin-top: 20px;
+  }
+
+  .hp-card--bundle {
+    position: relative;
+    background: var(--h-deep);
+    border-color: transparent;
+    color: var(--h-on-deep);
+    --h-ink: #fff;
+    --h-muted: var(--h-on-deep-muted);
+    --h-line: var(--h-deep-line);
+    --h-text: var(--h-on-deep);
+  }
+  html.dark .hp-card--bundle { background: #121A31; border-color: rgba(148, 170, 255, 0.18); }
+  .hp-card--bundle .hp-tile { background: rgba(255, 255, 255, 0.1); color: #fff; }
+  .hp-bundle-tiles { display: inline-flex; align-items: center; gap: 8px; }
+  .hp-plus { font-weight: 700; color: var(--h-on-deep-muted); }
+  .hp-badge {
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: var(--h-beacon);
+    color: #2A1A00;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+  }
+  .hp-bundle-inc {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin: 22px 0 0;
+    padding: 16px 0;
+    border-block: 1px solid var(--h-line);
+    font-size: 15px;
+    font-weight: 650;
+  }
+  .hp-bundle-inc svg { color: var(--h-beacon); }
+  .hp-bundle-list {
+    display: grid;
+    gap: 9px;
+    margin: 18px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .hp-bundle-list li { display: flex; align-items: center; gap: 9px; font-size: 14.5px; font-weight: 550; color: var(--h-on-deep); }
+  .hp-bundle-list svg { color: var(--h-beacon); flex-shrink: 0; }
+  .hp-card--bundle s { color: var(--h-on-deep-muted); }
+  .hp-card--bundle strong { color: var(--h-beacon); font-weight: 750; }
+  .hp-card--bundle .h-btn { width: 100%; justify-content: center; padding: 0 24px; }
+  .hp-card--bundle .h-btn:focus-visible { outline-color: #fff; }
+
+  /* ── Funk-Preisliste ── */
+  .hp-funk { margin-top: clamp(64px, 8vw, 104px); }
+  .hp-funk-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px 24px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--h-line-2);
+  }
+  .hp-funk-sub { margin: 0; font-size: 15px; color: var(--h-muted); }
+  .hp-rates { margin: 0; padding: 0; list-style: none; }
+  .hp-rates li { border-bottom: 1px solid var(--h-line); }
+  .hp-rate {
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      'tile abbr name go'
+      'tile q price go';
+    align-items: center;
+    gap: 4px 14px;
+    padding: 18px 4px;
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.25s ease, padding 0.45s var(--h-ease);
+  }
+  .hp-rate .hp-tile { grid-area: tile; }
+  .hp-rate-abbr { grid-area: abbr; font-family: var(--h-display); font-size: 26px; font-weight: 600; letter-spacing: -0.02em; color: var(--h-ink); }
+  .hp-rate-name { grid-area: name; font-size: 15.5px; font-weight: 600; color: var(--h-text); }
+  .hp-rate-q { grid-area: q; font-size: 14px; color: var(--h-muted); }
+  .hp-rate-price { grid-area: price; font-size: 15px; font-weight: 750; color: var(--h-ink); }
+  .hp-rate-once { font-weight: 500; color: var(--h-muted); }
+  .hp-rate-go { grid-area: go; color: var(--h-blue-ink); transition: transform 0.45s var(--h-ease); }
+  .hp-rate:hover { background: var(--h-blue-wash); padding-inline: 16px 12px; }
+  .hp-rate:hover .hp-rate-go { transform: translateX(4px); }
+  .hp-rate:focus-visible { outline: 3px solid var(--h-blue); outline-offset: -3px; border-radius: 12px; }
+  @media (min-width: 769px) {
+    .hp-rate {
+      grid-template-columns: auto 72px minmax(0, 1fr) 140px 180px auto;
+      grid-template-areas: 'tile abbr name q price go';
+      padding: 20px 8px;
+    }
+    .hp-rate-price { text-align: right; }
+  }
+
+  /* ── Enthalten + Vertrauen ── */
+  .hp-included {
+    margin-top: clamp(56px, 7vw, 88px);
+    padding: clamp(24px, 3vw, 36px);
+    border-radius: 28px;
+    background: var(--h-paper-2);
+    border: 1px solid var(--h-line);
+  }
+  .hp-included-title {
+    margin: 0 0 18px;
+    font-size: 13px;
+    font-weight: 750;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--h-muted);
+  }
+  .hp-included-list {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  @media (min-width: 640px) { .hp-included-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) { .hp-included-list { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  .hp-included-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 650;
+    line-height: 1.35;
+    color: var(--h-ink);
+  }
+  .hp-included-list .hp-tile { background: var(--h-card); }
+  .hp-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 28px;
+    margin: 24px 0 0;
+    padding: 20px 0 0;
+    border-top: 1px solid var(--h-line);
+    list-style: none;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--h-muted);
+  }
+  .hp-trust strong { color: var(--h-ink); font-weight: 700; }
+
+  /* ── Schein-Finder ── */
+  .hp-finder {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 20px;
+    margin-top: 18px;
+    padding: 22px 26px;
+    border-radius: 24px;
+    border: 1.5px dashed var(--h-line-2);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+  }
+  .hp-finder:hover { border-color: var(--h-blue); background: var(--h-blue-wash); }
+  .hp-finder-icon { color: var(--h-blue); display: grid; }
+  .hp-finder-text { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 220px; }
+  .hp-finder-text strong { font-size: 17px; color: var(--h-ink); }
+  .hp-finder-text span { font-size: 15px; color: var(--h-muted); }
+  .hp-finder-cta { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--h-blue-ink); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hp-card, .hp-rate, .hp-rate-go { transition: none; }
+    .hp-card:hover { transform: none; }
+  }
+</style>

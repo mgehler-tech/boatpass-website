@@ -47,7 +47,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
 <script is:inline>
   // Play Store hat kein iOS-Pendant (App noch nicht erschienen, siehe hero.ctaIos) –
   // ohne diese Weiche landen iOS-Besucher:innen auf einer Store-Seite, die sie nicht
-  // installieren können. Gleiche Erkennung wie im Hero-CTA (HeroSection.astro), hier
+  // installieren können. Gleiche Erkennung wie auf der Startseite (home/HomeBoot.astro), hier
   // für die Mid-Article-CTA in Blogposts.
   (function () {
     var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||

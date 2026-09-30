@@ -1,0 +1,353 @@
+/* =====================================================================
+   Startseite – Art Direction „Seekarte"
+   ---------------------------------------------------------------------
+   Die Seite erzählt den Weg zum Schein als Route auf einer Seekarte:
+   Ablegen (Hero) → vier Etappen (Lernweg) → Hafen (Download).
+   • Grund: kühles Kartenpapier mit feinem Gradnetz, tiefes Navy als Tinte.
+   • BoatPass-Blau ist die Kurslinie und alles Interaktive.
+   • Bernstein („Leuchtfeuer") nur für Hervorhebungen und die Merkhilfe –
+     derselbe Ton, den die App für Merkhilfen nutzt.
+   • Rot/Grün nur für falsch/richtig – wie Backbord/Steuerbord und wie in der App.
+   • Typo: Fraunces (Display) für Überschriften, Inter für alles andere.
+   Alle Klassen tragen das Präfix h- (bzw. hh-, hj-, … je Abschnitt), damit
+   nichts mit den übrigen Seiten kollidiert.
+   ===================================================================== */
+
+@import '@fontsource-variable/fraunces/wght.css';
+@import '@fontsource-variable/fraunces/wght-italic.css';
+
+.home {
+  --h-paper: #F0F4FA;
+  --h-paper-2: #E7EDF7;
+  --h-card: #FFFFFF;
+  --h-ink: #0E1A3A;
+  --h-text: #2B3246;
+  /* 5,9:1 auf --h-paper, 6,5:1 auf Weiß */
+  --h-muted: #586079;
+  --h-line: rgba(14, 26, 58, 0.10);
+  --h-line-2: rgba(14, 26, 58, 0.18);
+  --h-grid: rgba(14, 26, 58, 0.05);
+  --h-blue: #3366FF;
+  /* Blau als Schrift: #3366FF erreicht auf dem Papierton nur 4,2:1. */
+  --h-blue-ink: #2449D8;
+  --h-blue-wash: rgba(51, 102, 255, 0.08);
+  --h-btn: #3366FF;
+  --h-btn-hover: #2A58EE;
+  --h-beacon: #F4A62A;
+  --h-beacon-ink: #8A5300;
+  --h-beacon-wash: #FCF1DE;
+  --h-port: #D63B3B;
+  --h-port-ink: #B42323;
+  --h-port-wash: #FCECEC;
+  --h-stbd: #1E8E57;
+  --h-stbd-ink: #17744A;
+  --h-stbd-wash: #E5F4EB;
+  --h-deep: #0A1430;
+  --h-deep-2: #122453;
+  --h-on-deep: #EEF2FC;
+  --h-on-deep-muted: #A8B4D4;
+  --h-deep-line: rgba(200, 214, 255, 0.14);
+  --h-deep-grid: rgba(200, 214, 255, 0.06);
+
+  --h-display: 'Fraunces Variable', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --h-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  --h-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --h-radius: 24px;
+  --h-gutter: clamp(16px, 4vw, 40px);
+  --h-max: 1240px;
+
+  color: var(--h-text);
+  font-family: var(--h-sans);
+  background: var(--h-paper);
+  overflow-x: clip;
+}
+
+html.dark .home {
+  --h-paper: #0F1117;
+  --h-paper-2: #131827;
+  --h-card: #181E2E;
+  --h-ink: #F1F4FB;
+  --h-text: #D5DCEA;
+  --h-muted: #9AA5BD;
+  --h-line: rgba(148, 170, 255, 0.12);
+  --h-line-2: rgba(148, 170, 255, 0.22);
+  --h-grid: rgba(148, 170, 255, 0.05);
+  --h-blue: #5B8CFF;
+  --h-blue-ink: #86A8FF;
+  --h-blue-wash: rgba(91, 140, 255, 0.12);
+  --h-beacon: #F4B24A;
+  --h-beacon-ink: #F6C067;
+  --h-beacon-wash: rgba(244, 166, 42, 0.12);
+  --h-port-ink: #FF8F8F;
+  --h-port-wash: rgba(214, 59, 59, 0.16);
+  --h-stbd-ink: #68D9A0;
+  --h-stbd-wash: rgba(30, 142, 87, 0.2);
+  --h-deep: #0A0D18;
+  --h-deep-2: #111A33;
+}
+
+/* ── Layout-Grundgerüst ─────────────────────────────────────────────── */
+.h-container {
+  width: 100%;
+  max-width: var(--h-max);
+  margin-inline: auto;
+  padding-inline: var(--h-gutter);
+}
+
+.h-section {
+  position: relative;
+  padding-block: clamp(88px, 11vw, 160px);
+  /* Fester Header (64px) – Sprungziele nicht darunter verstecken. */
+  scroll-margin-top: 64px;
+}
+
+.h-deep {
+  background: var(--h-deep);
+  color: var(--h-on-deep);
+  --h-ink: var(--h-on-deep);
+  --h-muted: var(--h-on-deep-muted);
+  --h-line: var(--h-deep-line);
+  --h-grid: var(--h-deep-grid);
+  --h-blue-ink: #9DB8FF;
+}
+
+.h-graticule {
+  background-image:
+    linear-gradient(var(--h-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--h-grid) 1px, transparent 1px);
+  background-size: 96px 96px;
+}
+
+/* ── Typografie ─────────────────────────────────────────────────────── */
+.h-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 22px;
+  font-family: var(--h-sans);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--h-blue-ink);
+}
+/* Wegpunkt-Marke: das wiederkehrende Kartenzeichen der Seite. */
+.h-eyebrow::before {
+  content: '';
+  flex-shrink: 0;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+  background: radial-gradient(circle, currentColor 0 1.8px, transparent 2.4px);
+}
+.h-deep .h-eyebrow { color: var(--h-beacon); }
+@media (max-width: 400px) {
+  .h-eyebrow { font-size: 11px; letter-spacing: 0.11em; }
+}
+
+.h-display {
+  margin: 0;
+  font-family: var(--h-display);
+  font-weight: 560;
+  font-size: clamp(2.35rem, 5.4vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+  color: var(--h-ink);
+  text-wrap: balance;
+}
+.h-display .w--accent .wi,
+.h-accent {
+  font-style: italic;
+  font-weight: 480;
+  color: var(--h-blue-ink);
+}
+.h-deep .h-display .w--accent .wi { color: var(--h-beacon); }
+
+.h-lede {
+  margin: 24px 0 0;
+  max-width: 58ch;
+  font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+  line-height: 1.62;
+  color: var(--h-muted);
+  text-wrap: pretty;
+}
+
+.h-num { font-variant-numeric: tabular-nums; }
+
+/* Wortweise geteilte Überschriften (SplitText.astro). Die Maske sitzt auf
+   .w, bewegt wird .wi. Etwas Innenabstand, damit Unterlängen und die
+   Überhänge der Kursive nicht abgeschnitten werden. */
+.h-split .w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  padding: 0.04em 0.06em 0.14em 0;
+  margin: -0.04em -0.06em -0.14em 0;
+}
+.h-split .wi { display: inline-block; }
+
+/* ── Buttons & Links ────────────────────────────────────────────────── */
+.h-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 0 24px 0 12px;
+  border-radius: 18px;
+  background: var(--h-btn);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 14px 30px -12px rgba(51, 102, 255, 0.65);
+  transition:
+    transform 0.4s var(--h-ease),
+    box-shadow 0.4s var(--h-ease),
+    background-color 0.2s ease;
+}
+.h-btn:hover {
+  background: var(--h-btn-hover);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    0 20px 36px -14px rgba(51, 102, 255, 0.75);
+}
+.h-btn:active { transform: translateY(0) scale(0.98); transition-duration: 0.12s; }
+.h-btn:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 3px; }
+.h-btn-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: #fff;
+  flex-shrink: 0;
+}
+.h-btn-mark img { width: 20px; height: 20px; display: block; }
+.h-btn-arrow { transition: transform 0.4s var(--h-ease); }
+.h-btn:hover .h-btn-arrow { transform: translateX(4px); }
+
+.h-btn--quiet {
+  min-height: 52px;
+  padding: 0 22px;
+  background: transparent;
+  color: var(--h-ink);
+  box-shadow: inset 0 0 0 1.5px var(--h-line-2);
+}
+.h-btn--quiet:hover {
+  background: var(--h-blue-wash);
+  box-shadow: inset 0 0 0 1.5px var(--h-blue);
+}
+
+.h-deep .h-btn:focus-visible,
+.h-deep a:focus-visible,
+.h-deep button:focus-visible { outline-color: #fff; }
+
+/* iOS: Die App gibt es (noch) nicht im App Store. Der Play-Store-Link wird
+   dort gegen einen ehrlichen Status getauscht (Klasse via HomeBoot). */
+.h-ios-badge {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding: 0 22px;
+  border-radius: 18px;
+  background: var(--h-blue-wash);
+  border: 1px solid var(--h-line-2);
+  color: var(--h-blue-ink);
+  font-size: 16px;
+  font-weight: 700;
+}
+.h-ios .h-ios-badge { display: inline-flex; }
+.h-ios .h-play-only { display: none !important; }
+
+.h-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--h-blue-ink);
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 5px;
+  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  transition: text-decoration-color 0.2s ease, gap 0.3s var(--h-ease);
+}
+.h-link:hover { text-decoration-color: currentColor; gap: 11px; }
+
+/* ── Geräte-Rahmen für echte App-Screenshots ────────────────────────── */
+.h-phone {
+  --pw: 280px;
+  position: relative;
+  width: var(--pw);
+  padding: calc(var(--pw) * 0.032);
+  border-radius: calc(var(--pw) * 0.155);
+  background: linear-gradient(150deg, #26304F 0%, #0B1024 55%, #1A2240 100%);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 60px 90px -40px rgba(10, 20, 48, 0.55),
+    0 24px 40px -24px rgba(10, 20, 48, 0.45);
+}
+.h-phone-screen {
+  position: relative;
+  aspect-ratio: 1080 / 2340;
+  border-radius: calc(var(--pw) * 0.125);
+  overflow: hidden;
+  background: #F4F6FA;
+}
+.h-phone-screen img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Chips ──────────────────────────────────────────────────────────── */
+.h-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.h-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 13px 7px 11px;
+  border-radius: 999px;
+  background: var(--h-card);
+  border: 1px solid var(--h-line);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--h-text);
+}
+.h-chip svg { color: var(--h-blue); flex-shrink: 0; }
+
+/* ── Nur mit JavaScript sinnvolle Elemente (Quiz, Laufband-Schalter) ── */
+.h-js-only { display: none; }
+.h-js .h-js-only { display: block; }
+
+/* ── Bewegung: Startzustände ────────────────────────────────────────────
+   Nur wenn HomeBoot `h-motion` gesetzt hat (JS an, keine reduzierte
+   Bewegung). Sobald das Skript läuft, übernimmt GSAP die Werte als Inline-
+   Styles und setzt `h-ready` – ab dann greifen diese Regeln nicht mehr.
+   Lädt das Skript nicht, entfernt HomeBoot `h-motion` nach 3 s wieder:
+   Der Inhalt ist dann einfach statisch sichtbar. */
+.h-motion:not(.h-ready) .home [data-split] .wi { transform: translateY(110%); }
+.h-motion:not(.h-ready) .home [data-reveal] { opacity: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .h-btn, .h-btn-arrow, .h-link { transition: none; }
+  .h-btn:hover { transform: none; }
+}

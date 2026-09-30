@@ -1,0 +1,448 @@
+---
+// Hero – „Ablegen". Links die Aussage mit dem einen CTA, rechts der echte
+// Startbildschirm der App auf einer Seekarten-Tafel. Die Beschriftungen am
+// Handy zeigen auf die tatsächlich sichtbaren Bereiche des Screenshots.
+//
+// Bewusst anders als die übrigen Abschnitte: Der Text steht ab dem ersten
+// Paint fertig da (H1 = LCP-Element, CTA sofort nutzbar). Der Auftakt der
+// rechten Seite läuft als CSS-Animation, damit er nicht auf das JS-Bundle
+// warten muss. GSAP übernimmt im Hero nur das Neigen des Handys.
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import PlayCta from './PlayCta.astro';
+import { useTranslations } from '../../i18n/index';
+import { getBoatpassRating, formatRating } from '../../data/apps';
+import homeShotDe from '../../assets/images/app.screenshot.0.de.png';
+import homeShotEn from '../../assets/images/app.screenshot.0.en.png';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const h = t.home;
+const homeShot = lang === 'de' ? homeShotDe : homeShotEn;
+
+const rating = getBoatpassRating();
+const score = rating ? formatRating(rating.score).replace('.', lang === 'de' ? ',' : '.') : null;
+
+// Vertikale Lage (in % der Screenshot-Höhe, als Anteil übergeben) der beschrifteten Bereiche:
+// Fortschritt „53 / 300 Fragen", Streak-Karte, „Heute lernen"-Button.
+const calloutY = [27, 40, 62];
+---
+
+<section class="hh" aria-labelledby="hh-title">
+  <div class="hh-bg h-graticule" aria-hidden="true"></div>
+
+  <div class="h-container hh-grid">
+    <div class="hh-copy">
+      <p class="h-eyebrow">{h.heroEyebrow}</p>
+
+      <h1 id="hh-title" class="hh-title">
+        {t.hero.headline1}<br />
+        {t.hero.headline2}<br />
+        <span class="hh-accent">{t.hero.headlineAccent}</span>
+      </h1>
+
+      <p class="hh-licences">
+        <span class="hh-lic-label">{h.heroFor}</span>
+        {t.hero.licenses.map(name => <span class="hh-lic">{name}</span>)}
+      </p>
+
+      <p class="hh-sub">{t.hero.subline}</p>
+
+      <div class="hh-actions">
+        <PlayCta lang={lang} position="hero" id="hero-cta" />
+        {rating && (
+          <p class="hh-rating">
+            <span class="hh-rating-score h-num">{score}</span>
+            <span class="sr-only">{h.ratingOutOf},</span>
+            <span class="hh-rating-meta">
+              <span class="hh-stars" aria-hidden="true">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg width="15" height="15" viewBox="0 0 16 16" class:list={['hh-star', { 'hh-star--off': i >= Math.round(rating.score) }]}>
+                    <path d="M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z" fill="currentColor" />
+                  </svg>
+                ))}
+              </span>
+              <span class="hh-rating-count">{rating.ratings} {h.ratingSource}</span>
+            </span>
+          </p>
+        )}
+      </div>
+
+      <ul class="hh-facts">
+        {h.heroFacts.map(fact => (
+          <li><Icon name="check" size={15} strokeWidth={2.5} />{fact}</li>
+        ))}
+        <li class="h-play-only"><Icon name="phoneDevice" size={15} strokeWidth={2} />{t.hero.ctaIos}</li>
+      </ul>
+    </div>
+
+    <div class="hh-visual">
+      <div class="hh-chart" aria-hidden="true">
+        <div class="hh-chart-grid"></div>
+        <span class="hh-chart-cap">{h.chartCaption}</span>
+      </div>
+
+      <div class="hh-phone-wrap">
+        <div class="h-phone hh-phone" data-tilt>
+          <div class="h-phone-screen">
+            <Image
+              src={homeShot}
+              alt={h.phoneAlt}
+              widths={[300, 480, 640]}
+              sizes="(min-width: 1024px) 300px, 230px"
+              quality={80}
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+        </div>
+        <ul class="hh-callouts" aria-hidden="true">
+          {h.callouts.map((label, i) => (
+            <li class="hh-callout" style={`--y:${calloutY[i] / 100}; --i:${i}`}>
+              <span class="hh-callout-label">{label}</span>
+              <span class="hh-callout-line"></span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="h-container">
+    <a class="hh-next" href="#features">
+      <span class="hh-next-mark" aria-hidden="true"></span>
+      {h.heroHowLink}
+      <Icon name="chevronRight" size={16} strokeWidth={2.25} class="hh-next-arrow" />
+    </a>
+  </div>
+</section>
+
+<style is:global>
+  .hh {
+    position: relative;
+    padding: calc(64px + clamp(36px, 6vw, 88px)) 0 clamp(40px, 5vw, 64px);
+    background: var(--h-paper);
+    overflow: clip;
+  }
+  .hh-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    -webkit-mask-image: radial-gradient(110% 80% at 72% 38%, #000 25%, transparent 78%);
+            mask-image: radial-gradient(110% 80% at 72% 38%, #000 25%, transparent 78%);
+  }
+
+  .hh-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 56px;
+  }
+  @media (min-width: 1024px) {
+    .hh-grid {
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: clamp(40px, 5vw, 80px);
+      align-items: center;
+    }
+  }
+
+  /* ── Text ── */
+  .hh-copy { container-type: inline-size; }
+  .hh-title {
+    margin: 0;
+    font-family: var(--h-display);
+    font-weight: 560;
+    /* Die Größe folgt der Spaltenbreite (cqi), damit „führerschein." nie
+       mitten im Wort umbricht. Das weiche Trennzeichen nach „Sportboot"
+       (i18n) liefert die einzige erlaubte Trennstelle. */
+    font-size: clamp(2.5rem, 6.4vw, 4.6rem);
+    font-size: clamp(2.5rem, 12.6cqi, 5.4rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    color: var(--h-ink);
+    hyphens: manual;
+    overflow-wrap: normal;
+  }
+  .hh-accent {
+    font-style: italic;
+    font-weight: 470;
+    color: var(--h-blue-ink);
+  }
+
+  .hh-licences {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 30px 0 0;
+  }
+  .hh-lic-label {
+    margin-right: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--h-muted);
+  }
+  .hh-lic {
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--h-line-2);
+    background: color-mix(in srgb, var(--h-card) 70%, transparent);
+    font-size: 14px;
+    font-weight: 650;
+    color: var(--h-ink);
+    white-space: nowrap;
+  }
+
+  .hh-sub {
+    margin: 26px 0 0;
+    max-width: 44ch;
+    font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--h-muted);
+    text-wrap: pretty;
+  }
+
+  .hh-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 18px 28px;
+    margin-top: 36px;
+  }
+
+  .hh-rating {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+  }
+  .hh-rating-score {
+    font-family: var(--h-display);
+    font-size: 40px;
+    font-weight: 560;
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: var(--h-ink);
+  }
+  .hh-rating-meta { display: flex; flex-direction: column; gap: 5px; }
+  .hh-stars { display: inline-flex; gap: 2px; }
+  .hh-star { color: var(--h-beacon); display: block; }
+  .hh-star--off { color: var(--h-line-2); }
+  .hh-rating-count { font-size: 13.5px; font-weight: 500; color: var(--h-muted); line-height: 1.2; }
+
+  .hh-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .hh-facts li {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14.5px;
+    font-weight: 550;
+    color: var(--h-text);
+  }
+  .hh-facts svg { color: var(--h-stbd); flex-shrink: 0; }
+  .hh-facts li.h-play-only svg { color: var(--h-muted); }
+
+  /* ── Seekarten-Tafel mit Handy ── */
+  .hh-visual {
+    position: relative;
+    height: 440px;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+  .hh-chart {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background:
+      radial-gradient(120% 70% at 80% 0%, rgba(91, 140, 255, 0.28), transparent 60%),
+      linear-gradient(165deg, #122453 0%, #0A1430 70%);
+    overflow: hidden;
+  }
+  html.dark .hh-chart {
+    background:
+      radial-gradient(120% 70% at 80% 0%, rgba(91, 140, 255, 0.2), transparent 60%),
+      linear-gradient(165deg, #121C3A 0%, #0A0E1C 70%);
+    box-shadow: inset 0 0 0 1px rgba(148, 170, 255, 0.12);
+  }
+  .hh-chart-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200, 214, 255, 0.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200, 214, 255, 0.07) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: -1px -1px;
+  }
+  /* Randbeschriftung wie auf einer Seekarte: senkrecht am linken Rand, so
+     kollidiert sie nie mit dem Handy. */
+  .hh-chart-cap {
+    position: absolute;
+    left: 16px;
+    bottom: 22px;
+    z-index: 3;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: rgba(226, 234, 255, 0.66);
+  }
+
+  .hh-phone-wrap {
+    position: relative;
+    z-index: 2;
+    width: 230px;
+    margin: 36px auto 0;
+    perspective: 1400px;
+  }
+  .hh-phone { --pw: 230px; transform-style: preserve-3d; }
+
+  .hh-callouts { display: none; }
+
+  @media (min-width: 1024px) {
+    .hh-visual {
+      height: auto;
+      min-height: 640px;
+      padding-top: 0;
+      overflow: visible;
+    }
+    .hh-chart { top: 70px; bottom: 30px; }
+    .hh-phone-wrap {
+      width: var(--hh-pw);
+      margin: 0 9% 0 auto;
+      --hh-pw: clamp(250px, 23vw, 300px);
+    }
+    .hh-phone { --pw: var(--hh-pw); }
+    .hh-chart-cap { left: 20px; bottom: 26px; }
+  }
+
+  /* Beschriftungen: Chip links vom Handy, Linie bis auf den Screen. */
+  @media (min-width: 1180px) {
+    .hh-callouts {
+      display: block;
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      pointer-events: none;
+      /* Screen-Bereich im Rahmen (Bezel 3,2 %) */
+      --inset: calc(var(--hh-pw) * 0.032);
+    }
+    .hh-callout {
+      position: absolute;
+      right: calc(100% - 22px);
+      top: calc(var(--inset) + (100% - 2 * var(--inset)) * var(--y));
+      display: flex;
+      align-items: center;
+      transform: translateY(-50%);
+    }
+    .hh-callout-label {
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: #fff;
+      color: #0E1A3A;
+      font-size: 12.5px;
+      font-weight: 700;
+      white-space: nowrap;
+      box-shadow: 0 12px 26px -12px rgba(5, 12, 32, 0.6);
+    }
+    .hh-callout-line {
+      position: relative;
+      width: 72px;
+      height: 1.5px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.6));
+      transform-origin: left center;
+    }
+    .hh-callout-line::after {
+      content: '';
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      margin-top: -5px;
+      border-radius: 50%;
+      background: var(--h-beacon);
+      box-shadow: 0 0 0 4px rgba(244, 166, 42, 0.28);
+    }
+  }
+
+  /* ── Auftakt (nur mit h-motion, ab dem ersten Paint) ──
+     Tafel wischt von unten auf, das Handy steigt ein (nur transform, keine
+     Deckkraft – es bleibt LCP-tauglich), dann ziehen die Beschriftungen ihre
+     Linien auf den Screen. */
+  .h-motion .hh-chart { animation: hh-wipe 1.3s cubic-bezier(0.7, 0, 0.2, 1) both; }
+  .h-motion .hh-phone-wrap { animation: hh-rise 1.5s var(--h-ease) 0.12s both; }
+  .h-motion .hh-callout-line {
+    animation: hh-draw 0.7s cubic-bezier(0.3, 0.7, 0.2, 1) both;
+    animation-delay: calc(1.05s + var(--i, 0) * 0.12s);
+  }
+  .h-motion .hh-callout-label {
+    animation: hh-label 0.7s var(--h-ease) both;
+    animation-delay: calc(1.15s + var(--i, 0) * 0.12s);
+  }
+  @keyframes hh-wipe {
+    from { clip-path: inset(100% 0 0 0 round 30px); }
+    to { clip-path: inset(0 0 0 0 round 30px); }
+  }
+  @keyframes hh-rise {
+    from { transform: translateY(72px) rotate(3deg); }
+  }
+  @keyframes hh-draw {
+    from { transform: scaleX(0); }
+  }
+  @keyframes hh-label {
+    from { opacity: 0; transform: translateX(-10px); }
+  }
+
+  /* ── Kurs-Start: Link in den Lernweg ── */
+  .hh-next {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    margin-top: clamp(40px, 6vw, 72px);
+    color: var(--h-ink);
+    font-size: 15px;
+    font-weight: 650;
+    text-decoration: none;
+  }
+  .hh-next-mark {
+    position: relative;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--h-blue);
+    background: var(--h-paper);
+  }
+  .hh-next-mark::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 2px;
+    height: 40px;
+    margin-left: -1px;
+    background: repeating-linear-gradient(to bottom, var(--h-blue) 0 5px, transparent 5px 10px);
+    opacity: 0.6;
+  }
+  .hh-next-arrow { transform: rotate(90deg); transition: transform 0.4s var(--h-ease); color: var(--h-blue-ink); }
+  .hh-next:hover .hh-next-arrow { transform: rotate(90deg) translateX(3px); }
+  .hh-next:hover { color: var(--h-blue-ink); }
+</style>
