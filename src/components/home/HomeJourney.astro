@@ -1,0 +1,278 @@
+---
+// Lernweg – vier Etappen als Logbuch-Tabelle. Reihenfolge ist inhaltlich
+// begründet (starten, verstehen, messen, prüfen), deshalb nummeriert.
+//
+// Desktop (≥1024px): links die Etappen als Zeilen mit einer Fortschrittslinie
+// in der Nummernspalte, rechts ein mitlaufendes Handy im Seekarten-Rahmen
+// (CSS sticky), dessen Screen zur jeweils aktiven Etappe wechselt. Etappe 02
+// enthält das Quiz. Darunter: jede Etappe mit eigenem Screenshot.
+// Die Aktivierung läuft über home-motion.ts (IntersectionObserver) und
+// funktioniert auch bei reduzierter Bewegung – dann ohne Übergänge.
+import { Image } from 'astro:assets';
+import SectionHead from './SectionHead.astro';
+import QuizDemo from './QuizDemo.astro';
+import { useTranslations } from '../../i18n/index';
+import shotHomeDe from '../../assets/images/app.screenshot.0.de.png';
+import shotQuestionDe from '../../assets/images/app.screenshot.3.de.png';
+import shotLogDe from '../../assets/images/app.screenshot.1.de.png';
+import shotExamDe from '../../assets/images/app.screenshot.2.de.png';
+import shotHomeEn from '../../assets/images/app.screenshot.0.en.png';
+import shotQuestionEn from '../../assets/images/app.screenshot.3.en.png';
+import shotLogEn from '../../assets/images/app.screenshot.1.en.png';
+import shotExamEn from '../../assets/images/app.screenshot.2.en.png';
+
+interface Props {
+  lang: 'de' | 'en';
+  num: string;
+}
+
+const { lang, num } = Astro.props;
+const t = useTranslations(lang);
+const h = t.home;
+const de = lang === 'de';
+
+const shots = de
+  ? [shotHomeDe, shotQuestionDe, shotLogDe, shotExamDe]
+  : [shotHomeEn, shotQuestionEn, shotLogEn, shotExamEn];
+
+const alts = de
+  ? [
+      'Boatpass App – Startbildschirm mit Tagesziel, Streak und Lernmodi',
+      'Boatpass App – Frage mit Erklärung und Merkhilfe',
+      'Boatpass App – Logbuch mit Fortschritt je Kategorie',
+      'Boatpass App – Prüfungsbereich mit Formkurve',
+    ]
+  : [
+      'Boatpass app – home screen with daily goal, streak and study modes',
+      'Boatpass app – question with explanation and mnemonic',
+      'Boatpass app – logbook with progress per category',
+      'Boatpass app – exam area with performance curve',
+    ];
+
+const steps = t.steps.items.map((item, i) => ({
+  ...item,
+  num: String(i + 1).padStart(2, '0'),
+  shot: shots[i],
+  alt: alts[i],
+  chips: h.journeyChips[i],
+}));
+const total = String(steps.length).padStart(2, '0');
+---
+
+<section id="features" class="hj h-section" aria-labelledby="hj-title">
+  <div class="h-container">
+    <SectionHead
+      num={num}
+      label={h.journeyLabel}
+      meta={h.journeyMeta}
+      title={t.steps.title}
+      lede={t.steps.subtitle}
+      id="hj-title"
+      layout="split"
+    />
+
+    <div class="hj-grid" data-journey>
+      <div class="hj-track">
+        <div class="hj-line" aria-hidden="true"><span class="hj-line-fill" data-journey-fill></span></div>
+        <ol class="hj-steps">
+          {steps.map((step, i) => (
+            <li class:list={['hj-step', { 'hj-step--quiz': i === 1 }]} data-journey-step={i} data-journey-title={step.title}>
+              <span class="hj-marker h-num" aria-hidden="true">{step.num}</span>
+              <div class="hj-body">
+                <p class="hj-kicker">{h.journeyStage} {step.num} / {total}</p>
+                <h3 class="hj-title">{step.title}</h3>
+                <p class="hj-desc">{step.desc}</p>
+                <ul class="h-tags">
+                  {step.chips.map(chip => <li class="h-tag">{chip}</li>)}
+                </ul>
+                {i === 1 && <QuizDemo lang={lang} />}
+                <figure class="hj-shot">
+                  <div class="h-phone hj-shot-phone">
+                    <div class="h-phone-screen">
+                      <Image src={step.shot} alt={step.alt} widths={[240, 480]} sizes="220px" quality={78} loading="lazy" />
+                    </div>
+                  </div>
+                </figure>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+
+      <div class="hj-stage">
+        <div class="hj-stage-sticky">
+          <div class="h-chart hj-chart">
+            <div class="h-phone hj-phone">
+              <div class="h-phone-screen">
+                {steps.map((step, i) => (
+                  <Image
+                    src={step.shot}
+                    alt={step.alt}
+                    widths={[300, 600]}
+                    sizes="300px"
+                    quality={80}
+                    loading="lazy"
+                    class:list={['hj-screen', { 'is-active': i === 0 }]}
+                    data-journey-screen={i}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <p class="hj-stage-cap" aria-hidden="true">
+            <span class="h-num" data-stage-cap-num>01</span> / {total}
+            <span class="hj-stage-cap-sep">—</span>
+            <span data-stage-cap-title>{steps[0].title}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .hj { background: var(--h-paper); }
+
+  .hj-grid {
+    position: relative;
+    margin-top: clamp(48px, 6vw, 80px);
+  }
+
+  /* ── Fortschrittslinie in der Nummernspalte ── */
+  .hj-track { position: relative; padding-left: 64px; }
+  .hj-line {
+    position: absolute;
+    left: 19px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: var(--h-line-2);
+  }
+  .hj-line-fill {
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    top: 0;
+    bottom: 0;
+    background: var(--h-blue);
+    transform-origin: top center;
+    transform: scaleY(var(--hj-progress, 0));
+  }
+
+  .hj-steps { margin: 0; padding: 0; list-style: none; }
+  .hj-step { position: relative; padding: 28px 0 48px; border-top: 1px solid var(--h-line-2); }
+
+  .hj-marker {
+    position: absolute;
+    left: -64px;
+    top: 26px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 32px;
+    border: 1.5px solid var(--h-rule);
+    background: var(--h-paper);
+    color: var(--h-ink);
+    font-family: var(--h-mono);
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+  }
+  .hj-step.is-done .hj-marker,
+  .hj-step.is-active .hj-marker {
+    border-color: var(--h-blue);
+    background: var(--h-blue);
+    color: #fff;
+  }
+
+  .hj-kicker {
+    margin: 0 0 12px;
+    font-family: var(--h-mono);
+    font-size: 12.5px;
+    color: var(--h-muted);
+  }
+  .hj-title {
+    margin: 0;
+    font-family: var(--h-display);
+    font-stretch: 84%;
+    font-weight: 700;
+    font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+    line-height: 1;
+    letter-spacing: -0.015em;
+    color: var(--h-ink);
+  }
+  .hj-desc {
+    margin: 14px 0 20px;
+    max-width: 46ch;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--h-muted);
+  }
+
+  /* Screenshot je Etappe (nur unter 1024px). */
+  .hj-shot { margin: 28px 0 0; }
+  .hj-shot-phone { --pw: 220px; }
+  /* Mit JS zeigt Etappe 02 das Quiz – derselbe Inhalt wie ihr Screenshot. */
+  .h-js .hj-step--quiz .hj-shot { display: none; }
+
+  .hj-stage { display: none; }
+
+  @media (max-width: 639px) {
+    .hj-track { padding-left: 50px; }
+    .hj-line { left: 16px; }
+    .hj-marker { left: -50px; width: 34px; height: 28px; font-size: 12px; }
+  }
+
+  @media (min-width: 1024px) {
+    .hj-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      gap: clamp(40px, 5vw, 80px);
+    }
+    .hj-step {
+      min-height: 80vh;
+      padding: 32px 0 8vh;
+    }
+    .hj-step--quiz { min-height: 110vh; }
+    .hj-shot { display: none; }
+
+    .hj-stage { display: block; position: relative; }
+    .hj-stage-sticky {
+      position: sticky;
+      top: 64px;
+      height: calc(100vh - 64px);
+      height: calc(100svh - 64px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 12px;
+    }
+    .hj-chart {
+      display: grid;
+      place-items: center;
+      padding: 40px 0;
+    }
+    .hj-phone {
+      --pw: min(270px, calc((100svh - 64px) * 0.32));
+    }
+    .hj-screen {
+      clip-path: inset(100% 0 0 0);
+      transition: clip-path 0.9s var(--h-ease);
+    }
+    .hj-screen.is-prev { clip-path: inset(0 0 0 0); transition: none; z-index: 1; }
+    .hj-screen.is-active { clip-path: inset(0 0 0 0); z-index: 2; }
+
+    .hj-stage-cap {
+      margin: 0;
+      font-family: var(--h-mono);
+      font-size: 12.5px;
+      color: var(--h-muted);
+    }
+    .hj-stage-cap .h-num { color: var(--h-blue-ink); font-weight: 500; }
+    .hj-stage-cap-sep { margin: 0 6px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hj-screen, .hj-marker { transition: none !important; }
+  }
+</style>

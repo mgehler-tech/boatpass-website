@@ -1,0 +1,481 @@
+---
+// „Probier's aus": zehn echte Fragen aus der App, nacheinander beantwortbar –
+// jeweils mit Erklärung und Merkhilfe, wie es die App tut, und am Ende einer
+// Auswertung. Fragen, Antworten, Erklärungen und Merkhilfen stammen wortgleich
+// aus den App-Katalogen (data/quiz-questions.json, Herkunft in data/quiz.ts).
+//
+// Alle Fragen stehen im HTML; das Skript zeigt jeweils eine. Ohne JavaScript
+// bleibt der Block ausgeblendet (.h-js-only) – der Lernweg funktioniert dann
+// mit Text und Screenshot allein.
+import Icon from '../Icon.astro';
+import PlayCta from './PlayCta.astro';
+import { useTranslations } from '../../i18n/index';
+import { QUIZ_QUESTIONS, QUIZ_LICENCE_LABELS } from '../../data/quiz';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const q = useTranslations(lang).home.quiz;
+const keys = ['A', 'B', 'C', 'D'];
+const total = QUIZ_QUESTIONS.length;
+const counter = (n: number) => q.counter.replace('{n}', String(n)).replace('{total}', String(total));
+const idBase = `hq-${lang}`;
+---
+
+<div
+  class="hq h-js-only"
+  data-quiz
+  data-total={total}
+  data-right={q.right}
+  data-wrong={q.wrong}
+  data-correct-is={q.correctIs}
+  data-counter={q.counter}
+  data-score={q.resultScore}
+  data-result-high={q.resultHigh}
+  data-result-mid={q.resultMid}
+  data-result-low={q.resultLow}
+>
+  <div class="hq-head">
+    <span class="hq-label">{q.label}</span>
+    <span class="hq-counter h-num" data-counter-text aria-hidden="true">{counter(1)}</span>
+  </div>
+
+  <!-- Logbuch-Strichliste: je Frage ein Feld, grün/rot sobald beantwortet. -->
+  <ol class="hq-progress" aria-hidden="true">
+    {QUIZ_QUESTIONS.map((_, i) => <li class:list={['hq-seg', { 'is-current': i === 0 }]} data-seg={i}></li>)}
+  </ol>
+
+  <div class="hq-main">
+    {QUIZ_QUESTIONS.map((item, i) => (
+      <section class="hq-item" data-item={i} data-correct={item.correct} hidden={i !== 0} aria-labelledby={`${idBase}-q${i}`}>
+        <p class="hq-source">
+          <span class="sr-only">{counter(i + 1)} · </span>{q.sourcePrefix} · {QUIZ_LICENCE_LABELS[item.licence][lang]}
+        </p>
+        <p class="hq-question" id={`${idBase}-q${i}`} tabindex="-1">{item.question[lang]}</p>
+
+        <div class="hq-answers" role="group" aria-labelledby={`${idBase}-q${i}`}>
+          {item.answers.map((answer, j) => (
+            <button type="button" class="hq-answer" data-answer={j} aria-pressed="false">
+              <span class="hq-key" aria-hidden="true">
+                <span class="hq-key-letter">{keys[j]}</span>
+                <Icon name="check" size={15} strokeWidth={3} class="hq-key-ok" />
+                <Icon name="xmark" size={15} strokeWidth={3} class="hq-key-no" />
+              </span>
+              <span class="hq-text" data-answer-text>{answer[lang]}</span>
+            </button>
+          ))}
+        </div>
+
+        <div class="hq-feedback" data-feedback inert>
+          <div class="hq-feedback-inner">
+            <div class="hq-feedback-body">
+              <p class="hq-verdict"><span class="hq-verdict-mark" aria-hidden="true"></span><span data-verdict></span></p>
+              <p class="hq-expl" data-explanation>{item.explanation[lang]}</p>
+              <div class="hq-mnemo">
+                <span class="hq-mnemo-label"><Icon name="lightbulb" size={15} strokeWidth={2} />{q.mnemonicLabel}</span>
+                <p>{item.mnemonic[lang]}</p>
+              </div>
+            </div>
+            <button type="button" class="hq-next" data-next>
+              {i < total - 1 ? q.next : q.finish}
+              <Icon name="chevronRight" size={18} strokeWidth={2.25} />
+            </button>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <section class="hq-result" data-result hidden aria-labelledby={`${idBase}-result`}>
+      <p class="hq-result-eyebrow">{q.resultEyebrow}</p>
+      <p class="hq-result-score h-num" id={`${idBase}-result`} tabindex="-1" data-result-score></p>
+      <p class="hq-result-text" data-result-text></p>
+      <div class="hq-result-actions">
+        <PlayCta lang={lang} position="quiz-result" />
+        <button type="button" class="hq-restart" data-restart>
+          <Icon name="refresh" size={16} strokeWidth={2} />{q.restart}
+        </button>
+      </div>
+    </section>
+
+    <p class="hq-hint">{q.hint}</p>
+  </div>
+  <p class="sr-only" aria-live="polite" data-status></p>
+</div>
+
+<style is:global>
+  .hq {
+    margin-top: 32px;
+    max-width: 580px;
+    border: 1.5px solid var(--h-rule);
+    border-radius: var(--h-r);
+    background: var(--h-card);
+    scroll-margin-top: 96px;
+  }
+  .h-js .hq { display: block; }
+
+  .hq-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 6px 14px;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--h-line-2);
+    font-family: var(--h-mono);
+    font-size: 12.5px;
+  }
+  .hq-label { color: var(--h-ink); font-weight: 500; }
+  .hq-counter { color: var(--h-muted); }
+
+  /* ── Strichliste ── */
+  .hq-progress {
+    display: flex;
+    gap: 3px;
+    margin: 0;
+    padding: 14px 18px 0;
+    list-style: none;
+  }
+  .hq-seg {
+    flex: 1;
+    height: 8px;
+    background: var(--h-line);
+    transition: background-color 0.3s ease;
+  }
+  .hq-seg.is-current { background: var(--h-blue); }
+  .hq-seg.is-right { background: var(--h-stbd); }
+  .hq-seg.is-wrong { background: var(--h-port); }
+
+  .hq-main { padding: 4px 18px 18px; }
+  @media (max-width: 639px) {
+    .hq-head, .hq-progress { padding-inline: 14px; }
+    .hq-main { padding: 4px 14px 14px; }
+  }
+
+  /* ── Frage ── */
+  .hq-item:not([hidden]) { animation: hq-in 0.45s var(--h-ease) both; }
+  @keyframes hq-in {
+    from { opacity: 0; transform: translateX(12px); }
+  }
+  .hq-source {
+    margin: 14px 0 0;
+    font-family: var(--h-mono);
+    font-size: 12px;
+    color: var(--h-muted);
+  }
+  .hq-question {
+    margin: 6px 0 16px;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--h-ink);
+  }
+  .hq-question:focus { outline: none; }
+  .hq-question:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 4px; }
+
+  .hq-answers { display: grid; gap: 8px; }
+  .hq-answer {
+    display: grid;
+    grid-template-columns: 30px minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 54px;
+    padding: 10px 14px 10px 10px;
+    border-radius: var(--h-r);
+    border: 1px solid var(--h-line-2);
+    background: var(--h-card);
+    color: var(--h-text);
+    font: inherit;
+    font-size: 15.5px;
+    line-height: 1.4;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, opacity 0.3s ease;
+  }
+  .hq-answer:hover:not([aria-disabled='true']) {
+    border-color: var(--h-rule);
+    background: var(--h-blue-wash);
+  }
+  .hq-answer:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
+  .hq-answer[aria-disabled='true'] { cursor: default; }
+
+  .hq-key {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--h-line-2);
+    border-radius: 2px;
+    color: var(--h-ink);
+    font-family: var(--h-mono);
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .hq-key > * { grid-area: 1 / 1; }
+  .hq-key-ok, .hq-key-no { opacity: 0; }
+
+  .hq-answer.is-correct { border-color: var(--h-stbd); background: var(--h-stbd-wash); }
+  .hq-answer.is-correct .hq-key { border-color: var(--h-stbd); background: var(--h-stbd); color: #fff; }
+  .hq-answer.is-correct .hq-key-letter { opacity: 0; }
+  .hq-answer.is-correct .hq-key-ok { opacity: 1; }
+
+  .hq-answer.is-wrong { border-color: var(--h-port); background: var(--h-port-wash); }
+  .hq-answer.is-wrong .hq-key { border-color: var(--h-port); background: var(--h-port); color: #fff; }
+  .hq-answer.is-wrong .hq-key-letter { opacity: 0; }
+  .hq-answer.is-wrong .hq-key-no { opacity: 1; }
+
+  .hq-answer.is-dim { opacity: 0.45; }
+
+  @media (max-width: 639px) {
+    .hq-answer { gap: 10px; padding: 9px 12px 9px 9px; font-size: 15px; }
+  }
+
+  .hq-hint {
+    margin: 14px 0 0;
+    font-family: var(--h-mono);
+    font-size: 12.5px;
+    color: var(--h-muted);
+  }
+  .hq[data-started] .hq-hint { display: none; }
+
+  /* ── Auflösung (grid-template-rows 0fr → 1fr) ── */
+  .hq-feedback {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.5s var(--h-ease);
+  }
+  .hq-item[data-state] .hq-feedback { grid-template-rows: 1fr; }
+  .hq-feedback-inner { overflow: hidden; min-height: 0; }
+  .hq-feedback-body {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1.5px solid var(--h-rule);
+  }
+  .hq-verdict {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 6px;
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--h-port-ink);
+  }
+  .hq-verdict-mark { width: 10px; height: 10px; background: var(--h-port); }
+  .hq-item[data-state='right'] .hq-verdict { color: var(--h-stbd-ink); }
+  .hq-item[data-state='right'] .hq-verdict-mark { background: var(--h-stbd); }
+  .hq-expl { margin: 0; font-size: 15px; line-height: 1.6; color: var(--h-text); }
+
+  .hq-mnemo { margin-top: 14px; }
+  .hq-mnemo-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+    font-family: var(--h-mono);
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--h-beacon-ink);
+  }
+  .hq-mnemo-label svg { color: var(--h-beacon); }
+  .hq-mnemo p {
+    margin: 0;
+    padding: 10px 12px;
+    border: 1px solid color-mix(in srgb, var(--h-beacon) 55%, transparent);
+    border-radius: 2px;
+    background: var(--h-beacon-wash);
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--h-text);
+  }
+
+  /* „Nächste Frage" wie der „Weiter"-Button der App: volle Breite. */
+  .hq-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    min-height: 50px;
+    margin-top: 14px;
+    border: 0;
+    border-radius: var(--h-r);
+    background: var(--h-btn);
+    color: #fff;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  .hq-next:hover { background: var(--h-btn-hover); }
+  .hq-next:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 3px; }
+  .hq-next svg { transition: transform 0.35s var(--h-ease); }
+  .hq-next:hover svg { transform: translateX(4px); }
+
+  /* ── Auswertung ── */
+  .hq-result:not([hidden]) { animation: hq-in 0.45s var(--h-ease) both; }
+  .hq-result { padding-top: 16px; }
+  .hq-result-eyebrow {
+    margin: 0;
+    font-family: var(--h-mono);
+    font-size: 12.5px;
+    color: var(--h-muted);
+  }
+  .hq-result-score {
+    margin: 6px 0 0;
+    font-family: var(--h-display);
+    font-stretch: 84%;
+    font-weight: 720;
+    font-size: clamp(2rem, 5vw, 2.6rem);
+    line-height: 1;
+    color: var(--h-ink);
+  }
+  .hq-result-score:focus { outline: none; }
+  .hq-result-text { margin: 10px 0 0; font-size: 16px; line-height: 1.6; color: var(--h-muted); }
+  .hq-result-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 20px;
+    margin-top: 20px;
+  }
+  .hq-restart {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 4px;
+    border: 0;
+    background: none;
+    color: var(--h-blue-ink);
+    font: inherit;
+    font-size: 15px;
+    font-weight: 650;
+    cursor: pointer;
+  }
+  .hq-restart:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hq-feedback, .hq-answer, .hq-key, .hq-seg, .hq-next, .hq-next svg { transition: none; }
+    .hq-item:not([hidden]), .hq-result:not([hidden]) { animation: none; }
+  }
+</style>
+
+<script>
+  const fill = (template: string, values: Record<string, number>) =>
+    Object.entries(values).reduce((s, [k, v]) => s.replace(`{${k}}`, String(v)), template);
+
+  document.querySelectorAll<HTMLElement>('[data-quiz]').forEach((quiz) => {
+    const d = quiz.dataset;
+    const total = Number(d.total);
+    const items = Array.from(quiz.querySelectorAll<HTMLElement>('[data-item]'));
+    const segs = Array.from(quiz.querySelectorAll<HTMLElement>('[data-seg]'));
+    const counterText = quiz.querySelector<HTMLElement>('[data-counter-text]');
+    const status = quiz.querySelector<HTMLElement>('[data-status]');
+    const result = quiz.querySelector<HTMLElement>('[data-result]');
+    const resultScore = quiz.querySelector<HTMLElement>('[data-result-score]');
+    const resultText = quiz.querySelector<HTMLElement>('[data-result-text]');
+    const restart = quiz.querySelector<HTMLButtonElement>('[data-restart]');
+    if (!items.length || !status || !result || !resultScore || !resultText) return;
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let score = 0;
+
+    const textOf = (el: Element | undefined) => el?.querySelector('[data-answer-text]')?.textContent?.trim() ?? '';
+
+    // Bleibt die Kartenoberkante nach einem Wechsel über dem Header hängen,
+    // die Karte wieder ins Bild holen – sonst landet man mitten im Text.
+    const keepInView = () => {
+      if (quiz.getBoundingClientRect().top < 72) {
+        quiz.scrollIntoView({ block: 'start', behavior: reduce ? 'auto' : 'smooth' });
+      }
+    };
+
+    const setCurrentSeg = (i: number) => segs.forEach((s, j) => s.classList.toggle('is-current', j === i));
+
+    const show = (i: number) => {
+      items.forEach((item, j) => (item.hidden = j !== i));
+      result.hidden = true;
+      setCurrentSeg(i);
+      if (counterText) counterText.textContent = fill(d.counter ?? '', { n: i + 1, total });
+    };
+
+    const resetItem = (item: HTMLElement) => {
+      delete item.dataset.state;
+      item.querySelectorAll<HTMLButtonElement>('[data-answer]').forEach((btn) => {
+        btn.classList.remove('is-correct', 'is-wrong', 'is-dim');
+        btn.removeAttribute('aria-disabled');
+        btn.setAttribute('aria-pressed', 'false');
+      });
+      const feedback = item.querySelector<HTMLElement>('[data-feedback]');
+      if (feedback) feedback.inert = true;
+    };
+
+    items.forEach((item, i) => {
+      const correct = Number(item.dataset.correct);
+      const answers = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-answer]'));
+      const feedback = item.querySelector<HTMLElement>('[data-feedback]');
+      const verdict = item.querySelector<HTMLElement>('[data-verdict]');
+      const explanation = item.querySelector<HTMLElement>('[data-explanation]')?.textContent ?? '';
+      const next = item.querySelector<HTMLButtonElement>('[data-next]');
+
+      answers.forEach((btn, j) => {
+        btn.addEventListener('click', () => {
+          if (item.dataset.state) return;
+          const right = j === correct;
+          quiz.dataset.started = '';
+          item.dataset.state = right ? 'right' : 'wrong';
+          if (right) score += 1;
+          answers.forEach((other, k) => {
+            other.setAttribute('aria-disabled', 'true');
+            if (k === correct) other.classList.add('is-correct');
+            else if (k === j) other.classList.add('is-wrong');
+            else other.classList.add('is-dim');
+          });
+          btn.setAttribute('aria-pressed', 'true');
+          segs[i]?.classList.add(right ? 'is-right' : 'is-wrong');
+          if (verdict) verdict.textContent = right ? d.right ?? '' : d.wrong ?? '';
+          if (feedback) feedback.inert = false;
+          status.textContent = right
+            ? `${d.right} ${explanation}`
+            : `${d.wrong}. ${d.correctIs} ${textOf(answers[correct])} ${explanation}`;
+        });
+      });
+
+      next?.addEventListener('click', () => {
+        if (i < items.length - 1) {
+          show(i + 1);
+          status.textContent = '';
+          items[i + 1].querySelector<HTMLElement>('.hq-question')?.focus({ preventScroll: true });
+        } else {
+          items.forEach((it) => (it.hidden = true));
+          setCurrentSeg(-1);
+          resultScore.textContent = fill(d.score ?? '', { score, total });
+          const ratio = score / total;
+          resultText.textContent = (ratio >= 0.8 ? d.resultHigh : ratio >= 0.5 ? d.resultMid : d.resultLow) ?? '';
+          result.hidden = false;
+          if (counterText) counterText.textContent = '';
+          status.textContent = `${resultScore.textContent}. ${resultText.textContent}`;
+          resultScore.focus({ preventScroll: true });
+        }
+        keepInView();
+      });
+    });
+
+    restart?.addEventListener('click', () => {
+      score = 0;
+      items.forEach(resetItem);
+      segs.forEach((s) => s.classList.remove('is-right', 'is-wrong'));
+      delete quiz.dataset.started;
+      status.textContent = '';
+      show(0);
+      items[0].querySelector<HTMLElement>('.hq-question')?.focus({ preventScroll: true });
+      keepInView();
+    });
+  });
+</script>

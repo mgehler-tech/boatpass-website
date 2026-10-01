@@ -1,0 +1,155 @@
+---
+// Abschluss: ein CTA, die Bewertung und – nur am Desktop, wo man die App nicht
+// direkt installieren kann – ein QR-Code zum Play-Store-Eintrag. Der QR-Code
+// entsteht beim Build als SVG.
+import QRCode from 'qrcode';
+import SectionHead from './SectionHead.astro';
+import PlayCta from './PlayCta.astro';
+import { useTranslations } from '../../i18n/index';
+import { getBoatpassRating, formatRating } from '../../data/apps';
+
+interface Props {
+  lang: 'de' | 'en';
+  num: string;
+}
+
+const { lang, num } = Astro.props;
+const t = useTranslations(lang);
+const h = t.home;
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+
+const rating = getBoatpassRating();
+const score = rating ? formatRating(rating.score).replace('.', lang === 'de' ? ',' : '.') : null;
+
+const qrSvg = await QRCode.toString(playStoreUrl, {
+  type: 'svg',
+  margin: 0,
+  errorCorrectionLevel: 'M',
+  color: { dark: '#0B1530ff', light: '#ffffffff' },
+});
+---
+
+<section class="hx h-section h-deep" aria-labelledby="hx-title">
+  <div class="h-container">
+    <SectionHead num={num} label={h.finalLabel} meta={h.finalMeta} title={t.ctaBanner.title} id="hx-title" class="hx-head" />
+
+    <div class="hx-grid">
+      <div class="hx-copy">
+        <p class="hx-lede" data-reveal>{t.ctaBanner.subtitle}</p>
+        <div class="hx-actions" data-reveal>
+          <PlayCta lang={lang} position="final" id="final-cta" />
+          {rating && (
+            <p class="hx-rating">
+              <strong class="h-num">{score}</strong>
+              <span class="sr-only">{h.ratingOutOf},</span>
+              <span>{rating.ratings} {h.ratingSource}</span>
+            </p>
+          )}
+        </div>
+        <p class="hx-ios h-play-only" data-reveal>{t.hero.ctaIos}</p>
+      </div>
+
+      <div class="hx-side h-play-only" data-reveal>
+        <a class="hx-qr" href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="final-qr">
+          <span class="hx-qr-code" role="img" aria-label={h.qrAlt} set:html={qrSvg} />
+          <span class="hx-qr-text">
+            <img class="hx-qr-icon" src="/images/app-icon.png" alt="" width="40" height="40" loading="lazy" decoding="async" />
+            <strong>{h.qrTitle}</strong>
+            <span>{h.qrText}</span>
+          </span>
+          <span class="sr-only">{h.newTab}</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .hx { overflow: clip; }
+  .hx-head .hs-title { font-size: clamp(2.8rem, 7.5vw, 6.4rem); max-width: 12ch; }
+
+  .hx-grid {
+    display: grid;
+    gap: 48px;
+    align-items: end;
+    margin-top: 28px;
+  }
+  @media (min-width: 1024px) {
+    .hx-grid { grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 80px; }
+  }
+
+  .hx-lede {
+    margin: 0;
+    max-width: 46ch;
+    font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--h-on-deep-muted);
+  }
+  .hx-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 28px;
+    margin-top: 32px;
+  }
+  .hx .h-ios-badge { box-shadow: inset 0 0 0 1.5px var(--h-deep-line); color: #fff; }
+  .hx-rating {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 10px;
+    margin: 0;
+    font-family: var(--h-mono);
+    font-size: 13px;
+    color: var(--h-on-deep-muted);
+  }
+  .hx-rating strong {
+    font-family: var(--h-display);
+    font-stretch: 80%;
+    font-weight: 720;
+    font-size: 32px;
+    color: #fff;
+  }
+  .hx-ios {
+    margin: 20px 0 0;
+    font-family: var(--h-mono);
+    font-size: 13px;
+    color: var(--h-on-deep-muted);
+  }
+
+  .hx-side { display: none; }
+  @media (min-width: 1024px) {
+    .hx-side { display: block; justify-self: end; }
+  }
+  .hx-qr {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    width: 260px;
+    padding: 18px;
+    border-radius: var(--h-r);
+    background: #fff;
+    color: #0B1530;
+    text-decoration: none;
+    transition: transform 0.35s var(--h-ease);
+  }
+  .hx-qr:hover { transform: translateY(-3px); }
+  .hx-qr:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+  .hx-qr-code { display: block; line-height: 0; }
+  .hx-qr-code svg { width: 100%; height: auto; display: block; }
+  .hx-qr-text {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 12px;
+    align-items: center;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #525D78;
+  }
+  .hx-qr-icon { grid-row: span 2; border-radius: 9px; }
+  .hx-qr-text strong { font-size: 14.5px; color: #0B1530; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hx-qr { transition: none; }
+    .hx-qr:hover { transform: none; }
+  }
+</style>

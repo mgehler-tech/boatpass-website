@@ -1,0 +1,340 @@
+---
+// Hero – links die Aussage mit dem einen CTA, rechts der echte Startbildschirm
+// der App im Seekarten-Rahmen. Darüber eine Datenzeile mit den echten
+// Fragenzahlen je Lizenz (statt Lizenz-Pills), neben dem Handy Ablesewerte,
+// die genau so auf dem Screenshot stehen.
+//
+// Der Text steht ab dem ersten Paint fertig da (H1 = LCP-Element, CTA sofort
+// nutzbar). Der Auftakt des Handys läuft als CSS-Animation und wartet nicht
+// auf das JS-Bundle; GSAP übernimmt nur das Neigen per Maus.
+import { Image } from 'astro:assets';
+import PlayCta from './PlayCta.astro';
+import { useTranslations } from '../../i18n/index';
+import { getBoatpassRating, formatRating } from '../../data/apps';
+import homeShotDe from '../../assets/images/app.screenshot.0.de.png';
+import homeShotEn from '../../assets/images/app.screenshot.0.en.png';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const h = t.home;
+const p = t.pricing;
+const homeShot = lang === 'de' ? homeShotDe : homeShotEn;
+
+const rating = getBoatpassRating();
+const score = rating ? formatRating(rating.score).replace('.', lang === 'de' ? ',' : '.') : null;
+
+// Reihenfolge wie t.hero.licenses: Binnen, See, UBI, SRC, LRC.
+const counts = [p.catalog1Questions, p.catalog2Questions, p.catalog3Questions, p.srcQuestions, p.lrcQuestions];
+const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i] }));
+
+// Vertikale Lage der abgelesenen Stellen auf dem Screenshot (Anteil der Höhe):
+// „53 / 300 Fragen", Streak-Karte, „Heute lernen".
+const readoutY = [0.27, 0.37, 0.62];
+---
+
+<section class="hh" aria-labelledby="hh-title">
+  <div class="h-container">
+    <div class="hh-data">
+      <span class="hh-data-label">{h.heroData}</span>
+      <ul class="hh-data-list">
+        {catalogs.map(c => (
+          <li><span class="hh-data-name">{c.name}</span> <span class="hh-data-count h-num">{c.count}</span><span class="sr-only"> {h.funkQuestions}</span></li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="hh-grid">
+      <div class="hh-copy">
+        <h1 id="hh-title" class="hh-title">
+          {t.hero.headline1}<br />
+          {t.hero.headline2}<br />
+          <span class="hh-accent">{t.hero.headlineAccent}</span>
+        </h1>
+
+        <p class="hh-sub">{t.hero.subline}</p>
+
+        <div class="hh-actions">
+          <PlayCta lang={lang} position="hero" id="hero-cta" />
+          {rating && (
+            <p class="hh-rating">
+              <span class="hh-rating-score h-num">{score}</span>
+              <span class="sr-only">{h.ratingOutOf},</span>
+              <span class="hh-rating-meta">
+                <span class="hh-stars" aria-hidden="true">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <svg width="13" height="13" viewBox="0 0 16 16" class:list={['hh-star', { 'hh-star--off': i >= Math.round(rating.score) }]}>
+                      <path d="M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z" fill="currentColor" />
+                    </svg>
+                  ))}
+                </span>
+                <span class="hh-rating-count">{rating.ratings} {h.ratingSource}</span>
+              </span>
+            </p>
+          )}
+        </div>
+
+        <ul class="hh-facts">
+          {h.heroFacts.map(fact => <li>{fact}</li>)}
+          <li class="h-play-only">{t.hero.ctaIos}</li>
+        </ul>
+      </div>
+
+      <figure class="hh-visual">
+        <div class="h-chart hh-chart">
+          <div class="hh-phone-wrap">
+            <div class="h-phone hh-phone" data-tilt>
+              <div class="h-phone-screen">
+                <Image
+                  src={homeShot}
+                  alt={h.phoneAlt}
+                  widths={[300, 480, 640]}
+                  sizes="(min-width: 1024px) 290px, 230px"
+                  quality={80}
+                  loading="eager"
+                  fetchpriority="high"
+                />
+              </div>
+            </div>
+            <ul class="hh-readouts" aria-hidden="true">
+              {h.readouts.map(([label, value], i) => (
+                <li class="hh-readout" style={`--y:${readoutY[i]}; --i:${i}`}>
+                  <span class="hh-readout-line"></span>
+                  <span class="hh-readout-text">
+                    <span class="hh-readout-label">{label}</span>
+                    <span class="hh-readout-value">{value}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <figcaption class="hh-caption">{h.heroFigure}</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .hh {
+    position: relative;
+    padding: calc(64px + clamp(20px, 3vw, 36px)) 0 clamp(48px, 6vw, 88px);
+    background: var(--h-paper);
+    overflow: clip;
+  }
+
+  /* ── Datenzeile: echte Fragenzahlen je Lizenz ── */
+  .hh-data {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 8px 24px;
+    padding: 12px 0;
+    border-block: 1.5px solid var(--h-rule);
+    font-family: var(--h-mono);
+    font-size: 13px;
+    color: var(--h-muted);
+  }
+  .hh-data-label { color: var(--h-ink); font-weight: 500; }
+  .hh-data-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  /* Trenner am Ende des Eintrags – bricht die Zeile um, steht er am
+     Zeilenende statt am Anfang der nächsten. */
+  .hh-data-list li:not(:last-child)::after {
+    content: '·';
+    margin: 0 12px;
+    color: var(--h-line-2);
+  }
+  .hh-data-count { color: var(--h-ink); font-weight: 500; }
+  @media (max-width: 639px) {
+    .hh-data-list li:not(:last-child)::after { margin: 0 8px; }
+  }
+
+  .hh-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+    margin-top: clamp(36px, 5vw, 64px);
+  }
+  @media (min-width: 1024px) {
+    .hh-grid {
+      grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+      gap: clamp(40px, 5vw, 72px);
+      align-items: start;
+    }
+  }
+
+  /* ── Text ── */
+  .hh-copy { container-type: inline-size; }
+  .hh-title {
+    margin: 0;
+    font-family: var(--h-display);
+    font-stretch: 80%;
+    font-weight: 760;
+    /* Größe folgt der Spaltenbreite (cqi): „führerschein." bricht nie mitten
+       im Wort. Einzige erlaubte Trennstelle ist das weiche Trennzeichen. */
+    font-size: clamp(2.8rem, 7vw, 5.4rem);
+    font-size: clamp(2.8rem, 14cqi, 6.6rem);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    color: var(--h-ink);
+    hyphens: manual;
+    overflow-wrap: normal;
+  }
+  .hh-accent { color: var(--h-blue-ink); }
+
+  .hh-sub {
+    margin: 28px 0 0;
+    max-width: 46ch;
+    font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--h-muted);
+    text-wrap: pretty;
+  }
+
+  .hh-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 28px;
+    margin-top: 32px;
+  }
+  .hh-rating { display: flex; align-items: center; gap: 12px; margin: 0; }
+  .hh-rating-score {
+    font-family: var(--h-display);
+    font-stretch: 80%;
+    font-weight: 720;
+    font-size: 40px;
+    line-height: 1;
+    color: var(--h-ink);
+  }
+  .hh-rating-meta { display: flex; flex-direction: column; gap: 5px; }
+  .hh-stars { display: inline-flex; gap: 2px; }
+  .hh-star { color: var(--h-beacon); display: block; }
+  .hh-star--off { color: var(--h-line-2); }
+  .hh-rating-count { font-family: var(--h-mono); font-size: 12.5px; color: var(--h-muted); }
+
+  .hh-facts {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 6px 28px;
+    margin: 28px 0 0;
+    padding: 0;
+    list-style: none;
+    font-family: var(--h-mono);
+    font-size: 13px;
+    color: var(--h-text);
+  }
+  .hh-facts li::before { content: '— '; color: var(--h-blue-ink); }
+  @media (max-width: 479px) {
+    .hh-facts { grid-template-columns: 1fr; }
+  }
+
+  /* ── Handy im Seekarten-Rahmen ── */
+  .hh-visual { margin: 0; }
+  .hh-chart {
+    height: 440px;
+    overflow: hidden;
+  }
+  .hh-phone-wrap {
+    position: relative;
+    width: 230px;
+    margin: 40px auto 0;
+    perspective: 1400px;
+  }
+  .hh-phone { --pw: 230px; transform-style: preserve-3d; }
+  .hh-readouts { display: none; }
+  .hh-caption {
+    margin-top: 10px;
+    font-family: var(--h-mono);
+    font-size: 12.5px;
+    color: var(--h-muted);
+  }
+
+  @media (min-width: 1024px) {
+    .hh-chart {
+      height: auto;
+      padding: 44px 0 44px 32px;
+      overflow: visible;
+    }
+    .hh-phone-wrap {
+      --hh-pw: clamp(228px, 18vw, 256px);
+      width: var(--hh-pw);
+      margin: 0;
+    }
+    .hh-phone { --pw: var(--hh-pw); }
+  }
+
+  /* Ablesewerte: Linie vom Screen nach rechts, dann Beschriftung + Wert. */
+  @media (min-width: 1180px) {
+    .hh-readouts {
+      display: block;
+      position: absolute;
+      inset: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      pointer-events: none;
+      --inset: calc(var(--hh-pw) * 0.032);
+    }
+    .hh-readout {
+      position: absolute;
+      left: calc(100% - 18px);
+      top: calc(var(--inset) + (100% - 2 * var(--inset)) * var(--y));
+      display: flex;
+      align-items: center;
+      transform: translateY(-50%);
+    }
+    .hh-readout-line {
+      position: relative;
+      width: 48px;
+      height: 1px;
+      background: var(--h-rule);
+      transform-origin: left center;
+    }
+    .hh-readout-line::before {
+      content: '';
+      position: absolute;
+      left: -3px;
+      top: -3px;
+      width: 7px;
+      height: 7px;
+      background: var(--h-blue);
+    }
+    .hh-readout-text {
+      display: flex;
+      flex-direction: column;
+      padding-left: 10px;
+      font-family: var(--h-mono);
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+    .hh-readout-label { font-size: 11px; color: var(--h-muted); }
+    .hh-readout-value { font-size: 13px; font-weight: 500; color: var(--h-ink); }
+  }
+
+  /* ── Auftakt (nur mit h-motion, ab dem ersten Paint) ──
+     Nur transform – das Handy bleibt LCP-tauglich sichtbar. */
+  .h-motion .hh-phone-wrap { animation: hh-rise 1.4s var(--h-ease) 0.1s both; }
+  .h-motion .hh-readout-line {
+    animation: hh-draw 0.6s cubic-bezier(0.3, 0.7, 0.2, 1) both;
+    animation-delay: calc(0.9s + var(--i, 0) * 0.12s);
+  }
+  .h-motion .hh-readout-text {
+    animation: hh-fade 0.6s var(--h-ease) both;
+    animation-delay: calc(1s + var(--i, 0) * 0.12s);
+  }
+  @keyframes hh-rise { from { transform: translateY(56px); } }
+  @keyframes hh-draw { from { transform: scaleX(0); } }
+  @keyframes hh-fade { from { opacity: 0; transform: translateX(-8px); } }
+</style>

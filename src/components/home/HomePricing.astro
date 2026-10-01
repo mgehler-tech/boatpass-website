@@ -1,0 +1,366 @@
+---
+// Lizenzen & Preise als Tarifliste. Alle Zahlen und Preise kommen aus
+// i18n/pricing – nichts ist hier hart kodiert (die 720 Bundle-Fragen sind die
+// Summe aus Binnen und See). Aufbau: das Modell (kostenlos → Vollzugang),
+// dann eine Liste aller Angebote in zwei Gruppen, dann was jede Lizenz
+// enthält. Bewusst keine drei Karten mit hervorgehobener Mitte.
+import Icon from '../Icon.astro';
+import SectionHead from './SectionHead.astro';
+import PlayCta from './PlayCta.astro';
+import { useTranslations } from '../../i18n/index';
+
+interface Props {
+  lang: 'de' | 'en';
+  num: string;
+}
+
+const { lang, num } = Astro.props;
+const t = useTranslations(lang);
+const p = t.pricing;
+const h = t.home;
+const de = lang === 'de';
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const finderUrl = de ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/';
+
+type Row = {
+  name: string;
+  sub: string;
+  note?: string;
+  questions: string;
+  topics?: string;
+  price: string;
+  strike?: string;
+  save?: string;
+  badge?: string;
+  href: string;
+  action: string;
+  external?: boolean;
+};
+
+const bundleQuestions = String(Number(p.catalog1Questions) + Number(p.catalog2Questions));
+
+const groups: { title: string; note?: string; rows: Row[] }[] = [
+  {
+    title: p.sbfHeading,
+    rows: [
+      { name: p.catalog1Name, sub: p.catalog1Tagline, questions: p.catalog1Questions, topics: p.catalog1Themes, price: p.price, href: de ? '/sbf-binnen/' : '/en/sbf-inland/', action: p.detailsLink },
+      { name: p.catalog2Name, sub: p.catalog2Desc, note: p.catalog2Highlight, questions: p.catalog2Questions, topics: p.catalog2Themes, price: p.price, href: de ? '/sbf-see/' : '/en/sbf-coastal/', action: p.detailsLink },
+      { name: h.bundleName, sub: p.bundleTagline, questions: bundleQuestions, price: p.bundlePrice, strike: p.bundleStrike, save: p.bundleSave, badge: p.bundleLabel, href: playStoreUrl, action: p.bundleChoose, external: true },
+    ],
+  },
+  {
+    title: p.funkHeading,
+    note: p.funkSubtitle,
+    rows: [
+      { name: 'SRC', sub: de ? 'Seefunk (Küste)' : 'Sea radio (coastal)', questions: p.srcQuestions, topics: p.srcThemes, price: p.srcPrice, href: de ? '/src/' : '/en/src/', action: p.funkMore },
+      { name: 'UBI', sub: de ? 'Binnenfunk' : 'Inland radio', questions: p.catalog3Questions, topics: p.catalog3Themes, price: p.ubiPrice, href: de ? '/ubi/' : '/en/ubi/', action: p.funkMore },
+      { name: 'LRC', sub: de ? 'Seefunk (weltweit)' : 'Sea radio (worldwide)', questions: p.lrcQuestions, topics: p.lrcThemes, price: p.lrcPrice, href: de ? '/lrc/' : '/en/lrc/', action: p.funkMore },
+    ],
+  },
+];
+---
+
+<section id="pricing" class="hp h-section" aria-labelledby="hp-title">
+  <div class="h-container">
+    <SectionHead
+      num={num}
+      label={h.pricingLabel}
+      meta={h.pricingMeta}
+      title={p.title}
+      lede={p.subtitle}
+      id="hp-title"
+      layout="split"
+    />
+
+    <!-- Modell: kostenlos starten → bei Bedarf einmalig freischalten -->
+    <div class="hp-model" data-reveal>
+      <div class="hp-plan">
+        <p class="hp-plan-label">{p.freeLabel}</p>
+        <p class="hp-plan-price h-num">{h.freePrice}</p>
+        <p class="hp-plan-sub">{p.compareFreeSub}</p>
+        <ul class="hp-plan-list">
+          {p.freeFeatures.map(f => <li>{f}</li>)}
+        </ul>
+      </div>
+      <div class="hp-plan">
+        <p class="hp-plan-label">{p.comparePaidLabel}</p>
+        <p class="hp-plan-price h-num"><span class="hp-plan-unit">{h.fullFrom}</span> {h.fullPrice} <span class="hp-plan-unit">{h.fullUnit}</span></p>
+        <p class="hp-plan-sub">{p.comparePaidSub}</p>
+        <ul class="hp-plan-list">
+          {p.comparePaidFeatures.map(f => <li>{f}</li>)}
+        </ul>
+      </div>
+      <div class="hp-plan hp-plan--cta">
+        <PlayCta lang={lang} position="pricing" label={p.ctaFree} id="pricing-cta" />
+      </div>
+    </div>
+
+    <!-- Tarifliste -->
+    {groups.map(group => (
+      <div class="hp-group">
+        <div class="hp-group-head" data-reveal>
+          <h3 class="hp-group-title">{group.title}</h3>
+          {group.note && <p class="hp-group-note">{group.note}</p>}
+        </div>
+        <ul class="hp-rows">
+          {group.rows.map(row => (
+            <li class:list={['hp-row', { 'hp-row--bundle': !!row.badge }]} data-reveal>
+              <div class="hp-name">
+                <span class="hp-name-main">{row.name}{row.badge && <span class="hp-badge">{row.badge}</span>}</span>
+                <span class="hp-name-sub">{row.sub}</span>
+                {row.note && <span class="hp-name-note">{row.note}</span>}
+              </div>
+              <span class="hp-cell hp-cell--q h-num"><strong>{row.questions}</strong> {h.colQuestions}</span>
+              <span class="hp-cell hp-cell--t h-num">{row.topics ? <Fragment><strong>{row.topics}</strong> {h.colTopics}</Fragment> : <span aria-hidden="true">—</span>}</span>
+              <span class="hp-price">
+                <span class="hp-price-num h-num">{row.price}</span>
+                <span class="hp-price-sub">
+                  {row.strike ? <Fragment><s class="h-num">{row.strike}</s> · {row.save}</Fragment> : h.once}
+                </span>
+              </span>
+              {row.external ? (
+                <a class="hp-action h-play-only" href={row.href} target="_blank" rel="noopener noreferrer" data-cta-position="pricing-bundle">
+                  {row.action}<Icon name="chevronRight" size={16} strokeWidth={2.25} /><span class="sr-only">{h.newTab}</span>
+                </a>
+              ) : (
+                <a class="hp-action" href={row.href}>
+                  {row.action}<span class="sr-only">: {row.name}</span><Icon name="chevronRight" size={16} strokeWidth={2.25} />
+                </a>
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+
+    <!-- In jeder Lizenz enthalten + Vertrauen -->
+    <div class="hp-included" data-reveal>
+      <p class="hp-included-title">{h.included}</p>
+      <ul class="hp-included-list">
+        {p.cardFeatures.map(f => <li>{f}</li>)}
+      </ul>
+      <ul class="hp-trust">
+        <li>{p.trustPay} {p.trustPaySub}</li>
+        <li>{p.trustNoSub} · {p.trustNoSubSub}</li>
+        <li>{p.guaranteeTitle}: {p.guaranteeText}</li>
+      </ul>
+    </div>
+
+    <a class="hp-finder" href={finderUrl} data-reveal>
+      <span class="hp-finder-text">
+        <strong>{h.finderTitle}</strong>
+        <span>{h.finderText}</span>
+      </span>
+      <span class="hp-finder-cta">{h.finderCta}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></span>
+    </a>
+  </div>
+</section>
+
+<style is:global>
+  .hp { background: var(--h-paper); }
+
+  /* ── Modell ── */
+  .hp-model {
+    display: grid;
+    margin-top: clamp(40px, 5vw, 64px);
+    border-block: 1.5px solid var(--h-rule);
+  }
+  @media (min-width: 900px) {
+    .hp-model { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; }
+  }
+  .hp-plan { padding: 24px 0; }
+  .hp-plan + .hp-plan { border-top: 1px solid var(--h-line-2); }
+  @media (min-width: 900px) {
+    .hp-plan { padding: 28px 32px; }
+    .hp-plan:first-child { padding-left: 0; }
+    .hp-plan + .hp-plan { border-top: 0; border-left: 1px solid var(--h-line-2); }
+  }
+  .hp-plan--cta { display: flex; align-items: center; }
+  .hp-plan-label { margin: 0; font-family: var(--h-mono); font-size: 13px; color: var(--h-muted); }
+  .hp-plan-price {
+    margin: 8px 0 6px;
+    font-family: var(--h-display);
+    font-stretch: 82%;
+    font-weight: 720;
+    font-size: clamp(2.4rem, 4vw, 3.2rem);
+    line-height: 1;
+    color: var(--h-ink);
+  }
+  .hp-plan-unit {
+    font-family: var(--h-mono);
+    font-stretch: 100%;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--h-muted);
+  }
+  .hp-plan-sub { margin: 0; font-size: 15px; color: var(--h-muted); }
+  .hp-plan-list {
+    margin: 14px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--h-text);
+  }
+  .hp-plan-list li::before { content: '— '; color: var(--h-blue-ink); }
+
+  /* ── Tarifliste ── */
+  .hp-group { margin-top: clamp(48px, 6vw, 72px); }
+  .hp-group-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 4px 24px;
+    padding-bottom: 12px;
+    border-bottom: 1.5px solid var(--h-rule);
+  }
+  .hp-group-title {
+    margin: 0;
+    font-family: var(--h-display);
+    font-stretch: 84%;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+    line-height: 1.1;
+    color: var(--h-ink);
+  }
+  .hp-group-note { margin: 0; font-family: var(--h-mono); font-size: 13px; color: var(--h-muted); }
+
+  .hp-rows { margin: 0; padding: 0; list-style: none; }
+  .hp-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'name name'
+      'q t'
+      'price action';
+    gap: 10px 16px;
+    align-items: baseline;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--h-line-2);
+  }
+  .hp-name { grid-area: name; }
+  .hp-cell--q { grid-area: q; }
+  .hp-cell--t { grid-area: t; }
+  .hp-price { grid-area: price; }
+  .hp-action { grid-area: action; }
+  @media (min-width: 900px) {
+    .hp-row {
+      grid-template-columns: minmax(0, 1fr) 110px 110px 230px 180px;
+      grid-template-areas: 'name q t price action';
+      gap: 24px;
+      padding: 22px 0;
+    }
+  }
+  .hp-row--bundle { background: var(--h-blue-wash); padding-inline: 14px; margin-inline: -14px; }
+
+  .hp-name { display: flex; flex-direction: column; gap: 3px; }
+  .hp-name-main {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--h-display);
+    font-stretch: 84%;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.1;
+    color: var(--h-ink);
+  }
+  .hp-badge {
+    padding: 2px 7px;
+    border: 1px solid var(--h-blue-ink);
+    border-radius: 2px;
+    font-family: var(--h-mono);
+    font-stretch: 100%;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: var(--h-blue-ink);
+  }
+  .hp-name-sub { font-size: 14.5px; color: var(--h-muted); }
+  .hp-name-note { font-family: var(--h-mono); font-size: 12.5px; color: var(--h-text); }
+
+  .hp-cell { font-family: var(--h-mono); font-size: 13px; color: var(--h-muted); }
+  .hp-cell strong { font-weight: 500; color: var(--h-ink); font-size: 15px; }
+
+  .hp-price { display: flex; flex-direction: column; gap: 2px; }
+  .hp-price-num {
+    font-family: var(--h-display);
+    font-stretch: 82%;
+    font-weight: 720;
+    font-size: 28px;
+    line-height: 1;
+    color: var(--h-ink);
+  }
+  .hp-price-sub { font-family: var(--h-mono); font-size: 12.5px; color: var(--h-muted); }
+  .hp-row--bundle .hp-price-sub { color: var(--h-blue-ink); }
+
+  .hp-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    min-height: 44px;
+    color: var(--h-blue-ink);
+    font-size: 15px;
+    font-weight: 650;
+    text-decoration: none;
+    transition: gap 0.3s var(--h-ease);
+  }
+  .hp-action:hover { gap: 10px; text-decoration: underline; text-underline-offset: 4px; }
+
+  /* ── Enthalten + Vertrauen ── */
+  .hp-included {
+    display: grid;
+    gap: 14px;
+    margin-top: clamp(40px, 5vw, 56px);
+    padding: 18px 0;
+    border-block: 1px solid var(--h-line-2);
+    font-family: var(--h-mono);
+    font-size: 13px;
+  }
+  @media (min-width: 1024px) {
+    .hp-included { grid-template-columns: 220px minmax(0, 1fr); }
+    .hp-trust { grid-column: 2; }
+  }
+  .hp-included-title { margin: 0; color: var(--h-ink); font-weight: 500; }
+  .hp-included-list,
+  .hp-trust {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--h-text);
+  }
+  .hp-trust { color: var(--h-muted); }
+  .hp-included-list li,
+  .hp-trust li { padding: 2px 0; }
+  /* Trenner am Ende des Eintrags: Bricht die Zeile um, steht der Punkt
+     am Zeilenende statt verloren am Anfang der nächsten Zeile. */
+  .hp-included-list li:not(:last-child)::after,
+  .hp-trust li:not(:last-child)::after {
+    content: '·';
+    margin: 0 12px;
+    color: var(--h-muted);
+  }
+
+  /* ── Schein-Finder ── */
+  .hp-finder {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--h-line-2);
+    color: inherit;
+    text-decoration: none;
+  }
+  .hp-finder-text { display: flex; flex-direction: column; gap: 2px; }
+  .hp-finder-text strong { font-size: 17px; color: var(--h-ink); }
+  .hp-finder-text span { font-size: 15px; color: var(--h-muted); }
+  .hp-finder-cta { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--h-blue-ink); transition: gap 0.3s var(--h-ease); }
+  .hp-finder:hover .hp-finder-cta { gap: 10px; }
+  .hp-finder:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 4px; }
+</style>

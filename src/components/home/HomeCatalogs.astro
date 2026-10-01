@@ -1,0 +1,151 @@
+---
+// Amtliche Kataloge als Logbuch-Tabelle: je Lizenz der Katalog, seine gültige
+// Fassung und der direkte Link zu ELWIS. Daten aus data/catalogs.ts – dieselbe
+// Quelle wie CatalogSources auf den Lizenzseiten.
+import SectionHead from './SectionHead.astro';
+import { useTranslations } from '../../i18n/index';
+import { catalogRows, catalogPageStand } from '../../data/catalogs';
+
+interface Props {
+  lang: 'de' | 'en';
+  num: string;
+}
+
+const { lang, num } = Astro.props;
+const t = useTranslations(lang);
+const cs = t.catalogSources;
+const h = t.home;
+const rows = catalogRows(lang);
+const pageStand = catalogPageStand(lang);
+---
+
+<section id="kataloge" class="hc h-section" aria-labelledby="hc-title">
+  <div class="h-container">
+    <SectionHead
+      num={num}
+      label={h.catalogsLabel}
+      meta={`${rows.length} · ${h.catalogsMeta}`}
+      title={cs.title}
+      lede={cs.intro}
+      id="hc-title"
+      layout="split"
+    />
+
+    <div class="hc-ledger">
+      <div class="hc-cols" aria-hidden="true">
+        <span>{cs.colLicense}</span>
+        <span>{cs.colCatalog}</span>
+        <span>{cs.colStand}</span>
+        <span>{cs.colSource}</span>
+      </div>
+      <ul class="hc-rows">
+        {rows.map(r => (
+          <li class="hc-row" data-reveal>
+            <span class="hc-lic">{r.license}</span>
+            <span class="hc-cat">{r.catalog}</span>
+            <span class="hc-stand">
+              <span class="hc-stamp">{r.stand}</span>
+              {r.next && <span class="hc-stamp hc-stamp--next">{r.next}</span>}
+            </span>
+            <a class="hc-src" href={r.url} target="_blank" rel="noopener nofollow">
+              {cs.sourceCta}<span aria-hidden="true">&nbsp;↗</span>
+              <span class="sr-only"> – {r.license} {h.newTab}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div class="hc-notes" data-reveal>
+      <p>{cs.validityNote}</p>
+      <p>{cs.issuerNote}</p>
+      <p class="hc-meta"><strong>{cs.pageStandLabel}:</strong> {pageStand} · {cs.disclaimer}</p>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .hc { background: var(--h-paper-2); }
+
+  .hc-ledger { margin-top: clamp(40px, 5vw, 64px); border-top: 1.5px solid var(--h-rule); }
+  .hc-cols { display: none; }
+  .hc-rows { margin: 0; padding: 0; list-style: none; }
+  .hc-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--h-line-2);
+  }
+  .hc-lic {
+    font-family: var(--h-display);
+    font-stretch: 84%;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.1;
+    color: var(--h-ink);
+  }
+  .hc-cat { font-size: 15px; line-height: 1.5; color: var(--h-text); }
+  .hc-stand { display: flex; flex-wrap: wrap; gap: 6px; }
+  .hc-stamp {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    border: 1px solid var(--h-line-2);
+    border-radius: 2px;
+    font-family: var(--h-mono);
+    font-size: 12.5px;
+    color: var(--h-text);
+    white-space: nowrap;
+  }
+  .hc-stamp--next {
+    border-color: var(--h-beacon);
+    background: var(--h-beacon-wash);
+    color: var(--h-beacon-ink);
+  }
+  .hc-src {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    justify-self: start;
+    color: var(--h-blue-ink);
+    font-size: 15px;
+    font-weight: 650;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  }
+  .hc-src:hover { text-decoration-color: currentColor; }
+
+  @media (min-width: 900px) {
+    .hc-cols,
+    .hc-row {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1.6fr) minmax(0, 1fr) 170px;
+      gap: 24px;
+      align-items: center;
+    }
+    .hc-cols {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--h-line-2);
+      font-family: var(--h-mono);
+      font-size: 12.5px;
+      color: var(--h-muted);
+    }
+    .hc-row { padding: 18px 0; }
+    .hc-src { justify-self: end; }
+  }
+
+  .hc-notes {
+    display: grid;
+    gap: 10px;
+    max-width: 880px;
+    margin-top: 24px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--h-muted);
+  }
+  .hc-notes p { margin: 0; }
+  .hc-meta { font-family: var(--h-mono); font-size: 12.5px; }
+  .hc-meta strong { color: var(--h-ink); font-weight: 500; }
+</style>

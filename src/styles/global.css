@@ -143,20 +143,6 @@ html.dark .section-eyebrow {
   }
 }
 
-/* FAQ-Abschnitt der Startseite: eigene, responsive Vertikal-Rhythmik, damit er
-   dieselbe Trennlinie und denselben Abstand wie die übrigen Abschnitte bekommt
-   (vorher inline ohne oberen Abstand). */
-.home-faq {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 56px 24px;
-}
-@media (min-width: 768px) {
-  .home-faq {
-    padding: 80px 24px;
-  }
-}
-
 /* Sektions-Überschriften (H2) innerhalb der Inhalts-/Pillar-Seiten (SBF Binnen/See,
    Führerscheine, Kosten, Prüfungsfragen u. a.). Bisher war in jeder dieser
    Überschriften ein fester Wert hartkodiert (28px + letter-spacing:-1px), der auf

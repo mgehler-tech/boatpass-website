@@ -1,0 +1,362 @@
+[
+  {
+    "id": "2023_247",
+    "catalog": "sbf_binnen_2023.json",
+    "licence": "binnen",
+    "question": {
+      "de": "Welches Fahrzeug führt am Bug einen roten Wimpel?",
+      "en": "Which vessel has a red pennant on its bow?"
+    },
+    "answers": [
+      {
+        "de": "Ein Fahrzeug mit Vorrang beim Be- und Entladen.",
+        "en": "A vessel with priority when loading and unloading."
+      },
+      {
+        "de": "Ein Fahrzeug mit Vorrang beim Schleusen.",
+        "en": "A vessel with priority at locks."
+      },
+      {
+        "de": "Ein Fahrzeug, das explosive Stoffe geladen hat.",
+        "en": "A vessel carrying explosive substances."
+      },
+      {
+        "de": "Ein Fahrzeug, das brennbare Stoffe geladen hat.",
+        "en": "A vessel carrying flammable substances."
+      }
+    ],
+    "correct": 1,
+    "explanation": {
+      "de": "Ein roter Wimpel am Bug zeigt an: Dieses Fahrzeug hat von der zuständigen Behörde einen Vorrang beim Schleusen erhalten. Es fährt bevorzugt in die Schleuse ein, andere müssen warten.",
+      "en": "A red pennant at the bow indicates: this vessel has been granted priority at locks by the competent authority. It enters the lock with priority; others must wait."
+    },
+    "mnemonic": {
+      "de": "Roter Wimpel am Bug = Schleusenvorrang. Rot geht vor – aber nur mit Behördenerlaubnis.",
+      "en": "Red pennant at bow = lock priority. Red goes first – but only with official permission."
+    }
+  },
+  {
+    "id": "sbf_see_2023_14",
+    "catalog": "sbf_basis.json",
+    "licence": "basis",
+    "question": {
+      "de": "Wie weichen zwei Motorboote aus, die sich auf entgegengesetzten Kursen nähern?",
+      "en": "How do two power-driven vessels give way when approaching each other on opposite courses?"
+    },
+    "answers": [
+      {
+        "de": "Jedes Fahrzeug muss seinen Kurs nach Backbord ändern.",
+        "en": "Each vessel must alter its course to port."
+      },
+      {
+        "de": "Es muss das luvwärtige Fahrzeug dem leewärtigen Fahrzeug ausweichen.",
+        "en": "The vessel on the windward side must give way to the vessel on the leeward side."
+      },
+      {
+        "de": "Es muss das leewärtige Fahrzeug dem luvwärtigen Fahrzeug ausweichen.",
+        "en": "The vessel on the leeward side must give way to the vessel on the windward side."
+      },
+      {
+        "de": "Jedes Fahrzeug muss seinen Kurs nach Steuerbord ändern.",
+        "en": "Each vessel must alter its course to starboard."
+      }
+    ],
+    "correct": 3,
+    "explanation": {
+      "de": "Nähern sich zwei Maschinenfahrzeuge auf entgegengesetzten oder fast entgegengesetzten Kursen so, dass die Gefahr eines Zusammenstoßes besteht, muss jedes seinen Kurs nach Steuerbord ändern. Dadurch passieren sie einander an der Backbordseite. Beide Kursänderungen müssen rechtzeitig und deutlich erkennbar sein.",
+      "en": "When two power-driven vessels are meeting on reciprocal or nearly reciprocal courses so as to involve risk of collision, each must alter course to starboard so that they pass port-to-port. Both alterations must be made in ample time and be readily apparent."
+    },
+    "mnemonic": {
+      "de": "Kopf-an-Kopf: beide nach Steuerbord, Backbord an Backbord vorbei.",
+      "en": "Head-on: both alter to starboard and pass port-to-port."
+    }
+  },
+  {
+    "id": "2023_095",
+    "catalog": "sbf_binnen_2023.json",
+    "licence": "binnen",
+    "question": {
+      "de": "Was bedeutet \"zu Berg\" oder \"Bergfahrt\" auf Flüssen?",
+      "en": "What does 'upstream' ('zu Berg' / 'Bergfahrt') mean on rivers?"
+    },
+    "answers": [
+      {
+        "de": "Die Fahrt in Richtung Quelle.",
+        "en": "The journey towards the source."
+      },
+      {
+        "de": "Die Fahrt über Grund.",
+        "en": "The journey over ground."
+      },
+      {
+        "de": "Die Fahrt mit der Strömung.",
+        "en": "Riding with the current."
+      },
+      {
+        "de": "Die Fahrt in Richtung Mündung.",
+        "en": "The journey towards the estuary."
+      }
+    ],
+    "correct": 0,
+    "explanation": {
+      "de": "Bergfahrt bedeutet, gegen den Strom zu fahren, also in Richtung der Quelle. Das ist die anstrengendere Fahrt mit der Strömung entgegen. Talfahrt ist entsprechend die Fahrt zur Mündung hin.",
+      "en": "Upstream travel (Bergfahrt) means travelling against the current, towards the source. This is the harder direction, working against the flow. Downstream (Talfahrt) is towards the mouth."
+    },
+    "mnemonic": {
+      "de": "Berg = bergauf gegen den Strom. Wie beim Wandern: zu Berg ist bergauf, zu Tal ist bergab.",
+      "en": "Berg = upstream against the current. Like hiking: zu Berg is uphill, zu Tal is downhill."
+    }
+  },
+  {
+    "id": "2023_161",
+    "catalog": "sbf_binnen_2023.json",
+    "licence": "binnen",
+    "question": {
+      "de": "Was bedeuten fünf kurze Töne?",
+      "en": "What do five short blasts mean?"
+    },
+    "answers": [
+      {
+        "de": "Maschine geht rückwärts.",
+        "en": "The engine is going astern."
+      },
+      {
+        "de": "Fahrzeug ist manövrierunfähig.",
+        "en": "The vessel is unable to manoeuvre."
+      },
+      {
+        "de": "Überholen nicht möglich.",
+        "en": "Safe overtaking is not possible."
+      },
+      {
+        "de": "Achtung!",
+        "en": "Attention."
+      }
+    ],
+    "correct": 2,
+    "explanation": {
+      "de": "Fünf kurze Töne gibt der Vorausfahrende, wenn ein gefahrloses Überholen unmöglich ist. Der Überholende darf das Manöver dann nicht wie beabsichtigt fortsetzen.",
+      "en": "Five short blasts are sounded by the vessel ahead when safe overtaking is impossible. The overtaking vessel must not continue the manoeuvre as intended."
+    },
+    "mnemonic": {
+      "de": "Fünf kurze Töne: gefahrloses Überholen unmöglich.",
+      "en": "Five short blasts: safe overtaking is impossible."
+    }
+  },
+  {
+    "id": "sbf_see_2023_8",
+    "catalog": "sbf_basis.json",
+    "licence": "basis",
+    "question": {
+      "de": "Welche Seite wird als Luvseite bezeichnet?",
+      "en": "Which side is referred to as the windward side?"
+    },
+    "answers": [
+      {
+        "de": "Die dem Wind abgewandte Seite.",
+        "en": "The side facing away from the wind."
+      },
+      {
+        "de": "Die dem Wind zugekehrte Seite.",
+        "en": "The side facing the wind."
+      },
+      {
+        "de": "Die Seite in Fahrtrichtung rechts.",
+        "en": "The side to the right in the direction of travel."
+      },
+      {
+        "de": "Die Seite in Fahrtrichtung links.",
+        "en": "The side to the left in the direction of travel."
+      }
+    ],
+    "correct": 1,
+    "explanation": {
+      "de": "Die Luvseite ist die dem Wind zugewandte Seite des Fahrzeugs – also die Seite, von der der Wind herkommt. Bei einem Segelboot ist das die Seite, auf der sich das Segel nicht befindet (das Segel wölbt sich auf die andere Seite, die Leeseite). Luv = windwärts.",
+      "en": "The windward side (Luvseite) is the side of the vessel facing into the wind – the side from which the wind comes. On a sailing vessel, this is the side where the sail is not (the sail billows to the other side, the leeward side). Luv = windward."
+    },
+    "mnemonic": {
+      "de": "Luv liebt den Wind – es ist die Windseite.",
+      "en": "Luv faces the wind – it is the windward side."
+    }
+  },
+  {
+    "id": "2023_289",
+    "catalog": "sbf_binnen_2023.json",
+    "licence": "binnen",
+    "question": {
+      "de": "Wie muss ein Segel bei starkem Wind getrimmt werden?",
+      "en": "How should a sail be trimmed in strong winds?"
+    },
+    "answers": [
+      {
+        "de": "Es soll bauchig getrimmt werden.",
+        "en": "It should be trimmed full."
+      },
+      {
+        "de": "Die Schoten müssen dicht geholt werden.",
+        "en": "The sheets must be hauled in tight."
+      },
+      {
+        "de": "Das Segel soll flach getrimmt werden.",
+        "en": "The sail should be trimmed flat."
+      },
+      {
+        "de": "Die Schoten müssen gefiert werden.",
+        "en": "The sheets must be eased."
+      }
+    ],
+    "correct": 2,
+    "explanation": {
+      "de": "Bei starkem Wind muss das Segel flach getrimmt werden, um die Krängung zu reduzieren und den Winddruck zu vermindern. Ein bauchiges Segel bei viel Wind führt zu Überkrängen und Kontrollverlust.",
+      "en": "In strong winds the sail must be trimmed flat to reduce heel and decrease wind pressure. A full sail in strong winds leads to excessive heel and loss of control."
+    },
+    "mnemonic": {
+      "de": "Starkwind: Segel flach. Weniger Bauch = weniger Krängung = mehr Kontrolle.",
+      "en": "Strong wind: sail flat. Less belly = less heel = more control."
+    }
+  },
+  {
+    "id": "sbf_see_2023_240",
+    "catalog": "sbf_see_2023.json",
+    "licence": "see",
+    "question": {
+      "de": "Was versteht man unter einer Seemeile und wie lang ist eine Seemeile (in Metern)?",
+      "en": "What is a nautical mile and how long is one nautical mile (in metres)?"
+    },
+    "answers": [
+      {
+        "de": "Die Länge einer Bogenminute auf einem größten Kreis der Erdkugel, 1.852 m.",
+        "en": "The length of one arc minute on a great circle of the Earth, 1,852 m."
+      },
+      {
+        "de": "Die Länge einer Bogenminute auf einem Breitenparallel, 1.652 m.",
+        "en": "The length of one arc minute on a parallel of latitude, 1,652 m."
+      },
+      {
+        "de": "Die Länge einer Bogenminute auf dem Nullmeridian, 18,52 km.",
+        "en": "The length of one arc minute on the prime meridian, 18.52 km."
+      },
+      {
+        "de": "Sie entspricht der in einer Stunde zurückgelegten Distanz in Meter, 16,52 km.",
+        "en": "It equals the distance covered in one hour in metres, 16.52 km."
+      }
+    ],
+    "correct": 0,
+    "explanation": {
+      "de": "Eine Seemeile ist die Länge einer Bogenminute auf einem größten Kreis (Meridian) der Erde. Sie beträgt exakt 1.852 Meter. Daher entspricht 1° Breite = 60 Seemeilen.",
+      "en": "A nautical mile is the length of one arc minute on a great circle (meridian) of the Earth. It measures exactly 1,852 metres. Therefore 1° of latitude = 60 nautical miles."
+    },
+    "mnemonic": {
+      "de": "1 Seemeile = 1 Bogenminute = 1.852 Meter. 60 Seemeilen = 1 Breitengrad.",
+      "en": "1 nautical mile = 1 arc minute = 1,852 metres. 60 nautical miles = 1 degree of latitude."
+    }
+  },
+  {
+    "id": "sbf_see_2023_280",
+    "catalog": "sbf_see_2023.json",
+    "licence": "see",
+    "question": {
+      "de": "Was bedeutet das Flaggensignal \"NC\" auf einem Fahrzeug?",
+      "en": "What does the flag signal 'NC' displayed on a vessel mean?"
+    },
+    "answers": [
+      {
+        "de": "Fahrzeug des öffentlichen Dienstes.",
+        "en": "Government service vessel."
+      },
+      {
+        "de": "Fahrzeug mit gefährlichen Gütern.",
+        "en": "Vessel carrying dangerous goods."
+      },
+      {
+        "de": "Fahrzeug verlässt Liegeplatz.",
+        "en": "Vessel leaving berth."
+      },
+      {
+        "de": "Fahrzeug in Seenot.",
+        "en": "Vessel in distress."
+      }
+    ],
+    "correct": 3,
+    "explanation": {
+      "de": "Das Flaggensignal November-Charlie (NC) – die Flaggen N und C gleichzeitig gehisst – bedeutet: Fahrzeug in Seenot. Dieses internationale Notsignal ist weltweit bekannt.",
+      "en": "The November-Charlie flag signal (NC) – flags N and C hoisted together – means that the vessel is in distress. This international distress signal is recognised worldwide."
+    },
+    "mnemonic": {
+      "de": "Flaggensignal November-Charlie (NC) = Seenot. N und C zusammen = Notsignal.",
+      "en": "November-Charlie flag signal (NC): flags N and C together mean distress."
+    }
+  },
+  {
+    "id": "src_2018_94",
+    "catalog": "src_2018.json",
+    "licence": "src",
+    "question": {
+      "de": "Wie lautet das Dringlichkeitszeichen im Sprechfunk?",
+      "en": "What is the urgency signal in radiotelephony?"
+    },
+    "answers": [
+      {
+        "de": "SECURITE",
+        "en": "SECURITE"
+      },
+      {
+        "de": "MAYDAY",
+        "en": "MAYDAY"
+      },
+      {
+        "de": "PAN PAN",
+        "en": "PAN PAN"
+      },
+      {
+        "de": "URGENCY",
+        "en": "URGENCY"
+      }
+    ],
+    "correct": 2,
+    "explanation": {
+      "de": "Das Dringlichkeitszeichen im Sprechfunk lautet PAN PAN. Zum Vergleich: Das Notzeichen ist MAYDAY, das Sicherheitszeichen SECURITE.",
+      "en": "The urgency signal in radiotelephony is PAN PAN. For comparison: the distress signal is MAYDAY, the safety signal is SECURITE."
+    },
+    "mnemonic": {
+      "de": "Dringlichkeit = PAN PAN (Not = MAYDAY, Sicherheit = SECURITE).",
+      "en": "Urgency = PAN PAN (distress = MAYDAY, safety = SECURITE)."
+    }
+  },
+  {
+    "id": "ubi_2023_4",
+    "catalog": "ubi_2026.json",
+    "licence": "ubi",
+    "question": {
+      "de": "Wie lange dürfen Testsendungen dauern?",
+      "en": "How long may test transmissions last?"
+    },
+    "answers": [
+      {
+        "de": "Es gilt ein striktes Verbot zur Aussendung zu Testzwecken",
+        "en": "Test transmissions are strictly prohibited"
+      },
+      {
+        "de": "Maximal 10 Sekunden",
+        "en": "10 seconds maximum"
+      },
+      {
+        "de": "Testsendungen müssen mindestens 30 Sekunden dauern",
+        "en": "Test transmissions must last at least 30 seconds"
+      },
+      {
+        "de": "15–30 Sekunden",
+        "en": "15–30 seconds"
+      }
+    ],
+    "correct": 1,
+    "explanation": {
+      "de": "Testsendungen (Probesendungen) sind erlaubt, müssen aber kurz bleiben – höchstens 10 Sekunden –, um den laufenden Funkverkehr nicht zu blockieren.",
+      "en": "Test transmissions are permitted but must be kept short – no more than 10 seconds – so as not to block ongoing radio traffic."
+    },
+    "mnemonic": {
+      "de": "Test = kurz halten: höchstens 10 Sekunden.",
+      "en": "Test = keep it short: 10 seconds at most."
+    }
+  }
+]

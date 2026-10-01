@@ -1,0 +1,149 @@
+---
+// Echte Google-Play-Rezensionen (nur deutsche Startseite – alle vorliegenden
+// Texte sind deutschsprachig, eine übersetzte Rezension wäre keine mehr).
+//
+// Regeln aus data/reviews.ts gelten weiter: wortgleich, keine Profilbilder.
+// Dargestellt als Logbuch-Einträge (Datum · Eintrag · Name) statt als
+// Laufband mit Karten – ruhig, vollständig lesbar, ohne Avatare.
+import Icon from '../Icon.astro';
+import SectionHead from './SectionHead.astro';
+import { REVIEWS_DE } from '../../data/reviews';
+import { getBoatpassRating, formatRating } from '../../data/apps';
+import { useTranslations } from '../../i18n/index';
+
+interface Props {
+  num: string;
+}
+
+const { num } = Astro.props;
+const t = useTranslations('de');
+const h = t.home;
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const rating = getBoatpassRating();
+const score = rating ? formatRating(rating.score).replace('.', ',') : null;
+
+// Logbuch-Datum: 18.07.2026
+const logDate = (iso: string) => iso.split('-').reverse().join('.');
+---
+
+<section class="hr h-section" aria-labelledby="hr-title">
+  <div class="h-container">
+    <SectionHead
+      num={num}
+      label={h.reviewsLabel}
+      meta={rating ? `${rating.ratings} ${h.ratingSource}` : undefined}
+      title={h.reviewsTitle}
+      lede={h.reviewsIntro}
+      id="hr-title"
+      layout="split"
+    />
+
+    <div class="hr-grid">
+      {rating && (
+        <div class="hr-score" data-reveal>
+          <p class="hr-score-num h-num">{score}<span class="sr-only"> {h.ratingOutOf}</span></p>
+          <p class="hr-score-stars" aria-hidden="true">
+            {Array.from({ length: 5 }).map(() => (
+              <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z" fill="currentColor" /></svg>
+            ))}
+          </p>
+          <p class="hr-score-count">{rating.ratings} {h.ratingSource}</p>
+          <a class="h-link" href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="reviews">
+            {h.reviewsAll}
+            <Icon name="chevronRight" size={16} strokeWidth={2.25} />
+            <span class="sr-only">{h.newTab}</span>
+          </a>
+        </div>
+      )}
+
+      <ol class="hr-list" aria-label={h.reviewsListLabel}>
+        {REVIEWS_DE.map(r => (
+          <li class="hr-row" data-reveal>
+            <time class="hr-date h-num" datetime={r.date}>{logDate(r.date)}</time>
+            <figure class="hr-entry">
+              <blockquote class="hr-quote"><p>{r.excerpt ?? r.text}</p></blockquote>
+              <figcaption class="hr-meta">
+                <span class="hr-name">{r.name}</span>
+                <span class="hr-stars" role="img" aria-label={`${r.stars} von 5 Sternen`}>
+                  {Array.from({ length: r.stars }).map(() => (
+                    <svg width="12" height="12" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z" fill="currentColor" /></svg>
+                  ))}
+                </span>
+                {r.passed && <span class="hr-passed">{r.passed}</span>}
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style is:global>
+  .hr { background: var(--h-paper); }
+
+  .hr-grid {
+    display: grid;
+    gap: 40px;
+    margin-top: clamp(40px, 5vw, 64px);
+  }
+  @media (min-width: 1024px) {
+    .hr-grid { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 64px; align-items: start; }
+    .hr-score { position: sticky; top: 96px; }
+  }
+
+  .hr-score-num {
+    margin: 0;
+    font-family: var(--h-display);
+    font-stretch: 80%;
+    font-weight: 740;
+    font-size: clamp(5rem, 11vw, 8.5rem);
+    line-height: 0.85;
+    letter-spacing: -0.03em;
+    color: var(--h-ink);
+  }
+  .hr-score-stars { display: flex; gap: 3px; margin: 14px 0 0; color: var(--h-beacon); }
+  .hr-score-count { margin: 10px 0 4px; font-family: var(--h-mono); font-size: 13px; color: var(--h-muted); }
+
+  .hr-list { margin: 0; padding: 0; list-style: none; border-top: 1.5px solid var(--h-rule); }
+  .hr-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--h-line-2);
+  }
+  @media (min-width: 640px) {
+    .hr-row { grid-template-columns: 112px minmax(0, 1fr); gap: 24px; }
+  }
+  .hr-date { font-family: var(--h-mono); font-size: 13px; color: var(--h-muted); padding-top: 3px; }
+  .hr-entry { margin: 0; }
+  .hr-quote { margin: 0; }
+  .hr-quote p {
+    margin: 0;
+    max-width: 62ch;
+    font-size: 17.5px;
+    line-height: 1.55;
+    color: var(--h-ink);
+  }
+  .hr-quote p::before { content: '„'; }
+  .hr-quote p::after { content: '“'; }
+  .hr-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .hr-name { font-weight: 700; color: var(--h-ink); }
+  .hr-stars { display: inline-flex; gap: 2px; color: var(--h-beacon); }
+  .hr-passed {
+    padding: 2px 7px;
+    border: 1px solid var(--h-stbd);
+    border-radius: 2px;
+    font-family: var(--h-mono);
+    font-size: 12px;
+    color: var(--h-stbd-ink);
+  }
+</style>

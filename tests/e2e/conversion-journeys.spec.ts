@@ -8,14 +8,44 @@ import { test, expect } from '@playwright/test';
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 
 test.describe('Homepage → Play Store CTA', () => {
-  test('hero CTA and Google Play badge link to the app listing', async ({ page }) => {
+  test('hero and closing CTAs link to the app listing', async ({ page }) => {
     await page.goto('/');
     const heroCta = page.locator('#hero-cta-play');
+    await expect(heroCta).toBeVisible();
     await expect(heroCta).toHaveAttribute('href', PLAY_STORE_URL);
     await expect(heroCta).toHaveAttribute('target', '_blank');
 
-    const gplayBadge = page.locator('#hero-gplay-badge');
-    await expect(gplayBadge).toHaveAttribute('href', PLAY_STORE_URL);
+    const finalCta = page.locator('#final-cta-play');
+    await expect(finalCta).toHaveAttribute('href', PLAY_STORE_URL);
+  });
+});
+
+test.describe('Homepage quiz → Result → Play Store CTA', () => {
+  test('all ten app questions can be answered and end in a result with a working CTA', async ({ page }) => {
+    await page.goto('/');
+    const quiz = page.locator('[data-quiz]');
+    await quiz.scrollIntoViewIfNeeded();
+    await expect(quiz.locator('[data-item]')).toHaveCount(10);
+
+    for (let i = 0; i < 10; i++) {
+      const item = quiz.locator(`[data-item="${i}"]`);
+      await expect(item).toBeVisible();
+      await expect(quiz.locator('[data-counter-text]')).toHaveText(`Frage ${i + 1} von 10`);
+      const correct = Number(await item.getAttribute('data-correct'));
+      await item.locator('[data-answer]').nth(correct).click();
+      await expect(item.locator('[data-verdict]')).toHaveText('Richtig!');
+      await expect(item.locator('.hq-mnemo')).toBeVisible();
+      await item.locator('[data-next]').click();
+    }
+
+    const result = quiz.locator('[data-result]');
+    await expect(result).toBeVisible();
+    await expect(result.locator('[data-result-score]')).toHaveText('10 von 10 richtig');
+    await expect(result.locator('a[href*="play.google.com"]')).toHaveAttribute('href', PLAY_STORE_URL);
+
+    await result.locator('[data-restart]').click();
+    await expect(quiz.locator('[data-item="0"]')).toBeVisible();
+    await expect(quiz.locator('.hq-seg.is-right, .hq-seg.is-wrong')).toHaveCount(0);
   });
 });
 
