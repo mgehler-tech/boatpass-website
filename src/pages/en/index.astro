@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import HomeBoot from '../../components/home/HomeBoot.astro';
 import HomeHero from '../../components/home/HomeHero.astro';
+import HomeNavtex from '../../components/home/HomeNavtex.astro';
 import HomeJourney from '../../components/home/HomeJourney.astro';
 import HomeFounder from '../../components/home/HomeFounder.astro';
 import HomePricing from '../../components/home/HomePricing.astro';
@@ -10,8 +11,9 @@ import HomeGuide from '../../components/home/HomeGuide.astro';
 import HomeFinalCta from '../../components/home/HomeFinalCta.astro';
 import { getBoatpassRating } from '../../data/apps';
 import '../../styles/home.css';
-import frauncesLatin from '@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2?url';
-import frauncesLatinItalic from '@fontsource-variable/fraunces/files/fraunces-latin-wght-italic.woff2?url';
+// Display-Schrift der Startseite vorladen (nur das lateinische Subset, das
+// DE/EN tatsächlich braucht) – die H1 im Hero ist das größte Element.
+import archivoLatin from '@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2?url';
 
 const appRating = getBoatpassRating();
 
@@ -59,8 +61,7 @@ const faqSchema = {
   showCta={false}
 >
   <Fragment slot="head">
-    <link rel="preload" href={frauncesLatin} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={frauncesLatinItalic} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={archivoLatin} as="font" type="font/woff2" crossorigin />
   </Fragment>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -70,12 +71,13 @@ const faqSchema = {
        review. -->
   <div class="home">
     <HomeHero lang="en" />
-    <HomeJourney lang="en" />
-    <HomeFounder lang="en" />
-    <HomePricing lang="en" />
-    <HomeCatalogs lang="en" />
-    <HomeGuide lang="en" faqs={faqs} />
-    <HomeFinalCta lang="en" />
+    <HomeNavtex lang="en" />
+    <HomeJourney lang="en" num="01" />
+    <HomeFounder lang="en" num="02" />
+    <HomePricing lang="en" num="03" />
+    <HomeCatalogs lang="en" num="04" />
+    <HomeGuide lang="en" num="05" faqs={faqs} />
+    <HomeFinalCta lang="en" num="06" />
   </div>
 </BaseLayout>
 

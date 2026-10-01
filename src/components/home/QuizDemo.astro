@@ -38,136 +38,130 @@ const idBase = `hq-${lang}`;
   data-result-low={q.resultLow}
 >
   <div class="hq-head">
-    <span class="hq-label"><Icon name="lightbulb" size={15} strokeWidth={2} />{q.label}</span>
+    <span class="hq-label">{q.label}</span>
     <span class="hq-counter h-num" data-counter-text aria-hidden="true">{counter(1)}</span>
   </div>
 
-  <!-- Logbuch-Leiste: je Frage ein Segment, grün/rot sobald beantwortet. -->
+  <!-- Logbuch-Strichliste: je Frage ein Feld, grün/rot sobald beantwortet. -->
   <ol class="hq-progress" aria-hidden="true">
     {QUIZ_QUESTIONS.map((_, i) => <li class:list={['hq-seg', { 'is-current': i === 0 }]} data-seg={i}></li>)}
   </ol>
 
-  {QUIZ_QUESTIONS.map((item, i) => (
-    <section class="hq-item" data-item={i} data-correct={item.correct} hidden={i !== 0} aria-labelledby={`${idBase}-q${i}`}>
-      <p class="hq-source">
-        <span class="sr-only">{counter(i + 1)} · </span>{q.sourcePrefix} · {QUIZ_LICENCE_LABELS[item.licence][lang]}
-      </p>
-      <p class="hq-question" id={`${idBase}-q${i}`} tabindex="-1">{item.question[lang]}</p>
+  <div class="hq-main">
+    {QUIZ_QUESTIONS.map((item, i) => (
+      <section class="hq-item" data-item={i} data-correct={item.correct} hidden={i !== 0} aria-labelledby={`${idBase}-q${i}`}>
+        <p class="hq-source">
+          <span class="sr-only">{counter(i + 1)} · </span>{q.sourcePrefix} · {QUIZ_LICENCE_LABELS[item.licence][lang]}
+        </p>
+        <p class="hq-question" id={`${idBase}-q${i}`} tabindex="-1">{item.question[lang]}</p>
 
-      <div class="hq-answers" role="group" aria-labelledby={`${idBase}-q${i}`}>
-        {item.answers.map((answer, j) => (
-          <button type="button" class="hq-answer" data-answer={j} aria-pressed="false">
-            <span class="hq-key" aria-hidden="true">
-              <span class="hq-key-letter">{keys[j]}</span>
-              <Icon name="check" size={16} strokeWidth={3} class="hq-key-ok" />
-              <Icon name="xmark" size={16} strokeWidth={3} class="hq-key-no" />
-            </span>
-            <span class="hq-text" data-answer-text>{answer[lang]}</span>
-          </button>
-        ))}
-      </div>
-
-      <div class="hq-feedback" data-feedback inert>
-        <div class="hq-feedback-inner">
-          <div class="hq-feedback-body">
-            <p class="hq-verdict" data-verdict></p>
-            <p class="hq-expl" data-explanation>{item.explanation[lang]}</p>
-            <div class="hq-mnemo">
-              <span class="hq-mnemo-label"><Icon name="lightbulb" size={15} strokeWidth={2} />{q.mnemonicLabel}</span>
-              <p>{item.mnemonic[lang]}</p>
-            </div>
-          </div>
-          <button type="button" class="hq-next" data-next>
-            {i < total - 1 ? q.next : q.finish}
-            <Icon name="chevronRight" size={18} strokeWidth={2.25} />
-          </button>
+        <div class="hq-answers" role="group" aria-labelledby={`${idBase}-q${i}`}>
+          {item.answers.map((answer, j) => (
+            <button type="button" class="hq-answer" data-answer={j} aria-pressed="false">
+              <span class="hq-key" aria-hidden="true">
+                <span class="hq-key-letter">{keys[j]}</span>
+                <Icon name="check" size={15} strokeWidth={3} class="hq-key-ok" />
+                <Icon name="xmark" size={15} strokeWidth={3} class="hq-key-no" />
+              </span>
+              <span class="hq-text" data-answer-text>{answer[lang]}</span>
+            </button>
+          ))}
         </div>
+
+        <div class="hq-feedback" data-feedback inert>
+          <div class="hq-feedback-inner">
+            <div class="hq-feedback-body">
+              <p class="hq-verdict"><span class="hq-verdict-mark" aria-hidden="true"></span><span data-verdict></span></p>
+              <p class="hq-expl" data-explanation>{item.explanation[lang]}</p>
+              <div class="hq-mnemo">
+                <span class="hq-mnemo-label"><Icon name="lightbulb" size={15} strokeWidth={2} />{q.mnemonicLabel}</span>
+                <p>{item.mnemonic[lang]}</p>
+              </div>
+            </div>
+            <button type="button" class="hq-next" data-next>
+              {i < total - 1 ? q.next : q.finish}
+              <Icon name="chevronRight" size={18} strokeWidth={2.25} />
+            </button>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <section class="hq-result" data-result hidden aria-labelledby={`${idBase}-result`}>
+      <p class="hq-result-eyebrow">{q.resultEyebrow}</p>
+      <p class="hq-result-score h-num" id={`${idBase}-result`} tabindex="-1" data-result-score></p>
+      <p class="hq-result-text" data-result-text></p>
+      <div class="hq-result-actions">
+        <PlayCta lang={lang} position="quiz-result" />
+        <button type="button" class="hq-restart" data-restart>
+          <Icon name="refresh" size={16} strokeWidth={2} />{q.restart}
+        </button>
       </div>
     </section>
-  ))}
 
-  <section class="hq-result" data-result hidden aria-labelledby={`${idBase}-result`}>
-    <p class="hq-result-eyebrow">{q.resultEyebrow}</p>
-    <p class="hq-result-score h-num" id={`${idBase}-result`} tabindex="-1" data-result-score></p>
-    <p class="hq-result-text" data-result-text></p>
-    <div class="hq-result-actions">
-      <PlayCta lang={lang} position="quiz-result" />
-      <button type="button" class="hq-restart" data-restart>
-        <Icon name="refresh" size={16} strokeWidth={2} />{q.restart}
-      </button>
-    </div>
-  </section>
-
-  <p class="hq-hint">{q.hint}</p>
+    <p class="hq-hint">{q.hint}</p>
+  </div>
   <p class="sr-only" aria-live="polite" data-status></p>
 </div>
 
 <style is:global>
   .hq {
     margin-top: 32px;
-    max-width: 560px;
-    padding: 22px;
-    border-radius: 26px;
+    max-width: 580px;
+    border: 1.5px solid var(--h-rule);
+    border-radius: var(--h-r);
     background: var(--h-card);
-    border: 1px solid var(--h-line);
-    box-shadow: 0 30px 60px -40px rgba(14, 26, 58, 0.35);
     scroll-margin-top: 96px;
   }
   .h-js .hq { display: block; }
-  @media (max-width: 639px) {
-    .hq { padding: 16px; border-radius: 22px; }
-  }
 
   .hq-head {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
-    gap: 8px 14px;
+    gap: 6px 14px;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--h-line-2);
+    font-family: var(--h-mono);
+    font-size: 12.5px;
   }
-  .hq-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 6px 12px 6px 10px;
-    border-radius: 999px;
-    background: var(--h-beacon-wash);
-    color: var(--h-beacon-ink);
-    font-size: 13px;
-    font-weight: 700;
-  }
-  .hq-counter { font-size: 13px; font-weight: 650; color: var(--h-muted); }
+  .hq-label { color: var(--h-ink); font-weight: 500; }
+  .hq-counter { color: var(--h-muted); }
 
-  /* ── Logbuch-Leiste ── */
+  /* ── Strichliste ── */
   .hq-progress {
     display: flex;
-    gap: 4px;
-    margin: 16px 0 0;
-    padding: 0;
+    gap: 3px;
+    margin: 0;
+    padding: 14px 18px 0;
     list-style: none;
   }
   .hq-seg {
     flex: 1;
-    height: 6px;
-    border-radius: 999px;
-    background: var(--h-line-2);
-    transition: background-color 0.35s ease, transform 0.45s var(--h-ease);
+    height: 8px;
+    background: var(--h-line);
+    transition: background-color 0.3s ease;
   }
   .hq-seg.is-current { background: var(--h-blue); }
   .hq-seg.is-right { background: var(--h-stbd); }
   .hq-seg.is-wrong { background: var(--h-port); }
-  .hq-seg.is-current.is-right,
-  .hq-seg.is-current.is-wrong { transform: scaleY(1.5); }
+
+  .hq-main { padding: 4px 18px 18px; }
+  @media (max-width: 639px) {
+    .hq-head, .hq-progress { padding-inline: 14px; }
+    .hq-main { padding: 4px 14px 14px; }
+  }
 
   /* ── Frage ── */
-  .hq-item:not([hidden]) { animation: hq-in 0.5s var(--h-ease) both; }
+  .hq-item:not([hidden]) { animation: hq-in 0.45s var(--h-ease) both; }
   @keyframes hq-in {
-    from { opacity: 0; transform: translateX(14px); }
+    from { opacity: 0; transform: translateX(12px); }
   }
   .hq-source {
-    margin: 18px 0 0;
-    font-size: 12.5px;
-    font-weight: 600;
+    margin: 14px 0 0;
+    font-family: var(--h-mono);
+    font-size: 12px;
     color: var(--h-muted);
   }
   .hq-question {
@@ -179,19 +173,19 @@ const idBase = `hq-${lang}`;
     color: var(--h-ink);
   }
   .hq-question:focus { outline: none; }
-  .hq-question:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 4px; border-radius: 6px; }
+  .hq-question:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 4px; }
 
-  .hq-answers { display: grid; gap: 10px; }
+  .hq-answers { display: grid; gap: 8px; }
   .hq-answer {
     display: grid;
-    grid-template-columns: 34px minmax(0, 1fr);
+    grid-template-columns: 30px minmax(0, 1fr);
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     width: 100%;
-    min-height: 58px;
-    padding: 11px 16px 11px 12px;
-    border-radius: 16px;
-    border: 1.5px solid var(--h-line-2);
+    min-height: 54px;
+    padding: 10px 14px 10px 10px;
+    border-radius: var(--h-r);
+    border: 1px solid var(--h-line-2);
     background: var(--h-card);
     color: var(--h-text);
     font: inherit;
@@ -199,88 +193,80 @@ const idBase = `hq-${lang}`;
     line-height: 1.4;
     text-align: left;
     cursor: pointer;
-    transition:
-      border-color 0.2s ease,
-      background-color 0.2s ease,
-      opacity 0.3s ease,
-      transform 0.3s var(--h-ease);
+    transition: border-color 0.2s ease, background-color 0.2s ease, opacity 0.3s ease;
   }
   .hq-answer:hover:not([aria-disabled='true']) {
-    border-color: var(--h-blue);
+    border-color: var(--h-rule);
     background: var(--h-blue-wash);
   }
-  .hq-answer:active:not([aria-disabled='true']) { transform: scale(0.985); }
   .hq-answer:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
   .hq-answer[aria-disabled='true'] { cursor: default; }
 
   .hq-key {
     display: grid;
     place-items: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: var(--h-paper);
-    color: var(--h-muted);
-    font-size: 14px;
-    font-weight: 750;
-    transition: background-color 0.25s ease, color 0.25s ease;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--h-line-2);
+    border-radius: 2px;
+    color: var(--h-ink);
+    font-family: var(--h-mono);
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   }
   .hq-key > * { grid-area: 1 / 1; }
-  .hq-key-ok, .hq-key-no { opacity: 0; transform: scale(0.4); transition: opacity 0.25s ease, transform 0.35s var(--h-ease); }
+  .hq-key-ok, .hq-key-no { opacity: 0; }
 
   .hq-answer.is-correct { border-color: var(--h-stbd); background: var(--h-stbd-wash); }
-  .hq-answer.is-correct .hq-key { background: var(--h-stbd); color: #fff; }
+  .hq-answer.is-correct .hq-key { border-color: var(--h-stbd); background: var(--h-stbd); color: #fff; }
   .hq-answer.is-correct .hq-key-letter { opacity: 0; }
-  .hq-answer.is-correct .hq-key-ok { opacity: 1; transform: none; }
+  .hq-answer.is-correct .hq-key-ok { opacity: 1; }
 
   .hq-answer.is-wrong { border-color: var(--h-port); background: var(--h-port-wash); }
-  .hq-answer.is-wrong .hq-key { background: var(--h-port); color: #fff; }
+  .hq-answer.is-wrong .hq-key { border-color: var(--h-port); background: var(--h-port); color: #fff; }
   .hq-answer.is-wrong .hq-key-letter { opacity: 0; }
-  .hq-answer.is-wrong .hq-key-no { opacity: 1; transform: none; }
+  .hq-answer.is-wrong .hq-key-no { opacity: 1; }
 
-  .hq-answer.is-dim { opacity: 0.5; }
+  .hq-answer.is-dim { opacity: 0.45; }
 
   @media (max-width: 639px) {
-    .hq-answer { gap: 11px; padding: 10px 12px 10px 10px; font-size: 15px; grid-template-columns: 30px minmax(0, 1fr); }
-    .hq-key { width: 30px; height: 30px; }
+    .hq-answer { gap: 10px; padding: 9px 12px 9px 9px; font-size: 15px; }
   }
 
   .hq-hint {
-    margin: 14px 2px 0;
-    font-size: 13.5px;
+    margin: 14px 0 0;
+    font-family: var(--h-mono);
+    font-size: 12.5px;
     color: var(--h-muted);
   }
   .hq[data-started] .hq-hint { display: none; }
 
-  /* ── Auflösung: Aufklappen über grid-template-rows 0fr → 1fr ── */
+  /* ── Auflösung (grid-template-rows 0fr → 1fr) ── */
   .hq-feedback {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 0.55s var(--h-ease);
+    transition: grid-template-rows 0.5s var(--h-ease);
   }
   .hq-item[data-state] .hq-feedback { grid-template-rows: 1fr; }
   .hq-feedback-inner { overflow: hidden; min-height: 0; }
   .hq-feedback-body {
     margin-top: 16px;
-    padding: 16px 18px 18px;
-    border-radius: 18px;
-    border-left: 4px solid var(--h-port);
-    background: var(--h-port-wash);
-  }
-  .hq-item[data-state='right'] .hq-feedback-body {
-    border-left-color: var(--h-stbd);
-    background: var(--h-stbd-wash);
-  }
-  @media (max-width: 639px) {
-    .hq-feedback-body { padding: 14px 14px 16px; }
+    padding-top: 14px;
+    border-top: 1.5px solid var(--h-rule);
   }
   .hq-verdict {
+    display: flex;
+    align-items: center;
+    gap: 8px;
     margin: 0 0 6px;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 800;
     color: var(--h-port-ink);
   }
+  .hq-verdict-mark { width: 10px; height: 10px; background: var(--h-port); }
   .hq-item[data-state='right'] .hq-verdict { color: var(--h-stbd-ink); }
+  .hq-item[data-state='right'] .hq-verdict-mark { background: var(--h-stbd); }
   .hq-expl { margin: 0; font-size: 15px; line-height: 1.6; color: var(--h-text); }
 
   .hq-mnemo { margin-top: 14px; }
@@ -288,17 +274,18 @@ const idBase = `hq-${lang}`;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    margin-bottom: 7px;
-    font-size: 13.5px;
-    font-weight: 700;
+    margin-bottom: 6px;
+    font-family: var(--h-mono);
+    font-size: 12.5px;
+    font-weight: 500;
     color: var(--h-beacon-ink);
   }
   .hq-mnemo-label svg { color: var(--h-beacon); }
   .hq-mnemo p {
     margin: 0;
-    padding: 11px 14px;
-    border-radius: 12px;
-    border: 1px solid color-mix(in srgb, var(--h-beacon) 45%, transparent);
+    padding: 10px 12px;
+    border: 1px solid color-mix(in srgb, var(--h-beacon) 55%, transparent);
+    border-radius: 2px;
     background: var(--h-beacon-wash);
     font-size: 15px;
     font-style: italic;
@@ -306,49 +293,46 @@ const idBase = `hq-${lang}`;
     color: var(--h-text);
   }
 
-  /* „Nächste Frage" wie der „Weiter"-Button der App: volle Breite, Blau. */
+  /* „Nächste Frage" wie der „Weiter"-Button der App: volle Breite. */
   .hq-next {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     width: 100%;
-    min-height: 52px;
+    min-height: 50px;
     margin-top: 14px;
     border: 0;
-    border-radius: 16px;
+    border-radius: var(--h-r);
     background: var(--h-btn);
     color: #fff;
     font: inherit;
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.3s var(--h-ease);
+    transition: background-color 0.2s ease;
   }
   .hq-next:hover { background: var(--h-btn-hover); }
-  .hq-next:active { transform: scale(0.985); }
   .hq-next:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 3px; }
-  .hq-next svg { transition: transform 0.4s var(--h-ease); }
+  .hq-next svg { transition: transform 0.35s var(--h-ease); }
   .hq-next:hover svg { transform: translateX(4px); }
 
   /* ── Auswertung ── */
-  .hq-result:not([hidden]) { animation: hq-in 0.5s var(--h-ease) both; }
-  .hq-result { padding-top: 18px; }
+  .hq-result:not([hidden]) { animation: hq-in 0.45s var(--h-ease) both; }
+  .hq-result { padding-top: 16px; }
   .hq-result-eyebrow {
     margin: 0;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--h-blue-ink);
+    font-family: var(--h-mono);
+    font-size: 12.5px;
+    color: var(--h-muted);
   }
   .hq-result-score {
-    margin: 8px 0 0;
+    margin: 6px 0 0;
     font-family: var(--h-display);
-    font-weight: 560;
+    font-stretch: 84%;
+    font-weight: 720;
     font-size: clamp(2rem, 5vw, 2.6rem);
-    line-height: 1.05;
-    letter-spacing: -0.025em;
+    line-height: 1;
     color: var(--h-ink);
   }
   .hq-result-score:focus { outline: none; }
@@ -358,7 +342,7 @@ const idBase = `hq-${lang}`;
     flex-wrap: wrap;
     align-items: center;
     gap: 12px 20px;
-    margin-top: 22px;
+    margin-top: 20px;
   }
   .hq-restart {
     display: inline-flex;
@@ -377,7 +361,7 @@ const idBase = `hq-${lang}`;
   .hq-restart:hover { text-decoration: underline; text-underline-offset: 4px; }
 
   @media (prefers-reduced-motion: reduce) {
-    .hq-feedback, .hq-answer, .hq-key, .hq-key-ok, .hq-key-no, .hq-seg, .hq-next, .hq-next svg { transition: none; }
+    .hq-feedback, .hq-answer, .hq-key, .hq-seg, .hq-next, .hq-next svg { transition: none; }
     .hq-item:not([hidden]), .hq-result:not([hidden]) { animation: none; }
   }
 </style>
@@ -400,7 +384,6 @@ const idBase = `hq-${lang}`;
     if (!items.length || !status || !result || !resultScore || !resultText) return;
 
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let current = 0;
     let score = 0;
 
     const textOf = (el: Element | undefined) => el?.querySelector('[data-answer-text]')?.textContent?.trim() ?? '';
@@ -418,7 +401,6 @@ const idBase = `hq-${lang}`;
     const show = (i: number) => {
       items.forEach((item, j) => (item.hidden = j !== i));
       result.hidden = true;
-      current = i;
       setCurrentSeg(i);
       if (counterText) counterText.textContent = fill(d.counter ?? '', { n: i + 1, total });
     };

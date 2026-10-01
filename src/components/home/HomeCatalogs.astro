@@ -1,16 +1,17 @@
 ---
-// Amtliche Kataloge als „Logbuch": je Lizenz der Katalog, seine gültige
+// Amtliche Kataloge als Logbuch-Tabelle: je Lizenz der Katalog, seine gültige
 // Fassung und der direkte Link zu ELWIS. Daten aus data/catalogs.ts – dieselbe
 // Quelle wie CatalogSources auf den Lizenzseiten.
-import SplitText from './SplitText.astro';
+import SectionHead from './SectionHead.astro';
 import { useTranslations } from '../../i18n/index';
 import { catalogRows, catalogPageStand } from '../../data/catalogs';
 
 interface Props {
   lang: 'de' | 'en';
+  num: string;
 }
 
-const { lang } = Astro.props;
+const { lang, num } = Astro.props;
 const t = useTranslations(lang);
 const cs = t.catalogSources;
 const h = t.home;
@@ -18,13 +19,17 @@ const rows = catalogRows(lang);
 const pageStand = catalogPageStand(lang);
 ---
 
-<section id="kataloge" class="hc h-section h-graticule" aria-labelledby="hc-title">
+<section id="kataloge" class="hc h-section" aria-labelledby="hc-title">
   <div class="h-container">
-    <div class="hc-head">
-      <p class="h-eyebrow" data-reveal>{h.catalogsEyebrow}</p>
-      <SplitText as="h2" id="hc-title" class="h-display" text={h.catalogsTitle} />
-      <p class="h-lede" data-reveal>{cs.intro}</p>
-    </div>
+    <SectionHead
+      num={num}
+      label={h.catalogsLabel}
+      meta={`${rows.length} · ${h.catalogsMeta}`}
+      title={cs.title}
+      lede={cs.intro}
+      id="hc-title"
+      layout="split"
+    />
 
     <div class="hc-ledger">
       <div class="hc-cols" aria-hidden="true">
@@ -60,33 +65,24 @@ const pageStand = catalogPageStand(lang);
 </section>
 
 <style is:global>
-  .hc {
-    background-color: var(--h-paper-2);
-    border-block: 1px solid var(--h-line);
-  }
-  .hc-head { max-width: 780px; }
+  .hc { background: var(--h-paper-2); }
 
-  .hc-ledger {
-    margin-top: clamp(48px, 6vw, 72px);
-    border-radius: 28px;
-    background: var(--h-card);
-    border: 1px solid var(--h-line);
-    overflow: hidden;
-  }
+  .hc-ledger { margin-top: clamp(40px, 5vw, 64px); border-top: 1.5px solid var(--h-rule); }
   .hc-cols { display: none; }
   .hc-rows { margin: 0; padding: 0; list-style: none; }
   .hc-row {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 8px;
-    padding: 22px 22px 20px;
+    gap: 6px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--h-line-2);
   }
-  .hc-row + .hc-row { border-top: 1px solid var(--h-line); }
   .hc-lic {
     font-family: var(--h-display);
-    font-weight: 600;
-    font-size: 24px;
-    letter-spacing: -0.02em;
+    font-stretch: 84%;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.1;
     color: var(--h-ink);
   }
   .hc-cat { font-size: 15px; line-height: 1.5; color: var(--h-text); }
@@ -94,18 +90,16 @@ const pageStand = catalogPageStand(lang);
   .hc-stamp {
     display: inline-flex;
     align-items: center;
-    padding: 5px 10px;
-    border-radius: 8px;
-    border: 1px dashed var(--h-line-2);
-    font-size: 13px;
-    font-weight: 650;
-    font-variant-numeric: tabular-nums;
+    padding: 3px 8px;
+    border: 1px solid var(--h-line-2);
+    border-radius: 2px;
+    font-family: var(--h-mono);
+    font-size: 12.5px;
     color: var(--h-text);
     white-space: nowrap;
   }
   .hc-stamp--next {
-    border-style: solid;
-    border-color: color-mix(in srgb, var(--h-beacon) 55%, transparent);
+    border-color: var(--h-beacon);
     background: var(--h-beacon-wash);
     color: var(--h-beacon-ink);
   }
@@ -119,7 +113,7 @@ const pageStand = catalogPageStand(lang);
     font-weight: 650;
     text-decoration: underline;
     text-underline-offset: 4px;
-    text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+    text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
   }
   .hc-src:hover { text-decoration-color: currentColor; }
 
@@ -130,32 +124,28 @@ const pageStand = catalogPageStand(lang);
       grid-template-columns: 150px minmax(0, 1.6fr) minmax(0, 1fr) 170px;
       gap: 24px;
       align-items: center;
-      padding: 0 32px;
     }
     .hc-cols {
-      padding-block: 16px;
-      background: var(--h-paper);
+      padding: 10px 0;
       border-bottom: 1px solid var(--h-line-2);
-      font-size: 11.5px;
-      font-weight: 750;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      font-family: var(--h-mono);
+      font-size: 12.5px;
       color: var(--h-muted);
     }
-    .hc-row { padding-block: 20px; transition: background-color 0.25s ease; }
-    .hc-row:hover { background: var(--h-blue-wash); }
+    .hc-row { padding: 18px 0; }
     .hc-src { justify-self: end; }
   }
 
   .hc-notes {
     display: grid;
-    gap: 12px;
+    gap: 10px;
     max-width: 880px;
-    margin-top: 28px;
+    margin-top: 24px;
     font-size: 14px;
     line-height: 1.65;
     color: var(--h-muted);
   }
   .hc-notes p { margin: 0; }
-  .hc-meta strong { color: var(--h-ink); }
+  .hc-meta { font-family: var(--h-mono); font-size: 12.5px; }
+  .hc-meta strong { color: var(--h-ink); font-weight: 500; }
 </style>

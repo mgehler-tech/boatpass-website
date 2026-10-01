@@ -1,39 +1,43 @@
 /* =====================================================================
-   Startseite – Art Direction „Seekarte"
+   Startseite – Art Direction „Logbuch & Instrumente"
    ---------------------------------------------------------------------
-   Die Seite erzählt den Weg zum Schein als Route auf einer Seekarte:
-   Ablegen (Hero) → vier Etappen (Lernweg) → Hafen (Download).
-   • Grund: kühles Kartenpapier mit feinem Gradnetz, tiefes Navy als Tinte.
-   • BoatPass-Blau ist die Kurslinie und alles Interaktive.
-   • Bernstein („Leuchtfeuer") nur für Hervorhebungen und die Merkhilfe –
-     derselbe Ton, den die App für Merkhilfen nutzt.
-   • Rot/Grün nur für falsch/richtig – wie Backbord/Steuerbord und wie in der App.
-   • Typo: Fraunces (Display) für Überschriften, Inter für alles andere.
-   Alle Klassen tragen das Präfix h- (bzw. hh-, hj-, … je Abschnitt), damit
-   nichts mit den übrigen Seiten kollidiert.
+   Vorbild ist ein Logbuch bzw. eine Instrumententafel, nicht eine
+   Landingpage aus Karten:
+   • Linien und Tabellenzeilen statt abgerundeter Karten. Eine kleine
+     Rundung (3px) für alles, außer dem Gerät selbst.
+   • Überschriften in Archivo (leicht schmal, kräftig), Daten und
+     Beschriftungen in IBM Plex Mono, Fließtext in Inter.
+   • Die Fachsprache der Prüfung ist das Gestaltungsmaterial: echte
+     Fragenzahlen, Merkhilfen und Werte aus der App statt Deko.
+   • Eine Akzentfarbe (BoatPass-Blau). Rot/Grün nur für falsch/richtig,
+     Bernstein nur für die Merkhilfe – wie in der App.
+   • Kein Glow, kein Gradnetz, keine Eyebrow-Pills. Jeder Abschnitt
+     beginnt mit einer Logbuch-Zeile (Nummer · Name · Kennwert).
+   Alle Klassen tragen das Präfix h- (bzw. hh-, hj-, … je Abschnitt).
    ===================================================================== */
 
-@import '@fontsource-variable/fraunces/wght.css';
-@import '@fontsource-variable/fraunces/wght-italic.css';
+@import '@fontsource-variable/archivo/wdth.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
 
 .home {
   --h-paper: #F0F4FA;
-  --h-paper-2: #E7EDF7;
+  --h-paper-2: #E6ECF5;
   --h-card: #FFFFFF;
-  --h-ink: #0E1A3A;
-  --h-text: #2B3246;
-  /* 5,9:1 auf --h-paper, 6,5:1 auf Weiß */
-  --h-muted: #586079;
-  --h-line: rgba(14, 26, 58, 0.10);
-  --h-line-2: rgba(14, 26, 58, 0.18);
-  --h-grid: rgba(14, 26, 58, 0.05);
+  --h-ink: #0B1530;
+  --h-text: #26304A;
+  /* 6:1 auf --h-paper */
+  --h-muted: #525D78;
+  --h-rule: #0B1530;
+  --h-line: rgba(11, 21, 48, 0.13);
+  --h-line-2: rgba(11, 21, 48, 0.26);
   --h-blue: #3366FF;
   /* Blau als Schrift: #3366FF erreicht auf dem Papierton nur 4,2:1. */
   --h-blue-ink: #2449D8;
   --h-blue-wash: rgba(51, 102, 255, 0.08);
   --h-btn: #3366FF;
-  --h-btn-hover: #2A58EE;
-  --h-beacon: #F4A62A;
+  --h-btn-hover: #2449D8;
+  --h-beacon: #E8A317;
   --h-beacon-ink: #8A5300;
   --h-beacon-wash: #FCF1DE;
   --h-port: #D63B3B;
@@ -42,17 +46,16 @@
   --h-stbd: #1E8E57;
   --h-stbd-ink: #17744A;
   --h-stbd-wash: #E5F4EB;
-  --h-deep: #0A1430;
-  --h-deep-2: #122453;
+  --h-deep: #0B1530;
   --h-on-deep: #EEF2FC;
   --h-on-deep-muted: #A8B4D4;
-  --h-deep-line: rgba(200, 214, 255, 0.14);
-  --h-deep-grid: rgba(200, 214, 255, 0.06);
+  --h-deep-line: rgba(200, 214, 255, 0.2);
 
-  --h-display: 'Fraunces Variable', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --h-display: 'Archivo Variable', 'Arial Narrow', system-ui, sans-serif;
+  --h-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   --h-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
   --h-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --h-radius: 24px;
+  --h-r: 3px;
   --h-gutter: clamp(16px, 4vw, 40px);
   --h-max: 1240px;
 
@@ -64,14 +67,14 @@
 
 html.dark .home {
   --h-paper: #0F1117;
-  --h-paper-2: #131827;
-  --h-card: #181E2E;
+  --h-paper-2: #141926;
+  --h-card: #171D2B;
   --h-ink: #F1F4FB;
   --h-text: #D5DCEA;
   --h-muted: #9AA5BD;
-  --h-line: rgba(148, 170, 255, 0.12);
-  --h-line-2: rgba(148, 170, 255, 0.22);
-  --h-grid: rgba(148, 170, 255, 0.05);
+  --h-rule: #D5DCEA;
+  --h-line: rgba(213, 220, 234, 0.13);
+  --h-line-2: rgba(213, 220, 234, 0.26);
   --h-blue: #5B8CFF;
   --h-blue-ink: #86A8FF;
   --h-blue-wash: rgba(91, 140, 255, 0.12);
@@ -82,11 +85,10 @@ html.dark .home {
   --h-port-wash: rgba(214, 59, 59, 0.16);
   --h-stbd-ink: #68D9A0;
   --h-stbd-wash: rgba(30, 142, 87, 0.2);
-  --h-deep: #0A0D18;
-  --h-deep-2: #111A33;
+  --h-deep: #080B14;
 }
 
-/* ── Layout-Grundgerüst ─────────────────────────────────────────────── */
+/* ── Layout ─────────────────────────────────────────────────────────── */
 .h-container {
   width: 100%;
   max-width: var(--h-max);
@@ -94,10 +96,11 @@ html.dark .home {
   padding-inline: var(--h-gutter);
 }
 
+/* Bewusst unterschiedliche Abstände je Gewicht des Abschnitts
+   (Modifier in den Komponenten), nicht überall dieselben 120px. */
 .h-section {
   position: relative;
-  padding-block: clamp(88px, 11vw, 160px);
-  /* Fester Header (64px) – Sprungziele nicht darunter verstecken. */
+  padding-block: clamp(72px, 9vw, 128px);
   scroll-margin-top: 64px;
 }
 
@@ -105,162 +108,130 @@ html.dark .home {
   background: var(--h-deep);
   color: var(--h-on-deep);
   --h-ink: var(--h-on-deep);
+  --h-text: var(--h-on-deep);
   --h-muted: var(--h-on-deep-muted);
+  --h-rule: var(--h-on-deep);
   --h-line: var(--h-deep-line);
-  --h-grid: var(--h-deep-grid);
+  --h-line-2: rgba(200, 214, 255, 0.34);
   --h-blue-ink: #9DB8FF;
 }
 
-.h-graticule {
-  background-image:
-    linear-gradient(var(--h-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--h-grid) 1px, transparent 1px);
-  background-size: 96px 96px;
-}
+.h-num { font-variant-numeric: tabular-nums; }
+.h-mono { font-family: var(--h-mono); }
 
-/* ── Typografie ─────────────────────────────────────────────────────── */
-.h-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin: 0 0 22px;
-  font-family: var(--h-sans);
-  font-size: 12px;
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--h-blue-ink);
+/* ── Abschnittskopf: Logbuch-Zeile + Titel ──────────────────────────── */
+.hs-log {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: baseline;
+  padding-top: 12px;
+  font-family: var(--h-mono);
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--h-muted);
 }
-/* Wegpunkt-Marke: das wiederkehrende Kartenzeichen der Seite. */
-.h-eyebrow::before {
-  content: '';
-  flex-shrink: 0;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  border: 1.5px solid currentColor;
-  background: radial-gradient(circle, currentColor 0 1.8px, transparent 2.4px);
+.hs-rule {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: var(--h-rule);
+  transform-origin: left center;
 }
-.h-deep .h-eyebrow { color: var(--h-beacon); }
-@media (max-width: 400px) {
-  .h-eyebrow { font-size: 11px; letter-spacing: 0.11em; }
-}
+.hs-num { color: var(--h-blue-ink); font-weight: 500; }
+.hs-label { color: var(--h-ink); font-weight: 500; }
+.hs-meta { text-align: right; }
 
-.h-display {
+.hs-body { margin-top: clamp(28px, 4vw, 48px); }
+.hs-title {
   margin: 0;
+  max-width: 17ch;
   font-family: var(--h-display);
-  font-weight: 560;
-  font-size: clamp(2.35rem, 5.4vw, 4.6rem);
-  line-height: 1.02;
-  letter-spacing: -0.028em;
+  font-stretch: 84%;
+  font-weight: 720;
+  font-size: clamp(2.3rem, 5.2vw, 4.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.018em;
   color: var(--h-ink);
   text-wrap: balance;
 }
-.h-display .w--accent .wi,
-.h-accent {
-  font-style: italic;
-  font-weight: 480;
-  color: var(--h-blue-ink);
-}
-.h-deep .h-display .w--accent .wi { color: var(--h-beacon); }
-
-.h-lede {
-  margin: 24px 0 0;
-  max-width: 58ch;
-  font-size: clamp(1.05rem, 1.35vw, 1.2rem);
+.hs-lede {
+  margin: 20px 0 0;
+  max-width: 52ch;
+  font-size: clamp(1.02rem, 1.25vw, 1.15rem);
   line-height: 1.62;
   color: var(--h-muted);
   text-wrap: pretty;
 }
-
-.h-num { font-variant-numeric: tabular-nums; }
-
-/* Wortweise geteilte Überschriften (SplitText.astro). Die Maske sitzt auf
-   .w, bewegt wird .wi. Etwas Innenabstand, damit Unterlängen und die
-   Überhänge der Kursive nicht abgeschnitten werden. */
-.h-split .w {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: top;
-  padding: 0.04em 0.06em 0.14em 0;
-  margin: -0.04em -0.06em -0.14em 0;
+@media (min-width: 1024px) {
+  /* Titel links, Einleitung rechts unten – asymmetrisch, nicht gestapelt. */
+  .hs--split .hs-body {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+    gap: 64px;
+    align-items: end;
+  }
+  .hs--split .hs-lede { margin: 0; justify-self: end; }
 }
-.h-split .wi { display: inline-block; }
 
 /* ── Buttons & Links ────────────────────────────────────────────────── */
 .h-btn {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  min-height: 58px;
-  padding: 0 24px 0 12px;
-  border-radius: 18px;
+  min-height: 56px;
+  padding: 0 20px 0 10px;
+  border-radius: var(--h-r);
   background: var(--h-btn);
   color: #fff;
   font-size: 16px;
   font-weight: 700;
-  letter-spacing: -0.005em;
   text-decoration: none;
   white-space: nowrap;
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    0 14px 30px -12px rgba(51, 102, 255, 0.65);
-  transition:
-    transform 0.4s var(--h-ease),
-    box-shadow 0.4s var(--h-ease),
-    background-color 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.35s var(--h-ease);
 }
-.h-btn:hover {
-  background: var(--h-btn-hover);
-  transform: translateY(-2px);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.22),
-    0 20px 36px -14px rgba(51, 102, 255, 0.75);
-}
-.h-btn:active { transform: translateY(0) scale(0.98); transition-duration: 0.12s; }
+.h-btn:hover { background: var(--h-btn-hover); }
+.h-btn:active { transform: translateY(1px); }
 .h-btn:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 3px; }
 .h-btn-mark {
   display: grid;
   place-items: center;
   width: 36px;
   height: 36px;
-  border-radius: 11px;
+  border-radius: 2px;
   background: #fff;
   flex-shrink: 0;
 }
 .h-btn-mark img { width: 20px; height: 20px; display: block; }
-.h-btn-arrow { transition: transform 0.4s var(--h-ease); }
+.h-btn-arrow { transition: transform 0.35s var(--h-ease); }
 .h-btn:hover .h-btn-arrow { transform: translateX(4px); }
 
-.h-btn--quiet {
-  min-height: 52px;
-  padding: 0 22px;
+.h-btn--line {
+  min-height: 48px;
+  padding: 0 18px;
   background: transparent;
   color: var(--h-ink);
-  box-shadow: inset 0 0 0 1.5px var(--h-line-2);
+  box-shadow: inset 0 0 0 1.5px var(--h-rule);
 }
-.h-btn--quiet:hover {
-  background: var(--h-blue-wash);
-  box-shadow: inset 0 0 0 1.5px var(--h-blue);
-}
+.h-btn--line:hover { background: var(--h-ink); color: var(--h-paper); }
 
 .h-deep .h-btn:focus-visible,
 .h-deep a:focus-visible,
 .h-deep button:focus-visible { outline-color: #fff; }
 
-/* iOS: Die App gibt es (noch) nicht im App Store. Der Play-Store-Link wird
-   dort gegen einen ehrlichen Status getauscht (Klasse via HomeBoot). */
+/* iOS: Play-Store-Link weicht dem ehrlichen Status (Klasse via HomeBoot). */
 .h-ios-badge {
   display: none;
   align-items: center;
   gap: 10px;
-  min-height: 58px;
-  padding: 0 22px;
-  border-radius: 18px;
-  background: var(--h-blue-wash);
-  border: 1px solid var(--h-line-2);
-  color: var(--h-blue-ink);
+  min-height: 56px;
+  padding: 0 20px;
+  border-radius: var(--h-r);
+  box-shadow: inset 0 0 0 1.5px var(--h-line-2);
+  color: var(--h-ink);
   font-size: 16px;
   font-weight: 700;
 }
@@ -277,23 +248,41 @@ html.dark .home {
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 5px;
-  text-decoration-color: color-mix(in srgb, currentColor 30%, transparent);
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
   transition: text-decoration-color 0.2s ease, gap 0.3s var(--h-ease);
 }
 .h-link:hover { text-decoration-color: currentColor; gap: 11px; }
 
-/* ── Geräte-Rahmen für echte App-Screenshots ────────────────────────── */
+/* ── Kennzeichnungen (statt Häkchen-Chips) ──────────────────────────── */
+.h-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.h-tag {
+  padding: 4px 8px;
+  border: 1px solid var(--h-line-2);
+  border-radius: 2px;
+  font-family: var(--h-mono);
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--h-text);
+}
+
+/* ── Gerät für echte App-Screenshots ────────────────────────────────── */
 .h-phone {
   --pw: 280px;
   position: relative;
   width: var(--pw);
   padding: calc(var(--pw) * 0.032);
   border-radius: calc(var(--pw) * 0.155);
-  background: linear-gradient(150deg, #26304F 0%, #0B1024 55%, #1A2240 100%);
+  background: #0B1024;
   box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.08),
-    0 60px 90px -40px rgba(10, 20, 48, 0.55),
-    0 24px 40px -24px rgba(10, 20, 48, 0.45);
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 24px 48px -28px rgba(11, 21, 48, 0.55);
 }
 .h-phone-screen {
   position: relative;
@@ -311,43 +300,40 @@ html.dark .home {
   display: block;
 }
 
-/* ── Chips ──────────────────────────────────────────────────────────── */
-.h-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+/* ── Seekarten-Rahmen: der schwarz-weiße Minutenrand einer echten Karte ── */
+.h-chart {
+  --tick: 18px;
+  position: relative;
+  border: 1.5px solid var(--h-rule);
+  background: var(--h-paper-2);
 }
-.h-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 13px 7px 11px;
-  border-radius: 999px;
-  background: var(--h-card);
-  border: 1px solid var(--h-line);
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--h-text);
+.h-chart::before,
+.h-chart::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
 }
-.h-chip svg { color: var(--h-blue); flex-shrink: 0; }
+.h-chart::before {
+  inset: 0;
+  background:
+    repeating-linear-gradient(90deg, var(--h-rule) 0 var(--tick), transparent var(--tick) calc(var(--tick) * 2)) top / 100% 6px no-repeat,
+    repeating-linear-gradient(90deg, var(--h-rule) 0 var(--tick), transparent var(--tick) calc(var(--tick) * 2)) bottom / 100% 6px no-repeat;
+}
+.h-chart::after {
+  inset: 0;
+  background:
+    repeating-linear-gradient(180deg, var(--h-rule) 0 var(--tick), transparent var(--tick) calc(var(--tick) * 2)) left / 6px 100% no-repeat,
+    repeating-linear-gradient(180deg, var(--h-rule) 0 var(--tick), transparent var(--tick) calc(var(--tick) * 2)) right / 6px 100% no-repeat;
+}
 
-/* ── Nur mit JavaScript sinnvolle Elemente (Quiz, Laufband-Schalter) ── */
+/* ── Nur mit JavaScript sinnvoll (Quiz, Laufband-Schalter) ──────────── */
 .h-js-only { display: none; }
 .h-js .h-js-only { display: block; }
 
-/* ── Bewegung: Startzustände ────────────────────────────────────────────
-   Nur wenn HomeBoot `h-motion` gesetzt hat (JS an, keine reduzierte
-   Bewegung). Sobald das Skript läuft, übernimmt GSAP die Werte als Inline-
-   Styles und setzt `h-ready` – ab dann greifen diese Regeln nicht mehr.
-   Lädt das Skript nicht, entfernt HomeBoot `h-motion` nach 3 s wieder:
-   Der Inhalt ist dann einfach statisch sichtbar. */
-.h-motion:not(.h-ready) .home [data-split] .wi { transform: translateY(110%); }
+/* ── Bewegung: Startzustände (nur mit h-motion, s. HomeBoot) ─────────── */
 .h-motion:not(.h-ready) .home [data-reveal] { opacity: 0; }
+.h-motion:not(.h-ready) .home [data-rule] { transform: scaleX(0); }
 
 @media (prefers-reduced-motion: reduce) {
   .h-btn, .h-btn-arrow, .h-link { transition: none; }
-  .h-btn:hover { transform: none; }
 }

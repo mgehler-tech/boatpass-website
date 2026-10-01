@@ -35,7 +35,6 @@ function initJourney() {
   const steps = Array.from(grid.querySelectorAll<HTMLElement>('[data-journey-step]'));
   const screens = Array.from(grid.querySelectorAll<HTMLElement>('[data-journey-screen]'));
   const fill = grid.querySelector<HTMLElement>('[data-journey-fill]');
-  const stageNum = grid.querySelector<HTMLElement>('[data-stage-num]');
   const capNum = grid.querySelector<HTMLElement>('[data-stage-cap-num]');
   const capTitle = grid.querySelector<HTMLElement>('[data-stage-cap-title]');
   if (!steps.length) return;
@@ -74,12 +73,6 @@ function initJourney() {
     const num = String(i + 1).padStart(2, '0');
     if (capNum) capNum.textContent = num;
     if (capTitle) capTitle.textContent = steps[i].dataset.journeyTitle ?? '';
-    if (stageNum) {
-      stageNum.textContent = num;
-      if (motion && prev >= 0) {
-        gsap.fromTo(stageNum, { yPercent: i > prev ? 18 : -18, opacity: 0 }, { yPercent: 0, opacity: 1, duration: 0.9, ease: 'expo.out', overwrite: true });
-      }
-    }
     // Ohne Scrub zeigt die Linie den Stand der aktiven Etappe.
     if (!motion && fill) fill.style.setProperty('--hj-progress', String(i / (steps.length - 1)));
   };
@@ -114,7 +107,7 @@ function initJourney() {
   }
 }
 
-/* ── Rezensionen: Laufband ab 769px ───────────────────────────────────── */
+/* ── NAVTEX-Streifen: das einzige Laufband der Seite ──────────────────── */
 function initMarquee() {
   const viewport = document.querySelector<HTMLElement>('[data-marquee]');
   const track = viewport?.querySelector<HTMLElement>('[data-marquee-track]');
@@ -122,58 +115,35 @@ function initMarquee() {
   const toggleLabel = toggle?.querySelector<HTMLElement>('[data-marquee-toggle-label]');
   if (!viewport || !track || !motion) return;
 
-  const mq = window.matchMedia('(min-width: 769px)');
-  let clones: HTMLElement[] = [];
-  let io: IntersectionObserver | null = null;
+  // Klone sind für Screenreader und Tastatur unsichtbar – jede Merkhilfe
+  // existiert für sie genau einmal.
+  Array.from(track.children).forEach((item) => {
+    const clone = item.cloneNode(true) as HTMLElement;
+    clone.setAttribute('aria-hidden', 'true');
+    clone.inert = true;
+    track.appendChild(clone);
+  });
+  // Lesetempo: rund 45 px pro Sekunde.
+  const half = track.scrollWidth / 2;
+  track.style.setProperty('--hr-duration', `${Math.max(40, Math.round(half / 45))}s`);
+  viewport.scrollLeft = 0;
+  viewport.classList.add('is-marquee');
+  // Nichts mehr zu scrollen → kein leerer Tab-Stopp.
+  viewport.removeAttribute('tabindex');
 
-  const setPaused = (paused: boolean) => {
-    viewport.classList.toggle('is-paused', paused);
-    if (toggle) toggle.dataset.paused = String(paused);
-    if (toggleLabel && toggle) {
-      toggleLabel.textContent = (paused ? toggle.dataset.labelPlay : toggle.dataset.labelPause) ?? '';
-    }
-  };
+  // Außerhalb des Sichtbereichs steht das Band still.
+  new IntersectionObserver(([entry]) => {
+    viewport.classList.toggle('is-offscreen', !entry.isIntersecting);
+  }).observe(viewport);
 
-  const start = () => {
-    if (viewport.classList.contains('is-marquee')) return;
-    // Klone sind für Screenreader und Tastatur unsichtbar – jede Rezension
-    // existiert für sie genau einmal.
-    clones = Array.from(track.children).map((item) => {
-      const clone = item.cloneNode(true) as HTMLElement;
-      clone.setAttribute('aria-hidden', 'true');
-      clone.inert = true;
-      track.appendChild(clone);
-      return clone;
+  if (toggle) {
+    toggle.hidden = false;
+    toggle.addEventListener('click', () => {
+      const paused = viewport.classList.toggle('is-paused');
+      toggle.dataset.paused = String(paused);
+      if (toggleLabel) toggleLabel.textContent = (paused ? toggle.dataset.labelPlay : toggle.dataset.labelPause) ?? '';
     });
-    const half = track.scrollWidth / 2;
-    track.style.setProperty('--hr-duration', `${Math.max(40, Math.round(half / 38))}s`);
-    viewport.scrollLeft = 0;
-    viewport.classList.add('is-marquee');
-    // Nichts mehr zu scrollen → kein leerer Tab-Stopp.
-    viewport.removeAttribute('tabindex');
-    if (toggle) toggle.hidden = false;
-    io = new IntersectionObserver(([entry]) => {
-      viewport.classList.toggle('is-offscreen', !entry.isIntersecting);
-    });
-    io.observe(viewport);
-  };
-
-  const stop = () => {
-    clones.forEach((c) => c.remove());
-    clones = [];
-    io?.disconnect();
-    io = null;
-    viewport.classList.remove('is-marquee', 'is-offscreen');
-    viewport.setAttribute('tabindex', '0');
-    setPaused(false);
-    if (toggle) toggle.hidden = true;
-  };
-
-  const sync = () => (mq.matches ? start() : stop());
-  mq.addEventListener('change', sync);
-  sync();
-
-  toggle?.addEventListener('click', () => setPaused(!viewport.classList.contains('is-paused')));
+  }
 }
 
 /* ── Hero: Handy folgt dezent dem Zeiger (nur Maus) ───────────────────── */
@@ -218,33 +188,27 @@ function initTilt() {
 }
 
 /* ── Einblenden beim Scrollen ─────────────────────────────────────────────
+   Logbuch-Linien ziehen sich von links auf, Inhalte heben sich dezent an.
    IntersectionObserver statt ScrollTrigger: Er meldet für jedes Element
    sofort den Ausgangszustand. Was beim Laden schon oberhalb liegt (Sprung
    per #pricing aus dem Menü, wiederhergestellte Scrollposition), steht
    damit sofort da, statt unsichtbar zu bleiben. */
 function initReveals() {
   const items = gsap.utils.toArray<HTMLElement>('.home [data-reveal]');
-  const headings = gsap.utils.toArray<HTMLElement>('.home [data-split]');
+  const rules = gsap.utils.toArray<HTMLElement>('.home [data-rule]');
   const portrait = document.querySelector<HTMLElement>('[data-hf-portrait]');
 
-  gsap.set(items, { opacity: 0, y: 28 });
-  headings.forEach((h) => gsap.set(h.querySelectorAll('.wi'), { y: 0, yPercent: 110 }));
-  if (portrait) gsap.set(portrait, { clipPath: 'inset(14% 14% 14% 14% round 28px)' });
+  gsap.set(items, { opacity: 0, y: 20 });
+  gsap.set(rules, { scaleX: 0 });
+  if (portrait) gsap.set(portrait, { clipPath: 'inset(0% 0% 100% 0%)' });
 
   const show = (el: HTMLElement, instant: boolean, delay: number) => {
-    if (el.matches('[data-split]')) {
-      const words = el.querySelectorAll('.wi');
-      if (instant) gsap.set(words, { yPercent: 0 });
-      else gsap.to(words, { yPercent: 0, duration: 1.05, ease: 'expo.out', stagger: 0.05, delay });
-    } else if (el === portrait) {
-      const to = { clipPath: 'inset(0% 0% 0% 0% round 28px)' };
-      if (instant) gsap.set(el, to);
-      else gsap.to(el, { ...to, duration: 1.5, ease: 'expo.out', delay });
-    } else if (instant) {
-      gsap.set(el, { opacity: 1, y: 0 });
-    } else {
-      gsap.to(el, { opacity: 1, y: 0, duration: 0.95, ease: 'expo.out', delay });
-    }
+    let to: gsap.TweenVars;
+    if (el.matches('[data-rule]')) to = { scaleX: 1, duration: 1.1, ease: 'expo.inOut' };
+    else if (el === portrait) to = { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.3, ease: 'expo.inOut' };
+    else to = { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out' };
+    if (instant) gsap.set(el, { ...to, duration: 0 });
+    else gsap.to(el, { ...to, delay });
   };
 
   const io = new IntersectionObserver(
@@ -256,12 +220,12 @@ function initReveals() {
         .forEach((e) => {
           io.unobserve(e.target);
           const passed = !e.isIntersecting;
-          show(e.target as HTMLElement, passed, passed ? 0 : Math.min(n++, 6) * 0.08);
+          show(e.target as HTMLElement, passed, passed ? 0 : Math.min(n++, 6) * 0.07);
         });
     },
     { rootMargin: '0px 0px -8% 0px' },
   );
-  [...items, ...headings, ...(portrait ? [portrait] : [])].forEach((el) => io.observe(el));
+  [...rules, ...items, ...(portrait ? [portrait] : [])].forEach((el) => io.observe(el));
 }
 
 /* ── Scrubs: Gründer-Fotos ────────────────────────────────────────────── */

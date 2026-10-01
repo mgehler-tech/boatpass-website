@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HomeBoot from '../components/home/HomeBoot.astro';
 import HomeHero from '../components/home/HomeHero.astro';
+import HomeNavtex from '../components/home/HomeNavtex.astro';
 import HomeJourney from '../components/home/HomeJourney.astro';
 import HomeReviews from '../components/home/HomeReviews.astro';
 import HomeFounder from '../components/home/HomeFounder.astro';
@@ -13,8 +14,7 @@ import { getBoatpassRating } from '../data/apps';
 import '../styles/home.css';
 // Display-Schrift der Startseite vorladen (nur das lateinische Subset, das
 // DE/EN tatsächlich braucht) – die H1 im Hero ist das größte Element.
-import frauncesLatin from '@fontsource-variable/fraunces/files/fraunces-latin-wght-normal.woff2?url';
-import frauncesLatinItalic from '@fontsource-variable/fraunces/files/fraunces-latin-wght-italic.woff2?url';
+import archivoLatin from '@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2?url';
 
 const appRating = getBoatpassRating();
 
@@ -62,8 +62,7 @@ const faqSchema = {
   showCta={false}
 >
   <Fragment slot="head">
-    <link rel="preload" href={frauncesLatin} as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href={frauncesLatinItalic} as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href={archivoLatin} as="font" type="font/woff2" crossorigin />
   </Fragment>
   <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -74,13 +73,14 @@ const faqSchema = {
        an der Preisauswahl, wo die Frage „welcher Schein?" entsteht. -->
   <div class="home">
     <HomeHero lang="de" />
-    <HomeJourney lang="de" />
-    <HomeReviews />
-    <HomeFounder lang="de" />
-    <HomePricing lang="de" />
-    <HomeCatalogs lang="de" />
-    <HomeGuide lang="de" faqs={faqs} />
-    <HomeFinalCta lang="de" />
+    <HomeNavtex lang="de" />
+    <HomeJourney lang="de" num="01" />
+    <HomeReviews num="02" />
+    <HomeFounder lang="de" num="03" />
+    <HomePricing lang="de" num="04" />
+    <HomeCatalogs lang="de" num="05" />
+    <HomeGuide lang="de" num="06" faqs={faqs} />
+    <HomeFinalCta lang="de" num="07" />
   </div>
 </BaseLayout>
 

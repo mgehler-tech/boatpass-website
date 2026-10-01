@@ -4,15 +4,16 @@
 // Blogposts der jeweiligen Sprache.
 import { getCollection } from 'astro:content';
 import Icon from '../Icon.astro';
-import SplitText from './SplitText.astro';
+import SectionHead from './SectionHead.astro';
 import { useTranslations, getLocalizedPath } from '../../i18n/index';
 
 interface Props {
   lang: 'de' | 'en';
+  num: string;
   faqs: { q: string; a: string }[];
 }
 
-const { lang, faqs } = Astro.props;
+const { lang, num, faqs } = Astro.props;
 const t = useTranslations(lang);
 const h = t.home;
 
@@ -24,69 +25,74 @@ const postHref = (id: string) => {
   const slug = id.replace(`${lang}/`, '');
   return lang === 'de' ? `/blog/${slug}/` : `/en/blog/${slug}/`;
 };
+const postDate = (d: Date) => d.toISOString().slice(0, 10).split('-').reverse().join('.');
 ---
 
 <section id="ratgeber" class="hg h-section" aria-labelledby="hg-title">
-  <div class="h-container hg-grid">
-    <div class="hg-faq">
-      <p class="h-eyebrow" data-reveal>{h.guideEyebrow}</p>
-      <SplitText as="h2" id="hg-title" class="h-display hg-title" text={h.faqTitle} />
-      <div class="hg-acc" data-reveal>
-        {faqs.map(f => (
-          <details class="hg-item">
-            <summary class="hg-q">
-              <h3>{f.q}</h3>
-              <span class="hg-icon" aria-hidden="true"></span>
-            </summary>
-            <div class="hg-a"><p>{f.a}</p></div>
-          </details>
-        ))}
-      </div>
-      <a class="h-link hg-more" href={getLocalizedPath(lang, '/faq/')}>{h.faqMore}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a>
-    </div>
+  <div class="h-container">
+    <SectionHead num={num} label={h.guideLabel} meta={h.guideMeta} title={h.faqTitle} id="hg-title" />
 
-    <div class="hg-articles">
-      <h2 class="hg-sub" data-reveal>{h.articlesTitle}</h2>
-      <ol class="hg-list">
-        {posts.map(post => (
-          <li data-reveal>
-            <a class="hg-post" href={postHref(post.id)}>
-              <span class="hg-post-meta">
-                {post.data.tags[0] && <span class="hg-post-tag">{post.data.tags[0]}</span>}
-                <span>{post.data.readingTime} {h.minRead}</span>
-              </span>
-              <span class="hg-post-title">{post.data.title}</span>
-              <span class="hg-post-desc">{post.data.description}</span>
-            </a>
-          </li>
-        ))}
-      </ol>
-      <a class="h-link hg-more" href={getLocalizedPath(lang, '/blog/')}>{t.blog.allArticles}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a>
+    <div class="hg-grid">
+      <div class="hg-faq">
+        <div class="hg-acc" data-reveal>
+          {faqs.map((f, i) => (
+            <details class="hg-item">
+              <summary class="hg-q">
+                <span class="hg-q-num h-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                <h3>{f.q}</h3>
+                <span class="hg-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="hg-a"><p>{f.a}</p></div>
+            </details>
+          ))}
+        </div>
+        <a class="h-link hg-more" href={getLocalizedPath(lang, '/faq/')}>{h.faqMore}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a>
+      </div>
+
+      <div class="hg-articles">
+        <h2 class="hg-sub" data-reveal>{h.articlesTitle}</h2>
+        <ol class="hg-list">
+          {posts.map(post => (
+            <li data-reveal>
+              <a class="hg-post" href={postHref(post.id)}>
+                <span class="hg-post-meta">
+                  <span class="h-num">{postDate(post.data.date)}</span>
+                  {post.data.tags[0] && <span>{post.data.tags[0]}</span>}
+                  <span>{post.data.readingTime} {h.minRead}</span>
+                </span>
+                <span class="hg-post-title">{post.data.title}</span>
+                <span class="hg-post-desc">{post.data.description}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+        <a class="h-link hg-more" href={getLocalizedPath(lang, '/blog/')}>{t.blog.allArticles}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a>
+      </div>
     </div>
   </div>
 </section>
 
 <style is:global>
   .hg { background: var(--h-paper); }
-  .hg-grid { display: grid; gap: 80px; }
+  .hg-grid { display: grid; gap: 64px; margin-top: clamp(36px, 4vw, 56px); }
   @media (min-width: 1024px) {
-    .hg-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr); gap: clamp(56px, 7vw, 112px); }
+    .hg-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(56px, 7vw, 104px); }
   }
-  .hg-title { font-size: clamp(2.2rem, 4.4vw, 3.6rem); }
 
-  .hg-acc { margin-top: 36px; border-top: 1px solid var(--h-line-2); }
+  .hg-acc { border-top: 1.5px solid var(--h-rule); }
   .hg-item { border-bottom: 1px solid var(--h-line-2); }
   .hg-q {
-    display: flex;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) 28px;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    gap: 12px;
     min-height: 64px;
-    padding: 20px 4px;
+    padding: 18px 0;
     cursor: pointer;
     list-style: none;
   }
   .hg-q::-webkit-details-marker { display: none; }
+  .hg-q-num { font-family: var(--h-mono); font-size: 13px; color: var(--h-muted); }
   .hg-q h3 {
     margin: 0;
     font-size: 18px;
@@ -96,16 +102,14 @@ const postHref = (id: string) => {
     color: var(--h-ink);
   }
   .hg-q:hover h3 { color: var(--h-blue-ink); }
-  .hg-q:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; border-radius: 8px; }
-  /* Plus, das sich beim Öffnen zum Minus dreht. */
+  .hg-q:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
+  /* Plus, das sich beim Öffnen zum Minus schließt. */
   .hg-icon {
     position: relative;
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 1.5px solid var(--h-line-2);
-    transition: transform 0.45s var(--h-ease), border-color 0.25s ease, background-color 0.25s ease;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--h-line-2);
+    border-radius: 2px;
   }
   .hg-icon::before,
   .hg-icon::after {
@@ -113,69 +117,67 @@ const postHref = (id: string) => {
     position: absolute;
     left: 50%;
     top: 50%;
-    width: 12px;
-    height: 2px;
-    margin: -1px 0 0 -6px;
-    border-radius: 2px;
-    background: var(--h-blue-ink);
-    transition: transform 0.45s var(--h-ease);
+    width: 11px;
+    height: 1.5px;
+    margin: -0.75px 0 0 -5.5px;
+    background: var(--h-ink);
+    transition: transform 0.35s var(--h-ease);
   }
   .hg-icon::after { transform: rotate(90deg); }
-  .hg-item[open] .hg-icon { transform: rotate(180deg); background: var(--h-blue-wash); border-color: var(--h-blue); }
+  .hg-item[open] .hg-icon { border-color: var(--h-rule); }
   .hg-item[open] .hg-icon::after { transform: rotate(0deg); }
   .hg-a p {
     margin: 0;
-    padding: 0 4px 24px;
-    max-width: 62ch;
+    padding: 0 40px 22px 56px;
+    max-width: 66ch;
     font-size: 16px;
     line-height: 1.7;
     color: var(--h-muted);
+  }
+  @media (max-width: 639px) {
+    .hg-q { grid-template-columns: 32px minmax(0, 1fr) 28px; }
+    .hg-a p { padding: 0 0 20px 44px; }
   }
   /* Sanftes Aufklappen, wo der Browser es kann – sonst öffnet es sofort. */
   .home { interpolate-size: allow-keywords; }
   .hg-item::details-content {
     block-size: 0;
     overflow: hidden;
-    transition: block-size 0.5s var(--h-ease), content-visibility 0.5s allow-discrete;
+    transition: block-size 0.45s var(--h-ease), content-visibility 0.45s allow-discrete;
   }
   .hg-item[open]::details-content { block-size: auto; }
 
-  .hg-more { margin-top: 18px; }
+  .hg-more { margin-top: 14px; }
 
   .hg-sub {
-    margin: 0 0 8px;
+    margin: 0 0 14px;
     font-family: var(--h-display);
-    font-weight: 560;
-    font-size: clamp(1.8rem, 3vw, 2.4rem);
+    font-stretch: 84%;
+    font-weight: 700;
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
     line-height: 1.1;
-    letter-spacing: -0.02em;
     color: var(--h-ink);
   }
-  @media (min-width: 1024px) {
-    /* Auf eine Linie mit der FAQ-Überschrift (Eyebrow darüber). */
-    .hg-articles { padding-top: 34px; }
-  }
-  .hg-list { margin: 24px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--h-line-2); }
+  .hg-list { margin: 0; padding: 0; list-style: none; border-top: 1.5px solid var(--h-rule); }
   .hg-list li { border-bottom: 1px solid var(--h-line-2); }
   .hg-post {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding: 22px 4px;
+    gap: 6px;
+    padding: 18px 0;
     color: inherit;
     text-decoration: none;
   }
   .hg-post-meta {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 14px;
+    gap: 4px 14px;
+    font-family: var(--h-mono);
     font-size: 12.5px;
-    font-weight: 650;
     color: var(--h-muted);
   }
-  .hg-post-tag { color: var(--h-blue-ink); letter-spacing: 0.04em; text-transform: uppercase; font-weight: 750; }
   .hg-post-title {
-    font-size: 19px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.35;
     letter-spacing: -0.01em;
@@ -195,9 +197,9 @@ const postHref = (id: string) => {
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
-  .hg-post:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; border-radius: 10px; }
+  .hg-post:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
 
   @media (prefers-reduced-motion: reduce) {
-    .hg-icon, .hg-icon::before, .hg-icon::after, .hg-item::details-content { transition: none; }
+    .hg-icon::before, .hg-icon::after, .hg-item::details-content { transition: none; }
   }
 </style>

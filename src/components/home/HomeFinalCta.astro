@@ -1,19 +1,19 @@
 ---
-// „Hafen": der Abschluss der Route. Ein CTA, die Bewertung und – nur am
-// Desktop, wo man die App nicht direkt installieren kann – ein QR-Code zum
-// Play-Store-Eintrag. Der QR-Code entsteht beim Build als SVG.
+// Abschluss: ein CTA, die Bewertung und – nur am Desktop, wo man die App nicht
+// direkt installieren kann – ein QR-Code zum Play-Store-Eintrag. Der QR-Code
+// entsteht beim Build als SVG.
 import QRCode from 'qrcode';
-import Icon from '../Icon.astro';
-import SplitText from './SplitText.astro';
+import SectionHead from './SectionHead.astro';
 import PlayCta from './PlayCta.astro';
 import { useTranslations } from '../../i18n/index';
 import { getBoatpassRating, formatRating } from '../../data/apps';
 
 interface Props {
   lang: 'de' | 'en';
+  num: string;
 }
 
-const { lang } = Astro.props;
+const { lang, num } = Astro.props;
 const t = useTranslations(lang);
 const h = t.home;
 const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
@@ -25,119 +25,94 @@ const qrSvg = await QRCode.toString(playStoreUrl, {
   type: 'svg',
   margin: 0,
   errorCorrectionLevel: 'M',
-  color: { dark: '#0A1430ff', light: '#ffffffff' },
+  color: { dark: '#0B1530ff', light: '#ffffffff' },
 });
 ---
 
 <section class="hx h-section h-deep" aria-labelledby="hx-title">
-  <div class="hx-bg h-graticule" aria-hidden="true"></div>
+  <div class="h-container">
+    <SectionHead num={num} label={h.finalLabel} meta={h.finalMeta} title={t.ctaBanner.title} id="hx-title" class="hx-head" />
 
-  <div class="h-container hx-grid">
-    <div class="hx-copy">
-      <span class="hx-harbour" aria-hidden="true"><Icon name="anchor" size={22} strokeWidth={1.75} /></span>
-      <p class="h-eyebrow" data-reveal>{h.finalEyebrow}</p>
-      <SplitText as="h2" id="hx-title" class="h-display hx-title" text={h.finalTitle} />
-      <p class="h-lede" data-reveal>{t.ctaBanner.subtitle}</p>
-
-      <div class="hx-actions" data-reveal>
-        <PlayCta lang={lang} position="final" id="final-cta" />
-        {rating && (
-          <p class="hx-rating">
-            <Icon name="star" size={16} strokeWidth={2} class="hx-rating-star" />
-            <strong class="h-num">{score}</strong>
-            <span class="sr-only">{h.ratingOutOf},</span>
-            <span>{rating.ratings} {h.ratingSource}</span>
-          </p>
-        )}
+    <div class="hx-grid">
+      <div class="hx-copy">
+        <p class="hx-lede" data-reveal>{t.ctaBanner.subtitle}</p>
+        <div class="hx-actions" data-reveal>
+          <PlayCta lang={lang} position="final" id="final-cta" />
+          {rating && (
+            <p class="hx-rating">
+              <strong class="h-num">{score}</strong>
+              <span class="sr-only">{h.ratingOutOf},</span>
+              <span>{rating.ratings} {h.ratingSource}</span>
+            </p>
+          )}
+        </div>
+        <p class="hx-ios h-play-only" data-reveal>{t.hero.ctaIos}</p>
       </div>
-      <p class="hx-ios h-play-only" data-reveal><Icon name="phoneDevice" size={16} strokeWidth={2} />{t.hero.ctaIos}</p>
-    </div>
 
-    <div class="hx-side h-play-only" data-reveal>
-      <a class="hx-qr" href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="final-qr">
-        <span class="hx-qr-code" role="img" aria-label={h.qrAlt} set:html={qrSvg} />
-        <span class="hx-qr-text">
-          <img class="hx-qr-icon" src="/images/app-icon.png" alt="" width="44" height="44" loading="lazy" decoding="async" />
-          <strong>{h.qrTitle}</strong>
-          <span>{h.qrText}</span>
-        </span>
-        <span class="sr-only">{h.newTab}</span>
-      </a>
+      <div class="hx-side h-play-only" data-reveal>
+        <a class="hx-qr" href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="final-qr">
+          <span class="hx-qr-code" role="img" aria-label={h.qrAlt} set:html={qrSvg} />
+          <span class="hx-qr-text">
+            <img class="hx-qr-icon" src="/images/app-icon.png" alt="" width="40" height="40" loading="lazy" decoding="async" />
+            <strong>{h.qrTitle}</strong>
+            <span>{h.qrText}</span>
+          </span>
+          <span class="sr-only">{h.newTab}</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
 <style is:global>
   .hx { overflow: clip; }
-  .hx-bg {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    -webkit-mask-image: radial-gradient(80% 90% at 20% 30%, #000 20%, transparent 80%);
-            mask-image: radial-gradient(80% 90% at 20% 30%, #000 20%, transparent 80%);
-  }
+  .hx-head .hs-title { font-size: clamp(2.8rem, 7.5vw, 6.4rem); max-width: 12ch; }
+
   .hx-grid {
-    position: relative;
     display: grid;
-    gap: 56px;
-    align-items: center;
+    gap: 48px;
+    align-items: end;
+    margin-top: 28px;
   }
   @media (min-width: 1024px) {
-    .hx-grid { grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr); gap: 80px; }
+    .hx-grid { grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 80px; }
   }
 
-  /* Hafen-Marke: Ende der Kurslinie, die im Hero beginnt. */
-  .hx-harbour {
-    position: relative;
-    display: grid;
-    place-items: center;
-    width: 52px;
-    height: 52px;
-    margin-bottom: 36px;
-    border-radius: 50%;
-    border: 2px solid var(--h-beacon);
-    color: var(--h-beacon);
-    box-shadow: 0 0 0 8px rgba(244, 166, 42, 0.12);
+  .hx-lede {
+    margin: 0;
+    max-width: 46ch;
+    font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+    line-height: 1.6;
+    color: var(--h-on-deep-muted);
   }
-  .hx-harbour::before {
-    content: '';
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    width: 2px;
-    height: 56px;
-    margin-left: -1px;
-    margin-bottom: 10px;
-    background: repeating-linear-gradient(to bottom, rgba(244, 166, 42, 0.7) 0 5px, transparent 5px 10px);
-  }
-
-  .hx-title { font-size: clamp(2.8rem, 7vw, 6rem); }
   .hx-actions {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 18px 28px;
-    margin-top: 40px;
+    gap: 16px 28px;
+    margin-top: 32px;
   }
-  .hx .h-btn { box-shadow: 0 18px 40px -16px rgba(51, 102, 255, 0.9); }
-  .hx .h-ios-badge { background: rgba(255, 255, 255, 0.08); border-color: var(--h-deep-line); color: #fff; }
+  .hx .h-ios-badge { box-shadow: inset 0 0 0 1.5px var(--h-deep-line); color: #fff; }
   .hx-rating {
     display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    align-items: baseline;
+    gap: 10px;
     margin: 0;
-    font-size: 15px;
+    font-family: var(--h-mono);
+    font-size: 13px;
     color: var(--h-on-deep-muted);
   }
-  .hx-rating strong { font-size: 18px; color: #fff; }
-  .hx-rating-star { color: var(--h-beacon); fill: var(--h-beacon); }
+  .hx-rating strong {
+    font-family: var(--h-display);
+    font-stretch: 80%;
+    font-weight: 720;
+    font-size: 32px;
+    color: #fff;
+  }
   .hx-ios {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin: 22px 0 0;
-    font-size: 14.5px;
-    font-weight: 600;
+    margin: 20px 0 0;
+    font-family: var(--h-mono);
+    font-size: 13px;
     color: var(--h-on-deep-muted);
   }
 
@@ -148,34 +123,33 @@ const qrSvg = await QRCode.toString(playStoreUrl, {
   .hx-qr {
     display: flex;
     flex-direction: column;
-    gap: 22px;
-    width: 280px;
-    padding: 22px;
-    border-radius: 28px;
+    gap: 18px;
+    width: 260px;
+    padding: 18px;
+    border-radius: var(--h-r);
     background: #fff;
-    color: #0E1A3A;
+    color: #0B1530;
     text-decoration: none;
-    box-shadow: 0 40px 80px -40px rgba(0, 0, 0, 0.8);
-    transform: rotate(-2deg);
-    transition: transform 0.5s var(--h-ease);
+    transition: transform 0.35s var(--h-ease);
   }
-  .hx-qr:hover { transform: rotate(0deg) translateY(-4px); }
+  .hx-qr:hover { transform: translateY(-3px); }
   .hx-qr:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
   .hx-qr-code { display: block; line-height: 0; }
   .hx-qr-code svg { width: 100%; height: auto; display: block; }
   .hx-qr-text {
     display: grid;
-    grid-template-columns: 44px minmax(0, 1fr);
+    grid-template-columns: 40px minmax(0, 1fr);
     column-gap: 12px;
     align-items: center;
-    font-size: 13.5px;
+    font-size: 13px;
     line-height: 1.4;
-    color: #586079;
+    color: #525D78;
   }
-  .hx-qr-icon { grid-row: span 2; border-radius: 11px; }
-  .hx-qr-text strong { font-size: 15px; color: #0E1A3A; }
+  .hx-qr-icon { grid-row: span 2; border-radius: 9px; }
+  .hx-qr-text strong { font-size: 14.5px; color: #0B1530; }
 
   @media (prefers-reduced-motion: reduce) {
     .hx-qr { transition: none; }
+    .hx-qr:hover { transform: none; }
   }
 </style>

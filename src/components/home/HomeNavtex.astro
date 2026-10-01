@@ -1,0 +1,168 @@
+---
+// NAVTEX-Streifen: die Merkhilfen der zehn Quizfragen, wortgleich aus der App
+// (data/quiz-questions.json), laufend wie ein Seewarnfunk-Fernschreiber.
+// Das einzige laufende Element der Seite. Die Liste ist echt; home-motion.ts
+// hängt ab Bewegungs-Freigabe aria-hidden/inert-Klone an und startet das
+// Laufband. Anhalten per Schalter (WCAG 2.2.2), Hover oder Fokus. Ohne JS
+// oder bei reduzierter Bewegung: seitlich scrollbare Reihe.
+import { useTranslations } from '../../i18n/index';
+import { QUIZ_QUESTIONS, QUIZ_LICENCE_LABELS } from '../../data/quiz';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const h = useTranslations(lang).home;
+const items = QUIZ_QUESTIONS.map(q => ({
+  licence: QUIZ_LICENCE_LABELS[q.licence][lang],
+  text: q.mnemonic[lang],
+}));
+---
+
+<section class="hn" aria-labelledby={`hn-title-${lang}`}>
+  <div class="hn-head">
+    <span class="hn-code">{h.navtexLabel}</span>
+    <span class="hn-title" id={`hn-title-${lang}`}>{h.navtexTitle}</span>
+  </div>
+  <div class="hn-control">
+    <button type="button" class="hn-toggle" data-marquee-toggle data-paused="false" hidden
+      data-label-pause={h.navtexPause} data-label-play={h.navtexPlay}>
+      <span class="hn-toggle-icon" aria-hidden="true"></span>
+      <span data-marquee-toggle-label>{h.navtexPause}</span>
+    </button>
+  </div>
+  <!-- tabindex: ohne Laufband seitlich scrollbar, daher per Tastatur erreichbar.
+       Läuft das Band, entfernt home-motion.ts den Tab-Stopp wieder. -->
+  <div class="hn-viewport" data-marquee role="region" aria-labelledby={`hn-title-${lang}`} tabindex="0">
+    <ul class="hn-track" data-marquee-track>
+      {items.map(item => (
+        <li class="hn-item">
+          <span class="hn-lic">{item.licence}</span>
+          <span class="hn-text">{item.text}</span>
+          <span class="hn-sep" aria-hidden="true">+++</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style is:global>
+  /* Handy: Kopf + Schalter oben, Band darunter.
+     Desktop: Kopf | Band | Schalter in einer Zeile. */
+  .hn {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'head control'
+      'view view';
+    background: var(--h-deep);
+    color: var(--h-on-deep);
+    font-family: var(--h-mono);
+    font-size: 14px;
+  }
+  html.dark .hn { border-block: 1px solid var(--h-deep-line); }
+  .hn-head { grid-area: head; }
+  .hn-control { grid-area: control; }
+  .hn-viewport { grid-area: view; }
+  @media (min-width: 900px) {
+    .hn {
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      grid-template-areas: 'head view control';
+    }
+  }
+
+  .hn-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px var(--h-gutter);
+    border-bottom: 1px solid var(--h-deep-line);
+    white-space: nowrap;
+  }
+  .hn-control {
+    display: flex;
+    align-items: center;
+    padding: 0 var(--h-gutter) 0 0;
+    border-bottom: 1px solid var(--h-deep-line);
+  }
+  @media (min-width: 900px) {
+    .hn-head { border-bottom: 0; border-right: 1px solid var(--h-deep-line); padding-right: 20px; }
+    .hn-control { border-bottom: 0; border-left: 1px solid var(--h-deep-line); padding: 0 var(--h-gutter) 0 16px; }
+  }
+  .hn-code {
+    padding: 2px 6px;
+    border: 1px solid var(--h-on-deep);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+  }
+  .hn-title { color: var(--h-on-deep-muted); font-size: 13px; }
+  .hn-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 32px;
+    padding: 0 8px;
+    border: 1px solid var(--h-deep-line);
+    border-radius: 2px;
+    background: none;
+    color: var(--h-on-deep);
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .hn-toggle[hidden] { display: none; }
+  .hn-toggle:hover { border-color: var(--h-on-deep); }
+  .hn-toggle:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .hn-toggle-icon {
+    width: 8px;
+    height: 10px;
+    border-left: 2.5px solid currentColor;
+    border-right: 2.5px solid currentColor;
+  }
+  .hn-toggle[data-paused='true'] .hn-toggle-icon {
+    width: 0;
+    height: 0;
+    border-left: 8px solid currentColor;
+    border-right: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+
+  .hn-viewport {
+    overflow-x: auto;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  .hn-viewport::-webkit-scrollbar { display: none; }
+  .hn-viewport:focus-visible { outline: 2px solid #fff; outline-offset: -2px; }
+  .hn-track {
+    display: flex;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  /* Nur ohne Laufband einrücken – sonst wäre die verdoppelte Spur bei -50 %
+     um den Einzug versetzt und der Übergang sichtbar. */
+  .hn-viewport:not(.is-marquee) .hn-track { padding-left: var(--h-gutter); }
+  .hn-item {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 14px 0;
+    white-space: nowrap;
+  }
+  .hn-lic { color: var(--h-beacon); font-weight: 500; }
+  .hn-sep { margin: 0 22px; color: var(--h-on-deep-muted); }
+
+  /* Laufband (Klasse von home-motion.ts) */
+  .hn-viewport.is-marquee { overflow: hidden; }
+  .hn-viewport.is-marquee .hn-track { animation: hn-run var(--hr-duration, 120s) linear infinite; }
+  .hn-viewport.is-marquee:hover .hn-track,
+  .hn-viewport.is-marquee:focus-within .hn-track,
+  .hn-viewport.is-paused .hn-track,
+  .hn-viewport.is-offscreen .hn-track { animation-play-state: paused; }
+  @keyframes hn-run { to { transform: translateX(-50%); } }
+</style>
