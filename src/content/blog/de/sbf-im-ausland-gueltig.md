@@ -11,7 +11,7 @@ author: "Marius Gehler"
 altSlug: "sbf-valid-abroad"
 faq:
   - question: "Gilt mein deutscher SBF in Kroatien, den Niederlanden und Italien?"
-    answer: "Ja. Alle drei Länder akzeptieren den deutschen ICC (auf der Rückseite des SBF im Scheckkartenformat) für Charterboote. In der Regel brauchst du zusätzlich das SRC-Seefunkzeugnis. Auf niederländischen Binnengewässern ist ohnehin nur bei Booten über 15 m oder mehr als 20 km/h überhaupt eine Fahrerlaubnis nötig – der ICC Inland reicht dafür, die CEVNI-Kenntnisse sind darin bereits enthalten."
+    answer: "Ja. Alle drei Länder akzeptieren den deutschen ICC (auf der Rückseite des Scheckkarten-SBF) für Charterboote, meist zusätzlich mit SRC-Seefunkzeugnis. Auf niederländischen Binnengewässern ist nur bei Booten über 15 m oder mehr als 20 km/h ein Schein nötig."
   - question: "Was ist der ICC und brauche ich ihn fürs Ausland?"
     answer: "Der ICC (International Certificate of Competence) basiert auf UNECE-Resolution Nr. 40 und steht auf der Rückseite des SBF im Scheckkartenformat. Er wird von den Unterzeichnerstaaten gegenseitig anerkannt und von vielen weiteren Ländern in der Praxis akzeptiert. Alte Papierscheine enthalten keinen ICC und müssen beim DMYV oder DSV umgeschrieben werden."
   - question: "Welche Dokumente brauche ich zum Chartern im Ausland?"
@@ -19,9 +19,9 @@ faq:
   - question: "Brauche ich im Ausland ein Funkzeugnis (SRC)?"
     answer: "Auf Charteryachten ist ein UKW-Seefunkgerät praktisch immer vorhanden. Sobald du es bedienst, ist in Kroatien, Italien und den meisten anderen europäischen Ländern das SRC (Short Range Certificate) Pflicht."
   - question: "Gilt in Kroatien auch die 15-PS-Regel wie in Deutschland?"
-    answer: "Nein. In Kroatien gibt es keine allgemeine Führerscheinfreiheit für kleine Motorleistungen. Als Brodica (Motorboot) im Sinne des kroatischen Seegesetzbuchs gilt jedes Wasserfahrzeug mit mehr als 2,5 m Rumpflänge oder mehr als 5 kW Motorleistung, und dafür ist grundsätzlich ein Führerschein nötig. Eine oft kursierende Ausnahme für Mietboote bis 5 m und 5 kW war nur ein Ministeriumsvorschlag aus 2022, der nie in Kraft getreten ist."
+    answer: "Nein. Als Brodica (Motorboot) gilt in Kroatien jedes Wasserfahrzeug mit mehr als 2,5 m Rumpflänge oder mehr als 5 kW Motorleistung, und dafür ist grundsätzlich ein Führerschein nötig. Die kursierende Ausnahme für Mietboote war nur ein Ministeriumsvorschlag von 2022 und nie in Kraft."
   - question: "Ab wann brauche ich in Italien wirklich einen Bootsführerschein?"
-    answer: "Nach Art. 39 des Codice della Nautica da Diporto (D.Lgs. 171/2005) ist die Patente Pflicht, sobald die Motorleistung 30 kW (40,8 PS) übersteigt oder die Fahrt weiter als 6 Seemeilen von der Küste hinausgeht, unabhängig von der Motorleistung. Da Charteryachten fast immer stärker motorisiert sind, brauchst du in der Praxis auf jeder Charterroute den ICC Coastal."
+    answer: "Nach Art. 39 des Codice della Nautica da Diporto ist die Patente ab mehr als 30 kW (40,8 PS) oder bei Fahrten über 6 Seemeilen von der Küste Pflicht. Da Charteryachten meist stärker motorisiert sind, brauchst du in der Praxis den ICC Coastal."
 ---
 
 Der Sommerurlaub ist geplant, die Charteryacht gebucht – und dann die bange Frage: Reicht mein deutscher Sportbootführerschein im Ausland überhaupt? In den beliebtesten europäischen Segelrevieren – Kroatien, Niederlande, Italien – hast du als SBF-Inhaber grundsätzlich gute Karten. Aber jedes Land hat eigene Regeln, und wer unvorbereitet antritt, riskiert Ärger mit der Küstenwache. Dieser Artikel erklärt, was du wirklich wissen musst.
