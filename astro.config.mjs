@@ -53,6 +53,8 @@ export default defineConfig({
         defaultLocale: 'de',
         locales: { de: 'de-DE', en: 'en-US' },
       },
+      // /app/ ist eine noindex-Geräteweiche zu den Stores, kein Inhalt fürs Crawling.
+      filter: (page) => !/^https:\/\/boatpass\.de(\/en)?\/app\/$/.test(page),
       // Crawl-Priorisierung: Geld-/Pillar-Seiten höher, rechtliche Seiten niedriger.
       // Hilft Google, das Crawl-Budget auf die ranking-relevanten Seiten zu lenken.
       serialize(item) {

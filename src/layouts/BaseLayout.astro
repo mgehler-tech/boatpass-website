@@ -69,8 +69,10 @@ const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, sh
       // per CSS, welche Badge-Reihenfolge/Variante sichtbar ist.
       (function () {
         var ua = navigator.userAgent;
-        var isIos = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-        var platform = isIos ? 'ios' : /Android/i.test(ua) ? 'android' : 'desktop';
+        // Android zuerst: die iPadOS-Heuristik (MacIntel + Touch) darf kein Android-Gerät treffen.
+        var isAndroid = /Android/i.test(ua);
+        var isIos = !isAndroid && (/iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1));
+        var platform = isAndroid ? 'android' : isIos ? 'ios' : 'desktop';
         document.documentElement.setAttribute('data-platform', platform);
         if (platform === 'android') return;
         document.addEventListener('DOMContentLoaded', function () {

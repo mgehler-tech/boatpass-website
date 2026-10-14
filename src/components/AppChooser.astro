@@ -1,0 +1,190 @@
+---
+// Geräteweiche /app/ bzw. /en/app/ – Ziel für QR-Codes, Social-Bios, Flyer und
+// alle generischen Desktop-CTAs (siehe Geräteweiche im BaseLayout).
+// iPhone/iPad → App Store, Android → Google Play, Desktop → beide Badges + QR.
+// Weiterleitung erst nach dem Plausible-Event (callback), damit Store-Wahl und
+// Herkunft messbar bleiben; spätestens nach 800 ms wird trotzdem weitergeleitet.
+// `?stay` unterdrückt die Weiterleitung (zum Testen und Teilen der Seite).
+import QRCode from 'qrcode';
+import StoreBadges from './StoreBadges.astro';
+import { PLAY_STORE_URL, appStoreUrl, smartAppPath, type Lang } from '../data/stores';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const de = lang === 'de';
+const selfUrl = `https://boatpass.de${smartAppPath(lang)}`;
+const qrSvg = await QRCode.toString(selfUrl, {
+  type: 'svg',
+  margin: 0,
+  errorCorrectionLevel: 'M',
+  color: { dark: '#1A1F36', light: '#FFFFFF' },
+});
+
+const t = de
+  ? {
+      eyebrow: 'BoatPass-App',
+      h1: 'Hol dir BoatPass aufs Handy',
+      sub: 'Kostenlos laden, Fragenkataloge per Einmalkauf freischalten, kein Abo. Für iPhone, iPad und Android.',
+      qrTitle: 'Mit dem Handy scannen',
+      qrText: 'Die Kamera öffnet diese Seite, und die leitet automatisch in den passenden Store.',
+      redirecting: 'Du wirst zum Store weitergeleitet …',
+      facts: [
+        ['iPhone & iPad', 'ab iOS / iPadOS 16'],
+        ['Android', 'ab Android 8.0'],
+        ['Käufe', 'gelten im jeweiligen Store – ein Android-Kauf schaltet nichts auf dem iPhone frei und umgekehrt'],
+      ],
+      back: 'Zurück zur Startseite',
+    }
+  : {
+      eyebrow: 'BoatPass app',
+      h1: 'Get BoatPass on your phone',
+      sub: 'Download for free, unlock question catalogues with a one-off purchase, no subscription. For iPhone, iPad and Android.',
+      qrTitle: 'Scan with your phone',
+      qrText: 'Your camera opens this page, which takes you straight to the right store.',
+      redirecting: 'Taking you to the store …',
+      facts: [
+        ['iPhone & iPad', 'iOS / iPadOS 16 or later'],
+        ['Android', 'Android 8.0 or later'],
+        ['Purchases', 'apply to the store you bought in – an Android purchase does not unlock anything on iPhone and vice versa'],
+      ],
+      back: 'Back to the homepage',
+    };
+---
+
+<section class="ac" data-cta-position="app-chooser">
+  <div class="ac-inner">
+    <p class="ac-eyebrow">{t.eyebrow}</p>
+    <h1 class="ac-h1">{t.h1}</h1>
+    <p class="ac-sub">{t.sub}</p>
+    <p class="ac-redirect" id="ac-redirect" hidden>{t.redirecting}</p>
+
+    <StoreBadges lang={lang} height={52} align="center" eager id="ac-badge" position="app-chooser" />
+
+    <div class="ac-qr">
+      <div class="ac-qr-code" set:html={qrSvg} role="img" aria-label={selfUrl} />
+      <div class="ac-qr-copy">
+        <p class="ac-qr-title">{t.qrTitle}</p>
+        <p class="ac-qr-text">{t.qrText}</p>
+      </div>
+    </div>
+
+    <dl class="ac-facts">
+      {t.facts.map(([k, v]) => (
+        <div class="ac-fact">
+          <dt>{k}</dt>
+          <dd>{v}</dd>
+        </div>
+      ))}
+    </dl>
+
+    <a class="ac-back" href={de ? '/' : '/en/'}>{t.back}</a>
+  </div>
+</section>
+
+<script is:inline define:vars={{ playUrl: PLAY_STORE_URL, iosUrl: appStoreUrl(lang) }}>
+  (function () {
+    if (/[?&]stay\b/.test(location.search)) return;
+    var platform = document.documentElement.getAttribute('data-platform');
+    var target = platform === 'ios' ? iosUrl : platform === 'android' ? playUrl : null;
+    if (!target) return;
+    var note = document.getElementById('ac-redirect');
+    if (note) note.hidden = false;
+    var done = false;
+    function go() { if (done) return; done = true; location.replace(target); }
+    window.plausible('app_redirect', { props: { platform: platform }, callback: go });
+    setTimeout(go, 800);
+  })();
+</script>
+
+<style>
+  .ac {
+    padding: 140px 24px 96px;
+    background: #F0F4FA;
+    min-height: 70vh;
+  }
+  .ac-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+  .ac-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #1A44D4;
+    margin-bottom: 12px;
+  }
+  .ac-h1 {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 900;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+    color: #1A1F36;
+    margin-bottom: 16px;
+  }
+  .ac-sub {
+    font-size: 17px;
+    line-height: 1.65;
+    color: #656B78;
+    margin: 0 auto 32px;
+    max-width: 520px;
+  }
+  .ac-redirect { font-size: 15px; font-weight: 600; color: #1A44D4; margin-bottom: 20px; }
+
+  .ac-qr {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 40px auto 0;
+    max-width: 460px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid rgba(51, 102, 255, 0.12);
+    border-radius: 18px;
+    text-align: left;
+  }
+  .ac-qr-code { flex-shrink: 0; width: 112px; height: 112px; padding: 8px; background: #fff; border-radius: 10px; }
+  .ac-qr-code :global(svg) { display: block; width: 100%; height: 100%; }
+  .ac-qr-title { font-size: 16px; font-weight: 800; color: #1A1F36; margin-bottom: 4px; }
+  .ac-qr-text { font-size: 14px; line-height: 1.55; color: #656B78; margin: 0; }
+  /* Am Handy ist ein QR-Code zum Scannen sinnlos – dort zählen nur die Badges. */
+  :global(html[data-platform='ios']) .ac-qr,
+  :global(html[data-platform='android']) .ac-qr { display: none; }
+
+  .ac-facts {
+    margin: 32px auto 0;
+    max-width: 460px;
+    display: grid;
+    gap: 10px;
+    text-align: left;
+  }
+  .ac-fact { display: grid; grid-template-columns: 120px 1fr; gap: 12px; font-size: 14px; line-height: 1.5; }
+  .ac-fact dt { font-weight: 700; color: #1A1F36; }
+  .ac-fact dd { margin: 0; color: #656B78; }
+
+  .ac-back {
+    display: inline-block;
+    margin-top: 36px;
+    font-size: 14px;
+    color: #656B78;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  :global(html.dark) .ac { background: #0F1117; }
+  :global(html.dark) .ac-eyebrow,
+  :global(html.dark) .ac-redirect { color: #5B8CFF; }
+  :global(html.dark) .ac-h1,
+  :global(html.dark) .ac-qr-title,
+  :global(html.dark) .ac-fact dt { color: #E2E8F0; }
+  :global(html.dark) .ac-sub,
+  :global(html.dark) .ac-qr-text,
+  :global(html.dark) .ac-fact dd,
+  :global(html.dark) .ac-back { color: #94A3B8; }
+  :global(html.dark) .ac-qr { background: #1A2140; border-color: rgba(90, 120, 255, 0.22); }
+
+  @media (max-width: 480px) {
+    .ac { padding-top: 112px; }
+    .ac-fact { grid-template-columns: 1fr; gap: 2px; }
+  }
+</style>
