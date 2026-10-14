@@ -1,6 +1,6 @@
 ---
 title: "Außenborder-Basiswartung – einfache Pflege für lange Lebensdauer"
-seoTitle: "Außenborder warten: Basispflege"
+seoTitle: "Außenborder warten: Basispflege & Tipps"
 description: "Spülen, Ölwechsel, Zündkerzen, Anode und Propeller: die wichtigsten Wartungsschritte für deinen Außenborder, damit er zuverlässig läuft und lange hält."
 date: 2026-07-17
 tags: ["Vorbereitung"]

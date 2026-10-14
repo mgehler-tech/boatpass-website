@@ -1,6 +1,6 @@
 ---
 title: "Fines and Violations on the Water: The Costliest Mistakes and Their Consequences"
-seoTitle: "Fines & Violations on the Water"
+seoTitle: "Fines & Violations on the Water in Germany"
 description: "Boating without a license, alcohol, missing registration: which violations on the water get expensive fast, and when a fine turns into a criminal offense."
 date: 2026-07-31
 tags: ["Exam Knowledge"]

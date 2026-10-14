@@ -1,6 +1,6 @@
 ---
 title: "Wellenschlag und Sog: Rücksicht und Haftung auf dem Wasser"
-seoTitle: "Wellenschlag und Sog: Haftung"
+seoTitle: "Wellenschlag und Sog: Haftung beim Boot"
 description: "Wellenschlag und Sog vom eigenen Boot: Welche Schäden sie anrichten, was die Regeln verlangen und wer haftet. Rücksicht gegenüber anderen Wassernutzern."
 date: 2026-09-17
 tags: ["Prüfungswissen"]

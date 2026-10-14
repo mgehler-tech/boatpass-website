@@ -1,6 +1,6 @@
 ---
 title: "Verhalten nach einem Bootsunfall – Pflichten, Meldung und Beweissicherung"
-seoTitle: "Verhalten nach einem Bootsunfall"
+seoTitle: "Bootsunfall: Pflichten & Meldung im Ablauf"
 description: "Welche Pflichten nach einem Bootsunfall gelten: wann die Wasserschutzpolizei zu informieren ist, wie du Beweise sicherst und was bei Personenschaden zählt."
 date: 2026-08-01
 tags: ["Prüfungswissen"]

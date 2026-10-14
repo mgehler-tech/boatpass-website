@@ -1,6 +1,6 @@
 ---
 title: "Traffic Separation Schemes: Rules for Recreational Boaters"
-seoTitle: "Traffic Separation Schemes at Sea"
+seoTitle: "Traffic Separation Schemes at Sea: SBF Coastal"
 description: "Traffic separation schemes explained simply: layout, COLREGs Rule 10, and how to cross correctly, give way, and use the inshore traffic zone as a boater."
 date: 2026-09-24
 tags: ["Exam Knowledge"]

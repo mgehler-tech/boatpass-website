@@ -1,6 +1,6 @@
 ---
 title: "Right of Way on the Water – Who Has to Give Way?"
-seoTitle: "Right of Way on the Water"
+seoTitle: "Right of Way on the Water: SBF Exam Rules"
 description: "On the water there is no right of way, only give-way rules. Who gives way, who stands on? The COLREG basics with memory aids for the SBF exam."
 date: 2026-05-09
 tags: ["Exam Knowledge"]

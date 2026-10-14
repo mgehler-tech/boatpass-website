@@ -1,6 +1,6 @@
 ---
 title: "Boating at Night: How to Stay Safe After Sunset"
-seoTitle: "Boating at Night: Stay Safe"
+seoTitle: "Boating at Night: Rules, Lights & Safety"
 description: "Boating at night with a sportboat: preparation, night vision, orientation, and your duties after dark. How to plan a safe passage once the sun goes down."
 date: 2026-09-11
 tags: ["Practice"]

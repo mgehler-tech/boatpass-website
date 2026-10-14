@@ -1,6 +1,6 @@
 ---
 title: "Boat Wake and Suction: Consideration and Liability"
-seoTitle: "Boat Wake and Wash: Liability"
+seoTitle: "Boat Wake and Wash: Liability Explained"
 description: "Wake and suction from your own boat: what damage they cause, what the rules require, and who is liable. Being considerate toward other water users."
 date: 2026-09-17
 tags: ["Exam Knowledge"]

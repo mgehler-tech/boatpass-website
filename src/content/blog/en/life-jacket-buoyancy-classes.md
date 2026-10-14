@@ -1,6 +1,6 @@
 ---
 title: "Choosing the Right Life Jacket – Buoyancy Classes Explained"
-seoTitle: "Life Jackets: Buoyancy Classes"
+seoTitle: "Life Jackets: Buoyancy Classes Explained"
 description: "50N, 100N, 150N or 275N? The four EN ISO 12402 buoyancy classes explained – with real-world examples, the under-14 life jacket rule, and how to choose."
 date: 2026-06-26
 updated: 2026-08-31

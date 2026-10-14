@@ -1,6 +1,6 @@
 ---
 title: "SBF-Prüfung anmelden – Schritt für Schritt zu DSV & DMYV"
-seoTitle: "SBF-Prüfung anmelden: DSV & DMYV"
+seoTitle: "SBF-Prüfung anmelden: DSV & DMYV Ablauf"
 description: "Wie meldest du dich zur SBF-Prüfung an? Prüfungsorganisationen DSV und DMYV, nötige Unterlagen, Ablauf und Kosten – Schritt für Schritt erklärt."
 date: 2026-04-11
 tags: ["Vorbereitung"]
