@@ -1,6 +1,6 @@
 ---
-import Icon from './Icon.astro';
 import { useTranslations } from '../i18n/index';
+import { PLAY_STORE_URL } from '../data/stores';
 
 interface Props {
   lang: 'de' | 'en';
@@ -8,7 +8,9 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+// Generischer CTA: die Geräteweiche im BaseLayout führt iPhone/iPad in den App Store
+// und Desktop auf die Auswahlseite /app/.
+const playStoreUrl = PLAY_STORE_URL;
 ---
 
 <div class="max-w-6xl mx-auto px-6 mb-16">
@@ -24,31 +26,10 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
         </svg>
         <span>{t.ctaBanner.cta}</span>
       </a>
-      <div id="cta-banner-ios" class="cta-banner-ios-badge">
-        <Icon name="phoneDevice" size={16} strokeWidth={2} />
-        <span>{t.hero.ctaIos}</span>
-      </div>
+      <p class="cta-banner-platforms">iPhone · iPad · Android</p>
     </div>
   </div>
 </div>
-
-<script is:inline>
-  // Play Store hat kein iOS-Pendant (App noch nicht erschienen, siehe hero.ctaIos) –
-  // ohne diese Weiche landen iOS-Besucher:innen auf einer Store-Seite, die sie nicht
-  // installieren können. Gleiche Erkennung wie im Hero-CTA (HeroSection.astro), hier
-  // für den sitewide Bottom-Banner (auf jeder Seite via BaseLayout eingebunden).
-  (function () {
-    var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    if (!isIos) return;
-    var play = document.getElementById('cta-banner-play');
-    var ios = document.getElementById('cta-banner-ios');
-    if (play && ios) {
-      play.style.display = 'none';
-      ios.style.display = 'inline-flex';
-    }
-  })();
-</script>
 
 <style>
   .cta-banner-card {
@@ -129,18 +110,12 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   }
 
-  /* Startet ausgeblendet, das Inline-Script schaltet auf iOS um (siehe oben). */
-  .cta-banner-ios-badge {
-    display: none;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #ffffff;
-    font-size: 15px;
-    font-weight: 700;
-    padding: 14px 28px;
-    border-radius: 100px;
+  .cta-banner-platforms {
+    margin-top: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
   }
 
   @media (max-width: 768px) {
@@ -156,7 +131,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     .cta-banner-subtitle {
       font-size: 15px;
     }
-    .cta-banner-button, .cta-banner-ios-badge {
+    .cta-banner-button {
       width: 100%;
       justify-content: center;
     }

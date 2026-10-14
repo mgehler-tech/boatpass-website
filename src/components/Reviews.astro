@@ -8,8 +8,9 @@
 // rechtlich unnötig heikel, Stockfotos wären das Gegenteil des Ziels.
 import { REVIEWS_DE, formatReviewDate } from '../data/reviews';
 import { getBoatpassRating, formatRating } from '../data/apps';
+import { PLAY_STORE_URL } from '../data/stores';
 
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const playStoreUrl = PLAY_STORE_URL;
 const rating = getBoatpassRating();
 const score = rating ? formatRating(rating.score).replace('.', ',') : null;
 
@@ -77,8 +78,9 @@ const rowA = REVIEWS_DE;
         aus {rating.ratings} Bewertungen bei Google Play
       </p>
     )}
-    <a class="rv-link" href={playStoreUrl} target="_blank" rel="noopener noreferrer">
-      Alle Bewertungen ansehen →
+    <!-- data-store: die Rezensionen stammen aus Google Play, der Link darf nicht umgeleitet werden. -->
+    <a class="rv-link" href={playStoreUrl} data-store="play" target="_blank" rel="noopener noreferrer">
+      Alle Bewertungen bei Google Play ansehen →
     </a>
   </div>
 </section>

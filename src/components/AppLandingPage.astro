@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 import AppComparisonTable from './AppComparisonTable.astro';
+import StoreBadges from './StoreBadges.astro';
 import { softwareApplicationSchema, type LearningApp } from '../data/apps';
 
 interface Faq { q: string; a: string }
@@ -41,7 +42,6 @@ const {
   strengths, limitations, faqs, relatedLinks,
 } = Astro.props;
 
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 const base = lang === 'de' ? 'https://boatpass.de' : 'https://boatpass.de/en';
 const pageUrl = `https://boatpass.de${lang === 'de' ? '' : '/en'}${path}`;
 
@@ -52,19 +52,18 @@ const t = lang === 'de'
       comparison: 'Die Apps im Vergleich',
       profiles: 'Die Apps im Einzelnen',
       bestFor: 'Am besten geeignet für',
-      toStore: 'Im Play Store ansehen',
+      toStore: 'Bei Google Play ansehen',
+      toAppStore: 'Im App Store ansehen',
       toWebsite: 'Zur Website',
       strengthsTitle: 'Was Boatpass kann – und was nicht',
       canTitle: 'Das kann Boatpass',
       cantTitle: 'Das kann Boatpass nicht',
       transparency: 'Transparenzhinweis',
-      transparencyText: 'Boatpass ist unsere eigene App. Genau deshalb nennen wir hier Preise, Funktionen und Bewertungen der Alternativen vollständig – auch dort, wo sie besser abschneiden. Die Angaben stammen aus den öffentlichen Play-Store-Listings und den Websites der Anbieter.',
+      transparencyText: 'Boatpass ist unsere eigene App. Genau deshalb nennen wir hier Preise, Funktionen und Bewertungen der Alternativen vollständig – auch dort, wo sie besser abschneiden. Die Angaben stammen aus den öffentlichen Listings bei Google Play und im App Store sowie den Websites der Anbieter.',
       faqTitle: 'Häufige Fragen',
       relatedTitle: 'Passend dazu',
       ctaTitle: 'Boatpass ausprobieren',
       ctaText: 'Kostenlos starten, alle Kataloge antesten, danach je Schein einmalig freischalten – kein Abo.',
-      ctaButton: 'Boatpass im Play Store',
-      ctaIos: 'iOS-App kommt bald',
     }
   : {
       home: 'Home',
@@ -72,19 +71,18 @@ const t = lang === 'de'
       comparison: 'The apps compared',
       profiles: 'The apps in detail',
       bestFor: 'Best suited for',
-      toStore: 'View on Play Store',
+      toStore: 'View on Google Play',
+      toAppStore: 'View on the App Store',
       toWebsite: 'Visit website',
       strengthsTitle: 'What Boatpass does – and what it does not',
       canTitle: 'What Boatpass does',
       cantTitle: 'What Boatpass does not do',
       transparency: 'Transparency note',
-      transparencyText: 'Boatpass is our own app. That is precisely why we list the prices, features and ratings of the alternatives in full – including where they beat us. The figures come from the public Play Store listings and the vendors’ own websites.',
+      transparencyText: 'Boatpass is our own app. That is precisely why we list the prices, features and ratings of the alternatives in full – including where they beat us. The figures come from the public listings on Google Play and the App Store and the vendors’ own websites.',
       faqTitle: 'Frequently asked questions',
       relatedTitle: 'Related pages',
       ctaTitle: 'Try Boatpass',
       ctaText: 'Start for free, sample every catalogue, then unlock each licence with a single payment – no subscription.',
-      ctaButton: 'Boatpass on Google Play',
-      ctaIos: 'iOS app coming soon',
     };
 
 const breadcrumbSchema = {
@@ -177,7 +175,10 @@ const itemListSchema = {
             </p>
             <div class="app-profile-actions">
               {app.playUrl && (
-                <a href={app.playUrl} target="_blank" rel="noopener noreferrer" class="app-profile-link">→ {t.toStore}</a>
+                <a href={app.playUrl} data-store="play" target="_blank" rel="noopener noreferrer" class="app-profile-link">→ {t.toStore}</a>
+              )}
+              {app.appStoreUrl && (
+                <a href={app.appStoreUrl} data-store="ios" target="_blank" rel="noopener noreferrer" class="app-profile-link">→ {t.toAppStore}</a>
               )}
               {app.website && (
                 <a href={app.website} target="_blank" rel="noopener noreferrer" class="app-profile-link">→ {t.toWebsite}</a>
@@ -249,15 +250,7 @@ const itemListSchema = {
     <section style="margin-bottom:48px; background:linear-gradient(135deg,#3366FF,#1A44D4); border:1px solid rgba(255,255,255,0.15); border-radius:24px; padding:40px; box-shadow:0 20px 60px rgba(51,102,255,0.3);">
       <h2 style="font-size:24px; font-weight:800; color:white; margin-bottom:12px;">{t.ctaTitle}</h2>
       <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:24px;">{t.ctaText}</p>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        data-cta-position="app-landing-cta" id="app-landing-cta-play"
-        style="display:inline-flex; align-items:center; gap:8px; background:white; color:#3366FF; font-weight:700; font-size:14px; padding:12px 24px; border-radius:12px; text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,0.18);">
-        ▶&nbsp;{t.ctaButton}
-      </a>
-      <span id="app-landing-cta-ios" class="app-landing-cta-ios-badge">
-        <Icon name="phoneDevice" size={15} strokeWidth={2} />
-        {t.ctaIos}
-      </span>
+      <StoreBadges lang={lang} id="app-landing-cta" position="app-landing-cta" />
     </section>
 
     <!-- FAQ -->
@@ -285,24 +278,6 @@ const itemListSchema = {
 
   </div>
 </BaseLayout>
-
-<script is:inline>
-  // Play Store hat kein iOS-Pendant (App noch nicht erschienen, siehe t.ctaIos) –
-  // ohne diese Weiche landen iOS-Besucher:innen auf einer Store-Seite, die sie nicht
-  // installieren können. Gleiche Erkennung wie im Hero-CTA (HeroSection.astro), hier
-  // für die Abschluss-CTA der App-Vergleichsseiten (sbf-app, sbf-binnen-app, …).
-  (function () {
-    var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    if (!isIos) return;
-    var play = document.getElementById('app-landing-cta-play');
-    var ios = document.getElementById('app-landing-cta-ios');
-    if (play && ios) {
-      play.style.display = 'none';
-      ios.style.display = 'inline-flex';
-    }
-  })();
-</script>
 
 <style>
   /* Ausbruch aus der 800px-Textspalte. Die Spalte bleibt für Fließtext richtig –
@@ -345,19 +320,4 @@ const itemListSchema = {
   /* Als Klasse (statt inline-style) greift der globale Dark-Mode-Akzent-Override
      nicht mehr – daher hier explizit auf den helleren Akzent anheben. */
   html.dark .app-profile-link { color: var(--color-accent-fg) !important; }
-
-  /* Startet ausgeblendet, das Inline-Script oben schaltet auf iOS um. Gleiche
-     Behandlung wie .cta-banner-ios-badge / .blog-inline-cta-ios-badge. */
-  .app-landing-cta-ios-badge {
-    display: none;
-    align-items: center;
-    gap: 8px;
-    background: rgba(255,255,255,0.14);
-    border: 1px solid rgba(255,255,255,0.3);
-    color: white;
-    font-weight: 700;
-    font-size: 14px;
-    padding: 12px 24px;
-    border-radius: 12px;
-  }
 </style>

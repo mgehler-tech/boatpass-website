@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { useTranslations } from '../../../i18n/index';
+import { PLAY_STORE_URL } from '../../../data/stores';
 
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const playStoreUrl = PLAY_STORE_URL;
 
 // Prices for the result upselling, pulled centrally from the pricing source so
 // they never drift from the pricing section. SBF Inland/Coastal share the

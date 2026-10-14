@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import { cities, mapsSearchUrl } from '../../data/boat-schools';
 import type { BoatSchoolCity } from '../../data/boat-schools';
+import { PLAY_STORE_URL } from '../../data/stores';
 
 export function getStaticPaths() {
   return cities.map(city => ({ params: { city: city.slug }, props: { city } }));
@@ -11,7 +12,7 @@ export function getStaticPaths() {
 interface Props { city: BoatSchoolCity }
 const { city } = Astro.props;
 
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const playStoreUrl = PLAY_STORE_URL;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -211,7 +212,7 @@ function licenceLinks(variant: 'coastal' | 'inland' | 'both'): { href: string; l
       </div>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
         style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
-        &#9654;&nbsp;Kostenlos im Play Store
+        &#9654;&nbsp;Kostenlos laden
       </a>
     </section>
 
