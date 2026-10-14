@@ -1,6 +1,6 @@
 ---
 title: "How to Read a Nautical Chart – Symbols, Depths and Scale"
-seoTitle: "How to Read a Nautical Chart"
+seoTitle: "How to Read a Nautical Chart: SBF Coastal"
 description: "Chart datum, shoals, compass rose and scale: how to read a nautical chart safely for the SBF Coastal exam. The key symbols and terms explained."
 date: 2026-07-03
 tags: ["Navigation"]

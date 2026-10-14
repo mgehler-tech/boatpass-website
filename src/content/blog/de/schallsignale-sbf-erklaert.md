@@ -1,6 +1,6 @@
 ---
 title: "Schallsignale beim Sportbootführerschein: See & Binnen im Überblick"
-seoTitle: "Schallsignale SBF: See & Binnen"
+seoTitle: "Schallsignale SBF: See & Binnen erklärt"
 description: "Ein kurzer Ton, ein langer Ton – was bedeutet was? Alle wichtigen Schallsignale für SBF See und Binnen, getrennt und mit den typischen Fallen."
 date: 2026-05-13
 tags: ["Sicherheit"]

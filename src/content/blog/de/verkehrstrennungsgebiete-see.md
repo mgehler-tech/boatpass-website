@@ -1,6 +1,6 @@
 ---
 title: "Verkehrstrennungsgebiete: Regeln für Sportbootfahrer auf See"
-seoTitle: "Verkehrstrennungsgebiete auf See"
+seoTitle: "Verkehrstrennungsgebiete auf See: SBF See"
 description: "Verkehrstrennungsgebiete auf See erklärt: Aufbau, KVR Regel 10 und wie du als Sportbootfahrer richtig querst, ausweichst und die Küstenverkehrszone nutzt."
 date: 2026-09-24
 tags: ["Prüfungswissen"]

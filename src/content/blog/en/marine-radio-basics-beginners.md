@@ -1,6 +1,6 @@
 ---
 title: "Marine Radio Basics: Channels, DSC and Distress Calls"
-seoTitle: "Marine Radio Basics for Beginners"
+seoTitle: "Marine Radio Basics for Beginners (UBI & SRC)"
 description: "Marine VHF radio for beginners: which channels matter, how DSC works, and how to make a distress call correctly. The essentials explained simply."
 date: 2026-09-16
 tags: ["Exam Knowledge"]

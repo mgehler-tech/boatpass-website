@@ -1,6 +1,6 @@
 ---
 title: "Durchfahrtshöhen an Brücken – was du auf Binnengewässern beachten musst"
-seoTitle: "Durchfahrtshöhen an Brücken"
+seoTitle: "Durchfahrtshöhen an Brücken: SBF Binnen"
 description: "Warum Brückenhöhen vom Wasserstand abhängen, wie du Höhentafeln richtig liest und wo du aktuelle Durchfahrtshöhen für den SBF Binnen findest."
 date: 2026-07-15
 tags: ["Navigation"]

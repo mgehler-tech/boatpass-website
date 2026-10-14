@@ -1,6 +1,6 @@
 ---
 title: "Umweltschutz und Gewässerschutz beim Bootfahren"
-seoTitle: "Umweltschutz beim Bootfahren"
+seoTitle: "Umweltschutz beim Bootfahren: Regeln im SBF"
 description: "Öl, Abwasser, Müll und Naturschutzgebiete: Was beim Gewässerschutz mit dem Sportboot rechtlich gilt und was dazu in der SBF-Prüfung wirklich drankommt."
 date: 2026-08-18
 tags: ["Prüfungswissen"]

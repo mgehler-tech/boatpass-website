@@ -1,6 +1,6 @@
 ---
 title: "Environmental Protection and Water Conservation for Boaters"
-seoTitle: "Environmental Protection Boating"
+seoTitle: "Environmental Protection While Boating: Rules"
 description: "Oil, wastewater, trash, and protected areas: what water conservation rules apply on a recreational boat, and what the SBF exam expects on the topic."
 date: 2026-08-18
 tags: ["Exam Knowledge"]

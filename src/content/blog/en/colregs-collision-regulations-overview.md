@@ -1,6 +1,6 @@
 ---
 title: "COLREGs (KVR): The Key Collision Regulations at a Glance"
-seoTitle: "COLREGs (KVR) Explained"
+seoTitle: "COLREGs (KVR) Explained for the SBF Exam"
 description: "The collision regulations (COLREGs, German KVR) explained simply: structure, where they apply, and the key rules from lookout to give-way duties."
 date: 2026-09-25
 tags: ["Exam Knowledge"]

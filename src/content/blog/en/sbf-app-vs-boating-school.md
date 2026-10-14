@@ -1,6 +1,6 @@
 ---
 title: "SBF App vs. Boating School – Is a Theory Course Worth It?"
-seoTitle: "SBF App vs. Boating School"
+seoTitle: "SBF App vs. Boating School: Which Is Better?"
 description: "Can you pass the German boating license without a course? Costs, pros and cons of app-based learning vs. a boating school in an honest comparison."
 date: 2026-05-28
 tags: ["Preparation"]

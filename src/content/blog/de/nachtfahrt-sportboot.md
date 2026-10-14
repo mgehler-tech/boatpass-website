@@ -1,6 +1,6 @@
 ---
 title: "Nachtfahrt mit dem Sportboot: sicher durch die Dunkelheit"
-seoTitle: "Nachtfahrt mit dem Sportboot"
+seoTitle: "Nachtfahrt mit dem Sportboot: Regeln & Licht"
 description: "Nachtfahrt mit dem Sportboot: Vorbereitung, Nachtsicht, Orientierung und deine Pflichten bei Dunkelheit. So planst du eine sichere Fahrt nach Sonnenuntergang."
 date: 2026-09-11
 tags: ["Praxis"]

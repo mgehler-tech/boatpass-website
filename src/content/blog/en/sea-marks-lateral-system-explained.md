@@ -1,6 +1,6 @@
 ---
 title: "Sea Marks & the Lateral System Explained – Buoys, Cardinal Marks & Co."
-seoTitle: "Sea Marks & the Lateral System"
+seoTitle: "Sea Marks & the Lateral System for SBF Coastal"
 description: "Red and green buoys, cardinal marks, light characteristics: the sea-mark system for the SBF made simple – lateral, cardinal and special marks."
 date: 2026-05-31
 tags: ["Exam Knowledge"]

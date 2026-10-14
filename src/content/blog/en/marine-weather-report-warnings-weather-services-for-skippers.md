@@ -1,6 +1,6 @@
 ---
 title: "Marine Weather Reports and Warnings: Weather Services for Skippers"
-seoTitle: "Marine Weather Reports & Warnings"
+seoTitle: "Marine Weather Reports & Warnings for Skippers"
 description: "DWD marine weather reports, NAVTEX, VHF weather broadcasts, and apps: how to use official weather services for trip planning and read warnings correctly."
 date: 2026-07-29
 tags: ["Exam Knowledge"]

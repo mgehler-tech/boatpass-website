@@ -1,6 +1,6 @@
 ---
 title: "SBF im Ausland gültig? Kroatien, Niederlande & Italien"
-seoTitle: "SBF im Ausland: wo gilt er?"
+seoTitle: "SBF im Ausland: Wo gilt der Schein wirklich?"
 description: "Gilt dein Sportbootführerschein in Kroatien, den Niederlanden und Italien? Alles über ICC, Führerscheinpflicht und welche Dokumente du brauchst."
 date: 2026-06-18
 updated: 2026-09-07
