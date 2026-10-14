@@ -1,7 +1,8 @@
 ---
 import { Image } from 'astro:assets';
-import Icon from './Icon.astro';
+import StoreBadges from './StoreBadges.astro';
 import { useTranslations } from '../i18n/index';
+import { PLAY_STORE_URL } from '../data/stores';
 import { getBoatpassRating, formatRating } from '../data/apps';
 import screenshot0De from '../assets/images/app-screenshot.de.png';
 import screenshot1De from '../assets/images/app.screenshot.1.de.png';
@@ -21,7 +22,9 @@ const t = useTranslations(lang);
 const [screenshot0, screenshot1, screenshot2, screenshot3] = lang === 'en'
   ? [screenshot0En, screenshot1En, screenshot2En, screenshot3En]
   : [screenshot0De, screenshot1De, screenshot2De, screenshot3De];
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+// Generischer CTA: im Markup Google Play, die Geräteweiche im BaseLayout tauscht
+// auf iPhone/iPad gegen den App Store und am Desktop gegen die Auswahlseite /app/.
+const playStoreUrl = PLAY_STORE_URL;
 
 // Google-Play-Bewertung direkt am Haupt-CTA als Social Proof (Logo · Score · Sterne · Anzahl).
 const appRating = getBoatpassRating();
@@ -82,22 +85,6 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
             style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:15px; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
             ▶&nbsp;{t.hero.cta}
           </a>
-          <div id="hero-cta-ios" class="ios-badge"
-            style="display:none; align-items:center; gap:10px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); font-weight:700; font-size:15px; padding:13px 27px; border-radius:14px;">
-            <Icon name="phoneDevice" size={17} strokeWidth={2} />
-            {t.hero.ctaIos}
-          </div>
-
-          <!-- Offizielles "Jetzt bei Google Play"-Badge -->
-          <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-            id="hero-gplay-badge" class="gplay-badge"
-            aria-label={lang === 'de' ? 'Boatpass bei Google Play herunterladen' : 'Get Boatpass on Google Play'}>
-            <img src="/images/google-play-icon.png" alt="" width="24" height="24" aria-hidden="true" class="gplay-badge-icon" />
-            <span class="gplay-badge-text">
-              <span class="gplay-badge-eyebrow">{lang === 'de' ? 'Jetzt bei' : 'Get it on'}</span>
-              <span class="gplay-badge-wordmark">Google Play</span>
-            </span>
-          </a>
 
           {appRating && (
             <>
@@ -114,30 +101,12 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
                     ))}
                   </span>
                 </div>
-                <span class="hero-rating-count">{appRating.ratings} {ratingsLabel}</span>
+                <span class="hero-rating-count">{appRating.ratings} {ratingsLabel} · Google Play</span>
               </div>
             </>
           )}
-
-          <script is:inline>
-            // Läuft während des Parsens, also vor dem ersten Paint – kein Umspringen sichtbar.
-            // iPadOS gibt sich seit iOS 13 als MacIntel aus, daher der maxTouchPoints-Check.
-            (function () {
-              var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-              if (!isIos) return;
-              var play = document.getElementById('hero-cta-play');
-              var ios = document.getElementById('hero-cta-ios');
-              var gplay = document.getElementById('hero-gplay-badge');
-              if (play && ios) {
-                play.style.display = 'none';
-                ios.style.display = 'inline-flex';
-              }
-              // Google-Play-Badge auf iOS ausblenden – dort führt es nicht zum Ziel.
-              if (gplay) gplay.style.display = 'none';
-            })();
-          </script>
         </div>
+        <StoreBadges lang={lang} id="hero-badge" position="hero" eager class="hero-store-badges" />
       </div>
 
     </div>
@@ -252,7 +221,7 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
   }
   /* #7E8699 erreichte auf dem hellen Seitengrund (#F0F4FA) nur 3,3:1 und
      verfehlte damit WCAG AA (4.5:1) für die Lizenz-Namen unter der H1 –
-     dieselbe Kontrastschwäche, die für .ios-badge oben bereits behoben wurde.
+     dieselbe Kontrastschwäche wie beim früheren iOS-Status-Badge.
      #656B78 ist das im Projekt etablierte Muted-Grau (u. a. im Absatz direkt
      darunter) und erreicht hier 4,84:1. */
   .hero-lic {
@@ -283,52 +252,15 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
     color: transparent;
   }
 
-  /* Eigene Blautöne statt #3366FF: Auf dem hellen Badge-Grund erreicht die
-     Akzentfarbe nur 3,8:1 und verfehlt AA für 15px-Fetttext. Hell braucht
-     dunkleres, Dunkel helleres Blau – eine feste Farbe kann beides nicht. */
-  .ios-badge { color: #1A44D4; }
-  :global(html.dark) .ios-badge { color: #5B8CFF; }
-
-  /* CTA-Reihe: blauer Button · "Jetzt bei Google Play"-Badge · Trenner ·
-     Bewertungsblock – als eine zusammenhängende Einheit (Design-Vorgabe). */
+  /* CTA-Reihe: blauer Button · Trenner · Bewertungsblock als eine Einheit,
+     darunter die offiziellen Store-Badges (App Store + Google Play). */
   .hero-cta-row {
     display: flex;
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
   }
-
-  /* Offizielles schwarzes Google-Play-Badge (nachgebaut mit dem Play-Icon). */
-  .gplay-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 11px;
-    background: #000;
-    color: #fff;
-    padding: 8px 18px;
-    border-radius: 12px;
-    text-decoration: none;
-    border: 1px solid transparent;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .gplay-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 26px rgba(0,0,0,0.28);
-  }
-  .gplay-badge-icon { display: block; flex-shrink: 0; }
-  .gplay-badge-text { display: flex; flex-direction: column; line-height: 1.1; }
-  .gplay-badge-eyebrow {
-    font-size: 9px;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    opacity: 0.9;
-  }
-  .gplay-badge-wordmark {
-    font-size: 17px;
-    font-weight: 600;
-    letter-spacing: -0.2px;
-  }
+  :global(.hero-store-badges) { margin-top: 20px; }
 
   /* Vertikaler Trenner vor dem Bewertungsblock. */
   .hero-cta-divider {
@@ -358,7 +290,6 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
     color: #656B78;
     line-height: 1;
   }
-  :global(html.dark) .gplay-badge { border-color: rgba(255,255,255,0.16); }
   :global(html.dark) .hero-cta-divider { background: rgba(90,120,255,0.18); }
   :global(html.dark) .hero-rating-score { color: #E2E8F0; }
   :global(html.dark) .hero-rating-count { color: #94A3B8; }

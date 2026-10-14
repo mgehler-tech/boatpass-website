@@ -22,8 +22,8 @@ export const de = {
     headlineAccent: 'Sportboot­führerschein.',
     licenses: ['SBF Binnen', 'SBF See', 'UBI', 'SRC', 'LRC'],
     subline: 'Lern mit dem offiziellen Fragenkatalog – 3 Lernmodi, sofortiges Feedback, Prüfungssimulation. Kostenlos starten, kein Account nötig.',
-    cta: 'Kostenlos im Play Store',
-    ctaIos: 'iOS-App kommt bald',
+    cta: 'Kostenlos laden',
+    ctaIos: 'Kostenlos im App Store',
     stat1Num: 'Offiziell',
     stat1Label: 'Lizenzen',
     stat2Num: '3',
@@ -104,7 +104,7 @@ export const de = {
     price: '€ 9,99',
     ctaFree: 'Kostenlos starten',
     ctaUnlock: 'Vollzugang freischalten',
-    ctaStore: 'Im Play Store öffnen',
+    ctaStore: 'Im Store öffnen',
     questionsUnit: 'Fragen',
     themesUnit: 'Themengebiete',
     // Free-vs-Paid-Gegenüberstellung – einmal zentral vor den Lizenz-Karten
@@ -249,7 +249,7 @@ export const de = {
   ctaBanner: {
     title: 'Bereit für deine Prüfung?',
     subtitle: '15 Fragen am Tag über alle Lizenzen, ohne Account und ohne Zahlungsdaten.',
-    cta: 'Kostenlos im Play Store',
+    cta: 'Kostenlos laden',
   },
   blogInlineCta: {
     title: 'Lieber am Handy lernen?',

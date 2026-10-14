@@ -14,8 +14,8 @@ export const en: Translations = {
     headlineAccent: 'Boating License.',
     licenses: ['SBF Inland', 'SBF Coastal', 'UBI', 'SRC', 'LRC'],
     subline: 'Study with the official question catalog – 3 learning modes, instant feedback, exam simulation. Start for free, no account needed.',
-    cta: 'Free on Google Play',
-    ctaIos: 'iOS app coming soon',
+    cta: 'Download for free',
+    ctaIos: 'Free on the App Store',
     stat1Num: 'Official',
     stat1Label: 'Licenses',
     stat2Num: '3',
@@ -93,7 +93,7 @@ export const en: Translations = {
     price: '€9.99',
     ctaFree: 'Start for free',
     ctaUnlock: 'Unlock full access',
-    ctaStore: 'Open in Play Store',
+    ctaStore: 'Open in the store',
     questionsUnit: 'questions',
     themesUnit: 'topics',
     // Free-vs-paid comparison – stated once centrally before the license cards
@@ -238,7 +238,7 @@ export const en: Translations = {
   ctaBanner: {
     title: 'Ready for your exam?',
     subtitle: '15 questions a day across all licences, no account and no payment details.',
-    cta: 'Free on Google Play',
+    cta: 'Download for free',
   },
   blogInlineCta: {
     title: 'Prefer studying on your phone?',

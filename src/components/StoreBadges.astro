@@ -1,0 +1,89 @@
+---
+// Offizielle Store-Badges (App Store + Google Play) nebeneinander.
+// Reihenfolge: App Store zuerst, auf Android-Geräten Google Play zuerst
+// (html[data-platform] setzt das Inline-Script im BaseLayout).
+// data-store markiert die Links als explizite Badges – die Geräteweiche im
+// BaseLayout lässt sie unverändert.
+//
+// Markenrichtlinien: Badges unverändert, App-Store-Badge mind. 40 px hoch.
+// Das Google-Play-PNG enthält rundum Schutzraum, deshalb wird es größer
+// gerendert und per negativem Margin optisch auf Badge-Höhe gebracht.
+import { PLAY_STORE_URL, appStoreUrl, storeBadge, type Lang } from '../data/stores';
+
+interface Props {
+  lang: Lang;
+  /** Sichtbare Badge-Höhe in px (min. 40). */
+  height?: number;
+  /** Wert für data-cta-position (Plausible-Auswertung). */
+  position?: string;
+  align?: 'start' | 'center';
+  /** true für Badges im ersten Viewport (kein Lazy Loading). */
+  eager?: boolean;
+  /** Basis für stabile IDs (Tests): ergibt `${id}-ios` und `${id}-play`. */
+  id?: string;
+  class?: string;
+}
+
+const { lang, height = 44, position, align = 'start', eager = false, id, class: className } = Astro.props;
+const ios = storeBadge.ios[lang];
+const play = storeBadge.play[lang];
+const loading = eager ? 'eager' : 'lazy';
+const playHeight = Math.round(height * 1.5);
+---
+
+<div
+  class:list={['store-badges', align === 'center' && 'store-badges--center', className]}
+  data-cta-position={position}
+  style={`--sb-h:${Math.max(40, height)}px`}
+>
+  <a
+    id={id ? `${id}-ios` : undefined}
+    data-store="ios"
+    class="store-badge store-badge--ios"
+    href={appStoreUrl(lang)}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img src={ios.src} alt={ios.alt} width={Math.round((height * 119.664) / 40)} height={height} loading={loading} decoding="async" />
+  </a>
+  <a
+    id={id ? `${id}-play` : undefined}
+    data-store="play"
+    class="store-badge store-badge--play"
+    href={PLAY_STORE_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img src={play.src} alt={play.alt} width={Math.round((playHeight * 646) / 250)} height={playHeight} loading={loading} decoding="async" />
+  </a>
+</div>
+
+<style>
+  .store-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+  .store-badges--center { justify-content: center; }
+  .store-badge {
+    display: inline-flex;
+    align-items: center;
+    height: var(--sb-h);
+    line-height: 0;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+  }
+  .store-badge:hover { transform: translateY(-2px); }
+  .store-badge:focus-visible { outline: 2px solid #3366FF; outline-offset: 3px; }
+  .store-badge img { display: block; height: var(--sb-h); width: auto; }
+  .store-badge--play img {
+    height: calc(var(--sb-h) * 1.5);
+    margin: 0 calc(var(--sb-h) * -0.1);
+  }
+  :global(html[data-platform='android']) .store-badge--play { order: -1; }
+  @media (prefers-reduced-motion: reduce) {
+    .store-badge { transition: none; }
+    .store-badge:hover { transform: none; }
+  }
+</style>

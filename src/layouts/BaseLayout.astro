@@ -9,6 +9,7 @@ import '../styles/global.css';
 // entdeckt er die Datei erst nach dem CSS-Parsing – das kostet Zeit im kritischen Pfad.
 import interLatin from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import type { AppRating } from '../data/apps';
+import { APP_STORE_ID, PLAY_STORE_URL, appStoreUrl, smartAppPath } from '../data/stores';
 
 interface Props {
   title: string;
@@ -54,22 +55,52 @@ const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, sh
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png?v=2" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=2" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2" />
+    <!-- Safari Smart App Banner: natives „Laden/Öffnen"-Banner auf iPhone und iPad -->
+    <meta name="apple-itunes-app" content={`app-id=${APP_STORE_ID}`} />
     <!-- Plausible Analytics (cookielos, DSGVO-konform, kein Consent nötig) -->
     <script is:inline defer data-domain="boatpass.de" src="https://plausible.io/js/script.tagged-events.js"></script>
-    <script is:inline>
+    <script is:inline define:vars={{ playUrl: PLAY_STORE_URL, iosUrl: appStoreUrl(lang), chooserPath: smartAppPath(lang) }}>
       window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };
 
-      // Conversion Tracking: Play Store Klicks. `position` identifiziert die
+      // Geräteweiche für Store-Links. Generische CTAs verlinken im Markup auf Google Play
+      // (funktioniert ohne JS). iPhone/iPad bekommen stattdessen den App Store, Desktop
+      // die Auswahlseite /app/ mit beiden Badges + QR-Code. Explizite Store-Badges tragen
+      // data-store und bleiben unangetastet. `data-platform` auf <html> steuert außerdem
+      // per CSS, welche Badge-Reihenfolge/Variante sichtbar ist.
+      (function () {
+        var ua = navigator.userAgent;
+        var isIos = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+        var platform = isIos ? 'ios' : /Android/i.test(ua) ? 'android' : 'desktop';
+        document.documentElement.setAttribute('data-platform', platform);
+        if (platform === 'android') return;
+        document.addEventListener('DOMContentLoaded', function () {
+          var links = document.querySelectorAll('a[href^="' + playUrl + '"]:not([data-store])');
+          for (var i = 0; i < links.length; i++) {
+            if (platform === 'ios') {
+              links[i].href = iosUrl;
+            } else {
+              links[i].href = chooserPath;
+              links[i].removeAttribute('target');
+            }
+          }
+        });
+      })();
+
+      // Conversion Tracking: Store-Klicks getrennt nach Store. `position` identifiziert die
       // CTA-Platzierung (data-cta-position, z. B. "blog-inline"/"bottom-banner"), damit
       // sich Conversion-Beiträge einzelner CTA-Positionen in Plausible vergleichen lassen.
       // Ungetaggte CTAs (Hero, Header, Pricing, …) fallen auf "other" zurück.
       document.addEventListener('click', function (e) {
-        const link = e.target.closest('a');
-        if (link && link.href && link.href.includes('play.google.com')) {
-          const positionEl = link.closest('[data-cta-position]');
-          const position = positionEl ? positionEl.getAttribute('data-cta-position') : 'other';
-          window.plausible('play_store_click', { props: { path: window.location.pathname, position: position } });
-        }
+        var link = e.target.closest('a');
+        if (!link || !link.href) return;
+        var event = link.href.indexOf('play.google.com') !== -1 ? 'play_store_click'
+          : link.href.indexOf('apps.apple.com') !== -1 ? 'app_store_click'
+          : link.pathname === chooserPath ? 'app_chooser_click'
+          : null;
+        if (!event) return;
+        var positionEl = link.closest('[data-cta-position]');
+        var position = positionEl ? positionEl.getAttribute('data-cta-position') : 'other';
+        window.plausible(event, { props: { path: window.location.pathname, position: position } });
       });
     </script>
     <SEO title={title} description={description} lang={lang} ogImage={ogImage} ogImageWidth={ogImageWidth} ogImageHeight={ogImageHeight} type={type} hasAlternate={hasAlternate} altUrl={altUrl} noindex={noindex} appRating={appRating} />
