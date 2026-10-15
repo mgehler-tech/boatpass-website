@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { formatPrice, minPrice, priceText, PRICES, type ProductKey } from '../../data/stores';
+import { formatPrice, minPrice, priceText, storePrice, PRICES, type ProductKey } from '../../data/stores';
 
 // Preise aus src/data/stores.ts; abweichende Store-Preise nennt priceText() beide.
 const pt = (k: ProductKey) => priceText(k, 'en');
@@ -155,7 +155,15 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
     faqs: [
       {
         q: 'Which devices does the app support?',
-        a: 'Boatpass is currently available for Android (Google Play Store). An iOS version is currently in development.',
+        a: 'Boatpass is available for Android 8.0 or later (Google Play) and for iPhone and iPad with iOS or iPadOS 16 or later (App Store). Both versions have the same features and the same question catalogs.',
+      },
+      {
+        q: 'Can I use my Android purchase on iPhone?',
+        a: 'No. Google Play and the App Store process purchases separately, and Boatpass has no user account of its own through which purchases could be transferred. A purchase therefore only applies to the platform you bought it on. On other devices of the same platform you recover it with the same Google account or Apple ID via "Restore purchases".',
+      },
+      {
+        q: 'Why do some catalogs cost a different amount on the App Store than on Google Play?',
+        a: 'Apple only allows fixed price tiers, so some prices differ: UBI and SRC cost ' + storePrice('ubi', 'ios', 'en') + ' on the App Store instead of ' + storePrice('ubi', 'android', 'en') + ', while LRC costs ' + storePrice('lrc', 'ios', 'en') + ' instead of ' + storePrice('lrc', 'android', 'en') + '. SBF Binnen and SBF See cost the same in both stores. The App Store also offers a radio bundle for UBI, SRC and LRC.',
       },
       {
         q: 'Can I use the app offline?',

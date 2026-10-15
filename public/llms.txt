@@ -5,14 +5,23 @@
 > (UBI, SRC, LRC) in Deutschland. Gelernt wird mit dem vollständigen amtlichen
 > ELWIS-Fragenkatalog (herausgegeben von DSV und DMYV), inklusive
 > originalgetreuer Prüfungssimulation und gezieltem Fehlertraining.
-> Einmaliger Kauf statt Abo. Android-App, Web-Plattform unter https://boatpass.de.
+> Einmaliger Kauf statt Abo. App für Android (Google Play) und iPhone/iPad (App Store,
+> seit Oktober 2026), Web-Plattform unter https://boatpass.de.
 
 ## Kernfakten (verifiziert)
 
 - SBF Binnen Prüfungsbogen: 30 Fragen (7 Basis, davon mind. 5 richtig; 23 spezifisch, davon mind. 18 richtig), 45 Minuten.
 - SBF See Prüfungsbogen: 39 Fragen inkl. 9 Navigationsaufgaben (mind. 7 richtig), 60 Minuten.
 - Amtlicher Gesamtkatalog Binnen: 253 Fragen (+47 Segelfragen). See: 285 Fragen. Quelle: ELWIS (DSV/DMYV).
-- Preise: kostenlos (15 Fragen/Tag), SBF Binnen 9,99 €, SBF See 9,99 €, Komplettpaket 16,98 € – einmaliger Kauf, kein Abo.
+- Preise: kostenlos (15 Fragen/Tag), SBF Binnen 9,99 €, SBF See 9,99 € – einmaliger Kauf, kein Abo.
+  Paket Binnen + See: 16,98 € bei Google Play, 16,99 € im App Store. Funkmodule: UBI und SRC je 7,99 € (Google Play)
+  bzw. 8,99 € (App Store), LRC 9,99 € (Google Play) bzw. 7,99 € (App Store); im App Store zusätzlich ein
+  Funk-Paket (UBI + SRC + LRC) für 17,99 €. Stand: Oktober 2026.
+- Plattformen: Android ab 8.0 (https://play.google.com/store/apps/details?id=com.boatpass.app),
+  iPhone/iPad ab iOS/iPadOS 16 (https://apps.apple.com/de/app/boatpass/id6797036145).
+  Käufe gelten nur im jeweiligen Store, keine Übertragung zwischen Android und iOS.
+- Nicht verwechseln: Die gleichnamige App „BoatPass" eines US-Bootsverleihs (Florida) hat mit Boatpass nichts zu tun;
+  Anbieter der Lern-App ist Marius Gehler.
 
 ## Hauptseiten
 
@@ -80,13 +89,15 @@
 
 - [Über uns](https://boatpass.de/ueber-uns/): Marius Gehler, Gründer von Boatpass.
 - [Kontakt](https://boatpass.de/kontakt/): Support und Anfragen.
+- [App laden](https://boatpass.de/app/): Leitet je nach Gerät zu Google Play oder in den App Store.
 
 ## English Version
 
 > Boatpass also serves the German boating license (SBF Inland & Coastal) and
 > radio certificates (UBI, SRC, LRC) to an English-speaking audience under
 > the /en/ path. Same official ELWIS question catalog, exam simulation and
-> mistake training as the German site.
+> mistake training as the German site. Available for Android (Google Play) and
+> iPhone/iPad (App Store, since October 2026); purchases apply per store.
 
 - [Home (EN)](https://boatpass.de/en/): Overview of the Boatpass study app for the German boating license.
 - [SBF Inland (EN)](https://boatpass.de/en/sbf-inland/): Prep for the SBF Inland (German inland-waters boating license).

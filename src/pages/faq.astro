@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { formatPrice, minPrice, priceText, PRICES, type ProductKey } from '../data/stores';
+import { formatPrice, minPrice, priceText, storePrice, PRICES, type ProductKey } from '../data/stores';
 
 // Preise aus src/data/stores.ts; abweichende Store-Preise nennt priceText() beide.
 const pt = (k: ProductKey) => priceText(k, 'de');
@@ -155,7 +155,15 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
     faqs: [
       {
         q: 'Auf welchen Geräten läuft die App?',
-        a: 'Boatpass ist aktuell für Android verfügbar (Google Play Store). Eine iOS-Version wird gerade entwickelt.',
+        a: 'Boatpass gibt es für Android ab Version 8.0 (Google Play) und für iPhone und iPad ab iOS bzw. iPadOS 16 (App Store). Beide Versionen haben denselben Funktionsumfang und dieselben Fragenkataloge.',
+      },
+      {
+        q: 'Kann ich meinen Android-Kauf auf dem iPhone nutzen?',
+        a: 'Nein. Google Play und der App Store wickeln Käufe getrennt ab, und Boatpass hat kein eigenes Nutzerkonto, über das sich Käufe übertragen ließen. Ein Kauf gilt deshalb nur auf der Plattform, auf der du ihn getätigt hast. Auf weiteren Geräten derselben Plattform holst du ihn mit demselben Google-Konto bzw. derselben Apple-ID über „Käufe wiederherstellen" zurück.',
+      },
+      {
+        q: 'Warum kosten manche Kataloge im App Store anders als bei Google Play?',
+        a: 'Apple erlaubt nur feste Preisstufen, deshalb weichen einzelne Preise ab: UBI und SRC kosten im App Store ' + storePrice('ubi', 'ios', 'de') + ' statt ' + storePrice('ubi', 'android', 'de') + ', LRC dafür ' + storePrice('lrc', 'ios', 'de') + ' statt ' + storePrice('lrc', 'android', 'de') + '. SBF Binnen und SBF See kosten in beiden Stores gleich viel. Im App Store gibt es zusätzlich ein Funk-Paket für UBI, SRC und LRC.',
       },
       {
         q: 'Kann ich die App offline nutzen?',
