@@ -50,6 +50,9 @@ export interface LearningApp {
   /** Play-Store-Bewertung, null wenn nicht erhoben */
   rating: number | null;
   ratingCount: number | null;
+  /** App-Store-Bewertung (bisher nur für BoatPass erhoben) */
+  iosRating?: number | null;
+  iosRatingCount?: number | null;
   /** Play-Store-Downloadklasse, z. B. '100.000+' */
   downloads: string | null;
   licenses: LicenseKey[];
@@ -80,7 +83,9 @@ export const LEARNING_APPS: LearningApp[] = [
     appStoreUrl: APP_STORE_URL,
     website: 'https://boatpass.de/',
     rating: 4.96,
-    ratingCount: 26,
+    ratingCount: 28,
+    iosRating: 5.0,
+    iosRatingCount: 1,
     downloads: '100+',
     licenses: ['sbf-see', 'sbf-binnen', 'ubi', 'src', 'lrc'],
     pricingModel: 'freemium-onetime',
@@ -295,6 +300,12 @@ export function getBoatpassRating(): AppRating | null {
   const app = appById('boatpass');
   if (!app.rating || !app.ratingCount) return null;
   return { score: app.rating, ratings: app.ratingCount };
+}
+
+export function getBoatpassIosRating(): AppRating | null {
+  const app = appById('boatpass');
+  if (!app.iosRating || !app.iosRatingCount) return null;
+  return { score: app.iosRating, ratings: app.iosRatingCount };
 }
 
 /** JSON-LD SoftwareApplication für eine App. aggregateRating nur, wenn Bewertungen vorliegen. */
