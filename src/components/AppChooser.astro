@@ -86,15 +86,26 @@ const t = de
 
 <script is:inline define:vars={{ playUrl: PLAY_STORE_URL, iosUrl: appStoreUrl(lang) }}>
   (function () {
+    // ?ref=… (z. B. passed_sbf_see vom Boarding Pass der App) als Play-Install-Referrer durchreichen,
+    // damit die Play Console zeigt, welche Quelle Installs bringt. Nur [a-z0-9_] – nichts einschleusbar.
+    var refMatch = location.search.match(/[?&]ref=([a-z0-9_]{1,40})(?:&|$)/);
+    var ref = refMatch ? refMatch[1] : null;
+    var play = playUrl;
+    if (ref) {
+      var source = ref.indexOf('passed_') === 0 ? 'share_card' : 'boatpass_link';
+      play += '&referrer=' + encodeURIComponent('utm_source=' + source + '&utm_campaign=' + ref);
+      // Auch der Play-Badge der Seite (Desktop, ?stay) trägt den Referrer
+      document.querySelectorAll('.ac a[href^="https://play.google.com/"]').forEach(function (a) { a.href = play; });
+    }
     if (/[?&]stay\b/.test(location.search)) return;
     var platform = document.documentElement.getAttribute('data-platform');
-    var target = platform === 'ios' ? iosUrl : platform === 'android' ? playUrl : null;
+    var target = platform === 'ios' ? iosUrl : platform === 'android' ? play : null;
     if (!target) return;
     var note = document.getElementById('ac-redirect');
     if (note) note.hidden = false;
     var done = false;
     function go() { if (done) return; done = true; location.replace(target); }
-    window.plausible('app_redirect', { props: { platform: platform }, callback: go });
+    window.plausible('app_redirect', { props: ref ? { platform: platform, ref: ref } : { platform: platform }, callback: go });
     setTimeout(go, 800);
   })();
 </script>

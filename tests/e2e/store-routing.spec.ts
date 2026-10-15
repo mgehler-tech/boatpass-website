@@ -84,6 +84,26 @@ test.describe('Android visitors are sent to Google Play', () => {
     await expect(page.locator('#blog-inline-cta-play')).toHaveAttribute('href', PLAY_STORE_URL);
   });
 
+  test('the store chooser passes the share-card ref to Google Play as install referrer', async ({ page }) => {
+    await page.route('https://plausible.io/**', (route) => route.abort());
+    await page.route('https://play.google.com/**', (route) =>
+      route.fulfill({ status: 200, contentType: 'text/html', body: '<title>Google Play</title>' }),
+    );
+    await page.goto('/app/?ref=passed_sbf_see');
+    await expect(page).toHaveURL(
+      `${PLAY_STORE_URL}&referrer=utm_source%3Dshare_card%26utm_campaign%3Dpassed_sbf_see`,
+    );
+  });
+
+  test('an invalid ref is dropped instead of reaching the store URL', async ({ page }) => {
+    await page.route('https://plausible.io/**', (route) => route.abort());
+    await page.route('https://play.google.com/**', (route) =>
+      route.fulfill({ status: 200, contentType: 'text/html', body: '<title>Google Play</title>' }),
+    );
+    await page.goto('/app/?ref=%3Cscript%3E');
+    await expect(page).toHaveURL(PLAY_STORE_URL);
+  });
+
   test('prices show the Google Play price', async ({ page }) => {
     await page.goto('/ubi/');
     await expect(page.getByText('Im App Store: 8,99 €')).toBeVisible();
