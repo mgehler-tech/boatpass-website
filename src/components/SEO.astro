@@ -141,7 +141,7 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' |
         }
       ]
     },
-    // Bewertung stammt aus Google Play (App-Store-Bewertungen folgen, sobald vorhanden).
+    // Google Play und App Store zusammengefasst (getBoatpassCombinedRating).
     ...(appRating && appRating.ratings > 0 ? {
       "aggregateRating": {
         "@type": "AggregateRating",

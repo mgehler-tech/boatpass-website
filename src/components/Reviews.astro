@@ -7,12 +7,14 @@
 // Buchstaben-Kreise statt Porträts: Fremde Profilbilder zu spiegeln ist
 // rechtlich unnötig heikel, Stockfotos wären das Gegenteil des Ziels.
 import { REVIEWS_DE, formatReviewDate } from '../data/reviews';
-import { getBoatpassRating, formatRating } from '../data/apps';
+import { getBoatpassRating, getBoatpassIosRating, formatRating } from '../data/apps';
 import { PLAY_STORE_URL } from '../data/stores';
 
 const playStoreUrl = PLAY_STORE_URL;
 const rating = getBoatpassRating();
 const score = rating ? formatRating(rating.score).replace('.', ',') : null;
+const iosRating = getBoatpassIosRating();
+const iosScore = iosRating ? iosRating.score.toFixed(2).replace('.', ',') : null;
 
 // Desktop-Marquee (≥769px): eine einzige Reihe, die in eine Richtung endlos
 // läuft. Die sichtbare Bewegung ersetzt das statische Raster, das auf großen
@@ -76,6 +78,12 @@ const rowA = REVIEWS_DE;
       <p class="rv-agg">
         <strong>{score}</strong> <span class="rv-star-inline" aria-hidden="true">★</span>
         aus {rating.ratings} Bewertungen bei Google Play
+        {iosRating && (
+          <>
+            {' · '}<strong>{iosScore}</strong> <span class="rv-star-inline" aria-hidden="true">★</span>
+            {` aus ${iosRating.ratings} ${iosRating.ratings === 1 ? 'Bewertung' : 'Bewertungen'} im App Store`}
+          </>
+        )}
       </p>
     )}
     <!-- data-store: die Rezensionen stammen aus Google Play, der Link darf nicht umgeleitet werden. -->

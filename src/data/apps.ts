@@ -308,6 +308,26 @@ export function getBoatpassIosRating(): AppRating | null {
   return { score: app.iosRating, ratings: app.iosRatingCount };
 }
 
+/** Beide Stores zusammengefasst: nach Anzahl gewichteter Mittelwert, Summe der Bewertungen. */
+function combineRatings(...ratings: (AppRating | null)[]): AppRating | null {
+  const present = ratings.filter((r): r is AppRating => r !== null && r.ratings > 0);
+  const total = present.reduce((n, r) => n + r.ratings, 0);
+  if (total === 0) return null;
+  return { score: present.reduce((sum, r) => sum + r.score * r.ratings, 0) / total, ratings: total };
+}
+
+function storeRatings(app: LearningApp): AppRating | null {
+  return combineRatings(
+    app.rating && app.ratingCount ? { score: app.rating, ratings: app.ratingCount } : null,
+    app.iosRating && app.iosRatingCount ? { score: app.iosRating, ratings: app.iosRatingCount } : null,
+  );
+}
+
+/** Google Play + App Store zusammen – für Hero und strukturierte Daten. */
+export function getBoatpassCombinedRating(): AppRating | null {
+  return storeRatings(appById('boatpass'));
+}
+
 /** JSON-LD SoftwareApplication für eine App. aggregateRating nur, wenn Bewertungen vorliegen. */
 export function softwareApplicationSchema(app: LearningApp, lang: 'de' | 'en') {
   const os = [app.playUrl ? 'Android' : null, app.appStoreUrl ? 'iOS' : null]
@@ -332,12 +352,12 @@ export function softwareApplicationSchema(app: LearningApp, lang: 'de' | 'en') {
       price: app.pricingModel === 'free' ? '0' : '0',
       description: app.price[lang],
     },
-    ...(app.rating && app.ratingCount
+    ...(storeRatings(app)
       ? {
           aggregateRating: {
             '@type': 'AggregateRating',
-            ratingValue: formatRating(app.rating),
-            ratingCount: String(app.ratingCount),
+            ratingValue: formatRating(storeRatings(app)!.score),
+            ratingCount: String(storeRatings(app)!.ratings),
             bestRating: '5',
             worstRating: '1',
           },

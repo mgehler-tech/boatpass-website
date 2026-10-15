@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import StoreBadges from './StoreBadges.astro';
 import { useTranslations } from '../i18n/index';
 import { PLAY_STORE_URL } from '../data/stores';
-import { getBoatpassRating, formatRating } from '../data/apps';
+import { getBoatpassCombinedRating, formatRating } from '../data/apps';
 import screenshot0De from '../assets/images/app-screenshot.de.png';
 import screenshot1De from '../assets/images/app.screenshot.1.de.png';
 import screenshot2De from '../assets/images/app.screenshot.2.de.png';
@@ -26,8 +26,10 @@ const [screenshot0, screenshot1, screenshot2, screenshot3] = lang === 'en'
 // auf iPhone/iPad gegen den App Store und am Desktop gegen die Auswahlseite /app/.
 const playStoreUrl = PLAY_STORE_URL;
 
-// Google-Play-Bewertung direkt am Haupt-CTA als Social Proof (Logo · Score · Sterne · Anzahl).
-const appRating = getBoatpassRating();
+// Bewertung beider Stores direkt am Haupt-CTA als Social Proof (Score · Sterne · Anzahl).
+// Zusammengefasst, weil neben dem Button nur Platz für einen Block ist; der Footer
+// zeigt beide Stores einzeln.
+const appRating = getBoatpassCombinedRating();
 const ratingScoreLabel = appRating
   ? formatRating(appRating.score).replace('.', lang === 'de' ? ',' : '.')
   : null;
@@ -101,7 +103,7 @@ const ratingsLabel = lang === 'de' ? 'Bewertungen' : 'ratings';
                     ))}
                   </span>
                 </div>
-                <span class="hero-rating-count">{appRating.ratings} {ratingsLabel} · Google Play</span>
+                <span class="hero-rating-count">{appRating.ratings} {ratingsLabel} · Google Play & App Store</span>
               </div>
             </>
           )}
