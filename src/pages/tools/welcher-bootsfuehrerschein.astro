@@ -1,8 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { PLAY_STORE_URL, bundleSaving, formatPrice, storePrice, type Platform } from '../../data/stores';
+import { PLAY_STORE_URL, appStoreUrl, bundleSaving, formatPrice, smartAppPath, storePrice, type Platform } from '../../data/stores';
 
 const playStoreUrl = PLAY_STORE_URL;
+// Das Ergebnis wird erst nach dem Laden gerendert, die Geräteweiche im BaseLayout
+// greift dort nicht mehr – deshalb wählt das Skript den Store-Link selbst.
+const iosUrl = appStoreUrl('de');
+const chooserPath = smartAppPath('de');
 
 // Preise je Store: iPhone/iPad sehen App-Store-Preise, alle anderen Google Play.
 // Die Auswahl trifft das Inline-Skript anhand von html[data-platform].
@@ -363,9 +367,12 @@ const howToSchema = {
     }
   </style>
 
-  <script is:inline define:vars={{ playStoreUrl, PS }}>
+  <script is:inline define:vars={{ playStoreUrl, iosUrl, chooserPath, PS }}>
     (function () {
-      var P = PS[document.documentElement.getAttribute('data-platform') === 'ios' ? 'ios' : 'android'];
+      var platform = document.documentElement.getAttribute('data-platform');
+      var P = PS[platform === 'ios' ? 'ios' : 'android'];
+      var storeUrl = platform === 'ios' ? iosUrl : platform === 'android' ? playStoreUrl : chooserPath;
+      var storeTarget = platform === 'desktop' ? '' : ' target="_blank" rel="noopener noreferrer"';
       const STEPS = [
         { id: 'revier', q: 'Wo möchtest du fahren?', options: [
           { v: 'binnen', label: 'Binnengewässer', sub: 'Flüsse, Kanäle & Seen' },
@@ -529,7 +536,7 @@ const howToSchema = {
         }
 
         html += '<div style="margin-top:22px; display:flex; flex-wrap:wrap; gap:12px;">' +
-          '<a href="' + playStoreUrl + '" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:15px; padding:14px 26px; border-radius:14px; text-decoration:none;">▶&nbsp;Jetzt mit Boatpass lernen</a>' +
+          '<a href="' + storeUrl + '"' + storeTarget + ' style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:15px; padding:14px 26px; border-radius:14px; text-decoration:none;">▶&nbsp;Jetzt mit Boatpass lernen</a>' +
           '<button type="button" id="cfg-restart" class="cfg-restart-btn" style="border:1.5px solid rgba(51,102,255,0.2); color:#3366FF; font-weight:700; font-size:15px; padding:14px 24px; border-radius:14px; cursor:pointer;">Nochmal starten</button>' +
           '</div>';
         html += '<p style="font-size:12.5px; color:#656B78; line-height:1.6; margin-top:14px;">Preise gelten für den Vollzugang im jeweiligen Boatpass-Lernkatalog (Einmalkauf, kein Abo). Amtliche Prüfungs- und Verwaltungsgebühren sind nicht enthalten.</p>';
