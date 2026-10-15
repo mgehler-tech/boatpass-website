@@ -1,6 +1,7 @@
 ---
 import AppLandingPage from '../../components/AppLandingPage.astro';
 import { appsForLicense } from '../../data/apps';
+import { priceText } from '../../data/stores';
 
 const apps = appsForLicense('sbf-binnen');
 
@@ -58,7 +59,7 @@ const relatedLinks = [
   androidParagraphs={[
     'All six apps are on Google Play. The strongest free option is <strong>Sportbootführerschein Binnen</strong> by Matthias Wimmer: over 100,000 downloads, 4.9 ★ from 772 ratings, no ads, no in-app purchases, no tracking. The full official catalogue including sailing supplement questions is there, learned on a spaced-repetition principle.',
     'What it lacks is explanations for the answers. If you want to understand rather than memorise, <strong>SBF Binnen by Ralf Goritz</strong> (4.8 ★ from 567 ratings) serves you best: a textbook for every question, Leitner boxes either automatic or manual, a dedicated mode for uncertain questions and all exam knots. <strong>Bootspruefung.de</strong> and <strong>SBF-Fragen</strong> also supply theory texts.',
-    'Boatpass is on Google Play as well. The SBF Binnen catalogue costs €9.99 as a one-off, or €16.98 together with SBF See. Trying it is free.',
+    'Boatpass is on Google Play as well. The SBF Binnen catalogue costs ' + priceText('sbfBinnen', 'en') + ' as a one-off, or ' + priceText('bundleSbf', 'en') + ' together with SBF See. Trying it is free.',
   ]}
   iosHeading="SBF Binnen app for iPhone and iPad"
   iosParagraphs={[

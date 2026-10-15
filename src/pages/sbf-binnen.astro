@@ -4,7 +4,7 @@ import Icon from '../components/Icon.astro';
 import CatalogSources from '../components/CatalogSources.astro';
 import BoatSchoolFinder from '../components/BoatSchoolFinder.astro';
 import type { IconName } from '../icons';
-import { PLAY_STORE_URL } from '../data/stores';
+import { PLAY_STORE_URL, schemaOffers } from '../data/stores';
 
 const playStoreUrl = PLAY_STORE_URL;
 
@@ -93,13 +93,7 @@ const courseSchema = {
       "name": "Marius Gehler",
     },
   },
-  "offers": {
-    "@type": "Offer",
-    "category": "EducationApplication",
-    "price": "9.99",
-    "priceCurrency": "EUR",
-    "url": "https://play.google.com/store/apps/details?id=com.boatpass.app",
-  },
+  "offers": schemaOffers('sbfBinnen'),
 };
 
 // Direktvergleich Binnen vs. See als Entscheidungshilfe

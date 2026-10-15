@@ -1,6 +1,7 @@
 ---
 import AppLandingPage from '../../components/AppLandingPage.astro';
 import { appsForLicense } from '../../data/apps';
+import { priceText } from '../../data/stores';
 
 const apps = appsForLicense('sbf-see');
 
@@ -58,7 +59,7 @@ const relatedLinks = [
   androidParagraphs={[
     'All five apps are on Google Play. The most widely used free option is <strong>Sportbootführerschein See 2023</strong> by Matthias Wimmer, with over 100,000 downloads and 4.8 ★ from 703 ratings – no ads, no in-app purchases, no tracking. It works on a spaced-repetition principle: a question counts as done only once you have answered it correctly five times.',
     'The decisive catch: it <strong>does not cover the navigation tasks</strong>. For course calculation, dead reckoning and chartwork you need extra material – or an app that includes that part.',
-    'Boatpass is on Google Play too. The SBF See catalogue costs €9.99 as a one-off, or €16.98 bundled with SBF Binnen. Trying the app is free.',
+    'Boatpass is on Google Play too. The SBF See catalogue costs ' + priceText('sbfSee', 'en') + ' as a one-off, or ' + priceText('bundleSbf', 'en') + ' bundled with SBF Binnen. Trying the app is free.',
   ]}
   iosHeading="SBF See app for iPhone and iPad"
   iosParagraphs={[

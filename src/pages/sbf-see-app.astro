@@ -1,6 +1,7 @@
 ---
 import AppLandingPage from '../components/AppLandingPage.astro';
 import { appsForLicense } from '../data/apps';
+import { priceText } from '../data/stores';
 
 const apps = appsForLicense('sbf-see');
 
@@ -58,7 +59,7 @@ const relatedLinks = [
   androidParagraphs={[
     'Alle fünf Apps sind im Google Play Store verfügbar. Die meistgenutzte kostenlose Variante ist <strong>Sportbootführerschein See 2023</strong> von Matthias Wimmer mit über 100.000 Downloads und 4,8 ★ bei 703 Bewertungen – ohne Werbung, ohne In-App-Käufe, ohne Tracking. Sie arbeitet nach dem Karteikasten-Prinzip: Eine Frage gilt erst als erledigt, wenn du sie fünfmal richtig beantwortet hast.',
     'Der entscheidende Haken: Die <strong>Navigationsaufgaben deckt sie nicht ab</strong>. Für Kursberechnung, Besteckrechnung und Kartenarbeit brauchst du zusätzliches Material – oder eine App, die den Teil enthält.',
-    'Boatpass gibt es ebenfalls im Play Store. Der SBF-See-Katalog kostet einmalig 9,99 €, im Paket mit SBF Binnen 16,98 €. Zum Ausprobieren ist die App kostenlos.',
+    'Boatpass gibt es ebenfalls bei Google Play. Der SBF-See-Katalog kostet einmalig ' + priceText('sbfSee', 'de') + ', im Paket mit SBF Binnen ' + priceText('bundleSbf', 'de') + '. Zum Ausprobieren ist die App kostenlos.',
   ]}
   iosHeading="SBF-See-App für iPhone und iPad"
   iosParagraphs={[

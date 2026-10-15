@@ -1,6 +1,7 @@
 ---
 import AppLandingPage from '../components/AppLandingPage.astro';
 import { LEARNING_APPS } from '../data/apps';
+import { priceText } from '../data/stores';
 
 // Alle Apps, die mindestens eines der drei Funkzeugnisse abdecken.
 const apps = LEARNING_APPS.filter(app =>
@@ -61,7 +62,7 @@ const relatedLinks = [
   androidParagraphs={[
     'Alle drei Apps sind im Google Play Store verfügbar. Der Unterschied liegt weniger im Fragenkatalog – der ist amtlich und überall gleich – als im Drumherum: <strong>Bootspruefung.de</strong> liefert in der Pro-Version Musterfunksprüche und Theorietexte, <strong>SBF-Fragen</strong> setzt auf ein Karteikasten-System mit Prüfungssimulation nach Original-Bögen.',
     'Die beliebten kostenlosen Apps von Matthias Wimmer decken <strong>keine Funkzeugnisse</strong> ab, ebenso wenig Sailbyte. Wer den Funkschein lernen will, hat also faktisch drei Optionen.',
-    'Bei Boatpass kosten die Funkmodule einmalig 7,99 € (UBI und SRC) beziehungsweise 9,99 € (LRC) – kein Abo, dauerhafter Zugriff.',
+    'Bei Boatpass kosten die Funkmodule einmalig ' + priceText('ubi', 'de') + ' (UBI und SRC) beziehungsweise ' + priceText('lrc', 'de') + ' (LRC) – kein Abo, dauerhafter Zugriff.',
   ]}
   iosHeading="Funkschein-App für iPhone und iPad"
   iosParagraphs={[
@@ -73,7 +74,7 @@ const relatedLinks = [
     'Vollständige amtliche Fragenkataloge, unter anderem 130 UBI-Fragen',
     'Prüfungssimulation mit Bestehensgrenze und Zeitlimit',
     'Fehlertraining für die typischen Stolperstellen bei Notrufverfahren',
-    'Einmalig 7,99 € je Funkmodul (LRC 9,99 €), kein Abo',
+    'Einmalkauf je Funkmodul, im App Store auch als Funk-Paket – kein Abo',
     'Offline lernen – funktioniert ohne Internetverbindung',
   ]}
   limitations={[

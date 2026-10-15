@@ -3,7 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import CatalogSources from '../../components/CatalogSources.astro';
 import type { IconName } from '../../icons';
-import { PLAY_STORE_URL } from '../../data/stores';
+import PlatformPrice from '../../components/PlatformPrice.astro';
+import { PLAY_STORE_URL, minPrice, priceText, schemaOffers } from '../../data/stores';
 
 const playStoreUrl = PLAY_STORE_URL;
 
@@ -46,13 +47,7 @@ const courseSchema = {
       "name": "Marius Gehler",
     },
   },
-  "offers": {
-    "@type": "Offer",
-    "category": "EducationApplication",
-    "price": "7.99",
-    "priceCurrency": "EUR",
-    "url": "https://play.google.com/store/apps/details?id=com.boatpass.app",
-  },
+  "offers": schemaOffers('src'),
 };
 
 const faqs = [
@@ -62,7 +57,7 @@ const faqs = [
   },
   {
     q: 'What does the SRC cost?',
-    a: 'The official exam fee for the SRC at the DSV/DMYV is currently around €127.88 (admission, exam and issuance of the certificate). An optional preparation course at a radio school costs an additional €250–350 but is not mandatory. These fees are independent of the Boatpass SRC learning module (one-time €7.99).',
+    a: 'The official exam fee for the SRC at the DSV/DMYV is currently around €127.88 (admission, exam and issuance of the certificate). An optional preparation course at a radio school costs an additional €250–350 but is not mandatory. These fees are independent of the Boatpass SRC learning module (one-time ' + priceText('src', 'en') + ').',
   },
   {
     q: 'SRC or UBI – which radio certificate do I need?',
@@ -117,7 +112,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
 
 <BaseLayout
   title="SRC Study App – Short Range Certificate"
-  description="Learn the SRC radio certificate (Short Range Certificate): exam structure, contents, costs and prep. Boatpass SRC module in the app – a one-time €7.99."
+  description={`Learn the SRC radio certificate (Short Range Certificate): exam structure, contents, costs and prep. Boatpass SRC module in the app – a one-time payment from ${minPrice(['src'], 'en')}.`}
   lang="en"
   altUrl="https://boatpass.de/src/"
 >
@@ -142,7 +137,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
       <!-- Available badge -->
       <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#047857; font-size:14px; font-weight:700; padding:10px 20px; border-radius:14px; margin-bottom:24px;">
         <Icon name="check" size={17} stroke="#047857" strokeWidth={2.5} />
-        Boatpass SRC module – now available · one-time €7.99
+        Boatpass SRC module – now available · one-time <PlatformPrice product="src" lang="en" />
       </div>
       <br/>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
@@ -317,7 +312,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
         </div>
       </div>
       <p style="font-size:13px; color:#656B78; line-height:1.6; margin-top:12px;">
-        The official exam fee at the DSV/DMYV is currently around €127.88. A preparation course is not required – you can also learn the theory independently with the official question catalog. These official fees are independent of the Boatpass SRC learning module (one-time €7.99).
+        The official exam fee at the DSV/DMYV is currently around €127.88. A preparation course is not required – you can also learn the theory independently with the official question catalog. These official fees are independent of the Boatpass SRC learning module (one-time {priceText('src', 'en')}).
       </p>
     </section>
 
@@ -374,10 +369,10 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
       <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Now available</div>
       <h2 style="font-size:24px; font-weight:800; color:white; margin-bottom:12px;">Boatpass SRC module</h2>
       <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:20px;">
-        The SRC module for Boatpass is here – with the same learning concept as SBF Inland & Coastal: official question catalog, exam simulation and targeted mistake training. One-time <strong style="color:white;">€7.99</strong>, no subscription.
+        The SRC module for Boatpass is here – with the same learning concept as SBF Inland & Coastal: official question catalog, exam simulation and targeted mistake training. One-time <strong style="color:white;"><PlatformPrice product="src" lang="en" /></strong>, no subscription.
       </p>
       <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:24px;">
-        <span style="font-size:40px; font-weight:900; color:white; letter-spacing:-1.5px;">€7.99</span>
+        <span style="font-size:40px; font-weight:900; color:white; letter-spacing:-1.5px;"><PlatformPrice product="src" lang="en" alt /></span>
         <span style="font-size:14px; color:rgba(255,255,255,0.7); font-weight:500;">one-time purchase</span>
       </div>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"

@@ -50,31 +50,71 @@ export const PRICES: Record<ProductKey, Record<Platform, number | null>> = {
   bundleFunk: { android: null, ios: 1799 },
 };
 
-export const PLATFORM_LABEL: Record<Platform, Record<Lang, string>> = {
-  android: { de: 'Android', en: 'Android' },
-  ios: { de: 'iPhone & iPad', en: 'iPhone & iPad' },
-};
-
 export function formatPrice(cents: number, lang: Lang): string {
   const value = (cents / 100).toFixed(2);
   return lang === 'de' ? `${value.replace('.', ',')} €` : `€${value}`;
 }
 
-/**
- * Preis für Fließtext: identische Preise einmal, abweichende je Plattform,
- * z. B. „7,99 € (Android) · 8,99 € (iPhone & iPad)".
- */
-export function priceText(key: ProductKey, lang: Lang): string {
-  const { android, ios } = PRICES[key];
-  if (android !== null && ios !== null && android === ios) return formatPrice(android, lang);
-  return (['android', 'ios'] as const)
-    .filter((p) => PRICES[key][p] !== null)
-    .map((p) => `${formatPrice(PRICES[key][p] as number, lang)} (${PLATFORM_LABEL[p][lang]})`)
-    .join(' · ');
+const STORE_NAME: Record<Platform, Record<Lang, string>> = {
+  android: { de: 'bei Google Play', en: 'on Google Play' },
+  ios: { de: 'im App Store', en: 'on the App Store' },
+};
+
+/** Formatierter Preis eines Produkts auf einer Plattform, z. B. „8,99 €". */
+export function storePrice(key: ProductKey, platform: Platform, lang: Lang): string {
+  const cents = PRICES[key][platform];
+  if (cents === null) throw new Error(`${key} ist auf ${platform} nicht erhältlich`);
+  return formatPrice(cents, lang);
 }
 
-/** Niedrigster und höchster Kaufpreis über beide Stores – für „ab"-Angaben. */
-export function priceRange(): { min: number; max: number } {
-  const all = Object.values(PRICES).flatMap((p) => [p.android, p.ios]).filter((v): v is number => v !== null);
-  return { min: Math.min(...all), max: Math.max(...all) };
+/** true, wenn ein Produkt in beiden Stores gleich viel kostet. */
+export function samePrice(key: ProductKey): boolean {
+  const { android, ios } = PRICES[key];
+  return android !== null && android === ios;
+}
+
+/**
+ * Preis für Fließtext: identische Preise einmal, abweichende mit Store,
+ * z. B. „7,99 € bei Google Play bzw. 8,99 € im App Store".
+ */
+export function priceText(key: ProductKey, lang: Lang): string {
+  if (samePrice(key)) return storePrice(key, 'android', lang);
+  const parts = (['android', 'ios'] as const)
+    .filter((p) => PRICES[key][p] !== null)
+    .map((p) => `${storePrice(key, p, lang)} ${STORE_NAME[p][lang]}`);
+  return parts.join(lang === 'de' ? ' bzw. ' : ' or ');
+}
+
+/** Niedrigster Kaufpreis der genannten Produkte über beide Stores – für „ab"-Angaben. */
+export function minPrice(keys: ProductKey[], lang: Lang): string {
+  const all = keys.flatMap((k) => [PRICES[k].android, PRICES[k].ios]).filter((v): v is number => v !== null);
+  return formatPrice(Math.min(...all), lang);
+}
+
+/** Höchster Kaufpreis der genannten Produkte über beide Stores. */
+export function maxPrice(keys: ProductKey[], lang: Lang): string {
+  const all = keys.flatMap((k) => [PRICES[k].android, PRICES[k].ios]).filter((v): v is number => v !== null);
+  return formatPrice(Math.max(...all), lang);
+}
+
+export const ALL_PRODUCTS = Object.keys(PRICES) as ProductKey[];
+
+/** Ersparnis eines Pakets gegenüber den Einzelkäufen auf einer Plattform (Cent). */
+export function bundleSaving(bundle: ProductKey, parts: ProductKey[], platform: Platform): number {
+  const total = parts.reduce((sum, k) => sum + (PRICES[k][platform] ?? 0), 0);
+  return total - (PRICES[bundle][platform] ?? total);
+}
+
+/** schema.org-Offers je Store, z. B. für Product/Course-Markup. */
+export function schemaOffers(key: ProductKey) {
+  return (['android', 'ios'] as const)
+    .filter((p) => PRICES[key][p] !== null)
+    .map((p) => ({
+      '@type': 'Offer',
+      price: ((PRICES[key][p] as number) / 100).toFixed(2),
+      priceCurrency: 'EUR',
+      availability: 'https://schema.org/InStock',
+      url: p === 'android' ? PLAY_STORE_URL : APP_STORE_URL,
+      seller: { '@type': 'Organization', name: p === 'android' ? 'Google Play' : 'App Store' },
+    }));
 }

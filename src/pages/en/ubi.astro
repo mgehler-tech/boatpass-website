@@ -3,7 +3,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import CatalogSources from '../../components/CatalogSources.astro';
 import type { IconName } from '../../icons';
-import { PLAY_STORE_URL } from '../../data/stores';
+import PlatformPrice from '../../components/PlatformPrice.astro';
+import { PLAY_STORE_URL, minPrice, priceText, schemaOffers } from '../../data/stores';
 
 const playStoreUrl = PLAY_STORE_URL;
 
@@ -45,13 +46,7 @@ const courseSchema = {
       "name": "Marius Gehler",
     },
   },
-  "offers": {
-    "@type": "Offer",
-    "category": "EducationApplication",
-    "price": "7.99",
-    "priceCurrency": "EUR",
-    "url": "https://play.google.com/store/apps/details?id=com.boatpass.app",
-  },
+  "offers": schemaOffers('ubi'),
 };
 
 const faqs = [
@@ -61,7 +56,7 @@ const faqs = [
   },
   {
     q: 'What does the UBI cost?',
-    a: 'The official total fee for the UBI is €108.71, made up of admission (€15.89), the theory & practice exam (€70.03) and issuance of the certificate (€22.79). A retake of theory or practice costs €45.64. These official fees are independent of the Boatpass UBI learning module (one-time €7.99).',
+    a: 'The official total fee for the UBI is €108.71, made up of admission (€15.89), the theory & practice exam (€70.03) and issuance of the certificate (€22.79). A retake of theory or practice costs €45.64. These official fees are independent of the Boatpass UBI learning module (one-time ' + priceText('ubi', 'en') + ').',
   },
   {
     q: 'Do I need a radio course for the UBI?',
@@ -116,7 +111,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
 
 <BaseLayout
   title="UBI Study App – Inland Radio Certificate"
-  description="Learn the UBI VHF radio certificate for inland navigation: exam structure, contents and preparation. Boatpass UBI module in the app – a one-time €7.99."
+  description={`Learn the UBI VHF radio certificate for inland navigation: exam structure, contents and preparation. Boatpass UBI module in the app – a one-time payment from ${minPrice(['ubi'], 'en')}.`}
   lang="en"
   altUrl="https://boatpass.de/ubi/"
 >
@@ -142,7 +137,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
       <!-- Available badge -->
       <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#047857; font-size:14px; font-weight:700; padding:10px 20px; border-radius:14px; margin-bottom:24px;">
         <Icon name="check" size={17} stroke="#047857" strokeWidth={2.5} />
-        Boatpass UBI module – now available · one-time €7.99
+        Boatpass UBI module – now available · one-time <PlatformPrice product="ubi" lang="en" />
       </div>
       <br/>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
@@ -288,7 +283,7 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
         </div>
       </div>
       <p style="font-size:13px; color:#656B78; line-height:1.6; margin-top:12px;">
-        Fees as per the DSV. Retake of theory <u>or</u> practice: €45.64. For exams abroad, additional travel costs may apply. These official fees are independent of the Boatpass UBI learning module (one-time €7.99).
+        Fees as per the DSV. Retake of theory <u>or</u> practice: €45.64. For exams abroad, additional travel costs may apply. These official fees are independent of the Boatpass UBI learning module (one-time {priceText('ubi', 'en')}).
       </p>
     </section>
 
@@ -345,10 +340,10 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
       <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Now available</div>
       <h2 style="font-size:24px; font-weight:800; color:white; margin-bottom:12px;">Boatpass UBI module</h2>
       <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:20px;">
-        The UBI module for Boatpass is here – with the same learning concept as SBF Inland & Coastal: official question catalog, exam simulation and mistake training. One-time <strong style="color:white;">€7.99</strong>, no subscription.
+        The UBI module for Boatpass is here – with the same learning concept as SBF Inland & Coastal: official question catalog, exam simulation and mistake training. One-time <strong style="color:white;"><PlatformPrice product="ubi" lang="en" /></strong>, no subscription.
       </p>
       <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:24px;">
-        <span style="font-size:40px; font-weight:900; color:white; letter-spacing:-1.5px;">€7.99</span>
+        <span style="font-size:40px; font-weight:900; color:white; letter-spacing:-1.5px;"><PlatformPrice product="ubi" lang="en" alt /></span>
         <span style="font-size:14px; color:rgba(255,255,255,0.7); font-weight:500;">one-time purchase</span>
       </div>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"

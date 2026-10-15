@@ -1,23 +1,21 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { useTranslations } from '../../i18n/index';
-import { PLAY_STORE_URL } from '../../data/stores';
+import { PLAY_STORE_URL, bundleSaving, formatPrice, storePrice, type Platform } from '../../data/stores';
 
 const playStoreUrl = PLAY_STORE_URL;
 
-// Preise für das Ergebnis-Upselling zentral aus der Preis-Datenquelle ziehen,
-// damit sie nie von der Preis-Sektion abweichen. SBF Binnen/See teilen sich den
-// generischen Katalogpreis (t.pricing.price).
-const t = useTranslations('de');
-const P = {
-  binnen: t.pricing.price,
-  see: t.pricing.price,
-  ubi: t.pricing.ubiPrice,
-  src: t.pricing.srcPrice,
-  lrc: t.pricing.lrcPrice,
-  bundle: t.pricing.bundlePrice,
-  bundleSave: t.pricing.bundleSave,
-};
+// Preise je Store: iPhone/iPad sehen App-Store-Preise, alle anderen Google Play.
+// Die Auswahl trifft das Inline-Skript anhand von html[data-platform].
+const priceSet = (platform: Platform) => ({
+  binnen: storePrice('sbfBinnen', platform, 'de'),
+  see: storePrice('sbfSee', platform, 'de'),
+  ubi: storePrice('ubi', platform, 'de'),
+  src: storePrice('src', platform, 'de'),
+  lrc: storePrice('lrc', platform, 'de'),
+  bundle: storePrice('bundleSbf', platform, 'de'),
+  bundleSave: `Spare ${formatPrice(bundleSaving('bundleSbf', ['sbfBinnen', 'sbfSee'], platform), 'de')}`,
+});
+const PS = { android: priceSet('android'), ios: priceSet('ios') };
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -365,8 +363,9 @@ const howToSchema = {
     }
   </style>
 
-  <script is:inline define:vars={{ playStoreUrl, P }}>
+  <script is:inline define:vars={{ playStoreUrl, PS }}>
     (function () {
+      var P = PS[document.documentElement.getAttribute('data-platform') === 'ios' ? 'ios' : 'android'];
       const STEPS = [
         { id: 'revier', q: 'Wo möchtest du fahren?', options: [
           { v: 'binnen', label: 'Binnengewässer', sub: 'Flüsse, Kanäle & Seen' },

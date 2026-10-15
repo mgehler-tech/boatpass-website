@@ -1,6 +1,7 @@
 ---
 import AppLandingPage from '../components/AppLandingPage.astro';
 import { appsForLicense } from '../data/apps';
+import { priceText } from '../data/stores';
 
 const apps = appsForLicense('sbf-binnen');
 
@@ -58,7 +59,7 @@ const relatedLinks = [
   androidParagraphs={[
     'Im Google Play Store sind alle sechs Apps verfügbar. Die beste kostenlose Option ist <strong>Sportbootführerschein Binnen</strong> von Matthias Wimmer: über 100.000 Downloads, 4,9 ★ bei 772 Bewertungen, keine Werbung, keine In-App-Käufe, kein Tracking. Der komplette amtliche Katalog inklusive Segelzusatzfragen ist enthalten, gelernt wird nach dem Karteikasten-Prinzip.',
     'Was ihr fehlt, sind Erklärungstexte zu den Antworten. Wer verstehen statt auswendig lernen will, ist mit <strong>SBF Binnen von Ralf Goritz</strong> (4,8 ★ bei 567 Bewertungen) am besten bedient: Lehrbuch zu jeder Frage, Leitner-Lernboxen wahlweise automatisch oder manuell, ein eigener Modus für unsichere Fragen und alle Prüfungsknoten. Auch <strong>Bootspruefung.de</strong> und <strong>SBF-Fragen</strong> liefern Theorietexte.',
-    'Boatpass findest du ebenfalls im Play Store. Der SBF-Binnen-Katalog kostet einmalig 9,99 €, zusammen mit SBF See 16,98 €. Antesten ist kostenlos.',
+    'Boatpass findest du ebenfalls bei Google Play. Der SBF-Binnen-Katalog kostet einmalig ' + priceText('sbfBinnen', 'de') + ', zusammen mit SBF See ' + priceText('bundleSbf', 'de') + '. Antesten ist kostenlos.',
   ]}
   iosHeading="SBF-Binnen-App für iPhone und iPad"
   iosParagraphs={[
