@@ -2,11 +2,12 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BlogCard from '../../components/BlogCard.astro';
+import { PLAY_STORE_URL } from '../../data/stores';
 
 const posts = (await getCollection('blog', entry => entry.data.lang === 'de'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const playStoreUrl = PLAY_STORE_URL;
 
 // Kuratierter Lernpfad für Einsteiger – in der Reihenfolge der SBF-Reise
 const journeySlugs = [

@@ -1,6 +1,7 @@
 ---
 import AppLandingPage from '../../components/AppLandingPage.astro';
 import { LEARNING_APPS } from '../../data/apps';
+import { priceText } from '../../data/stores';
 
 // Every app covering at least one of the three radio certificates.
 const apps = LEARNING_APPS.filter(app =>
@@ -30,7 +31,7 @@ const faqs = [
   },
   {
     q: 'Are the radio apps available for iPhone?',
-    a: 'Bootspruefung.de and SBF-Fragen are available for Android and iOS. Boatpass is currently Android only; the iOS version is in progress.',
+    a: 'Yes. Bootspruefung.de, SBF-Fragen and – since October 2026 – Boatpass are available for Android and iOS.',
   },
 ];
 
@@ -61,24 +62,24 @@ const relatedLinks = [
   androidParagraphs={[
     'All three apps are on Google Play. The difference lies less in the question catalogue – that is official and identical everywhere – than in what surrounds it: <strong>Bootspruefung.de</strong> supplies sample radio messages and theory texts in its Pro version, while <strong>SBF-Fragen</strong> relies on a spaced-repetition box with exam simulation on original papers.',
     'The popular free apps by Matthias Wimmer cover <strong>no radio certificates</strong>, and neither does Sailbyte. Anyone studying for a radio certificate effectively has three options.',
-    'With Boatpass the radio modules cost €7.99 one-off (UBI and SRC) and €9.99 (LRC) – no subscription, permanent access.',
+    'With Boatpass the radio modules cost ' + priceText('ubi', 'en') + ' one-off (UBI and SRC) and ' + priceText('lrc', 'en') + ' (LRC) – no subscription, permanent access.',
   ]}
   iosHeading="Radio certificate app for iPhone and iPad"
   iosParagraphs={[
-    'On iOS, <strong>Bootspruefung.de</strong> and <strong>SBF-Fragen</strong> remain. Both cover UBI, SRC and LRC.',
-    '<strong>Boatpass is not currently in the App Store</strong> – the iOS version is in development. On iPhone the other two apps are today the only choice for a radio certificate.',
+    'On iOS all three compared apps are available: <strong>Bootspruefung.de</strong>, <strong>SBF-Fragen</strong> and <strong>Boatpass</strong>. All cover UBI, SRC and LRC.',
+    '<strong>Boatpass has been on the App Store since October 2026</strong> and also offers a radio bundle for all three certificates there. A purchase only applies to the store you bought in, so an Android purchase does not unlock anything on iPhone.',
   ]}
   strengths={[
     'UBI, SRC and LRC in the same app as SBF See and SBF Binnen',
     'Complete official catalogues, including 130 UBI questions',
     'Exam simulation with pass mark and time limit',
     'Mistake training for the classic stumbling blocks in distress procedures',
-    '€7.99 one-off per radio module (LRC €9.99), no subscription',
+    'One-off purchase per radio module, also as a radio bundle on the App Store – no subscription',
     'Study offline – works without an internet connection',
   ]}
   limitations={[
     'No FKN pyrotechnics certificate and no Lake Constance licence',
-    'Android only so far',
+    'Purchases apply per store – no transfer between Android and iPhone',
     'No audio sample radio messages – the practical exam is practised on the equipment',
     'Far fewer ratings than Bootspruefung.de and SBF-Fragen',
     'Does not replace the practical part of the radio exam',

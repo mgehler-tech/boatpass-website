@@ -4,8 +4,10 @@ import Icon from '../components/Icon.astro';
 import PracticeBridge from '../components/PracticeBridge.astro';
 import CatalogSources from '../components/CatalogSources.astro';
 import type { IconName } from '../icons';
+import PlatformPrice from '../components/PlatformPrice.astro';
+import { PLAY_STORE_URL, minPrice, priceText, schemaOffers } from '../data/stores';
 
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const playStoreUrl = PLAY_STORE_URL;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -46,13 +48,7 @@ const courseSchema = {
       "name": "Marius Gehler",
     },
   },
-  "offers": {
-    "@type": "Offer",
-    "category": "EducationApplication",
-    "price": "9.99",
-    "priceCurrency": "EUR",
-    "url": "https://play.google.com/store/apps/details?id=com.boatpass.app",
-  },
+  "offers": schemaOffers('lrc'),
 };
 
 const faqs = [
@@ -66,7 +62,7 @@ const faqs = [
   },
   {
     q: 'Was kostet das LRC?',
-    a: 'Die amtliche Prüfungsgebühr für das LRC variiert je nach Verband und Bundesland und liegt bei rund 188–207 €. Ein optionaler Vorbereitungskurs kostet zusätzlich etwa 300–500 €, ist aber nicht vorgeschrieben. Diese Gebühren sind unabhängig vom Boatpass LRC-Lernmodul (einmalig 9,99 €).',
+    a: 'Die amtliche Prüfungsgebühr für das LRC variiert je nach Verband und Bundesland und liegt bei rund 188–207 €. Ein optionaler Vorbereitungskurs kostet zusätzlich etwa 300–500 €, ist aber nicht vorgeschrieben. Diese Gebühren sind unabhängig vom Boatpass LRC-Lernmodul (einmalig ' + priceText('lrc', 'de') + ').',
   },
   {
     q: 'Ab welchem Alter kann ich das LRC machen?',
@@ -112,7 +108,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
 
 <BaseLayout
   title="LRC Funkzeugnis Lernapp – Long Range Certificate"
-  description="LRC-Funkzeugnis (Long Range Certificate) lernen: Prüfungsaufbau, Inhalte, Kosten und Vorbereitung. Boatpass LRC-Modul in der App – einmalig 9,99 €."
+  description={`LRC-Funkzeugnis (Long Range Certificate) lernen: Prüfungsaufbau, Inhalte, Kosten und Vorbereitung. Boatpass LRC-Modul in der App – einmalig ab ${minPrice(['lrc'], 'de')}.`}
   lang="de"
   altUrl="https://boatpass.de/en/lrc/"
 >
@@ -137,7 +133,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
       <!-- Verfügbar Badge -->
       <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#047857; font-size:14px; font-weight:700; padding:10px 20px; border-radius:14px; margin-bottom:24px;">
         <Icon name="check" size={17} stroke="#047857" strokeWidth={2.5} />
-        Boatpass LRC-Modul – jetzt verfügbar · einmalig 9,99 €
+        Boatpass LRC-Modul – jetzt verfügbar · einmalig <PlatformPrice product="lrc" lang="de" />
       </div>
       <br/>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
@@ -282,7 +278,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
         </div>
       </div>
       <p style="font-size:13px; color:#656B78; line-height:1.6; margin-top:12px;">
-        Die genaue Prüfungsgebühr variiert je nach Verband und Bundesland (ca. 188–207 €). Ein Vorbereitungskurs ist nicht vorgeschrieben – die Theorie kannst du auch eigenständig mit dem offiziellen Fragenkatalog lernen. Diese amtlichen Gebühren sind unabhängig vom Boatpass LRC-Lernmodul (einmalig 9,99 €).
+        Die genaue Prüfungsgebühr variiert je nach Verband und Bundesland (ca. 188–207 €). Ein Vorbereitungskurs ist nicht vorgeschrieben – die Theorie kannst du auch eigenständig mit dem offiziellen Fragenkatalog lernen. Diese amtlichen Gebühren sind unabhängig vom Boatpass LRC-Lernmodul (einmalig {priceText('lrc', 'de')}).
       </p>
     </section>
 
@@ -339,10 +335,10 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
       <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Jetzt verfügbar</div>
       <h2 style="font-size:24px; font-weight:800; color:white; margin-bottom:12px;">Boatpass LRC-Modul</h2>
       <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:20px;">
-        Das LRC-Modul für Boatpass ist da – mit dem gleichen Lernkonzept wie SBF Binnen & See: offizieller Fragenkatalog, Prüfungssimulation und gezieltes Fehlertraining. Einmalig <strong style="color:white;">9,99 €</strong>, kein Abo.
+        Das LRC-Modul für Boatpass ist da – mit dem gleichen Lernkonzept wie SBF Binnen & See: offizieller Fragenkatalog, Prüfungssimulation und gezieltes Fehlertraining. Einmalig <strong style="color:white;"><PlatformPrice product="lrc" lang="de" /></strong>, kein Abo.
       </p>
       <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:24px;">
-        <span style="font-size:40px; font-weight:900; color:white; letter-spacing:-1.5px;">9,99 €</span>
+        <span style="font-size:40px; font-weight:900; color:white; letter-spacing:-1.5px;"><PlatformPrice product="lrc" lang="de" alt /></span>
         <span style="font-size:14px; color:rgba(255,255,255,0.7); font-weight:500;">Einmalkauf</span>
       </div>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"

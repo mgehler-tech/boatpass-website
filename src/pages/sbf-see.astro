@@ -5,8 +5,9 @@ import PracticeBridge from '../components/PracticeBridge.astro';
 import CatalogSources from '../components/CatalogSources.astro';
 import BoatSchoolFinder from '../components/BoatSchoolFinder.astro';
 import type { IconName } from '../icons';
+import { PLAY_STORE_URL, schemaOffers } from '../data/stores';
 
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const playStoreUrl = PLAY_STORE_URL;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -93,13 +94,7 @@ const courseSchema = {
       "name": "Marius Gehler",
     },
   },
-  "offers": {
-    "@type": "Offer",
-    "category": "EducationApplication",
-    "price": "9.99",
-    "priceCurrency": "EUR",
-    "url": "https://play.google.com/store/apps/details?id=com.boatpass.app",
-  },
+  "offers": schemaOffers('sbfSee'),
 };
 
 // Direktvergleich Binnen vs. See als Entscheidungshilfe
@@ -150,7 +145,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
       </p>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
         style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
-        ▶&nbsp;Kostenlos im Play Store
+        ▶&nbsp;Kostenlos laden
       </a>
     </div>
   </div>

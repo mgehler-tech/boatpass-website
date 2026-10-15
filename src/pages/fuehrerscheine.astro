@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 import type { IconName } from '../icons';
+import { priceText } from '../data/stores';
 
 // Verfügbare Führerscheine/Themenseiten – verlinken auf die bestehenden Detailseiten
 const available = [
@@ -37,21 +38,21 @@ const available = [
     icon: 'phone' as IconName,
     title: 'UBI',
     tag: 'UKW-Sprechfunk Binnen',
-    desc: 'Das UKW-Sprechfunkzeugnis für die Binnenschifffahrt – jetzt als Modul in der App, einmalig 7,99 €.',
+    desc: 'Das UKW-Sprechfunkzeugnis für die Binnenschifffahrt – jetzt als Modul in der App, einmalig ' + priceText('ubi', 'de') + '.',
     href: '/ubi/',
   },
   {
     icon: 'satellite' as IconName,
     title: 'SRC',
     tag: 'Seefunk Küste',
-    desc: 'Das Short Range Certificate – UKW-Seefunkzeugnis (Kurzstrecke) für Küstengewässer – jetzt als Modul in der App, einmalig 7,99 €.',
+    desc: 'Das Short Range Certificate – UKW-Seefunkzeugnis (Kurzstrecke) für Küstengewässer – jetzt als Modul in der App, einmalig ' + priceText('src', 'de') + '.',
     href: '/src/',
   },
   {
     icon: 'globe' as IconName,
     title: 'LRC',
     tag: 'Seefunk weltweit',
-    desc: 'Das Allgemeine Funkbetriebszeugnis für weltweiten Seefunk (UKW, Grenz-/Kurzwelle, Satellit) – jetzt als Modul in der App, einmalig 9,99 €.',
+    desc: 'Das Allgemeine Funkbetriebszeugnis für weltweiten Seefunk (UKW, Grenz-/Kurzwelle, Satellit) – jetzt als Modul in der App, einmalig ' + priceText('lrc', 'de') + '.',
     href: '/lrc/',
   },
 ];

@@ -9,6 +9,8 @@
  * Play-Store-Listings und Anbieter-Websites.
  */
 
+import { ALL_PRODUCTS, APP_STORE_URL, PLAY_STORE_URL, maxPrice, minPrice } from './stores';
+
 export interface AppRating {
   score: number;
   ratings: number;
@@ -48,6 +50,9 @@ export interface LearningApp {
   /** Play-Store-Bewertung, null wenn nicht erhoben */
   rating: number | null;
   ratingCount: number | null;
+  /** App-Store-Bewertung (bisher nur für BoatPass erhoben) */
+  iosRating?: number | null;
+  iosRatingCount?: number | null;
   /** Play-Store-Downloadklasse, z. B. '100.000+' */
   downloads: string | null;
   licenses: LicenseKey[];
@@ -74,15 +79,21 @@ export const LEARNING_APPS: LearningApp[] = [
     id: 'boatpass',
     name: 'Boatpass',
     vendor: 'Boatpass',
-    playUrl: 'https://play.google.com/store/apps/details?id=com.boatpass.app',
-    appStoreUrl: null,
+    playUrl: PLAY_STORE_URL,
+    appStoreUrl: APP_STORE_URL,
     website: 'https://boatpass.de/',
     rating: 4.96,
-    ratingCount: 26,
+    ratingCount: 28,
+    iosRating: 5.0,
+    iosRatingCount: 1,
     downloads: '100+',
     licenses: ['sbf-see', 'sbf-binnen', 'ubi', 'src', 'lrc'],
     pricingModel: 'freemium-onetime',
-    price: { de: '0 € / 7,99–16,98 € einmalig', en: '€0 / €7.99–16.98 one-off' },
+    // Spanne über beide Stores (Einzelkatalog bis Paket), siehe src/data/stores.ts.
+    price: {
+      de: `0 € / ${minPrice(ALL_PRODUCTS, 'de').replace(' €', '')}–${maxPrice(ALL_PRODUCTS, 'de')} einmalig`,
+      en: `€0 / ${minPrice(ALL_PRODUCTS, 'en')}–${maxPrice(ALL_PRODUCTS, 'en').replace('€', '')} one-off`,
+    },
     singleApp: true,
     offline: true,
     examSimulation: true,
@@ -291,6 +302,32 @@ export function getBoatpassRating(): AppRating | null {
   return { score: app.rating, ratings: app.ratingCount };
 }
 
+export function getBoatpassIosRating(): AppRating | null {
+  const app = appById('boatpass');
+  if (!app.iosRating || !app.iosRatingCount) return null;
+  return { score: app.iosRating, ratings: app.iosRatingCount };
+}
+
+/** Beide Stores zusammengefasst: nach Anzahl gewichteter Mittelwert, Summe der Bewertungen. */
+function combineRatings(...ratings: (AppRating | null)[]): AppRating | null {
+  const present = ratings.filter((r): r is AppRating => r !== null && r.ratings > 0);
+  const total = present.reduce((n, r) => n + r.ratings, 0);
+  if (total === 0) return null;
+  return { score: present.reduce((sum, r) => sum + r.score * r.ratings, 0) / total, ratings: total };
+}
+
+function storeRatings(app: LearningApp): AppRating | null {
+  return combineRatings(
+    app.rating && app.ratingCount ? { score: app.rating, ratings: app.ratingCount } : null,
+    app.iosRating && app.iosRatingCount ? { score: app.iosRating, ratings: app.iosRatingCount } : null,
+  );
+}
+
+/** Google Play + App Store zusammen – für Hero und strukturierte Daten. */
+export function getBoatpassCombinedRating(): AppRating | null {
+  return storeRatings(appById('boatpass'));
+}
+
 /** JSON-LD SoftwareApplication für eine App. aggregateRating nur, wenn Bewertungen vorliegen. */
 export function softwareApplicationSchema(app: LearningApp, lang: 'de' | 'en') {
   const os = [app.playUrl ? 'Android' : null, app.appStoreUrl ? 'iOS' : null]
@@ -303,7 +340,9 @@ export function softwareApplicationSchema(app: LearningApp, lang: 'de' | 'en') {
     name: app.name,
     applicationCategory: 'EducationalApplication',
     operatingSystem: os,
-    ...(app.playUrl ? { downloadUrl: app.playUrl } : {}),
+    ...(app.playUrl || app.appStoreUrl
+      ? { downloadUrl: [app.playUrl, app.appStoreUrl].filter(Boolean) }
+      : {}),
     ...(app.website ? { url: app.website } : {}),
     author: { '@type': 'Organization', name: app.vendor },
     description: app.summary[lang],
@@ -313,12 +352,12 @@ export function softwareApplicationSchema(app: LearningApp, lang: 'de' | 'en') {
       price: app.pricingModel === 'free' ? '0' : '0',
       description: app.price[lang],
     },
-    ...(app.rating && app.ratingCount
+    ...(storeRatings(app)
       ? {
           aggregateRating: {
             '@type': 'AggregateRating',
-            ratingValue: formatRating(app.rating),
-            ratingCount: String(app.ratingCount),
+            ratingValue: formatRating(storeRatings(app)!.score),
+            ratingCount: String(storeRatings(app)!.ratings),
             bestRating: '5',
             worstRating: '1',
           },

@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import type { IconName } from '../../icons';
+import { priceText } from '../../data/stores';
 
 const available = [
   {
@@ -36,21 +37,21 @@ const available = [
     icon: 'phone' as IconName,
     title: 'UBI',
     tag: 'VHF radio (inland)',
-    desc: 'The VHF radio certificate for inland navigation – now a module in the app, a one-time €7.99.',
+    desc: 'The VHF radio certificate for inland navigation – now a module in the app, a one-time ' + priceText('ubi', 'en') + '.',
     href: '/en/ubi/',
   },
   {
     icon: 'satellite' as IconName,
     title: 'SRC',
     tag: 'Marine radio (coastal)',
-    desc: 'Short Range Certificate – VHF marine radio with DSC for the coastal area. A module in the app, one-time €7.99.',
+    desc: 'Short Range Certificate – VHF marine radio with DSC for the coastal area. A module in the app, one-time ' + priceText('src', 'en') + '.',
     href: '/en/src/',
   },
   {
     icon: 'globe' as IconName,
     title: 'LRC',
     tag: 'Marine radio (worldwide)',
-    desc: 'Long Range Certificate – the general operator\'s certificate for worldwide marine radio. A module in the app, one-time €9.99.',
+    desc: 'Long Range Certificate – the general operator\'s certificate for worldwide marine radio. A module in the app, one-time ' + priceText('lrc', 'en') + '.',
     href: '/en/lrc/',
   },
 ];

@@ -1,4 +1,5 @@
 import { test, expect, devices } from '@playwright/test';
+import { APP_STORE_URL, PLAY_STORE_URL } from '../../src/data/stores';
 
 // Only the UA/viewport/touch bits, not `defaultBrowserType` (webkit) — the
 // project always runs on chromium (see ios-cta-deflection.spec.ts).
@@ -11,23 +12,24 @@ const { defaultBrowserType, ...iPhone13 } = devices['iPhone 13'];
  * → accordion — that had zero e2e coverage, so a regression there (menu not
  * opening, accordion not expanding, links missing) would ship undetected even
  * though most visitors reach these pages on a phone.
+ *
+ * The device here is an iPhone, so the device switch in BaseLayout sends every
+ * generic app CTA to the App Store; explicit badges keep their store URL.
  */
-const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
 
-test.describe('Mobile Homepage → Play Store CTA', () => {
+test.describe('Mobile Homepage → App Store CTA', () => {
   test.use({ ...iPhone13 });
 
-  test('hero CTA and Google Play badge link to the app listing', async ({ page }) => {
+  test('hero CTA leads to the App Store, badges link to both stores', async ({ page }) => {
     await page.goto('/');
-    const heroCta = page.locator('#hero-cta-play');
-    await expect(heroCta).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator('#hero-cta-play')).toHaveAttribute('href', APP_STORE_URL);
 
-    const gplayBadge = page.locator('#hero-gplay-badge');
-    await expect(gplayBadge).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator('#hero-badge-ios')).toHaveAttribute('href', APP_STORE_URL);
+    await expect(page.locator('#hero-badge-play')).toHaveAttribute('href', PLAY_STORE_URL);
   });
 });
 
-test.describe('Mobile Homepage → Pricing → Play Store CTA', () => {
+test.describe('Mobile Homepage → Pricing → App Store CTA', () => {
   test.use({ ...iPhone13 });
 
   test('hamburger menu → Preise leads to the pricing section', async ({ page }) => {
@@ -38,12 +40,13 @@ test.describe('Mobile Homepage → Pricing → Play Store CTA', () => {
     await page.locator('.mobile-nav-link', { hasText: 'Preise' }).click();
     await expect(page).toHaveURL(/#pricing$/);
 
-    const ctaLinks = page.locator('#pricing a[href*="play.google.com"]');
-    await expect(ctaLinks.first()).toHaveAttribute('href', PLAY_STORE_URL);
+    const ctaLinks = page.locator(`#pricing a[href="${APP_STORE_URL}"]`);
+    expect(await ctaLinks.count()).toBeGreaterThan(0);
+    await expect(page.locator('#pricing a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
   });
 });
 
-test.describe('Mobile Navigation → SBF Binnen → Play Store CTA', () => {
+test.describe('Mobile Navigation → SBF Binnen → App Store CTA', () => {
   test.use({ ...iPhone13 });
 
   test('hamburger menu → Führerscheine accordion leads to SBF Binnen with a working CTA', async ({ page }) => {
@@ -57,12 +60,12 @@ test.describe('Mobile Navigation → SBF Binnen → Play Store CTA', () => {
     await link.click();
     await expect(page).toHaveURL(/\/sbf-binnen\/$/);
 
-    const cta = page.locator('a[href*="play.google.com"]').first();
-    await expect(cta).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator(`main a[href="${APP_STORE_URL}"]`).first()).toBeVisible();
+    await expect(page.locator('main a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
   });
 });
 
-test.describe('Mobile Navigation → SBF See → Play Store CTA', () => {
+test.describe('Mobile Navigation → SBF See → App Store CTA', () => {
   test.use({ ...iPhone13 });
 
   test('hamburger menu → Führerscheine accordion leads to SBF See with a working CTA', async ({ page }) => {
@@ -76,7 +79,7 @@ test.describe('Mobile Navigation → SBF See → Play Store CTA', () => {
     await link.click();
     await expect(page).toHaveURL(/\/sbf-see\/$/);
 
-    const cta = page.locator('a[href*="play.google.com"]').first();
-    await expect(cta).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator(`main a[href="${APP_STORE_URL}"]`).first()).toBeVisible();
+    await expect(page.locator('main a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
   });
 });

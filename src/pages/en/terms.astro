@@ -1,10 +1,22 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// Shared section styles (layout identical to the privacy policy).
+const card = 'background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;';
+const num = 'font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;';
+const h2 = 'font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;';
+const p = 'font-size:15px; color:#4B5563; line-height:1.7;';
+const pGap = `${p} margin-bottom:12px;`;
+const strong = 'color:#1A1F36;';
+const link = 'color:#3366FF; text-decoration:none;';
+const row = 'display:flex; flex-wrap:wrap; gap:4px 12px; padding:12px 16px; background:rgba(51,102,255,0.03); border-radius:12px;';
+const rowName = 'font-size:14px; font-weight:700; color:#1A1F36; flex:0 0 180px;';
+const rowText = 'font-size:14px; color:#4B5563; flex:1 1 240px; min-width:0;';
 ---
 
 <BaseLayout
   title="Terms of Use – Boatpass SBF App & Website"
-  description="Terms of use for the Boatpass Android app and website: scope, one-time purchase instead of subscription, usage rights, liability and withdrawal rights."
+  description="Terms of use for the Boatpass apps for Android and iOS and the website: one-off purchase instead of subscription, usage rights, liability and withdrawal rights."
   lang="en"
   altUrl="https://boatpass.de/nutzungsbedingungen/"
   showCta={false}
@@ -17,134 +29,183 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         Legal
       </div>
       <h1 style="font-size:clamp(30px,4.5vw,42px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:12px;">Terms of Use</h1>
-      <p style="font-size:16px; color:#656B78;">Applicable to the <strong style="color:#1A1F36;">BoatPass Android app</strong> and <strong style="color:#1A1F36;">boatpass.de</strong>. Last updated: July 2026.</p>
+      <p style="font-size:16px; color:#656B78;">Valid for the <strong style={strong}>BoatPass</strong> app for <strong style={strong}>Android</strong> and <strong style={strong}>iPhone/iPad</strong> and for the <strong style={strong}>website boatpass.de</strong>. Last updated: October 2026. The German version is legally binding.</p>
     </div>
 
     <!-- 01 Provider -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <div style="font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">01</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Provider</h2>
+    <div style={card}>
+      <div style={num}>01</div>
+      <h2 style={h2}>Provider</h2>
       <p style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:4px;">Marius Gehler</p>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+      <p style={p}>
         Blissestraße 56 · 10713 Berlin · Germany<br />
-        <a href="mailto:support@boatpass.de" style="color:#3366FF; text-decoration:none;">support@boatpass.de</a>
+        <a href="mailto:support@boatpass.de" style={link}>support@boatpass.de</a>
       </p>
     </div>
 
     <!-- 02 Scope -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <div style="font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">02</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Scope</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
-        These terms apply to the use of the Android app <strong style="color:#1A1F36;">BoatPass</strong> (a study app for the German boating licence) and the website <strong style="color:#1A1F36;">boatpass.de</strong>. By using the app or website, you agree to these terms.
+    <div style={card}>
+      <div style={num}>02</div>
+      <h2 style={h2}>Scope</h2>
+      <p style={p}>
+        These terms apply to the use of the <strong style={strong}>BoatPass</strong> app (study app for the German recreational boating licence and radio certificates) in its Android version from Google Play and its iOS/iPadOS version from the App Store, and to the website <strong style={strong}>boatpass.de</strong>. Section 10 additionally applies to the iOS app.
       </p>
     </div>
 
     <!-- 03 Requirements -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <div style="font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">03</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Requirements</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
-        The app can be downloaded free of charge from the Google Play Store on Android 8.0 or later. A Google account is required to purchase paid content.
-      </p>
+    <div style={card}>
+      <div style={num}>03</div>
+      <h2 style={h2}>Requirements</h2>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style={row}>
+          <span style={rowName}>Android</span>
+          <span style={rowText}>Android 8.0 or later, free on Google Play. Purchases require a Google account.</span>
+        </div>
+        <div style={row}>
+          <span style={rowName}>iPhone &amp; iPad</span>
+          <span style={rowText}>iOS or iPadOS 16 or later, free on the App Store. Purchases require an Apple Account.</span>
+        </div>
+      </div>
     </div>
 
     <!-- 04 Licence -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <div style="font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">04</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Licence</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
-        You receive a personal, non-transferable licence to use the app on your own devices. Redistribution, copying, or commercial use is not permitted.
+    <div style={card}>
+      <div style={num}>04</div>
+      <h2 style={h2}>Licence</h2>
+      <p style={p}>
+        You receive a personal, non-transferable licence to use the app on your own devices. Passing it on, copying it or using it commercially is not permitted. You may use the iOS app on Apple-branded devices that you own or control, as permitted by the Usage Rules in Apple's Media Services Terms and Conditions.
       </p>
     </div>
 
     <!-- 05 Free use & purchases -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <div style="font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">05</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Free Use &amp; Catalogue Purchases</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:16px;">
-        BoatPass is free to download. Individual question catalogues are available as one-time purchases:
+    <div style={card}>
+      <div style={num}>05</div>
+      <h2 style={h2}>Free use &amp; catalogue purchases</h2>
+      <p style={`${p} margin-bottom:16px;`}>
+        BoatPass is free to download. Individual question catalogues are available as one-off purchases; there is no subscription:
       </p>
       <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
         {[
-          ['SBF Binnen', 'Free with daily limit (15 questions/day). Full access (300 questions) via one-time purchase.'],
-          ['SBF See', 'Full access (285 questions, all modes) via one-time purchase.'],
-          ['UKW Radio (UBI)', 'Full access (130 questions) via one-time purchase.'],
-          ['Short-Range Certificate (SRC)', 'Full access (180 questions) via one-time purchase.'],
-          ['Long-Range Certificate (LRC)', 'Full access (76 questions) via one-time purchase.'],
-          ['Further catalogues', 'e.g. Lake Constance licence – coming soon.'],
+          ['SBF Binnen (inland)', 'Free with a daily limit (15 questions/day). Full access (300 questions) via one-off purchase.'],
+          ['SBF See (coastal)', 'Full access (285 questions, all modes) via one-off purchase.'],
+          ['VHF radio (UBI)', 'Full access (130 questions) via one-off purchase.'],
+          ['Short Range Certificate (SRC)', 'Full access (180 questions) via one-off purchase.'],
+          ['Long Range Certificate (LRC)', 'Full access (76 questions) via one-off purchase.'],
+          ['Bundles', 'SBF Binnen + See as a combo bundle; on the App Store also the radio bundle (UBI + SRC + LRC).'],
+          ['More catalogues', 'E.g. Lake Constance licence – in preparation.'],
         ].map(([name, desc]) => (
-          <div style="display:flex; gap:12px; padding:12px 16px; background:rgba(51,102,255,0.03); border-radius:12px;">
-            <span style="font-size:14px; font-weight:700; color:#1A1F36; min-width:180px; flex-shrink:0;">{name}</span>
-            <span style="font-size:14px; color:#4B5563;">{desc}</span>
+          <div style={row}>
+            <span style={rowName}>{name}</span>
+            <span style={rowText}>{desc}</span>
           </div>
         ))}
       </div>
       <p style="font-size:14px; color:#656B78; line-height:1.7;">
-        Prices and scope are shown before purchase in the app and via Google Play. Each catalogue purchase applies only to the respective licence type.
+        Prices and scope are shown before purchase in the app and in the respective store; the price shown there, including VAT, applies. Prices may differ between Google Play and the App Store. Each catalogue purchase only applies to the respective licence type.
       </p>
     </div>
 
-    <!-- 06 Right of withdrawal -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <div style="font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">06</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Purchases, Right of Withdrawal &amp; Refunds</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
-        Purchases are processed via Google Play.
+    <!-- 06 Purchases per store -->
+    <div style={card}>
+      <div style={num}>06</div>
+      <h2 style={h2}>Purchases apply per store</h2>
+      <p style={pGap}>
+        A purchase is tied to the account of the store you bought it in: Google Play purchases apply in the Android app, App Store purchases in the iOS app. <strong style={strong}>Purchases cannot be transferred between Android and iPhone/iPad</strong>, because the stores process purchases separately and we do not run our own user accounts.
       </p>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
-        <strong style="color:#1A1F36;">Right of withdrawal:</strong> As a consumer in the EU, you generally have a 14-day right of withdrawal. For digital content (question catalogues) that is made accessible immediately after purchase, the right of withdrawal expires pursuant to § 356(5) BGB once you have expressly agreed to immediate provision before the withdrawal period expires and confirmed that you thereby lose your right of withdrawal. This consent is obtained as part of the Google Play purchase process.
-      </p>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
-        Refunds are governed by <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:none;">Google Play's return policy</a>. For further issues: <a href="mailto:support@boatpass.de" style="color:#3366FF; text-decoration:none; font-weight:600;">support@boatpass.de</a>
+      <p style={p}>
+        On other devices of the same platform or after reinstalling, you recover your purchases with the same Google account or Apple Account via "Restore purchases". Apple Family Sharing is not supported.
       </p>
     </div>
 
-    <!-- 07 Question catalogue accuracy -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <div style="font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">07</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Question Catalogue &amp; Accuracy</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
-        The question catalogues are based on official exam questions from the competent authorities (SBF Binnen: GDWS; SBF See: BSH; last updated August 2023, valid for exam year 2026). We strive to keep the content current but assume no liability for complete alignment with the current exam syllabus. <strong style="color:#1A1F36;">The app supports learning and does not replace official exam preparation.</strong>
+    <!-- 07 Withdrawal -->
+    <div style={card}>
+      <div style={num}>07</div>
+      <h2 style={h2}>Purchases, right of withdrawal &amp; refunds</h2>
+      <p style={pGap}>
+        Purchases are processed via Google Play or the App Store. The respective store operator is the contracting party for payment.
+      </p>
+      <p style={pGap}>
+        <strong style={strong}>Right of withdrawal:</strong> As a consumer in the EU you generally have a 14-day right of withdrawal. For digital content (question catalogues) made available immediately after purchase, the right of withdrawal expires under Section 356(5) of the German Civil Code (BGB) once you have expressly agreed to immediate provision before the withdrawal period ends and confirmed that you thereby lose your right of withdrawal. This consent is obtained in the respective store's purchase process.
+      </p>
+      <p style={p}>
+        Refunds follow the store's policies: <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer" style={link}>Google Play refund policy</a> or, for the App Store, via <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" style={link}>reportaproblem.apple.com</a>. We cannot refund store purchases ourselves for technical reasons. For any other issues: <a href="mailto:support@boatpass.de" style="color:#3366FF; text-decoration:none; font-weight:600;">support@boatpass.de</a>
       </p>
     </div>
 
-    <!-- 08 Liability -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <div style="font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">08</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Liability</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
-        We are fully liable for damages resulting from injury to life, body, or health, as well as for intent and gross negligence. For slight negligence, liability is limited to breaches of a material contractual obligation (cardinal obligation) and only up to the foreseeable, typical damage. Any further liability for slight negligence is excluded. Liability under the Product Liability Act remains unaffected.
-      </p>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
-        In particular, no guarantee is given that using the app will result in passing an exam.
+    <!-- 08 Catalogue -->
+    <div style={card}>
+      <div style={num}>08</div>
+      <h2 style={h2}>Question catalogue &amp; accuracy</h2>
+      <p style={p}>
+        The question catalogues are based on the official exam questions of the competent authorities (SBF Binnen: GDWS; SBF See: BSH; last updated August 2023, valid for the 2026 exam year). We strive to keep content up to date but accept no liability for complete conformity with the currently valid exam status. <strong style={strong}>The app supports your learning and does not replace official exam preparation.</strong>
       </p>
     </div>
 
-    <!-- 09 Changes -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <div style="font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">09</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Changes to These Terms</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
-        We reserve the right to amend these terms for good reason (e.g. changes in law, new features, or changes to the business model). We will notify users of material changes in good time within the app. Continued use of the app after amended terms take effect constitutes acceptance.
+    <!-- 09 Liability -->
+    <div style={card}>
+      <div style={num}>09</div>
+      <h2 style={h2}>Liability</h2>
+      <p style={pGap}>
+        We are liable without limitation for damage resulting from injury to life, body or health and for intent and gross negligence. For slight negligence we are only liable for breach of an essential contractual obligation (cardinal obligation), and then only up to the foreseeable, typical damage. Any further liability is excluded. Liability under the German Product Liability Act and your statutory warranty rights remain unaffected.
+      </p>
+      <p style={p}>
+        In particular, we do not guarantee that using the app will lead to passing an exam.
       </p>
     </div>
 
-    <!-- 10 Governing law -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <div style="font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">10</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Governing Law &amp; Jurisdiction</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
-        German law applies. The place of jurisdiction for disputes with merchants is Berlin. For consumers, the statutory rules on jurisdiction apply.
+    <!-- 10 iOS terms (Apple minimum terms) -->
+    <div style={card}>
+      <div style={num}>10</div>
+      <h2 style={h2}>Additional terms for the iOS app</h2>
+      <p style={pGap}>
+        For the iOS/iPadOS version, Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" style={link}>Licensed Application End User License Agreement (Standard EULA)</a> and the following terms additionally apply:
+      </p>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        {[
+          ['Parties', 'These terms are concluded between you and us only, not with Apple. We alone are responsible for the app and its content.'],
+          ['Maintenance &amp; support', 'We alone provide maintenance and support for the app. Apple has no obligation to do so.'],
+          ['Warranty', 'If the app fails to conform to any applicable warranty, you may notify Apple, and Apple will refund the purchase price. To the maximum extent permitted by law, Apple has no other warranty obligation. Your statutory warranty rights against us remain unaffected.'],
+          ['Claims', 'We, not Apple, are responsible for addressing any claims relating to the app, such as product liability claims, claims that the app fails to conform to legal or regulatory requirements, and consumer protection claims.'],
+          ['Intellectual property', 'If a third party claims that the app infringes its intellectual property rights, we, not Apple, are responsible for the investigation, defence, settlement and discharge of that claim.'],
+          ['Export control', 'You represent that you are not located in a country subject to a US government embargo and are not listed on any US government list of prohibited or restricted parties.'],
+          ['Third-party terms', 'When using the app you must comply with applicable third-party terms, such as those of your mobile network operator.'],
+          ['Third-party beneficiary', 'Apple and its subsidiaries are third-party beneficiaries of these terms and, upon your acceptance, may enforce them against you.'],
+        ].map(([name, desc]) => (
+          <div style={row}>
+            <span style={rowName} set:html={name}></span>
+            <span style={rowText}>{desc}</span>
+          </div>
+        ))}
+      </div>
+      <p style="font-size:14px; color:#656B78; line-height:1.7; margin-top:16px;">
+        Please direct any questions, complaints or claims regarding the app to the provider (section 01).
       </p>
     </div>
 
-    <!-- 11 Dispute resolution -->
+    <!-- 11 Changes -->
+    <div style={card}>
+      <div style={num}>11</div>
+      <h2 style={h2}>Changes to these terms</h2>
+      <p style={p}>
+        We may change these terms for objective reasons (e.g. changes in the law or new features). We will inform you of material changes in good time within the app. Catalogues you have already bought are not affected by changes.
+      </p>
+    </div>
+
+    <!-- 12 Governing law -->
+    <div style={card}>
+      <div style={num}>12</div>
+      <h2 style={h2}>Governing law &amp; jurisdiction</h2>
+      <p style={p}>
+        German law applies. Place of jurisdiction for disputes with businesses is Berlin. For consumers the statutory rules on jurisdiction apply; mandatory consumer protection provisions of the country of your habitual residence remain unaffected.
+      </p>
+    </div>
+
+    <!-- 13 Dispute resolution -->
     <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
-      <div style="font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">11</div>
-      <h2 style="font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;">Dispute Resolution</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
-        We are not willing and not obliged to participate in dispute resolution proceedings before a consumer arbitration board (§ 36 VSBG). For questions or complaints, contact us at <a href="mailto:support@boatpass.de" style="color:#3366FF; text-decoration:none; font-weight:600;">support@boatpass.de</a>.
+      <div style={num}>13</div>
+      <h2 style={h2}>Dispute resolution</h2>
+      <p style={p}>
+        We are neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board (Section 36 VSBG). For questions or complaints, contact us at <a href="mailto:support@boatpass.de" style="color:#3366FF; text-decoration:none; font-weight:600;">support@boatpass.de</a>.
       </p>
     </div>
 
