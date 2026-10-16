@@ -9,11 +9,10 @@ import { useTranslations, getLocalizedPath } from '../../i18n/index';
 
 interface Props {
   lang: 'de' | 'en';
-  num: string;
   faqs: { q: string; a: string }[];
 }
 
-const { lang, num, faqs } = Astro.props;
+const { lang, faqs } = Astro.props;
 const t = useTranslations(lang);
 const h = t.home;
 
@@ -30,15 +29,14 @@ const postDate = (d: Date) => d.toISOString().slice(0, 10).split('-').reverse().
 
 <section id="ratgeber" class="hg h-section" aria-labelledby="hg-title">
   <div class="h-container">
-    <SectionHead num={num} label={h.guideLabel} meta={h.guideMeta} title={h.faqTitle} id="hg-title" />
+    <SectionHead title={h.faqTitle} id="hg-title" />
 
     <div class="hg-grid">
       <div class="hg-faq">
         <div class="hg-acc" data-reveal>
-          {faqs.map((f, i) => (
+          {faqs.map(f => (
             <details class="hg-item">
               <summary class="hg-q">
-                <span class="hg-q-num h-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
                 <h3>{f.q}</h3>
                 <span class="hg-icon" aria-hidden="true"></span>
               </summary>
@@ -79,11 +77,11 @@ const postDate = (d: Date) => d.toISOString().slice(0, 10).split('-').reverse().
     .hg-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: clamp(56px, 7vw, 104px); }
   }
 
-  .hg-acc { border-top: 1.5px solid var(--h-rule); }
+  .hg-acc { border-top: 1px solid var(--h-line-2); }
   .hg-item { border-bottom: 1px solid var(--h-line-2); }
   .hg-q {
     display: grid;
-    grid-template-columns: 44px minmax(0, 1fr) 28px;
+    grid-template-columns: minmax(0, 1fr) 28px;
     align-items: center;
     gap: 12px;
     min-height: 64px;
@@ -92,7 +90,6 @@ const postDate = (d: Date) => d.toISOString().slice(0, 10).split('-').reverse().
     list-style: none;
   }
   .hg-q::-webkit-details-marker { display: none; }
-  .hg-q-num { font-family: var(--h-mono); font-size: 13px; color: var(--h-muted); }
   .hg-q h3 {
     margin: 0;
     font-size: 18px;
@@ -124,19 +121,18 @@ const postDate = (d: Date) => d.toISOString().slice(0, 10).split('-').reverse().
     transition: transform 0.35s var(--h-ease);
   }
   .hg-icon::after { transform: rotate(90deg); }
-  .hg-item[open] .hg-icon { border-color: var(--h-rule); }
+  .hg-item[open] .hg-icon { border-color: var(--h-blue); color: var(--h-blue-ink); }
   .hg-item[open] .hg-icon::after { transform: rotate(0deg); }
   .hg-a p {
     margin: 0;
-    padding: 0 40px 22px 56px;
+    padding: 0 40px 22px 0;
     max-width: 66ch;
     font-size: 16px;
     line-height: 1.7;
     color: var(--h-muted);
   }
   @media (max-width: 639px) {
-    .hg-q { grid-template-columns: 32px minmax(0, 1fr) 28px; }
-    .hg-a p { padding: 0 0 20px 44px; }
+    .hg-a p { padding: 0 0 20px; }
   }
   /* Sanftes Aufklappen, wo der Browser es kann – sonst öffnet es sofort. */
   .home { interpolate-size: allow-keywords; }
@@ -158,7 +154,7 @@ const postDate = (d: Date) => d.toISOString().slice(0, 10).split('-').reverse().
     line-height: 1.1;
     color: var(--h-ink);
   }
-  .hg-list { margin: 0; padding: 0; list-style: none; border-top: 1.5px solid var(--h-rule); }
+  .hg-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--h-line-2); }
   .hg-list li { border-bottom: 1px solid var(--h-line-2); }
   .hg-post {
     display: flex;
@@ -172,7 +168,7 @@ const postDate = (d: Date) => d.toISOString().slice(0, 10).split('-').reverse().
     display: flex;
     flex-wrap: wrap;
     gap: 4px 14px;
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 12.5px;
     color: var(--h-muted);
   }

@@ -108,8 +108,9 @@ const idBase = `hq-${lang}`;
   .hq {
     margin-top: 32px;
     max-width: 580px;
-    border: 1.5px solid var(--h-rule);
+    border: 1px solid var(--h-line);
     border-radius: var(--h-r);
+    box-shadow: 0 1px 2px rgba(11, 21, 48, 0.04), 0 16px 40px -24px rgba(11, 21, 48, 0.28);
     background: var(--h-card);
     scroll-margin-top: 96px;
   }
@@ -123,7 +124,7 @@ const idBase = `hq-${lang}`;
     gap: 6px 14px;
     padding: 12px 18px;
     border-bottom: 1px solid var(--h-line-2);
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 12.5px;
   }
   .hq-label { color: var(--h-ink); font-weight: 500; }
@@ -160,7 +161,7 @@ const idBase = `hq-${lang}`;
   }
   .hq-source {
     margin: 14px 0 0;
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 12px;
     color: var(--h-muted);
   }
@@ -196,7 +197,7 @@ const idBase = `hq-${lang}`;
     transition: border-color 0.2s ease, background-color 0.2s ease, opacity 0.3s ease;
   }
   .hq-answer:hover:not([aria-disabled='true']) {
-    border-color: var(--h-rule);
+    border-color: var(--h-blue);
     background: var(--h-blue-wash);
   }
   .hq-answer:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
@@ -210,7 +211,7 @@ const idBase = `hq-${lang}`;
     border: 1px solid var(--h-line-2);
     border-radius: var(--h-r-sm);
     color: var(--h-ink);
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 13px;
     font-weight: 500;
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -236,7 +237,7 @@ const idBase = `hq-${lang}`;
 
   .hq-hint {
     margin: 14px 0 0;
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 12.5px;
     color: var(--h-muted);
   }
@@ -253,7 +254,7 @@ const idBase = `hq-${lang}`;
   .hq-feedback-body {
     margin-top: 16px;
     padding-top: 14px;
-    border-top: 1.5px solid var(--h-rule);
+    border-top: 1px solid var(--h-line);
   }
   .hq-verdict {
     display: flex;
@@ -275,7 +276,7 @@ const idBase = `hq-${lang}`;
     align-items: center;
     gap: 6px;
     margin-bottom: 6px;
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 12.5px;
     font-weight: 500;
     color: var(--h-beacon-ink);
@@ -322,7 +323,7 @@ const idBase = `hq-${lang}`;
   .hq-result { padding-top: 16px; }
   .hq-result-eyebrow {
     margin: 0;
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 12.5px;
     color: var(--h-muted);
   }

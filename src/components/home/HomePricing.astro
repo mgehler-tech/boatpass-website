@@ -14,10 +14,9 @@ import { PLAY_STORE_URL, bundleSaving, formatPrice, priceNote, type ProductKey }
 
 interface Props {
   lang: 'de' | 'en';
-  num: string;
 }
 
-const { lang, num } = Astro.props;
+const { lang } = Astro.props;
 const t = useTranslations(lang);
 const p = t.pricing;
 const h = t.home;
@@ -71,9 +70,6 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
 <section id="pricing" class="hp h-section" aria-labelledby="hp-title">
   <div class="h-container">
     <SectionHead
-      num={num}
-      label={h.pricingLabel}
-      meta={h.pricingMeta}
       title={p.title}
       lede={p.subtitle}
       id="hp-title"
@@ -87,7 +83,7 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
         <p class="hp-plan-price h-num">{h.freePrice}</p>
         <p class="hp-plan-sub">{p.compareFreeSub}</p>
         <ul class="hp-plan-list">
-          {p.freeFeatures.map(f => <li>{f}</li>)}
+          {p.freeFeatures.map(f => <li><Icon name="check" size={16} strokeWidth={2.5} class="hp-plan-icon" />{f}</li>)}
         </ul>
       </div>
       <div class="hp-plan">
@@ -95,7 +91,7 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
         <p class="hp-plan-price h-num"><span class="hp-plan-unit">{h.fullFrom}</span> {h.fullPrice} <span class="hp-plan-unit">{h.fullUnit}</span></p>
         <p class="hp-plan-sub">{p.comparePaidSub}</p>
         <ul class="hp-plan-list">
-          {p.comparePaidFeatures.map(f => <li>{f}</li>)}
+          {p.comparePaidFeatures.map(f => <li><Icon name="check" size={16} strokeWidth={2.5} class="hp-plan-icon" />{f}</li>)}
         </ul>
       </div>
       <div class="hp-plan hp-plan--cta">
@@ -124,7 +120,7 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
                 <span class="hp-price-num h-num"><PlatformPrice product={row.product} lang={lang} /></span>
                 <span class="hp-price-sub">
                   {row.strike ? (
-                    <Fragment><s class="h-num">{row.strike}</s> · {saveLabel} <span class="pp-android">{bundleSave.android}</span><span class="pp-ios">{bundleSave.ios}</span></Fragment>
+                    <Fragment><s class="h-num">{row.strike}</s> · <span class="pp-android">{`${saveLabel} ${bundleSave.android}`}</span><span class="pp-ios">{`${saveLabel} ${bundleSave.ios}`}</span></Fragment>
                   ) : h.once}
                 </span>
               </span>
@@ -178,20 +174,23 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
   .hp-model {
     display: grid;
     margin-top: clamp(40px, 5vw, 64px);
-    border-block: 1.5px solid var(--h-rule);
+    padding: 4px 20px;
+    border-radius: var(--h-r);
+    background: var(--h-card);
+    box-shadow: inset 0 0 0 1px var(--h-line), 0 1px 2px rgba(11, 21, 48, 0.04), 0 18px 44px -30px rgba(11, 21, 48, 0.3);
   }
   @media (min-width: 900px) {
     .hp-model { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; }
   }
   .hp-plan { padding: 24px 0; }
-  .hp-plan + .hp-plan { border-top: 1px solid var(--h-line-2); }
+  .hp-plan + .hp-plan { border-top: 1px solid var(--h-line); }
   @media (min-width: 900px) {
+    .hp-model { padding: 8px; }
     .hp-plan { padding: 28px 32px; }
-    .hp-plan:first-child { padding-left: 0; }
-    .hp-plan + .hp-plan { border-top: 0; border-left: 1px solid var(--h-line-2); }
+    .hp-plan + .hp-plan { border-top: 0; border-left: 1px solid var(--h-line); }
   }
   .hp-plan--cta { display: flex; align-items: center; }
-  .hp-plan-label { margin: 0; font-family: var(--h-mono); font-size: 13px; color: var(--h-muted); }
+  .hp-plan-label { margin: 0; font-family: var(--h-sans); font-size: 13px; color: var(--h-muted); }
   .hp-plan-price {
     margin: 8px 0 6px;
     font-family: var(--h-display);
@@ -202,7 +201,7 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     color: var(--h-ink);
   }
   .hp-plan-unit {
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-stretch: 100%;
     font-size: 13px;
     font-weight: 400;
@@ -217,7 +216,9 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     line-height: 1.5;
     color: var(--h-text);
   }
-  .hp-plan-list li::before { content: '— '; color: var(--h-blue-ink); }
+  .hp-plan-list li { display: flex; align-items: center; gap: 8px; }
+  .hp-plan-list li + li { margin-top: 4px; }
+  .hp-plan-icon { flex-shrink: 0; color: var(--h-stbd-ink); }
 
   /* ── Tarifliste ── */
   .hp-group { margin-top: clamp(48px, 6vw, 72px); }
@@ -228,7 +229,7 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     justify-content: space-between;
     gap: 4px 24px;
     padding-bottom: 12px;
-    border-bottom: 1.5px solid var(--h-rule);
+    border-bottom: 1px solid var(--h-line-2);
   }
   .hp-group-title {
     margin: 0;
@@ -239,7 +240,7 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     line-height: 1.1;
     color: var(--h-ink);
   }
-  .hp-group-note { margin: 0; font-family: var(--h-mono); font-size: 13px; color: var(--h-muted); }
+  .hp-group-note { margin: 0; font-family: var(--h-sans); font-size: 13px; color: var(--h-muted); }
 
   .hp-rows { margin: 0; padding: 0; list-style: none; }
   .hp-price-note {
@@ -293,16 +294,16 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     padding: 2px 9px;
     border: 1px solid var(--h-blue-ink);
     border-radius: var(--h-r-pill);
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-stretch: 100%;
     font-size: 11.5px;
     font-weight: 500;
     color: var(--h-blue-ink);
   }
   .hp-name-sub { font-size: 14.5px; color: var(--h-muted); }
-  .hp-name-note { font-family: var(--h-mono); font-size: 12.5px; color: var(--h-text); }
+  .hp-name-note { font-family: var(--h-sans); font-size: 12.5px; color: var(--h-text); }
 
-  .hp-cell { font-family: var(--h-mono); font-size: 13px; color: var(--h-muted); }
+  .hp-cell { font-family: var(--h-sans); font-size: 13px; color: var(--h-muted); }
   .hp-cell strong { font-weight: 500; color: var(--h-ink); font-size: 15px; }
 
   .hp-price { display: flex; flex-direction: column; gap: 2px; }
@@ -314,7 +315,7 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     line-height: 1;
     color: var(--h-ink);
   }
-  .hp-price-sub { font-family: var(--h-mono); font-size: 12.5px; color: var(--h-muted); }
+  .hp-price-sub { font-family: var(--h-sans); font-size: 12.5px; color: var(--h-muted); }
   .hp-row--bundle .hp-price-sub { color: var(--h-blue-ink); }
 
   .hp-action {
@@ -338,7 +339,7 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     margin-top: clamp(40px, 5vw, 56px);
     padding: 18px 0;
     border-block: 1px solid var(--h-line-2);
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 13px;
   }
   @media (min-width: 1024px) {

@@ -13,10 +13,9 @@ import { PLAY_STORE_URL } from '../../data/stores';
 import { useTranslations } from '../../i18n/index';
 
 interface Props {
-  num: string;
 }
 
-const { num } = Astro.props;
+
 const t = useTranslations('de');
 const h = t.home;
 const playStoreUrl = PLAY_STORE_URL;
@@ -30,9 +29,6 @@ const logDate = (iso: string) => iso.split('-').reverse().join('.');
 <section class="hr h-section" aria-labelledby="hr-title">
   <div class="h-container">
     <SectionHead
-      num={num}
-      label={h.reviewsLabel}
-      meta={rating ? `${rating.ratings} ${h.ratingSourcePlay}` : undefined}
       title={h.reviewsTitle}
       lede={h.reviewsIntro}
       id="hr-title"
@@ -105,9 +101,9 @@ const logDate = (iso: string) => iso.split('-').reverse().join('.');
     color: var(--h-ink);
   }
   .hr-score-stars { display: flex; gap: 3px; margin: 14px 0 0; color: var(--h-beacon); }
-  .hr-score-count { margin: 10px 0 4px; font-family: var(--h-mono); font-size: 13px; color: var(--h-muted); }
+  .hr-score-count { margin: 10px 0 4px; font-family: var(--h-sans); font-size: 13px; color: var(--h-muted); }
 
-  .hr-list { margin: 0; padding: 0; list-style: none; border-top: 1.5px solid var(--h-rule); }
+  .hr-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--h-line-2); }
   .hr-row {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
@@ -118,7 +114,7 @@ const logDate = (iso: string) => iso.split('-').reverse().join('.');
   @media (min-width: 640px) {
     .hr-row { grid-template-columns: 112px minmax(0, 1fr); gap: 24px; }
   }
-  .hr-date { font-family: var(--h-mono); font-size: 13px; color: var(--h-muted); padding-top: 3px; }
+  .hr-date { font-family: var(--h-sans); font-size: 13px; color: var(--h-muted); padding-top: 3px; }
   .hr-entry { margin: 0; }
   .hr-quote { margin: 0; }
   .hr-quote p {
@@ -144,7 +140,7 @@ const logDate = (iso: string) => iso.split('-').reverse().join('.');
     padding: 2px 9px;
     border: 1px solid var(--h-stbd);
     border-radius: var(--h-r-pill);
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 12px;
     color: var(--h-stbd-ink);
   }

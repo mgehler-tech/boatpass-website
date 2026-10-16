@@ -7,10 +7,9 @@ import { useTranslations } from '../../i18n/index';
 
 interface Props {
   lang: 'de' | 'en';
-  num: string;
 }
 
-const { lang, num } = Astro.props;
+const { lang } = Astro.props;
 const t = useTranslations(lang);
 const h = t.home;
 const aboutUrl = lang === 'de' ? '/ueber-uns/' : '/en/about/';
@@ -19,7 +18,7 @@ const contactUrl = lang === 'de' ? '/kontakt/' : '/en/contact/';
 
 <section class="hf h-section h-deep" aria-labelledby="hf-title">
   <div class="h-container">
-    <SectionHead num={num} label={h.founderLabel} meta={t.founder.chip2} title={t.founder.title} id="hf-title" />
+    <SectionHead title={t.founder.title} id="hf-title" />
 
     <div class="hf-grid">
       <div class="hf-media">
@@ -49,8 +48,8 @@ const contactUrl = lang === 'de' ? '/kontakt/' : '/en/contact/';
         <p class="hf-role" data-reveal>{t.founder.role}</p>
         <p class="hf-intro" data-reveal>{t.founder.intro}</p>
         <ul class="hf-points" data-reveal>
-          <li>{t.founder.chip1}</li>
-          <li>{t.founder.chip2}</li>
+          <li><Icon name="check" size={16} strokeWidth={2.5} class="hf-point-icon" />{t.founder.chip1}</li>
+          <li><Icon name="check" size={16} strokeWidth={2.5} class="hf-point-icon" />{t.founder.chip2}</li>
         </ul>
         <div class="hf-links" data-reveal>
           <a class="h-link" href={aboutUrl}>{t.founder.cta}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a>
@@ -109,7 +108,7 @@ const contactUrl = lang === 'de' ? '/kontakt/' : '/en/contact/';
 
   .hf-role {
     margin: 0;
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 13px;
     color: var(--h-on-deep-muted);
   }
@@ -123,19 +122,25 @@ const contactUrl = lang === 'de' ? '/kontakt/' : '/en/contact/';
     color: var(--h-on-deep);
   }
   .hf-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     margin: 28px 0 0;
     padding: 0;
     list-style: none;
-    border-top: 1px solid var(--h-deep-line);
-    font-family: var(--h-mono);
-    font-size: 13.5px;
+    font-size: 14px;
   }
   .hf-points li {
-    padding: 10px 0;
-    border-bottom: 1px solid var(--h-deep-line);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px 8px 10px;
+    border-radius: var(--h-r-pill);
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0 0 0 1px var(--h-deep-line);
     color: var(--h-on-deep);
   }
-  .hf-points li::before { content: '— '; color: var(--h-beacon); }
+  .hf-point-icon { flex-shrink: 0; color: var(--h-beacon); }
   .hf-links { display: flex; flex-wrap: wrap; gap: 4px 28px; margin-top: 22px; }
   .hf .h-link { color: #fff; text-decoration-color: rgba(255, 255, 255, 0.4); }
   .hf .h-link:hover { text-decoration-color: #fff; }

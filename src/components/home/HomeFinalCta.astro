@@ -13,10 +13,9 @@ import { smartAppPath } from '../../data/stores';
 
 interface Props {
   lang: 'de' | 'en';
-  num: string;
 }
 
-const { lang, num } = Astro.props;
+const { lang } = Astro.props;
 const t = useTranslations(lang);
 const h = t.home;
 const chooserPath = smartAppPath(lang);
@@ -34,7 +33,7 @@ const qrSvg = await QRCode.toString(`https://boatpass.de${chooserPath}`, {
 
 <section class="hx h-section h-deep" aria-labelledby="hx-title">
   <div class="h-container">
-    <SectionHead num={num} label={h.finalLabel} meta={h.finalMeta} title={t.ctaBanner.title} id="hx-title" class="hx-head" />
+    <SectionHead title={t.ctaBanner.title} id="hx-title" class="hx-head" />
 
     <div class="hx-grid">
       <div class="hx-copy">
@@ -101,7 +100,7 @@ const qrSvg = await QRCode.toString(`https://boatpass.de${chooserPath}`, {
     align-items: baseline;
     gap: 10px;
     margin: 0;
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 13px;
     color: var(--h-on-deep-muted);
   }

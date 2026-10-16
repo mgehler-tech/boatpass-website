@@ -1,12 +1,7 @@
 ---
-// Abschnittskopf als Logbuch-Zeile: durchgezogene Linie, darunter Nummer ·
-// Name · Kennwert in Mono – danach Titel und Einleitung. Ersetzt die
-// Eyebrow-Pills; die Nummer kommt von der Seite, weil die englische
-// Startseite einen Abschnitt weniger hat.
+// Abschnittskopf: Titel und Einleitung. Bewusst ohne Nummer, Linie oder
+// Eyebrow darüber – der Titel trägt den Abschnitt allein.
 interface Props {
-  num: string;
-  label: string;
-  meta?: string;
   title: string;
   lede?: string;
   id: string;
@@ -15,19 +10,11 @@ interface Props {
   class?: string;
 }
 
-const { num, label, meta, title, lede, id, layout = 'stack', class: className } = Astro.props;
+const { title, lede, id, layout = 'stack', class: className } = Astro.props;
 ---
 
 <header class:list={['hs', layout === 'split' && 'hs--split', className]}>
-  <div class="hs-log">
-    <span class="hs-rule" data-rule aria-hidden="true"></span>
-    <span class="hs-num h-num">{num}</span>
-    <span class="hs-label">{label}</span>
-    {meta && <span class="hs-meta">{meta}</span>}
-  </div>
-  <div class="hs-body">
-    <h2 class="hs-title" id={id} data-reveal>{title}</h2>
-    {lede && <p class="hs-lede" data-reveal>{lede}</p>}
-    <slot />
-  </div>
+  <h2 class="hs-title" id={id} data-reveal>{title}</h2>
+  {lede && <p class="hs-lede" data-reveal>{lede}</p>}
+  <slot />
 </header>

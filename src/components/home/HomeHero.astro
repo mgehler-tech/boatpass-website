@@ -1,14 +1,15 @@
 ---
 // Hero – links die Aussage mit dem einen CTA, rechts der echte Startbildschirm
-// der App im Seekarten-Rahmen. Darüber eine Datenzeile mit den echten
-// Fragenzahlen je Lizenz (statt Lizenz-Pills), neben dem Handy Ablesewerte,
-// die genau so auf dem Screenshot stehen.
+// der App im Seekarten-Rahmen. Darüber die amtlichen Kataloge als Chips mit
+// echter Fragenzahl, die direkt zur jeweiligen Lizenzseite führen; neben dem
+// Handy Ablesewerte, die genau so auf dem Screenshot stehen.
 //
 // Der Text steht ab dem ersten Paint fertig da (H1 = LCP-Element, CTA sofort
 // nutzbar). Der Auftakt des Handys läuft als CSS-Animation und wartet nicht
 // auf das JS-Bundle; GSAP übernimmt nur das Neigen per Maus.
 import { Image } from 'astro:assets';
 import StoreCta from './StoreCta.astro';
+import Icon from '../Icon.astro';
 import { useTranslations } from '../../i18n/index';
 import { getBoatpassCombinedRating, formatRating } from '../../data/apps';
 import homeShotDe from '../../assets/images/app.screenshot.0.de.png';
@@ -30,7 +31,10 @@ const score = rating ? formatRating(rating.score).replace('.', lang === 'de' ? '
 
 // Reihenfolge wie t.hero.licenses: Binnen, See, UBI, SRC, LRC.
 const counts = [p.catalog1Questions, p.catalog2Questions, p.catalog3Questions, p.srcQuestions, p.lrcQuestions];
-const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i] }));
+const hrefs = lang === 'de'
+  ? ['/sbf-binnen/', '/sbf-see/', '/ubi/', '/src/', '/lrc/']
+  : ['/en/sbf-inland/', '/en/sbf-coastal/', '/en/ubi/', '/en/src/', '/en/lrc/'];
+const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], href: hrefs[i] }));
 
 // Vertikale Lage der abgelesenen Stellen auf dem Screenshot (Anteil der Höhe):
 // „53 / 300 Fragen", Streak-Karte, „Heute lernen".
@@ -39,14 +43,22 @@ const readoutY = [0.27, 0.37, 0.62];
 
 <section class="hh" aria-labelledby="hh-title">
   <div class="h-container">
-    <div class="hh-data">
-      <span class="hh-data-label">{h.heroData}</span>
+    <nav class="hh-data" aria-labelledby="hh-data-label">
+      <p class="hh-data-label" id="hh-data-label">
+        <span class="hh-data-icon" aria-hidden="true"><Icon name="check" size={13} strokeWidth={2.75} /></span>
+        {h.heroData}
+      </p>
       <ul class="hh-data-list">
         {catalogs.map(c => (
-          <li><span class="hh-data-name">{c.name}</span> <span class="hh-data-count h-num">{c.count}</span><span class="sr-only"> {h.funkQuestions}</span></li>
+          <li>
+            <a class="hh-chip" href={c.href}>
+              <span>{c.name}</span>
+              <span class="hh-chip-count h-num">{c.count}<span class="sr-only"> {h.funkQuestions}</span></span>
+            </a>
+          </li>
         ))}
       </ul>
-    </div>
+    </nav>
 
     <div class="hh-grid">
       <div class="hh-copy">
@@ -79,7 +91,7 @@ const readoutY = [0.27, 0.37, 0.62];
         </div>
 
         <ul class="hh-facts">
-          {h.heroFacts.map(fact => <li>{fact}</li>)}
+          {h.heroFacts.map(fact => <li><Icon name="check" size={15} strokeWidth={2.5} class="hh-fact-icon" />{fact}</li>)}
         </ul>
       </div>
 
@@ -126,38 +138,97 @@ const readoutY = [0.27, 0.37, 0.62];
     overflow: clip;
   }
 
-  /* ── Datenzeile: echte Fragenzahlen je Lizenz ── */
+  /* ── Amtliche Kataloge: Chips mit Fragenzahl, je ein Link zur Lizenzseite ── */
   .hh-data {
     display: flex;
     flex-wrap: wrap;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
-    gap: 8px 24px;
-    padding: 12px 0;
-    border-block: 1.5px solid var(--h-rule);
-    font-family: var(--h-mono);
-    font-size: 13px;
-    color: var(--h-muted);
+    gap: 14px 32px;
   }
-  .hh-data-label { color: var(--h-ink); font-weight: 500; }
+  .hh-data-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--h-ink);
+  }
+  .hh-data-icon {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--h-blue-wash);
+    color: var(--h-blue-ink);
+  }
   .hh-data-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px 0;
+    gap: 8px;
     margin: 0;
     padding: 0;
     list-style: none;
   }
-  /* Trenner am Ende des Eintrags – bricht die Zeile um, steht er am
-     Zeilenende statt am Anfang der nächsten. */
-  .hh-data-list li:not(:last-child)::after {
-    content: '·';
-    margin: 0 12px;
-    color: var(--h-line-2);
+  .hh-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 40px;
+    padding: 0 5px 0 15px;
+    border-radius: var(--h-r-pill);
+    background: var(--h-card);
+    box-shadow: inset 0 0 0 1px var(--h-line), 0 1px 2px rgba(11, 21, 48, 0.05);
+    color: var(--h-ink);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: box-shadow 0.25s ease, transform 0.35s var(--h-ease);
   }
-  .hh-data-count { color: var(--h-ink); font-weight: 500; }
+  .hh-chip-count {
+    min-width: 40px;
+    padding: 5px 9px;
+    border-radius: var(--h-r-pill);
+    background: var(--h-blue-wash);
+    color: var(--h-blue-ink);
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1.2;
+    text-align: center;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+  .hh-chip:hover {
+    box-shadow: inset 0 0 0 1px var(--h-blue), 0 6px 16px -10px rgba(51, 102, 255, 0.6);
+    transform: translateY(-1px);
+  }
+  .hh-chip:hover .hh-chip-count { background: var(--h-btn); color: #fff; }
+  .hh-chip:focus-visible { outline: 2px solid var(--h-blue); outline-offset: -2px; }
+  /* Handy: eine wischbare Zeile statt zwei Reihen über der Überschrift. Die
+     Zeile läuft bis an den Rand, der Ausblender zeigt, dass es weitergeht. */
   @media (max-width: 639px) {
-    .hh-data-list li:not(:last-child)::after { margin: 0 8px; }
+    .hh-data { gap: 12px; }
+    .hh-data-list {
+      flex-wrap: nowrap;
+      width: calc(100% + 2 * var(--h-gutter));
+      margin-inline: calc(-1 * var(--h-gutter));
+      padding: 2px var(--h-gutter);
+      overflow-x: auto;
+      scrollbar-width: none;
+      scroll-snap-type: x proximity;
+      scroll-padding-inline: var(--h-gutter);
+      -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent);
+      mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent);
+    }
+    .hh-data-list::-webkit-scrollbar { display: none; }
+    .hh-data-list li { scroll-snap-align: start; }
+    .hh-chip { min-height: 38px; font-size: 13.5px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hh-chip { transition: none; }
+    .hh-chip:hover { transform: none; }
   }
 
   .hh-grid {
@@ -222,7 +293,7 @@ const readoutY = [0.27, 0.37, 0.62];
   .hh-stars { display: inline-flex; gap: 2px; }
   .hh-star { color: var(--h-beacon); display: block; }
   .hh-star--off { color: var(--h-line-2); }
-  .hh-rating-count { font-family: var(--h-mono); font-size: 12.5px; color: var(--h-muted); }
+  .hh-rating-count { font-family: var(--h-sans); font-size: 12.5px; color: var(--h-muted); }
 
   .hh-facts {
     display: grid;
@@ -231,11 +302,11 @@ const readoutY = [0.27, 0.37, 0.62];
     margin: 28px 0 0;
     padding: 0;
     list-style: none;
-    font-family: var(--h-mono);
-    font-size: 13px;
+    font-size: 14px;
     color: var(--h-text);
   }
-  .hh-facts li::before { content: '— '; color: var(--h-blue-ink); }
+  .hh-facts li { display: flex; align-items: center; gap: 8px; }
+  .hh-fact-icon { flex-shrink: 0; color: var(--h-stbd-ink); }
   @media (max-width: 479px) {
     .hh-facts { grid-template-columns: 1fr; }
   }
@@ -256,7 +327,7 @@ const readoutY = [0.27, 0.37, 0.62];
   .hh-readouts { display: none; }
   .hh-caption {
     margin-top: 10px;
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 12.5px;
     color: var(--h-muted);
   }
@@ -299,7 +370,7 @@ const readoutY = [0.27, 0.37, 0.62];
       position: relative;
       width: 48px;
       height: 1px;
-      background: var(--h-rule);
+      background: var(--h-line-2);
       transform-origin: left center;
     }
     .hh-readout-line::before {
@@ -315,7 +386,7 @@ const readoutY = [0.27, 0.37, 0.62];
       display: flex;
       flex-direction: column;
       padding-left: 10px;
-      font-family: var(--h-mono);
+      font-family: var(--h-sans);
       line-height: 1.3;
       white-space: nowrap;
     }

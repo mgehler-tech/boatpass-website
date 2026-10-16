@@ -188,24 +188,21 @@ function initTilt() {
 }
 
 /* ── Einblenden beim Scrollen ─────────────────────────────────────────────
-   Logbuch-Linien ziehen sich von links auf, Inhalte heben sich dezent an.
+   Inhalte heben sich dezent an, das Gründerporträt wird aufgezogen.
    IntersectionObserver statt ScrollTrigger: Er meldet für jedes Element
    sofort den Ausgangszustand. Was beim Laden schon oberhalb liegt (Sprung
    per #pricing aus dem Menü, wiederhergestellte Scrollposition), steht
    damit sofort da, statt unsichtbar zu bleiben. */
 function initReveals() {
   const items = gsap.utils.toArray<HTMLElement>('.home [data-reveal]');
-  const rules = gsap.utils.toArray<HTMLElement>('.home [data-rule]');
   const portrait = document.querySelector<HTMLElement>('[data-hf-portrait]');
 
   gsap.set(items, { opacity: 0, y: 20 });
-  gsap.set(rules, { scaleX: 0 });
   if (portrait) gsap.set(portrait, { clipPath: 'inset(0% 0% 100% 0%)' });
 
   const show = (el: HTMLElement, instant: boolean, delay: number) => {
     let to: gsap.TweenVars;
-    if (el.matches('[data-rule]')) to = { scaleX: 1, duration: 1.1, ease: 'expo.inOut' };
-    else if (el === portrait) to = { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.3, ease: 'expo.inOut' };
+    if (el === portrait) to = { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.3, ease: 'expo.inOut' };
     else to = { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out' };
     if (instant) gsap.set(el, { ...to, duration: 0 });
     else gsap.to(el, { ...to, delay });
@@ -225,7 +222,7 @@ function initReveals() {
     },
     { rootMargin: '0px 0px -8% 0px' },
   );
-  [...rules, ...items, ...(portrait ? [portrait] : [])].forEach((el) => io.observe(el));
+  [...items, ...(portrait ? [portrait] : [])].forEach((el) => io.observe(el));
 }
 
 /* ── Scrubs: Gründer-Fotos ────────────────────────────────────────────── */

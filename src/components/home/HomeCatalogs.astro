@@ -8,10 +8,9 @@ import { catalogRows, catalogPageStand } from '../../data/catalogs';
 
 interface Props {
   lang: 'de' | 'en';
-  num: string;
 }
 
-const { lang, num } = Astro.props;
+const { lang } = Astro.props;
 const t = useTranslations(lang);
 const cs = t.catalogSources;
 const h = t.home;
@@ -22,9 +21,6 @@ const pageStand = catalogPageStand(lang);
 <section id="kataloge" class="hc h-section" aria-labelledby="hc-title">
   <div class="h-container">
     <SectionHead
-      num={num}
-      label={h.catalogsLabel}
-      meta={`${rows.length} · ${h.catalogsMeta}`}
       title={cs.title}
       lede={cs.intro}
       id="hc-title"
@@ -67,7 +63,7 @@ const pageStand = catalogPageStand(lang);
 <style is:global>
   .hc { background: var(--h-paper-2); }
 
-  .hc-ledger { margin-top: clamp(40px, 5vw, 64px); border-top: 1.5px solid var(--h-rule); }
+  .hc-ledger { margin-top: clamp(40px, 5vw, 64px); border-top: 1px solid var(--h-line-2); }
   .hc-cols { display: none; }
   .hc-rows { margin: 0; padding: 0; list-style: none; }
   .hc-row {
@@ -93,7 +89,7 @@ const pageStand = catalogPageStand(lang);
     padding: 3px 10px;
     border: 1px solid var(--h-line-2);
     border-radius: var(--h-r-pill);
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 12.5px;
     color: var(--h-text);
     white-space: nowrap;
@@ -128,7 +124,7 @@ const pageStand = catalogPageStand(lang);
     .hc-cols {
       padding: 10px 0;
       border-bottom: 1px solid var(--h-line-2);
-      font-family: var(--h-mono);
+      font-family: var(--h-sans);
       font-size: 12.5px;
       color: var(--h-muted);
     }
@@ -146,6 +142,6 @@ const pageStand = catalogPageStand(lang);
     color: var(--h-muted);
   }
   .hc-notes p { margin: 0; }
-  .hc-meta { font-family: var(--h-mono); font-size: 12.5px; }
+  .hc-meta { font-family: var(--h-sans); font-size: 12.5px; }
   .hc-meta strong { color: var(--h-ink); font-weight: 500; }
 </style>

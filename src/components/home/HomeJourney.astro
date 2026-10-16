@@ -23,10 +23,9 @@ import shotExamEn from '../../assets/images/app.screenshot.2.en.png';
 
 interface Props {
   lang: 'de' | 'en';
-  num: string;
 }
 
-const { lang, num } = Astro.props;
+const { lang } = Astro.props;
 const t = useTranslations(lang);
 const h = t.home;
 const de = lang === 'de';
@@ -62,9 +61,6 @@ const total = String(steps.length).padStart(2, '0');
 <section id="features" class="hj h-section" aria-labelledby="hj-title">
   <div class="h-container">
     <SectionHead
-      num={num}
-      label={h.journeyLabel}
-      meta={h.journeyMeta}
       title={t.steps.title}
       lede={t.steps.subtitle}
       id="hj-title"
@@ -170,11 +166,11 @@ const total = String(steps.length).padStart(2, '0');
     place-items: center;
     width: 40px;
     height: 32px;
-    border: 1.5px solid var(--h-rule);
+    border: 1px solid var(--h-line-2);
     border-radius: var(--h-r-sm);
     background: var(--h-paper);
     color: var(--h-ink);
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 13px;
     font-weight: 500;
     transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
@@ -188,7 +184,7 @@ const total = String(steps.length).padStart(2, '0');
 
   .hj-kicker {
     margin: 0 0 12px;
-    font-family: var(--h-mono);
+    font-family: var(--h-sans);
     font-size: 12.5px;
     color: var(--h-muted);
   }
@@ -265,7 +261,7 @@ const total = String(steps.length).padStart(2, '0');
 
     .hj-stage-cap {
       margin: 0;
-      font-family: var(--h-mono);
+      font-family: var(--h-sans);
       font-size: 12.5px;
       color: var(--h-muted);
     }
