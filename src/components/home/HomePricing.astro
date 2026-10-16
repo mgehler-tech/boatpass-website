@@ -252,7 +252,7 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
       padding: 22px 0;
     }
   }
-  .hp-row--bundle { background: var(--h-blue-wash); padding-inline: 14px; margin-inline: -14px; }
+  .hp-row--bundle { background: var(--h-blue-wash); padding-inline: 14px; margin-inline: -14px; border-radius: var(--h-r-md); }
 
   .hp-name { display: flex; flex-direction: column; gap: 3px; }
   .hp-name-main {
@@ -268,9 +268,9 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     color: var(--h-ink);
   }
   .hp-badge {
-    padding: 2px 7px;
+    padding: 2px 9px;
     border: 1px solid var(--h-blue-ink);
-    border-radius: 2px;
+    border-radius: var(--h-r-pill);
     font-family: var(--h-mono);
     font-stretch: 100%;
     font-size: 11.5px;
