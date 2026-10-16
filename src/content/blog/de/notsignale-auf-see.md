@@ -1,6 +1,6 @@
 ---
 title: "Notsignale auf See: Diese Seenotsignale musst du kennen"
-seoTitle: "Notsignale auf See: Übersicht"
+seoTitle: "Notsignale auf See: Übersicht für den SBF"
 description: "Rote Fallschirmrakete, Handfackel, Mayday und Co.: Welche Notsignale es gibt, was sie bedeuten und welche du als Sportbootfahrer einsetzen darfst."
 date: 2026-05-20
 tags: ["Sicherheit"]

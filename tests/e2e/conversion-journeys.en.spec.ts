@@ -1,40 +1,42 @@
 import { test, expect } from '@playwright/test';
+import { APP_STORE_URL_INTL, PLAY_STORE_URL } from '../../src/data/stores';
 
 /**
  * English-language counterpart to conversion-journeys.spec.ts. The /en/ site
- * is a fully parallel funnel (its own hero, pricing, nav and license finder),
- * so it needs the same guardrails as the German site — a regression here has
- * the same direct revenue impact but previously shipped with zero coverage.
+ * is a fully parallel funnel (its own hero, pricing, nav and licence finder),
+ * so it needs the same guardrails as the German site – a regression here has
+ * the same direct revenue impact.
+ *
+ * Desktop: generic CTAs lead to the store chooser /en/app/, explicit badges
+ * to the stores (see conversion-journeys.spec.ts for the reasoning).
  */
-const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const CHOOSER = '/en/app/';
 
-test.describe('EN Homepage → Play Store CTA', () => {
-  test('hero and closing CTAs link to the app listing', async ({ page }) => {
+test.describe('EN Homepage → app CTA', () => {
+  test('hero and closing CTAs lead to the store chooser, closing badges link to both stores', async ({ page }) => {
     await page.goto('/en/');
-    const heroCta = page.locator('#hero-cta-play');
-    await expect(heroCta).toBeVisible();
-    await expect(heroCta).toHaveAttribute('href', PLAY_STORE_URL);
-    await expect(heroCta).toHaveAttribute('target', '_blank');
+    await expect(page.locator('#hero-cta-play')).toHaveAttribute('href', CHOOSER);
+    await expect(page.locator('#hero-cta-play')).toContainText('Download for free');
+    await expect(page.locator('#final-cta-play')).toHaveAttribute('href', CHOOSER);
 
-    const finalCta = page.locator('#final-cta-play');
-    await expect(finalCta).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator('#final-badge-ios')).toHaveAttribute('href', APP_STORE_URL_INTL);
+    await expect(page.locator('#final-badge-play')).toHaveAttribute('href', PLAY_STORE_URL);
   });
 });
 
-test.describe('EN Homepage → Pricing → Play Store CTA', () => {
-  test('pricing section CTAs link to the app listing', async ({ page }) => {
+test.describe('EN Homepage → Pricing → app CTA', () => {
+  test('pricing section CTAs lead to the store chooser', async ({ page }) => {
     await page.goto('/en/');
     await page.locator('nav a', { hasText: 'Pricing' }).first().click();
     await expect(page).toHaveURL(/#pricing$/);
     await expect(page.locator('#pricing')).toBeInViewport();
 
-    const ctaLinks = page.locator('#pricing a[href*="play.google.com"]');
-    await expect(ctaLinks.first()).toHaveAttribute('href', PLAY_STORE_URL);
-    expect(await ctaLinks.count()).toBeGreaterThan(0);
+    expect(await page.locator(`#pricing a[href="${CHOOSER}"]`).count()).toBeGreaterThan(0);
+    await expect(page.locator('#pricing a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
   });
 });
 
-test.describe('EN Navigation → SBF Inland → Play Store CTA', () => {
+test.describe('EN Navigation → SBF Inland → app CTA', () => {
   test('mega menu leads to SBF Inland with a working CTA', async ({ page }) => {
     await page.goto('/en/');
     await page.hover('#licenses-trigger');
@@ -43,12 +45,12 @@ test.describe('EN Navigation → SBF Inland → Play Store CTA', () => {
     await link.click();
     await expect(page).toHaveURL(/\/en\/sbf-inland\/$/);
 
-    const cta = page.locator('a[href*="play.google.com"]').first();
-    await expect(cta).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator(`main a[href="${CHOOSER}"]`).first()).toBeVisible();
+    await expect(page.locator('main a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
   });
 });
 
-test.describe('EN Navigation → SBF Coastal → Play Store CTA', () => {
+test.describe('EN Navigation → SBF Coastal → app CTA', () => {
   test('mega menu leads to SBF Coastal with a working CTA', async ({ page }) => {
     await page.goto('/en/');
     await page.hover('#licenses-trigger');
@@ -57,8 +59,8 @@ test.describe('EN Navigation → SBF Coastal → Play Store CTA', () => {
     await link.click();
     await expect(page).toHaveURL(/\/en\/sbf-coastal\/$/);
 
-    const cta = page.locator('a[href*="play.google.com"]').first();
-    await expect(cta).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator(`main a[href="${CHOOSER}"]`).first()).toBeVisible();
+    await expect(page.locator('main a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
   });
 });
 
@@ -77,9 +79,8 @@ test.describe('EN License Finder full flow → Recommendation → Next step', ()
     const recommendationLinks = result.locator('a.res-card');
     await expect(recommendationLinks).toHaveCount(2);
 
-    // The Play Store CTA inside the result must also be correct.
-    const playCta = result.locator('a[href*="play.google.com"]');
-    await expect(playCta).toHaveAttribute('href', PLAY_STORE_URL);
+    // The result is rendered after load, so it picks its store link itself.
+    await expect(result.locator(`a[href="${CHOOSER}"]`)).toHaveCount(1);
 
     // Follow the "next step" link into the recommended licence page.
     const firstHref = await recommendationLinks.first().getAttribute('href');
@@ -107,8 +108,8 @@ test.describe('EN License Finder full flow → Recommendation → Next step', ()
     await expect(recommendationLinks.filter({ hasText: 'SBF Coastal' })).toHaveAttribute('href', '/en/sbf-coastal/');
 
     await expect(result.locator('.res-bundle')).toBeVisible();
+    await expect(result.locator('.res-bundle')).toContainText('€16.98');
 
-    const playCta = result.locator('a[href*="play.google.com"]');
-    await expect(playCta).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(result.locator(`a[href="${CHOOSER}"]`)).toHaveCount(1);
   });
 });

@@ -8,7 +8,7 @@
 // bleibt der Block ausgeblendet (.h-js-only) – der Lernweg funktioniert dann
 // mit Text und Screenshot allein.
 import Icon from '../Icon.astro';
-import PlayCta from './PlayCta.astro';
+import StoreCta from './StoreCta.astro';
 import { useTranslations } from '../../i18n/index';
 import { QUIZ_QUESTIONS, QUIZ_LICENCE_LABELS } from '../../data/quiz';
 
@@ -92,7 +92,7 @@ const idBase = `hq-${lang}`;
       <p class="hq-result-score h-num" id={`${idBase}-result`} tabindex="-1" data-result-score></p>
       <p class="hq-result-text" data-result-text></p>
       <div class="hq-result-actions">
-        <PlayCta lang={lang} position="quiz-result" />
+        <StoreCta lang={lang} position="quiz-result" />
         <button type="button" class="hq-restart" data-restart>
           <Icon name="refresh" size={16} strokeWidth={2} />{q.restart}
         </button>

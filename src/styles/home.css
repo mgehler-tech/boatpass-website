@@ -209,7 +209,7 @@ html.dark .home {
   background: #fff;
   flex-shrink: 0;
 }
-.h-btn-mark img { width: 20px; height: 20px; display: block; }
+.h-btn-mark img { width: 20px; height: 20px; }
 .h-btn-arrow { transition: transform 0.35s var(--h-ease); }
 .h-btn:hover .h-btn-arrow { transform: translateX(4px); }
 
@@ -226,21 +226,17 @@ html.dark .home {
 .h-deep a:focus-visible,
 .h-deep button:focus-visible { outline-color: #fff; }
 
-/* iOS: Play-Store-Link weicht dem ehrlichen Status (Klasse via HomeBoot). */
-.h-ios-badge {
-  display: none;
-  align-items: center;
-  gap: 10px;
-  min-height: 56px;
-  padding: 0 22px;
-  border-radius: var(--h-r-pill);
-  box-shadow: inset 0 0 0 1.5px var(--h-line-2);
-  color: var(--h-ink);
-  font-size: 16px;
-  font-weight: 700;
-}
-.h-ios .h-ios-badge { display: inline-flex; }
-.h-ios .h-play-only { display: none !important; }
+/* Store-CTA je Gerät (html[data-platform] aus dem BaseLayout, s. StoreCta).
+   Ohne Attribut (kein JS) gilt die neutrale Variante. */
+.h-on-android,
+.h-on-ios { display: none; }
+html[data-platform='android'] .h-on-android { display: inline; }
+html[data-platform='android'] .h-off-android,
+html[data-platform='android'] .h-on-other,
+html[data-platform='ios'] .h-on-other { display: none; }
+html[data-platform='ios'] .h-on-ios { display: inline; }
+html[data-platform='desktop'] .h-off-desktop { display: none; }
+.h-btn-mark svg { color: var(--h-btn); }
 
 .h-link {
   display: inline-flex;

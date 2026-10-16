@@ -1,6 +1,7 @@
 ---
 import AppLandingPage from '../components/AppLandingPage.astro';
 import { appsForLicense } from '../data/apps';
+import { priceText } from '../data/stores';
 
 const apps = appsForLicense('sbf-binnen');
 
@@ -27,7 +28,7 @@ const faqs = [
   },
   {
     q: 'Gibt es eine SBF-Binnen-App fürs iPhone?',
-    a: 'Bootspruefung.de, SBF-Fragen und SBF Binnen von Ralf Goritz sind für iOS verfügbar. Die kostenlose Wimmer-App und Sailbyte gibt es nur für Android. Boatpass ist derzeit ebenfalls nur für Android verfügbar, die iOS-Version ist in Arbeit.',
+    a: 'Bootspruefung.de, SBF-Fragen und SBF Binnen von Ralf Goritz sind für iOS verfügbar. Die kostenlose Wimmer-App und Sailbyte gibt es nur für Android. Boatpass gibt es seit Oktober 2026 auch für iPhone und iPad.',
   },
 ];
 
@@ -58,12 +59,12 @@ const relatedLinks = [
   androidParagraphs={[
     'Im Google Play Store sind alle sechs Apps verfügbar. Die beste kostenlose Option ist <strong>Sportbootführerschein Binnen</strong> von Matthias Wimmer: über 100.000 Downloads, 4,9 ★ bei 772 Bewertungen, keine Werbung, keine In-App-Käufe, kein Tracking. Der komplette amtliche Katalog inklusive Segelzusatzfragen ist enthalten, gelernt wird nach dem Karteikasten-Prinzip.',
     'Was ihr fehlt, sind Erklärungstexte zu den Antworten. Wer verstehen statt auswendig lernen will, ist mit <strong>SBF Binnen von Ralf Goritz</strong> (4,8 ★ bei 567 Bewertungen) am besten bedient: Lehrbuch zu jeder Frage, Leitner-Lernboxen wahlweise automatisch oder manuell, ein eigener Modus für unsichere Fragen und alle Prüfungsknoten. Auch <strong>Bootspruefung.de</strong> und <strong>SBF-Fragen</strong> liefern Theorietexte.',
-    'Boatpass findest du ebenfalls im Play Store. Der SBF-Binnen-Katalog kostet einmalig 9,99 €, zusammen mit SBF See 16,98 €. Antesten ist kostenlos.',
+    'Boatpass findest du ebenfalls bei Google Play. Der SBF-Binnen-Katalog kostet einmalig ' + priceText('sbfBinnen', 'de') + ', zusammen mit SBF See ' + priceText('bundleSbf', 'de') + '. Antesten ist kostenlos.',
   ]}
   iosHeading="SBF-Binnen-App für iPhone und iPad"
   iosParagraphs={[
-    'Auf dem iPhone stehen dir von den sechs Apps drei zur Verfügung: <strong>Bootspruefung.de</strong>, <strong>SBF-Fragen</strong> und <strong>SBF Binnen von Ralf Goritz</strong>. Alle drei enthalten den vollständigen Katalog inklusive Segelzusatzfragen.',
-    'Die kostenlose Wimmer-App und Sailbyte sind Android-exklusiv. <strong>Boatpass ist bisher nicht im App Store</strong> – die iOS-Version ist in Entwicklung. Wenn du heute auf dem iPhone starten willst, bleiben die beiden genannten Apps.',
+    'Auf dem iPhone stehen dir von den sechs Apps vier zur Verfügung: <strong>Bootspruefung.de</strong>, <strong>SBF-Fragen</strong>, <strong>SBF Binnen von Ralf Goritz</strong> und <strong>Boatpass</strong>. Alle vier enthalten den vollständigen Katalog inklusive Segelzusatzfragen.',
+    'Die kostenlose Wimmer-App und Sailbyte sind Android-exklusiv. <strong>Boatpass ist seit Oktober 2026 im App Store</strong> – mit denselben 15 Gratisfragen pro Tag wie unter Android. Ein Kauf gilt nur im jeweiligen Store.',
   ]}
   strengths={[
     'Vollständiger amtlicher SBF-Binnen-Katalog inklusive Segelzusatzfragen',
@@ -74,7 +75,7 @@ const relatedLinks = [
     'Offline lernen – funktioniert ohne Internetverbindung',
   ]}
   limitations={[
-    'Bisher nur für Android verfügbar',
+    'Käufe gelten nur im jeweiligen Store – kein Übertrag zwischen Android und iPhone',
     'Kein Bodenseeschifferpatent – dafür brauchst du Bootspruefung.de oder SBF-Fragen',
     'Nur 10 Bewertungen im Play Store, verglichen mit 772 bei der Wimmer-App',
     'Kein begleitender Onlinekurs im Browser',

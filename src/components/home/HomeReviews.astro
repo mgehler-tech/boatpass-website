@@ -9,6 +9,7 @@ import Icon from '../Icon.astro';
 import SectionHead from './SectionHead.astro';
 import { REVIEWS_DE } from '../../data/reviews';
 import { getBoatpassRating, formatRating } from '../../data/apps';
+import { PLAY_STORE_URL } from '../../data/stores';
 import { useTranslations } from '../../i18n/index';
 
 interface Props {
@@ -18,7 +19,7 @@ interface Props {
 const { num } = Astro.props;
 const t = useTranslations('de');
 const h = t.home;
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const playStoreUrl = PLAY_STORE_URL;
 const rating = getBoatpassRating();
 const score = rating ? formatRating(rating.score).replace('.', ',') : null;
 
@@ -31,7 +32,7 @@ const logDate = (iso: string) => iso.split('-').reverse().join('.');
     <SectionHead
       num={num}
       label={h.reviewsLabel}
-      meta={rating ? `${rating.ratings} ${h.ratingSource}` : undefined}
+      meta={rating ? `${rating.ratings} ${h.ratingSourcePlay}` : undefined}
       title={h.reviewsTitle}
       lede={h.reviewsIntro}
       id="hr-title"
@@ -47,8 +48,9 @@ const logDate = (iso: string) => iso.split('-').reverse().join('.');
               <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z" fill="currentColor" /></svg>
             ))}
           </p>
-          <p class="hr-score-count">{rating.ratings} {h.ratingSource}</p>
-          <a class="h-link" href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="reviews">
+          <p class="hr-score-count">{rating.ratings} {h.ratingSourcePlay}</p>
+          <!-- data-store: die Rezensionen stammen aus Google Play, der Link darf nicht umgeleitet werden. -->
+          <a class="h-link" href={playStoreUrl} data-store="play" target="_blank" rel="noopener noreferrer" data-cta-position="reviews">
             {h.reviewsAll}
             <Icon name="chevronRight" size={16} strokeWidth={2.25} />
             <span class="sr-only">{h.newTab}</span>

@@ -1,5 +1,6 @@
 ---
 import { formatRating, type AppRating } from '../data/apps';
+import { ALL_PRODUCTS, APP_STORE_URL, PLAY_STORE_URL, PRICES, maxPrice } from '../data/stores';
 
 interface Props {
   title: string;
@@ -95,9 +96,7 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' |
   "url": "https://boatpass.de",
   "logo": "https://boatpass.de/images/app-icon.png",
   "description": "Boatpass ist die moderne Lernapp für den Sportbootführerschein (SBF Binnen & See) – mit offiziellem ELWIS-Fragenkatalog, Prüfungssimulation und Fehlertraining.",
-  "sameAs": [
-    "https://play.google.com/store/apps/details?id=com.boatpass.app"
-  ],
+  "sameAs": [PLAY_STORE_URL, APP_STORE_URL],
   "contactPoint": {
     "@type": "ContactPoint",
     "contactType": "customer support",
@@ -113,15 +112,18 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' |
     "@type": "MobileApplication",
     "name": "Boatpass – Sportbootführerschein App",
     "url": "https://boatpass.de",
-    "downloadUrl": "https://play.google.com/store/apps/details?id=com.boatpass.app",
-    "operatingSystem": "Android",
+    "downloadUrl": [PLAY_STORE_URL, APP_STORE_URL],
+    "installUrl": [PLAY_STORE_URL, APP_STORE_URL],
+    "operatingSystem": "Android 8.0+, iOS 16+, iPadOS 16+",
     "applicationCategory": "EducationApplication",
+    // Preise je Store aus src/data/stores.ts. SBF Binnen/See kosten überall gleich viel,
+    // die Pakete und Funkmodule weichen zwischen Google Play und App Store ab.
     "offers": {
       "@type": "AggregateOffer",
       "priceCurrency": "EUR",
       "lowPrice": "0",
-      "highPrice": "16.98",
-      "offerCount": "4",
+      "highPrice": maxPrice(ALL_PRODUCTS, 'en').replace('€', ''),
+      "offerCount": "2",
       "offers": [
         {
           "@type": "Offer",
@@ -132,27 +134,14 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' |
         },
         {
           "@type": "Offer",
-          "price": "9.99",
+          "price": ((PRICES.sbfBinnen.android ?? 0) / 100).toFixed(2),
           "priceCurrency": "EUR",
-          "name": "SBF Binnen Vollzugang",
-          "description": "Vollzugang SBF Binnen – einmaliger Kauf, kein Abo"
-        },
-        {
-          "@type": "Offer",
-          "price": "9.99",
-          "priceCurrency": "EUR",
-          "name": "SBF See Vollzugang",
-          "description": "Vollzugang SBF See – einmaliger Kauf, kein Abo"
-        },
-        {
-          "@type": "Offer",
-          "price": "16.98",
-          "priceCurrency": "EUR",
-          "name": "Komplett-Paket SBF Binnen + See",
-          "description": "Beide Kataloge im Paket – einmaliger Kauf, 3 € gespart"
+          "name": "SBF-Katalog Vollzugang",
+          "description": "Vollzugang SBF Binnen oder SBF See je Katalog – einmaliger Kauf, kein Abo (Google Play und App Store)"
         }
       ]
     },
+    // Google Play und App Store zusammengefasst (getBoatpassCombinedRating).
     ...(appRating && appRating.ratings > 0 ? {
       "aggregateRating": {
         "@type": "AggregateRating",

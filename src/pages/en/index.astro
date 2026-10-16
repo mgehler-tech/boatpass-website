@@ -9,13 +9,13 @@ import HomePricing from '../../components/home/HomePricing.astro';
 import HomeCatalogs from '../../components/home/HomeCatalogs.astro';
 import HomeGuide from '../../components/home/HomeGuide.astro';
 import HomeFinalCta from '../../components/home/HomeFinalCta.astro';
-import { getBoatpassRating } from '../../data/apps';
+import { getBoatpassCombinedRating } from '../../data/apps';
 import '../../styles/home.css';
 // Display-Schrift der Startseite vorladen (nur das lateinische Subset, das
 // DE/EN tatsächlich braucht) – die H1 im Hero ist das größte Element.
 import archivoLatin from '@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2?url';
 
-const appRating = getBoatpassRating();
+const appRating = getBoatpassCombinedRating();
 
 const websiteSchema = {
   "@context": "https://schema.org",

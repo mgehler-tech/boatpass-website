@@ -1,6 +1,6 @@
 ---
 title: "Conduct After a Boating Accident: Duties, Reporting, and Preserving Evidence"
-seoTitle: "Conduct After a Boating Accident"
+seoTitle: "Boating Accident: Duties & Reporting Rules"
 description: "Collision, grounding, or injury on board: what duties apply after a boating accident, when to notify the water police, and how to preserve evidence."
 date: 2026-08-01
 tags: ["Exam Knowledge"]

@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import appIcon from '../assets/images/app-icon.png';
 import { useTranslations } from '../i18n/index';
+import { PLAY_STORE_URL } from '../data/stores';
 
 interface Props {
   lang: 'de' | 'en';
@@ -9,7 +10,9 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+// Generischer CTA: die Geräteweiche im BaseLayout führt iPhone/iPad in den App Store
+// und Desktop auf die Auswahlseite /app/.
+const playStoreUrl = PLAY_STORE_URL;
 ---
 
 <!--
@@ -18,7 +21,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   ursprünglichen DOM-Ort direkt vor dem Footer stehen – doppelt zum CtaBanner darunter.
   Grund für die Zwischenplatzierung: Artikel sind ~1.000-1.700 Wörter lang, der einzige
   bisherige App-CTA sitzt als CtaBanner erst ganz am Ende der Seite. Leser, die vorher
-  abspringen, sehen nie einen Play-Store-Link.
+  abspringen, sehen nie einen Store-Link.
 -->
 <aside id="blog-inline-cta" hidden aria-label={lang === 'de' ? 'App-Empfehlung' : 'App recommendation'}>
   <Image src={appIcon} alt="" width={40} height={40} loading="lazy" class="blog-inline-cta-icon" />
@@ -29,7 +32,6 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="blog-inline" id="blog-inline-cta-play" class="blog-inline-cta-button">
     {t.blogInlineCta.cta}
   </a>
-  <span id="blog-inline-cta-ios" class="blog-inline-cta-ios-badge">{t.hero.ctaIos}</span>
 </aside>
 
 <script>
@@ -41,24 +43,6 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     if (!firstHeading) return;
     firstHeading.before(cta);
     cta.hidden = false;
-  })();
-</script>
-
-<script is:inline>
-  // Play Store hat kein iOS-Pendant (App noch nicht erschienen, siehe hero.ctaIos) –
-  // ohne diese Weiche landen iOS-Besucher:innen auf einer Store-Seite, die sie nicht
-  // installieren können. Gleiche Erkennung wie auf der Startseite (home/HomeBoot.astro), hier
-  // für die Mid-Article-CTA in Blogposts.
-  (function () {
-    var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-    if (!isIos) return;
-    var play = document.getElementById('blog-inline-cta-play');
-    var ios = document.getElementById('blog-inline-cta-ios');
-    if (play && ios) {
-      play.style.display = 'none';
-      ios.style.display = 'inline-flex';
-    }
   })();
 </script>
 
@@ -123,32 +107,12 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
     box-shadow: 0 8px 20px rgba(51,102,255,0.32);
   }
 
-  /* Startet ausgeblendet, das Inline-Script schaltet auf iOS um (siehe oben). */
-  .blog-inline-cta-ios-badge {
-    display: none;
-    /* align-items/justify-content + min-height halten das iOS-Pendant auf
-       dieselbe 44px-Tap-Fläche wie der Play-Store-Button (WCAG 2.5.5); das
-       Inline-Script schaltet display auf inline-flex. */
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
-    flex-shrink: 0;
-    white-space: nowrap;
-    background: rgba(51,102,255,0.10);
-    border: 1px solid rgba(51,102,255,0.22);
-    color: #1A44D4;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 11px 20px;
-    border-radius: 100px;
-  }
-
   @media (max-width: 520px) {
     #blog-inline-cta {
       flex-wrap: wrap;
       padding: 16px 18px;
     }
-    .blog-inline-cta-button, .blog-inline-cta-ios-badge {
+    .blog-inline-cta-button {
       width: 100%;
       justify-content: center;
       text-align: center;
@@ -161,9 +125,4 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
   }
   html.dark .blog-inline-cta-title { color: #E2E8F0; }
   html.dark .blog-inline-cta-subtitle { color: #94A3B8; }
-  html.dark .blog-inline-cta-ios-badge {
-    background: rgba(90,120,255,0.14);
-    border-color: rgba(90,120,255,0.28);
-    color: #5B8CFF;
-  }
 </style>

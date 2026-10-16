@@ -2,6 +2,8 @@
 import { useTranslations } from '../i18n/index';
 import Icon from './Icon.astro';
 import CatalogSources from './CatalogSources.astro';
+import PlatformPrice from './PlatformPrice.astro';
+import { PLAY_STORE_URL, bundleSaving, formatPrice, priceNote, type ProductKey } from '../data/stores';
 import type { IconName } from '../icons';
 
 interface Props {
@@ -24,7 +26,16 @@ interface Props {
 const { lang, withGuarantee = false, withSourceNote = true, withProof = false } = Astro.props;
 const t = useTranslations(lang);
 const de = lang === 'de';
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const playStoreUrl = PLAY_STORE_URL;
+
+// Ersparnis des SBF-Pakets je Store (weicht zwischen Google Play und App Store um 1 Cent ab).
+const saveAndroid = formatPrice(bundleSaving('bundleSbf', ['sbfBinnen', 'sbfSee'], 'android'), lang);
+const saveIos = formatPrice(bundleSaving('bundleSbf', ['sbfBinnen', 'sbfSee'], 'ios'), lang);
+const saveLabel = de ? 'Spare' : 'Save';
+
+// Preishinweis je Store (PAngV), Text passend zum Gerät.
+const priceNoteAndroid = priceNote('android', lang);
+const priceNoteIos = priceNote('ios', lang);
 
 const soonItems = [t.pricing.soon1];
 
@@ -40,9 +51,9 @@ const sbfVariants = [
 ];
 const funkOnce = de ? 'einmalig' : 'one-time';
 const funkCards = [
-  { abbr: 'SRC', name: de ? 'Seefunk (Küste)' : 'Sea radio (coastal)', price: t.pricing.srcPrice, url: de ? '/src/' : '/en/src/', icon: 'satellite' as IconName },
-  { abbr: 'UBI', name: de ? 'Binnenfunk' : 'Inland radio', price: t.pricing.ubiPrice, url: de ? '/ubi/' : '/en/ubi/', icon: 'wifi' as IconName },
-  { abbr: 'LRC', name: de ? 'Seefunk (weltweit)' : 'Sea radio (worldwide)', price: t.pricing.lrcPrice, url: de ? '/lrc/' : '/en/lrc/', icon: 'globe' as IconName },
+  { abbr: 'SRC', name: de ? 'Seefunk (Küste)' : 'Sea radio (coastal)', product: 'src' as ProductKey, url: de ? '/src/' : '/en/src/', icon: 'satellite' as IconName },
+  { abbr: 'UBI', name: de ? 'Binnenfunk' : 'Inland radio', product: 'ubi' as ProductKey, url: de ? '/ubi/' : '/en/ubi/', icon: 'wifi' as IconName },
+  { abbr: 'LRC', name: de ? 'Seefunk (weltweit)' : 'Sea radio (worldwide)', product: 'lrc' as ProductKey, url: de ? '/lrc/' : '/en/lrc/', icon: 'globe' as IconName },
 ];
 ---
 
@@ -103,9 +114,9 @@ const funkCards = [
             <div class="pv2-card-name pv2-bundle-title">{de ? 'Binnen + See' : 'Inland + Coastal'}</div>
             <div class="pv2-bundle-tag">{t.pricing.bundleTagline}</div>
             <div class="pv2-bundle-price-d">
-              <span class="pv2-price-num pv2-bundle-num">{t.pricing.bundlePrice}</span>
+              <span class="pv2-price-num pv2-bundle-num"><PlatformPrice product="bundleSbf" lang={lang} /></span>
               <span class="pv2-strike">{de ? 'statt' : 'instead of'} {t.pricing.bundleStrike}</span>
-              <span class="pv2-save-text">{t.pricing.bundleSave}</span>
+              <span class="pv2-save-text">{saveLabel} <span class="pp-android">{saveAndroid}</span><span class="pp-ios">{saveIos}</span></span>
             </div>
           </div>
           <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="pv2-cta pv2-cta-bundle cta-white-btn">{t.pricing.bundleChoose} →</a>
@@ -170,9 +181,9 @@ const funkCards = [
           </div>
           <div class="pv2-card-cat pv2-bundle-cat">{t.pricing.bundleTagline}</div>
           <div class="pv2-bundle-price">
-            <span class="pv2-price-num">{t.pricing.bundlePrice}</span>
+            <span class="pv2-price-num"><PlatformPrice product="bundleSbf" lang={lang} /></span>
             <span class="pv2-strike">{t.pricing.bundleStrike}</span>
-            <span class="pv2-save-green">{t.pricing.bundleSave}</span>
+            <span class="pv2-save-green">{saveLabel} <span class="pp-android">{saveAndroid}</span><span class="pp-ios">{saveIos}</span></span>
           </div>
           <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="pv2-cta pv2-cta-bundle cta-white-btn">{t.pricing.bundleChoose} →</a>
         </div>
@@ -194,7 +205,7 @@ const funkCards = [
               <span class="pv2-stamp pv2-stamp-sm">{t.pricing.currentCatalog}</span>
               <div class="pv2-funk-name">{f.name}</div>
               <div class="pv2-funk-price-row">
-                <span class="pv2-funk-price">{f.price}</span>
+                <span class="pv2-funk-price"><PlatformPrice product={f.product} lang={lang} /></span>
                 <span class="pv2-funk-once">{funkOnce}</span>
               </div>
               <span class="pv2-funk-more">{t.pricing.funkMore} →</span>
@@ -203,6 +214,11 @@ const funkCards = [
         </div>
         <div class="snap-dots" data-snap-dots="funk"></div>
       </div>
+
+      <!-- Preishinweis: Preise je Store (PAngV) – Text passend zum Gerät -->
+      <p class="reveal-item pv2-price-note" style="opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease;">
+        <span class="pp-android">{priceNoteAndroid}</span><span class="pp-ios">{priceNoteIos}</span>
+      </p>
 
       <!-- Katalog-Hinweis + offizielle Quelle -->
       {withSourceNote && (
@@ -373,21 +389,21 @@ const funkCards = [
                   <span class="license-abbr">UBI</span>
                   <span class="license-name">{de ? 'Sprechfunk' : 'VHF radio'}</span>
                 </div>
-                <span class="license-price">{t.pricing.ubiPrice}</span>
+                <span class="license-price"><PlatformPrice product="ubi" lang={lang} /></span>
               </div>
               <div class="license-row">
                 <div class="license-row-left">
                   <span class="license-abbr">SRC</span>
                   <span class="license-name">{de ? 'Seefunk (Küste)' : 'Sea radio (coastal)'}</span>
                 </div>
-                <span class="license-price">{t.pricing.srcPrice}</span>
+                <span class="license-price"><PlatformPrice product="src" lang={lang} /></span>
               </div>
               <div class="license-row">
                 <div class="license-row-left">
                   <span class="license-abbr">LRC</span>
                   <span class="license-name">{de ? 'Seefunk (weltweit)' : 'Sea radio (worldwide)'}</span>
                 </div>
-                <span class="license-price">{t.pricing.lrcPrice}</span>
+                <span class="license-price"><PlatformPrice product="lrc" lang={lang} /></span>
               </div>
             </div>
             <span class="licenses-link-cta" style="margin-top:auto;">{de ? 'Alle Lizenzen ansehen' : 'View all licenses'} →</span>
@@ -430,8 +446,8 @@ const funkCards = [
 
         <div class="bundle-action">
           <div class="bundle-price-block" style="display:flex; flex-direction:column; align-items:flex-end; line-height:1;">
-            <span style="font-size:38px; font-weight:900; color:white; letter-spacing:-1.5px; white-space:nowrap;">{t.pricing.bundlePrice}</span>
-            <span style="margin-top:8px; background:rgba(255,255,255,0.2); color:white; font-size:12px; font-weight:700; padding:4px 12px; border-radius:100px; white-space:nowrap;">{t.pricing.bundleSave}</span>
+            <span style="font-size:38px; font-weight:900; color:white; letter-spacing:-1.5px; white-space:nowrap;"><PlatformPrice product="bundleSbf" lang={lang} /></span>
+            <span style="margin-top:8px; background:rgba(255,255,255,0.2); color:white; font-size:12px; font-weight:700; padding:4px 12px; border-radius:100px; white-space:nowrap;">{saveLabel} <span class="pp-android">{saveAndroid}</span><span class="pp-ios">{saveIos}</span></span>
           </div>
           <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
             class="cta-white-btn"
@@ -441,6 +457,10 @@ const funkCards = [
         </div>
       </div>
     </div>
+
+    <p class="pv2-price-note">
+      <span class="pp-android">{priceNoteAndroid}</span><span class="pp-ios">{priceNoteIos}</span>
+    </p>
 
     </Fragment>
   )}
@@ -902,6 +922,17 @@ const funkCards = [
   .pv2-funk-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
   .pv2-funk-price { font-size: 17px; font-weight: 900; color: #1A1F36; letter-spacing: -0.5px; }
   .pv2-funk-more { font-size: 12.5px; font-weight: 700; color: #3366FF; }
+
+  /* Preishinweis unter den Karten: Preise je Store, inkl. MwSt. */
+  .pv2-price-note {
+    max-width: 820px;
+    margin: 20px auto 0;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #656B78;
+    text-align: center;
+  }
+  :global(html.dark) .pv2-price-note { color: #94A3B8; }
 
   .pv2-note {
     display: grid; grid-template-columns: 1.35fr 1fr; gap: 20px; text-align: left;

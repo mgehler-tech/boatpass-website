@@ -1,7 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { PLAY_STORE_URL } from '../data/stores';
 
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const playStoreUrl = PLAY_STORE_URL;
 ---
 
 <BaseLayout
@@ -36,7 +37,7 @@ const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass
         <a href="/faq/" style="font-size:15px; font-weight:600; color:#1A1F36; background:white; border:1px solid rgba(51,102,255,0.15); padding:14px 24px; border-radius:14px; text-decoration:none;">Häufige Fragen</a>
       </div>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" style="font-size:14px; color:#656B78; text-decoration:underline; text-underline-offset:2px;">
-        Oder lade die Boatpass-App im Play Store →
+        Oder lade die Boatpass-App für iPhone oder Android →
       </a>
     </div>
   </div>

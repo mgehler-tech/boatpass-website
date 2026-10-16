@@ -1,6 +1,6 @@
 ---
 title: "Sound Signals for the Boating License: Coastal & Inland Overview"
-seoTitle: "Sound Signals for the SBF Exam"
+seoTitle: "Sound Signals for the SBF Exam Explained"
 description: "One short blast, one prolonged blast – what means what? The important sound signals for SBF Coastal and Inland, separated and with the usual traps."
 date: 2026-05-13
 tags: ["Safety"]

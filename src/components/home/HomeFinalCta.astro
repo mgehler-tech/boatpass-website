@@ -1,12 +1,15 @@
 ---
-// Abschluss: ein CTA, die Bewertung und – nur am Desktop, wo man die App nicht
-// direkt installieren kann – ein QR-Code zum Play-Store-Eintrag. Der QR-Code
-// entsteht beim Build als SVG.
+// Abschluss: ein CTA, die Bewertung, die offiziellen Store-Badges und – nur am
+// Desktop, wo man die App nicht direkt installieren kann – ein QR-Code zur
+// Geräteweiche /app/, die auf dem Handy in den passenden Store leitet. Der
+// QR-Code entsteht beim Build als SVG.
 import QRCode from 'qrcode';
 import SectionHead from './SectionHead.astro';
-import PlayCta from './PlayCta.astro';
+import StoreCta from './StoreCta.astro';
+import StoreBadges from '../StoreBadges.astro';
 import { useTranslations } from '../../i18n/index';
-import { getBoatpassRating, formatRating } from '../../data/apps';
+import { getBoatpassCombinedRating, formatRating } from '../../data/apps';
+import { smartAppPath } from '../../data/stores';
 
 interface Props {
   lang: 'de' | 'en';
@@ -16,12 +19,12 @@ interface Props {
 const { lang, num } = Astro.props;
 const t = useTranslations(lang);
 const h = t.home;
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const chooserPath = smartAppPath(lang);
 
-const rating = getBoatpassRating();
+const rating = getBoatpassCombinedRating();
 const score = rating ? formatRating(rating.score).replace('.', lang === 'de' ? ',' : '.') : null;
 
-const qrSvg = await QRCode.toString(playStoreUrl, {
+const qrSvg = await QRCode.toString(`https://boatpass.de${chooserPath}`, {
   type: 'svg',
   margin: 0,
   errorCorrectionLevel: 'M',
@@ -37,7 +40,7 @@ const qrSvg = await QRCode.toString(playStoreUrl, {
       <div class="hx-copy">
         <p class="hx-lede" data-reveal>{t.ctaBanner.subtitle}</p>
         <div class="hx-actions" data-reveal>
-          <PlayCta lang={lang} position="final" id="final-cta" />
+          <StoreCta lang={lang} position="final" id="final-cta" />
           {rating && (
             <p class="hx-rating">
               <strong class="h-num">{score}</strong>
@@ -46,18 +49,19 @@ const qrSvg = await QRCode.toString(playStoreUrl, {
             </p>
           )}
         </div>
-        <p class="hx-ios h-play-only" data-reveal>{t.hero.ctaIos}</p>
+        <div data-reveal>
+          <StoreBadges lang={lang} id="final-badge" position="final-badges" height={44} class="hx-badges" />
+        </div>
       </div>
 
-      <div class="hx-side h-play-only" data-reveal>
-        <a class="hx-qr" href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="final-qr">
+      <div class="hx-side" data-reveal>
+        <a class="hx-qr" href={chooserPath} data-cta-position="final-qr">
           <span class="hx-qr-code" role="img" aria-label={h.qrAlt} set:html={qrSvg} />
           <span class="hx-qr-text">
             <img class="hx-qr-icon" src="/images/app-icon.png" alt="" width="40" height="40" loading="lazy" decoding="async" />
             <strong>{h.qrTitle}</strong>
             <span>{h.qrText}</span>
           </span>
-          <span class="sr-only">{h.newTab}</span>
         </a>
       </div>
     </div>
@@ -92,7 +96,6 @@ const qrSvg = await QRCode.toString(playStoreUrl, {
     gap: 16px 28px;
     margin-top: 32px;
   }
-  .hx .h-ios-badge { box-shadow: inset 0 0 0 1.5px var(--h-deep-line); color: #fff; }
   .hx-rating {
     display: inline-flex;
     align-items: baseline;
@@ -109,12 +112,7 @@ const qrSvg = await QRCode.toString(playStoreUrl, {
     font-size: 32px;
     color: #fff;
   }
-  .hx-ios {
-    margin: 20px 0 0;
-    font-family: var(--h-mono);
-    font-size: 13px;
-    color: var(--h-on-deep-muted);
-  }
+  .hx-badges { margin-top: 28px; }
 
   .hx-side { display: none; }
   @media (min-width: 1024px) {

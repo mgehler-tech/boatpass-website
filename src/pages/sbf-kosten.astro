@@ -2,8 +2,9 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
 import type { IconName } from '../icons';
+import { PLAY_STORE_URL, priceText } from '../data/stores';
 
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.boatpass.app';
+const playStoreUrl = PLAY_STORE_URL;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -25,7 +26,7 @@ const faqs = [
   },
   {
     q: 'Kann ich beim SBF Geld sparen?',
-    a: 'Ja. Der größte Kostenblock ist der Vorbereitungskurs. Da der offizielle ELWIS-Fragenkatalog frei verfügbar ist, kannst du die Theorie ohne teuren Kurs lernen – z. B. mit der Boatpass-App für einmalig 9,99 € pro Katalog (oder 16,98 € für beide). Für die Praxis reicht oft ein Übungstag auf dem Wasser.',
+    a: 'Ja. Der größte Kostenblock ist der Vorbereitungskurs. Da der offizielle ELWIS-Fragenkatalog frei verfügbar ist, kannst du die Theorie ohne teuren Kurs lernen – z. B. mit der Boatpass-App für einmalig 9,99 € pro Katalog (oder ' + priceText('bundleSbf', 'de') + ' für beide). Für die Praxis reicht oft ein Übungstag auf dem Wasser.',
   },
   {
     q: 'Ist die kombinierte Prüfung Binnen + See günstiger?',
@@ -121,7 +122,7 @@ const faqSchema = {
             </tr>
             <tr style="border-top:1px solid rgba(51,102,255,0.08);">
               <td style="padding:13px 16px; color:#374151;">Lern-App / Fragenkatalog (Boatpass)</td>
-              <td style="padding:13px 16px; color:#374151;">9,99 € pro Katalog · 16,98 € Paket</td>
+              <td style="padding:13px 16px; color:#374151;">9,99 € pro Katalog · {priceText('bundleSbf', 'de')} Paket</td>
               <td style="padding:13px 16px; color:#374151;">Optional</td>
             </tr>
             <tr style="border-top:1px solid rgba(51,102,255,0.08); background:rgba(26,31,54,0.02);">

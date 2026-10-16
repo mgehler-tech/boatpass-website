@@ -1,0 +1,39 @@
+---
+// Preis, der je nach Gerät den passenden Store-Preis zeigt: iPhone/iPad den
+// App-Store-Preis, alle anderen den Google-Play-Preis (html[data-platform]
+// aus dem BaseLayout). Bei gleichem Preis wird nur eine Zahl gerendert.
+// Mit `alt` folgt eine kleine Zeile mit dem Preis im jeweils anderen Store –
+// so bleibt die vollständige Preisangabe auf jedem Gerät sichtbar.
+import { PRICES, samePrice, storePrice, type Lang, type ProductKey } from '../data/stores';
+
+interface Props {
+  product: ProductKey;
+  lang: Lang;
+  /** Zeile mit dem Preis im anderen Store anhängen. */
+  alt?: boolean;
+  /** Klasse für die Alt-Zeile (Farbe/Größe passend zum Umfeld). */
+  altClass?: string;
+}
+
+const { product, lang, alt = false, altClass } = Astro.props;
+const de = lang === 'de';
+const same = samePrice(product);
+const hasAndroid = PRICES[product].android !== null;
+const hasIos = PRICES[product].ios !== null;
+const android = hasAndroid ? storePrice(product, 'android', lang) : null;
+const ios = hasIos ? storePrice(product, 'ios', lang) : null;
+---
+
+{same || !hasAndroid || !hasIos ? (
+  <span>{android ?? ios}</span>
+) : (
+  <>
+    <span class="pp-android">{android}</span><span class="pp-ios">{ios}</span>
+    {alt && (
+      <span class:list={['pp-alt', altClass]}>
+        <span class="pp-android">{de ? `Im App Store: ${ios}` : `On the App Store: ${ios}`}</span>
+        <span class="pp-ios">{de ? `Bei Google Play: ${android}` : `On Google Play: ${android}`}</span>
+      </span>
+    )}
+  </>
+)}

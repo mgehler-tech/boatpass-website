@@ -1,6 +1,6 @@
 ---
 title: "How to Register for the SBF Exam – Step by Step With DSV & DMYV"
-seoTitle: "How to Register for the SBF Exam"
+seoTitle: "How to Register for the SBF Exam (DSV & DMYV)"
 description: "How do you register for the German boating license exam? DSV and DMYV, required documents, the full application process, and costs – step by step."
 date: 2026-04-11
 tags: ["Preparation"]

@@ -1,5 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { formatPrice, minPrice, priceText, storePrice, PRICES, type ProductKey } from '../../data/stores';
+
+// Preise aus src/data/stores.ts; abweichende Store-Preise nennt priceText() beide.
+const pt = (k: ProductKey) => priceText(k, 'en');
+const sbfStrike = formatPrice((PRICES.sbfBinnen.android ?? 0) + (PRICES.sbfSee.android ?? 0), 'en');
+const funkFrom = minPrice(['ubi', 'src', 'lrc'], 'en');
 
 // FAQ grouped by topic: clearer for users + a clean H2 structure and thematic
 // keyword clusters for SEO. Each category has its own anchor (id) so Google can
@@ -31,11 +37,11 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       },
       {
         q: 'SRC or UBI – which radio certificate do I need?',
-        a: 'It depends on your waters. For coastal sea radio – a VHF marine radio with DSC – you need the SRC (Short Range Certificate). For inland radio on rivers and canals, the UBI (VHF radiotelephone certificate for inland waterways) applies. The SRC is not valid for inland radio, and the UBI is not valid for sea radio – if you navigate both, you need both certificates. In Boatpass you learn UBI and SRC as separate modules for a one-time €7.99 each.',
+        a: 'It depends on your waters. For coastal sea radio – a VHF marine radio with DSC – you need the SRC (Short Range Certificate). For inland radio on rivers and canals, the UBI (VHF radiotelephone certificate for inland waterways) applies. The SRC is not valid for inland radio, and the UBI is not valid for sea radio – if you navigate both, you need both certificates. In Boatpass you learn UBI and SRC as separate modules for a one-time ' + pt('ubi') + ' each.',
       },
       {
         q: 'What is the difference between SRC and LRC?',
-        a: 'Both are sea radio certificates and differ mainly in range. The SRC (Short Range Certificate) covers VHF sea radio with DSC in the coastal area (sea area A1, about 35 nautical miles). The LRC (Long Range Certificate) additionally covers worldwide sea radio via MF/HF (medium and short wave) and satellite (sea areas A1–A4) – required for offshore and blue-water sailing. For coastal waters the SRC is enough; the LRC builds on it and is the choice for the open sea. In Boatpass both are available as separate modules (SRC €7.99, LRC €9.99).',
+        a: 'Both are sea radio certificates and differ mainly in range. The SRC (Short Range Certificate) covers VHF sea radio with DSC in the coastal area (sea area A1, about 35 nautical miles). The LRC (Long Range Certificate) additionally covers worldwide sea radio via MF/HF (medium and short wave) and satellite (sea areas A1–A4) – required for offshore and blue-water sailing. For coastal waters the SRC is enough; the LRC builds on it and is the choice for the open sea. In Boatpass both are available as separate modules (SRC ' + pt('src') + ', LRC ' + pt('lrc') + ').',
       },
     ],
   },
@@ -131,15 +137,15 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       },
       {
         q: 'Do I save money with the combined Inland + Coastal exam?',
-        a: 'Yes. Taken separately, the official exam fees are €130.78 (Inland) and €148.38 (Coastal), €279.16 in total. The combined Inland + Coastal exam costs only €178.61 – you save around €100. This is possible because the 72 base questions are identical for both licenses and are examined only once. In Boatpass you learn both catalogs in the complete bundle for €16.98 instead of €19.98.',
+        a: 'Yes. Taken separately, the official exam fees are €130.78 (Inland) and €148.38 (Coastal), €279.16 in total. The combined Inland + Coastal exam costs only €178.61 – you save around €100. This is possible because the 72 base questions are identical for both licenses and are examined only once. In Boatpass you learn both catalogs in the complete bundle for ' + pt('bundleSbf') + ' instead of ' + sbfStrike + '.',
       },
       {
         q: 'How much do the radio certificates (UBI, SRC, LRC) cost?',
-        a: 'The official exam fees (admission, examination, and issuing of the certificate) are around €109 for the UBI, around €128 for the SRC, and roughly €188–207 for the LRC. A preparatory course is optional. In Boatpass you learn the theory as a module: UBI and SRC for a one-time €7.99 each, LRC for a one-time €9.99 – no subscription.',
+        a: 'The official exam fees (admission, examination, and issuing of the certificate) are around €109 for the UBI, around €128 for the SRC, and roughly €188–207 for the LRC. A preparatory course is optional. In Boatpass you learn the theory as a module: UBI and SRC for a one-time ' + pt('ubi') + ' each, LRC for a one-time ' + pt('lrc') + ' – no subscription.',
       },
       {
         q: 'Is the Boatpass app free?',
-        a: 'Yes – the app is free. In the free mode, you can work through 15 study questions per day and explore the app. Full SBF access (unlimited questions, exam simulation, mistake training) is a one-time purchase of €9.99 per catalog – or both SBF catalogs as a complete bundle for €16.98 (you save €3). The radio modules UBI, SRC, and LRC are unlocked separately (from €7.99). No subscription, no hidden fees.',
+        a: 'Yes – the app is free. In the free mode, you can work through 15 study questions per day and explore the app. Full SBF access (unlimited questions, exam simulation, mistake training) is a one-time purchase of ' + pt('sbfBinnen') + ' per catalog – or both SBF catalogs as a complete bundle for ' + pt('bundleSbf') + ' instead of ' + sbfStrike + '. The radio modules UBI, SRC, and LRC are unlocked separately (from ' + funkFrom + '). No subscription, no hidden fees.',
       },
     ],
   },
@@ -149,7 +155,15 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
     faqs: [
       {
         q: 'Which devices does the app support?',
-        a: 'Boatpass is currently available for Android (Google Play Store). An iOS version is currently in development.',
+        a: 'Boatpass is available for Android 8.0 or later (Google Play) and for iPhone and iPad with iOS or iPadOS 16 or later (App Store). Both versions have the same features and the same question catalogs.',
+      },
+      {
+        q: 'Can I use my Android purchase on iPhone?',
+        a: 'No. Google Play and the App Store process purchases separately, and Boatpass has no user account of its own through which purchases could be transferred. A purchase therefore only applies to the platform you bought it on. On other devices of the same platform you recover it with the same Google account or Apple ID via "Restore purchases".',
+      },
+      {
+        q: 'Why do some catalogs cost a different amount on the App Store than on Google Play?',
+        a: 'Apple only allows fixed price tiers, so some prices differ: UBI and SRC cost ' + storePrice('ubi', 'ios', 'en') + ' on the App Store instead of ' + storePrice('ubi', 'android', 'en') + ', while LRC costs ' + storePrice('lrc', 'ios', 'en') + ' instead of ' + storePrice('lrc', 'android', 'en') + '. SBF Binnen and SBF See cost the same in both stores. The App Store also offers a radio bundle for UBI, SRC and LRC.',
       },
       {
         q: 'Can I use the app offline?',
@@ -184,7 +198,7 @@ const breadcrumbSchema = {
 
 <BaseLayout
   title="SBF, Radio Certificate & Boating License FAQ"
-  description="Common questions on the German boating license (SBF Inland & Coastal) and radio certificates UBI, SRC & LRC: process, costs, catalogs and the Boatpass app."
+  description="Common questions on the German boating license (SBF Inland & Coastal) and radio certificates UBI, SRC & LRC: process, costs, catalogs, Boatpass app."
   lang="en"
 >
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

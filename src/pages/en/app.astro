@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import AppChooser from '../../components/AppChooser.astro';
+---
+
+<!-- noindex: Googlebot smartphone carries "Android" in its user agent and would only
+     see the redirect to Google Play – this page is a springboard, not content. -->
+<BaseLayout
+  title="Get the BoatPass app – iPhone, iPad & Android"
+  description="Get the BoatPass boating licence app: free on the App Store for iPhone and iPad or on Google Play for Android."
+  lang="en"
+  altUrl="https://boatpass.de/app/"
+  noindex={true}
+  showCta={false}
+>
+  <AppChooser lang="en" />
+</BaseLayout>

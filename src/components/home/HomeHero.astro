@@ -8,9 +8,9 @@
 // nutzbar). Der Auftakt des Handys läuft als CSS-Animation und wartet nicht
 // auf das JS-Bundle; GSAP übernimmt nur das Neigen per Maus.
 import { Image } from 'astro:assets';
-import PlayCta from './PlayCta.astro';
+import StoreCta from './StoreCta.astro';
 import { useTranslations } from '../../i18n/index';
-import { getBoatpassRating, formatRating } from '../../data/apps';
+import { getBoatpassCombinedRating, formatRating } from '../../data/apps';
 import homeShotDe from '../../assets/images/app.screenshot.0.de.png';
 import homeShotEn from '../../assets/images/app.screenshot.0.en.png';
 
@@ -24,7 +24,8 @@ const h = t.home;
 const p = t.pricing;
 const homeShot = lang === 'de' ? homeShotDe : homeShotEn;
 
-const rating = getBoatpassRating();
+// Google Play und App Store zusammen (nach Anzahl gewichtet), wie im Schema.
+const rating = getBoatpassCombinedRating();
 const score = rating ? formatRating(rating.score).replace('.', lang === 'de' ? ',' : '.') : null;
 
 // Reihenfolge wie t.hero.licenses: Binnen, See, UBI, SRC, LRC.
@@ -58,7 +59,7 @@ const readoutY = [0.27, 0.37, 0.62];
         <p class="hh-sub">{t.hero.subline}</p>
 
         <div class="hh-actions">
-          <PlayCta lang={lang} position="hero" id="hero-cta" />
+          <StoreCta lang={lang} position="hero" id="hero-cta" />
           {rating && (
             <p class="hh-rating">
               <span class="hh-rating-score h-num">{score}</span>
@@ -79,7 +80,6 @@ const readoutY = [0.27, 0.37, 0.62];
 
         <ul class="hh-facts">
           {h.heroFacts.map(fact => <li>{fact}</li>)}
-          <li class="h-play-only">{t.hero.ctaIos}</li>
         </ul>
       </div>
 
