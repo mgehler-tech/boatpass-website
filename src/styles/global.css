@@ -189,6 +189,28 @@ html.dark .section-eyebrow {
   text-decoration: underline !important;
 }
 
+/* Vierer-Kennzahlenraster der Prüfungsaufbau-Blöcke (SBF Binnen/See, DE + EN).
+   Bisher stand dort repeat(auto-fit, minmax(220px, 1fr)): im ~752px breiten
+   Inhaltsstreifen (max-width:800px) passten genau drei Spalten, sodass die
+   vierte Karte allein in einer zweiten Reihe hing – mit leerer Zelle daneben
+   (unsauberes, asymmetrisches Alignment). Dasselbe Muster, das das Projekt für
+   Feature-Karten und das Lizenz-Raster bereits bewusst vermeidet. Jetzt eine
+   gleichmäßige Leiter: ein Block auf dem Handy, ein ausgewogenes 2×2 auf
+   Tablets, vier gleich breite Spalten auf dem Desktop – nie wieder eine
+   verwaiste vierte Karte. Reiner Layout-Feinschliff, Abstände auf dem 4/8px-
+   Raster; Corporate Design (Farben, Weights) bleibt unberührt. */
+.exam-facts-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+@media (min-width: 560px) {
+  .exam-facts-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .exam-facts-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
 /* Dark Mode – class-based via html.dark. Init script in BaseLayout.astro sets the class
    before first paint to avoid FOUC. Respects both system preference and manual toggle. */
 html.dark {
