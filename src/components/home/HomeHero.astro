@@ -232,7 +232,8 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
   @media (min-width: 640px) and (max-width: 1023px) {
     .hh-panel { height: auto; aspect-ratio: 16 / 9; }
   }
-  /* Dark Mode: Abdunkelung über dem Foto, unter dem Gerät. */
+  /* Dark Mode: leichte Abdunkelung über dem (ohnehin dunklen) Dämmerungsfoto,
+     unter dem Gerät – hält den Kontaktschatten des Geräts lesbar. */
   .hh-panel::after {
     content: '';
     position: absolute;
@@ -243,7 +244,7 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
     opacity: 0;
     transition: opacity 0.3s ease;
   }
-  html.dark .hh-panel::after { opacity: 1; }
+  html.dark .hh-panel::after { opacity: 0.3; }
 
   .hh-phone-pos {
     position: absolute;

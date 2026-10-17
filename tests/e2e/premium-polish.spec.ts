@@ -161,9 +161,9 @@ test.describe('Hero reduction', () => {
 });
 
 test.describe('Hero photo pipeline', () => {
-  test('renders a picture with art direction and avif/webp sources', async ({ page }) => {
+  test('renders a day picture with art direction and avif/webp sources', async ({ page }) => {
     await page.goto('/');
-    const pic = page.locator('.hh-panel picture.hh-photo');
+    const pic = page.locator('.hh-panel picture.hh-photo--day');
     await expect(pic).toHaveCount(1);
     await expect(pic.locator('source[media="(min-width: 1024px)"][type="image/avif"]')).toHaveCount(1);
     await expect(pic.locator('source:not([media])[type="image/webp"]')).toHaveCount(1);
@@ -174,14 +174,31 @@ test.describe('Hero photo pipeline', () => {
     await expect(page.locator('.hh-phone img[fetchpriority="high"]')).toHaveCount(0);
   });
 
+  test('ships a dusk picture that only shows (and only loads) in dark mode', async ({ page }) => {
+    await page.goto('/');
+    const dusk = page.locator('.hh-panel picture.hh-photo--dusk');
+    await expect(dusk).toHaveCount(1);
+    await expect(dusk.locator('img')).toHaveAttribute('loading', 'lazy');
+    // Hell: Dämmerung unsichtbar und nicht geladen, Tag sichtbar.
+    await expect(dusk).toBeHidden();
+    expect(await dusk.locator('img').evaluate(el => (el as HTMLImageElement).currentSrc)).toBe('');
+    await expect(page.locator('.hh-photo--day')).toBeVisible();
+    // Dunkel (per Umschalter): Dämmerung sichtbar, Tag unsichtbar.
+    await page.locator('footer .theme-choice[data-theme-set="dark"]').click();
+    await expect(dusk).toBeVisible();
+    await expect(page.locator('.hh-photo--day')).toBeHidden();
+  });
+
   test('mobile band sizes match the rendered width and the parallax overhang is desktop-only', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto('/');
     // 16:9-Bild, das ein 118vw hohes Band per object-fit: cover füllt, ist ~210vw breit.
-    await expect(page.locator('.hh-photo source:not([media])[type="image/webp"]')).toHaveAttribute('sizes', '(max-width: 639px) 210vw, 100vw');
-    expect(await page.locator('.hh-photo').evaluate(el => getComputedStyle(el).bottom)).toBe('0px');
+    for (const variant of ['day', 'dusk']) {
+      await expect(page.locator(`.hh-photo--${variant} source:not([media])[type="image/webp"]`)).toHaveAttribute('sizes', '(max-width: 639px) 210vw, 100vw');
+    }
+    expect(await page.locator('.hh-photo--day').evaluate(el => getComputedStyle(el).bottom)).toBe('0px');
     await page.setViewportSize({ width: 1280, height: 800 });
-    expect(parseFloat(await page.locator('.hh-photo').evaluate(el => getComputedStyle(el).bottom))).toBeLessThan(0);
+    expect(parseFloat(await page.locator('.hh-photo--day').evaluate(el => getComputedStyle(el).bottom))).toBeLessThan(0);
   });
 });
 
@@ -224,14 +241,17 @@ test.describe('Hero panel', () => {
     expect(phone!.y + phone!.height).toBeGreaterThan(panel!.y + panel!.height);
     expect(phone!.y - panel!.y).toBeGreaterThanOrEqual(60);
   });
-  test('dark mode darkens the photo', async ({ page }) => {
+  test('dark mode shows the dusk photo with a light overlay', async ({ page }) => {
     await page.emulateMedia({ colorScheme: 'dark' });
     await page.goto('/');
     await expect(page.locator('html')).toHaveClass(/dark/);
+    await expect(page.locator('.hh-photo--dusk')).toBeVisible();
+    await expect(page.locator('.hh-photo--day')).toBeHidden();
     // Ein nicht erzeugtes ::after meldet ebenfalls Opazität 1 – deshalb zusätzlich der Verlauf.
     expect(await page.locator('.hh-panel').evaluate(el => getComputedStyle(el, '::after').backgroundImage)).toContain('linear-gradient');
-    expect(await page.locator('.hh-panel').evaluate(el => getComputedStyle(el, '::after').opacity)).toBe('1');
-    expect(await page.locator('.hh-photo img').evaluate(el => getComputedStyle(el).filter)).toContain('saturate');
+    const opacity = parseFloat(await page.locator('.hh-panel').evaluate(el => getComputedStyle(el, '::after').opacity));
+    expect(opacity).toBeGreaterThan(0);
+    expect(opacity).toBeLessThan(0.6);
   });
 });
 

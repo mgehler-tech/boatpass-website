@@ -198,10 +198,11 @@ function initParallax() {
    (HeroPhoto), damit beim Verschieben kein Rand durchblitzt. */
 function initHeroParallax() {
   const hero = document.querySelector<HTMLElement>('.hh');
-  const photo = hero?.querySelector<HTMLElement>('.hh-photo');
-  if (!hero || !photo) return;
+  // Tag- und Dämmerungsbild (HeroPhoto); sichtbar ist immer nur eines.
+  const photos = hero ? Array.from(hero.querySelectorAll<HTMLElement>('.hh-photo')) : [];
+  if (!hero || !photos.length) return;
   gsap.matchMedia().add('(min-width: 1024px)', () => {
-    gsap.to(photo, {
+    gsap.to(photos, {
       yPercent: -10,
       ease: 'none',
       scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true },
