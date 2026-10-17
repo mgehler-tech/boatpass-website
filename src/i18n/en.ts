@@ -264,10 +264,9 @@ export const en: Translations = {
       ['Streak', '1 day'],
       ['Mode', 'Study today'],
     ],
-    navtexLabel: 'NAVTEX',
-    navtexTitle: 'Mnemonics from the app',
-    navtexPause: 'Pause',
-    navtexPlay: 'Resume',
+    mnemoSection: 'Mnemonics from the app',
+    mnemoTitle: 'Mnemonic from the app',
+    mnemoNext: 'Next mnemonic',
     journeyStage: 'Stage',
     journeyChips: [
       ['Study today', 'Study by topic', 'Streak & daily goal'],

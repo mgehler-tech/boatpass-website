@@ -107,43 +107,24 @@ function initJourney() {
   }
 }
 
-/* ── NAVTEX-Streifen: das einzige Laufband der Seite ──────────────────── */
-function initMarquee() {
-  const viewport = document.querySelector<HTMLElement>('[data-marquee]');
-  const track = viewport?.querySelector<HTMLElement>('[data-marquee-track]');
-  const toggle = document.querySelector<HTMLButtonElement>('[data-marquee-toggle]');
-  const toggleLabel = toggle?.querySelector<HTMLElement>('[data-marquee-toggle-label]');
-  if (!viewport || !track || !motion) return;
+/* ── Merkhilfen-Band: nächste Merkhilfe auf Klick ─────────────────────── */
+function initMnemonics() {
+  const list = document.querySelector<HTMLElement>('[data-mnemo-list]');
+  const nav = document.querySelector<HTMLElement>('[data-mnemo-nav]');
+  const next = nav?.querySelector<HTMLButtonElement>('[data-mnemo-next]');
+  const count = nav?.querySelector<HTMLElement>('[data-mnemo-count]');
+  if (!list || !nav || !next) return;
+  const items = Array.from(list.querySelectorAll<HTMLElement>('[data-mnemo-item]'));
+  if (items.length < 2) return;
 
-  // Klone sind für Screenreader und Tastatur unsichtbar – jede Merkhilfe
-  // existiert für sie genau einmal.
-  Array.from(track.children).forEach((item) => {
-    const clone = item.cloneNode(true) as HTMLElement;
-    clone.setAttribute('aria-hidden', 'true');
-    clone.inert = true;
-    track.appendChild(clone);
+  let current = 0;
+  nav.hidden = false;
+  next.addEventListener('click', () => {
+    items[current].classList.remove('is-current');
+    current = (current + 1) % items.length;
+    items[current].classList.add('is-current');
+    if (count) count.textContent = `${current + 1} / ${items.length}`;
   });
-  // Lesetempo: rund 45 px pro Sekunde.
-  const half = track.scrollWidth / 2;
-  track.style.setProperty('--hr-duration', `${Math.max(40, Math.round(half / 45))}s`);
-  viewport.scrollLeft = 0;
-  viewport.classList.add('is-marquee');
-  // Nichts mehr zu scrollen → kein leerer Tab-Stopp.
-  viewport.removeAttribute('tabindex');
-
-  // Außerhalb des Sichtbereichs steht das Band still.
-  new IntersectionObserver(([entry]) => {
-    viewport.classList.toggle('is-offscreen', !entry.isIntersecting);
-  }).observe(viewport);
-
-  if (toggle) {
-    toggle.hidden = false;
-    toggle.addEventListener('click', () => {
-      const paused = viewport.classList.toggle('is-paused');
-      toggle.dataset.paused = String(paused);
-      if (toggleLabel) toggleLabel.textContent = (paused ? toggle.dataset.labelPlay : toggle.dataset.labelPause) ?? '';
-    });
-  }
 }
 
 /* ── Hero: Handy folgt dezent dem Zeiger (nur Maus) ───────────────────── */
@@ -296,4 +277,4 @@ if (motion) {
 }
 
 initJourney();
-initMarquee();
+initMnemonics();

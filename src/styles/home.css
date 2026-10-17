@@ -1,24 +1,19 @@
 /* =====================================================================
-   Startseite – Art Direction „Logbuch & Instrumente"
+   Startseite – ruhig, kompetent, frisch (s. PRODUCT.md)
    ---------------------------------------------------------------------
-   Vorbild ist ein Logbuch bzw. eine Instrumententafel, nicht eine
-   Landingpage aus Karten:
-   • Linien und Tabellenzeilen statt abgerundeter Karten. Eine kleine
-     Rundung (3px) für alles, außer dem Gerät selbst.
-   • Überschriften in Archivo (leicht schmal, kräftig), Daten und
-     Beschriftungen in IBM Plex Mono, Fließtext in Inter.
-   • Die Fachsprache der Prüfung ist das Gestaltungsmaterial: echte
-     Fragenzahlen, Merkhilfen und Werte aus der App statt Deko.
+   • Echtes Material statt Deko: amtliche Fragenzahlen, Screenshots,
+     Quizfragen, Merkhilfen und Bewertungen aus der App.
+   • Weich und präzise: Flächen, Haarlinien und Rundungen (Radius-Tokens
+     unten) statt harter Linienraster; Bedienelemente als Pille.
+   • Überschriften in Archivo (leicht schmal, kräftig), alles andere in
+     Inter. Keine Monospace-Schrift, keine nummerierten Abschnittsköpfe.
    • Eine Akzentfarbe (BoatPass-Blau). Rot/Grün nur für falsch/richtig,
      Bernstein nur für die Merkhilfe – wie in der App.
-   • Kein Glow, kein Gradnetz, keine Eyebrow-Pills. Jeder Abschnitt
-     beginnt mit einer Logbuch-Zeile (Nummer · Name · Kennwert).
-   Alle Klassen tragen das Präfix h- (bzw. hh-, hj-, … je Abschnitt).
+   • Nichts bewegt sich von selbst in Dauerschleife.
+   Alle Klassen tragen das Präfix h- (bzw. hh-, hj-, hm-, … je Abschnitt).
    ===================================================================== */
 
 @import '@fontsource-variable/archivo/wdth.css';
-@import '@fontsource/ibm-plex-mono/400.css';
-@import '@fontsource/ibm-plex-mono/500.css';
 
 .home {
   --h-paper: #F0F4FA;
@@ -52,7 +47,6 @@
   --h-deep-line: rgba(200, 214, 255, 0.2);
 
   --h-display: 'Archivo Variable', 'Arial Narrow', system-ui, sans-serif;
-  --h-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
   --h-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
   --h-ease: cubic-bezier(0.22, 1, 0.36, 1);
   /* Radien: Karten weich, Bedienelemente als Pille, kleine Marken dazwischen. */
@@ -121,7 +115,6 @@ html.dark .home {
 }
 
 .h-num { font-variant-numeric: tabular-nums; }
-.h-mono { font-family: var(--h-mono); }
 
 /* ── Abschnittskopf: Titel + Einleitung ────────────────────────────── */
 .hs-title {

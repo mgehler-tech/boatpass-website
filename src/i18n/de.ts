@@ -282,10 +282,9 @@ export const de = {
       ['Streak', '1 Tag'],
       ['Modus', 'Heute lernen'],
     ],
-    navtexLabel: 'NAVTEX',
-    navtexTitle: 'Merkhilfen aus der App',
-    navtexPause: 'Anhalten',
-    navtexPlay: 'Weiterlaufen lassen',
+    mnemoSection: 'Merkhilfen aus der App',
+    mnemoTitle: 'Merkhilfe aus der App',
+    mnemoNext: 'Nächste Merkhilfe',
     journeyStage: 'Etappe',
     // Konkrete Funktionen je Etappe – alle auf den jeweiligen Screenshots sichtbar.
     journeyChips: [
