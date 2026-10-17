@@ -78,6 +78,8 @@ Welche Dokumente genau verlangt werden, hängt vom Verband und Prüfungsort ab. 
 
 Die Prüfung kannst du oft schon kurz **vor** Erreichen des Mindestalters ablegen – ausgehändigt wird der Führerschein dann zum Geburtstag.
 
+Wann Kinder und Jugendliche überhaupt selbst ans Steuer dürfen – und ab wann sie ohne Aufsicht fahren –, erklärt unser Beitrag zum [Mindestalter für Kinder und Jugendliche am Steuer](/blog/kinder-jugendliche-boot-fahren-mindestalter/).
+
 Welche Unterlagen und formalen Voraussetzungen du für die Anmeldung sonst noch brauchst, fasst unser Überblick zu den [Voraussetzungen für den Sportbootführerschein](/blog/sportbootfuehrerschein-voraussetzungen/) zusammen.
 
 ## Theorie und Praxis: ein oder zwei Termine?
