@@ -78,6 +78,7 @@ Auch ohne Vorhersage kannst du das Wetter „lesen":
 - **Steigendes Barometer:** besseres, beständigeres Wetter.
 - **Aufziehende, tiefer werdende Bewölkung:** häufig Vorbote einer Warmfront.
 - **Böen und drehender Wind:** können auf eine durchziehende Front hinweisen.
+- **Quellwolken mit Gewittertendenz:** Hier hilft dir unser Ratgeber zum [Verhalten bei Gewitter und Blitzschlag auf dem Wasser](/blog/gewitter-blitzschlag-wasser-verhalten-vorsorge/).
 
 Als verantwortlicher Bootsführer darfst du dich nicht allein auf die Vorhersage verlassen, sondern musst die aktuelle Lage selbst einschätzen können.
 

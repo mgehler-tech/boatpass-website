@@ -78,6 +78,7 @@ Even without a forecast you can "read" the weather:
 - **Rising barometer:** better, more settled weather.
 - **Lowering, thickening cloud:** often the herald of a warm front.
 - **Gusts and shifting wind:** can indicate a passing front.
+- **Towering cumulus with thunderstorm potential:** see our guide to [behaviour in thunderstorms and lightning on the water](/blog/thunderstorms-lightning-on-the-water/).
 
 As the responsible skipper you must not rely on the forecast alone but be able to assess the current situation yourself.
 

@@ -59,7 +59,7 @@ Viele Binnenseen, Flussabschnitte und Küstengewässer haben eigene Geschwindigk
 
 ## Gewässerverunreinigung: wenn aus der Owi eine Straftat wird
 
-Ein Bereich, in dem aus einer vermeintlichen Kleinigkeit schnell etwas Ernstes wird, ist der Umweltschutz. Wer unbefugt Öl, Bilgenwasser oder andere Schadstoffe in ein Gewässer einleitet, verstößt nicht nur gegen Ordnungswidrigkeitenrecht, sondern macht sich unter Umständen nach **Paragraf 324 StGB (Gewässerverunreinigung)** strafbar. Der Strafrahmen reicht bis zu **fünf Jahren Freiheitsstrafe** oder Geldstrafe. Das betrifft nicht nur große Frachter, sondern grundsätzlich jeden, der ein Gewässer unbefugt verunreinigt, auch mit einem kleinen Sportboot. Wer seinen Motor und die Bilge regelmäßig wartet, etwa nach den Hinweisen in unserem Artikel zur [Außenborder-Basiswartung](/blog/aussenborder-basiswartung/), reduziert dieses Risiko spürbar.
+Ein Bereich, in dem aus einer vermeintlichen Kleinigkeit schnell etwas Ernstes wird, ist der [Umwelt- und Gewässerschutz beim Bootfahren](/blog/umweltschutz-gewaesserschutz-bootfahren/). Wer unbefugt Öl, Bilgenwasser oder andere Schadstoffe in ein Gewässer einleitet, verstößt nicht nur gegen Ordnungswidrigkeitenrecht, sondern macht sich unter Umständen nach **Paragraf 324 StGB (Gewässerverunreinigung)** strafbar. Der Strafrahmen reicht bis zu **fünf Jahren Freiheitsstrafe** oder Geldstrafe. Das betrifft nicht nur große Frachter, sondern grundsätzlich jeden, der ein Gewässer unbefugt verunreinigt, auch mit einem kleinen Sportboot. Wer seinen Motor und die Bilge regelmäßig wartet, etwa nach den Hinweisen in unserem Artikel zur [Außenborder-Basiswartung](/blog/aussenborder-basiswartung/), reduziert dieses Risiko spürbar.
 
 ## Pflichten nach einem Unfall
 

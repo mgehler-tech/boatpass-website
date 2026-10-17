@@ -101,6 +101,8 @@ The German SBF with ICC is **valid for life** – no renewal, no re-issue needed
 
 If you want to navigate both coastal and inland waters, you need **both licenses**. A typical scenario: you charter on the Baltic during your summer holiday (SBF Coastal) and go out on the Müritz at the weekend (SBF Inland).
 
+If you later want to go further offshore, the [Coastal Skipper licence (SKS)](/blog/sks-coastal-skippers-license/) is the natural next step.
+
 The combined exam saves around €100 in exam fees – and the 72 basic questions are identical for both licenses, so you only learn them once.
 
 ## Conclusion

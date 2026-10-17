@@ -62,7 +62,7 @@ Practical tips:
 - **Remember any moving parts.** A folding mast, a foldable antenna, or a retractable bimini can buy you valuable centimeters on a tight passage if you lower them before the bridge.
 - **Factor in your load.** A heavily loaded boat sits lower in the water, which slightly reduces the height of your highest point above the waterline. On an already tight passage, that can make the difference.
 
-Newer boats often list overall height in the manufacturer's documentation or technical data sheet. If you're on a charter boat, though, don't rely on that figure blindly, check it yourself where possible, especially if extra antennas or hardware have been added since.
+Newer boats often list overall height in the manufacturer's documentation or technical data sheet. If you're on a charter boat, though, don't rely on that figure blindly, check it yourself where possible (see our [handover check for charter and own boats](/blog/boat-handover-check-charter-or-own-boat/)), especially if extra antennas or hardware have been added since.
 
 ## Where to find current water level and clearance data
 

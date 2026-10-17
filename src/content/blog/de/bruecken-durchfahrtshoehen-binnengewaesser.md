@@ -62,7 +62,7 @@ Praktische Tipps dafür:
 - **Denke an bewegliche Teile.** Klappmasten, umlegbare Antennen oder ein einholbares Bimini können dir bei knappen Durchfahrten wertvolle Zentimeter verschaffen, wenn du sie vor der Brücke einklappst.
 - **Berücksichtige die Beladung.** Ein schwer beladenes Boot liegt tiefer im Wasser, wodurch sich die Höhe deines höchsten Punktes über der Wasserlinie geringfügig verringert. Bei einer ohnehin knappen Durchfahrt kann das den Unterschied ausmachen.
 
-Neuere Boote führen die Gesamthöhe häufig in den Herstellerunterlagen oder im technischen Datenblatt auf. Verlass dich bei Charterbooten aber nicht blind auf diese Angabe, sondern prüfe sie nach Möglichkeit selbst nach, insbesondere wenn zusätzliche Antennen oder Aufbauten nachgerüstet wurden.
+Neuere Boote führen die Gesamthöhe häufig in den Herstellerunterlagen oder im technischen Datenblatt auf. Verlass dich bei Charterbooten aber nicht blind auf diese Angabe, sondern prüfe sie nach Möglichkeit selbst nach (mehr dazu im [Übernahmecheck für Charterboot und eigenes Boot](/blog/boots-uebernahmecheck-charterboot-eigenes-boot/)), insbesondere wenn zusätzliche Antennen oder Aufbauten nachgerüstet wurden.
 
 ## Wo du aktuelle Pegel- und Höhendaten findest
 

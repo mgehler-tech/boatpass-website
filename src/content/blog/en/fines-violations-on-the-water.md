@@ -59,7 +59,7 @@ Many inland lakes, river sections, and coastal waters have their own speed limit
 
 ## Polluting a Waterway: When a Fine Turns Into a Crime
 
-One area where something seemingly minor can quickly turn serious is environmental protection. Unlawfully discharging oil, bilge water, or other pollutants into a body of water isn't just a regulatory matter, it can also be a criminal offense under **Section 324 StGB (water pollution)**. The sentencing range goes up to **five years in prison** or a fine. That applies not just to large freighters but in principle to anyone who unlawfully pollutes a body of water, including with a small recreational boat. Maintaining your engine and bilge regularly, following the guidance in our article on [basic outboard motor maintenance](/en/blog/outboard-motor-basic-maintenance/), noticeably reduces this risk.
+One area where something seemingly minor can quickly turn serious is [environmental and water protection while boating](/blog/environmental-protection-boating-water-conservation/). Unlawfully discharging oil, bilge water, or other pollutants into a body of water isn't just a regulatory matter, it can also be a criminal offense under **Section 324 StGB (water pollution)**. The sentencing range goes up to **five years in prison** or a fine. That applies not just to large freighters but in principle to anyone who unlawfully pollutes a body of water, including with a small recreational boat. Maintaining your engine and bilge regularly, following the guidance in our article on [basic outboard motor maintenance](/en/blog/outboard-motor-basic-maintenance/), noticeably reduces this risk.
 
 ## Duties After an Accident
 

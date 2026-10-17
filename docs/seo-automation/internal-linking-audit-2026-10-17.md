@@ -39,3 +39,19 @@ per Dateicheck verifiziert (kein Build möglich: `node_modules` fehlt in der Umg
 2. `sportkuestenschifferschein-sks`: wird in keinem anderen Artikel erwähnt – Hinweis auf SKS als Aufbauschein in `sbf-binnen-vs-see` und `sbf-gueltigkeit-welcher-schein-wo`.
 3. `kinder-jugendliche-boot-fahren-mindestalter`: „Mindestalter" in `sbf-pruefung-anmelden`, `boot-fahren-ohne-fuehrerschein-15-ps` verlinken.
 4. BlogTeaser-Slot (nur Top 3 nach Datum) und Single-Tag-Taxonomie – unverändert offen.
+
+## 4. Zweiter Durchlauf (2026-10-17, Routine)
+
+Blog→Blog-Inbound vorher: `gewitter-…`, `boots-uebernahmecheck-…`,
+`umweltschutz-…` = 0, `sportkuestenschifferschein-sks` = 1. Vier weitere
+Fließtext-Links ergänzt (DE+EN, 8 Dateien):
+
+| Quelle (DE) | Ziel | Anchor (DE) |
+|---|---|---|
+| `bussgelder-verstoesse-wasser` | `umweltschutz-gewaesserschutz-bootfahren` | „Umwelt- und Gewässerschutz beim Bootfahren" |
+| `bruecken-durchfahrtshoehen-binnengewaesser` | `boots-uebernahmecheck-charterboot-eigenes-boot` | „Übernahmecheck für Charterboot und eigenes Boot" |
+| `wetterkunde-beaufort` | `gewitter-blitzschlag-wasser-verhalten-vorsorge` | „Verhalten bei Gewitter und Blitzschlag auf dem Wasser" |
+| `sbf-gueltigkeit-welcher-schein-wo` | `sportkuestenschifferschein-sks` | „Sportküstenschifferschein (SKS)" |
+
+Ziel-Slugs per Dateicheck verifiziert. Offen: iOS-Launch-Artikel (Waisen-Risiko
+sobald BlogTeaser rotiert), BlogTeaser-Slot, Single-Tag-Taxonomie.

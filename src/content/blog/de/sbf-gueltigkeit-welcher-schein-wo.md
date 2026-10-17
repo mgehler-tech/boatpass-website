@@ -103,6 +103,8 @@ Der deutsche SBF mit ICC ist **lebenslang gültig** – keine Verlängerung, kei
 
 Wenn du sowohl auf Küstengewässern als auch auf Binnengewässern fahren willst, brauchst du **beide Scheine**. Ein typisches Szenario: Du charterst im Sommerurlaub auf der Ostsee (SBF See) und fährst am Wochenende auf der Müritz (SBF Binnen).
 
+Wer darüber hinaus weiter vor der Küste unterwegs sein will, findet im [Sportküstenschifferschein (SKS)](/blog/sportkuestenschifferschein-sks/) den nächsten Aufbauschein.
+
 Die Kombiprüfung spart dabei rund 100 € an Prüfungsgebühren – und die 72 Basisfragen sind bei beiden Scheinen identisch, also lernst du sie nur einmal.
 
 ## Fazit
