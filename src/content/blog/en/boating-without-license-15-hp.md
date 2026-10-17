@@ -34,6 +34,8 @@ This covers the vast majority of German waters. Only **above 15 HP** does the Sp
 
 License-free does not mean rule-free: anyone operating a motorboat up to 15 HP must be **at least 16 years old**. For the license-required Sportbootführerschein with an engine (motor), the minimum age is **16** – this applies to both the SBF Binnen (inland) and SBF See (coastal). Only for the **sailing** endorsement (SBF Binnen under sail) is the minimum age **14**.
 
+What other age limits apply to children and teenagers – from riding along to taking the helm themselves – is covered in our guide to the [minimum age for children and teenagers at the helm](/en/blog/minimum-age-children-boat-germany/).
+
 ## The Most Important Exceptions
 
 The 15-HP rule sounds simple, but it has special cases that quickly become relevant in practice.

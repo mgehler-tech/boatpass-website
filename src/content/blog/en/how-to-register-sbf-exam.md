@@ -78,6 +78,8 @@ Exactly [which documents are required](/en/blog/boating-license-requirements/) d
 
 You can often take the exam shortly **before** reaching the minimum age – the license is then issued on your birthday.
 
+When children and teenagers may take the helm themselves – and when they can do so without supervision – is explained in our guide to the [minimum age for children and teenagers at the helm](/en/blog/minimum-age-children-boat-germany/).
+
 ## Theory and Practical: One Date or Two?
 
 The SBF exam consists of **theory** and **practical**. Often both take place on the same date or on consecutive days:
