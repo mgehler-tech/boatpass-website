@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { MIN_STORE_RATINGS, getBoatpassStoreRatingsForDisplay } from '../../src/data/apps';
 
 /**
  * Startseite Premium-Politur (Spec docs/superpowers/specs/2026-10-17-premium-polish-design.md).
@@ -94,5 +95,20 @@ test.describe('Header', () => {
     await page.locator('#mobile-menu .mobile-accordion-trigger', { hasText: 'Ratgeber' }).click();
     await expect(page.locator('#mobile-acc-guides-body a', { hasText: 'Blog' })).toBeVisible();
     await expect(page.locator('#mobile-menu .theme-choice[data-theme-set="dark"]')).toBeVisible();
+  });
+});
+
+test.describe('Footer', () => {
+  test('only stores with enough ratings are shown, no icons, theme toggle present', async ({ page }) => {
+    const shown = getBoatpassStoreRatingsForDisplay();
+    expect(shown.every(r => r.rating.ratings >= MIN_STORE_RATINGS)).toBe(true);
+    await page.goto('/');
+    await expect(page.locator('footer .footer-rating')).toHaveCount(shown.length);
+    await expect(page.locator('footer .footer-rating', { hasText: 'App Store' })).toHaveCount(0);
+    await expect(page.locator('footer .footer-links svg')).toHaveCount(0);
+    await expect(page.locator('footer .footer-col')).toHaveCount(3);
+    await expect(page.locator('footer .theme-toggle')).toBeVisible();
+    await expect(page.locator('footer')).not.toContainText('Entwickelt mit');
+    await expect(page.locator('#footer-badge-ios')).toBeVisible();
   });
 });

@@ -308,6 +308,22 @@ export function getBoatpassIosRating(): AppRating | null {
   return { score: app.iosRating, ratings: app.iosRatingCount };
 }
 
+/** Ab so vielen Bewertungen zeigt der Footer die Bewertung eines Stores einzeln.
+ *  Eine „5,00 aus 1 Bewertung" wirkt dünner als gar keine Angabe. */
+export const MIN_STORE_RATINGS = 10;
+export type StoreKey = 'ios' | 'play';
+
+/** Store-Bewertungen für die Anzeige (Footer): nur Stores mit genug Bewertungen, Reihenfolge ios, play. */
+export function getBoatpassStoreRatingsForDisplay(): { store: StoreKey; rating: AppRating }[] {
+  const all: { store: StoreKey; rating: AppRating | null }[] = [
+    { store: 'ios', rating: getBoatpassIosRating() },
+    { store: 'play', rating: getBoatpassRating() },
+  ];
+  return all.filter(
+    (r): r is { store: StoreKey; rating: AppRating } => r.rating !== null && r.rating.ratings >= MIN_STORE_RATINGS,
+  );
+}
+
 /** Beide Stores zusammengefasst: nach Anzahl gewichteter Mittelwert, Summe der Bewertungen. */
 function combineRatings(...ratings: (AppRating | null)[]): AppRating | null {
   const present = ratings.filter((r): r is AppRating => r !== null && r.ratings > 0);

@@ -237,6 +237,7 @@ export const de = {
     imprint: 'Impressum',
     terms: 'Nutzungsbedingungen',
     contact: 'Kontakt',
+    madeIn: 'Entwickelt in Deutschland',
   },
   // Hell/Dunkel-Umschalter (Footer, mobiles Menü)
   theme: {

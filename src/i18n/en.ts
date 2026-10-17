@@ -221,6 +221,7 @@ export const en: Translations = {
     imprint: 'Imprint',
     terms: 'Terms of Use',
     contact: 'Contact',
+    madeIn: 'Made in Germany',
   },
   theme: {
     label: 'Appearance',
