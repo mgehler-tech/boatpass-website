@@ -1,8 +1,8 @@
 ---
 // Lizenzen & Preise als Tarifliste. Fragenzahlen kommen aus i18n/pricing, Preise
 // je Store aus data/stores (PlatformPrice zeigt auf iPhone/iPad den App-Store-
-// Preis) – nichts ist hier hart kodiert (die 720 Bundle-Fragen sind die Summe
-// aus Binnen und See). Aufbau: das Modell (kostenlos → Vollzugang),
+// Preis) – nichts ist hier hart kodiert (Fragenzahlen der Pakete sind die
+// Summe ihrer Teile, Streichpreis und Ersparnis kommen je Store aus stores.ts). Aufbau: das Modell (kostenlos → Vollzugang),
 // dann eine Liste aller Angebote in zwei Gruppen, dann was jede Lizenz
 // enthält. Bewusst keine drei Karten mit hervorgehobener Mitte.
 import Icon from '../Icon.astro';
@@ -10,7 +10,7 @@ import SectionHead from './SectionHead.astro';
 import StoreCta from './StoreCta.astro';
 import PlatformPrice from '../PlatformPrice.astro';
 import { useTranslations } from '../../i18n/index';
-import { PLAY_STORE_URL, bundleSaving, formatPrice, priceNote, type ProductKey } from '../../data/stores';
+import { PLAY_STORE_URL, PRICES, bundleSaving, formatPrice, priceNote, type ProductKey } from '../../data/stores';
 
 interface Props {
   lang: 'de' | 'en';
@@ -22,12 +22,15 @@ const p = t.pricing;
 const h = t.home;
 const de = lang === 'de';
 const playStoreUrl = PLAY_STORE_URL;
-// Ersparnis des SBF-Pakets je Store (weicht um 1 Cent ab).
+// Pakete: Streichpreis (Summe der Einzelpreise) und Ersparnis je Store –
+// beides weicht zwischen Google Play und App Store ab.
 const saveLabel = de ? 'Spare' : 'Save';
-const bundleSave = {
-  android: formatPrice(bundleSaving('bundleSbf', ['sbfBinnen', 'sbfSee'], 'android'), lang),
-  ios: formatPrice(bundleSaving('bundleSbf', ['sbfBinnen', 'sbfSee'], 'ios'), lang),
-};
+const bundleInfo = (bundle: ProductKey, parts: ProductKey[]) =>
+  (['android', 'ios'] as const).map(platform => ({
+    cls: platform === 'android' ? 'pp-android' : 'pp-ios',
+    strike: formatPrice(parts.reduce((sum, k) => sum + (PRICES[k][platform] ?? 0), 0), lang),
+    save: formatPrice(bundleSaving(bundle, parts, platform), lang),
+  }));
 const finderUrl = de ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/';
 
 type Row = {
@@ -37,14 +40,15 @@ type Row = {
   questions: string;
   topics?: string;
   product: ProductKey;
-  strike?: string;
+  /** Nur bei Paketen: die enthaltenen Einzelprodukte. */
+  parts?: ProductKey[];
   badge?: string;
   href: string;
   action: string;
   external?: boolean;
 };
 
-const bundleQuestions = String(Number(p.catalog1Questions) + Number(p.catalog2Questions));
+const sum = (...counts: string[]) => String(counts.reduce((n, c) => n + Number(c), 0));
 
 const groups: { title: string; note?: string; rows: Row[] }[] = [
   {
@@ -52,7 +56,7 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     rows: [
       { name: p.catalog1Name, sub: p.catalog1Tagline, questions: p.catalog1Questions, topics: p.catalog1Themes, product: 'sbfBinnen', href: de ? '/sbf-binnen/' : '/en/sbf-inland/', action: p.detailsLink },
       { name: p.catalog2Name, sub: p.catalog2Desc, note: p.catalog2Highlight, questions: p.catalog2Questions, topics: p.catalog2Themes, product: 'sbfSee', href: de ? '/sbf-see/' : '/en/sbf-coastal/', action: p.detailsLink },
-      { name: h.bundleName, sub: p.bundleTagline, questions: bundleQuestions, product: 'bundleSbf', strike: p.bundleStrike, badge: p.bundleLabel, href: playStoreUrl, action: p.bundleChoose, external: true },
+      { name: h.bundleName, sub: p.bundleTagline, questions: sum(p.catalog1Questions, p.catalog2Questions), product: 'bundleSbf', parts: ['sbfBinnen', 'sbfSee'], badge: p.bundleLabel, href: playStoreUrl, action: p.bundleChoose, external: true },
     ],
   },
   {
@@ -62,6 +66,7 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
       { name: 'SRC', sub: de ? 'Seefunk (Küste)' : 'Sea radio (coastal)', questions: p.srcQuestions, topics: p.srcThemes, product: 'src', href: de ? '/src/' : '/en/src/', action: p.funkMore },
       { name: 'UBI', sub: de ? 'Binnenfunk' : 'Inland radio', questions: p.catalog3Questions, topics: p.catalog3Themes, product: 'ubi', href: de ? '/ubi/' : '/en/ubi/', action: p.funkMore },
       { name: 'LRC', sub: de ? 'Seefunk (weltweit)' : 'Sea radio (worldwide)', questions: p.lrcQuestions, topics: p.lrcThemes, product: 'lrc', href: de ? '/lrc/' : '/en/lrc/', action: p.funkMore },
+      { name: h.funkBundleName, sub: h.funkBundleTagline, questions: sum(p.catalog3Questions, p.srcQuestions, p.lrcQuestions), product: 'bundleFunk', parts: ['ubi', 'src', 'lrc'], badge: p.bundleLabel, href: playStoreUrl, action: p.bundleChoose, external: true },
     ],
   },
 ];
@@ -119,9 +124,9 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
               <span class="hp-price">
                 <span class="hp-price-num h-num"><PlatformPrice product={row.product} lang={lang} /></span>
                 <span class="hp-price-sub">
-                  {row.strike ? (
-                    <Fragment><s class="h-num">{row.strike}</s> · <span class="pp-android">{`${saveLabel} ${bundleSave.android}`}</span><span class="pp-ios">{`${saveLabel} ${bundleSave.ios}`}</span></Fragment>
-                  ) : h.once}
+                  {row.parts ? bundleInfo(row.product, row.parts).map(b => (
+                    <span class={b.cls}><s class="h-num">{b.strike}</s>{` · ${saveLabel} ${b.save}`}</span>
+                  )) : h.once}
                 </span>
               </span>
               {row.external ? (
@@ -245,8 +250,8 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
   .hp-rows { margin: 0; padding: 0; list-style: none; }
   .hp-price-note {
     max-width: 80ch;
-    margin: 24px 0 0;
-    font-size: 13.5px;
+    margin: 20px 0 0;
+    font-size: 12.5px;
     line-height: 1.6;
     color: var(--h-muted);
   }

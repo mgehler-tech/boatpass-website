@@ -47,7 +47,7 @@ export const PRICES: Record<ProductKey, Record<Platform, number | null>> = {
   src: { android: 799, ios: 899 },
   lrc: { android: 999, ios: 799 },
   bundleSbf: { android: 1698, ios: 1699 },
-  bundleFunk: { android: null, ios: 1799 },
+  bundleFunk: { android: 1797, ios: 1799 },
 };
 
 export function formatPrice(cents: number, lang: Lang): string {
@@ -106,26 +106,19 @@ export function bundleSaving(bundle: ProductKey, parts: ProductKey[], platform: 
 }
 
 /**
- * Preishinweis (PAngV) für die Geräte-Variante `platform`: welche Preise gelten
- * und was im jeweils anderen Store anders kostet, inkl. iOS-Funk-Paket.
+ * Kurzer Preishinweis für die Geräte-Variante `platform`: in welchem Store die
+ * angezeigten Preise gelten und dass der andere Store bei einzelnen Produkten
+ * leicht abweicht. Die Preise selbst zeigt PlatformPrice je Gerät passend an.
  */
 export function priceNote(platform: Platform, lang: Lang): string {
-  const de = lang === 'de';
-  const diffKeys = (['ubi', 'src', 'lrc', 'bundleSbf'] as ProductKey[]).filter((k) => !samePrice(k));
-  const diffNames: Partial<Record<ProductKey, string>> = {
-    ubi: 'UBI', src: 'SRC', lrc: 'LRC',
-    bundleSbf: de ? 'Paket Binnen + See' : 'Inland + Coastal bundle',
-  };
-  const listFor = (p: Platform) => diffKeys.map((k) => `${diffNames[k]} ${storePrice(k, p, lang)}`).join(', ');
-  const funkBundle = storePrice('bundleFunk', 'ios', lang);
-  if (platform === 'android') {
-    return de
-      ? `Preise inkl. MwSt. bei Google Play (Android). Im App Store (iPhone & iPad) gelten teils andere Preise: ${listFor('ios')}; zusätzlich gibt es dort das Funk-Paket (UBI + SRC + LRC) für ${funkBundle}. Stand: ${PRICES_AS_OF.de}.`
-      : `Prices incl. VAT on Google Play (Android). Some prices differ on the App Store (iPhone & iPad): ${listFor('ios')}; there is also a radio bundle (UBI + SRC + LRC) for ${funkBundle}. As of ${PRICES_AS_OF.en}.`;
+  if (lang === 'de') {
+    return platform === 'android'
+      ? `Preise inkl. MwSt. bei Google Play. Im App Store weichen einzelne Preise leicht ab. Stand: ${PRICES_AS_OF.de}.`
+      : `Preise inkl. MwSt. im App Store. Bei Google Play weichen einzelne Preise leicht ab. Stand: ${PRICES_AS_OF.de}.`;
   }
-  return de
-    ? `Preise inkl. MwSt. im App Store (iPhone & iPad), dazu das Funk-Paket (UBI + SRC + LRC) für ${funkBundle}. Bei Google Play (Android) gelten teils andere Preise: ${listFor('android')}. Stand: ${PRICES_AS_OF.de}.`
-    : `Prices incl. VAT on the App Store (iPhone & iPad), plus a radio bundle (UBI + SRC + LRC) for ${funkBundle}. Some prices differ on Google Play (Android): ${listFor('android')}. As of ${PRICES_AS_OF.en}.`;
+  return platform === 'android'
+    ? `Prices incl. VAT on Google Play. Some prices differ slightly on the App Store. As of ${PRICES_AS_OF.en}.`
+    : `Prices incl. VAT on the App Store. Some prices differ slightly on Google Play. As of ${PRICES_AS_OF.en}.`;
 }
 
 /** schema.org-Offers je Store, z. B. für Product/Course-Markup. */
