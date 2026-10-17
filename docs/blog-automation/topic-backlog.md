@@ -59,4 +59,9 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [ ] Die ersten eigenen Fahrten nach dem SBF – typische Anfängerfehler in der Bootspraxis vermeiden (Themen-Lücke: Bootspraxis für Einsteiger nach Scheinerwerb, ergänzt Boots-Übernahmecheck und Prüfungsvorbereitung-Themen)
 - [ ] Sprechfunk-Verkehr in der Praxis – Beispieldialoge für Anruf, Antwort und Verbindungsabbau (Themen-Lücke: praktische Funkdisziplin/Phraseologie, ergänzt das offene Thema "Seefunk und Sprechfunk – Grundlagen")
 
+- [ ] SBF-Praxisprüfung Schritt für Schritt – Ablauf, Pflichtmanöver und Bewertung (Keywords: "sbf praxisprüfung", "sportbootführerschein praktische prüfung manöver"; ca. 500–900 Suchen/Monat, grobe Schätzung; Lücke: Bestand hat nur Einzelmanöver-Artikel, keinen Prüfungsablauf-Überblick; stärkt Pillar /sbf-binnen/)
+- [ ] Funkprüfung SRC und UBI – Ablauf, Gebühren und praktische Prüfung mit Beispielfunkspruch (Keywords: "src prüfung ablauf", "funkzeugnis prüfung kosten", "ubi prüfung"; ca. 300–600 Suchen/Monat, grobe Schätzung; Lücke: ubi-vs-src-funkschein erklärt nur die Wahl, nicht die Prüfung; Gebühren vor Veröffentlichung bei Prüfungsausschuss verifizieren)
+- [ ] Radeffekt, Drehkreis und Bremsweg – wie sich ein Motorboot wirklich manövriert (Keywords: "radeffekt boot", "propellerwirkung motorboot", "boot manövrieren lernen"; ca. 200–400 Suchen/Monat, grobe Schätzung; Lücke: im Bestand nicht behandelt, Kernwissen der Bootspraxis für Einsteiger und für Hafenmanöver)
+- [ ] Prüfungsangst und Lernplan für die letzte Woche vor der SBF-Prüfung (Keywords: "sbf prüfungsangst", "sbf prüfung letzte woche lernen"; ca. 100–250 Suchen/Monat, grobe Schätzung; Lücke: Bestand deckt Vorbereitungsdauer und Fehler ab, nicht die letzte Phase; gute App-Anbindung)
+
 ## Erledigt
