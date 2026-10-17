@@ -1,0 +1,49 @@
+---
+// Haupt-CTA der Startseite. Im Markup ein generischer Google-Play-Link (ohne
+// data-store), den die Geräteweiche im BaseLayout umschreibt: iPhone/iPad →
+// App Store, Desktop → Auswahlseite /app/ mit beiden Badges und QR-Code.
+// Beschriftung und Symbol folgen html[data-platform], damit der Button sagt,
+// wohin er führt. Ohne JS bleibt die neutrale Variante „Kostenlos laden".
+import Icon from '../Icon.astro';
+import { useTranslations } from '../../i18n/index';
+import { PLAY_STORE_URL } from '../../data/stores';
+
+interface Props {
+  lang: 'de' | 'en';
+  /** data-cta-position für die Plausible-Store-Events */
+  position: string;
+  /** Feste Beschriftung auf allen Geräten (statt Store-Name je Gerät). */
+  label?: string;
+  class?: string;
+  /** Basis für stabile IDs (Tests): ergibt `${id}-play`. */
+  id?: string;
+}
+
+const { lang, position, label, class: className, id } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<a
+  id={id ? `${id}-play` : undefined}
+  href={PLAY_STORE_URL}
+  target="_blank"
+  rel="noopener noreferrer"
+  class:list={['h-btn', className]}
+  data-cta-position={position}
+>
+  <span class="h-btn-mark">
+    <img class="h-on-android" src="/images/google-play-icon.png" alt="" width="20" height="20" />
+    <Icon name="phoneDevice" size={20} strokeWidth={1.75} class="h-off-android" />
+  </span>
+  {label ? (
+    <span>{label}</span>
+  ) : (
+    <span>
+      <span class="h-on-android">{t.home.ctaPlay}</span>
+      <span class="h-on-ios">{t.hero.ctaIos}</span>
+      <span class="h-on-other">{t.hero.cta}</span>
+    </span>
+  )}
+  <Icon name="chevronRight" size={18} strokeWidth={2.25} class="h-btn-arrow" />
+  <span class="sr-only h-off-desktop">{t.home.newTab}</span>
+</a>

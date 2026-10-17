@@ -1,12 +1,11 @@
 ---
 import { useTranslations } from '../i18n/index';
-
-type LicenseKey = 'binnen' | 'see' | 'src' | 'lrc' | 'ubi';
+import { catalogRows, catalogPageStand, type CatalogKey } from '../data/catalogs';
 
 interface Props {
   lang: 'de' | 'en';
   // Wenn gesetzt: kompakter Einzel-Block für genau eine Lizenz (für Lizenz-Seiten).
-  only?: LicenseKey;
+  only?: CatalogKey;
   // Startseite: Tabelle hinter einem <details> verstecken. Die Aussage steht
   // dort ohnehin im Text darüber – die fünf Katalogzeilen sind Beleg zum
   // Nachschlagen, nicht Lesestoff. Auf den Lizenzseiten bleibt alles offen,
@@ -22,24 +21,10 @@ interface Props {
 const { lang, only, collapsible = false, embedded = false } = Astro.props;
 const t = useTranslations(lang);
 
-// "Stand dieser Übersicht" wird beim Build aus dem aktuellen Datum gesetzt –
-// so ist die Angabe bei jedem Deploy ehrlich aktuell.
-const now = new Date();
-const monthsDe = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
-const monthsEn = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const pageStand = lang === 'de'
-  ? `${monthsDe[now.getMonth()]} ${now.getFullYear()}`
-  : `${monthsEn[now.getMonth()]} ${now.getFullYear()}`;
-
-// Lizenz-Namen, Stände und ELWIS-Links sind amtlich verifiziert (Stand Juni 2026).
-// Verlinkt sind die kanonischen ELWIS-Seiten, die stets die gültige Fassung zeigen.
-const rows: { key: LicenseKey; license: string; catalog: string; stand: string; next?: string; url: string }[] = [
-  { key: 'binnen', license: 'SBF Binnen', catalog: t.catalogSources.binnenCat, stand: t.catalogSources.binnenStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html' },
-  { key: 'see', license: 'SBF See', catalog: t.catalogSources.seeCat, stand: t.catalogSources.seeStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-neu-node.html' },
-  { key: 'src', license: 'SRC', catalog: t.catalogSources.srcCat, stand: t.catalogSources.srcStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-SRC-2018.html' },
-  { key: 'lrc', license: 'LRC', catalog: t.catalogSources.lrcCat, stand: t.catalogSources.lrcStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-LRC-2018.html' },
-  { key: 'ubi', license: 'UBI', catalog: t.catalogSources.ubiCat, stand: t.catalogSources.ubiStand, next: t.catalogSources.ubiNext, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html' },
-];
+// Kataloge und "Stand dieser Übersicht" kommen aus data/catalogs.ts –
+// dieselbe Quelle wie der Katalog-Abschnitt der Startseite.
+const pageStand = catalogPageStand(lang);
+const rows = catalogRows(lang);
 
 const single = only ? rows.find(r => r.key === only) : null;
 

@@ -20,12 +20,14 @@ const { defaultBrowserType, ...iPhone13 } = devices['iPhone 13'];
 test.describe('Mobile Homepage → App Store CTA', () => {
   test.use({ ...iPhone13 });
 
-  test('hero CTA leads to the App Store, badges link to both stores', async ({ page }) => {
+  test('hero and closing CTAs lead to the App Store, footer badges link to both stores', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('#hero-cta-play')).toHaveAttribute('href', APP_STORE_URL);
+    await expect(page.locator('#hero-cta-play')).toContainText('Kostenlos im App Store');
+    await expect(page.locator('#final-cta-play')).toHaveAttribute('href', APP_STORE_URL);
 
-    await expect(page.locator('#hero-badge-ios')).toHaveAttribute('href', APP_STORE_URL);
-    await expect(page.locator('#hero-badge-play')).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator('#footer-badge-ios')).toHaveAttribute('href', APP_STORE_URL);
+    await expect(page.locator('#footer-badge-play')).toHaveAttribute('href', PLAY_STORE_URL);
   });
 });
 

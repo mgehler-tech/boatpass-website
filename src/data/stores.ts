@@ -47,7 +47,7 @@ export const PRICES: Record<ProductKey, Record<Platform, number | null>> = {
   src: { android: 799, ios: 899 },
   lrc: { android: 999, ios: 799 },
   bundleSbf: { android: 1698, ios: 1699 },
-  bundleFunk: { android: null, ios: 1799 },
+  bundleFunk: { android: 1797, ios: 1799 },
 };
 
 export function formatPrice(cents: number, lang: Lang): string {
@@ -103,6 +103,22 @@ export const ALL_PRODUCTS = Object.keys(PRICES) as ProductKey[];
 export function bundleSaving(bundle: ProductKey, parts: ProductKey[], platform: Platform): number {
   const total = parts.reduce((sum, k) => sum + (PRICES[k][platform] ?? 0), 0);
   return total - (PRICES[bundle][platform] ?? total);
+}
+
+/**
+ * Kurzer Preishinweis für die Geräte-Variante `platform`: in welchem Store die
+ * angezeigten Preise gelten und dass der andere Store bei einzelnen Produkten
+ * leicht abweicht. Die Preise selbst zeigt PlatformPrice je Gerät passend an.
+ */
+export function priceNote(platform: Platform, lang: Lang): string {
+  if (lang === 'de') {
+    return platform === 'android'
+      ? `Preise inkl. MwSt. bei Google Play. Im App Store weichen einzelne Preise leicht ab. Stand: ${PRICES_AS_OF.de}.`
+      : `Preise inkl. MwSt. im App Store. Bei Google Play weichen einzelne Preise leicht ab. Stand: ${PRICES_AS_OF.de}.`;
+  }
+  return platform === 'android'
+    ? `Prices incl. VAT on Google Play. Some prices differ slightly on the App Store. As of ${PRICES_AS_OF.en}.`
+    : `Prices incl. VAT on the App Store. Some prices differ slightly on Google Play. As of ${PRICES_AS_OF.en}.`;
 }
 
 /** schema.org-Offers je Store, z. B. für Product/Course-Markup. */

@@ -15,16 +15,21 @@ const { defaultBrowserType: _android, ...pixel7 } = devices['Pixel 7'];
  * data-store and are never rewritten. Prices that differ between the stores
  * (PlatformPrice.astro) follow the same html[data-platform] switch.
  *
- * Covered here: the sitewide bottom banner (CtaBanner), the blog
+ * Covered here: the homepage CTA (home/StoreCta – label follows the device),
+ * the sitewide bottom banner (CtaBanner, not on the homepage), the blog
  * mid-article CTA (BlogInlineCta), the store chooser and platform prices.
  */
 
 test.describe('iPhone visitors are sent to the App Store', () => {
   test.use({ ...iPhone13 });
 
-  test('bottom banner, blog CTA and comparison badges lead to the App Store', async ({ page }) => {
+  test('homepage CTA, bottom banner, blog CTA and comparison badges lead to the App Store', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('html')).toHaveAttribute('data-platform', 'ios');
+    await expect(page.locator('#hero-cta-play')).toHaveAttribute('href', APP_STORE_URL);
+    await expect(page.locator('#hero-cta-play')).toContainText('Kostenlos im App Store');
+
+    await page.goto('/faq/');
     await expect(page.locator('#cta-banner-play')).toHaveAttribute('href', APP_STORE_URL);
 
     await page.goto('/blog/wichtigste-knoten-sbf/');
@@ -69,16 +74,21 @@ test.describe('iPhone visitors are sent to the App Store', () => {
 test.describe('Android visitors are sent to Google Play', () => {
   test.use({ ...pixel7 });
 
-  test('bottom banner and blog CTA lead to Google Play, Play badge comes first', async ({ page }) => {
+  test('homepage CTA, bottom banner and blog CTA lead to Google Play, Play badge comes first', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('html')).toHaveAttribute('data-platform', 'android');
-    await expect(page.locator('#cta-banner-play')).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator('#hero-cta-play')).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator('#hero-cta-play')).toContainText('Kostenlos bei Google Play');
 
-    const playBadge = page.locator('#hero-badge-play');
-    const iosBadge = page.locator('#hero-badge-ios');
+    const playBadge = page.locator('#footer-badge-play');
+    const iosBadge = page.locator('#footer-badge-ios');
+    await playBadge.scrollIntoViewIfNeeded();
     const playBox = await playBadge.boundingBox();
     const iosBox = await iosBadge.boundingBox();
     expect(playBox && iosBox && (playBox.y < iosBox.y || playBox.x < iosBox.x)).toBeTruthy();
+
+    await page.goto('/faq/');
+    await expect(page.locator('#cta-banner-play')).toHaveAttribute('href', PLAY_STORE_URL);
 
     await page.goto('/blog/wichtigste-knoten-sbf/');
     await expect(page.locator('#blog-inline-cta-play')).toHaveAttribute('href', PLAY_STORE_URL);
@@ -112,9 +122,13 @@ test.describe('Android visitors are sent to Google Play', () => {
 });
 
 test.describe('Desktop visitors are sent to the store chooser', () => {
-  test('bottom banner and blog CTA lead to /app/', async ({ page }) => {
+  test('homepage CTA, bottom banner and blog CTA lead to /app/', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('html')).toHaveAttribute('data-platform', 'desktop');
+    await expect(page.locator('#hero-cta-play')).toHaveAttribute('href', '/app/');
+    await expect(page.locator('#hero-cta-play')).toContainText('Kostenlos laden');
+
+    await page.goto('/faq/');
     await expect(page.locator('#cta-banner-play')).toHaveAttribute('href', '/app/');
 
     await page.goto('/blog/wichtigste-knoten-sbf/');

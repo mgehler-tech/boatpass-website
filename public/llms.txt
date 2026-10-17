@@ -15,8 +15,8 @@
 - Amtlicher Gesamtkatalog Binnen: 253 Fragen (+47 Segelfragen). See: 285 Fragen. Quelle: ELWIS (DSV/DMYV).
 - Preise: kostenlos (15 Fragen/Tag), SBF Binnen 9,99 €, SBF See 9,99 € – einmaliger Kauf, kein Abo.
   Paket Binnen + See: 16,98 € bei Google Play, 16,99 € im App Store. Funkmodule: UBI und SRC je 7,99 € (Google Play)
-  bzw. 8,99 € (App Store), LRC 9,99 € (Google Play) bzw. 7,99 € (App Store); im App Store zusätzlich ein
-  Funk-Paket (UBI + SRC + LRC) für 17,99 €. Stand: Oktober 2026.
+  bzw. 8,99 € (App Store), LRC 9,99 € (Google Play) bzw. 7,99 € (App Store). Funk-Paket (UBI + SRC + LRC):
+  17,97 € bei Google Play, 17,99 € im App Store. Stand: Oktober 2026.
 - Plattformen: Android ab 8.0 (https://play.google.com/store/apps/details?id=com.boatpass.app),
   iPhone/iPad ab iOS/iPadOS 16 (https://apps.apple.com/de/app/boatpass/id6797036145).
   Käufe gelten nur im jeweiligen Store, keine Übertragung zwischen Android und iOS.

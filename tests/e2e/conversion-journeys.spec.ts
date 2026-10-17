@@ -15,13 +15,44 @@ import { APP_STORE_URL, PLAY_STORE_URL } from '../../src/data/stores';
 const CHOOSER = '/app/';
 
 test.describe('Homepage → app CTA', () => {
-  test('hero CTA leads to the store chooser, badges link to both stores', async ({ page }) => {
+  test('hero and closing CTAs lead to the store chooser, footer badges link to both stores', async ({ page }) => {
     await page.goto('/');
     const heroCta = page.locator('#hero-cta-play');
     await expect(heroCta).toHaveAttribute('href', CHOOSER);
+    await expect(heroCta).toContainText('Kostenlos laden');
+    await expect(page.locator('#final-cta-play')).toHaveAttribute('href', CHOOSER);
 
-    await expect(page.locator('#hero-badge-ios')).toHaveAttribute('href', APP_STORE_URL);
-    await expect(page.locator('#hero-badge-play')).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator('#footer-badge-ios')).toHaveAttribute('href', APP_STORE_URL);
+    await expect(page.locator('#footer-badge-play')).toHaveAttribute('href', PLAY_STORE_URL);
+  });
+});
+
+test.describe('Homepage quiz → Result → app CTA', () => {
+  test('all ten app questions can be answered and end in a result with a working CTA', async ({ page }) => {
+    await page.goto('/');
+    const quiz = page.locator('[data-quiz]');
+    await quiz.scrollIntoViewIfNeeded();
+    await expect(quiz.locator('[data-item]')).toHaveCount(10);
+
+    for (let i = 0; i < 10; i++) {
+      const item = quiz.locator(`[data-item="${i}"]`);
+      await expect(item).toBeVisible();
+      await expect(quiz.locator('[data-counter-text]')).toHaveText(`Frage ${i + 1} von 10`);
+      const correct = Number(await item.getAttribute('data-correct'));
+      await item.locator('[data-answer]').nth(correct).click();
+      await expect(item.locator('[data-verdict]')).toHaveText('Richtig!');
+      await expect(item.locator('.hq-mnemo')).toBeVisible();
+      await item.locator('[data-next]').click();
+    }
+
+    const result = quiz.locator('[data-result]');
+    await expect(result).toBeVisible();
+    await expect(result.locator('[data-result-score]')).toHaveText('10 von 10 richtig');
+    await expect(result.locator(`a[href="${CHOOSER}"]`)).toBeVisible();
+
+    await result.locator('[data-restart]').click();
+    await expect(quiz.locator('[data-item="0"]')).toBeVisible();
+    await expect(quiz.locator('.hq-seg.is-right, .hq-seg.is-wrong')).toHaveCount(0);
   });
 });
 

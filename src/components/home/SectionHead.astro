@@ -1,0 +1,20 @@
+---
+// Abschnittskopf: Titel und Einleitung. Bewusst ohne Nummer, Linie oder
+// Eyebrow darüber – der Titel trägt den Abschnitt allein.
+interface Props {
+  title: string;
+  lede?: string;
+  id: string;
+  /** 'split': Titel links, Einleitung rechts unten (ab 1024px) */
+  layout?: 'split' | 'stack';
+  class?: string;
+}
+
+const { title, lede, id, layout = 'stack', class: className } = Astro.props;
+---
+
+<header class:list={['hs', layout === 'split' && 'hs--split', className]}>
+  <h2 class="hs-title" id={id} data-reveal>{title}</h2>
+  {lede && <p class="hs-lede" data-reveal>{lede}</p>}
+  <slot />
+</header>

@@ -87,7 +87,7 @@ const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showC
 
     <!-- Store-Badges + Bewertungen je Store -->
     <div class="footer-store">
-      <StoreBadges lang={lang} height={40} position="footer" />
+      <StoreBadges lang={lang} height={40} position="footer" id="footer-badge" />
       {storeRatings.map((r) => (
         <a href={r.href} data-store={r.store} target="_blank" rel="noopener noreferrer" class="footer-rating" aria-label={`${r.score} ${lang === 'de' ? 'von 5' : 'out of 5'} · ${r.count}`}>
           <span class="footer-rating-top">
