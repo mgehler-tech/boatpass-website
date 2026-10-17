@@ -6,7 +6,6 @@ import HomeJourney from '../components/home/HomeJourney.astro';
 import HomeReviews from '../components/home/HomeReviews.astro';
 import HomeFounder from '../components/home/HomeFounder.astro';
 import HomePricing from '../components/home/HomePricing.astro';
-import HomeCatalogs from '../components/home/HomeCatalogs.astro';
 import HomeGuide from '../components/home/HomeGuide.astro';
 import HomeFinalCta from '../components/home/HomeFinalCta.astro';
 import { getBoatpassCombinedRating } from '../data/apps';
@@ -67,8 +66,8 @@ const faqSchema = {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <HomeBoot />
   <!-- Seitenfluss als Route: Ablegen (Hero) → vier Etappen (Lernweg) → Vertrauen
-       (Rezensionen, Gründer) → Lizenz & Preis → Nachprüfen (amtliche Kataloge)
-       → Fragen & Ratgeber → Hafen (Download). Der Schein-Finder hängt direkt
+       (Rezensionen, Gründer) → Lizenz & Preis → Fragen & Ratgeber
+       → Hafen (Download). Der Schein-Finder hängt direkt
        an der Preisauswahl, wo die Frage „welcher Schein?" entsteht. -->
   <div class="home">
     <HomeHero lang="de" />
@@ -76,7 +75,6 @@ const faqSchema = {
     <HomeReviews />
     <HomeFounder lang="de" />
     <HomePricing lang="de" />
-    <HomeCatalogs lang="de" />
     <HomeGuide lang="de" faqs={faqs} />
     <HomeFinalCta lang="de" />
   </div>

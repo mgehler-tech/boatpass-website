@@ -268,7 +268,6 @@ export const de = {
     newTab: '(öffnet in neuem Tab)',
     heroData: 'Amtliche Fragenkataloge 2026',
     heroFacts: ['Kein Account nötig', '15 Fragen täglich gratis', 'Einmalkauf statt Abo', 'Für iPhone, iPad & Android'],
-    heroFigure: 'Abb. 1 — Startbildschirm der App (Android)',
     ratingOutOf: 'von 5 Sternen',
     ratingSource: 'Bewertungen · Google Play & App Store',
     ratingSourcePlay: 'Bewertungen bei Google Play',

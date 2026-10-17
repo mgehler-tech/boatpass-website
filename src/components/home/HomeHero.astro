@@ -90,7 +90,7 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
         </ul>
       </div>
 
-      <figure class="hh-visual">
+      <div class="hh-visual">
         <div class="h-stage hh-stage">
           <div class="hh-phone-wrap">
             <div class="h-phone hh-phone" data-tilt>
@@ -108,8 +108,7 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
             </div>
           </div>
         </div>
-        <figcaption class="hh-caption">{h.heroFigure}</figcaption>
-      </figure>
+      </div>
     </div>
   </div>
 </section>
@@ -308,12 +307,6 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
     perspective: 1400px;
   }
   .hh-phone { --pw: 230px; transform-style: preserve-3d; }
-  .hh-caption {
-    margin-top: 10px;
-    font-family: var(--h-sans);
-    font-size: 12.5px;
-    color: var(--h-muted);
-  }
 
   /* Desktop: Handy mittig auf der Fläche, in voller Höhe sichtbar. */
   @media (min-width: 1024px) {

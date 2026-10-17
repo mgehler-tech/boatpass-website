@@ -1,6 +1,6 @@
 /**
- * Amtliche Fragenkataloge je Lizenz – eine Quelle für die Startseite
- * (HomeCatalogs) und die Lizenzseiten (CatalogSources).
+ * Amtliche Fragenkataloge je Lizenz – eine Quelle für die Lizenzseiten
+ * (CatalogSources).
  *
  * Lizenz-Namen, Stände und ELWIS-Links sind amtlich verifiziert (Stand Juni 2026).
  * Verlinkt sind die kanonischen ELWIS-Seiten, die stets die gültige Fassung zeigen.

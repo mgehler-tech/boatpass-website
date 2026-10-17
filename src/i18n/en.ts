@@ -252,7 +252,6 @@ export const en: Translations = {
     newTab: '(opens in a new tab)',
     heroData: 'Official question catalogues 2026',
     heroFacts: ['No account needed', '15 free questions a day', 'One-off purchase, no subscription', 'For iPhone, iPad & Android'],
-    heroFigure: 'Fig. 1 — The app’s home screen (Android)',
     ratingOutOf: 'out of 5 stars',
     ratingSource: 'ratings · Google Play & App Store',
     ratingSourcePlay: 'ratings on Google Play',
