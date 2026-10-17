@@ -197,11 +197,11 @@ function initParallax() {
   if (inset) gsap.fromTo(inset, { yPercent: 18 }, { yPercent: -12, ease: 'none', scrollTrigger: { ...st } });
 }
 
-/* ── Lenis (nur ab 768px: darunter gibt es das mobile Menü mit eigenem
+/* ── Lenis (nur ab 1024px: darunter gibt es das mobile Menü mit eigenem
    Scrollbereich, und Touch scrollt ohnehin nativ) ───────────────────── */
 function initSmoothScroll() {
   const mm = gsap.matchMedia();
-  mm.add('(min-width: 768px)', () => {
+  mm.add('(min-width: 1024px)', () => {
     const instance = new Lenis({ lerp: 0.11, allowNestedScroll: true });
     instance.on('scroll', ScrollTrigger.update);
     const tick = (time: number) => instance.raf(time * 1000);
