@@ -25,12 +25,8 @@
 }
 
 /* ── Layout ─────────────────────────────────────────────────────────── */
-.h-container {
-  width: 100%;
-  max-width: var(--h-max);
-  margin-inline: auto;
-  padding-inline: var(--h-gutter);
-}
+/* .h-container und die .h-btn-Familie liegen seitenweit in brand.css
+   (Header und Footer nutzen sie auf jeder Seite). */
 
 /* Bewusst unterschiedliche Abstände je Gewicht des Abschnitts
    (Modifier in den Komponenten), nicht überall dieselben 120px. */
@@ -86,38 +82,7 @@
   .hs--split .hs-lede { margin: 0; justify-self: end; }
 }
 
-/* ── Buttons & Links ────────────────────────────────────────────────── */
-.h-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 56px;
-  padding: 0 22px 0 10px;
-  border-radius: var(--h-r-pill);
-  background: var(--h-btn);
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.2s ease, transform 0.35s var(--h-ease);
-}
-.h-btn:hover { background: var(--h-btn-hover); }
-.h-btn:active { transform: translateY(1px); }
-.h-btn:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 3px; }
-.h-btn-mark {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #fff;
-  flex-shrink: 0;
-}
-.h-btn-mark img { width: 20px; height: 20px; }
-.h-btn-arrow { transition: transform 0.35s var(--h-ease); }
-.h-btn:hover .h-btn-arrow { transform: translateX(4px); }
-
+/* ── Buttons & Links (.h-btn selbst: brand.css) ─────────────────────── */
 
 .h-deep .h-btn:focus-visible,
 .h-deep a:focus-visible,

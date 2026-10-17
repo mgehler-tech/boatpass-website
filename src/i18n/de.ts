@@ -9,6 +9,10 @@ export const de = {
     about: 'Über uns',
     contact: 'Kontakt',
     getApp: 'App laden',
+    // Dritte Gruppe im Ratgeber-Menü (Blog, FAQ)
+    readGroup: 'Lesen & Fragen',
+    // aria-label des Sprachlinks im Header
+    switchLang: 'Zur englischen Version',
   },
   hero: {
     // Die H1 nennt den Hauptsuchbegriff und bleibt konstant. Vorher tauschte

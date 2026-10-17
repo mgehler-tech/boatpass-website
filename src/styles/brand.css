@@ -86,3 +86,54 @@ html.dark {
    h-js setzt das Inline-Skript im BaseLayout vor dem ersten Paint. */
 .h-js-only { display: none; }
 .h-js .h-js-only { display: block; }
+
+/* ── Layout ─────────────────────────────────────────────────────────── */
+.h-container {
+  width: 100%;
+  max-width: var(--h-max);
+  margin-inline: auto;
+  padding-inline: var(--h-gutter);
+}
+
+/* ── Pillen-Button (Hero, Preise, Header, Footer-Menü) ─────────────── */
+.h-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 0 22px 0 10px;
+  border-radius: var(--h-r-pill);
+  background: var(--h-btn);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.35s var(--h-ease);
+}
+.h-btn:hover { background: var(--h-btn-hover); }
+.h-btn:active { transform: translateY(1px); }
+.h-btn:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 3px; }
+.h-btn-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+}
+.h-btn-mark img { width: 20px; height: 20px; }
+.h-btn-arrow { transition: transform 0.35s var(--h-ease); }
+.h-btn:hover .h-btn-arrow { transform: translateX(4px); }
+/* Kompakte Variante ohne Icon-Kreis (Header, mobiles Menü). */
+.h-btn--sm {
+  min-height: 40px;
+  padding: 0 14px 0 16px;
+  gap: 6px;
+  font-size: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .h-btn, .h-btn-arrow { transition: none; }
+}

@@ -27,9 +27,11 @@ interface Props {
   /** Override für Astro.url.pathname, s. Header.astro. Nötig für Seiten wie 404.astro,
    * die unter keiner echten Route erreichbar sind. */
   currentPath?: string;
+  /** Startseite: Kopfzeile oben transparent, nach 24 px Scrollweg Fläche (s. Header.astro). */
+  heroHeader?: boolean;
 }
 
-const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, showCta = true, hasAlternate = true, altUrl, noindex = false, appRating, currentPath } = Astro.props;
+const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, showCta = true, hasAlternate = true, altUrl, noindex = false, appRating, currentPath, heroHeader = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -116,7 +118,8 @@ const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, sh
     <a href="#main-content" class="skip-link">
       {lang === 'de' ? 'Zum Hauptinhalt springen' : 'Skip to main content'}
     </a>
-    <Header lang={lang} altUrl={altUrl} hasAlternate={hasAlternate} currentPath={currentPath} />
+    {heroHeader && <div class="header-sentinel" aria-hidden="true" style="position:absolute;top:0;left:0;width:1px;height:24px;pointer-events:none;"></div>}
+    <Header lang={lang} altUrl={altUrl} hasAlternate={hasAlternate} currentPath={currentPath} transparentAtTop={heroHeader} />
     <main id="main-content">
       <slot />
     </main>

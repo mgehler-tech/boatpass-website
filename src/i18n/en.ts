@@ -8,6 +8,8 @@ export const en: Translations = {
     about: 'About',
     contact: 'Contact',
     getApp: 'Get App',
+    readGroup: 'Read & ask',
+    switchLang: 'Switch to German',
   },
   hero: {
     headline1: 'The fastest way',
