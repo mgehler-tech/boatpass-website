@@ -131,3 +131,18 @@ test.describe('Hero reduction', () => {
     expect(await page.evaluate(() => (document.body.innerText.match(/4\.96/g) ?? []).length)).toBe(2);
   });
 });
+
+test.describe('Hero photo pipeline', () => {
+  test('renders a picture with art direction and avif/webp sources', async ({ page }) => {
+    await page.goto('/');
+    const pic = page.locator('.hh-panel picture.hh-photo');
+    await expect(pic).toHaveCount(1);
+    await expect(pic.locator('source[media="(min-width: 1024px)"][type="image/avif"]')).toHaveCount(1);
+    await expect(pic.locator('source:not([media])[type="image/webp"]')).toHaveCount(1);
+    const img = pic.locator('img');
+    await expect(img).toHaveAttribute('fetchpriority', 'high');
+    await expect(img).toHaveAttribute('alt', '');
+    expect(await img.evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+    await expect(page.locator('.hh-phone img[fetchpriority="high"]')).toHaveCount(0);
+  });
+});

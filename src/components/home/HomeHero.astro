@@ -11,6 +11,7 @@
 // auf das JS-Bundle; GSAP übernimmt nur das Neigen per Maus.
 import { Image } from 'astro:assets';
 import StoreCta from './StoreCta.astro';
+import HeroPhoto from './HeroPhoto.astro';
 import { useTranslations } from '../../i18n/index';
 import { getBoatpassCombinedRating, formatRating } from '../../data/apps';
 import homeShotDe from '../../assets/images/app.screenshot.0.de.png';
@@ -69,7 +70,8 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
         <p class="hh-note">{h.heroNote}</p>
       </div>
 
-      <div class="hh-visual">
+      <div class="hh-visual hh-panel">
+        <HeroPhoto />
         <div class="h-stage hh-stage">
           <div class="hh-phone-wrap">
             <div class="h-phone hh-phone" data-tilt>
@@ -81,7 +83,6 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
                   sizes="(min-width: 1024px) 290px, 230px"
                   quality={80}
                   loading="eager"
-                  fetchpriority="high"
                 />
               </div>
             </div>

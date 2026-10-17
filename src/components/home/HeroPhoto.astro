@@ -1,0 +1,61 @@
+---
+// Foto-Bühne des Heros (Spec 4.1): Art Direction mit zwei Quellen, 3:4 ab
+// 1024 px und 16:9 darunter. Astros <Picture> kennt kein <source media>,
+// deshalb getImage() je Quelle und Format und ein handgebautes <picture>; so
+// lädt das Handy nie beide Bilder. Bis die echten Fotos (Spec Anhang A)
+// vorliegen, liegen Platzhalter an denselben Pfaden
+// (scripts/make-hero-placeholders.mjs); der Tausch ist ein reiner Dateitausch.
+import { getImage } from 'astro:assets';
+import waterDay from '../../assets/images/hero/water-day.jpg';
+import waterDayWide from '../../assets/images/hero/water-day-wide.jpg';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+
+const widths = [640, 960, 1280, 1920];
+const quality = 68;
+const [portraitAvif, portraitWebp, wideAvif, wideWebp] = await Promise.all([
+  getImage({ src: waterDay, width: 960, widths, format: 'avif', quality }),
+  getImage({ src: waterDay, width: 960, widths, format: 'webp', quality }),
+  getImage({ src: waterDayWide, width: 1280, widths, format: 'avif', quality }),
+  getImage({ src: waterDayWide, width: 1280, widths, format: 'webp', quality }),
+]);
+---
+
+<picture class:list={['hh-photo', className]}>
+  <source media="(min-width: 1024px)" type="image/avif" srcset={portraitAvif.srcSet.attribute} sizes="42vw" />
+  <source media="(min-width: 1024px)" type="image/webp" srcset={portraitWebp.srcSet.attribute} sizes="42vw" />
+  <source type="image/avif" srcset={wideAvif.srcSet.attribute} sizes="100vw" />
+  <source type="image/webp" srcset={wideWebp.srcSet.attribute} sizes="100vw" />
+  <img
+    src={wideWebp.src}
+    width={wideWebp.attributes.width}
+    height={wideWebp.attributes.height}
+    alt=""
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  />
+</picture>
+
+<style is:global>
+  /* Füllt das Paneel; die 12 % Überhang unten sind Reserve für die
+     Scroll-Parallaxe (home-motion.ts), damit kein Rand durchblitzt. */
+  .hh-photo {
+    position: absolute;
+    inset: 0 0 -12% 0;
+    display: block;
+    line-height: 0;
+  }
+  .hh-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 60%;
+    display: block;
+  }
+  html.dark .hh-photo img { filter: saturate(0.85) brightness(0.8); }
+</style>
