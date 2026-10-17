@@ -35,7 +35,7 @@ Die genaue Bezugsgröße unterscheidet sich je nach Wasserstraße und wird von d
 
 ## Kanal oder frei fließender Fluss: unterschiedliche Herausforderungen
 
-Wie stark die Durchfahrtshöhe schwankt, hängt auch davon ab, auf welcher Art von Wasserstraße du unterwegs bist. Auf **regulierten Kanälen** wird der Wasserstand meist durch Schleusen und Stauhaltungen innerhalb enger Grenzen konstant gehalten. Hier bleibt die Durchfahrtshöhe an Brücken über weite Strecken des Jahres recht stabil, größere Abweichungen sind eher selten und meist mit Wartungsarbeiten oder besonderen Betriebszuständen verbunden.
+Wie stark die Durchfahrtshöhe schwankt, hängt auch davon ab, auf welcher Art von Wasserstraße du unterwegs bist. Auf **regulierten Kanälen** wird der Wasserstand meist durch [Schleusen](/blog/schleusenfahrt-ablauf-verhalten-sportbootfahrer/) und Stauhaltungen innerhalb enger Grenzen konstant gehalten. Hier bleibt die Durchfahrtshöhe an Brücken über weite Strecken des Jahres recht stabil, größere Abweichungen sind eher selten und meist mit Wartungsarbeiten oder besonderen Betriebszuständen verbunden.
 
 Auf **frei fließenden Flüssen** wie großen Strömen sieht das anders aus. Dort hängt der Pegel direkt vom Niederschlag und der Schneeschmelze im gesamten Einzugsgebiet ab und kann innerhalb weniger Tage deutlich steigen oder fallen. Wer auf solchen Gewässern unterwegs ist, sollte die Pegelentwicklung der vergangenen Tage im Blick behalten und nicht nur den Wert zum Zeitpunkt der Abfahrt berücksichtigen, sondern auch, ob der Pegel gerade steigt oder fällt.
 

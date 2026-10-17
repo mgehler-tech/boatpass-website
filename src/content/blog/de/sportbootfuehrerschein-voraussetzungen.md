@@ -51,7 +51,7 @@ Du brauchst ein **ärztliches Zeugnis für Sportbootführerscheinbewerber**. Das
 
 ### Was wird geprüft?
 
-- **Sehvermögen:** Ausreichende Sehschärfe – gegebenenfalls mit Sehhilfe (Brille/Kontaktlinsen). Den Sehtest kann auch ein Optiker durchführen.
+- **Sehvermögen:** Ausreichende Sehschärfe – gegebenenfalls mit Sehhilfe (Brille/Kontaktlinsen). Den [Sehtest](/blog/sehtest-sportbootfuehrerschein-anforderungen-ablauf/) kann auch ein Optiker durchführen.
 - **Farbunterscheidungsvermögen:** Du musst Farben unterscheiden können – wichtig für die Erkennung von Lichtern und Tonnen.
 - **Hörvermögen:** Ausreichendes Hörvermögen – gegebenenfalls mit Hörhilfe.
 

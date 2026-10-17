@@ -51,7 +51,7 @@ You need a **medical certificate for boating license applicants**. This is a spe
 
 ### What is checked?
 
-- **Eyesight:** Sufficient visual acuity – with a visual aid (glasses/contact lenses) if needed. The eye test can also be done by an optician.
+- **Eyesight:** Sufficient visual acuity – with a visual aid (glasses/contact lenses) if needed. The [eye test](/en/blog/eyesight-test-boating-license-requirements-process/) can also be done by an optician.
 - **Color vision:** You have to be able to distinguish colors – important for recognizing lights and buoys.
 - **Hearing:** Sufficient hearing – with a hearing aid if needed.
 

@@ -102,7 +102,7 @@ A few mistakes show up again and again:
 
 ## Thinking ahead to the spring check
 
-A good winterizing job doesn't end with the last task in autumn, it also makes the start of the next season easier. If you note down what still needs doing in spring while you winterize, an upcoming oil change, servicing the bilge pump, or an antifouling job, you save yourself time under pressure before the first launch. It's also worth checking your engine's manual for manufacturer-specific recommendations on winterizing and de-winterizing so you don't miss anything.
+A good winterizing job doesn't end with the last task in autumn, it also makes the start of the next season easier. If you note down what still needs doing in spring while you winterize, an upcoming oil change, servicing the bilge pump, or an antifouling job, you save yourself time under pressure before the first launch (our [spring checklist for the start of the season](/en/blog/getting-your-boat-ready-spring-checklist-season-start/) helps with that). It's also worth checking your engine's manual for manufacturer-specific recommendations on winterizing and de-winterizing so you don't miss anything.
 
 ## Winterizing and your SBF preparation
 

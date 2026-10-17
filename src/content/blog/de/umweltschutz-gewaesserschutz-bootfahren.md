@@ -60,7 +60,7 @@ Auch abseits ausgewiesener Schutzgebiete gilt: Halte beim Ankern und Fahren in F
 
 ## Lärm und Wellenschlag
 
-Gewässerschutz betrifft nicht nur Stoffe, die ins Wasser gelangen, sondern auch Lärm und Wellenschlag. In vielen Naturschutz- und Wohngebieten am Wasser gelten Geschwindigkeitsbegrenzungen, die neben der Sicherheit auch dem Schutz von Ufern und Tierwelt vor übermäßigem Wellenschlag und Lärm dienen. Reduziere deine Geschwindigkeit rechtzeitig, wenn du dich Uferzonen, Schilfgebieten oder ausgewiesenen ruhigen Zonen näherst, auch wenn kein explizites Schild dies vorschreibt.
+Gewässerschutz betrifft nicht nur Stoffe, die ins Wasser gelangen, sondern auch Lärm und Wellenschlag. In vielen Naturschutz- und Wohngebieten am Wasser gelten Geschwindigkeitsbegrenzungen, die neben der Sicherheit auch dem Schutz von Ufern und Tierwelt vor übermäßigem Wellenschlag und Lärm dienen. Wer für [Wellenschlag und Sog haftet](/blog/wellen-sog-haftung/), steht im eigenen Artikel. Reduziere deine Geschwindigkeit rechtzeitig, wenn du dich Uferzonen, Schilfgebieten oder ausgewiesenen ruhigen Zonen näherst, auch wenn kein explizites Schild dies vorschreibt.
 
 ## Rücksicht auf Wasservögel und Wildtiere
 
