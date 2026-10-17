@@ -107,26 +107,6 @@ function initJourney() {
   }
 }
 
-/* ── Merkhilfen-Band: nächste Merkhilfe auf Klick ─────────────────────── */
-function initMnemonics() {
-  const list = document.querySelector<HTMLElement>('[data-mnemo-list]');
-  const nav = document.querySelector<HTMLElement>('[data-mnemo-nav]');
-  const next = nav?.querySelector<HTMLButtonElement>('[data-mnemo-next]');
-  const count = nav?.querySelector<HTMLElement>('[data-mnemo-count]');
-  if (!list || !nav || !next) return;
-  const items = Array.from(list.querySelectorAll<HTMLElement>('[data-mnemo-item]'));
-  if (items.length < 2) return;
-
-  let current = 0;
-  nav.hidden = false;
-  next.addEventListener('click', () => {
-    items[current].classList.remove('is-current');
-    current = (current + 1) % items.length;
-    items[current].classList.add('is-current');
-    if (count) count.textContent = `${current + 1} / ${items.length}`;
-  });
-}
-
 /* ── Hero: Handy folgt dezent dem Zeiger (nur Maus) ───────────────────── */
 function initTilt() {
   const hero = document.querySelector<HTMLElement>('.hh');
@@ -277,4 +257,3 @@ if (motion) {
 }
 
 initJourney();
-initMnemonics();
