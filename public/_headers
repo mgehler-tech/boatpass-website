@@ -21,3 +21,10 @@
   # Die Seite braucht keine dieser Browser-APIs; explizit abschalten.
   Permissions-Policy: geolocation=(), camera=(), microphone=(), payment=(), usb=(), interest-cohort=()
   X-Frame-Options: SAMEORIGIN
+
+# Nur boatpass.de gehört in den Index, nicht die pages.dev-Adressen, die jedes
+# Deployment zusätzlich bekommt (Produktion und Vorschau).
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+https://:version.:project.pages.dev/*
+  X-Robots-Tag: noindex
