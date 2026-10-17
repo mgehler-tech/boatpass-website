@@ -1,6 +1,6 @@
 ---
 // Hero – links die Aussage mit dem einen CTA, rechts der echte Startbildschirm
-// der App im Seekarten-Rahmen. Darüber die amtlichen Kataloge als Chips mit
+// der App auf einer ruhigen Fläche. Darüber die amtlichen Kataloge als Chips mit
 // echter Fragenzahl, die direkt zur jeweiligen Lizenzseite führen; neben dem
 // Handy Ablesewerte, die genau so auf dem Screenshot stehen.
 //
@@ -96,7 +96,7 @@ const readoutY = [0.27, 0.37, 0.62];
       </div>
 
       <figure class="hh-visual">
-        <div class="h-chart hh-chart">
+        <div class="h-stage hh-stage">
           <div class="hh-phone-wrap">
             <div class="h-phone hh-phone" data-tilt>
               <div class="h-phone-screen">
@@ -311,9 +311,9 @@ const readoutY = [0.27, 0.37, 0.62];
     .hh-facts { grid-template-columns: 1fr; }
   }
 
-  /* ── Handy im Seekarten-Rahmen ── */
+  /* ── Handy auf einer ruhigen Fläche ── */
   .hh-visual { margin: 0; }
-  .hh-chart {
+  .hh-stage {
     height: 440px;
     overflow: hidden;
   }
@@ -333,7 +333,7 @@ const readoutY = [0.27, 0.37, 0.62];
   }
 
   @media (min-width: 1024px) {
-    .hh-chart {
+    .hh-stage {
       height: auto;
       padding: 44px 0 44px 32px;
       overflow: visible;

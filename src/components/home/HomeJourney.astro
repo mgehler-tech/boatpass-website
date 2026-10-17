@@ -3,7 +3,7 @@
 // begründet (starten, verstehen, messen, prüfen), deshalb nummeriert.
 //
 // Desktop (≥1024px): links die Etappen als Zeilen mit einer Fortschrittslinie
-// in der Nummernspalte, rechts ein mitlaufendes Handy im Seekarten-Rahmen
+// in der Nummernspalte, rechts ein mitlaufendes Handy auf einer ruhigen Fläche
 // (CSS sticky), dessen Screen zur jeweils aktiven Etappe wechselt. Etappe 02
 // enthält das Quiz. Darunter: jede Etappe mit eigenem Screenshot.
 // Die Aktivierung läuft über home-motion.ts (IntersectionObserver) und
@@ -97,7 +97,7 @@ const total = String(steps.length).padStart(2, '0');
 
       <div class="hj-stage">
         <div class="hj-stage-sticky">
-          <div class="h-chart hj-chart">
+          <div class="h-stage hj-backdrop">
             <div class="h-phone hj-phone">
               <div class="h-phone-screen">
                 {steps.map((step, i) => (
@@ -244,7 +244,7 @@ const total = String(steps.length).padStart(2, '0');
       justify-content: center;
       gap: 12px;
     }
-    .hj-chart {
+    .hj-backdrop {
       display: grid;
       place-items: center;
       padding: 40px 0;
