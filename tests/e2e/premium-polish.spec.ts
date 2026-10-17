@@ -196,3 +196,15 @@ test.describe('Hero panel', () => {
     expect(await page.locator('.hh-photo img').evaluate(el => getComputedStyle(el).filter)).toContain('saturate');
   });
 });
+
+test.describe('Journey stage', () => {
+  test('sticky phone stands free without box or caption', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto('/');
+    await expect(page.locator('.hj-stage-cap, [data-stage-cap-num]')).toHaveCount(0);
+    const bd = page.locator('.hj-backdrop');
+    expect(await bd.evaluate(el => getComputedStyle(el).backgroundColor)).toBe('rgba(0, 0, 0, 0)');
+    expect(await bd.evaluate(el => getComputedStyle(el).boxShadow)).toBe('none');
+    expect((await page.locator('.hj-phone').boundingBox())!.width).toBeGreaterThanOrEqual(260);
+  });
+});

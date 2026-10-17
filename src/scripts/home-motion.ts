@@ -35,8 +35,6 @@ function initJourney() {
   const steps = Array.from(grid.querySelectorAll<HTMLElement>('[data-journey-step]'));
   const screens = Array.from(grid.querySelectorAll<HTMLElement>('[data-journey-screen]'));
   const fill = grid.querySelector<HTMLElement>('[data-journey-fill]');
-  const capNum = grid.querySelector<HTMLElement>('[data-stage-cap-num]');
-  const capTitle = grid.querySelector<HTMLElement>('[data-stage-cap-title]');
   if (!steps.length) return;
 
   // Die Bühne gibt es nur am Desktop. Dort alle vier Screens vorab laden,
@@ -70,9 +68,6 @@ function initJourney() {
       prevTimer = window.setTimeout(() => screens.forEach((s) => s.classList.remove('is-prev')), 950);
     }
 
-    const num = String(i + 1).padStart(2, '0');
-    if (capNum) capNum.textContent = num;
-    if (capTitle) capTitle.textContent = steps[i].dataset.journeyTitle ?? '';
     // Ohne Scrub zeigt die Linie den Stand der aktiven Etappe.
     if (!motion && fill) fill.style.setProperty('--hj-progress', String(i / (steps.length - 1)));
   };
