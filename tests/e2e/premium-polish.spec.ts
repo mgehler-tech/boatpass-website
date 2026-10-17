@@ -112,3 +112,22 @@ test.describe('Footer', () => {
     await expect(page.locator('#footer-badge-ios')).toBeVisible();
   });
 });
+
+test.describe('Hero reduction', () => {
+  test('rating is one line, facts are one sentence, catalogs are text links, rating appears three times (DE)', async ({ page }) => {
+    await page.goto('/');
+    await expect(page.locator('.hh-rating')).toContainText(/4,96 · 29 Bewertungen/);
+    await expect(page.locator('.hh-rating-score, .hh-facts, .hh-chip, .hh-data')).toHaveCount(0);
+    await expect(page.locator('.hh-note')).toContainText('Ohne Account starten');
+    await expect(page.locator('.hh-catalogs a')).toHaveCount(5);
+    await expect(page.locator('.hh-catalogs a').nth(1)).toHaveAttribute('href', '/sbf-see/');
+    await expect(page.locator('.hx-rating')).toHaveCount(0);
+    expect(await page.evaluate(() => (document.body.innerText.match(/4,96/g) ?? []).length)).toBe(3);
+  });
+  test('EN parity', async ({ page }) => {
+    await page.goto('/en/');
+    await expect(page.locator('.hh-rating')).toContainText(/4\.96 · 29 ratings/);
+    await expect(page.locator('.hh-catalogs a')).toHaveCount(5);
+    expect(await page.evaluate(() => (document.body.innerText.match(/4\.96/g) ?? []).length)).toBe(2);
+  });
+});

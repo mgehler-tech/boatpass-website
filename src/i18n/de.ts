@@ -277,9 +277,11 @@ export const de = {
   home: {
     newTab: '(öffnet in neuem Tab)',
     heroData: 'Amtliche Fragenkataloge 2026',
-    heroFacts: ['Kein Account nötig', '15 Fragen täglich gratis', 'Einmalkauf statt Abo', 'Für iPhone, iPad & Android'],
+    // Faktenzeile unter dem Button, ein Satz statt vier Häkchen.
+    heroNote: 'Ohne Account starten, 15 Fragen täglich gratis. Danach Einmalkauf statt Abo, für iPhone, iPad und Android.',
     ratingOutOf: 'von 5 Sternen',
-    ratingSource: 'Bewertungen · Google Play & App Store',
+    // Einzeilige Bewertung im Hero: „4,96 · 29 Bewertungen"
+    ratingCountLabel: 'Bewertungen',
     ratingSourcePlay: 'Bewertungen bei Google Play',
     // Haupt-CTA je Gerät (StoreCta): Android, iPhone/iPad, sonst hero.cta.
     ctaPlay: 'Kostenlos bei Google Play',
@@ -332,7 +334,6 @@ export const de = {
     colTopics: 'Themen',
     colPrice: 'Preis',
     once: 'einmalig',
-    funkQuestions: 'Fragen',
     finderTitle: 'Unsicher, welcher Schein zu dir passt?',
     finderText: 'Fünf Fragen, eine klare Empfehlung.',
     finderCta: 'Zum Schein-Finder',
