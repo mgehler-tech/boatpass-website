@@ -1,7 +1,9 @@
 ---
 // Hero – links die Aussage mit dem einen CTA, rechts der echte Startbildschirm
-// der App auf einer ruhigen Fläche. Darüber die amtlichen Kataloge als Chips mit
-// echter Fragenzahl, die direkt zur jeweiligen Lizenzseite führen.
+// der App auf einer ruhigen Fläche. Darunter, als Abschluss des Heros, die
+// amtlichen Kataloge als Chips mit echter Fragenzahl, die direkt zur jeweiligen
+// Lizenzseite führen. Bewusst nicht über der Überschrift: Auf Laptops kostete
+// die Zeile dort so viel Höhe, dass Button und Handy unter den Rand rutschten.
 //
 // Der Text steht ab dem ersten Paint fertig da (H1 = LCP-Element, CTA sofort
 // nutzbar). Der Auftakt des Handys läuft als CSS-Animation und wartet nicht
@@ -38,23 +40,6 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
 
 <section class="hh" aria-labelledby="hh-title">
   <div class="h-container">
-    <nav class="hh-data" aria-labelledby="hh-data-label">
-      <p class="hh-data-label" id="hh-data-label">
-        <span class="hh-data-icon" aria-hidden="true"><Icon name="check" size={13} strokeWidth={2.75} /></span>
-        {h.heroData}
-      </p>
-      <ul class="hh-data-list">
-        {catalogs.map(c => (
-          <li>
-            <a class="hh-chip" href={c.href}>
-              <span>{c.name}</span>
-              <span class="hh-chip-count h-num">{c.count}<span class="sr-only"> {h.funkQuestions}</span></span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
-
     <div class="hh-grid">
       <div class="hh-copy">
         <h1 id="hh-title" class="hh-title">
@@ -110,6 +95,23 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
         </div>
       </div>
     </div>
+
+    <nav class="hh-data" aria-labelledby="hh-data-label">
+      <p class="hh-data-label" id="hh-data-label">
+        <span class="hh-data-icon" aria-hidden="true"><Icon name="check" size={13} strokeWidth={2.75} /></span>
+        {h.heroData}
+      </p>
+      <ul class="hh-data-list">
+        {catalogs.map(c => (
+          <li>
+            <a class="hh-chip" href={c.href}>
+              <span>{c.name}</span>
+              <span class="hh-chip-count h-num">{c.count}<span class="sr-only"> {h.funkQuestions}</span></span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
   </div>
 </section>
 
@@ -123,6 +125,7 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
 
   /* ── Amtliche Kataloge: Chips mit Fragenzahl, je ein Link zur Lizenzseite ── */
   .hh-data {
+    margin-top: clamp(40px, 5vw, 64px);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -189,8 +192,8 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
   }
   .hh-chip:hover .hh-chip-count { background: var(--h-btn); color: #fff; }
   .hh-chip:focus-visible { outline: 2px solid var(--h-blue); outline-offset: -2px; }
-  /* Handy: eine wischbare Zeile statt zwei Reihen über der Überschrift. Die
-     Zeile läuft bis an den Rand, der Ausblender zeigt, dass es weitergeht. */
+  /* Handy: eine wischbare Zeile statt zwei Reihen. Die Zeile läuft bis an
+     den Rand, der Ausblender zeigt, dass es weitergeht. */
   @media (max-width: 639px) {
     .hh-data { gap: 12px; }
     .hh-data-list {
@@ -218,7 +221,6 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     gap: 48px;
-    margin-top: clamp(36px, 5vw, 64px);
   }
   @media (min-width: 1024px) {
     .hh-grid {
@@ -244,6 +246,12 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
     color: var(--h-ink);
     hyphens: manual;
     overflow-wrap: normal;
+  }
+  /* Niedrige Laptop-Fenster (z. B. MacBook mit Lesezeichenleiste): die
+     Überschrift richtet sich zusätzlich nach der Höhe, damit Button und
+     Bewertung ohne Scrollen sichtbar bleiben. Nur kleiner, nie größer. */
+  @media (min-width: 1024px) {
+    .hh-title { font-size: min(clamp(2.8rem, 14cqi, 6.6rem), 11.5vh); }
   }
   .hh-accent { color: var(--h-blue-ink); }
 
@@ -317,7 +325,9 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
       padding: 44px 32px;
     }
     .hh-phone-wrap {
-      --hh-pw: clamp(228px, 18vw, 256px);
+      /* Breite folgt auch der Fensterhöhe, damit das Handy auf niedrigen
+         Laptop-Fenstern vollständig im Bild bleibt. */
+      --hh-pw: clamp(200px, min(18vw, 31vh), 256px);
       width: var(--hh-pw);
       margin: 0;
     }
