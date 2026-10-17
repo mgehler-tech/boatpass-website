@@ -284,7 +284,7 @@ export const en: Translations = {
       restart: 'Start again',
     },
     reviewsTitle: 'What learners write',
-    reviewsIntro: 'Taken unchanged from the Play Store, with date and star rating. You can read them there yourself.',
+    reviewsIntro: 'Real reviews from the Play Store, quoted word for word.',
     reviewsAll: 'See all ratings on Google Play',
     reviewsListLabel: 'Reviews from learners',
     founderPortraitAlt: 'Marius Gehler, founder of Boatpass, at the helm of a motorboat in the harbour',

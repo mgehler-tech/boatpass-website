@@ -302,7 +302,7 @@ export const de = {
       restart: 'Nochmal von vorn',
     },
     reviewsTitle: 'Was Lernende schreiben',
-    reviewsIntro: 'Unverändert aus dem Play Store übernommen, mit Datum und Sternzahl. Nachlesen kannst du sie dort selbst.',
+    reviewsIntro: 'Echte Rezensionen aus dem Play Store, Wort für Wort übernommen.',
     reviewsAll: 'Alle Bewertungen bei Google Play',
     reviewsListLabel: 'Bewertungen von Lernenden',
     founderPortraitAlt: 'Marius Gehler, Gründer von Boatpass, am Steuerstand eines Motorboots im Hafen',
