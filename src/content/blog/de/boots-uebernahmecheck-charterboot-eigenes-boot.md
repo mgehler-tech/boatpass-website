@@ -17,6 +17,22 @@ faq:
     answer: "Du solltest dir zumindest Motor, Bordelektrik, Funk, Ankergeschirr und die Sicherheitsausrüstung zeigen lassen und Fragen stellen, bis dir alles klar ist. Eine ordentliche Einweisung ist bei Charter üblich und gerade bei einem unbekannten Bootstyp sinnvoll."
   - question: "Gilt der Übernahmecheck auch für ein gebrauchtes, selbst gekauftes Boot?"
     answer: "Ja, auch dort lohnt sich eine strukturierte Prüfung von Papieren, Technik und Sicherheitsausrüstung vor der ersten Fahrt. Bei größeren Anschaffungen kann zusätzlich ein unabhängiges Gutachten durch eine Fachperson sinnvoll sein."
+howTo:
+  name: "Boot bei Charter oder Kauf übernehmen und prüfen"
+  description: "So prüfst du ein Charterboot oder eigenes Boot vor der ersten Fahrt in sechs Schritten."
+  steps:
+    - name: "Papiere und Zuständigkeiten klären"
+      text: "Prüfe, ob dein Führerschein zu Boot und Fahrtgebiet passt, lass dir die Bootspapiere zeigen, kläre Versicherung und Selbstbeteiligung und notiere die Notfallnummer des Vermieters."
+    - name: "Rundgang am Steg machen"
+      text: "Kontrolliere Rumpf, Aufbauten, Festmacher, Fender und Anker auf Schäden und fotografiere Auffälligkeiten mit Datum."
+    - name: "Sicherheitsausrüstung prüfen"
+      text: "Stelle sicher, dass Rettungswesten, Feuerlöscher, Erste-Hilfe-Set, Signalmittel, Lenzpumpe und Funk vorhanden und funktionsfähig sind."
+    - name: "Technik und Antrieb testen"
+      text: "Prüfe Kraftstoff, Öl, Motorprobelauf, Bordelektrik, Beleuchtung, Instrumente und Steuerung."
+    - name: "Einweisung nutzen und Probefahrt machen"
+      text: "Lass dir Motor, Bordelektrik, Funk und Ankergeschirr erklären, stelle Fragen und fahre möglichst eine kurze Probefahrt."
+    - name: "Übergabeprotokoll unterschreiben"
+      text: "Halte alle Mängel und Schäden im Übergabeprotokoll fest und lass es von beiden Seiten unterschreiben, bevor du ablegst."
 ---
 
 Der Schein ist bestanden, das Boot liegt am Steg, und du willst eigentlich nur noch losfahren. Genau in diesem Moment lohnt sich ein ruhiger Blick aufs Boot. Ein strukturierter **Übernahmecheck** braucht etwas Zeit, schützt dich vor unangenehmen Überraschungen unterwegs und bewahrt dich bei Charter vor Streit um Schäden, die du nicht verursacht hast. Dieser Beitrag zeigt, was du prüfen solltest, bevor du zum ersten Mal ablegst.
