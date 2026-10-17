@@ -232,12 +232,14 @@ html[data-platform='desktop'] .h-off-desktop { display: none; }
 }
 
 /* ── Gerät für echte App-Screenshots ────────────────────────────────── */
+/* Breite über --pw, gesetzt vom jeweiligen Abschnitt (.hh-phone, .hj-phone …).
+   Bewusst nur als Rückfallwert hier: Ein --pw direkt auf .h-phone würde die
+   Abschnittswerte überschreiben, weil home.css nach den Komponenten lädt. */
 .h-phone {
-  --pw: 280px;
   position: relative;
-  width: var(--pw);
-  padding: calc(var(--pw) * 0.032);
-  border-radius: calc(var(--pw) * 0.155);
+  width: var(--pw, 280px);
+  padding: calc(var(--pw, 280px) * 0.032);
+  border-radius: calc(var(--pw, 280px) * 0.155);
   background: #0B1024;
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.1),
@@ -246,7 +248,7 @@ html[data-platform='desktop'] .h-off-desktop { display: none; }
 .h-phone-screen {
   position: relative;
   aspect-ratio: 1080 / 2340;
-  border-radius: calc(var(--pw) * 0.125);
+  border-radius: calc(var(--pw, 280px) * 0.125);
   overflow: hidden;
   background: #F4F6FA;
 }

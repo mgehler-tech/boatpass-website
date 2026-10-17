@@ -1,8 +1,7 @@
 ---
 // Hero – links die Aussage mit dem einen CTA, rechts der echte Startbildschirm
 // der App auf einer ruhigen Fläche. Darüber die amtlichen Kataloge als Chips mit
-// echter Fragenzahl, die direkt zur jeweiligen Lizenzseite führen; neben dem
-// Handy Ablesewerte, die genau so auf dem Screenshot stehen.
+// echter Fragenzahl, die direkt zur jeweiligen Lizenzseite führen.
 //
 // Der Text steht ab dem ersten Paint fertig da (H1 = LCP-Element, CTA sofort
 // nutzbar). Der Auftakt des Handys läuft als CSS-Animation und wartet nicht
@@ -35,10 +34,6 @@ const hrefs = lang === 'de'
   ? ['/sbf-binnen/', '/sbf-see/', '/ubi/', '/src/', '/lrc/']
   : ['/en/sbf-inland/', '/en/sbf-coastal/', '/en/ubi/', '/en/src/', '/en/lrc/'];
 const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], href: hrefs[i] }));
-
-// Vertikale Lage der abgelesenen Stellen auf dem Screenshot (Anteil der Höhe):
-// „53 / 300 Fragen", Streak-Karte, „Heute lernen".
-const readoutY = [0.27, 0.37, 0.62];
 ---
 
 <section class="hh" aria-labelledby="hh-title">
@@ -111,17 +106,6 @@ const readoutY = [0.27, 0.37, 0.62];
                 />
               </div>
             </div>
-            <ul class="hh-readouts" aria-hidden="true">
-              {h.readouts.map(([label, value], i) => (
-                <li class="hh-readout" style={`--y:${readoutY[i]}; --i:${i}`}>
-                  <span class="hh-readout-line"></span>
-                  <span class="hh-readout-text">
-                    <span class="hh-readout-label">{label}</span>
-                    <span class="hh-readout-value">{value}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
         <figcaption class="hh-caption">{h.heroFigure}</figcaption>
@@ -324,7 +308,6 @@ const readoutY = [0.27, 0.37, 0.62];
     perspective: 1400px;
   }
   .hh-phone { --pw: 230px; transform-style: preserve-3d; }
-  .hh-readouts { display: none; }
   .hh-caption {
     margin-top: 10px;
     font-family: var(--h-sans);
@@ -332,11 +315,13 @@ const readoutY = [0.27, 0.37, 0.62];
     color: var(--h-muted);
   }
 
+  /* Desktop: Handy mittig auf der Fläche, in voller Höhe sichtbar. */
   @media (min-width: 1024px) {
     .hh-stage {
+      display: grid;
+      place-items: center;
       height: auto;
-      padding: 44px 0 44px 32px;
-      overflow: visible;
+      padding: 44px 32px;
     }
     .hh-phone-wrap {
       --hh-pw: clamp(228px, 18vw, 256px);
@@ -346,66 +331,8 @@ const readoutY = [0.27, 0.37, 0.62];
     .hh-phone { --pw: var(--hh-pw); }
   }
 
-  /* Ablesewerte: Linie vom Screen nach rechts, dann Beschriftung + Wert. */
-  @media (min-width: 1180px) {
-    .hh-readouts {
-      display: block;
-      position: absolute;
-      inset: 0;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      pointer-events: none;
-      --inset: calc(var(--hh-pw) * 0.032);
-    }
-    .hh-readout {
-      position: absolute;
-      left: calc(100% - 18px);
-      top: calc(var(--inset) + (100% - 2 * var(--inset)) * var(--y));
-      display: flex;
-      align-items: center;
-      transform: translateY(-50%);
-    }
-    .hh-readout-line {
-      position: relative;
-      width: 48px;
-      height: 1px;
-      background: var(--h-line-2);
-      transform-origin: left center;
-    }
-    .hh-readout-line::before {
-      content: '';
-      position: absolute;
-      left: -3px;
-      top: -3px;
-      width: 7px;
-      height: 7px;
-      background: var(--h-blue);
-    }
-    .hh-readout-text {
-      display: flex;
-      flex-direction: column;
-      padding-left: 10px;
-      font-family: var(--h-sans);
-      line-height: 1.3;
-      white-space: nowrap;
-    }
-    .hh-readout-label { font-size: 11px; color: var(--h-muted); }
-    .hh-readout-value { font-size: 13px; font-weight: 500; color: var(--h-ink); }
-  }
-
   /* ── Auftakt (nur mit h-motion, ab dem ersten Paint) ──
      Nur transform – das Handy bleibt LCP-tauglich sichtbar. */
   .h-motion .hh-phone-wrap { animation: hh-rise 1.4s var(--h-ease) 0.1s both; }
-  .h-motion .hh-readout-line {
-    animation: hh-draw 0.6s cubic-bezier(0.3, 0.7, 0.2, 1) both;
-    animation-delay: calc(0.9s + var(--i, 0) * 0.12s);
-  }
-  .h-motion .hh-readout-text {
-    animation: hh-fade 0.6s var(--h-ease) both;
-    animation-delay: calc(1s + var(--i, 0) * 0.12s);
-  }
   @keyframes hh-rise { from { transform: translateY(56px); } }
-  @keyframes hh-draw { from { transform: scaleX(0); } }
-  @keyframes hh-fade { from { opacity: 0; transform: translateX(-8px); } }
 </style>

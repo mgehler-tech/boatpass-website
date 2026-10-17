@@ -275,13 +275,6 @@ export const de = {
     // Haupt-CTA je Gerät (StoreCta): Android, iPhone/iPad, sonst hero.cta.
     ctaPlay: 'Kostenlos bei Google Play',
     phoneAlt: 'Boatpass App – Startbildschirm mit Lizenz, Fortschritt, Streak und Lernmodi',
-    // Ablesewerte am Hero-Handy – Beschriftung und Wert genau so, wie sie auf
-    // dem Screenshot stehen.
-    readouts: [
-      ['Fortschritt', '53 / 300 Fragen'],
-      ['Streak', '1 Tag'],
-      ['Modus', 'Heute lernen'],
-    ],
     journeyStage: 'Etappe',
     // Konkrete Funktionen je Etappe – alle auf den jeweiligen Screenshots sichtbar.
     journeyChips: [

@@ -258,12 +258,6 @@ export const en: Translations = {
     ratingSourcePlay: 'ratings on Google Play',
     ctaPlay: 'Free on Google Play',
     phoneAlt: 'Boatpass app – home screen with licence, progress, streak and study modes',
-    // Readouts next to the hero phone – label and value exactly as on the screenshot.
-    readouts: [
-      ['Progress', '53 / 300 questions'],
-      ['Streak', '1 day'],
-      ['Mode', 'Study today'],
-    ],
     journeyStage: 'Stage',
     journeyChips: [
       ['Study today', 'Study by topic', 'Streak & daily goal'],
