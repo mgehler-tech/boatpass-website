@@ -220,6 +220,11 @@ export const en: Translations = {
     terms: 'Terms of Use',
     contact: 'Contact',
   },
+  theme: {
+    label: 'Appearance',
+    light: 'Light',
+    dark: 'Dark',
+  },
   faq: {
     title: 'Frequently Asked Questions',
     subtitle: 'Everything about the boating license exam and the app',

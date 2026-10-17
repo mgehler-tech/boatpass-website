@@ -208,10 +208,6 @@ html[data-platform='desktop'] .h-off-desktop { display: none; }
   overflow: hidden;
 }
 
-/* ── Nur mit JavaScript sinnvoll (Quiz) ──────────────────────────────── */
-.h-js-only { display: none; }
-.h-js .h-js-only { display: block; }
-
 /* ── Bewegung: Startzustände (nur mit h-motion, s. HomeBoot) ─────────── */
 .h-motion:not(.h-ready) .home [data-reveal] { opacity: 0; }
 

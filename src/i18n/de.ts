@@ -234,6 +234,12 @@ export const de = {
     terms: 'Nutzungsbedingungen',
     contact: 'Kontakt',
   },
+  // Hell/Dunkel-Umschalter (Footer, mobiles Menü)
+  theme: {
+    label: 'Darstellung',
+    light: 'Hell',
+    dark: 'Dunkel',
+  },
   faq: {
     title: 'Häufige Fragen',
     subtitle: 'Alles rund um den Sportbootführerschein und die App',

@@ -18,3 +18,25 @@ test.describe('Tokens', () => {
     expect(shadow).toContain('0 10px 24px -12px');
   });
 });
+
+test.describe('ThemeToggle', () => {
+  test('footer toggle switches and persists the theme', async ({ page }) => {
+    await page.goto('/sbf-binnen/');
+    const dark = page.locator('footer .theme-choice[data-theme-set="dark"]');
+    await expect(dark).toBeVisible();
+    await dark.click();
+    await expect(page.locator('html')).toHaveClass(/dark/);
+    await expect(dark).toHaveAttribute('aria-pressed', 'true');
+    await page.reload();
+    await expect(page.locator('html')).toHaveClass(/dark/);
+    await page.locator('footer .theme-choice[data-theme-set="light"]').click();
+    await expect(page.locator('html')).not.toHaveClass(/dark/);
+  });
+  test('toggle is hidden without the h-js class', async ({ page }) => {
+    await page.goto('/sbf-binnen/');
+    await expect(page.locator('footer .theme-toggle')).toHaveCount(1);
+    await expect(page.locator('footer .theme-toggle')).toBeVisible();
+    await page.evaluate(() => document.documentElement.classList.remove('h-js'));
+    await expect(page.locator('footer .theme-toggle')).toBeHidden();
+  });
+});

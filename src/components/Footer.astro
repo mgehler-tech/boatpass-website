@@ -1,6 +1,7 @@
 ---
 import Icon from './Icon.astro';
 import StoreBadges from './StoreBadges.astro';
+import ThemeToggle from './ThemeToggle.astro';
 import { useTranslations, getLocalizedPath } from '../i18n/index';
 import { getBoatpassRating, getBoatpassIosRating, type AppRating } from '../data/apps';
 import { PLAY_STORE_URL, appStoreUrl } from '../data/stores';
@@ -148,6 +149,7 @@ const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showC
         <Icon name="heart" size={13} stroke="none" class="footer-heart" />
         {lang === 'de' ? 'in Deutschland' : 'in Germany'}
       </p>
+      <ThemeToggle lang={lang} />
     </div>
   </div>
 </footer>

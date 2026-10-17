@@ -37,6 +37,9 @@ const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, sh
   <head>
     <script is:inline>
   (function() {
+    // h-js: JavaScript läuft – Bausteine mit .h-js-only (Quiz, Theme-Umschalter)
+    // werden sichtbar. Vor dem ersten Paint gesetzt, damit nichts nachspringt.
+    document.documentElement.classList.add('h-js');
     try {
       var saved = localStorage.getItem('theme');
       var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -119,5 +122,9 @@ const { title, description, lang, ogImage, ogImageWidth, ogImageHeight, type, sh
     </main>
     {showCta && <CtaBanner lang={lang} />}
     <Footer lang={lang} />
+    <script>
+      import { initThemeToggles } from '../scripts/theme-toggle';
+      initThemeToggles();
+    </script>
   </body>
 </html>

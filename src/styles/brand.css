@@ -81,3 +81,8 @@ html.dark {
   --h-deep: #080B14;
   --h-shadow-device: 0 60px 120px -40px rgba(0,0,0,.8), 0 10px 24px -12px rgba(0,0,0,.6);
 }
+
+/* ── Nur mit JavaScript sinnvoll (Quiz, Theme-Umschalter) ───────────────
+   h-js setzt das Inline-Skript im BaseLayout vor dem ersten Paint. */
+.h-js-only { display: none; }
+.h-js .h-js-only { display: block; }

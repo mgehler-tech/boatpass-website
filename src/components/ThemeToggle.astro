@@ -1,0 +1,43 @@
+---
+// Hell/Dunkel-Umschalter als zwei Textschalter. Verhalten in
+// src/scripts/theme-toggle.ts (einmal pro Seite im BaseLayout initialisiert).
+// Ohne JavaScript bleibt die Gruppe unsichtbar (h-js kommt aus dem BaseLayout).
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang: 'de' | 'en';
+  class?: string;
+}
+
+const { lang, class: className } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class:list={['theme-toggle', 'h-js-only', className]} role="group" aria-label={t.theme.label}>
+  <button type="button" class="theme-choice" data-theme-set="light" aria-pressed="false">{t.theme.light}</button>
+  <span class="theme-sep" aria-hidden="true">|</span>
+  <button type="button" class="theme-choice" data-theme-set="dark" aria-pressed="false">{t.theme.dark}</button>
+</div>
+
+<style is:global>
+  .theme-toggle { display: none; align-items: center; gap: 2px; }
+  .h-js .theme-toggle { display: inline-flex; }
+  .theme-choice {
+    min-height: 44px;
+    padding: 0 6px;
+    border: 0;
+    background: none;
+    font: 500 13px/1 var(--h-sans);
+    color: var(--h-muted);
+    cursor: pointer;
+    border-radius: var(--h-r-sm);
+    transition: color 0.2s ease;
+  }
+  .theme-choice:hover { color: var(--h-ink); }
+  .theme-choice[aria-pressed='true'] { color: var(--h-ink); font-weight: 600; }
+  .theme-choice:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
+  .theme-sep { color: var(--h-line-2); font-size: 13px; }
+  @media (prefers-reduced-motion: reduce) {
+    .theme-choice { transition: none; }
+  }
+</style>
