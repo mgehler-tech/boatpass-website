@@ -80,8 +80,8 @@ test.describe('Android visitors are sent to Google Play', () => {
     await expect(page.locator('#hero-cta-play')).toHaveAttribute('href', PLAY_STORE_URL);
     await expect(page.locator('#hero-cta-play')).toContainText('Kostenlos bei Google Play');
 
-    const playBadge = page.locator('#final-badge-play');
-    const iosBadge = page.locator('#final-badge-ios');
+    const playBadge = page.locator('#footer-badge-play');
+    const iosBadge = page.locator('#footer-badge-ios');
     await playBadge.scrollIntoViewIfNeeded();
     const playBox = await playBadge.boundingBox();
     const iosBox = await iosBadge.boundingBox();

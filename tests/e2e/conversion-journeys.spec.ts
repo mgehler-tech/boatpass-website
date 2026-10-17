@@ -15,15 +15,15 @@ import { APP_STORE_URL, PLAY_STORE_URL } from '../../src/data/stores';
 const CHOOSER = '/app/';
 
 test.describe('Homepage → app CTA', () => {
-  test('hero and closing CTAs lead to the store chooser, closing badges link to both stores', async ({ page }) => {
+  test('hero and closing CTAs lead to the store chooser, footer badges link to both stores', async ({ page }) => {
     await page.goto('/');
     const heroCta = page.locator('#hero-cta-play');
     await expect(heroCta).toHaveAttribute('href', CHOOSER);
     await expect(heroCta).toContainText('Kostenlos laden');
     await expect(page.locator('#final-cta-play')).toHaveAttribute('href', CHOOSER);
 
-    await expect(page.locator('#final-badge-ios')).toHaveAttribute('href', APP_STORE_URL);
-    await expect(page.locator('#final-badge-play')).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator('#footer-badge-ios')).toHaveAttribute('href', APP_STORE_URL);
+    await expect(page.locator('#footer-badge-play')).toHaveAttribute('href', PLAY_STORE_URL);
   });
 });
 

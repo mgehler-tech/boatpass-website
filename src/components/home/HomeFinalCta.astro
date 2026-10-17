@@ -1,12 +1,11 @@
 ---
-// Abschluss: ein CTA, die Bewertung, die offiziellen Store-Badges und – nur am
-// Desktop, wo man die App nicht direkt installieren kann – ein QR-Code zur
-// Geräteweiche /app/, die auf dem Handy in den passenden Store leitet. Der
-// QR-Code entsteht beim Build als SVG.
+// Abschluss: ein CTA, die Bewertung und – nur am Desktop, wo man die App nicht
+// direkt installieren kann – ein QR-Code zur Geräteweiche /app/, die auf dem
+// Handy in den passenden Store leitet. Die offiziellen Store-Badges stehen
+// direkt darunter im Footer. Der QR-Code entsteht beim Build als SVG.
 import QRCode from 'qrcode';
 import SectionHead from './SectionHead.astro';
 import StoreCta from './StoreCta.astro';
-import StoreBadges from '../StoreBadges.astro';
 import { useTranslations } from '../../i18n/index';
 import { getBoatpassCombinedRating, formatRating } from '../../data/apps';
 import { smartAppPath } from '../../data/stores';
@@ -47,9 +46,6 @@ const qrSvg = await QRCode.toString(`https://boatpass.de${chooserPath}`, {
               <span>{rating.ratings} {h.ratingSource}</span>
             </p>
           )}
-        </div>
-        <div data-reveal>
-          <StoreBadges lang={lang} id="final-badge" position="final-badges" height={44} class="hx-badges" />
         </div>
       </div>
 
@@ -111,7 +107,6 @@ const qrSvg = await QRCode.toString(`https://boatpass.de${chooserPath}`, {
     font-size: 32px;
     color: #fff;
   }
-  .hx-badges { margin-top: 28px; }
 
   .hx-side { display: none; }
   @media (min-width: 1024px) {
