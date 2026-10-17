@@ -39,11 +39,9 @@ const altLang = lang === 'de' ? 'en' : 'de';
 const altUrl = altUrlOverride ?? (lang === 'de'
   ? `https://boatpass.de/en${Astro.url.pathname}`
   : `https://boatpass.de${Astro.url.pathname.replace('/en', '')}`);
-// Mit explizitem altUrl (z.B. Blog mit abweichenden Slugs) zeigt x-default auf die DE-Version,
-// sonst – wie bisher – auf die Startseite.
-const xDefaultUrl = altUrlOverride
-  ? (lang === 'de' ? canonical : altUrlOverride)
-  : (hasAlternate ? 'https://boatpass.de/' : canonical);
+// x-default zeigt auf die DE-Version des Seitenpaars (nicht auf die Startseite), damit die
+// hreflang-Gruppe in sich konsistent ist und die Rückverweise (Return Tags) stimmen.
+const xDefaultUrl = hasAlternate ? (lang === 'de' ? canonical : altUrl) : canonical;
 const resolvedOgImage = ogImage ?? (lang === 'en' ? '/images/og-image-en.jpg' : '/images/og-image.jpg');
 const ogImageAbs = resolvedOgImage.startsWith('http') ? resolvedOgImage : `https://boatpass.de${resolvedOgImage}`;
 const ogImageType = ogImageAbs.endsWith('.jpg') || ogImageAbs.endsWith('.jpeg') ? 'image/jpeg' : 'image/png';
