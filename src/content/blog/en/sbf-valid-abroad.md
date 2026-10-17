@@ -11,17 +11,17 @@ author: "Marius Gehler"
 altSlug: "sbf-im-ausland-gueltig"
 faq:
   - question: "Is my German SBF valid in Croatia, the Netherlands, and Italy?"
-    answer: "Yes. All three countries accept the German ICC (on the reverse of the credit-card-format SBF) on charter boats. You will generally also need the SRC radio operator's licence. On Dutch inland waterways, a licence is only required at all for boats over 15 m or capable of more than 20 km/h – the ICC Inland covers that, and it already includes CEVNI knowledge."
+    answer: "Yes. All three countries accept the German ICC (on the reverse of the credit-card-format SBF) on charter boats, usually together with the SRC radio licence. On Dutch inland waterways, a licence is only required for boats over 15 m or faster than 20 km/h."
   - question: "What is the ICC, and do I need it abroad?"
-    answer: "The ICC (International Certificate of Competence) is based on UNECE Resolution No. 40 and appears on the reverse of the credit-card-format SBF. It is mutually recognised by signatory countries and accepted in practice by many more. Older paper licences don't include an ICC and need to be upgraded through the DMYV or DSV."
+    answer: "The ICC (International Certificate of Competence) is based on UNECE Resolution No. 40 and appears on the reverse of the credit-card-format SBF. Signatory countries recognise it mutually. Older paper licences include no ICC and must be upgraded through the DMYV or DSV."
   - question: "What documents do I need to charter a boat abroad?"
     answer: "Generally: your passport or national ID (original), your SBF See with ICC Coastal on the reverse, the SRC (if there's a radio on board), plus documents provided by the charter company such as the boat registration, insurance document, and country-specific paperwork (for example the Vinjeta in Croatia)."
   - question: "Do I need a radio licence (SRC) abroad?"
     answer: "Charter yachts almost always have a VHF radio on board. As soon as you operate it, the SRC (Short Range Certificate) is required in Croatia, Italy, and most other European countries."
   - question: "Does Croatia have a licence-free rule like Germany's 15 hp exemption?"
-    answer: "No. Croatia has no general licence exemption for small engines. Under Croatian maritime law, any vessel over 2.5 m in hull length or over 5 kW of engine power counts as a 'brodica' (motorboat) and generally requires a licence. A widely circulated claim that unmanned rental boats up to 5 m and 5 kW can be operated licence-free by anyone 18+ was only a 2022 ministry proposal that was never enacted into law."
+    answer: "No. In Croatia, any vessel over 2.5 m hull length or over 5 kW engine power counts as a 'brodica' (motorboat) and generally requires a licence. The widely circulated exemption for rental boats was only a 2022 ministry proposal and never became law."
   - question: "At what point do I actually need a licence in Italy?"
-    answer: "Under Article 39 of the Codice della Nautica da Diporto (Legislative Decree 171/2005), a licence is mandatory once engine power exceeds 30 kW (40.8 hp), or once you sail more than 6 nautical miles from the coast, regardless of engine power. Since charter boats almost always exceed 30 kW, you need the ICC Coastal in practice on nearly every charter route."
+    answer: "Under Article 39 of the Codice della Nautica da Diporto, a licence is mandatory above 30 kW (40.8 hp) or more than 6 nautical miles from the coast. Since charter boats almost always exceed 30 kW, you need the ICC Coastal in practice."
 ---
 
 You've booked the charter, packed your bags – and now you're wondering whether your German Sportbootführerschein (recreational boat licence) actually holds up abroad. Good news: in most European charter destinations, it does. But each country has its own rules, and the details matter more than you might expect. Here's what you need to know before you cast off.

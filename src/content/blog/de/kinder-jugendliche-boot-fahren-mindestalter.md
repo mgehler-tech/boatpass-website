@@ -14,7 +14,7 @@ faq:
   - question: "Dürfen Kinder unter 16 Jahren ein Motorboot führen?"
     answer: "Grundsätzlich nicht. Sowohl für den Sportbootführerschein mit Antriebsmaschine als auch für führerscheinfreie Boote bis 15 PS (11,03 kW) gilt ein Mindestalter von 16 Jahren. Eine kleine Ausnahme gibt es auf Seeschifffahrtsstraßen für sehr schwache Motoren bis 5 PS (3,68 kW)."
   - question: "Ab welchem Alter kann man sich zur SBF-Prüfung anmelden?"
-    answer: "Die Anmeldung zur Prüfung ist schon drei Monate vor dem jeweiligen Mindestalter möglich: für SBF Binnen und SBF See unter Motor also mit 15 Jahren und 9 Monaten, für SBF Binnen unter Segel bereits mit 13 Jahren und 9 Monaten. Ausgehändigt wird der Führerschein aber erst, wenn das Mindestalter tatsächlich erreicht ist. Minderjährige brauchen zusätzlich die Einverständniserklärung eines Erziehungsberechtigten."
+    answer: "Die Anmeldung ist drei Monate vor dem Mindestalter möglich: mit 15 Jahren und 9 Monaten für SBF Binnen und See unter Motor, mit 13 Jahren und 9 Monaten für SBF Binnen unter Segel. Der Schein wird erst ab Mindestalter ausgehändigt; Minderjährige brauchen die Einverständniserklärung eines Erziehungsberechtigten."
   - question: "Was ist der DSV-Jugendsegelschein?"
     answer: "Der DSV-Jugendsegelschein (früher Jüngstensegelschein) ist ein vereinsinterner Schein des Deutschen Segler-Verbandes für Kinder von etwa 7 bis 14 Jahren. Er ist nicht amtlich, ersetzt also nicht den Sportbootführerschein, sondern dient als Ausbildungs- und Regattanachweis im Verein."
 ---

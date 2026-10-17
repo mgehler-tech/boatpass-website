@@ -14,7 +14,7 @@ faq:
   - question: "Can children under 16 operate a motorboat?"
     answer: "Generally, no. Both the recreational boating license (SBF) with an engine and unlicensed boats up to 15 hp (11.03 kW) require a minimum age of 16. There is a narrow exception on Germany's sea shipping lanes for very weak motors up to 5 hp (3.68 kW)."
   - question: "At what age can you register for the SBF exam?"
-    answer: "You can register for the exam as early as three months before the relevant minimum age: at 15 years and 9 months for the SBF Inland and SBF Coastal with an engine, and already at 13 years and 9 months for the SBF Inland under sail. The license itself is only issued once the actual minimum age is reached. Minors also need the written consent of a parent or legal guardian to register."
+    answer: "You can register three months before the minimum age: at 15 years 9 months for the SBF Inland and Coastal under power, and 13 years 9 months for the SBF Inland under sail. The license is issued only at the actual minimum age; minors need a guardian's written consent."
   - question: "What is the DSV youth sailing certificate?"
     answer: "The DSV Jugendsegelschein (formerly Jüngstensegelschein) is a club-level certificate from the German Sailing Association for children roughly 7 to 14 years old. It's not an official government license, so it doesn't replace the recreational boating license, but it serves as a training and racing credential within sailing clubs."
 ---
