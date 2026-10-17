@@ -1,10 +1,11 @@
 ---
 title: "Gezeiten berechnen mit der Zwölftelregel – einfach erklärt"
-seoTitle: "Zwölftelregel: Gezeiten berechnen (SBF See)"
-description: "Tidenhub, Hoch- und Niedrigwasser, Tiefe unter dem Kiel: Mit der Zwölftelregel schätzt du den Wasserstand ab – mit Rechenbeispiel für den SBF See."
+seoTitle: "Zwölftelregel: Gezeiten berechnen + Beispiel"
+description: "Tidenhub, Hoch- und Niedrigwasser, Tiefe unter dem Kiel: Mit der Zwölftelregel schätzt du den Wasserstand ab – mit Rechenbeispiel für Steigen und Fallen und Tipps für den Törn."
 date: 2026-06-02
+updated: 2026-10-17
 tags: ["Navigation"]
-readingTime: 7
+readingTime: 8
 lang: de
 author: "Marius Gehler"
 altSlug: "tides-rule-of-twelfths"
@@ -16,10 +17,10 @@ faq:
   - question: "Wie berechne ich das Wasser unter dem Kiel?"
     answer: "Die Wassertiefe ergibt sich aus der Kartentiefe bezogen auf Seekartennull plus der aktuellen Gezeitenhöhe, minus dem Tiefgang des Bootes. Dabei sollte immer eine Sicherheitsreserve eingeplant werden, da Wind und Luftdruck den realen Wasserstand von der Vorhersage abweichen lassen können."
   - question: "Wie genau ist die Zwölftelregel?"
-    answer: "Sie ist eine Näherung, die einen gleichmäßigen, sinusähnlichen Tidenverlauf unterstellt und meist unter 2,5 % vom Tidenhub abweicht. Für Törnplanung und SBF-See-Prüfung reicht diese Genauigkeit aus, bei unregelmäßigem Tidenverlauf wie Doppelhochwasser stößt sie aber an ihre Grenzen."
+    answer: "Sie ist eine Näherung, die einen gleichmäßigen, sinusähnlichen Tidenverlauf unterstellt und meist unter 2,5 % vom Tidenhub abweicht. Für die Törnplanung reicht diese Genauigkeit aus, bei unregelmäßigem Tidenverlauf wie Doppelhochwasser stößt sie aber an ihre Grenzen."
 howTo:
   name: "Wasserstand mit der Zwölftelregel berechnen"
-  description: "So schätzt du mit der Zwölftelregel den Wasserstand zwischen Niedrig- und Hochwasser ab und ermittelst daraus das Wasser unter dem Kiel – so wie es die SBF-See-Prüfung und die Törnplanung verlangen."
+  description: "So schätzt du mit der Zwölftelregel den Wasserstand zwischen Niedrig- und Hochwasser ab und ermittelst daraus das Wasser unter dem Kiel – so wie du es für die Törnplanung brauchst."
   steps:
     - name: "Hoch- und Niedrigwasserzeiten und -höhen ablesen"
       text: "Entnimm dem Gezeitenkalender oder der Tidentafel für dein Revier die Zeiten und Höhen von Niedrig- und Hochwasser, zum Beispiel Niedrigwasser 08:00 Uhr mit 1,0 m und Hochwasser 14:00 Uhr mit 4,0 m."
@@ -94,12 +95,24 @@ Plane dabei immer eine **Sicherheitsreserve** ein – Wind und Luftdruck können
 
 ## Wie genau ist die Zwölftelregel?
 
-Die Zwölftelregel ist eine Näherung. Sie unterstellt einen gleichmäßigen, sinusähnlichen Tidenverlauf und rund sechs Stunden zwischen den Wenden. Die Abweichung von der idealen Kurve bleibt klein – meist unter 2,5 % des Tidenhubs. Für die Törnplanung und die SBF-See-Prüfung ist diese Genauigkeit völlig ausreichend. In Revieren mit unregelmäßigem Tidenverlauf (z. B. mit Doppelhochwasser) stößt die Regel allerdings an ihre Grenzen.
+Die Zwölftelregel ist eine Näherung. Sie unterstellt einen gleichmäßigen, sinusähnlichen Tidenverlauf und rund sechs Stunden zwischen den Wenden. Die Abweichung von der idealen Kurve bleibt klein – meist unter 2,5 % des Tidenhubs. Für die Törnplanung ist diese Genauigkeit völlig ausreichend. In Revieren mit unregelmäßigem Tidenverlauf (z. B. mit Doppelhochwasser) stößt die Regel allerdings an ihre Grenzen.
 
-## So bereitest du dich vor
+## Beispiel bei fallendem Wasser
 
-Gezeitenfragen tauchen im theoretischen Teil des [SBF See](/sbf-see/) auf und sind eng mit der [Navigationsaufgabe](/blog/sbf-see-navigationsaufgaben-erklaert/) verknüpft. Wer die Zwölftelregel und die Begriffe rund um Tidenhub und Seekartennull sicher beherrscht, sammelt hier verlässlich Punkte. In der Boatpass-App kannst du die passenden Fragen gezielt und getrennt vom restlichen Katalog üben.
+Dieselbe Tide, andere Frage: Wie hoch steht das Wasser um **17:00 Uhr**, wenn das nächste Niedrigwasser um 20:00 Uhr mit 1,2 m folgt und das Hochwasser um 14:00 Uhr bei 4,0 m lag? Der Tidenhub beträgt 2,8 m, ein Zwölftel also etwa 0,23 m. Nach drei Stunden sind 1 + 2 + 3 = 6 Zwölftel gefallen, das sind rund 1,4 m. Der Wasserstand liegt damit bei 4,0 m − 1,4 m = **2,6 m** über Seekartennull. Wichtig: Jede Tide hat ihren eigenen Tidenhub, rechne also immer mit den Werten des Hoch- und Niedrigwassers, zwischen denen du dich gerade befindest.
+
+## Wo du die Zeiten und Höhen herbekommst
+
+Die Eingangswerte (Zeiten und Höhen von Hoch- und Niedrigwasser) liefern die Gezeitentafeln und der Gezeitenkalender des BSH sowie die Tide-Angaben gängiger Navigations-Apps. Für Orte ohne eigene Vorhersage nutzt du Bezugsorte mit Zu- und Abschlägen. Prüfe außerdem, auf welches Bezugsniveau sich die Höhen beziehen. In der Praxis rechnest du Gezeitenhöhe und Kartentiefe immer auf dasselbe Niveau um, sonst stimmt das Ergebnis nicht.
+
+## Wann die Regel nicht reicht
+
+An der Ostsee ist der Tidenhub meist so gering, dass Wind und Luftdruck den Wasserstand stärker bestimmen als die Gezeiten. Auch im Wattenmeer und in Flussmündungen verläuft die Tide oft unsymmetrisch: Das Wasser steigt schneller, als es fällt, oder Strömung und Sturmflut verschieben Zeiten und Höhen. Dann ist die Zwölftelregel nur eine grobe Orientierung. Rechne mit großzügiger Reserve und prüfe aktuelle Wasserstandsvorhersagen, bevor du Watten oder Barren überquerst.
+
+## Wie geht es weiter?
+
+Die Gezeitenkunde gehört nicht zum Sportbootführerschein, sondern zu weiterführenden Seeausbildungen wie dem [Sportküstenschifferschein (SKS)](/blog/sportkuestenschifferschein-sks/). Für Törns in Tidenrevieren lohnt sich das Thema trotzdem, auch mit dem [SBF See](/sbf-see/) in der Tasche. Wie du Strömung und Tide konkret für die Törnplanung nutzt, zeigt der Beitrag [Strömung und Tide praktisch nutzen](/blog/stroemung-tide-toernplanung-grundlagen/). Den Prüfungsstoff des SBF See, etwa die [Navigationsaufgaben](/blog/sbf-see-navigationsaufgaben-erklaert/), übst du in der Boatpass-App mit dem offiziellen ELWIS-Fragenkatalog.
 
 ## Fazit
 
-Die Zwölftelregel macht die Gezeitenrechnung erstaunlich einfach: Tidenhub durch zwölf teilen, die Reihenfolge **1 – 2 – 3 – 3 – 2 – 1** anwenden und das Ergebnis zur Niedrigwasserhöhe addieren (oder beim Fallen abziehen). Zusammen mit der Formel für das Wasser unter dem Kiel hast du damit ein praxistaugliches Werkzeug – an Bord wie in der Prüfung.
+Die Zwölftelregel macht die Gezeitenrechnung erstaunlich einfach: Tidenhub durch zwölf teilen, die Reihenfolge **1 – 2 – 3 – 3 – 2 – 1** anwenden und das Ergebnis zur Niedrigwasserhöhe addieren (oder beim Fallen abziehen). Zusammen mit der Formel für das Wasser unter dem Kiel hast du damit ein praxistaugliches Werkzeug für die Törnplanung an Bord.
