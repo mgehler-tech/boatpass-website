@@ -44,6 +44,9 @@ test.describe('ThemeToggle', () => {
     await page.goto('/sbf-binnen/');
     await expect(page.locator('footer .theme-toggle')).toHaveCount(1);
     await expect(page.locator('footer .theme-toggle')).toBeVisible();
+    // Die generische .h-js-only-Regel (display:block) darf die Gruppe nicht überstimmen.
+    // Als Flex-Item der Legal-Zeile wird inline-flex zu flex blockifiziert; beides ist richtig.
+    expect(await page.locator('footer .theme-toggle').evaluate(el => getComputedStyle(el).display)).toMatch(/^(inline-)?flex$/);
     await page.evaluate(() => document.documentElement.classList.remove('h-js'));
     await expect(page.locator('footer .theme-toggle')).toBeHidden();
   });
@@ -74,6 +77,31 @@ test.describe('Header', () => {
     await page.goto('/sbf-binnen/');
     await expect(page.locator('header.site-header')).not.toHaveAttribute('data-hero');
     expect(await page.locator('header.site-header').evaluate(el => getComputedStyle(el).backgroundColor)).not.toBe('rgba(0, 0, 0, 0)');
+  });
+
+  test('falls back to a solid header without JavaScript and keeps a non-color-mix background', async ({ page }) => {
+    await page.goto('/');
+    const header = page.locator('header.site-header');
+    expect(await header.evaluate(el => getComputedStyle(el).backgroundColor)).toBe('rgba(0, 0, 0, 0)');
+    // Ohne JavaScript gibt es kein h-js: die Kopfzeile muss dann Fläche sein,
+    // sonst steht sie beim Scrollen durchsichtig über Foto und Navy-Abschnitten.
+    await page.evaluate(() => document.documentElement.classList.remove('h-js'));
+    expect(await header.evaluate(el => getComputedStyle(el).backgroundColor)).not.toBe('rgba(0, 0, 0, 0)');
+    // Browser ohne color-mix() (iOS 15, Safari < 16.2) brauchen eine Rückfall-Deklaration davor.
+    const css = await page.evaluate(async () => {
+      const hrefs = [...document.querySelectorAll<HTMLLinkElement>('link[rel="stylesheet"]')].map(l => l.href);
+      const texts = await Promise.all(hrefs.map(h => fetch(h).then(r => r.text())));
+      return texts.join('\n');
+    });
+    expect(css).toMatch(/background:\s*var\(--h-paper\);\s*background:\s*color-mix\(/);
+    expect(css).toMatch(/background:\s*var\(--h-deep\);\s*background:\s*color-mix\(/);
+  });
+
+  test('language link name contains its visible text (WCAG 2.5.3)', async ({ page }) => {
+    await page.goto('/');
+    expect(await page.locator('a.lang-switch').getAttribute('aria-label')).toMatch(/^EN\b/);
+    await page.goto('/en/');
+    expect(await page.locator('a.lang-switch').getAttribute('aria-label')).toMatch(/^DE\b/);
   });
 
   test('mega menu stays inside a 1024px viewport', async ({ page }) => {
@@ -144,6 +172,16 @@ test.describe('Hero photo pipeline', () => {
     await expect(img).toHaveAttribute('alt', '');
     expect(await img.evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
     await expect(page.locator('.hh-phone img[fetchpriority="high"]')).toHaveCount(0);
+  });
+
+  test('mobile band sizes match the rendered width and the parallax overhang is desktop-only', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto('/');
+    // 16:9-Bild, das ein 118vw hohes Band per object-fit: cover füllt, ist ~210vw breit.
+    await expect(page.locator('.hh-photo source:not([media])[type="image/webp"]')).toHaveAttribute('sizes', '(max-width: 639px) 210vw, 100vw');
+    expect(await page.locator('.hh-photo').evaluate(el => getComputedStyle(el).bottom)).toBe('0px');
+    await page.setViewportSize({ width: 1280, height: 800 });
+    expect(parseFloat(await page.locator('.hh-photo').evaluate(el => getComputedStyle(el).bottom))).toBeLessThan(0);
   });
 });
 

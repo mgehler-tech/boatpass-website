@@ -28,8 +28,11 @@ const [portraitAvif, portraitWebp, wideAvif, wideWebp] = await Promise.all([
 <picture class:list={['hh-photo', className]}>
   <source media="(min-width: 1024px)" type="image/avif" srcset={portraitAvif.srcSet.attribute} sizes="42vw" />
   <source media="(min-width: 1024px)" type="image/webp" srcset={portraitWebp.srcSet.attribute} sizes="42vw" />
-  <source type="image/avif" srcset={wideAvif.srcSet.attribute} sizes="100vw" />
-  <source type="image/webp" srcset={wideWebp.srcSet.attribute} sizes="100vw" />
+  <!-- Unter 640 px ist das Band 118vw hoch; ein 16:9-Bild, das es per
+       object-fit: cover füllt, ist rund 210vw breit. Zwischen 640 und 1023 px
+       hat das Band selbst 16:9, also 100vw. -->
+  <source type="image/avif" srcset={wideAvif.srcSet.attribute} sizes="(max-width: 639px) 210vw, 100vw" />
+  <source type="image/webp" srcset={wideWebp.srcSet.attribute} sizes="(max-width: 639px) 210vw, 100vw" />
   <img
     src={wideWebp.src}
     width={wideWebp.attributes.width}
@@ -42,13 +45,18 @@ const [portraitAvif, portraitWebp, wideAvif, wideWebp] = await Promise.all([
 </picture>
 
 <style is:global>
-  /* Füllt das Paneel; die 12 % Überhang unten sind Reserve für die
-     Scroll-Parallaxe (home-motion.ts), damit kein Rand durchblitzt. */
+  /* Füllt das Paneel. Ab 1024 px 12 % Überhang unten als Reserve für die
+     Scroll-Parallaxe (home-motion.ts), damit kein Rand durchblitzt; darunter
+     läuft keine Parallaxe, deshalb kein Überhang (der würde nur den
+     Bildausschnitt verschieben). */
   .hh-photo {
     position: absolute;
-    inset: 0 0 -12% 0;
+    inset: 0;
     display: block;
     line-height: 0;
+  }
+  @media (min-width: 1024px) {
+    .hh-photo { bottom: -12%; }
   }
   .hh-photo img {
     width: 100%;

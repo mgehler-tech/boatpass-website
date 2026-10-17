@@ -13,7 +13,10 @@ const { lang, class: className } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<div class:list={['theme-toggle', 'h-js-only', className]} role="group" aria-label={t.theme.label}>
+<!-- Bewusst ohne .h-js-only: deren display:block würde das inline-flex der Gruppe
+     überstimmen (gleiche Spezifität, Reihenfolge im Bundle nicht garantiert).
+     Die eigenen zwei Regeln unten verbergen und zeigen die Gruppe. -->
+<div class:list={['theme-toggle', className]} role="group" aria-label={t.theme.label}>
   <button type="button" class="theme-choice" data-theme-set="light" aria-pressed="false">{t.theme.light}</button>
   <span class="theme-sep" aria-hidden="true">|</span>
   <button type="button" class="theme-choice" data-theme-set="dark" aria-pressed="false">{t.theme.dark}</button>

@@ -396,6 +396,9 @@ const homeHref = getLocalizedPath(lang, '/');
     left: 0;
     right: 0;
     z-index: 50;
+    /* Erst die deckende Rückfallebene (Browser ohne color-mix, z. B. iOS 15),
+       dann die transluzente Fläche. */
+    background: var(--h-paper);
     background: color-mix(in srgb, var(--h-paper) 78%, transparent);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
@@ -403,12 +406,17 @@ const homeHref = getLocalizedPath(lang, '/');
     transition: background-color 0.3s var(--h-ease), border-color 0.3s var(--h-ease);
   }
   :global(html.dark) .site-header {
+    background: var(--h-deep);
     background: color-mix(in srgb, var(--h-deep) 78%, transparent);
   }
   /* Startseite ganz oben: Kopfzeile liegt über Papier, keine Fläche nötig.
-     Bei geöffnetem mobilen Menü bleibt sie Fläche, sonst stünde sie
-     durchsichtig über dem abgedunkelten Hintergrund. */
-  .site-header[data-hero]:not(.is-scrolled):not(:has(.mobile-menu-panel.open)) {
+     Nur mit JavaScript (h-js aus dem BaseLayout): Ohne Skript gäbe es kein
+     is-scrolled, und die Kopfzeile stünde beim Scrollen durchsichtig über
+     Foto und Navy-Abschnitten. Bei geöffnetem mobilen Menü bleibt sie Fläche,
+     sonst stünde sie durchsichtig über dem abgedunkelten Hintergrund; ohne
+     :has()-Unterstützung fällt die ganze Regel weg und die Kopfzeile ist
+     immer Fläche (gute Degradation). */
+  :global(html.h-js) .site-header[data-hero]:not(.is-scrolled):not(:has(.mobile-menu-panel.open)) {
     background: transparent;
     border-bottom-color: transparent;
     -webkit-backdrop-filter: none;
