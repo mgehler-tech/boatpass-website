@@ -1,10 +1,13 @@
 ---
-import Icon from './Icon.astro';
+// Fußzeile aller Seiten (Spec docs/superpowers/specs/2026-10-17-premium-polish-design.md, 4.4):
+// Store-Badges mit Bewertung je Store (nur ab MIN_STORE_RATINGS), drei
+// Link-Spalten als reiner Text, rechtliche Zeile mit Hell/Dunkel-Umschalter.
+// Keine Icons, keine Chevrons, keine Haarlinien zwischen den Zeilen.
 import StoreBadges from './StoreBadges.astro';
+import ThemeToggle from './ThemeToggle.astro';
 import { useTranslations, getLocalizedPath } from '../i18n/index';
-import { getBoatpassRating, getBoatpassIosRating, type AppRating } from '../data/apps';
+import { getBoatpassStoreRatingsForDisplay } from '../data/apps';
 import { PLAY_STORE_URL, appStoreUrl } from '../data/stores';
-import type { IconName } from '../icons';
 
 interface Props {
   lang: 'de' | 'en';
@@ -12,88 +15,86 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const de = lang === 'de';
 const year = new Date().getFullYear();
 const playStoreUrl = PLAY_STORE_URL;
-const numberLocale = lang === 'de' ? 'de-DE' : 'en-GB';
+const numberLocale = de ? 'de-DE' : 'en-GB';
 
 // Bewertungen je Store getrennt – die Stores weisen sie nicht gemeinsam aus.
-const storeRatings = [
-  { rating: getBoatpassIosRating(), store: 'ios' as const, href: appStoreUrl(lang), name: 'App Store' },
-  { rating: getBoatpassRating(), store: 'play' as const, href: playStoreUrl, name: 'Google Play' },
-]
-  .filter((r): r is typeof r & { rating: AppRating } => r.rating !== null)
-  .map((r) => {
-    const n = r.rating.ratings;
-    const noun = lang === 'de' ? (n === 1 ? 'Bewertung' : 'Bewertungen') : (n === 1 ? 'review' : 'reviews');
-    return {
-      ...r,
-      // Zwei feste Nachkommastellen, damit beide Blöcke gleich aussehen (4,96 · 5,00).
-      score: r.rating.score.toFixed(2).replace('.', lang === 'de' ? ',' : '.'),
-      count: `${n.toLocaleString(numberLocale)} ${noun} · ${r.name}`,
-    };
-  });
+const storeRatings = getBoatpassStoreRatingsForDisplay().map(({ store, rating }) => {
+  const n = rating.ratings;
+  const noun = de ? (n === 1 ? 'Bewertung' : 'Bewertungen') : (n === 1 ? 'review' : 'reviews');
+  const name = store === 'ios' ? 'App Store' : 'Google Play';
+  return {
+    store,
+    href: store === 'ios' ? appStoreUrl(lang) : playStoreUrl,
+    // Zwei feste Nachkommastellen, damit mehrere Blöcke gleich aussehen (4,96 · 5,00).
+    score: rating.score.toFixed(2).replace('.', de ? ',' : '.'),
+    count: `${n.toLocaleString(numberLocale)} ${noun} · ${name}`,
+  };
+});
 
 interface FooterLink {
   href: string;
   label: string;
-  icon: IconName;
   external?: boolean;
   /** Expliziter Store-Link – die Geräteweiche im BaseLayout lässt ihn unverändert. */
   store?: 'ios' | 'play';
 }
 
 const licenseLinks: FooterLink[] = [
-  { href: lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/', label: lang === 'de' ? 'SBF Binnen' : 'SBF Inland', icon: 'waves' },
-  { href: lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/', label: lang === 'de' ? 'SBF See' : 'SBF Coastal', icon: 'sailboat' },
-  { href: lang === 'de' ? '/ubi/' : '/en/ubi/', label: 'UBI', icon: 'microphone' },
-  { href: lang === 'de' ? '/src/' : '/en/src/', label: 'SRC', icon: 'wifi' },
-  { href: lang === 'de' ? '/lrc/' : '/en/lrc/', label: 'LRC', icon: 'satellite' },
+  { href: de ? '/sbf-binnen/' : '/en/sbf-inland/', label: de ? 'SBF Binnen' : 'SBF Inland' },
+  { href: de ? '/sbf-see/' : '/en/sbf-coastal/', label: de ? 'SBF See' : 'SBF Coastal' },
+  { href: de ? '/ubi/' : '/en/ubi/', label: 'UBI' },
+  { href: de ? '/src/' : '/en/src/', label: 'SRC' },
+  { href: de ? '/lrc/' : '/en/lrc/', label: 'LRC' },
 ];
 
 const guideLinks: FooterLink[] = [
-  { href: lang === 'de' ? '/sbf-kosten/' : '/en/sbf-costs/', label: lang === 'de' ? 'SBF Kosten' : 'SBF Costs', icon: 'banknotes' },
-  { href: lang === 'de' ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/', label: lang === 'de' ? 'Prüfung & Ablauf' : 'Exam & Process', icon: 'clipboard' },
-  { href: lang === 'de' ? '/sbf-binnen-pruefungsfragen/' : '/en/sbf-inland-exam-questions/', label: lang === 'de' ? 'Prüfungsfragen Binnen' : 'Inland Exam Questions', icon: 'waves' },
-  { href: lang === 'de' ? '/sbf-see-pruefungsfragen/' : '/en/sbf-coastal-exam-questions/', label: lang === 'de' ? 'Prüfungsfragen See' : 'Coastal Exam Questions', icon: 'sailboat' },
-  { href: lang === 'de' ? '/sbf-app/' : '/en/sbf-app/', label: lang === 'de' ? 'SBF-Apps im Vergleich' : 'Apps Compared', icon: 'phoneDevice' },
-  { href: lang === 'de' ? '/sbf-app-kostenlos/' : '/en/sbf-app-free/', label: lang === 'de' ? 'Kostenlose SBF-Apps' : 'Free SBF Apps', icon: 'creditCard' },
+  { href: de ? '/sbf-kosten/' : '/en/sbf-costs/', label: de ? 'SBF Kosten' : 'SBF Costs' },
+  { href: de ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/', label: de ? 'Prüfung & Ablauf' : 'Exam & Process' },
+  { href: de ? '/sbf-binnen-pruefungsfragen/' : '/en/sbf-inland-exam-questions/', label: de ? 'Prüfungsfragen Binnen' : 'Inland Exam Questions' },
+  { href: de ? '/sbf-see-pruefungsfragen/' : '/en/sbf-coastal-exam-questions/', label: de ? 'Prüfungsfragen See' : 'Coastal Exam Questions' },
+  { href: de ? '/sbf-app/' : '/en/sbf-app/', label: de ? 'SBF-Apps im Vergleich' : 'Apps Compared' },
+  { href: de ? '/sbf-app-kostenlos/' : '/en/sbf-app-free/', label: de ? 'Kostenlose SBF-Apps' : 'Free SBF Apps' },
 ];
 
 const aboutLinks: FooterLink[] = [
-  { href: getLocalizedPath(lang, '/blog/'), label: t.nav.blog, icon: 'document' },
-  { href: getLocalizedPath(lang, '/faq/'), label: t.nav.faq, icon: 'question' },
-  { href: lang === 'de' ? '/ueber-uns/' : '/en/about/', label: t.nav.about, icon: 'lightbulb' },
-  { href: lang === 'de' ? '/kontakt/' : '/en/contact/', label: t.nav.contact, icon: 'envelope' },
-  { href: appStoreUrl(lang), label: lang === 'de' ? 'App Store (iPhone & iPad)' : 'App Store (iPhone & iPad)', icon: 'phone', external: true, store: 'ios' },
-  { href: playStoreUrl, label: lang === 'de' ? 'Google Play (Android)' : 'Google Play (Android)', icon: 'phoneDevice', external: true, store: 'play' },
+  { href: getLocalizedPath(lang, '/blog/'), label: t.nav.blog },
+  { href: getLocalizedPath(lang, '/faq/'), label: t.nav.faq },
+  { href: de ? '/ueber-uns/' : '/en/about/', label: t.nav.about },
+  { href: de ? '/kontakt/' : '/en/contact/', label: t.nav.contact },
+  { href: appStoreUrl(lang), label: 'App Store (iPhone & iPad)', external: true, store: 'ios' },
+  { href: playStoreUrl, label: 'Google Play (Android)', external: true, store: 'play' },
 ];
 
 const legalLinks: FooterLink[] = [
-  { href: lang === 'de' ? '/datenschutz/' : '/en/privacy/', label: t.footer.privacy, icon: 'lock' },
-  { href: lang === 'de' ? '/impressum/' : '/en/legal/', label: t.footer.imprint, icon: 'scale' },
-  { href: lang === 'de' ? '/nutzungsbedingungen/' : '/en/terms/', label: t.footer.terms, icon: 'document' },
+  { href: de ? '/datenschutz/' : '/en/privacy/', label: t.footer.privacy },
+  { href: de ? '/impressum/' : '/en/legal/', label: t.footer.imprint },
+  { href: de ? '/nutzungsbedingungen/' : '/en/terms/', label: t.footer.terms },
 ];
 
-const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showChevron?: boolean; hideOnMobile?: boolean }[] = [
-  { heading: lang === 'de' ? 'Lizenzen' : 'Licenses', icon: 'anchor', links: licenseLinks, showChevron: true },
-  { heading: lang === 'de' ? 'Ratgeber' : 'Guides', icon: 'book', links: guideLinks, hideOnMobile: true },
-  { heading: 'BoatPass', icon: 'users', links: aboutLinks },
+const columns: { heading: string; links: FooterLink[]; guides?: boolean }[] = [
+  { heading: de ? 'Lizenzen' : 'Licenses', links: licenseLinks },
+  // Ratgeber ist auf dem Handy über Menü und Startseite erreichbar; dort
+  // bleibt die Spalte ausgeblendet, damit der Footer nicht zur Linkwand wird.
+  { heading: de ? 'Ratgeber' : 'Guides', links: guideLinks, guides: true },
+  { heading: 'BoatPass', links: aboutLinks },
 ];
-
 ---
 
-<footer style="background:#E8EDF6; border-top:1px solid rgba(51,102,255,0.10);" class="mt-12 sm:mt-24 footer-root">
-  <div class="max-w-6xl mx-auto px-6 py-8 sm:py-12">
+<footer class="site-footer">
+  <div class="h-container">
 
-    <!-- Store-Badges + Bewertungen je Store -->
+    <!-- Store-Badges + Bewertung je Store -->
     <div class="footer-store">
       <StoreBadges lang={lang} height={40} position="footer" id="footer-badge" />
       {storeRatings.map((r) => (
-        <a href={r.href} data-store={r.store} target="_blank" rel="noopener noreferrer" class="footer-rating" aria-label={`${r.score} ${lang === 'de' ? 'von 5' : 'out of 5'} · ${r.count}`}>
+        <a href={r.href} data-store={r.store} target="_blank" rel="noopener noreferrer" class="footer-rating" aria-label={`${r.score} ${de ? 'von 5' : 'out of 5'} · ${r.count}`}>
           <span class="footer-rating-top">
             <span class="footer-rating-stars" aria-hidden="true">★★★★★</span>
             <span class="footer-rating-score">{r.score}</span>
-            <span class="footer-rating-outof">{lang === 'de' ? 'von 5' : 'out of 5'}</span>
+            <span class="footer-rating-outof">{de ? 'von 5' : 'out of 5'}</span>
           </span>
           <span class="footer-rating-count">{r.count}</span>
         </a>
@@ -101,27 +102,19 @@ const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showC
     </div>
 
     <!-- Link-Spalten -->
-    <div class="footer-link-grid">
-      {linkColumns.map((col) => (
-        <div class={`footer-link-col${col.hideOnMobile ? ' footer-link-col-hide-mobile' : ''}`}>
-          <h3 class="footer-col-heading">
-            <span class="footer-col-heading-icon"><Icon name={col.icon} size={15} strokeWidth={2} /></span>
-            {col.heading}
-          </h3>
-          <ul class="footer-link-list">
+    <div class="footer-cols">
+      {columns.map((col) => (
+        <div class:list={['footer-col', col.guides && 'footer-col--guides']}>
+          <h3 class="footer-col-title">{col.heading}</h3>
+          <ul class="footer-links">
             {col.links.map((link) => (
               <li>
                 <a
                   href={link.href}
-                  class="footer-link-row"
                   data-store={link.store}
                   target={link.external ? '_blank' : undefined}
                   rel={link.external ? 'noopener noreferrer' : undefined}
-                >
-                  <Icon name={link.icon} size={15} strokeWidth={1.75} />
-                  <span>{link.label}</span>
-                  {col.showChevron && <Icon name="chevronRight" size={14} strokeWidth={2} class="footer-link-chevron" />}
-                </a>
+                >{link.label}</a>
               </li>
             ))}
           </ul>
@@ -129,208 +122,103 @@ const linkColumns: { heading: string; icon: IconName; links: FooterLink[]; showC
       ))}
     </div>
 
-    <div class="footer-bottom">
-      <p class="footer-copyright">
-        © {year} Boatpass. {lang === 'de' ? 'Alle Rechte vorbehalten.' : 'All rights reserved.'}
-      </p>
-
-      <div class="footer-legal-row">
-        {legalLinks.map((link, i) => (
-          <>
-            <a href={link.href} class="footer-legal-link">{link.label}</a>
-            {i < legalLinks.length - 1 && <span class="footer-legal-sep" aria-hidden="true">·</span>}
-          </>
-        ))}
-      </div>
-
-      <p class="footer-madewith">
-        {lang === 'de' ? 'Entwickelt mit' : 'Made with'}
-        <Icon name="heart" size={13} stroke="none" class="footer-heart" />
-        {lang === 'de' ? 'in Deutschland' : 'in Germany'}
-      </p>
+    <!-- Rechtliches + Darstellung -->
+    <div class="footer-legal">
+      <p class="footer-copyright">© {year} Boatpass</p>
+      {legalLinks.map((link) => (
+        <a href={link.href} class="footer-legal-link">{link.label}</a>
+      ))}
+      <ThemeToggle lang={lang} class="footer-theme" />
     </div>
+    <p class="footer-made">{t.footer.madeIn}</p>
   </div>
 </footer>
 
 <style>
-  /* ── Play-Store-Badge + Bewertung ── */
+  .site-footer {
+    margin-top: clamp(48px, 6vw, 96px);
+    padding: clamp(40px, 5vw, 64px) 0 32px;
+    background: var(--h-paper-2);
+    border-top: 1px solid var(--h-line);
+    color: var(--h-text);
+    font-family: var(--h-sans);
+  }
+  :global(html.dark) .site-footer { background: #0D1018; }
+
+  /* ── Badges + Bewertung ── */
   .footer-store {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 16px 20px;
-    margin-bottom: 32px;
+    gap: 16px 28px;
+    margin-bottom: 40px;
   }
   .footer-rating {
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    text-decoration: none;
+    gap: 3px;
     width: fit-content;
+    text-decoration: none;
+    border-radius: var(--h-r-sm);
   }
-  .footer-rating-top {
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-    white-space: nowrap;
-  }
-  .footer-rating-stars {
-    color: #FBBF24;
-    letter-spacing: 1px;
-    font-size: 15px;
-    line-height: 1;
-  }
-  .footer-rating-score {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--color-navy);
-    line-height: 1;
-  }
-  .footer-rating-outof {
-    font-size: 12px;
-    color: var(--color-muted);
-  }
-  .footer-rating-count {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--color-muted);
-  }
-  .footer-rating:hover .footer-rating-score { color: var(--color-primary); }
+  .footer-rating-top { display: flex; align-items: baseline; gap: 6px; white-space: nowrap; }
+  .footer-rating-stars { font-size: 14px; line-height: 1; letter-spacing: 1px; color: var(--h-beacon); }
+  .footer-rating-score { font: 600 14px/1 var(--h-sans); color: var(--h-ink); }
+  .footer-rating-outof { font-size: 12px; color: var(--h-muted); }
+  .footer-rating-count { font-size: 13px; color: var(--h-muted); }
+  .footer-rating:hover .footer-rating-score { color: var(--h-blue-ink); }
 
-  /* ── Link grid ── */
-  .footer-link-grid {
+  /* ── Spalten ── */
+  .footer-cols {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-bottom: 28px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px 20px;
+    margin-bottom: 40px;
   }
   @media (min-width: 640px) {
-    .footer-link-grid { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .footer-cols { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
   }
-
-  /* Ratgeber ist auf dem Handy bereits über das Header-Menü und die
-     Startseite erreichbar – im Footer wirkten drei volle Spalten hier zu lang.
-     Lizenzen und BoatPass rutschen dadurch nebeneinander in ein 2er-Grid.
-     Auf dem Desktop bleibt der Platz vorhanden, dort bleiben alle drei Spalten. */
   @media (max-width: 639px) {
-    .footer-link-col-hide-mobile { display: none; }
+    .footer-col--guides { display: none; }
   }
-
-  .footer-col-heading {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--color-navy);
-    margin: 0 0 8px;
-  }
-  .footer-col-heading-icon {
+  .footer-col-title { margin: 0 0 6px; font: 600 14px/1.4 var(--h-sans); color: var(--h-ink); }
+  .footer-links { margin: 0; padding: 0; list-style: none; }
+  .footer-links a {
     display: inline-flex;
-    color: var(--color-primary);
-  }
-
-  .footer-link-list {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  .footer-link-row {
-    display: flex;
     align-items: center;
-    gap: 10px;
     min-height: 44px;
-    padding: 6px 0;
-    font-size: 14.5px;
-    color: var(--color-muted);
+    padding-block: 10px;
+    font: 400 15px/1.4 var(--h-sans);
+    color: var(--h-text);
     text-decoration: none;
-    border-top: 1px solid var(--color-border);
     transition: color 0.15s ease;
   }
-  .footer-link-list li:first-child .footer-link-row { border-top: none; }
-  .footer-link-row :global(svg:first-child) {
-    flex-shrink: 0;
-    color: var(--color-primary);
-    opacity: 0.7;
-  }
-  .footer-link-row span {
-    flex: 1;
-  }
-  :global(.footer-link-chevron) {
-    flex-shrink: 0;
-    color: var(--color-muted) !important;
-    opacity: 0.6;
-  }
-  a.footer-link-row:hover {
-    color: var(--color-text);
-  }
-  a.footer-link-row:hover :global(.footer-link-chevron) {
-    transform: translateX(2px);
-    opacity: 1;
-  }
+  .footer-links a:hover { color: var(--h-ink); text-decoration: underline; text-underline-offset: 4px; }
 
-  /* ── Bottom bar ── */
-  .footer-bottom {
-    border-top: 1px solid var(--color-border);
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-  }
-  .footer-copyright {
-    font-size: 12.5px;
-    color: var(--color-muted);
-    margin: 0;
-  }
-
-  .footer-legal-row {
+  /* ── Rechtliches ── */
+  .footer-legal {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    /* Zeilenabstand (row-gap) klein halten, damit die auf 44px vergrößerten
-       Touch-Flächen die Zeile beim Umbruch auf dem Handy nicht auseinanderziehen;
-       Spaltenabstand (column-gap) trennt Link und "·" wie bisher. */
-    gap: 2px 8px;
-    font-size: 12.5px;
-    /* Negative Ränder gleichen die zusätzliche Höhe der 44px-Touch-Flächen aus,
-       sodass der vertikale Rhythmus zur Copyright-/„Made with"-Zeile erhalten bleibt. */
-    margin: -10px 0;
+    gap: 0 20px;
+    padding-top: 12px;
+    border-top: 1px solid var(--h-line);
   }
-  /* Rechtliche Links (Datenschutz · Impressum · Nutzungsbedingungen) sind echte
-     Navigationsziele und brauchen daher – wie die übrigen Footer-Links bereits –
-     eine ausreichend große Touch-Fläche (WCAG 2.5.5, mind. 44px). Als reine
-     Textzeile mit 4px-Padding waren sie nur ~25px hoch und auf dem Handy,
-     dicht an dicht mit nur 8px Abstand, leicht zu verfehlen. inline-flex begrenzt
-     die Fläche auf die tatsächliche Linkbreite (kein ganzflächiges Tappen). */
+  .footer-copyright { margin: 0; font-size: 13px; color: var(--h-muted); }
   .footer-legal-link {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    color: var(--color-muted);
+    font-size: 13px;
+    color: var(--h-muted);
     text-decoration: none;
   }
-  .footer-legal-link:hover { color: var(--color-text); text-decoration: underline; }
-  .footer-legal-sep {
-    color: var(--color-border);
-  }
+  .footer-legal-link:hover { color: var(--h-ink); text-decoration: underline; text-underline-offset: 4px; }
+  :global(.footer-theme) { margin-left: auto; }
+  .footer-made { margin: 4px 0 0; font-size: 13px; color: var(--h-muted); }
 
-  .footer-madewith {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 12.5px;
-    color: var(--color-muted);
-    margin: 0;
+  .site-footer a:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    .footer-links a { transition: none; }
   }
-  :global(.footer-heart) {
-    color: #3366FF;
-    fill: currentColor;
-  }
-
-  /* Touch-Flächen auf dem Handy: Link-Zeilen sind bereits über min-height:44px
-     in .footer-link-row abgedeckt (WCAG 2.5.5), unabhängig vom Breakpoint. */
-
-  html.dark .footer-root { background: #0D1018 !important; border-color: rgba(90, 120, 255, 0.12) !important; }
 </style>

@@ -97,7 +97,9 @@ const total = String(steps.length).padStart(2, '0');
 
       <div class="hj-stage">
         <div class="hj-stage-sticky">
-          <div class="h-stage hj-backdrop">
+          <!-- Gerät steht frei auf dem Papier (kein Kasten, Spec 4.6); ein weicher
+               Lichtfleck dahinter trennt es leise vom Grund. -->
+          <div class="hj-backdrop">
             <div class="h-phone hj-phone">
               <div class="h-phone-screen">
                 {steps.map((step, i) => (
@@ -115,11 +117,6 @@ const total = String(steps.length).padStart(2, '0');
               </div>
             </div>
           </div>
-          <p class="hj-stage-cap" aria-hidden="true">
-            <span class="h-num" data-stage-cap-num>01</span> / {total}
-            <span class="hj-stage-cap-sep">—</span>
-            <span data-stage-cap-title>{steps[0].title}</span>
-          </p>
         </div>
       </div>
     </div>
@@ -245,12 +242,24 @@ const total = String(steps.length).padStart(2, '0');
       gap: 12px;
     }
     .hj-backdrop {
+      position: relative;
       display: grid;
       place-items: center;
       padding: 40px 0;
     }
+    /* Weicher Lichtfleck hinter dem Gerät statt eines Kastens. */
+    .hj-backdrop::before {
+      content: '';
+      position: absolute;
+      inset: -10%;
+      background: radial-gradient(closest-side, var(--h-paper-2), transparent);
+      opacity: 0.6;
+      pointer-events: none;
+    }
     .hj-phone {
-      --pw: min(270px, calc((100svh - 64px) * 0.32));
+      position: relative;
+      --pw: min(320px, calc((100svh - 64px) * 0.36));
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), var(--h-shadow-device);
     }
     .hj-screen {
       clip-path: inset(100% 0 0 0);
@@ -258,15 +267,6 @@ const total = String(steps.length).padStart(2, '0');
     }
     .hj-screen.is-prev { clip-path: inset(0 0 0 0); transition: none; z-index: 1; }
     .hj-screen.is-active { clip-path: inset(0 0 0 0); z-index: 2; }
-
-    .hj-stage-cap {
-      margin: 0;
-      font-family: var(--h-sans);
-      font-size: 12.5px;
-      color: var(--h-muted);
-    }
-    .hj-stage-cap .h-num { color: var(--h-blue-ink); font-weight: 500; }
-    .hj-stage-cap-sep { margin: 0 6px; }
   }
 
   @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,139 @@
+/* =====================================================================
+   Seitenweite Design-Tokens (seit 2026-10-17)
+   ---------------------------------------------------------------------
+   Die Tokens der neuen Startseite (Spec docs/superpowers/specs/
+   2026-10-17-premium-polish-design.md, Abschnitt 4.5) gelten jetzt auf
+   jeder Seite: Header und Footer liegen außerhalb von `.home` und sollen
+   dieselbe Sprache sprechen. Die älteren Tailwind-Theme-Tokens
+   (`--color-*` in global.css) bleiben für die Unterseiten bestehen, bis
+   diese nachgezogen sind.
+
+   Präfix h-; Dunkelwerte unter html.dark (klassenbasiert, s. BaseLayout).
+   ===================================================================== */
+
+:root {
+  --h-paper: #F0F4FA;
+  --h-paper-2: #E6ECF5;
+  --h-card: #FFFFFF;
+  --h-ink: #0B1530;
+  --h-text: #26304A;
+  /* 6:1 auf --h-paper */
+  --h-muted: #525D78;
+  --h-rule: #0B1530;
+  --h-line: rgba(11, 21, 48, 0.13);
+  --h-line-2: rgba(11, 21, 48, 0.26);
+  --h-blue: #3366FF;
+  /* Blau als Schrift: #3366FF erreicht auf dem Papierton nur 4,2:1. */
+  --h-blue-ink: #2449D8;
+  --h-blue-wash: rgba(51, 102, 255, 0.08);
+  --h-btn: #3366FF;
+  --h-btn-hover: #2449D8;
+  --h-beacon: #E8A317;
+  --h-beacon-ink: #8A5300;
+  --h-beacon-wash: #FCF1DE;
+  --h-port: #D63B3B;
+  --h-port-ink: #B42323;
+  --h-port-wash: #FCECEC;
+  --h-stbd: #1E8E57;
+  --h-stbd-ink: #17744A;
+  --h-stbd-wash: #E5F4EB;
+  --h-deep: #0B1530;
+  --h-on-deep: #EEF2FC;
+  --h-on-deep-muted: #A8B4D4;
+  --h-deep-line: rgba(200, 214, 255, 0.2);
+
+  --h-display: 'Archivo Variable', 'Arial Narrow', system-ui, sans-serif;
+  --h-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
+  --h-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Radien: Karten weich, Bedienelemente als Pille, kleine Marken dazwischen. */
+  --h-r: 16px;
+  --h-r-md: 12px;
+  --h-r-sm: 8px;
+  --h-r-pill: 999px;
+  --h-gutter: clamp(16px, 4vw, 40px);
+  --h-max: 1240px;
+
+  /* Geräte-Schatten für frei stehende App-Screens (Hero, Lernweg): ein
+     langer, weicher Fallschatten plus ein kurzer Kontaktschatten. */
+  --h-shadow-device: 0 60px 120px -40px rgba(11,21,48,.55), 0 10px 24px -12px rgba(11,21,48,.35);
+}
+
+html.dark {
+  --h-paper: #0F1117;
+  --h-paper-2: #141926;
+  --h-card: #171D2B;
+  --h-ink: #F1F4FB;
+  --h-text: #D5DCEA;
+  --h-muted: #9AA5BD;
+  --h-rule: #D5DCEA;
+  --h-line: rgba(213, 220, 234, 0.13);
+  --h-line-2: rgba(213, 220, 234, 0.26);
+  --h-blue: #5B8CFF;
+  --h-blue-ink: #86A8FF;
+  --h-blue-wash: rgba(91, 140, 255, 0.12);
+  --h-beacon: #F4B24A;
+  --h-beacon-ink: #F6C067;
+  --h-beacon-wash: rgba(244, 166, 42, 0.12);
+  --h-port-ink: #FF8F8F;
+  --h-port-wash: rgba(214, 59, 59, 0.16);
+  --h-stbd-ink: #68D9A0;
+  --h-stbd-wash: rgba(30, 142, 87, 0.2);
+  --h-deep: #080B14;
+  --h-shadow-device: 0 60px 120px -40px rgba(0,0,0,.8), 0 10px 24px -12px rgba(0,0,0,.6);
+}
+
+/* ── Nur mit JavaScript sinnvoll (Quiz, Theme-Umschalter) ───────────────
+   h-js setzt das Inline-Skript im BaseLayout vor dem ersten Paint. */
+.h-js-only { display: none; }
+.h-js .h-js-only { display: block; }
+
+/* ── Layout ─────────────────────────────────────────────────────────── */
+.h-container {
+  width: 100%;
+  max-width: var(--h-max);
+  margin-inline: auto;
+  padding-inline: var(--h-gutter);
+}
+
+/* ── Pillen-Button (Hero, Preise, Header, Footer-Menü) ─────────────── */
+.h-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  padding: 0 22px 0 10px;
+  border-radius: var(--h-r-pill);
+  background: var(--h-btn);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, transform 0.35s var(--h-ease);
+}
+.h-btn:hover { background: var(--h-btn-hover); }
+.h-btn:active { transform: translateY(1px); }
+.h-btn:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 3px; }
+.h-btn-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff;
+  flex-shrink: 0;
+}
+.h-btn-mark img { width: 20px; height: 20px; }
+.h-btn-arrow { transition: transform 0.35s var(--h-ease); }
+.h-btn:hover .h-btn-arrow { transform: translateX(4px); }
+/* Kompakte Variante ohne Icon-Kreis (Header, mobiles Menü). */
+.h-btn--sm {
+  min-height: 40px;
+  padding: 0 14px 0 16px;
+  gap: 6px;
+  font-size: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .h-btn, .h-btn-arrow { transition: none; }
+}

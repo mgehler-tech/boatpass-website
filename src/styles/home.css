@@ -11,88 +11,22 @@
      Bernstein nur für die Merkhilfe – wie in der App.
    • Nichts bewegt sich von selbst in Dauerschleife.
    Alle Klassen tragen das Präfix h- (bzw. hh-, hj-, … je Abschnitt).
+   Tokens liegen seit 2026-10-17 in brand.css (seitenweit); hier bleiben
+   Layout, Bausteine und die Archivo-Einbindung der Startseite.
    ===================================================================== */
 
 @import '@fontsource-variable/archivo/wdth.css';
 
 .home {
-  --h-paper: #F0F4FA;
-  --h-paper-2: #E6ECF5;
-  --h-card: #FFFFFF;
-  --h-ink: #0B1530;
-  --h-text: #26304A;
-  /* 6:1 auf --h-paper */
-  --h-muted: #525D78;
-  --h-rule: #0B1530;
-  --h-line: rgba(11, 21, 48, 0.13);
-  --h-line-2: rgba(11, 21, 48, 0.26);
-  --h-blue: #3366FF;
-  /* Blau als Schrift: #3366FF erreicht auf dem Papierton nur 4,2:1. */
-  --h-blue-ink: #2449D8;
-  --h-blue-wash: rgba(51, 102, 255, 0.08);
-  --h-btn: #3366FF;
-  --h-btn-hover: #2449D8;
-  --h-beacon: #E8A317;
-  --h-beacon-ink: #8A5300;
-  --h-beacon-wash: #FCF1DE;
-  --h-port: #D63B3B;
-  --h-port-ink: #B42323;
-  --h-port-wash: #FCECEC;
-  --h-stbd: #1E8E57;
-  --h-stbd-ink: #17744A;
-  --h-stbd-wash: #E5F4EB;
-  --h-deep: #0B1530;
-  --h-on-deep: #EEF2FC;
-  --h-on-deep-muted: #A8B4D4;
-  --h-deep-line: rgba(200, 214, 255, 0.2);
-
-  --h-display: 'Archivo Variable', 'Arial Narrow', system-ui, sans-serif;
-  --h-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
-  --h-ease: cubic-bezier(0.22, 1, 0.36, 1);
-  /* Radien: Karten weich, Bedienelemente als Pille, kleine Marken dazwischen. */
-  --h-r: 16px;
-  --h-r-md: 12px;
-  --h-r-sm: 8px;
-  --h-r-pill: 999px;
-  --h-gutter: clamp(16px, 4vw, 40px);
-  --h-max: 1240px;
-
   color: var(--h-text);
   font-family: var(--h-sans);
   background: var(--h-paper);
   overflow-x: clip;
 }
 
-html.dark .home {
-  --h-paper: #0F1117;
-  --h-paper-2: #141926;
-  --h-card: #171D2B;
-  --h-ink: #F1F4FB;
-  --h-text: #D5DCEA;
-  --h-muted: #9AA5BD;
-  --h-rule: #D5DCEA;
-  --h-line: rgba(213, 220, 234, 0.13);
-  --h-line-2: rgba(213, 220, 234, 0.26);
-  --h-blue: #5B8CFF;
-  --h-blue-ink: #86A8FF;
-  --h-blue-wash: rgba(91, 140, 255, 0.12);
-  --h-beacon: #F4B24A;
-  --h-beacon-ink: #F6C067;
-  --h-beacon-wash: rgba(244, 166, 42, 0.12);
-  --h-port-ink: #FF8F8F;
-  --h-port-wash: rgba(214, 59, 59, 0.16);
-  --h-stbd-ink: #68D9A0;
-  --h-stbd-wash: rgba(30, 142, 87, 0.2);
-  --h-deep: #080B14;
-}
-
 /* ── Layout ─────────────────────────────────────────────────────────── */
-.h-container {
-  width: 100%;
-  max-width: var(--h-max);
-  margin-inline: auto;
-  padding-inline: var(--h-gutter);
-}
+/* .h-container und die .h-btn-Familie liegen seitenweit in brand.css
+   (Header und Footer nutzen sie auf jeder Seite). */
 
 /* Bewusst unterschiedliche Abstände je Gewicht des Abschnitts
    (Modifier in den Komponenten), nicht überall dieselben 120px. */
@@ -148,38 +82,7 @@ html.dark .home {
   .hs--split .hs-lede { margin: 0; justify-self: end; }
 }
 
-/* ── Buttons & Links ────────────────────────────────────────────────── */
-.h-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 56px;
-  padding: 0 22px 0 10px;
-  border-radius: var(--h-r-pill);
-  background: var(--h-btn);
-  color: #fff;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.2s ease, transform 0.35s var(--h-ease);
-}
-.h-btn:hover { background: var(--h-btn-hover); }
-.h-btn:active { transform: translateY(1px); }
-.h-btn:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 3px; }
-.h-btn-mark {
-  display: grid;
-  place-items: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #fff;
-  flex-shrink: 0;
-}
-.h-btn-mark img { width: 20px; height: 20px; }
-.h-btn-arrow { transition: transform 0.35s var(--h-ease); }
-.h-btn:hover .h-btn-arrow { transform: translateX(4px); }
-
+/* ── Buttons & Links (.h-btn selbst: brand.css) ─────────────────────── */
 
 .h-deep .h-btn:focus-visible,
 .h-deep a:focus-visible,
@@ -261,18 +164,6 @@ html[data-platform='desktop'] .h-off-desktop { display: none; }
   display: block;
 }
 
-/* ── Bühne für die App-Screenshots: ruhige, leicht abgesetzte Fläche ── */
-.h-stage {
-  position: relative;
-  border-radius: calc(var(--h-r) + 8px);
-  background: var(--h-paper-2);
-  box-shadow: inset 0 0 0 1px var(--h-line);
-  overflow: hidden;
-}
-
-/* ── Nur mit JavaScript sinnvoll (Quiz) ──────────────────────────────── */
-.h-js-only { display: none; }
-.h-js .h-js-only { display: block; }
 
 /* ── Bewegung: Startzustände (nur mit h-motion, s. HomeBoot) ─────────── */
 .h-motion:not(.h-ready) .home [data-reveal] { opacity: 0; }
