@@ -197,6 +197,23 @@ function initParallax() {
   if (inset) gsap.fromTo(inset, { yPercent: 18 }, { yPercent: -12, ease: 'none', scrollTrigger: { ...st } });
 }
 
+/* ── Hero: Foto läuft beim Scrollen etwas langsamer als die Seite ───────
+   Nur am Desktop (darunter ist das Band kurz und scrollt nativ). Das Gerät
+   bewegt sich nicht mit – es steht „im Wasser". Das Foto hat 12 % Überhang
+   (HeroPhoto), damit beim Verschieben kein Rand durchblitzt. */
+function initHeroParallax() {
+  const hero = document.querySelector<HTMLElement>('.hh');
+  const photo = hero?.querySelector<HTMLElement>('.hh-photo');
+  if (!hero || !photo) return;
+  gsap.matchMedia().add('(min-width: 1024px)', () => {
+    gsap.to(photo, {
+      yPercent: -10,
+      ease: 'none',
+      scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true },
+    });
+  });
+}
+
 /* ── Lenis (nur ab 1024px: darunter gibt es das mobile Menü mit eigenem
    Scrollbereich, und Touch scrollt ohnehin nativ) ───────────────────── */
 function initSmoothScroll() {
@@ -245,6 +262,7 @@ if (motion) {
   initReveals();
   initParallax();
   initTilt();
+  initHeroParallax();
   initSmoothScroll();
   // Ab hier gelten die Inline-Werte von GSAP, nicht mehr die CSS-Startzustände.
   root.classList.add('h-ready');

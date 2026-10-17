@@ -146,3 +146,53 @@ test.describe('Hero photo pipeline', () => {
     await expect(page.locator('.hh-phone img[fetchpriority="high"]')).toHaveCount(0);
   });
 });
+
+test.describe('Hero panel', () => {
+  for (const vp of [{ w: 1280, h: 720 }, { w: 1280, h: 620 }, { w: 1440, h: 900 }]) {
+    test(`CTA and phone visible without scrolling at ${vp.w}x${vp.h}`, async ({ page }) => {
+      await page.setViewportSize({ width: vp.w, height: vp.h });
+      await page.goto('/');
+      const cta = await page.locator('#hero-cta-play').boundingBox();
+      expect(cta!.y + cta!.height).toBeLessThanOrEqual(vp.h);
+      const phone = await page.locator('.hh-phone').boundingBox();
+      expect(phone!.y).toBeLessThan(vp.h);
+      expect(phone!.width).toBeGreaterThanOrEqual(280);
+      const panel = await page.locator('.hh-panel').boundingBox();
+      expect(panel!.y).toBeGreaterThanOrEqual(64);
+      // Rechte Kante am Viewport-Rand; 16 px Toleranz für eine eventuelle Scrollbar.
+      expect(panel!.x + panel!.width).toBeGreaterThanOrEqual(vp.w - 16);
+      expect(phone!.y + phone!.height).toBeGreaterThan(panel!.y + panel!.height);
+      await expect(page.locator('.hh-stage')).toHaveCount(0);
+    });
+  }
+  for (const w of [360, 1024, 1280, 1920]) {
+    test(`no horizontal overflow at ${w}`, async ({ page }) => {
+      await page.setViewportSize({ width: w, height: 800 });
+      await page.goto('/');
+      const over = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+      expect(over).toBeLessThanOrEqual(0);
+    });
+  }
+  test('mobile band is full-bleed with the phone cropped at the bottom', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto('/');
+    const panel = await page.locator('.hh-panel').boundingBox();
+    expect(panel!.x).toBe(0);
+    expect(panel!.width).toBe(375);
+    expect(panel!.height).toBeGreaterThanOrEqual(420);
+    expect(panel!.height).toBeLessThanOrEqual(540);
+    const phone = await page.locator('.hh-phone').boundingBox();
+    expect(Math.round(phone!.width)).toBe(220);
+    expect(phone!.y + phone!.height).toBeGreaterThan(panel!.y + panel!.height);
+    expect(phone!.y - panel!.y).toBeGreaterThanOrEqual(60);
+  });
+  test('dark mode darkens the photo', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.goto('/');
+    await expect(page.locator('html')).toHaveClass(/dark/);
+    // Ein nicht erzeugtes ::after meldet ebenfalls Opazität 1 – deshalb zusätzlich der Verlauf.
+    expect(await page.locator('.hh-panel').evaluate(el => getComputedStyle(el, '::after').backgroundImage)).toContain('linear-gradient');
+    expect(await page.locator('.hh-panel').evaluate(el => getComputedStyle(el, '::after').opacity)).toBe('1');
+    expect(await page.locator('.hh-photo img').evaluate(el => getComputedStyle(el).filter)).toContain('saturate');
+  });
+});
