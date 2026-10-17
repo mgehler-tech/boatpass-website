@@ -19,7 +19,7 @@ faq:
     answer: "The App Store also lists an app with the same name from a US boat rental service. The study app for the German boating licence is the one by Marius Gehler in the Education category."
 ---
 
-Since October 2026 BoatPass has also been on the **App Store**. That means you can now study for the German recreational boating licence (Sportbootführerschein, SBF) and the marine radio certificates on your iPhone and iPad, with the same official question catalogue and the same study modes as in the Android app. Here is what the app does, what it costs and what to watch out for when you buy.
+Since October 2026 BoatPass has also been on the **App Store**. That means you can now study for the German recreational boating licence (Sportbootführerschein, SBF) and the marine radio certificates [UBI](/en/ubi/), [SRC](/en/src/) and [LRC](/en/lrc/) on your iPhone and iPad, with the same official question catalogue and the same study modes as in the Android app. Here is what the app does, what it costs and what to watch out for when you buy.
 
 ## A real iOS app, not a copy
 
@@ -37,7 +37,7 @@ BoatPass contains the complete official question catalogue, valid for 2026 exams
 - **SRC** (Short Range Certificate): 180 questions
 - **LRC** (Long Range Certificate): 76 questions
 
-You can see exactly which questions come up in the exam on our pages for the [SBF Binnen exam questions](/en/sbf-inland-exam-questions/) and the [SBF See exam questions](/en/sbf-coastal-exam-questions/).
+You can see exactly which questions come up in the exam on our pages for the [SBF Binnen exam questions](/en/sbf-inland-exam-questions/) and the [SBF See exam questions](/en/sbf-coastal-exam-questions/). For a complete overview of requirements, scope and preparation, see our main pages on the [SBF Binnen](/en/sbf-inland/) and the [SBF See](/en/sbf-coastal/).
 
 ### Every question explained
 

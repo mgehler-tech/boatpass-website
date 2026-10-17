@@ -19,7 +19,7 @@ faq:
     answer: "Im App Store gibt es eine gleichnamige App eines US-Bootsverleihs. Die Lern-App für den Sportbootführerschein erkennst du am Anbieter Marius Gehler und an der Kategorie Bildung."
 ---
 
-Seit Oktober 2026 gibt es BoatPass auch im **App Store**. Damit kannst du jetzt auf dem iPhone und dem iPad für den Sportbootführerschein und die Funkzeugnisse lernen, mit demselben amtlichen Fragenkatalog und denselben Lernmodi wie in der Android-App. Hier erfährst du, was die App kann, was sie kostet und worauf du beim Kauf achten solltest.
+Seit Oktober 2026 gibt es BoatPass auch im **App Store**. Damit kannst du jetzt auf dem iPhone und dem iPad für den Sportbootführerschein und die Funkzeugnisse [UBI](/ubi/), [SRC](/src/) und [LRC](/lrc/) lernen, mit demselben amtlichen Fragenkatalog und denselben Lernmodi wie in der Android-App. Hier erfährst du, was die App kann, was sie kostet und worauf du beim Kauf achten solltest.
 
 ## Eine echte iOS-App, keine Kopie
 
@@ -37,7 +37,7 @@ BoatPass enthält den vollständigen amtlichen Fragenkatalog, gültig für das P
 - **SRC**: 180 Fragen
 - **LRC**: 76 Fragen
 
-Welche Fragen genau in der Prüfung drankommen, kannst du auf unseren Seiten zu den [Prüfungsfragen SBF Binnen](/sbf-binnen-pruefungsfragen/) und [SBF See](/sbf-see-pruefungsfragen/) nachlesen.
+Welche Fragen genau in der Prüfung drankommen, kannst du auf unseren Seiten zu den [Prüfungsfragen SBF Binnen](/sbf-binnen-pruefungsfragen/) und [SBF See](/sbf-see-pruefungsfragen/) nachlesen. Einen vollständigen Überblick zu Voraussetzungen, Geltungsbereich und Vorbereitung bieten unsere Hauptseiten zum [SBF Binnen](/sbf-binnen/) und zum [SBF See](/sbf-see/).
 
 ### Jede Frage erklärt
 
