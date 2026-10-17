@@ -315,7 +315,6 @@ export const de = {
     bundleName: 'Binnen + See',
     funkBundleName: 'Funk-Paket',
     funkBundleTagline: 'UBI + SRC + LRC – alle drei Funkzeugnisse in einem Kauf',
-    included: 'In jeder Lizenz enthalten',
     // Spaltenköpfe der Tarifliste
     colLicence: 'Lizenz',
     colQuestions: 'Fragen',

@@ -2,9 +2,10 @@
 // Lizenzen & Preise als Tarifliste. Fragenzahlen kommen aus i18n/pricing, Preise
 // je Store aus data/stores (PlatformPrice zeigt auf iPhone/iPad den App-Store-
 // Preis) – nichts ist hier hart kodiert (Fragenzahlen der Pakete sind die
-// Summe ihrer Teile, Streichpreis und Ersparnis kommen je Store aus stores.ts). Aufbau: das Modell (kostenlos → Vollzugang),
-// dann eine Liste aller Angebote in zwei Gruppen, dann was jede Lizenz
-// enthält. Bewusst keine drei Karten mit hervorgehobener Mitte.
+// Summe ihrer Teile, Streichpreis und Ersparnis kommen je Store aus stores.ts).
+// Aufbau: das Modell (kostenlos → Vollzugang), dann alle Angebote in zwei
+// Gruppen, dann der Schein-Finder. Bewusst keine drei Karten mit
+// hervorgehobener Mitte.
 import Icon from '../Icon.astro';
 import SectionHead from './SectionHead.astro';
 import StoreCta from './StoreCta.astro';
@@ -148,19 +149,6 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     <p class="hp-price-note" data-reveal>
       <span class="pp-android">{priceNote('android', lang)}</span><span class="pp-ios">{priceNote('ios', lang)}</span>
     </p>
-
-    <!-- In jeder Lizenz enthalten + Vertrauen -->
-    <div class="hp-included" data-reveal>
-      <p class="hp-included-title">{h.included}</p>
-      <ul class="hp-included-list">
-        {p.cardFeatures.map(f => <li>{f}</li>)}
-      </ul>
-      <ul class="hp-trust">
-        <li>{p.trustPay} {p.trustPaySub}</li>
-        <li>{p.trustNoSub} · {p.trustNoSubSub}</li>
-        <li>{p.guaranteeTitle}: {p.guaranteeText}</li>
-      </ul>
-    </div>
 
     <a class="hp-finder" href={finderUrl} data-reveal>
       <span class="hp-finder-text">
@@ -337,42 +325,6 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
   }
   .hp-action:hover { gap: 10px; text-decoration: underline; text-underline-offset: 4px; }
 
-  /* ── Enthalten + Vertrauen ── */
-  .hp-included {
-    display: grid;
-    gap: 14px;
-    margin-top: clamp(40px, 5vw, 56px);
-    padding: 18px 0;
-    border-block: 1px solid var(--h-line-2);
-    font-family: var(--h-sans);
-    font-size: 13px;
-  }
-  @media (min-width: 1024px) {
-    .hp-included { grid-template-columns: 220px minmax(0, 1fr); }
-    .hp-trust { grid-column: 2; }
-  }
-  .hp-included-title { margin: 0; color: var(--h-ink); font-weight: 500; }
-  .hp-included-list,
-  .hp-trust {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    color: var(--h-text);
-  }
-  .hp-trust { color: var(--h-muted); }
-  .hp-included-list li,
-  .hp-trust li { padding: 2px 0; }
-  /* Trenner am Ende des Eintrags: Bricht die Zeile um, steht der Punkt
-     am Zeilenende statt verloren am Anfang der nächsten Zeile. */
-  .hp-included-list li:not(:last-child)::after,
-  .hp-trust li:not(:last-child)::after {
-    content: '·';
-    margin: 0 12px;
-    color: var(--h-muted);
-  }
-
   /* ── Schein-Finder ── */
   .hp-finder {
     display: flex;
@@ -380,8 +332,9 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     align-items: center;
     justify-content: space-between;
     gap: 12px 24px;
+    margin-top: clamp(32px, 4vw, 48px);
     padding: 20px 0;
-    border-bottom: 1px solid var(--h-line-2);
+    border-block: 1px solid var(--h-line-2);
     color: inherit;
     text-decoration: none;
   }

@@ -297,7 +297,6 @@ export const en: Translations = {
     bundleName: 'Inland + Coastal',
     funkBundleName: 'Radio bundle',
     funkBundleTagline: 'UBI + SRC + LRC – all three radio certificates in one purchase',
-    included: 'Included with every licence',
     colLicence: 'Licence',
     colQuestions: 'Questions',
     colTopics: 'Topics',
