@@ -101,7 +101,7 @@ Einige Fehler tauchen bei der Einwinterung immer wieder auf:
 
 ## Frühjahrscheck vorausschauend mitdenken
 
-Eine gute Einwinterung endet nicht mit dem letzten Handgriff im Herbst, sondern erleichtert auch den Start in die neue Saison. Wer sich beim Einwintern notiert, was im Frühjahr noch zu erledigen ist, zum Beispiel ein anstehender Ölwechsel, eine fällige Wartung der Lenzpumpe oder ein Antifouling-Auftrag, spart sich im Frühjahr Zeit unter Zeitdruck vor dem ersten Ablegen. Auch ein Blick in die Bedienungsanleitung des Motors lohnt sich, um herstellerspezifische Empfehlungen für Ein- und Auswinterung nicht zu verpassen.
+Eine gute Einwinterung endet nicht mit dem letzten Handgriff im Herbst, sondern erleichtert auch den Start in die neue Saison. Wer sich beim Einwintern notiert, was im Frühjahr noch zu erledigen ist, zum Beispiel ein anstehender Ölwechsel, eine fällige Wartung der Lenzpumpe oder ein Antifouling-Auftrag, spart sich im Frühjahr Zeit unter Zeitdruck vor dem ersten Ablegen (die passende [Checkliste für den Saisonstart im Frühjahr](/blog/boot-startklar-machen-fruehjahr-checkliste-saisonstart/) hilft dabei). Auch ein Blick in die Bedienungsanleitung des Motors lohnt sich, um herstellerspezifische Empfehlungen für Ein- und Auswinterung nicht zu verpassen.
 
 ## Boot einwintern und die SBF-Vorbereitung
 

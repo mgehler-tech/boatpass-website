@@ -35,7 +35,7 @@ The exact reference used varies by waterway and is set and published by the resp
 
 ## Canals versus free-flowing rivers: different challenges
 
-How much clearance heights fluctuate also depends on the type of waterway you're on. On **regulated canals**, the water level is usually kept within tight limits by locks and impounded reaches. Here, clearance heights at bridges tend to stay fairly stable for most of the year, with larger deviations mostly tied to maintenance work or unusual operating conditions.
+How much clearance heights fluctuate also depends on the type of waterway you're on. On **regulated canals**, the water level is usually kept within tight limits by [locks](/en/blog/navigating-locks-procedure-behavior-boaters/) and impounded reaches. Here, clearance heights at bridges tend to stay fairly stable for most of the year, with larger deviations mostly tied to maintenance work or unusual operating conditions.
 
 On **free-flowing rivers**, things look different. There, the water level depends directly on rainfall and snowmelt across the entire catchment area and can rise or fall noticeably within just a few days. If you're cruising waters like these, keep an eye on how the level has been trending over the past few days, not just its value at the moment you set off, and whether it's currently rising or falling.
 
