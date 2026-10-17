@@ -17,6 +17,22 @@ faq:
     answer: "You should at least have the engine, onboard electrics, radio, ground tackle and safety equipment shown to you, and keep asking until everything is clear. A proper briefing is common with charter and especially sensible for an unfamiliar type of boat."
   - question: "Does the handover check also apply to a used boat I bought myself?"
     answer: "Yes, a structured check of papers, technical condition and safety equipment before the first trip is worthwhile there too. For larger purchases, an independent survey by a professional can also make sense."
+howTo:
+  name: "Take over and inspect a charter or newly bought boat"
+  description: "How to check a charter boat or your own boat before the first trip in six steps."
+  steps:
+    - name: "Clarify papers and responsibilities"
+      text: "Check that your license fits the boat and cruising area, ask to see the boat documents, clarify insurance and deductible, and note the charter company's emergency number."
+    - name: "Walk around the boat"
+      text: "Inspect the hull, superstructure, mooring lines, fenders and anchor for damage and take dated photos of anything unusual."
+    - name: "Check the safety equipment"
+      text: "Make sure life jackets, fire extinguisher, first-aid kit, signaling devices, bilge pump and radio are on board and working."
+    - name: "Test engine and technology"
+      text: "Check fuel, oil, an engine test run, onboard electrics, lights, instruments and steering."
+    - name: "Use the briefing and do a test run"
+      text: "Have the engine, electrics, radio and ground tackle explained, ask questions and, if possible, do a short test run."
+    - name: "Sign the handover protocol"
+      text: "Record all defects and damage in the handover protocol and have both sides sign it before you cast off."
 ---
 
 You passed the exam, the boat is at the pontoon, and all you want to do is head out. That is exactly the moment to take a calm look at the boat. A structured **handover check** takes a little time, protects you from unpleasant surprises underway, and with a charter boat saves you from disputes over damage you did not cause. This article shows what to check before you cast off for the first time.
