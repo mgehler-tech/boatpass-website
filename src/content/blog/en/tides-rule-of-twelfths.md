@@ -1,10 +1,11 @@
 ---
 title: "Calculating Tides with the Rule of Twelfths – Simply Explained"
 seoTitle: "Tides: The Rule of Twelfths Explained"
-description: "Tidal range, high and low water, depth under the keel: the rule of twelfths lets you estimate water level between tides – with a worked example."
+description: "Tidal range, high and low water, depth under the keel: the rule of twelfths lets you estimate water level between tides – with worked examples for rising and falling water."
 date: 2026-06-02
+updated: 2026-10-17
 tags: ["Navigation"]
-readingTime: 7
+readingTime: 8
 lang: en
 author: "Marius Gehler"
 altSlug: "gezeiten-zwoelftelregel"
@@ -16,10 +17,10 @@ faq:
   - question: "How do you calculate the water under the keel?"
     answer: "Water depth equals the charted depth relative to chart datum plus the current tidal height, minus the boat's draft. Always build in a safety margin, since wind and air pressure can make the real water level deviate from the forecast."
   - question: "How accurate is the rule of twelfths?"
-    answer: "It is an approximation that assumes a smooth, sine-like tidal curve and usually deviates by less than 2.5% of the tidal range. That accuracy is sufficient for passage planning and the SBF Coastal exam, but the rule reaches its limits in areas with irregular tidal patterns like double high waters."
+    answer: "It is an approximation that assumes a smooth, sine-like tidal curve and usually deviates by less than 2.5% of the tidal range. That accuracy is sufficient for passage planning, but the rule reaches its limits in areas with irregular tidal patterns like double high waters."
 howTo:
   name: "Calculate the water level with the rule of twelfths"
-  description: "How to estimate the water level between low and high water with the rule of twelfths and derive the water under your keel from it – as required for passage planning and the SBF Coastal exam."
+  description: "How to estimate the water level between low and high water with the rule of twelfths and derive the water under your keel from it – as you need it for passage planning."
   steps:
     - name: "Look up the times and heights of high and low water"
       text: "Take the times and heights of low and high water for your area from the tide tables, for example low water at 08:00 with 1.0 m and high water at 14:00 with 4.0 m."
@@ -94,12 +95,24 @@ Always build in a **safety margin** – wind and air pressure can make the real 
 
 ## How accurate is the rule of twelfths?
 
-The rule of twelfths is an approximation. It assumes a smooth, sine-like tidal curve and roughly six hours between the turning points. The deviation from the ideal curve stays small – usually under 2.5% of the tidal range. For passage planning and the SBF Coastal exam, this accuracy is perfectly sufficient. In areas with irregular tidal patterns (e.g. double high waters), however, the rule reaches its limits.
+The rule of twelfths is an approximation. It assumes a smooth, sine-like tidal curve and roughly six hours between the turning points. The deviation from the ideal curve stays small – usually under 2.5% of the tidal range. For passage planning, this accuracy is perfectly sufficient. In areas with irregular tidal patterns (e.g. double high waters), however, the rule reaches its limits.
 
-## How to prepare
+## Example with falling water
 
-Tide questions appear in the theory part of the [SBF Coastal](/en/sbf-coastal/) and are closely linked to the [navigation task](/en/blog/sbf-coastal-navigation-tasks-explained/). Anyone who has a confident grasp of the rule of twelfths and the terms around tidal range and chart datum can reliably collect points here. In the Boatpass app you can practice the relevant questions separately from the rest of the catalog.
+Same tide, different question: how high is the water at **17:00** if high water at 14:00 was 4.0 m and the next low water at 20:00 is 1.2 m? The tidal range is 2.8 m, so one twelfth is about 0.23 m. After three hours, 1 + 2 + 3 = 6 twelfths have dropped, roughly 1.4 m. The water level is therefore 4.0 m − 1.4 m = **2.6 m** above chart datum. Note that every tide has its own range, so always use the high and low water values you are currently between.
+
+## Where to get the times and heights
+
+The input values (times and heights of high and low water) come from the BSH tide tables and tidal calendar as well as the tide data in common navigation apps. For places without their own prediction, you use reference ports with corrections. Also check which datum the heights refer to. In practice, always convert tidal height and charted depth to the same datum, otherwise the result is wrong.
+
+## When the rule is not enough
+
+On the Baltic Sea the tidal range is usually so small that wind and air pressure influence the water level more than the tides. In the Wadden Sea and in river estuaries the tide is often asymmetric too: the water rises faster than it falls, or currents and storm surges shift times and heights. In those cases the rule of twelfths is only a rough guide. Allow a generous margin and check current water level forecasts before crossing flats or bars.
+
+## What comes next?
+
+Tidal science is not part of the Sportbootführerschein. It belongs to more advanced sea qualifications such as the [SKS](/en/blog/sks-coastal-skippers-license/). Still, the topic is worthwhile for passages in tidal waters, even with the [SBF Coastal](/en/sbf-coastal/) in your pocket. The article on [using currents and tides for trip planning](/en/blog/using-currents-and-tides-for-trip-planning/) shows how to apply it in practice. For the SBF Coastal exam material, such as the [navigation tasks](/en/blog/sbf-coastal-navigation-tasks-explained/), practice in the Boatpass app with the official ELWIS question catalog.
 
 ## Conclusion
 
-The rule of twelfths makes tidal calculation surprisingly simple: divide the tidal range by twelve, apply the sequence **1 – 2 – 3 – 3 – 2 – 1**, and add the result to the low water height (or subtract it when the water is falling). Together with the formula for the water under the keel, you have a practical tool – on board as well as in the exam.
+The rule of twelfths makes tidal calculation surprisingly simple: divide the tidal range by twelve, apply the sequence **1 – 2 – 3 – 3 – 2 – 1**, and add the result to the low water height (or subtract it when the water is falling). Together with the formula for the water under the keel, you have a practical tool for passage planning on board.
