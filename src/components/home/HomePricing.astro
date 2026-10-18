@@ -125,20 +125,23 @@ const groups: { key: 'sbf' | 'funk'; title: string; note?: string; rows: Row[]; 
         <div class="hp-group-body">
           <ul class="hp-rows">
             {group.rows.map(row => (
-              <li class="hp-row" data-reveal>
-                <div class="hp-name">
-                  <span class="hp-name-main">{row.name}</span>
-                  <span class="hp-name-sub">{row.sub}</span>
-                  {row.note && <span class="hp-name-note">{row.note}</span>}
-                </div>
-                <span class="hp-cell hp-cell--q h-num"><strong>{row.questions}</strong> {h.colQuestions}</span>
-                <span class="hp-cell hp-cell--t h-num">{row.topics ? <Fragment><strong>{row.topics}</strong> {h.colTopics}</Fragment> : <span aria-hidden="true">—</span>}</span>
-                <span class="hp-price">
-                  <span class="hp-price-num h-num"><PlatformPrice product={row.product} lang={lang} /></span>
-                  <span class="hp-price-sub">{h.once}</span>
-                </span>
-                <a class="hp-action" href={row.href}>
-                  {row.action}<span class="sr-only">: {row.name}</span><Icon name="chevronRight" size={16} strokeWidth={2.25} />
+              <li data-reveal>
+                <!-- Die ganze Zeile ist der Link zur Detailseite; der Name der
+                     Zeile ergibt sich aus ihrem Inhalt plus „, Details ansehen". -->
+                <a class="hp-row" href={row.href}>
+                  <span class="hp-name">
+                    <span class="hp-name-main">{row.name}</span>
+                    <span class="hp-name-sub">{row.sub}</span>
+                    {row.note && <span class="hp-name-note">{row.note}</span>}
+                  </span>
+                  <span class="hp-cell hp-cell--q h-num"><strong>{row.questions}</strong> {h.colQuestions}</span>
+                  <span class="hp-cell hp-cell--t h-num">{row.topics ? <Fragment><strong>{row.topics}</strong> {h.colTopics}</Fragment> : <span aria-hidden="true">—</span>}</span>
+                  <span class="hp-price">
+                    <span class="hp-price-num h-num"><PlatformPrice product={row.product} lang={lang} /></span>
+                    <span class="hp-price-sub">{h.once}</span>
+                  </span>
+                  <span class="hp-chevron" aria-hidden="true"><Icon name="chevronRight" size={18} strokeWidth={2.25} /></span>
+                  <span class="sr-only">, {row.action}</span>
                 </a>
               </li>
             ))}
@@ -305,29 +308,48 @@ const groups: { key: 'sbf' | 'funk'; title: string; note?: string; rows: Row[]; 
     line-height: 1.6;
     color: var(--h-muted);
   }
+  /* Zeile = Link. Negativer Außenabstand plus gleich großer Innenabstand,
+     damit die Hover-Fläche über den Text hinausreicht, ohne das Raster zu
+     verschieben. */
   .hp-row {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
-      'name name'
+      'name chev'
       'q t'
-      'price action';
+      'price price';
     gap: 10px 16px;
     align-items: baseline;
-    padding: 20px 0;
+    min-height: 72px;
+    margin-inline: -12px;
+    padding: 20px 12px;
     border-bottom: 1px solid var(--h-line-2);
+    border-radius: var(--h-r-sm);
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
   }
+  .hp-row:hover { background: var(--h-blue-wash); }
+  .hp-row:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
   .hp-name { grid-area: name; }
   .hp-cell--q { grid-area: q; }
   .hp-cell--t { grid-area: t; }
   .hp-price { grid-area: price; }
-  .hp-action { grid-area: action; }
+  .hp-chevron {
+    grid-area: chev;
+    justify-self: end;
+    align-self: center;
+    color: var(--h-blue-ink);
+    transition: transform 0.3s var(--h-ease);
+  }
+  .hp-chevron svg { display: block; }
+  .hp-row:hover .hp-chevron { transform: translateX(4px); }
   @media (min-width: 900px) {
     .hp-row {
-      grid-template-columns: minmax(0, 1fr) 110px 110px 230px 180px;
-      grid-template-areas: 'name q t price action';
+      grid-template-columns: minmax(0, 1fr) 110px 110px 170px 20px;
+      grid-template-areas: 'name q t price chev';
       gap: 24px;
-      padding: 22px 0;
+      padding: 22px 12px;
     }
   }
 
@@ -365,25 +387,12 @@ const groups: { key: 'sbf' | 'funk'; title: string; note?: string; rows: Row[]; 
     font-family: var(--h-display);
     font-stretch: 82%;
     font-weight: 720;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1;
     color: var(--h-ink);
   }
   .hp-price-sub { font-family: var(--h-sans); font-size: 12.5px; color: var(--h-muted); }
 
-  .hp-action {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 6px;
-    min-height: 44px;
-    color: var(--h-blue-ink);
-    font-size: 15px;
-    font-weight: 650;
-    text-decoration: none;
-    transition: gap 0.3s var(--h-ease);
-  }
-  .hp-action:hover { gap: 10px; text-decoration: underline; text-underline-offset: 4px; }
 
   /* ── Schein-Finder ── */
   .hp-finder {
@@ -404,4 +413,8 @@ const groups: { key: 'sbf' | 'funk'; title: string; note?: string; rows: Row[]; 
   .hp-finder-cta { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--h-blue-ink); transition: gap 0.3s var(--h-ease); }
   .hp-finder:hover .hp-finder-cta { gap: 10px; }
   .hp-finder:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 4px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hp-row, .hp-chevron, .hp-finder-cta, .h-btn-arrow { transition: none; }
+  }
 </style>

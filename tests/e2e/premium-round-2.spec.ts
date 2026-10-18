@@ -78,3 +78,31 @@ test.describe('Preisliste: Paket-Karten', () => {
     await expect(page.locator('#pricing .hp-bundle').nth(0)).toContainText(/2 catalogues/);
   });
 });
+
+test.describe('Preisliste: Zeilen als Links', () => {
+  test('vier bündige Spalten, Zeile führt zur Detailseite', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto('/');
+    const rows = page.locator('#pricing .hp-group').first().locator('a.hp-row');
+    await expect(rows).toHaveCount(2);
+    await expect(rows.nth(0)).toHaveAttribute('href', '/sbf-binnen/');
+    await expect(rows.nth(0)).toHaveAccessibleName(/SBF Binnen.*300.*Details ansehen/s);
+    await expect(page.locator('#pricing .hp-action')).toHaveCount(0);
+    await expect(page.locator('#pricing a.hp-row a, #pricing a.hp-row button')).toHaveCount(0);
+    const all = page.locator('#pricing a.hp-row');
+    await expect(all).toHaveCount(5);
+    for (const cell of ['.hp-cell--q', '.hp-cell--t', '.hp-price', '.hp-chevron']) {
+      const xs = await all.locator(cell).evaluateAll(els => els.map(e => e.getBoundingClientRect().x));
+      expect(xs).toHaveLength(5);
+      expect(Math.max(...xs) - Math.min(...xs)).toBeLessThanOrEqual(1);
+    }
+  });
+  test('kein horizontaler Überlauf bei 360px, Chevron sichtbar', async ({ page }) => {
+    await page.setViewportSize({ width: 360, height: 780 });
+    await page.goto('/');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
+    const chevron = page.locator('#pricing a.hp-row').first().locator('.hp-chevron');
+    await chevron.scrollIntoViewIfNeeded();
+    await expect(chevron).toBeVisible();
+  });
+});
