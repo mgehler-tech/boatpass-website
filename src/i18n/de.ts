@@ -186,6 +186,8 @@ export const de = {
     detailsLink: 'Details ansehen',
     bundleStrike: formatPrice((PRICES.sbfBinnen.android ?? 0) + (PRICES.sbfSee.android ?? 0), 'de'),
     bundleChoose: 'Bundle wählen',
+    catalogsLabel: 'Kataloge',
+    bundleNote: 'Einmalkauf, kein Abo. Alle Lernfunktionen inklusive.',
     funkHeading: 'Funkscheine',
     funkSubtitle: 'Einzeln oder als Paket – auch ohne Sportbootführerschein.',
     funkMore: 'Mehr erfahren',
