@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/page/PageHead.astro';
 import Icon from '../components/Icon.astro';
 import CatalogSources from '../components/CatalogSources.astro';
 import BoatSchoolFinder from '../components/BoatSchoolFinder.astro';
@@ -129,25 +130,15 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        Sportbootführerschein Binnen
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        SBF Binnen lernen –<br>die smarte Lernapp
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:560px; margin:0 auto 36px;">
-        Bereite dich mit dem offiziellen ELWIS-Fragenkatalog auf die SBF-Binnen-Prüfung vor.
-        3 Lernmodi, Prüfungssimulation und gezieltes Fehlertraining – kostenlos starten.
-      </p>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
-        ▶&nbsp;Kostenlos laden
-      </a>
-    </div>
-  </div>
+  <!-- Seitenkopf (PageHead, Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="de"
+    eyebrow="Sportbootführerschein Binnen"
+    lede="Bereite dich mit dem offiziellen ELWIS-Fragenkatalog auf die SBF-Binnen-Prüfung vor. 3 Lernmodi, Prüfungssimulation und gezieltes Fehlertraining – kostenlos starten."
+    cta
+  >
+    SBF Binnen lernen –<br />die smarte Lernapp
+  </PageHead>
 
   <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
 

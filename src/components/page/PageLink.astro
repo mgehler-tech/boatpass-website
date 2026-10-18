@@ -1,0 +1,25 @@
+---
+// Textlink mit Chevron (Spec Runde 2, 5.3): ersetzt die „… →"-Links der
+// Inhaltsseiten. Externe Ziele öffnen im neuen Tab und sagen das vor.
+import Icon from '../Icon.astro';
+
+interface Props {
+  lang: 'de' | 'en';
+  href: string;
+  external?: boolean;
+  class?: string;
+}
+
+const { lang, href, external = false, class: className } = Astro.props;
+const newTab = lang === 'de' ? '(öffnet in neuem Tab)' : '(opens in new tab)';
+---
+
+<a
+  class:list={['pg-link', className]}
+  href={href}
+  target={external ? '_blank' : undefined}
+  rel={external ? 'noopener noreferrer' : undefined}
+>
+  <slot /><Icon name="chevronRight" size={16} strokeWidth={2.25} />
+  {external && <span class="sr-only">{newTab}</span>}
+</a>

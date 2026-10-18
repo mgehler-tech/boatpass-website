@@ -48,8 +48,6 @@
   --h-blue-ink: #9DB8FF;
 }
 
-.h-num { font-variant-numeric: tabular-nums; }
-
 /* ── Abschnittskopf: Titel + Einleitung ────────────────────────────── */
 .hs-title {
   margin: 0;
@@ -87,18 +85,6 @@
 .h-deep .h-btn:focus-visible,
 .h-deep a:focus-visible,
 .h-deep button:focus-visible { outline-color: #fff; }
-
-/* Store-CTA je Gerät (html[data-platform] aus dem BaseLayout, s. StoreCta).
-   Ohne Attribut (kein JS) gilt die neutrale Variante. */
-.h-on-android,
-.h-on-ios { display: none; }
-html[data-platform='android'] .h-on-android { display: inline; }
-html[data-platform='android'] .h-off-android,
-html[data-platform='android'] .h-on-other,
-html[data-platform='ios'] .h-on-other { display: none; }
-html[data-platform='ios'] .h-on-ios { display: inline; }
-html[data-platform='desktop'] .h-off-desktop { display: none; }
-.h-btn-mark svg { color: var(--h-btn); }
 
 .h-link {
   display: inline-flex;
