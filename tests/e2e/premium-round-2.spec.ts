@@ -96,6 +96,13 @@ test.describe('Preisliste: Zeilen als Links', () => {
       expect(xs).toHaveLength(5);
       expect(Math.max(...xs) - Math.min(...xs)).toBeLessThanOrEqual(1);
     }
+    // Die Haarlinie unter jeder Zeile liegt am Listenelement, nicht am Link mit
+    // negativem Außenabstand: sie beginnt bündig mit der Linie des Gruppenkopfs.
+    const headX = (await page.locator('#pricing .hp-group-head').first().boundingBox())!.x;
+    const liX = (await page.locator('#pricing .hp-rows > li').first().boundingBox())!.x;
+    expect(Math.abs(liX - headX)).toBeLessThanOrEqual(1);
+    expect(await page.locator('#pricing .hp-rows > li').first().evaluate(el => getComputedStyle(el).borderBottomWidth)).toBe('1px');
+    expect(await rows.nth(0).evaluate(el => getComputedStyle(el).borderBottomWidth)).toBe('0px');
   });
   test('kein horizontaler Überlauf bei 360px, Chevron sichtbar', async ({ page }) => {
     await page.setViewportSize({ width: 360, height: 780 });

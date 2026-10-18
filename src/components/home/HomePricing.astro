@@ -257,6 +257,9 @@ const groups: { key: 'sbf' | 'funk'; title: string; note?: string; rows: Row[]; 
   .hp-group-note { margin: 0; font-family: var(--h-sans); font-size: 13px; color: var(--h-muted); }
 
   .hp-rows { margin: 0; padding: 0; list-style: none; }
+  /* Haarlinie am Listenelement, damit sie bündig mit der Gruppenlinie beginnt
+     (der Link darunter ragt für die Hover-Fläche 12 px nach links hinaus). */
+  .hp-rows > li { border-bottom: 1px solid var(--h-line-2); }
 
   /* ── Gruppe: Zeilen links, Paket-Karte rechts (Spec Runde 2, 5.2) ── */
   .hp-group-body { display: grid; gap: 24px; }
@@ -323,7 +326,6 @@ const groups: { key: 'sbf' | 'funk'; title: string; note?: string; rows: Row[]; 
     min-height: 72px;
     margin-inline: -12px;
     padding: 20px 12px;
-    border-bottom: 1px solid var(--h-line-2);
     border-radius: var(--h-r-sm);
     color: inherit;
     text-decoration: none;
