@@ -264,7 +264,6 @@ export const en: Translations = {
     ratingSourcePlay: 'ratings on Google Play',
     ctaPlay: 'Free on Google Play',
     phoneAlt: 'Boatpass app – home screen with licence, progress, streak and study modes',
-    journeyStage: 'Stage',
     journeyChips: [
       ['Study today', 'Study by topic', 'Streak & daily goal'],
       ['Explanation for every answer', 'Mnemonic'],

@@ -5,7 +5,9 @@
 // Desktop (≥1024px): links die Etappen als Zeilen mit einer Fortschrittslinie
 // in der Nummernspalte, rechts ein mitlaufendes Handy auf einer ruhigen Fläche
 // (CSS sticky), dessen Screen zur jeweils aktiven Etappe wechselt. Etappe 02
-// enthält das Quiz. Darunter: jede Etappe mit eigenem Screenshot.
+// enthält das Quiz. Darunter: jede Etappe mit eigenem Screenshot. Etappen sind
+// so hoch wie ihr Inhalt (am Desktop mindestens 44vh); die Nummer steht nur
+// einmal, als Marker auf der Linie (Spec Runde 2, 5.1).
 // Die Aktivierung läuft über home-motion.ts (IntersectionObserver) und
 // funktioniert auch bei reduzierter Bewegung – dann ohne Übergänge.
 import { Image } from 'astro:assets';
@@ -55,7 +57,6 @@ const steps = t.steps.items.map((item, i) => ({
   alt: alts[i],
   chips: h.journeyChips[i],
 }));
-const total = String(steps.length).padStart(2, '0');
 ---
 
 <section id="features" class="hj h-section" aria-labelledby="hj-title">
@@ -75,7 +76,6 @@ const total = String(steps.length).padStart(2, '0');
             <li class:list={['hj-step', { 'hj-step--quiz': i === 1 }]} data-journey-step={i} data-journey-title={step.title}>
               <span class="hj-marker h-num" aria-hidden="true">{step.num}</span>
               <div class="hj-body">
-                <p class="hj-kicker">{h.journeyStage} {step.num} / {total}</p>
                 <h3 class="hj-title">{step.title}</h3>
                 <p class="hj-desc">{step.desc}</p>
                 <ul class="h-tags">
@@ -179,12 +179,6 @@ const total = String(steps.length).padStart(2, '0');
     color: #fff;
   }
 
-  .hj-kicker {
-    margin: 0 0 12px;
-    font-family: var(--h-sans);
-    font-size: 12.5px;
-    color: var(--h-muted);
-  }
   .hj-title {
     margin: 0;
     font-family: var(--h-display);
@@ -223,11 +217,12 @@ const total = String(steps.length).padStart(2, '0');
       grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
       gap: clamp(40px, 5vw, 80px);
     }
+    /* Etappen auf Inhaltshöhe mit kleinem Mindestmaß; die Quiz-Etappe ist so
+       hoch wie das Quiz. Schwellen: Abschnitt < 2100 px bei 1440×900. */
     .hj-step {
-      min-height: 80vh;
-      padding: 32px 0 8vh;
+      min-height: 44vh;
+      padding: 28px 0 36px;
     }
-    .hj-step--quiz { min-height: 110vh; }
     .hj-shot { display: none; }
 
     .hj-stage { display: block; position: relative; }
