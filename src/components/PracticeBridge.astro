@@ -1,13 +1,20 @@
 ---
+// Praxis-Brücke: nimmt die Angst vor dem schwierigsten Prüfungsteil (Kartenaufgabe
+// bzw. Sprechfunk) und zeigt, was die App davon abdeckt. Zweisprachig und auf den
+// pg-Klassen (Spec Runde 2, 5.3); importiert page.css, damit der Baustein auch auf
+// noch nicht migrierten Seiten gestaltet ist.
+import '../styles/page.css';
 import Icon from './Icon.astro';
 import type { IconName } from '../icons';
 
 interface Props {
   // 'navigation' → Kartenaufgaben (SBF See); 'radio' → Sprechfunkverfahren (SRC/UBI/LRC)
   variant: 'navigation' | 'radio';
+  /** Sprache der Texte; Standard Deutsch (bestehende Aufrufe ohne lang). */
+  lang?: 'de' | 'en';
 }
 
-const { variant } = Astro.props;
+const { variant, lang = 'de' } = Astro.props;
 
 type Content = {
   heading: string;
@@ -16,72 +23,75 @@ type Content = {
   reassure: string;
 };
 
-const content: Record<Props['variant'], Content> = {
-  navigation: {
-    heading: 'Kartenaufgaben digital meistern – schaffe ich das ohne Kurs?',
-    intro: 'Die Navigationsaufgabe gilt als der schwierigste Prüfungsteil – ist aber kein Bauchgefühl, sondern ein festes Schema: Kurs anlegen, Standort bestimmen, Wind- und Stromversatz sowie Gezeiten einrechnen. Genau solche Wiederhol-Aufgaben lernst du auf dem Smartphone oft besser als im Buch.',
-    points: [
-      { icon: 'compass', title: 'Schema statt Raten', desc: 'Jede Kartenaufgabe folgt denselben Rechenschritten. Du lernst den Ablauf – nicht 15 Einzelfälle auswendig.' },
-      { icon: 'refresh', title: 'Beliebig oft wiederholen', desc: 'Alle 15 Navigationsaufgaben à 9 Fragen sind getrennt vom Fragebogen übbar – so oft, bis der Ablauf sitzt.' },
-      { icon: 'check', title: 'Sofortige Kontrolle', desc: 'Nach jedem Schritt siehst du, ob dein Ergebnis stimmt – mit Erklärung, statt nur „richtig/falsch".' },
-    ],
-    reassure: 'Für die praktische Kartenarbeit am Prüfungstag brauchst du Übungsseekarte, Zirkel und Anlegedreieck. Den Rechenweg bringst du mit BoatPass sicher mit – du gehst mit Routine in die Aufgabe, nicht hoffend.',
+const content: Record<'de' | 'en', Record<Props['variant'], Content>> = {
+  de: {
+    navigation: {
+      heading: 'Kartenaufgaben digital meistern – schaffe ich das ohne Kurs?',
+      intro: 'Die Navigationsaufgabe gilt als der schwierigste Prüfungsteil – ist aber kein Bauchgefühl, sondern ein festes Schema: Kurs anlegen, Standort bestimmen, Wind- und Stromversatz sowie Gezeiten einrechnen. Genau solche Wiederhol-Aufgaben lernst du auf dem Smartphone oft besser als im Buch.',
+      points: [
+        { icon: 'compass', title: 'Schema statt Raten', desc: 'Jede Kartenaufgabe folgt denselben Rechenschritten. Du lernst den Ablauf – nicht 15 Einzelfälle auswendig.' },
+        { icon: 'refresh', title: 'Beliebig oft wiederholen', desc: 'Alle 15 Navigationsaufgaben à 9 Fragen sind getrennt vom Fragebogen übbar – so oft, bis der Ablauf sitzt.' },
+        { icon: 'check', title: 'Sofortige Kontrolle', desc: 'Nach jedem Schritt siehst du, ob dein Ergebnis stimmt – mit Erklärung, statt nur „richtig/falsch".' },
+      ],
+      reassure: 'Für die praktische Kartenarbeit am Prüfungstag brauchst du Übungsseekarte, Zirkel und Anlegedreieck. Den Rechenweg bringst du mit BoatPass sicher mit – du gehst mit Routine in die Aufgabe, nicht hoffend.',
+    },
+    radio: {
+      heading: 'Angst vorm Sprechfunk? Die nehmen wir dir.',
+      intro: 'Die Sorge vor Diktat und dem Absetzen einer Meldung kommt fast immer aus fehlender Wiederholung – nicht aus mangelndem Können. Die Meldungen folgen einem festen Wortlaut (MAYDAY, PAN PAN, Buchstabiertafel). Wer den Ablauf oft genug durchgespielt hat, dem sitzt er.',
+      points: [
+        { icon: 'microphone', title: 'Fester Wortlaut', desc: 'Not-, Dringlichkeits- und Sicherheitsmeldungen haben eine feste Reihenfolge. Du lernst das Muster – und füllst es im Ernstfall sicher aus.' },
+        { icon: 'clipboard', title: 'Meldungen Schritt für Schritt', desc: 'Buchstabiertafel, Anruf, Verkehrsabwicklung: Du übst jeden Baustein einzeln, bis er ohne Nachdenken kommt.' },
+        { icon: 'refresh', title: 'Sicherheit durch Wiederholung', desc: 'Was du hundertmal durchgespielt hast, sagst du am Prüfungstag automatisch – die praktische Hürde wird zur Formsache.' },
+      ],
+      reassure: 'Den finalen Sprechschliff am echten Gerät holst du dir im praktischen Prüfungsteil bei deiner Funkschule. Den Wortlaut und die Verfahren bringst du mit BoatPass sicher mit.',
+    },
   },
-  radio: {
-    heading: 'Angst vorm Sprechfunk? Die nehmen wir dir.',
-    intro: 'Die Sorge vor Diktat und dem Absetzen einer Meldung kommt fast immer aus fehlender Wiederholung – nicht aus mangelndem Können. Die Meldungen folgen einem festen Wortlaut (MAYDAY, PAN PAN, Buchstabiertafel). Wer den Ablauf oft genug durchgespielt hat, dem sitzt er.',
-    points: [
-      { icon: 'microphone', title: 'Fester Wortlaut', desc: 'Not-, Dringlichkeits- und Sicherheitsmeldungen haben eine feste Reihenfolge. Du lernst das Muster – und füllst es im Ernstfall sicher aus.' },
-      { icon: 'clipboard', title: 'Meldungen Schritt für Schritt', desc: 'Buchstabiertafel, Anruf, Verkehrsabwicklung: Du übst jeden Baustein einzeln, bis er ohne Nachdenken kommt.' },
-      { icon: 'refresh', title: 'Sicherheit durch Wiederholung', desc: 'Was du hundertmal durchgespielt hast, sagst du am Prüfungstag automatisch – die praktische Hürde wird zur Formsache.' },
-    ],
-    reassure: 'Den finalen Sprechschliff am echten Gerät holst du dir im praktischen Prüfungsteil bei deiner Funkschule. Den Wortlaut und die Verfahren bringst du mit BoatPass sicher mit.',
+  en: {
+    navigation: {
+      heading: 'Mastering chart tasks digitally – can I do it without a course?',
+      intro: "The navigation task is considered the hardest part of the exam – but it's not a gut feeling, it's a fixed scheme: lay out the course, determine your position, factor in wind and current set as well as tides. Repetitive tasks like these are often easier to learn on your phone than in a book.",
+      points: [
+        { icon: 'compass', title: 'A method, not guesswork', desc: 'Every chart task follows the same calculation steps. You learn the procedure – not 15 individual cases by heart.' },
+        { icon: 'refresh', title: 'Repeat as often as you like', desc: 'All 15 navigation tasks of 9 questions each can be practiced separately from the question paper – as often as it takes for the procedure to stick.' },
+        { icon: 'check', title: 'Instant feedback', desc: 'After each step you see whether your result is right – with an explanation, not just "correct/incorrect".' },
+      ],
+      reassure: 'For the practical chartwork on exam day you need a training chart, dividers and a course plotter. The calculation method you bring with you confidently via Boatpass – you go into the task with routine, not hope.',
+    },
+    radio: {
+      heading: "Afraid of radio? We'll take that fear away.",
+      intro: 'The worry about dictation and sending a message almost always comes from a lack of repetition – not from a lack of ability. The messages follow a fixed wording (MAYDAY, PAN PAN, phonetic alphabet). Anyone who has run through the procedure often enough has it down.',
+      points: [
+        { icon: 'microphone', title: 'A fixed wording', desc: 'Distress, urgency and safety messages have a fixed order. You learn the pattern – and fill it in confidently in an emergency.' },
+        { icon: 'clipboard', title: 'Messages step by step', desc: 'Phonetic alphabet, call, traffic handling: you practice each building block individually until it comes without thinking.' },
+        { icon: 'refresh', title: 'Confidence through repetition', desc: "What you've run through a hundred times you'll say automatically on exam day – the practical hurdle becomes a formality." },
+      ],
+      reassure: 'You get the final speaking polish on real equipment in the practical exam part at your radio school. The wording and procedures you bring with you confidently via Boatpass.',
+    },
   },
 };
 
-const c = content[variant];
+const c = content[lang][variant];
 ---
 
-<section style="margin-bottom:48px;">
-  <h2 class="content-section-title" style="margin-bottom:16px;">{c.heading}</h2>
-  <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">{c.intro}</p>
+<section class="pg-section pg-practice">
+  <h2 class="pg-h2">{c.heading}</h2>
+  <p class="pg-p">{c.intro}</p>
 
-  <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:20px;">
+  <div class="pg-rows">
     {c.points.map(p => (
-      <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.1); border-radius:16px; padding:20px;">
-        <span style="width:40px; height:40px; border-radius:12px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-          <Icon name={p.icon} size={20} stroke="#3366FF" strokeWidth={1.75} />
-        </span>
-        <div>
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:4px; font-size:16px; line-height:1.4;">{p.title}</div>
-          <div style="font-size:14px; color:#4B5563; line-height:1.65;">{p.desc}</div>
+      <div class="pg-row">
+        <span class="pg-row-icon"><Icon name={p.icon} size={20} strokeWidth={1.75} /></span>
+        <div class="pg-row-body">
+          <p class="pg-row-title">{p.title}</p>
+          <p class="pg-row-text">{p.desc}</p>
         </div>
       </div>
     ))}
   </div>
 
   <!-- Ehrliche Abgrenzung: App bringt Verfahren/Schema, Praxis bleibt vor Ort -->
-  <div class="practice-note" style="display:flex; align-items:flex-start; gap:16px; background:linear-gradient(160deg,#F4F7FE 0%,#EAF0FC 100%); border:1px solid rgba(51,102,255,0.16); border-radius:16px; padding:20px 24px;">
-    <span style="flex-shrink:0; margin-top:1px;"><Icon name="lifebuoy" size={20} stroke="#3366FF" strokeWidth={1.75} /></span>
-    <p class="practice-note-text" style="font-size:14px; color:#4B5563; line-height:1.65; margin:0;">{c.reassure}</p>
+  <div class="pg-card pg-card--note">
+    <span class="pg-row-icon"><Icon name="lifebuoy" size={20} strokeWidth={1.75} /></span>
+    <p class="pg-note">{c.reassure}</p>
   </div>
 </section>
-
-<style>
-  html.dark section h2 { color: #E2E8F0 !important; }
-  html.dark section > p { color: #94A3B8 !important; }
-  html.dark section [style*="background:white"] {
-    background: #181E2E !important;
-    border-color: rgba(90, 120, 255, 0.12) !important;
-  }
-  html.dark section [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
-  html.dark section [style*="color:#4B5563"]  { color: #94A3B8 !important; }
-  html.dark section [style*="background:rgba(51,102,255,0.08)"] {
-    background: rgba(90, 120, 255, 0.14) !important;
-  }
-  html.dark .practice-note {
-    background: rgba(90, 120, 255, 0.07) !important;
-    border-color: rgba(90, 120, 255, 0.18) !important;
-  }
-  html.dark .practice-note-text { color: #94A3B8 !important; }
-</style>

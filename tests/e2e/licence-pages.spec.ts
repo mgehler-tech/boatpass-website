@@ -96,3 +96,21 @@ test.describe('SBF Binnen vollständig', () => {
     expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
   });
 });
+
+test.describe('PracticeBridge', () => {
+  test('DE rendert den Baustein ohne Inline-Farben', async ({ page }) => {
+    await page.goto('/sbf-see/');
+    const de = page.locator('.pg-practice');
+    await expect(de).toHaveCount(1);
+    await expect(de.locator('.pg-row')).toHaveCount(3);
+    await expect(de.locator('[style*="#1A1F36"], [style*="background:white"], [style*="#3366FF"], [style*="#4B5563"]')).toHaveCount(0);
+    await expect(de.locator('h2.pg-h2')).toContainText('Kartenaufgaben digital meistern');
+  });
+  test('EN nutzt denselben Baustein', async ({ page }) => {
+    test.fixme(true, 'bis Task 5 die EN-Seiten den Baustein einbinden');
+    await page.goto('/en/sbf-coastal/');
+    const en = page.locator('.pg-practice');
+    await expect(en).toHaveCount(1);
+    await expect(en.locator('h2.pg-h2')).toContainText('Mastering chart tasks');
+  });
+});
