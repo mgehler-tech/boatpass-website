@@ -2,10 +2,23 @@
 import { Image } from 'astro:assets';
 import { useTranslations, getLocalizedPath } from '../i18n/index';
 import Icon from './Icon.astro';
+import ThemeToggle from './ThemeToggle.astro';
 import appIcon from '../assets/images/app-icon.png';
-import type { IconName } from '../icons';
 import { PLAY_STORE_URL } from '../data/stores';
 
+/**
+ * Kopfzeile aller Seiten (Spec docs/superpowers/specs/2026-10-17-premium-polish-design.md, 4.3).
+ * Vier Einträge (Features · Preise · Führerscheine · Ratgeber), rechts die
+ * DE|EN-Pille, die Hell|Dunkel-Pille (ThemeToggle, Verhalten in
+ * src/scripts/theme-toggle.ts) und der CTA. Beide Pillen bleiben auf jeder
+ * Breite im Header, auch auf dem Handy: So lässt sich Sprache oder eine vom
+ * System erzwungene Darstellung wechseln, ohne erst das Menü zu öffnen.
+ * Blog und FAQ liegen im Ratgeber-Menü.
+ *
+ * Auf der Startseite (transparentAtTop) ist die Kopfzeile ganz oben transparent
+ * und wird nach 24 px Scrollweg zur transluzenten Fläche; den Sentinel dafür
+ * rendert das BaseLayout. Auf allen anderen Seiten ist sie von Anfang an Fläche.
+ */
 interface Props {
   lang: 'de' | 'en';
   altUrl?: string;
@@ -14,15 +27,17 @@ interface Props {
    * keiner echten Route erreichbar, "auf der aktuellen Seite bleiben" ergäbe
    * dort einen Link auf /404/ – eine URL ohne Inhalt. */
   currentPath?: string;
+  /** Startseite: oben transparent, nach dem Scrollen Fläche. */
+  transparentAtTop?: boolean;
 }
 
-const { lang, altUrl, hasAlternate = true, currentPath: currentPathOverride } = Astro.props;
+const { lang, altUrl, hasAlternate = true, currentPath: currentPathOverride, transparentAtTop = false } = Astro.props;
 const t = useTranslations(lang);
 const playStoreUrl = PLAY_STORE_URL;
 const de = lang === 'de';
 const boatSchoolUrl = de ? '/bootsfahrschulen/' : '/en/boat-schools/';
 
-// Der Sprachwechsler muss auf der aktuellen Seite bleiben statt auf die
+// Der Sprachwechsel muss auf der aktuellen Seite bleiben statt auf die
 // Startseite zu springen. Ohne explizites altUrl (z. B. abweichende Slugs bei
 // Blogposts) greift dieselbe Pfad-Heuristik wie in SEO.astro für hreflang.
 // altUrl ist dort eine absolute URL (fürs hreflang-Tag) – für einen anklickbaren
@@ -36,28 +51,28 @@ const deHref = de ? currentPath : otherLangPath;
 const enHref = de ? otherLangPath : currentPath;
 
 /**
- * Mega-Menü-Struktur. Zwei Spalten mit Gruppenüberschrift plus eine Promo-Kachel.
- * Beschreibungen sind Teil der Navigation, nicht Deko: Sie machen die Einträge
- * scanbar, sobald ein Menü mehr als eine Handvoll Ziele hat.
+ * Mega-Menü-Struktur. Zwei bis drei Spalten mit Gruppenüberschrift plus eine
+ * Promo-Kachel. Beschreibungen sind Teil der Navigation, nicht Deko: Sie machen
+ * die Einträge scanbar, sobald ein Menü mehr als eine Handvoll Ziele hat.
  */
-interface MegaItem { href: string; label: string; desc: string; icon: IconName; soon?: boolean }
+interface MegaItem { href: string; label: string; desc: string; soon?: boolean }
 interface MegaGroup { title: string; items: MegaItem[] }
 
 const licensesGroups: MegaGroup[] = [
   {
     title: de ? 'Sportbootführerscheine' : 'Boating licences',
     items: [
-      { href: de ? '/sbf-binnen/' : '/en/sbf-inland/', label: de ? 'SBF Binnen' : 'SBF Inland', desc: de ? 'Flüsse, Seen und Kanäle' : 'Rivers, lakes and canals', icon: 'waves' },
-      { href: de ? '/sbf-see/' : '/en/sbf-coastal/', label: de ? 'SBF See' : 'SBF Coastal', desc: de ? 'Küstengewässer und Navigation' : 'Coastal waters and navigation', icon: 'anchor' },
-      { href: '', label: de ? 'Bodenseeschifferpatent' : 'Lake Constance licence', desc: de ? 'In Vorbereitung' : 'In preparation', icon: 'compass', soon: true },
+      { href: de ? '/sbf-binnen/' : '/en/sbf-inland/', label: de ? 'SBF Binnen' : 'SBF Inland', desc: de ? 'Flüsse, Seen und Kanäle' : 'Rivers, lakes and canals' },
+      { href: de ? '/sbf-see/' : '/en/sbf-coastal/', label: de ? 'SBF See' : 'SBF Coastal', desc: de ? 'Küstengewässer und Navigation' : 'Coastal waters and navigation' },
+      { href: '', label: de ? 'Bodenseeschifferpatent' : 'Lake Constance licence', desc: de ? 'In Vorbereitung' : 'In preparation', soon: true },
     ],
   },
   {
     title: de ? 'Funkzeugnisse' : 'Radio certificates',
     items: [
-      { href: de ? '/ubi/' : '/en/ubi/', label: 'UBI', desc: de ? 'UKW-Sprechfunk Binnen' : 'VHF radio, inland waters', icon: 'wifi' },
-      { href: de ? '/src/' : '/en/src/', label: 'SRC', desc: de ? 'Seefunk im Küstenbereich' : 'Marine radio, coastal', icon: 'satellite' },
-      { href: de ? '/lrc/' : '/en/lrc/', label: 'LRC', desc: de ? 'Weltweiter Seefunk' : 'Worldwide marine radio', icon: 'globe' },
+      { href: de ? '/ubi/' : '/en/ubi/', label: 'UBI', desc: de ? 'UKW-Sprechfunk Binnen' : 'VHF radio, inland waters' },
+      { href: de ? '/src/' : '/en/src/', label: 'SRC', desc: de ? 'Seefunk im Küstenbereich' : 'Marine radio, coastal' },
+      { href: de ? '/lrc/' : '/en/lrc/', label: 'LRC', desc: de ? 'Weltweiter Seefunk' : 'Worldwide marine radio' },
     ],
   },
 ];
@@ -66,77 +81,77 @@ const guidesGroups: MegaGroup[] = [
   {
     title: de ? 'Vorbereitung' : 'Preparation',
     items: [
-      { href: de ? '/sbf-kosten/' : '/en/sbf-costs/', label: de ? 'SBF Kosten' : 'SBF costs', desc: de ? 'Alle Gebühren im Überblick' : 'Every fee at a glance', icon: 'banknotes' },
-      { href: de ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/', label: de ? 'Prüfung & Ablauf' : 'Exam & process', desc: de ? 'Anmeldung bis Prüfungstag' : 'From registration to exam day', icon: 'clipboard' },
-      { href: de ? '/sbf-binnen-pruefungsfragen/' : '/en/sbf-inland-exam-questions/', label: de ? 'Prüfungsfragen Binnen' : 'Inland exam questions', desc: de ? 'Amtlicher Katalog erklärt' : 'Official catalogue explained', icon: 'book' },
-      { href: de ? '/sbf-see-pruefungsfragen/' : '/en/sbf-coastal-exam-questions/', label: de ? 'Prüfungsfragen See' : 'Coastal exam questions', desc: de ? 'Amtlicher Katalog erklärt' : 'Official catalogue explained', icon: 'document' },
+      { href: de ? '/sbf-kosten/' : '/en/sbf-costs/', label: de ? 'SBF Kosten' : 'SBF costs', desc: de ? 'Alle Gebühren im Überblick' : 'Every fee at a glance' },
+      { href: de ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/', label: de ? 'Prüfung & Ablauf' : 'Exam & process', desc: de ? 'Anmeldung bis Prüfungstag' : 'From registration to exam day' },
+      { href: de ? '/sbf-binnen-pruefungsfragen/' : '/en/sbf-inland-exam-questions/', label: de ? 'Prüfungsfragen Binnen' : 'Inland exam questions', desc: de ? 'Amtlicher Katalog erklärt' : 'Official catalogue explained' },
+      { href: de ? '/sbf-see-pruefungsfragen/' : '/en/sbf-coastal-exam-questions/', label: de ? 'Prüfungsfragen See' : 'Coastal exam questions', desc: de ? 'Amtlicher Katalog erklärt' : 'Official catalogue explained' },
     ],
   },
   {
     title: de ? 'App-Vergleich' : 'App comparison',
     items: [
-      { href: de ? '/sbf-app/' : '/en/sbf-app/', label: de ? 'Alle Apps im Vergleich' : 'All apps compared', desc: de ? 'Sieben Apps nebeneinander' : 'Seven apps side by side', icon: 'scale' },
-      { href: de ? '/sbf-see-app/' : '/en/sbf-coastal-app/', label: de ? 'SBF-See-Apps' : 'SBF See apps', desc: de ? 'Mit Navigationsaufgaben' : 'With navigation tasks', icon: 'sailboat' },
-      { href: de ? '/sbf-binnen-app/' : '/en/sbf-inland-app/', label: de ? 'SBF-Binnen-Apps' : 'SBF Binnen apps', desc: de ? 'Von gratis bis Monatsabo' : 'From free to monthly plans', icon: 'waves' },
-      { href: de ? '/funkschein-app/' : '/en/radio-certificate-app/', label: de ? 'Funkschein-Apps' : 'Radio certificate apps', desc: de ? 'UBI, SRC und LRC' : 'UBI, SRC and LRC', icon: 'microphone' },
-      { href: de ? '/sbf-app-kostenlos/' : '/en/sbf-app-free/', label: de ? 'Kostenlose Apps' : 'Free apps', desc: de ? 'Was wirklich gratis geht' : 'What is genuinely free', icon: 'creditCard' },
+      { href: de ? '/sbf-app/' : '/en/sbf-app/', label: de ? 'Alle Apps im Vergleich' : 'All apps compared', desc: de ? 'Sieben Apps nebeneinander' : 'Seven apps side by side' },
+      { href: de ? '/sbf-see-app/' : '/en/sbf-coastal-app/', label: de ? 'SBF-See-Apps' : 'SBF See apps', desc: de ? 'Mit Navigationsaufgaben' : 'With navigation tasks' },
+      { href: de ? '/sbf-binnen-app/' : '/en/sbf-inland-app/', label: de ? 'SBF-Binnen-Apps' : 'SBF Binnen apps', desc: de ? 'Von gratis bis Monatsabo' : 'From free to monthly plans' },
+      { href: de ? '/funkschein-app/' : '/en/radio-certificate-app/', label: de ? 'Funkschein-Apps' : 'Radio certificate apps', desc: de ? 'UBI, SRC und LRC' : 'UBI, SRC and LRC' },
+      { href: de ? '/sbf-app-kostenlos/' : '/en/sbf-app-free/', label: de ? 'Kostenlose Apps' : 'Free apps', desc: de ? 'Was wirklich gratis geht' : 'What is genuinely free' },
+    ],
+  },
+  {
+    title: t.nav.readGroup,
+    items: [
+      { href: getLocalizedPath(lang, '/blog/'), label: t.nav.blog, desc: de ? 'Artikel rund ums Bootfahren' : 'Articles on boating' },
+      { href: getLocalizedPath(lang, '/faq/'), label: t.nav.faq, desc: de ? 'Kurze Antworten' : 'Short answers' },
     ],
   },
 ];
 
 const promo = {
   href: de ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/',
-  eyebrow: de ? 'Tool' : 'Tool',
+  eyebrow: 'Tool',
   title: de ? 'Welcher Schein passt zu dir?' : 'Which licence fits you?',
   desc: de ? 'Fünf Fragen, eine klare Empfehlung.' : 'Five questions, one clear answer.',
   cta: de ? 'Jetzt herausfinden' : 'Find out now',
 };
+
+const homeHref = getLocalizedPath(lang, '/');
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 border-b" style="background: rgba(240,244,250,0.85); backdrop-filter: blur(20px); border-color: rgba(51,102,255,0.10);">
-  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+<header class="site-header" data-hero={transparentAtTop ? '' : undefined}>
+  <div class="h-container site-header-bar">
 
     <!-- Logo -->
-    <a href={getLocalizedPath(lang, '/')} class="logo-link flex shrink-0 items-center gap-2 text-xl font-black" style="color: #1A1F36; letter-spacing: -0.5px; text-decoration: none;">
+    <a href={homeHref} class="logo-link">
       <!-- Immer above the fold: lazy-loading würde das Logo unnötig verzögern. -->
-      <Image src={appIcon} alt="" width={56} height={56} loading="eager" style="width: 28px; height: 28px; border-radius: 6px;" />
-      Boat<span style="color: #3366FF;">Pass</span>
+      <Image src={appIcon} alt="" width={56} height={56} loading="eager" />
+      Boat<span class="logo-accent">Pass</span>
     </a>
 
-    <!-- Links -->
-    <nav aria-label={lang === 'de' ? 'Hauptnavigation' : 'Main navigation'} class="hidden lg:flex items-center gap-5 xl:gap-8">
-      <a href={`${getLocalizedPath(lang, '/')}#features`} class="text-sm font-medium nav-link" style="color: #4B5563; text-decoration: none;">
-        {lang === 'de' ? 'Features' : 'Features'}
-      </a>
-      <a href={`${getLocalizedPath(lang, '/')}#pricing`} class="text-sm font-medium nav-link" style="color: #4B5563; text-decoration: none;">
-        {lang === 'de' ? 'Preise' : 'Pricing'}
-      </a>
+    <!-- Hauptnavigation (ab 1024px) -->
+    <nav aria-label={de ? 'Hauptnavigation' : 'Main navigation'} class="site-nav">
+      <a href={`${homeHref}#features`} class="nav-link">Features</a>
+      <a href={`${homeHref}#pricing`} class="nav-link">{de ? 'Preise' : 'Pricing'}</a>
 
-      <!-- Führerscheine / Licenses Dropdown -->
+      <!-- Führerscheine / Licences -->
       <div class="nav-dropdown">
-        <a id="licenses-trigger" href={lang === 'de' ? '/fuehrerscheine/' : '/en/licenses/'} class="text-sm font-medium nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" style="color: #4B5563; text-decoration:none; display:flex; align-items:center; gap:4px;">
-          {lang === 'de' ? 'Führerscheine' : 'Licenses'} <span aria-hidden="true" style="font-size:10px;">▾</span>
+        <a id="licenses-trigger" href={de ? '/fuehrerscheine/' : '/en/licenses/'} class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          {de ? 'Führerscheine' : 'Licenses'}
+          <svg class="nav-caret" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
-        <div id="licenses-menu" class="nav-mega">
+        <div id="licenses-menu" class="nav-mega nav-mega--licenses">
           <div class="nav-mega-cols">
             {licensesGroups.map(group => (
               <div class="nav-mega-col">
                 <div class="nav-mega-title">{group.title}</div>
                 {group.items.map(item => (item.soon ? (
                   <span class="nav-mega-item nav-mega-item--soon">
-                    <span class="nav-mega-icon"><Icon name={item.icon} size={17} stroke="#9CA3AF" strokeWidth={1.75} /></span>
-                    <span class="nav-mega-text">
-                      <span class="nav-mega-label">{item.label}</span>
-                      <span class="nav-mega-desc">{item.desc}<span class="nav-mega-soon">{de ? 'bald' : 'soon'}</span></span>
-                    </span>
+                    <span class="nav-mega-label">{item.label}</span>
+                    <span class="nav-mega-desc">{item.desc}<span class="nav-mega-soon">{de ? 'bald' : 'soon'}</span></span>
                   </span>
                 ) : (
                   <a href={item.href} class="nav-mega-item">
-                    <span class="nav-mega-icon"><Icon name={item.icon} size={17} stroke="#3366FF" strokeWidth={1.75} /></span>
-                    <span class="nav-mega-text">
-                      <span class="nav-mega-label">{item.label}</span>
-                      <span class="nav-mega-desc">{item.desc}</span>
-                    </span>
+                    <span class="nav-mega-label">{item.label}</span>
+                    <span class="nav-mega-desc">{item.desc}</span>
                   </a>
                 )))}
               </div>
@@ -146,35 +161,30 @@ const promo = {
             <span class="nav-mega-promo-eyebrow">{promo.eyebrow}</span>
             <span class="nav-mega-promo-title">{promo.title}</span>
             <span class="nav-mega-promo-desc">{promo.desc}</span>
-            <span class="nav-mega-promo-cta">{promo.cta} <span aria-hidden="true">→</span></span>
+            <span class="nav-mega-promo-cta">{promo.cta}<Icon name="chevronRight" size={14} strokeWidth={2.25} /></span>
           </a>
           <a href={boatSchoolUrl} class="nav-mega-footer-link">
-            <span class="nav-mega-footer-icon">
-              <Icon name="mapPin" size={14} stroke="#3366FF" strokeWidth={1.75} />
-            </span>
             {de ? 'Bootsfahrschule in deiner Nähe finden' : 'Find a boat school near you'}
-            <span aria-hidden="true" style="margin-left:auto; font-size:12px; opacity:0.5;">→</span>
+            <Icon name="chevronRight" size={14} strokeWidth={2.25} class="nav-mega-footer-arrow" />
           </a>
         </div>
       </div>
 
-      <!-- Ratgeber / Guides Dropdown -->
-      <div class="nav-dropdown">
-        <button id="guides-trigger" class="text-sm font-medium nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false" style="color: #4B5563; background:none; border:none; cursor:pointer; display:flex; align-items:center; gap:4px; padding:0; font-family:inherit;">
-          {lang === 'de' ? 'Ratgeber' : 'Guides'} <span aria-hidden="true" style="font-size:10px;">▾</span>
+      <!-- Ratgeber / Guides (drei Spalten: Menü hängt mittig unter der ganzen Navigation) -->
+      <div class="nav-dropdown nav-dropdown--wide">
+        <button id="guides-trigger" type="button" class="nav-link nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+          {de ? 'Ratgeber' : 'Guides'}
+          <svg class="nav-caret" width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </button>
-        <div id="guides-menu" class="nav-mega">
+        <div id="guides-menu" class="nav-mega nav-mega--guides">
           <div class="nav-mega-cols">
             {guidesGroups.map(group => (
               <div class="nav-mega-col">
                 <div class="nav-mega-title">{group.title}</div>
                 {group.items.map(item => (
                   <a href={item.href} class="nav-mega-item">
-                    <span class="nav-mega-icon"><Icon name={item.icon} size={17} stroke="#3366FF" strokeWidth={1.75} /></span>
-                    <span class="nav-mega-text">
-                      <span class="nav-mega-label">{item.label}</span>
-                      <span class="nav-mega-desc">{item.desc}</span>
-                    </span>
+                    <span class="nav-mega-label">{item.label}</span>
+                    <span class="nav-mega-desc">{item.desc}</span>
                   </a>
                 ))}
               </div>
@@ -184,79 +194,40 @@ const promo = {
             <span class="nav-mega-promo-eyebrow">{promo.eyebrow}</span>
             <span class="nav-mega-promo-title">{promo.title}</span>
             <span class="nav-mega-promo-desc">{promo.desc}</span>
-            <span class="nav-mega-promo-cta">{promo.cta} <span aria-hidden="true">→</span></span>
+            <span class="nav-mega-promo-cta">{promo.cta}<Icon name="chevronRight" size={14} strokeWidth={2.25} /></span>
           </a>
         </div>
       </div>
-
-      <a href={getLocalizedPath(lang, '/blog/')} class="text-sm font-medium nav-link" style="color: #4B5563; text-decoration: none;">
-        {t.nav.blog}
-      </a>
-      <a href={getLocalizedPath(lang, '/faq/')} class="text-sm font-medium nav-link" style="color: #4B5563; text-decoration: none;">
-        {t.nav.faq}
-      </a>
     </nav>
 
-    <!-- Right side -->
-    <div class="header-actions flex shrink-0 items-center gap-3">
-      <div class="lang-switcher">
-        <a href={deHref} class={`lang-option${lang === 'de' ? ' lang-active' : ''}`}>
-          DE
-        </a>
-        <a href={enHref} class={`lang-option${lang === 'en' ? ' lang-active' : ''}`}>
-          EN
-        </a>
-      </div>
-      <!-- Theme Toggle (Icon-Pill matching lang-switcher) -->
-      <button type="button" class="theme-switcher" aria-pressed="false" aria-label={lang === 'de' ? 'Design wechseln' : 'Toggle theme'}>
-        <span class="theme-option" data-theme="light">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="5"/>
-            <line x1="12" y1="1" x2="12" y2="3"/>
-            <line x1="12" y1="21" x2="12" y2="23"/>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-            <line x1="1" y1="12" x2="3" y2="12"/>
-            <line x1="21" y1="12" x2="23" y2="12"/>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-          </svg>
-        </span>
-        <span class="theme-option" data-theme="dark">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-          </svg>
-        </span>
-      </button>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        class="hidden lg:inline-flex items-center gap-2 text-sm font-bold text-white px-5 py-2.5 rounded-full"
-        style="background: #3366FF; box-shadow: 0 4px 14px rgba(51,102,255,0.25); text-decoration: none;">
+    <!-- Rechts: Sprache, Darstellung, CTA, Menü -->
+    <div class="site-actions">
+      <nav class="lang-switcher h-seg" aria-label={t.nav.language}>
+        <a href={deHref} hreflang="de" lang="de" class="lang-option h-seg-opt" aria-current={de ? 'page' : undefined}>DE</a>
+        <a href={enHref} hreflang="en" lang="en" class="lang-option h-seg-opt" aria-current={de ? undefined : 'page'}>EN</a>
+      </nav>
+      <ThemeToggle lang={lang} />
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="site-cta h-btn h-btn--sm" data-cta-position="header">
         {t.nav.getApp}
+        <Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" />
       </a>
-
-      <!-- Hamburger Button (Mobile only) -->
-      <button id="mobile-menu-btn" class="lg:hidden flex flex-col justify-center items-center w-11 h-11 rounded-lg" style="background: rgba(51,102,255,0.06); border: 1px solid rgba(51,102,255,0.12);" aria-label={lang === 'de' ? 'Menü öffnen' : 'Open menu'} aria-expanded="false" aria-controls="mobile-menu">
-        <span class="hamburger-line"></span>
+      <button id="mobile-menu-btn" type="button" class="site-burger" aria-label={de ? 'Menü öffnen' : 'Open menu'} aria-expanded="false" aria-controls="mobile-menu">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
       </button>
     </div>
-  </nav>
+  </div>
 
-  <!-- Mobile Menu Panel -->
-  <div id="mobile-menu" class="mobile-menu-panel lg:hidden" aria-hidden="true" inert>
-    <nav aria-label={lang === 'de' ? 'Mobile Navigation' : 'Mobile navigation'} class="px-4 pt-3 pb-5 flex flex-col gap-0.5">
-      <a href={`${getLocalizedPath(lang, '/')}#features`} class="mobile-nav-link">
-        {lang === 'de' ? 'Features' : 'Features'}
-      </a>
-      <a href={`${getLocalizedPath(lang, '/')}#pricing`} class="mobile-nav-link">
-        {lang === 'de' ? 'Preise' : 'Pricing'}
-      </a>
+  <!-- Mobiles Menü (unter 1024px) -->
+  <div id="mobile-menu" class="mobile-menu-panel" aria-hidden="true" inert>
+    <nav aria-label={de ? 'Mobile Navigation' : 'Mobile navigation'} class="mobile-menu-nav">
+      <a href={`${homeHref}#features`} class="mobile-nav-link">Features</a>
+      <a href={`${homeHref}#pricing`} class="mobile-nav-link">{de ? 'Preise' : 'Pricing'}</a>
 
-      <!-- Führerscheine Accordion -->
+      <!-- Führerscheine -->
       <div class="mobile-accordion">
-        <button class="mobile-accordion-trigger mobile-nav-link w-full text-left" aria-expanded="false" aria-controls="mobile-acc-body">
-          <span>{lang === 'de' ? 'Führerscheine' : 'Licenses'}</span>
+        <button type="button" class="mobile-accordion-trigger mobile-nav-link" aria-expanded="false" aria-controls="mobile-acc-body">
+          <span>{de ? 'Führerscheine' : 'Licenses'}</span>
           <span class="accordion-chevron" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
@@ -265,25 +236,29 @@ const promo = {
         </button>
         <div id="mobile-acc-body" class="mobile-accordion-body">
           <div class="mobile-subnav">
-            <a href={lang === 'de' ? '/tools/welcher-bootsfuehrerschein/' : '/en/tools/which-boating-license/'} class="mobile-nav-sublink mobile-nav-sublink--cta">{lang === 'de' ? 'Welcher Schein? →' : 'Which licence? →'}</a>
+            <a href={promo.href} class="mobile-nav-sublink mobile-nav-sublink--cta">{de ? 'Welcher Schein?' : 'Which licence?'}</a>
             <div class="mobile-divider"></div>
-            <a href={lang === 'de' ? '/sbf-binnen/' : '/en/sbf-inland/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF Binnen' : 'SBF Inland'}</a>
-            <a href={lang === 'de' ? '/sbf-see/' : '/en/sbf-coastal/'} class="mobile-nav-sublink">{lang === 'de' ? 'SBF See' : 'SBF Coastal'}</a>
+            {licensesGroups.map((group, i) => (
+              <>
+                {i > 0 && <div class="mobile-divider"></div>}
+                <div class="mobile-subnav-heading">{group.title}</div>
+                {group.items.map(item => (item.soon ? (
+                  <span class="mobile-nav-sublink mobile-nav-sublink--soon">{item.label} <span class="soon-badge">{de ? 'bald' : 'soon'}</span></span>
+                ) : (
+                  <a href={item.href} class="mobile-nav-sublink">{item.label}</a>
+                )))}
+              </>
+            ))}
             <div class="mobile-divider"></div>
-            <a href={lang === 'de' ? '/ubi/' : '/en/ubi/'} class="mobile-nav-sublink">UBI</a>
-            <a href={lang === 'de' ? '/src/' : '/en/src/'} class="mobile-nav-sublink">SRC</a>
-            <a href={lang === 'de' ? '/lrc/' : '/en/lrc/'} class="mobile-nav-sublink">LRC</a>
-            <span class="mobile-nav-sublink mobile-nav-sublink--soon">Bodenseeschifferpatent <span class="soon-badge">{lang === 'de' ? 'bald' : 'soon'}</span></span>
-            <div class="mobile-divider"></div>
-            <a href={boatSchoolUrl} class="mobile-nav-sublink mobile-nav-sublink--cta">{de ? 'Fahrschule finden →' : 'Find a boat school →'}</a>
+            <a href={boatSchoolUrl} class="mobile-nav-sublink mobile-nav-sublink--cta">{de ? 'Fahrschule finden' : 'Find a boat school'}</a>
           </div>
         </div>
       </div>
 
-      <!-- Ratgeber / Guides Accordion -->
+      <!-- Ratgeber (inkl. Blog und FAQ) -->
       <div class="mobile-accordion">
-        <button class="mobile-accordion-trigger mobile-nav-link w-full text-left" aria-expanded="false" aria-controls="mobile-acc-guides-body">
-          <span>{lang === 'de' ? 'Ratgeber' : 'Guides'}</span>
+        <button type="button" class="mobile-accordion-trigger mobile-nav-link" aria-expanded="false" aria-controls="mobile-acc-guides-body">
+          <span>{de ? 'Ratgeber' : 'Guides'}</span>
           <span class="accordion-chevron" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
               <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
@@ -305,16 +280,10 @@ const promo = {
         </div>
       </div>
 
-      <a href={getLocalizedPath(lang, '/blog/')} class="mobile-nav-link">
-        {t.nav.blog}
-      </a>
-      <a href={getLocalizedPath(lang, '/faq/')} class="mobile-nav-link">
-        {t.nav.faq}
-      </a>
-
       <div class="mobile-menu-footer">
-        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="mobile-cta-btn">
+        <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="mobile-cta-btn h-btn h-btn--sm" data-cta-position="header">
           {t.nav.getApp}
+          <Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" />
         </a>
       </div>
     </nav>
@@ -325,9 +294,19 @@ const promo = {
 <div id="mobile-menu-backdrop" class="mobile-backdrop" aria-hidden="true"></div>
 
 <script>
+  const header = document.querySelector<HTMLElement>('header.site-header');
   const btn = document.getElementById('mobile-menu-btn') as HTMLButtonElement | null;
   const menu = document.getElementById('mobile-menu');
   const backdrop = document.getElementById('mobile-menu-backdrop');
+
+  // Kopfzeile: oben transparent (nur mit Sentinel aus dem BaseLayout), danach Fläche.
+  const sentinel = document.querySelector('.header-sentinel');
+  if (header && sentinel && 'IntersectionObserver' in window) {
+    new IntersectionObserver(
+      (entries) => header.classList.toggle('is-scrolled', !entries[0].isIntersecting),
+      { threshold: 0 },
+    ).observe(sentinel);
+  }
 
   // Alle sichtbaren fokussierbaren Elemente im Menü (collapsed Accordion-Inhalte ausgeschlossen)
   function getFocusable(): HTMLElement[] {
@@ -348,7 +327,6 @@ const promo = {
     menu?.setAttribute('aria-hidden', 'false');
     menu?.removeAttribute('inert');
     document.body.style.overflow = 'hidden';
-    // Fokus auf erstes Element setzen
     requestAnimationFrame(() => getFocusable()[0]?.focus());
   }
 
@@ -359,7 +337,6 @@ const promo = {
     menu?.setAttribute('aria-hidden', 'true');
     menu?.setAttribute('inert', '');
     document.body.style.overflow = '';
-    // Fokus zurück auf Hamburger-Button
     btn?.focus();
   }
 
@@ -369,7 +346,6 @@ const promo = {
 
   backdrop?.addEventListener('click', closeMenu);
 
-  // Escape schließt das Menü
   document.addEventListener('keydown', (e: KeyboardEvent) => {
     if (e.key === 'Escape' && menu?.classList.contains('open')) closeMenu();
   });
@@ -395,213 +371,231 @@ const promo = {
     link.addEventListener('click', closeMenu);
   });
 
-  // Accordion
+  // Akkordeons
   menu?.querySelectorAll('.mobile-accordion-trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
       const accordion = trigger.closest('.mobile-accordion');
       const isOpen = accordion?.classList.contains('accordion-open');
-      if (isOpen) {
-        accordion?.classList.remove('accordion-open');
-        trigger.setAttribute('aria-expanded', 'false');
-      } else {
-        accordion?.classList.add('accordion-open');
-        trigger.setAttribute('aria-expanded', 'true');
-      }
+      accordion?.classList.toggle('accordion-open', !isOpen);
+      trigger.setAttribute('aria-expanded', String(!isOpen));
     });
   });
 
-  // Desktop Dropdown: aria-expanded per Fokus verwalten
+  // Desktop-Dropdowns: aria-expanded per Fokus verwalten
   function wireDropdown(triggerId: string) {
     const trigger = document.getElementById(triggerId);
     const container = trigger?.closest('.nav-dropdown');
     if (!container || !trigger) return;
     container.addEventListener('focusin', () => trigger.setAttribute('aria-expanded', 'true'));
-    container.addEventListener('focusout', (e: FocusEvent) => {
-      if (!container.contains(e.relatedTarget as Node)) trigger.setAttribute('aria-expanded', 'false');
+    container.addEventListener('focusout', (e: Event) => {
+      const next = (e as FocusEvent).relatedTarget as Node | null;
+      if (!container.contains(next)) trigger.setAttribute('aria-expanded', 'false');
     });
   }
   wireDropdown('licenses-trigger');
   wireDropdown('guides-trigger');
-
-  // Theme toggle – unterstützt mehrere Umschalter (Desktop-Header + mobiles Menü),
-  // die immer synchron denselben Zustand zeigen.
-  const themeToggles = Array.from(
-    document.querySelectorAll<HTMLButtonElement>('.theme-switcher')
-  );
-
-  function syncThemeToggle() {
-    const isDark = document.documentElement.classList.contains('dark');
-    themeToggles.forEach(toggle => {
-      toggle.setAttribute('aria-pressed', String(isDark));
-      toggle.querySelectorAll<HTMLElement>('.theme-option').forEach(opt => {
-        opt.classList.toggle('theme-option-active', opt.dataset.theme === (isDark ? 'dark' : 'light'));
-      });
-    });
-  }
-
-  themeToggles.forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
-      const clicked = (e.target as Element).closest<HTMLElement>('.theme-option');
-      let isDark: boolean;
-      if (clicked?.dataset.theme === 'light') {
-        isDark = false;
-        document.documentElement.classList.remove('dark');
-      } else if (clicked?.dataset.theme === 'dark') {
-        isDark = true;
-        document.documentElement.classList.add('dark');
-      } else {
-        isDark = document.documentElement.classList.toggle('dark');
-      }
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      syncThemeToggle();
-    });
-  });
-
-  syncThemeToggle();
 </script>
 
 <style>
-  .lang-switcher {
-    display: inline-flex;
-    align-items: center;
-    background: rgba(51,102,255,0.06);
-    border: 1px solid rgba(51,102,255,0.12);
-    border-radius: 100px;
-    padding: 3px;
-    gap: 2px;
-  }
-  .lang-option {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #4B5563;
-    text-decoration: none;
-    padding: 4px 10px;
-    border-radius: 100px;
-    transition: color 0.15s;
-  }
-  /* Touch-Fläche unsichtbar auf min. 44px Höhe erweitern (WCAG 2.5.5),
-     ohne die sichtbare Pill-Größe zu verändern. */
-  .lang-option::after {
-    content: '';
-    position: absolute;
+  /* ── Kopfzeile ─────────────────────────────────────────────────────── */
+  .site-header {
+    position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    z-index: 50;
+    /* Erst die deckende Rückfallebene (Browser ohne color-mix, z. B. iOS 15),
+       dann die transluzente Fläche. */
+    background: var(--h-paper);
+    background: color-mix(in srgb, var(--h-paper) 78%, transparent);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--h-line);
+    transition: background-color 0.3s var(--h-ease), border-color 0.3s var(--h-ease);
+  }
+  :global(html.dark) .site-header {
+    background: var(--h-deep);
+    background: color-mix(in srgb, var(--h-deep) 78%, transparent);
+  }
+  /* Startseite ganz oben: Kopfzeile liegt über Papier, keine Fläche nötig.
+     Nur mit JavaScript (h-js aus dem BaseLayout): Ohne Skript gäbe es kein
+     is-scrolled, und die Kopfzeile stünde beim Scrollen durchsichtig über
+     Foto und Navy-Abschnitten. Bei geöffnetem mobilen Menü bleibt sie Fläche,
+     sonst stünde sie durchsichtig über dem abgedunkelten Hintergrund; ohne
+     :has()-Unterstützung fällt die ganze Regel weg und die Kopfzeile ist
+     immer Fläche (gute Degradation). */
+  :global(html.h-js) .site-header[data-hero]:not(.is-scrolled):not(:has(.mobile-menu-panel.open)) {
+    background: transparent;
+    border-bottom-color: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .site-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    height: 64px;
+  }
+
+  /* Logo */
+  .logo-link {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 8px;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--h-ink);
+    text-decoration: none;
+    border-radius: var(--h-r-sm);
+  }
+  .logo-link :global(img) { width: 28px; height: 28px; border-radius: 6px; }
+  .logo-accent { color: var(--h-blue-ink); }
+
+  /* Hauptnavigation */
+  .site-nav { position: relative; display: none; align-items: center; gap: 28px; }
+  .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 44px;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: 500 15px/1 var(--h-sans);
+    color: var(--h-text);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  .nav-link:hover,
+  .nav-dropdown:focus-within .nav-dropdown-trigger { color: var(--h-ink); }
+  .nav-caret { opacity: 0.6; transition: transform 0.3s var(--h-ease); }
+  .nav-dropdown:hover .nav-caret,
+  .nav-dropdown:focus-within .nav-caret { transform: rotate(180deg); }
+
+  /* Rechts: DE|EN- und Hell|Dunkel-Pille (Stil .h-seg in brand.css), CTA, Menü */
+  .site-actions { display: flex; align-items: center; gap: 8px; }
+  .site-cta { display: none; }
+  .site-burger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
     height: 44px;
-    min-height: 100%;
+    margin-right: -10px;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    border-radius: var(--h-r-sm);
   }
-  .lang-option:hover { color: #1A1F36; }
-  .lang-active {
-    background: white;
-    color: #1A1F36 !important;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  .hamburger-line {
+    display: block;
+    width: 18px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--h-ink);
   }
 
-  .nav-link:hover { color: #1A1F36 !important; }
+  .logo-link:focus-visible,
+  .nav-link:focus-visible,
+  .site-burger:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
 
+  /* Schmale Handys: Logo · DE|EN · Hell|Dunkel · Menü müssen in eine Zeile
+     passen (328 px Inhalt bei 360 px Breite: Logo 133 + 8 + zwei Pillen à 66
+     + Menü 44 − 10 Außenabstand = 315), deshalb engere Abstände und Optionen. */
+  @media (max-width: 420px) {
+    .site-header-bar { gap: 8px; }
+    .site-actions { gap: 4px; }
+    .site-actions :global(.h-seg-opt) { min-width: 28px; padding: 0 5px; }
+  }
+  @media (min-width: 1024px) {
+    .site-nav { display: flex; }
+    .site-actions { gap: 12px; }
+    .site-cta { display: inline-flex; margin-left: 8px; }
+    .site-burger { display: none; }
+  }
+
+  /* ── Megamenü ──────────────────────────────────────────────────────── */
   .nav-dropdown { position: relative; }
-
-  /* Mega-Menü: zwei Spalten mit Gruppenüberschrift plus Promo-Kachel.
-     Statt display:none wird über opacity/visibility geblendet – nur so ist der
+  /* Statt display:none wird über opacity/visibility geblendet – nur so ist der
      Auf- und Abbau animierbar. */
   .nav-mega {
     position: absolute;
-    top: calc(100% + 12px);
+    top: calc(100% + 8px);
     left: 50%;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 14px;
-    background: white;
-    border: 1px solid rgba(51,102,255,0.10);
-    border-radius: 18px;
-    box-shadow: 0 2px 4px rgba(26,31,54,0.04), 0 12px 32px rgba(26,31,54,0.10);
+    gap: 8px;
+    padding: 12px;
+    background: var(--h-card);
+    border-radius: var(--h-r);
+    box-shadow: 0 0 0 1px var(--h-line), 0 1px 2px rgba(11, 21, 48, 0.04), 0 24px 48px -24px rgba(11, 21, 48, 0.3);
     z-index: 100;
+    /* Feste Breite aus Spalten + Kachel: Ein absolut positioniertes Element
+       mit left:50% würde sonst auf den rechts verbleibenden Platz schrumpfen
+       (Kachel bricht um) oder mit max-content den Fußlink mitzählen. */
+    width: calc(2 * 224px + 196px + 2 * 8px + 24px);
     max-width: calc(100vw - 32px);
     opacity: 0;
     visibility: hidden;
     transform: translateX(-50%) translateY(-6px);
-    transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s;
+    transition: opacity 0.18s ease, transform 0.25s var(--h-ease), visibility 0.18s;
   }
-  /* Unsichtbare Brücke über die 12px-Lücke, damit der Hover nicht abreißt */
-  .nav-mega::before {
-    content: '';
-    position: absolute;
-    top: -12px;
-    left: 0;
-    right: 0;
-    height: 12px;
-  }
+  /* Unsichtbare Brücke über die Lücke, damit der Hover nicht abreißt */
+  .nav-mega::before { content: ''; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
   .nav-dropdown:hover .nav-mega,
   .nav-dropdown:focus-within .nav-mega {
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
   }
-  @media (prefers-reduced-motion: reduce) {
-    .nav-mega { transition: opacity 0.01s, visibility 0.01s; transform: translateX(-50%); }
-    .nav-dropdown:hover .nav-mega,
-    .nav-dropdown:focus-within .nav-mega { transform: translateX(-50%); }
-  }
+  /* Das Ratgeber-Menü hat drei Spalten plus Promo-Kachel (~850 px). Damit es
+     bei 1024 px nicht über den Rand läuft, hängt es mittig unter der ganzen
+     Navigation statt unter seinem Auslöser (position: static am Dropdown). */
+  .nav-dropdown--wide { position: static; }
+  .nav-mega--guides { width: calc(3 * 200px + 196px + 3 * 8px + 24px); }
+  .nav-mega--guides .nav-mega-col { width: 200px; }
 
   .nav-mega-cols { display: flex; gap: 8px; }
-  .nav-mega-col { display: flex; flex-direction: column; gap: 2px; width: 244px; }
+  .nav-mega-col { display: flex; flex-direction: column; gap: 2px; width: 224px; }
   .nav-mega-title {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color:#656B78;
-    padding: 6px 10px 8px;
+    padding: 8px 10px 6px;
+    font: 600 13px/1.3 var(--h-sans);
+    color: var(--h-muted);
   }
   .nav-mega-item {
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
+    flex-direction: column;
+    gap: 2px;
     padding: 9px 10px;
-    border-radius: 11px;
+    border-radius: var(--h-r-md);
     text-decoration: none;
-    transition: background 0.15s ease;
+    transition: background-color 0.15s ease;
   }
-  .nav-mega-item:hover { background: rgba(51,102,255,0.06); }
-  .nav-mega-icon {
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    border-radius: 9px;
-    background: rgba(51,102,255,0.08);
+  .nav-mega-item:hover { background: var(--h-blue-wash); }
+  .nav-mega-label { font: 600 15px/1.35 var(--h-sans); color: var(--h-ink); }
+  .nav-mega-desc {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
-    transition: background 0.15s ease;
+    gap: 3px 6px;
+    font: 400 13px/1.4 var(--h-sans);
+    color: var(--h-muted);
   }
-  .nav-mega-item:hover .nav-mega-icon { background: rgba(51,102,255,0.14); }
-  .nav-mega-text { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
-  .nav-mega-label { font-size: 14px; font-weight: 600; color: #1A1F36; line-height: 1.35; }
-  /* #6E7686 statt #9097A6: Kontrast auf Weiß lag bei 2.93:1 und riss die
-     WCAG-2.2-AA-Mindestanforderung für Fließtext (4.5:1, SC 1.4.3) deutlich.
-     #6E7686 erreicht 4.57:1 bei minimal abweichendem Blaugrau-Ton. */
-  .nav-mega-desc { font-size: 12px; color: #6E7686; line-height: 1.4; display: flex; flex-wrap: wrap; align-items: center; gap: 3px 6px; }
-
-  /* "bald"-Einträge ohne Zielseite: sichtbar, aber nicht klickbar */
   .nav-mega-item--soon { cursor: default; }
   .nav-mega-item--soon:hover { background: none; }
-  .nav-mega-item--soon .nav-mega-icon { background: rgba(0,0,0,0.04); }
-  .nav-mega-item--soon .nav-mega-label { color:#656B78; }
+  .nav-mega-item--soon .nav-mega-label { color: var(--h-muted); }
   .nav-mega-soon {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #3366FF;
-    background: rgba(51,102,255,0.10);
-    border-radius: 100px;
-    padding: 2px 7px;
+    padding: 2px 8px;
+    border-radius: var(--h-r-pill);
+    background: var(--h-blue-wash);
+    font: 600 11px/1.4 var(--h-sans);
+    color: var(--h-blue-ink);
     white-space: nowrap;
   }
 
@@ -610,369 +604,156 @@ const promo = {
     flex-direction: column;
     width: 196px;
     padding: 18px;
-    border-radius: 14px;
-    background: linear-gradient(150deg, #3366FF, #1A44D4);
+    border-radius: var(--h-r-md);
+    background: var(--h-deep);
+    color: var(--h-on-deep);
     text-decoration: none;
-    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    transition: transform 0.35s var(--h-ease);
   }
-  .nav-mega-promo:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(51,102,255,0.32); }
-  .nav-mega-promo-eyebrow {
-    font-size: 10px;
-    font-weight: 700;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.65);
-    margin-bottom: 10px;
-  }
-  .nav-mega-promo-title { font-size: 15px; font-weight: 700; color: white; line-height: 1.35; margin-bottom: 6px; }
-  .nav-mega-promo-desc { font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.5; margin-bottom: auto; }
-  .nav-mega-promo-cta { font-size: 12px; font-weight: 700; color: white; margin-top: 16px; }
+  :global(html.dark) .nav-mega-promo { background: #18213F; }
+  .nav-mega-promo:hover { transform: translateY(-2px); }
+  .nav-mega-promo-eyebrow { margin-bottom: 10px; font: 500 12px/1 var(--h-sans); color: var(--h-on-deep-muted); }
+  .nav-mega-promo-title { margin-bottom: 6px; font: 700 15px/1.35 var(--h-sans); color: var(--h-on-deep); }
+  .nav-mega-promo-desc { margin-bottom: auto; font: 400 13px/1.5 var(--h-sans); color: var(--h-on-deep-muted); }
+  .nav-mega-promo-cta { display: inline-flex; align-items: center; gap: 4px; margin-top: 16px; font: 700 13px/1 var(--h-sans); color: var(--h-on-deep); }
 
   .nav-mega-footer-link {
     flex-basis: 100%;
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #3366FF;
+    gap: 6px;
+    min-height: 44px;
+    margin: 2px -12px -12px;
+    padding: 0 14px;
+    border-top: 1px solid var(--h-line);
+    border-radius: 0 0 var(--h-r) var(--h-r);
+    font: 600 13px/1 var(--h-sans);
+    color: var(--h-blue-ink);
     text-decoration: none;
-    padding: 10px 14px;
-    margin: 2px -14px -14px;
-    border-top: 1px solid rgba(51,102,255,0.08);
-    border-radius: 0 0 14px 14px;
-    transition: background 0.15s ease;
+    transition: background-color 0.15s ease;
   }
-  .nav-mega-footer-link:hover { background: rgba(51,102,255,0.05); }
-  .nav-mega-footer-icon {
-    flex-shrink: 0;
-    width: 26px;
-    height: 26px;
-    border-radius: 7px;
-    background: rgba(51,102,255,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  .nav-mega-footer-link:hover { background: var(--h-blue-wash); }
+  .nav-mega-footer-link :global(.nav-mega-footer-arrow) { margin-left: auto; opacity: 0.6; }
+  .nav-mega a:focus-visible { outline: 3px solid var(--h-blue); outline-offset: -3px; }
 
-  /* Hamburger lines */
-  .hamburger-line {
-    display: block;
-    width: 18px;
-    height: 2px;
-    background: #1A1F36;
-    border-radius: 2px;
-    margin: 2px 0;
-    transition: transform 0.2s, opacity 0.2s;
-  }
-
-  /* Mobile Menu Panel */
+  /* ── Mobiles Menü ──────────────────────────────────────────────────── */
   .mobile-menu-panel {
     position: fixed;
     top: 64px;
     left: 0;
     right: 0;
-    background: rgba(240,244,250,0.96);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(51,102,255,0.10);
-    box-shadow: 0 12px 40px rgba(26,31,54,0.10);
+    z-index: 49;
+    max-height: calc(100vh - 64px);
+    max-height: calc(100dvh - 64px);
+    overflow-y: auto;
+    background: var(--h-paper);
+    border-bottom: 1px solid var(--h-line);
+    box-shadow: 0 24px 48px -24px rgba(11, 21, 48, 0.3);
     transform: translateY(-6px);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.24s cubic-bezier(0.4,0,0.2,1), opacity 0.24s;
-    z-index: 49;
-    max-height: calc(100vh - 64px);
-    overflow-y: auto;
+    transition: transform 0.24s var(--h-ease), opacity 0.24s ease;
   }
-  .mobile-menu-panel.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  /* Backdrop */
+  .mobile-menu-panel.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
   .mobile-backdrop {
     display: none;
     position: fixed;
     inset: 0;
-    background: rgba(26,31,54,0.28);
     z-index: 48;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    background: rgba(11, 21, 48, 0.28);
   }
   .mobile-backdrop.open { display: block; }
+  @media (min-width: 1024px) {
+    .mobile-menu-panel, .mobile-backdrop { display: none; }
+  }
 
-  /* Mobile nav links */
+  .mobile-menu-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 8px var(--h-gutter) 16px;
+  }
   .mobile-nav-link {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 15px;
-    font-weight: 600;
-    color: #1A1F36;
-    text-decoration: none;
-    padding: 11px 12px;
-    border-radius: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s;
     width: 100%;
-    letter-spacing: -0.1px;
+    min-height: 52px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: var(--h-r-md);
+    background: none;
+    font: 600 18px/1.2 var(--h-sans);
+    color: var(--h-ink);
+    text-align: left;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
   }
-  .mobile-nav-link:hover { background: rgba(51,102,255,0.07); }
-
-  /* Accordion */
+  .mobile-nav-link:hover { background: var(--h-blue-wash); }
   .accordion-chevron {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
     flex-shrink: 0;
+    border: 1px solid var(--h-line-2);
     border-radius: 50%;
-    background: rgba(51,102,255,0.09);
-    color: #3366FF;
-    transition: transform 0.22s cubic-bezier(0.4,0,0.2,1), background 0.2s, color 0.2s;
+    color: var(--h-ink);
+    transition: transform 0.3s var(--h-ease), border-color 0.2s ease;
   }
   .mobile-accordion-body {
     display: grid;
     grid-template-rows: 0fr;
-    transition: grid-template-rows 0.25s cubic-bezier(0.4,0,0.2,1);
     overflow: hidden;
+    transition: grid-template-rows 0.3s var(--h-ease);
   }
-  .mobile-accordion-body > .mobile-subnav {
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    padding: 4px 0 6px 0;
-  }
-  .accordion-open .mobile-accordion-body {
-    grid-template-rows: 1fr;
-  }
-  .accordion-open .accordion-chevron {
-    transform: rotate(180deg);
-    background: #3366FF;
-    color: #fff;
-  }
+  .mobile-subnav { display: flex; flex-direction: column; gap: 1px; overflow: hidden; padding: 2px 0 8px; }
+  .accordion-open .mobile-accordion-body { grid-template-rows: 1fr; }
+  .accordion-open .accordion-chevron { transform: rotate(180deg); border-color: var(--h-blue); }
 
-  /* Sublinks: die eigentlichen Navigationsziele im mobilen Menü (SBF Binnen/See,
-     Funkzeugnisse, Ratgeber-Links). Als reine 14px-Textzeile mit 11px-Padding
-     waren sie nur ~43px hoch und blieben damit knapp unter der 44px-Mindestgröße
-     für Touch-Flächen (WCAG 2.5.5), die der Rest der Seite bereits durchgängig
-     einhält (Footer-, Katalog-, Blog-Teaser-Links, Filter-Chips, Sprach-/Theme-
-     Umschalter). min-height:44px zieht die Tap-Fläche sauber auf das Raster; das
-     vertikale Padding ist entsprechend angepasst und die Zeile per Flexbox
-     zentriert, sodass der bisherige Rhythmus (32px-Einzug, 1px-Zeilenabstand)
-     erhalten bleibt. Corporate Design (Farben, Schrift) unberührt. */
   .mobile-nav-sublink {
     display: flex;
     align-items: center;
     min-height: 44px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #4B5563;
+    padding: 0 12px 0 28px;
+    border-radius: var(--h-r-sm);
+    font: 500 16px/1.3 var(--h-sans);
+    color: var(--h-text);
     text-decoration: none;
-    padding: 8px 12px 8px 32px;
-    border-radius: 8px;
-    transition: background 0.15s, color 0.15s;
+    transition: background-color 0.15s ease, color 0.15s ease;
   }
-  .mobile-nav-sublink:hover { background: rgba(51,102,255,0.07); color: #1A1F36; }
-  .mobile-nav-sublink--cta {
-    font-weight: 700;
-    color: #3366FF;
-  }
-  .mobile-nav-sublink--cta:hover { color: #2952CC; }
-  .mobile-nav-sublink--soon {
-    opacity: 0.5;
-    cursor: default;
-    pointer-events: none;
-  }
+  .mobile-nav-sublink:hover { background: var(--h-blue-wash); color: var(--h-ink); }
+  .mobile-nav-sublink--cta { font-weight: 600; color: var(--h-blue-ink); }
+  .mobile-nav-sublink--soon { opacity: 0.55; cursor: default; pointer-events: none; }
   .soon-badge {
-    font-size: 12px;
-    font-weight: 700;
-    color: #3366FF;
-    background: rgba(51,102,255,0.12);
-    border-radius: 100px;
-    padding: 1px 7px;
-    margin-left: 4px;
+    margin-left: 6px;
+    padding: 3px 8px;
+    border-radius: var(--h-r-pill);
+    background: var(--h-blue-wash);
+    font: 600 12px/1 var(--h-sans);
+    color: var(--h-blue-ink);
   }
+  .mobile-subnav-heading { padding: 10px 12px 4px 28px; font: 600 13px/1.3 var(--h-sans); color: var(--h-muted); }
+  .mobile-divider { height: 1px; margin: 4px 12px; background: var(--h-line); }
 
-  /* Gruppenüberschrift innerhalb eines Accordion-Blocks. Spiegelt die
-     .nav-mega-title des Desktop-Mega-Menüs: teilt lange Link-Listen (Ratgeber)
-     in scanbare Cluster, statt sie als flache Wand auszugeben. */
-  .mobile-subnav-heading {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color:#656B78;
-    padding: 8px 12px 3px 32px;
-  }
-
-  /* Divider */
-  .mobile-divider {
-    height: 1px;
-    background: rgba(51,102,255,0.09);
-    margin: 3px 12px;
-  }
-
-  /* ── Theme Toggle (mirrors .lang-switcher) ─────────────────── */
-  .theme-switcher {
-    display: inline-flex;
-    align-items: center;
-    background: rgba(51,102,255,0.06);
-    border: 1px solid rgba(51,102,255,0.12);
-    border-radius: 100px;
-    padding: 3px;
-    gap: 2px;
-    cursor: pointer;
-  }
-  .theme-option {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: #4B5563;
-    padding: 4px 8px;
-    border-radius: 100px;
-    transition: color 0.15s, background 0.15s;
-  }
-  .theme-option-active {
-    background: white;
-    color: #1A1F36;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  }
-  .theme-option:not(.theme-option-active):hover { color: #1A1F36; }
-  /* Umschalter bleibt auch auf dem Handy sichtbar – direkt neben dem
-     Sprachwechsler im Header. So können Nutzer eine vom Browser erzwungene
-     oder gespeicherte Dark-/Light-Wahl jederzeit überstimmen, ohne erst das
-     Menü öffnen zu müssen. Auf schmalen Screens Abstände und Innenpaddings
-     straffen, damit die Kopfzeile (Logo · DE/EN · Design · Menü) nicht umbricht
-     und das Sprach-Pill nicht aufs Logo läuft. */
-  @media (max-width: 480px) {
-    .header-actions { gap: 8px; }
-    .theme-option { padding: 4px 7px; }
-    .lang-option { padding: 4px 9px; }
-  }
-  @media (max-width: 380px) {
-    .header-actions { gap: 6px; }
-    .theme-option { padding: 4px 6px; }
-    .lang-option { padding: 4px 7px; font-size: 13px; }
-    .logo-link { font-size: 1.05rem; gap: 6px; }
-    .logo-link :global(img) { width: 24px !important; height: 24px !important; }
-  }
-
-  /* ── Dark Mode (controlled by html.dark class) ─────────────── */
-  html.dark header {
-    background: rgba(10, 13, 20, 0.95) !important;
-    border-color: rgba(90, 120, 255, 0.14) !important;
-  }
-  html.dark .logo-link { color: #E2E8F0 !important; }
-  html.dark .nav-link { color: #94A3B8 !important; }
-  html.dark .nav-link:hover { color: #E2E8F0 !important; }
-  html.dark .lang-switcher {
-    background: rgba(90, 120, 255, 0.12) !important;
-    border-color: rgba(90, 120, 255, 0.24) !important;
-  }
-  html.dark .lang-option { color: #94A3B8 !important; }
-  html.dark .lang-option:hover { color: #E2E8F0 !important; }
-  html.dark .lang-active {
-    background: #3366FF !important;
-    color: #ffffff !important;
-    box-shadow: 0 1px 6px rgba(51, 102, 255, 0.40) !important;
-  }
-  html.dark .theme-switcher {
-    background: rgba(90, 120, 255, 0.12) !important;
-    border-color: rgba(90, 120, 255, 0.24) !important;
-  }
-  html.dark .theme-option { color: #656B78 !important; }
-  html.dark .theme-option:not(.theme-option-active):hover { color: #E2E8F0 !important; }
-  html.dark .theme-option-active {
-    background: #3366FF !important;
-    color: #ffffff !important;
-    box-shadow: 0 1px 6px rgba(51, 102, 255, 0.40) !important;
-  }
-  html.dark .hamburger-line { background: #C8D0E8 !important; }
-  html.dark #mobile-menu-btn {
-    background: rgba(90, 120, 255, 0.10) !important;
-    border-color: rgba(90, 120, 255, 0.18) !important;
-  }
-  html.dark .nav-mega {
-    background: #1A2140 !important;
-    border-color: rgba(90, 120, 255, 0.16) !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 12px 40px rgba(0, 0, 0, 0.5) !important;
-  }
-  html.dark .nav-mega-title { color: #656B78 !important; }
-  html.dark .nav-mega-label { color: #E2E8F0 !important; }
-  html.dark .nav-mega-desc { color: #8A93AD !important; }
-  html.dark .nav-mega-item:hover { background: rgba(90, 120, 255, 0.10) !important; }
-  html.dark .nav-mega-icon { background: rgba(90, 120, 255, 0.12) !important; }
-  html.dark .nav-mega-item:hover .nav-mega-icon { background: rgba(90, 120, 255, 0.20) !important; }
-  html.dark .nav-mega-item--soon .nav-mega-icon { background: rgba(255,255,255,0.05) !important; }
-  html.dark .nav-mega-item--soon .nav-mega-label { color: #656B78 !important; }
-  html.dark .nav-mega-footer-link {
-    color: #7BA3FF !important;
-    border-color: rgba(90, 120, 255, 0.12) !important;
-  }
-  html.dark .nav-mega-footer-link:hover { background: rgba(90, 120, 255, 0.10) !important; }
-  html.dark .nav-mega-footer-icon { background: rgba(90, 120, 255, 0.15) !important; }
-  html.dark .mobile-menu-panel {
-    background: rgba(10, 13, 20, 0.98) !important;
-    border-color: rgba(90, 120, 255, 0.12) !important;
-  }
-  html.dark .mobile-nav-link { color: #E2E8F0 !important; }
-  html.dark .mobile-nav-link:hover { background: rgba(90, 120, 255, 0.10) !important; }
-  html.dark .mobile-nav-sublink { color: #94A3B8 !important; }
-  html.dark .mobile-nav-sublink:hover {
-    background: rgba(90, 120, 255, 0.10) !important;
-    color: #E2E8F0 !important;
-  }
-  html.dark .mobile-subnav-heading { color: #656B78 !important; }
-  html.dark .mobile-divider { background: rgba(90, 120, 255, 0.10) !important; }
-  html.dark .accordion-chevron { background: rgba(90, 120, 255, 0.14) !important; }
-  html.dark .accordion-open .accordion-chevron { background: #3366FF !important; }
-  html.dark .soon-badge {
-    background: rgba(90, 120, 255, 0.20) !important;
-    color: #8BB4FF !important;
-  }
-  /* Klassenbasierte Blau-Akzente (kein inline-style → vom globalen
-     Akzent-Override nicht erfasst): im Dark Mode auf den helleren Akzent
-     anheben, sonst matt/schwer erkennbar auf dunklem Grund. */
-  html.dark .nav-mega-soon {
-    background: rgba(90, 120, 255, 0.20) !important;
-    color: #8BB4FF !important;
-  }
-  html.dark .mobile-nav-sublink--cta { color: var(--color-accent-fg) !important; }
-  html.dark .mobile-nav-sublink--cta:hover { color: #8BB4FF !important; }
-  html.dark .accordion-chevron { color: var(--color-accent-fg) !important; }
-  html.dark .accordion-open .accordion-chevron { color: #fff !important; }
-
-  /* Footer with CTA */
   .mobile-menu-footer {
-    margin-top: 8px;
-    padding-top: 12px;
-    border-top: 1px solid rgba(51,102,255,0.09);
-  }
-  .mobile-cta-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 12px;
-    background: #3366FF;
-    box-shadow: 0 4px 16px rgba(51,102,255,0.28);
-    transition: background 0.15s, box-shadow 0.15s, transform 0.15s;
-    letter-spacing: -0.1px;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 8px;
+    padding: 12px 12px 0;
+    border-top: 1px solid var(--h-line);
   }
-  .mobile-cta-btn:hover {
-    background: #2952CC;
-    box-shadow: 0 6px 20px rgba(51,102,255,0.35);
-    transform: translateY(-1px);
+  .mobile-nav-link:focus-visible,
+  .mobile-nav-sublink:focus-visible { outline: 3px solid var(--h-blue); outline-offset: -3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-header, .nav-link, .nav-caret, .nav-mega, .nav-mega-item,
+    .nav-mega-promo, .mobile-menu-panel, .accordion-chevron, .mobile-accordion-body,
+    .mobile-nav-link, .mobile-nav-sublink { transition: none; }
+    .nav-mega { transform: translateX(-50%); }
   }
 </style>

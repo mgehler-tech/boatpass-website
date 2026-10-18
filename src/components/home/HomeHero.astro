@@ -1,16 +1,17 @@
 ---
 // Hero – links die Aussage mit dem einen CTA, rechts der echte Startbildschirm
-// der App auf einer ruhigen Fläche. Darunter, als Abschluss des Heros, die
-// amtlichen Kataloge als Chips mit echter Fragenzahl, die direkt zur jeweiligen
-// Lizenzseite führen. Bewusst nicht über der Überschrift: Auf Laptops kostete
-// die Zeile dort so viel Höhe, dass Button und Handy unter den Rand rutschten.
+// der App. Erster Viewport bewusst auf fünf Elemente reduziert (Spec
+// docs/superpowers/specs/2026-10-17-premium-polish-design.md, 4.2): H1,
+// Subline, Button mit einzeiliger Bewertung, eine Faktenzeile als Satz und
+// darunter die amtlichen Kataloge als ruhige Textzeile mit Links zur
+// jeweiligen Lizenzseite (die Fragenzahlen stehen in der Preisliste).
 //
 // Der Text steht ab dem ersten Paint fertig da (H1 = LCP-Element, CTA sofort
 // nutzbar). Der Auftakt des Handys läuft als CSS-Animation und wartet nicht
 // auf das JS-Bundle; GSAP übernimmt nur das Neigen per Maus.
 import { Image } from 'astro:assets';
 import StoreCta from './StoreCta.astro';
-import Icon from '../Icon.astro';
+import HeroPhoto from './HeroPhoto.astro';
 import { useTranslations } from '../../i18n/index';
 import { getBoatpassCombinedRating, formatRating } from '../../data/apps';
 import homeShotDe from '../../assets/images/app.screenshot.0.de.png';
@@ -23,7 +24,6 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const h = t.home;
-const p = t.pricing;
 const homeShot = lang === 'de' ? homeShotDe : homeShotEn;
 
 // Google Play und App Store zusammen (nach Anzahl gewichtet), wie im Schema.
@@ -31,11 +31,11 @@ const rating = getBoatpassCombinedRating();
 const score = rating ? formatRating(rating.score).replace('.', lang === 'de' ? ',' : '.') : null;
 
 // Reihenfolge wie t.hero.licenses: Binnen, See, UBI, SRC, LRC.
-const counts = [p.catalog1Questions, p.catalog2Questions, p.catalog3Questions, p.srcQuestions, p.lrcQuestions];
 const hrefs = lang === 'de'
   ? ['/sbf-binnen/', '/sbf-see/', '/ubi/', '/src/', '/lrc/']
   : ['/en/sbf-inland/', '/en/sbf-coastal/', '/en/ubi/', '/en/src/', '/en/lrc/'];
-const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], href: hrefs[i] }));
+const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
+const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z';
 ---
 
 <section class="hh" aria-labelledby="hh-title">
@@ -54,40 +54,37 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
           <StoreCta lang={lang} position="hero" id="hero-cta" />
           {rating && (
             <p class="hh-rating">
-              <span class="hh-rating-score h-num">{score}</span>
-              <span class="sr-only">{h.ratingOutOf},</span>
-              <span class="hh-rating-meta">
-                <span class="hh-stars" aria-hidden="true">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg width="13" height="13" viewBox="0 0 16 16" class:list={['hh-star', { 'hh-star--off': i >= Math.round(rating.score) }]}>
-                      <path d="M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z" fill="currentColor" />
-                    </svg>
-                  ))}
-                </span>
-                <span class="hh-rating-count">{rating.ratings} {h.ratingSource}</span>
+              <span class="hh-stars" aria-hidden="true">
+                {Array.from({ length: 5 }).map(() => (
+                  <svg width="12" height="12" viewBox="0 0 16 16"><path d={STAR} fill="currentColor" /></svg>
+                ))}
+              </span>
+              <span class="hh-rating-text">
+                <span class="sr-only">{h.ratingOutOf},</span>
+                <span class="h-num">{score}</span> · {rating.ratings} {h.ratingCountLabel}
               </span>
             </p>
           )}
         </div>
 
-        <ul class="hh-facts">
-          {h.heroFacts.map(fact => <li><Icon name="check" size={15} strokeWidth={2.5} class="hh-fact-icon" />{fact}</li>)}
-        </ul>
+        <p class="hh-note">{h.heroNote}</p>
       </div>
 
-      <div class="hh-visual">
-        <div class="h-stage hh-stage">
+      <!-- Foto-Paneel: Wasser als Bühne, das Gerät steht unten mittig davor und
+           ist vollständig zu sehen (Höhe folgt dem Paneel, nie angeschnitten). -->
+      <div class="hh-visual hh-panel">
+        <HeroPhoto />
+        <div class="hh-phone-pos">
           <div class="hh-phone-wrap">
             <div class="h-phone hh-phone" data-tilt>
               <div class="h-phone-screen">
                 <Image
                   src={homeShot}
                   alt={h.phoneAlt}
-                  widths={[300, 480, 640]}
-                  sizes="(min-width: 1024px) 290px, 230px"
+                  widths={[300, 480, 640, 760]}
+                  sizes="(min-width: 1024px) 360px, 220px"
                   quality={80}
                   loading="eager"
-                  fetchpriority="high"
                 />
               </div>
             </div>
@@ -96,22 +93,16 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
       </div>
     </div>
 
-    <nav class="hh-data" aria-labelledby="hh-data-label">
-      <p class="hh-data-label" id="hh-data-label">
-        <span class="hh-data-icon" aria-hidden="true"><Icon name="check" size={13} strokeWidth={2.75} /></span>
-        {h.heroData}
-      </p>
-      <ul class="hh-data-list">
-        {catalogs.map(c => (
-          <li>
-            <a class="hh-chip" href={c.href}>
-              <span>{c.name}</span>
-              <span class="hh-chip-count h-num">{c.count}<span class="sr-only"> {h.funkQuestions}</span></span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <!-- Amtliche Kataloge: eine ruhige Zeile, je ein Textlink zur Lizenzseite. -->
+    <p class="hh-catalogs">
+      <span class="hh-catalogs-label">{h.heroData}</span>
+      {catalogs.map((c, i) => (
+        <>
+          {i > 0 && <span class="hh-catalog-sep" aria-hidden="true">·</span>}
+          <a class="hh-catalog" href={c.href}>{c.name}</a>
+        </>
+      ))}
+    </p>
   </div>
 </section>
 
@@ -121,101 +112,39 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
     padding: calc(64px + clamp(20px, 3vw, 36px)) 0 clamp(48px, 6vw, 88px);
     background: var(--h-paper);
     overflow: clip;
+    /* Container für 100cqw: das Paneel misst den Rand ohne Scrollbar. */
+    container-type: inline-size;
+  }
+  @media (min-width: 1024px) {
+    .hh { padding-top: 80px; }
   }
 
-  /* ── Amtliche Kataloge: Chips mit Fragenzahl, je ein Link zur Lizenzseite ── */
-  .hh-data {
-    margin-top: clamp(40px, 5vw, 64px);
+  /* ── Amtliche Kataloge: ruhige Textzeile, je ein Link zur Lizenzseite ── */
+  .hh-catalogs {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px 32px;
+    align-items: baseline;
+    gap: 0 10px;
+    margin: clamp(32px, 4vw, 48px) 0 0;
+    font-size: 14px;
+    color: var(--h-muted);
   }
-  .hh-data-label {
+  .hh-catalogs-label { margin-right: 6px; font-weight: 600; color: var(--h-ink); }
+  .hh-catalog-sep { color: var(--h-line-2); }
+  .hh-catalog {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    margin: 0;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--h-ink);
-  }
-  .hh-data-icon {
-    display: grid;
-    place-items: center;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: var(--h-blue-wash);
+    min-height: 44px;
     color: var(--h-blue-ink);
-  }
-  .hh-data-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .hh-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    min-height: 40px;
-    padding: 0 5px 0 15px;
-    border-radius: var(--h-r-pill);
-    background: var(--h-card);
-    box-shadow: inset 0 0 0 1px var(--h-line), 0 1px 2px rgba(11, 21, 48, 0.05);
-    color: var(--h-ink);
-    font-size: 14px;
     font-weight: 600;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: box-shadow 0.25s ease, transform 0.35s var(--h-ease);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 5px;
+    text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+    transition: text-decoration-color 0.2s ease;
   }
-  .hh-chip-count {
-    min-width: 40px;
-    padding: 5px 9px;
-    border-radius: var(--h-r-pill);
-    background: var(--h-blue-wash);
-    color: var(--h-blue-ink);
-    font-size: 13px;
-    font-weight: 650;
-    line-height: 1.2;
-    text-align: center;
-    transition: background-color 0.25s ease, color 0.25s ease;
-  }
-  .hh-chip:hover {
-    box-shadow: inset 0 0 0 1px var(--h-blue), 0 6px 16px -10px rgba(51, 102, 255, 0.6);
-    transform: translateY(-1px);
-  }
-  .hh-chip:hover .hh-chip-count { background: var(--h-btn); color: #fff; }
-  .hh-chip:focus-visible { outline: 2px solid var(--h-blue); outline-offset: -2px; }
-  /* Handy: eine wischbare Zeile statt zwei Reihen. Die Zeile läuft bis an
-     den Rand, der Ausblender zeigt, dass es weitergeht. */
-  @media (max-width: 639px) {
-    .hh-data { gap: 12px; }
-    .hh-data-list {
-      flex-wrap: nowrap;
-      width: calc(100% + 2 * var(--h-gutter));
-      margin-inline: calc(-1 * var(--h-gutter));
-      padding: 2px var(--h-gutter);
-      overflow-x: auto;
-      scrollbar-width: none;
-      scroll-snap-type: x proximity;
-      scroll-padding-inline: var(--h-gutter);
-      -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent);
-      mask-image: linear-gradient(90deg, #000 calc(100% - 40px), transparent);
-    }
-    .hh-data-list::-webkit-scrollbar { display: none; }
-    .hh-data-list li { scroll-snap-align: start; }
-    .hh-chip { min-height: 38px; font-size: 13.5px; }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hh-chip { transition: none; }
-    .hh-chip:hover { transform: none; }
-  }
+  .hh-catalog:hover { text-decoration-color: currentColor; }
+  .hh-catalog:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; border-radius: var(--h-r-sm); }
 
   .hh-grid {
     display: grid;
@@ -226,12 +155,12 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
     .hh-grid {
       grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
       gap: clamp(40px, 5vw, 72px);
-      align-items: start;
+      align-items: center;
     }
   }
 
   /* ── Text ── */
-  .hh-copy { container-type: inline-size; }
+  .hh-copy { container-type: inline-size; align-self: center; }
   .hh-title {
     margin: 0;
     font-family: var(--h-display);
@@ -271,71 +200,92 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, count: counts[i], hre
     gap: 16px 28px;
     margin-top: 32px;
   }
-  .hh-rating { display: flex; align-items: center; gap: 12px; margin: 0; }
-  .hh-rating-score {
-    font-family: var(--h-display);
-    font-stretch: 80%;
-    font-weight: 720;
-    font-size: 40px;
-    line-height: 1;
-    color: var(--h-ink);
-  }
-  .hh-rating-meta { display: flex; flex-direction: column; gap: 5px; }
-  .hh-stars { display: inline-flex; gap: 2px; }
-  .hh-star { color: var(--h-beacon); display: block; }
-  .hh-star--off { color: var(--h-line-2); }
-  .hh-rating-count { font-family: var(--h-sans); font-size: 12.5px; color: var(--h-muted); }
+  /* Bewertung: eine Zeile neben dem Button (Sterne, Score, Anzahl). */
+  .hh-rating { display: inline-flex; align-items: center; gap: 8px; margin: 0; }
+  .hh-stars { display: inline-flex; gap: 2px; color: var(--h-beacon); }
+  .hh-stars svg { display: block; }
+  .hh-rating-text { font: 600 14px/1 var(--h-sans); color: var(--h-muted); }
+  .hh-rating-text .h-num { color: var(--h-ink); }
 
-  .hh-facts {
-    display: grid;
-    grid-template-columns: repeat(2, max-content);
-    gap: 6px 28px;
-    margin: 28px 0 0;
-    padding: 0;
-    list-style: none;
-    font-size: 14px;
-    color: var(--h-text);
-  }
-  .hh-facts li { display: flex; align-items: center; gap: 8px; }
-  .hh-fact-icon { flex-shrink: 0; color: var(--h-stbd-ink); }
-  @media (max-width: 479px) {
-    .hh-facts { grid-template-columns: 1fr; }
+  /* Fakten als ein Satz statt vier Häkchen. */
+  .hh-note {
+    margin: 20px 0 0;
+    max-width: 46ch;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--h-muted);
+    text-wrap: pretty;
   }
 
-  /* ── Handy auf einer ruhigen Fläche ── */
+  /* ── Foto-Paneel mit Gerät (Spec 4.1, nach Sichtung geändert) ──
+     Unter 1024 px ein randabfallendes Band, ab 1024 px ein Paneel, das rechts
+     bis an den Viewport läuft. Das Foto (HeroPhoto) liegt absolut dahinter.
+     Das Gerät steht vollständig im Paneel: Seine Breite ist durch die
+     Paneelhöhe begrenzt (100cqh, Paneel ist Größen-Container; Gerät ist
+     2,09-mal so hoch wie breit), oben und unten bleibt Luft. */
   .hh-visual { margin: 0; }
-  .hh-stage {
-    height: 440px;
-    overflow: hidden;
-  }
-  .hh-phone-wrap {
+  .hh-panel {
     position: relative;
-    width: 230px;
-    margin: 40px auto 0;
-    perspective: 1400px;
+    overflow: hidden;
+    margin-inline: calc(-1 * var(--h-gutter));
+    height: clamp(460px, 124vw, 560px);
+    background: var(--h-paper-2);
+    container-type: size;
   }
-  .hh-phone { --pw: 230px; transform-style: preserve-3d; }
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .hh-panel { height: auto; aspect-ratio: 16 / 9; }
+  }
+  /* Dark Mode: leichte Abdunkelung über dem (ohnehin dunklen) Dämmerungsfoto,
+     unter dem Gerät – hält den Kontaktschatten des Geräts lesbar. */
+  .hh-panel::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(180deg, rgba(8, 11, 20, 0.35), rgba(8, 11, 20, 0.6));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  html.dark .hh-panel::after { opacity: 0.3; }
 
-  /* Desktop: Handy mittig auf der Fläche, in voller Höhe sichtbar. */
+  .hh-phone-pos {
+    position: absolute;
+    left: 50%;
+    bottom: 5cqh;
+    z-index: 2;
+    transform: translateX(-50%);
+  }
+  .hh-phone-wrap { perspective: 1400px; }
+  .hh-phone {
+    --pw: min(220px, calc(90cqh / 2.1));
+    transform-style: preserve-3d;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), var(--h-shadow-device);
+  }
+
   @media (min-width: 1024px) {
-    .hh-stage {
-      display: grid;
-      place-items: center;
-      height: auto;
-      padding: 44px 32px;
+    .hh-panel {
+      /* Bis an den rechten Viewport-Rand: Containerrest plus Gutter zurückgeben. */
+      margin-inline: 0 calc(-1 * ((100cqw - min(100cqw, var(--h-max))) / 2 + var(--h-gutter)));
+      height: clamp(560px, 86vh, 820px);
+      border-radius: 28px 0 0 28px;
     }
-    .hh-phone-wrap {
-      /* Breite folgt auch der Fensterhöhe, damit das Handy auf niedrigen
-         Laptop-Fenstern vollständig im Bild bleibt. */
-      --hh-pw: clamp(200px, min(18vw, 31vh), 256px);
-      width: var(--hh-pw);
-      margin: 0;
-    }
-    .hh-phone { --pw: var(--hh-pw); }
+    .hh-phone-pos { bottom: 6cqh; }
+    .hh-phone { --pw: min(clamp(280px, 24vw, 360px), calc(88cqh / 2.1)); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hh-panel::after { transition: none; }
   }
 
   /* ── Auftakt (nur mit h-motion, ab dem ersten Paint) ──
-     Nur transform – das Handy bleibt LCP-tauglich sichtbar. */
+     Nur transform – das Handy bleibt LCP-tauglich sichtbar. Der Hub bleibt
+     unter der Luft zum Paneelrand (5cqh bzw. 6cqh), damit das Gerät auch im
+     Startbild der Animation nicht angeschnitten ist; Chrome startet sie bei
+     einem Paneel unterhalb der Falte erst, wenn es ins Bild scrollt. */
+  .hh-phone-wrap { --hh-rise: 20px; }
   .h-motion .hh-phone-wrap { animation: hh-rise 1.4s var(--h-ease) 0.1s both; }
-  @keyframes hh-rise { from { transform: translateY(56px); } }
+  @keyframes hh-rise { from { transform: translateY(var(--hh-rise)); } }
+  @media (min-width: 1024px) {
+    .hh-phone-wrap { --hh-rise: 32px; }
+  }
 </style>

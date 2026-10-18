@@ -8,6 +8,8 @@ export const en: Translations = {
     about: 'About',
     contact: 'Contact',
     getApp: 'Get App',
+    readGroup: 'Read & ask',
+    language: 'Language',
   },
   hero: {
     headline1: 'The fastest way',
@@ -219,6 +221,12 @@ export const en: Translations = {
     imprint: 'Imprint',
     terms: 'Terms of Use',
     contact: 'Contact',
+    madeIn: 'Made in Germany',
+  },
+  theme: {
+    label: 'Appearance',
+    light: 'Light',
+    dark: 'Dark',
   },
   faq: {
     title: 'Frequently Asked Questions',
@@ -250,9 +258,9 @@ export const en: Translations = {
   home: {
     newTab: '(opens in a new tab)',
     heroData: 'Official question catalogues 2026',
-    heroFacts: ['No account needed', '15 free questions a day', 'One-off purchase, no subscription', 'For iPhone, iPad & Android'],
+    heroNote: 'Start without an account, 15 free questions a day. After that a one-off purchase instead of a subscription, for iPhone, iPad and Android.',
     ratingOutOf: 'out of 5 stars',
-    ratingSource: 'ratings · Google Play & App Store',
+    ratingCountLabel: 'ratings',
     ratingSourcePlay: 'ratings on Google Play',
     ctaPlay: 'Free on Google Play',
     phoneAlt: 'Boatpass app – home screen with licence, progress, streak and study modes',
@@ -302,7 +310,6 @@ export const en: Translations = {
     colTopics: 'Topics',
     colPrice: 'Price',
     once: 'one-off',
-    funkQuestions: 'questions',
     finderTitle: 'Not sure which licence you need?',
     finderText: 'Five questions, one clear answer.',
     finderCta: 'Open the licence finder',

@@ -1,13 +1,12 @@
 ---
-// Abschluss: ein CTA, die Bewertung und – nur am Desktop, wo man die App nicht
-// direkt installieren kann – ein QR-Code zur Geräteweiche /app/, die auf dem
-// Handy in den passenden Store leitet. Die offiziellen Store-Badges stehen
-// direkt darunter im Footer. Der QR-Code entsteht beim Build als SVG.
+// Abschluss: ein CTA und – nur am Desktop, wo man die App nicht direkt
+// installieren kann – ein QR-Code zur Geräteweiche /app/, die auf dem Handy in
+// den passenden Store leitet. Die offiziellen Store-Badges und die Bewertung
+// stehen direkt darunter im Footer. Der QR-Code entsteht beim Build als SVG.
 import QRCode from 'qrcode';
 import SectionHead from './SectionHead.astro';
 import StoreCta from './StoreCta.astro';
 import { useTranslations } from '../../i18n/index';
-import { getBoatpassCombinedRating, formatRating } from '../../data/apps';
 import { smartAppPath } from '../../data/stores';
 
 interface Props {
@@ -18,9 +17,6 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 const h = t.home;
 const chooserPath = smartAppPath(lang);
-
-const rating = getBoatpassCombinedRating();
-const score = rating ? formatRating(rating.score).replace('.', lang === 'de' ? ',' : '.') : null;
 
 const qrSvg = await QRCode.toString(`https://boatpass.de${chooserPath}`, {
   type: 'svg',
@@ -39,13 +35,6 @@ const qrSvg = await QRCode.toString(`https://boatpass.de${chooserPath}`, {
         <p class="hx-lede" data-reveal>{t.ctaBanner.subtitle}</p>
         <div class="hx-actions" data-reveal>
           <StoreCta lang={lang} position="final" id="final-cta" />
-          {rating && (
-            <p class="hx-rating">
-              <strong class="h-num">{score}</strong>
-              <span class="sr-only">{h.ratingOutOf},</span>
-              <span>{rating.ratings} {h.ratingSource}</span>
-            </p>
-          )}
         </div>
       </div>
 
@@ -91,23 +80,6 @@ const qrSvg = await QRCode.toString(`https://boatpass.de${chooserPath}`, {
     gap: 16px 28px;
     margin-top: 32px;
   }
-  .hx-rating {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 10px;
-    margin: 0;
-    font-family: var(--h-sans);
-    font-size: 13px;
-    color: var(--h-on-deep-muted);
-  }
-  .hx-rating strong {
-    font-family: var(--h-display);
-    font-stretch: 80%;
-    font-weight: 720;
-    font-size: 32px;
-    color: #fff;
-  }
-
   .hx-side { display: none; }
   @media (min-width: 1024px) {
     .hx-side { display: block; justify-self: end; }

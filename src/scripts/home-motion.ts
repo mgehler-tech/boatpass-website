@@ -35,8 +35,6 @@ function initJourney() {
   const steps = Array.from(grid.querySelectorAll<HTMLElement>('[data-journey-step]'));
   const screens = Array.from(grid.querySelectorAll<HTMLElement>('[data-journey-screen]'));
   const fill = grid.querySelector<HTMLElement>('[data-journey-fill]');
-  const capNum = grid.querySelector<HTMLElement>('[data-stage-cap-num]');
-  const capTitle = grid.querySelector<HTMLElement>('[data-stage-cap-title]');
   if (!steps.length) return;
 
   // Die Bühne gibt es nur am Desktop. Dort alle vier Screens vorab laden,
@@ -70,9 +68,6 @@ function initJourney() {
       prevTimer = window.setTimeout(() => screens.forEach((s) => s.classList.remove('is-prev')), 950);
     }
 
-    const num = String(i + 1).padStart(2, '0');
-    if (capNum) capNum.textContent = num;
-    if (capTitle) capTitle.textContent = steps[i].dataset.journeyTitle ?? '';
     // Ohne Scrub zeigt die Linie den Stand der aktiven Etappe.
     if (!motion && fill) fill.style.setProperty('--hj-progress', String(i / (steps.length - 1)));
   };
@@ -197,6 +192,24 @@ function initParallax() {
   if (inset) gsap.fromTo(inset, { yPercent: 18 }, { yPercent: -12, ease: 'none', scrollTrigger: { ...st } });
 }
 
+/* ── Hero: Foto läuft beim Scrollen etwas langsamer als die Seite ───────
+   Nur am Desktop (darunter ist das Band kurz und scrollt nativ). Das Gerät
+   bewegt sich nicht mit – es steht „im Wasser". Das Foto hat 12 % Überhang
+   (HeroPhoto), damit beim Verschieben kein Rand durchblitzt. */
+function initHeroParallax() {
+  const hero = document.querySelector<HTMLElement>('.hh');
+  // Tag- und Dämmerungsbild (HeroPhoto); sichtbar ist immer nur eines.
+  const photos = hero ? Array.from(hero.querySelectorAll<HTMLElement>('.hh-photo')) : [];
+  if (!hero || !photos.length) return;
+  gsap.matchMedia().add('(min-width: 1024px)', () => {
+    gsap.to(photos, {
+      yPercent: -10,
+      ease: 'none',
+      scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true },
+    });
+  });
+}
+
 /* ── Lenis (nur ab 1024px: darunter gibt es das mobile Menü mit eigenem
    Scrollbereich, und Touch scrollt ohnehin nativ) ───────────────────── */
 function initSmoothScroll() {
@@ -245,6 +258,7 @@ if (motion) {
   initReveals();
   initParallax();
   initTilt();
+  initHeroParallax();
   initSmoothScroll();
   // Ab hier gelten die Inline-Werte von GSAP, nicht mehr die CSS-Startzustände.
   root.classList.add('h-ready');

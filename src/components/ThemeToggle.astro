@@ -1,0 +1,33 @@
+---
+// Hell/Dunkel-Umschalter im Header: Sonne und Mond in einer Segment-Pille
+// (Stil .h-seg in brand.css, gleiches Bild wie der DE|EN-Wechsler daneben).
+// Verhalten in src/scripts/theme-toggle.ts (einmal pro Seite im BaseLayout
+// initialisiert). Ohne JavaScript bleibt die Gruppe unsichtbar (h-js kommt
+// aus dem BaseLayout), weil sie dann nichts schalten könnte.
+import Icon from './Icon.astro';
+import { useTranslations } from '../i18n/index';
+
+interface Props {
+  lang: 'de' | 'en';
+  class?: string;
+}
+
+const { lang, class: className } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<!-- Bewusst ohne .h-js-only: deren display:block würde das inline-flex der
+     Pille (.h-seg) überstimmen. Die Regel unten verbirgt sie nur ohne JS und
+     ist spezifischer als .h-seg, damit die Reihenfolge im Bundle egal ist. -->
+<div class:list={['theme-toggle h-seg', className]} role="group" aria-label={t.theme.label}>
+  <button type="button" class="theme-choice h-seg-opt" data-theme-set="light" aria-pressed="false" aria-label={t.theme.light} title={t.theme.light}>
+    <Icon name="sun" size={15} strokeWidth={2} />
+  </button>
+  <button type="button" class="theme-choice h-seg-opt" data-theme-set="dark" aria-pressed="false" aria-label={t.theme.dark} title={t.theme.dark}>
+    <Icon name="moon" size={15} strokeWidth={2} />
+  </button>
+</div>
+
+<style is:global>
+  html:not(.h-js) .theme-toggle { display: none; }
+</style>

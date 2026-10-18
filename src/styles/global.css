@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@fontsource-variable/inter";
+@import "./brand.css";
 
 @theme {
   --color-primary:    #3366FF;
