@@ -8,9 +8,12 @@ import { PLAY_STORE_URL } from '../data/stores';
 
 /**
  * Kopfzeile aller Seiten (Spec docs/superpowers/specs/2026-10-17-premium-polish-design.md, 4.3).
- * Vier Einträge (Features · Preise · Führerscheine · Ratgeber), ein Sprachlink,
- * ein CTA. Blog und FAQ liegen im Ratgeber-Menü. Der Theme-Umschalter sitzt im
- * mobilen Menü und im Footer (src/scripts/theme-toggle.ts).
+ * Vier Einträge (Features · Preise · Führerscheine · Ratgeber), rechts die
+ * DE|EN-Pille, die Hell|Dunkel-Pille (ThemeToggle, Verhalten in
+ * src/scripts/theme-toggle.ts) und der CTA. Beide Pillen bleiben auf jeder
+ * Breite im Header, auch auf dem Handy: So lässt sich Sprache oder eine vom
+ * System erzwungene Darstellung wechseln, ohne erst das Menü zu öffnen.
+ * Blog und FAQ liegen im Ratgeber-Menü.
  *
  * Auf der Startseite (transparentAtTop) ist die Kopfzeile ganz oben transparent
  * und wird nach 24 px Scrollweg zur transluzenten Fläche; den Sentinel dafür
@@ -34,7 +37,7 @@ const playStoreUrl = PLAY_STORE_URL;
 const de = lang === 'de';
 const boatSchoolUrl = de ? '/bootsfahrschulen/' : '/en/boat-schools/';
 
-// Der Sprachlink muss auf der aktuellen Seite bleiben statt auf die
+// Der Sprachwechsel muss auf der aktuellen Seite bleiben statt auf die
 // Startseite zu springen. Ohne explizites altUrl (z. B. abweichende Slugs bei
 // Blogposts) greift dieselbe Pfad-Heuristik wie in SEO.astro für hreflang.
 // altUrl ist dort eine absolute URL (fürs hreflang-Tag) – für einen anklickbaren
@@ -44,6 +47,8 @@ const currentPath = currentPathOverride ?? Astro.url.pathname;
 const otherLangPath = hasAlternate
   ? (altUrl ?? (de ? `/en${currentPath}` : currentPath.replace(/^\/en/, ''))).replace(/^https:\/\/boatpass\.de/, '')
   : (de ? '/en/' : '/');
+const deHref = de ? currentPath : otherLangPath;
+const enHref = de ? otherLangPath : currentPath;
 
 /**
  * Mega-Menü-Struktur. Zwei bis drei Spalten mit Gruppenüberschrift plus eine
@@ -195,9 +200,13 @@ const homeHref = getLocalizedPath(lang, '/');
       </div>
     </nav>
 
-    <!-- Rechts: Sprache, CTA, Menü -->
+    <!-- Rechts: Sprache, Darstellung, CTA, Menü -->
     <div class="site-actions">
-      <a class="lang-switch" href={otherLangPath} hreflang={de ? 'en' : 'de'} aria-label={t.nav.switchLang}>{de ? 'EN' : 'DE'}</a>
+      <nav class="lang-switcher h-seg" aria-label={t.nav.language}>
+        <a href={deHref} hreflang="de" lang="de" class="lang-option h-seg-opt" aria-current={de ? 'page' : undefined}>DE</a>
+        <a href={enHref} hreflang="en" lang="en" class="lang-option h-seg-opt" aria-current={de ? undefined : 'page'}>EN</a>
+      </nav>
+      <ThemeToggle lang={lang} />
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="site-cta h-btn h-btn--sm" data-cta-position="header">
         {t.nav.getApp}
         <Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" />
@@ -276,7 +285,6 @@ const homeHref = getLocalizedPath(lang, '/');
           {t.nav.getApp}
           <Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" />
         </a>
-        <ThemeToggle lang={lang} />
       </div>
     </nav>
   </div>
@@ -468,21 +476,8 @@ const homeHref = getLocalizedPath(lang, '/');
   .nav-dropdown:hover .nav-caret,
   .nav-dropdown:focus-within .nav-caret { transform: rotate(180deg); }
 
-  /* Rechts */
-  .site-actions { display: flex; align-items: center; gap: 6px; }
-  .lang-switch {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 44px;
-    min-height: 44px;
-    font: 600 14px/1 var(--h-sans);
-    color: var(--h-text);
-    text-decoration: none;
-    border-radius: var(--h-r-sm);
-    transition: color 0.2s ease;
-  }
-  .lang-switch:hover { color: var(--h-ink); }
+  /* Rechts: DE|EN- und Hell|Dunkel-Pille (Stil .h-seg in brand.css), CTA, Menü */
+  .site-actions { display: flex; align-items: center; gap: 8px; }
   .site-cta { display: none; }
   .site-burger {
     display: flex;
@@ -508,13 +503,20 @@ const homeHref = getLocalizedPath(lang, '/');
 
   .logo-link:focus-visible,
   .nav-link:focus-visible,
-  .lang-switch:focus-visible,
   .site-burger:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
 
+  /* Schmale Handys: Logo · DE|EN · Hell|Dunkel · Menü müssen in eine Zeile
+     passen (328 px Inhalt bei 360 px Breite: Logo 133 + 8 + zwei Pillen à 66
+     + Menü 44 − 10 Außenabstand = 315), deshalb engere Abstände und Optionen. */
+  @media (max-width: 420px) {
+    .site-header-bar { gap: 8px; }
+    .site-actions { gap: 4px; }
+    .site-actions :global(.h-seg-opt) { min-width: 28px; padding: 0 5px; }
+  }
   @media (min-width: 1024px) {
     .site-nav { display: flex; }
-    .site-actions { gap: 20px; }
-    .site-cta { display: inline-flex; }
+    .site-actions { gap: 12px; }
+    .site-cta { display: inline-flex; margin-left: 8px; }
     .site-burger { display: none; }
   }
 
@@ -749,7 +751,7 @@ const homeHref = getLocalizedPath(lang, '/');
   .mobile-nav-sublink:focus-visible { outline: 3px solid var(--h-blue); outline-offset: -3px; }
 
   @media (prefers-reduced-motion: reduce) {
-    .site-header, .nav-link, .lang-switch, .nav-caret, .nav-mega, .nav-mega-item,
+    .site-header, .nav-link, .nav-caret, .nav-mega, .nav-mega-item,
     .nav-mega-promo, .mobile-menu-panel, .accordion-chevron, .mobile-accordion-body,
     .mobile-nav-link, .mobile-nav-sublink { transition: none; }
     .nav-mega { transform: translateX(-50%); }

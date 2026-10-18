@@ -186,3 +186,10 @@ Ultra-realistic photograph of calm open water during the blue hour just after su
 - Dateinamen: `water-day.jpg` (3:4), `water-day-wide.jpg` (16:9), optional `water-dusk.jpg`, `water-dusk-wide.jpg`.
 - Ablage: `src/assets/images/hero/`. Astro erzeugt daraus AVIF/WebP in allen Breiten; es muss nichts vorab verkleinert werden.
 - Wenn das Modell Boote oder warme Töne hinzufügt: Bild verwerfen und mit dem Zusatz „no boats, no warm tones, more empty sky" erneut erzeugen. Lieber ein zu leeres Bild als ein zu volles.
+
+## Änderungen nach Sichtung (2026-10-18)
+
+Nach der ersten Sichtung des gebauten Branches durch den Inhaber gelten zwei Abweichungen von den Abschnitten 4.1 und 4.3; dieser Nachtrag ersetzt dort die betroffenen Sätze.
+
+1. **Gerät im Hero vollständig sichtbar (ersetzt 4.1 „angeschnitten").** Das Handy wird weder unten (12 % / 22 %) noch oben angeschnitten. Seine Breite ist durch die Paneelhöhe begrenzt (`--pw: min(…, 88cqh / 2.1)`, Paneel als Größen-Container), es steht mit 6 % Luft über dem unteren Paneelrand; unter 1024 px gilt 5 % und `min(220px, 90cqh / 2.1)`. Das mobile Band ist dafür 124vw statt 118vw hoch (`clamp(460px, 124vw, 560px)`), die `sizes`-Angabe des 16:9-Bildes 220vw. Grund: Beim Sichtungsstand war das Gerät an flachen Fenstern oben abgeschnitten, und der Anschnitt unten wurde als Fehler gelesen, nicht als Inszenierung.
+2. **DE|EN-Pille und Hell|Dunkel-Pille zurück in den Header (ersetzt 4.3 „ein Sprachlink", „Theme-Umschalter im mobilen Menü und Footer").** Wie auf der Live-Seite sitzen beide Umschalter rechts im Header, auf jeder Breite, jetzt im gemeinsamen Stil `.h-seg` (brand.css): zwei gleich große Optionen, die aktive als Karte. Sprache als `nav.lang-switcher` mit zwei Links (`hreflang`, `aria-current="page"` auf der aktuellen), Darstellung als `ThemeToggle` mit Sonne/Mond aus `src/icons.ts`. Footer und mobiles Menü haben keinen Theme-Umschalter mehr.

@@ -28,41 +28,52 @@ test.describe('Tokens', () => {
 });
 
 test.describe('ThemeToggle', () => {
-  test('footer toggle switches and persists the theme', async ({ page }) => {
+  test('header toggle switches and persists the theme, on desktop and phone', async ({ page }) => {
     await page.goto('/sbf-binnen/');
-    const dark = page.locator('footer .theme-choice[data-theme-set="dark"]');
+    const dark = page.locator('header .theme-choice[data-theme-set="dark"]');
     await expect(dark).toBeVisible();
+    await expect(dark).toHaveAttribute('aria-label', 'Dunkel');
     await dark.click();
     await expect(page.locator('html')).toHaveClass(/dark/);
     await expect(dark).toHaveAttribute('aria-pressed', 'true');
     await page.reload();
     await expect(page.locator('html')).toHaveClass(/dark/);
-    await page.locator('footer .theme-choice[data-theme-set="light"]').click();
+    await page.locator('header .theme-choice[data-theme-set="light"]').click();
     await expect(page.locator('html')).not.toHaveClass(/dark/);
+    // Auf dem Handy bleibt er im Header; Footer und mobiles Menü haben keinen.
+    await page.setViewportSize({ width: 360, height: 780 });
+    await expect(page.locator('header .theme-toggle')).toBeVisible();
+    await expect(page.locator('footer .theme-toggle, #mobile-menu .theme-toggle')).toHaveCount(0);
   });
   test('toggle is hidden without the h-js class', async ({ page }) => {
     await page.goto('/sbf-binnen/');
-    await expect(page.locator('footer .theme-toggle')).toHaveCount(1);
-    await expect(page.locator('footer .theme-toggle')).toBeVisible();
+    await expect(page.locator('header .theme-toggle')).toHaveCount(1);
+    await expect(page.locator('header .theme-toggle')).toBeVisible();
     // Die generische .h-js-only-Regel (display:block) darf die Gruppe nicht überstimmen.
-    // Als Flex-Item der Legal-Zeile wird inline-flex zu flex blockifiziert; beides ist richtig.
-    expect(await page.locator('footer .theme-toggle').evaluate(el => getComputedStyle(el).display)).toMatch(/^(inline-)?flex$/);
+    // Als Flex-Item der Aktionsleiste wird inline-flex zu flex blockifiziert; beides ist richtig.
+    expect(await page.locator('header .theme-toggle').evaluate(el => getComputedStyle(el).display)).toMatch(/^(inline-)?flex$/);
     await page.evaluate(() => document.documentElement.classList.remove('h-js'));
-    await expect(page.locator('footer .theme-toggle')).toBeHidden();
+    await expect(page.locator('header .theme-toggle')).toBeHidden();
   });
 });
 
 test.describe('Header', () => {
-  test('has four nav entries, one language link and a CTA', async ({ page }) => {
+  test('has four nav entries, a DE|EN pill, a theme pill and a CTA', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('nav.site-nav > *')).toHaveCount(4);
     await expect(page.locator('nav.site-nav > a', { hasText: 'Blog' })).toHaveCount(0);
     await expect(page.locator('#guides-menu a', { hasText: 'Blog' })).toHaveCount(1);
     await expect(page.locator('#guides-menu a', { hasText: 'FAQ' })).toHaveCount(1);
-    await expect(page.locator('a.lang-switch')).toHaveText('EN');
-    await expect(page.locator('a.lang-switch')).toHaveAttribute('href', '/en/');
+    const lang = page.locator('header nav.lang-switcher a.lang-option');
+    await expect(lang).toHaveCount(2);
+    await expect(lang.nth(0)).toHaveText('DE');
+    await expect(lang.nth(0)).toHaveAttribute('aria-current', 'page');
+    await expect(lang.nth(1)).toHaveText('EN');
+    await expect(lang.nth(1)).toHaveAttribute('href', '/en/');
+    await expect(lang.nth(1)).not.toHaveAttribute('aria-current');
+    await expect(page.locator('header .site-actions .theme-toggle .theme-choice')).toHaveCount(2);
     await expect(page.locator('a.site-cta')).toHaveAttribute('data-cta-position', 'header');
-    await expect(page.locator('.lang-switcher, .theme-switcher')).toHaveCount(0);
+    await expect(page.locator('a.lang-switch')).toHaveCount(0);
     await expect(page.locator('#guides-menu .nav-mega-icon, #licenses-menu .nav-mega-icon')).toHaveCount(0);
   });
 
@@ -97,11 +108,19 @@ test.describe('Header', () => {
     expect(css).toMatch(/background:\s*var\(--h-deep\);\s*background:\s*color-mix\(/);
   });
 
-  test('language link name contains its visible text (WCAG 2.5.3)', async ({ page }) => {
-    await page.goto('/');
-    expect(await page.locator('a.lang-switch').getAttribute('aria-label')).toMatch(/^EN\b/);
+  test('both pills fit a 360px header in one row and mark the current language (EN)', async ({ page }) => {
+    await page.setViewportSize({ width: 360, height: 780 });
     await page.goto('/en/');
-    expect(await page.locator('a.lang-switch').getAttribute('aria-label')).toMatch(/^DE\b/);
+    await expect(page.locator('nav.lang-switcher a.lang-option[hreflang="en"]')).toHaveAttribute('aria-current', 'page');
+    await expect(page.locator('nav.lang-switcher a.lang-option[hreflang="de"]')).toHaveAttribute('href', '/');
+    await expect(page.locator('nav.lang-switcher')).toHaveAttribute('aria-label', 'Language');
+    const logo = await page.locator('.logo-link').boundingBox();
+    const theme = await page.locator('header .theme-toggle').boundingBox();
+    const burger = await page.locator('#mobile-menu-btn').boundingBox();
+    expect(theme!.x).toBeGreaterThan(logo!.x + logo!.width);
+    expect(burger!.x + burger!.width).toBeLessThanOrEqual(360);
+    expect(Math.abs(logo!.y + logo!.height / 2 - (burger!.y + burger!.height / 2))).toBeLessThan(4);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
   });
 
   test('mega menu stays inside a 1024px viewport', async ({ page }) => {
@@ -113,7 +132,7 @@ test.describe('Header', () => {
     expect(box!.x + box!.width).toBeLessThanOrEqual(1024);
   });
 
-  test('mobile menu has Preise, Ratgeber accordion with Blog, and a theme toggle', async ({ page }) => {
+  test('mobile menu has Preise and a Ratgeber accordion with Blog; the theme toggle stays in the header', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/');
     await page.locator('#mobile-menu-btn').click();
@@ -122,12 +141,13 @@ test.describe('Header', () => {
     await expect(page.locator('#mobile-menu > nav > a.mobile-nav-link', { hasText: 'Blog' })).toHaveCount(0);
     await page.locator('#mobile-menu .mobile-accordion-trigger', { hasText: 'Ratgeber' }).click();
     await expect(page.locator('#mobile-acc-guides-body a', { hasText: 'Blog' })).toBeVisible();
-    await expect(page.locator('#mobile-menu .theme-choice[data-theme-set="dark"]')).toBeVisible();
+    await expect(page.locator('#mobile-menu .theme-choice')).toHaveCount(0);
+    await expect(page.locator('header .site-actions .theme-choice[data-theme-set="dark"]')).toBeVisible();
   });
 });
 
 test.describe('Footer', () => {
-  test('only stores with enough ratings are shown, no icons, theme toggle present', async ({ page }) => {
+  test('only stores with enough ratings are shown, no icons, no theme toggle', async ({ page }) => {
     const shown = getBoatpassStoreRatingsForDisplay();
     expect(shown.every(r => r.rating.ratings >= MIN_STORE_RATINGS)).toBe(true);
     await page.goto('/');
@@ -135,7 +155,7 @@ test.describe('Footer', () => {
     await expect(page.locator('footer .footer-rating', { hasText: 'App Store' })).toHaveCount(0);
     await expect(page.locator('footer .footer-links svg')).toHaveCount(0);
     await expect(page.locator('footer .footer-col')).toHaveCount(3);
-    await expect(page.locator('footer .theme-toggle')).toBeVisible();
+    await expect(page.locator('footer .theme-toggle')).toHaveCount(0);
     await expect(page.locator('footer')).not.toContainText('Entwickelt mit');
     await expect(page.locator('#footer-badge-ios')).toBeVisible();
   });
@@ -184,7 +204,7 @@ test.describe('Hero photo pipeline', () => {
     expect(await dusk.locator('img').evaluate(el => (el as HTMLImageElement).currentSrc)).toBe('');
     await expect(page.locator('.hh-photo--day')).toBeVisible();
     // Dunkel (per Umschalter): Dämmerung sichtbar, Tag unsichtbar.
-    await page.locator('footer .theme-choice[data-theme-set="dark"]').click();
+    await page.locator('header .theme-choice[data-theme-set="dark"]').click();
     await expect(dusk).toBeVisible();
     await expect(page.locator('.hh-photo--day')).toBeHidden();
   });
@@ -192,9 +212,9 @@ test.describe('Hero photo pipeline', () => {
   test('mobile band sizes match the rendered width and the parallax overhang is desktop-only', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto('/');
-    // 16:9-Bild, das ein 118vw hohes Band per object-fit: cover füllt, ist ~210vw breit.
+    // 16:9-Bild, das ein 124vw hohes Band per object-fit: cover füllt, ist ~220vw breit.
     for (const variant of ['day', 'dusk']) {
-      await expect(page.locator(`.hh-photo--${variant} source:not([media])[type="image/webp"]`)).toHaveAttribute('sizes', '(max-width: 639px) 210vw, 100vw');
+      await expect(page.locator(`.hh-photo--${variant} source:not([media])[type="image/webp"]`)).toHaveAttribute('sizes', '(max-width: 639px) 220vw, 100vw');
     }
     expect(await page.locator('.hh-photo--day').evaluate(el => getComputedStyle(el).bottom)).toBe('0px');
     await page.setViewportSize({ width: 1280, height: 800 });
@@ -202,21 +222,30 @@ test.describe('Hero photo pipeline', () => {
   });
 });
 
+// Der Auftakt hebt das Gerät 1,4 s lang an; Maße erst danach nehmen.
+async function phoneSettled(page: import('@playwright/test').Page) {
+  await page.locator('.hh-phone-wrap').evaluate(el => Promise.all(el.getAnimations().map(a => a.finished)));
+}
+
 test.describe('Hero panel', () => {
   for (const vp of [{ w: 1280, h: 720 }, { w: 1280, h: 620 }, { w: 1440, h: 900 }]) {
-    test(`CTA and phone visible without scrolling at ${vp.w}x${vp.h}`, async ({ page }) => {
+    test(`CTA visible without scrolling, phone fully inside the panel at ${vp.w}x${vp.h}`, async ({ page }) => {
       await page.setViewportSize({ width: vp.w, height: vp.h });
       await page.goto('/');
       const cta = await page.locator('#hero-cta-play').boundingBox();
       expect(cta!.y + cta!.height).toBeLessThanOrEqual(vp.h);
+      await phoneSettled(page);
       const phone = await page.locator('.hh-phone').boundingBox();
-      expect(phone!.y).toBeLessThan(vp.h);
-      expect(phone!.width).toBeGreaterThanOrEqual(280);
       const panel = await page.locator('.hh-panel').boundingBox();
+      expect(phone!.y).toBeLessThan(vp.h);
+      // Nie angeschnitten: oben wie unten Luft zum Paneelrand; nie kleiner als 230 px.
+      expect(phone!.width).toBeGreaterThanOrEqual(230);
+      expect(phone!.width).toBeLessThanOrEqual(360);
+      expect(phone!.y).toBeGreaterThanOrEqual(panel!.y + 16);
+      expect(phone!.y + phone!.height).toBeLessThanOrEqual(panel!.y + panel!.height - 16);
       expect(panel!.y).toBeGreaterThanOrEqual(64);
       // Rechte Kante am Viewport-Rand; 16 px Toleranz für eine eventuelle Scrollbar.
       expect(panel!.x + panel!.width).toBeGreaterThanOrEqual(vp.w - 16);
-      expect(phone!.y + phone!.height).toBeGreaterThan(panel!.y + panel!.height);
       await expect(page.locator('.hh-stage')).toHaveCount(0);
     });
   }
@@ -228,18 +257,32 @@ test.describe('Hero panel', () => {
       expect(over).toBeLessThanOrEqual(0);
     });
   }
-  test('mobile band is full-bleed with the phone cropped at the bottom', async ({ page }) => {
+  test('mobile band is full-bleed with the phone fully visible', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto('/');
+    await phoneSettled(page);
     const panel = await page.locator('.hh-panel').boundingBox();
     expect(panel!.x).toBe(0);
     expect(panel!.width).toBe(375);
-    expect(panel!.height).toBeGreaterThanOrEqual(420);
-    expect(panel!.height).toBeLessThanOrEqual(540);
+    expect(panel!.height).toBeGreaterThanOrEqual(460);
+    expect(panel!.height).toBeLessThanOrEqual(560);
     const phone = await page.locator('.hh-phone').boundingBox();
-    expect(Math.round(phone!.width)).toBe(220);
-    expect(phone!.y + phone!.height).toBeGreaterThan(panel!.y + panel!.height);
-    expect(phone!.y - panel!.y).toBeGreaterThanOrEqual(60);
+    expect(phone!.width).toBeGreaterThanOrEqual(190);
+    expect(phone!.width).toBeLessThanOrEqual(220);
+    expect(phone!.y).toBeGreaterThanOrEqual(panel!.y + 16);
+    expect(phone!.y + phone!.height).toBeLessThanOrEqual(panel!.y + panel!.height - 16);
+  });
+  test('tablet panel keeps 16:9 (size containment must not break aspect-ratio) with the phone inside', async ({ page }) => {
+    await page.setViewportSize({ width: 768, height: 1024 });
+    await page.goto('/');
+    await phoneSettled(page);
+    const panel = await page.locator('.hh-panel').boundingBox();
+    expect(panel!.width).toBe(768);
+    expect(Math.round(panel!.height)).toBe(432);
+    const phone = await page.locator('.hh-phone').boundingBox();
+    expect(phone!.width).toBeGreaterThanOrEqual(170);
+    expect(phone!.y).toBeGreaterThanOrEqual(panel!.y + 16);
+    expect(phone!.y + phone!.height).toBeLessThanOrEqual(panel!.y + panel!.height - 16);
   });
   test('dark mode shows the dusk photo with a light overlay', async ({ page }) => {
     await page.emulateMedia({ colorScheme: 'dark' });

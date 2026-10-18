@@ -9,7 +9,7 @@ export const en: Translations = {
     contact: 'Contact',
     getApp: 'Get App',
     readGroup: 'Read & ask',
-    switchLang: 'DE: switch to German',
+    language: 'Language',
   },
   hero: {
     headline1: 'The fastest way',

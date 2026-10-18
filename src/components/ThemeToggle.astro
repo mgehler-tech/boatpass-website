@@ -1,7 +1,10 @@
 ---
-// Hell/Dunkel-Umschalter als zwei Textschalter. Verhalten in
-// src/scripts/theme-toggle.ts (einmal pro Seite im BaseLayout initialisiert).
-// Ohne JavaScript bleibt die Gruppe unsichtbar (h-js kommt aus dem BaseLayout).
+// Hell/Dunkel-Umschalter im Header: Sonne und Mond in einer Segment-Pille
+// (Stil .h-seg in brand.css, gleiches Bild wie der DE|EN-Wechsler daneben).
+// Verhalten in src/scripts/theme-toggle.ts (einmal pro Seite im BaseLayout
+// initialisiert). Ohne JavaScript bleibt die Gruppe unsichtbar (h-js kommt
+// aus dem BaseLayout), weil sie dann nichts schalten könnte.
+import Icon from './Icon.astro';
 import { useTranslations } from '../i18n/index';
 
 interface Props {
@@ -13,34 +16,18 @@ const { lang, class: className } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<!-- Bewusst ohne .h-js-only: deren display:block würde das inline-flex der Gruppe
-     überstimmen (gleiche Spezifität, Reihenfolge im Bundle nicht garantiert).
-     Die eigenen zwei Regeln unten verbergen und zeigen die Gruppe. -->
-<div class:list={['theme-toggle', className]} role="group" aria-label={t.theme.label}>
-  <button type="button" class="theme-choice" data-theme-set="light" aria-pressed="false">{t.theme.light}</button>
-  <span class="theme-sep" aria-hidden="true">|</span>
-  <button type="button" class="theme-choice" data-theme-set="dark" aria-pressed="false">{t.theme.dark}</button>
+<!-- Bewusst ohne .h-js-only: deren display:block würde das inline-flex der
+     Pille (.h-seg) überstimmen. Die Regel unten verbirgt sie nur ohne JS und
+     ist spezifischer als .h-seg, damit die Reihenfolge im Bundle egal ist. -->
+<div class:list={['theme-toggle h-seg', className]} role="group" aria-label={t.theme.label}>
+  <button type="button" class="theme-choice h-seg-opt" data-theme-set="light" aria-pressed="false" aria-label={t.theme.light} title={t.theme.light}>
+    <Icon name="sun" size={15} strokeWidth={2} />
+  </button>
+  <button type="button" class="theme-choice h-seg-opt" data-theme-set="dark" aria-pressed="false" aria-label={t.theme.dark} title={t.theme.dark}>
+    <Icon name="moon" size={15} strokeWidth={2} />
+  </button>
 </div>
 
 <style is:global>
-  .theme-toggle { display: none; align-items: center; gap: 2px; }
-  .h-js .theme-toggle { display: inline-flex; }
-  .theme-choice {
-    min-height: 44px;
-    padding: 0 6px;
-    border: 0;
-    background: none;
-    font: 500 13px/1 var(--h-sans);
-    color: var(--h-muted);
-    cursor: pointer;
-    border-radius: var(--h-r-sm);
-    transition: color 0.2s ease;
-  }
-  .theme-choice:hover { color: var(--h-ink); }
-  .theme-choice[aria-pressed='true'] { color: var(--h-ink); font-weight: 600; }
-  .theme-choice:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
-  .theme-sep { color: var(--h-line-2); font-size: 13px; }
-  @media (prefers-reduced-motion: reduce) {
-    .theme-choice { transition: none; }
-  }
+  html:not(.h-js) .theme-toggle { display: none; }
 </style>

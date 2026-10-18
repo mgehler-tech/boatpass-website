@@ -134,6 +134,58 @@ html.dark {
   font-size: 14px;
 }
 
+/* ── Segment-Pille (Header: DE|EN und Hell|Dunkel) ───────────────────
+   Zwei gleich große Optionen in einer flachen Pille; die aktive Option
+   steht als Karte darauf. Die Trefferfläche jeder Option reicht unsichtbar
+   auf 44 px Höhe (WCAG 2.5.5), die sichtbare Pille bleibt 34 px. */
+.h-seg {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r-pill);
+  background: color-mix(in srgb, var(--h-ink) 5%, transparent);
+}
+.h-seg-opt {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 34px;
+  height: 26px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: var(--h-r-pill);
+  background: none;
+  font: 600 13px/1 var(--h-sans);
+  color: var(--h-muted);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+.h-seg-opt::after {
+  content: '';
+  position: absolute;
+  inset: -9px 0;
+}
+.h-seg-opt:hover { color: var(--h-ink); }
+.h-seg-opt[aria-current],
+.h-seg-opt[aria-pressed='true'] {
+  background: var(--h-card);
+  color: var(--h-ink);
+  box-shadow: 0 1px 3px rgba(11, 21, 48, 0.14);
+}
+.h-seg-opt:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
+.h-seg-opt svg { display: block; }
+html.dark .h-seg { background: color-mix(in srgb, #fff 6%, transparent); }
+html.dark .h-seg-opt[aria-current],
+html.dark .h-seg-opt[aria-pressed='true'] {
+  background: color-mix(in srgb, #fff 14%, transparent);
+  color: var(--h-on-deep);
+  box-shadow: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .h-btn, .h-btn-arrow { transition: none; }
+  .h-btn, .h-btn-arrow, .h-seg-opt { transition: none; }
 }

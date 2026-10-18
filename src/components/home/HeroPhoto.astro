@@ -27,10 +27,10 @@ const widths = [640, 960, 1280, 1920];
 const quality = 68;
 // Paneel ab 1024 px: 5 von 12 Spalten plus Rand, rund 42 % der Breite.
 const portraitSizes = '42vw';
-// Unter 640 px ist das Band 118vw hoch; ein 16:9-Bild, das es per object-fit:
-// cover füllt, ist rund 210vw breit. Zwischen 640 und 1023 px hat das Band
+// Unter 640 px ist das Band 124vw hoch; ein 16:9-Bild, das es per object-fit:
+// cover füllt, ist rund 220vw breit. Zwischen 640 und 1023 px hat das Band
 // selbst 16:9, also 100vw.
-const wideSizes = '(max-width: 639px) 210vw, 100vw';
+const wideSizes = '(max-width: 639px) 220vw, 100vw';
 
 async function sources(portrait: ImageMetadata, wide: ImageMetadata) {
   const [pAvif, pWebp, wAvif, wWebp] = await Promise.all([

@@ -1,10 +1,10 @@
 ---
 // Fußzeile aller Seiten (Spec docs/superpowers/specs/2026-10-17-premium-polish-design.md, 4.4):
 // Store-Badges mit Bewertung je Store (nur ab MIN_STORE_RATINGS), drei
-// Link-Spalten als reiner Text, rechtliche Zeile mit Hell/Dunkel-Umschalter.
+// Link-Spalten als reiner Text, darunter die rechtliche Zeile. Der Hell/Dunkel-
+// Umschalter sitzt im Header (ThemeToggle), nicht hier.
 // Keine Icons, keine Chevrons, keine Haarlinien zwischen den Zeilen.
 import StoreBadges from './StoreBadges.astro';
-import ThemeToggle from './ThemeToggle.astro';
 import { useTranslations, getLocalizedPath } from '../i18n/index';
 import { getBoatpassStoreRatingsForDisplay } from '../data/apps';
 import { PLAY_STORE_URL, appStoreUrl } from '../data/stores';
@@ -128,7 +128,6 @@ const columns: { heading: string; links: FooterLink[]; guides?: boolean }[] = [
       {legalLinks.map((link) => (
         <a href={link.href} class="footer-legal-link">{link.label}</a>
       ))}
-      <ThemeToggle lang={lang} class="footer-theme" />
     </div>
     <p class="footer-made">{t.footer.madeIn}</p>
   </div>
@@ -214,7 +213,6 @@ const columns: { heading: string; links: FooterLink[]; guides?: boolean }[] = [
     text-decoration: none;
   }
   .footer-legal-link:hover { color: var(--h-ink); text-decoration: underline; text-underline-offset: 4px; }
-  :global(.footer-theme) { margin-left: auto; }
   .footer-made { margin: 4px 0 0; font-size: 13px; color: var(--h-muted); }
 
   .site-footer a:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }

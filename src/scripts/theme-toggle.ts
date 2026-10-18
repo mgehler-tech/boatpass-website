@@ -1,5 +1,5 @@
 /**
- * Hell/Dunkel-Umschalter (Footer und mobiles Menü).
+ * Hell/Dunkel-Umschalter (Header, auf allen Seiten und Breiten).
  *
  * Der Zustand liegt als Klasse `dark` am <html> und in localStorage `theme`;
  * das Inline-Skript im BaseLayout stellt ihn vor dem ersten Paint wieder her.

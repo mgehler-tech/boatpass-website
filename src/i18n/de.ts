@@ -13,7 +13,7 @@ export const de = {
     readGroup: 'Lesen & Fragen',
     // aria-label des Sprachlinks im Header; beginnt mit dem sichtbaren Text
     // „EN", damit der zugängliche Name das Label enthält (WCAG 2.5.3).
-    switchLang: 'EN: zur englischen Version',
+    language: 'Sprache',
   },
   hero: {
     // Die H1 nennt den Hauptsuchbegriff und bleibt konstant. Vorher tauschte

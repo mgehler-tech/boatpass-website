@@ -70,8 +70,8 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
         <p class="hh-note">{h.heroNote}</p>
       </div>
 
-      <!-- Foto-Paneel: Wasser als Bühne, das Gerät steht unten mittig „im Wasser"
-           (unterer Rand vom Paneel angeschnitten). -->
+      <!-- Foto-Paneel: Wasser als Bühne, das Gerät steht unten mittig davor und
+           ist vollständig zu sehen (Höhe folgt dem Paneel, nie angeschnitten). -->
       <div class="hh-visual hh-panel">
         <HeroPhoto />
         <div class="hh-phone-pos">
@@ -217,17 +217,20 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
     text-wrap: pretty;
   }
 
-  /* ── Foto-Paneel mit Gerät (Spec 4.1) ──
-     Unter 1024 px ein randabfallendes Band, das Gerät zu 22 % angeschnitten;
-     ab 1024 px ein Paneel, das rechts bis an den Viewport läuft, Gerät zu 12 %
-     angeschnitten. Das Foto (HeroPhoto) liegt absolut dahinter. */
+  /* ── Foto-Paneel mit Gerät (Spec 4.1, nach Sichtung geändert) ──
+     Unter 1024 px ein randabfallendes Band, ab 1024 px ein Paneel, das rechts
+     bis an den Viewport läuft. Das Foto (HeroPhoto) liegt absolut dahinter.
+     Das Gerät steht vollständig im Paneel: Seine Breite ist durch die
+     Paneelhöhe begrenzt (100cqh, Paneel ist Größen-Container; Gerät ist
+     2,09-mal so hoch wie breit), oben und unten bleibt Luft. */
   .hh-visual { margin: 0; }
   .hh-panel {
     position: relative;
     overflow: hidden;
     margin-inline: calc(-1 * var(--h-gutter));
-    height: clamp(420px, 118vw, 540px);
+    height: clamp(460px, 124vw, 560px);
     background: var(--h-paper-2);
+    container-type: size;
   }
   @media (min-width: 640px) and (max-width: 1023px) {
     .hh-panel { height: auto; aspect-ratio: 16 / 9; }
@@ -249,13 +252,13 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
   .hh-phone-pos {
     position: absolute;
     left: 50%;
-    bottom: 0;
+    bottom: 5cqh;
     z-index: 2;
-    transform: translate(-50%, 22%);
+    transform: translateX(-50%);
   }
   .hh-phone-wrap { perspective: 1400px; }
   .hh-phone {
-    --pw: 220px;
+    --pw: min(220px, calc(90cqh / 2.1));
     transform-style: preserve-3d;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), var(--h-shadow-device);
   }
@@ -267,15 +270,22 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
       height: clamp(560px, 86vh, 820px);
       border-radius: 28px 0 0 28px;
     }
-    .hh-phone-pos { transform: translate(-50%, 12%); }
-    .hh-phone { --pw: clamp(280px, 24vw, 360px); }
+    .hh-phone-pos { bottom: 6cqh; }
+    .hh-phone { --pw: min(clamp(280px, 24vw, 360px), calc(88cqh / 2.1)); }
   }
   @media (prefers-reduced-motion: reduce) {
     .hh-panel::after { transition: none; }
   }
 
   /* ── Auftakt (nur mit h-motion, ab dem ersten Paint) ──
-     Nur transform – das Handy bleibt LCP-tauglich sichtbar. */
+     Nur transform – das Handy bleibt LCP-tauglich sichtbar. Der Hub bleibt
+     unter der Luft zum Paneelrand (5cqh bzw. 6cqh), damit das Gerät auch im
+     Startbild der Animation nicht angeschnitten ist; Chrome startet sie bei
+     einem Paneel unterhalb der Falte erst, wenn es ins Bild scrollt. */
+  .hh-phone-wrap { --hh-rise: 20px; }
   .h-motion .hh-phone-wrap { animation: hh-rise 1.4s var(--h-ease) 0.1s both; }
-  @keyframes hh-rise { from { transform: translateY(56px); } }
+  @keyframes hh-rise { from { transform: translateY(var(--hh-rise)); } }
+  @media (min-width: 1024px) {
+    .hh-phone-wrap { --hh-rise: 32px; }
+  }
 </style>
