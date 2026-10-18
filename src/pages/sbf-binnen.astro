@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHead from '../components/page/PageHead.astro';
 import PageLayout from '../components/page/PageLayout.astro';
 import PageFacts from '../components/page/PageFacts.astro';
+import PageLink from '../components/page/PageLink.astro';
 import Icon from '../components/Icon.astro';
 import CatalogSources from '../components/CatalogSources.astro';
 import BoatSchoolFinder from '../components/BoatSchoolFinder.astro';
@@ -110,14 +111,14 @@ const compare = [
   { label: 'Mindestalter', binnen: '16 Jahre', see: '16 Jahre' },
 ];
 
-const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'Schifffahrtsrecht', desc: 'Vorfahrtregeln, Lichterführung & Wasserstraßenordnung', count: 124, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
-  { name: 'Navigation', desc: 'Karten, Kurse, Positionen & Peilungen', count: 52, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Sicherheit', desc: 'Rettungsausrüstung, Notsignale & Sicherheitsverhalten', count: 39, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Signale & Zeichen', desc: 'Schallzeichen, Sichtzeichen & Flaggen', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
-  { name: 'Wetterkunde', desc: 'Wind, Wetter & Vorhersage', count: 6, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
-  { name: 'Allgemein', desc: 'Allgemeine Grundlagen & Seemannschaft', count: 4, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
-  { name: 'Segeln', desc: 'Segelspezifische Fragen für den Geltungsbereich Segeln', count: 47, icon: 'sailboat', color: '#0EA5E9', bg: 'rgba(14,165,233,0.10)' },
+const categories: { name: string; desc: string; count: number; icon: IconName }[] = [
+  { name: 'Schifffahrtsrecht', desc: 'Vorfahrtregeln, Lichterführung & Wasserstraßenordnung', count: 124, icon: 'scale' },
+  { name: 'Navigation', desc: 'Karten, Kurse, Positionen & Peilungen', count: 52, icon: 'compass' },
+  { name: 'Sicherheit', desc: 'Rettungsausrüstung, Notsignale & Sicherheitsverhalten', count: 39, icon: 'shield' },
+  { name: 'Signale & Zeichen', desc: 'Schallzeichen, Sichtzeichen & Flaggen', count: 28, icon: 'bell' },
+  { name: 'Wetterkunde', desc: 'Wind, Wetter & Vorhersage', count: 6, icon: 'cloud' },
+  { name: 'Allgemein', desc: 'Allgemeine Grundlagen & Seemannschaft', count: 4, icon: 'document' },
+  { name: 'Segeln', desc: 'Segelspezifische Fragen für den Geltungsbereich Segeln', count: 47, icon: 'sailboat' },
 ];
 ---
 
@@ -158,214 +159,214 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
     />
 
     <!-- Answer-Snippet: kurze, zitierfähige Direktantwort für Suchmaschinen & KI -->
-    <section style="margin-bottom:48px;">
-      <div style="background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px;">
-        <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Auf den Punkt</div>
-        <p style="font-size:17px; color:#1A1F36; line-height:1.7; margin:0; font-weight:600;">
+    <section class="pg-section">
+      <div class="pg-answer">
+        <p class="pg-answer-label">Auf den Punkt</p>
+        <p class="pg-answer-text">
           Der SBF Binnen (Sportbootführerschein Binnen) ist die amtliche Fahrerlaubnis für Motorboote mit mehr als 11,03 kW (15 PS) auf deutschen Binnenschifffahrtsstraßen. Die Theorieprüfung umfasst 30 Multiple-Choice-Fragen (7 Basis- + 23 spezifische Fragen) in 45 Minuten – bestanden ab 5 von 7 Basis- und 18 von 23 spezifischen Fragen richtig. Geprüft wird aus dem amtlichen ELWIS-Fragenkatalog (253+ Fragen); Boatpass trainiert alle Inhalte mit Prüfungssimulation und Fehlertraining.
         </p>
       </div>
     </section>
 
     <!-- Was ist SBF Binnen -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Was ist der SBF Binnen?</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
-        Der <strong>Sportbootführerschein Binnen (SBF Binnen)</strong> ist die amtliche Fahrerlaubnis für Motorboote auf deutschen Binnenschifffahrtsstraßen – Flüsse, Kanäle und Binnenseen. Er ist Pflicht für Boote mit mehr als <strong>11,03 kW (15 PS) Motorleistung</strong>. Für Elektromotoren gilt bisher eine Grenze von 7,5 kW – eine geplante Reform soll die Schwelle technologieneutral auf einheitlich 11,03 kW anheben, ist aber noch nicht in Kraft getreten. Auf einigen Revieren (z. B. dem Rhein) gelten strengere regionale Grenzen. Wo genau die Grenze verläuft und wann du <a href="/blog/boot-fahren-ohne-fuehrerschein-15-ps/" style="color:#3366FF; text-decoration:underline;">ganz ohne Führerschein fahren darfst</a>, erklären wir im Detail.
+    <section class="pg-section">
+      <h2 class="pg-h2">Was ist der SBF Binnen?</h2>
+      <p class="pg-p">
+        Der <strong>Sportbootführerschein Binnen (SBF Binnen)</strong> ist die amtliche Fahrerlaubnis für Motorboote auf deutschen Binnenschifffahrtsstraßen – Flüsse, Kanäle und Binnenseen. Er ist Pflicht für Boote mit mehr als <strong>11,03 kW (15 PS) Motorleistung</strong>. Für Elektromotoren gilt bisher eine Grenze von 7,5 kW – eine geplante Reform soll die Schwelle technologieneutral auf einheitlich 11,03 kW anheben, ist aber noch nicht in Kraft getreten. Auf einigen Revieren (z. B. dem Rhein) gelten strengere regionale Grenzen. Wo genau die Grenze verläuft und wann du <a href="/blog/boot-fahren-ohne-fuehrerschein-15-ps/" class="pg-inline-link">ganz ohne Führerschein fahren darfst</a>, erklären wir im Detail.
       </p>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      <p class="pg-p">
         Das Mindestalter beträgt 16 Jahre. Der Schein wird vom DMYV abgenommen und ist unbegrenzt gültig.
       </p>
     </section>
 
     <!-- Quellen-Transparenz: amtlicher Fragenkatalog -->
-    <section style="margin-bottom:48px;">
+    <section class="pg-section">
       <CatalogSources lang="de" only="binnen" />
     </section>
 
     <!-- Prüfungsaufbau -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">SBF-Binnen-Prüfung: Aufbau & Bestehensgrenze</h2>
-      <div class="exam-facts-grid" style="margin-bottom:20px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Theorieprüfung</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">30 Fragen · 45 Minuten<br>Multiple Choice</div>
+    <section class="pg-section">
+      <h2 class="pg-h2">SBF-Binnen-Prüfung: Aufbau & Bestehensgrenze</h2>
+      <div class="pg-cards pg-cards--4">
+        <div class="pg-card">
+          <p class="pg-card-label">Theorieprüfung</p>
+          <p class="pg-card-text">30 Fragen · 45 Minuten<br>Multiple Choice</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Basisfragen</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">7 Fragen<br>mind. 5 richtig</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Basisfragen</p>
+          <p class="pg-card-text">7 Fragen<br>mind. 5 richtig</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Spezifische Fragen</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">23 Fragen<br>mind. 18 richtig</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Spezifische Fragen</p>
+          <p class="pg-card-text">23 Fragen<br>mind. 18 richtig</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Fragenkatalog</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">253+ Fragen<br>offizieller ELWIS-Katalog</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Fragenkatalog</p>
+          <p class="pg-card-text">253+ Fragen<br>offizieller ELWIS-Katalog</p>
         </div>
       </div>
-      <p style="font-size:15px; color:#656B78; line-height:1.7;">
+      <p class="pg-note">
         Nach der Theorie folgt eine <strong>praktische Prüfung</strong> auf dem Wasser. Die amtliche Prüfungsgebühr für den SBF Binnen beträgt 2026 <strong>130,78 €</strong> (Theorie + Praxis).
       </p>
     </section>
 
     <!-- Ablauf: Praxis & Anmeldung -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Ablauf: von der Anmeldung bis zur Praxis</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Ablauf: von der Anmeldung bis zur Praxis</h2>
+      <p class="pg-p">
         Du meldest dich bei einem anerkannten Prüfungsausschuss (z. B. DMYV) an. Zuerst legst du die Theorieprüfung ab, danach folgt die <strong>praktische Prüfung</strong> auf dem Wasser.
       </p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-bottom:18px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Anmeldung</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">Antrag beim Prüfungsausschuss, Passbild und Ausweis – Mindestalter 16 Jahre.</div>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-title">Anmeldung</p>
+          <p class="pg-card-text">Antrag beim Prüfungsausschuss, Passbild und Ausweis – Mindestalter 16 Jahre.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Praktische Manöver</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">An- und Ablegen, Wenden, Aufstoppen und das Mann-über-Bord-Manöver.</div>
+        <div class="pg-card">
+          <p class="pg-card-title">Praktische Manöver</p>
+          <p class="pg-card-text">An- und Ablegen, Wenden, Aufstoppen und das Mann-über-Bord-Manöver.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;"><a href="/blog/wichtigste-knoten-sbf/" style="color:inherit; text-decoration:underline;">Knoten</a></div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">Die prüfungsrelevanten Knoten zügig anwenden (z. B. Palstek, Webeleinstek, Klampe).</div>
+        <div class="pg-card">
+          <p class="pg-card-title"><a href="/blog/wichtigste-knoten-sbf/" class="pg-card-link">Knoten</a></p>
+          <p class="pg-card-text">Die prüfungsrelevanten Knoten zügig anwenden (z. B. Palstek, Webeleinstek, Klampe).</p>
         </div>
       </div>
-      <a href="/sbf-pruefung-ablauf/" style="display:inline-flex; align-items:center; gap:8px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">Prüfungsablauf Schritt für Schritt →</a>
+      <PageLink lang="de" href="/sbf-pruefung-ablauf/">Prüfungsablauf Schritt für Schritt</PageLink>
     </section>
 
     <!-- Bootsfahrschule finden -->
     <BoatSchoolFinder lang="de" variant="binnen" />
 
     <!-- Kosten kompakt -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Was kostet der SBF Binnen?</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Was kostet der SBF Binnen?</h2>
+      <p class="pg-p">
         Fest ist nur die amtliche <strong>Prüfungsgebühr von 130,78 €</strong> (Theorie + Praxis). Den größten Kostenblock macht der Vorbereitungskurs aus – wer die Theorie selbst mit dem offiziellen ELWIS-Katalog lernt, spart genau diesen Posten.
       </p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:18px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-size:22px; font-weight:900; color:#1A1F36;">130,78 €</div>
-          <div style="font-size:14px; color:#656B78; line-height:1.55; margin-top:4px;">Amtliche Prüfungsgebühr</div>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-kpi">130,78 €</p>
+          <p class="pg-card-text">Amtliche Prüfungsgebühr</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-size:22px; font-weight:900; color:#1A1F36;">≈ 500–650 €</div>
-          <div style="font-size:14px; color:#656B78; line-height:1.55; margin-top:4px;">Kompletter Kurs (optional)</div>
+        <div class="pg-card">
+          <p class="pg-kpi">≈ 500–650 €</p>
+          <p class="pg-card-text">Kompletter Kurs (optional)</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-size:22px; font-weight:900; color:#3366FF;">ab 9,99 €</div>
-          <div style="font-size:14px; color:#656B78; line-height:1.55; margin-top:4px;">Theorie lernen mit Boatpass</div>
+        <div class="pg-card">
+          <p class="pg-kpi pg-kpi--accent">ab 9,99 €</p>
+          <p class="pg-card-text">Theorie lernen mit Boatpass</p>
         </div>
       </div>
-      <a href="/sbf-kosten/" style="display:inline-flex; align-items:center; gap:8px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">Alle SBF-Kosten im Detail →</a>
+      <PageLink lang="de" href="/sbf-kosten/">Alle SBF-Kosten im Detail</PageLink>
     </section>
 
     <!-- Geltungsbereich -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Wo darf ich mit dem SBF Binnen fahren?</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Wo darf ich mit dem SBF Binnen fahren?</h2>
+      <p class="pg-p">
         Der SBF Binnen gilt auf den <strong>Binnenschifffahrtsstraßen</strong> Deutschlands – also Flüssen, Kanälen und Binnenseen. Unter Motor ist die Bootslänge auf <strong>20 Meter</strong> begrenzt; für längere Fahrzeuge brauchst du ein Sportschifferzeugnis. Für die Küstengewässer von Nord- und Ostsee ist er nicht gültig – dort gilt der SBF See.
       </p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Wo er gilt</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">Flüsse, Kanäle und Binnenseen auf deutschen Binnenschifffahrtsstraßen.</div>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-title">Wo er gilt</p>
+          <p class="pg-card-text">Flüsse, Kanäle und Binnenseen auf deutschen Binnenschifffahrtsstraßen.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Voraussetzungen</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">Mindestalter 16 Jahre. Der Schein wird vom DMYV abgenommen und gilt unbegrenzt.</div>
+        <div class="pg-card">
+          <p class="pg-card-title">Voraussetzungen</p>
+          <p class="pg-card-text">Mindestalter 16 Jahre. Der Schein wird vom DMYV abgenommen und gilt unbegrenzt.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Regionale Grenzen</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">Auf manchen Revieren (z. B. Rhein) gelten strengere Leistungsgrenzen – vorher prüfen.</div>
+        <div class="pg-card">
+          <p class="pg-card-title">Regionale Grenzen</p>
+          <p class="pg-card-text">Auf manchen Revieren (z. B. Rhein) gelten strengere Leistungsgrenzen – vorher prüfen.</p>
         </div>
       </div>
     </section>
 
     <!-- Vergleich Binnen vs. See -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">SBF Binnen oder See – was brauchst du?</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">SBF Binnen oder See – was brauchst du?</h2>
+      <p class="pg-p">
         Binnen und See sind zwei eigenständige Scheine. Wer beide Reviere befahren will, kann sie in einer
         <strong>kombinierten Prüfung</strong> günstiger zusammen ablegen (rund 178,61 € statt zweimal einzeln).
       </p>
       <!-- min-width aktiviert das horizontale Scrollen des overflow-x-Wrappers auf schmalen Screens (wie AppComparisonTable/CatalogSources). Ohne min-width wurde die Tabelle stattdessen auf Handybreite gequetscht: die drei Spalten brachen mehrzeilig um und wurden unleserlich. -->
-      <div style="overflow-x:auto;">
-        <table style="width:100%; min-width:640px; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
+      <div class="pg-table">
+        <table>
           <thead>
-            <tr style="background:rgba(26,31,54,0.04);">
-              <th style="text-align:left; padding:14px 18px; font-weight:700; color:#1A1F36;"></th>
-              <th style="text-align:left; padding:14px 18px; font-weight:800; color:#1A1F36;">SBF Binnen</th>
-              <th style="text-align:left; padding:14px 18px; font-weight:800; color:#1A1F36;">SBF See</th>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">SBF Binnen</th>
+              <th scope="col">SBF See</th>
             </tr>
           </thead>
           <tbody>
             {compare.map((row, i) => (
-              <tr style={`border-top:1px solid rgba(51,102,255,0.08);${i % 2 ? ' background:rgba(26,31,54,0.02);' : ''}`}>
-                <td style="padding:13px 18px; font-weight:600; color:#1A1F36;">{row.label}</td>
-                <td style="padding:13px 18px; color:#4B5563;">{row.binnen}</td>
-                <td style="padding:13px 18px; color:#4B5563;">{row.see}</td>
+              <tr>
+                <th scope="row">{row.label}</th>
+                <td>{row.binnen}</td>
+                <td>{row.see}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <a href="/sbf-see/" style="display:inline-flex; align-items:center; gap:8px; margin-top:18px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">SBF See im Detail ansehen →</a>
+      <PageLink lang="de" href="/sbf-see/" class="pg-link--spaced">SBF See im Detail ansehen</PageLink>
     </section>
 
     <!-- FAQ -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Häufige Fragen zum SBF Binnen</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Häufige Fragen zum SBF Binnen</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Lernen nach Kategorie -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">Lernen nach Kategorie</h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Lernen nach Kategorie</h2>
+      <p class="pg-p">
         Der offizielle Fragenkatalog umfasst {categories.reduce((s, c) => s + c.count, 0)} Fragen in {categories.length} Themengebieten – übe gezielt nach Schwachstellen.
       </p>
-      <p style="font-size:14px; color:#656B78; line-height:1.6; margin-top:-8px; margin-bottom:20px;">
-        Quelle: amtlicher Fragenkatalog (DSV/DMYV) auf <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
+      <p class="pg-note pg-note--sm">
+        Quelle: amtlicher Fragenkatalog (DSV/DMYV) auf <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
       </p>
-      <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="pg-rows">
         {categories.map(c => (
-          <div style="display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px;">
-            <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
-              <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={c.icon} size={20} strokeWidth={1.75} />
             </span>
-            <div style="flex:1; min-width:0;">
-              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
-              <div style="font-size:12px; color:#656B78; line-height:1.4; margin-top:2px;">{c.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{c.name}</p>
+              <p class="pg-row-text">{c.desc}</p>
             </div>
-            <span style="font-size:12px; font-weight:700; color:#656B78; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} Fragen</span>
+            <span class="pg-pill">{c.count} Fragen</span>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Wie die App hilft -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">So hilft Boatpass beim SBF Binnen</h2>
-      <div style="display:flex; flex-direction:column; gap:16px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">So hilft Boatpass beim SBF Binnen</h2>
+      <div class="pg-rows">
         {([
           { icon: 'book', title: 'Vollständiger ELWIS-Katalog', desc: 'Alle 253+ offiziellen Fragen für SBF Binnen – immer aktuell, direkt in der App.' },
           { icon: 'target', title: 'Prüfungssimulation', desc: 'Echte Prüfungsbedingungen: 30 Fragen, 45 Minuten, Bestehensgrenze – genau wie am Prüfungstag.' },
           { icon: 'refresh', title: 'Fehlertraining', desc: 'Trainiere gezielt die Fragen, die du noch nicht kannst. Kein Zeitverschwendung mit bereits gelernten Inhalten.' },
           { icon: 'chart', title: 'Fortschrittsanzeige', desc: 'Sieh jederzeit, wie weit du bist – nach Kategorie aufgeschlüsselt.' },
         ] satisfies { icon: IconName; title: string; desc: string }[]).map(f => (
-          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={f.icon} size={21} stroke="#3366FF" strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={f.icon} size={21} strokeWidth={1.75} />
             </span>
-            <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
-              <div style="font-size:15px; color:#656B78; line-height:1.6;">{f.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{f.title}</p>
+              <p class="pg-row-text">{f.desc}</p>
             </div>
           </div>
         ))}
@@ -373,40 +374,40 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
     </section>
 
     <!-- Interne Links -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
-      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Weiterführende Artikel</h3>
-      <div class="related-links">
-        <a href="/sbf-binnen-pruefungsfragen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen Prüfungsfragen üben</a>
-        <a href="/sbf-binnen-app/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF-Binnen-Apps im Vergleich</a>
-        <a href="/sbf-kosten/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Was kostet der Sportbootführerschein?</a>
-        <a href="/sbf-pruefung-ablauf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Prüfung: Ablauf von Theorie & Praxis</a>
-        <a href="/blog/sbf-pruefung-alles-wissenswerte/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Prüfung: Alles was du wissen musst</a>
-        <a href="/blog/sbf-vorbereitung-wie-lange/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Wie lange muss ich für den SBF lernen?</a>
-        <a href="/blog/sbf-binnen-vs-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen vs. SBF See – was ist der Unterschied?</a>
-        <a href="/blog/motorboot-oder-segelboot-welcher-sbf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Motorboot oder Segelboot – welcher SBF und welche Praxis?</a>
-        <a href="/blog/ausweichregeln-vorfahrt-wasser/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Ausweichregeln auf dem Wasser – wer muss ausweichen?</a>
-        <a href="/blog/schallsignale-sbf-erklaert/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Schallsignale beim SBF: See & Binnen im Überblick</a>
-        <a href="/blog/lichterfuehrung-erklaert/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Lichterführung erklärt – welche Lichter führt ein Boot nachts?</a>
-        <a href="/blog/verhalten-bei-verminderter-sicht-nebel/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Verminderte Sicht und Nebel: richtig verhalten mit dem Sportbootführerschein</a>
-        <a href="/blog/schleppverband-besondere-fahrzeuge-erkennen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Schleppverband und besondere Fahrzeuge – Signalkörper am Tag erkennen</a>
-        <a href="/blog/anlegen-ablegen-hafenmanoever/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Anlegen und Ablegen: Hafenmanöver für Einsteiger</a>
-        <a href="/blog/5-tipps-sbf-bestehen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Mit diesen 5 Tipps die SBF-Prüfung beim ersten Versuch bestehen</a>
-        <a href="/blog/rettungsweste-auftriebsklassen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Die richtige Rettungsweste wählen – Auftriebsklassen erklärt</a>
-        <a href="/blog/bruecken-durchfahrtshoehen-binnengewaesser/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Durchfahrtshöhen an Brücken – was du auf Binnengewässern beachten musst</a>
-        <a href="/blog/boot-trailern-slippen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Boot trailern und slippen – was Sportbootfahrer wissen müssen</a>
-        <a href="/blog/boot-einwintern-checkliste-winterlager/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Boot einwintern – Checkliste fürs Winterlager</a>
-        <a href="/blog/wasserskifahren-wakeboarden-regeln-beobachterpflicht/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Wasserskifahren und Wakeboarden – Regeln, Beobachterpflicht und Kennzeichnung</a>
-        <a href="/blog/boot-startklar-machen-fruehjahr-checkliste-saisonstart/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Boot startklar machen im Frühjahr – Checkliste zum Saisonstart</a>
-        <a href="/blog/verhalten-nach-bootsunfall-pflichten-meldung/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Verhalten nach einem Bootsunfall – Pflichten, Meldung und Beweissicherung</a>
-        <a href="/blog/bussgelder-verstoesse-wasser/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Bußgelder und Verstöße auf dem Wasser – die teuersten Fehler und ihre Folgen</a>
-        <a href="/blog/kinder-jugendliche-boot-fahren-mindestalter/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Ab wann dürfen Kinder und Jugendliche ein Boot führen?</a>
-        <a href="/blog/schleusenfahrt-ablauf-verhalten-sportbootfahrer/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Schleusenfahrt – Ablauf und Verhalten für Sportbootfahrer</a>
-        <a href="/blog/umweltschutz-gewaesserschutz-bootfahren/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Umweltschutz und Gewässerschutz beim Bootfahren</a>
-        <a href="/blog/nachtfahrt-sportboot/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Nachtfahrt mit dem Sportboot – sicher durch die Dunkelheit</a>
-        <a href="/blog/wellen-sog-haftung/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Wellenschlag und Sog: Rücksicht und Haftung auf dem Wasser</a>
-        <a href="/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Häufige Fragen zum Sportbootführerschein</a>
-        <a href="/sbf-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See lernen mit Boatpass</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Weiterführende Artikel</h2>
+      <ul class="pg-related">
+        <li><a href="/sbf-binnen-pruefungsfragen/">SBF Binnen Prüfungsfragen üben<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-binnen-app/">SBF-Binnen-Apps im Vergleich<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-kosten/">Was kostet der Sportbootführerschein?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-pruefung-ablauf/">SBF Prüfung: Ablauf von Theorie & Praxis<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sbf-pruefung-alles-wissenswerte/">SBF Prüfung: Alles was du wissen musst<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sbf-vorbereitung-wie-lange/">Wie lange muss ich für den SBF lernen?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sbf-binnen-vs-see/">SBF Binnen vs. SBF See – was ist der Unterschied?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/motorboot-oder-segelboot-welcher-sbf/">Motorboot oder Segelboot – welcher SBF und welche Praxis?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/ausweichregeln-vorfahrt-wasser/">Ausweichregeln auf dem Wasser – wer muss ausweichen?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/schallsignale-sbf-erklaert/">Schallsignale beim SBF: See & Binnen im Überblick<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/lichterfuehrung-erklaert/">Lichterführung erklärt – welche Lichter führt ein Boot nachts?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/verhalten-bei-verminderter-sicht-nebel/">Verminderte Sicht und Nebel: richtig verhalten mit dem Sportbootführerschein<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/schleppverband-besondere-fahrzeuge-erkennen/">Schleppverband und besondere Fahrzeuge – Signalkörper am Tag erkennen<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/anlegen-ablegen-hafenmanoever/">Anlegen und Ablegen: Hafenmanöver für Einsteiger<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/5-tipps-sbf-bestehen/">Mit diesen 5 Tipps die SBF-Prüfung beim ersten Versuch bestehen<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/rettungsweste-auftriebsklassen/">Die richtige Rettungsweste wählen – Auftriebsklassen erklärt<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/bruecken-durchfahrtshoehen-binnengewaesser/">Durchfahrtshöhen an Brücken – was du auf Binnengewässern beachten musst<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/boot-trailern-slippen/">Boot trailern und slippen – was Sportbootfahrer wissen müssen<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/boot-einwintern-checkliste-winterlager/">Boot einwintern – Checkliste fürs Winterlager<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/wasserskifahren-wakeboarden-regeln-beobachterpflicht/">Wasserskifahren und Wakeboarden – Regeln, Beobachterpflicht und Kennzeichnung<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/boot-startklar-machen-fruehjahr-checkliste-saisonstart/">Boot startklar machen im Frühjahr – Checkliste zum Saisonstart<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/verhalten-nach-bootsunfall-pflichten-meldung/">Verhalten nach einem Bootsunfall – Pflichten, Meldung und Beweissicherung<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/bussgelder-verstoesse-wasser/">Bußgelder und Verstöße auf dem Wasser – die teuersten Fehler und ihre Folgen<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/kinder-jugendliche-boot-fahren-mindestalter/">Ab wann dürfen Kinder und Jugendliche ein Boot führen?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/schleusenfahrt-ablauf-verhalten-sportbootfahrer/">Schleusenfahrt – Ablauf und Verhalten für Sportbootfahrer<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/umweltschutz-gewaesserschutz-bootfahren/">Umweltschutz und Gewässerschutz beim Bootfahren<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/nachtfahrt-sportboot/">Nachtfahrt mit dem Sportboot – sicher durch die Dunkelheit<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/wellen-sog-haftung/">Wellenschlag und Sog: Rücksicht und Haftung auf dem Wasser<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/faq/">Häufige Fragen zum Sportbootführerschein<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-see/">SBF See lernen mit Boatpass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
   </PageLayout>

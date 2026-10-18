@@ -11,6 +11,11 @@ test.beforeEach(async ({ page }) => {
   await page.route(/plausible\.io/, r => r.abort());
 });
 
+// Die alten Inline-Farben der Inhaltsseiten (Spec 5.3); auf migrierten Seiten darf keine mehr in
+// main stehen. Die eingebetteten Bausteine CatalogSources und BoatSchoolFinder bleiben in dieser
+// Runde unangetastet und tragen noch #4B5563/#656B78, deshalb nur die drei Selektoren der Spec.
+const noInline = 'main [style*="#1A1F36"], main [style*="background:white"], main [style*="#3366FF"]';
+
 test.describe('Seitenkopf', () => {
   test('SBF Binnen: Archivo-Titel bündig zum Logo, Store-Button mit einem Symbol, Bewertung', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
@@ -58,5 +63,36 @@ test.describe('Spaltenordnung', () => {
     const m2 = (await main.boundingBox())!;
     expect(a2.y + a2.height).toBeLessThanOrEqual(m2.y);
     await expect(aside.locator('.pg-aside-buy')).toBeHidden();
+  });
+});
+
+test.describe('SBF Binnen vollständig', () => {
+  test('keine Inline-Farben, keine Pfeilzeichen, Bausteine vorhanden', async ({ page }) => {
+    await page.goto('/sbf-binnen/');
+    await expect(page.locator(noInline)).toHaveCount(0);
+    expect(await page.locator('main').innerText()).not.toMatch(/[→▶]/);
+    await expect(page.locator('.pg-main .pg-answer')).toHaveCount(1);
+    await expect(page.locator('.pg-main > .pg-section').first().locator('.pg-answer')).toHaveCount(1);
+    await expect(page.locator('.pg-cards--4 .pg-card')).toHaveCount(4);
+    await expect(page.locator('.pg-table table')).toHaveCount(1);
+    await expect(page.locator('.pg-faq .pg-faq-item')).toHaveCount(5);
+    await expect(page.locator('.pg-rows').first().locator('.pg-row')).toHaveCount(7);
+    await expect(page.locator('ul.pg-related a')).toHaveCount(30);
+    await expect(page.locator('ul.pg-related a').first()).toHaveAttribute('href', '/sbf-binnen-pruefungsfragen/');
+    await expect(page.locator('h2.pg-h2')).toHaveCount(10);
+    // Alte Klassen nur noch im unangetasteten BoatSchoolFinder (eigene section), nicht in den Seitenabschnitten.
+    await expect(page.locator('.pg-section .content-section-title, .related-links, .exam-facts-grid')).toHaveCount(0);
+    await expect(page.locator('a.pg-link')).toHaveCount(3);
+  });
+  test('Dark Mode über Tokens', async ({ page }) => {
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await page.goto('/sbf-binnen/');
+    expect(await page.locator('.pg-card').first().evaluate(el => getComputedStyle(el).backgroundColor)).toBe('rgb(23, 29, 43)');
+    expect(await page.locator('.pg-answer').evaluate(el => getComputedStyle(el).backgroundColor)).not.toBe('rgb(255, 255, 255)');
+  });
+  test('kein horizontaler Überlauf bei 360px', async ({ page }) => {
+    await page.setViewportSize({ width: 360, height: 780 });
+    await page.goto('/sbf-binnen/');
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
   });
 });

@@ -160,3 +160,159 @@
 @media (prefers-reduced-motion: reduce) {
   .pg-link { transition: none; }
 }
+
+/* ── Abschnitte und Text ────────────────────────────────────────────── */
+.pg-main > * + * { margin-top: clamp(48px, 6vw, 64px); }
+/* BoatSchoolFinder bringt einen eigenen Inline-Abstand nach unten mit; im
+   neuen Rhythmus zählt nur der Abstand oben (sonst doppelt). */
+.pg-main > .boat-school-finder { margin-bottom: 0 !important; }
+/* .content-section-title: Überschrift des eingebetteten BoatSchoolFinders, der
+   in dieser Runde unangetastet bleibt; auf diesen Seiten sieht sie aus wie .pg-h2. */
+.pg-h2,
+.pg-main .content-section-title {
+  margin: 0 0 14px;
+  font-family: var(--h-display);
+  font-stretch: 84%;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--h-ink);
+}
+.pg-h2--sm { font-size: 1.125rem; }
+.pg-h3 { margin: 0 0 6px; font: 650 16px/1.4 var(--h-sans); color: var(--h-ink); }
+.pg-p { margin: 0 0 16px; font-size: 16.5px; line-height: 1.7; color: var(--h-text); }
+.pg-p:last-child { margin-bottom: 0; }
+.pg-p strong { color: var(--h-ink); font-weight: 650; }
+.pg-note { margin: 0; font-size: 15px; line-height: 1.65; color: var(--h-muted); }
+.pg-note--sm { margin: -4px 0 20px; font-size: 14px; }
+.pg-inline-link { color: var(--h-blue-ink); text-decoration: underline; text-underline-offset: 3px; }
+.pg-card-link { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.pg-link--spaced { margin-top: 18px; }
+
+/* ── Antwort-Kasten („Auf den Punkt") ───────────────────────────────── */
+.pg-answer {
+  padding: 22px 24px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r);
+  background: var(--h-card);
+}
+.pg-answer-label {
+  margin: 0 0 8px;
+  font: 600 12px/1.4 var(--h-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--h-blue-ink);
+}
+.pg-answer-text { margin: 0; font-size: 17px; line-height: 1.6; font-weight: 500; color: var(--h-ink); }
+
+/* ── Karten ─────────────────────────────────────────────────────────── */
+.pg-cards { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 0 0 18px; }
+.pg-cards:last-child { margin-bottom: 0; }
+@media (min-width: 560px) {
+  .pg-cards--3, .pg-cards--4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 900px) {
+  .pg-cards--3 { grid-template-columns: repeat(3, 1fr); }
+  .pg-cards--4 { grid-template-columns: repeat(4, 1fr); }
+}
+.pg-card {
+  padding: 20px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r);
+  background: var(--h-card);
+}
+.pg-card-label {
+  margin: 0 0 8px;
+  font: 600 12px/1.4 var(--h-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--h-blue-ink);
+}
+.pg-card-title { margin: 0 0 6px; font: 650 16px/1.4 var(--h-sans); color: var(--h-ink); }
+.pg-card-text { margin: 0; font-size: 15px; line-height: 1.6; color: var(--h-muted); }
+.pg-kpi {
+  margin: 0 0 4px;
+  font-family: var(--h-display);
+  font-stretch: 84%;
+  font-weight: 720;
+  font-size: 26px;
+  line-height: 1.1;
+  color: var(--h-ink);
+}
+.pg-kpi--accent { color: var(--h-blue-ink); }
+
+/* ── Tabelle ────────────────────────────────────────────────────────── */
+.pg-table {
+  overflow-x: auto;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r);
+  background: var(--h-card);
+}
+.pg-table table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 15px; }
+.pg-table th, .pg-table td { padding: 13px 18px; text-align: left; vertical-align: top; }
+.pg-table thead th { background: var(--h-paper-2); font-weight: 700; color: var(--h-ink); }
+.pg-table tbody tr { border-top: 1px solid var(--h-line); }
+.pg-table tbody th { font-weight: 600; color: var(--h-ink); }
+.pg-table td { color: var(--h-text); }
+
+/* ── FAQ ────────────────────────────────────────────────────────────── */
+.pg-faq { display: flex; flex-direction: column; gap: 12px; }
+.pg-faq-item {
+  padding: 20px 22px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r);
+  background: var(--h-card);
+}
+
+/* ── Zeilenlisten (Kategorien, So hilft Boatpass, Praxis-Brücke) ─────── */
+.pg-rows { display: flex; flex-direction: column; }
+.pg-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-top: 1px solid var(--h-line);
+}
+.pg-row:last-child { border-bottom: 1px solid var(--h-line); }
+.pg-row-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  background: var(--h-blue-wash);
+  color: var(--h-blue-ink);
+}
+.pg-row-body { flex: 1; min-width: 0; }
+.pg-row-title { margin: 0; font: 650 15px/1.4 var(--h-sans); color: var(--h-ink); }
+.pg-row-text { margin: 2px 0 0; font-size: 14px; line-height: 1.5; color: var(--h-muted); }
+.pg-pill {
+  flex-shrink: 0;
+  padding: 3px 10px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r-pill);
+  font: 600 12px/1.4 var(--h-sans);
+  color: var(--h-muted);
+  white-space: nowrap;
+}
+
+/* ── Weiterführende Artikel ─────────────────────────────────────────── */
+.pg-section--related { padding-top: 32px; border-top: 1px solid var(--h-line); }
+.pg-related { margin: 0; padding: 0; list-style: none; }
+.pg-related a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 8px 0;
+  color: var(--h-blue-ink);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.pg-related li + li a { border-top: 1px solid var(--h-line); }
+.pg-related a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.pg-related a svg { flex-shrink: 0; }
