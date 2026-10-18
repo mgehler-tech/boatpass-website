@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHead from '../components/page/PageHead.astro';
+import PageLayout from '../components/page/PageLayout.astro';
+import PageFacts from '../components/page/PageFacts.astro';
 import Icon from '../components/Icon.astro';
 import CatalogSources from '../components/CatalogSources.astro';
 import BoatSchoolFinder from '../components/BoatSchoolFinder.astro';
@@ -140,7 +142,20 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
     SBF Binnen lernen –<br />die smarte Lernapp
   </PageHead>
 
-  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="de"
+      title="Auf einen Blick"
+      product="sbfBinnen"
+      items={[
+        { k: 'Fragenkatalog', v: '253+ Fragen' },
+        { k: 'Theorieprüfung', v: '30 Fragen · 45 Min' },
+        { k: 'Bestehensgrenze', v: '5 von 7 Basis, 18 von 23 spezifisch' },
+        { k: 'Prüfungsgebühr 2026', v: '130,78 €' },
+        { k: 'Mindestalter', v: '16 Jahre' },
+      ]}
+    />
 
     <!-- Answer-Snippet: kurze, zitierfähige Direktantwort für Suchmaschinen & KI -->
     <section style="margin-bottom:48px;">
@@ -394,5 +409,5 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
       </div>
     </section>
 
-  </div>
+  </PageLayout>
 </BaseLayout>

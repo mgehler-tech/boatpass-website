@@ -76,6 +76,71 @@
   margin-top: 28px;
 }
 
+/* ── Spaltenordnung ─────────────────────────────────────────────────── */
+.pg-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 'aside' 'main';
+  gap: 32px;
+  padding: clamp(40px, 5vw, 56px) 0 clamp(64px, 8vw, 112px);
+}
+.pg-main { grid-area: main; min-width: 0; max-width: 780px; }
+.pg-aside { grid-area: aside; min-width: 0; }
+.pg-layout--wide { display: block; }
+@media (min-width: 1024px) {
+  .pg-layout--read {
+    grid-template-columns: minmax(0, 1fr) 320px;
+    grid-template-areas: 'main aside';
+    gap: 64px;
+    align-items: start;
+  }
+  /* Klebt unter der Kopfzeile; in flachen Fenstern scrollt die Karte innen. */
+  .pg-aside {
+    position: sticky;
+    top: 88px;
+    max-height: calc(100vh - 112px);
+    overflow: auto;
+  }
+}
+
+/* ── Fakten-Karte in der Seitenleiste ───────────────────────────────── */
+.pg-aside-card {
+  padding: 24px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r);
+  background: var(--h-card);
+}
+.pg-aside-title {
+  margin: 0 0 8px;
+  font-family: var(--h-display);
+  font-stretch: 84%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  color: var(--h-ink);
+}
+.pg-facts { margin: 0; }
+.pg-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 0;
+  border-top: 1px solid var(--h-line);
+}
+.pg-fact-k { font: 500 13px/1.4 var(--h-sans); color: var(--h-muted); }
+.pg-fact-v { margin: 0; font: 600 15px/1.4 var(--h-sans); color: var(--h-ink); }
+.pg-aside-buy {
+  display: none;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--h-line);
+}
+.pg-aside-price { margin: 0 0 12px; font-size: 14px; line-height: 1.5; color: var(--h-muted); }
+.pg-aside-price strong { color: var(--h-ink); font-weight: 650; }
+@media (min-width: 1024px) {
+  .pg-aside-buy { display: block; }
+}
+
 /* ── Textlink mit Chevron (ersetzt „→"-Links) ───────────────────────── */
 .pg-link {
   display: inline-flex;

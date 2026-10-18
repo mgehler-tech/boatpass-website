@@ -33,3 +33,30 @@ test.describe('Seitenkopf', () => {
     await expect(page.locator('.hh-actions .hh-rating')).toContainText(/4,96 · 29 Bewertungen/);
   });
 });
+
+test.describe('Spaltenordnung', () => {
+  test('Aside klebt rechts (1280x620) und steht am Handy vor dem Inhalt', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 620 });
+    await page.goto('/sbf-binnen/');
+    const aside = page.locator('.pg-aside');
+    const main = page.locator('.pg-main');
+    expect(await aside.evaluate(el => getComputedStyle(el).position)).toBe('sticky');
+    // Erst nach dem Scrollen klebt die Leiste; dann muss sie ganz ins flache Fenster passen.
+    await page.evaluate(() => window.scrollTo(0, 900));
+    await page.waitForTimeout(300);
+    const a = (await aside.boundingBox())!;
+    const m = (await main.boundingBox())!;
+    expect(a.x).toBeGreaterThan(m.x + m.width);
+    expect(a.y).toBeGreaterThanOrEqual(80);
+    expect(a.y + a.height).toBeLessThanOrEqual(620);
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await expect(aside.locator('dl.pg-facts dt')).toHaveCount(5);
+    await expect(aside.locator('dl.pg-facts')).toContainText('130,78 €');
+    await expect(aside.locator('.pg-aside-buy a[data-cta-position="page-aside"]')).toBeVisible();
+    await page.setViewportSize({ width: 375, height: 812 });
+    const a2 = (await aside.boundingBox())!;
+    const m2 = (await main.boundingBox())!;
+    expect(a2.y + a2.height).toBeLessThanOrEqual(m2.y);
+    await expect(aside.locator('.pg-aside-buy')).toBeHidden();
+  });
+});
