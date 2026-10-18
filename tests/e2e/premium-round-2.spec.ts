@@ -104,6 +104,28 @@ test.describe('Preisliste: Zeilen als Links', () => {
     expect(await page.locator('#pricing .hp-rows > li').first().evaluate(el => getComputedStyle(el).borderBottomWidth)).toBe('1px');
     expect(await rows.nth(0).evaluate(el => getComputedStyle(el).borderBottomWidth)).toBe('0px');
   });
+  // Zwischen 1024 und ~1150 px steht die Karte neben den Zeilen; die Zeile darf
+  // dort nicht fünfspaltig bleiben, sonst kollabiert die Namensspalte auf 58 px.
+  for (const w of [1024, 1100, 1280, 1440]) {
+    test(`Name und Zahlen überlappen nie (${w}px)`, async ({ page }) => {
+      await page.setViewportSize({ width: w, height: 768 });
+      await page.goto('/');
+      const rows = page.locator('#pricing a.hp-row');
+      await expect(rows).toHaveCount(5);
+      const boxes = await rows.evaluateAll(els => els.map(a => {
+        const r = (s: string) => a.querySelector(s)!.getBoundingClientRect();
+        const name = a.querySelector('.hp-name') as HTMLElement;
+        return { name: r('.hp-name'), q: r('.hp-cell--q'), overflow: name.scrollWidth - name.clientWidth };
+      }));
+      for (const b of boxes) {
+        expect(b.overflow).toBeLessThanOrEqual(1);
+        const sideBySide = b.name.right <= b.q.left + 1;
+        const stacked = b.q.top >= b.name.bottom - 1;
+        expect(sideBySide || stacked).toBe(true);
+        if (sideBySide) expect(b.name.width).toBeGreaterThanOrEqual(200);
+      }
+    });
+  }
   test('kein horizontaler Überlauf bei 360px, Chevron sichtbar', async ({ page }) => {
     await page.setViewportSize({ width: 360, height: 780 });
     await page.goto('/');

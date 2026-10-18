@@ -256,7 +256,10 @@ const groups: { key: 'sbf' | 'funk'; title: string; note?: string; rows: Row[]; 
   }
   .hp-group-note { margin: 0; font-family: var(--h-sans); font-size: 13px; color: var(--h-muted); }
 
-  .hp-rows { margin: 0; padding: 0; list-style: none; }
+  /* Die Liste ist Größen-Container: Die Zeile wird nach ihrer eigenen Breite
+     fünfspaltig, nicht nach dem Viewport. Neben der Karte (ab 1024 px) ist sie
+     erst ab etwa 1200 px Fensterbreite breit genug; darunter stapelt sie. */
+  .hp-rows { margin: 0; padding: 0; list-style: none; container-type: inline-size; }
   /* Haarlinie am Listenelement, damit sie bündig mit der Gruppenlinie beginnt
      (der Link darunter ragt für die Hover-Fläche 12 px nach links hinaus). */
   .hp-rows > li { border-bottom: 1px solid var(--h-line-2); }
@@ -346,7 +349,9 @@ const groups: { key: 'sbf' | 'funk'; title: string; note?: string; rows: Row[]; 
   }
   .hp-chevron svg { display: block; }
   .hp-row:hover .hp-chevron { transform: translateX(4px); }
-  @media (min-width: 900px) {
+  /* Fünf Spalten erst, wenn der Name mindestens ~215 px bekommt
+     (720 − 506 px feste Spalten und Abstände). */
+  @container (min-width: 720px) {
     .hp-row {
       grid-template-columns: minmax(0, 1fr) 110px 110px 170px 20px;
       grid-template-areas: 'name q t price chev';

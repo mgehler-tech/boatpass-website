@@ -72,7 +72,7 @@ Die Startseite hat seit PR 399 eine ruhige, luftige Sprache: Papier-Töne, Archi
     aside.hp-bundle         (die Paket-Karte der Gruppe)
 ```
 
-**Zeile `a.hp-row`** – vier Spalten ab 900 px: `minmax(0,1fr) 110px 110px 170px`, plus ein 20-px-Chevron (`Icon chevronRight`) als fünfte, schmale Spalte am rechten Rand, der die Zeile als Link ausweist. Grundlinie aller Zellen bündig (`align-items: baseline`, Zahlen in `.h-num`):
+**Zeile `a.hp-row`** – vier Spalten, sobald die Zeilenliste mindestens 720 px breit ist (Container-Query auf `ul.hp-rows`, nicht Viewport-Breite; neben der Karte ist das ab etwa 1200 px Fensterbreite der Fall, einspaltig ab etwa 800 px): `minmax(0,1fr) 110px 110px 170px`, plus ein 20-px-Chevron (`Icon chevronRight`) als fünfte, schmale Spalte am rechten Rand, der die Zeile als Link ausweist. Darunter stapelt die Zeile; die Namensspalte bekommt so nie weniger als rund 215 px (Review-Befund: mit einer 900-px-Viewport-Schwelle kollabierte sie zwischen 1024 und 1150 px auf 58 px). Grundlinie aller Zellen bündig (`align-items: baseline`, Zahlen in `.h-num`):
 1. Lizenz: Name (Archivo 22 px) und Untertitel (14,5 px, `--h-muted`); der heutige `note`-Zusatz („inkl. 15 Navigationsaufgaben à 9 Fragen") bleibt als dritte Zeile.
 2. Fragen: Zahl 15 px `--h-ink`, Einheit 13 px `--h-muted`.
 3. Themen: wie Fragen; Funkscheine ohne Themen zeigen „–" mit `aria-hidden` (wie heute).
