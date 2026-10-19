@@ -87,6 +87,7 @@
 .pg-main { grid-area: main; min-width: 0; max-width: 780px; }
 .pg-aside { grid-area: aside; min-width: 0; }
 .pg-layout--wide { display: block; }
+.pg-layout--wide .pg-main { max-width: none; }
 @media (min-width: 1024px) {
   .pg-layout--read {
     grid-template-columns: minmax(0, 1fr) 320px;

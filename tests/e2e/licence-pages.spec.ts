@@ -165,6 +165,9 @@ test.describe('Führerschein-Übersicht', () => {
   for (const [path, h1, banner] of [['/fuehrerscheine/', /Welche Lizenz/, 'Finder'], ['/en/licenses/', /Which licen/i, 'finder']] as const) {
     test(`${path}: breite Spalte, Finder-Banner ohne Verlauf, Lizenzkarten auf Tokens`, async ({ page }) => {
       await expectMigrated(page, path, { h1, facts: 0, cta: false });
+      // Breite Variante: der Inhalt nutzt die ganze Containerbreite (1240 px), nicht die Lesespalte.
+      await page.setViewportSize({ width: 1440, height: 900 });
+      expect((await page.locator('.pg-layout--wide .pg-main').boundingBox())!.width).toBeGreaterThanOrEqual(1100);
       const bannerEl = page.locator('a.pg-banner');
       await expect(bannerEl).toHaveCount(1);
       await expect(bannerEl).toContainText(new RegExp(banner, 'i'));
