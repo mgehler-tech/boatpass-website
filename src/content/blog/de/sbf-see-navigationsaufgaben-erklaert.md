@@ -3,8 +3,9 @@ title: "SBF See Navigationsaufgaben erklärt – Aufbau, Aufgabentypen & Tipps"
 seoTitle: "SBF See Navigationsaufgaben erklärt"
 description: "Die Navigationsaufgabe ist der anspruchsvollste Teil der SBF-See-Prüfung. Aufbau, Aufgabentypen und wie du dich gezielt darauf vorbereitest."
 date: 2026-06-03
+updated: 2026-10-19
 tags: ["Navigation"]
-readingTime: 9
+readingTime: 10
 lang: de
 author: "Marius Gehler"
 altSlug: "sbf-coastal-navigation-tasks-explained"
@@ -14,7 +15,9 @@ faq:
   - question: "Wie viele Navigationsfragen muss ich beim SBF See richtig beantworten?"
     answer: "Von den 9 Navigationsfragen musst du mindestens 7 richtig beantworten. Die Navigationsaufgabe wird getrennt gewertet – selbst wenn du alle anderen Fragen richtig hast, fällst du durch, wenn du weniger als 7 der 9 Navigationsfragen korrekt löst."
   - question: "Welche Hilfsmittel darf ich zur SBF-See-Navigationsaufgabe mitbringen?"
-    answer: "Du brauchst ein Kursdreieck (Navigationsdreieck) zum Abtragen und Ablesen von Kursen, einen Zirkel oder Stechzirkel zum Messen von Distanzen, Bleistift und Radiergummi sowie einen einfachen Taschenrechner (kein Smartphone) für Zeit- und Geschwindigkeitsberechnungen."
+    answer: "Du brauchst ein Kursdreieck (Navigationsdreieck) zum Abtragen und Ablesen von Kursen, einen Zirkel oder Stechzirkel zum Messen von Distanzen, Bleistift und Radiergummi sowie Taschenrechner nur nach Rücksprache: Elektronische Hilfsmittel sind in der Prüfung eingeschränkt, ein Smartphone ist tabu. Frag vorher bei deiner Prüfungsstelle nach und übe die Zeit- und Geschwindigkeitsrechnung sicherheitshalber auch ohne Rechner."
+  - question: "Wie sind die Bestehensgrenzen in der SBF-See-Theorie aufgeteilt?"
+    answer: "Du brauchst mindestens 5 von 7 Basisfragen, 18 von 23 See-Fragen und 7 von 9 Navigations-Teilfragen richtig. Alle Teile müssen bestanden werden. Folgefehler werden bei korrektem Lösungsweg nicht doppelt bestraft."
   - question: "Welche Seekarte wird bei der SBF-See-Prüfung verwendet?"
     answer: "Allen Navigationsaufgaben liegt die Übungskarte D49 zugrunde – ein Seekartenausschnitt der Mündungen von Jade, Weser und Elbe. Sie ist die offizielle Grundlage für alle 15 Navigationsaufgaben im amtlichen ELWIS-Fragenkatalog."
 howTo:
@@ -41,6 +44,8 @@ Die Navigationsaufgabe ist ein eigenständiger Teil der SBF-See-Theorieprüfung.
 
 Von den 9 Navigationsfragen musst du **mindestens 7 richtig** beantworten. Die Navigationsaufgabe wird getrennt gewertet – selbst wenn du alle anderen Fragen richtig hast, fällst du durch, wenn du weniger als 7 der 9 Navigationsfragen korrekt löst.
 
+Die Teilgrenzen im Überblick: mindestens **5 von 7** Basisfragen, **18 von 23** See-Fragen und **7 von 9** Navigations-Teilfragen. Alle Teile müssen bestanden werden. Gut zu wissen: **Folgefehler** werden bei korrektem Lösungsweg anerkannt. Hast du dich in einer frühen Teilfrage vertan, aber danach richtig weitergerechnet, wirst du dafür nicht ein zweites Mal bestraft.
+
 ## Die Seekarte D49
 
 Allen Navigationsaufgaben liegt die **Übungskarte D49** zugrunde – ein Seekartenausschnitt der Mündungen von Jade, Weser und Elbe (auch als Übungskarte 49 oder INT 1463 bekannt). In der Prüfung erhältst du einen maßstabsgetreuen Ausschnitt dieser Karte, auf dem du Kurse einzeichnest, Positionen bestimmst und Peilungen einträgst.
@@ -51,11 +56,11 @@ Die D49 ist keine Übungskarte, die nur zum Lernen dient – sie ist die offizie
 
 Der Fragenkatalog des ELWIS (Elektronischer Wasserstraßen-Informationsservice) enthält genau **15 Navigationsaufgaben**, jeweils mit einem eigenen Seekartenausschnitt. In der Prüfung bekommst du eine dieser 15 Aufgaben – du weißt vorher nicht welche.
 
-Aus einem Pool von 15 möglichen Teilfragen werden für jede Aufgabe 9 ausgewählt. Das bedeutet: Die Fragetypen wiederholen sich, aber die konkreten Werte und Positionen ändern sich je nach Aufgabe.
+Jede Aufgabe besteht aus 9 Teilfragen. Die Fragetypen wiederholen sich, aber die konkreten Werte und Positionen ändern sich von Aufgabe zu Aufgabe.
 
 ## Welche Aufgabentypen kommen dran?
 
-Die 15 möglichen Teilfragen decken diese Bereiche ab:
+Die Teilfragen decken diese Bereiche ab:
 
 ### 1. Kurs berechnen und einzeichnen
 
@@ -107,11 +112,23 @@ Für die Navigationsaufgabe brauchst du (und darfst mitbringen):
 - **Kursdreieck (Navigationsdreieck):** Zum Abtragen und Ablesen von Kursen
 - **Zirkel oder Stechzirkel:** Zum Messen von Distanzen
 - **Bleistift und Radiergummi:** Die Seekarte wird beschriftet und eingezeichnet
-- **Taschenrechner:** Für Zeit-/Geschwindigkeitsberechnungen (einfacher Taschenrechner, kein Smartphone)
+- **Taschenrechner:** Elektronische Hilfsmittel sind eingeschränkt, ein Smartphone ist nicht erlaubt. Kläre vorab mit deiner Prüfungsstelle, ob ein einfacher Taschenrechner zugelassen ist, und übe die Rechnungen sicherheitshalber auch von Hand
 
 ## Zeitplanung in der Prüfung
 
 Die gesamte Theorieprüfung dauert 60 Minuten für 30 Fragen plus 9 Navigationsfragen. Erfahrungsgemäß brauchen geübte Prüflinge **15 bis 20 Minuten** für die Navigationsaufgabe. Plane sicherheitshalber 25 bis 30 Minuten ein und bearbeite die Navigationsaufgabe zuerst – sie erfordert die meiste Konzentration.
+
+## Rechenbeispiel zur Kursumrechnung
+
+Die Werte sind frei erfunden und stammen nicht aus der Prüfung. Sie zeigen nur das Prinzip: Dein Magnetkompass zeigt **MgK 070°**, die Ablenkung laut Tabelle beträgt **+2°** (Ost), die Missweisung laut Kompassrose **+3°** (Ost). Dann gilt rwK = 070° + 2° + 3° = **075°**. Umgekehrt rechnest du MgK = rwK − Ablenkung − Missweisung, also 075° − 2° − 3° = 070°. Bei West-Werten drehen sich die Vorzeichen um.
+
+## Typische Fehler bei der Navigationsaufgabe
+
+- **Vorzeichen vertauscht:** Ost wird addiert, West subtrahiert, in der Gegenrichtung genau umgekehrt.
+- **Falscher Maßstab:** Distanzen werden am seitlichen Breitenmaßstab abgegriffen, nie am Längengrad-Rand.
+- **Ungenaues Einzeichnen:** Ein Strich, der um zwei Grad danebenliegt, verschiebt die Position oft aus dem Toleranzbereich.
+- **Koppelort und beobachteter Ort verwechselt:** Die Besteckversetzung zeigt immer vom Koppelort zum beobachteten Ort.
+- **Zeit verschenkt:** Wer an einer Teilfrage festhängt, springt besser weiter und kommt später zurück.
 
 ## Tipps für die Vorbereitung
 
@@ -133,4 +150,4 @@ Die Fragen zu Schifffahrtszeichen und Seekarteneinträgen sind reine Wissensfrag
 
 ## Fazit
 
-Die Navigationsaufgabe beim SBF See ist anspruchsvoll, aber beherrschbar. Es gibt genau 15 Aufgaben im amtlichen Fragenkatalog, und die Aufgabentypen wiederholen sich. Wer alle 15 Aufgaben durcharbeitet, die Umrechnungsformeln beherrscht und mit der echten Seekarte D49 übt, ist gut vorbereitet. In der Boatpass-App kannst du die Navigationsfragen gezielt trainieren – getrennt vom restlichen Fragenkatalog.
+Die Navigationsaufgabe beim SBF See ist anspruchsvoll, aber beherrschbar. Es gibt genau 15 Aufgaben im amtlichen Fragenkatalog, und die Aufgabentypen wiederholen sich. Wer alle 15 Aufgaben durcharbeitet, die Umrechnungsformeln beherrscht und mit der echten Seekarte D49 übt, ist gut vorbereitet. In der Boatpass-App kannst du die Navigationsfragen gezielt trainieren – getrennt vom restlichen Fragenkatalog, im Prüfungsmodus mit dem offiziellen ELWIS-Fragenkatalog. Weitere Details zum Ablauf findest du in unserem Überblick zu den [SBF-See-Prüfungsfragen](/sbf-see-pruefungsfragen/) und zum [Prüfungsablauf](/sbf-pruefung-ablauf/).

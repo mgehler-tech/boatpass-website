@@ -3,8 +3,9 @@ title: "SBF Coastal Navigation Tasks Explained – Structure, Task Types & Tips"
 seoTitle: "SBF Coastal Navigation Tasks Explained"
 description: "The navigation task is the toughest part of the SBF Coastal exam. How it is structured, which task types come up and how to prepare for them."
 date: 2026-06-03
+updated: 2026-10-19
 tags: ["Navigation"]
-readingTime: 9
+readingTime: 10
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-see-navigationsaufgaben-erklaert"
@@ -14,7 +15,9 @@ faq:
   - question: "How many navigation questions do I need to answer correctly for the SBF Coastal?"
     answer: "You need to answer at least 7 of the 9 navigation questions correctly. The navigation task is graded separately – even if you get every other question right, you fail if you solve fewer than 7 of the 9 navigation questions correctly."
   - question: "Which tools am I allowed to bring to the SBF Coastal navigation task?"
-    answer: "You need a course plotter (navigation triangle) for plotting and reading off courses, dividers for measuring distances, a pencil and eraser, and a simple calculator (not a smartphone) for time and speed calculations."
+    answer: "You need a course plotter (navigation triangle) for plotting and reading off courses, dividers for measuring distances, a pencil and eraser, a calculator only after checking: electronic aids are restricted in the exam and a smartphone is not allowed. Ask your examination office beforehand and practice time and speed calculations without a calculator to be safe."
+  - question: "How are the passing thresholds of the SBF Coastal theory exam split?"
+    answer: "You need at least 5 of 7 basic questions, 18 of 23 coastal questions and 7 of 9 navigation sub-questions correct. All parts must be passed. Consequential errors are not penalized twice if your method is correct."
   - question: "Which nautical chart is used in the SBF Coastal exam?"
     answer: "All navigation tasks are based on the training chart D49 – a chart excerpt of the mouths of the Jade, Weser and Elbe. It is the official basis for all 15 navigation tasks in the official ELWIS question catalog."
 howTo:
@@ -41,6 +44,8 @@ The navigation task is a self-contained part of the SBF Coastal theory exam. In 
 
 Of the 9 navigation questions you have to answer **at least 7 correctly**. The navigation task is graded separately – even if you get all the other questions right, you fail if you solve fewer than 7 of the 9 navigation questions correctly.
 
+The thresholds at a glance: at least **5 of 7** basic questions, **18 of 23** coastal questions and **7 of 9** navigation sub-questions. All parts must be passed. Good to know: **consequential errors** are accepted if your method is correct. If you slipped in an early sub-question but kept calculating correctly afterwards, you are not penalized a second time.
+
 ## The nautical chart D49
 
 All navigation tasks are based on the **training chart D49** – a chart excerpt of the mouths of the Jade, Weser and Elbe (also known as training chart 49 or INT 1463). In the exam you receive a to-scale excerpt of this chart on which you plot courses, determine positions and enter bearings.
@@ -51,11 +56,11 @@ The D49 isn't a practice chart that's only for studying – it's the official ba
 
 The question catalog from ELWIS (Electronic Waterways Information Service) contains exactly **15 navigation tasks**, each with its own chart excerpt. In the exam you get one of these 15 tasks – you don't know in advance which one.
 
-From a pool of 15 possible sub-questions, 9 are selected for each task. This means: the question types repeat, but the specific values and positions change from task to task.
+Each task consists of 9 sub-questions. The question types repeat, but the specific values and positions change from task to task.
 
 ## Which task types come up?
 
-The 15 possible sub-questions cover these areas:
+The sub-questions cover these areas:
 
 ### 1. Calculate and plot a course
 
@@ -107,11 +112,23 @@ For the navigation task you need (and may bring):
 - **Course plotter (navigation triangle):** For plotting and reading off courses
 - **Dividers:** For measuring distances
 - **Pencil and eraser:** The chart gets written on and plotted
-- **Calculator:** For time/speed calculations (a simple calculator, not a smartphone)
+- **Calculator:** Electronic aids are restricted and a smartphone is not allowed. Check with your examination office beforehand whether a simple calculator is permitted, and practice the calculations by hand to be safe
 
 ## Time management in the exam
 
 The entire theory exam lasts 60 minutes for 30 questions plus 9 navigation questions. Experience shows that practiced candidates need **15 to 20 minutes** for the navigation task. To be safe, plan for 25 to 30 minutes and tackle the navigation task first – it requires the most concentration.
+
+## Worked example: course conversion
+
+The values are invented and not from the exam. They only show the principle: your magnetic compass reads **MgK 070°**, the deviation from the table is **+2°** (East), the variation from the compass rose is **+3°** (East). Then rwK = 070° + 2° + 3° = **075°**. In reverse, MgK = rwK − deviation − variation, so 075° − 2° − 3° = 070°. For West values the signs flip.
+
+## Common mistakes in the navigation task
+
+- **Signs mixed up:** East is added, West is subtracted, and in the opposite direction exactly the reverse.
+- **Wrong scale:** Distances are measured on the latitude scale at the side margin, never on the longitude edge.
+- **Imprecise plotting:** A line that is two degrees off often moves the position outside the tolerance.
+- **Dead-reckoning and observed position mixed up:** Set and drift always points from the dead-reckoning position to the observed position.
+- **Wasted time:** If you get stuck on a sub-question, move on and come back later.
 
 ## Tips for preparation
 
@@ -133,4 +150,4 @@ The questions on navigation marks and chart entries are pure knowledge questions
 
 ## Conclusion
 
-The navigation task in the SBF Coastal is demanding but manageable. There are exactly 15 tasks in the official question catalog, and the task types repeat. Anyone who works through all 15 tasks, masters the conversion formulas and practices with the real D49 chart is well prepared. In the Boatpass app you can train the navigation questions in a targeted way – separately from the rest of the question catalog.
+The navigation task in the SBF Coastal is demanding but manageable. There are exactly 15 tasks in the official question catalog, and the task types repeat. Anyone who works through all 15 tasks, masters the conversion formulas and practices with the real D49 chart is well prepared. In the Boatpass app you can train the navigation questions in a targeted way – separately from the rest of the question catalog, in exam mode with the official ELWIS question catalog. For more details see our overview of the [SBF Coastal exam questions](/en/sbf-coastal-exam-questions/) and the [exam procedure](/en/sbf-exam/).
