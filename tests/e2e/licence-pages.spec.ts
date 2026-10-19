@@ -147,6 +147,30 @@ test.describe('Lizenzseiten migriert', () => {
   test('LRC (DE)', async ({ page }) => {
     await expectMigrated(page, '/lrc/', { h1: /LRC lernen/, facts: 5 });
   });
+  test('UBI (EN)', async ({ page }) => {
+    await expectMigrated(page, '/en/ubi/', { h1: /UBI/, facts: 5 });
+    await expect(page.locator('.pg-practice h2.pg-h2')).toContainText('Afraid of radio');
+  });
+  test('SRC (EN)', async ({ page }) => {
+    await expectMigrated(page, '/en/src/', { h1: /SRC/, facts: 5 });
+    await expect(page.locator('.pg-practice')).toHaveCount(1);
+  });
+  test('LRC (EN)', async ({ page }) => {
+    await expectMigrated(page, '/en/lrc/', { h1: /LRC/, facts: 5 });
+    await expect(page.locator('.pg-practice')).toHaveCount(1);
+  });
+});
+
+test.describe('Funkseiten EN: Badge und Modul-Karte', () => {
+  test('UBI (EN): Badge mit Preis, Modul-Karte, drei Store-Links auf /en/app/', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto('/en/ubi/');
+    await expect(page.locator('.pg-head .pg-badge')).toBeVisible();
+    await expect(page.locator('.pg-head .pg-badge')).toContainText('€');
+    await expect(page.locator('.pg-cta a[data-cta-position="page-module"]')).toBeVisible();
+    await expect(page.locator('main a[href="/en/app/"]')).toHaveCount(3);
+    await expect(page.locator('main a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
+  });
 });
 
 test.describe('Funkseiten: Badge und Modul-Karte', () => {

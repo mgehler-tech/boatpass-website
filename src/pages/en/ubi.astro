@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PracticeBridge from '../../components/PracticeBridge.astro';
+import PageHead from '../../components/page/PageHead.astro';
+import PageLayout from '../../components/page/PageLayout.astro';
+import PageFacts from '../../components/page/PageFacts.astro';
+import PageLink from '../../components/page/PageLink.astro';
 import Icon from '../../components/Icon.astro';
 import CatalogSources from '../../components/CatalogSources.astro';
 import type { IconName } from '../../icons';
@@ -94,19 +99,14 @@ const definedTermSchema = {
   "inLanguage": "en",
 };
 
-const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'Traffic circuits', desc: 'Channel and area radio, route radio on inland waterways', count: 30, icon: 'wifi', color: '#7C3AED', bg: 'rgba(124,58,237,0.10)' },
-  { name: 'Operating procedures', desc: 'Call handling, priorities & speaking procedures', count: 29, icon: 'microphone', color: '#EA580C', bg: 'rgba(234,88,12,0.10)' },
-  { name: 'ATIS & technology', desc: 'Automatic transmitter identification and equipment knowledge', count: 25, icon: 'satellite', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Distress & safety', desc: 'Distress calls, urgency and safety traffic', count: 24, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Radio & regulations', desc: 'Frequencies, licensing law & radio regulations', count: 22, icon: 'scale', color: '#1D4ED8', bg: 'rgba(29,78,216,0.10)' },
+const categories: { name: string; desc: string; count: number; icon: IconName }[] = [
+  { name: 'Traffic circuits', desc: 'Channel and area radio, route radio on inland waterways', count: 30, icon: 'wifi' },
+  { name: 'Operating procedures', desc: 'Call handling, priorities & speaking procedures', count: 29, icon: 'microphone' },
+  { name: 'ATIS & technology', desc: 'Automatic transmitter identification and equipment knowledge', count: 25, icon: 'satellite' },
+  { name: 'Distress & safety', desc: 'Distress calls, urgency and safety traffic', count: 24, icon: 'shield' },
+  { name: 'Radio & regulations', desc: 'Frequencies, licensing law & radio regulations', count: 22, icon: 'scale' },
 ];
 
-const radioPoints: { icon: IconName; title: string; desc: string }[] = [
-  { icon: 'microphone', title: 'A fixed wording', desc: 'Distress, urgency and safety messages have a fixed order. You learn the pattern – and fill it in confidently in an emergency.' },
-  { icon: 'clipboard', title: 'Messages step by step', desc: 'Phonetic alphabet, call, traffic handling: you practice each building block individually until it comes without thinking.' },
-  { icon: 'refresh', title: 'Confidence through repetition', desc: 'What you\'ve run through a hundred times you\'ll say automatically on exam day – the practical hurdle becomes a formality.' },
-];
 ---
 
 <BaseLayout
@@ -120,78 +120,76 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        VHF Radio Certificate (Inland)
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        Learn UBI –<br>everything about the radio certificate
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto 36px;">
-        The VHF radio certificate for inland navigation (UBI) is mandatory for anyone who wants to operate a radio on board.
-        Here you'll find everything about the exam – and how the Boatpass UBI module prepares you optimally.
-      </p>
+  <!-- Seitenkopf und Lesespalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="en"
+    eyebrow="VHF Radio Certificate (Inland)"
+    lede="The VHF radio certificate for inland navigation (UBI) is mandatory for anyone who wants to operate a radio on board. Here you'll find everything about the exam – and how the Boatpass UBI module prepares you optimally."
+    ctaLabel="Start learning UBI in the app"
+    cta
+  >
+    Learn UBI –<br />everything about the radio certificate
+    <span slot="badge">Boatpass UBI module – now available · one-time&nbsp;<PlatformPrice product="ubi" lang="en" /></span>
+  </PageHead>
 
-      <!-- Available badge -->
-      <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#047857; font-size:14px; font-weight:700; padding:10px 20px; border-radius:14px; margin-bottom:24px;">
-        <Icon name="check" size={17} stroke="#047857" strokeWidth={2.5} />
-        Boatpass UBI module – now available · one-time <PlatformPrice product="ubi" lang="en" />
-      </div>
-      <br/>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:15px; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2); margin-top:16px;">
-        ▶&nbsp;Start learning UBI in the app
-      </a>
-    </div>
-  </div>
-
-  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="en"
+      title="At a glance"
+      product="ubi"
+      items={[
+        { k: 'Question catalogue', v: '130 questions' },
+        { k: 'Theory', v: '60 min, pass from 17 correct' },
+        { k: 'Exam format', v: 'Written + practical (DSV)' },
+        { k: 'Exam fee', v: '€108.71' },
+        { k: 'Minimum age', v: '15 years' },
+      ]}
+    />
 
     <!-- Answer snippet: short, quotable direct answer for search engines & AI -->
-    <section style="margin-bottom:48px;">
-      <div style="background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px;">
-        <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">In a nutshell</div>
-        <p style="font-size:17px; color:#1A1F36; line-height:1.7; margin:0; font-weight:600;">
+    <section class="pg-section">
+      <div class="pg-answer">
+        <p class="pg-answer-label">In a nutshell</p>
+        <p class="pg-answer-text">
           The UBI (VHF radio certificate for inland navigation) permits the operation of VHF radio equipment on inland waterways. The exam consists of a theory part with 22 multiple-choice questions in 60 minutes – passed from 17 correct answers – and a practical part with mandatory tasks (ATIS setup, equipment knowledge, and distress, urgency and safety messages). Minimum age: 15. Boatpass trains the complete official question catalog (130 questions) with exam simulation and mistake training.
         </p>
       </div>
     </section>
 
     <!-- What is UBI -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">What is the UBI?</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">What is the UBI?</h2>
+      <p class="pg-p">
         The <strong>VHF radio certificate for inland navigation (UBI)</strong> is the official or officially recognized authorization to operate and supervise a ship's radio station on inland waterways. The exam is administered by the examination boards of the German Sailing Association (DSV). Minimum age: 15.
       </p>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      <p class="pg-p">
         The UBI is <strong>independent of the SBF Inland</strong> – you can obtain it separately. In practice, however, preparing for both together is advisable, since many inland boaters need both certificates.
       </p>
     </section>
 
     <!-- Source transparency: official question catalog -->
-    <section style="margin-bottom:48px;">
+    <section class="pg-section">
       <CatalogSources lang="en" only="ubi" />
     </section>
 
     <!-- Who needs it -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Who needs the UBI?</h2>
-      <div style="display:flex; flex-direction:column; gap:12px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Who needs the UBI?</h2>
+      <div class="pg-rows">
         {([
           { icon: 'anchor', title: 'Inland radio requirement', desc: 'Anyone operating a VHF radio installation on inland waterways' },
           { icon: 'lifebuoy', title: 'Busy areas', desc: 'Recreational boaters traveling on the Rhine, Elbe or Danube' },
           { icon: 'satellite', title: 'AIS transmit operation', desc: 'Anyone using AIS devices (Automatic Identification System) with transmit operation' },
           { icon: 'home', title: 'Houseboats & charter', desc: 'Charterers of houseboats and larger motorboats on inland waterways' },
         ] satisfies { icon: IconName; title: string; desc: string }[]).map(item => (
-          <div style="display:flex; align-items:flex-start; gap:14px; background:white; border:1px solid rgba(51,102,255,0.1); border-radius:14px; padding:18px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={item.icon} size={20} stroke="#3366FF" strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={item.icon} size={20} strokeWidth={1.75} />
             </span>
-            <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:3px; font-size:14px;">{item.title}</div>
-              <div style="font-size:14px; color:#4B5563; line-height:1.6;">{item.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{item.title}</p>
+              <p class="pg-row-text">{item.desc}</p>
             </div>
           </div>
         ))}
@@ -199,111 +197,88 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
     </section>
 
     <!-- Exam structure -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">UBI exam: structure & contents</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:20px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Exam format</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Written + practical<br>DSV examination board</div>
+    <section class="pg-section">
+      <h2 class="pg-h2">UBI exam: structure & contents</h2>
+      <div class="pg-cards pg-cards--4">
+        <div class="pg-card">
+          <p class="pg-card-label">Exam format</p>
+          <p class="pg-card-text">Written + practical<br>DSV examination board</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Theory</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Multiple choice<br>Area & operating knowledge</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Theory</p>
+          <p class="pg-card-text">Multiple choice<br>Area & operating knowledge</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Practice</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Speaking exercises<br>Distress calls & procedures</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Practice</p>
+          <p class="pg-card-text">Speaking exercises<br>Distress calls & procedures</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Exam fee</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">approx. €109<br>full exam (DSV)</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Exam fee</p>
+          <p class="pg-card-text">approx. €109<br>full exam (DSV)</p>
         </div>
       </div>
-      <div style="background:rgba(51,102,255,0.05); border:1px solid rgba(51,102,255,0.15); border-radius:14px; padding:20px; margin-bottom:16px;">
-        <p style="font-size:15px; color:#4B5563; line-height:1.7; margin:0;">
-          <strong style="color:#1A1F36;">Exam topics:</strong> traffic circuits as well as the priority and types of radio traffic, frequencies and their use, automatic transmitter identification system (ATIS), distress, urgency and safety traffic, plus operation and technology of the radio installation.
+      <div class="pg-card pg-card--soft">
+        <p class="pg-note">
+          <strong>Exam topics:</strong> traffic circuits as well as the priority and types of radio traffic, frequencies and their use, automatic transmitter identification system (ATIS), distress, urgency and safety traffic, plus operation and technology of the radio installation.
         </p>
       </div>
-      <div style="display:flex; align-items:flex-start; gap:12px; background:rgba(16,185,129,0.07); border:1px solid rgba(16,185,129,0.25); border-radius:14px; padding:20px;">
-        <span style="flex-shrink:0; margin-top:1px;"><Icon name="lightbulb" size={20} stroke="#047857" strokeWidth={1.75} /></span>
-        <p style="font-size:15px; color:#4B5563; line-height:1.7; margin:0;">
-          <strong style="color:#047857;">Already have a marine radio certificate?</strong> For holders of the <a href="/en/src/" style="color:#3366FF; text-decoration:none;">SRC</a> or <a href="/en/lrc/" style="color:#3366FF; text-decoration:none;">LRC</a>, the theory and practical UBI exams are shortened – both exams may even be possible in a single day.
+      <div class="pg-card pg-card--note pg-card--hint">
+        <span class="pg-row-icon pg-row-icon--hint"><Icon name="lightbulb" size={20} strokeWidth={1.75} /></span>
+        <p class="pg-note">
+          <strong>Already have a marine radio certificate?</strong> For holders of the <a href="/en/src/" class="pg-inline-link">SRC</a> or <a href="/en/lrc/" class="pg-inline-link">LRC</a>, the theory and practical UBI exams are shortened – both exams may even be possible in a single day.
         </p>
       </div>
     </section>
 
-    <!-- Practice bridge: take the fear out of radio -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Afraid of radio? We'll take that fear away.</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
-        The worry about dictation and sending a message almost always comes from a lack of repetition – not from a lack of ability. The messages follow a fixed wording (MAYDAY, PAN PAN, phonetic alphabet). Anyone who has run through the procedure often enough has it down.
-      </p>
-      <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:18px;">
-        {radioPoints.map(p => (
-          <div style="display:flex; align-items:flex-start; gap:14px; background:white; border:1px solid rgba(51,102,255,0.1); border-radius:14px; padding:18px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={p.icon} size={20} stroke="#3366FF" strokeWidth={1.75} />
-            </span>
-            <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:3px; font-size:14px;">{p.title}</div>
-              <div style="font-size:14px; color:#4B5563; line-height:1.6;">{p.desc}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div style="display:flex; align-items:flex-start; gap:14px; background:linear-gradient(160deg,#F4F7FE 0%,#EAF0FC 100%); border:1px solid rgba(51,102,255,0.16); border-radius:16px; padding:20px 24px;">
-        <span style="flex-shrink:0; margin-top:1px;"><Icon name="lifebuoy" size={20} stroke="#3366FF" strokeWidth={1.75} /></span>
-        <p style="font-size:14px; color:#4B5563; line-height:1.65; margin:0;">You get the final speaking polish on real equipment in the practical exam part at your radio school. The wording and procedures you bring with you confidently via Boatpass.</p>
-      </div>
-    </section>
+    <PracticeBridge variant="radio" lang="en" />
 
     <!-- Costs in detail -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">What does the UBI cost?</h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:24px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">What does the UBI cost?</h2>
+      <p class="pg-p">
         The official exam fee is made up of three items. Here's what you pay for what:
       </p>
-      <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; overflow:hidden;">
+      <div class="pg-fees">
         {[
           { label: 'Admission to the exam', desc: 'Application processing & admission by the examination board', price: '€15.89' },
           { label: 'Theory & practice exam', desc: 'Administration of the written and practical exam', price: '€70.03' },
           { label: 'Issuance of the radio certificate', desc: 'Issuing the official UBI certificate', price: '€22.79' },
         ].map(row => (
-          <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:18px 24px; border-bottom:1px solid rgba(51,102,255,0.08);">
+          <div class="pg-fee">
             <div>
-              <div style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:2px;">{row.label}</div>
-              <div style="font-size:13px; color:#656B78; line-height:1.5;">{row.desc}</div>
+              <p class="pg-fee-label">{row.label}</p>
+              <p class="pg-fee-desc">{row.desc}</p>
             </div>
-            <div style="font-size:16px; font-weight:800; color:#1A1F36; white-space:nowrap;">{row.price}</div>
+            <p class="pg-fee-price h-num">{row.price}</p>
           </div>
         ))}
-        <div style="display:flex; justify-content:space-between; align-items:center; gap:16px; padding:20px 24px; background:rgba(51,102,255,0.05);">
-          <div style="font-size:15px; font-weight:800; color:#1A1F36;">Total (incl. VAT)</div>
-          <div style="font-size:20px; font-weight:900; color:#3366FF; white-space:nowrap;">€108.71</div>
+        <div class="pg-fee pg-fee--total">
+          <p class="pg-fee-label">Total (incl. VAT)</p>
+          <p class="pg-fee-price pg-fee-price--accent h-num">€108.71</p>
         </div>
       </div>
-      <p style="font-size:13px; color:#656B78; line-height:1.6; margin-top:12px;">
+      <p class="pg-note pg-note--sm pg-note--after">
         Fees as per the DSV. Retake of theory <u>or</u> practice: €45.64. For exams abroad, additional travel costs may apply. These official fees are independent of the Boatpass UBI learning module (one-time {priceText('ubi', 'en')}).
       </p>
     </section>
 
     <!-- How Boatpass helps with the UBI -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">How Boatpass helps with the UBI</h2>
-      <div style="display:flex; flex-direction:column; gap:16px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">How Boatpass helps with the UBI</h2>
+      <div class="pg-rows">
         {([
           { icon: 'book', title: 'Complete UBI question catalog', desc: 'All official UBI questions on inland radio and ATIS – fully covered, always up to date.' },
           { icon: 'target', title: 'Exam simulation', desc: 'Practice under real exam conditions with a passing threshold and time pressure.' },
           { icon: 'refresh', title: 'Mistake training', desc: 'Train only your weak spots – efficiently and in a targeted way.' },
           { icon: 'chart', title: 'Progress by category', desc: 'See, broken down by topic, how well you\'re prepared for the UBI exam.' },
         ] satisfies { icon: IconName; title: string; desc: string }[]).map(f => (
-          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={f.icon} size={21} stroke="#3366FF" strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={f.icon} size={21} strokeWidth={1.75} />
             </span>
-            <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
-              <div style="font-size:15px; color:#656B78; line-height:1.6;">{f.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{f.title}</p>
+              <p class="pg-row-text">{f.desc}</p>
             </div>
           </div>
         ))}
@@ -311,75 +286,77 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
     </section>
 
     <!-- Learn by category -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">Learn by category</h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Learn by category</h2>
+      <p class="pg-p">
         The UBI question catalog comprises {categories.reduce((s, c) => s + c.count, 0)} questions across {categories.length} topic areas – practice in a targeted way based on your weak spots.
       </p>
-      <p style="font-size:14px; color:#656B78; line-height:1.6; margin-top:-8px; margin-bottom:20px;">
-        Source: official question catalog on <a href="https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
+      <p class="pg-note pg-note--sm">
+        Source: official question catalog on <a href="https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
       </p>
-      <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="pg-rows">
         {categories.map(c => (
-          <div style="display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px;">
-            <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
-              <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={c.icon} size={20} strokeWidth={1.75} />
             </span>
-            <div style="flex:1; min-width:0;">
-              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
-              <div style="font-size:12px; color:#656B78; line-height:1.4; margin-top:2px;">{c.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{c.name}</p>
+              <p class="pg-row-text">{c.desc}</p>
             </div>
-            <span style="font-size:12px; font-weight:700; color:#656B78; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} questions</span>
+            <span class="pg-pill">{c.count} questions</span>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Boatpass UBI module available -->
-    <section style="margin-bottom:48px; background:linear-gradient(135deg,#3366FF,#1A44D4); border:1px solid rgba(255,255,255,0.15); border-radius:24px; padding:40px; box-shadow:0 20px 60px rgba(51,102,255,0.3);">
-      <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Now available</div>
-      <h2 style="font-size:24px; font-weight:800; color:white; margin-bottom:12px;">Boatpass UBI module</h2>
-      <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:20px;">
-        The UBI module for Boatpass is here – with the same learning concept as SBF Inland & Coastal: official question catalog, exam simulation and mistake training. One-time <strong style="color:white;"><PlatformPrice product="ubi" lang="en" /></strong>, no subscription.
-      </p>
-      <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:24px;">
-        <span style="font-size:40px; font-weight:900; color:white; letter-spacing:-1.5px;"><PlatformPrice product="ubi" lang="en" alt /></span>
-        <span style="font-size:14px; color:rgba(255,255,255,0.7); font-weight:500;">one-time purchase</span>
+    <section class="pg-section">
+      <div class="pg-cta">
+        <div class="pg-cta-text">
+          <p class="pg-eyebrow">Now available</p>
+          <h2 class="pg-h2">Boatpass UBI module</h2>
+          <p class="pg-p">The UBI module for Boatpass is here – with the same learning concept as SBF Inland & Coastal: official question catalog, exam simulation and mistake training. One-time <strong><PlatformPrice product="ubi" lang="en" /></strong>, no subscription.</p>
+        </div>
+        <div class="pg-cta-buy">
+          <p class="pg-cta-price"><span class="h-num"><PlatformPrice product="ubi" lang="en" alt /></span> <span class="pg-cta-unit">one-time purchase</span></p>
+          <a class="h-btn h-btn--sm" href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="page-module">
+            Unlock the UBI module in the app
+            <Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" />
+            <span class="sr-only h-off-desktop">(opens in new tab)</span>
+          </a>
+        </div>
       </div>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:8px; background:white; color:#3366FF; font-weight:700; font-size:14px; padding:12px 24px; border-radius:12px; text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,0.18);">
-        ▶&nbsp;Unlock the UBI module in the app
-      </a>
     </section>
 
     <!-- FAQ -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Frequently asked questions about the UBI</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Frequently asked questions about the UBI</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Internal links -->
-    <section style="padding-top:32px; border-top:1px solid rgba(51,102,255,0.1);">
-      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Related licenses</h3>
-      <div class="related-links">
-        <a href="/en/radio-certificate-app/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Radio certificate apps compared</a>
-        <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Learn SBF Inland with Boatpass</a>
-        <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Learn SBF Coastal with Boatpass</a>
-        <a href="/en/src/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SRC – Short Range Certificate for marine radio</a>
-        <a href="/en/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Frequently asked questions about the boating license</a>
-        <a href="/en/blog/ubi-vs-src-radio-license/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ UBI or SRC – which radio certificate fits your boat?</a>
-        <a href="/en/blog/ubi-question-catalog-2026/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ UBI question catalog 2026: what changes on October 1</a>
-        <a href="/en/blog/distress-signals-at-sea/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Distress signals at sea: what you need to know</a>
-        <a href="/en/blog/gps-chartplotter-vhf-modern-navigation/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ GPS, chartplotters & VHF radio – modern onboard navigation</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Related licenses</h2>
+      <ul class="pg-related">
+        <li><a href="/en/radio-certificate-app/">Radio certificate apps compared<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-inland/">Learn SBF Inland with Boatpass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-coastal/">Learn SBF Coastal with Boatpass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/src/">SRC – Short Range Certificate for marine radio<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/faq/">Frequently asked questions about the boating license<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/ubi-vs-src-radio-license/">UBI or SRC – which radio certificate fits your boat?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/ubi-question-catalog-2026/">UBI question catalog 2026: what changes on October 1<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/distress-signals-at-sea/">Distress signals at sea: what you need to know<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/gps-chartplotter-vhf-modern-navigation/">GPS, chartplotters & VHF radio – modern onboard navigation<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
+  </PageLayout>
 </BaseLayout>
