@@ -97,6 +97,48 @@ test.describe('SBF Binnen vollständig', () => {
   });
 });
 
+/** Rauchtest für eine migrierte Seite: Kopf, Spaltenordnung, keine Inline-Farben/Pfeile, Conversion-Hook, 360 px. */
+async function expectMigrated(page: import('@playwright/test').Page, path: string, opts: { h1: RegExp; facts: number; cta?: boolean }) {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto(path);
+  const title = page.locator('h1.pg-title');
+  await expect(title).toContainText(opts.h1);
+  expect(await title.evaluate(el => getComputedStyle(el).fontFamily)).toMatch(/Archivo/);
+  const logo = (await page.locator('.logo-link').boundingBox())!;
+  expect(Math.abs((await title.boundingBox())!.x - logo.x)).toBeLessThanOrEqual(1);
+  if (opts.facts > 0) {
+    await expect(page.locator('.pg-layout--read')).toHaveCount(1);
+    await expect(page.locator('.pg-aside dl.pg-facts dt')).toHaveCount(opts.facts);
+  } else {
+    await expect(page.locator('.pg-layout--wide')).toHaveCount(1);
+    await expect(page.locator('.pg-aside')).toHaveCount(0);
+  }
+  await expect(page.locator(noInline)).toHaveCount(0);
+  expect(await page.locator('main').innerText()).not.toMatch(/[→▶]/);
+  if (opts.cta !== false) {
+    // Die Geräteweiche schreibt generische Play-Links am Desktop auf die Auswahlseite um: /app/ bzw. /en/app/.
+    await expect(page.locator('main a[href="/app/"], main a[href="/en/app/"]').first()).toBeVisible();
+  }
+  await expect(page.locator('main a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
+  await expect(page.locator('.pg-section .content-section-title, .related-links, .exam-facts-grid')).toHaveCount(0);
+  await page.setViewportSize({ width: 360, height: 780 });
+  expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
+}
+
+test.describe('Lizenzseiten migriert', () => {
+  test('SBF See (DE)', async ({ page }) => {
+    await expectMigrated(page, '/sbf-see/', { h1: /SBF See lernen/, facts: 5 });
+    await expect(page.locator('.pg-aside dl.pg-facts')).toContainText('148,38 €');
+  });
+  test('SBF Inland (EN)', async ({ page }) => {
+    await expectMigrated(page, '/en/sbf-inland/', { h1: /Learn SBF Inland/, facts: 5 });
+    await expect(page.locator('.pg-head p.pg-eyebrow')).toHaveText('Inland Boating License');
+  });
+  test('SBF Coastal (EN)', async ({ page }) => {
+    await expectMigrated(page, '/en/sbf-coastal/', { h1: /Learn SBF Coastal/, facts: 5 });
+  });
+});
+
 test.describe('PracticeBridge', () => {
   test('DE rendert den Baustein ohne Inline-Farben', async ({ page }) => {
     await page.goto('/sbf-see/');
@@ -107,7 +149,6 @@ test.describe('PracticeBridge', () => {
     await expect(de.locator('h2.pg-h2')).toContainText('Kartenaufgaben digital meistern');
   });
   test('EN nutzt denselben Baustein', async ({ page }) => {
-    test.fixme(true, 'bis Task 5 die EN-Seiten den Baustein einbinden');
     await page.goto('/en/sbf-coastal/');
     const en = page.locator('.pg-practice');
     await expect(en).toHaveCount(1);
