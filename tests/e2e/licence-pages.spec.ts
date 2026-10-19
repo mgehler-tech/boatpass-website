@@ -137,6 +137,45 @@ test.describe('Lizenzseiten migriert', () => {
   test('SBF Coastal (EN)', async ({ page }) => {
     await expectMigrated(page, '/en/sbf-coastal/', { h1: /Learn SBF Coastal/, facts: 5 });
   });
+  test('UBI (DE)', async ({ page }) => {
+    await expectMigrated(page, '/ubi/', { h1: /UBI lernen/, facts: 5 });
+    await expect(page.locator('.pg-aside dl.pg-facts')).toContainText('108,71 €');
+  });
+  test('SRC (DE)', async ({ page }) => {
+    await expectMigrated(page, '/src/', { h1: /SRC lernen/, facts: 5 });
+  });
+  test('LRC (DE)', async ({ page }) => {
+    await expectMigrated(page, '/lrc/', { h1: /LRC lernen/, facts: 5 });
+  });
+});
+
+test.describe('Funkseiten: Badge und Modul-Karte', () => {
+  test('UBI: Badge mit Preis im Kopf (375px), Modul-Karte ohne Verlauf, drei Store-Links', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto('/ubi/');
+    await expect(page.locator('.pg-head .pg-badge')).toBeVisible();
+    await expect(page.locator('.pg-head .pg-badge')).toContainText('€');
+    const cta = page.locator('.pg-cta');
+    await expect(cta).toHaveCount(1);
+    expect(await cta.evaluate(el => getComputedStyle(el).backgroundImage)).toBe('none');
+    await expect(cta.locator('h2')).toContainText('Boatpass UBI-Modul');
+    await expect(cta.locator('a[data-cta-position="page-module"]')).toBeVisible();
+    // Geräteweiche entscheidet nach User-Agent, nicht nach Breite: Playwright-Chromium ist „desktop",
+    // die drei generischen Play-Links (Kopf, Aside, Modul) stehen deshalb auf /app/.
+    await expect(page.locator('main a[href="/app/"]')).toHaveCount(3);
+    await expect(page.locator('main a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
+  });
+  test('SRC: Vergleichskarten und Gebührenliste; UBI: Gesamtzeile', async ({ page }) => {
+    await page.goto('/src/');
+    await expect(page.locator('.funk-compare-grid .pg-card')).toHaveCount(3);
+    await expect(page.locator('.funk-compare-grid .pg-card--current')).toHaveCount(1);
+    await expect(page.locator('.pg-fees .pg-fee')).toHaveCount(2);
+    await expect(page.locator('.pg-fees')).toContainText('ca. 128 €');
+    await page.goto('/ubi/');
+    await expect(page.locator('.pg-fees .pg-fee')).toHaveCount(4);
+    await expect(page.locator('.pg-fees .pg-fee--total')).toContainText('108,71 €');
+    await expect(page.locator('.pg-cards--4 .pg-card')).toHaveCount(4);
+  });
 });
 
 test.describe('PracticeBridge', () => {
