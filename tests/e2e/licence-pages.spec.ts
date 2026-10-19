@@ -33,6 +33,15 @@ test.describe('Seitenkopf', () => {
     await expect(page.locator('.pg-actions .hh-rating')).toContainText(/4,96/);
     await expect(page.locator('main a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
   });
+  test('Archivo wird auf Lizenzseiten vorgeladen, auf anderen Seiten nicht', async ({ page }) => {
+    // Ohne Preload startet die 90-KB-Schrift erst nach dem CSS und schiebt den LCP (Lighthouse +750 ms).
+    await page.goto('/sbf-binnen/');
+    await expect(page.locator('head link[rel="preload"][as="font"][href*="archivo"]')).toHaveCount(1);
+    await page.goto('/en/licenses/');
+    await expect(page.locator('head link[rel="preload"][as="font"][href*="archivo"]')).toHaveCount(1);
+    await page.goto('/datenschutz/');
+    await expect(page.locator('head link[rel="preload"][as="font"][href*="archivo"]')).toHaveCount(0);
+  });
   test('Startseite behält ihre Bewertungszeile', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('.hh-actions .hh-rating')).toContainText(/4,96 · 29 Bewertungen/);

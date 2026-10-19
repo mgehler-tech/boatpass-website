@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PracticeBridge from '../../components/PracticeBridge.astro';
 import PageHead from '../../components/page/PageHead.astro';
+import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
 import PageLayout from '../../components/page/PageLayout.astro';
 import PageFacts from '../../components/page/PageFacts.astro';
 import PageLink from '../../components/page/PageLink.astro';
@@ -115,6 +116,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName }[
   lang="en"
   altUrl="https://boatpass.de/ubi/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

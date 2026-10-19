@@ -1,0 +1,10 @@
+---
+// Preload der Display-Schrift (Archivo, Subset latin mit Breitenachse) für
+// Seiten mit PageHead. Ohne Preload startet die 90-KB-Datei erst nach dem CSS
+// und schiebt den LCP der H1 um mehrere hundert Millisekunden (Lighthouse,
+// mobil simuliert). Einsatz: <DisplayFontPreload slot="head" /> im BaseLayout.
+// Dieselbe Datei nutzt auch die Startseite (home.css), der Browser-Cache greift.
+import archivoLatin from '@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2?url';
+---
+
+<link rel="preload" href={archivoLatin} as="font" type="font/woff2" crossorigin />
