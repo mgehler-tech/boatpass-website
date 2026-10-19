@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/page/PageHead.astro';
+import PageLayout from '../components/page/PageLayout.astro';
+import PageFacts from '../components/page/PageFacts.astro';
+import PageLink from '../components/page/PageLink.astro';
 import Icon from '../components/Icon.astro';
 import type { IconName } from '../icons';
 import { priceText } from '../data/stores';
@@ -126,69 +130,62 @@ const definedTermSchema = {
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        Alle Lizenzen
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        Welche Lizenz<br>passt zu dir?
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto;">
-        Ob Binnengewässer oder Küste, Motorboot oder Funk an Bord – hier findest du
-        die richtige Lizenz und alles, was du für die Vorbereitung wissen musst.
-      </p>
-    </div>
-  </div>
+  <!-- Seitenkopf und breite Spalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="de"
+    eyebrow="Alle Lizenzen"
+    lede="Ob Binnengewässer oder Küste, Motorboot oder Funk an Bord – hier findest du die richtige Lizenz und alles, was du für die Vorbereitung wissen musst."
+  >
+    Welche Lizenz<br />passt zu dir?
+  </PageHead>
 
-  <div style="max-width:1000px; margin:0 auto; padding:60px 24px 80px;">
+  <PageLayout variant="wide">
 
     <!-- Konfigurator-Banner -->
-    <a href="/tools/welcher-bootsfuehrerschein/" class="finder-banner" style="display:flex; align-items:center; gap:18px; background:linear-gradient(135deg,#1A1F36,#3366FF); border-radius:18px; padding:24px 26px; text-decoration:none; margin-bottom:56px; box-shadow:0 10px 30px rgba(51,102,255,0.18);">
-      <div style="flex:1; min-width:0;">
-        <div style="font-size:12px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Kostenloser Finder</div>
-        <div style="font-size:21px; font-weight:900; color:white; letter-spacing:-0.5px; line-height:1.2;">Unsicher, welchen Schein du brauchst?</div>
-        <div style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.5; margin-top:6px;">3 Fragen beantworten – sofort die richtige Lizenz & das passende Funkzeugnis erfahren.</div>
-      </div>
-      <span class="finder-banner-cta" style="flex-shrink:0; background:white; color:#3366FF; font-weight:800; font-size:15px; padding:12px 22px; border-radius:12px; white-space:nowrap;">Finder starten →</span>
+    <a href="/tools/welcher-bootsfuehrerschein/" class="pg-banner">
+      <span class="pg-banner-text">
+        <span class="pg-eyebrow">Kostenloser Finder</span>
+        <span class="pg-banner-title">Unsicher, welchen Schein du brauchst?</span>
+        <span class="pg-banner-sub">3 Fragen beantworten – sofort die richtige Lizenz & das passende Funkzeugnis erfahren.</span>
+      </span>
+      <span class="h-btn h-btn--sm pg-banner-cta">Finder starten<Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" /></span>
     </a>
 
     <!-- Verfügbar -->
-    <section style="margin-bottom:64px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">
         Sportbootführerschein
       </h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:28px;">
+      <p class="pg-p">
         Mit Boatpass lernst du die komplette Theorie – die Detailseiten erklären jeden Schein im Detail.
       </p>
       <div class="license-grid">
         {available.map(c => (
           <a href={c.href} class="license-card">
-            <div class="license-icon"><Icon name={c.icon} size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
+            <div class="license-icon"><Icon name={c.icon} size={26} strokeWidth={1.75} /></div>
             <div class="license-title">{c.title}</div>
             <span class="license-tag">{c.tag}</span>
             <div class="license-desc">{c.desc}</div>
-            <div class="license-link">Mehr erfahren →</div>
+            <div class="license-link">Mehr erfahren<Icon name="chevronRight" size={16} strokeWidth={2.25} /></div>
           </a>
         ))}
       </div>
     </section>
 
     <!-- Was ist ein Funkzeugnis -->
-    <section style="margin-bottom:64px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Was ist ein Funkzeugnis?</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
-        Ein <strong>Funkzeugnis</strong> ist der amtliche Nachweis, der zum Betrieb von Seefunk- oder Binnenfunkanlagen an Bord berechtigt – anders als der Bootsführerschein wird es nur benötigt, wenn tatsächlich ein Funkgerät an Bord ist. In Deutschland gibt es drei Funkzeugnisse: das <a href="/ubi/" style="color:#3366FF; text-decoration:underline;">UBI</a> für UKW-Sprechfunk auf Binnengewässern, das <a href="/src/" style="color:#3366FF; text-decoration:underline;">SRC</a> für UKW-Seefunk mit DSC im Küstenbereich und das <a href="/lrc/" style="color:#3366FF; text-decoration:underline;">LRC</a> für weltweiten Seefunk inklusive Kurz-/Grenzwelle und Satellitenkommunikation.
+    <section class="pg-section">
+      <h2 class="pg-h2">Was ist ein Funkzeugnis?</h2>
+      <p class="pg-p">
+        Ein <strong>Funkzeugnis</strong> ist der amtliche Nachweis, der zum Betrieb von Seefunk- oder Binnenfunkanlagen an Bord berechtigt – anders als der Bootsführerschein wird es nur benötigt, wenn tatsächlich ein Funkgerät an Bord ist. In Deutschland gibt es drei Funkzeugnisse: das <a href="/ubi/" class="pg-inline-link">UBI</a> für UKW-Sprechfunk auf Binnengewässern, das <a href="/src/" class="pg-inline-link">SRC</a> für UKW-Seefunk mit DSC im Küstenbereich und das <a href="/lrc/" class="pg-inline-link">LRC</a> für weltweiten Seefunk inklusive Kurz-/Grenzwelle und Satellitenkommunikation.
       </p>
     </section>
 
     <!-- Bald -->
     <section>
-      <h2 class="content-section-title" style="margin-bottom:8px;">
+      <h2 class="pg-h2">
         Bald verfügbar
       </h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:28px;">
+      <p class="pg-p">
         Wir arbeiten an weiteren Lizenzen – Spezialscheine wie das Bodenseeschifferpatent folgen.
       </p>
       <div class:list={["license-grid", { "license-grid--single": soon.length === 1 }]}>
@@ -196,15 +193,15 @@ const definedTermSchema = {
           c.href ? (
             <a href={c.href} class="license-card license-card-soon">
               <span class="license-soon-badge">bald</span>
-              <div class="license-icon"><Icon name={c.icon} size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
+              <div class="license-icon"><Icon name={c.icon} size={26} strokeWidth={1.75} /></div>
               <div class="license-title">{c.title}</div>
               <div class="license-desc">{c.desc}</div>
-              <div class="license-link">Vorschau →</div>
+              <div class="license-link">Vorschau<Icon name="chevronRight" size={16} strokeWidth={2.25} /></div>
             </a>
           ) : (
             <div class="license-card license-card-soon license-card-disabled">
               <span class="license-soon-badge">bald</span>
-              <div class="license-icon"><Icon name={c.icon} size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
+              <div class="license-icon"><Icon name={c.icon} size={26} strokeWidth={1.75} /></div>
               <div class="license-title">{c.title}</div>
               <div class="license-desc">{c.desc}</div>
             </div>
@@ -214,168 +211,36 @@ const definedTermSchema = {
     </section>
 
     <!-- FAQ -->
-    <section style="margin-top:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Häufige Fragen zum Bootsführerschein</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Häufige Fragen zum Bootsführerschein</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Weiterführende Artikel -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.1);">
-      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Weiterführende Artikel</h3>
-      <div class="related-links">
-        <a href="/blog/sportbootfuehrerschein-voraussetzungen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Voraussetzungen für den Sportbootführerschein</a>
-        <a href="/blog/sehtest-sportbootfuehrerschein-anforderungen-ablauf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Sehtest für den Sportbootführerschein – Anforderungen und Ablauf</a>
-        <a href="/blog/kinder-jugendliche-boot-fahren-mindestalter/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Ab wann dürfen Kinder und Jugendliche ein Boot führen?</a>
-        <a href="/blog/sportbootfuehrerschein-reform-2026/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Sportbootführerschein-Reform 2026: Was sich ändert und was bleibt</a>
-        <a href="/blog/sportbootfuehrerschein-verloren-beschaedigt-ersatz/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Sportbootführerschein verloren oder beschädigt – so bekommst du Ersatz</a>
-        <a href="/blog/sbf-binnen-vs-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen vs. SBF See – was ist der Unterschied?</a>
-        <a href="/blog/motorboot-oder-segelboot-welcher-sbf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Motorboot oder Segelboot – welcher SBF passt zu dir?</a>
-        <a href="/blog/ubi-vs-src-funkschein/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ UBI vs. SRC – welches Funkzeugnis brauche ich?</a>
-        <a href="/blog/charterschein-boot-mieten-ohne-fuehrerschein/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Boot mieten ohne Führerschein: der Charterschein</a>
-        <a href="/blog/sportkuestenschifferschein-sks/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Sportküstenschifferschein (SKS): die nächste Stufe nach dem SBF See</a>
-        <a href="/blog/sbf-im-ausland-gueltig/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF im Ausland gültig? Kroatien, Niederlande & Italien</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Weiterführende Artikel</h2>
+      <ul class="pg-related">
+        <li><a href="/blog/sportbootfuehrerschein-voraussetzungen/">Voraussetzungen für den Sportbootführerschein<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sehtest-sportbootfuehrerschein-anforderungen-ablauf/">Sehtest für den Sportbootführerschein – Anforderungen und Ablauf<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/kinder-jugendliche-boot-fahren-mindestalter/">Ab wann dürfen Kinder und Jugendliche ein Boot führen?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sportbootfuehrerschein-reform-2026/">Sportbootführerschein-Reform 2026: Was sich ändert und was bleibt<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sportbootfuehrerschein-verloren-beschaedigt-ersatz/">Sportbootführerschein verloren oder beschädigt – so bekommst du Ersatz<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sbf-binnen-vs-see/">SBF Binnen vs. SBF See – was ist der Unterschied?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/motorboot-oder-segelboot-welcher-sbf/">Motorboot oder Segelboot – welcher SBF passt zu dir?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/ubi-vs-src-funkschein/">UBI vs. SRC – welches Funkzeugnis brauche ich?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/charterschein-boot-mieten-ohne-fuehrerschein/">Boot mieten ohne Führerschein: der Charterschein<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sportkuestenschifferschein-sks/">Sportküstenschifferschein (SKS): die nächste Stufe nach dem SBF See<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sbf-im-ausland-gueltig/">SBF im Ausland gültig? Kroatien, Niederlande & Italien<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
-
+  </PageLayout>
 </BaseLayout>
 
-<style>
-  .license-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  /* Eine einzelne "Bald"-Karte nicht in ein 2-Spalten-Raster zwingen – sonst
-     bleibt die zweite Zelle leer und die Sektion wirkt unfertig (asymmetrisches
-     Alignment neben der leeren Zelle). Bei genau einer Karte einspaltig und auf
-     die Breite einer regulären Lizenz-Karte begrenzt ((952px − 20px Gap)/2),
-     links ausgerichtet. Wächst die Liste, greift wieder das 2-Spalten-Raster;
-     schmaler als 466px schrumpft die Spalte automatisch auf die volle Breite
-     (Mobile unverändert). Reiner Layout-Feinschliff, Corporate Design unberührt. */
-  .license-grid--single { grid-template-columns: minmax(0, 466px); }
-  .license-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background: white;
-    border: 1px solid rgba(51,102,255,0.10);
-    border-radius: 20px;
-    padding: 28px;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-  .license-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(26,31,54,0.10);
-    border-color: rgba(51,102,255,0.28);
-  }
-  .license-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: rgba(51,102,255,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-  }
-  .license-title {
-    font-size: 20px;
-    font-weight: 800;
-    color: #1A1F36;
-    letter-spacing: -0.5px;
-    margin-bottom: 10px;
-  }
-  .license-tag {
-    align-self: flex-start;
-    font-size: 12px;
-    font-weight: 700;
-    color: #3366FF;
-    background: rgba(51,102,255,0.08);
-    border: 1px solid rgba(51,102,255,0.16);
-    padding: 4px 10px;
-    border-radius: 100px;
-    margin-bottom: 12px;
-  }
-  .license-desc {
-    font-size: 15px;
-    color: #656B78;
-    line-height: 1.6;
-    margin-bottom: 18px;
-    flex-grow: 1;
-  }
-  .license-link {
-    font-size: 14px;
-    font-weight: 700;
-    color: #3366FF;
-  }
-
-  /* "Bald"-Karten optisch gedämpft */
-  .license-card-soon { background: rgba(255,255,255,0.6); }
-  .license-soon-badge {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    font-size: 11px;
-    font-weight: 700;
-    color: #b45309;
-    background: rgba(245,158,11,0.12);
-    border: 1px solid rgba(245,158,11,0.3);
-    padding: 3px 10px;
-    border-radius: 100px;
-  }
-  /* Karten ohne Zielseite: sichtbar, aber nicht klickbar */
-  .license-card-disabled { opacity: 0.6; cursor: default; }
-  .license-card-disabled:hover {
-    transform: none;
-    box-shadow: none;
-    border-color: rgba(51,102,255,0.10);
-  }
-
-  @media (max-width: 640px) {
-    .license-grid { grid-template-columns: 1fr; }
-  }
-
-  /* Finder-Banner auf schmalen Screens stapeln. Als starre Flex-Zeile drängte
-     der rechte Button (feste Breite, white-space:nowrap) die 21px-Überschrift
-     ("Unsicher, welchen Schein du brauchst?") in eine gequetschte, mehrzeilige
-     Restspalte und stand daneben unausgewogen mittig. Ab dem projektweiten
-     768px-Breakpoint stapelt der Banner jetzt zur Spalte und der Button läuft
-     über die volle Breite – dieselbe Behandlung wie der Finder-Teaser und der
-     CTA-Banner der Startseite. Overrides mit !important, da die Basiswerte als
-     Inline-Style gesetzt sind. Reiner Layout-Feinschliff, Corporate Design
-     (Farben, Gradient, Font-Weights) unberührt. */
-  @media (max-width: 768px) {
-    .finder-banner {
-      flex-direction: column !important;
-      align-items: stretch !important;
-      gap: 20px !important;
-    }
-    .finder-banner-cta {
-      text-align: center !important;
-      padding-top: 14px !important;
-      padding-bottom: 14px !important;
-    }
-  }
-
-  html.dark .license-card {
-    background: #181E2E;
-    border-color: rgba(90, 120, 255, 0.14);
-  }
-  html.dark .license-card:hover {
-    border-color: rgba(90, 120, 255, 0.32);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
-  }
-  html.dark .license-card-soon { background: rgba(24, 30, 46, 0.6); }
-  html.dark .license-title { color: #E2E8F0; }
-  html.dark .license-desc  { color: #94A3B8; }
-</style>

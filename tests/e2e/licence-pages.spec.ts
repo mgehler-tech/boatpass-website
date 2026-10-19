@@ -161,6 +161,25 @@ test.describe('Lizenzseiten migriert', () => {
   });
 });
 
+test.describe('Führerschein-Übersicht', () => {
+  for (const [path, h1, banner] of [['/fuehrerscheine/', /Welche Lizenz/, 'Finder'], ['/en/licenses/', /Which licen/i, 'finder']] as const) {
+    test(`${path}: breite Spalte, Finder-Banner ohne Verlauf, Lizenzkarten auf Tokens`, async ({ page }) => {
+      await expectMigrated(page, path, { h1, facts: 0, cta: false });
+      const bannerEl = page.locator('a.pg-banner');
+      await expect(bannerEl).toHaveCount(1);
+      await expect(bannerEl).toContainText(new RegExp(banner, 'i'));
+      expect(await bannerEl.evaluate(el => getComputedStyle(el).backgroundImage)).toBe('none');
+      await expect(page.locator('.license-grid .license-card')).toHaveCount(await page.locator('.license-card').count());
+      expect(await page.locator('.license-card').count()).toBeGreaterThanOrEqual(5);
+      // Kartenfarben kommen aus den Tokens: im Dunkelmodus ist die Karte dunkel.
+      await page.emulateMedia({ colorScheme: 'dark' });
+      await page.reload();
+      expect(await page.locator('.license-card').first().evaluate(el => getComputedStyle(el).backgroundColor)).toBe('rgb(23, 29, 43)');
+      await expect(page.locator('.license-link svg')).toHaveCount(await page.locator('.license-link').count());
+    });
+  }
+});
+
 test.describe('Funkseiten EN: Badge und Modul-Karte', () => {
   test('UBI (EN): Badge mit Preis, Modul-Karte, drei Store-Links auf /en/app/', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
