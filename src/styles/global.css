@@ -320,6 +320,15 @@ html.dark [style*="color:#1A44D4"],
 html.dark [style*="color: #1A44D4"] {
   color: var(--color-accent-fg) !important;
 }
+/* Light Mode: Das Marken-Blau #3366FF erreicht als Textfarbe auf der Seitenfläche
+   (#F0F4FA) und auf hellblauen Chips/Badges nur 4,2–4,3:1 (WCAG 1.4.3 verlangt
+   4,5:1). Zentral auf das bereits genutzte dunklere Blau #2952CC (~6,3:1)
+   angehoben, statt an ~650 Einzelstellen. Nur Textfarbe; Flächen (background)
+   und Icons bleiben im Marken-Blau. */
+html:not(.dark) [style*="color:#3366FF"],
+html:not(.dark) [style*="color: #3366FF"] {
+  color: #2952CC !important;
+}
 html.dark [stroke="#3366FF"],
 html.dark [style*="stroke:#3366FF"],
 html.dark [style*="stroke: #3366FF"] {
