@@ -320,6 +320,13 @@ html.dark [style*="color:#1A44D4"],
 html.dark [style*="color: #1A44D4"] {
   color: var(--color-accent-fg) !important;
 }
+/* Klassenbasierte Blau-Texte (Tailwind text-primary, .src-link in CatalogSources)
+   werden von den Inline-Style-Selektoren oben nicht erfasst und lagen im Dark
+   Mode bei nur 3,6–4,1:1 (13–16px Text, AA braucht 4.5:1). Gleicher Akzent. */
+html.dark .text-primary,
+html.dark .src-link {
+  color: var(--color-accent-fg);
+}
 html.dark [stroke="#3366FF"],
 html.dark [style*="stroke:#3366FF"],
 html.dark [style*="stroke: #3366FF"] {
