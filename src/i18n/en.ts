@@ -169,6 +169,8 @@ export const en: Translations = {
     detailsLink: 'View details',
     bundleStrike: formatPrice((PRICES.sbfBinnen.android ?? 0) + (PRICES.sbfSee.android ?? 0), 'en'),
     bundleChoose: 'Choose bundle',
+    catalogsLabel: 'catalogues',
+    bundleNote: 'One-off purchase, no subscription. All study features included.',
     funkHeading: 'Radio certificates',
     funkSubtitle: 'Individually or as a bundle – no boating licence required.',
     funkMore: 'Learn more',
@@ -264,7 +266,6 @@ export const en: Translations = {
     ratingSourcePlay: 'ratings on Google Play',
     ctaPlay: 'Free on Google Play',
     phoneAlt: 'Boatpass app – home screen with licence, progress, streak and study modes',
-    journeyStage: 'Stage',
     journeyChips: [
       ['Study today', 'Study by topic', 'Streak & daily goal'],
       ['Explanation for every answer', 'Mnemonic'],
