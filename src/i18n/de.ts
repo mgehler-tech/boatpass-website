@@ -186,6 +186,8 @@ export const de = {
     detailsLink: 'Details ansehen',
     bundleStrike: formatPrice((PRICES.sbfBinnen.android ?? 0) + (PRICES.sbfSee.android ?? 0), 'de'),
     bundleChoose: 'Bundle wählen',
+    catalogsLabel: 'Kataloge',
+    bundleNote: 'Einmalkauf, kein Abo. Alle Lernfunktionen inklusive.',
     funkHeading: 'Funkscheine',
     funkSubtitle: 'Einzeln oder als Paket – auch ohne Sportbootführerschein.',
     funkMore: 'Mehr erfahren',
@@ -287,7 +289,6 @@ export const de = {
     // Haupt-CTA je Gerät (StoreCta): Android, iPhone/iPad, sonst hero.cta.
     ctaPlay: 'Kostenlos bei Google Play',
     phoneAlt: 'Boatpass App – Startbildschirm mit Lizenz, Fortschritt, Streak und Lernmodi',
-    journeyStage: 'Etappe',
     // Konkrete Funktionen je Etappe – alle auf den jeweiligen Screenshots sichtbar.
     journeyChips: [
       ['Heute lernen', 'Nach Themen lernen', 'Streak & Tagesziel'],

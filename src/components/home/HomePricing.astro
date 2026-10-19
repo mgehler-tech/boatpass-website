@@ -3,9 +3,9 @@
 // je Store aus data/stores (PlatformPrice zeigt auf iPhone/iPad den App-Store-
 // Preis) – nichts ist hier hart kodiert (Fragenzahlen der Pakete sind die
 // Summe ihrer Teile, Streichpreis und Ersparnis kommen je Store aus stores.ts).
-// Aufbau: das Modell (kostenlos → Vollzugang), dann alle Angebote in zwei
-// Gruppen, dann der Schein-Finder. Bewusst keine drei Karten mit
-// hervorgehobener Mitte.
+// Aufbau: das Modell (kostenlos → Vollzugang), dann zwei Gruppen mit den
+// Einzellizenzen als Zeilen und dem Paket der Gruppe als Karte daneben, dann
+// der Schein-Finder. Bewusst keine drei Karten mit hervorgehobener Mitte.
 import Icon from '../Icon.astro';
 import SectionHead from './SectionHead.astro';
 import StoreCta from './StoreCta.astro';
@@ -41,34 +41,44 @@ type Row = {
   questions: string;
   topics?: string;
   product: ProductKey;
-  /** Nur bei Paketen: die enthaltenen Einzelprodukte. */
-  parts?: ProductKey[];
-  badge?: string;
   href: string;
   action: string;
-  external?: boolean;
+};
+
+/** Das Paket einer Gruppe: eigene Karte neben den Zeilen (Spec Runde 2, 5.2). */
+type Bundle = {
+  name: string;
+  sub: string;
+  questions: string;
+  product: ProductKey;
+  /** Die enthaltenen Einzelprodukte (Streichpreis, Ersparnis, Katalogzahl). */
+  parts: ProductKey[];
+  badge: string;
+  choose: string;
 };
 
 const sum = (...counts: string[]) => String(counts.reduce((n, c) => n + Number(c), 0));
 
-const groups: { title: string; note?: string; rows: Row[] }[] = [
+const groups: { key: 'sbf' | 'funk'; title: string; note?: string; rows: Row[]; bundle: Bundle }[] = [
   {
+    key: 'sbf',
     title: p.sbfHeading,
     rows: [
       { name: p.catalog1Name, sub: p.catalog1Tagline, questions: p.catalog1Questions, topics: p.catalog1Themes, product: 'sbfBinnen', href: de ? '/sbf-binnen/' : '/en/sbf-inland/', action: p.detailsLink },
       { name: p.catalog2Name, sub: p.catalog2Desc, note: p.catalog2Highlight, questions: p.catalog2Questions, topics: p.catalog2Themes, product: 'sbfSee', href: de ? '/sbf-see/' : '/en/sbf-coastal/', action: p.detailsLink },
-      { name: h.bundleName, sub: p.bundleTagline, questions: sum(p.catalog1Questions, p.catalog2Questions), product: 'bundleSbf', parts: ['sbfBinnen', 'sbfSee'], badge: p.bundleLabel, href: playStoreUrl, action: p.bundleChoose, external: true },
     ],
+    bundle: { name: h.bundleName, sub: p.bundleTagline, questions: sum(p.catalog1Questions, p.catalog2Questions), product: 'bundleSbf', parts: ['sbfBinnen', 'sbfSee'], badge: p.bundleLabel, choose: p.bundleChoose },
   },
   {
+    key: 'funk',
     title: p.funkHeading,
     note: p.funkSubtitle,
     rows: [
       { name: 'SRC', sub: de ? 'Seefunk (Küste)' : 'Sea radio (coastal)', questions: p.srcQuestions, topics: p.srcThemes, product: 'src', href: de ? '/src/' : '/en/src/', action: p.funkMore },
       { name: 'UBI', sub: de ? 'Binnenfunk' : 'Inland radio', questions: p.catalog3Questions, topics: p.catalog3Themes, product: 'ubi', href: de ? '/ubi/' : '/en/ubi/', action: p.funkMore },
       { name: 'LRC', sub: de ? 'Seefunk (weltweit)' : 'Sea radio (worldwide)', questions: p.lrcQuestions, topics: p.lrcThemes, product: 'lrc', href: de ? '/lrc/' : '/en/lrc/', action: p.funkMore },
-      { name: h.funkBundleName, sub: h.funkBundleTagline, questions: sum(p.catalog3Questions, p.srcQuestions, p.lrcQuestions), product: 'bundleFunk', parts: ['ubi', 'src', 'lrc'], badge: p.bundleLabel, href: playStoreUrl, action: p.bundleChoose, external: true },
     ],
+    bundle: { name: h.funkBundleName, sub: h.funkBundleTagline, questions: sum(p.catalog3Questions, p.srcQuestions, p.lrcQuestions), product: 'bundleFunk', parts: ['ubi', 'src', 'lrc'], badge: p.bundleLabel, choose: p.bundleChoose },
   },
 ];
 ---
@@ -105,43 +115,54 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
       </div>
     </div>
 
-    <!-- Tarifliste -->
+    <!-- Tarifliste: Einzellizenzen als Zeilen, das Paket der Gruppe als Karte daneben -->
     {groups.map(group => (
       <div class="hp-group">
         <div class="hp-group-head" data-reveal>
           <h3 class="hp-group-title">{group.title}</h3>
           {group.note && <p class="hp-group-note">{group.note}</p>}
         </div>
-        <ul class="hp-rows">
-          {group.rows.map(row => (
-            <li class:list={['hp-row', { 'hp-row--bundle': !!row.badge }]} data-reveal>
-              <div class="hp-name">
-                <span class="hp-name-main">{row.name}{row.badge && <span class="hp-badge">{row.badge}</span>}</span>
-                <span class="hp-name-sub">{row.sub}</span>
-                {row.note && <span class="hp-name-note">{row.note}</span>}
-              </div>
-              <span class="hp-cell hp-cell--q h-num"><strong>{row.questions}</strong> {h.colQuestions}</span>
-              <span class="hp-cell hp-cell--t h-num">{row.topics ? <Fragment><strong>{row.topics}</strong> {h.colTopics}</Fragment> : <span aria-hidden="true">—</span>}</span>
-              <span class="hp-price">
-                <span class="hp-price-num h-num"><PlatformPrice product={row.product} lang={lang} /></span>
-                <span class="hp-price-sub">
-                  {row.parts ? bundleInfo(row.product, row.parts).map(b => (
-                    <span class={b.cls}><s class="h-num">{b.strike}</s>{` · ${saveLabel} ${b.save}`}</span>
-                  )) : h.once}
-                </span>
-              </span>
-              {row.external ? (
-                <a class="hp-action" href={row.href} target="_blank" rel="noopener noreferrer" data-cta-position="pricing-bundle">
-                  {row.action}<Icon name="chevronRight" size={16} strokeWidth={2.25} /><span class="sr-only h-off-desktop">{h.newTab}</span>
+        <div class="hp-group-body">
+          <ul class="hp-rows">
+            {group.rows.map(row => (
+              <li data-reveal>
+                <!-- Die ganze Zeile ist der Link zur Detailseite; der Name der
+                     Zeile ergibt sich aus ihrem Inhalt plus „, Details ansehen". -->
+                <a class="hp-row" href={row.href}>
+                  <span class="hp-name">
+                    <span class="hp-name-main">{row.name}</span>
+                    <span class="hp-name-sub">{row.sub}</span>
+                    {row.note && <span class="hp-name-note">{row.note}</span>}
+                  </span>
+                  <span class="hp-cell hp-cell--q h-num"><strong>{row.questions}</strong> {h.colQuestions}</span>
+                  <span class="hp-cell hp-cell--t h-num">{row.topics ? <Fragment><strong>{row.topics}</strong> {h.colTopics}</Fragment> : <span aria-hidden="true">—</span>}</span>
+                  <span class="hp-price">
+                    <span class="hp-price-num h-num"><PlatformPrice product={row.product} lang={lang} /></span>
+                    <span class="hp-price-sub">{h.once}</span>
+                  </span>
+                  <span class="hp-chevron" aria-hidden="true"><Icon name="chevronRight" size={18} strokeWidth={2.25} /></span>
+                  <span class="sr-only">, {row.action}</span>
                 </a>
-              ) : (
-                <a class="hp-action" href={row.href}>
-                  {row.action}<span class="sr-only">: {row.name}</span><Icon name="chevronRight" size={16} strokeWidth={2.25} />
-                </a>
-              )}
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+          <aside class="hp-bundle" aria-labelledby={`hp-bundle-${group.key}`} data-reveal>
+            <span class="hp-badge">{group.bundle.badge}</span>
+            <h4 id={`hp-bundle-${group.key}`} class="hp-bundle-title">{group.bundle.name}</h4>
+            <p class="hp-bundle-sub">{group.bundle.sub}</p>
+            <p class="hp-bundle-meta h-num"><strong>{group.bundle.questions}</strong> {h.colQuestions} · {group.bundle.parts.length} {p.catalogsLabel}</p>
+            <p class="hp-bundle-price h-num"><PlatformPrice product={group.bundle.product} lang={lang} /></p>
+            <p class="hp-bundle-save">
+              {bundleInfo(group.bundle.product, group.bundle.parts).map(b => (
+                <span class={b.cls}><s class="h-num">{b.strike}</s>{` · ${saveLabel} ${b.save}`}</span>
+              ))}
+            </p>
+            <a class="h-btn h-btn--sm hp-bundle-cta" href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="pricing-bundle">
+              {group.bundle.choose}<Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" /><span class="sr-only h-off-desktop">{h.newTab}</span>
+            </a>
+            <p class="hp-bundle-note">{p.bundleNote}</p>
+          </aside>
+        </div>
       </div>
     ))}
 
@@ -235,7 +256,57 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
   }
   .hp-group-note { margin: 0; font-family: var(--h-sans); font-size: 13px; color: var(--h-muted); }
 
-  .hp-rows { margin: 0; padding: 0; list-style: none; }
+  /* Die Liste ist Größen-Container: Die Zeile wird nach ihrer eigenen Breite
+     fünfspaltig, nicht nach dem Viewport. Neben der Karte (ab 1024 px) ist sie
+     erst ab etwa 1200 px Fensterbreite breit genug; darunter stapelt sie. */
+  .hp-rows { margin: 0; padding: 0; list-style: none; container-type: inline-size; }
+  /* Haarlinie am Listenelement, damit sie bündig mit der Gruppenlinie beginnt
+     (der Link darunter ragt für die Hover-Fläche 12 px nach links hinaus). */
+  .hp-rows > li { border-bottom: 1px solid var(--h-line-2); }
+
+  /* ── Gruppe: Zeilen links, Paket-Karte rechts (Spec Runde 2, 5.2) ── */
+  .hp-group-body { display: grid; gap: 24px; }
+  @media (min-width: 1024px) {
+    .hp-group-body {
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 0 40px;
+      align-items: start;
+    }
+  }
+  .hp-bundle {
+    padding: 24px;
+    border-radius: var(--h-r);
+    background: var(--h-card);
+    box-shadow: inset 0 0 0 1px var(--h-line), 0 1px 2px rgba(11, 21, 48, 0.04), 0 18px 44px -30px rgba(11, 21, 48, 0.3);
+  }
+  @media (min-width: 640px) {
+    .hp-bundle { padding: 28px; }
+  }
+  .hp-bundle .hp-badge { display: inline-block; }
+  .hp-bundle-title {
+    margin: 12px 0 0;
+    font-family: var(--h-display);
+    font-stretch: 84%;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 1.05;
+    color: var(--h-ink);
+  }
+  .hp-bundle-sub { margin: 6px 0 0; font-size: 14.5px; line-height: 1.5; color: var(--h-muted); }
+  .hp-bundle-meta { margin: 14px 0 0; font-family: var(--h-sans); font-size: 13px; color: var(--h-muted); }
+  .hp-bundle-meta strong { font-weight: 500; font-size: 15px; color: var(--h-ink); }
+  .hp-bundle-price {
+    margin: 16px 0 0;
+    font-family: var(--h-display);
+    font-stretch: 82%;
+    font-weight: 720;
+    font-size: 36px;
+    line-height: 1;
+    color: var(--h-ink);
+  }
+  .hp-bundle-save { margin: 6px 0 0; font-family: var(--h-sans); font-size: 13px; color: var(--h-blue-ink); }
+  .hp-bundle-cta { margin-top: 20px; }
+  .hp-bundle-note { margin: 12px 0 0; font-size: 12.5px; line-height: 1.5; color: var(--h-muted); }
   .hp-price-note {
     max-width: 80ch;
     margin: 20px 0 0;
@@ -243,32 +314,51 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     line-height: 1.6;
     color: var(--h-muted);
   }
+  /* Zeile = Link. Negativer Außenabstand plus gleich großer Innenabstand,
+     damit die Hover-Fläche über den Text hinausreicht, ohne das Raster zu
+     verschieben. */
   .hp-row {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
-      'name name'
+      'name chev'
       'q t'
-      'price action';
+      'price price';
     gap: 10px 16px;
     align-items: baseline;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--h-line-2);
+    min-height: 72px;
+    margin-inline: -12px;
+    padding: 20px 12px;
+    border-radius: var(--h-r-sm);
+    color: inherit;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
   }
+  .hp-row:hover { background: var(--h-blue-wash); }
+  .hp-row:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
   .hp-name { grid-area: name; }
   .hp-cell--q { grid-area: q; }
   .hp-cell--t { grid-area: t; }
   .hp-price { grid-area: price; }
-  .hp-action { grid-area: action; }
-  @media (min-width: 900px) {
+  .hp-chevron {
+    grid-area: chev;
+    justify-self: end;
+    align-self: center;
+    color: var(--h-blue-ink);
+    transition: transform 0.3s var(--h-ease);
+  }
+  .hp-chevron svg { display: block; }
+  .hp-row:hover .hp-chevron { transform: translateX(4px); }
+  /* Fünf Spalten erst, wenn der Name mindestens ~215 px bekommt
+     (720 − 506 px feste Spalten und Abstände). */
+  @container (min-width: 720px) {
     .hp-row {
-      grid-template-columns: minmax(0, 1fr) 110px 110px 230px 180px;
-      grid-template-areas: 'name q t price action';
+      grid-template-columns: minmax(0, 1fr) 110px 110px 170px 20px;
+      grid-template-areas: 'name q t price chev';
       gap: 24px;
-      padding: 22px 0;
+      padding: 22px 12px;
     }
   }
-  .hp-row--bundle { background: var(--h-blue-wash); padding-inline: 14px; margin-inline: -14px; border-radius: var(--h-r-md); }
 
   .hp-name { display: flex; flex-direction: column; gap: 3px; }
   .hp-name-main {
@@ -304,26 +394,12 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
     font-family: var(--h-display);
     font-stretch: 82%;
     font-weight: 720;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1;
     color: var(--h-ink);
   }
   .hp-price-sub { font-family: var(--h-sans); font-size: 12.5px; color: var(--h-muted); }
-  .hp-row--bundle .hp-price-sub { color: var(--h-blue-ink); }
 
-  .hp-action {
-    display: inline-flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 6px;
-    min-height: 44px;
-    color: var(--h-blue-ink);
-    font-size: 15px;
-    font-weight: 650;
-    text-decoration: none;
-    transition: gap 0.3s var(--h-ease);
-  }
-  .hp-action:hover { gap: 10px; text-decoration: underline; text-underline-offset: 4px; }
 
   /* ── Schein-Finder ── */
   .hp-finder {
@@ -344,4 +420,8 @@ const groups: { title: string; note?: string; rows: Row[] }[] = [
   .hp-finder-cta { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--h-blue-ink); transition: gap 0.3s var(--h-ease); }
   .hp-finder:hover .hp-finder-cta { gap: 10px; }
   .hp-finder:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 4px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hp-row, .hp-chevron, .hp-finder-cta, .h-btn-arrow { transition: none; }
+  }
 </style>
