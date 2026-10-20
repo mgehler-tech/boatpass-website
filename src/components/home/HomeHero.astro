@@ -6,14 +6,23 @@
 // darunter die amtlichen Kataloge als ruhige Textzeile mit Links zur
 // jeweiligen Lizenzseite (die Fragenzahlen stehen in der Preisliste).
 //
+// Der CTA hängt vom Gerät ab (html[data-platform] aus dem BaseLayout):
+// Handys bekommen den einen Button, der direkt in ihren Store führt. Desktop
+// zeigt stattdessen die offiziellen Badges beider Stores, damit sofort sichtbar
+// ist, dass es die App für iOS und Android gibt; der QR-Link darunter führt
+// zur Auswahlseite /app/. Ohne JS bleibt der neutrale Button.
+//
 // Der Text steht ab dem ersten Paint fertig da (H1 = LCP-Element, CTA sofort
 // nutzbar). Der Auftakt des Handys läuft als CSS-Animation und wartet nicht
 // auf das JS-Bundle; GSAP übernimmt nur das Neigen per Maus.
 import { Image } from 'astro:assets';
 import StoreCta from './StoreCta.astro';
+import StoreBadges from '../StoreBadges.astro';
 import HeroPhoto from './HeroPhoto.astro';
+import Icon from '../Icon.astro';
 import { useTranslations } from '../../i18n/index';
 import { getBoatpassCombinedRating, formatRating } from '../../data/apps';
+import { smartAppPath } from '../../data/stores';
 import homeShotDe from '../../assets/images/app.screenshot.0.de.png';
 import homeShotEn from '../../assets/images/app.screenshot.0.en.png';
 
@@ -51,7 +60,8 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
         <p class="hh-sub">{t.hero.subline}</p>
 
         <div class="hh-actions">
-          <StoreCta lang={lang} position="hero" id="hero-cta" />
+          <StoreCta lang={lang} position="hero" id="hero-cta" class="hh-cta-device" />
+          <StoreBadges lang={lang} height={48} eager position="hero" id="hero-badge" class="hh-cta-desktop" />
           {rating && (
             <p class="hh-rating">
               <span class="hh-stars" aria-hidden="true">
@@ -66,6 +76,11 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
             </p>
           )}
         </div>
+
+        <a class="hh-qr hh-cta-desktop" href={smartAppPath(lang)} data-cta-position="hero-qr">
+          <Icon name="qrCode" size={18} strokeWidth={1.75} />
+          <span>{h.heroQr}</span>
+        </a>
 
         <p class="hh-note">{h.heroNote}</p>
       </div>
@@ -206,6 +221,30 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
   .hh-stars svg { display: block; }
   .hh-rating-text { font: 600 14px/1 var(--h-sans); color: var(--h-muted); }
   .hh-rating-text .h-num { color: var(--h-ink); }
+
+  /* Desktop: Badges beider Stores statt des Geräte-Buttons (s. Kopfkommentar). */
+  .hh-cta-desktop { display: none !important; }
+  html[data-platform='desktop'] .hh-cta-desktop { display: flex !important; }
+  html[data-platform='desktop'] .hh-cta-device { display: none; }
+
+  .hh-qr {
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    min-height: 44px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--h-blue-ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 5px;
+    text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+    transition: text-decoration-color 0.2s ease;
+  }
+  .hh-qr:hover { text-decoration-color: currentColor; }
+  .hh-qr:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; border-radius: var(--h-r-sm); }
+  .hh-qr svg { flex: none; }
 
   /* Fakten als ein Satz statt vier Häkchen. */
   .hh-note {

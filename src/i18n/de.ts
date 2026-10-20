@@ -285,6 +285,7 @@ export const de = {
     ratingOutOf: 'von 5 Sternen',
     // Einzeilige Bewertung im Hero: „4,96 · 29 Bewertungen"
     ratingCountLabel: 'Bewertungen',
+    heroQr: 'Aufs Handy per QR-Code',
     ratingSourcePlay: 'Bewertungen bei Google Play',
     // Haupt-CTA je Gerät (StoreCta): Android, iPhone/iPad, sonst hero.cta.
     ctaPlay: 'Kostenlos bei Google Play',
