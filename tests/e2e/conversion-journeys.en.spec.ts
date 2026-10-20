@@ -13,10 +13,14 @@ import { APP_STORE_URL_INTL, PLAY_STORE_URL } from '../../src/data/stores';
 const CHOOSER = '/en/app/';
 
 test.describe('EN Homepage → app CTA', () => {
-  test('hero and closing CTAs lead to the store chooser, footer badges link to both stores', async ({ page }) => {
+  test('hero shows both store badges, closing CTA leads to the store chooser, footer badges link to both stores', async ({ page }) => {
     await page.goto('/en/');
-    await expect(page.locator('#hero-cta-play')).toHaveAttribute('href', CHOOSER);
-    await expect(page.locator('#hero-cta-play')).toContainText('Download for free');
+    await expect(page.locator('#hero-cta-play')).toBeHidden();
+    await expect(page.locator('#hero-badge-ios')).toBeVisible();
+    await expect(page.locator('#hero-badge-ios')).toHaveAttribute('href', APP_STORE_URL_INTL);
+    await expect(page.locator('#hero-badge-play')).toBeVisible();
+    await expect(page.locator('#hero-badge-play')).toHaveAttribute('href', PLAY_STORE_URL);
+    await expect(page.locator('.hh-qr')).toHaveAttribute('href', CHOOSER);
     await expect(page.locator('#final-cta-play')).toHaveAttribute('href', CHOOSER);
 
     await expect(page.locator('#footer-badge-ios')).toHaveAttribute('href', APP_STORE_URL_INTL);
