@@ -53,7 +53,7 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Verkehrstrennungsgebiete auf See – Verhalten und Regeln für Sportbootfahrer (2026-09-24: verkehrstrennungsgebiete-see / traffic-separation-schemes-at-sea)
 - [x] Kollisionsverhütungsregeln (KVR) im Überblick – Hub zu allen KVR-Themen (ad-hoc, GSC: Query "kollisionsverhütungsregeln", Pos. 51 ohne eigene Seite; 2026-09-25: kollisionsverhuetungsregeln-kvr-ueberblick / colregs-collision-regulations-overview)
 - [x] Boots-Übernahmecheck vor der ersten Fahrt – Charterboot oder eigenes Boot sicher prüfen (2026-10-17: boots-uebernahmecheck-charterboot-eigenes-boot / boat-handover-check-charter-or-own-boat)
-- [ ] Sportbootführerschein trotz gesundheitlicher Einschränkung – was das ärztliche Zeugnis wirklich bedeutet
+- [x] Sportbootführerschein trotz gesundheitlicher Einschränkung – was das ärztliche Zeugnis wirklich bedeutet (2026-10-20: sportbootfuehrerschein-gesundheitliche-einschraenkung-aerztliches-zeugnis / boating-license-with-a-health-condition-medical-certificate)
 - [ ] Funkzeugnis LRC (Long Range Certificate) – wann reicht das SRC nicht mehr aus? (GSC: Query "funkschein lrc", 20 Impr./Pos. 73, unbesetzt – Ergänzung zu ubi-vs-src-funkschein)
 - [ ] Bootskennzeichen und Registrierungspflicht – wann muss mein Sportboot amtlich gekennzeichnet werden? (GSC: Query "boat registration", 10 Impr./Pos. 53, unbesetzt – bislang keine Inhalte zu Kennzeichnungspflicht/Registrierung)
 - [ ] Die ersten eigenen Fahrten nach dem SBF – typische Anfängerfehler in der Bootspraxis vermeiden (Themen-Lücke: Bootspraxis für Einsteiger nach Scheinerwerb, ergänzt Boots-Übernahmecheck und Prüfungsvorbereitung-Themen)
