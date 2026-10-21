@@ -20,13 +20,26 @@ const { city } = Astro.props;
 const playStoreUrl = PLAY_STORE_URL;
 
 const licenceTypes = city.variant === 'coastal'
-  ? [{ name: 'SBF Coastal', href: '/en/sbf-coastal/', desc: 'Required for coastal waters (North and Baltic Sea).' }]
+  ? [{ name: 'SBF Coastal', href: '/en/sbf-coastal/' }]
   : city.variant === 'inland'
-    ? [{ name: 'SBF Inland', href: '/en/sbf-inland/', desc: 'Required for rivers, canals and lakes above 15 HP.' }]
+    ? [{ name: 'SBF Inland', href: '/en/sbf-inland/' }]
     : [
-        { name: 'SBF Inland', href: '/en/sbf-inland/', desc: 'Required for rivers, canals and lakes above 15 HP.' },
-        { name: 'SBF Coastal', href: '/en/sbf-coastal/', desc: 'Required for coastal waters (North and Baltic Sea).' },
+        { name: 'SBF Inland', href: '/en/sbf-inland/' },
+        { name: 'SBF Coastal', href: '/en/sbf-coastal/' },
       ];
+
+// Schein-Bezeichnung und Erklärung je Variante, Gegenstück zu licenceLabel/licenceDescription der DE-Seite.
+const licenceLabel = licenceTypes.map(l => l.name).join(' & ');
+
+function licenceDescription(variant: 'coastal' | 'inland' | 'both', name: string): string {
+  if (variant === 'coastal') {
+    return `For the coastal waters around ${name} you need the Sportbootführerschein See (SBF Coastal). It covers the maritime waterways of the North Sea and the Baltic Sea.`;
+  }
+  if (variant === 'inland') {
+    return `For the inland waters around ${name} you need the Sportbootführerschein Binnen (SBF Inland) for boats above 15 HP. It is valid on rivers, canals and lakes throughout Germany.`;
+  }
+  return `${name} gives you access to both inland and coastal waters. For rivers and lakes you need the SBF Inland, for the coast the SBF Coastal. Many boat schools offer a combined course for both licences.`;
+}
 
 // Sidebar facts, taken verbatim from the city data (spec round 3, 3.3).
 const cityFacts = [
@@ -92,17 +105,23 @@ const faqSchema = city.faq.length > 0 ? {
     <section class="pg-section">
       <h2 class="pg-h2">Waterways in {city.name}</h2>
       <p class="pg-p">
-        {city.name} offers access to: <strong>{city.waterways.en}</strong>.
+        {city.waterways.en} – {licenceDescription(city.variant, city.name)}
       </p>
       <div class="pg-cards pg-cards--2">
-        {licenceTypes.map(l => (
-          <a href={l.href} class="pg-card">
-            <p class="pg-card-title">{l.name}</p>
-            <p class="pg-card-text">{l.desc}</p>
-            <span class="pg-card-more">View details<Icon name="chevronRight" size={16} strokeWidth={2.25} /></span>
-          </a>
-        ))}
+        <div class="pg-card">
+          <p class="pg-card-title">Waterways</p>
+          <p class="pg-card-text">{city.waterways.en}</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-title">Licence required</p>
+          <p class="pg-card-text">{licenceLabel}</p>
+        </div>
       </div>
+      <ul class="pg-related">
+        {licenceTypes.map(l => (
+          <li><a href={l.href}>{l.name} in detail<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        ))}
+      </ul>
     </section>
 
     <!-- Boat Schools -->
@@ -165,36 +184,46 @@ const faqSchema = city.faq.length > 0 ? {
       <p class="pg-p">
         {city.examInfo.en}
       </p>
-      <div class="pg-cards pg-cards--3">
+      <div class="pg-cards pg-cards--2">
         <div class="pg-card">
-          <p class="pg-card-title">Theory exam</p>
-          <p class="pg-card-text">30 multiple-choice questions (SBF Inland: 45 min, SBF Coastal: 60 min incl. navigation).</p>
+          <p class="pg-kpi">
+            €{city.variant === 'coastal' ? '148.38' : city.variant === 'inland' ? '130.78' : '178.61'}
+          </p>
+          <p class="pg-card-text">
+            Official exam fee {city.variant === 'both' ? '(combined)' : city.variant === 'coastal' ? '(Coastal)' : '(Inland)'}
+          </p>
         </div>
         <div class="pg-card">
-          <p class="pg-card-title">Practical exam</p>
-          <p class="pg-card-text">On-water manoeuvres: docking, turning, stopping and man-overboard. Plus knots.</p>
-        </div>
-        <div class="pg-card">
-          <p class="pg-card-title">Exam bodies</p>
-          <p class="pg-card-text">Exams are administered by the DMYV (German Motor Yacht Association) or the DSV (German Sailing Association).</p>
+          <p class="pg-kpi pg-kpi--accent">from €9.99</p>
+          <p class="pg-card-text">Study theory with BoatPass</p>
         </div>
       </div>
     </section>
 
-    <!-- Study with BoatPass CTA -->
+    <!-- Study theory with BoatPass -->
     <section class="pg-section">
       <h2 class="pg-h2">Study Theory with BoatPass</h2>
       <p class="pg-p">
-        You do not need a boat school for the theory exam. The official ELWIS question catalogue is freely available, and BoatPass puts it in your pocket: exam simulation, mistake training and progress tracking for just 9.99 euros per catalogue.
+        You do not need a boat school for the theory exam. Prepare on your own with the official
+        ELWIS question catalogue, exam simulation and targeted mistake training – then book only the
+        practical lessons at a boat school in {city.name} and learn flexibly at your own pace.
       </p>
-      <div class="pg-answer pg-answer--icon">
-        <span class="pg-row-icon"><Icon name="lightbulb" size={20} strokeWidth={1.75} /></span>
-        <div class="pg-answer-body">
-          <p class="pg-card-title">The smart split</p>
-          <p class="pg-card-text">
-            Study theory independently with <strong>BoatPass</strong> (from 9.99 euros), then book only the practical lessons at a <strong>boat school in {city.name}</strong>. This is the most cost-effective way to get your German boat licence.
-          </p>
-        </div>
+      <div class="pg-rows">
+        {([
+          { icon: 'book' as const, title: 'Official ELWIS question catalogue', desc: `All official exam questions for the ${licenceLabel} – always up to date.` },
+          { icon: 'target' as const, title: 'Exam simulation', desc: 'Real exam conditions with a timer and a separate pass mark.' },
+          { icon: 'refresh' as const, title: 'Mistake training', desc: 'Practise only the questions you are not yet sure about.' },
+        ]).map(f => (
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={f.icon} size={21} strokeWidth={1.75} />
+            </span>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{f.title}</p>
+              <p class="pg-row-text">{f.desc}</p>
+            </div>
+          </div>
+        ))}
       </div>
       <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="h-btn h-btn--sm">Download for free<Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" /></a>
     </section>
