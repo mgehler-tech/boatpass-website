@@ -29,3 +29,18 @@ test.describe('SBF-Kosten', () => {
     await expect(page.locator('.pg-aside .pg-aside-price')).toContainText(/from/);
   });
 });
+
+test.describe('Prüfungsablauf', () => {
+  test('DE: Kennzahlen nur aus der Seite (keine Gebühr)', async ({ page }) => {
+    await expectMigrated(page, '/sbf-pruefung-ablauf/', { h1: /Prüfung/, facts: 5 });
+    const facts = page.locator('.pg-aside dl.pg-facts');
+    await expect(facts).toContainText('60 Min');
+    await expect(facts).toContainText('16 Jahre');
+    await expect(facts).not.toContainText('130,78');
+    await expect(page.locator('.pg-aside .pg-aside-price')).toContainText(/ab/);
+  });
+  test('EN parity', async ({ page }) => {
+    await expectMigrated(page, '/en/sbf-exam/', { h1: /exam/i, facts: 5 });
+    await expect(page.locator('.pg-aside dl.pg-facts')).toContainText('60 min');
+  });
+});

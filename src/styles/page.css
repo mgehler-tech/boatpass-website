@@ -504,3 +504,6 @@ a.license-card:hover .license-link { gap: 10px; }
 .pg-answer--icon { display: flex; align-items: flex-start; gap: 16px; }
 .pg-answer--icon > .pg-row-icon { margin-top: 2px; }
 .pg-answer-body { flex: 1; min-width: 0; }
+
+/* Kleine Icon-Kachel in Hinweiskästen (Prüfungsablauf) */
+.pg-row-icon--sm { width: 34px; height: 34px; border-radius: 10px; }

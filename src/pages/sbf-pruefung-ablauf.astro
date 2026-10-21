@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/page/PageHead.astro';
+import PageLayout from '../components/page/PageLayout.astro';
+import PageFacts from '../components/page/PageFacts.astro';
+import PageLink from '../components/page/PageLink.astro';
+import DisplayFontPreload from '../components/page/DisplayFontPreload.astro';
 import Icon from '../components/Icon.astro';
 import type { IconName } from '../icons';
 import { PLAY_STORE_URL } from '../data/stores';
@@ -77,153 +82,160 @@ const howToSchema = {
   lang="de"
   altUrl="https://boatpass.de/en/sbf-exam/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        Sportbootführerschein · Binnen & See
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        SBF Prüfung –<br>so läuft sie ab
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto 36px;">
-        Theorie und Praxis Schritt für Schritt erklärt: Aufbau, Fragen, Manöver und Bestehensgrenzen für SBF Binnen und SBF See. So weißt du genau, was am Prüfungstag auf dich zukommt.
-      </p>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
-        ▶&nbsp;Auf die Theorie vorbereiten
-      </a>
-    </div>
-  </div>
+  <!-- Seitenkopf und Lesespalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="de"
+    eyebrow="Sportbootführerschein · Binnen & See"
+    lede="Theorie und Praxis Schritt für Schritt erklärt: Aufbau, Fragen, Manöver und Bestehensgrenzen für SBF Binnen und SBF See. So weißt du genau, was am Prüfungstag auf dich zukommt."
+    ctaLabel="Auf die Theorie vorbereiten"
+    cta
+  >
+    SBF Prüfung –<br />so läuft sie ab
+  </PageHead>
 
-  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="de"
+      title="Auf einen Blick"
+      product="sbfBinnen"
+      from
+      items={[
+        { k: 'Theorie Binnen', v: '30 Fragen · 45 Min' },
+        { k: 'Theorie See', v: '39 Fragen · 60 Min (inkl. Navigation)' },
+        { k: 'Bestehensgrenze', v: '5 von 7 Basis, 18 von 23 spezifisch' },
+        { k: 'Mindestalter', v: '16 Jahre' },
+        { k: 'Anmeldung', v: 'Prüfungsausschuss (DMYV)' },
+      ]}
+    />
 
     <!-- Geltungsbereich-Hinweis -->
-    <div style="display:flex; align-items:flex-start; gap:14px; background:rgba(51,102,255,0.05); border:1px solid rgba(51,102,255,0.16); border-radius:16px; padding:20px 22px; margin-bottom:48px;">
-      <span style="width:34px; height:34px; border-radius:10px; background:rgba(51,102,255,0.10); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-        <Icon name="document" size={18} stroke="#3366FF" strokeWidth={1.75} />
+    <div class="pg-card pg-card--soft pg-card--note">
+      <span class="pg-row-icon pg-row-icon--sm">
+        <Icon name="document" size={18} strokeWidth={1.75} />
       </span>
-      <div style="font-size:15px; color:#4B5563; line-height:1.7;">
-        <strong style="color:#1A1F36;">Diese Seite beschreibt den Ablauf der Sportbootführerschein-Prüfung – für <a href="/sbf-binnen/" style="color:#3366FF; text-decoration:none;">SBF Binnen</a> und <a href="/sbf-see/" style="color:#3366FF; text-decoration:none;">SBF See</a>.</strong>
-        Die Sprechfunkzeugnisse haben einen eigenen Prüfungsablauf – Aufbau und Inhalte findest du auf den Seiten zu <a href="/ubi/" style="color:#3366FF; text-decoration:none;">UBI</a>, <a href="/src/" style="color:#3366FF; text-decoration:none;">SRC</a> und <a href="/lrc/" style="color:#3366FF; text-decoration:none;">LRC</a>.
+      <div class="pg-card-text">
+        <strong>Diese Seite beschreibt den Ablauf der Sportbootführerschein-Prüfung – für <a href="/sbf-binnen/" class="pg-inline-link">SBF Binnen</a> und <a href="/sbf-see/" class="pg-inline-link">SBF See</a>.</strong>
+        Die Sprechfunkzeugnisse haben einen eigenen Prüfungsablauf – Aufbau und Inhalte findest du auf den Seiten zu <a href="/ubi/" class="pg-inline-link">UBI</a>, <a href="/src/" class="pg-inline-link">SRC</a> und <a href="/lrc/" class="pg-inline-link">LRC</a>.
       </div>
     </div>
 
     <!-- Überblick -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Theorie und Praxis – zwei Prüfungsteile</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Theorie und Praxis – zwei Prüfungsteile</h2>
+      <p class="pg-p">
         Die <strong>Sportbootführerschein-Prüfung</strong> besteht aus zwei getrennten Teilen: einer <strong>theoretischen Prüfung</strong> (Multiple-Choice-Bogen) und einer <strong>praktischen Prüfung</strong> auf dem Wasser. Beide musst du bestehen, um den Schein zu erhalten. Abgenommen wird die Prüfung von einem anerkannten Prüfungsausschuss (z. B. DMYV).
       </p>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      <p class="pg-p">
         Ein Vorbereitungskurs ist <strong>nicht vorgeschrieben</strong> – du kannst die Theorie selbstständig mit dem offiziellen Fragenkatalog lernen.
       </p>
     </section>
 
     <!-- Theorie -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">1. Die theoretische Prüfung</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">1. Die theoretische Prüfung</h2>
+      <p class="pg-p">
         In der Theorie beantwortest du einen Fragebogen aus dem amtlichen ELWIS-Katalog. Der Aufbau unterscheidet sich je nach Schein:
       </p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">SBF Binnen</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.7;">30 Fragen · 45 Minuten<br>7 Basisfragen (mind. 5 richtig)<br>23 spezifische Fragen (mind. 18 richtig)</div>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-label">SBF Binnen</p>
+          <div class="pg-card-text">30 Fragen · 45 Minuten<br>7 Basisfragen (mind. 5 richtig)<br>23 spezifische Fragen (mind. 18 richtig)</div>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">SBF See</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.7;">39 Fragen · 60 Minuten<br>30 Standardfragen wie Binnen<br>+ 9 Fragen Navigationsaufgabe (mind. 7 richtig)</div>
+        <div class="pg-card">
+          <p class="pg-card-label">SBF See</p>
+          <div class="pg-card-text">39 Fragen · 60 Minuten<br>30 Standardfragen wie Binnen<br>+ 9 Fragen Navigationsaufgabe (mind. 7 richtig)</div>
         </div>
       </div>
     </section>
 
     <!-- Praxis -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">2. Die praktische Prüfung</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">2. Die praktische Prüfung</h2>
+      <p class="pg-p">
         In der Praxis zeigst du auf dem Wasser, dass du ein Boot sicher führen kannst. Geprüft werden typischerweise:
       </p>
-      <div style="display:flex; flex-direction:column; gap:16px;">
+      <div class="pg-rows">
         {[
           { icon: 'lifebuoy', title: 'Manöver', desc: 'An- und Ablegen, Wenden, Aufstoppen und das wichtige Mann-über-Bord-Manöver.', href: '/blog/anlegen-ablegen-hafenmanoever/' },
           { icon: 'knot', title: 'Knoten', desc: 'Die prüfungsrelevanten Knoten sicher und zügig anwenden (z. B. Palstek, Webeleinstek, Belegen einer Klampe).', href: '/blog/wichtigste-knoten-sbf/' },
           { icon: 'compass', title: 'Bootsführung & Sicherheit', desc: 'Richtiges Verhalten an Bord, Ausweichregeln und sicheres Steuern im Revier.', href: '/blog/ausweichregeln-vorfahrt-wasser/' },
         ].map(f => (
-          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={f.icon as IconName} size={21} stroke="#3366FF" strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={f.icon as IconName} size={21} strokeWidth={1.75} />
             </span>
             <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">
-                {f.href ? <a href={f.href} style="color:inherit; text-decoration:underline;">{f.title}</a> : f.title}
+              <div class="pg-row-title">
+                {f.href ? <a href={f.href} class="pg-card-link">{f.title}</a> : f.title}
               </div>
-              <div style="font-size:15px; color:#656B78; line-height:1.6;">{f.desc}</div>
+              <p class="pg-row-text">{f.desc}</p>
             </div>
           </div>
         ))}
       </div>
-      <p style="font-size:15px; color:#656B78; line-height:1.7; margin-top:20px;">
+      <p class="pg-note pg-note--after">
         Für die Praxis empfiehlt sich mindestens ein Übungstag auf dem Wasser. Die genauen Anforderungen können je nach Prüfungsausschuss leicht variieren.
       </p>
     </section>
 
     <!-- Voraussetzungen / Anmeldung -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Voraussetzungen & Anmeldung</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Mindestalter</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">16 Jahre (SBF Binnen)</div>
+    <section class="pg-section">
+      <h2 class="pg-h2">Voraussetzungen & Anmeldung</h2>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-label">Mindestalter</p>
+          <p class="pg-card-text">16 Jahre (SBF Binnen)</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Anmeldung</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">beim Prüfungsausschuss (DMYV)</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Anmeldung</p>
+          <p class="pg-card-text">beim Prüfungsausschuss (DMYV)</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Kurspflicht</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">keine – Selbststudium möglich</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Kurspflicht</p>
+          <p class="pg-card-text">keine – Selbststudium möglich</p>
         </div>
       </div>
-      <p style="font-size:15px; color:#656B78; line-height:1.7; margin-top:20px;">
-        Eine Schritt-für-Schritt-Anleitung zur Anmeldung bei DSV und DMYV findest du im <a href="/blog/sbf-pruefung-anmelden/" style="color:#3366FF; text-decoration:underline;">Artikel zur SBF-Prüfungsanmeldung</a>.
+      <p class="pg-note pg-note--after">
+        Eine Schritt-für-Schritt-Anleitung zur Anmeldung bei DSV und DMYV findest du im <a href="/blog/sbf-pruefung-anmelden/" class="pg-inline-link">Artikel zur SBF-Prüfungsanmeldung</a>.
       </p>
     </section>
 
     <!-- FAQ -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Häufige Fragen zum Prüfungsablauf</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Häufige Fragen zum Prüfungsablauf</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Interne Links -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
-      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Weiterführende Seiten</h2>
-      <div class="related-links">
-        <a href="/sbf-binnen-pruefungsfragen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen Prüfungsfragen üben</a>
-        <a href="/sbf-see-pruefungsfragen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See Prüfungsfragen üben</a>
-        <a href="/sbf-kosten/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Was kostet der Sportbootführerschein?</a>
-        <a href="/blog/mann-ueber-bord-manoever/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Mann-über-Bord-Manöver: So gelingt es in der Praxisprüfung</a>
-        <a href="/blog/anlegen-ablegen-hafenmanoever/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Anlegen und Ablegen: Hafenmanöver für die Praxisprüfung</a>
-        <a href="/blog/schallsignale-sbf-erklaert/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Schallsignale beim SBF: See & Binnen im Überblick</a>
-        <a href="/blog/erste-hilfe-an-bord/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Erste Hilfe an Bord: Die wichtigsten Maßnahmen auf dem Wasser</a>
-        <a href="/blog/sbf-binnen-pruefung-nicht-bestanden/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF-Binnen-Prüfung nicht bestanden – was jetzt zu tun ist</a>
-        <a href="/blog/promillegrenze-boot/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Promillegrenze auf dem Boot – was Sportbootführer wissen müssen</a>
-        <a href="/blog/umweltschutz-gewaesserschutz-bootfahren/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Umweltschutz und Gewässerschutz beim Bootfahren</a>
-        <a href="/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Häufige Fragen zum Sportbootführerschein</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Weiterführende Seiten</h2>
+      <ul class="pg-related">
+        <li><a href="/sbf-binnen-pruefungsfragen/">SBF Binnen Prüfungsfragen üben<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-see-pruefungsfragen/">SBF See Prüfungsfragen üben<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-kosten/">Was kostet der Sportbootführerschein?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/mann-ueber-bord-manoever/">Mann-über-Bord-Manöver: So gelingt es in der Praxisprüfung<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/anlegen-ablegen-hafenmanoever/">Anlegen und Ablegen: Hafenmanöver für die Praxisprüfung<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/schallsignale-sbf-erklaert/">Schallsignale beim SBF: See & Binnen im Überblick<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/erste-hilfe-an-bord/">Erste Hilfe an Bord: Die wichtigsten Maßnahmen auf dem Wasser<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sbf-binnen-pruefung-nicht-bestanden/">SBF-Binnen-Prüfung nicht bestanden – was jetzt zu tun ist<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/promillegrenze-boot/">Promillegrenze auf dem Boot – was Sportbootführer wissen müssen<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/umweltschutz-gewaesserschutz-bootfahren/">Umweltschutz und Gewässerschutz beim Bootfahren<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/faq/">Häufige Fragen zum Sportbootführerschein<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
+  </PageLayout>
 </BaseLayout>

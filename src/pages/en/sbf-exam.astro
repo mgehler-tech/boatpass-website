@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../../components/page/PageHead.astro';
+import PageLayout from '../../components/page/PageLayout.astro';
+import PageFacts from '../../components/page/PageFacts.astro';
+import PageLink from '../../components/page/PageLink.astro';
+import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
 import Icon from '../../components/Icon.astro';
 import type { IconName } from '../../icons';
 import { PLAY_STORE_URL } from '../../data/stores';
@@ -77,153 +82,160 @@ const howToSchema = {
   lang="en"
   altUrl="https://boatpass.de/sbf-pruefung-ablauf/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        Boating License · Inland & Coastal
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        The SBF exam –<br>how it works
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto 36px;">
-        Theory and practice explained step by step: structure, questions, maneuvers and passing thresholds for SBF Inland and SBF Coastal. So you know exactly what to expect on exam day.
-      </p>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
-        ▶&nbsp;Prepare for the theory
-      </a>
-    </div>
-  </div>
+  <!-- Seitenkopf und Lesespalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="en"
+    eyebrow="Boating License · Inland & Coastal"
+    lede="Theory and practice explained step by step: structure, questions, maneuvers and passing thresholds for SBF Inland and SBF Coastal. So you know exactly what to expect on exam day."
+    ctaLabel="Prepare for the theory"
+    cta
+  >
+    The SBF exam –<br />how it works
+  </PageHead>
 
-  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="en"
+      title="At a glance"
+      product="sbfBinnen"
+      from
+      items={[
+        { k: 'Theory Inland', v: '30 questions · 45 min' },
+        { k: 'Theory Coastal', v: '39 questions · 60 min (incl. navigation)' },
+        { k: 'Pass mark', v: '5 of 7 basic, 18 of 23 specific' },
+        { k: 'Minimum age', v: '16 years' },
+        { k: 'Registration', v: 'Exam board (DMYV)' },
+      ]}
+    />
 
     <!-- Scope note -->
-    <div style="display:flex; align-items:flex-start; gap:14px; background:rgba(51,102,255,0.05); border:1px solid rgba(51,102,255,0.16); border-radius:16px; padding:20px 22px; margin-bottom:48px;">
-      <span style="width:34px; height:34px; border-radius:10px; background:rgba(51,102,255,0.10); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-        <Icon name="document" size={18} stroke="#3366FF" strokeWidth={1.75} />
+    <div class="pg-card pg-card--soft pg-card--note">
+      <span class="pg-row-icon pg-row-icon--sm">
+        <Icon name="document" size={18} strokeWidth={1.75} />
       </span>
-      <div style="font-size:15px; color:#4B5563; line-height:1.7;">
-        <strong style="color:#1A1F36;">This page describes the process of the boating license exam – for <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none;">SBF Inland</a> and <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none;">SBF Coastal</a>.</strong>
-        The radio certificates have their own exam process – you'll find the structure and contents on the pages for <a href="/en/ubi/" style="color:#3366FF; text-decoration:none;">UBI</a>, <a href="/en/src/" style="color:#3366FF; text-decoration:none;">SRC</a> and <a href="/en/lrc/" style="color:#3366FF; text-decoration:none;">LRC</a>.
+      <div class="pg-card-text">
+        <strong>This page describes the process of the boating license exam – for <a href="/en/sbf-inland/" class="pg-inline-link">SBF Inland</a> and <a href="/en/sbf-coastal/" class="pg-inline-link">SBF Coastal</a>.</strong>
+        The radio certificates have their own exam process – you'll find the structure and contents on the pages for <a href="/en/ubi/" class="pg-inline-link">UBI</a>, <a href="/en/src/" class="pg-inline-link">SRC</a> and <a href="/en/lrc/" class="pg-inline-link">LRC</a>.
       </div>
     </div>
 
     <!-- Overview -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Theory and practice – two exam parts</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Theory and practice – two exam parts</h2>
+      <p class="pg-p">
         The <strong>boating license exam</strong> consists of two separate parts: a <strong>theory exam</strong> (multiple-choice paper) and a <strong>practical exam</strong> on the water. You have to pass both to receive the license. The exam is administered by a recognized examination board (e.g. DMYV).
       </p>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      <p class="pg-p">
         A preparation course is <strong>not required</strong> – you can learn the theory independently with the official question catalog.
       </p>
     </section>
 
     <!-- Theory -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">1. The theory exam</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">1. The theory exam</h2>
+      <p class="pg-p">
         In the theory you answer a question paper from the official ELWIS catalog. The structure differs depending on the license:
       </p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">SBF Inland</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.7;">30 questions · 45 minutes<br>7 basic questions (at least 5 correct)<br>23 specific questions (at least 18 correct)</div>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-label">SBF Inland</p>
+          <div class="pg-card-text">30 questions · 45 minutes<br>7 basic questions (at least 5 correct)<br>23 specific questions (at least 18 correct)</div>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">SBF Coastal</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.7;">39 questions · 60 minutes<br>30 standard questions like Inland<br>+ 9 navigation task questions (at least 7 correct)</div>
+        <div class="pg-card">
+          <p class="pg-card-label">SBF Coastal</p>
+          <div class="pg-card-text">39 questions · 60 minutes<br>30 standard questions like Inland<br>+ 9 navigation task questions (at least 7 correct)</div>
         </div>
       </div>
     </section>
 
     <!-- Practice -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">2. The practical exam</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">2. The practical exam</h2>
+      <p class="pg-p">
         In the practical part you show on the water that you can handle a boat safely. Typically tested are:
       </p>
-      <div style="display:flex; flex-direction:column; gap:16px;">
+      <div class="pg-rows">
         {[
           { icon: 'lifebuoy', title: 'Maneuvers', desc: 'Coming alongside and casting off, turning, stopping and the important man-overboard maneuver.', href: '/en/blog/docking-undocking-harbor-maneuvers/' },
           { icon: 'knot', title: 'Knots', desc: 'Applying the exam-relevant knots confidently and quickly (e.g. bowline, clove hitch, securing a cleat).', href: '/en/blog/most-important-knots-sbf/' },
           { icon: 'compass', title: 'Boat handling & safety', desc: 'Correct behavior on board, give-way rules and safe steering in the area.', href: '/en/blog/right-of-way-collision-rules/' },
         ].map(f => (
-          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={f.icon as IconName} size={21} stroke="#3366FF" strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={f.icon as IconName} size={21} strokeWidth={1.75} />
             </span>
             <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">
-                {f.href ? <a href={f.href} style="color:inherit; text-decoration:underline;">{f.title}</a> : f.title}
+              <div class="pg-row-title">
+                {f.href ? <a href={f.href} class="pg-card-link">{f.title}</a> : f.title}
               </div>
-              <div style="font-size:15px; color:#656B78; line-height:1.6;">{f.desc}</div>
+              <p class="pg-row-text">{f.desc}</p>
             </div>
           </div>
         ))}
       </div>
-      <p style="font-size:15px; color:#656B78; line-height:1.7; margin-top:20px;">
+      <p class="pg-note pg-note--after">
         For the practical part, at least one day of practice on the water is recommended. The exact requirements can vary slightly depending on the examination board.
       </p>
     </section>
 
     <!-- Requirements / Registration -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Requirements & registration</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Minimum age</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">16 years (SBF Inland)</div>
+    <section class="pg-section">
+      <h2 class="pg-h2">Requirements & registration</h2>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-label">Minimum age</p>
+          <p class="pg-card-text">16 years (SBF Inland)</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Registration</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">with the examination board (DMYV)</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Registration</p>
+          <p class="pg-card-text">with the examination board (DMYV)</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Course requirement</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">none – self-study possible</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Course requirement</p>
+          <p class="pg-card-text">none – self-study possible</p>
         </div>
       </div>
-      <p style="font-size:15px; color:#656B78; line-height:1.7; margin-top:20px;">
-        For a step-by-step walkthrough of registering with the DSV and DMYV, see our <a href="/en/blog/how-to-register-sbf-exam/" style="color:#3366FF; text-decoration:underline;">SBF exam registration guide</a>.
+      <p class="pg-note pg-note--after">
+        For a step-by-step walkthrough of registering with the DSV and DMYV, see our <a href="/en/blog/how-to-register-sbf-exam/" class="pg-inline-link">SBF exam registration guide</a>.
       </p>
     </section>
 
     <!-- FAQ -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Frequently asked questions about the exam process</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Frequently asked questions about the exam process</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Internal links -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
-      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Further reading</h2>
-      <div class="related-links">
-        <a href="/en/sbf-inland-exam-questions/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Practice SBF Inland exam questions</a>
-        <a href="/en/sbf-coastal-exam-questions/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Practice SBF Coastal exam questions</a>
-        <a href="/en/sbf-costs/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ What does the boating license cost?</a>
-        <a href="/en/blog/man-overboard-maneuver/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Man-overboard maneuver: how to nail it in the practical exam</a>
-        <a href="/en/blog/docking-undocking-harbor-maneuvers/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Docking and undocking: harbor maneuvers for the practical exam</a>
-        <a href="/en/blog/sound-signals-sbf-explained/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Sound signals for the SBF: coastal & inland overview</a>
-        <a href="/en/blog/first-aid-on-board/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ First aid on board: the essential measures on the water</a>
-        <a href="/en/blog/failed-sbf-inland-exam-what-to-do-next/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Failed the SBF Inland exam? What to do next</a>
-        <a href="/en/blog/blood-alcohol-limit-boat/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Blood alcohol limit on a boat – what skippers need to know</a>
-        <a href="/en/blog/environmental-protection-boating-water-conservation/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Environmental protection and water conservation for boaters</a>
-        <a href="/en/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Frequently asked questions about the boating license</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Further reading</h2>
+      <ul class="pg-related">
+        <li><a href="/en/sbf-inland-exam-questions/">Practice SBF Inland exam questions<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-coastal-exam-questions/">Practice SBF Coastal exam questions<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-costs/">What does the boating license cost?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/man-overboard-maneuver/">Man-overboard maneuver: how to nail it in the practical exam<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/docking-undocking-harbor-maneuvers/">Docking and undocking: harbor maneuvers for the practical exam<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/sound-signals-sbf-explained/">Sound signals for the SBF: coastal & inland overview<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/first-aid-on-board/">First aid on board: the essential measures on the water<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/failed-sbf-inland-exam-what-to-do-next/">Failed the SBF Inland exam? What to do next<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/blood-alcohol-limit-boat/">Blood alcohol limit on a boat – what skippers need to know<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/environmental-protection-boating-water-conservation/">Environmental protection and water conservation for boaters<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/faq/">Frequently asked questions about the boating license<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
+  </PageLayout>
 </BaseLayout>

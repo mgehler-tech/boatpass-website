@@ -112,6 +112,22 @@ PAGES = {
         facts=[('Exam fee Inland', '€130.78'), ('Exam fee Coastal', '€148.38'), ('Combined exam', '€178.61'),
                ('Preparation course', 'approx. €340–400 upwards'), ('Theory with Boatpass', 'from €9.99')],
     ),
+    'sbf-pruefung-ablauf': dict(
+        file='src/pages/sbf-pruefung-ablauf.astro', lang='de', eyebrow='Sportbootführerschein · Binnen & See',
+        h1='SBF Prüfung –<br />so läuft sie ab',
+        lede='Theorie und Praxis Schritt für Schritt erklärt: Aufbau, Fragen, Manöver und Bestehensgrenzen für SBF Binnen und SBF See. So weißt du genau, was am Prüfungstag auf dich zukommt.',
+        cta_label='Auf die Theorie vorbereiten', title='Auf einen Blick', product='sbfBinnen', price_from=True,
+        facts=[('Theorie Binnen', '30 Fragen · 45 Min'), ('Theorie See', '39 Fragen · 60 Min (inkl. Navigation)'),
+               ('Bestehensgrenze', '5 von 7 Basis, 18 von 23 spezifisch'), ('Mindestalter', '16 Jahre'), ('Anmeldung', 'Prüfungsausschuss (DMYV)')],
+    ),
+    'en-sbf-exam': dict(
+        file='src/pages/en/sbf-exam.astro', lang='en', eyebrow='Boating License · Inland & Coastal',
+        h1='The SBF exam –<br />how it works',
+        lede='Theory and practice explained step by step: structure, questions, maneuvers and passing thresholds for SBF Inland and SBF Coastal. So you know exactly what to expect on exam day.',
+        cta_label='Prepare for the theory', title='At a glance', product='sbfBinnen', price_from=True,
+        facts=[('Theory Inland', '30 questions · 45 min'), ('Theory Coastal', '39 questions · 60 min (incl. navigation)'),
+               ('Pass mark', '5 of 7 basic, 18 of 23 specific'), ('Minimum age', '16 years'), ('Registration', 'Exam board (DMYV)')],
+    ),
     'fuehrerscheine': dict(
         file='src/pages/fuehrerscheine.astro', lang='de', eyebrow='Alle Lizenzen',
         h1='Welche Lizenz<br />passt zu dir?',

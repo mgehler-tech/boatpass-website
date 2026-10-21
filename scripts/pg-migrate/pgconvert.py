@@ -144,6 +144,13 @@ sub(r'<span style="flex-shrink:0; margin-top:1px;">', '<span class="pg-row-icon 
 sub(r' stroke="#047857"', '')
 sub(r'<strong style="color:#(?:1A1F36|047857);">', '<strong>')
 
+# Runde 3: Hinweiskasten mit kleiner Icon-Kachel, mehrzeilige Kartentexte, Label mit 10 px Abstand
+sub(r'<div style="display:flex; align-items:flex-start; gap:14px; background:rgba\(51,102,255,0\.05\); border:1px solid rgba\(51,102,255,0\.16\); border-radius:16px;[^"]*">', '<div class="pg-card pg-card--soft pg-card--note">')
+sub(r'<span style="width:34px; height:34px; border-radius:10px; background:rgba\(51,102,255,0\.10?\); display:flex; align-items:center; justify-content:center;[^"]*">', '<span class="pg-row-icon pg-row-icon--sm">')
+sub(r'<div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">(.*?)</div>', r'<p class="pg-card-label">\1</p>')
+sub(r'<div style="font-size:15px; color:#4B5563; line-height:1\.7;">', '<div class="pg-card-text">')
+sub(r'<div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">', '<div class="pg-row-title">')
+
 # Funkseiten: Modul-Kasten (Verlauf) → ruhige Deep-Karte .pg-cta
 NEWTAB = '(öffnet in neuem Tab)' if lang == 'de' else '(opens in new tab)'
 
