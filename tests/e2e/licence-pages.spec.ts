@@ -42,12 +42,13 @@ test.describe('Seitenkopf', () => {
     await page.goto('/datenschutz/');
     await expect(page.locator('head link[rel="preload"][as="font"][href*="archivo"]')).toHaveCount(0);
   });
-  test('Archivo ist auf Lizenzseiten optional (kein LCP-Warten), auf der Startseite wie bisher', async ({ page }) => {
-    // Spec 5.3: über 150 ms LCP-Verschlechterung → font-display: optional (Plan Task 9).
+  test('Archivo lädt auf Lizenzseiten mit swap (Entscheidung des Inhabers, wie die Startseite)', async ({ page }) => {
+    // Lighthouse-Delta ist simulierte Schriftübertragung und unabhängig von font-display;
+    // der Inhaber hat sich am 2026-10-21 für swap entschieden: Archivo immer, mit Schriftwechsel.
     await page.goto('/sbf-binnen/');
     const displays = await page.evaluate(() => [...document.fonts].filter(f => f.family.includes('Archivo')).map(f => f.display));
     expect(displays.length).toBeGreaterThan(0);
-    expect(new Set(displays)).toEqual(new Set(['optional']));
+    expect(new Set(displays)).toEqual(new Set(['swap']));
     // Bleibt Archivo aus (kalter Besuch), fällt die H1 auf Inter zurück, nicht auf Arial Narrow.
     expect(await page.locator('h1.pg-title').evaluate(el => getComputedStyle(el).fontFamily)).toMatch(/Archivo Variable"?,\s*"?Inter/);
     await page.goto('/');
