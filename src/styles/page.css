@@ -1,9 +1,10 @@
 /* Lizenz- und Inhaltsseiten: Seitenkopf, Textlink und (ab Task 2) Spaltenordnung
    und Bausteine mit Präfix pg-. Diese Datei wird vom PageHead-Baustein
-   importiert, nicht von global.css: Archivo und die Klassen landen nur auf
-   Seiten, die den neuen Rahmen nutzen (Spec Runde 2, 5.3). Farben nur über
+   importiert, nicht von global.css: die Klassen landen nur auf Seiten, die den
+   neuen Rahmen nutzen (Spec Runde 2, 5.3); Archivo lädt DisplayFontPreload. Farben nur über
    die --h-*-Tokens aus brand.css, Dark Mode kommt damit von selbst. */
-@import '@fontsource-variable/archivo/wdth.css';
+/* Archivo kommt nicht mehr per Fontsource-Import (swap), sondern als eigene
+   @font-face-Deklaration mit font-display: optional aus DisplayFontPreload.astro. */
 
 /* ── Seitenkopf ─────────────────────────────────────────────────────── */
 .pg-head {

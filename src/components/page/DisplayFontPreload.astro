@@ -1,10 +1,18 @@
 ---
-// Preload der Display-Schrift (Archivo, Subset latin mit Breitenachse) für
-// Seiten mit PageHead. Ohne Preload startet die 90-KB-Datei erst nach dem CSS
-// und schiebt den LCP der H1 um mehrere hundert Millisekunden (Lighthouse,
-// mobil simuliert). Einsatz: <DisplayFontPreload slot="head" /> im BaseLayout.
-// Dieselbe Datei nutzt auch die Startseite (home.css), der Browser-Cache greift.
+// Display-Schrift (Archivo, Subset latin mit Breitenachse) für Seiten mit
+// PageHead: Preload plus eigene @font-face-Deklaration mit font-display:
+// optional. Hintergrund (Spec Runde 2, 5.3 / Plan Task 9): Mit dem Fontsource-
+// Import (swap) lag der mobile LCP der H1 rund 750 ms hinter main, weil die
+// 90-KB-Datei auf dem kritischen Pfad lag. Mit optional rendert die H1 beim
+// ersten Besuch notfalls in Inter und mit Archivo, sobald die Datei im Cache
+// ist (dieselbe Datei nutzt die Startseite, der Cache greift gegenseitig).
+// Einsatz: <DisplayFontPreload slot="head" /> im BaseLayout.
 import archivoLatin from '@fontsource-variable/archivo/files/archivo-latin-wdth-normal.woff2?url';
+
+// Unicode-Bereich des latin-Subsets, wie in @fontsource-variable/archivo/wdth.css.
+const LATIN = 'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD';
+const fontFace = `@font-face{font-family:"Archivo Variable";font-style:normal;font-display:optional;font-weight:100 900;font-stretch:62% 125%;src:url(${archivoLatin}) format("woff2-variations");unicode-range:${LATIN}}`;
 ---
 
 <link rel="preload" href={archivoLatin} as="font" type="font/woff2" crossorigin />
+<style is:inline set:html={fontFace}></style>

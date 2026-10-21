@@ -42,6 +42,16 @@ test.describe('Seitenkopf', () => {
     await page.goto('/datenschutz/');
     await expect(page.locator('head link[rel="preload"][as="font"][href*="archivo"]')).toHaveCount(0);
   });
+  test('Archivo ist auf Lizenzseiten optional (kein LCP-Warten), auf der Startseite wie bisher', async ({ page }) => {
+    // Spec 5.3: über 150 ms LCP-Verschlechterung → font-display: optional (Plan Task 9).
+    await page.goto('/sbf-binnen/');
+    const displays = await page.evaluate(() => [...document.fonts].filter(f => f.family.includes('Archivo')).map(f => f.display));
+    expect(displays.length).toBeGreaterThan(0);
+    expect(new Set(displays)).toEqual(new Set(['optional']));
+    await page.goto('/');
+    const home = await page.evaluate(() => [...document.fonts].filter(f => f.family.includes('Archivo')).map(f => f.display));
+    expect(home).toContain('swap');
+  });
   test('Startseite behält ihre Bewertungszeile', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('.hh-actions .hh-rating')).toContainText(/4,96 · 29 Bewertungen/);
@@ -138,6 +148,12 @@ test.describe('Lizenzseiten migriert', () => {
   test('SBF See (DE)', async ({ page }) => {
     await expectMigrated(page, '/sbf-see/', { h1: /SBF See lernen/, facts: 5 });
     await expect(page.locator('.pg-aside dl.pg-facts')).toContainText('148,38 €');
+    // FAQ-Markup wie auf allen anderen Seiten (Review-Befund: See/Coastal hatten pg-card).
+    await expect(page.locator('.pg-faq .pg-card')).toHaveCount(0);
+    expect(await page.locator('.pg-faq .pg-faq-item').count()).toBeGreaterThanOrEqual(3);
+    await page.goto('/en/sbf-coastal/');
+    await expect(page.locator('.pg-faq .pg-card')).toHaveCount(0);
+    expect(await page.locator('.pg-faq .pg-faq-item').count()).toBeGreaterThanOrEqual(3);
   });
   test('SBF Inland (EN)', async ({ page }) => {
     await expectMigrated(page, '/en/sbf-inland/', { h1: /Learn SBF Inland/, facts: 5 });
