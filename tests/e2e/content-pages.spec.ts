@@ -67,3 +67,26 @@ test.describe('Prüfungsfragen', () => {
     await expect(page.locator('.pg-aside dl.pg-facts')).toContainText('9 questions');
   });
 });
+
+test.describe('Schein-Finder', () => {
+  test('DE: schmale Spalte, Konfigurator bedienbar bis zum Ergebnis, Tabelle mit Zeilenköpfen', async ({ page }) => {
+    await expectMigrated(page, '/tools/welcher-bootsfuehrerschein/', { h1: /Bootsführerschein/, facts: 0, cta: false, variant: 'narrow' });
+    await page.setViewportSize({ width: 1440, height: 900 });
+    const col = (await page.locator('.pg-layout--narrow .pg-main').boundingBox())!;
+    expect(col.width).toBeLessThanOrEqual(760);
+    await expect(page.locator('#cfg .cfg-opt').first()).toBeVisible();
+    // Durchklicken wie in conversion-journeys; danach darf das Ergebnis weder Pfeile noch Inline-Farben tragen.
+    await page.locator('.cfg-opt', { hasText: 'Küste (Nord- & Ostsee)' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Verbrenner über 15 PS' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Ja' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Küstennah' }).click();
+    await expect(page.locator('#cfg-result')).toBeVisible();
+    expect(await page.locator('main').innerText()).not.toMatch(/[→▶▼←💡]/);
+    await expect(page.locator('#cfg-result [style*="#1A1F36"], #cfg-result [style*="#3366FF"], #cfg-result [style*="linear-gradient"]')).toHaveCount(0);
+    expect(await page.locator('.pg-table table tbody th[scope="row"]').count()).toBeGreaterThanOrEqual(4);
+  });
+  test('EN parity', async ({ page }) => {
+    await expectMigrated(page, '/en/tools/which-boating-license/', { h1: /licen/i, facts: 0, cta: false, variant: 'narrow' });
+    await expect(page.locator('#cfg .cfg-opt').first()).toBeVisible();
+  });
+});

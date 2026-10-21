@@ -172,9 +172,26 @@ PAGES = {
         lede='Inland waters or coast, motorboat or radio on board – find the right license here and everything you need to know to prepare.',
         wide=True, cta=False,
     ),
+    # Schein-Finder: schmale Spalte ohne Leiste, Konfigurator bleibt (Spec Runde 3, 3.1/3.6).
+    'tools-finder': dict(
+        file='src/pages/tools/welcher-bootsfuehrerschein.astro', lang='de', prefix='../../', eyebrow='Kostenloser Finder',
+        h1='Welchen Bootsführerschein<br />brauche ich?',
+        lede='Beantworte 3 kurze Fragen zu Revier, Motorleistung und Funk – und erfahre in 30 Sekunden, welchen Schein und welches Funkzeugnis du wirklich brauchst.',
+        narrow=True, cta=False,
+        marker='  <div style="max-width:760px; margin:0 auto; padding:48px 24px 90px;">\n',
+        close=r'\n  </div>\n(\n  <!-- is:global)',
+    ),
+    'en-tools-finder': dict(
+        file='src/pages/en/tools/which-boating-license.astro', lang='en', prefix='../../../', eyebrow='Free finder',
+        h1='Which boating licence<br />do I need?',
+        lede='Answer 3 short questions about your waters, engine power and radio – and find out in 30 seconds which licence and radio certificate you really need.',
+        narrow=True, cta=False,
+        marker='  <div style="max-width:760px; margin:0 auto; padding:48px 24px 90px;">\n',
+        close=r'\n  </div>\n(\n  <!-- is:global)',
+    ),
 }
 
-ICON = '<Icon name="chevronRight" size={16} strokeWidth={2.25} />'
+ICON ='<Icon name="chevronRight" size={16} strokeWidth={2.25} />'
 
 
 def overview(s):
@@ -207,11 +224,20 @@ def overview(s):
     return s
 
 
+def ensure_icon(path, prefix):
+    """Der Konverter erzeugt <Icon>-Pfeile; der Import fehlt auf Seiten, die ihn noch nicht hatten."""
+    t = path.read_text()
+    if '<Icon ' in t and "/Icon.astro'" not in t:
+        base = f"import BaseLayout from '{prefix}layouts/BaseLayout.astro';\n"
+        t = t.replace(base, base + f"import Icon from '{prefix}components/Icon.astro';\n", 1)
+        path.write_text(t)
+
+
 def migrate(key):
     cfg = PAGES[key]
     path = ROOT / cfg['file']
     s = path.read_text()
-    prefix = '../../' if cfg['lang'] == 'en' else '../'
+    prefix = cfg.get('prefix') or ('../../' if cfg['lang'] == 'en' else '../')  # Unterordner (tools/) geben den Pfad vor
     wide = cfg.get('wide', False)
 
     # Display-Schrift vorladen (idempotent; Runde 2b: DisplayFontPreload im head-Slot)
@@ -228,12 +254,13 @@ def migrate(key):
         path.write_text(s)
         out = subprocess.run([sys.executable, str(HERE / 'pgconvert.py'), str(path), cfg['lang']], capture_output=True, text=True)
         print(out.stdout.strip())
+        ensure_icon(path, prefix)
         return
 
     # Kopf + Beginn der Lesespalte
     start = s.index('  <!-- Hero -->\n')
-    marker = ('  <div style="max-width:1000px; margin:0 auto; padding:60px 24px 80px;">\n' if wide
-              else '  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">\n')
+    marker = cfg.get('marker') or ('  <div style="max-width:1000px; margin:0 auto; padding:60px 24px 80px;">\n' if wide
+                                   else '  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">\n')
     end = s.index(marker) + len(marker)
     label_attr = f'\n    ctaLabel="{cfg["cta_label"]}"' if cfg.get('cta_label') else ''
     badge = ''
@@ -241,7 +268,8 @@ def migrate(key):
         text, product = cfg['badge']
         badge = f'\n    <span slot="badge">{text}&nbsp;<PlatformPrice product="{product}" lang="{cfg["lang"]}" /></span>'
     cta_attr = '' if cfg.get('cta') is False else '\n    cta'
-    head = f"""  <!-- Seitenkopf und {'breite Spalte' if wide else 'Lesespalte'} (Spec Runde 2, 5.3) -->
+    col = 'schmale Spalte (Spec Runde 3, 3.1)' if cfg.get('narrow') else ('breite Spalte' if wide else 'Lesespalte') + ' (Spec Runde 2, 5.3)'
+    head = f"""  <!-- Seitenkopf und {col} -->
   <PageHead
     lang="{cfg['lang']}"
     eyebrow="{cfg['eyebrow']}"
@@ -273,14 +301,15 @@ def migrate(key):
     if wide:
         s = overview(s)
 
-    # Ende der Lesespalte
-    s, n = re.subn(r"\n  </div>\n\n?</BaseLayout>", "\n  </PageLayout>\n</BaseLayout>", s, count=1)
+    # Ende der Lesespalte (Gruppe 1 = was nach der Spalte folgt; Standard: das Layout-Ende)
+    s, n = re.subn(cfg.get('close') or r"\n  </div>\n\n?(</BaseLayout>)", r"\n  </PageLayout>\n\1", s, count=1)
     assert n == 1, 'close'
 
-    # Imports
+    # Imports (PageFacts nur, wo eine Leiste gerendert wird)
     base_import = f"import BaseLayout from '{prefix}layouts/BaseLayout.astro';\n"
     assert base_import in s, 'base import'
-    extra = ''.join(f"import {n} from '{prefix}components/page/{n}.astro';\n" for n in ['PageHead', 'PageLayout', 'PageFacts', 'PageLink'])
+    names = ['PageHead', 'PageLayout', 'PageLink'] if (wide or cfg.get('narrow')) else ['PageHead', 'PageLayout', 'PageFacts', 'PageLink']
+    extra = ''.join(f"import {n} from '{prefix}components/page/{n}.astro';\n" for n in names)
     s = s.replace(base_import, base_import + extra, 1)
 
     # EN: Inline-Praxisblock durch die Komponente ersetzen
@@ -300,6 +329,7 @@ def migrate(key):
     print(out.stdout.strip())
     if out.returncode:
         print(out.stderr)
+    ensure_icon(path, prefix)
 
 
 for key in sys.argv[1:] or PAGES:

@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import PageHead from '../../components/page/PageHead.astro';
+import PageLayout from '../../components/page/PageLayout.astro';
+import PageLink from '../../components/page/PageLink.astro';
+import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
 import { PLAY_STORE_URL, appStoreUrl, bundleSaving, formatPrice, smartAppPath, storePrice, type Platform } from '../../data/stores';
 
 const playStoreUrl = PLAY_STORE_URL;
@@ -106,28 +111,22 @@ const howToSchema = {
   lang="de"
   altUrl="https://boatpass.de/en/tools/which-boating-license/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(appSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 56px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        Kostenloser Finder
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        Welchen Bootsführerschein<br>brauche ich?
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:560px; margin:0 auto;">
-        Beantworte 3 kurze Fragen zu Revier, Motorleistung und Funk – und erfahre
-        in 30 Sekunden, welchen Schein und welches Funkzeugnis du wirklich brauchst.
-      </p>
-    </div>
-  </div>
+  <!-- Seitenkopf und schmale Spalte (Spec Runde 3, 3.1) -->
+  <PageHead
+    lang="de"
+    eyebrow="Kostenloser Finder"
+    lede="Beantworte 3 kurze Fragen zu Revier, Motorleistung und Funk – und erfahre in 30 Sekunden, welchen Schein und welches Funkzeugnis du wirklich brauchst."
+  >
+    Welchen Bootsführerschein<br />brauche ich?
+  </PageHead>
 
-  <div style="max-width:760px; margin:0 auto; padding:48px 24px 90px;">
+  <PageLayout variant="narrow">
 
     <!-- Interaktiver Konfigurator -->
     <div id="cfg" class="cfg-card">
@@ -139,97 +138,97 @@ const howToSchema = {
       <div id="cfg-options" class="cfg-options"></div>
       <div id="cfg-back" class="cfg-back">
         <button type="button" id="cfg-back-btn" class="cfg-back-btn">
-          <span class="cfg-back-arrow">←</span> Zurück
+          <span class="cfg-back-arrow" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg></span> Zurück
         </button>
       </div>
     </div>
 
     <!-- Ergebnis -->
-    <div id="cfg-result" style="display:none; margin-top:24px;" tabindex="-1"></div>
+    <div id="cfg-result" style="display:none;" tabindex="-1"></div>
 
     <!-- Statische Entscheidungstabelle (immer sichtbar, ohne JS, KI-zitierbar) -->
-    <section style="margin-top:64px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">Entscheidungshilfe auf einen Blick</h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Entscheidungshilfe auf einen Blick</h2>
+      <p class="pg-p">
         Welcher Bootsführerschein und welches Funkzeugnis für welches Vorhaben – die wichtigsten Fälle als Übersicht.
       </p>
       <!-- min-width aktiviert das horizontale Scrollen des overflow-x-Wrappers auf schmalen Screens (wie AppComparisonTable/CatalogSources). Ohne min-width wurde die Tabelle stattdessen auf Handybreite gequetscht: die drei Spalten brachen mehrzeilig um und wurden unleserlich. -->
-      <div style="overflow-x:auto;">
-        <table style="width:100%; min-width:640px; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
+      <div class="pg-table">
+        <table>
           <thead>
-            <tr style="background:rgba(26,31,54,0.04);">
-              <th style="text-align:left; padding:14px 16px; font-weight:800; color:#1A1F36;">Dein Vorhaben</th>
-              <th style="text-align:left; padding:14px 16px; font-weight:800; color:#1A1F36;">Führerschein</th>
-              <th style="text-align:left; padding:14px 16px; font-weight:800; color:#1A1F36;">Funkzeugnis</th>
+            <tr>
+              <th scope="col">Dein Vorhaben</th>
+              <th scope="col">Führerschein</th>
+              <th scope="col">Funkzeugnis</th>
             </tr>
           </thead>
           <tbody>
             {decisionRows.map((row, i) => (
-              <tr style={`border-top:1px solid rgba(51,102,255,0.08);${i % 2 ? ' background:rgba(26,31,54,0.02);' : ''}`}>
-                <td style="padding:13px 16px; font-weight:600; color:#1A1F36;">{row.vorhaben}</td>
-                <td style="padding:13px 16px; color:#4B5563;">{row.schein}</td>
-                <td style="padding:13px 16px; color:#4B5563;">{row.funk}</td>
+              <tr>
+                <th scope="row">{row.vorhaben}</th>
+                <td>{row.schein}</td>
+                <td>{row.funk}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <p style="font-size:13px; color:#656B78; line-height:1.6; margin-top:12px;">
+      <p class="pg-note pg-note--sm pg-note--after">
         * Die Führerscheinpflicht greift in Deutschland ab mehr als 15 PS (11,03 kW) – bei Elektroantrieben bereits ab 7,5 kW (rund 10 PS). Eine Reform soll diese Grenze technologieneutral auf 11,03 kW vereinheitlichen, ist aber noch nicht in Kraft getreten. Auf einzelnen Revieren (Rhein, Bodensee) gelten abweichende Regeln.
       </p>
     </section>
 
     <!-- FAQ -->
-    <section style="margin-top:56px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Häufige Fragen</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Häufige Fragen</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Interne Links -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
-      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Alle Lizenzen im Detail</h2>
-      <div class="related-links">
-        <a href="/sbf-binnen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen lernen</a>
-        <a href="/sbf-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See lernen</a>
-        <a href="/ubi/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ UBI – UKW-Sprechfunkzeugnis Binnen</a>
-        <a href="/src/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SRC – Seefunk Küste</a>
-        <a href="/lrc/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ LRC – Seefunk weltweit</a>
-        <a href="/fuehrerscheine/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Übersicht aller Bootsführerscheine</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Alle Lizenzen im Detail</h2>
+      <ul class="pg-related">
+        <li><a href="/sbf-binnen/">SBF Binnen lernen<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-see/">SBF See lernen<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/ubi/">UBI – UKW-Sprechfunkzeugnis Binnen<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/src/">SRC – Seefunk Küste<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/lrc/">LRC – Seefunk weltweit<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/fuehrerscheine/">Übersicht aller Bootsführerscheine<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
     <!-- Ratgeber & Vergleiche -->
-    <section style="margin-top:40px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
-      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Noch unsicher? Diese Ratgeber helfen weiter</h2>
-      <div class="related-links">
-        <a href="/blog/sbf-binnen-vs-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen vs. SBF See – was ist der Unterschied?</a>
-        <a href="/blog/motorboot-oder-segelboot-welcher-sbf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Motorboot oder Segelboot – welcher SBF passt zu dir?</a>
-        <a href="/blog/ubi-vs-src-funkschein/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ UBI vs. SRC – welches Funkzeugnis brauche ich?</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Noch unsicher? Diese Ratgeber helfen weiter</h2>
+      <ul class="pg-related">
+        <li><a href="/blog/sbf-binnen-vs-see/">SBF Binnen vs. SBF See – was ist der Unterschied?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/motorboot-oder-segelboot-welcher-sbf/">Motorboot oder Segelboot – welcher SBF passt zu dir?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/ubi-vs-src-funkschein/">UBI vs. SRC – welches Funkzeugnis brauche ich?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
+  </PageLayout>
 
   <!-- is:global, weil die Optionen & Ergebnis-Karten zur Laufzeit per JS erzeugt
        werden. Astro-gescopte Styles (data-astro-*) greifen nur bei build-time
        gerenderten Elementen und würden die dynamischen Buttons ungestylt lassen. -->
   <style is:global>
     .cfg-card {
-      background:#fff; border:1px solid rgba(51,102,255,0.12); border-radius:24px;
+      background:var(--h-card); border:1px solid var(--h-line); border-radius:24px;
       padding:32px 28px; box-shadow:0 18px 48px rgba(26,31,54,0.08);
     }
     @media (min-width:560px) { .cfg-card { padding:36px 36px; } }
 
     .cfg-head { margin-bottom:22px; }
     .cfg-progress {
-      font-size:12px; font-weight:800; color:#3366FF; text-transform:uppercase;
+      font-size:12px; font-weight:800; color:var(--h-blue-ink); text-transform:uppercase;
       letter-spacing:1.5px; margin-bottom:10px;
     }
     .cfg-progress-bar {
@@ -237,38 +236,38 @@ const howToSchema = {
     }
     .cfg-progress-bar > span {
       display:block; height:100%; width:0%; border-radius:100px;
-      background:linear-gradient(90deg,#3366FF,#5B8CFF);
+      background:var(--h-blue);
       transition:width .35s cubic-bezier(.4,0,.2,1);
     }
     .cfg-question {
-      font-size:clamp(22px,3.2vw,28px); font-weight:800; color:#1A1F36;
+      font-size:clamp(22px,3.2vw,28px); font-weight:800; color:var(--h-ink);
       letter-spacing:-0.6px; line-height:1.25; margin-bottom:22px;
     }
 
     .cfg-options { display:flex; flex-direction:column; gap:12px; }
     .cfg-opt {
       display:flex; align-items:center; gap:16px; text-align:left; width:100%;
-      background:#fff; border:1.5px solid rgba(51,102,255,0.14); border-radius:16px;
+      background:var(--h-card); border:1.5px solid var(--h-line); border-radius:16px;
       padding:18px 18px 18px 20px; cursor:pointer; position:relative;
       transition:border-color .18s ease, background .18s ease, box-shadow .18s ease, transform .12s ease;
       animation:cfgIn .3s ease both;
     }
     .cfg-opt:hover {
-      border-color:#3366FF; background:rgba(51,102,255,0.035);
+      border-color:var(--h-blue-ink); background:rgba(51,102,255,0.035);
       box-shadow:0 10px 26px rgba(51,102,255,0.14); transform:translateY(-2px);
     }
     .cfg-opt:active { transform:translateY(0) scale(0.995); }
     .cfg-opt-text { min-width:0; display:flex; flex-direction:column; }
-    .cfg-opt-label { font-weight:700; color:#1A1F36; font-size:16.5px; line-height:1.3; }
-    .cfg-opt-sub { font-size:13.5px; color:#656B78; margin-top:3px; line-height:1.4; }
+    .cfg-opt-label { font-weight:700; color:var(--h-ink); font-size:16.5px; line-height:1.3; }
+    .cfg-opt-sub { font-size:13.5px; color:var(--h-muted); margin-top:3px; line-height:1.4; }
     .cfg-opt-arrow {
       margin-left:auto; flex:0 0 auto; display:inline-flex; align-items:center;
       justify-content:center; width:34px; height:34px; border-radius:50%;
-      background:rgba(51,102,255,0.10); color:#3366FF; font-weight:800; font-size:17px;
+      background:rgba(51,102,255,0.10); color:var(--h-blue-ink); font-weight:800; font-size:17px;
       transition:background .18s ease, color .18s ease, transform .18s ease;
     }
     .cfg-opt:hover .cfg-opt-arrow {
-      background:#3366FF; color:#fff; transform:translateX(3px);
+      background:var(--h-blue); color:#fff; transform:translateX(3px);
     }
 
     @keyframes cfgIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
@@ -277,97 +276,67 @@ const howToSchema = {
     .cfg-back { margin-top:22px; display:none; }
     .cfg-back-btn {
       display:inline-flex; align-items:center; gap:7px; background:none; border:none;
-      color:#656B78; font-size:14px; font-weight:600; cursor:pointer; padding:6px 2px;
+      color:var(--h-muted); font-size:14px; font-weight:600; cursor:pointer; padding:6px 2px;
       transition:color .15s ease;
     }
-    .cfg-back-btn:hover { color:#3366FF; }
+    .cfg-back-btn:hover { color:var(--h-blue-ink); }
     .cfg-back-btn:hover .cfg-back-arrow { transform:translateX(-3px); }
     .cfg-back-arrow { display:inline-block; transition:transform .15s ease; }
 
     .res-card {
-      display:block; background:#fff; border:1px solid rgba(51,102,255,0.16);
-      border-left:4px solid #3366FF; border-radius:16px; padding:20px 22px; text-decoration:none;
+      display:block; background:var(--h-card); border:1px solid var(--h-line);
+      border-radius:16px; padding:20px 22px; text-decoration:none;
       transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
     }
     a.res-card:hover {
-      border-left-color:#1A1F36; box-shadow:0 8px 22px rgba(51,102,255,0.12); transform:translateY(-2px);
+      border-left-color:var(--h-ink); box-shadow:0 8px 22px rgba(51,102,255,0.12); transform:translateY(-2px);
     }
 
     /* Ergebnis-Preis (Upselling): rechts neben dem Lizenznamen. */
     .res-price { text-align:right; }
     .res-price-num {
-      font-size:20px; font-weight:900; color:#1A1F36; letter-spacing:-0.5px; line-height:1; white-space:nowrap;
+      font-size:20px; font-weight:900; color:var(--h-ink); letter-spacing:-0.5px; line-height:1; white-space:nowrap;
     }
-    .res-price-note { font-size:11px; font-weight:600; color:#656B78; margin-top:4px; white-space:nowrap; }
+    .res-price-note { font-size:11px; font-weight:600; color:var(--h-muted); margin-top:4px; white-space:nowrap; }
     .res-tag {
-      display:inline-block; font-size:12px; font-weight:700; color:#656B78;
-      background:rgba(26,31,54,0.05); padding:5px 11px; border-radius:100px; white-space:nowrap;
+      display:inline-block; font-size:12px; font-weight:700; color:var(--h-muted);
+      background:var(--h-paper-2); border:1px solid var(--h-line); padding:5px 11px; border-radius:100px; white-space:nowrap;
     }
-    .res-learn { display:inline-block; margin-top:12px; color:#3366FF; font-weight:800; font-size:14px; }
+    .res-learn { display:inline-block; margin-top:12px; color:var(--h-blue-ink); font-weight:800; font-size:14px; }
 
     /* Bundle-Spartipp unter den Ergebnis-Karten. */
     .res-bundle {
       display:flex; align-items:flex-start; gap:10px; margin-top:14px;
-      background:rgba(51,102,255,0.06); border:1px solid rgba(51,102,255,0.16);
-      border-radius:14px; padding:14px 16px; font-size:14px; color:#1A1F36; line-height:1.55;
+      background:var(--h-blue-wash);
+      border-radius:14px; padding:14px 16px; font-size:14px; color:var(--h-ink); line-height:1.55;
     }
     .res-bundle strong { font-weight:800; }
     .res-bundle-icon { flex:0 0 auto; font-size:16px; line-height:1.4; }
+    .cfg-restart-btn { display:inline-flex; align-items:center; min-height:40px; padding:0 16px; background:var(--h-card); border:1.5px solid var(--h-line-2); color:var(--h-blue-ink); font-weight:700; font-size:14px; border-radius:var(--h-r-pill); cursor:pointer; }
+    .cfg-restart-btn:hover { border-color:var(--h-blue); }
 
-    html.dark .res-price-num { color:#E2E8F0 !important; }
-    html.dark .res-price-note { color:#94A3B8 !important; }
-    html.dark .res-tag { background:rgba(90,120,255,0.12); color:#94A3B8; }
-    html.dark .res-learn { color:#6B9CFF !important; }
-    html.dark .res-bundle {
-      background:rgba(90,120,255,0.10); border-color:rgba(90,120,255,0.22); color:#E2E8F0;
-    }
-
-    /* ── Dark Mode ─────────────────────────────────────────────── */
-    .cfg-restart-btn { background: white; }
-    html.dark .cfg-restart-btn {
-      background: #181E2E !important;
-      color: #6B9CFF !important;
-      border-color: rgba(90,120,255,0.25) !important;
-    }
-    html.dark div[style*="background:#F0F4FA"] { background: #0F1117 !important; }
-    html.dark h1[style*="color:#1A1F36"],
-    html.dark h2[style*="color:#1A1F36"] { color: #E2E8F0 !important; }
-    html.dark p[style*="color:#656B78"] { color: #94A3B8 !important; }
-    html.dark table[style*="background:white"] {
-      background: #181E2E !important;
-      border-color: rgba(90,120,255,0.14) !important;
-    }
-    html.dark th[style*="color:#1A1F36"] { color: #E2E8F0 !important; }
-    html.dark td[style*="color:#1A1F36"] { color: #E2E8F0 !important; }
-    html.dark div[style*="background:white"][style*="border-radius:16px"] {
-      background: #181E2E !important;
-      border-color: rgba(90,120,255,0.12) !important;
-    }
-    /* Broad catch for all inline-styled text on this page (incl. JS-generated result card) */
-    html.dark [style*="color:#1A1F36"] { color: #E2E8F0 !important; }
-    html.dark [style*="color:#656B78"] { color: #94A3B8 !important; }
-    html.dark .cfg-opt-label { color: #E2E8F0 !important; }
-    html.dark .cfg-card {
-      background: #181E2E !important;
-      border-color: rgba(90, 120, 255, 0.14) !important;
-      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.3) !important;
-    }
-    html.dark .cfg-question { color: #E2E8F0 !important; }
-    html.dark .cfg-opt {
-      background: #1E2540 !important;
-      border-color: rgba(90, 120, 255, 0.16) !important;
-    }
-    html.dark .cfg-opt:hover {
-      background: rgba(90, 120, 255, 0.10) !important;
-      border-color: rgba(90, 120, 255, 0.35) !important;
-    }
-    html.dark .res-card {
-      background: #1E2540 !important;
-      border-color: rgba(90, 120, 255, 0.16) !important;
-    }
+    /* Ergebnis und Pfeile auf Tokens (Runde 3, 3.6); Logik unverändert. */
+    .res-eyebrow { margin:0 0 12px; }
+    .res-list { display:flex; flex-direction:column; gap:14px; }
+    .res-head { display:flex; align-items:flex-start; gap:12px; }
+    .res-main { min-width:0; }
+    .res-cat { font-size:12px; font-weight:700; color:var(--h-muted); text-transform:uppercase; letter-spacing:.5px; }
+    .res-name { font-family:var(--h-display); font-stretch:84%; font-weight:720; font-size:22px; letter-spacing:-.01em; color:var(--h-ink); }
+    .res-aside { margin-left:auto; flex:0 0 auto; }
+    .res-sub { font-size:14px; color:var(--h-muted); line-height:1.6; margin-top:8px; }
+    .res-learn { display:inline-flex; align-items:center; gap:6px; }
+    .res-learn svg, .cfg-opt-arrow svg, .cfg-back-arrow svg { display:block; }
+    .cfg-back-arrow svg { transform:rotate(180deg); }
+    .res-bundle-icon { display:flex; color:var(--h-blue-ink); }
+    .res-actions { margin-top:22px; display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+    .res-note { font-size:12.5px; color:var(--h-muted); line-height:1.6; margin-top:14px; }
   </style>
 
   <script is:inline define:vars={{ playStoreUrl, iosUrl, chooserPath, PS }}>
+    // Inline-SVG statt Pfeil-/Emoji-Zeichen (Spec Runde 3, 3.6); Pfade wie in src/icons.ts.
+    var CHEV = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8.25 4.5 7.5 7.5-7.5 7.5"/></svg>';
+    var CHEV_BTN = CHEV.replace('<svg ', '<svg class="h-btn-arrow" ');
+    var BULB = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>';
     (function () {
       var platform = document.documentElement.getAttribute('data-platform');
       var P = PS[platform === 'ios' ? 'ios' : 'android'];
@@ -447,7 +416,7 @@ const howToSchema = {
           btn.innerHTML =
             '<span class="cfg-opt-text"><span class="cfg-opt-label">' + opt.label + '</span>' +
             (opt.sub ? '<span class="cfg-opt-sub">' + opt.sub + '</span>' : '') +
-            '</span><span class="cfg-opt-arrow" aria-hidden="true">→</span>';
+            '</span><span class="cfg-opt-arrow" aria-hidden="true">' + CHEV + '</span>';
           btn.addEventListener('click', function () { choose(stepId, opt.v); });
           elOptions.appendChild(btn);
         });
@@ -496,8 +465,8 @@ const howToSchema = {
       function showResult() {
         const recs = compute();
         elCfg.style.display = 'none';
-        let html = '<div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Deine Empfehlung</div>';
-        html += '<div style="display:flex; flex-direction:column; gap:14px;">';
+        let html = '<p class="pg-eyebrow res-eyebrow">Deine Empfehlung</p>';
+        html += '<div class="res-list">';
         recs.forEach(function (r) {
           // Rechte Spalte: Preis (kaufbare Lizenz) bzw. Status-Tag (kein Kauf / bald).
           let aside;
@@ -510,15 +479,15 @@ const howToSchema = {
             aside = '<span class="res-tag">Kein Kauf nötig</span>';
           }
           const learn = r.href && !r.info && !r.soon
-            ? '<span class="res-learn">Mehr erfahren →</span>' : '';
+            ? '<span class="res-learn">Mehr erfahren' + CHEV + '</span>' : '';
           const wrap = r.href ? 'a' : 'div';
           const hrefAttr = r.href ? ' href="' + r.href + '"' : '';
           html += '<' + wrap + hrefAttr + ' class="res-card">' +
-            '<div style="display:flex; align-items:flex-start; gap:12px;">' +
-            '<div style="min-width:0;"><div style="font-size:12px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:0.5px;">' + r.cat + '</div>' +
-            '<div style="font-size:20px; font-weight:900; color:#1A1F36; letter-spacing:-0.5px;">' + r.name + '</div></div>' +
-            '<div style="margin-left:auto; flex:0 0 auto;">' + aside + '</div></div>' +
-            '<div style="font-size:14px; color:#656B78; line-height:1.6; margin-top:8px;">' + r.sub + '</div>' +
+            '<div class="res-head">' +
+            '<div class="res-main"><div class="res-cat">' + r.cat + '</div>' +
+            '<div class="res-name">' + r.name + '</div></div>' +
+            '<div class="res-aside">' + aside + '</div></div>' +
+            '<div class="res-sub">' + r.sub + '</div>' +
             learn +
             '</' + wrap + '>';
         });
@@ -530,16 +499,16 @@ const howToSchema = {
         const hasSee = recs.some(function (r) { return r.key === 'see'; });
         if (hasBinnen && hasSee) {
           html += '<div class="res-bundle">' +
-            '<span class="res-bundle-icon" aria-hidden="true">💡</span>' +
+            '<span class="res-bundle-icon" aria-hidden="true">' + BULB + '</span>' +
             '<span>Spar-Tipp: Beide zusammen im <strong>SBF-Bundle für ' + P.bundle + '</strong> – ' + P.bundleSave + ' gegenüber dem Einzelkauf.</span>' +
             '</div>';
         }
 
-        html += '<div style="margin-top:22px; display:flex; flex-wrap:wrap; gap:12px;">' +
-          '<a href="' + storeUrl + '"' + storeTarget + ' style="display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:15px; padding:14px 26px; border-radius:14px; text-decoration:none;">▶&nbsp;Jetzt mit Boatpass lernen</a>' +
-          '<button type="button" id="cfg-restart" class="cfg-restart-btn" style="border:1.5px solid rgba(51,102,255,0.2); color:#3366FF; font-weight:700; font-size:15px; padding:14px 24px; border-radius:14px; cursor:pointer;">Nochmal starten</button>' +
+        html += '<div class="res-actions">' +
+          '<a href="' + storeUrl + '"' + storeTarget + ' class="h-btn h-btn--sm">Jetzt mit Boatpass lernen' + CHEV_BTN + '</a>' +
+          '<button type="button" id="cfg-restart" class="cfg-restart-btn">Nochmal starten</button>' +
           '</div>';
-        html += '<p style="font-size:12.5px; color:#656B78; line-height:1.6; margin-top:14px;">Preise gelten für den Vollzugang im jeweiligen Boatpass-Lernkatalog (Einmalkauf, kein Abo). Amtliche Prüfungs- und Verwaltungsgebühren sind nicht enthalten.</p>';
+        html += '<p class="res-note">Preise gelten für den Vollzugang im jeweiligen Boatpass-Lernkatalog (Einmalkauf, kein Abo). Amtliche Prüfungs- und Verwaltungsgebühren sind nicht enthalten.</p>';
         elResult.innerHTML = html;
         elResult.style.display = 'block';
         document.getElementById('cfg-restart').addEventListener('click', function () {
