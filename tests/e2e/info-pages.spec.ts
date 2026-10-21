@@ -81,3 +81,36 @@ test.describe('Über uns', () => {
     await expect(page.locator('main .pg-checks .pg-check')).toHaveCount(5);
   });
 });
+
+test.describe('Kontakt', () => {
+  const FORM_ENDPOINT = 'https://formspree.io/f/xgoqqywe'; // aus kontakt.astro / contact.astro
+  test('DE: schmale Spalte, Formular unverändert, Erfolgsbox als Hinweis', async ({ page }) => {
+    await expectMigrated(page, '/kontakt/', { h1: /Schreib uns/, facts: 0, cta: false, variant: 'narrow' });
+    await expect(page.locator('#kontakt-form input#name')).toBeVisible();
+    await expect(page.locator('#kontakt-form input#email')).toBeVisible();
+    await expect(page.locator('#kontakt-form textarea#message')).toBeVisible();
+    await expect(page.locator('#kontakt-form #submit-btn')).toBeVisible();
+    await expect(page.locator('main .pg-faq .pg-faq-item')).toHaveCount(4);
+    await expect(page.locator('main [style*="color:#"], main [style*="background:#"]')).toHaveCount(0);
+    // Absenden: Endpunkt abfangen, Erfolgsbox erscheint mit Hinweis-Klasse (Review Focus 1).
+    let posted = false;
+    await page.route(FORM_ENDPOINT, async route => {
+      posted = route.request().method() === 'POST';
+      await route.fulfill({ status: 200, contentType: 'application/json', body: '{"ok":true}' });
+    });
+    await page.fill('#name', 'Test Person');
+    await page.fill('#email', 'test@example.com');
+    await page.fill('#message', 'Nur ein Test.');
+    await page.click('#submit-btn');
+    await expect(page.locator('#success-msg')).toBeVisible();
+    expect(posted).toBe(true);
+    await expect(page.locator('#success-msg')).toHaveClass(/pg-notice--ok/);
+    await expect(page.locator('#kontakt-form')).toBeHidden();
+  });
+  test('EN parity', async ({ page }) => {
+    await expectMigrated(page, '/en/contact/', { h1: /Get in touch|Contact|Write/i, facts: 0, cta: false, variant: 'narrow' });
+    await expect(page.locator('#contact-form #submit-btn')).toBeVisible();
+    await expect(page.locator('main .pg-faq .pg-faq-item')).toHaveCount(4);
+    await expect(page.locator('#error-msg')).toHaveClass(/pg-notice--error/);
+  });
+});

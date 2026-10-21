@@ -657,3 +657,7 @@ details[open] > .pg-faq-q svg { transform: rotate(90deg); }
 .pg-checks { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .pg-check { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.6; color: var(--h-text); }
 .pg-check-mark { flex-shrink: 0; font-weight: 700; color: var(--h-blue-ink); }
+
+/* ── Kontakt (Runde 3b, Task 4): Status-Boxen vor dem Formular ohne Spaltenabstand ── */
+.pg-main > .pg-notice + .pg-notice, .pg-main > .pg-notice + form { margin-top: 0; }
+.pg-notice--error { margin-bottom: 16px; }

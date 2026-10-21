@@ -55,6 +55,8 @@ CONTACT = [
     (r'<div style="background:white; border:1px solid rgba\(51,102,255,0\.12\); border-radius:12px; padding:20px 24px;">', '<div class="pg-faq-item">'),
     (r'<h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">', '<h3 class="pg-h3">'),
     (r'<p style="font-size:15px; line-height:1\.6; color:#4B5563; margin:0;">', '<p class="pg-card-text">'),
+    # Links in den Selbsthilfe-Antworten
+    (r' style="color:#3366FF;[^"]*"', ' class="pg-inline-link"'),
 ]
 
 ICON = '<Icon name="chevronRight" size={16} strokeWidth={2.25} />'
@@ -289,7 +291,8 @@ def migrate(key):
         s = s[:m.start()] + s[m.end():]
         s, n = WRAPPER_RE.subn(lambda _: head, s, count=1)
         assert n == 1, 'wrapper'
-        s, n = re.subn(r"\n  </div>\n\n?</BaseLayout>", "\n  </PageLayout>\n</BaseLayout>", s, count=1)
+        # Spaltenende: direkt vor </BaseLayout> oder (Kontakt) vor dem seitenlokalen <style> des Formulars
+        s, n = re.subn(r"\n  </div>\n(\n?)(  <style>|</BaseLayout>)", r"\n  </PageLayout>\n\1\2", s, count=1)
         assert n == 1, 'close'
         extra = f"import DisplayFontPreload from '{prefix}components/page/DisplayFontPreload.astro';\n"
         extra += ''.join(f"import {n} from '{prefix}components/page/{n}.astro';\n" for n in ['PageHead', 'PageLayout'])
