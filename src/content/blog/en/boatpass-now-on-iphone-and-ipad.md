@@ -1,7 +1,7 @@
 ---
 title: "BoatPass Now on iPhone and iPad: SBF App on the App Store"
 seoTitle: "BoatPass Now on iPhone and iPad"
-description: "BoatPass is now on the App Store: SBF Binnen, SBF See, UBI, SRC and LRC on iPhone and iPad. What the app does, what it costs and what to know before you buy."
+description: "BoatPass is now on the App Store: SBF Binnen, SBF See, UBI, SRC and LRC on iPhone and iPad. Features, price and buying info explained – see it now."
 date: 2026-10-15
 tags: ["Preparation"]
 readingTime: 5

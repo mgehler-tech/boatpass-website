@@ -1,7 +1,7 @@
 ---
 title: "Sportbootführerschein trotz gesundheitlicher Einschränkung"
 seoTitle: "SBF mit gesundheitlicher Einschränkung"
-description: "Was bedeutet das ärztliche Zeugnis für den Sportbootführerschein wirklich? Auflagen, Hilfsmittel, Einschränkungen und was du vor der Anmeldung klären solltest."
+description: "Ärztliches Zeugnis für den Sportbootführerschein: Auflagen, Hilfsmittel und Einschränkungen – und was du vor der Anmeldung zur Prüfung klären solltest."
 date: 2026-10-20
 tags: ["Vorbereitung", "Prüfungswissen"]
 readingTime: 8
