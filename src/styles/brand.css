@@ -42,7 +42,7 @@
   --h-on-deep-muted: #A8B4D4;
   --h-deep-line: rgba(200, 214, 255, 0.2);
 
-  --h-display: 'Archivo Variable', 'Arial Narrow', system-ui, sans-serif;
+  --h-display: 'Archivo Variable', 'Inter Variable', 'Inter', system-ui, sans-serif;
   --h-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
   --h-ease: cubic-bezier(0.22, 1, 0.36, 1);
   /* Radien: Karten weich, Bedienelemente als Pille, kleine Marken dazwischen. */

@@ -48,6 +48,8 @@ test.describe('Seitenkopf', () => {
     const displays = await page.evaluate(() => [...document.fonts].filter(f => f.family.includes('Archivo')).map(f => f.display));
     expect(displays.length).toBeGreaterThan(0);
     expect(new Set(displays)).toEqual(new Set(['optional']));
+    // Bleibt Archivo aus (kalter Besuch), fällt die H1 auf Inter zurück, nicht auf Arial Narrow.
+    expect(await page.locator('h1.pg-title').evaluate(el => getComputedStyle(el).fontFamily)).toMatch(/Archivo Variable"?,\s*"?Inter/);
     await page.goto('/');
     const home = await page.evaluate(() => [...document.fonts].filter(f => f.family.includes('Archivo')).map(f => f.display));
     expect(home).toContain('swap');
