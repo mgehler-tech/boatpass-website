@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { expectMigrated, noInline } from './helpers/migrated';
 
 /**
  * Premium-Politur, Runde 2b (Spec docs/superpowers/specs/2026-10-18-premium-round-2-design.md,
@@ -11,10 +12,6 @@ test.beforeEach(async ({ page }) => {
   await page.route(/plausible\.io/, r => r.abort());
 });
 
-// Die alten Inline-Farben der Inhaltsseiten (Spec 5.3); auf migrierten Seiten darf keine mehr in
-// main stehen. Die eingebetteten Bausteine CatalogSources und BoatSchoolFinder bleiben in dieser
-// Runde unangetastet und tragen noch #4B5563/#656B78, deshalb nur die drei Selektoren der Spec.
-const noInline = 'main [style*="#1A1F36"], main [style*="background:white"], main [style*="#3366FF"]';
 
 test.describe('Seitenkopf', () => {
   test('SBF Binnen: Archivo-Titel bündig zum Logo, Store-Button mit einem Symbol, Bewertung', async ({ page }) => {
@@ -118,34 +115,6 @@ test.describe('SBF Binnen vollständig', () => {
     expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
   });
 });
-
-/** Rauchtest für eine migrierte Seite: Kopf, Spaltenordnung, keine Inline-Farben/Pfeile, Conversion-Hook, 360 px. */
-async function expectMigrated(page: import('@playwright/test').Page, path: string, opts: { h1: RegExp; facts: number; cta?: boolean }) {
-  await page.setViewportSize({ width: 1440, height: 900 });
-  await page.goto(path);
-  const title = page.locator('h1.pg-title');
-  await expect(title).toContainText(opts.h1);
-  expect(await title.evaluate(el => getComputedStyle(el).fontFamily)).toMatch(/Archivo/);
-  const logo = (await page.locator('.logo-link').boundingBox())!;
-  expect(Math.abs((await title.boundingBox())!.x - logo.x)).toBeLessThanOrEqual(1);
-  if (opts.facts > 0) {
-    await expect(page.locator('.pg-layout--read')).toHaveCount(1);
-    await expect(page.locator('.pg-aside dl.pg-facts dt')).toHaveCount(opts.facts);
-  } else {
-    await expect(page.locator('.pg-layout--wide')).toHaveCount(1);
-    await expect(page.locator('.pg-aside')).toHaveCount(0);
-  }
-  await expect(page.locator(noInline)).toHaveCount(0);
-  expect(await page.locator('main').innerText()).not.toMatch(/[→▶]/);
-  if (opts.cta !== false) {
-    // Die Geräteweiche schreibt generische Play-Links am Desktop auf die Auswahlseite um: /app/ bzw. /en/app/.
-    await expect(page.locator('main a[href="/app/"], main a[href="/en/app/"]').first()).toBeVisible();
-  }
-  await expect(page.locator('main a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
-  await expect(page.locator('.pg-section .content-section-title, .related-links, .exam-facts-grid')).toHaveCount(0);
-  await page.setViewportSize({ width: 360, height: 780 });
-  expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
-}
 
 test.describe('Lizenzseiten migriert', () => {
   test('SBF See (DE)', async ({ page }) => {

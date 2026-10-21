@@ -1,10 +1,12 @@
 ---
-// Spaltenordnung der Inhaltsseiten (Spec Runde 2, 5.3). `read`: Lesespalte plus
-// klebende Seitenleiste (Slot „aside"), die im DOM vor dem Inhalt steht und
-// am Handy direkt unter dem Kopf erscheint. `wide`: eine Spalte über die
-// Containerbreite (Führerschein-Übersicht).
+// Spaltenordnung der Inhaltsseiten (Spec Runde 2, 5.3; Runde 3, 3.1). `read`:
+// Lesespalte plus klebende Seitenleiste (Slot „aside"), die im DOM vor dem
+// Inhalt steht und am Handy direkt unter dem Kopf erscheint. `wide`: eine
+// Spalte über die Containerbreite (Übersichten). `narrow`: eine Spalte mit
+// 760 px, linksbündig auf der Containerkante, ohne Leiste (Infoseiten, FAQ,
+// Schein-Finder).
 interface Props {
-  variant?: 'read' | 'wide';
+  variant?: 'read' | 'wide' | 'narrow';
 }
 
 const { variant = 'read' } = Astro.props;

@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import DisplayFontPreload from '../components/page/DisplayFontPreload.astro';
+import PageHead from '../components/page/PageHead.astro';
+import PageLayout from '../components/page/PageLayout.astro';
+import PageFacts from '../components/page/PageFacts.astro';
+import PageLink from '../components/page/PageLink.astro';
 import Icon from '../components/Icon.astro';
 import type { IconName } from '../icons';
 import { PLAY_STORE_URL, priceText } from '../data/stores';
@@ -51,136 +56,143 @@ const faqSchema = {
   lang="de"
   altUrl="https://boatpass.de/en/sbf-costs/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        SBF Kosten
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        Was kostet der<br>Sportbootführerschein?
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto 36px;">
-        Prüfungsgebühren, Kurs, Praxis und Lernmaterial – hier siehst du alle Kostenpunkte für SBF Binnen, SBF See und die Kombination im Überblick. Plus: wie du clever sparst.
-      </p>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:10px; background:#3366FF; color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.25);">
-        ▶&nbsp;Theorie ab 9,99 € lernen
-      </a>
-    </div>
-  </div>
+  <!-- Seitenkopf und Lesespalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="de"
+    eyebrow="SBF Kosten"
+    lede="Prüfungsgebühren, Kurs, Praxis und Lernmaterial – hier siehst du alle Kostenpunkte für SBF Binnen, SBF See und die Kombination im Überblick. Plus: wie du clever sparst."
+    ctaLabel="Theorie ab 9,99 € lernen"
+    cta
+  >
+    Was kostet der<br />Sportbootführerschein?
+  </PageHead>
 
-  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="de"
+      title="Auf einen Blick"
+      product="sbfBinnen"
+      from
+      items={[
+        { k: 'Prüfungsgebühr Binnen', v: '130,78 €' },
+        { k: 'Prüfungsgebühr See', v: '148,38 €' },
+        { k: 'Kombi-Prüfung', v: '178,61 €' },
+        { k: 'Vorbereitungskurs', v: 'ca. 340–400 € aufwärts' },
+        { k: 'Theorie mit Boatpass', v: 'ab 9,99 €' },
+      ]}
+    />
 
     <!-- Überblick -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">SBF Kosten im Überblick</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">SBF Kosten im Überblick</h2>
+      <p class="pg-p">
         Die Gesamtkosten für den <strong>Sportbootführerschein</strong> hängen vor allem davon ab, ob du einen Vorbereitungskurs besuchst oder die Theorie selbstständig lernst. Fest sind nur die <strong>amtlichen Prüfungsgebühren</strong> (130,78 € Binnen, 148,38 € See) – alles andere lässt sich beeinflussen.
       </p>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      <p class="pg-p">
         Mit komplettem Kurs liegst du 2026 pro Schein bei rund <strong>500–650 €</strong>. Wer die Theorie selbst lernt und nur die Praxis extern übt, kommt mit <strong>Prüfungsgebühr + App ab ca. 138 €</strong> plus Übungskosten deutlich günstiger weg.
       </p>
     </section>
 
     <!-- Kostentabelle -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Die einzelnen Kostenpunkte</h2>
+    <section class="pg-section">
+      <h2 class="pg-h2">Die einzelnen Kostenpunkte</h2>
       <!-- min-width aktiviert das horizontale Scrollen des overflow-x-Wrappers auf schmalen Screens (wie AppComparisonTable/CatalogSources). Ohne min-width wurde die Tabelle stattdessen auf Handybreite gequetscht: die drei Spalten brachen mehrzeilig um und wurden unleserlich. -->
-      <div style="overflow-x:auto;">
-        <table style="width:100%; min-width:640px; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
+      <div class="pg-table">
+        <table>
           <thead>
-            <tr style="background:rgba(26,31,54,0.04);">
-              <th style="text-align:left; padding:14px 16px; font-weight:700; color:#1A1F36;">Kostenpunkt</th>
-              <th style="text-align:left; padding:14px 16px; font-weight:700; color:#1A1F36;">Ungefähre Kosten</th>
-              <th style="text-align:left; padding:14px 16px; font-weight:700; color:#1A1F36;">Pflicht?</th>
+            <tr>
+              <th scope="col">Kostenpunkt</th>
+              <th scope="col">Ungefähre Kosten</th>
+              <th scope="col">Pflicht?</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-top:1px solid rgba(51,102,255,0.08);">
-              <td style="padding:13px 16px; color:#374151;">Prüfungsgebühr Binnen (Theorie + Praxis)</td>
-              <td style="padding:13px 16px; color:#374151;">130,78 €</td>
-              <td style="padding:13px 16px; color:#374151;">Ja</td>
+            <tr>
+              <th scope="row">Prüfungsgebühr Binnen (Theorie + Praxis)</th>
+              <td>130,78 €</td>
+              <td>Ja</td>
             </tr>
-            <tr style="border-top:1px solid rgba(51,102,255,0.08); background:rgba(26,31,54,0.02);">
-              <td style="padding:13px 16px; color:#374151;">Prüfungsgebühr See (Theorie + Praxis)</td>
-              <td style="padding:13px 16px; color:#374151;">148,38 €</td>
-              <td style="padding:13px 16px; color:#374151;">Ja</td>
+            <tr>
+              <th scope="row">Prüfungsgebühr See (Theorie + Praxis)</th>
+              <td>148,38 €</td>
+              <td>Ja</td>
             </tr>
-            <tr style="border-top:1px solid rgba(51,102,255,0.08);">
-              <td style="padding:13px 16px; color:#374151;">Kombi-Prüfung Binnen + See</td>
-              <td style="padding:13px 16px; color:#374151;">178,61 € (statt 279,16 €)</td>
-              <td style="padding:13px 16px; color:#374151;">Ja</td>
+            <tr>
+              <th scope="row">Kombi-Prüfung Binnen + See</th>
+              <td>178,61 € (statt 279,16 €)</td>
+              <td>Ja</td>
             </tr>
-            <tr style="border-top:1px solid rgba(51,102,255,0.08); background:rgba(26,31,54,0.02);">
-              <td style="padding:13px 16px; color:#374151;">Vorbereitungskurs (online/Fahrschule)</td>
-              <td style="padding:13px 16px; color:#374151;">ca. 340–400 € aufwärts</td>
-              <td style="padding:13px 16px; color:#374151;">Optional</td>
+            <tr>
+              <th scope="row">Vorbereitungskurs (online/Fahrschule)</th>
+              <td>ca. 340–400 € aufwärts</td>
+              <td>Optional</td>
             </tr>
-            <tr style="border-top:1px solid rgba(51,102,255,0.08);">
-              <td style="padding:13px 16px; color:#374151;">Lern-App / Fragenkatalog (Boatpass)</td>
-              <td style="padding:13px 16px; color:#374151;">9,99 € pro Katalog · {priceText('bundleSbf', 'de')} Paket</td>
-              <td style="padding:13px 16px; color:#374151;">Optional</td>
+            <tr>
+              <th scope="row">Lern-App / Fragenkatalog (Boatpass)</th>
+              <td>9,99 € pro Katalog · {priceText('bundleSbf', 'de')} Paket</td>
+              <td>Optional</td>
             </tr>
-            <tr style="border-top:1px solid rgba(51,102,255,0.08); background:rgba(26,31,54,0.02);">
-              <td style="padding:13px 16px; color:#374151;">Praktische Übungsstunden</td>
-              <td style="padding:13px 16px; color:#374151;">variabel (je nach Anbieter)</td>
-              <td style="padding:13px 16px; color:#374151;">Empfohlen</td>
+            <tr>
+              <th scope="row">Praktische Übungsstunden</th>
+              <td>variabel (je nach Anbieter)</td>
+              <td>Empfohlen</td>
             </tr>
-            <tr style="border-top:1px solid rgba(51,102,255,0.08);">
-              <td style="padding:13px 16px; color:#374151;">Nebenkosten (Passbild, Anmeldung)</td>
-              <td style="padding:13px 16px; color:#374151;">gering</td>
-              <td style="padding:13px 16px; color:#374151;">Ja</td>
+            <tr>
+              <th scope="row">Nebenkosten (Passbild, Anmeldung)</th>
+              <td>gering</td>
+              <td>Ja</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <p style="font-size:14px; color:#656B78; line-height:1.6; margin-top:12px;">
+      <p class="pg-note pg-note--sm pg-note--after">
         Die Prüfungsgebühren sind bundesweit einheitlich durch DSV und DMYV festgelegt (Stand 2026). Kurs- und Praxiskosten variieren je nach Anbieter und Region.
       </p>
     </section>
 
     <!-- Binnen / See / Kombi -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">SBF Binnen, SBF See oder beide?</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">SBF Binnen</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Prüfungsgebühr <strong>130,78 €</strong> (Theorie + Praxis) plus Lernmaterial.</div>
+    <section class="pg-section">
+      <h2 class="pg-h2">SBF Binnen, SBF See oder beide?</h2>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-label">SBF Binnen</p>
+          <p class="pg-card-text">Prüfungsgebühr <strong>130,78 €</strong> (Theorie + Praxis) plus Lernmaterial.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">SBF See</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Prüfungsgebühr <strong>148,38 €</strong> – etwas höher wegen der Navigationsaufgabe.</div>
+        <div class="pg-card">
+          <p class="pg-card-label">SBF See</p>
+          <p class="pg-card-text">Prüfungsgebühr <strong>148,38 €</strong> – etwas höher wegen der Navigationsaufgabe.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Kombi Binnen + See</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Nur <strong>178,61 €</strong> statt 279,16 € – über 100 € gespart bei einer kombinierten Prüfung.</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Kombi Binnen + See</p>
+          <p class="pg-card-text">Nur <strong>178,61 €</strong> statt 279,16 € – über 100 € gespart bei einer kombinierten Prüfung.</p>
         </div>
       </div>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-top:20px;">
+      <p class="pg-p">
         Wenn du ohnehin beide Reviere befahren möchtest, ist die <strong>kombinierte Prüfung</strong> klar am wirtschaftlichsten: Du sparst sowohl bei der Prüfungsgebühr als auch beim Lernmaterial (Komplett-Paket statt zwei Einzelkäufe).
       </p>
     </section>
 
     <!-- So sparst du -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">So sparst du beim Sportbootführerschein</h2>
-      <div style="display:flex; flex-direction:column; gap:16px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">So sparst du beim Sportbootführerschein</h2>
+      <div class="pg-rows">
         {[
           { icon: 'phoneDevice', title: 'Theorie selbst lernen', desc: 'Der größte Kostenblock ist der Vorbereitungskurs. Mit dem offiziellen ELWIS-Katalog in der App lernst du die Theorie eigenständig – für einmalig 9,99 € statt mehreren Hundert Euro Kursgebühr.' },
           { icon: 'target', title: 'Gezielt statt breit üben', desc: 'Mit Prüfungssimulation und Fehlertraining gehst du beim ersten Versuch durch – eine Wiederholungsprüfung kostet erneut Gebühren.' },
           { icon: 'users', title: 'Kombi-Prüfung nutzen', desc: 'Brauchst du Binnen und See, spart die kombinierte Prüfung gegenüber zwei getrennten Anläufen.' },
         ].map(f => (
-          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={f.icon as IconName} size={21} stroke="#3366FF" strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={f.icon as IconName} size={21} strokeWidth={1.75} />
             </span>
-            <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
-              <div style="font-size:15px; color:#656B78; line-height:1.6;">{f.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{f.title}</p>
+              <p class="pg-row-text">{f.desc}</p>
             </div>
           </div>
         ))}
@@ -188,33 +200,33 @@ const faqSchema = {
     </section>
 
     <!-- FAQ -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Häufige Fragen zu den SBF-Kosten</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Häufige Fragen zu den SBF-Kosten</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Interne Links -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
-      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Weiterführende Seiten</h2>
-      <div class="related-links">
-        <a href="/sbf-binnen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen lernen mit Boatpass</a>
-        <a href="/sbf-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See lernen mit Boatpass</a>
-        <a href="/sbf-pruefung-ablauf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Prüfung: Ablauf von Theorie & Praxis</a>
-        <a href="/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Häufige Fragen zum Sportbootführerschein</a>
-        <a href="/blog/bootsfuehrerschein-kosten-sparen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Bootsführerschein-Kosten sparen: die 5 besten Spartipps</a>
-        <a href="/blog/sbf-app-vs-bootsschule/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF-App vs. Bootsschule – lohnt sich ein Theoriekurs?</a>
-        <a href="/blog/sbf-eigenes-boot-oder-charterboot/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF mit eigenem Boot oder Charterboot – was passt zu wem?</a>
-        <a href="/blog/aussenborder-basiswartung/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Außenborder-Basiswartung – einfache Pflege für lange Lebensdauer</a>
-        <a href="/blog/bootsversicherung-sportboote-sinnvoll/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Bootsversicherung: welche Policen für dein Boot wirklich sinnvoll sind</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Weiterführende Seiten</h2>
+      <ul class="pg-related">
+        <li><a href="/sbf-binnen/">SBF Binnen lernen mit Boatpass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-see/">SBF See lernen mit Boatpass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-pruefung-ablauf/">SBF Prüfung: Ablauf von Theorie & Praxis<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/faq/">Häufige Fragen zum Sportbootführerschein<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/bootsfuehrerschein-kosten-sparen/">Bootsführerschein-Kosten sparen: die 5 besten Spartipps<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sbf-app-vs-bootsschule/">SBF-App vs. Bootsschule – lohnt sich ein Theoriekurs?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sbf-eigenes-boot-oder-charterboot/">SBF mit eigenem Boot oder Charterboot – was passt zu wem?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/aussenborder-basiswartung/">Außenborder-Basiswartung – einfache Pflege für lange Lebensdauer<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/bootsversicherung-sportboote-sinnvoll/">Bootsversicherung: welche Policen für dein Boot wirklich sinnvoll sind<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
+  </PageLayout>
 </BaseLayout>
