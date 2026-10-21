@@ -32,6 +32,20 @@ Strings und Klassen im Inline-Skript an: Pfeil- und Emoji-Zeichen werden Inline-
 bleiben unangetastet. Der Lauf ist einmalig gedacht (nach dem Umbau findet er seine
 Muster nicht mehr und bricht ab).
 
+## Fahrschulen (Runde 3a, Task 5)
+
+```bash
+python3 scripts/pg-migrate/pgschools.py            # Übersicht und Städte-Template, DE und EN
+```
+
+`pgschools.py` ruft `pgpage.py` für die vier Seiten auf (Übersicht `wide`, Städte-Template
+`read` mit `raw=True` und `facts_expr='cityFacts'`, die Konstante kommt ins Frontmatter) und
+ersetzt danach die seitenspezifischen Muster: Info-Kasten mit Glühbirne, Städtekarten
+(`.city-*`, EN-Klassen auf die DE-Namen), Schulkarten (`.pg-school*`, Website/Telefon bleiben
+44 px hohe Flächen), Google-Maps-Kasten als `.pg-banner`, Kennzahlen als `.pg-kpi`, Zeilenliste
+als `.pg-rows`. Die Regeln dafür hängt der Lauf einmalig an `src/styles/page.css` an. Der Lauf
+ist wiederholbar (zweiter Durchlauf ändert nichts).
+
 ## Grenzen
 
 - Regex auf exakte Inline-Werte: ein abweichender Wert (anderes `padding`, andere Opazität)

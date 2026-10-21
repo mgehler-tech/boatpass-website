@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { expectMigrated } from './helpers/migrated';
+import { cities } from '../../src/data/boat-schools';
 
 /**
  * Premium-Politur, Runde 3a (Spec docs/superpowers/specs/2026-10-21-premium-round-3-design.md):
@@ -88,5 +89,49 @@ test.describe('Schein-Finder', () => {
   test('EN parity', async ({ page }) => {
     await expectMigrated(page, '/en/tools/which-boating-license/', { h1: /licen/i, facts: 0, cta: false, variant: 'narrow' });
     await expect(page.locator('#cfg .cfg-opt').first()).toBeVisible();
+  });
+});
+
+test.describe('Fahrschulen', () => {
+  const berlin = cities.find(c => c.slug === 'berlin')!;   // inland
+  const hamburg = cities.find(c => c.slug === 'hamburg')!; // both
+
+  test('Übersicht DE: breite Spalte, Info-Kasten mit Icon, eine Karte je Stadt', async ({ page }) => {
+    await expectMigrated(page, '/bootsfahrschulen/', { h1: /Bootsfahrschule/, facts: 0, cta: false });
+    await expect(page.locator('.city-grid .city-card')).toHaveCount(cities.length);
+    await expect(page.locator('.pg-answer--icon .pg-row-icon svg')).toHaveCount(1);
+    await expect(page.locator('.city-card .city-link svg')).toHaveCount(cities.length);
+  });
+  test('Übersicht EN parity', async ({ page }) => {
+    await expectMigrated(page, '/en/boat-schools/', { h1: /Boat Schools/, facts: 0, cta: false });
+    await expect(page.locator('.city-grid .city-card')).toHaveCount(cities.length);
+  });
+  test('Berlin (Binnen): Kennzahlen aus den Stadtdaten, Schulkarten, Karten-Banner', async ({ page }) => {
+    await expectMigrated(page, `/bootsfahrschulen/${berlin.slug}/`, { h1: /Berlin/, facts: 4 });
+    const facts = page.locator('.pg-aside dl.pg-facts');
+    await expect(facts).toContainText(berlin.state);
+    await expect(facts).toContainText('SBF Binnen');
+    await expect(facts).not.toContainText('SBF See');
+    await expect(facts).toContainText(`${berlin.schools.length}`);
+    await expect(page.locator('.pg-aside .pg-aside-price')).toContainText(/ab/);
+    await expect(page.locator('.pg-school')).toHaveCount(berlin.schools.length);
+    await expect(page.locator('.pg-school .pg-pill')).toHaveCount(berlin.schools.reduce((n, s) => n + s.licenses.length, 0));
+    await expect(page.locator('a.pg-banner[href*="google"]')).toHaveCount(1);
+    // Schulkarten-Links bleiben 44 px hohe Tap-Flächen (WCAG 2.5.5, frühere Korrektur).
+    const link = (await page.locator('.pg-school a').first().boundingBox())!;
+    expect(link.height).toBeGreaterThanOrEqual(44);
+  });
+  test('Hamburg (beides): Schein-Paar nennt beide Scheine', async ({ page }) => {
+    await expectMigrated(page, `/bootsfahrschulen/${hamburg.slug}/`, { h1: /Hamburg/, facts: 4 });
+    await expect(page.locator('.pg-aside dl.pg-facts')).toContainText('SBF Binnen & SBF See');
+    await expect(page.locator('.pg-school')).toHaveCount(hamburg.schools.length);
+  });
+  test('Stadt EN parity', async ({ page }) => {
+    await expectMigrated(page, `/en/boat-schools/${hamburg.slug}/`, { h1: /Hamburg/, facts: 4 });
+    const facts = page.locator('.pg-aside dl.pg-facts');
+    await expect(facts).toContainText('SBF Inland');
+    await expect(facts).toContainText('SBF Coastal');
+    await expect(page.locator('.pg-aside .pg-aside-price')).toContainText(/from/);
+    await expect(page.locator('.pg-school')).toHaveCount(hamburg.schools.length);
   });
 });

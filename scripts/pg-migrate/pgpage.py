@@ -164,13 +164,36 @@ PAGES = {
         file='src/pages/fuehrerscheine.astro', lang='de', eyebrow='Alle Lizenzen',
         h1='Welche Lizenz<br />passt zu dir?',
         lede='Ob Binnengewässer oder Küste, Motorboot oder Funk an Bord – hier findest du die richtige Lizenz und alles, was du für die Vorbereitung wissen musst.',
-        wide=True, cta=False,
+        wide=True, cta=False, licences=True,
     ),
     'en-licenses': dict(
         file='src/pages/en/licenses.astro', lang='en', eyebrow='All Licenses',
         h1='Which license<br />fits you?',
         lede='Inland waters or coast, motorboat or radio on board – find the right license here and everything you need to know to prepare.',
+        wide=True, cta=False, licences=True,
+    ),
+    # Fahrschulen: Übersicht breit ohne Leiste, Städte-Template lesend mit Kennzahlen aus `city` (Spec Runde 3, 3.3).
+    'fahrschulen': dict(
+        file='src/pages/bootsfahrschulen/index.astro', lang='de', prefix='../../', eyebrow='Fahrschule finden',
+        h1='Bootsfahrschule<br />in deiner Nähe',
+        lede='Mit BoatPass lernst du die komplette Theorie für den Sportbootführerschein. Für die praktische Ausbildung auf dem Wasser brauchst du eine Bootsfahrschule – finde die passende in deiner Stadt.',
         wide=True, cta=False,
+    ),
+    'en-boat-schools': dict(
+        file='src/pages/en/boat-schools/index.astro', lang='en', prefix='../../../', eyebrow='Find a School',
+        h1='Boat Schools<br />Near You',
+        lede='BoatPass covers the theory for your German boat licence. For practical training and exam registration, you need a boat school. Find one in your city below.',
+        wide=True, cta=False,
+    ),
+    'fahrschulen-stadt': dict(
+        file='src/pages/bootsfahrschulen/[city].astro', lang='de', prefix='../../', raw=True, eyebrow='city.state',
+        h1='Bootsfahrschulen<br />in {city.name}', lede='city.intro.de',
+        cta_label='Kostenlos laden', title='Auf einen Blick', product='sbfBinnen', price_from=True, facts_expr='cityFacts',
+    ),
+    'en-boat-schools-city': dict(
+        file='src/pages/en/boat-schools/[city].astro', lang='en', prefix='../../../', raw=True, eyebrow='city.state',
+        h1='Boat Schools<br />in {city.name}', lede='city.intro.en',
+        cta_label='Download for free', title='At a glance', product='sbfBinnen', price_from=True, facts_expr='cityFacts',
     ),
     # Schein-Finder: schmale Spalte ohne Leiste, Konfigurator bleibt (Spec Runde 3, 3.1/3.6).
     'tools-finder': dict(
@@ -268,12 +291,14 @@ def migrate(key):
         text, product = cfg['badge']
         badge = f'\n    <span slot="badge">{text}&nbsp;<PlatformPrice product="{product}" lang="{cfg["lang"]}" /></span>'
     cta_attr = '' if cfg.get('cta') is False else '\n    cta'
+    # raw=True: Eyebrow und Lede sind Ausdrücke des Templates (Städteseiten), keine Zeichenketten.
+    q = (lambda v: '{' + v + '}') if cfg.get('raw') else (lambda v: '"' + v + '"')
     col = 'schmale Spalte (Spec Runde 3, 3.1)' if cfg.get('narrow') else ('breite Spalte' if wide else 'Lesespalte') + ' (Spec Runde 2, 5.3)'
     head = f"""  <!-- Seitenkopf und {col} -->
   <PageHead
     lang="{cfg['lang']}"
-    eyebrow="{cfg['eyebrow']}"
-    lede="{cfg['lede']}"{label_attr}{cta_attr}
+    eyebrow={q(cfg['eyebrow'])}
+    lede={q(cfg['lede'])}{label_attr}{cta_attr}
   >
     {cfg['h1']}{badge}
   </PageHead>
@@ -284,21 +309,23 @@ def migrate(key):
     elif cfg.get('narrow'):
         head += '  <PageLayout variant="narrow">\n'
     else:
-        facts = ',\n'.join(f"        {{ k: '{k}', v: '{v}' }}" for k, v in cfg['facts'])
         from_attr = '\n      from' if cfg.get('price_from') else ''
+        if cfg.get('facts_expr'):
+            items = '{' + cfg['facts_expr'] + '}'  # Kennzahlen als Konstante im Frontmatter (Städte-Template)
+        else:
+            facts = ',\n'.join(f"        {{ k: '{k}', v: '{v}' }}" for k, v in cfg['facts'])
+            items = '{[\n' + facts + ',\n      ]}'
         head += f"""  <PageLayout>
     <PageFacts
       slot="aside"
       lang="{cfg['lang']}"
       title="{cfg['title']}"
       product="{cfg['product']}"{from_attr}
-      items={{[
-{facts},
-      ]}}
+      items={items}
     />
 """
     s = s[:start] + head + s[end:]
-    if wide:
+    if wide and cfg.get('licences'):
         s = overview(s)
 
     # Ende der Lesespalte (Gruppe 1 = was nach der Spalte folgt; Standard: das Layout-Ende)

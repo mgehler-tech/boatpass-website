@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHead from '../../../components/page/PageHead.astro';
+import PageLayout from '../../../components/page/PageLayout.astro';
+import PageFacts from '../../../components/page/PageFacts.astro';
+import PageLink from '../../../components/page/PageLink.astro';
+import DisplayFontPreload from '../../../components/page/DisplayFontPreload.astro';
 import Icon from '../../../components/Icon.astro';
 import { cities, mapsSearchUrl } from '../../../data/boat-schools';
 import type { BoatSchoolCity } from '../../../data/boat-schools';
@@ -23,6 +28,14 @@ const licenceTypes = city.variant === 'coastal'
         { name: 'SBF Inland', href: '/en/sbf-inland/', desc: 'Required for rivers, canals and lakes above 15 HP.' },
         { name: 'SBF Coastal', href: '/en/sbf-coastal/', desc: 'Required for coastal waters (North and Baltic Sea).' },
       ];
+
+// Sidebar facts, taken verbatim from the city data (spec round 3, 3.3).
+const cityFacts = [
+  { k: 'State', v: city.state },
+  { k: 'Waterways', v: city.waterways.en },
+  { k: 'Licence required', v: licenceTypes.map(l => l.name).join(' & ') },
+  ...(city.schools.length ? [{ k: 'Boat schools listed', v: `${city.schools.length}` }] : []),
+];
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -51,78 +64,83 @@ const faqSchema = city.faq.length > 0 ? {
   lang="en"
   altUrl={`https://boatpass.de/bootsfahrschulen/${city.slug}/`}
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   {faqSchema && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        {city.state}
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        Boat Schools in {city.name}
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto;">
-        {city.intro.en}
-      </p>
-    </div>
-  </div>
+  <!-- Seitenkopf und Lesespalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="en"
+    eyebrow={city.state}
+    lede={city.intro.en}
+    ctaLabel="Download for free"
+    cta
+  >
+    Boat Schools<br />in {city.name}
+  </PageHead>
 
-  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="en"
+      title="At a glance"
+      product="sbfBinnen"
+      from
+      items={cityFacts}
+    />
 
     <!-- Waterways -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Waterways in {city.name}</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Waterways in {city.name}</h2>
+      <p class="pg-p">
         {city.name} offers access to: <strong>{city.waterways.en}</strong>.
       </p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
+      <div class="pg-cards pg-cards--2">
         {licenceTypes.map(l => (
-          <a href={l.href} class="info-card" style="text-decoration:none;">
-            <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">{l.name}</div>
-            <div style="font-size:15px; color:#656B78; line-height:1.65;">{l.desc}</div>
-            <div style="font-size:14px; font-weight:700; color:#3366FF; margin-top:10px;">View details &rarr;</div>
+          <a href={l.href} class="pg-card">
+            <p class="pg-card-title">{l.name}</p>
+            <p class="pg-card-text">{l.desc}</p>
+            <span class="pg-card-more">View details<Icon name="chevronRight" size={16} strokeWidth={2.25} /></span>
           </a>
         ))}
       </div>
     </section>
 
     <!-- Boat Schools -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Boat Schools in {city.name}</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Boat Schools in {city.name}</h2>
+      <p class="pg-p">
         {city.schools.length > 0
           ? `Here are ${city.schools.length} boat schools in ${city.name} that offer boat licence training.`
           : `There are several boat schools in ${city.name} that prepare you for the boat licence exam.`}
       </p>
 
       {city.schools.length > 0 && (
-        <div class="school-list">
+        <div class="pg-schools">
           {city.schools.map(school => (
-            <div class="school-card">
-              <div class="school-header">
-                <span class="school-icon">
-                  <Icon name="mapPin" size={18} stroke="#3366FF" strokeWidth={1.75} />
+            <div class="pg-school">
+              <div class="pg-school-head">
+                <span class="pg-row-icon pg-row-icon--sm">
+                  <Icon name="mapPin" size={18} strokeWidth={1.75} />
                 </span>
-                <div style="flex:1; min-width:0;">
-                  <h3 class="school-name">{school.name}</h3>
-                  <p class="school-address">{school.address}</p>
+                <div class="pg-row-body">
+                  <h3 class="pg-card-title">{school.name}</h3>
+                  <p class="pg-row-text">{school.address}</p>
                 </div>
               </div>
-              <div class="school-licenses">
+              <div class="pg-school-tags">
                 {school.licenses.map(lic => (
-                  <span class="school-license-tag">{lic}</span>
+                  <span class="pg-pill">{lic}</span>
                 ))}
               </div>
-              <div class="school-actions">
-                <a href={school.website} target="_blank" rel="noopener noreferrer" class="school-link">
-                  <Icon name="globe" size={15} stroke="currentColor" strokeWidth={1.75} />
+              <div class="pg-school-actions">
+                <a href={school.website} target="_blank" rel="noopener noreferrer" class="pg-school-link">
+                  <Icon name="globe" size={15} strokeWidth={1.75} />
                   Website
                 </a>
                 {school.phone && (
-                  <a href={`tel:${school.phone.replace(/\s/g, '')}`} class="school-link school-link-secondary">
-                    <Icon name="phone" size={15} stroke="currentColor" strokeWidth={1.75} />
+                  <a href={`tel:${school.phone.replace(/\s/g, '')}`} class="pg-school-link pg-school-link--muted">
+                    <Icon name="phone" size={15} strokeWidth={1.75} />
                     {school.phone}
                   </a>
                 )}
@@ -132,68 +150,65 @@ const faqSchema = city.faq.length > 0 ? {
         </div>
       )}
 
-      <a href={mapsSearchUrl(city.mapsQuery)} target="_blank" rel="noopener noreferrer" class="maps-cta">
-        <div style="flex:1; min-width:0;">
-          <div style="font-size:12px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Google Maps</div>
-          <div style="font-size:21px; font-weight:900; color:white; letter-spacing:-0.5px; line-height:1.2;">More boat schools in {city.name}</div>
-          <div style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.5; margin-top:6px;">Browse all schools on the map, compare reviews and find directions.</div>
-        </div>
-        <span style="flex-shrink:0; background:white; color:#3366FF; font-weight:800; font-size:15px; padding:12px 22px; border-radius:12px; white-space:nowrap;">Open Map &rarr;</span>
+      <a href={mapsSearchUrl(city.mapsQuery)} target="_blank" rel="noopener noreferrer" class="pg-banner">
+        <span class="pg-banner-text">
+          <span class="pg-eyebrow">Google Maps</span>
+          <span class="pg-banner-title">More boat schools in {city.name}</span>
+          <span class="pg-banner-sub">Browse all schools on the map, compare reviews and find directions.</span>
+        </span>
+        <span class="h-btn h-btn--sm pg-banner-cta">Open Map<Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" /></span>
       </a>
     </section>
 
     <!-- Exams -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Exams in {city.name}</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Exams in {city.name}</h2>
+      <p class="pg-p">
         {city.examInfo.en}
       </p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
-        <div class="info-card">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Theory exam</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">30 multiple-choice questions (SBF Inland: 45 min, SBF Coastal: 60 min incl. navigation).</div>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-title">Theory exam</p>
+          <p class="pg-card-text">30 multiple-choice questions (SBF Inland: 45 min, SBF Coastal: 60 min incl. navigation).</p>
         </div>
-        <div class="info-card">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Practical exam</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">On-water manoeuvres: docking, turning, stopping and man-overboard. Plus knots.</div>
+        <div class="pg-card">
+          <p class="pg-card-title">Practical exam</p>
+          <p class="pg-card-text">On-water manoeuvres: docking, turning, stopping and man-overboard. Plus knots.</p>
         </div>
-        <div class="info-card">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Exam bodies</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">Exams are administered by the DMYV (German Motor Yacht Association) or the DSV (German Sailing Association).</div>
+        <div class="pg-card">
+          <p class="pg-card-title">Exam bodies</p>
+          <p class="pg-card-text">Exams are administered by the DMYV (German Motor Yacht Association) or the DSV (German Sailing Association).</p>
         </div>
       </div>
     </section>
 
     <!-- Study with BoatPass CTA -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Study Theory with BoatPass</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Study Theory with BoatPass</h2>
+      <p class="pg-p">
         You do not need a boat school for the theory exam. The official ELWIS question catalogue is freely available, and BoatPass puts it in your pocket: exam simulation, mistake training and progress tracking for just 9.99 euros per catalogue.
       </p>
-      <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px; margin-bottom:20px;">
-        <span style="flex-shrink:0; margin-top:2px;"><Icon name="book" size={22} stroke="#3366FF" strokeWidth={1.75} /></span>
-        <div>
-          <div style="font-size:14px; font-weight:700; color:#1A1F36; margin-bottom:6px;">The smart split</div>
-          <p style="font-size:15px; color:#656B78; line-height:1.65; margin:0;">
+      <div class="pg-answer pg-answer--icon">
+        <span class="pg-row-icon"><Icon name="lightbulb" size={20} strokeWidth={1.75} /></span>
+        <div class="pg-answer-body">
+          <p class="pg-card-title">The smart split</p>
+          <p class="pg-card-text">
             Study theory independently with <strong>BoatPass</strong> (from 9.99 euros), then book only the practical lessons at a <strong>boat school in {city.name}</strong>. This is the most cost-effective way to get your German boat licence.
           </p>
         </div>
       </div>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
-        &#9654;&nbsp;Download for free
-      </a>
+      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer" class="h-btn h-btn--sm">Download for free<Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" /></a>
     </section>
 
     <!-- FAQ -->
     {city.faq.length > 0 && (
-      <section style="margin-bottom:48px;">
-        <h2 class="content-section-title" style="margin-bottom:20px;">Frequently asked questions about {city.name}</h2>
-        <div style="display:flex; flex-direction:column; gap:14px;">
+      <section class="pg-section">
+        <h2 class="pg-h2">Frequently asked questions about {city.name}</h2>
+        <div class="pg-faq">
           {city.faq.map(f => (
-            <div class="faq-item">
-              <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q.en}</h3>
-              <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a.en}</div>
+            <div class="pg-faq-item">
+              <h3 class="pg-h3">{f.q.en}</h3>
+              <p class="pg-card-text">{f.a.en}</p>
             </div>
           ))}
         </div>
@@ -201,230 +216,19 @@ const faqSchema = city.faq.length > 0 ? {
     )}
 
     <!-- Internal links -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.1);">
-      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Further reading</h3>
-      <div class="related-links">
-        <a href="/en/boat-schools/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; All boat school cities</a>
-        <a href="/en/blog/boating-regions-in-germany/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Boating regions in Germany: where can you go with the SBF?</a>
-        <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Learn SBF Inland with BoatPass</a>
-        <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Learn SBF Coastal with BoatPass</a>
-        <a href="/en/sbf-costs/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; What does the boat licence cost?</a>
-        <a href="/en/sbf-exam/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF exam: how theory and practice work</a>
-        <a href="/en/licenses/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; All German boating licences at a glance</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Further reading</h2>
+      <ul class="pg-related">
+        <li><a href="/en/boat-schools/">All boat school cities<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/boating-regions-in-germany/">Boating regions in Germany: where can you go with the SBF?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-inland/">Learn SBF Inland with BoatPass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-coastal/">Learn SBF Coastal with BoatPass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-costs/">What does the boat licence cost?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-exam/">SBF exam: how theory and practice work<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/licenses/">All German boating licences at a glance<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
-
+  </PageLayout>
 </BaseLayout>
 
-<style>
-  .maps-cta {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    background: linear-gradient(135deg, #1A1F36, #3366FF);
-    border-radius: 18px;
-    padding: 24px 26px;
-    text-decoration: none;
-    box-shadow: 0 10px 30px rgba(51,102,255,0.18);
-    transition: box-shadow 0.2s ease, transform 0.2s ease;
-  }
-  .maps-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 36px rgba(51,102,255,0.25);
-  }
-
-  .info-card {
-    background: white;
-    border: 1px solid rgba(51,102,255,0.12);
-    border-radius: 16px;
-    padding: 22px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-  a.info-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(26,31,54,0.10);
-    border-color: rgba(51,102,255,0.28);
-  }
-
-  .faq-item {
-    background: white;
-    border: 1px solid rgba(51,102,255,0.08);
-    border-radius: 16px;
-    padding: 22px;
-  }
-
-  .school-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 20px;
-  }
-  .school-card {
-    background: white;
-    border: 1px solid rgba(51,102,255,0.10);
-    border-radius: 16px;
-    padding: 22px;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-  }
-  .school-card:hover {
-    border-color: rgba(51,102,255,0.25);
-    box-shadow: 0 4px 16px rgba(51,102,255,0.08);
-  }
-  .school-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    margin-bottom: 14px;
-  }
-  .school-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    background: rgba(51,102,255,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .school-name {
-    font-size: 16px;
-    font-weight: 700;
-    color: #1A1F36;
-    margin-bottom: 4px;
-  }
-  .school-address {
-    font-size: 14px;
-    color: #656B78;
-    line-height: 1.5;
-    margin: 0;
-  }
-  .school-licenses {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 14px;
-  }
-  .school-license-tag {
-    font-size: 12px;
-    font-weight: 600;
-    color: #3366FF;
-    background: rgba(51,102,255,0.06);
-    border: 1px solid rgba(51,102,255,0.12);
-    border-radius: 8px;
-    padding: 4px 10px;
-  }
-  .school-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  /* Website and phone links on each school card as standalone, min. 44px tall
-     tap targets (WCAG 2.5.5). Previously they were thin 14px text lines with no
-     padding (~20px tall) – too small and easy to mis-tap on mobile. Rendered as
-     subtly outlined chip buttons, the card's two primary actions also stand out
-     more clearly. Brand blue (#3366FF) and the existing grey (#4B5563) unchanged. */
-  .school-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    min-height: 44px;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #3366FF;
-    text-decoration: none;
-    border-radius: 10px;
-    border: 1px solid rgba(51,102,255,0.16);
-    background: rgba(51,102,255,0.04);
-    transition: background-color 0.15s ease, border-color 0.15s ease;
-  }
-  .school-link:hover {
-    background: rgba(51,102,255,0.09);
-    border-color: rgba(51,102,255,0.28);
-  }
-  .school-link-secondary {
-    color: #4B5563;
-    border-color: rgba(26,31,54,0.12);
-    background: rgba(26,31,54,0.02);
-  }
-  .school-link-secondary:hover {
-    background: rgba(26,31,54,0.05);
-    border-color: rgba(26,31,54,0.20);
-  }
-
-  @media (max-width: 640px) {
-    .maps-cta {
-      flex-direction: column;
-      text-align: center;
-    }
-    .maps-cta span:last-child {
-      width: 100%;
-      text-align: center;
-    }
-  }
-
-  html.dark .info-card {
-    background: #181E2E !important;
-    border-color: rgba(90, 120, 255, 0.14) !important;
-  }
-  html.dark a.info-card:hover {
-    border-color: rgba(90, 120, 255, 0.32) !important;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3) !important;
-  }
-  html.dark .faq-item {
-    background: #181E2E !important;
-    border-color: rgba(90, 120, 255, 0.14) !important;
-  }
-  html.dark .info-card div:first-child,
-  html.dark .faq-item h3 {
-    color: #E2E8F0 !important;
-  }
-  html.dark .info-card div:nth-child(2),
-  html.dark .faq-item div {
-    color: #94A3B8 !important;
-  }
-  html.dark .school-card {
-    background: #181E2E !important;
-    border-color: rgba(90, 120, 255, 0.14) !important;
-  }
-  html.dark .school-card:hover {
-    border-color: rgba(90, 120, 255, 0.30) !important;
-    box-shadow: 0 4px 16px rgba(90, 120, 255, 0.10) !important;
-  }
-  html.dark .school-name {
-    color: #E2E8F0 !important;
-  }
-  html.dark .school-address {
-    color: #94A3B8 !important;
-  }
-  html.dark .school-icon {
-    background: rgba(90, 120, 255, 0.14) !important;
-  }
-  html.dark .school-license-tag {
-    color: #7B9CFF !important;
-    background: rgba(90, 120, 255, 0.10) !important;
-    border-color: rgba(90, 120, 255, 0.20) !important;
-  }
-  html.dark .school-link {
-    color: #7B9CFF !important;
-    border-color: rgba(90,120,255,0.22) !important;
-    background: rgba(90,120,255,0.08) !important;
-  }
-  html.dark .school-link:hover {
-    background: rgba(90,120,255,0.14) !important;
-    border-color: rgba(90,120,255,0.34) !important;
-  }
-  html.dark .school-link-secondary {
-    color: #94A3B8 !important;
-    border-color: rgba(148,163,184,0.20) !important;
-    background: rgba(148,163,184,0.06) !important;
-  }
-  html.dark .school-link-secondary:hover {
-    background: rgba(148,163,184,0.10) !important;
-    border-color: rgba(148,163,184,0.30) !important;
-  }
-</style>
