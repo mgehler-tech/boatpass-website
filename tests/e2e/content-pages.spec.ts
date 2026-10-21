@@ -44,3 +44,26 @@ test.describe('Prüfungsablauf', () => {
     await expect(page.locator('.pg-aside dl.pg-facts')).toContainText('60 min');
   });
 });
+
+test.describe('Prüfungsfragen', () => {
+  test('Binnen DE: vier Kennzahlen aus der Seite, keine Gebühr', async ({ page }) => {
+    await expectMigrated(page, '/sbf-binnen-pruefungsfragen/', { h1: /SBF Binnen Fragen/, facts: 4 });
+    const facts = page.locator('.pg-aside dl.pg-facts');
+    await expect(facts).toContainText('253');
+    await expect(facts).not.toContainText('130,78');
+  });
+  test('See DE: fünf Kennzahlen inkl. Navigationsaufgabe', async ({ page }) => {
+    await expectMigrated(page, '/sbf-see-pruefungsfragen/', { h1: /SBF See Fragen/, facts: 5 });
+    const facts = page.locator('.pg-aside dl.pg-facts');
+    await expect(facts).toContainText('285');
+    await expect(facts).toContainText('9 Fragen');
+  });
+  test('Inland EN', async ({ page }) => {
+    await expectMigrated(page, '/en/sbf-inland-exam-questions/', { h1: /SBF Inland questions/, facts: 4 });
+    await expect(page.locator('.pg-aside dl.pg-facts')).toContainText('253');
+  });
+  test('Coastal EN', async ({ page }) => {
+    await expectMigrated(page, '/en/sbf-coastal-exam-questions/', { h1: /SBF Coastal questions/, facts: 5 });
+    await expect(page.locator('.pg-aside dl.pg-facts')).toContainText('9 questions');
+  });
+});

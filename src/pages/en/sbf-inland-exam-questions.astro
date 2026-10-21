@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../../components/page/PageHead.astro';
+import PageLayout from '../../components/page/PageLayout.astro';
+import PageFacts from '../../components/page/PageFacts.astro';
+import PageLink from '../../components/page/PageLink.astro';
+import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
 import Icon from '../../components/Icon.astro';
 import type { IconName } from '../../icons';
 import { PLAY_STORE_URL } from '../../data/stores';
@@ -16,13 +21,13 @@ const breadcrumbSchema = {
   ],
 };
 
-const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & waterways regulations', count: 124, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
-  { name: 'Navigation', desc: 'Charts, courses, positions & bearings', count: 52, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 39, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Signals & marks', desc: 'Sound signals, visual signals & flags', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
-  { name: 'Meteorology', desc: 'Wind, weather & forecasting', count: 5, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
-  { name: 'General', desc: 'General fundamentals & seamanship', count: 3, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
+const categories: { name: string; desc: string; count: number; icon: IconName }[] = [
+  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & waterways regulations', count: 124, icon: 'scale' },
+  { name: 'Navigation', desc: 'Charts, courses, positions & bearings', count: 52, icon: 'compass' },
+  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 39, icon: 'shield' },
+  { name: 'Signals & marks', desc: 'Sound signals, visual signals & flags', count: 28, icon: 'bell' },
+  { name: 'Meteorology', desc: 'Wind, weather & forecasting', count: 5, icon: 'cloud' },
+  { name: 'General', desc: 'General fundamentals & seamanship', count: 3, icon: 'document' },
 ];
 
 const faqs = [
@@ -61,94 +66,99 @@ const faqSchema = {
   lang="en"
   altUrl="https://boatpass.de/sbf-binnen-pruefungsfragen/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        SBF Inland Exam Questions
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        SBF Inland questions –<br>practice the official catalog
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto 36px;">
-        Over 250 official ELWIS questions, clearly sorted by category. Learn with a real exam simulation and targeted mistake training – and head into the SBF Inland theory exam with confidence.
-      </p>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
-        ▶&nbsp;Practice questions for free
-      </a>
-    </div>
-  </div>
+  <!-- Seitenkopf und Lesespalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="en"
+    eyebrow="SBF Inland Exam Questions"
+    lede="Over 250 official ELWIS questions, clearly sorted by category. Learn with a real exam simulation and targeted mistake training – and head into the SBF Inland theory exam with confidence."
+    ctaLabel="Practice questions for free"
+    cta
+  >
+    SBF Inland questions –<br />practice the official catalog
+  </PageHead>
 
-  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="en"
+      title="At a glance"
+      product="sbfBinnen"
+      items={[
+        { k: 'Question catalogue', v: '253 questions (72 basic + 181 specific)' },
+        { k: 'Theory exam', v: '30 questions · 45 min' },
+        { k: 'Basic questions', v: '7, at least 5 correct' },
+        { k: 'Specific questions', v: '23, at least 18 correct' },
+      ]}
+    />
 
     <!-- Answer snippet: short, quotable direct answer for search engines & AI -->
-    <section style="margin-bottom:48px;">
-      <div style="background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px;">
-        <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">In a nutshell</div>
-        <p style="font-size:17px; color:#1A1F36; line-height:1.7; margin:0; font-weight:600;">
+    <section class="pg-section">
+      <div class="pg-answer">
+        <p class="pg-answer-label">In a nutshell</p>
+        <p class="pg-answer-text">
           The official SBF Inland question catalog comprises 253 questions (72 basic + 181 specific inland questions); under sail, 47 sailing questions are added. In the theory exam, 30 questions are drawn from these (7 basic + 23 specific), to be solved in 45 minutes. You pass if you answer at least 5 of 7 basic questions and 18 of 23 specific questions correctly. Boatpass trains exactly this ELWIS catalog with exam simulation and mistake training.
         </p>
       </div>
     </section>
 
     <!-- The catalog -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">The official SBF Inland question catalog</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">The official SBF Inland question catalog</h2>
+      <p class="pg-p">
         The <strong>exam questions for the SBF Inland</strong> come from the official question catalog set by the <strong>DSV and DMYV</strong> and published free of charge via <strong>ELWIS</strong>. For the <strong>under engine</strong> scope it comprises <strong>72 basic questions and 181 specific inland questions</strong> (253 questions in total). Anyone who also wants to navigate <strong>under sail</strong> learns 47 additional sailing questions.
       </p>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      <p class="pg-p">
         In the real theory exam, a paper of <strong>30 questions</strong> is compiled from these – 7 basic questions and 23 specific questions. Anyone who works through the catalog systematically knows every possible question on exam day.
       </p>
-      <p style="font-size:14px; color:#656B78; line-height:1.6; margin-top:14px;">
-        Source: official question catalog (DSV/DMYV), published free of charge via <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
+      <p class="pg-note pg-note--sm pg-note--after">
+        Source: official question catalog (DSV/DMYV), published free of charge via <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
       </p>
     </section>
 
     <!-- Exam structure -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">How the theory exam is structured</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Exam paper</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">30 questions · 45 minutes<br>Multiple choice</div>
+    <section class="pg-section">
+      <h2 class="pg-h2">How the theory exam is structured</h2>
+      <div class="pg-cards pg-cards--4">
+        <div class="pg-card">
+          <p class="pg-card-label">Exam paper</p>
+          <p class="pg-card-text">30 questions · 45 minutes<br>Multiple choice</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Basic questions</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">7 questions<br>at least 5 correct</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Basic questions</p>
+          <p class="pg-card-text">7 questions<br>at least 5 correct</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Specific questions</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">23 questions<br>at least 18 correct</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Specific questions</p>
+          <p class="pg-card-text">23 questions<br>at least 18 correct</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Question catalog</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">253 questions (engine)<br>+ 47 sailing questions</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Question catalog</p>
+          <p class="pg-card-text">253 questions (engine)<br>+ 47 sailing questions</p>
         </div>
       </div>
     </section>
 
     <!-- Practice effectively -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Practice SBF Inland questions effectively</h2>
-      <div style="display:flex; flex-direction:column; gap:16px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Practice SBF Inland questions effectively</h2>
+      <div class="pg-rows">
         {[
           { icon: 'book', title: 'Learning mode: category by category', desc: 'Work through the complete catalog structured by topic, at your own pace. That way no topic is left open.' },
           { icon: 'target', title: 'Exam simulation: 30 questions, 45 minutes', desc: 'Practice under real exam conditions with a random paper and passing threshold – just like on exam day.' },
           { icon: 'refresh', title: 'Mistake training: only your weak spots', desc: 'Specifically repeat the questions you don\'t know yet, instead of wasting time on what you\'ve already learned.' },
           { icon: 'chart', title: 'Keep an eye on your progress', desc: 'See, broken down by category, where you stand and when you\'re ready for the exam.' },
         ].map(f => (
-          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={f.icon as IconName} size={21} stroke="#3366FF" strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={f.icon as IconName} size={21} strokeWidth={1.75} />
             </span>
-            <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
-              <div style="font-size:15px; color:#656B78; line-height:1.6;">{f.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{f.title}</p>
+              <p class="pg-row-text">{f.desc}</p>
             </div>
           </div>
         ))}
@@ -156,52 +166,52 @@ const faqSchema = {
     </section>
 
     <!-- FAQ -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Frequently asked questions about the catalog</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Frequently asked questions about the catalog</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Learn by category -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">Learn by category</h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Learn by category</h2>
+      <p class="pg-p">
         The question catalog is divided into topic areas – practice in a targeted way based on your weak spots.
       </p>
-      <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="pg-rows">
         {categories.map(c => (
-          <div style="display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px;">
-            <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
-              <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={c.icon} size={20} strokeWidth={1.75} />
             </span>
-            <div style="flex:1; min-width:0;">
-              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
-              <div style="font-size:12px; color:#656B78; line-height:1.4; margin-top:2px;">{c.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{c.name}</p>
+              <p class="pg-row-text">{c.desc}</p>
             </div>
-            <span style="font-size:12px; font-weight:700; color:#656B78; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} questions</span>
+            <span class="pg-pill">{c.count} questions</span>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Internal links -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
-      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Further reading</h2>
-      <div class="related-links">
-        <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Learn SBF Inland: overview & app</a>
-        <a href="/en/sbf-coastal-exam-questions/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Practice SBF Coastal exam questions</a>
-        <a href="/en/sbf-exam/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF exam: how theory & practice work</a>
-        <a href="/en/sbf-costs/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ What does the boating license cost?</a>
-        <a href="/en/blog/hardest-sbf-exam-questions/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ The hardest SBF exam questions – and how to master them</a>
-        <a href="/en/blog/most-common-sbf-mistakes/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ The most common mistakes in the SBF exam – and how to avoid them</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Further reading</h2>
+      <ul class="pg-related">
+        <li><a href="/en/sbf-inland/">Learn SBF Inland: overview & app<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-coastal-exam-questions/">Practice SBF Coastal exam questions<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-exam/">SBF exam: how theory & practice work<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-costs/">What does the boating license cost?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/hardest-sbf-exam-questions/">The hardest SBF exam questions – and how to master them<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/most-common-sbf-mistakes/">The most common mistakes in the SBF exam – and how to avoid them<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
+  </PageLayout>
 </BaseLayout>
