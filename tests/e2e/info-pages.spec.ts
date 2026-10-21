@@ -65,3 +65,19 @@ test.describe('Rechtstexte', () => {
     await expect(page.locator('main .pg-kv .pg-kv-v').first()).toBeVisible();
   });
 });
+
+test.describe('Über uns', () => {
+  test('DE: Kopf mit Store-Button, Porträt lädt eager, Versprechen-Liste', async ({ page }) => {
+    await expectMigrated(page, '/ueber-uns/', { h1: /Boatpass/, facts: 0, cta: true, variant: 'narrow' });
+    await expect(page.locator('main .pg-portrait img[loading="eager"][fetchpriority="high"]')).toHaveCount(1);
+    await expect(page.locator('main .pg-portrait .pg-card-title')).toContainText('Marius Gehler');
+    await expect(page.locator('main .pg-checks .pg-check')).toHaveCount(5);
+    expect(await page.locator('main .pg-card--legal').count()).toBeGreaterThanOrEqual(5);
+    await expect(page.locator('main [style*="color:#"], main [style*="background:"]')).toHaveCount(0);
+  });
+  test('EN parity', async ({ page }) => {
+    await expectMigrated(page, '/en/about/', { h1: /Boatpass/i, facts: 0, cta: true, variant: 'narrow' });
+    await expect(page.locator('main .pg-portrait img[loading="eager"][fetchpriority="high"]')).toHaveCount(1);
+    await expect(page.locator('main .pg-checks .pg-check')).toHaveCount(5);
+  });
+});

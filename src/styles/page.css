@@ -649,3 +649,11 @@ details[open] > .pg-faq-q svg { transform: rotate(90deg); }
 .pg-note + .pg-note { margin-top: 8px; }
 .pg-card--legal .pg-note { font-size: 14px; }
 
+/* ── Über uns (Runde 3b, Task 3): Porträt, Bild in der Karte, Schlagwörter, Versprechen ── */
+.pg-portrait img { object-position: center 22%; }
+.pg-card-title--lg { font-size: 20px; margin-bottom: 4px; }
+.pg-card-img { display: block; width: 100%; height: 240px; margin-bottom: 20px; border-radius: var(--h-r-sm); object-fit: cover; object-position: center 35%; }
+.pg-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.pg-checks { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.pg-check { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.6; color: var(--h-text); }
+.pg-check-mark { flex-shrink: 0; font-weight: 700; color: var(--h-blue-ink); }

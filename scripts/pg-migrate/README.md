@@ -53,11 +53,17 @@ python3 scripts/pg-migrate/pginfo.py impressum en-legal
 ```
 
 `pginfo.py` liest den Kopf-Block der Infoseiten (Pille, H1, Intro) aus und ersetzt ihn durch
-`PageHead`, die 720-px-Hülle durch `PageLayout variant="narrow"`; Legal-Karten, Labels,
+`PageHead`, die 720-/600-px-Hülle durch `PageLayout variant="narrow"`; Legal-Karten, Labels,
 Absätze und Links werden Klassen (`pg-card--legal`, `pg-card-label`, `pg-p--sm`, `pg-strong`,
-`pg-inline-link`). Die Regeln für Legal-Karten, `pg-meta`, `pg-divider`, `pg-kv`, `pg-notice`,
-`pg-chips`, FAQ-Akkordeon und `pg-portrait` hängt der erste Lauf an `src/styles/page.css` an.
-Die Lede landet als Text im `PageHead` (Auszeichnungen wie `<strong>` entfallen dort).
+`pg-inline-link`). Je Seite ein Modus in `PAGES`: Inline-Werte (Impressum), `consts`
+(Datenschutz/Nutzungsbedingungen: `style={card}` → Klassen, die const-Zeilen entfallen,
+Trenner → `pg-divider`, Zeilen → `pg-kv`, Aufzählungen → `pg-bullets`), `about` (Porträt,
+Bild in der Karte, Schlagwörter, Versprechen-Liste), `contact` (Status-Boxen → `pg-notice`,
+Selbsthilfe → `pg-faq`; Formular und Skript unangetastet), `faq` (Tailwind-Kopf, Chips,
+`details.pg-faq-item` mit Chevron, Links in den Antwort-Strings). Die zugehörigen Regeln hängt
+der erste Lauf des jeweiligen Modus an `src/styles/page.css` an. Die Lede landet als Text im
+`PageHead` (Auszeichnungen wie `<strong>` entfallen dort). Für die Rechtstexte liegt der
+sichtbare Text von vor der Umstellung unter `tests/e2e/fixtures/legal-text/` (Wortgleichheit).
 
 ## Grenzen
 
