@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/page/PageHead.astro';
+import PageLayout from '../components/page/PageLayout.astro';
+import PageFacts from '../components/page/PageFacts.astro';
+import DisplayFontPreload from '../components/page/DisplayFontPreload.astro';
 import Icon from '../components/Icon.astro';
 import type { IconName } from '../icons';
-import { PLAY_STORE_URL } from '../data/stores';
-
-const playStoreUrl = PLAY_STORE_URL;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -16,13 +17,13 @@ const breadcrumbSchema = {
   ],
 };
 
-const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'Schifffahrtsrecht', desc: 'Vorfahrtregeln, Lichterführung & Kollisionsverhütungsregeln', count: 130, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
-  { name: 'Navigation & Seekarte', desc: 'Kartenarbeit, Kurse, Gezeiten & Strom', count: 72, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Sicherheit', desc: 'Rettungsausrüstung, Notsignale & Sicherheitsverhalten', count: 40, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Signale & Zeichen', desc: 'Schall-, Sicht- und Seezeichen', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
-  { name: 'Wetterkunde', desc: 'Wind, Wetter, Gezeitentafel & Vorhersage', count: 10, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
-  { name: 'Allgemein', desc: 'Allgemeine Grundlagen & Seemannschaft', count: 5, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
+const categories: { name: string; desc: string; count: number; icon: IconName }[] = [
+  { name: 'Schifffahrtsrecht', desc: 'Vorfahrtregeln, Lichterführung & Kollisionsverhütungsregeln', count: 130, icon: 'scale' },
+  { name: 'Navigation & Seekarte', desc: 'Kartenarbeit, Kurse, Gezeiten & Strom', count: 72, icon: 'compass' },
+  { name: 'Sicherheit', desc: 'Rettungsausrüstung, Notsignale & Sicherheitsverhalten', count: 40, icon: 'shield' },
+  { name: 'Signale & Zeichen', desc: 'Schall-, Sicht- und Seezeichen', count: 28, icon: 'bell' },
+  { name: 'Wetterkunde', desc: 'Wind, Wetter, Gezeitentafel & Vorhersage', count: 10, icon: 'cloud' },
+  { name: 'Allgemein', desc: 'Allgemeine Grundlagen & Seemannschaft', count: 5, icon: 'document' },
 ];
 
 const faqs = [
@@ -61,105 +62,111 @@ const faqSchema = {
   lang="de"
   altUrl="https://boatpass.de/en/sbf-coastal-exam-questions/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        SBF See Prüfungsfragen
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        SBF See Fragen –<br>inklusive Navigation üben
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto 36px;">
-        Der komplette amtliche ELWIS-Katalog See – plus die Navigationsaufgabe mit realem Navigationsteil. Übe alle 39 Prüfungsfragen unter echten Bedingungen.
-      </p>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
-        ▶&nbsp;Kostenlos Fragen üben
-      </a>
-    </div>
-  </div>
+  <!-- Seitenkopf und Lesespalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="de"
+    eyebrow="SBF See Prüfungsfragen"
+    lede="Der komplette amtliche ELWIS-Katalog See – plus die Navigationsaufgabe mit realem Navigationsteil. Übe alle 39 Prüfungsfragen unter echten Bedingungen."
+    ctaLabel="Kostenlos Fragen üben"
+    cta
+  >
+    SBF See Fragen –<br />inklusive Navigation üben
+  </PageHead>
 
-  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="de"
+      title="Auf einen Blick"
+      product="sbfSee"
+      items={[
+        { k: 'Fragenkatalog', v: '285 Fragen (72 Basis + 213 spezifisch)' },
+        { k: 'Theorieprüfung', v: '39 Fragen · 60 Min' },
+        { k: 'Basisfragen', v: '7, mind. 5 richtig' },
+        { k: 'Spezifische Fragen', v: '23, mind. 18 richtig' },
+        { k: 'Navigationsaufgabe', v: '9 Fragen, mind. 7 richtig' },
+      ]}
+    />
 
     <!-- Answer-Snippet: kurze, zitierfähige Direktantwort für Suchmaschinen & KI -->
-    <section style="margin-bottom:48px;">
-      <div style="background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px;">
-        <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Auf den Punkt</div>
-        <p style="font-size:17px; color:#1A1F36; line-height:1.7; margin:0; font-weight:600;">
+    <section class="pg-section">
+      <div class="pg-answer">
+        <p class="pg-answer-label">Auf den Punkt</p>
+        <p class="pg-answer-text">
           Der amtliche SBF-See-Fragenkatalog umfasst 285 Fragen (72 Basis- + 213 spezifische See-Fragen). Die Theorieprüfung besteht aus 39 Fragen in 60 Minuten: 30 Standardfragen (7 Basis + 23 spezifische) plus 9 Fragen zur Navigationsaufgabe auf der Seekarte. Bestanden hat, wer mindestens 5 von 7 Basisfragen, 18 von 23 spezifischen Fragen und 7 von 9 Navigationsfragen richtig hat. Boatpass trainiert den vollständigen ELWIS-Katalog inklusive realem Navigationsteil.
         </p>
       </div>
     </section>
 
     <!-- Der Katalog -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Der offizielle SBF-See-Fragenkatalog</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Der offizielle SBF-See-Fragenkatalog</h2>
+      <p class="pg-p">
         Die <strong>Prüfungsfragen für den SBF See</strong> stammen aus dem amtlichen Fragenkatalog (DSV/DMYV, veröffentlicht über ELWIS) für die <strong>Seeschifffahrtsstraßen</strong> (Nord- und Ostsee). Er umfasst <strong>72 Basisfragen und 213 spezifische See-Fragen</strong> (zusammen 285 Fragen). Dazu kommt der entscheidende Teil, den es beim Binnen nicht gibt: die <strong>Navigationsaufgabe</strong>.
       </p>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      <p class="pg-p">
         Die Theorieprüfung umfasst insgesamt <strong>39 Fragen in 60 Minuten</strong> – 30 Standardfragen plus 9 Fragen zur Navigationsaufgabe auf der Seekarte.
       </p>
-      <p style="font-size:14px; color:#656B78; line-height:1.6; margin-top:14px;">
-        Quelle: amtlicher Fragenkatalog (DSV/DMYV), kostenlos veröffentlicht über <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-neu-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
+      <p class="pg-note pg-note--sm pg-note--after">
+        Quelle: amtlicher Fragenkatalog (DSV/DMYV), kostenlos veröffentlicht über <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-neu-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
       </p>
     </section>
 
     <!-- Aufbau der Prüfung -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">So ist die SBF-See-Theorieprüfung aufgebaut</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Prüfungsbogen</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">39 Fragen · 60 Minuten<br>Multiple Choice + Navigation</div>
+    <section class="pg-section">
+      <h2 class="pg-h2">So ist die SBF-See-Theorieprüfung aufgebaut</h2>
+      <div class="pg-cards pg-cards--4">
+        <div class="pg-card">
+          <p class="pg-card-label">Prüfungsbogen</p>
+          <p class="pg-card-text">39 Fragen · 60 Minuten<br>Multiple Choice + Navigation</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Basisfragen</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">7 Fragen<br>mind. 5 richtig</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Basisfragen</p>
+          <p class="pg-card-text">7 Fragen<br>mind. 5 richtig</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Spezifische Fragen</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">23 Fragen<br>mind. 18 richtig</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Spezifische Fragen</p>
+          <p class="pg-card-text">23 Fragen<br>mind. 18 richtig</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Navigationsaufgabe</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">9 Fragen<br>mind. 7 richtig</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Navigationsaufgabe</p>
+          <p class="pg-card-text">9 Fragen<br>mind. 7 richtig</p>
         </div>
       </div>
     </section>
 
     <!-- Navigationsaufgabe -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Die Navigationsaufgabe – der Knackpunkt beim SBF See</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Die Navigationsaufgabe – der Knackpunkt beim SBF See</h2>
+      <p class="pg-p">
         Die Navigationsaufgabe ist der Teil, vor dem die meisten Prüflinge Respekt haben. Auf der amtlichen <strong>Übungs-Seekarte</strong> trägst du Kurse ab, bestimmst Positionen und berücksichtigst Einflüsse wie <strong>Strom, Wind und Gezeiten</strong>. Von den 9 Einzelfragen musst du mindestens 7 richtig lösen.
       </p>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      <p class="pg-p">
         Der große Vorteil: Es gibt insgesamt nur <strong>15 amtliche Navigationsaufgaben</strong>, von denen in der Prüfung eine unverändert gestellt wird. Wer diese 15 Aufgaben mit einem <strong>realen Navigationsteil</strong> durchübt – genau wie in der echten Prüfung – geht souverän in den Prüfungstag. Genau das bildet die Boatpass-App ab.
       </p>
     </section>
 
     <!-- Effektiv üben -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">SBF-See-Fragen effektiv üben</h2>
-      <div style="display:flex; flex-direction:column; gap:16px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">SBF-See-Fragen effektiv üben</h2>
+      <div class="pg-rows">
         {[
           { icon: 'book', title: 'Kompletter ELWIS-Katalog See', desc: 'Alle Fragen zu Küste und Seeschifffahrtsstraßen – vollständig abgedeckt, immer aktuell.' },
           { icon: 'compass', title: 'Navigation mit realem Navigationsteil', desc: 'Übe die Navigationsaufgabe so, wie sie in der echten Prüfung gestellt wird – Kurse, Positionen, Gezeiten.' },
           { icon: 'target', title: 'Prüfungssimulation: 39 Fragen, 60 Minuten', desc: 'Echte Prüfungsbedingungen inklusive Navigationsteil und Bestehensgrenze.' },
           { icon: 'refresh', title: 'Fehlertraining', desc: 'Wiederhole gezielt deine Schwachstellen, statt alles von vorne zu lernen.' },
         ].map(f => (
-          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={f.icon as IconName} size={21} stroke="#3366FF" strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={f.icon as IconName} size={21} strokeWidth={1.75} />
             </span>
-            <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
-              <div style="font-size:15px; color:#656B78; line-height:1.6;">{f.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{f.title}</p>
+              <p class="pg-row-text">{f.desc}</p>
             </div>
           </div>
         ))}
@@ -167,52 +174,52 @@ const faqSchema = {
     </section>
 
     <!-- FAQ -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Häufige Fragen zum SBF-See-Katalog</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Häufige Fragen zum SBF-See-Katalog</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Lernen nach Kategorie -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">Lernen nach Kategorie</h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Lernen nach Kategorie</h2>
+      <p class="pg-p">
         Der Fragenkatalog ist in Themengebiete unterteilt – übe gezielt nach Schwachstellen.
       </p>
-      <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="pg-rows">
         {categories.map(c => (
-          <div style="display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px;">
-            <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
-              <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={c.icon} size={20} strokeWidth={1.75} />
             </span>
-            <div style="flex:1; min-width:0;">
-              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
-              <div style="font-size:12px; color:#656B78; line-height:1.4; margin-top:2px;">{c.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{c.name}</p>
+              <p class="pg-row-text">{c.desc}</p>
             </div>
-            <span style="font-size:12px; font-weight:700; color:#656B78; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} Fragen</span>
+            <span class="pg-pill">{c.count} Fragen</span>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Interne Links -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
-      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Weiterführende Seiten</h2>
-      <div class="related-links">
-        <a href="/sbf-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See lernen: Überblick & App</a>
-        <a href="/sbf-binnen-pruefungsfragen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen Prüfungsfragen üben</a>
-        <a href="/sbf-pruefung-ablauf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Prüfung: Ablauf von Theorie & Praxis</a>
-        <a href="/sbf-kosten/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Was kostet der Sportbootführerschein?</a>
-        <a href="/blog/sbf-see-navigationsaufgaben-erklaert/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See Navigationsaufgaben erklärt – Aufbau & Tipps</a>
-        <a href="/blog/schwierigste-sbf-pruefungsfragen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Die schwierigsten SBF-Prüfungsfragen – und wie du sie meisterst</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Weiterführende Seiten</h2>
+      <ul class="pg-related">
+        <li><a href="/sbf-see/">SBF See lernen: Überblick & App<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-binnen-pruefungsfragen/">SBF Binnen Prüfungsfragen üben<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-pruefung-ablauf/">SBF Prüfung: Ablauf von Theorie & Praxis<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-kosten/">Was kostet der Sportbootführerschein?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/sbf-see-navigationsaufgaben-erklaert/">SBF See Navigationsaufgaben erklärt – Aufbau & Tipps<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/schwierigste-sbf-pruefungsfragen/">Die schwierigsten SBF-Prüfungsfragen – und wie du sie meisterst<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
+  </PageLayout>
 </BaseLayout>

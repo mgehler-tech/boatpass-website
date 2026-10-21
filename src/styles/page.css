@@ -495,3 +495,89 @@ a.license-card:hover .license-link { gap: 10px; }
 @media (prefers-reduced-motion: reduce) {
   .pg-banner, .license-card, .license-link { transition: none; }
 }
+
+/* ── Schmale Variante (Infoseiten, FAQ, Schein-Finder; Spec Runde 3, 3.1) ── */
+.pg-layout--narrow { display: block; }
+.pg-layout--narrow .pg-main { max-width: 760px; }
+
+/* Antwort-Kasten mit Icon davor (Fahrschul-Übersicht) */
+.pg-answer--icon { display: flex; align-items: flex-start; gap: 16px; }
+.pg-answer--icon > .pg-row-icon { margin-top: 2px; }
+.pg-answer-body { flex: 1; min-width: 0; }
+
+/* Kleine Icon-Kachel in Hinweiskästen (Prüfungsablauf) */
+.pg-row-icon--sm { width: 34px; height: 34px; border-radius: 10px; }
+
+/* ── Fahrschulen (Runde 3a, Task 5): Städtekarten, Schulkarten, Link-Karten ── */
+@media (min-width: 560px) { .pg-cards--2 { grid-template-columns: repeat(2, 1fr); } }
+a.pg-card { display: block; text-decoration: none; transition: border-color 0.2s var(--h-ease), transform 0.2s var(--h-ease); }
+a.pg-card:hover { border-color: var(--h-line-2); transform: translateY(-2px); }
+.pg-card-more { display: inline-flex; align-items: center; gap: 6px; margin-top: 10px; font: 700 14px/1.4 var(--h-sans); color: var(--h-blue-ink); }
+.city-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+.city-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 26px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r);
+  background: var(--h-card);
+  text-decoration: none;
+  transition: transform 0.2s var(--h-ease), border-color 0.2s var(--h-ease), box-shadow 0.2s var(--h-ease);
+}
+.city-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--h-line-2);
+  box-shadow: 0 16px 36px color-mix(in srgb, var(--h-ink) 10%, transparent);
+}
+.city-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  border-radius: 14px;
+  background: var(--h-blue-wash);
+  color: var(--h-blue-ink);
+}
+.city-name {
+  margin: 0 0 10px;
+  font-family: var(--h-display);
+  font-stretch: 84%;
+  font-weight: 720;
+  font-size: 22px;
+  letter-spacing: -0.01em;
+  color: var(--h-ink);
+}
+.city-card .pg-pill { margin-bottom: 12px; }
+.city-waterways { flex-grow: 1; margin: 0 0 18px; font-size: 15px; line-height: 1.6; color: var(--h-muted); }
+.city-link { display: inline-flex; align-items: center; gap: 6px; font: 700 14px/1.4 var(--h-sans); color: var(--h-blue-ink); }
+.city-link svg { transition: transform 0.35s var(--h-ease); }
+.city-card:hover .city-link svg { transform: translateX(4px); }
+.pg-schools { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
+.pg-school { padding: 20px 22px; border: 1px solid var(--h-line); border-radius: var(--h-r); background: var(--h-card); }
+.pg-school-head { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 14px; }
+.pg-school-head .pg-row-icon { margin-top: 2px; }
+.pg-school-head .pg-card-title { margin-bottom: 2px; }
+.pg-school-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+.pg-school-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+/* Website- und Telefon-Link bleiben mind. 44 px hohe Tap-Flächen (WCAG 2.5.5). */
+.pg-school-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid var(--h-line-2);
+  border-radius: var(--h-r-sm);
+  background: var(--h-card);
+  font: 600 14px/1.4 var(--h-sans);
+  color: var(--h-blue-ink);
+  text-decoration: none;
+  transition: background 0.15s var(--h-ease), border-color 0.15s var(--h-ease);
+}
+.pg-school-link:hover { background: var(--h-blue-wash); border-color: var(--h-blue); }
+.pg-school-link--muted { color: var(--h-text); }
+.pg-school-link--muted:hover { background: var(--h-paper-2); border-color: var(--h-line-2); }
+@media (prefers-reduced-motion: reduce) { .city-card, .city-link svg, a.pg-card { transition: none; } }

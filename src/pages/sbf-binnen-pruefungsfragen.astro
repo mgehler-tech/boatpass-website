@@ -1,10 +1,11 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/page/PageHead.astro';
+import PageLayout from '../components/page/PageLayout.astro';
+import PageFacts from '../components/page/PageFacts.astro';
+import DisplayFontPreload from '../components/page/DisplayFontPreload.astro';
 import Icon from '../components/Icon.astro';
 import type { IconName } from '../icons';
-import { PLAY_STORE_URL } from '../data/stores';
-
-const playStoreUrl = PLAY_STORE_URL;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -16,13 +17,13 @@ const breadcrumbSchema = {
   ],
 };
 
-const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'Schifffahrtsrecht', desc: 'Vorfahrtregeln, Lichterführung & Wasserstraßenordnung', count: 124, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
-  { name: 'Navigation', desc: 'Karten, Kurse, Positionen & Peilungen', count: 52, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Sicherheit', desc: 'Rettungsausrüstung, Notsignale & Sicherheitsverhalten', count: 39, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Signale & Zeichen', desc: 'Schallzeichen, Sichtzeichen & Flaggen', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
-  { name: 'Wetterkunde', desc: 'Wind, Wetter & Vorhersage', count: 5, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
-  { name: 'Allgemein', desc: 'Allgemeine Grundlagen & Seemannschaft', count: 3, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
+const categories: { name: string; desc: string; count: number; icon: IconName }[] = [
+  { name: 'Schifffahrtsrecht', desc: 'Vorfahrtregeln, Lichterführung & Wasserstraßenordnung', count: 124, icon: 'scale' },
+  { name: 'Navigation', desc: 'Karten, Kurse, Positionen & Peilungen', count: 52, icon: 'compass' },
+  { name: 'Sicherheit', desc: 'Rettungsausrüstung, Notsignale & Sicherheitsverhalten', count: 39, icon: 'shield' },
+  { name: 'Signale & Zeichen', desc: 'Schallzeichen, Sichtzeichen & Flaggen', count: 28, icon: 'bell' },
+  { name: 'Wetterkunde', desc: 'Wind, Wetter & Vorhersage', count: 5, icon: 'cloud' },
+  { name: 'Allgemein', desc: 'Allgemeine Grundlagen & Seemannschaft', count: 3, icon: 'document' },
 ];
 
 const faqs = [
@@ -61,94 +62,99 @@ const faqSchema = {
   lang="de"
   altUrl="https://boatpass.de/en/sbf-inland-exam-questions/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        SBF Binnen Prüfungsfragen
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        SBF Binnen Fragen –<br>offiziellen Katalog üben
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto 36px;">
-        Über 250 amtliche ELWIS-Fragen, übersichtlich nach Kategorien sortiert. Lern mit echter Prüfungssimulation und gezieltem Fehlertraining – und geh sicher in die SBF-Binnen-Theorieprüfung.
-      </p>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
-        ▶&nbsp;Kostenlos Fragen üben
-      </a>
-    </div>
-  </div>
+  <!-- Seitenkopf und Lesespalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="de"
+    eyebrow="SBF Binnen Prüfungsfragen"
+    lede="Über 250 amtliche ELWIS-Fragen, übersichtlich nach Kategorien sortiert. Lern mit echter Prüfungssimulation und gezieltem Fehlertraining – und geh sicher in die SBF-Binnen-Theorieprüfung."
+    ctaLabel="Kostenlos Fragen üben"
+    cta
+  >
+    SBF Binnen Fragen –<br />offiziellen Katalog üben
+  </PageHead>
 
-  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="de"
+      title="Auf einen Blick"
+      product="sbfBinnen"
+      items={[
+        { k: 'Fragenkatalog', v: '253 Fragen (72 Basis + 181 spezifisch)' },
+        { k: 'Theorieprüfung', v: '30 Fragen · 45 Min' },
+        { k: 'Basisfragen', v: '7, mind. 5 richtig' },
+        { k: 'Spezifische Fragen', v: '23, mind. 18 richtig' },
+      ]}
+    />
 
     <!-- Answer-Snippet: kurze, zitierfähige Direktantwort für Suchmaschinen & KI -->
-    <section style="margin-bottom:48px;">
-      <div style="background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px;">
-        <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Auf den Punkt</div>
-        <p style="font-size:17px; color:#1A1F36; line-height:1.7; margin:0; font-weight:600;">
+    <section class="pg-section">
+      <div class="pg-answer">
+        <p class="pg-answer-label">Auf den Punkt</p>
+        <p class="pg-answer-text">
           Der amtliche SBF-Binnen-Fragenkatalog umfasst 253 Fragen (72 Basis- + 181 spezifische Binnenfragen), unter Segel kommen 47 Segelfragen hinzu. In der Theorieprüfung werden daraus 30 Fragen gezogen (7 Basis + 23 spezifische), die in 45 Minuten zu lösen sind. Bestanden hat, wer mindestens 5 von 7 Basisfragen und 18 von 23 spezifischen Fragen richtig beantwortet. Boatpass trainiert exakt diesen ELWIS-Katalog mit Prüfungssimulation und Fehlertraining.
         </p>
       </div>
     </section>
 
     <!-- Der Katalog -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Der offizielle SBF-Binnen-Fragenkatalog</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Der offizielle SBF-Binnen-Fragenkatalog</h2>
+      <p class="pg-p">
         Die <strong>Prüfungsfragen für den SBF Binnen</strong> stammen aus dem amtlichen Fragenkatalog, den <strong>DSV und DMYV</strong> festlegen und der über <strong>ELWIS</strong> kostenlos veröffentlicht wird. Für den Geltungsbereich <strong>unter Motor</strong> umfasst er <strong>72 Basisfragen und 181 spezifische Binnenfragen</strong> (zusammen 253 Fragen). Wer zusätzlich <strong>unter Segel</strong> fahren möchte, lernt 47 weitere Segelfragen.
       </p>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      <p class="pg-p">
         In der echten Theorieprüfung wird daraus ein Bogen mit <strong>30 Fragen</strong> zusammengestellt – 7 Basisfragen und 23 spezifische Fragen. Wer den Katalog systematisch durcharbeitet, kennt am Prüfungstag jede mögliche Frage.
       </p>
-      <p style="font-size:14px; color:#656B78; line-height:1.6; margin-top:14px;">
-        Quelle: amtlicher Fragenkatalog (DSV/DMYV), kostenlos veröffentlicht über <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
+      <p class="pg-note pg-note--sm pg-note--after">
+        Quelle: amtlicher Fragenkatalog (DSV/DMYV), kostenlos veröffentlicht über <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
       </p>
     </section>
 
     <!-- Aufbau der Prüfung -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">So ist die Theorieprüfung aufgebaut</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Prüfungsbogen</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">30 Fragen · 45 Minuten<br>Multiple Choice</div>
+    <section class="pg-section">
+      <h2 class="pg-h2">So ist die Theorieprüfung aufgebaut</h2>
+      <div class="pg-cards pg-cards--4">
+        <div class="pg-card">
+          <p class="pg-card-label">Prüfungsbogen</p>
+          <p class="pg-card-text">30 Fragen · 45 Minuten<br>Multiple Choice</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Basisfragen</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">7 Fragen<br>mind. 5 richtig</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Basisfragen</p>
+          <p class="pg-card-text">7 Fragen<br>mind. 5 richtig</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Spezifische Fragen</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">23 Fragen<br>mind. 18 richtig</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Spezifische Fragen</p>
+          <p class="pg-card-text">23 Fragen<br>mind. 18 richtig</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Fragenkatalog</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">253 Fragen (Motor)<br>+ 47 Segelfragen</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Fragenkatalog</p>
+          <p class="pg-card-text">253 Fragen (Motor)<br>+ 47 Segelfragen</p>
         </div>
       </div>
     </section>
 
     <!-- Effektiv üben -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">SBF-Binnen-Fragen effektiv üben</h2>
-      <div style="display:flex; flex-direction:column; gap:16px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">SBF-Binnen-Fragen effektiv üben</h2>
+      <div class="pg-rows">
         {[
           { icon: 'book', title: 'Lernmodus: Kategorie für Kategorie', desc: 'Arbeite den kompletten Katalog strukturiert nach Themengebieten durch, in deinem Tempo. So bleibt kein Thema offen.' },
           { icon: 'target', title: 'Prüfungssimulation: 30 Fragen, 45 Minuten', desc: 'Übe unter echten Prüfungsbedingungen mit zufälligem Bogen und Bestehensgrenze – genau wie am Prüfungstag.' },
           { icon: 'refresh', title: 'Fehlertraining: nur deine Schwachstellen', desc: 'Wiederhole gezielt die Fragen, die du noch nicht sicher kannst, statt Zeit mit bereits Gelerntem zu verlieren.' },
           { icon: 'chart', title: 'Fortschritt im Blick', desc: 'Sieh nach Kategorie aufgeschlüsselt, wo du stehst und wann du prüfungsreif bist.' },
         ].map(f => (
-          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={f.icon as IconName} size={21} stroke="#3366FF" strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={f.icon as IconName} size={21} strokeWidth={1.75} />
             </span>
-            <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
-              <div style="font-size:15px; color:#656B78; line-height:1.6;">{f.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{f.title}</p>
+              <p class="pg-row-text">{f.desc}</p>
             </div>
           </div>
         ))}
@@ -156,52 +162,52 @@ const faqSchema = {
     </section>
 
     <!-- FAQ -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Häufige Fragen zum Fragenkatalog</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Häufige Fragen zum Fragenkatalog</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Lernen nach Kategorie -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">Lernen nach Kategorie</h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Lernen nach Kategorie</h2>
+      <p class="pg-p">
         Der Fragenkatalog ist in Themengebiete unterteilt – übe gezielt nach Schwachstellen.
       </p>
-      <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="pg-rows">
         {categories.map(c => (
-          <div style="display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px;">
-            <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
-              <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={c.icon} size={20} strokeWidth={1.75} />
             </span>
-            <div style="flex:1; min-width:0;">
-              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
-              <div style="font-size:12px; color:#656B78; line-height:1.4; margin-top:2px;">{c.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{c.name}</p>
+              <p class="pg-row-text">{c.desc}</p>
             </div>
-            <span style="font-size:12px; font-weight:700; color:#656B78; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} Fragen</span>
+            <span class="pg-pill">{c.count} Fragen</span>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Interne Links -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
-      <h2 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Weiterführende Seiten</h2>
-      <div class="related-links">
-        <a href="/sbf-binnen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen lernen: Überblick & App</a>
-        <a href="/sbf-see-pruefungsfragen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF See Prüfungsfragen üben</a>
-        <a href="/sbf-pruefung-ablauf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Prüfung: Ablauf von Theorie & Praxis</a>
-        <a href="/sbf-kosten/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Was kostet der Sportbootführerschein?</a>
-        <a href="/blog/schwierigste-sbf-pruefungsfragen/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Die schwierigsten SBF-Prüfungsfragen – und wie du sie meisterst</a>
-        <a href="/blog/haeufigste-fehler-sbf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Die häufigsten Fehler bei der SBF-Prüfung vermeiden</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Weiterführende Seiten</h2>
+      <ul class="pg-related">
+        <li><a href="/sbf-binnen/">SBF Binnen lernen: Überblick & App<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-see-pruefungsfragen/">SBF See Prüfungsfragen üben<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-pruefung-ablauf/">SBF Prüfung: Ablauf von Theorie & Praxis<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-kosten/">Was kostet der Sportbootführerschein?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/schwierigste-sbf-pruefungsfragen/">Die schwierigsten SBF-Prüfungsfragen – und wie du sie meisterst<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/haeufigste-fehler-sbf/">Die häufigsten Fehler bei der SBF-Prüfung vermeiden<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
+  </PageLayout>
 </BaseLayout>

@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../../components/page/PageHead.astro';
+import PageLayout from '../../components/page/PageLayout.astro';
+import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
 import Icon from '../../components/Icon.astro';
 import { cities } from '../../data/boat-schools';
 
@@ -49,33 +52,27 @@ const faqSchema = {
   lang="de"
   altUrl="https://boatpass.de/en/boat-schools/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        Fahrschule finden
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        Bootsfahrschule<br>in deiner Nähe
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto;">
-        Mit BoatPass lernst du die komplette Theorie für den Sportbootführerschein.
-        Für die praktische Ausbildung auf dem Wasser brauchst du eine Bootsfahrschule
-        – finde die passende in deiner Stadt.
-      </p>
-    </div>
-  </div>
+  <!-- Seitenkopf und breite Spalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="de"
+    eyebrow="Fahrschule finden"
+    lede="Mit BoatPass lernst du die komplette Theorie für den Sportbootführerschein. Für die praktische Ausbildung auf dem Wasser brauchst du eine Bootsfahrschule – finde die passende in deiner Stadt."
+  >
+    Bootsfahrschule<br />in deiner Nähe
+  </PageHead>
 
-  <div style="max-width:1000px; margin:0 auto; padding:60px 24px 80px;">
+  <PageLayout variant="wide">
 
     <!-- Info-Box -->
-    <div style="display:flex; align-items:flex-start; gap:18px; background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px; margin-bottom:56px;">
-      <div>
-        <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Theorie + Praxis</div>
-        <p style="font-size:15px; color:#4B5563; line-height:1.7; margin:0;">
+    <div class="pg-answer pg-answer--icon">
+      <span class="pg-row-icon"><Icon name="lightbulb" size={20} strokeWidth={1.75} /></span>
+      <div class="pg-answer-body">
+        <p class="pg-card-title">Theorie + Praxis</p>
+        <p class="pg-card-text">
           <strong>BoatPass</strong> = Theorie lernen (offizieller ELWIS-Fragenkatalog, Prüfungssimulation, Fehlertraining).
           <strong>Bootsfahrschule</strong> = Praxisausbildung auf dem Wasser + Prüfungsanmeldung.
           Beides zusammen ist der schnellste Weg zum Sportbootführerschein.
@@ -84,132 +81,53 @@ const faqSchema = {
     </div>
 
     <!-- Städte-Grid -->
-    <section style="margin-bottom:64px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">
         Bootsfahrschulen nach Stadt
       </h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:28px;">
+      <p class="pg-p">
         Wähle deine Stadt und erfahre alles über Gewässer, Prüfungsorte und Bootsfahrschulen vor Ort.
       </p>
       <div class="city-grid">
         {cities.map(city => (
           <a href={`/bootsfahrschulen/${city.slug}/`} class="city-card">
             <div class="city-icon">
-              <Icon name="mapPin" size={26} stroke="#3366FF" strokeWidth={1.75} />
+              <Icon name="mapPin" size={26} strokeWidth={1.75} />
             </div>
             <div class="city-name">{city.name}</div>
-            <span class="city-tag">{city.state}</span>
+            <span class="pg-pill">{city.state}</span>
             <div class="city-waterways">{city.waterways.de}</div>
-            <div class="city-link">Mehr erfahren &rarr;</div>
+            <div class="city-link">Mehr erfahren<Icon name="chevronRight" size={16} strokeWidth={2.25} /></div>
           </a>
         ))}
       </div>
     </section>
 
     <!-- FAQ -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Häufige Fragen zur Bootsfahrschule</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Häufige Fragen zur Bootsfahrschule</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Weiterführende Artikel -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.1);">
-      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Weiterführende Artikel</h3>
-      <div class="related-links">
-        <a href="/sbf-binnen/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF Binnen lernen mit BoatPass</a>
-        <a href="/sbf-see/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF See lernen mit BoatPass</a>
-        <a href="/sbf-kosten/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Was kostet der Sportbootführerschein?</a>
-        <a href="/sbf-pruefung-ablauf/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF Prüfung: Ablauf von Theorie & Praxis</a>
-        <a href="/fuehrerscheine/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Alle Bootsführerscheine im Überblick</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Weiterführende Artikel</h2>
+      <ul class="pg-related">
+        <li><a href="/sbf-binnen/">SBF Binnen lernen mit BoatPass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-see/">SBF See lernen mit BoatPass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-kosten/">Was kostet der Sportbootführerschein?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-pruefung-ablauf/">SBF Prüfung: Ablauf von Theorie & Praxis<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/fuehrerscheine/">Alle Bootsführerscheine im Überblick<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
-
+  </PageLayout>
 </BaseLayout>
 
-<style>
-  .city-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .city-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background: white;
-    border: 1px solid rgba(51,102,255,0.10);
-    border-radius: 20px;
-    padding: 28px;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-  .city-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(26,31,54,0.10);
-    border-color: rgba(51,102,255,0.28);
-  }
-  .city-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: rgba(51,102,255,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-  }
-  .city-name {
-    font-size: 20px;
-    font-weight: 800;
-    color: #1A1F36;
-    letter-spacing: -0.5px;
-    margin-bottom: 10px;
-  }
-  .city-tag {
-    align-self: flex-start;
-    font-size: 12px;
-    font-weight: 700;
-    color: #3366FF;
-    background: rgba(51,102,255,0.08);
-    border: 1px solid rgba(51,102,255,0.16);
-    padding: 4px 10px;
-    border-radius: 100px;
-    margin-bottom: 12px;
-  }
-  .city-waterways {
-    font-size: 15px;
-    color: #656B78;
-    line-height: 1.6;
-    margin-bottom: 18px;
-    flex-grow: 1;
-  }
-  .city-link {
-    font-size: 14px;
-    font-weight: 700;
-    color: #3366FF;
-  }
-
-  @media (max-width: 640px) {
-    .city-grid { grid-template-columns: 1fr; }
-  }
-
-  html.dark .city-card {
-    background: #181E2E !important;
-    border-color: rgba(90, 120, 255, 0.14) !important;
-  }
-  html.dark .city-card:hover {
-    border-color: rgba(90, 120, 255, 0.32) !important;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3) !important;
-  }
-  html.dark .city-name { color: #E2E8F0 !important; }
-  html.dark .city-waterways { color: #94A3B8 !important; }
-</style>

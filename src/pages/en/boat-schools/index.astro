@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHead from '../../../components/page/PageHead.astro';
+import PageLayout from '../../../components/page/PageLayout.astro';
+import DisplayFontPreload from '../../../components/page/DisplayFontPreload.astro';
 import Icon from '../../../components/Icon.astro';
 import { cities } from '../../../data/boat-schools';
 
@@ -48,33 +51,27 @@ const faqSchema = {
   lang="en"
   altUrl="https://boatpass.de/bootsfahrschulen/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        Find a School
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        Boat Schools<br>Near You
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto;">
-        BoatPass covers the theory for your German boat licence. For practical training
-        and exam registration, you need a boat school. Find one in your city below.
-      </p>
-    </div>
-  </div>
+  <!-- Seitenkopf und breite Spalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="en"
+    eyebrow="Find a School"
+    lede="BoatPass covers the theory for your German boat licence. For practical training and exam registration, you need a boat school. Find one in your city below."
+  >
+    Boat Schools<br />Near You
+  </PageHead>
 
-  <div style="max-width:1000px; margin:0 auto; padding:60px 24px 80px;">
+  <PageLayout variant="wide">
 
     <!-- Note box -->
-    <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px; margin-bottom:56px;">
-      <span style="flex-shrink:0; margin-top:2px;"><Icon name="book" size={22} stroke="#3366FF" strokeWidth={1.75} /></span>
-      <div>
-        <div style="font-size:14px; font-weight:700; color:#1A1F36; margin-bottom:6px;">BoatPass + Boat School = Ready for the exam</div>
-        <p style="font-size:15px; color:#656B78; line-height:1.65; margin:0;">
+    <div class="pg-answer pg-answer--icon">
+      <span class="pg-row-icon"><Icon name="lightbulb" size={20} strokeWidth={1.75} /></span>
+      <div class="pg-answer-body">
+        <p class="pg-card-title">BoatPass + Boat School = Ready for the exam</p>
+        <p class="pg-card-text">
           <strong>BoatPass</strong> is your theory learning app: the complete official ELWIS question catalogue with exam simulation and mistake training.
           A <strong>boat school</strong> provides practical training on the water, knot practice and helps with exam registration.
           Together, they cover everything you need for your German boat licence.
@@ -83,130 +80,51 @@ const faqSchema = {
     </div>
 
     <!-- City grid -->
-    <section style="margin-bottom:64px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">
         Boat Schools by City
       </h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:28px;">
+      <p class="pg-p">
         Select your city to find boat schools, waterway information, exam locations and costs.
       </p>
-      <div class="school-grid">
+      <div class="city-grid">
         {cities.map(city => (
-          <a href={`/en/boat-schools/${city.slug}/`} class="school-card">
-            <div class="school-icon"><Icon name="mapPin" size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
-            <div class="school-title">{city.name}</div>
-            <span class="school-tag">{city.state}</span>
-            <div class="school-desc">{city.waterways.en}</div>
-            <div class="school-link">Learn more &rarr;</div>
+          <a href={`/en/boat-schools/${city.slug}/`} class="city-card">
+            <div class="city-icon"><Icon name="mapPin" size={26} strokeWidth={1.75} /></div>
+            <div class="city-name">{city.name}</div>
+            <span class="pg-pill">{city.state}</span>
+            <div class="city-waterways">{city.waterways.en}</div>
+            <div class="city-link">Learn more<Icon name="chevronRight" size={16} strokeWidth={2.25} /></div>
           </a>
         ))}
       </div>
     </section>
 
     <!-- FAQ -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Frequently Asked Questions</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Frequently Asked Questions</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Internal links -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.1);">
-      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Further reading</h3>
-      <div class="related-links">
-        <a href="/en/sbf-inland/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Learn SBF Inland with BoatPass</a>
-        <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; Learn SBF Coastal with BoatPass</a>
-        <a href="/en/sbf-costs/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; What does the boat licence cost?</a>
-        <a href="/en/sbf-exam/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; SBF exam: how theory and practice work</a>
-        <a href="/en/licenses/" style="color:#3366FF; text-decoration:none; font-size:15px;">&rarr; All German boating licences at a glance</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Further reading</h2>
+      <ul class="pg-related">
+        <li><a href="/en/sbf-inland/">Learn SBF Inland with BoatPass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-coastal/">Learn SBF Coastal with BoatPass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-costs/">What does the boat licence cost?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-exam/">SBF exam: how theory and practice work<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/licenses/">All German boating licences at a glance<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
-
+  </PageLayout>
 </BaseLayout>
 
-<style>
-  .school-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  .school-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background: white;
-    border: 1px solid rgba(51,102,255,0.10);
-    border-radius: 20px;
-    padding: 28px;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-  .school-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(26,31,54,0.10);
-    border-color: rgba(51,102,255,0.28);
-  }
-  .school-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: rgba(51,102,255,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-  }
-  .school-title {
-    font-size: 20px;
-    font-weight: 800;
-    color: #1A1F36;
-    letter-spacing: -0.5px;
-    margin-bottom: 10px;
-  }
-  .school-tag {
-    align-self: flex-start;
-    font-size: 12px;
-    font-weight: 700;
-    color: #3366FF;
-    background: rgba(51,102,255,0.08);
-    border: 1px solid rgba(51,102,255,0.16);
-    padding: 4px 10px;
-    border-radius: 100px;
-    margin-bottom: 12px;
-  }
-  .school-desc {
-    font-size: 15px;
-    color: #656B78;
-    line-height: 1.6;
-    margin-bottom: 18px;
-    flex-grow: 1;
-  }
-  .school-link {
-    font-size: 14px;
-    font-weight: 700;
-    color: #3366FF;
-  }
-
-  @media (max-width: 640px) {
-    .school-grid { grid-template-columns: 1fr; }
-  }
-
-  html.dark .school-card {
-    background: #181E2E !important;
-    border-color: rgba(90, 120, 255, 0.14) !important;
-  }
-  html.dark .school-card:hover {
-    border-color: rgba(90, 120, 255, 0.32) !important;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3) !important;
-  }
-  html.dark .school-title { color: #E2E8F0 !important; }
-  html.dark .school-desc  { color: #94A3B8 !important; }
-</style>

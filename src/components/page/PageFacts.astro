@@ -14,11 +14,14 @@ interface Props {
   items: { k: string; v: string }[];
   /** Mit Produkt: Preiszeile und Store-Button unter den Paaren. */
   product?: ProductKey;
+  /** Seiten, die mehrere Produkte behandeln: „In der App ab …" statt „für …". */
+  from?: boolean;
 }
 
-const { lang, title, items, product } = Astro.props;
+const { lang, title, items, product, from = false } = Astro.props;
 const de = lang === 'de';
 const t = useTranslations(lang);
+const priceLead = de ? (from ? 'In der App ab' : 'In der App für') : (from ? 'In the app from' : 'In the app for');
 ---
 
 <div class="pg-aside-card">
@@ -34,7 +37,7 @@ const t = useTranslations(lang);
   {product && (
     <div class="pg-aside-buy">
       <p class="pg-aside-price">
-        {`${de ? 'In der App für' : 'In the app for'} `}<strong class="h-num"><PlatformPrice product={product} lang={lang} /></strong>{` ${de ? 'einmalig' : 'one-off'}`}
+        {`${priceLead} `}<strong class="h-num"><PlatformPrice product={product} lang={lang} /></strong>{` ${de ? 'einmalig' : 'one-off'}`}
       </p>
       <a class="h-btn h-btn--sm" href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" data-cta-position="page-aside">
         {de ? 'Kostenlos starten' : 'Start for free'}
