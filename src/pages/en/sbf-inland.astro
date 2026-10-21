@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../../components/page/PageHead.astro';
+import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
+import PageLayout from '../../components/page/PageLayout.astro';
+import PageFacts from '../../components/page/PageFacts.astro';
+import PageLink from '../../components/page/PageLink.astro';
 import Icon from '../../components/Icon.astro';
 import CatalogSources from '../../components/CatalogSources.astro';
 import BoatSchoolFinder from '../../components/BoatSchoolFinder.astro';
@@ -107,14 +112,14 @@ const compare = [
   { label: 'Minimum age', binnen: '16 years', see: '16 years' },
 ];
 
-const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & waterways regulations', count: 124, icon: 'scale', color: '#6366F1', bg: 'rgba(99,102,241,0.10)' },
-  { name: 'Navigation', desc: 'Charts, courses, positions & bearings', count: 52, icon: 'compass', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 39, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Signals & marks', desc: 'Sound signals, visual signals & flags', count: 28, icon: 'bell', color: '#D97706', bg: 'rgba(217,119,6,0.10)' },
-  { name: 'Meteorology', desc: 'Wind, weather & forecasting', count: 6, icon: 'cloud', color: '#0284C7', bg: 'rgba(2,132,199,0.10)' },
-  { name: 'General', desc: 'General fundamentals & seamanship', count: 4, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
-  { name: 'Sailing', desc: 'Sailing-specific questions for the sailing scope', count: 47, icon: 'sailboat', color: '#0EA5E9', bg: 'rgba(14,165,233,0.10)' },
+const categories: { name: string; desc: string; count: number; icon: IconName }[] = [
+  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & waterways regulations', count: 124, icon: 'scale' },
+  { name: 'Navigation', desc: 'Charts, courses, positions & bearings', count: 52, icon: 'compass' },
+  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 39, icon: 'shield' },
+  { name: 'Signals & marks', desc: 'Sound signals, visual signals & flags', count: 28, icon: 'bell' },
+  { name: 'Meteorology', desc: 'Wind, weather & forecasting', count: 6, icon: 'cloud' },
+  { name: 'General', desc: 'General fundamentals & seamanship', count: 4, icon: 'document' },
+  { name: 'Sailing', desc: 'Sailing-specific questions for the sailing scope', count: 47, icon: 'sailboat' },
 ];
 ---
 
@@ -124,242 +129,246 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
   lang="en"
   altUrl="https://boatpass.de/sbf-binnen/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        Inland Boating License
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        Learn SBF Inland –<br>the smart study app
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:560px; margin:0 auto 36px;">
-        Prepare for the SBF Inland exam with the official ELWIS question catalog.
-        3 learning modes, exam simulation and targeted mistake training – start for free.
-      </p>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:16px; padding:16px 32px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2);">
-        ▶&nbsp;Download for free
-      </a>
-    </div>
-  </div>
+  <!-- Seitenkopf und Lesespalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="en"
+    eyebrow="Inland Boating License"
+    lede="Prepare for the SBF Inland exam with the official ELWIS question catalog. 3 learning modes, exam simulation and targeted mistake training – start for free."
+    cta
+  >
+    Learn SBF Inland –<br />the smart study app
+  </PageHead>
 
-  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="en"
+      title="At a glance"
+      product="sbfBinnen"
+      items={[
+        { k: 'Question catalogue', v: '253+ questions' },
+        { k: 'Theory exam', v: '30 questions · 45 min' },
+        { k: 'Pass mark', v: '5 of 7 basic, 18 of 23 specific' },
+        { k: 'Exam fee 2026', v: '€130.78' },
+        { k: 'Minimum age', v: '16 years' },
+      ]}
+    />
 
     <!-- Answer-Snippet: short, quotable direct answer for search engines & AI -->
-    <section style="margin-bottom:48px;">
-      <div style="background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px;">
-        <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">In short</div>
-        <p style="font-size:17px; color:#1A1F36; line-height:1.7; margin:0; font-weight:600;">
+    <section class="pg-section">
+      <div class="pg-answer">
+        <p class="pg-answer-label">In short</p>
+        <p class="pg-answer-text">
           The SBF Inland (German inland boating license) is the official permit for motorboats with more than 11.03 kW (15 HP) on German inland waterways. The theory exam consists of 30 multiple-choice questions (7 basic + 23 specific questions) in 45 minutes – passed with at least 5 of 7 basic and 18 of 23 specific questions correct. The exam draws on the official ELWIS question catalog (253+ questions); Boatpass trains all content with exam simulation and mistake training.
         </p>
       </div>
     </section>
 
     <!-- What is SBF Inland -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">What is the SBF Inland?</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
-        The <strong>inland boating license (SBF Inland)</strong> is the official permit for motorboats on German inland waterways – rivers, canals and inland lakes. It is mandatory for boats with more than <strong>11.03 kW (15 HP) of engine power</strong>. For electric motors a limit of 7.5 kW applies so far – a planned reform aims to raise it technology-neutrally to a uniform 11.03 kW, but it has not yet come into force. On some areas (e.g. the Rhine) stricter regional limits apply. See exactly where the line is drawn and when you can <a href="/en/blog/boating-without-license-15-hp/" style="color:#3366FF; text-decoration:underline;">boat without a license at all</a>.
+    <section class="pg-section">
+      <h2 class="pg-h2">What is the SBF Inland?</h2>
+      <p class="pg-p">
+        The <strong>inland boating license (SBF Inland)</strong> is the official permit for motorboats on German inland waterways – rivers, canals and inland lakes. It is mandatory for boats with more than <strong>11.03 kW (15 HP) of engine power</strong>. For electric motors a limit of 7.5 kW applies so far – a planned reform aims to raise it technology-neutrally to a uniform 11.03 kW, but it has not yet come into force. On some areas (e.g. the Rhine) stricter regional limits apply. See exactly where the line is drawn and when you can <a href="/en/blog/boating-without-license-15-hp/" class="pg-inline-link">boat without a license at all</a>.
       </p>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      <p class="pg-p">
         The minimum age is 16. The license is administered by the DMYV and is valid indefinitely.
       </p>
     </section>
 
     <!-- Source transparency: official question catalog -->
-    <section style="margin-bottom:48px;">
+    <section class="pg-section">
       <CatalogSources lang="en" only="binnen" />
     </section>
 
     <!-- Exam structure -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">SBF Inland exam: structure & passing threshold</h2>
-      <div class="exam-facts-grid" style="margin-bottom:20px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Theory exam</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">30 questions · 45 minutes<br>Multiple choice</div>
+    <section class="pg-section">
+      <h2 class="pg-h2">SBF Inland exam: structure & passing threshold</h2>
+      <div class="pg-cards pg-cards--4">
+        <div class="pg-card">
+          <p class="pg-card-label">Theory exam</p>
+          <p class="pg-card-text">30 questions · 45 minutes<br>Multiple choice</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Basic questions</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">7 questions<br>at least 5 correct</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Basic questions</p>
+          <p class="pg-card-text">7 questions<br>at least 5 correct</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Specific questions</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">23 questions<br>at least 18 correct</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Specific questions</p>
+          <p class="pg-card-text">23 questions<br>at least 18 correct</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Question catalog</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">253+ questions<br>official ELWIS catalog</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Question catalog</p>
+          <p class="pg-card-text">253+ questions<br>official ELWIS catalog</p>
         </div>
       </div>
-      <p style="font-size:15px; color:#656B78; line-height:1.7;">
+      <p class="pg-note">
         After the theory comes a <strong>practical exam</strong> on the water. The official exam fee for the SBF Inland in 2026 is <strong>€130.78</strong> (theory + practice).
       </p>
     </section>
 
     <!-- Process: practice & registration -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Process: from registration to the practical part</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Process: from registration to the practical part</h2>
+      <p class="pg-p">
         You register with a recognized examination board (e.g. DMYV). First you take the theory exam, then comes the <strong>practical exam</strong> on the water.
       </p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; margin-bottom:18px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Registration</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">Application to the examination board, passport photo and ID – minimum age 16.</div>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-title">Registration</p>
+          <p class="pg-card-text">Application to the examination board, passport photo and ID – minimum age 16.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Practical maneuvers</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">Coming alongside and casting off, turning, stopping and the man-overboard maneuver.</div>
+        <div class="pg-card">
+          <p class="pg-card-title">Practical maneuvers</p>
+          <p class="pg-card-text">Coming alongside and casting off, turning, stopping and the man-overboard maneuver.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;"><a href="/en/blog/most-important-knots-sbf/" style="color:inherit; text-decoration:underline;">Knots</a></div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">Apply the exam-relevant knots quickly (e.g. bowline, clove hitch, cleat).</div>
+        <div class="pg-card">
+          <p class="pg-card-title"><a href="/en/blog/most-important-knots-sbf/" class="pg-card-link">Knots</a></p>
+          <p class="pg-card-text">Apply the exam-relevant knots quickly (e.g. bowline, clove hitch, cleat).</p>
         </div>
       </div>
-      <a href="/en/sbf-exam/" style="display:inline-flex; align-items:center; gap:8px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">Exam process step by step →</a>
+      <PageLink lang="en" href="/en/sbf-exam/">Exam process step by step</PageLink>
     </section>
 
     <!-- Find a boat school -->
     <BoatSchoolFinder lang="en" variant="binnen" />
 
     <!-- Costs compact -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">What does the SBF Inland cost?</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">What does the SBF Inland cost?</h2>
+      <p class="pg-p">
         Only the official <strong>exam fee of €130.78</strong> (theory + practice) is fixed. The biggest cost block is the preparation course – anyone who learns the theory themselves with the official ELWIS catalog saves exactly that item.
       </p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:18px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-size:22px; font-weight:900; color:#1A1F36;">€130.78</div>
-          <div style="font-size:14px; color:#656B78; line-height:1.55; margin-top:4px;">Official exam fee</div>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-kpi">€130.78</p>
+          <p class="pg-card-text">Official exam fee</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-size:22px; font-weight:900; color:#1A1F36;">≈ €500–650</div>
-          <div style="font-size:14px; color:#656B78; line-height:1.55; margin-top:4px;">Complete course (optional)</div>
+        <div class="pg-card">
+          <p class="pg-kpi">≈ €500–650</p>
+          <p class="pg-card-text">Complete course (optional)</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-size:22px; font-weight:900; color:#3366FF;">from €9.99</div>
-          <div style="font-size:14px; color:#656B78; line-height:1.55; margin-top:4px;">Learn theory with Boatpass</div>
+        <div class="pg-card">
+          <p class="pg-kpi pg-kpi--accent">from €9.99</p>
+          <p class="pg-card-text">Learn theory with Boatpass</p>
         </div>
       </div>
-      <a href="/en/sbf-costs/" style="display:inline-flex; align-items:center; gap:8px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">All SBF costs in detail →</a>
+      <PageLink lang="en" href="/en/sbf-costs/">All SBF costs in detail</PageLink>
     </section>
 
     <!-- Scope -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Where may I navigate with the SBF Inland?</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Where may I navigate with the SBF Inland?</h2>
+      <p class="pg-p">
         The SBF Inland is valid on Germany's <strong>inland waterways</strong> – i.e. rivers, canals and inland lakes. Under engine the boat length is limited to <strong>20 meters</strong>; for longer vessels you need a recreational skipper's certificate. It is not valid for the coastal waters of the North and Baltic Sea – there the SBF Coastal applies.
       </p>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Where it's valid</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">Rivers, canals and inland lakes on German inland waterways.</div>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-title">Where it's valid</p>
+          <p class="pg-card-text">Rivers, canals and inland lakes on German inland waterways.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Requirements</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">Minimum age 16. The license is administered by the DMYV and is valid indefinitely.</div>
+        <div class="pg-card">
+          <p class="pg-card-title">Requirements</p>
+          <p class="pg-card-text">Minimum age 16. The license is administered by the DMYV and is valid indefinitely.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; padding:22px;">
-          <div style="font-weight:700; color:#1A1F36; margin-bottom:6px;">Regional limits</div>
-          <div style="font-size:15px; color:#656B78; line-height:1.65;">On some areas (e.g. the Rhine) stricter power limits apply – check beforehand.</div>
+        <div class="pg-card">
+          <p class="pg-card-title">Regional limits</p>
+          <p class="pg-card-text">On some areas (e.g. the Rhine) stricter power limits apply – check beforehand.</p>
         </div>
       </div>
     </section>
 
     <!-- Comparison Inland vs. Coastal -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">SBF Inland or Coastal – what do you need?</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">SBF Inland or Coastal – what do you need?</h2>
+      <p class="pg-p">
         Inland and Coastal are two separate licenses. Anyone who wants to navigate both areas can take them together more cheaply in a
         <strong>combined exam</strong> (around €178.61 instead of twice separately).
       </p>
       <!-- min-width activates the overflow-x wrapper's horizontal scroll on narrow screens (like AppComparisonTable/CatalogSources). Without it the table was squeezed to phone width instead, crushing the three columns into unreadable multi-line cells. -->
-      <div style="overflow-x:auto;">
-        <table style="width:100%; min-width:640px; border-collapse:collapse; font-size:15px; background:white; border:1px solid rgba(51,102,255,0.10); border-radius:16px; overflow:hidden;">
+      <div class="pg-table">
+        <table>
           <thead>
-            <tr style="background:rgba(26,31,54,0.04);">
-              <th style="text-align:left; padding:14px 18px; font-weight:700; color:#1A1F36;"></th>
-              <th style="text-align:left; padding:14px 18px; font-weight:800; color:#1A1F36;">SBF Inland</th>
-              <th style="text-align:left; padding:14px 18px; font-weight:800; color:#1A1F36;">SBF Coastal</th>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">SBF Inland</th>
+              <th scope="col">SBF Coastal</th>
             </tr>
           </thead>
           <tbody>
             {compare.map((row, i) => (
-              <tr style={`border-top:1px solid rgba(51,102,255,0.08);${i % 2 ? ' background:rgba(26,31,54,0.02);' : ''}`}>
-                <td style="padding:13px 18px; font-weight:600; color:#1A1F36;">{row.label}</td>
-                <td style="padding:13px 18px; color:#4B5563;">{row.binnen}</td>
-                <td style="padding:13px 18px; color:#4B5563;">{row.see}</td>
+              <tr>
+                <th scope="row">{row.label}</th>
+                <td>{row.binnen}</td>
+                <td>{row.see}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <a href="/en/sbf-coastal/" style="display:inline-flex; align-items:center; gap:8px; margin-top:18px; color:#3366FF; font-weight:700; font-size:15px; text-decoration:none;">View SBF Coastal in detail →</a>
+      <PageLink lang="en" href="/en/sbf-coastal/" class="pg-link--spaced">View SBF Coastal in detail</PageLink>
     </section>
 
     <!-- FAQ -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Frequently asked questions about the SBF Inland</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Frequently asked questions about the SBF Inland</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Learn by category -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">Learn by category</h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Learn by category</h2>
+      <p class="pg-p">
         The official question catalog comprises {categories.reduce((s, c) => s + c.count, 0)} questions across {categories.length} topic areas – practice in a targeted way based on your weak spots.
       </p>
-      <p style="font-size:14px; color:#656B78; line-height:1.6; margin-top:-8px; margin-bottom:20px;">
-        Source: official question catalog (DSV/DMYV) on <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
+      <p class="pg-note pg-note--sm">
+        Source: official question catalog (DSV/DMYV) on <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
       </p>
-      <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="pg-rows">
         {categories.map(c => (
-          <div style="display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px;">
-            <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
-              <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={c.icon} size={20} strokeWidth={1.75} />
             </span>
-            <div style="flex:1; min-width:0;">
-              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
-              <div style="font-size:12px; color:#656B78; line-height:1.4; margin-top:2px;">{c.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{c.name}</p>
+              <p class="pg-row-text">{c.desc}</p>
             </div>
-            <span style="font-size:12px; font-weight:700; color:#656B78; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} questions</span>
+            <span class="pg-pill">{c.count} questions</span>
           </div>
         ))}
       </div>
     </section>
 
     <!-- How the app helps -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">How Boatpass helps with the SBF Inland</h2>
-      <div style="display:flex; flex-direction:column; gap:16px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">How Boatpass helps with the SBF Inland</h2>
+      <div class="pg-rows">
         {([
           { icon: 'book', title: 'Complete ELWIS catalog', desc: 'All 253+ official questions for SBF Inland – always up to date, right in the app.' },
           { icon: 'target', title: 'Exam simulation', desc: 'Real exam conditions: 30 questions, 45 minutes, passing threshold – just like on exam day.' },
           { icon: 'refresh', title: 'Mistake training', desc: 'Specifically train the questions you don\'t know yet. No wasting time on content you\'ve already learned.' },
           { icon: 'chart', title: 'Progress display', desc: 'See at any time how far you are – broken down by category.' },
         ] satisfies { icon: IconName; title: string; desc: string }[]).map(f => (
-          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={f.icon} size={21} stroke="#3366FF" strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={f.icon} size={21} strokeWidth={1.75} />
             </span>
-            <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
-              <div style="font-size:15px; color:#656B78; line-height:1.6;">{f.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{f.title}</p>
+              <p class="pg-row-text">{f.desc}</p>
             </div>
           </div>
         ))}
@@ -367,41 +376,41 @@ const categories: { name: string; desc: string; count: number; icon: IconName; c
     </section>
 
     <!-- Internal links -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.08);">
-      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Further reading</h3>
-      <div class="related-links">
-        <a href="/en/sbf-inland-exam-questions/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Practice SBF Inland exam questions</a>
-        <a href="/en/sbf-inland-app/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Binnen apps compared</a>
-        <a href="/en/sbf-costs/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ What does the boating license cost?</a>
-        <a href="/en/sbf-exam/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF exam: how theory & practice work</a>
-        <a href="/en/blog/sbf-exam-everything-you-need-to-know/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF exam: everything you need to know</a>
-        <a href="/en/blog/sbf-preparation-how-long/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ How long do I have to study for the SBF?</a>
-        <a href="/en/blog/sbf-inland-vs-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Inland vs. SBF Coastal – what's the difference?</a>
-        <a href="/en/blog/motorboat-or-sailboat-which-sbf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Motorboat or sailboat – which SBF and which practical exam?</a>
-        <a href="/en/blog/right-of-way-collision-rules/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Right of way on the water – who has to give way?</a>
-        <a href="/en/blog/sound-signals-sbf-explained/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Sound signals for the SBF: coastal & inland overview</a>
-        <a href="/en/blog/navigation-lights-explained/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Navigation lights explained – which lights does a boat show at night?</a>
-        <a href="/en/blog/how-to-behave-in-restricted-visibility-fog/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Restricted visibility and fog: how to behave with your boating license</a>
-        <a href="/en/blog/towing-convoys-special-vessels-day-shapes/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Towing convoys and special vessels – recognizing day shapes</a>
-        <a href="/en/blog/docking-undocking-harbor-maneuvers/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Docking and undocking: harbor maneuvers for beginners</a>
-        <a href="/en/blog/5-tips-pass-sbf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ 5 tips to pass the SBF exam on your first try</a>
-        <a href="/en/blog/life-jacket-buoyancy-classes/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Choosing the right life jacket – buoyancy classes explained</a>
-        <a href="/en/blog/bridge-clearance-heights-inland-waterways/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Bridge clearance heights – what to watch for on inland waterways</a>
-        <a href="/en/blog/trailering-and-launching-a-boat/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Trailering and launching a boat – what boaters need to know</a>
-        <a href="/en/blog/winterizing-a-boat-checklist-for-winter-storage/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Winterizing a boat – a checklist for winter storage</a>
-        <a href="/en/blog/getting-your-boat-ready-spring-checklist-season-start/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Getting your boat ready in spring – a season start checklist</a>
-        <a href="/en/blog/water-skiing-wakeboarding-rules-observer-duty/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Water skiing and wakeboarding – rules, observer duty, and markings</a>
-        <a href="/en/blog/conduct-after-a-boating-accident-duties-and-reporting/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Conduct after a boating accident – duties, reporting and evidence</a>
-        <a href="/en/blog/fines-violations-on-the-water/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Fines and violations on the water – the costliest mistakes and their consequences</a>
-        <a href="/en/blog/minimum-age-children-boat-germany/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ What minimum age applies to children driving a boat in Germany?</a>
-        <a href="/en/blog/navigating-locks-procedure-behavior-boaters/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Navigating locks: procedure and behavior for recreational boaters</a>
-        <a href="/en/blog/environmental-protection-boating-water-conservation/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Environmental protection and water conservation for boaters</a>
-        <a href="/en/blog/boating-at-night/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Boating at night: how to stay safe after sunset</a>
-        <a href="/en/blog/boat-wake-wash-liability/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Boat wake and suction: consideration and liability on the water</a>
-        <a href="/en/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Frequently asked questions about the boating license</a>
-        <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Learn SBF Coastal with Boatpass</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Further reading</h2>
+      <ul class="pg-related">
+        <li><a href="/en/sbf-inland-exam-questions/">Practice SBF Inland exam questions<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-inland-app/">SBF Binnen apps compared<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-costs/">What does the boating license cost?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-exam/">SBF exam: how theory & practice work<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/sbf-exam-everything-you-need-to-know/">SBF exam: everything you need to know<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/sbf-preparation-how-long/">How long do I have to study for the SBF?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/sbf-inland-vs-coastal/">SBF Inland vs. SBF Coastal – what's the difference?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/motorboat-or-sailboat-which-sbf/">Motorboat or sailboat – which SBF and which practical exam?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/right-of-way-collision-rules/">Right of way on the water – who has to give way?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/sound-signals-sbf-explained/">Sound signals for the SBF: coastal & inland overview<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/navigation-lights-explained/">Navigation lights explained – which lights does a boat show at night?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/how-to-behave-in-restricted-visibility-fog/">Restricted visibility and fog: how to behave with your boating license<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/towing-convoys-special-vessels-day-shapes/">Towing convoys and special vessels – recognizing day shapes<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/docking-undocking-harbor-maneuvers/">Docking and undocking: harbor maneuvers for beginners<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/5-tips-pass-sbf/">5 tips to pass the SBF exam on your first try<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/life-jacket-buoyancy-classes/">Choosing the right life jacket – buoyancy classes explained<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/bridge-clearance-heights-inland-waterways/">Bridge clearance heights – what to watch for on inland waterways<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/trailering-and-launching-a-boat/">Trailering and launching a boat – what boaters need to know<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/winterizing-a-boat-checklist-for-winter-storage/">Winterizing a boat – a checklist for winter storage<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/getting-your-boat-ready-spring-checklist-season-start/">Getting your boat ready in spring – a season start checklist<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/water-skiing-wakeboarding-rules-observer-duty/">Water skiing and wakeboarding – rules, observer duty, and markings<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/conduct-after-a-boating-accident-duties-and-reporting/">Conduct after a boating accident – duties, reporting and evidence<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/fines-violations-on-the-water/">Fines and violations on the water – the costliest mistakes and their consequences<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/minimum-age-children-boat-germany/">What minimum age applies to children driving a boat in Germany?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/navigating-locks-procedure-behavior-boaters/">Navigating locks: procedure and behavior for recreational boaters<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/environmental-protection-boating-water-conservation/">Environmental protection and water conservation for boaters<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/boating-at-night/">Boating at night: how to stay safe after sunset<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/boat-wake-wash-liability/">Boat wake and suction: consideration and liability on the water<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/faq/">Frequently asked questions about the boating license<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-coastal/">Learn SBF Coastal with Boatpass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
+  </PageLayout>
 </BaseLayout>

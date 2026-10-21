@@ -1,0 +1,25 @@
+---
+// Spaltenordnung der Inhaltsseiten (Spec Runde 2, 5.3). `read`: Lesespalte plus
+// klebende Seitenleiste (Slot „aside"), die im DOM vor dem Inhalt steht und
+// am Handy direkt unter dem Kopf erscheint. `wide`: eine Spalte über die
+// Containerbreite (Führerschein-Übersicht).
+interface Props {
+  variant?: 'read' | 'wide';
+}
+
+const { variant = 'read' } = Astro.props;
+const hasAside = variant === 'read' && Astro.slots.has('aside');
+---
+
+<div class="h-container">
+  <div class:list={['pg-layout', `pg-layout--${variant}`]}>
+    {hasAside && (
+      <aside class="pg-aside">
+        <slot name="aside" />
+      </aside>
+    )}
+    <div class="pg-main">
+      <slot />
+    </div>
+  </div>
+</div>

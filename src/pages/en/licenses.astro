@@ -1,5 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../../components/page/PageHead.astro';
+import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
+import PageLayout from '../../components/page/PageLayout.astro';
+import PageFacts from '../../components/page/PageFacts.astro';
+import PageLink from '../../components/page/PageLink.astro';
 import Icon from '../../components/Icon.astro';
 import type { IconName } from '../../icons';
 import { priceText } from '../../data/stores';
@@ -121,73 +126,67 @@ const definedTermSchema = {
   lang="en"
   altUrl="https://boatpass.de/fuehrerscheine/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.18); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        All Licenses
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        Which license<br>fits you?
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto;">
-        Inland waters or coast, motorboat or radio on board – find the right license here
-        and everything you need to know to prepare.
-      </p>
-    </div>
-  </div>
+  <!-- Seitenkopf und breite Spalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="en"
+    eyebrow="All Licenses"
+    lede="Inland waters or coast, motorboat or radio on board – find the right license here and everything you need to know to prepare."
+  >
+    Which license<br />fits you?
+  </PageHead>
 
-  <div style="max-width:1000px; margin:0 auto; padding:60px 24px 80px;">
+  <PageLayout variant="wide">
 
     <!-- Finder banner -->
-    <a href="/en/tools/which-boating-license/" class="finder-banner" style="display:flex; align-items:center; gap:18px; background:linear-gradient(135deg,#1A1F36,#3366FF); border-radius:18px; padding:24px 26px; text-decoration:none; margin-bottom:56px; box-shadow:0 10px 30px rgba(51,102,255,0.18);">
-      <div style="flex:1; min-width:0;">
-        <div style="font-size:12px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Free finder</div>
-        <div style="font-size:21px; font-weight:900; color:white; letter-spacing:-0.5px; line-height:1.2;">Not sure which licence you need?</div>
-        <div style="font-size:15px; color:rgba(255,255,255,0.85); line-height:1.5; margin-top:6px;">Answer 3 questions – instantly find the right licence and matching radio certificate.</div>
-      </div>
-      <span class="finder-banner-cta" style="flex-shrink:0; background:white; color:#3366FF; font-weight:800; font-size:15px; padding:12px 22px; border-radius:12px; white-space:nowrap;">Start finder →</span>
+    <a href="/en/tools/which-boating-license/" class="pg-banner">
+      <span class="pg-banner-text">
+        <span class="pg-eyebrow">Free finder</span>
+        <span class="pg-banner-title">Not sure which licence you need?</span>
+        <span class="pg-banner-sub">Answer 3 questions – instantly find the right licence and matching radio certificate.</span>
+      </span>
+      <span class="h-btn h-btn--sm pg-banner-cta">Start finder<Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" /></span>
     </a>
 
     <!-- Available -->
-    <section style="margin-bottom:64px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">
         Sportbootführerschein (SBF)
       </h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:28px;">
+      <p class="pg-p">
         With Boatpass you learn the complete theory – the detail pages explain each license in depth.
       </p>
       <div class="license-grid">
         {available.map(c => (
           <a href={c.href} class="license-card">
-            <div class="license-icon"><Icon name={c.icon} size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
+            <div class="license-icon"><Icon name={c.icon} size={26} strokeWidth={1.75} /></div>
             <div class="license-title">{c.title}</div>
             <span class="license-tag">{c.tag}</span>
             <div class="license-desc">{c.desc}</div>
-            <div class="license-link">Learn more →</div>
+            <div class="license-link">Learn more<Icon name="chevronRight" size={16} strokeWidth={2.25} /></div>
           </a>
         ))}
       </div>
     </section>
 
     <!-- What is a radio certificate -->
-    <section style="margin-bottom:64px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">What is a radio certificate?</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
-        A <strong>radio certificate</strong> is the official qualification required to operate marine or inland radio equipment on board – unlike the boating license itself, it's only needed if a radio is actually installed on board. Germany has three radio certificates: the <a href="/en/ubi/" style="color:#3366FF; text-decoration:underline;">UBI</a> for VHF radio on inland waterways, the <a href="/en/src/" style="color:#3366FF; text-decoration:underline;">SRC</a> for coastal VHF marine radio with DSC, and the <a href="/en/lrc/" style="color:#3366FF; text-decoration:underline;">LRC</a> for worldwide marine radio, including MF/HF and satellite communication.
+    <section class="pg-section">
+      <h2 class="pg-h2">What is a radio certificate?</h2>
+      <p class="pg-p">
+        A <strong>radio certificate</strong> is the official qualification required to operate marine or inland radio equipment on board – unlike the boating license itself, it's only needed if a radio is actually installed on board. Germany has three radio certificates: the <a href="/en/ubi/" class="pg-inline-link">UBI</a> for VHF radio on inland waterways, the <a href="/en/src/" class="pg-inline-link">SRC</a> for coastal VHF marine radio with DSC, and the <a href="/en/lrc/" class="pg-inline-link">LRC</a> for worldwide marine radio, including MF/HF and satellite communication.
       </p>
     </section>
 
     <!-- Coming soon -->
     <section>
-      <h2 class="content-section-title" style="margin-bottom:8px;">
+      <h2 class="pg-h2">
         Coming soon
       </h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:28px;">
+      <p class="pg-p">
         We're working on more catalogs – special licenses like the Lake Constance licence are on the way.
       </p>
       <div class:list={["license-grid", { "license-grid--single": soon.length === 1 }]}>
@@ -195,15 +194,15 @@ const definedTermSchema = {
           c.href ? (
             <a href={c.href} class="license-card license-card-soon">
               <span class="license-soon-badge">soon</span>
-              <div class="license-icon"><Icon name={c.icon} size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
+              <div class="license-icon"><Icon name={c.icon} size={26} strokeWidth={1.75} /></div>
               <div class="license-title">{c.title}</div>
               <div class="license-desc">{c.desc}</div>
-              <div class="license-link">Preview →</div>
+              <div class="license-link">Preview<Icon name="chevronRight" size={16} strokeWidth={2.25} /></div>
             </a>
           ) : (
             <div class="license-card license-card-soon license-card-disabled">
               <span class="license-soon-badge">soon</span>
-              <div class="license-icon"><Icon name={c.icon} size={26} stroke="#3366FF" strokeWidth={1.75} /></div>
+              <div class="license-icon"><Icon name={c.icon} size={26} strokeWidth={1.75} /></div>
               <div class="license-title">{c.title}</div>
               <div class="license-desc">{c.desc}</div>
             </div>
@@ -213,165 +212,36 @@ const definedTermSchema = {
     </section>
 
     <!-- FAQ -->
-    <section style="margin-top:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Frequently asked questions about boating licenses</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Frequently asked questions about boating licenses</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Further reading -->
-    <section style="margin-top:48px; padding-top:32px; border-top:1px solid rgba(51,102,255,0.1);">
-      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Further reading</h3>
-      <div class="related-links">
-        <a href="/en/blog/boating-license-requirements/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Requirements for a German boating license</a>
-        <a href="/en/blog/eyesight-test-boating-license-requirements-process/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Eyesight test for the German boating license – requirements and process</a>
-        <a href="/en/blog/minimum-age-children-boat-germany/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ What minimum age applies to children driving a boat in Germany?</a>
-        <a href="/en/blog/recreational-boating-license-reform-2026/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Recreational Boating License Reform 2026: what's changing and what stays the same</a>
-        <a href="/en/blog/replacing-a-lost-or-damaged-boating-license/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Replacing a lost or damaged boating license</a>
-        <a href="/en/blog/sbf-inland-vs-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SBF Inland vs. SBF Coastal – what's the difference?</a>
-        <a href="/en/blog/motorboat-or-sailboat-which-sbf/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Motorboat or sailboat – which SBF is right for you?</a>
-        <a href="/en/blog/ubi-vs-src-radio-license/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ UBI vs. SRC – which radio certificate do I need?</a>
-        <a href="/en/blog/charter-certificate-rent-boat-without-license/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Renting a boat without a license: the charter certificate</a>
-        <a href="/en/blog/sks-coastal-skippers-license/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Sports Coastal Skipper's License (SKS): the next stage after the SBF Coastal</a>
-        <a href="/en/blog/sbf-valid-abroad/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ German boat license abroad: Croatia, Netherlands & Italy</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Further reading</h2>
+      <ul class="pg-related">
+        <li><a href="/en/blog/boating-license-requirements/">Requirements for a German boating license<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/eyesight-test-boating-license-requirements-process/">Eyesight test for the German boating license – requirements and process<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/minimum-age-children-boat-germany/">What minimum age applies to children driving a boat in Germany?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/recreational-boating-license-reform-2026/">Recreational Boating License Reform 2026: what's changing and what stays the same<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/replacing-a-lost-or-damaged-boating-license/">Replacing a lost or damaged boating license<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/sbf-inland-vs-coastal/">SBF Inland vs. SBF Coastal – what's the difference?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/motorboat-or-sailboat-which-sbf/">Motorboat or sailboat – which SBF is right for you?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/ubi-vs-src-radio-license/">UBI vs. SRC – which radio certificate do I need?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/charter-certificate-rent-boat-without-license/">Renting a boat without a license: the charter certificate<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/sks-coastal-skippers-license/">Sports Coastal Skipper's License (SKS): the next stage after the SBF Coastal<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/sbf-valid-abroad/">German boat license abroad: Croatia, Netherlands & Italy<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
-
+  </PageLayout>
 </BaseLayout>
 
-<style>
-  .license-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  /* A lone "coming soon" card must not be forced into a 2-column grid – it would
-     leave the second cell empty and make the section look unfinished (asymmetric
-     alignment next to an empty cell). With exactly one card, use a single column
-     capped at a regular license card's width ((952px − 20px gap)/2), left-aligned.
-     If the list grows, the 2-column grid takes over again; below 466px the column
-     shrinks to full width automatically (mobile unchanged). Pure layout polish,
-     corporate design untouched. */
-  .license-grid--single { grid-template-columns: minmax(0, 466px); }
-  .license-card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background: white;
-    border: 1px solid rgba(51,102,255,0.10);
-    border-radius: 20px;
-    padding: 28px;
-    text-decoration: none;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  }
-  .license-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 36px rgba(26,31,54,0.10);
-    border-color: rgba(51,102,255,0.28);
-  }
-  .license-icon {
-    width: 52px;
-    height: 52px;
-    border-radius: 14px;
-    background: rgba(51,102,255,0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-  }
-  .license-title {
-    font-size: 20px;
-    font-weight: 800;
-    color: #1A1F36;
-    letter-spacing: -0.5px;
-    margin-bottom: 10px;
-  }
-  .license-tag {
-    align-self: flex-start;
-    font-size: 12px;
-    font-weight: 700;
-    color: #3366FF;
-    background: rgba(51,102,255,0.08);
-    border: 1px solid rgba(51,102,255,0.16);
-    padding: 4px 10px;
-    border-radius: 100px;
-    margin-bottom: 12px;
-  }
-  .license-desc {
-    font-size: 15px;
-    color: #656B78;
-    line-height: 1.6;
-    margin-bottom: 18px;
-    flex-grow: 1;
-  }
-  .license-link {
-    font-size: 14px;
-    font-weight: 700;
-    color: #3366FF;
-  }
-
-  .license-card-soon { background: rgba(255,255,255,0.6); }
-  .license-soon-badge {
-    position: absolute;
-    top: 18px;
-    right: 18px;
-    font-size: 11px;
-    font-weight: 700;
-    color: #b45309;
-    background: rgba(245,158,11,0.12);
-    border: 1px solid rgba(245,158,11,0.3);
-    padding: 3px 10px;
-    border-radius: 100px;
-  }
-  .license-card-disabled { opacity: 0.6; cursor: default; }
-  .license-card-disabled:hover {
-    transform: none;
-    box-shadow: none;
-    border-color: rgba(51,102,255,0.10);
-  }
-
-  @media (max-width: 640px) {
-    .license-grid { grid-template-columns: 1fr; }
-  }
-
-  /* Stack the finder banner on narrow screens. As a rigid flex row the
-     fixed-width, nowrap button squeezed the 21px heading ("Not sure which
-     licence you need?") into a cramped, multi-line column and sat unbalanced
-     beside it. From the project-wide 768px breakpoint the banner now stacks to
-     a column with a full-width button below – the same treatment as the home
-     page finder teaser and CTA banner. Overrides use !important because the base
-     values are set as inline styles. Pure layout polish; corporate design
-     (colours, gradient, font weights) untouched. */
-  @media (max-width: 768px) {
-    .finder-banner {
-      flex-direction: column !important;
-      align-items: stretch !important;
-      gap: 20px !important;
-    }
-    .finder-banner-cta {
-      text-align: center !important;
-      padding-top: 14px !important;
-      padding-bottom: 14px !important;
-    }
-  }
-
-  html.dark .license-card {
-    background: #181E2E;
-    border-color: rgba(90, 120, 255, 0.14);
-  }
-  html.dark .license-card:hover {
-    border-color: rgba(90, 120, 255, 0.32);
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.3);
-  }
-  html.dark .license-card-soon { background: rgba(24, 30, 46, 0.6); }
-  html.dark .license-title { color: #E2E8F0; }
-  html.dark .license-desc  { color: #94A3B8; }
-</style>

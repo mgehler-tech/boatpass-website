@@ -1,5 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import PracticeBridge from '../../components/PracticeBridge.astro';
+import PageHead from '../../components/page/PageHead.astro';
+import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
+import PageLayout from '../../components/page/PageLayout.astro';
+import PageFacts from '../../components/page/PageFacts.astro';
+import PageLink from '../../components/page/PageLink.astro';
 import Icon from '../../components/Icon.astro';
 import CatalogSources from '../../components/CatalogSources.astro';
 import type { IconName } from '../../icons';
@@ -95,20 +101,15 @@ const definedTermSchema = {
   "inLanguage": "en",
 };
 
-const categories: { name: string; desc: string; count: number; icon: IconName; color: string; bg: string }[] = [
-  { name: 'VHF & operating procedures', desc: 'Marine radio, DSC, speaking procedures & GMDSS overview', count: 19, icon: 'microphone', color: '#EA580C', bg: 'rgba(234,88,12,0.10)' },
-  { name: 'MF & HF', desc: 'MF/HF radio, NAVTEX & transmission procedures', count: 15, icon: 'wifi', color: '#7C3AED', bg: 'rgba(124,58,237,0.10)' },
-  { name: 'Satellite radio', desc: 'GMDSS satellite, Inmarsat, EPIRB & SART', count: 13, icon: 'satellite', color: '#0D9488', bg: 'rgba(13,148,136,0.10)' },
-  { name: 'Distress & safety traffic', desc: 'Mayday, distress DSC & SAR coordination', count: 11, icon: 'shield', color: '#E11D48', bg: 'rgba(225,29,72,0.10)' },
-  { name: 'Radio regulations', desc: 'ITU Radio Regulations, sea areas A1–A4 & certification', count: 10, icon: 'scale', color: '#1D4ED8', bg: 'rgba(29,78,216,0.10)' },
-  { name: 'English & phonetics', desc: 'Distress English, phonetic alphabet & distress calls', count: 8, icon: 'document', color: '#64748B', bg: 'rgba(100,116,139,0.10)' },
+const categories: { name: string; desc: string; count: number; icon: IconName }[] = [
+  { name: 'VHF & operating procedures', desc: 'Marine radio, DSC, speaking procedures & GMDSS overview', count: 19, icon: 'microphone' },
+  { name: 'MF & HF', desc: 'MF/HF radio, NAVTEX & transmission procedures', count: 15, icon: 'wifi' },
+  { name: 'Satellite radio', desc: 'GMDSS satellite, Inmarsat, EPIRB & SART', count: 13, icon: 'satellite' },
+  { name: 'Distress & safety traffic', desc: 'Mayday, distress DSC & SAR coordination', count: 11, icon: 'shield' },
+  { name: 'Radio regulations', desc: 'ITU Radio Regulations, sea areas A1–A4 & certification', count: 10, icon: 'scale' },
+  { name: 'English & phonetics', desc: 'Distress English, phonetic alphabet & distress calls', count: 8, icon: 'document' },
 ];
 
-const radioPoints: { icon: IconName; title: string; desc: string }[] = [
-  { icon: 'microphone', title: 'A fixed wording', desc: 'Distress, urgency and safety messages have a fixed order. You learn the pattern – and fill it in confidently in an emergency.' },
-  { icon: 'clipboard', title: 'Messages step by step', desc: 'Phonetic alphabet, call, traffic handling: you practice each building block individually until it comes without thinking.' },
-  { icon: 'refresh', title: 'Confidence through repetition', desc: 'What you\'ve run through a hundred times you\'ll say automatically on exam day – the practical hurdle becomes a formality.' },
-];
 ---
 
 <BaseLayout
@@ -117,82 +118,82 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
   lang="en"
   altUrl="https://boatpass.de/lrc/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(courseSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(definedTermSchema)} />
 
-  <!-- Hero -->
-  <div style="background:#F0F4FA; padding:100px 24px 60px; text-align:center;">
-    <div style="max-width:720px; margin:0 auto;">
-      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#2952CC; font-size:12px; font-weight:700; padding:6px 14px; border-radius:100px; margin-bottom:24px;">
-        Long Range Certificate · Worldwide Marine Radio
-      </div>
-      <h1 style="font-size:clamp(32px,5vw,52px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:20px;">
-        Learn LRC –<br>General Operator's Certificate
-      </h1>
-      <p style="font-size:18px; color:#656B78; line-height:1.65; max-width:580px; margin:0 auto 36px;">
-        The Long Range Certificate (LRC) is the highest marine radio certificate in recreational boating – valid for VHF, MF/HF and satellite radio in all sea areas worldwide.
-      </p>
+  <!-- Seitenkopf und Lesespalte (Spec Runde 2, 5.3) -->
+  <PageHead
+    lang="en"
+    eyebrow="Long Range Certificate · Worldwide Marine Radio"
+    lede="The Long Range Certificate (LRC) is the highest marine radio certificate in recreational boating – valid for VHF, MF/HF and satellite radio in all sea areas worldwide."
+    ctaLabel="Start learning LRC in the app"
+    cta
+  >
+    Learn LRC –<br />General Operator's Certificate
+    <span slot="badge">Boatpass LRC module – now available · one-time&nbsp;<PlatformPrice product="lrc" lang="en" /></span>
+  </PageHead>
 
-      <!-- Available badge -->
-      <div style="display:inline-flex; align-items:center; gap:10px; background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.3); color:#047857; font-size:14px; font-weight:700; padding:10px 20px; border-radius:14px; margin-bottom:24px;">
-        <Icon name="check" size={17} stroke="#047857" strokeWidth={2.5} />
-        Boatpass LRC module – now available · one-time <PlatformPrice product="lrc" lang="en" />
-      </div>
-      <br/>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(135deg,#1A1F36,#3366FF); color:white; font-weight:700; font-size:15px; padding:14px 28px; border-radius:14px; text-decoration:none; box-shadow:0 8px 24px rgba(51,102,255,0.2); margin-top:16px;">
-        ▶&nbsp;Start learning LRC in the app
-      </a>
-    </div>
-  </div>
-
-  <div style="max-width:800px; margin:0 auto; padding:60px 24px 100px;">
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="en"
+      title="At a glance"
+      product="lrc"
+      items={[
+        { k: 'Question catalogue', v: '76 questions' },
+        { k: 'Theory', v: '20 min, pass from 11 correct' },
+        { k: 'Practical', v: 'Operating GMDSS equipment' },
+        { k: 'Exam fee', v: 'approx. €188–207' },
+        { k: 'Minimum age', v: '18 years (application)' },
+      ]}
+    />
 
     <!-- Answer snippet: short, quotable direct answer for search engines & AI -->
-    <section style="margin-bottom:48px;">
-      <div style="background:white; border:1px solid rgba(51,102,255,0.18); border-left:4px solid #3366FF; border-radius:16px; padding:24px 26px;">
-        <div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">In a nutshell</div>
-        <p style="font-size:17px; color:#1A1F36; line-height:1.7; margin:0; font-weight:600;">
+    <section class="pg-section">
+      <div class="pg-answer">
+        <p class="pg-answer-label">In a nutshell</p>
+        <p class="pg-answer-text">
           The LRC (Long Range Certificate) is the highest marine radio certificate in recreational boating and is valid worldwide for VHF, MF/HF and satellite radio (all sea areas A1–A4). It builds on the SRC: in the theory you answer a paper of 14 LRC questions in 20 minutes – passed from 11 correct answers. Anyone without an SRC additionally works through the SRC paper (24 questions). Added to that are an English dictation with translation and a practical part. Boatpass trains the official LRC question catalog (76 questions) with exam simulation and mistake training.
         </p>
       </div>
     </section>
 
     <!-- What is LRC -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">What is the LRC?</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">What is the LRC?</h2>
+      <p class="pg-p">
         The <strong>Long Range Certificate (LRC)</strong> is the official authorization for unrestricted participation in the worldwide maritime radio service within the GMDSS (Global Maritime Distress and Safety System). It permits radio via <strong>VHF, MF and HF</strong> as well as via <strong>satellite</strong> – i.e. also far from the coast on the high seas.
       </p>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75;">
+      <p class="pg-p">
         This makes the LRC the <strong>highest marine radio certificate in recreational boating</strong>. It is administered by the examination boards of the German Sailing Association (DSV) and the German Motor Yachting Association (DMYV), is internationally recognized and valid indefinitely.
       </p>
     </section>
 
     <!-- Source transparency: official question catalog -->
-    <section style="margin-bottom:48px;">
+    <section class="pg-section">
       <CatalogSources lang="en" only="lrc" />
     </section>
 
     <!-- Who needs it -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Who needs the LRC?</h2>
-      <div style="display:flex; flex-direction:column; gap:12px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Who needs the LRC?</h2>
+      <div class="pg-rows">
         {([
           { icon: 'waves', title: 'Offshore & blue water', desc: 'Offshore and blue-water sailors traveling beyond VHF range (sea areas A2–A4)' },
           { icon: 'satellite', title: 'MF/HF radio', desc: 'Anyone using MF/HF radio or satellite communication (e.g. Inmarsat) on board' },
           { icon: 'compass', title: 'Long-distance & Atlantic', desc: 'Skippers on long passages, an Atlantic crossing or a circumnavigation' },
           { icon: 'anchor', title: 'Worldwide certificate', desc: 'Anyone who wants an unrestricted, worldwide-valid marine radio certificate instead of the coastal SRC' },
         ] satisfies { icon: IconName; title: string; desc: string }[]).map(item => (
-          <div style="display:flex; align-items:flex-start; gap:14px; background:white; border:1px solid rgba(51,102,255,0.1); border-radius:14px; padding:18px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={item.icon} size={20} stroke="#3366FF" strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={item.icon} size={20} strokeWidth={1.75} />
             </span>
-            <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:3px; font-size:14px;">{item.title}</div>
-              <div style="font-size:14px; color:#4B5563; line-height:1.6;">{item.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{item.title}</p>
+              <p class="pg-row-text">{item.desc}</p>
             </div>
           </div>
         ))}
@@ -200,23 +201,23 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
     </section>
 
     <!-- LRC vs SRC -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">LRC vs. SRC: what's the difference?</h2>
+    <section class="pg-section">
+      <h2 class="pg-h2">LRC vs. SRC: what's the difference?</h2>
       <div class="lrc-compare-grid">
-        <div style="background:white; border:2px solid rgba(51,102,255,0.2); border-radius:16px; padding:24px;">
-          <div style="font-weight:800; color:#1A1F36; margin-bottom:4px;">LRC</div>
-          <div style="font-size:13px; color:#3366FF; margin-bottom:12px;">Long Range Certificate</div>
-          <ul style="list-style:none; padding:0; margin:0; font-size:14px; color:#4B5563; line-height:1.8;">
+        <div class="pg-card pg-card--current">
+          <p class="pg-card-title">LRC</p>
+          <p class="pg-card-sub">Long Range Certificate</p>
+          <ul class="pg-checklist">
             <li>✓ Worldwide (sea areas A1–A4)</li>
             <li>✓ VHF + MF/HF</li>
             <li>✓ Satellite radio (GMDSS)</li>
             <li>✓ Unrestricted validity</li>
           </ul>
         </div>
-        <div style="background:white; border:2px solid rgba(51,102,255,0.12); border-radius:16px; padding:24px;">
-          <div style="font-weight:800; color:#1A1F36; margin-bottom:4px;">SRC</div>
-          <div style="font-size:13px; color:#3366FF; margin-bottom:12px;">Short Range Certificate</div>
-          <ul style="list-style:none; padding:0; margin:0; font-size:14px; color:#4B5563; line-height:1.8;">
+        <div class="pg-card">
+          <p class="pg-card-title">SRC</p>
+          <p class="pg-card-sub">Short Range Certificate</p>
+          <ul class="pg-checklist">
             <li>✓ Coastal area (sea area A1)</li>
             <li>✓ VHF marine radio only</li>
             <li>✗ No MF/HF</li>
@@ -224,108 +225,85 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
           </ul>
         </div>
       </div>
-      <p style="font-size:14px; color:#656B78; margin-top:12px; line-height:1.6;">
-        For most coastal areas the <a href="/en/src/" style="color:#3366FF; text-decoration:none;">SRC</a> is sufficient. But anyone who wants to use radio on the high seas needs the LRC – it fully includes the scope of the SRC.
+      <p class="pg-note pg-note--after">
+        For most coastal areas the <a href="/en/src/" class="pg-inline-link">SRC</a> is sufficient. But anyone who wants to use radio on the high seas needs the LRC – it fully includes the scope of the SRC.
       </p>
     </section>
 
     <!-- Exam structure -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">LRC exam: structure & contents</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px; margin-bottom:20px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Theory</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Written<br>Multiple choice (SRC + LRC papers)</div>
+    <section class="pg-section">
+      <h2 class="pg-h2">LRC exam: structure & contents</h2>
+      <div class="pg-cards pg-cards--4">
+        <div class="pg-card">
+          <p class="pg-card-label">Theory</p>
+          <p class="pg-card-text">Written<br>Multiple choice (SRC + LRC papers)</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">English</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Receive & translate distress calls<br>Send texts (phonetics)</div>
+        <div class="pg-card">
+          <p class="pg-card-label">English</p>
+          <p class="pg-card-text">Receive & translate distress calls<br>Send texts (phonetics)</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Practice</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">Operating GMDSS devices<br>DSC, MF/HF, satellite</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Practice</p>
+          <p class="pg-card-text">Operating GMDSS devices<br>DSC, MF/HF, satellite</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; padding:24px;">
-          <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">Minimum age</div>
-          <div style="font-size:15px; color:#4B5563; line-height:1.6;">18 years (application)<br>on exam day ≥ 17 y. 9 mo.</div>
+        <div class="pg-card">
+          <p class="pg-card-label">Minimum age</p>
+          <p class="pg-card-text">18 years (application)<br>on exam day ≥ 17 y. 9 mo.</p>
         </div>
       </div>
-      <div style="background:rgba(51,102,255,0.05); border:1px solid rgba(51,102,255,0.15); border-radius:14px; padding:20px;">
-        <p style="font-size:15px; color:#4B5563; line-height:1.7; margin:0;">
-          <strong style="color:#1A1F36;">Exam topics:</strong> the GMDSS system and sea areas A1–A4, VHF/MF/HF marine radio, DSC procedures (Digital Selective Calling), satellite radio (Inmarsat), NAVTEX, distress, urgency and safety traffic, international distress English and the phonetic alphabet, plus the ITU radio regulations (Radio Regulations).
+      <div class="pg-card pg-card--soft">
+        <p class="pg-note">
+          <strong>Exam topics:</strong> the GMDSS system and sea areas A1–A4, VHF/MF/HF marine radio, DSC procedures (Digital Selective Calling), satellite radio (Inmarsat), NAVTEX, distress, urgency and safety traffic, international distress English and the phonetic alphabet, plus the ITU radio regulations (Radio Regulations).
         </p>
       </div>
     </section>
 
-    <!-- Practice bridge: take the fear out of radio -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:16px;">Afraid of radio? We'll take that fear away.</h2>
-      <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:20px;">
-        The worry about dictation and sending a message almost always comes from a lack of repetition – not from a lack of ability. The messages follow a fixed wording (MAYDAY, PAN PAN, phonetic alphabet). Anyone who has run through the procedure often enough has it down.
-      </p>
-      <div style="display:flex; flex-direction:column; gap:12px; margin-bottom:18px;">
-        {radioPoints.map(p => (
-          <div style="display:flex; align-items:flex-start; gap:14px; background:white; border:1px solid rgba(51,102,255,0.1); border-radius:14px; padding:18px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={p.icon} size={20} stroke="#3366FF" strokeWidth={1.75} />
-            </span>
-            <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:3px; font-size:14px;">{p.title}</div>
-              <div style="font-size:14px; color:#4B5563; line-height:1.6;">{p.desc}</div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div style="display:flex; align-items:flex-start; gap:14px; background:linear-gradient(160deg,#F4F7FE 0%,#EAF0FC 100%); border:1px solid rgba(51,102,255,0.16); border-radius:16px; padding:20px 24px;">
-        <span style="flex-shrink:0; margin-top:1px;"><Icon name="lifebuoy" size={20} stroke="#3366FF" strokeWidth={1.75} /></span>
-        <p style="font-size:14px; color:#4B5563; line-height:1.65; margin:0;">You get the final speaking polish on real equipment in the practical exam part at your radio school. The wording and procedures you bring with you confidently via Boatpass.</p>
-      </div>
-    </section>
+    <PracticeBridge variant="radio" lang="en" />
 
     <!-- Costs -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">What does the LRC cost?</h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:24px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">What does the LRC cost?</h2>
+      <p class="pg-p">
         For the official LRC exam there is a fee for admission, the exam and the issuance of the certificate:
       </p>
-      <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:16px; overflow:hidden;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:18px 24px; border-bottom:1px solid rgba(51,102,255,0.08);">
+      <div class="pg-fees">
+        <div class="pg-fee">
           <div>
-            <div style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:2px;">Admission, exam & issuance</div>
-            <div style="font-size:13px; color:#656B78; line-height:1.5;">Official fee via DSV / DMYV (theory + practice + certificate)</div>
+            <p class="pg-fee-label">Admission, exam & issuance</p>
+            <p class="pg-fee-desc">Official fee via DSV / DMYV (theory + practice + certificate)</p>
           </div>
-          <div style="font-size:16px; font-weight:800; color:#1A1F36; white-space:nowrap;">approx. €188</div>
+          <p class="pg-fee-price h-num">approx. €188</p>
         </div>
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding:18px 24px;">
+        <div class="pg-fee">
           <div>
-            <div style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:2px;">Preparation course (optional)</div>
-            <div style="font-size:13px; color:#656B78; line-height:1.5;">Radio school with study material & practical training</div>
+            <p class="pg-fee-label">Preparation course (optional)</p>
+            <p class="pg-fee-desc">Radio school with study material & practical training</p>
           </div>
-          <div style="font-size:16px; font-weight:800; color:#1A1F36; white-space:nowrap;">approx. €300–500</div>
+          <p class="pg-fee-price h-num">approx. €300–500</p>
         </div>
       </div>
-      <p style="font-size:13px; color:#656B78; line-height:1.6; margin-top:12px;">
+      <p class="pg-note pg-note--sm pg-note--after">
         The exact exam fee varies by association and federal state (approx. €188–207). A preparation course is not required – you can also learn the theory independently with the official question catalog. These official fees are independent of the Boatpass LRC learning module (one-time {priceText('lrc', 'en')}).
       </p>
     </section>
 
     <!-- How Boatpass helps with the LRC -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">How Boatpass helps with the LRC</h2>
-      <div style="display:flex; flex-direction:column; gap:16px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">How Boatpass helps with the LRC</h2>
+      <div class="pg-rows">
         {([
           { icon: 'book', title: 'Complete LRC question catalog', desc: 'All official LRC questions – including the SRC part and the LRC extension – always up to date.' },
           { icon: 'target', title: 'Exam simulation', desc: 'Practice under real conditions: written theory exam with a passing threshold and time pressure.' },
           { icon: 'refresh', title: 'Mistake training', desc: 'Only practice your weak spots – no time lost on content you\'ve already learned.' },
           { icon: 'chart', title: 'Progress by category', desc: 'See which LRC topics you have a firm grasp of and where there are still gaps.' },
         ] satisfies { icon: IconName; title: string; desc: string }[]).map(f => (
-          <div style="display:flex; align-items:flex-start; gap:16px; background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:20px;">
-            <span style="width:40px; height:40px; border-radius:11px; background:rgba(51,102,255,0.08); display:flex; align-items:center; justify-content:center; flex-shrink:0;">
-              <Icon name={f.icon} size={21} stroke="#3366FF" strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={f.icon} size={21} strokeWidth={1.75} />
             </span>
-            <div>
-              <div style="font-weight:700; color:#1A1F36; margin-bottom:4px;">{f.title}</div>
-              <div style="font-size:15px; color:#656B78; line-height:1.6;">{f.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{f.title}</p>
+              <p class="pg-row-text">{f.desc}</p>
             </div>
           </div>
         ))}
@@ -333,77 +311,79 @@ const radioPoints: { icon: IconName; title: string; desc: string }[] = [
     </section>
 
     <!-- Learn by category -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:8px;">Learn by category</h2>
-      <p style="font-size:16px; color:#656B78; line-height:1.6; margin-bottom:20px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Learn by category</h2>
+      <p class="pg-p">
         The LRC question catalog comprises {categories.reduce((s, c) => s + c.count, 0)} questions across {categories.length} topic areas – practice in a targeted way based on your weak spots.
       </p>
-      <p style="font-size:14px; color:#656B78; line-height:1.6; margin-top:-8px; margin-bottom:20px;">
-        Source: official question catalog on <a href="https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">elwis.de</a>.
+      <p class="pg-note pg-note--sm">
+        Source: official question catalog on <a href="https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
       </p>
-      <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="pg-rows">
         {categories.map(c => (
-          <div style="display:flex; align-items:center; gap:14px; background:white; border:1px solid rgba(0,0,0,0.07); border-radius:14px; padding:14px 18px;">
-            <span style={`width:40px; height:40px; border-radius:11px; background:${c.bg}; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>
-              <Icon name={c.icon} size={20} stroke={c.color} strokeWidth={1.75} />
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name={c.icon} size={20} strokeWidth={1.75} />
             </span>
-            <div style="flex:1; min-width:0;">
-              <div style="font-size:14px; font-weight:700; color:#1A1F36; line-height:1.3;">{c.name}</div>
-              <div style="font-size:12px; color:#656B78; line-height:1.4; margin-top:2px;">{c.desc}</div>
+            <div class="pg-row-body">
+              <p class="pg-row-title">{c.name}</p>
+              <p class="pg-row-text">{c.desc}</p>
             </div>
-            <span style="font-size:12px; font-weight:700; color:#656B78; background:rgba(0,0,0,0.04); border:1px solid rgba(0,0,0,0.07); border-radius:100px; padding:3px 10px; flex-shrink:0; white-space:nowrap;">{c.count} questions</span>
+            <span class="pg-pill">{c.count} questions</span>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Boatpass LRC module available -->
-    <section style="margin-bottom:48px; background:linear-gradient(135deg,#3366FF,#1A44D4); border:1px solid rgba(255,255,255,0.15); border-radius:24px; padding:40px; box-shadow:0 20px 60px rgba(51,102,255,0.3);">
-      <div style="font-size:13px; font-weight:700; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:1px; margin-bottom:12px;">Now available</div>
-      <h2 style="font-size:24px; font-weight:800; color:white; margin-bottom:12px;">Boatpass LRC module</h2>
-      <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.7; margin-bottom:20px;">
-        The LRC module for Boatpass is here – with the same learning concept as SBF Inland & Coastal: official question catalog, exam simulation and targeted mistake training. One-time <strong style="color:white;"><PlatformPrice product="lrc" lang="en" /></strong>, no subscription.
-      </p>
-      <div style="display:flex; align-items:baseline; gap:8px; margin-bottom:24px;">
-        <span style="font-size:40px; font-weight:900; color:white; letter-spacing:-1.5px;"><PlatformPrice product="lrc" lang="en" alt /></span>
-        <span style="font-size:14px; color:rgba(255,255,255,0.7); font-weight:500;">one-time purchase</span>
+    <section class="pg-section">
+      <div class="pg-cta">
+        <div class="pg-cta-text">
+          <p class="pg-eyebrow">Now available</p>
+          <h2 class="pg-h2">Boatpass LRC module</h2>
+          <p class="pg-p">The LRC module for Boatpass is here – with the same learning concept as SBF Inland & Coastal: official question catalog, exam simulation and targeted mistake training. One-time <strong><PlatformPrice product="lrc" lang="en" /></strong>, no subscription.</p>
+        </div>
+        <div class="pg-cta-buy">
+          <p class="pg-cta-price"><span class="h-num"><PlatformPrice product="lrc" lang="en" alt /></span> <span class="pg-cta-unit">one-time purchase</span></p>
+          <a class="h-btn h-btn--sm" href={playStoreUrl} target="_blank" rel="noopener noreferrer" data-cta-position="page-module">
+            Unlock the LRC module in the app
+            <Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" />
+            <span class="sr-only h-off-desktop">(opens in new tab)</span>
+          </a>
+        </div>
       </div>
-      <a href={playStoreUrl} target="_blank" rel="noopener noreferrer"
-        style="display:inline-flex; align-items:center; gap:8px; background:white; color:#3366FF; font-weight:700; font-size:14px; padding:12px 24px; border-radius:12px; text-decoration:none; box-shadow:0 8px 24px rgba(0,0,0,0.18);">
-        ▶&nbsp;Unlock the LRC module in the app
-      </a>
     </section>
 
     <!-- FAQ -->
-    <section style="margin-bottom:48px;">
-      <h2 class="content-section-title" style="margin-bottom:20px;">Frequently asked questions about the LRC</h2>
-      <div style="display:flex; flex-direction:column; gap:14px;">
+    <section class="pg-section">
+      <h2 class="pg-h2">Frequently asked questions about the LRC</h2>
+      <div class="pg-faq">
         {faqs.map(f => (
-          <div style="background:white; border:1px solid rgba(51,102,255,0.08); border-radius:16px; padding:22px;">
-            <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:8px;">{f.q}</h3>
-            <div style="font-size:15px; color:#656B78; line-height:1.7;">{f.a}</div>
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
           </div>
         ))}
       </div>
     </section>
 
     <!-- Internal links -->
-    <section style="padding-top:32px; border-top:1px solid rgba(51,102,255,0.1);">
-      <h3 style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:16px;">Related licenses</h3>
-      <div class="related-links">
-        <a href="/en/radio-certificate-app/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Radio certificate apps compared</a>
-        <a href="/en/src/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ SRC – Short Range Certificate for marine radio</a>
-        <a href="/en/sbf-coastal/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Learn SBF Coastal with Boatpass</a>
-        <a href="/en/ubi/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ UBI – VHF radio certificate inland</a>
-        <a href="/en/faq/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Frequently asked questions about the boating license</a>
-        <a href="/en/blog/ubi-vs-src-radio-license/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ UBI or SRC – which radio certificate fits your boat?</a>
-        <a href="/en/blog/marine-radio-basics-beginners/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Marine radio basics: channels, DSC and distress calls</a>
-        <a href="/en/blog/distress-signals-at-sea/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ Distress signals at sea: what you need to know</a>
-        <a href="/en/blog/gps-chartplotter-vhf-modern-navigation/" style="color:#3366FF; text-decoration:none; font-size:15px;">→ GPS, chartplotters & VHF radio – modern onboard navigation</a>
-      </div>
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Related licenses</h2>
+      <ul class="pg-related">
+        <li><a href="/en/radio-certificate-app/">Radio certificate apps compared<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/src/">SRC – Short Range Certificate for marine radio<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-coastal/">Learn SBF Coastal with Boatpass<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/ubi/">UBI – VHF radio certificate inland<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/faq/">Frequently asked questions about the boating license<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/ubi-vs-src-radio-license/">UBI or SRC – which radio certificate fits your boat?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/marine-radio-basics-beginners/">Marine radio basics: channels, DSC and distress calls<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/distress-signals-at-sea/">Distress signals at sea: what you need to know<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/gps-chartplotter-vhf-modern-navigation/">GPS, chartplotters & VHF radio – modern onboard navigation<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
     </section>
 
-  </div>
+  </PageLayout>
 </BaseLayout>
 
 <style>

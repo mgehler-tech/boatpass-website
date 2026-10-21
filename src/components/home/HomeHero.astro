@@ -19,9 +19,9 @@ import { Image } from 'astro:assets';
 import StoreCta from './StoreCta.astro';
 import StoreBadges from '../StoreBadges.astro';
 import HeroPhoto from './HeroPhoto.astro';
+import StoreRating from '../StoreRating.astro';
 import Icon from '../Icon.astro';
 import { useTranslations } from '../../i18n/index';
-import { getBoatpassCombinedRating, formatRating } from '../../data/apps';
 import { smartAppPath } from '../../data/stores';
 import homeShotDe from '../../assets/images/app.screenshot.0.de.png';
 import homeShotEn from '../../assets/images/app.screenshot.0.en.png';
@@ -35,16 +35,11 @@ const t = useTranslations(lang);
 const h = t.home;
 const homeShot = lang === 'de' ? homeShotDe : homeShotEn;
 
-// Google Play und App Store zusammen (nach Anzahl gewichtet), wie im Schema.
-const rating = getBoatpassCombinedRating();
-const score = rating ? formatRating(rating.score).replace('.', lang === 'de' ? ',' : '.') : null;
-
 // Reihenfolge wie t.hero.licenses: Binnen, See, UBI, SRC, LRC.
 const hrefs = lang === 'de'
   ? ['/sbf-binnen/', '/sbf-see/', '/ubi/', '/src/', '/lrc/']
   : ['/en/sbf-inland/', '/en/sbf-coastal/', '/en/ubi/', '/en/src/', '/en/lrc/'];
 const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
-const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3-2.93 4.15-.6L8 1.5z';
 ---
 
 <section class="hh" aria-labelledby="hh-title">
@@ -62,19 +57,7 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
         <div class="hh-actions">
           <StoreCta lang={lang} position="hero" id="hero-cta" class="hh-cta-device" />
           <StoreBadges lang={lang} height={48} eager position="hero" id="hero-badge" class="hh-cta-desktop" />
-          {rating && (
-            <p class="hh-rating">
-              <span class="hh-stars" aria-hidden="true">
-                {Array.from({ length: 5 }).map(() => (
-                  <svg width="12" height="12" viewBox="0 0 16 16"><path d={STAR} fill="currentColor" /></svg>
-                ))}
-              </span>
-              <span class="hh-rating-text">
-                <span class="sr-only">{h.ratingOutOf},</span>
-                <span class="h-num">{score}</span> · {rating.ratings} {h.ratingCountLabel}
-              </span>
-            </p>
-          )}
+          <StoreRating lang={lang} />
         </div>
 
         <a class="hh-qr hh-cta-desktop" href={smartAppPath(lang)} data-cta-position="hero-qr">
@@ -215,12 +198,7 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
     gap: 16px 28px;
     margin-top: 32px;
   }
-  /* Bewertung: eine Zeile neben dem Button (Sterne, Score, Anzahl). */
-  .hh-rating { display: inline-flex; align-items: center; gap: 8px; margin: 0; }
-  .hh-stars { display: inline-flex; gap: 2px; color: var(--h-beacon); }
-  .hh-stars svg { display: block; }
-  .hh-rating-text { font: 600 14px/1 var(--h-sans); color: var(--h-muted); }
-  .hh-rating-text .h-num { color: var(--h-ink); }
+  /* Bewertungszeile: StoreRating.astro (eigene Styles). */
 
   /* Desktop: Badges beider Stores statt des Geräte-Buttons (s. Kopfkommentar). */
   .hh-cta-desktop { display: none !important; }

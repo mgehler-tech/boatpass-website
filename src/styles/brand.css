@@ -42,7 +42,7 @@
   --h-on-deep-muted: #A8B4D4;
   --h-deep-line: rgba(200, 214, 255, 0.2);
 
-  --h-display: 'Archivo Variable', 'Arial Narrow', system-ui, sans-serif;
+  --h-display: 'Archivo Variable', 'Inter Variable', 'Inter', system-ui, sans-serif;
   --h-sans: 'Inter Variable', 'Inter', system-ui, sans-serif;
   --h-ease: cubic-bezier(0.22, 1, 0.36, 1);
   /* Radien: Karten weich, Bedienelemente als Pille, kleine Marken dazwischen. */
@@ -189,3 +189,18 @@ html.dark .h-seg-opt[aria-pressed='true'] {
 @media (prefers-reduced-motion: reduce) {
   .h-btn, .h-btn-arrow, .h-seg-opt { transition: none; }
 }
+
+/* ── Ziffern und Geräteweiche (seitenweit; vorher nur home.css) ──────── */
+.h-num { font-variant-numeric: tabular-nums; }
+
+/* Store-CTA je Gerät (html[data-platform] aus dem BaseLayout, s. StoreCta).
+   Ohne Attribut (kein JS) gilt die neutrale Variante. */
+.h-on-android,
+.h-on-ios { display: none; }
+html[data-platform='android'] .h-on-android { display: inline; }
+html[data-platform='android'] .h-off-android,
+html[data-platform='android'] .h-on-other,
+html[data-platform='ios'] .h-on-other { display: none; }
+html[data-platform='ios'] .h-on-ios { display: inline; }
+html[data-platform='desktop'] .h-off-desktop { display: none; }
+.h-btn-mark svg { color: var(--h-btn); }

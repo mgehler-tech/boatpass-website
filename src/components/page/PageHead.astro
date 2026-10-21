@@ -1,0 +1,44 @@
+---
+// Seitenkopf der Lizenz- und Inhaltsseiten (Spec Runde 2, 5.3): kleine Zeile,
+// H1 in Archivo, Lede, optional ein Verfügbar-Hinweis (Slot „badge") und der
+// Store-Button mit Bewertungszeile. Linksbündig auf der 1240-px-Kante, damit
+// Logo, Titel und Inhalt auf einer Linie stehen. Importiert page.css, damit
+// Archivo und die pg-Klassen nur auf diesen Seiten laden.
+import '../../styles/page.css';
+import StoreCta from '../home/StoreCta.astro';
+import StoreRating from '../StoreRating.astro';
+
+interface Props {
+  lang: 'de' | 'en';
+  eyebrow: string;
+  lede: string;
+  /** Store-Button mit Bewertungszeile unter der Lede. */
+  cta?: boolean;
+  /** Feste Beschriftung des Buttons; Standard „Kostenlos laden" / „Download for free". */
+  ctaLabel?: string;
+  /** data-cta-position für die Plausible-Store-Events. */
+  position?: string;
+}
+
+const { lang, eyebrow, lede, cta = false, ctaLabel, position = 'page-head' } = Astro.props;
+const label = ctaLabel ?? (lang === 'de' ? 'Kostenlos laden' : 'Download for free');
+---
+
+<header class="pg-head">
+  <div class="h-container">
+    <div class="pg-head-inner">
+      <p class="pg-eyebrow">{eyebrow}</p>
+      <h1 class="pg-title"><slot /></h1>
+      <p class="pg-lede">{lede}</p>
+      {Astro.slots.has('badge') && (
+        <p class="pg-badge"><slot name="badge" /></p>
+      )}
+      {cta && (
+        <div class="pg-actions">
+          <StoreCta lang={lang} position={position} label={label} />
+          <StoreRating lang={lang} />
+        </div>
+      )}
+    </div>
+  </div>
+</header>
