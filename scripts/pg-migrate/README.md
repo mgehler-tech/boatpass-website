@@ -46,6 +46,19 @@ ersetzt danach die seitenspezifischen Muster: Info-Kasten mit Glühbirne, Städt
 als `.pg-rows`. Die Regeln dafür hängt der Lauf einmalig an `src/styles/page.css` an. Der Lauf
 ist wiederholbar (zweiter Durchlauf ändert nichts).
 
+## Infoseiten (Runde 3b)
+
+```bash
+python3 scripts/pg-migrate/pginfo.py impressum en-legal
+```
+
+`pginfo.py` liest den Kopf-Block der Infoseiten (Pille, H1, Intro) aus und ersetzt ihn durch
+`PageHead`, die 720-px-Hülle durch `PageLayout variant="narrow"`; Legal-Karten, Labels,
+Absätze und Links werden Klassen (`pg-card--legal`, `pg-card-label`, `pg-p--sm`, `pg-strong`,
+`pg-inline-link`). Die Regeln für Legal-Karten, `pg-meta`, `pg-divider`, `pg-kv`, `pg-notice`,
+`pg-chips`, FAQ-Akkordeon und `pg-portrait` hängt der erste Lauf an `src/styles/page.css` an.
+Die Lede landet als Text im `PageHead` (Auszeichnungen wie `<strong>` entfallen dort).
+
 ## Grenzen
 
 - Regex auf exakte Inline-Werte: ein abweichender Wert (anderes `padding`, andere Opazität)
