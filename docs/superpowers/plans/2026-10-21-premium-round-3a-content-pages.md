@@ -18,7 +18,7 @@
 - Keine Emojis, keine `→`/`▶`/`▼`/`&rarr;` im sichtbaren Text; Icons über `Icon.astro`.
 - Texte, Schema.org-Blöcke, URLs, hreflang, Abschnittsreihenfolge unverändert; `getStaticPaths` der Städteseiten unverändert.
 - Farben nur über Tokens: `main [style*="#1A1F36"], main [style*="background:white"], main [style*="#3366FF"]` → 0 je Seite.
-- Der Schein-Finder (`#cfg`, `.cfg-*`, sein Skript und sein `is:global`-Style) bleibt unangetastet.
+- Der Schein-Finder: Logik, IDs, `.cfg-*`-Klassen und `data-*`-Hooks bleiben unangetastet; Skript und `is:global`-Style dürfen nur wie in Spec 3.6 angefasst werden (Zeichen, Farben, Button).
 - E2E-Runbook (Port 4321 freimachen, Plausible abfangen, unter Last `--workers=1`); `astro check` bleibt bei 47 Alt-Fehlern.
 - Commits mit `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`, nach jedem Commit pushen.
 
@@ -92,9 +92,9 @@ git push -u origin feat/premium-round-3a
 
 **Files:** Modify `src/pages/sbf-pruefung-ablauf.astro`, `src/pages/en/sbf-exam.astro`, `scripts/pg-migrate/pgpage.py` (Konfiguration); Test `tests/e2e/content-pages.spec.ts`.
 
-**Interfaces:** Fakten laut Spec 3.3 (fünf Paare, `product="sbfBinnen"`, `from`).
+**Interfaces:** Fakten laut Spec 3.3 (fünf Paare: Theorie Binnen, Theorie See, Bestehensgrenze, Mindestalter, Anmeldung; `product="sbfBinnen"`, `from`); jeder Wert per `grep` im Seitentext belegt.
 
-- [ ] **Step 1: Test** – `expectMigrated(page, '/sbf-pruefung-ablauf/', { h1: /Prüfung/, facts: 5 })` und `'/en/sbf-exam/'` (`/exam/i`); zusätzlich `.pg-aside dl.pg-facts` enthält `60 Min`.
+- [ ] **Step 1: Test** – `expectMigrated(page, '/sbf-pruefung-ablauf/', { h1: /Prüfung/, facts: 5 })` und `'/en/sbf-exam/'` (`/exam/i`); zusätzlich `.pg-aside dl.pg-facts` enthält `60 Min` und `16 Jahre`, nicht `130,78`.
 - [ ] **Step 2: Fehlschlag sehen** – `-g "Prüfungsablauf"` → FAIL.
 - [ ] **Step 3: Migrieren** (Konfiguration + Konverter; neue Restmuster in den Konverter aufnehmen, nicht per Hand in die Seite).
 - [ ] **Step 4: Erfolg sehen** – `-g "Prüfungsablauf"` plus `conversion-journeys.en.spec.ts` → PASS.
@@ -106,9 +106,9 @@ git push -u origin feat/premium-round-3a
 
 **Files:** Modify `src/pages/sbf-binnen-pruefungsfragen.astro`, `src/pages/sbf-see-pruefungsfragen.astro`, `src/pages/en/sbf-inland-exam-questions.astro`, `src/pages/en/sbf-coastal-exam-questions.astro`, `scripts/pg-migrate/pgpage.py`; Test `tests/e2e/content-pages.spec.ts`.
 
-**Interfaces:** Fakten wie SBF Binnen bzw. SBF See aus Runde 2b (`product` entsprechend, ohne `from`).
+**Interfaces:** Fakten laut Spec 3.3 (Binnen vier Paare: Katalog 253, Theorieprüfung, Basisfragen, spezifische Fragen; See fünf Paare, zusätzlich Navigationsaufgabe), `product` entsprechend, ohne `from`.
 
-- [ ] **Step 1: Test** – vier `expectMigrated`-Aufrufe (`facts: 5`), Binnen enthält `130,78 €`, See `148,38 €`.
+- [ ] **Step 1: Test** – vier `expectMigrated`-Aufrufe (Binnen `facts: 4`, See `facts: 5`), Binnen enthält `253`, See `285` und `9 Fragen`; keine Gebühr in der Karte.
 - [ ] **Step 2: Fehlschlag sehen** – `-g "Prüfungsfragen"` → FAIL.
 - [ ] **Step 3: Migrieren.**
 - [ ] **Step 4: Erfolg sehen** – `-g "Prüfungsfragen"` → PASS.
@@ -120,7 +120,7 @@ git push -u origin feat/premium-round-3a
 
 **Files:** Modify `src/pages/tools/welcher-bootsfuehrerschein.astro`, `src/pages/en/tools/which-boating-license.astro`, `scripts/pg-migrate/pgpage.py` (Konfiguration mit `wide=False`, `cta=False`, `narrow=True`, Inhaltsmarker `max-width:760px; margin:0 auto; padding:48px 24px 90px;`); Test.
 
-**Interfaces:** `PageHead` ohne `cta`; `PageLayout variant="narrow"`; `#cfg-result` behält `style="display:none; margin-top:24px;"` (kein Farbwert, vom Skript gesteuert – Ruling im Ledger); Entscheidungstabelle → `.pg-table`; FAQ/Links wie üblich.
+**Interfaces:** `PageHead` ohne `cta`; `PageLayout variant="narrow"`; `#cfg-result` behält `style="display:none; margin-top:24px;"` (kein Farbwert, vom Skript gesteuert); Skript light-touch nach Spec 3.6: Pfeilzeichen → Inline-SVG-Chevron (Pfad von `chevronRight`, für „Zurück" per CSS gespiegelt), Emoji und Dreieck entfernen, Ergebniskarten-Inline-Farben → `.res-*`-Klassen auf Tokens im `is:global`-Block (Dark-Regeln dort entfallen), Verlaufs-Button → `a.h-btn.h-btn--sm`; Entscheidungstabelle → `.pg-table`; FAQ/Links wie üblich.
 
 - [ ] **Step 1: Test**
 ```ts
@@ -137,7 +137,7 @@ test('Finder: schmale Spalte, Konfigurator bedienbar, Tabelle', async ({ page })
 ```
 plus EN (`/en/tools/which-boating-license/`, `h1: /licen/i`).
 - [ ] **Step 2: Fehlschlag sehen** – `-g "Finder"` → FAIL.
-- [ ] **Step 3: Migrieren** (Hero → `PageHead`, Hülle → `PageLayout variant="narrow"`, Tabelle/FAQ/Links per Konverter; Konfigurator-Block byteidentisch lassen – per `git diff` prüfen, dass zwischen `<!-- Interaktiver Konfigurator -->` und `<!-- Statische Entscheidungstabelle` nichts außer `#cfg-result` angefasst wurde).
+- [ ] **Step 3: Migrieren** (Hero → `PageHead`, Hülle → `PageLayout variant="narrow"`, Tabelle/FAQ/Links per Konverter; im Skript nur Strings und Klassen ändern – der Diff des `<script>`-Blocks darf keine Zeile mit Logik (`if`, `questions`, `result`, `addEventListener`) berühren; der Test klickt die Optionen weiter durch).
 - [ ] **Step 4: Erfolg sehen** – `-g "Finder"` plus `npx playwright test tests/e2e/conversion-journeys.spec.ts -g "finder|Finder|Konfigurator|license"` → PASS.
 - [ ] **Step 5: Commit und Push** – `feat(pages): Schein-Finder DE/EN im schmalen Rahmen`.
 
@@ -149,10 +149,10 @@ plus EN (`/en/tools/which-boating-license/`, `h1: /licen/i`).
 
 **Interfaces:**
 - Übersicht: `PageHead` ohne `cta`, `PageLayout variant="wide"`, Info-Box → `.pg-answer.pg-answer--icon`, `city-card`-Link „Mehr erfahren →" → Text + `Icon chevronRight`.
-- Städteseite: `PageHead` mit `cta` (Beschriftung „Kostenlos laden" / „Download for free"), `PageLayout` (read) mit `PageFacts` aus `city`: `[{ k: 'Bundesland', v: city.state }, { k: 'Gewässer', v: city.waterways.de }, { k: 'Benötigter Schein', v: licenceLabel(city.variant) }, ...(city.schools.length ? [{ k: 'Bootsfahrschulen vor Ort', v: `${city.schools.length}` }] : [])]`, `product={city.variant === 'see' ? 'sbfSee' : 'sbfBinnen'}` (Zuordnung aus der Seite prüfen), EN analog mit `.en`-Feldern.
+- Städteseite: `PageHead` mit `cta` (Beschriftung „Kostenlos laden" / „Download for free"), `PageLayout` (read) mit `PageFacts` aus `city`: `[{ k: 'Bundesland', v: city.state }, { k: 'Gewässer', v: city.waterways.de }, { k: 'Benötigter Schein', v: licenceLabel(city.variant) }, ...(city.schools.length ? [{ k: 'Bootsfahrschulen vor Ort', v: `${city.schools.length}` }] : [])]`, `product="sbfBinnen" from` für alle Städte (Spec 3.3; `variant` ist `inland` | `coastal` | `both`), EN analog mit `.en`-Feldern; `.maps-cta` → `.pg-banner`, Lizenz-Tags → `.pg-pill`, Info-Box der Übersicht mit `Icon lightbulb`.
 - Schulkarten: `.pg-school` (Karte), `.pg-school-head` (Icon-Kachel + `h3.pg-card-title` + Ort), Zeilen als `.pg-row-text`, Links `pg-inline-link`/`PageLink external` (Web).
 
-- [ ] **Step 1: Test** – Übersicht DE/EN (`facts: 0, cta: false`, `.city-grid .city-card` Anzahl = alle `.city-card`, kein `→`), zwei Städteseiten (erste Stadt aus `getStaticPaths` mit Schulen, eine ohne; Pfade per `grep -n slug src/data/*cities*` ermitteln) mit `facts: 4|5` und `.pg-school`-Anzahl = `city.schools.length`.
+- [ ] **Step 1: Test** – Übersicht DE/EN (`facts: 0, cta: false`, `.city-grid .city-card` Anzahl = alle `.city-card`, kein `→`), zwei Städteseiten aus `src/data/boat-schools.ts` (eine `inland`, eine `both`, Slugs dort ablesen) mit `facts: 4` und `.pg-school`-Anzahl = `city.schools.length`; Preiszeile enthält „ab".
 - [ ] **Step 2: Fehlschlag sehen** – `-g "Fahrschul"` → FAIL.
 - [ ] **Step 3: Migrieren** (Style-Blöcke der vier Seiten nach `page.css`, tokenisiert; Konfiguration für Übersicht und Städte-Template; die Städte-Template-Konfiguration übergibt Eyebrow/H1/Lede als Ausdrücke – `pgpage.py` braucht dafür `raw=True`, damit `{city.state}` nicht in Anführungszeichen landet).
 - [ ] **Step 4: Erfolg sehen** – `-g "Fahrschul"` plus volle `licence-pages.spec.ts` → PASS; `npx astro build` rendert alle Städte (Anzahl `dist/bootsfahrschulen/*/index.html` = Anzahl Städte).
