@@ -256,6 +256,23 @@ def ensure_icon(path, prefix):
         path.write_text(t)
 
 
+def tidy_imports(path):
+    """Nur Importe behalten, die die Seite nach dem Umbau noch nutzt (Review Runde 3a, Important 1)."""
+    t = path.read_text()
+    before = t
+    if '<PageLink' not in t:
+        t = re.sub(r"import PageLink from '[^']*';\n", '', t)
+    if '<PageFacts' not in t:
+        t = re.sub(r"import PageFacts from '[^']*';\n", '', t)
+    if t.count('playStoreUrl') == 1 and 'const playStoreUrl = PLAY_STORE_URL;\n' in t:
+        t = t.replace('const playStoreUrl = PLAY_STORE_URL;\n', '')
+        t = re.sub(r"import \{ PLAY_STORE_URL \} from '[^']*data/stores';\n", '', t)
+        t = t.replace('import { PLAY_STORE_URL, ', 'import { ')
+    t = re.sub(r'\n{3,}', '\n\n', t)
+    if t != before:
+        path.write_text(t)
+
+
 def migrate(key):
     cfg = PAGES[key]
     path = ROOT / cfg['file']
@@ -278,6 +295,7 @@ def migrate(key):
         out = subprocess.run([sys.executable, str(HERE / 'pgconvert.py'), str(path), cfg['lang']], capture_output=True, text=True)
         print(out.stdout.strip())
         ensure_icon(path, prefix)
+        tidy_imports(path)
         return
 
     # Kopf + Beginn der Lesespalte
@@ -357,6 +375,7 @@ def migrate(key):
     if out.returncode:
         print(out.stderr)
     ensure_icon(path, prefix)
+    tidy_imports(path)
 
 
 for key in sys.argv[1:] or PAGES:

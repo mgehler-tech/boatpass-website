@@ -46,6 +46,9 @@ SCRIPT_REPS = [
 ]
 
 STYLE_REPS = [
+    # Längere Muster zuerst, damit die kürzeren (color:#1A1F36) sie nicht vorher zerlegen.
+    (' border-left:4px solid #3366FF;', ''),
+    ('border-left-color:#1A1F36;', 'border-color:var(--h-line-2);'),
     ('background:#fff', 'background:var(--h-card)'),
     ('color:#1A1F36', 'color:var(--h-ink)'),
     ('color:#656B78', 'color:var(--h-muted)'),
@@ -56,8 +59,6 @@ STYLE_REPS = [
     ('background:linear-gradient(90deg,#3366FF,#5B8CFF)', 'background:var(--h-blue)'),
     ('border:1px solid rgba(51,102,255,0.12);', 'border:1px solid var(--h-line);'),      # .cfg-card
     ('border:1.5px solid rgba(51,102,255,0.14);', 'border:1.5px solid var(--h-line);'),  # .cfg-opt
-    (' border-left:4px solid #3366FF;', ''),
-    ('border-left-color:#1A1F36;', 'border-color:var(--h-line-2);'),
     # Reihenfolge: erst die Bundle-Box (Hintergrund + Rahmen), dann der einzelne Rahmen der Karte.
     ('background:rgba(51,102,255,0.06); border:1px solid rgba(51,102,255,0.16);', 'background:var(--h-blue-wash);'),
     ('border:1px solid rgba(51,102,255,0.16);', 'border:1px solid var(--h-line);'),

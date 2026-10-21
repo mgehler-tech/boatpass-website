@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHead from '../../components/page/PageHead.astro';
 import PageLayout from '../../components/page/PageLayout.astro';
-import PageLink from '../../components/page/PageLink.astro';
 import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
 import Icon from '../../components/Icon.astro';
 import { cities } from '../../data/boat-schools';
@@ -72,7 +71,7 @@ const faqSchema = {
     <div class="pg-answer pg-answer--icon">
       <span class="pg-row-icon"><Icon name="lightbulb" size={20} strokeWidth={1.75} /></span>
       <div class="pg-answer-body">
-        <p class="pg-answer-label">Theorie + Praxis</p>
+        <p class="pg-card-title">Theorie + Praxis</p>
         <p class="pg-card-text">
           <strong>BoatPass</strong> = Theorie lernen (offizieller ELWIS-Fragenkatalog, Prüfungssimulation, Fehlertraining).
           <strong>Bootsfahrschule</strong> = Praxisausbildung auf dem Wasser + Prüfungsanmeldung.

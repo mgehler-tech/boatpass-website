@@ -3,13 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHead from '../components/page/PageHead.astro';
 import PageLayout from '../components/page/PageLayout.astro';
 import PageFacts from '../components/page/PageFacts.astro';
-import PageLink from '../components/page/PageLink.astro';
 import DisplayFontPreload from '../components/page/DisplayFontPreload.astro';
 import Icon from '../components/Icon.astro';
 import type { IconName } from '../icons';
-import { PLAY_STORE_URL } from '../data/stores';
-
-const playStoreUrl = PLAY_STORE_URL;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -108,7 +104,7 @@ const howToSchema = {
       items={[
         { k: 'Theorie Binnen', v: '30 Fragen · 45 Min' },
         { k: 'Theorie See', v: '39 Fragen · 60 Min (inkl. Navigation)' },
-        { k: 'Bestehensgrenze', v: '5 von 7 Basis, 18 von 23 spezifisch' },
+        { k: 'Bestehensgrenze', v: '5 von 7 Basis, 18 von 23 spezifisch (See: 7 von 9 Navigation)' },
         { k: 'Mindestalter', v: '16 Jahre' },
         { k: 'Anmeldung', v: 'Prüfungsausschuss (DMYV)' },
       ]}

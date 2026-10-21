@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import PageHead from '../../components/page/PageHead.astro';
 import PageLayout from '../../components/page/PageLayout.astro';
-import PageLink from '../../components/page/PageLink.astro';
 import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
 import { PLAY_STORE_URL, appStoreUrl, bundleSaving, formatPrice, smartAppPath, storePrice, type Platform } from '../../data/stores';
 
@@ -163,7 +162,7 @@ const howToSchema = {
             </tr>
           </thead>
           <tbody>
-            {decisionRows.map((row, i) => (
+            {decisionRows.map((row) => (
               <tr>
                 <th scope="row">{row.vorhaben}</th>
                 <td>{row.schein}</td>
@@ -289,7 +288,7 @@ const howToSchema = {
       transition:border-color .15s ease, box-shadow .15s ease, transform .15s ease;
     }
     a.res-card:hover {
-      border-left-color:var(--h-ink); box-shadow:0 8px 22px rgba(51,102,255,0.12); transform:translateY(-2px);
+      border-color:var(--h-line-2); box-shadow:0 8px 22px rgba(51,102,255,0.12); transform:translateY(-2px);
     }
 
     /* Ergebnis-Preis (Upselling): rechts neben dem Lizenznamen. */
@@ -330,6 +329,8 @@ const howToSchema = {
     .res-bundle-icon { display:flex; color:var(--h-blue-ink); }
     .res-actions { margin-top:22px; display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
     .res-note { font-size:12.5px; color:var(--h-muted); line-height:1.6; margin-top:14px; }
+    /* Ergebnis steht an der Stelle des (dann verborgenen) Konfigurators: kein Spaltenabstand davor. */
+    .pg-main > #cfg-result { margin-top:0; }
   </style>
 
   <script is:inline define:vars={{ playStoreUrl, iosUrl, chooserPath, PS }}>

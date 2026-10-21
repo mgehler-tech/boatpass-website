@@ -105,6 +105,8 @@ test.describe('Fahrschulen', () => {
   test('Übersicht EN parity', async ({ page }) => {
     await expectMigrated(page, '/en/boat-schools/', { h1: /Boat Schools/, facts: 0, cta: false });
     await expect(page.locator('.city-grid .city-card')).toHaveCount(cities.length);
+    await expect(page.locator('.pg-answer--icon .pg-row-icon svg')).toHaveCount(1);
+    await expect(page.locator('.city-card .city-link svg')).toHaveCount(cities.length);
   });
   test('Berlin (Binnen): Kennzahlen aus den Stadtdaten, Schulkarten, Karten-Banner', async ({ page }) => {
     await expectMigrated(page, `/bootsfahrschulen/${berlin.slug}/`, { h1: /Berlin/, facts: 4 });

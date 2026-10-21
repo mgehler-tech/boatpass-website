@@ -139,9 +139,9 @@ def common(s, lang):
     s = sub(s, r'<span style="flex-shrink:0; margin-top:2px;"><Icon name="book" size=\{22\}(?: stroke="#3366FF")? strokeWidth=\{1\.75\} /></span>', BULB)
     s = sub(s, r'(<div class="pg-answer pg-answer--icon">\n)(\s*)<div>\n', lambda m: f'{m.group(1)}{m.group(2)}{BULB}\n{m.group(2)}<div class="pg-answer-body">\n')
     s = sub(s, r'(<div class="pg-answer pg-answer--icon">\n\s*' + re.escape(BULB) + r'\n\s*)<div>\n', r'\1<div class="pg-answer-body">\n')
-    s = sub(s, r'<div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">([^<]*)</div>', r'<p class="pg-answer-label">\1</p>')
+    s = sub(s, r'<div style="font-size:12px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">([^<]*)</div>', r'<p class="pg-card-title">\1</p>')
     # Fließtext des Kastens wie auf der EN-Seite (der Konverter macht aus margin:0 eine pg-note)
-    s = sub(s, r'(<p class="pg-answer-label">[^\n]*\n\s*)<p class="pg-note">', r'\1<p class="pg-card-text">')
+    s = sub(s, r'(<p class="pg-card-title">[^\n]*\n\s*)<p class="pg-note">', r'\1<p class="pg-card-text">')
     s = sub(s, r'<div style="font-size:14px; font-weight:700; color:#1A1F36; margin-bottom:6px;">([^<]*)</div>', r'<p class="pg-card-title">\1</p>')
     s = sub(s, r'<p style="font-size:15px; color:#(?:4B5563|656B78); line-height:1\.(?:7|65); margin:0;">', '<p class="pg-card-text">')
     # Einleitungen der Abschnitte

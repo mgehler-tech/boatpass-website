@@ -3,13 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHead from '../../components/page/PageHead.astro';
 import PageLayout from '../../components/page/PageLayout.astro';
 import PageFacts from '../../components/page/PageFacts.astro';
-import PageLink from '../../components/page/PageLink.astro';
 import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
 import Icon from '../../components/Icon.astro';
 import type { IconName } from '../../icons';
-import { PLAY_STORE_URL } from '../../data/stores';
-
-const playStoreUrl = PLAY_STORE_URL;
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -108,7 +104,7 @@ const howToSchema = {
       items={[
         { k: 'Theory Inland', v: '30 questions · 45 min' },
         { k: 'Theory Coastal', v: '39 questions · 60 min (incl. navigation)' },
-        { k: 'Pass mark', v: '5 of 7 basic, 18 of 23 specific' },
+        { k: 'Pass mark', v: '5 of 7 basic, 18 of 23 specific (coastal: 7 of 9 navigation)' },
         { k: 'Minimum age', v: '16 years' },
         { k: 'Registration', v: 'Exam board (DMYV)' },
       ]}
