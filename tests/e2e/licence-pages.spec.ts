@@ -36,7 +36,7 @@ test.describe('Seitenkopf', () => {
     await expect(page.locator('head link[rel="preload"][as="font"][href*="archivo"]')).toHaveCount(1);
     await page.goto('/en/licenses/');
     await expect(page.locator('head link[rel="preload"][as="font"][href*="archivo"]')).toHaveCount(1);
-    await page.goto('/datenschutz/');
+    await page.goto('/app/'); // außerhalb des Rahmens (Runde 3b stellt /datenschutz/ um)
     await expect(page.locator('head link[rel="preload"][as="font"][href*="archivo"]')).toHaveCount(0);
   });
   test('Archivo lädt auf Lizenzseiten mit swap (Entscheidung des Inhabers, wie die Startseite)', async ({ page }) => {

@@ -636,3 +636,16 @@ details[open] > .pg-faq-q svg { transform: rotate(90deg); }
 .pg-portrait img { display: block; width: 100%; height: 380px; object-fit: cover; }
 .pg-portrait-body { padding: 20px 24px; }
 @media (prefers-reduced-motion: reduce) { .pg-faq-q svg, .pg-chip { transition: none; } }
+
+/* ── Rechtstexte (Runde 3b, Task 2): Meta-Box, Schlüssel-Wert-Listen, Aufzählungen, Trenner in der Spalte ── */
+.pg-meta { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.pg-main > .pg-card--legal + .pg-divider { margin-top: 32px; }
+.pg-main > .pg-divider + .pg-card--legal { margin-top: 0; }
+.pg-kvs { display: flex; flex-direction: column; }
+.pg-bullets { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+.pg-bullets--before { margin: 0 0 20px; }
+.pg-bullet { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.6; color: var(--h-text); }
+.pg-bullet-mark { flex-shrink: 0; color: var(--h-blue-ink); }
+.pg-note + .pg-note { margin-top: 8px; }
+.pg-card--legal .pg-note { font-size: 14px; }
+

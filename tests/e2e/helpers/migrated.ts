@@ -20,6 +20,8 @@ export type MigratedOptions = {
   cta?: boolean;
   /** Spaltenordnung; Standard: read bei Fakten, sonst wide. */
   variant?: 'read' | 'wide' | 'narrow';
+  /** false: Pfeilzeichen im Fließtext erlaubt (Rechtstexte nennen Menüpfade wie „Mehr → Fortschritt"); Links bleiben pfeilfrei. */
+  arrows?: boolean;
 };
 
 /** Rauchtest: Kopf, Spaltenordnung, keine Inline-Farben/Pfeile, Conversion-Hook, 360 px. */
@@ -39,7 +41,11 @@ export async function expectMigrated(page: Page, path: string, opts: MigratedOpt
     await expect(page.locator('.pg-aside')).toHaveCount(0);
   }
   await expect(page.locator(noInline)).toHaveCount(0);
-  expect(await page.locator('main').innerText()).not.toMatch(/[→▶▼←]/);
+  if (opts.arrows !== false) {
+    expect(await page.locator('main').innerText()).not.toMatch(/[→▶▼←]/);
+  } else {
+    await expect(page.locator('main a', { hasText: /[→▶▼←]/ })).toHaveCount(0);
+  }
   if (opts.cta !== false) {
     // Die Geräteweiche schreibt generische Play-Links am Desktop auf die Auswahlseite um: /app/ bzw. /en/app/.
     await expect(page.locator('main a[href="/app/"], main a[href="/en/app/"]').first()).toBeVisible();

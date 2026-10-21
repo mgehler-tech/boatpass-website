@@ -1,17 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
+import PageHead from '../../components/page/PageHead.astro';
+import PageLayout from '../../components/page/PageLayout.astro';
 
 // Shared section styles (layout identical to the privacy policy).
-const card = 'background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;';
-const num = 'font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;';
-const h2 = 'font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;';
-const p = 'font-size:15px; color:#4B5563; line-height:1.7;';
-const pGap = `${p} margin-bottom:12px;`;
-const strong = 'color:#1A1F36;';
-const link = 'color:#3366FF; text-decoration:none;';
-const row = 'display:flex; flex-wrap:wrap; gap:4px 12px; padding:12px 16px; background:rgba(51,102,255,0.03); border-radius:12px;';
-const rowName = 'font-size:14px; font-weight:700; color:#1A1F36; flex:0 0 180px;';
-const rowText = 'font-size:14px; color:#4B5563; flex:1 1 240px; min-width:0;';
 ---
 
 <BaseLayout
@@ -21,70 +14,71 @@ const rowText = 'font-size:14px; color:#4B5563; flex:1 1 240px; min-width:0;';
   altUrl="https://boatpass.de/nutzungsbedingungen/"
   showCta={false}
 >
-  <div style="max-width:720px; margin:0 auto; padding:80px 24px 120px;">
+  <DisplayFontPreload slot="head" />
+  <!-- Seitenkopf und schmale Spalte (Spec Runde 3, 3.1/3.5) -->
+  <PageHead
+    lang="en"
+    eyebrow="Legal"
+    lede="Valid for the BoatPass app for Android and iPhone/iPad and for the website boatpass.de. Last updated: October 2026. The German version is legally binding."
+  >
+    Terms of Use
+  </PageHead>
 
-    <!-- Header -->
-    <div style="margin-bottom:48px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#2952CC; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
-        Legal
-      </div>
-      <h1 style="font-size:clamp(30px,4.5vw,42px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:12px;">Terms of Use</h1>
-      <p style="font-size:16px; color:#656B78;">Valid for the <strong style={strong}>BoatPass</strong> app for <strong style={strong}>Android</strong> and <strong style={strong}>iPhone/iPad</strong> and for the <strong style={strong}>website boatpass.de</strong>. Last updated: October 2026. The German version is legally binding.</p>
-    </div>
+  <PageLayout variant="narrow">
 
     <!-- 01 Provider -->
-    <div style={card}>
-      <div style={num}>01</div>
-      <h2 style={h2}>Provider</h2>
-      <p style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:4px;">Marius Gehler</p>
-      <p style={p}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">01</p>
+      <h2 class="pg-h2 pg-h2--sm">Provider</h2>
+      <p class="pg-p pg-p--sm pg-strong">Marius Gehler</p>
+      <p class="pg-p pg-p--sm">
         Blissestraße 56 · 10713 Berlin · Germany<br />
-        <a href="mailto:support@boatpass.de" style={link}>support@boatpass.de</a>
+        <a href="mailto:support@boatpass.de" class="pg-inline-link">support@boatpass.de</a>
       </p>
     </div>
 
     <!-- 02 Scope -->
-    <div style={card}>
-      <div style={num}>02</div>
-      <h2 style={h2}>Scope</h2>
-      <p style={p}>
-        These terms apply to the use of the <strong style={strong}>BoatPass</strong> app (study app for the German recreational boating licence and radio certificates) in its Android version from Google Play and its iOS/iPadOS version from the App Store, and to the website <strong style={strong}>boatpass.de</strong>. Section 10 additionally applies to the iOS app.
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">02</p>
+      <h2 class="pg-h2 pg-h2--sm">Scope</h2>
+      <p class="pg-p pg-p--sm">
+        These terms apply to the use of the <strong>BoatPass</strong> app (study app for the German recreational boating licence and radio certificates) in its Android version from Google Play and its iOS/iPadOS version from the App Store, and to the website <strong>boatpass.de</strong>. Section 10 additionally applies to the iOS app.
       </p>
     </div>
 
     <!-- 03 Requirements -->
-    <div style={card}>
-      <div style={num}>03</div>
-      <h2 style={h2}>Requirements</h2>
-      <div style="display:flex; flex-direction:column; gap:10px;">
-        <div style={row}>
-          <span style={rowName}>Android</span>
-          <span style={rowText}>Android 8.0 or later, free on Google Play. Purchases require a Google account.</span>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">03</p>
+      <h2 class="pg-h2 pg-h2--sm">Requirements</h2>
+      <div class="pg-kvs">
+        <div class="pg-kv">
+          <span class="pg-kv-k">Android</span>
+          <span class="pg-kv-v">Android 8.0 or later, free on Google Play. Purchases require a Google account.</span>
         </div>
-        <div style={row}>
-          <span style={rowName}>iPhone &amp; iPad</span>
-          <span style={rowText}>iOS or iPadOS 16 or later, free on the App Store. Purchases require an Apple Account.</span>
+        <div class="pg-kv">
+          <span class="pg-kv-k">iPhone &amp; iPad</span>
+          <span class="pg-kv-v">iOS or iPadOS 16 or later, free on the App Store. Purchases require an Apple Account.</span>
         </div>
       </div>
     </div>
 
     <!-- 04 Licence -->
-    <div style={card}>
-      <div style={num}>04</div>
-      <h2 style={h2}>Licence</h2>
-      <p style={p}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">04</p>
+      <h2 class="pg-h2 pg-h2--sm">Licence</h2>
+      <p class="pg-p pg-p--sm">
         You receive a personal, non-transferable licence to use the app on your own devices. Passing it on, copying it or using it commercially is not permitted. You may use the iOS app on Apple-branded devices that you own or control, as permitted by the Usage Rules in Apple's Media Services Terms and Conditions.
       </p>
     </div>
 
     <!-- 05 Free use & purchases -->
-    <div style={card}>
-      <div style={num}>05</div>
-      <h2 style={h2}>Free use &amp; catalogue purchases</h2>
-      <p style={`${p} margin-bottom:16px;`}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">05</p>
+      <h2 class="pg-h2 pg-h2--sm">Free use &amp; catalogue purchases</h2>
+      <p class="pg-p pg-p--sm">
         BoatPass is free to download. Individual question catalogues are available as one-off purchases; there is no subscription:
       </p>
-      <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+      <div class="pg-kvs">
         {[
           ['SBF Binnen (inland)', 'Free with a daily limit (15 questions/day). Full access (300 questions) via one-off purchase.'],
           ['SBF See (coastal)', 'Full access (285 questions, all modes) via one-off purchase.'],
@@ -94,73 +88,73 @@ const rowText = 'font-size:14px; color:#4B5563; flex:1 1 240px; min-width:0;';
           ['Bundles', 'SBF Binnen + See as a combo bundle and the radio bundle (UBI + SRC + LRC).'],
           ['More catalogues', 'E.g. Lake Constance licence – in preparation.'],
         ].map(([name, desc]) => (
-          <div style={row}>
-            <span style={rowName}>{name}</span>
-            <span style={rowText}>{desc}</span>
+          <div class="pg-kv">
+            <span class="pg-kv-k">{name}</span>
+            <span class="pg-kv-v">{desc}</span>
           </div>
         ))}
       </div>
-      <p style="font-size:14px; color:#656B78; line-height:1.7;">
+      <p class="pg-note">
         Prices and scope are shown before purchase in the app and in the respective store; the price shown there, including VAT, applies. Prices may differ between Google Play and the App Store. Each catalogue purchase only applies to the respective licence type.
       </p>
     </div>
 
     <!-- 06 Purchases per store -->
-    <div style={card}>
-      <div style={num}>06</div>
-      <h2 style={h2}>Purchases apply per store</h2>
-      <p style={pGap}>
-        A purchase is tied to the account of the store you bought it in: Google Play purchases apply in the Android app, App Store purchases in the iOS app. <strong style={strong}>Purchases cannot be transferred between Android and iPhone/iPad</strong>, because the stores process purchases separately and we do not run our own user accounts.
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">06</p>
+      <h2 class="pg-h2 pg-h2--sm">Purchases apply per store</h2>
+      <p class="pg-p pg-p--sm">
+        A purchase is tied to the account of the store you bought it in: Google Play purchases apply in the Android app, App Store purchases in the iOS app. <strong>Purchases cannot be transferred between Android and iPhone/iPad</strong>, because the stores process purchases separately and we do not run our own user accounts.
       </p>
-      <p style={p}>
+      <p class="pg-p pg-p--sm">
         On other devices of the same platform or after reinstalling, you recover your purchases with the same Google account or Apple Account via "Restore purchases". Apple Family Sharing is not supported.
       </p>
     </div>
 
     <!-- 07 Withdrawal -->
-    <div style={card}>
-      <div style={num}>07</div>
-      <h2 style={h2}>Purchases, right of withdrawal &amp; refunds</h2>
-      <p style={pGap}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">07</p>
+      <h2 class="pg-h2 pg-h2--sm">Purchases, right of withdrawal &amp; refunds</h2>
+      <p class="pg-p pg-p--sm">
         Purchases are processed via Google Play or the App Store. The respective store operator is the contracting party for payment.
       </p>
-      <p style={pGap}>
-        <strong style={strong}>Right of withdrawal:</strong> As a consumer in the EU you generally have a 14-day right of withdrawal. For digital content (question catalogues) made available immediately after purchase, the right of withdrawal expires under Section 356(5) of the German Civil Code (BGB) once you have expressly agreed to immediate provision before the withdrawal period ends and confirmed that you thereby lose your right of withdrawal. This consent is obtained in the respective store's purchase process.
+      <p class="pg-p pg-p--sm">
+        <strong>Right of withdrawal:</strong> As a consumer in the EU you generally have a 14-day right of withdrawal. For digital content (question catalogues) made available immediately after purchase, the right of withdrawal expires under Section 356(5) of the German Civil Code (BGB) once you have expressly agreed to immediate provision before the withdrawal period ends and confirmed that you thereby lose your right of withdrawal. This consent is obtained in the respective store's purchase process.
       </p>
-      <p style={p}>
-        Refunds follow the store's policies: <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer" style={link}>Google Play refund policy</a> or, for the App Store, via <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" style={link}>reportaproblem.apple.com</a>. We cannot refund store purchases ourselves for technical reasons. For any other issues: <a href="mailto:support@boatpass.de" style="color:#3366FF; text-decoration:none; font-weight:600;">support@boatpass.de</a>
+      <p class="pg-p pg-p--sm">
+        Refunds follow the store's policies: <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer" class="pg-inline-link">Google Play refund policy</a> or, for the App Store, via <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" class="pg-inline-link">reportaproblem.apple.com</a>. We cannot refund store purchases ourselves for technical reasons. For any other issues: <a href="mailto:support@boatpass.de" class="pg-inline-link">support@boatpass.de</a>
       </p>
     </div>
 
     <!-- 08 Catalogue -->
-    <div style={card}>
-      <div style={num}>08</div>
-      <h2 style={h2}>Question catalogue &amp; accuracy</h2>
-      <p style={p}>
-        The question catalogues are based on the official exam questions of the competent authorities (SBF Binnen: GDWS; SBF See: BSH; last updated August 2023, valid for the 2026 exam year). We strive to keep content up to date but accept no liability for complete conformity with the currently valid exam status. <strong style={strong}>The app supports your learning and does not replace official exam preparation.</strong>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">08</p>
+      <h2 class="pg-h2 pg-h2--sm">Question catalogue &amp; accuracy</h2>
+      <p class="pg-p pg-p--sm">
+        The question catalogues are based on the official exam questions of the competent authorities (SBF Binnen: GDWS; SBF See: BSH; last updated August 2023, valid for the 2026 exam year). We strive to keep content up to date but accept no liability for complete conformity with the currently valid exam status. <strong>The app supports your learning and does not replace official exam preparation.</strong>
       </p>
     </div>
 
     <!-- 09 Liability -->
-    <div style={card}>
-      <div style={num}>09</div>
-      <h2 style={h2}>Liability</h2>
-      <p style={pGap}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">09</p>
+      <h2 class="pg-h2 pg-h2--sm">Liability</h2>
+      <p class="pg-p pg-p--sm">
         We are liable without limitation for damage resulting from injury to life, body or health and for intent and gross negligence. For slight negligence we are only liable for breach of an essential contractual obligation (cardinal obligation), and then only up to the foreseeable, typical damage. Any further liability is excluded. Liability under the German Product Liability Act and your statutory warranty rights remain unaffected.
       </p>
-      <p style={p}>
+      <p class="pg-p pg-p--sm">
         In particular, we do not guarantee that using the app will lead to passing an exam.
       </p>
     </div>
 
     <!-- 10 iOS terms (Apple minimum terms) -->
-    <div style={card}>
-      <div style={num}>10</div>
-      <h2 style={h2}>Additional terms for the iOS app</h2>
-      <p style={pGap}>
-        For the iOS/iPadOS version, Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" style={link}>Licensed Application End User License Agreement (Standard EULA)</a> and the following terms additionally apply:
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">10</p>
+      <h2 class="pg-h2 pg-h2--sm">Additional terms for the iOS app</h2>
+      <p class="pg-p pg-p--sm">
+        For the iOS/iPadOS version, Apple's <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" class="pg-inline-link">Licensed Application End User License Agreement (Standard EULA)</a> and the following terms additionally apply:
       </p>
-      <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="pg-kvs">
         {[
           ['Parties', 'These terms are concluded between you and us only, not with Apple. We alone are responsible for the app and its content.'],
           ['Maintenance &amp; support', 'We alone provide maintenance and support for the app. Apple has no obligation to do so.'],
@@ -171,43 +165,43 @@ const rowText = 'font-size:14px; color:#4B5563; flex:1 1 240px; min-width:0;';
           ['Third-party terms', 'When using the app you must comply with applicable third-party terms, such as those of your mobile network operator.'],
           ['Third-party beneficiary', 'Apple and its subsidiaries are third-party beneficiaries of these terms and, upon your acceptance, may enforce them against you.'],
         ].map(([name, desc]) => (
-          <div style={row}>
-            <span style={rowName} set:html={name}></span>
-            <span style={rowText}>{desc}</span>
+          <div class="pg-kv">
+            <span class="pg-kv-k" set:html={name}></span>
+            <span class="pg-kv-v">{desc}</span>
           </div>
         ))}
       </div>
-      <p style="font-size:14px; color:#656B78; line-height:1.7; margin-top:16px;">
+      <p class="pg-note pg-note--after">
         Please direct any questions, complaints or claims regarding the app to the provider (section 01).
       </p>
     </div>
 
     <!-- 11 Changes -->
-    <div style={card}>
-      <div style={num}>11</div>
-      <h2 style={h2}>Changes to these terms</h2>
-      <p style={p}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">11</p>
+      <h2 class="pg-h2 pg-h2--sm">Changes to these terms</h2>
+      <p class="pg-p pg-p--sm">
         We may change these terms for objective reasons (e.g. changes in the law or new features). We will inform you of material changes in good time within the app. Catalogues you have already bought are not affected by changes.
       </p>
     </div>
 
     <!-- 12 Governing law -->
-    <div style={card}>
-      <div style={num}>12</div>
-      <h2 style={h2}>Governing law &amp; jurisdiction</h2>
-      <p style={p}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">12</p>
+      <h2 class="pg-h2 pg-h2--sm">Governing law &amp; jurisdiction</h2>
+      <p class="pg-p pg-p--sm">
         German law applies. Place of jurisdiction for disputes with businesses is Berlin. For consumers the statutory rules on jurisdiction apply; mandatory consumer protection provisions of the country of your habitual residence remain unaffected.
       </p>
     </div>
 
     <!-- 13 Dispute resolution -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
-      <div style={num}>13</div>
-      <h2 style={h2}>Dispute resolution</h2>
-      <p style={p}>
-        We are neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board (Section 36 VSBG). For questions or complaints, contact us at <a href="mailto:support@boatpass.de" style="color:#3366FF; text-decoration:none; font-weight:600;">support@boatpass.de</a>.
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">13</p>
+      <h2 class="pg-h2 pg-h2--sm">Dispute resolution</h2>
+      <p class="pg-p pg-p--sm">
+        We are neither willing nor obliged to take part in dispute resolution proceedings before a consumer arbitration board (Section 36 VSBG). For questions or complaints, contact us at <a href="mailto:support@boatpass.de" class="pg-inline-link">support@boatpass.de</a>.
       </p>
     </div>
 
-  </div>
+  </PageLayout>
 </BaseLayout>
