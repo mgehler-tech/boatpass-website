@@ -263,6 +263,7 @@ export const en: Translations = {
     heroNote: 'Start without an account, 15 free questions a day. After that a one-off purchase instead of a subscription, for iPhone, iPad and Android.',
     ratingOutOf: 'out of 5 stars',
     ratingCountLabel: 'ratings',
+    heroQr: 'Get it on your phone via QR code',
     ratingSourcePlay: 'ratings on Google Play',
     ctaPlay: 'Free on Google Play',
     phoneAlt: 'Boatpass app – home screen with licence, progress, streak and study modes',

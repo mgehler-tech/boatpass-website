@@ -232,7 +232,8 @@ test.describe('Hero panel', () => {
     test(`CTA visible without scrolling, phone fully inside the panel at ${vp.w}x${vp.h}`, async ({ page }) => {
       await page.setViewportSize({ width: vp.w, height: vp.h });
       await page.goto('/');
-      const cta = await page.locator('#hero-cta-play').boundingBox();
+      // Desktop: die Store-Badges sind der Hero-CTA.
+      const cta = await page.locator('#hero-badge-ios').boundingBox();
       expect(cta!.y + cta!.height).toBeLessThanOrEqual(vp.h);
       await phoneSettled(page);
       const phone = await page.locator('.hh-phone').boundingBox();

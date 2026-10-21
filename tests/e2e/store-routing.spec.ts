@@ -28,6 +28,7 @@ test.describe('iPhone visitors are sent to the App Store', () => {
     await expect(page.locator('html')).toHaveAttribute('data-platform', 'ios');
     await expect(page.locator('#hero-cta-play')).toHaveAttribute('href', APP_STORE_URL);
     await expect(page.locator('#hero-cta-play')).toContainText('Kostenlos im App Store');
+    await expect(page.locator('#hero-badge-ios')).toBeHidden();
 
     await page.goto('/faq/');
     await expect(page.locator('#cta-banner-play')).toHaveAttribute('href', APP_STORE_URL);
@@ -79,6 +80,7 @@ test.describe('Android visitors are sent to Google Play', () => {
     await expect(page.locator('html')).toHaveAttribute('data-platform', 'android');
     await expect(page.locator('#hero-cta-play')).toHaveAttribute('href', PLAY_STORE_URL);
     await expect(page.locator('#hero-cta-play')).toContainText('Kostenlos bei Google Play');
+    await expect(page.locator('#hero-badge-ios')).toBeHidden();
 
     const playBadge = page.locator('#footer-badge-play');
     const iosBadge = page.locator('#footer-badge-ios');
@@ -122,11 +124,13 @@ test.describe('Android visitors are sent to Google Play', () => {
 });
 
 test.describe('Desktop visitors are sent to the store chooser', () => {
-  test('homepage CTA, bottom banner and blog CTA lead to /app/', async ({ page }) => {
+  test('homepage hero shows both badges, bottom banner and blog CTA lead to /app/', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('html')).toHaveAttribute('data-platform', 'desktop');
-    await expect(page.locator('#hero-cta-play')).toHaveAttribute('href', '/app/');
-    await expect(page.locator('#hero-cta-play')).toContainText('Kostenlos laden');
+    await expect(page.locator('#hero-cta-play')).toBeHidden();
+    await expect(page.locator('#hero-badge-ios')).toBeVisible();
+    await expect(page.locator('#hero-badge-play')).toBeVisible();
+    await expect(page.locator('.hh-qr')).toHaveAttribute('href', '/app/');
 
     await page.goto('/faq/');
     await expect(page.locator('#cta-banner-play')).toHaveAttribute('href', '/app/');
