@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
+import PageHead from '../../components/page/PageHead.astro';
+import PageLayout from '../../components/page/PageLayout.astro';
 ---
 
 <BaseLayout
@@ -9,22 +12,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   altUrl="https://boatpass.de/impressum/"
   showCta={false}
 >
-  <div style="max-width:720px; margin:0 auto; padding:80px 24px 120px;">
+  <DisplayFontPreload slot="head" />
+  <!-- Seitenkopf und schmale Spalte (Spec Runde 3, 3.1/3.5) -->
+  <PageHead
+    lang="en"
+    eyebrow="Legal"
+    lede="Information pursuant to § 5 DDG (German Digital Services Act). Applies to the website boatpass.de and to the BoatPass app on Google Play and the App Store."
+  >
+    Legal Notice
+  </PageHead>
 
-    <!-- Header -->
-    <div style="margin-bottom:48px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#2952CC; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
-        Legal
-      </div>
-      <h1 style="font-size:clamp(30px,4.5vw,42px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:12px;">Legal Notice</h1>
-      <p style="font-size:16px; color:#656B78;">Information pursuant to § 5 DDG (German Digital Services Act). Applies to the website boatpass.de and to the <strong style="color:#1A1F36;">BoatPass</strong> app on Google Play and the App Store.</p>
-    </div>
+  <PageLayout variant="narrow">
 
     <!-- Card: Provider -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Provider</h2>
-      <p style="font-size:16px; font-weight:700; color:#1A1F36; margin-bottom:4px;">Marius Gehler</p>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+    <div class="pg-card pg-card--legal">
+      <h2 class="pg-card-label">Provider</h2>
+      <p class="pg-p pg-p--sm pg-strong">Marius Gehler</p>
+      <p class="pg-p pg-p--sm">
         Blissestraße 56<br />
         10713 Berlin<br />
         Germany
@@ -32,48 +36,46 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
 
     <!-- Card: Contact -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Contact</h2>
-      <a href="mailto:support@boatpass.de" style="font-size:15px; color:#3366FF; text-decoration:none; font-weight:500;">
-        support@boatpass.de
-      </a>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-top:8px;">
-        or via the <a href="/en/contact/" style="color:#3366FF; text-decoration:none; font-weight:500;">contact form</a>
+    <div class="pg-card pg-card--legal">
+      <h2 class="pg-card-label">Contact</h2>
+      <p class="pg-p pg-p--sm"><a href="mailto:support@boatpass.de" class="pg-inline-link">support@boatpass.de</a></p>
+      <p class="pg-p pg-p--sm">
+        or via the <a href="/en/contact/" class="pg-inline-link">contact form</a>
       </p>
     </div>
 
     <!-- Card: Responsible under MStV (the study guide blog is a journalistic-editorial service) -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Responsible for content under § 18(2) MStV</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+    <div class="pg-card pg-card--legal">
+      <h2 class="pg-card-label">Responsible for content under § 18(2) MStV</h2>
+      <p class="pg-p pg-p--sm">
         Marius Gehler<br />
         Blissestraße 56, 10713 Berlin, Germany
       </p>
     </div>
 
     <!-- Card: Liability for content -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Liability for content</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+    <div class="pg-card pg-card--legal">
+      <h2 class="pg-card-label">Liability for content</h2>
+      <p class="pg-p pg-p--sm">
         The content of this website has been created with the greatest care. However, we cannot guarantee the accuracy, completeness, or timeliness of the content. As a service provider, we are responsible for our own content on these pages in accordance with general law pursuant to § 7(1) DDG.
       </p>
     </div>
 
     <!-- Card: Liability for links -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Liability for links</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+    <div class="pg-card pg-card--legal">
+      <h2 class="pg-card-label">Liability for links</h2>
+      <p class="pg-p pg-p--sm">
         Our website contains links to external third-party websites over whose content we have no control. We therefore cannot accept any liability for this external content. The respective provider or operator of the linked pages is always responsible for their content.
       </p>
     </div>
 
     <!-- Card: Copyright -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Copyright</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+    <div class="pg-card pg-card--legal">
+      <h2 class="pg-card-label">Copyright</h2>
+      <p class="pg-p pg-p--sm">
         The content and works created by the site operators on these pages are subject to German copyright law. Reproduction, editing, distribution, and any kind of exploitation outside the limits of copyright law require the written consent of the respective author or creator.
       </p>
     </div>
 
-  </div>
+  </PageLayout>
 </BaseLayout>

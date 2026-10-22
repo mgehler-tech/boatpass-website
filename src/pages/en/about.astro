@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
+import PageHead from '../../components/page/PageHead.astro';
+import PageLayout from '../../components/page/PageLayout.astro';
 
 const personSchema = {
   "@context": "https://schema.org",
@@ -31,20 +34,22 @@ const personSchema = {
   lang="en"
   altUrl="https://boatpass.de/ueber-uns/"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
-  <div style="max-width:720px; margin:0 auto; padding:80px 24px 120px;">
+  <!-- Seitenkopf und schmale Spalte (Spec Runde 3, 3.1/3.5) -->
+  <PageHead
+    lang="en"
+    eyebrow="About us"
+    lede="The person behind the app – and why it exists."
+    cta
+  >
+    About BoatPass
+  </PageHead>
 
-    <!-- Header -->
-    <div style="margin-bottom:48px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#2952CC; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
-        About us
-      </div>
-      <h1 style="font-size:clamp(30px,4.5vw,42px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:12px;">About BoatPass</h1>
-      <p style="font-size:16px; color:#656B78;">The person behind the app – and why it exists.</p>
-    </div>
+  <PageLayout variant="narrow">
 
     <!-- Author profile -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; overflow:hidden; margin-bottom:16px;">
+    <div class="pg-card pg-card--legal pg-portrait">
       <img
         src="/ueber-uns-hero.webp"
         alt="Marius Gehler, founder of BoatPass, at the helm of a motorboat in a marina"
@@ -52,41 +57,40 @@ const personSchema = {
         height="1250"
         loading="eager"
         fetchpriority="high"
-        style="display:block; width:100%; height:380px; object-fit:cover; object-position:center 22%;"
       />
-      <div style="padding:32px;">
-        <div style="font-size:20px; font-weight:800; color:#1A1F36; margin-bottom:4px;">Marius Gehler</div>
-        <div style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Founder & Developer of BoatPass</div>
-        <p style="font-size:16px; color:#4B5563; line-height:1.7; margin:0;">
+      <div class="pg-portrait-body">
+        <p class="pg-card-title pg-card-title--lg">Marius Gehler</p>
+        <p class="pg-card-label">Founder & Developer of BoatPass</p>
+        <p class="pg-p">
           Hi, I'm Marius – founder and developer of BoatPass. I've been building apps for years, and
           I built BoatPass with one clear goal: a boating-license app that feels genuinely good on your
           phone – fast, clean and motivating.
         </p>
-        <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:20px;">
+        <div class="pg-pills">
           {["SBF Binnen", "SBF See", "ELWIS catalog", "Android & iOS"].map(tag => (
-            <span style="font-size:12px; font-weight:700; background:rgba(51,102,255,0.08); color:#3366FF; border:1px solid rgba(51,102,255,0.15); padding:3px 10px; border-radius:100px;">{tag}</span>
+            <span class="pg-pill">{tag}</span>
           ))}
         </div>
       </div>
     </div>
 
     <!-- Card: Why BoatPass exists -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Why BoatPass exists</h2>
+    <div class="pg-card pg-card--legal">
+      <h2 class="pg-h2 pg-h2--sm">Why BoatPass exists</h2>
       <img
         src="/ueber-uns.webp"
         alt="Marius Gehler at the helm of a sailboat on the water"
         width="1000"
         height="750"
         loading="lazy"
-        style="display:block; width:100%; height:240px; object-fit:cover; object-position:center 35%; border-radius:12px; margin-bottom:20px;"
+        class="pg-card-img"
       />
-      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
+      <p class="pg-p pg-p--sm">
         When I started studying, I asked friends who already had their license. Their verdict was almost
         always the same: there are apps with good content – but none that make studying on your phone
         actually enjoyable. Clunky menus, uninspired interfaces, questions you just memorize by rote.
       </p>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+      <p class="pg-p pg-p--sm">
         That stuck with me. I've been building apps in my spare time for years – BoatPass is my passion
         project alongside my day job. So I built the app I wish I'd had: one that makes studying on your
         phone genuinely enjoyable – and that maps 1:1 onto the official question catalog.
@@ -94,9 +98,9 @@ const personSchema = {
     </div>
 
     <!-- Card: What matters to me -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">What matters to me</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+    <div class="pg-card pg-card--legal">
+      <h2 class="pg-h2 pg-h2--sm">What matters to me</h2>
+      <p class="pg-p pg-p--sm">
         Studying theory for the boating license shouldn't feel like a chore. You should enjoy learning and
         make fast progress. That's why every question comes with clear explanations and memory aids –
         instead of just „right/wrong“. The material sticks, and you get out on the water sooner.
@@ -104,62 +108,62 @@ const personSchema = {
     </div>
 
     <!-- Card: Where the content comes from -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Where the content comes from</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
+    <div class="pg-card pg-card--legal">
+      <h2 class="pg-h2 pg-h2--sm">Where the content comes from</h2>
+      <p class="pg-p pg-p--sm">
         The questions and answers in BoatPass are not my invention: they come 1:1 from the official
         question catalog published by the German Federal Ministry for Digital and Transport via
-        <a href="https://www.elwis.de/" target="_blank" rel="noopener noreferrer" style="color:#3366FF; text-decoration:underline;">ELWIS</a>.
+        <a href="https://www.elwis.de/" target="_blank" rel="noopener noreferrer" class="pg-inline-link">ELWIS</a>.
         Which catalog and which revision sits behind each licence is listed on the licence pages, with a
         direct link so you can check it against the official source yourself.
       </p>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7; margin-bottom:12px;">
+      <p class="pg-p pg-p--sm">
         The explanations and memory aids I write myself – based on the catalog and the underlying
         regulations (BinSchStrO, SeeSchStrO, COLREGs). BoatPass is developed independently and is not
         affiliated with DSV, DMYV or any public authority.
       </p>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+      <p class="pg-p pg-p--sm">
         If you spot a mistake in an explanation, tell me. I check every report myself and correct it in
         the next update.
       </p>
     </div>
 
     <!-- Card: My promise -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">My promise</h2>
-      <ul style="list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px;">
-        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
-          <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
+    <div class="pg-card pg-card--legal">
+      <h2 class="pg-h2 pg-h2--sm">My promise</h2>
+      <ul class="pg-checks">
+        <li class="pg-check">
+          <span class="pg-check-mark">✓</span>
           Always up-to-date official question catalog (ELWIS)
         </li>
-        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
-          <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
+        <li class="pg-check">
+          <span class="pg-check-mark">✓</span>
           No subscription – buy once, use it for good
         </li>
-        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
-          <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
+        <li class="pg-check">
+          <span class="pg-check-mark">✓</span>
           Explanations & memory aids instead of rote memorization
         </li>
-        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
-          <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
+        <li class="pg-check">
+          <span class="pg-check-mark">✓</span>
           Built by a developer who takes design seriously
         </li>
-        <li style="display:flex; align-items:flex-start; gap:12px; font-size:15px; color:#4B5563; line-height:1.6;">
-          <span style="color:#3366FF; font-weight:700; flex-shrink:0;">✓</span>
+        <li class="pg-check">
+          <span class="pg-check-mark">✓</span>
           Report a mistake – I check every report myself and fix it in the next update
         </li>
       </ul>
     </div>
 
     <!-- Card: Contact -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
-      <h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Contact</h2>
-      <p style="font-size:15px; color:#4B5563; line-height:1.7;">
+    <div class="pg-card pg-card--legal">
+      <h2 class="pg-h2 pg-h2--sm">Contact</h2>
+      <p class="pg-p pg-p--sm">
         Feedback, found a bug, or just a question? Reach me via the
-        <a href="/en/contact/" style="color:#3366FF; text-decoration:none; font-weight:500;">contact form</a> –
+        <a href="/en/contact/" class="pg-inline-link">contact form</a> –
         I read every message myself.
       </p>
     </div>
 
-  </div>
+  </PageLayout>
 </BaseLayout>

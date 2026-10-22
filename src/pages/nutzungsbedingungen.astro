@@ -1,17 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-
-// Wiederkehrende Stile der Abschnittskarten (Layout identisch zur Datenschutzerklärung).
-const card = 'background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px; margin-bottom:16px;';
-const num = 'font-size:11px; font-weight:700; color:#656B78; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;';
-const h2 = 'font-size:18px; font-weight:800; color:#1A1F36; margin-bottom:16px;';
-const p = 'font-size:15px; color:#4B5563; line-height:1.7;';
-const pGap = `${p} margin-bottom:12px;`;
-const strong = 'color:#1A1F36;';
-const link = 'color:#3366FF; text-decoration:none;';
-const row = 'display:flex; flex-wrap:wrap; gap:4px 12px; padding:12px 16px; background:rgba(51,102,255,0.03); border-radius:12px;';
-const rowName = 'font-size:14px; font-weight:700; color:#1A1F36; flex:0 0 180px;';
-const rowText = 'font-size:14px; color:#4B5563; flex:1 1 240px; min-width:0;';
+import DisplayFontPreload from '../components/page/DisplayFontPreload.astro';
+import PageHead from '../components/page/PageHead.astro';
+import PageLayout from '../components/page/PageLayout.astro';
 ---
 
 <BaseLayout
@@ -21,70 +12,71 @@ const rowText = 'font-size:14px; color:#4B5563; flex:1 1 240px; min-width:0;';
   altUrl="https://boatpass.de/en/terms/"
   showCta={false}
 >
-  <div style="max-width:720px; margin:0 auto; padding:80px 24px 120px;">
+  <DisplayFontPreload slot="head" />
+  <!-- Seitenkopf und schmale Spalte (Spec Runde 3, 3.1/3.5) -->
+  <PageHead
+    lang="de"
+    eyebrow="Rechtliches"
+    lede="Gültig für die App BoatPass für Android und iPhone/iPad sowie die Website boatpass.de. Zuletzt aktualisiert: Oktober 2026."
+  >
+    Nutzungs&shy;bedingungen
+  </PageHead>
 
-    <!-- Header -->
-    <div style="margin-bottom:48px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#2952CC; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
-        Rechtliches
-      </div>
-      <h1 style="font-size:clamp(30px,4.5vw,42px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:12px;">Nutzungsbedingungen</h1>
-      <p style="font-size:16px; color:#656B78;">Gültig für die App <strong style={strong}>BoatPass</strong> für <strong style={strong}>Android</strong> und <strong style={strong}>iPhone/iPad</strong> sowie die <strong style={strong}>Website boatpass.de</strong>. Zuletzt aktualisiert: Oktober 2026.</p>
-    </div>
+  <PageLayout variant="narrow">
 
     <!-- 01 Anbieter -->
-    <div style={card}>
-      <div style={num}>01</div>
-      <h2 style={h2}>Anbieter</h2>
-      <p style="font-size:15px; font-weight:700; color:#1A1F36; margin-bottom:4px;">Marius Gehler</p>
-      <p style={p}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">01</p>
+      <h2 class="pg-h2 pg-h2--sm">Anbieter</h2>
+      <p class="pg-p pg-p--sm pg-strong">Marius Gehler</p>
+      <p class="pg-p pg-p--sm">
         Blissestraße 56 · 10713 Berlin · Deutschland<br />
-        <a href="mailto:support@boatpass.de" style={link}>support@boatpass.de</a>
+        <a href="mailto:support@boatpass.de" class="pg-inline-link">support@boatpass.de</a>
       </p>
     </div>
 
     <!-- 02 Geltungsbereich -->
-    <div style={card}>
-      <div style={num}>02</div>
-      <h2 style={h2}>Geltungsbereich</h2>
-      <p style={p}>
-        Diese Nutzungsbedingungen gelten für die Nutzung der App <strong style={strong}>BoatPass</strong> (Lern-App für den Sportbootführerschein und Funkzeugnisse) in der Android-Version aus Google Play und der iOS-/iPadOS-Version aus dem App Store sowie für die Website <strong style={strong}>boatpass.de</strong>. Für die iOS-App gelten ergänzend die Bestimmungen in Abschnitt 10.
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">02</p>
+      <h2 class="pg-h2 pg-h2--sm">Geltungsbereich</h2>
+      <p class="pg-p pg-p--sm">
+        Diese Nutzungsbedingungen gelten für die Nutzung der App <strong>BoatPass</strong> (Lern-App für den Sportbootführerschein und Funkzeugnisse) in der Android-Version aus Google Play und der iOS-/iPadOS-Version aus dem App Store sowie für die Website <strong>boatpass.de</strong>. Für die iOS-App gelten ergänzend die Bestimmungen in Abschnitt 10.
       </p>
     </div>
 
     <!-- 03 Nutzungsvoraussetzungen -->
-    <div style={card}>
-      <div style={num}>03</div>
-      <h2 style={h2}>Nutzungsvoraussetzungen</h2>
-      <div style="display:flex; flex-direction:column; gap:10px;">
-        <div style={row}>
-          <span style={rowName}>Android</span>
-          <span style={rowText}>Ab Android 8.0, kostenlos aus Google Play. Für Käufe ist ein Google-Konto erforderlich.</span>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">03</p>
+      <h2 class="pg-h2 pg-h2--sm">Nutzungsvoraussetzungen</h2>
+      <div class="pg-kvs">
+        <div class="pg-kv">
+          <span class="pg-kv-k">Android</span>
+          <span class="pg-kv-v">Ab Android 8.0, kostenlos aus Google Play. Für Käufe ist ein Google-Konto erforderlich.</span>
         </div>
-        <div style={row}>
-          <span style={rowName}>iPhone &amp; iPad</span>
-          <span style={rowText}>Ab iOS bzw. iPadOS 16, kostenlos aus dem App Store. Für Käufe ist ein Apple-Account erforderlich.</span>
+        <div class="pg-kv">
+          <span class="pg-kv-k">iPhone &amp; iPad</span>
+          <span class="pg-kv-v">Ab iOS bzw. iPadOS 16, kostenlos aus dem App Store. Für Käufe ist ein Apple-Account erforderlich.</span>
         </div>
       </div>
     </div>
 
     <!-- 04 Nutzungslizenz -->
-    <div style={card}>
-      <div style={num}>04</div>
-      <h2 style={h2}>Nutzungslizenz</h2>
-      <p style={p}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">04</p>
+      <h2 class="pg-h2 pg-h2--sm">Nutzungslizenz</h2>
+      <p class="pg-p pg-p--sm">
         Du erhältst eine persönliche, nicht übertragbare Lizenz zur Nutzung der App auf deinen eigenen Geräten. Eine Weitergabe, Vervielfältigung oder kommerzielle Nutzung ist nicht gestattet. Die iOS-App darfst du auf Apple-Geräten nutzen, die du besitzt oder kontrollierst, und zwar im Rahmen der Nutzungsregeln der Mediendienste-Bedingungen von Apple.
       </p>
     </div>
 
     <!-- 05 Kostenlose Nutzung & Käufe -->
-    <div style={card}>
-      <div style={num}>05</div>
-      <h2 style={h2}>Kostenlose Nutzung &amp; Katalogkäufe</h2>
-      <p style={`${p} margin-bottom:16px;`}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">05</p>
+      <h2 class="pg-h2 pg-h2--sm">Kostenlose Nutzung &amp; Katalogkäufe</h2>
+      <p class="pg-p pg-p--sm">
         BoatPass ist kostenlos herunterladbar. Einzelne Fragenkataloge sind als Einmalkauf erhältlich, es gibt kein Abo:
       </p>
-      <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:16px;">
+      <div class="pg-kvs">
         {[
           ['SBF Binnen', 'Kostenlos mit Tageslimit (15 Fragen/Tag). Vollzugang (300 Fragen) per Einmalkauf.'],
           ['SBF See', 'Vollzugang (285 Fragen, alle Modi) per Einmalkauf.'],
@@ -94,73 +86,73 @@ const rowText = 'font-size:14px; color:#4B5563; flex:1 1 240px; min-width:0;';
           ['Pakete', 'SBF Binnen + See als Kombi-Paket sowie das Funk-Paket (UBI + SRC + LRC).'],
           ['Weitere Kataloge', 'Z.&nbsp;B. Bodenseeschifferpatent – in Vorbereitung.'],
         ].map(([name, desc]) => (
-          <div style={row}>
-            <span style={rowName}>{name}</span>
-            <span style={rowText} set:html={desc}></span>
+          <div class="pg-kv">
+            <span class="pg-kv-k">{name}</span>
+            <span class="pg-kv-v" set:html={desc}></span>
           </div>
         ))}
       </div>
-      <p style="font-size:14px; color:#656B78; line-height:1.7;">
+      <p class="pg-note">
         Preise und Umfang werden vor dem Kauf in der App und im jeweiligen Store angezeigt; maßgeblich ist der dort angezeigte Preis inklusive Mehrwertsteuer. Die Preise können sich zwischen Google Play und App Store unterscheiden. Jeder Katalogkauf gilt nur für den jeweiligen Führerscheintyp.
       </p>
     </div>
 
     <!-- 06 Käufe je Plattform -->
-    <div style={card}>
-      <div style={num}>06</div>
-      <h2 style={h2}>Käufe gelten je Store</h2>
-      <p style={pGap}>
-        Ein Kauf ist an das Konto des Stores gebunden, in dem du ihn getätigt hast: Käufe über Google Play gelten in der Android-App, Käufe über den App Store in der iOS-App. <strong style={strong}>Eine Übertragung zwischen Android und iPhone/iPad ist nicht möglich</strong>, weil die Stores Käufe getrennt abwickeln und wir kein eigenes Nutzerkonto führen.
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">06</p>
+      <h2 class="pg-h2 pg-h2--sm">Käufe gelten je Store</h2>
+      <p class="pg-p pg-p--sm">
+        Ein Kauf ist an das Konto des Stores gebunden, in dem du ihn getätigt hast: Käufe über Google Play gelten in der Android-App, Käufe über den App Store in der iOS-App. <strong>Eine Übertragung zwischen Android und iPhone/iPad ist nicht möglich</strong>, weil die Stores Käufe getrennt abwickeln und wir kein eigenes Nutzerkonto führen.
       </p>
-      <p style={p}>
+      <p class="pg-p pg-p--sm">
         Auf weiteren Geräten derselben Plattform oder nach einer Neuinstallation holst du deine Käufe mit demselben Google-Konto bzw. Apple-Account über „Käufe wiederherstellen" zurück. Die Familienfreigabe von Apple wird nicht unterstützt.
       </p>
     </div>
 
     <!-- 07 Widerrufsrecht -->
-    <div style={card}>
-      <div style={num}>07</div>
-      <h2 style={h2}>Käufe, Widerrufsrecht &amp; Rückerstattungen</h2>
-      <p style={pGap}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">07</p>
+      <h2 class="pg-h2 pg-h2--sm">Käufe, Widerrufsrecht &amp; Rückerstattungen</h2>
+      <p class="pg-p pg-p--sm">
         Käufe werden über Google Play bzw. den App Store abgewickelt. Vertragspartner für die Zahlung ist der jeweilige Store-Betreiber.
       </p>
-      <p style={pGap}>
-        <strong style={strong}>Widerrufsrecht:</strong> Als Verbraucher in der EU steht dir grundsätzlich ein 14-tägiges Widerrufsrecht zu. Bei digitalen Inhalten (Fragenkatalogen), die nach dem Kauf sofort zugänglich gemacht werden, erlischt das Widerrufsrecht gemäß § 356 Abs. 5 BGB, sobald du der sofortigen Bereitstellung vor Ablauf der Widerrufsfrist ausdrücklich zugestimmt und bestätigt hast, dass du damit dein Widerrufsrecht verlierst. Diese Zustimmung wird im Kaufprozess des jeweiligen Stores eingeholt.
+      <p class="pg-p pg-p--sm">
+        <strong>Widerrufsrecht:</strong> Als Verbraucher in der EU steht dir grundsätzlich ein 14-tägiges Widerrufsrecht zu. Bei digitalen Inhalten (Fragenkatalogen), die nach dem Kauf sofort zugänglich gemacht werden, erlischt das Widerrufsrecht gemäß § 356 Abs. 5 BGB, sobald du der sofortigen Bereitstellung vor Ablauf der Widerrufsfrist ausdrücklich zugestimmt und bestätigt hast, dass du damit dein Widerrufsrecht verlierst. Diese Zustimmung wird im Kaufprozess des jeweiligen Stores eingeholt.
       </p>
-      <p style={p}>
-        Rückerstattungen richten sich nach den Richtlinien des Stores: <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer" style={link}>Rückgaberichtlinien von Google Play</a> bzw. für den App Store über <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" style={link}>reportaproblem.apple.com</a>. Wir selbst können Store-Käufe technisch nicht erstatten. Bei weiteren Problemen: <a href="mailto:support@boatpass.de" style="color:#3366FF; text-decoration:none; font-weight:600;">support@boatpass.de</a>
+      <p class="pg-p pg-p--sm">
+        Rückerstattungen richten sich nach den Richtlinien des Stores: <a href="https://support.google.com/googleplay/answer/2479637" target="_blank" rel="noopener noreferrer" class="pg-inline-link">Rückgaberichtlinien von Google Play</a> bzw. für den App Store über <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener noreferrer" class="pg-inline-link">reportaproblem.apple.com</a>. Wir selbst können Store-Käufe technisch nicht erstatten. Bei weiteren Problemen: <a href="mailto:support@boatpass.de" class="pg-inline-link">support@boatpass.de</a>
       </p>
     </div>
 
     <!-- 08 Fragenkatalog & Aktualität -->
-    <div style={card}>
-      <div style={num}>08</div>
-      <h2 style={h2}>Fragenkatalog &amp; Aktualität</h2>
-      <p style={p}>
-        Die Fragenkataloge basieren auf den offiziellen Prüfungsfragen der zuständigen Behörden (SBF Binnen: GDWS; SBF See: BSH; zuletzt aktualisiert August 2023, gültig für Prüfungsjahr 2026). Wir bemühen uns um aktuelle Inhalte, übernehmen jedoch keine Haftung für vollständige Übereinstimmung mit dem jeweils gültigen Prüfungsstand. <strong style={strong}>Die App dient der Lernunterstützung und ersetzt keine offizielle Prüfungsvorbereitung.</strong>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">08</p>
+      <h2 class="pg-h2 pg-h2--sm">Fragenkatalog &amp; Aktualität</h2>
+      <p class="pg-p pg-p--sm">
+        Die Fragenkataloge basieren auf den offiziellen Prüfungsfragen der zuständigen Behörden (SBF Binnen: GDWS; SBF See: BSH; zuletzt aktualisiert August 2023, gültig für Prüfungsjahr 2026). Wir bemühen uns um aktuelle Inhalte, übernehmen jedoch keine Haftung für vollständige Übereinstimmung mit dem jeweils gültigen Prüfungsstand. <strong>Die App dient der Lernunterstützung und ersetzt keine offizielle Prüfungsvorbereitung.</strong>
       </p>
     </div>
 
     <!-- 09 Haftung -->
-    <div style={card}>
-      <div style={num}>09</div>
-      <h2 style={h2}>Haftung</h2>
-      <p style={pGap}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">09</p>
+      <h2 class="pg-h2 pg-h2--sm">Haftung</h2>
+      <p class="pg-p pg-p--sm">
         Wir haften unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für Vorsatz und grobe Fahrlässigkeit. Für leichte Fahrlässigkeit haften wir nur bei Verletzung einer wesentlichen Vertragspflicht (Kardinalpflicht), und auch dann nur in Höhe des vorhersehbaren, typischen Schadens. Eine weitergehende Haftung ist ausgeschlossen. Die Haftung nach dem Produkthaftungsgesetz und deine gesetzlichen Gewährleistungsrechte bleiben unberührt.
       </p>
-      <p style={p}>
+      <p class="pg-p pg-p--sm">
         Insbesondere wird keine Garantie dafür übernommen, dass die Nutzung der App zum Bestehen einer Prüfung führt.
       </p>
     </div>
 
     <!-- 10 iOS-Zusatzbedingungen (Mindestbedingungen nach Apple) -->
-    <div style={card}>
-      <div style={num}>10</div>
-      <h2 style={h2}>Zusätzliche Bedingungen für die iOS-App</h2>
-      <p style={pGap}>
-        Für die iOS-/iPadOS-Version gelten ergänzend der <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" style={link}>Standard-Lizenzvertrag für Endnutzer (EULA) von Apple</a> sowie die folgenden Bestimmungen:
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">10</p>
+      <h2 class="pg-h2 pg-h2--sm">Zusätzliche Bedingungen für die iOS-App</h2>
+      <p class="pg-p pg-p--sm">
+        Für die iOS-/iPadOS-Version gelten ergänzend der <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener noreferrer" class="pg-inline-link">Standard-Lizenzvertrag für Endnutzer (EULA) von Apple</a> sowie die folgenden Bestimmungen:
       </p>
-      <div style="display:flex; flex-direction:column; gap:10px;">
+      <div class="pg-kvs">
         {[
           ['Vertragspartner', 'Diese Bedingungen gelten zwischen dir und uns, nicht zwischen dir und Apple. Für die App und ihre Inhalte sind allein wir verantwortlich.'],
           ['Wartung &amp; Support', 'Support und Wartung der App leisten ausschließlich wir. Apple ist hierzu nicht verpflichtet.'],
@@ -171,43 +163,43 @@ const rowText = 'font-size:14px; color:#4B5563; flex:1 1 240px; min-width:0;';
           ['Drittbedingungen', 'Bei der Nutzung der App hast du die Bedingungen Dritter einzuhalten, etwa deines Mobilfunkanbieters.'],
           ['Drittbegünstigte', 'Apple und die Tochtergesellschaften von Apple sind Drittbegünstigte dieser Bedingungen und können sie nach deren Annahme dir gegenüber durchsetzen.'],
         ].map(([name, desc]) => (
-          <div style={row}>
-            <span style={rowName} set:html={name}></span>
-            <span style={rowText}>{desc}</span>
+          <div class="pg-kv">
+            <span class="pg-kv-k" set:html={name}></span>
+            <span class="pg-kv-v">{desc}</span>
           </div>
         ))}
       </div>
-      <p style="font-size:14px; color:#656B78; line-height:1.7; margin-top:16px;">
+      <p class="pg-note pg-note--after">
         Fragen, Beschwerden oder Ansprüche zur App richtest du an den Anbieter (Abschnitt 01).
       </p>
     </div>
 
     <!-- 11 Änderungen -->
-    <div style={card}>
-      <div style={num}>11</div>
-      <h2 style={h2}>Änderungen der Nutzungsbedingungen</h2>
-      <p style={p}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">11</p>
+      <h2 class="pg-h2 pg-h2--sm">Änderungen der Nutzungsbedingungen</h2>
+      <p class="pg-p pg-p--sm">
         Wir können diese Nutzungsbedingungen aus sachlichem Grund ändern (z.&nbsp;B. bei Änderungen der Rechtslage oder neuen Funktionen). Über wesentliche Änderungen informieren wir rechtzeitig innerhalb der App. Bereits gekaufte Kataloge bleiben von Änderungen unberührt.
       </p>
     </div>
 
     <!-- 12 Anwendbares Recht -->
-    <div style={card}>
-      <div style={num}>12</div>
-      <h2 style={h2}>Anwendbares Recht &amp; Gerichtsstand</h2>
-      <p style={p}>
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">12</p>
+      <h2 class="pg-h2 pg-h2--sm">Anwendbares Recht &amp; Gerichtsstand</h2>
+      <p class="pg-p pg-p--sm">
         Es gilt deutsches Recht. Gerichtsstand für Streitigkeiten mit Unternehmern ist Berlin. Für Verbraucher gelten die gesetzlichen Regelungen zum Gerichtsstand; zwingende Verbraucherschutzvorschriften des Landes, in dem du deinen gewöhnlichen Aufenthalt hast, bleiben unberührt.
       </p>
     </div>
 
     <!-- 13 Streitbeilegung -->
-    <div style="background:white; border:1px solid rgba(51,102,255,0.1); border-radius:20px; padding:32px;">
-      <div style={num}>13</div>
-      <h2 style={h2}>Streitbeilegung</h2>
-      <p style={p}>
-        Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG). Bei Fragen oder Beschwerden erreichst du uns unter <a href="mailto:support@boatpass.de" style="color:#3366FF; text-decoration:none; font-weight:600;">support@boatpass.de</a>.
+    <div class="pg-card pg-card--legal">
+      <p class="pg-card-label pg-card-label--muted">13</p>
+      <h2 class="pg-h2 pg-h2--sm">Streitbeilegung</h2>
+      <p class="pg-p pg-p--sm">
+        Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen (§ 36 VSBG). Bei Fragen oder Beschwerden erreichst du uns unter <a href="mailto:support@boatpass.de" class="pg-inline-link">support@boatpass.de</a>.
       </p>
     </div>
 
-  </div>
+  </PageLayout>
 </BaseLayout>

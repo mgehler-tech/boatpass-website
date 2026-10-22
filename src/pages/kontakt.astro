@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import DisplayFontPreload from '../components/page/DisplayFontPreload.astro';
+import PageHead from '../components/page/PageHead.astro';
+import PageLayout from '../components/page/PageLayout.astro';
 
 // FAQPage-Schema: spiegelt die vier sichtbaren Selbsthilfe-Fragen unten auf der Seite.
 const faqSchema = {
@@ -49,22 +52,23 @@ const faqSchema = {
   altUrl="https://boatpass.de/en/contact/"
   showCta={false}
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-  <div style="max-width:600px; margin:0 auto; padding:80px 24px 120px;">
+  <!-- Seitenkopf und schmale Spalte (Spec Runde 3, 3.1/3.5) -->
+  <PageHead
+    lang="de"
+    eyebrow="Kontakt"
+    lede="Fragen, Feedback oder ein Bug gefunden? Wir freuen uns von dir zu hören."
+  >
+    Schreib uns
+  </PageHead>
 
-    <!-- Header -->
-    <div style="margin-bottom:48px;">
-      <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(51,102,255,0.08); border:1px solid rgba(51,102,255,0.2); color:#2952CC; font-size:12px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:5px 12px; border-radius:100px; margin-bottom:16px;">
-        Kontakt
-      </div>
-      <h1 style="font-size:clamp(30px,4.5vw,42px); font-weight:900; letter-spacing:-0.045em; color:#1A1F36; line-height:1.1; margin-bottom:12px;">Schreib uns</h1>
-      <p style="font-size:16px; color:#656B78;">Fragen, Feedback oder ein Bug gefunden? Wir freuen uns von dir zu hören.</p>
-    </div>
+  <PageLayout variant="narrow">
 
-    <div id="success-msg" role="status" aria-live="polite" aria-atomic="true" style="display:none; background:#f0fdf4; border:1px solid #bbf7d0; color:#166534; border-radius:12px; padding:20px 24px; margin-bottom:24px; font-weight:500; font-size:1rem;">
+    <div id="success-msg" role="status" aria-live="polite" aria-atomic="true" class="pg-notice pg-notice--ok" style="display:none;">
       ✓ Nachricht angekommen! Sie landet direkt bei Marius – Antwort meist innerhalb weniger Stunden.
     </div>
-    <div id="error-msg" role="alert" aria-live="assertive" aria-atomic="true" style="display:none; background:#fef2f2; border:1px solid #fecaca; color:#991b1b; border-radius:12px; padding:16px 20px; margin-bottom:24px;"></div>
+    <div id="error-msg" role="alert" aria-live="assertive" aria-atomic="true" class="pg-notice pg-notice--error" style="display:none;"></div>
 
     <form id="kontakt-form" class="space-y-6">
       <div>
@@ -91,30 +95,30 @@ const faqSchema = {
     <!-- Support-Selbsthilfe: beantwortet die Fragen, die uns am häufigsten per
          Formular erreichen, und macht die Seite für Suchmaschinen mehr als ein
          nacktes Formular. -->
-    <section style="margin-top:56px;">
-      <h2 style="font-size:22px; font-weight:900; letter-spacing:-0.02em; color:#1A1F36; margin-bottom:8px;">Vielleicht hilft das schon weiter</h2>
-      <p style="font-size:15px; color:#656B78; margin-bottom:24px;">Diese vier Fragen erreichen uns am häufigsten – die Antwort steht meist schon auf der Website.</p>
+    <section class="pg-section">
+      <h2 class="pg-h2">Vielleicht hilft das schon weiter</h2>
+      <p class="pg-p">Diese vier Fragen erreichen uns am häufigsten – die Antwort steht meist schon auf der Website.</p>
 
-      <div style="display:grid; gap:16px;">
-        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; padding:20px 24px;">
-          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">Ich habe gekauft, sehe die Fragen aber nicht</h3>
-          <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">Der Kauf hängt an deinem Google-Konto bzw. deiner Apple-ID, nicht am Gerät. Öffne die App mit demselben Konto und tippe in den Einstellungen auf „Käufe wiederherstellen". Klappt das nicht, schreib uns mit deiner Bestellnummer aus der Kaufbestätigung von Google Play oder Apple. Ein Kauf bei Google Play gilt übrigens nicht auf dem iPhone und umgekehrt.</p>
+      <div class="pg-faq">
+        <div class="pg-faq-item">
+          <h3 class="pg-h3">Ich habe gekauft, sehe die Fragen aber nicht</h3>
+          <p class="pg-card-text">Der Kauf hängt an deinem Google-Konto bzw. deiner Apple-ID, nicht am Gerät. Öffne die App mit demselben Konto und tippe in den Einstellungen auf „Käufe wiederherstellen". Klappt das nicht, schreib uns mit deiner Bestellnummer aus der Kaufbestätigung von Google Play oder Apple. Ein Kauf bei Google Play gilt übrigens nicht auf dem iPhone und umgekehrt.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; padding:20px 24px;">
-          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">Ist der Fragenkatalog aktuell?</h3>
-          <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">Ja. Wir nutzen den amtlichen ELWIS-Katalog von DSV und DMYV und gleichen ihn regelmäßig ab. Welche Fragen in der Prüfung drankommen, steht auf den Seiten <a href="/sbf-binnen-pruefungsfragen/" style="color:#3366FF;">SBF Binnen Prüfungsfragen</a> und <a href="/sbf-see-pruefungsfragen/" style="color:#3366FF;">SBF See Prüfungsfragen</a>.</p>
+        <div class="pg-faq-item">
+          <h3 class="pg-h3">Ist der Fragenkatalog aktuell?</h3>
+          <p class="pg-card-text">Ja. Wir nutzen den amtlichen ELWIS-Katalog von DSV und DMYV und gleichen ihn regelmäßig ab. Welche Fragen in der Prüfung drankommen, steht auf den Seiten <a href="/sbf-binnen-pruefungsfragen/" class="pg-inline-link">SBF Binnen Prüfungsfragen</a> und <a href="/sbf-see-pruefungsfragen/" class="pg-inline-link">SBF See Prüfungsfragen</a>.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; padding:20px 24px;">
-          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">Gibt es Boatpass für iPhone?</h3>
-          <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">Ja, seit Oktober 2026 – für iPhone und iPad ab iOS 16, kostenlos im App Store.</p>
+        <div class="pg-faq-item">
+          <h3 class="pg-h3">Gibt es Boatpass für iPhone?</h3>
+          <p class="pg-card-text">Ja, seit Oktober 2026 – für iPhone und iPad ab iOS 16, kostenlos im App Store.</p>
         </div>
-        <div style="background:white; border:1px solid rgba(51,102,255,0.12); border-radius:12px; padding:20px 24px;">
-          <h3 style="font-size:16px; font-weight:800; color:#1A1F36; margin-bottom:6px;">Fragen zur Prüfung selbst</h3>
-          <p style="font-size:15px; line-height:1.6; color:#4B5563; margin:0;">Zu Anmeldung, Kosten und Ablauf beraten wir nicht individuell – das übernehmen DSV und DMYV. Das Wichtigste haben wir aber gesammelt: <a href="/sbf-pruefung-ablauf/" style="color:#3366FF;">Prüfungsablauf</a>, <a href="/sbf-kosten/" style="color:#3366FF;">Kosten</a>, <a href="/blog/promillegrenze-boot/" style="color:#3366FF;">Promillegrenze an Bord</a> und die <a href="/faq/" style="color:#3366FF;">häufigen Fragen</a>.</p>
+        <div class="pg-faq-item">
+          <h3 class="pg-h3">Fragen zur Prüfung selbst</h3>
+          <p class="pg-card-text">Zu Anmeldung, Kosten und Ablauf beraten wir nicht individuell – das übernehmen DSV und DMYV. Das Wichtigste haben wir aber gesammelt: <a href="/sbf-pruefung-ablauf/" class="pg-inline-link">Prüfungsablauf</a>, <a href="/sbf-kosten/" class="pg-inline-link">Kosten</a>, <a href="/blog/promillegrenze-boot/" class="pg-inline-link">Promillegrenze an Bord</a> und die <a href="/faq/" class="pg-inline-link">häufigen Fragen</a>.</p>
         </div>
       </div>
     </section>
-  </div>
+  </PageLayout>
 
   <style>
     /* Formularfelder an das projektweite Design-System angeglichen. Vorher trugen

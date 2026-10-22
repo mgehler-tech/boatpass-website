@@ -581,3 +581,90 @@ a.pg-card:hover { border-color: var(--h-line-2); transform: translateY(-2px); }
 .pg-school-link--muted { color: var(--h-text); }
 .pg-school-link--muted:hover { background: var(--h-paper-2); border-color: var(--h-line-2); }
 @media (prefers-reduced-motion: reduce) { .city-card, .city-link svg, a.pg-card { transition: none; } }
+
+/* ── Infoseiten (Runde 3b): Legal-Karten, Meta, Trenner, Schlüssel-Wert, Hinweise, Chips, Akkordeon, Porträt ── */
+.pg-card--legal { padding: 28px; }
+.pg-main > .pg-card--legal + .pg-card--legal { margin-top: 16px; }
+.pg-card--legal .pg-card-label { margin-bottom: 14px; }
+.pg-card-label--muted { color: var(--h-muted); }
+.pg-p--sm { font-size: 15px; line-height: 1.65; }
+.pg-strong { margin-bottom: 4px; font-weight: 700; color: var(--h-ink); }
+.pg-meta { padding: 14px 16px; border-radius: var(--h-r-sm); background: var(--h-blue-wash); font-size: 13px; line-height: 1.6; color: var(--h-text); }
+.pg-divider { display: flex; align-items: center; gap: 12px; margin: 8px 0 16px; }
+.pg-divider::after { content: ""; flex: 1; height: 1px; background: var(--h-line); }
+.pg-divider-label { font: 600 12px/1.4 var(--h-sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--h-muted); white-space: nowrap; }
+.pg-kv { display: grid; grid-template-columns: minmax(120px, 170px) 1fr; gap: 4px 16px; padding: 10px 0; border-top: 1px solid var(--h-line); }
+.pg-kv:last-child { border-bottom: 1px solid var(--h-line); }
+.pg-kv-k { margin: 0; font: 650 14px/1.5 var(--h-sans); color: var(--h-ink); }
+.pg-kv-v { margin: 0; font-size: 14px; line-height: 1.6; color: var(--h-text); }
+@media (max-width: 479px) { .pg-kv { grid-template-columns: 1fr; } }
+.pg-notice { padding: 14px 16px; border-radius: var(--h-r-sm); font-size: 15px; line-height: 1.55; }
+.pg-notice--ok { background: var(--h-stbd-wash); color: var(--h-stbd-ink); }
+.pg-notice--error { background: var(--h-port-wash); color: var(--h-port-ink); }
+.pg-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.pg-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border: 1px solid var(--h-line-2);
+  border-radius: var(--h-r-pill);
+  background: var(--h-card);
+  font: 600 14px/1 var(--h-sans);
+  color: var(--h-text);
+  text-decoration: none;
+  transition: border-color 0.15s var(--h-ease), color 0.15s var(--h-ease);
+}
+.pg-chip:hover { border-color: var(--h-blue); color: var(--h-blue-ink); }
+details.pg-faq-item { padding: 0; }
+.pg-faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 22px;
+  cursor: pointer;
+  list-style: none;
+  font: 650 16px/1.4 var(--h-sans);
+  color: var(--h-ink);
+}
+.pg-faq-q::-webkit-details-marker { display: none; }
+.pg-faq-q svg { flex-shrink: 0; color: var(--h-blue-ink); transition: transform 0.25s var(--h-ease); }
+details[open] > .pg-faq-q svg { transform: rotate(90deg); }
+.pg-faq-a { padding: 0 22px 20px; }
+.pg-portrait { padding: 0; overflow: hidden; }
+.pg-portrait img { display: block; width: 100%; height: 380px; object-fit: cover; }
+.pg-portrait-body { padding: 20px 24px; }
+@media (prefers-reduced-motion: reduce) { .pg-faq-q svg, .pg-chip { transition: none; } }
+
+/* ── Rechtstexte (Runde 3b, Task 2): Meta-Box, Schlüssel-Wert-Listen, Aufzählungen, Trenner in der Spalte ── */
+.pg-meta { display: flex; flex-direction: column; gap: 6px; margin-top: 12px; }
+.pg-main > .pg-card--legal + .pg-divider { margin-top: 32px; }
+.pg-main > .pg-divider + .pg-card--legal { margin-top: 0; }
+.pg-kvs { display: flex; flex-direction: column; }
+.pg-kvs + .pg-note { margin-top: 12px; }
+.pg-bullets { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+.pg-bullets--before { margin: 0 0 20px; }
+.pg-bullet { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.6; color: var(--h-text); }
+.pg-bullet-mark { flex-shrink: 0; color: var(--h-blue-ink); }
+.pg-note + .pg-note { margin-top: 8px; }
+.pg-card--legal .pg-note { font-size: 14px; }
+
+/* ── Über uns (Runde 3b, Task 3): Porträt, Bild in der Karte, Schlagwörter, Versprechen ── */
+.pg-portrait img { object-position: center 22%; }
+.pg-card-title--lg { font-size: 20px; margin-bottom: 4px; }
+.pg-card-img { display: block; width: 100%; height: 240px; margin-bottom: 20px; border-radius: var(--h-r-sm); object-fit: cover; object-position: center 35%; }
+.pg-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.pg-checks { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.pg-check { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.6; color: var(--h-text); }
+.pg-check-mark { flex-shrink: 0; font-weight: 700; color: var(--h-blue-ink); }
+
+/* ── Kontakt (Runde 3b, Task 4): Status-Boxen vor dem Formular ohne Spaltenabstand ── */
+.pg-main > .pg-notice + .pg-notice, .pg-main > .pg-notice + form { margin-top: 0; }
+.pg-notice--error { margin-bottom: 16px; }
+
+/* ── FAQ (Runde 3b, Task 5): Sprungmarken, Frage als Überschrift im Akkordeon, Antwort-Inhalte ── */
+.pg-section[id] { scroll-margin-top: 96px; }
+.pg-faq-q > h3 { margin: 0; font: inherit; color: inherit; }
+.pg-faq-a p + p, .pg-faq-a ul, .pg-faq-a ol { margin-top: 10px; }
+.pg-faq-a a { color: var(--h-blue-ink); text-decoration: underline; text-underline-offset: 3px; }

@@ -1,5 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import DisplayFontPreload from '../components/page/DisplayFontPreload.astro';
+import PageHead from '../components/page/PageHead.astro';
+import PageLayout from '../components/page/PageLayout.astro';
+import Icon from '../components/Icon.astro';
 import { formatPrice, minPrice, priceText, storePrice, PRICES, type ProductKey } from '../data/stores';
 
 // Preise aus src/data/stores.ts; abweichende Store-Preise nennt priceText() beide.
@@ -33,7 +37,7 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       },
       {
         q: 'Brauche ich für die Ostsee den SBF See oder den SBF Binnen?',
-        a: 'An Nord- und Ostsee gilt der SBF See, denn die Küstengewässer sind Seeschifffahrtsstraßen – der SBF Binnen reicht dort nicht. Wichtig: Die Grenze zwischen See und Binnen verläuft nicht an der Küstenlinie, sondern an den Flussmündungen. Auf der Elbe brauchst du zum Beispiel bis Hamburg den SBF See, oberhalb den SBF Binnen. Für den Bodensee gilt eine eigene Regelung (Bodensee-Schifferpatent). Wer Küste und Binnen befahren möchte, macht beide Scheine – am günstigsten in der Kombiprüfung. Eine vollständige Übersicht, welcher Schein wo gilt, findest du im <a href="/blog/sbf-gueltigkeit-welcher-schein-wo/" style="color:#3366FF; text-decoration:underline;">Artikel zur SBF-Gültigkeit</a>.',
+        a: 'An Nord- und Ostsee gilt der SBF See, denn die Küstengewässer sind Seeschifffahrtsstraßen – der SBF Binnen reicht dort nicht. Wichtig: Die Grenze zwischen See und Binnen verläuft nicht an der Küstenlinie, sondern an den Flussmündungen. Auf der Elbe brauchst du zum Beispiel bis Hamburg den SBF See, oberhalb den SBF Binnen. Für den Bodensee gilt eine eigene Regelung (Bodensee-Schifferpatent). Wer Küste und Binnen befahren möchte, macht beide Scheine – am günstigsten in der Kombiprüfung. Eine vollständige Übersicht, welcher Schein wo gilt, findest du im <a href="/blog/sbf-gueltigkeit-welcher-schein-wo/" class="pg-inline-link">Artikel zur SBF-Gültigkeit</a>.',
       },
       {
         q: 'SRC oder UBI – welches Funkzeugnis brauche ich?',
@@ -51,7 +55,7 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
     faqs: [
       {
         q: 'Wie alt muss man für den Sportbootführerschein sein?',
-        a: 'Das Mindestalter beträgt für den SBF Binnen und den SBF See unter Motor jeweils 16 Jahre. Für den SBF Binnen unter Segel reicht 14 Jahre. Zur Prüfung anmelden darfst du dich schon etwas früher (ab etwa 15 Jahren und 9 Monaten) – das Mindestalter musst du erst bei der Aushändigung des Führerscheins erreicht haben. Auch wer führerscheinfrei ein Boot bis 15 PS fährt, muss in der Regel mindestens 16 Jahre alt sein – eine Ausnahme gilt auf Seeschifffahrtsstraßen für sehr schwache Motoren bis 3,68 kW (ca. 5 PS), hier gibt es kein festes Mindestalter. Mehr zu den Altersregeln für Kinder und Jugendliche auf dem Wasser – inklusive Ruderboot, SUP und DSV-Jugendsegelschein – im <a href="/blog/kinder-jugendliche-boot-fahren-mindestalter/" style="color:#3366FF; text-decoration:underline;">Artikel „Ab wann dürfen Kinder Boot fahren?"</a>.',
+        a: 'Das Mindestalter beträgt für den SBF Binnen und den SBF See unter Motor jeweils 16 Jahre. Für den SBF Binnen unter Segel reicht 14 Jahre. Zur Prüfung anmelden darfst du dich schon etwas früher (ab etwa 15 Jahren und 9 Monaten) – das Mindestalter musst du erst bei der Aushändigung des Führerscheins erreicht haben. Auch wer führerscheinfrei ein Boot bis 15 PS fährt, muss in der Regel mindestens 16 Jahre alt sein – eine Ausnahme gilt auf Seeschifffahrtsstraßen für sehr schwache Motoren bis 3,68 kW (ca. 5 PS), hier gibt es kein festes Mindestalter. Mehr zu den Altersregeln für Kinder und Jugendliche auf dem Wasser – inklusive Ruderboot, SUP und DSV-Jugendsegelschein – im <a href="/blog/kinder-jugendliche-boot-fahren-mindestalter/" class="pg-inline-link">Artikel „Ab wann dürfen Kinder Boot fahren?"</a>.',
       },
       {
         q: 'Welche Unterlagen brauche ich für die Prüfungsanmeldung?',
@@ -59,11 +63,11 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       },
       {
         q: 'Brauche ich überhaupt einen Bootsführerschein? (15-PS-Regel)',
-        a: 'In Deutschland darfst du Motorboote bis einschließlich 15 PS (11,03 kW) ab 16 Jahren ohne Sportbootführerschein führen – auf Binnen- und Seeschifffahrtsstraßen. Erst über 15 PS wird der SBF Pflicht. Ausnahmen: Auf dem <a href="/blog/bodensee-schifferpatent/" style="color:#3366FF; text-decoration:underline;">Bodensee (Bodensee-Schifferpatent)</a> und auf dem Rhein gelten niedrigere Grenzen, und einzelne Zonen (z. B. ein Abschnitt der Spree in Berlin) verlangen unabhängig von der Motorleistung einen Schein. Fürs offene Meer oder einen <a href="/blog/charterschein-boot-mieten-ohne-fuehrerschein/" style="color:#3366FF; text-decoration:underline;">Charter im Ausland</a> brauchst du fast immer den SBF See.',
+        a: 'In Deutschland darfst du Motorboote bis einschließlich 15 PS (11,03 kW) ab 16 Jahren ohne Sportbootführerschein führen – auf Binnen- und Seeschifffahrtsstraßen. Erst über 15 PS wird der SBF Pflicht. Ausnahmen: Auf dem <a href="/blog/bodensee-schifferpatent/" class="pg-inline-link">Bodensee (Bodensee-Schifferpatent)</a> und auf dem Rhein gelten niedrigere Grenzen, und einzelne Zonen (z. B. ein Abschnitt der Spree in Berlin) verlangen unabhängig von der Motorleistung einen Schein. Fürs offene Meer oder einen <a href="/blog/charterschein-boot-mieten-ohne-fuehrerschein/" class="pg-inline-link">Charter im Ausland</a> brauchst du fast immer den SBF See.',
       },
       {
         q: 'Gilt auf dem Boot die 0,5-Promille-Grenze wie beim Auto?',
-        a: 'Nein, nicht in dieser Form. Für Sportboote gilt nicht das StVG, sondern die Binnenschifffahrtsstraßen-Ordnung (BinSchStrO) bzw. die Seeschifffahrtsstraßen-Ordnung (SeeSchStrO): Der Schiffsführer muss jederzeit fahrtüchtig sein. Strafbar wird Trunkenheit über § 315a StGB – relative Fahruntüchtigkeit kann schon bei niedrigen Werten plus Ausfallerscheinungen vorliegen, absolute Fahruntüchtigkeit ab 1,1 Promille. Die sichere Regel lautet: Als Schiffsführer trinkst du keinen Alkohol. Mehr dazu im <a href="/blog/promillegrenze-boot/" style="color:#3366FF; text-decoration:underline;">Artikel zur Promillegrenze auf dem Boot</a>.',
+        a: 'Nein, nicht in dieser Form. Für Sportboote gilt nicht das StVG, sondern die Binnenschifffahrtsstraßen-Ordnung (BinSchStrO) bzw. die Seeschifffahrtsstraßen-Ordnung (SeeSchStrO): Der Schiffsführer muss jederzeit fahrtüchtig sein. Strafbar wird Trunkenheit über § 315a StGB – relative Fahruntüchtigkeit kann schon bei niedrigen Werten plus Ausfallerscheinungen vorliegen, absolute Fahruntüchtigkeit ab 1,1 Promille. Die sichere Regel lautet: Als Schiffsführer trinkst du keinen Alkohol. Mehr dazu im <a href="/blog/promillegrenze-boot/" class="pg-inline-link">Artikel zur Promillegrenze auf dem Boot</a>.',
       },
       {
         q: 'Wie lange ist der Sportbootführerschein gültig?',
@@ -71,7 +75,7 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       },
       {
         q: 'Was ist der Charterschein – und ersetzt er den SBF?',
-        a: 'Der Charterschein (amtlich Charterbescheinigung) erlaubt es, auf bestimmten ausgewiesenen Binnengewässern – vor allem auf der Mecklenburgischen Seenplatte – ein gemietetes Boot ohne Sportbootführerschein zu führen. Voraussetzung: Das Boot ist maximal 15 m lang und 12 km/h schnell, das Mindestalter liegt meist bei 16 Jahren, dazu kommt eine 2- bis 3-stündige Einweisung durch den Vermieter. Es gelten Auflagen wie Nachtfahrverbot und Fahrverbot ab Windstärke 4. Der Charterschein ersetzt den SBF aber nicht: Er gilt nur fürs Mietboot, nur im ausgewiesenen Revier und nicht im Ausland. Details im <a href="/blog/charterschein-boot-mieten-ohne-fuehrerschein/" style="color:#3366FF; text-decoration:underline;">Artikel zum Charterschein</a>.',
+        a: 'Der Charterschein (amtlich Charterbescheinigung) erlaubt es, auf bestimmten ausgewiesenen Binnengewässern – vor allem auf der Mecklenburgischen Seenplatte – ein gemietetes Boot ohne Sportbootführerschein zu führen. Voraussetzung: Das Boot ist maximal 15 m lang und 12 km/h schnell, das Mindestalter liegt meist bei 16 Jahren, dazu kommt eine 2- bis 3-stündige Einweisung durch den Vermieter. Es gelten Auflagen wie Nachtfahrverbot und Fahrverbot ab Windstärke 4. Der Charterschein ersetzt den SBF aber nicht: Er gilt nur fürs Mietboot, nur im ausgewiesenen Revier und nicht im Ausland. Details im <a href="/blog/charterschein-boot-mieten-ohne-fuehrerschein/" class="pg-inline-link">Artikel zum Charterschein</a>.',
       },
     ],
   },
@@ -93,7 +97,7 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       },
       {
         q: 'Gilt der deutsche SBF auch im Ausland?',
-        a: 'Der SBF Binnen wird auf deutschen Binnenschifffahrtsstraßen anerkannt. Im Ausland gelten die jeweiligen nationalen Vorschriften – in vielen europäischen Ländern reicht der SBF aus, in anderen ist zusätzlich der ICC (International Certificate of Competence) notwendig, den du auf Basis deines deutschen Scheins beantragen kannst. Details zu einzelnen Charterrevieren findest du im <a href="/blog/sbf-im-ausland-gueltig/" style="color:#3366FF; text-decoration:underline;">Artikel „SBF im Ausland gültig?“</a> zu Kroatien, den Niederlanden und Italien.',
+        a: 'Der SBF Binnen wird auf deutschen Binnenschifffahrtsstraßen anerkannt. Im Ausland gelten die jeweiligen nationalen Vorschriften – in vielen europäischen Ländern reicht der SBF aus, in anderen ist zusätzlich der ICC (International Certificate of Competence) notwendig, den du auf Basis deines deutschen Scheins beantragen kannst. Details zu einzelnen Charterrevieren findest du im <a href="/blog/sbf-im-ausland-gueltig/" class="pg-inline-link">Artikel „SBF im Ausland gültig?“</a> zu Kroatien, den Niederlanden und Italien.',
       },
       {
         q: 'Wie viele Fehler darf man beim SBF haben?',
@@ -101,11 +105,11 @@ const categories: { id: string; title: string; faqs: { q: string; a: string }[] 
       },
       {
         q: 'Was passiert, wenn ich durch die SBF-Prüfung falle?',
-        a: 'Du kannst die Prüfung wiederholen – nicht bestandene Teile werden einzeln nachgeholt. Hast du nur die Theorie oder nur die Praxis nicht bestanden, wiederholst du auch nur diesen Teil; eine bereits bestandene Teilprüfung musst du in der Regel nicht erneut ablegen. Die Wiederholungsgebühren liegen 2026 je nach Prüfungsausschuss bei etwa 37–49 € für die Theorie und 57–75 € für die Praxis. Mit dem gezielten Fehlertraining in Boatpass bereitest du genau die Themen nach, an denen es gehakt hat. Was du direkt nach einer nicht bestandenen Prüfung tun solltest, erklärt der <a href="/blog/sbf-binnen-pruefung-nicht-bestanden/" style="color:#3366FF; text-decoration:underline;">Artikel „SBF-Binnen-Prüfung nicht bestanden"</a>.',
+        a: 'Du kannst die Prüfung wiederholen – nicht bestandene Teile werden einzeln nachgeholt. Hast du nur die Theorie oder nur die Praxis nicht bestanden, wiederholst du auch nur diesen Teil; eine bereits bestandene Teilprüfung musst du in der Regel nicht erneut ablegen. Die Wiederholungsgebühren liegen 2026 je nach Prüfungsausschuss bei etwa 37–49 € für die Theorie und 57–75 € für die Praxis. Mit dem gezielten Fehlertraining in Boatpass bereitest du genau die Themen nach, an denen es gehakt hat. Was du direkt nach einer nicht bestandenen Prüfung tun solltest, erklärt der <a href="/blog/sbf-binnen-pruefung-nicht-bestanden/" class="pg-inline-link">Artikel „SBF-Binnen-Prüfung nicht bestanden"</a>.',
       },
       {
         q: 'Wie schwer ist die Navigationsaufgabe beim SBF See?',
-        a: 'Die Navigationsaufgabe gilt für viele als anspruchsvollster Teil des SBF See, ist aber gut lernbar. Du arbeitest mit einer amtlichen Übungsseekarte und löst 9 Aufgaben rund um Kurse (<a href="/blog/kompass-missweisung-deviation-erklaert/" style="color:#3366FF; text-decoration:underline;">Kompasskurs, Missweisung und Deviation</a>), Standort- und Distanzbestimmung sowie Gezeiten. Mindestens 7 der 9 Aufgaben müssen richtig sein. Mit etwas Übung an Kartenarbeit, Anlegezirkel und Kursdreieck wird die Aufgabe zur Routine – Boatpass trainiert die zugehörigen Fragen aus dem amtlichen Katalog.',
+        a: 'Die Navigationsaufgabe gilt für viele als anspruchsvollster Teil des SBF See, ist aber gut lernbar. Du arbeitest mit einer amtlichen Übungsseekarte und löst 9 Aufgaben rund um Kurse (<a href="/blog/kompass-missweisung-deviation-erklaert/" class="pg-inline-link">Kompasskurs, Missweisung und Deviation</a>), Standort- und Distanzbestimmung sowie Gezeiten. Mindestens 7 der 9 Aufgaben müssen richtig sein. Mit etwas Übung an Kartenarbeit, Anlegezirkel und Kursdreieck wird die Aufgabe zur Routine – Boatpass trainiert die zugehörigen Fragen aus dem amtlichen Katalog.',
       },
     ],
   },
@@ -201,51 +205,48 @@ const breadcrumbSchema = {
   description="Häufige Fragen zum Sportbootführerschein (SBF Binnen & See) und den Funkzeugnissen UBI, SRC, LRC: Ablauf, Kosten, Fragenkataloge und die Boatpass-App."
   lang="de"
 >
+  <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
 
-  <div class="max-w-3xl mx-auto px-4 pt-24 pb-16">
-    <h1 class="section-display-title mb-4">Häufige Fragen</h1>
-    <p class="faq-subtitle text-gray-500 text-xl mb-8">Alles rund um den Sportbootführerschein, die Funkzeugnisse und die Boatpass-App</p>
+  <!-- Seitenkopf und schmale Spalte (Spec Runde 3, 3.1/3.5) -->
+  <PageHead
+    lang="de"
+    eyebrow="FAQ"
+    lede="Alles rund um den Sportbootführerschein, die Funkzeugnisse und die Boatpass-App"
+  >
+    Häufige Fragen
+  </PageHead>
 
+  <PageLayout variant="narrow">
     <!-- Kategorie-Navigation: Sprungmarken zu den Themenblöcken -->
-    <nav aria-label="FAQ-Kategorien" class="flex flex-wrap gap-2 mb-12">
-      {categories.map((cat) => (
-        <a
-          href={`#${cat.id}`}
-          class="inline-flex items-center min-h-11 text-sm font-semibold text-primary bg-primary/8 border border-primary/15 rounded-full px-4 py-2 hover:bg-primary/15 transition-colors"
-        >
-          {cat.title}
-        </a>
-      ))}
-    </nav>
+    <nav aria-label="FAQ-Kategorien" class="pg-chips">
+    {categories.map((cat) => (
+      <a
+        href={`#${cat.id}`}
+        class="pg-chip"
+      >
+        {cat.title}
+      </a>
+    ))}
+  </nav>
 
-    <div class="space-y-12">
-      {categories.map((cat) => (
-        <section id={cat.id} class="scroll-mt-24">
-          <h2 class="content-section-title mb-5">{cat.title}</h2>
-          <div class="space-y-4">
-            {cat.faqs.map((faq) => (
-              <details class="faq-item bg-white border border-gray-100 rounded-2xl overflow-hidden group">
-                <summary class="flex items-center justify-between p-6 cursor-pointer font-semibold text-text list-none">
-                  <h3 class="font-semibold text-base m-0">{faq.q}</h3>
-                  <span class="text-primary ml-4 transition-transform group-open:rotate-180">▼</span>
-                </summary>
-                <div class="faq-answer px-6 pb-6 text-gray-600 leading-relaxed" set:html={faq.a} />
-              </details>
-            ))}
-          </div>
-        </section>
-      ))}
-    </div>
-  </div>
+    {categories.map((cat) => (
+      <section id={cat.id} class="pg-section">
+        <h2 class="pg-h2">{cat.title}</h2>
+        <div class="pg-faq">
+          {cat.faqs.map((faq) => (
+            <details class="pg-faq-item">
+              <summary class="pg-faq-q">
+                <h3>{faq.q}</h3>
+                <Icon name="chevronRight" size={18} strokeWidth={2} />
+              </summary>
+              <div class="pg-faq-a pg-card-text" set:html={faq.a} />
+            </details>
+          ))}
+        </div>
+      </section>
+  ))}
+  </PageLayout>
 </BaseLayout>
 
-<style is:global>
-  html.dark .faq-item {
-    background: #181E2E;
-    border-color: rgba(90, 120, 255, 0.12);
-  }
-  html.dark .faq-answer { color: #94A3B8; }
-  html.dark .faq-subtitle { color: #64748B; }
-</style>
