@@ -35,12 +35,13 @@ test.describe('Rechtstexte', () => {
   // rootDir ist das testDir (tests/e2e).
   const fixture = (slug: string) => readFileSync(join(test.info().config.rootDir, 'fixtures/legal-text', `${slug}.txt`), 'utf8');
   // PageLink external ergänzt einen Screenreader-Hinweis; der ist kein Inhalt des Rechtstexts.
+  // Weiche Trennstriche (U+00AD) in den langen Titeln sind kein Inhalt.
   const norm = (t: string) => t.replace(/\s*→/g, '').replace(/\((?:öffnet in neuem tab|opens in new tab)\)/gi, '')
-    .replace(/\s+/g, ' ').trim().toLowerCase();
+    .replace(/­/g, '').replace(/\s+/g, ' ').trim().toLowerCase();
   const pages = [
-    ['datenschutz', '/datenschutz/', /Datenschutzerklärung/],
+    ['datenschutz', '/datenschutz/', /Datenschutz­?erklärung/],
     ['privacy', '/en/privacy/', /Privacy Policy/],
-    ['nutzungsbedingungen', '/nutzungsbedingungen/', /Nutzungsbedingungen/],
+    ['nutzungsbedingungen', '/nutzungsbedingungen/', /Nutzungs­?bedingungen/],
     ['terms', '/en/terms/', /Terms of Use/],
   ] as const;
   for (const [slug, path, h1] of pages) {
@@ -58,6 +59,27 @@ test.describe('Rechtstexte', () => {
     expect(await page.locator('main .pg-meta').count()).toBeGreaterThanOrEqual(5);
     expect(await page.locator('main .pg-bullet').count()).toBeGreaterThanOrEqual(8);
     await expect(page.locator('main a.pg-link[href*="plausible.io"][target="_blank"] svg')).toHaveCount(1);
+  });
+  test('Lange Titel brechen bei 375 px am weichen Trennstrich, nicht mitten im Wort', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 800 });
+    for (const path of ['/nutzungsbedingungen/', '/datenschutz/']) {
+      await page.goto(path);
+      // Zeilenkästen des Titeltexts: eine verwaiste Endsilbe („…unge | n") wäre eine schmale letzte Zeile.
+      // Rechtecke je Zeile zusammenfassen (der eingefügte Trennstrich liefert ein eigenes schmales Rechteck).
+      const widths = await page.locator('h1.pg-title').evaluate(el => {
+        const range = document.createRange();
+        range.selectNodeContents(el);
+        const lines = new Map<number, number>();
+        for (const r of Array.from(range.getClientRects())) {
+          if (r.width <= 0) continue;
+          const key = Math.round(r.top);
+          lines.set(key, (lines.get(key) ?? 0) + r.width);
+        }
+        return Array.from(lines.values()).map(w => Math.round(w));
+      });
+      expect(widths.length).toBeGreaterThanOrEqual(2);
+      expect(Math.min(...widths)).toBeGreaterThan(80);
+    }
   });
   test('Nutzungsbedingungen: Schlüssel-Wert-Zeilen', async ({ page }) => {
     await page.goto('/nutzungsbedingungen/');

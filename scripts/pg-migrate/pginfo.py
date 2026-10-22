@@ -324,6 +324,9 @@ def migrate(key):
         s = migrate_faq(s, cfg, prefix, base_import)
     for pat, repl in INLINE:
         s = re.sub(pat, repl, s)
+    if cfg.get('about'):
+        # EN trug Label-Überschriften (13 px Versalien), DE Abschnittstitel; Parität nach DE (Spec: EN spiegelt DE).
+        s = s.replace('<h2 class="pg-card-label">', '<h2 class="pg-h2 pg-h2--sm">')
     path.write_text(s)
     left = [l.strip()[:140] for l in s.splitlines() if 'style=' in l]
     print(f'{path.name}: {len(left)} Zeilen mit style verbleiben')
