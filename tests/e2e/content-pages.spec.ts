@@ -119,6 +119,16 @@ test.describe('Fahrschulen', () => {
     await expect(page.locator('.pg-school')).toHaveCount(berlin.schools.length);
     await expect(page.locator('.pg-school .pg-pill')).toHaveCount(berlin.schools.reduce((n, s) => n + s.licenses.length, 0));
     await expect(page.locator('a.pg-banner[href*="google"]')).toHaveCount(1);
+    // Abschnittsstruktur: zwei Info-Karten plus Schein-Link unter „Gewässer“, zwei Kennzahlen
+    // zur Prüfung (amtliche Gebühr, „ab 9,99 €“), drei Lernzeilen unter „Theorie“.
+    const waterways = page.locator('.pg-section').first();
+    await expect(waterways.locator('.pg-card')).toHaveCount(2);
+    await expect(waterways.locator('ul.pg-related li')).toHaveCount(1);
+    await expect(page.locator('.pg-kpi')).toHaveCount(2);
+    await expect(page.locator('.pg-kpi').first()).toContainText('130,78');
+    await expect(page.locator('.pg-kpi--accent')).toContainText(/ab 9,99/);
+    await expect(page.locator('.pg-rows .pg-row')).toHaveCount(3);
+    await expect(page.locator('.pg-rows .pg-row .pg-row-icon svg')).toHaveCount(3);
     // Schulkarten-Links bleiben 44 px hohe Tap-Flächen (WCAG 2.5.5, frühere Korrektur).
     const link = (await page.locator('.pg-school a').first().boundingBox())!;
     expect(link.height).toBeGreaterThanOrEqual(44);
@@ -135,5 +145,16 @@ test.describe('Fahrschulen', () => {
     await expect(facts).toContainText('SBF Coastal');
     await expect(page.locator('.pg-aside .pg-aside-price')).toContainText(/from/);
     await expect(page.locator('.pg-school')).toHaveCount(hamburg.schools.length);
+    await expect(page.locator('a.pg-banner[href*="google"]')).toHaveCount(1);
+    // Abschnittsstruktur wie DE: zwei Info-Karten plus Schein-Links (Hamburg: beide Scheine),
+    // zwei Kennzahlen (Kombi-Gebühr, „from €9.99“), drei Lernzeilen mit Icons.
+    const waterways = page.locator('.pg-section').first();
+    await expect(waterways.locator('.pg-card')).toHaveCount(2);
+    await expect(waterways.locator('ul.pg-related li')).toHaveCount(2);
+    await expect(page.locator('.pg-kpi')).toHaveCount(2);
+    await expect(page.locator('.pg-kpi').first()).toContainText('178.61');
+    await expect(page.locator('.pg-kpi--accent')).toContainText(/from €9\.99/);
+    await expect(page.locator('.pg-rows .pg-row')).toHaveCount(3);
+    await expect(page.locator('.pg-rows .pg-row .pg-row-icon svg')).toHaveCount(3);
   });
 });
