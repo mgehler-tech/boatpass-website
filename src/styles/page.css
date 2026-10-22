@@ -661,3 +661,9 @@ details[open] > .pg-faq-q svg { transform: rotate(90deg); }
 /* ── Kontakt (Runde 3b, Task 4): Status-Boxen vor dem Formular ohne Spaltenabstand ── */
 .pg-main > .pg-notice + .pg-notice, .pg-main > .pg-notice + form { margin-top: 0; }
 .pg-notice--error { margin-bottom: 16px; }
+
+/* ── FAQ (Runde 3b, Task 5): Sprungmarken, Frage als Überschrift im Akkordeon, Antwort-Inhalte ── */
+.pg-section[id] { scroll-margin-top: 96px; }
+.pg-faq-q > h3 { margin: 0; font: inherit; color: inherit; }
+.pg-faq-a p + p, .pg-faq-a ul, .pg-faq-a ol { margin-top: 10px; }
+.pg-faq-a a { color: var(--h-blue-ink); text-decoration: underline; text-underline-offset: 3px; }

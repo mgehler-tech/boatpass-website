@@ -114,3 +114,29 @@ test.describe('Kontakt', () => {
     await expect(page.locator('#error-msg')).toHaveClass(/pg-notice--error/);
   });
 });
+
+test.describe('FAQ', () => {
+  test('DE: schmale Spalte, Kategorie-Chips, Akkordeon mit Chevron ohne Skript', async ({ page }) => {
+    await expectMigrated(page, '/faq/', { h1: /Häufige Fragen/, facts: 0, cta: false, variant: 'narrow' });
+    const sections = await page.locator('main section[id]').count();
+    expect(sections).toBeGreaterThanOrEqual(3);
+    await expect(page.locator('main nav.pg-chips a.pg-chip')).toHaveCount(sections);
+    const chip = (await page.locator('main nav.pg-chips a.pg-chip').first().boundingBox())!;
+    expect(chip.height).toBeGreaterThanOrEqual(44);
+    const first = page.locator('main details.pg-faq-item').first();
+    await expect(first).not.toHaveAttribute('open', '');
+    expect(await first.locator('summary.pg-faq-q svg').evaluate(el => getComputedStyle(el).transform)).toBe('none');
+    await first.locator('summary.pg-faq-q').click();
+    await expect(first).toHaveAttribute('open', '');
+    await expect(first.locator('.pg-faq-a')).toBeVisible();
+    expect(await first.locator('summary.pg-faq-q svg').evaluate(el => getComputedStyle(el).transform)).not.toBe('none');
+    await expect(page.locator('main [style*="color:#"]')).toHaveCount(0);
+  });
+  test('EN parity', async ({ page }) => {
+    await expectMigrated(page, '/en/faq/', { h1: /Frequently Asked Questions/, facts: 0, cta: false, variant: 'narrow' });
+    const sections = await page.locator('main section[id]').count();
+    await expect(page.locator('main nav.pg-chips a.pg-chip')).toHaveCount(sections);
+    await page.locator('main details.pg-faq-item').first().locator('summary').click();
+    await expect(page.locator('main details.pg-faq-item').first()).toHaveAttribute('open', '');
+  });
+});
