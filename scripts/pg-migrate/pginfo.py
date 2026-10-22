@@ -67,6 +67,9 @@ INLINE = [
     (r'<h2 style="font-size:13px; font-weight:700; color:#3366FF; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">', '<h2 class="pg-card-label">'),
     (r'<p style="font-size:1[56]px; font-weight:700; color:#1A1F36; margin-bottom:4px;">', '<p class="pg-p pg-p--sm pg-strong">'),
     (r'<p style="font-size:15px; color:#4B5563; line-height:1\.7;(?: margin-(?:top|bottom):\d+px;)?">', '<p class="pg-p pg-p--sm">'),
+    # Mail-Link stand nackt in der Karte; als Absatz behält er den Zeilenabstand zum Folgetext (Review 3b).
+    (r'<a href="(mailto:[^"]+)" style="font-size:15px; color:#3366FF; text-decoration:none; font-weight:500;">\n\s*([^<\n]+?)\s*\n\s*</a>',
+     r'<p class="pg-p pg-p--sm"><a href="\1" class="pg-inline-link">\2</a></p>'),
     (r' style="font-size:15px; color:#3366FF; text-decoration:none; font-weight:500;"', ' class="pg-inline-link"'),
     (r' style="color:#3366FF; text-decoration:none; font-weight:[56]00;"', ' class="pg-inline-link"'),
     (r' style="color:#3366FF; text-decoration:underline;"', ' class="pg-inline-link"'),
@@ -190,6 +193,7 @@ details[open] > .pg-faq-q svg { transform: rotate(90deg); }
 .pg-main > .pg-card--legal + .pg-divider { margin-top: 32px; }
 .pg-main > .pg-divider + .pg-card--legal { margin-top: 0; }
 .pg-kvs { display: flex; flex-direction: column; }
+.pg-kvs + .pg-note { margin-top: 12px; }
 .pg-bullets { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
 .pg-bullets--before { margin: 0 0 20px; }
 .pg-bullet { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.6; color: var(--h-text); }

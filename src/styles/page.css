@@ -642,6 +642,7 @@ details[open] > .pg-faq-q svg { transform: rotate(90deg); }
 .pg-main > .pg-card--legal + .pg-divider { margin-top: 32px; }
 .pg-main > .pg-divider + .pg-card--legal { margin-top: 0; }
 .pg-kvs { display: flex; flex-direction: column; }
+.pg-kvs + .pg-note { margin-top: 12px; }
 .pg-bullets { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
 .pg-bullets--before { margin: 0 0 20px; }
 .pg-bullet { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; line-height: 1.6; color: var(--h-text); }

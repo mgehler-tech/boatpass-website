@@ -21,6 +21,8 @@ test.describe('Impressum', () => {
     expect(await page.locator('main .pg-card--legal').count()).toBeGreaterThanOrEqual(5);
     await expect(page.locator('main a[href^="mailto:"]')).toHaveCount(1);
     await expect(page.locator('main .pg-card--legal .pg-card-label').first()).toBeVisible();
+    // Review 3b: der Mail-Link steht in einem Absatz, nicht nackt in der Karte (sonst 2 px Abstand zum Folgetext).
+    await expect(page.locator('main .pg-card--legal p > a[href^="mailto:"]')).toHaveCount(1);
   });
   test('EN parity', async ({ page }) => {
     await expectMigrated(page, '/en/legal/', { h1: /Legal|Imprint/, facts: 0, cta: false, variant: 'narrow' });
@@ -85,6 +87,12 @@ test.describe('Rechtstexte', () => {
     await page.goto('/nutzungsbedingungen/');
     expect(await page.locator('main .pg-kvs .pg-kv .pg-kv-k').count()).toBeGreaterThanOrEqual(4);
     await expect(page.locator('main .pg-kv .pg-kv-v').first()).toBeVisible();
+    // Review 3b: ein Hinweis direkt nach der Schlüssel-Wert-Liste bekommt Luft (vorher 0 px).
+    const gap = await page.locator('main .pg-kvs + .pg-note').first().evaluate(note => {
+      const list = note.previousElementSibling as HTMLElement;
+      return note.getBoundingClientRect().top - list.getBoundingClientRect().bottom;
+    });
+    expect(gap).toBeGreaterThanOrEqual(8);
   });
 });
 
