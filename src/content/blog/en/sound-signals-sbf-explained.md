@@ -3,6 +3,7 @@ title: "Sound Signals for the Boating License: Coastal & Inland Overview"
 seoTitle: "Sound Signals for the SBF Exam Explained"
 description: "One short blast, one prolonged blast – what means what? The important sound signals for SBF Coastal and Inland, separated and with the usual traps."
 date: 2026-05-13
+updated: 2026-10-23
 tags: ["Safety"]
 readingTime: 7
 lang: en
@@ -10,7 +11,7 @@ author: "Marius Gehler"
 altSlug: "schallsignale-sbf-erklaert"
 faq:
   - question: "How long is a short blast and a prolonged blast?"
-    answer: "A short blast lasts about one second, and a prolonged blast lasts about four to six seconds. All sound signals for both SBF Coastal and SBF Inland are built from these two building blocks."
+    answer: "A short blast lasts about one second, and a prolonged blast lasts four to six seconds at sea and about four seconds on inland waters. All sound signals for both SBF Coastal and SBF Inland are built from these two building blocks."
   - question: "What does a short blast mean on the boating license exam?"
     answer: "A short blast means \"I am altering my course to starboard,\" two short blasts mean \"to port,\" and three short blasts mean \"I am operating astern propulsion.\" These basic meanings apply at sea (COLREGs) as well as on inland waters."
   - question: "What's the difference between five short blasts at sea and on inland waters?"
@@ -26,7 +27,7 @@ Sound signals are a perennial topic in the SBF theory exam – and a popular sou
 Before we get to the meaning, you need the two building blocks:
 
 - **Short blast (●):** lasts about **one second**.
-- **Prolonged blast (▬):** lasts about **four to six seconds**.
+- **Prolonged blast (▬):** lasts **four to six seconds** at sea and **about four seconds** on inland waters.
 
 All sound signals are made up of these two building blocks. What's tested is hearing and matching them – in the exam you have to know the meaning of a given blast sequence.
 
@@ -94,4 +95,11 @@ Closely related are the visual counterparts – the lights and shapes of other v
 
 ## Conclusion
 
-Sound signals are no mystery if you **cleanly separate Coastal and Inland**. Short blast ≈ 1 second, prolonged blast ≈ 4–6 seconds – and then: one short blast means starboard, two short means port, three short means engine astern. The few points where Coastal and Inland differ you learn specifically – then the sound-signal questions are safe points in the exam.
+Sound signals are no mystery if you **cleanly separate Coastal and Inland**. Short blast ≈ 1 second, prolonged blast 4–6 seconds (inland: about 4 seconds) – and then: one short blast means starboard, two short means port, three short means engine astern. The few points where Coastal and Inland differ you learn specifically – then the sound-signal questions are safe points in the exam.
+
+## Sources
+
+- [German Collision Regulations (KVR), Rule 32](https://www.gesetze-im-internet.de/seestro_1972/regel_32.html) and [Rule 34](https://www.gesetze-im-internet.de/seestro_1972/regel_34.html) – duration of short and prolonged blasts, maneuvering and warning signals at sea
+- [KVR Rule 35](https://www.gesetze-im-internet.de/seestro_1972/regel_35.html) – sound signals in restricted visibility
+- [German Inland Waterways Regulations (BinSchStrO), Annex 6](https://www.gesetze-im-internet.de/binschstro_2012/anlage_6.html) – sound signals and blast durations on inland waterways
+- [BinSchStrO § 4.02](https://www.gesetze-im-internet.de/binschstro_2012/__4_02.html) – which sound signals small craft give

@@ -3,6 +3,7 @@ title: "Betonnung Nord- vs. Ostsee: Unterschiede im Lateralsystem"
 seoTitle: "Betonnung Nordsee vs. Ostsee: Unterschiede"
 description: "Warum die Betonnung in Nordsee und Ostsee unterschiedlich funktioniert und wie du sie sicher in der Seekarte erkennst. Für die SBF-See-Prüfung erklärt."
 date: 2026-07-10
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 8
 lang: de
@@ -85,3 +86,10 @@ Wer sich einmal bewusst gemacht hat, dass die Betonnungsrichtung nicht immer der
 ## Fazit
 
 Das Lateralsystem selbst ist in Nord- und Ostsee identisch, Farben, Formen und Toppzeichen unterscheiden sich nicht. Der entscheidende Unterschied liegt in der Richtung der Betonnung: In der gezeitenreichen Nordsee ergibt sich die Richtung „von See kommend" meist von selbst aus dem natürlichen Strömungsverlauf, in der nahezu gezeitenfreien Ostsee dagegen fehlt diese natürliche Orientierung an vielen Stellen, weshalb die Richtung dort behördlich festgelegt und in der Seekarte mit einem eigenen Pfeilsymbol gekennzeichnet wird. Wer das verinnerlicht hat, liest Kartenausschnitte in der Prüfung sicherer und ist auch im echten Fahrwasser weniger überrascht, wenn Backbord und Steuerbord plötzlich anders liegen als erwartet. In der Boatpass-App kannst du genau solche Kartenaufgaben zur Betonnung mit dem offiziellen ELWIS-Fragenkatalog gezielt üben, getrennt nach [SBF Binnen](/sbf-binnen/) und [SBF See](/sbf-see/).
+
+## Quellen
+
+- [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), § 2 Begriffsbestimmungen](https://www.gesetze-im-internet.de/seeschstro_1971/__2.html) – Definition der Steuerbordseite eines Fahrwassers, auch für Fahrwasser zwischen zwei Meeresteilen (Abs. 1 Nr. 2)
+- [SeeSchStrO, Anlage I – Schifffahrtszeichen](https://www.gesetze-im-internet.de/seeschstro_1971/anlage_i.html) – laterale Zeichen mit ungeraden (Steuerbord) und geraden (Backbord) Nummern, von See beginnend oder nach festgelegter Richtung (Zeichen B.11)
+- [IALA-Empfehlung R1001 – The IALA Maritime Buoyage System](https://www.iala.int/product/r1001/) – Festlegung der Betonnungsrichtung und ihre Angabe in Seekarten
+- [BSH – Deutsches Seekartennull](https://www.bsh.de/DE/THEMEN/Vermessung_und_Kartographie/Seekartennull/Deutsches_Seekartennull/deutsches-seekartennull_node.html) – Gezeitenbezug in der Nordsee, mittlerer Wasserstand als Bezug in der Ostsee

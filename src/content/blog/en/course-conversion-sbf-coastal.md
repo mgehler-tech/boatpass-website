@@ -3,7 +3,7 @@ title: "Course Conversion for the SBF Coastal: True, Magnetic & Compass Course E
 seoTitle: "Course Conversion for the SBF Coastal"
 description: "True, magnetic and compass course made simple: the formula, the East/West sign rule and three worked examples for the SBF Coastal navigation task."
 date: 2026-06-05
-updated: 2026-08-20
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 9
 lang: en
@@ -19,7 +19,7 @@ faq:
   - question: "What is the difference between true, magnetic and compass course?"
     answer: "True course is referenced to the geographic north pole, magnetic course to the magnetic north pole, and compass course is simply what your on-board compass reads. Deviation and variation are the corrections that connect them."
   - question: "What is the offset for wind and current?"
-    answer: "The offset corrects for the set caused by wind (leeway) or current so you reach your actual course over ground. It is calculated using the same East-plus, West-minus sign logic as variation and deviation."
+    answer: "The offset corrects for the set caused by wind (leeway) or current so you reach your actual course over ground. Like variation and deviation, it is applied with a sign: a set to starboard counts as plus, a set to port as minus."
   - question: "How many of the navigation task questions do I need to get right for the SBF Coastal?"
     answer: "The navigation task has 9 sub-questions, and you need at least 7 correct to pass. It is graded separately from the rest of the question catalogue, and course conversion is one of several task types it can include."
 howTo:
@@ -110,17 +110,17 @@ The course you actually make over the seabed is the **course over ground (COG)**
 
 > TC + offset (wind/current) → **COG** (or, in reverse, the course to steer in order to achieve a desired COG)
 
-The East-plus, West-minus logic applies here too for the direction of the set. One thing to keep clear: variation and deviation are **compass errors**, while wind and current are **external forces** – but both are handled with the same sign principle.
+Signs apply here too, but they depend on the side of the set: to starboard = plus, to port = minus. One thing to keep clear: variation and deviation are **compass errors**, while wind and current are **external forces** – but both are added with their sign.
 
 ## Worked example 3: course over ground with an offset
 
-You are steering a true course of **TC = 090°**. The current sets you off with an offset of **4° W**.
+You are steering a true course of **TC = 090°**. The current sets you off with an offset of **4° to port**.
 
 1. Apply the sign: offset = −4°
 2. COG = TC + offset
 3. COG = 090° + (−4°) = **086°**
 
-Your actual course over ground is therefore **086°**, even though you steered 090° – the current has set you 4° to the west. The same sign principle (East +, West −) applies here as with variation and deviation, except the offset acts between TC and COG, not between chart and compass.
+Your actual course over ground is therefore **086°**, even though you steered 090° – the current has set you 4° to port. Working with signs is the same as with variation and deviation, except that the sign depends on the side of the set (starboard +, port −) and the offset acts between TC and COG, not between chart and compass.
 
 ## The most common mistakes – and how to avoid them
 
@@ -138,3 +138,10 @@ To see how course conversion fits into the complete navigation task, read the ov
 ## Conclusion
 
 Course conversion for the SBF Coastal is no mystery: one formula (**TC = CC + Deviation + Variation**), one sign rule (**East +, West −**) and a bit of practice are enough. Master both and you will solve the course questions in the navigation task in seconds – and walk into exam day relaxed.
+
+## Sources
+
+- [ELWIS – SBF See navigation tasks](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Navigationsaufgaben/Navigationsaufgaben-node.html) – official task set, 9 of 15 questions per navigation task
+- [ELWIS – navigation task 1](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Navigationsaufgaben/Navigationsaufgabe-01/Navigationsaufgabe-01-node.html) – official worked example: TC 079°, deviation +4°, variation +1° gives CC 074°
+- [ELWIS – SKS navigation tasks (PDF)](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Navigationsaufgaben-SKS.pdf?__blob=publicationFile&v=2) – course conversion with wind and current offsets (BW, BS) including signs
+- [NOAA NCEI – Magnetic Declination](https://www.ncei.noaa.gov/products/magnetic-declination) – sign rule east positive, west negative

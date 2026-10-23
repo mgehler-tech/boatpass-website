@@ -3,6 +3,7 @@ title: "Verhalten nach einem Bootsunfall – Pflichten, Meldung und Beweissicher
 seoTitle: "Bootsunfall: Pflichten & Meldung im Ablauf"
 description: "Welche Pflichten nach einem Bootsunfall gelten: wann die Wasserschutzpolizei zu informieren ist, wie du Beweise sicherst und was bei Personenschaden zählt."
 date: 2026-08-01
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -12,7 +13,7 @@ faq:
   - question: "Muss ich nach einem Bootsunfall die Polizei rufen?"
     answer: "Bei Personenschäden, größeren Sachschäden, einer Umweltgefährdung oder wenn die Schuldfrage strittig ist, solltest du die Wasserschutzpolizei immer informieren, notfalls über den allgemeinen Notruf 110. Bei kleineren Bagatellschäden zwischen einigen Beteiligten reicht oft der Austausch von Kontakt- und Versicherungsdaten, im Zweifel ist eine Meldung aber die sicherere Wahl."
   - question: "Was genau muss ich nach einem Zusammenstoß mit einem anderen Boot tun?"
-    answer: "Anhalten, die Unfallfolgen feststellen und deine Identität preisgeben, das schreibt für Binnengewässer Paragraf 1.16 Absatz 3 der Binnenschifffahrtsstraßen-Ordnung ausdrücklich vor. Tausche mit den anderen Beteiligten Name, Adresse, amtliches Kennzeichen und, wenn vorhanden, die Bootsversicherung aus, notiere zusätzlich mögliche Zeugen. Ein Verstoß gegen diese Feststellungspflicht ist eine Ordnungswidrigkeit."
+    answer: "Anhalten, die Unfallfolgen feststellen und deine Identität preisgeben, das schreibt für Binnengewässer Paragraf 1.16 Nummer 3 der Binnenschifffahrtsstraßen-Ordnung ausdrücklich vor. Tausche mit den anderen Beteiligten Name, Adresse, amtliches Kennzeichen und, wenn vorhanden, die Bootsversicherung aus, notiere zusätzlich mögliche Zeugen. Ein Verstoß gegen diese Feststellungspflicht ist eine Ordnungswidrigkeit."
   - question: "Welche Beweise sollte ich nach einem Bootsunfall sichern?"
     answer: "Sinnvoll sind Fotos von Schäden und der Unfallstelle, die Position per GPS, Kontaktdaten aller Beteiligten und möglicher Zeugen sowie ein zeitnaher Eintrag im Bordbuch mit Datum, Uhrzeit, Wetter und Hergang. Je genauer die Dokumentation, desto einfacher die spätere Klärung mit Versicherung oder Behörden."
   - question: "Wie schnell muss ich meiner Bootsversicherung einen Unfall melden?"
@@ -45,7 +46,7 @@ Wie du im Ernstfall konkret vorgehst, Erste-Hilfe-Maßnahmen, Rettungskette und 
 
 ## Feststellungspflicht statt Unfallflucht
 
-Ein weit verbreiteter Irrtum: Anders als im Straßenverkehr gilt **Paragraf 142 StGB**, die klassische Unfallflucht, nach der Rechtsprechung **nicht unmittelbar** für Unfälle auf dem Wasser. Das bedeutet aber nicht, dass Weiterfahren nach einer Kollision folgenlos bleibt. Die Schifffahrtsordnungen kennen eine eigene **Feststellungspflicht**: Nach Paragraf 1.16 Absatz 3 der Binnenschifffahrtsstraßen-Ordnung (BinSchStrO) ist jeder an einem Schifffahrtsunfall Beteiligte verpflichtet, die Folgen des Unfalls festzustellen und seine Identität preiszugeben. Auf See schreibt die Seeschifffahrtsstraßenordnung vor allem vor, die Fahrrinne freizuhalten und die zuständige Behörde über Gefahren für die Schifffahrt zu informieren, etwa ein havariertes Boot oder treibende Wrackteile. Unabhängig von den genauen Formulierungen der jeweiligen Schifffahrtsordnung gilt aber überall derselbe Grundsatz: Anhalten, Hilfe leisten und Kontaktdaten austauschen, statt sich der Verantwortung zu entziehen.
+Ein weit verbreiteter Irrtum: Anders als im Straßenverkehr gilt **Paragraf 142 StGB**, die klassische Unfallflucht, nach der Rechtsprechung **nicht unmittelbar** für Unfälle auf dem Wasser. Das bedeutet aber nicht, dass Weiterfahren nach einer Kollision folgenlos bleibt. Die Schifffahrtsordnungen kennen eine eigene **Feststellungspflicht**: Nach Paragraf 1.16 Nummer 3 der Binnenschifffahrtsstraßen-Ordnung (BinSchStrO) ist jeder an einem Schifffahrtsunfall Beteiligte verpflichtet, die Folgen des Unfalls festzustellen und seine Identität preiszugeben. Auf See schreibt die Seeschifffahrtsstraßenordnung vor allem vor, die Fahrrinne freizuhalten und die zuständige Behörde über Gefahren für die Schifffahrt zu informieren, etwa ein havariertes Boot oder treibende Wrackteile. Unabhängig von den genauen Formulierungen der jeweiligen Schifffahrtsordnung gilt aber überall derselbe Grundsatz: Anhalten, Hilfe leisten und Kontaktdaten austauschen, statt sich der Verantwortung zu entziehen.
 
 Konkret heißt das: Halte an, tausche mit den anderen Beteiligten Namen, Adresse und, wenn vorhanden, die Daten der Bootsversicherung aus. Notiere außerdem das amtliche Kennzeichen der beteiligten Boote. Ein Verstoß gegen diese Feststellungspflicht ist eine Ordnungswidrigkeit, wir haben die möglichen Bußgelder und weitere teure Fehler auf dem Wasser in unserem Artikel zu [Bußgeldern und Verstößen](/blog/bussgelder-verstoesse-wasser/) zusammengefasst. Kommt es zu Verletzten und verlässt jemand trotzdem die Unfallstelle, kommen zusätzlich Straftatbestände wie unterlassene Hilfeleistung oder fahrlässige Körperverletzung in Betracht.
 
@@ -102,3 +103,10 @@ Das Verhalten nach einem Unfall gehört zu den rechtlichen Grundpflichten, die i
 ## Fazit
 
 Nach einem Bootsunfall zählt zuerst die Sicherheit aller Beteiligten, dann die Feststellung der Unfallfolgen mit Austausch der Identität, und je nach Schwere die Meldung an die Wasserschutzpolizei. Eine sorgfältige, zeitnahe Dokumentation mit Fotos, Position und Kontaktdaten erleichtert die spätere Klärung erheblich, ebenso die unverzügliche Meldung an die eigene Versicherung und, bei einem Charterboot, an den Vercharterer. Wer diese Reihenfolge kennt, statt sie im Schreckmoment erst zu erfinden, kommt deutlich entspannter durch eine ohnehin unangenehme Situation.
+
+## Quellen
+
+- [Binnenschifffahrtsstraßen-Ordnung (BinSchStrO), § 1.16](https://www.gesetze-im-internet.de/binschstro_2012/__1_16.html) und [BinSchStrEV, § 5](https://www.gesetze-im-internet.de/binschstrev_2012/__5.html) – Rettung, Hilfeleistung und Feststellungspflicht nach einem Schiffsunfall; Verstoß als Ordnungswidrigkeit
+- [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), § 37](https://www.gesetze-im-internet.de/seeschstro_1971/__37.html) – Verhalten bei Schiffsunfällen und Unterrichtung des Wasserstraßen- und Schifffahrtsamts
+- [Strafgesetzbuch, § 142](https://www.gesetze-im-internet.de/stgb/__142.html) und [§ 323c](https://www.gesetze-im-internet.de/stgb/__323c.html) – Unfallflucht (nur Straßenverkehr) und unterlassene Hilfeleistung
+- [Versicherungsvertragsgesetz (VVG), § 30](https://www.gesetze-im-internet.de/vvg_2008/__30.html) – unverzügliche Anzeige des Versicherungsfalls

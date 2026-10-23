@@ -3,6 +3,7 @@ title: "Kollisionsverhütungsregeln (KVR): Die wichtigsten Regeln im Überblick"
 seoTitle: "KVR: Kollisionsverhütungsregeln erklärt"
 description: "Kollisionsverhütungsregeln (KVR) einfach erklärt: Aufbau, Geltungsbereich und die wichtigsten Regeln von Ausguck bis Ausweichpflicht für den SBF See."
 date: 2026-09-25
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 7
 lang: de
@@ -110,3 +111,10 @@ Die KVR wirken auf den ersten Blick trocken, lassen sich aber gut strukturieren:
 Die Kollisionsverhütungsregeln sind das internationale Grundgesetz des Seeverkehrs. Sie gelten auf der Hohen See und den seeschiffbaren Gewässern, auf den deutschen Seeschifffahrtsstraßen ergänzt durch die SeeSchStrO. Ihr Aufbau ist logisch: **Teil A** klärt Grundsätze und Verantwortung, **Teil B** das Ausweichen bei jeder Sicht, bei gegenseitiger Sicht und bei verminderter Sicht, **Teil C** die Lichter und Signalkörper und **Teil D** die Schall- und Lichtsignale. Wer diese Struktur kennt, ordnet jede Prüfungsfrage schnell richtig ein.
 
 Die **Boatpass-App** trainiert dich mit den offiziellen Prüfungsfragen des SBF See, inklusive aller KVR-Themen von den Ausweichregeln bis zu Lichtern und Schallsignalen, im realistischen Prüfungsmodus und mit gezieltem Fehlertraining.
+
+## Quellen
+
+- [Kollisionsverhütungsregeln (KVR) – Volltext](https://www.gesetze-im-internet.de/seestro_1972/) – amtliche deutsche Fassung mit allen 41 Regeln und vier Anlagen
+- [KVR Regel 1](https://www.gesetze-im-internet.de/seestro_1972/regel_1.html) – Anwendungsbereich auf Hoher See und seeschiffbaren Gewässern
+- [Verordnung zu den Internationalen Regeln (SeeStrOV), § 2](https://www.gesetze-im-internet.de/seestrov/__2.html) – Geltung in Deutschland und Vorrang der SeeSchStrO als Sondervorschrift
+- [IMO – COLREGs](https://www.imo.org/en/About/Conventions/Pages/COLREG.aspx) – Übereinkommen von 1972, Aufbau in sechs Teilen

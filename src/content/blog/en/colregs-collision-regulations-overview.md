@@ -3,6 +3,7 @@ title: "COLREGs (KVR): The Key Collision Regulations at a Glance"
 seoTitle: "COLREGs (KVR) Explained for the SBF Exam"
 description: "The collision regulations (COLREGs, German KVR) explained simply: structure, where they apply, and the key rules from lookout to give-way duties."
 date: 2026-09-25
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 7
 lang: en
@@ -110,3 +111,10 @@ At first glance the COLREGs seem dry, but they are easy to structure:
 The collision regulations are the international constitution of traffic at sea. They apply on the high seas and connected navigable waters, supplemented on German maritime waterways by the SeeSchStrO. Their structure is logical: **Part A** covers principles and responsibility, **Part B** giving way in any visibility, in sight of one another, and in restricted visibility, **Part C** lights and shapes, and **Part D** sound and light signals. Once you know this structure, you can quickly place every exam question correctly.
 
 The **Boatpass app** trains you with the official SBF Coastal exam questions, including all COLREGs topics from the give-way rules to lights and sound signals, in a realistic exam mode and with targeted mistake training.
+
+## Sources
+
+- [German COLREGs (KVR) – full text](https://www.gesetze-im-internet.de/seestro_1972/) – official German version with all 41 rules and four annexes
+- [KVR Rule 1](https://www.gesetze-im-internet.de/seestro_1972/regel_1.html) – application on the high seas and connected waters navigable by seagoing vessels
+- [German COLREGs Ordinance (SeeStrOV), § 2](https://www.gesetze-im-internet.de/seestrov/__2.html) – scope in Germany and precedence of the SeeSchStrO as special rules
+- [IMO – COLREGs](https://www.imo.org/en/About/Conventions/Pages/COLREG.aspx) – 1972 convention and its structure in six parts

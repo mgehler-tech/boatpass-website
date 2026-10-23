@@ -3,6 +3,7 @@ title: "Trailering and Launching a Boat – What Sport Boat Skippers Need to Kno
 seoTitle: "Trailering and Launching a Boat: Step by Step"
 description: "Trailer, tow vehicle, launch sequence: the essentials for transporting your boat safely on the road and getting it into the water without stress."
 date: 2026-07-16
+updated: 2026-10-23
 tags: ["Preparation"]
 readingTime: 8
 lang: en
@@ -111,3 +112,10 @@ For the theoretical exam itself, it's still worth training with the questions fr
 ## Conclusion
 
 Trailering and launching are skills that come together quickly with a bit of practice. Carefully match your tow vehicle and trailer, secure the boat properly, prepare well before you reach the ramp, and stay calm and considerate toward other boaters, and you'll spare yourself stress and breakdowns. That way, the trip to the water becomes a relaxed part of your boating outing instead of a stressful hurdle before it even starts.
+
+## Sources
+
+- [German Driving Licence Regulation (FeV), section 6](https://www.gesetze-im-internet.de/fev_2010/__6.html) – licence categories B and BE and their weight limits for car-and-trailer combinations
+- [German Vehicle Registration Regulation (FZV), section 4](https://www.gesetze-im-internet.de/fzv_2023/__4.html) – plate requirement even for registration-exempt sports equipment trailers
+- [German Road Traffic Regulations (StVO), section 3](https://www.gesetze-im-internet.de/stvo_2013/__3.html) – speed limit for cars towing a trailer outside built-up areas
+- [German Road Traffic Regulations (StVO), section 22](https://www.gesetze-im-internet.de/stvo_2013/__22.html) – duty to secure loads

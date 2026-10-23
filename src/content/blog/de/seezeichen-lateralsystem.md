@@ -3,6 +3,7 @@ title: "Seezeichen & Lateralsystem erklärt – Tonnen, Kardinalzeichen & Co."
 seoTitle: "Seezeichen & Lateralsystem erklärt"
 description: "Rote und grüne Tonnen, Kardinalzeichen, Kennungen: Das Seezeichen-System für den SBF See erklärt – Lateral-, Kardinal- und Sonderzeichen verständlich."
 date: 2026-05-31
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -109,3 +110,9 @@ Die Lichtfarbe entspricht oft der Zeichenfarbe: rote Backbordtonnen führen rote
 ## Fazit
 
 Das Seezeichensystem wirkt anfangs unübersichtlich, folgt aber klaren Regeln: Im Lateralsystem ist beim Einlaufen rot backbord und grün steuerbord, das Kardinalsystem zeigt über die Kegel-Toppzeichen die sichere Passierseite an, und Sonderzeichen sind gelb. Wer die Logik versteht, muss kaum etwas auswendig lernen. In der Boatpass-App kannst du die Fragen zu Seezeichen und Navigation gezielt mit dem offiziellen ELWIS-Katalog trainieren – inklusive der typischen Prüfungsbilder.
+
+## Quellen
+
+- [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), Anlage I – Schifffahrtszeichen](https://www.gesetze-im-internet.de/seeschstro_1971/anlage_i.html) – amtliche Beschreibung der lateralen und kardinalen Zeichen, Einzelgefahren-, Mitten- und Sonderzeichen sowie der Feuerkennungen
+- [IALA-Empfehlung R1001 – The IALA Maritime Buoyage System](https://www.iala.int/product/r1001/) – internationales Betonnungssystem mit den Regionen A und B
+- [ELWIS – Fragenkatalog SBF See, Spezifische Fragen](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – amtliche Prüfungsfragen zu Fahrwasserseiten, Tonnen und Kennungen

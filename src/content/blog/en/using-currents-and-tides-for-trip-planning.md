@@ -3,6 +3,7 @@ title: "Using Currents and Tides Practically – Trip Planning Basics"
 seoTitle: "Currents & Tides in Boat Trip Planning"
 description: "How to factor currents and tides into your trip planning: timing your departure well, using local knowledge, and avoiding common beginner mistakes."
 date: 2026-07-24
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 9
 lang: en
@@ -33,7 +34,7 @@ howTo:
       text: "Check the latest forecast shortly before you set off, since wind and air pressure can shift the actual water level and current conditions away from the tabulated values."
 ---
 
-On tidal waters such as the North Sea and the Baltic, and on some rivers with tidal influence, choosing the right departure time can be the difference between a relaxed trip and a stressful one. Recreational skippers who factor current and tide into their planning not only save fuel and time, they also cut the risk of running aground or ending up in dangerous conditions at the wrong spot. This article walks through the basics of trip planning with current and tide in mind, for anyone holding a German boating license (Sportbootführerschein, SBF) or planning to sail tidal waters.
+On tidal waters such as the North Sea, and on some rivers with tidal influence, choosing the right departure time can be the difference between a relaxed trip and a stressful one. Recreational skippers who factor current and tide into their planning not only save fuel and time, they also cut the risk of running aground or ending up in dangerous conditions at the wrong spot. This article walks through the basics of trip planning with current and tide in mind, for anyone holding a German boating license (Sportbootführerschein, SBF) or planning to sail tidal waters.
 
 ## Why current and tide shape your planning
 
@@ -104,3 +105,10 @@ The theory part of the [SBF See](/en/sbf-coastal/) (the coastal license) covers 
 ## Conclusion
 
 On many waters, current and tide are not a minor detail, they are a central factor in safe, comfortable trip planning. With a tide table and current atlas as your foundation, a deliberate choice of departure time, and enough buffer for the unexpected, a trip becomes noticeably more relaxed than if you stick rigidly to a fixed clock time. Once you have internalized these basics, they will serve you well both on your own trips and on the related questions in the SBF coastal exam.
+
+## Sources
+
+- [BSH – The tides](https://www.bsh.de/DE/THEMEN/Wasserstand_und_Gezeiten/Gezeiten/gezeiten_node.html) – tide tables and tidal calendar, tidal streams and weather-related deviations from the predicted water level (German Federal Maritime and Hydrographic Agency)
+- [DWD – Tides on the North Sea and Baltic](https://www.dwd.de/DE/wetter/thema_des_tages/2026/3/15.html) – wind set-up and wind effects on the water level, only weak tides on the Baltic (German Weather Service)
+- [ELWIS – SBF See question catalog, specific questions](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – wind against tidal stream (question 233) and basic tidal terms (questions 249 to 255)
+- [German Recreational Boat Licence Regulation (SpFV), Annex 3](https://www.gesetze-im-internet.de/spfv/anlage_3.html) – tides as well as current and wind drift in the SBF Coastal syllabus (no. 2.3.1)

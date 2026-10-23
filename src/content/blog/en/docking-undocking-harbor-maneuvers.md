@@ -3,6 +3,7 @@ title: "Docking and Undocking – Harbor Maneuvers for Beginners"
 seoTitle: "Docking and Undocking for Beginners"
 description: "Master docking and undocking with confidence: judge wind, current and rudder effect correctly, use lines and fenders wisely for the SBF practical exam."
 date: 2026-07-05
+updated: 2026-10-23
 tags: ["Practice"]
 readingTime: 7
 lang: en
@@ -106,3 +107,8 @@ You can train the theory questions on maneuvers, right-of-way rules and behavior
 ## Conclusion
 
 Docking and undocking seem intimidating at first, but they follow clear principles: assess wind and current beforehand, release or secure lines in the right order, approach with too little rather than too much speed, and when in doubt, start a second, calm attempt. If you use forward and aft spring lines deliberately and place fenders in good time, you have the key tools for confident harbor maneuvers in hand, in the exam just as much as in everyday boating.
+
+## Sources
+
+- [Recreational Boat Licence Regulation (SpFV), Annex 4](https://www.gesetze-im-internet.de/spfv/anlage_4.html) – practical exam protocol: docking and undocking are mandatory maneuvers
+- [ELWIS – basic questions of the official question catalogue](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Basisfragen/Basisfragen-node.html) – questions on approach angle when docking, prop walk and when rudder effect sets in

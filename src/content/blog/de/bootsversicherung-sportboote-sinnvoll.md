@@ -3,6 +3,7 @@ title: "Bootsversicherung für Sportboote – was ist wirklich sinnvoll?"
 seoTitle: "Bootsversicherung: Was ist sinnvoll?"
 description: "Bootshaftpflicht, Kasko, Insassenunfall: Welche Versicherungen für dein Sportboot sinnvoll sind und was Häfen und Vercharterer tatsächlich verlangen."
 date: 2026-07-21
+updated: 2026-10-23
 tags: ["Vorbereitung"]
 readingTime: 9
 lang: de
@@ -105,7 +106,7 @@ Weil diese Faktoren stark variieren, lohnt sich immer ein individuelles Angebot 
 
 ## Sonderfall Trailer und Straßenfahrt
 
-Wer sein Boot mit einem [Trailer transportiert](/blog/boot-trailern-slippen/), sollte bedenken, dass für die Fahrt auf öffentlichen Straßen eigene Regeln gelten. Ein Bootstrailer ist ein Anhänger im Straßenverkehr und benötigt eine eigene Zulassung sowie eine entsprechende Absicherung über die Kfz-Haftpflicht des Zugfahrzeugs oder eine separate Anhängerversicherung. Diese Absicherung ist von der Bootsversicherung getrennt zu betrachten, da sie den Straßenverkehr und nicht das Boot auf dem Wasser betrifft.
+Wer sein Boot mit einem [Trailer transportiert](/blog/boot-trailern-slippen/), sollte bedenken, dass für die Fahrt auf öffentlichen Straßen eigene Regeln gelten. Ein Bootstrailer ist ein Anhänger im Straßenverkehr und benötigt in der Regel eine eigene Zulassung (zulassungsfrei sind nur Spezialanhänger, die ausschließlich Sportgeräte befördern) sowie eine entsprechende Absicherung über die Kfz-Haftpflicht des Zugfahrzeugs oder eine separate Anhängerversicherung. Diese Absicherung ist von der Bootsversicherung getrennt zu betrachten, da sie den Straßenverkehr und nicht das Boot auf dem Wasser betrifft.
 
 ## Worauf du beim Vergleich der Angebote achten solltest
 
@@ -120,3 +121,9 @@ Bevor du dich für eine Police entscheidest, hilft ein strukturierter Vergleich:
 ## Fazit
 
 Eine gesetzliche Pflicht zur Bootsversicherung gibt es in Deutschland nicht, trotzdem ist die Bootshaftpflichtversicherung für die meisten Eigner der sinnvollste erste Baustein, schon weil Häfen, Vereine und teils auch ausländische Behörden sie voraussetzen. Ob zusätzlich eine Kaskoversicherung, Insassenunfallschutz oder Rechtsschutz dazukommt, hängt vom Bootswert, der Nutzung und deiner persönlichen Risikobereitschaft ab. Wer chartert, muss sich um die meisten dieser Fragen nicht selbst kümmern, sollte aber die Vertragsbedingungen des Vercharterers kennen. Genauso wichtig wie die richtige Versicherung ist am Ende fundiertes Wissen für die Praxis: In der Boatpass-App bereitest du dich mit dem offiziellen ELWIS-Fragenkatalog gezielt auf deine SBF-Prüfung vor und bist damit auch abseits der Versicherungsfrage sicher unterwegs.
+
+## Quellen
+
+- [Pflichtversicherungsgesetz (PflVG), § 1a](https://www.gesetze-im-internet.de/pflvg/__1a.html) – die gesetzliche Pflichtversicherung gilt für Landfahrzeuge und Anhänger, nicht für Boote
+- [Fahrzeug-Zulassungsverordnung (FZV), § 3](https://www.gesetze-im-internet.de/fzv_2023/__3.html) – Zulassungspflicht für Anhänger und Ausnahme für Sportgeräteanhänger
+- [GDV-Stellungnahme zum Entwurf der Sportschifffahrtsverordnung (Juni 2025)](https://www.gdv.de/resource/blob/194136/1ca096bac3d4cbe9aeff88f9871ba196/stn-sportschifffahrtverordnung-data.pdf) – Haftpflichtschutz für Wasserfahrzeuge wird bisher freiwillig abgeschlossen; Vermieterpolicen schließen den Bootsführer meist ein

@@ -3,6 +3,7 @@ title: "Wassersport-Reviere in Deutschland – wo darfst du mit dem SBF fahren?"
 seoTitle: "Wassersport-Reviere in Deutschland"
 description: "Bodensee, Mecklenburgische Seenplatte, Ostsee oder Rhein: die beliebtesten Wassersport-Reviere Deutschlands und welchen SBF du dort brauchst."
 date: 2026-07-22
+updated: 2026-10-23
 tags: ["Vorbereitung"]
 readingTime: 9
 lang: de
@@ -95,3 +96,10 @@ Die Saison für Wassersport ist in Deutschland grundsätzlich auf die wärmeren 
 ## Fazit
 
 Deutschland bietet vom ruhigen Seenrevier bis zur tidenbeeinflussten Küste ein breites Spektrum an Wassersportmöglichkeiten, für die je nach Lage der SBF Binnen, der SBF See oder, am Bodensee, das BSP erforderlich ist. Wer sich vorab mit den Besonderheiten des gewünschten Reviers vertraut macht, plant nicht nur rechtlich sicherer, sondern findet auch leichter das passende Revier für den eigenen Erfahrungsstand. Für die Prüfungsvorbereitung, egal ob SBF Binnen oder SBF See, hilft dir die Boatpass-App mit dem offiziellen ELWIS-Fragenkatalog und einem realistischen Prüfungsmodus, damit du für dein Wunschrevier bestens gerüstet bist.
+
+## Quellen
+
+- [Sportbootführerscheinverordnung (SpFV), § 3](https://www.gesetze-im-internet.de/spfv/__3.html) und [§ 4](https://www.gesetze-im-internet.de/spfv/__4.html) – Fahrerlaubnis für Binnen- bzw. Seeschifffahrtsstraßen
+- [SpFV, § 5](https://www.gesetze-im-internet.de/spfv/__5.html) – führerscheinfreie Grenze von 11,03 kW (15 PS) auf allen Binnen- und Seeschifffahrtsstraßen
+- [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), § 1](https://www.gesetze-im-internet.de/seeschstro_1971/__1.html) – Abgrenzung der Seeschifffahrtsstraßen, einschließlich Nord-Ostsee-Kanal
+- [Landratsamt Bodenseekreis: Informationen zum Schifffahrtsrecht am Bodensee](https://bodenseekreis.de/fileadmin/02_verkehr_wirtschaft/schifffahrt/downloads/bootszulassung/info-schifffahrtsrecht-bodensee.pdf) – Schifferpatent nach der Bodensee-Schifffahrts-Ordnung (PDF)

@@ -3,6 +3,7 @@ title: "Kompass, Missweisung und Deviation einfach erklärt"
 seoTitle: "Kompass: Missweisung & Deviation erklärt"
 description: "Warum zeigt der Bordkompass nicht nach Norden? Missweisung und Deviation verständlich erklärt: Ursachen, Kompassrose und Deviationstabelle für den SBF See."
 date: 2026-07-04
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 8
 lang: de
@@ -111,3 +112,9 @@ Im theoretischen Teil der SBF-See-Prüfung wird häufig abgefragt, ob du den Unt
 ## Fazit
 
 Missweisung und Deviation sind zwei unterschiedliche, aber verwandte Störgrößen des Magnetkompasses: Die Missweisung entsteht durch den Abstand zwischen geografischem und magnetischem Nordpol und ist ortsabhängig, die Deviation entsteht durch das eigene Boot und ist boots- sowie kursabhängig. Wer beide Ursachen kennt und weiß, wo die jeweiligen Werte stehen, nämlich Missweisung in der Kompassrose der Seekarte und Deviation in der bootsseitigen Deviationstabelle, hat die wichtigste Grundlage für die Kursumrechnung beim SBF See gelegt.
+
+## Quellen
+
+- [NOAA NCEI – Magnetic Declination](https://www.ncei.noaa.gov/products/magnetic-declination) – Definition der Missweisung, Ost positiv und West negativ, Änderung mit Ort und Zeit
+- [BSH – Sportbootausrüstung, Magnetkompass](https://www.bsh.de/DE/THEMEN/Schifffahrt/Sportschifffahrt/Sportbootausruestung/sportbootausruestung_node.html) – Anforderungen an den Kompass und empfohlene eisenfreie Zone von einem Meter
+- [ELWIS – Fragenkatalog SBF See, Spezifische Fragen](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – amtliche Prüfungsfragen zur Deviationstabelle und zur Aufstellung des Magnetkompasses (Fragen 242 und 248)

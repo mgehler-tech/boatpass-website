@@ -3,6 +3,7 @@ title: "First Aid on Board: The Most Important Measures on the Water"
 seoTitle: "First Aid on Board: The Essentials"
 description: "First aid on a boat: how to call for help, the recovery position, resuscitation, and immediate measures for hypothermia, seasickness, and injuries."
 date: 2026-07-08
+updated: 2026-10-23
 tags: ["Safety"]
 readingTime: 9
 lang: en
@@ -101,7 +102,7 @@ Most minor injuries on board happen with lines, winches, hatches, or the engine:
 
 - **Bleeding wounds:** apply firm pressure with a clean cloth or dressing, and elevate the injured area if possible.
 - **Bruises and impact injuries:** cool and immobilize the area; with severe pain or visible deformity, consider a possible fracture and avoid putting weight on it.
-- **Burns**, for example from a hot engine: cool immediately with lukewarm water, don't use home remedies like butter or flour, and cover the wound loosely with a sterile dressing.
+- **Burns**, for example from a hot engine: cool immediately with cool (not ice-cold) water for at least 20 minutes, don't use home remedies like butter or flour, and cover the wound loosely with a sterile dressing.
 
 ### Choking
 
@@ -129,3 +130,10 @@ When a rescue boat, helicopter, or paramedics arrive on scene, a short, clear ha
 ## Conclusion
 
 First aid on board follows the same basic principles as on land, but comes with a few extra challenges: less space, motion, cold, and wet conditions, and help that takes longer to arrive than you're used to. If you're confident in protecting yourself, calling for help, the recovery position, and the basics of resuscitation, and can recognize common on-board emergencies like hypothermia, seasickness, or burns, you'll be able to bridge those critical first minutes until professional help takes over.
+
+## Sources
+
+- [German Red Cross (DRK) – CPR (German)](https://www.drk.de/hilfe-in-deutschland/erste-hilfe/herz-lungen-wiederbelebung/) – compression depth 5 to 6 cm, rate 100 to 120 per minute, ratio 30:2
+- [German Red Cross (DRK) – choking (German)](https://www.drk.de/hilfe-in-deutschland/erste-hilfe/ersticken/) – up to five back blows and five abdominal thrusts, alternating
+- [German Red Cross (DRK) – burns (German)](https://www.drk.de/hilfe-in-deutschland/erste-hilfe/verbrennungen/) and [hypothermia (German)](https://www.drk.de/hilfe-in-deutschland/erste-hilfe/erfrierungen-und-unterkuehlungen/) – cooling burns, slow rewarming, warm sugary drinks, no alcohol
+- [DGzRS – Maritime Rescue Co-ordination Centre Bremen (German)](https://www.dgzrs.de/crews-stationen/die-zentrale-der-seenotretter) – how to reach sea rescue in an emergency, including VHF channel 16

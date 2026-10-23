@@ -3,6 +3,7 @@ title: "BoatPass jetzt für iPhone und iPad: SBF-App im App Store"
 seoTitle: "BoatPass jetzt für iPhone und iPad"
 description: "BoatPass jetzt im App Store: SBF Binnen, SBF See, UBI, SRC und LRC auf iPhone und iPad. Funktionen, Preis und Kauf-Infos im Überblick – jetzt ansehen."
 date: 2026-10-15
+updated: 2026-10-23
 tags: ["Vorbereitung"]
 readingTime: 5
 lang: de
@@ -96,3 +97,9 @@ BoatPass läuft auch auf dem **iPad**. Gerade für die Navigationsaufgaben des S
 Mit der iOS-Version kannst du BoatPass jetzt auf iPhone, iPad und Android nutzen. Inhalt und Funktionen sind auf beiden Plattformen gleich: der amtliche Fragenkatalog mit Erklärungen, Prüfungssimulation mit amtlichen Bögen, Lernplan und Navigationsaufgaben. Einziger Unterschied: Ein Kauf gilt nur im Store, in dem du ihn getätigt hast.
 
 Du willst direkt loslegen? Lade **BoatPass** über [boatpass.de/app](/app/) und starte kostenlos mit 15 Fragen am Tag. Wenn du merkst, dass dir die App liegt, schaltest du den Schein frei, den du brauchst, einmal bezahlt und ohne Abo.
+
+## Quellen
+
+- [ELWIS – Fragenkatalog Binnen](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-node.html) und [Fragenkatalog See](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html) – 300 Fragen Binnen, 285 Fragen und 15 Navigationsaufgaben See
+- [ABVT der WSV – UKW-Sprechfunkzeugnis UBI](https://www.abvt.wsv.de/Webs/WSA/ABVT/DE/UKW-Sprechfunkzeugnisse/UBI_node.html) – Gesamtfragenkatalog UBI 2026 mit 130 Fragen
+- [ELWIS – Sprechfunkzeugnisse](https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html) – Fragenkataloge SRC (180 Fragen) und LRC (76 zusätzliche Fragen)

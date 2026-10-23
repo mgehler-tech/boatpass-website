@@ -3,6 +3,7 @@ title: "Thunderstorms and Lightning on the Water: How to Prepare and Stay Safe"
 seoTitle: "Thunderstorms & Lightning on the Water"
 description: "Spot approaching thunderstorms early and avoid lightning strikes on your boat. How recreational skippers can prepare and behave safely on the water."
 date: 2026-08-14
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -12,7 +13,7 @@ faq:
   - question: "Why are thunderstorms particularly dangerous on the water?"
     answer: "On open water you're usually the tallest object for a long distance in any direction, and a mast or fishing rod makes you even more exposed. Storms over water can also build without any sheltering terrain nearby, and you don't have the option of quickly taking cover in a building."
   - question: "What is the 30-30 rule for thunderstorms?"
-    answer: "Count the seconds between the flash and the thunder and divide by three, which gives you the storm's approximate distance in kilometers. As a rule of thumb, if fewer than 30 seconds pass between flash and thunder, you should get off the water or otherwise get to safety without delay."
+    answer: "Count the seconds between the flash and the thunder and divide by three, which gives you the storm's approximate distance in kilometers. As a rule of thumb, if fewer than 30 seconds pass between flash and thunder, you should get off the water or otherwise get to safety without delay. The second 30 refers to waiting: the danger is only considered over 30 minutes after the last thunder."
   - question: "What should I do if a thunderstorm catches me on the water?"
     answer: "Head for the nearest safe harbor or a sheltered bay, put on life jackets, secure loose gear, and avoid contact with metal fittings such as the rail, shrouds, or mast while the storm passes. Stay as low in the boat as you can and don't go into the water."
   - question: "Can lightning damage my boat even if no one on board is hurt?"
@@ -59,7 +60,7 @@ Alongside your own observations, keep an eye on official weather warnings before
 
 A simple rule of thumb helps you roughly gauge how far away a thunderstorm is: count the seconds between the flash of lightning and the thunder that follows, then divide by three. That gives you the approximate distance in kilometers, since sound takes roughly three seconds to travel one kilometer, while the light from the flash arrives essentially instantly.
 
-As a guideline: if **fewer than 30 seconds** pass between the flash and the thunder, the storm is close enough that you should act promptly, either getting off open water or at least making all the preparations you'd need if it arrives. This rule doesn't replace an official weather warning, but it's a useful way to judge the situation yourself while underway.
+As a guideline: if **fewer than 30 seconds** pass between the flash and the thunder, the storm is close enough that you should act promptly, either getting off open water or at least making all the preparations you'd need if it arrives. The second 30 covers the end of the storm: only once no thunder has been heard for 30 minutes is the danger considered over. This rule doesn't replace an official weather warning, but it's a useful way to judge the situation yourself while underway.
 
 ## Preparing Before the Storm Hits
 
@@ -119,3 +120,10 @@ Thunderstorms aren't a standalone exam topic with fixed memorization points the 
 ## Conclusion
 
 Thunderstorms are one of the weather situations where caution and acting early make the real difference to safety on board. Knowing warning signs like towering clouds and falling pressure, using the 30-30 rule as a rough guide, and heading for a safe harbor in good time all cut the risk significantly. If a storm can't be avoided, keeping your distance from metal fittings, staying low in the boat, and keeping the crew calm will help you get through it safely.
+
+## Sources
+
+- [VDE – lightning protection for swimming, diving and water sports (German)](https://www.vde.com/de/blitzschutz/infos/beimwassersport) – risks on and in the water, behavior on board, lightning protection for sailboats
+- [VDE – recommendations for behavior during thunderstorms (German)](https://www.vde.com/de/blitzschutz/ueber-uns/interessantes-aus-dem-abb/empfehlungen-bestaetigt) – danger is only over once no thunder has been heard for 30 minutes
+- [Deutscher Wetterdienst – thunder (German)](https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?lv2=100578&lv3=100620) – about three seconds between flash and thunder correspond to roughly one kilometer
+- [Deutscher Wetterdienst – thunderstorms (German)](https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?lv2=100932&lv3=101028) – formation, cumulonimbus clouds and side effects such as gusts and heavy rain

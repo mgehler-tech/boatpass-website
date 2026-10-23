@@ -3,7 +3,7 @@ title: "Gezeiten berechnen mit der Zwölftelregel – einfach erklärt"
 seoTitle: "Zwölftelregel: Gezeiten berechnen + Beispiel"
 description: "Zwölftelregel einfach erklärt: So schätzt du Tidenhub, Hoch- und Niedrigwasser und die Wassertiefe ab – mit Rechenbeispiel. Jetzt Gezeiten berechnen lernen."
 date: 2026-06-02
-updated: 2026-10-17
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 8
 lang: de
@@ -34,7 +34,7 @@ howTo:
       text: "Rechne Kartentiefe plus Gezeitenhöhe minus Tiefgang deines Bootes. Plane zusätzlich eine Sicherheitsreserve ein, weil Wind und Luftdruck den realen Wasserstand von der Vorhersage abweichen lassen können."
 ---
 
-Wer auf Nord- oder Ostsee unterwegs ist, kommt an den Gezeiten nicht vorbei. Besonders im Wattenmeer entscheidet der richtige Zeitpunkt darüber, ob unter dem Kiel noch genug Wasser steht. Mit der **Zwölftelregel** lässt sich der Wasserstand zwischen Hoch- und Niedrigwasser einfach abschätzen – ganz ohne aufwendige Tabellen. So funktioniert sie.
+Wer auf der Nordsee unterwegs ist, kommt an den Gezeiten nicht vorbei. Besonders im Wattenmeer entscheidet der richtige Zeitpunkt darüber, ob unter dem Kiel noch genug Wasser steht. Mit der **Zwölftelregel** lässt sich der Wasserstand zwischen Hoch- und Niedrigwasser einfach abschätzen – ganz ohne aufwendige Tabellen. So funktioniert sie.
 
 ## Die Grundbegriffe
 
@@ -111,8 +111,15 @@ An der Ostsee ist der Tidenhub meist so gering, dass Wind und Luftdruck den Wass
 
 ## Wie geht es weiter?
 
-Die Gezeitenkunde gehört nicht zum Sportbootführerschein, sondern zu weiterführenden Seeausbildungen wie dem [Sportküstenschifferschein (SKS)](/blog/sportkuestenschifferschein-sks/). Für Törns in Tidenrevieren lohnt sich das Thema trotzdem, auch mit dem [SBF See](/sbf-see/) in der Tasche. Wie du Strömung und Tide konkret für die Törnplanung nutzt, zeigt der Beitrag [Strömung und Tide praktisch nutzen](/blog/stroemung-tide-toernplanung-grundlagen/). Den Prüfungsstoff des SBF See, etwa die [Navigationsaufgaben](/blog/sbf-see-navigationsaufgaben-erklaert/), übst du in der Boatpass-App mit dem offiziellen ELWIS-Fragenkatalog. Welche Gezeiten-Fragen die Prüfung tatsächlich stellt und warum die Navigationsaufgabe ohne Gezeitenrechnung auskommt, steht auf der Seite [SBF See Navigationsaufgaben](/sbf-see-navigationsaufgaben/#gezeiten).
+Grundbegriffe wie Tide, Tidenhub, Hoch- und Niedrigwasser fragt bereits die Theorieprüfung zum [SBF See](/sbf-see/) ab, eine Gezeitenrechnung wie die Zwölftelregel wird dort aber nicht verlangt. Vertieft wird die Gezeitenkunde in weiterführenden Seeausbildungen wie dem [Sportküstenschifferschein (SKS)](/blog/sportkuestenschifferschein-sks/). Für Törns in Tidenrevieren lohnt sich das Thema deshalb auch mit dem SBF See in der Tasche. Wie du Strömung und Tide konkret für die Törnplanung nutzt, zeigt der Beitrag [Strömung und Tide praktisch nutzen](/blog/stroemung-tide-toernplanung-grundlagen/). Den Prüfungsstoff des SBF See, etwa die [Navigationsaufgaben](/blog/sbf-see-navigationsaufgaben-erklaert/), übst du in der Boatpass-App mit dem offiziellen ELWIS-Fragenkatalog. Welche Gezeiten-Fragen die Prüfung tatsächlich stellt und warum die Navigationsaufgabe ohne Gezeitenrechnung auskommt, steht auf der Seite [SBF See Navigationsaufgaben](/sbf-see-navigationsaufgaben/#gezeiten).
 
 ## Fazit
 
 Die Zwölftelregel macht die Gezeitenrechnung erstaunlich einfach: Tidenhub durch zwölf teilen, die Reihenfolge **1 – 2 – 3 – 3 – 2 – 1** anwenden und das Ergebnis zur Niedrigwasserhöhe addieren (oder beim Fallen abziehen). Zusammen mit der Formel für das Wasser unter dem Kiel hast du damit ein praxistaugliches Werkzeug für die Törnplanung an Bord.
+
+## Quellen
+
+- [BSH – Die Gezeiten](https://www.bsh.de/DE/THEMEN/Wasserstand_und_Gezeiten/Gezeiten/gezeiten_node.html) – Hoch- und Niedrigwasser, Tidenhub, Seekartennull, Gezeitentafeln und Gezeitenkalender sowie wetterbedingte Abweichungen
+- [ELWIS – Fragenkatalog SBF See, spezifische Fragen](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – Gezeitengrundbegriffe im SBF See (Fragen 249 bis 255)
+- [Sportbootführerscheinverordnung (SpFV), Anlage 3](https://www.gesetze-im-internet.de/spfv/anlage_3.html) – Gezeiten als Prüfungsstoff des SBF See (Nr. 2.3.1)
+- [DWD – Gezeiten an Nord- und Ostsee](https://www.dwd.de/DE/wetter/thema_des_tages/2026/3/15.html) – nur schwache Gezeiten an der Ostsee, dort prägt vor allem der Wind den Wasserstand

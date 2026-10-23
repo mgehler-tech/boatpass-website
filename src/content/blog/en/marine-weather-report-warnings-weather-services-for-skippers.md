@@ -3,6 +3,7 @@ title: "Marine Weather Reports and Warnings: Weather Services for Skippers"
 seoTitle: "Marine Weather Reports & Warnings for Skippers"
 description: "DWD marine weather reports, NAVTEX, VHF weather broadcasts, and apps: how to use official weather services for trip planning and read warnings correctly."
 date: 2026-07-29
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 9
 lang: en
@@ -120,3 +121,10 @@ In the theory part of the [SBF See](/en/sbf-coastal/) exam, weather is tested as
 ## Conclusion
 
 The DWD's marine weather report is the central official source for wind and gale warnings on the North Sea and Baltic Sea, supplemented by NAVTEX and VHF marine radio as radio-based channels that also work without mobile coverage. Weather apps are a useful addition for a quick overview, but they don't replace the official warning. If you know the different sources and use them regularly, from rough early planning to ongoing checks underway, you'll make better-informed decisions and be far better protected from nasty surprises on the water.
+
+## Sources
+
+- [Deutscher Wetterdienst – marine weather for the North Sea and Baltic (German)](https://www.dwd.de/DE/fachnutzer/schifffahrt/seewetter/nordostsee/_node.html) – marine weather reports several times a day, 5-day medium-range report once a day
+- [Deutscher Wetterdienst – NAVTEX (German)](https://www.dwd.de/DE/fachnutzer/schifffahrt/funkausstrahlung/navtex/_node.html) – broadcast times on 490 kHz (identifier L, German) and 518 kHz (English)
+- [Deutscher Wetterdienst – warning levels and color scale (German)](https://www.dwd.de/DE/wetter/warnungen_aktuell/kriterien/warnstufen.html) – four warning levels from yellow to purple
+- [ELWIS – SBF See question catalog, specific questions (German)](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – strong-wind warning for force 6 and 7, gale warning from force 8 (questions 267 and 268)

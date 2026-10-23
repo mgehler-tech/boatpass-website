@@ -3,6 +3,7 @@ title: "SBF App vs. Bootsschule – Lohnt sich ein Theoriekurs?"
 seoTitle: "SBF App vs. Bootsschule im Vergleich"
 description: "Kann man den Sportbootführerschein ohne Kurs bestehen? Kosten, Vor- und Nachteile von App-Lernen vs. Bootsschule im ehrlichen Vergleich – jetzt lesen."
 date: 2026-05-28
+updated: 2026-10-23
 tags: ["Vorbereitung"]
 readingTime: 7
 lang: de
@@ -122,3 +123,10 @@ Auch die **praktische Prüfung** ist identisch. Du musst Manöver auf dem Wasser
 ## Fazit
 
 Ein Theoriekurs ist keine Pflicht – und für die reine Prüfungsvorbereitung auch nicht nötig. Der offizielle Fragenkatalog ist öffentlich, und eine App mit Prüfungssimulation und Fehlertraining reicht aus, um die Theorie zu bestehen. Wer wenig Vorerfahrung hat, profitiert von einem Kurs – aber das ist eine persönliche Entscheidung, keine Voraussetzung. Wie du bei der Vorbereitung zusätzlich Geld sparst, zeigen unsere [5 besten Spartipps für den Bootsführerschein](/blog/bootsfuehrerschein-kosten-sparen/).
+
+## Quellen
+
+- [Sportbootführerscheinverordnung § 7](https://www.gesetze-im-internet.de/spfv/__7.html) – Antrag auf Zulassung zur Prüfung: geforderte Unterlagen, ein Kursnachweis gehört nicht dazu
+- [Sportbootführerscheinverordnung § 8](https://www.gesetze-im-internet.de/spfv/__8.html) – Prüfung aus theoretischem und praktischem Teil, Inhalte nach Anlage 3 und 4
+- [ELWIS – Fragenkatalog SBF See](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html) – öffentlich zugänglicher amtlicher Fragenkatalog
+- [Gebührentabelle des Prüfungsausschusses München](https://www.pa-muenchen.de/gebuehren/) – Prüfungsgebühren SBF See 148,38 €, SBF Binnen 130,78 € (Stand Oktober 2026)

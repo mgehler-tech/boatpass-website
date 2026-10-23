@@ -3,6 +3,7 @@ title: "Nachtfahrt mit dem Sportboot: sicher durch die Dunkelheit"
 seoTitle: "Nachtfahrt mit dem Sportboot: Regeln & Licht"
 description: "Nachtfahrt mit dem Sportboot: Vorbereitung, Nachtsicht, Orientierung und Pflichten bei Dunkelheit. So planst du eine sichere Fahrt nach Sonnenuntergang."
 date: 2026-09-11
+updated: 2026-10-23
 tags: ["Praxis"]
 readingTime: 9
 lang: de
@@ -90,3 +91,9 @@ Wenn du zum ersten Mal im Dunkeln unterwegs bist, taste dich langsam heran:
 Eine Nachtfahrt mit dem Sportboot ist ein besonderes Erlebnis, verlangt aber mehr Vorbereitung und Ruhe als eine Fahrt bei Tag. Entscheidend sind vier Dinge: eine **sorgfältige Vorbereitung bei Tageslicht**, der **Schutz der Nachtsicht**, eine **saubere Orientierung** an Feuern, Seezeichen und Instrumenten sowie die konsequente Beachtung deiner Pflichten aus der KVR, also Lichterführung, sichere Geschwindigkeit und Ausguck. Wer langsam anfängt und ein bekanntes Revier wählt, sammelt schnell Sicherheit für weitere Fahrten nach Sonnenuntergang.
 
 Die **Boatpass-App** hilft dir, das nötige Grundlagenwissen sicher aufzubauen, von der Lichterführung über die Seezeichen bis zu den Ausweichregeln, mit den offiziellen Prüfungsfragen und realistischem Prüfungsmodus, damit du auch nachts weißt, was die Lichter um dich herum bedeuten.
+
+## Quellen
+
+- [Kollisionsverhütungsregeln (KVR), Regel 20](https://www.gesetze-im-internet.de/seestro_1972/regel_20.html) – Lichter von Sonnenuntergang bis Sonnenaufgang und bei verminderter Sicht
+- [KVR Regel 5](https://www.gesetze-im-internet.de/seestro_1972/regel_5.html) – gehöriger Ausguck durch Sehen, Hören und alle verfügbaren Mittel
+- [KVR Regel 6](https://www.gesetze-im-internet.de/seestro_1972/regel_6.html) – sichere Geschwindigkeit, inklusive Hintergrundhelligkeit bei Nacht

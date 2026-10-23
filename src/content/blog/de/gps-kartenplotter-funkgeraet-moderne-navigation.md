@@ -3,6 +3,7 @@ title: "GPS, Kartenplotter und Funkgerät – moderne Navigation an Bord versteh
 seoTitle: "GPS, Kartenplotter & Funk: Navigation an Bord"
 description: "GPS, Kartenplotter, AIS und Funkgerät: So funktioniert moderne Bordelektronik – und warum die SBF-Prüfung trotzdem die Papierkarte verlangt."
 date: 2026-07-19
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 9
 lang: de
@@ -88,3 +89,10 @@ Wer diese Gewohnheiten früh verinnerlicht, profitiert vom Komfort der modernen 
 GPS, Kartenplotter, AIS und Funkgerät haben die Navigation auf dem Wasser spürbar komfortabler und in vielen Situationen sicherer gemacht. Sie ersetzen aber nicht das Grundwissen, das du für den SBF See lernst: Wer Kurs, Distanz und Position mit Karte und Kompass sicher bestimmen kann, nutzt moderne Elektronik als sinnvolle Ergänzung und ist gleichzeitig für den Fall gewappnet, dass die Technik einmal ausfällt. Für den Betrieb eines Funkgeräts kommt zusätzlich das passende Sprechfunkzeugnis ins Spiel, das unabhängig vom Sportbootführerschein erworben werden muss.
 
 Die **Boatpass-App** hilft dir, die navigatorischen Grundlagen für den SBF See sicher zu verinnerlichen, mit dem vollständigen amtlichen ELWIS-Fragenkatalog und realistischer Prüfungssimulation, damit du auch ohne Kartenplotter jederzeit weißt, wo du stehst.
+
+## Quellen
+
+- [Sportbootführerscheinverordnung (SpFV), Anlage 3](https://www.gesetze-im-internet.de/spfv/anlage_3.html) – Navigationsaufgabe des SBF See mit Eintragungen in der Seekarte und zugelassenen Hilfsmitteln (Nr. 1.1 und 1.3)
+- [BSH – Nachrichten für Seefahrer (NfS)](https://www.bsh.de/DE/THEMEN/Schifffahrt/Nautische_Informationen/Nachrichten_fuer_Seefahrer/Nachrichten_fuer_Seefahrer_node.html) – wöchentliche Berichtigungen für Seekarten und Seebücher
+- [Bundesnetzagentur – Seefunk und Binnenschifffahrtsfunk](https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/Frequenzen/SpezielleAnwendungen/Seefunk/start.html) – Zuteilung von Rufzeichen, MMSI und ATIS-Nummer vor Inbetriebnahme der Funkanlage
+- [Sportseeschifferscheinverordnung, § 1](https://www.gesetze-im-internet.de/sportseeschv/__1.html) – Funkbetriebszeugnis (SRC oder LRC) entsprechend der Funkausrüstung des Sportfahrzeugs (Abs. 7)

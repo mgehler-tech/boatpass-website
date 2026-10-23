@@ -3,6 +3,7 @@ title: "Die häufigsten Fehler bei der SBF-Prüfung – und wie du sie vermeides
 seoTitle: "Häufigste Fehler in der SBF-Prüfung"
 description: "Diese konkreten Fehler machen die meisten SBF-Kandidaten beim Bootsführerschein – in Theorie, Praxis und Vorbereitung. So vermeidest du sie."
 date: 2026-05-12
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -41,7 +42,7 @@ Das ist die **häufigste Fehlerquelle in der Theorieprüfung**. [Lichterführung
 - Weißes Hecklicht = Heck
 - Weißes Topplicht = Fahrt voraus (nur bei Motorbooten)
 
-Wenn du von vorne auf ein anderes Boot blickst und **grünes Licht siehst**, kommst du von der Steuerbordseite des anderen Bootes – du musst **ausweichen**. Siehst du **rotes Licht**, hat das andere Boot Vorfahrt – du bist kurshaltendes Fahrzeug.
+Wenn du auf kreuzendem Kurs auf ein anderes Boot blickst und **rotes Licht siehst**, kommt es von deiner Steuerbordseite – du musst **ausweichen**. Siehst du **grünes Licht**, muss das andere Boot ausweichen – du bist kurshaltendes Fahrzeug.
 
 **Schallzeichen – was du wissen musst:**
 - Ein kurzer Ton (·): "Ich weiche nach **Steuerbord** aus"
@@ -105,3 +106,10 @@ Das Mindestalter für das selbstständige Führen eines Motorboots auf Binnensch
 ## Fazit
 
 Die meisten Durchfaller scheitern nicht am fehlenden Wissen, sondern an vermeidbaren Fehlern: zu oberflächlichem Lernen der schwierigen Kategorien, fehlendem Prüfungstraining und schlechtem Timing. Wer diese Fallen kennt, ist deutlich besser vorbereitet.
+
+## Quellen
+
+- [ELWIS – Basisfragen SBF Binnen](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Basisfragen/Basisfragen-node.html) – amtliche Frage 15: Bei kreuzenden Kursen muss ausweichen, wer das andere Fahrzeug an seiner Steuerbordseite hat
+- [ELWIS – Bewertungsschlüssel für die theoretische Prüfung](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html) – 30 Fragen in 45 Minuten beim SBF Binnen
+- [Sportbootführerscheinverordnung § 5](https://www.gesetze-im-internet.de/spfv/__5.html) und [§ 6](https://www.gesetze-im-internet.de/spfv/__6.html) – führerscheinfrei bis 11,03 kW (Verbrennungsmotor) bzw. 7,5 kW (Elektromotor); Mindestalter 16 Jahre mit Antriebsmaschine
+- [Gebührentabelle des Prüfungsausschusses München](https://www.pa-muenchen.de/gebuehren/) – Prüfungsgebühr SBF Binnen 130,78 € (Stand Oktober 2026)

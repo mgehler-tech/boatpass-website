@@ -3,6 +3,7 @@ title: "SBF mit eigenem Boot oder Charterboot – was passt zu wem?"
 seoTitle: "SBF: eigenes Boot oder Charterboot?"
 description: "Eigenes Boot oder lieber chartern? Kosten, Aufwand, Flexibilität und Verantwortung im Vergleich – für frisch gebackene SBF-Inhaber und Einsteiger."
 date: 2026-07-11
+updated: 2026-10-23
 tags: ["Vorbereitung"]
 readingTime: 9
 lang: de
@@ -96,3 +97,9 @@ Wer sich für eine Bootsbeteiligung interessiert, sollte vorab klare Absprachen 
 ## Fazit
 
 Es gibt keine pauschal „richtige" Antwort auf die Frage eigenes Boot oder Charter, sondern nur die Antwort, die zu deinem Fahrverhalten, deinem Budget und deiner Lebenssituation passt. Wer oft, spontan und über Jahre hinweg fährt, profitiert meist von einem eigenen Boot trotz der laufenden Verantwortung. Wer selten, saisonal oder noch unentschlossen ist, welcher Bootstyp zu ihm passt, ist mit Chartern in der Regel besser bedient. In beiden Fällen bleibt der Sportbootführerschein die Grundlage, auf der alles Weitere aufbaut. Wenn du dich noch auf die Prüfung vorbereitest, kannst du mit der Boatpass-App den offiziellen ELWIS-Fragenkatalog gezielt im Prüfungsmodus üben, egal ob du danach ein eigenes Boot kaufst oder erst einmal chartern gehst.
+
+## Quellen
+
+- [Sportbootführerscheinverordnung (SpFV), § 3](https://www.gesetze-im-internet.de/spfv/__3.html) – Fahrerlaubnispflicht für Sportboote auf Binnenschifffahrtsstraßen
+- [Binnenschifffahrt-Sportbootvermietungsverordnung, § 9](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/__9.html) – Charterbescheinigung als Ausnahme für Mieter ohne Sportbootführerschein
+- [Binnenschifffahrt-Sportbootvermietungsverordnung, Anlage 5](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/anlage_5.html) – Binnenschifffahrtsstraßen, die mit Charterbescheinigung befahren werden dürfen

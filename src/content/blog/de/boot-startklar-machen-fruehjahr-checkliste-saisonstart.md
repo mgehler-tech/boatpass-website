@@ -3,6 +3,7 @@ title: "Boot startklar machen im Frühjahr – Checkliste zum Saisonstart"
 seoTitle: "Boot startklar machen: Frühjahrs-Checkliste"
 description: "Rumpf, Motor, Batterie und Sicherheitsausrüstung: die Checkliste für den Saisonstart, damit dein Boot nach der Winterpause sicher wieder ins Wasser kommt."
 date: 2026-08-07
+updated: 2026-10-23
 tags: ["Vorbereitung"]
 readingTime: 9
 lang: de
@@ -141,3 +142,9 @@ Für die theoretische Prüfung bleibt das gezielte Lernen der amtlichen Fragen w
 ## Fazit
 
 Ein systematischer Frühjahrscheck ist die beste Vorbereitung für eine entspannte und sichere Saison. Wer Rumpf, Motor, Batterie, Wassersysteme, Sicherheitsausrüstung und Elektronik der Reihe nach durchgeht und die erste Ausfahrt bewusst als Probefahrt nutzt, vermeidet die meisten bösen Überraschungen auf dem Wasser. Nimm dir für den Saisonstart ausreichend Zeit, im Zweifel unterstützt dich eine Fachwerkstatt bei den technisch anspruchsvolleren Punkten, dann steht der neuen Saison nichts mehr im Weg.
+
+## Quellen
+
+- [Bundesministerium für Verkehr – Sicherheit auf dem Wasser](https://www.bmv.de/SharedDocs/DE/Publikationen/WS/sicherheit-auf-dem-wasser.html) – amtliche Broschüre zu Sicherheitsausrüstung, Prüffrist der Feuerlöscher, Signalmitteln und Kennzeichnung
+- [Binnenschifffahrt-Kennzeichnungsverordnung (KlFzKV-BinSch), § 2](https://www.gesetze-im-internet.de/klfzkv-binsch/__2.html) – Kennzeichnungspflicht für Kleinfahrzeuge auf Binnenschifffahrtsstraßen
+- [Binnenschifffahrt-Kennzeichnungsverordnung (KlFzKV-BinSch), § 6](https://www.gesetze-im-internet.de/klfzkv-binsch/__6.html) – Urkunden zum Kennzeichen, die an Bord mitzuführen sind

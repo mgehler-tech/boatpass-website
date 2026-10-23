@@ -3,6 +3,7 @@ title: "Die schwierigsten SBF-Prüfungsfragen – und wie du sie meisterst"
 seoTitle: "Die schwierigsten SBF-Prüfungsfragen"
 description: "Welche Fragen beim Sportbootführerschein die höchste Fehlerquote haben, warum sie so schwierig sind und wie du sie trotzdem richtig beantwortest."
 date: 2026-05-18
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -111,3 +112,10 @@ Wenn du beide Scheine gleichzeitig machst, trenne die Lernphasen. Eine Woche See
 ## Fazit
 
 Die schwierigsten SBF-Fragen betreffen bei den [SBF-See-Prüfungsfragen](/sbf-see-pruefungsfragen/) vor allem Wetterkunde, Lichterführung und Schallsignale – bei den [SBF-Binnen-Prüfungsfragen](/sbf-binnen-pruefungsfragen/) sind es die Segelfragen. Die Fehlerquoten (bis 48 %) zeigen, dass selbst engagierte Prüflinge an bestimmten Fragen scheitern. Der Schlüssel: Gezieltes Fehlertraining statt stumpfes Wiederholen aller Fragen. In der Boatpass-App werden genau die Fragen priorisiert, die du noch nicht sicher beherrschst.
+
+## Quellen
+
+- [ELWIS – Spezifische Fragen SBF See](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – amtlicher Katalog mit 213 Fragen; Frage 267: Starkwindwarnung bei Windstärke 6 und 7, Frage 268: Sturmwarnung ab Windstärke 8
+- [ELWIS – Fragenkatalog SBF See](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html) – Gliederung in 72 Basisfragen, spezifische Fragen und Navigationsaufgaben
+- [ELWIS – Spezifische Fragen Segeln (SBF Binnen)](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Spezifische-Fragen-Segeln/Spezifische-Fragen-Segeln-node.html) – 47 Segelfragen, darunter die Trimmfragen 291 und 292 zur Jolle auf Amwindkursen
+- [ELWIS – Bewertungsschlüssel für die theoretische Prüfung](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html) – Segelfragen nur bei Prüfung für den Geltungsbereich Segeln

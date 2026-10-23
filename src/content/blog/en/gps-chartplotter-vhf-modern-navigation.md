@@ -3,6 +3,7 @@ title: "GPS, Chartplotters, and VHF Radio: Understanding Modern Onboard Navigati
 seoTitle: "GPS, Chartplotters & VHF: Navigation on Board"
 description: "GPS, chartplotter, AIS, and VHF radio: how modern onboard electronics work – and why the SBF exam still relies on the paper chart and dividers."
 date: 2026-07-19
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 9
 lang: en
@@ -19,7 +20,7 @@ faq:
     answer: "No, operating a radio also requires a separate radio operator's certificate, either the UBI for inland waterways or the SRC for coastal waters depending on your cruising area. This certificate must be obtained independently of the Sportbootführerschein."
 ---
 
-Hardly any modern sport boat goes without a GPS receiver, a chartplotter, or a VHF radio these days. These devices make boating more convenient and, in many situations, safer too. At the same time, they don't replace the fundamentals you learn for the [SBF See](/en/sbf-coastal/), Germany's Sportbootführerschein für See, the required license for skippering sport boats above a certain size on coastal waters; instead, they build on top of them. This article explains how GPS, chartplotters, AIS, and VHF radio work together, where their strengths and limits lie, and how modern electronics fit sensibly into classic navigation.
+Hardly any modern sport boat goes without a GPS receiver, a chartplotter, or a VHF radio these days. These devices make boating more convenient and, in many situations, safer too. At the same time, they don't replace the fundamentals you learn for the [SBF See](/en/sbf-coastal/), Germany's Sportbootführerschein für See, the required license for skippering sport boats above a certain engine power on coastal waters; instead, they build on top of them. This article explains how GPS, chartplotters, AIS, and VHF radio work together, where their strengths and limits lie, and how modern electronics fit sensibly into classic navigation.
 
 ## Why Modern Electronics Don't Replace Classic Navigation
 
@@ -88,3 +89,10 @@ Building these habits early lets you enjoy the convenience of modern technology 
 GPS, chartplotters, AIS, and VHF radio have made navigation on the water noticeably more convenient and, in many situations, safer. But they don't replace the fundamentals you learn for the SBF See: if you can reliably fix course, distance, and position using a chart and compass, you can use modern electronics as a genuinely useful addition while staying prepared for the moment the technology fails. Operating a radio also brings the matching radio operator's certificate into play, which has to be obtained independently of the Sportbootführerschein.
 
 The **Boatpass app** helps you build a solid grasp of the navigation fundamentals for the SBF See, with the complete official ELWIS question catalog and realistic exam simulation, so you always know where you stand, even without a chartplotter.
+
+## Sources
+
+- [German Recreational Boat Licence Regulation (SpFV), Annex 3](https://www.gesetze-im-internet.de/spfv/anlage_3.html) – SBF Coastal navigation task with entries on the nautical chart and permitted aids (no. 1.1 and 1.3)
+- [BSH – Notices to Mariners (NfS)](https://www.bsh.de/DE/THEMEN/Schifffahrt/Nautische_Informationen/Nachrichten_fuer_Seefahrer/Nachrichten_fuer_Seefahrer_node.html) – weekly corrections for nautical charts and publications (German Federal Maritime and Hydrographic Agency)
+- [Bundesnetzagentur – maritime and inland waterway radio](https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/Frequenzen/SpezielleAnwendungen/Seefunk/start.html) – assignment of call sign, MMSI and ATIS number before the radio is put into service (Federal Network Agency)
+- [Sportseeschifferscheinverordnung, § 1](https://www.gesetze-im-internet.de/sportseeschv/__1.html) – radio operator certificate (SRC or LRC) matching the boat's radio equipment (para. 7)

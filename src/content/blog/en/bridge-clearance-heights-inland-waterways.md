@@ -3,6 +3,7 @@ title: "Bridge Clearance Heights on Inland Waterways – What You Need to Know"
 seoTitle: "Bridge Clearance on Inland Waterways"
 description: "Why bridge clearance depends on the water level, how to read clearance boards correctly, and where to find current data for the SBF Inland exam."
 date: 2026-07-15
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 9
 lang: en
@@ -105,3 +106,10 @@ Signs and signals at bridges and locks, along with the basic understanding that 
 ## Conclusion
 
 Bridge clearance heights aren't a fixed number, they're always a snapshot that depends on the current water level. Once you understand the difference between the reference level and the actual water level, can read clearance boards and light signals correctly, and know your own boat's height precisely, you'll avoid nasty surprises under a bridge. In the [Boatpass app](/en/sbf-inland-exam-questions/) you can train your knowledge of route signs and signals from the official question catalog and get properly prepared for the SBF Inland exam.
+
+## Sources
+
+- [German Inland Waterways Regulations (BinSchStrO), § 6.25](https://www.gesetze-im-internet.de/binschstro_2012/__6_25.html) and [§ 6.26](https://www.gesetze-im-internet.de/binschstro_2012/__6_26.html) – marked openings of fixed bridges, and approach rules and signal lights at movable bridges
+- [BinSchStrO, § 16.16](https://www.gesetze-im-internet.de/binschstro_2012/__16_16.html) – example from the Middle Weser: clearance height referenced to the highest navigable water level (HSW) at reference gauges
+- [PEGELONLINE (federal waterways administration)](https://www.pegelonline.wsv.de/gast/start) – current water levels at gauges on German federal waterways
+- [ELWIS – notices to inland skippers (NfB)](https://www.elwis.de/DE/dynamisch/Nfb/) – official notices on closures and restrictions on federal waterways

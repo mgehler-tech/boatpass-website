@@ -3,6 +3,7 @@ title: "Conduct After a Boating Accident: Duties, Reporting, and Preserving Evid
 seoTitle: "Boating Accident: Duties & Reporting Rules"
 description: "Collision, grounding, or injury on board: what duties apply after a boating accident, when to notify the water police, and how to preserve evidence."
 date: 2026-08-01
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -12,7 +13,7 @@ faq:
   - question: "Do I have to call the police after a boating accident in Germany?"
     answer: "If anyone is injured, damage is significant, there's a risk to the environment, or the parties disagree about fault, you should always notify the water police (Wasserschutzpolizei), if needed via the general emergency number 110. For minor damage where everyone agrees and exchanges contact and insurance details, that exchange is often enough, but when in doubt, reporting it is always the safer choice."
   - question: "What exactly do I have to do after colliding with another boat?"
-    answer: "Stop, establish the consequences of the accident, and disclose your identity, that's explicitly required for inland waters under Section 1.16(3) of the Inland Waterways Order. Exchange name, address, official registration number, and, if available, boat insurance details with everyone else involved, and note down any witnesses. Violating this duty to establish the facts is a regulatory offense."
+    answer: "Stop, establish the consequences of the accident, and disclose your identity, that's explicitly required for inland waters under Section 1.16 No. 3 of the Inland Waterways Order. Exchange name, address, official registration number, and, if available, boat insurance details with everyone else involved, and note down any witnesses. Violating this duty to establish the facts is a regulatory offense."
   - question: "What evidence should I preserve after a boating accident?"
     answer: "Useful evidence includes photos of the damage and the accident scene, your GPS position, contact details of everyone involved and any witnesses, and a prompt logbook entry with date, time, weather, and a factual account of what happened. The more precise the documentation, the easier it is to sort things out with insurers or authorities later."
   - question: "How quickly do I have to report an accident to my boat insurer?"
@@ -45,7 +46,7 @@ We've covered exactly how to act in an emergency, first aid measures, the chain 
 
 ## A Duty to Establish the Facts, Not a Hit-and-Run Law
 
-A common misconception: unlike on the road, **Section 142 of the German Criminal Code**, the classic hit-and-run provision, does **not directly apply** to accidents on the water according to court rulings. That doesn't mean leaving the scene after a collision has no consequences, though. The shipping regulations set out their own **duty to establish the facts**: under Section 1.16(3) of the Inland Waterways Order (BinSchStrO), everyone involved in a shipping accident must establish the consequences of the accident and disclose their identity. At sea, the Maritime Shipping Regulations (Seeschifffahrtsstraßenordnung) mainly require keeping the fairway clear and notifying the relevant authority of any hazard to navigation, such as a damaged boat or drifting wreckage. Regardless of the exact wording in each set of shipping regulations, the same basic principle applies everywhere: stop, render assistance, and exchange contact details, rather than avoiding responsibility.
+A common misconception: unlike on the road, **Section 142 of the German Criminal Code**, the classic hit-and-run provision, does **not directly apply** to accidents on the water according to court rulings. That doesn't mean leaving the scene after a collision has no consequences, though. The shipping regulations set out their own **duty to establish the facts**: under Section 1.16 No. 3 of the Inland Waterways Order (BinSchStrO), everyone involved in a shipping accident must establish the consequences of the accident and disclose their identity. At sea, the Maritime Shipping Regulations (Seeschifffahrtsstraßenordnung) mainly require keeping the fairway clear and notifying the relevant authority of any hazard to navigation, such as a damaged boat or drifting wreckage. Regardless of the exact wording in each set of shipping regulations, the same basic principle applies everywhere: stop, render assistance, and exchange contact details, rather than avoiding responsibility.
 
 In practice, that means: stop, exchange names, addresses, and, if available, boat insurance details with everyone else involved. Also note the official registration number of the boats involved. Violating this duty is a regulatory offense, we've summarized the possible fines and other costly mistakes on the water in our article on [fines and violations on the water](/en/blog/fines-violations-on-the-water/). If someone is injured and a party still leaves the scene, criminal offenses such as failure to render assistance or negligent bodily harm can also apply.
 
@@ -102,3 +103,10 @@ Conduct after an accident is one of the basic legal duties regularly tested in t
 ## Conclusion
 
 After a boating accident, everyone's safety comes first, then establishing the facts and exchanging identities, and depending on severity, notifying the water police. Careful, timely documentation with photos, position, and contact details makes sorting things out afterward much easier, as does notifying your own insurer without delay, and, on a chartered boat, the charter company as well. Knowing this order in advance, rather than improvising it in the shock of the moment, makes an already unpleasant situation far less stressful to handle.
+
+## Sources
+
+- [German Inland Waterways Regulations (BinSchStrO), § 1.16](https://www.gesetze-im-internet.de/binschstro_2012/__1_16.html) and [BinSchStrEV, § 5](https://www.gesetze-im-internet.de/binschstrev_2012/__5.html) – rescue, assistance and the duty to enable identification after an accident; breach as a regulatory offense
+- [German Maritime Shipping Regulations (SeeSchStrO), § 37](https://www.gesetze-im-internet.de/seeschstro_1971/__37.html) – conduct after shipping accidents and notifying the waterways and shipping office
+- [German Criminal Code, § 142](https://www.gesetze-im-internet.de/stgb/__142.html) and [§ 323c](https://www.gesetze-im-internet.de/stgb/__323c.html) – leaving the scene (road traffic only) and failure to render assistance
+- [German Insurance Contract Act (VVG), § 30](https://www.gesetze-im-internet.de/vvg_2008/__30.html) – notifying the insurer of an insured event without undue delay

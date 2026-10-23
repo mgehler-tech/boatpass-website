@@ -3,6 +3,7 @@ title: "Boat Insurance for Sport Boats – What Actually Makes Sense?"
 seoTitle: "Boat Insurance for Sport Boats: What to Cover"
 description: "Third-party liability, hull cover, personal accident: which policies make sense for your sport boat and what marinas and charter companies require."
 date: 2026-07-21
+updated: 2026-10-23
 tags: ["Preparation"]
 readingTime: 9
 lang: en
@@ -105,7 +106,7 @@ Because these factors vary so much, it's always worth getting an individual quot
 
 ## Special case: trailers and road travel
 
-If you [transport your boat on a trailer](/en/blog/trailering-and-launching-a-boat/), keep in mind that separate rules apply for travel on public roads. A boat trailer is a road vehicle trailer and needs its own registration as well as cover through the towing vehicle's liability insurance or a separate trailer policy. This cover is distinct from your boat insurance, since it concerns road traffic rather than the boat on the water.
+If you [transport your boat on a trailer](/en/blog/trailering-and-launching-a-boat/), keep in mind that separate rules apply for travel on public roads. A boat trailer is a road vehicle trailer and usually needs its own registration (only special trailers used exclusively to carry sports equipment are exempt) as well as cover through the towing vehicle's liability insurance or a separate trailer policy. This cover is distinct from your boat insurance, since it concerns road traffic rather than the boat on the water.
 
 ## What to check when comparing offers
 
@@ -120,3 +121,9 @@ Before committing to a policy, a structured comparison helps:
 ## Conclusion
 
 There's no legal requirement for boat insurance in Germany, but third-party liability cover is still the most sensible first building block for most owners, not least because marinas, clubs, and sometimes foreign authorities require it. Whether you add hull insurance, personal accident cover, or legal protection on top depends on the boat's value, how you use it, and your own risk tolerance. If you charter, most of these questions are handled for you, but it's still worth knowing the charter company's contract terms. Just as important as the right insurance is solid practical knowledge: the Boatpass app helps you prepare specifically for your SBF exam using the official ELWIS question catalog, so you're well prepared on the water too, insurance questions aside.
+
+## Sources
+
+- [German Compulsory Insurance Act (PflVG), § 1a](https://www.gesetze-im-internet.de/pflvg/__1a.html) – compulsory liability insurance covers land vehicles and trailers, not boats
+- [German Vehicle Registration Regulation (FZV), § 3](https://www.gesetze-im-internet.de/fzv_2023/__3.html) – registration requirement for trailers and exemption for sports equipment trailers
+- [GDV statement on the draft recreational boating regulation (June 2025)](https://www.gdv.de/resource/blob/194136/1ca096bac3d4cbe9aeff88f9871ba196/stn-sportschifffahrtverordnung-data.pdf) – liability cover for watercraft is currently voluntary; rental company policies usually include the skipper

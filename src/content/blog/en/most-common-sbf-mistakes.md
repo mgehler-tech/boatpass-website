@@ -3,6 +3,7 @@ title: "Most Common Mistakes in the German Boating License Exam"
 seoTitle: "Most Common SBF Exam Mistakes & How to Avoid"
 description: "The specific mistakes that cause most SBF candidates to fail – in theory, practical, and knot sections – and how you can avoid them on exam day."
 date: 2026-05-12
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -41,7 +42,7 @@ This is the **most common failure point in the theory exam**. [Light signals](/e
 - White stern light = rear
 - White masthead light = vessel under engine power
 
-When you see **green light** on an approaching vessel, you're on their starboard side – you must **give way**. When you see **red light**, they must give way to you.
+When you see **red light** on a vessel on a crossing course, it is on your starboard side – you must **give way**. When you see **green light**, they must give way to you.
 
 **Sound signals – what you need to know:**
 - One short blast (·): "I am altering my course to **starboard**"
@@ -104,3 +105,10 @@ The [minimum age](/en/blog/boating-license-requirements/) to independently opera
 ## Summary
 
 Most failures come from avoidable, specific gaps: superficial knowledge of light and sound signals, lack of exam simulation practice, and underestimating knots. Knowing these failure points puts you significantly ahead.
+
+## Sources
+
+- [ELWIS – SBF Inland basic questions](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Basisfragen/Basisfragen-node.html) – official question 15: on crossing courses, the vessel that has the other on its starboard side must give way
+- [ELWIS – assessment key for the theory exam](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html) – 30 questions in 45 minutes for the SBF Inland
+- [German Recreational Boat Licence Regulation (SpFV) § 5](https://www.gesetze-im-internet.de/spfv/__5.html) and [§ 6](https://www.gesetze-im-internet.de/spfv/__6.html) – licence-free up to 11.03 kW (combustion engine) or 7.5 kW (electric motor); minimum age 16 for motorboats
+- [Fee table of the Munich examination board](https://www.pa-muenchen.de/gebuehren/) – SBF Inland exam fee €130.78 (as of October 2026)

@@ -3,7 +3,7 @@ title: "Lichterführung erklärt – welche Lichter führt ein Boot nachts?"
 seoTitle: "Lichterführung: Bootslichter nachts"
 description: "Topplicht, Seitenlichter, Hecklicht: Wie erkennst du nachts, was für ein Fahrzeug vor dir liegt? Die Lichterführung für den SBF See mit Merksätzen."
 date: 2026-05-26
-updated: 2026-08-18
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 9
 lang: de
@@ -103,7 +103,7 @@ Nicht nur die Farbe und der Sektor zählen, auch die **Mindesttragweite** ist Pr
 - **Hecklicht:** mindestens 2 Seemeilen
 - **Weißes, rotes, grünes oder gelbes Rundumlicht:** mindestens 2 Seemeilen
 
-Ab 12 m Länge steigen die Anforderungen: Das Topplicht muss dann je nach Fahrzeuggröße 3 oder 5 Seemeilen weit sichtbar sein, die Seitenlichter mindestens 2 Seemeilen. Für die SBF-Prüfung reichen in der Regel die Werte für Boote unter 12 m, da die meisten Sportboote in diese Kategorie fallen.
+Ab 12 m Länge steigen die Anforderungen: Das Topplicht muss dann je nach Fahrzeuggröße 3, 5 oder 6 Seemeilen weit sichtbar sein, die Seitenlichter mindestens 2 Seemeilen. Für die SBF-Prüfung reichen in der Regel die Werte für Boote unter 12 m, da die meisten Sportboote in diese Kategorie fallen.
 
 ## So lernst du die Lichterführung
 
@@ -117,3 +117,10 @@ Ab 12 m Länge steigen die Anforderungen: Das Topplicht muss dann je nach Fahrze
 Die Lichterführung lässt sich aus wenigen Bausteinen ableiten: Topplicht (225°, vorn), Seitenlichter (grün/rot, je 112,5°) und Hecklicht (135°, achtern). Das Topplicht unterscheidet Motor von Segel, die Mindesttragweiten sind fester Prüfungsstoff, und die Merksprüche („Rot über Rot – das Schiff ist tot") helfen bei den Sonderlichtern. Wer die Bausteine einmal sitzen hat, erkennt auch ungewohnte Lichterkombinationen in der Prüfung sicher wieder. Wie du dieses Wissen bei einer echten [Nachtfahrt mit dem Sportboot](/blog/nachtfahrt-sportboot/) in der Praxis anwendest, liest du im zugehörigen Artikel.
 
 In der Boatpass-App findest du die typischen Prüfungsbilder direkt aus dem offiziellen ELWIS-Fragenkatalog, kannst sie im Prüfungsmodus unter realen Bedingungen üben und siehst sofort, welche Lichterkombinationen dir noch Schwierigkeiten machen.
+
+## Quellen
+
+- [Kollisionsverhütungsregeln (KVR), Regel 21](https://www.gesetze-im-internet.de/seestro_1972/regel_21.html) – Begriffe und Horizontbögen von Topplicht, Seitenlichtern, Hecklicht und Rundumlicht
+- [KVR Regel 22](https://www.gesetze-im-internet.de/seestro_1972/regel_22.html) – Mindesttragweiten der Lichter nach Fahrzeuglänge
+- [KVR Regel 23](https://www.gesetze-im-internet.de/seestro_1972/regel_23.html) und [Regel 25](https://www.gesetze-im-internet.de/seestro_1972/regel_25.html) – Lichter von Maschinenfahrzeugen (inkl. unter 12 m und 7 m) und Segelfahrzeugen
+- [KVR Regel 27](https://www.gesetze-im-internet.de/seestro_1972/regel_27.html) – manövrierunfähige und manövrierbehinderte Fahrzeuge

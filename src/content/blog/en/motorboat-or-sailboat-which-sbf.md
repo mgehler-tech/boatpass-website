@@ -3,6 +3,7 @@ title: "Motorboat or Sailboat – Which SBF and Which Practical Training?"
 seoTitle: "Motorboat or Sailboat: Which SBF Do You Need?"
 description: "Engine or sail for the German boating license? Differences in scope, theory, practical exam, and study effort, so you can make the right choice."
 date: 2026-07-15
+updated: 2026-10-23
 tags: ["Preparation"]
 readingTime: 8
 lang: en
@@ -43,7 +44,7 @@ If you're aiming for both scopes anyway, you can usually prepare theory and prac
 
 ## Practical Exam: Engine Maneuvers vs. Sailing Maneuvers
 
-The practical exam under engine focuses on maneuvers that matter for safely handling a motorboat: docking and undocking, turning in a confined space, the man-overboard maneuver, and often an anchoring maneuver too. For a detailed step-by-step guide to the most important mandatory maneuver, see [Man-Overboard Maneuver Under Engine](/en/blog/man-overboard-maneuver/); docking and undocking is covered in [Docking and Undocking – Harbor Maneuvers for Beginners](/en/blog/docking-undocking-harbor-maneuvers/).
+The practical exam under engine focuses on maneuvers that matter for safely handling a motorboat: docking and undocking, turning in a confined space, the man-overboard maneuver, and stopping the boat on course. For a detailed step-by-step guide to the most important mandatory maneuver, see [Man-Overboard Maneuver Under Engine](/en/blog/man-overboard-maneuver/); docking and undocking is covered in [Docking and Undocking – Harbor Maneuvers for Beginners](/en/blog/docking-undocking-harbor-maneuvers/).
 
 Under sail, additional skills come into play that can only be practiced on the water: setting and stowing sails, sailing courses relative to the wind, confidently handling a tack and a jibe, and controlling the boat under sail, for example by heaving-to. These maneuvers depend much more on weather than running under engine, which is why sailing practice generally can't be compressed into a single day; several practice sessions in different wind conditions make more sense.
 
@@ -90,3 +91,10 @@ If you're still unsure which license and scope actually fits what you have in mi
 ## Conclusion
 
 Engine or sail is more than a matter of taste, it directly determines how much theory you study and which practical skills you have to demonstrate. For the SBF Inland, the sailing scope means 47 additional questions and its own practical exam; for the SBF Coastal, that split doesn't exist in theory, even though practical sailing experience should still be built up deliberately. Think honestly, before you register, about how you actually plan to boat going forward, it saves study time and unnecessary add-on exams. With the Boatpass app you can study the complete official ELWIS question catalog, sailing questions included, and practice in exam mode no matter which scope you choose.
+
+## Sources
+
+- [German Recreational Boat Licence Regulation (SpFV), § 6](https://www.gesetze-im-internet.de/spfv/__6.html) – minimum age 16 under engine, 14 under sail
+- [SpFV, Annex 4](https://www.gesetze-im-internet.de/spfv/anlage_4.html) – practical exam split by type of propulsion, mandatory and other maneuvers under engine and under sail
+- [ELWIS – recreational boat licences](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) – licence required above 11.03 kW (combustion engine) or 7.5 kW (electric motor), SBF Coastal only for boats with an engine
+- [ELWIS – inland question catalog](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-node.html) and [coastal question catalog](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html) – 72 base questions, 181 specific inland questions, 47 sailing questions and 213 specific coastal questions

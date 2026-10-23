@@ -3,6 +3,7 @@ title: "SBF Inland vs. SBF Coastal – What's the Difference?"
 seoTitle: "SBF Inland vs. SBF Coastal: Differences"
 description: "Which German boating license do you need? Coverage, exam differences, costs, and why combining both licenses is cheaper than doing them separately."
 date: 2026-04-22
+updated: 2026-10-23
 tags: ["License Comparison"]
 readingTime: 7
 lang: en
@@ -28,7 +29,7 @@ When you start researching the German boating license, you'll quickly hit the ke
 Valid on all German **inland waterways** – rivers, canals, and lakes officially classified as federal waterways:
 
 - Rhine, Elbe, Mosel, Danube, Weser
-- Havel, Spree, Müritz, Chiemsee
+- Havel, Spree, Müritz
 - Elbe-Lübeck-Kanal
 
 **Best for:** Houseboat trips in Germany, river cruising, lakes in Brandenburg or Bavaria.
@@ -50,8 +51,8 @@ Valid on German **coastal waterways** and coastal waters internationally:
 
 | | SBF Inland | SBF Coastal |
 |---|---|---|
-| Theory | 30 questions, 45 min | 30 questions + 9 navigation tasks, 60 min |
-| Pass threshold | 5/7 base + 18/23 specific | 5/7 base + 18/23 specific |
+| Theory | 30 questions, 45 min | 30 questions + navigation task (9 questions), 60 min |
+| Pass threshold | 5/7 base + 18/23 specific | 5/7 base + 18/23 specific + 7/9 navigation |
 | Key topics | Waterway rules, light signals, sound signals | Chart navigation, compass work, tidal calculations |
 | Practical exam | Yes | Yes (on coastal waters) |
 
@@ -86,3 +87,10 @@ Most instructors recommend starting with **SBF Coastal** (harder), then the inla
 ## Summary
 
 The key difference is coverage: inland for German rivers and lakes, coastal for sea and international waters. Anyone planning to boat flexibly long-term should consider the combined exam – it's cheaper than taking them separately.
+
+## Sources
+
+- [German Recreational Boat Licence Regulation (SpFV), § 2](https://www.gesetze-im-internet.de/spfv/__2.html) and [German Maritime Waterways Regulations (SeeSchStrO), § 1](https://www.gesetze-im-internet.de/seeschstro_1971/__1.html) – definition of inland and maritime waterways, Kiel Canal as a maritime waterway
+- [Federal Waterways Act (WaStrG), Annex 1](https://www.gesetze-im-internet.de/wastrg/anlage_1.html) – list of federal waterways (including Rhine, Mosel, Danube, Elbe-Lübeck-Kanal, Müritz-Elde waterway)
+- [ELWIS – marking scheme](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html) – number of questions, time limits and pass marks for the theory exam, base questions when taking both exams on one day
+- [Fee table of the Munich/Nuremberg examination board](https://www.pa-muenchen.de/gebuehren/) – exam fees for SBF Inland, SBF Coastal and the combined exam (as of October 2026)

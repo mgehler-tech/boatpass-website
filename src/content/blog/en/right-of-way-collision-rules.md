@@ -3,6 +3,7 @@ title: "Right of Way on the Water – Who Has to Give Way?"
 seoTitle: "Right of Way on the Water: SBF Exam Rules"
 description: "On the water there is no right of way, only give-way rules. Who gives way, who stands on? The COLREG basics with memory aids for the SBF exam."
 date: 2026-05-09
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -35,7 +36,7 @@ faq:
 
 ## Right of Way? There Is None.
 
-The collision regulations (COLREG / German SeeSchStrO) deliberately speak not of right of way but of the **give-way vessel** and the **stand-on vessel**:
+The collision regulations (COLREG / German KVR) deliberately speak not of right of way but of the **give-way vessel** and the **stand-on vessel**:
 
 - The **give-way vessel** must take early and obvious action to keep clear.
 - The **stand-on vessel** must **maintain** her course and speed, so the other can rely on it.
@@ -103,3 +104,10 @@ In the practical exam the examiner asks typical situations: "A sailing boat is c
 ## Conclusion
 
 On the water there's no right of way, only the duties to give way and to stand on. The hierarchy (power gives way to sail gives way to fishing gives way to restricted gives way to not-under-command), the starboard rule for crossing motorboats, and "windward gives way to leeward" for sailing vessels are the key building blocks. Master the scheme and you'll solve most exam questions confidently. In the Boatpass app you can train the give-way and traffic-rule questions specifically with the official ELWIS question catalog.
+
+## Sources
+
+- [German COLREGs (KVR), Rule 18](https://www.gesetze-im-internet.de/seestro_1972/regel_18.html) – responsibilities between vessels and vessels constrained by their draught
+- [KVR Rule 13](https://www.gesetze-im-internet.de/seestro_1972/regel_13.html) and [Rule 15](https://www.gesetze-im-internet.de/seestro_1972/regel_15.html) – overtaking (22.5° abaft the beam) and crossing situations
+- [German Maritime Waterways Regulations (SeeSchStrO), § 25](https://www.gesetze-im-internet.de/seeschstro_1971/__25.html) and [§ 31](https://www.gesetze-im-internet.de/seeschstro_1971/__31.html) – priority in the fairway and give-way duty of towing boats
+- [German Inland Waterways Regulations (BinSchStrO), § 6.02a](https://www.gesetze-im-internet.de/binschstro_2012/__6_02a.html) – give-way rules between small craft on inland waters

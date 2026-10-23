@@ -3,6 +3,7 @@ title: "Towing Convoys and Special Vessels – Recognizing Day Shapes"
 seoTitle: "Towing Convoys & Day Shapes Explained"
 description: "Pushed and towed convoys, fishing vessels, and special craft: balls, cones, diamonds, and cylinders as day shapes explained simply for the SBF exam."
 date: 2026-07-21
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -26,7 +27,7 @@ faq:
   - question: "What is the difference between pushed and towed convoys in terms of day shapes?"
     answer: "A rigidly coupled pushed convoy is treated under the collision regulations as a single vessel and therefore shows only one set of lights or day shapes. A towed convoy, by contrast, consists of two separately recognizable units, each showing its own day shapes."
   - question: "When must a tow show an additional diamond shape?"
-    answer: "If the length of the tow, measured from the stern of the towing vessel to the end of the last vessel towed, exceeds 200 meters, both the towing vessel and the vessel being towed must exhibit a diamond shape. The last vessel in the tow also carries the diamond at its after end."
+    answer: "If the length of the tow, measured from the stern of the towing vessel to the end of the last vessel towed, exceeds 200 meters, both the towing vessel and the vessel being towed must exhibit a diamond shape. A partially submerged, inconspicuous object being towed also carries a diamond at its after end."
   - question: "How do you tell not under command from restricted in ability to maneuver by day shape?"
     answer: "A vessel not under command, for example after an engine failure, shows two black balls one above the other. A vessel restricted in her ability to maneuver, for example while dredging or towing a heavy convoy, shows three shapes in the order ball-diamond-ball."
 ---
@@ -40,7 +41,7 @@ Every day shape prescribed by the collision regulations is built from four simpl
 - **Ball**
 - **Cone** (point up or point down)
 - **Cylinder**
-- **Diamond**: two cones joined at their bases, point to point
+- **Diamond**: two cones joined at their bases, base to base
 
 Once you can reliably tell these four shapes apart, you can work out most combinations logically instead of memorizing every single one by heart.
 
@@ -58,7 +59,7 @@ On large inland waterways such as the Rhine, you regularly meet pushed convoys m
 
 ### The diamond shape for long tows
 
-Towed convoys are subject to one additional rule that applies both day and night: if the length of the tow, measured from the stern of the towing vessel to the after end of the last vessel or object towed, exceeds **200 meters**, both the towing vessel and the vessel being towed must exhibit an additional **diamond shape** where it can best be seen. The last vessel or object in the tow must also carry a diamond shape at or near its after end, so that a crossing vessel can tell exactly where the tow actually ends.
+Towed convoys are subject to one additional rule that applies by day: if the length of the tow, measured from the stern of the towing vessel to the after end of the last vessel or object towed, exceeds **200 meters**, both the towing vessel and the vessel being towed must exhibit an additional **diamond shape** where it can best be seen. If the last vessel or object in the tow is inconspicuous and partially submerged, it must also carry a diamond shape at or near its after end, so that a crossing vessel can tell exactly where the tow actually ends.
 
 If a vessel or object being towed, say an unmanned pontoon, cannot for structural reasons exhibit the required lights or shapes, every possible measure must still be taken to illuminate it or at least make its presence known. In practice this means: if you spot a diamond shape on an otherwise unremarkable craft or object, it very likely belongs to a towed convoy, and you should keep well clear of the entire length of the tow, not just the visible towing vessel.
 
@@ -119,3 +120,10 @@ With this approach you can reliably work through most exam questions on day shap
 ## Conclusion
 
 Day shapes translate the most important night-time light combinations into four simple daytime forms: ball, cone, cylinder, and diamond. Pushed and towed convoys, fishing vessels, vessels not under command or restricted in their ability to maneuver, and vessels constrained by draught, at anchor, or aground can all be identified unambiguously once you have internalized the basic shapes and their typical combinations. The Boatpass app lets you practice exactly these day-shape questions using the official ELWIS question catalog, until you can identify every combination correctly on the first try.
+
+## Sources
+
+- [German Collision Regulations (KVR), Rule 24](https://www.gesetze-im-internet.de/seestro_1972/regel_24.html) – lights and shapes for towing and pushing, diamond for tows over 200 m
+- [KVR Rule 26](https://www.gesetze-im-internet.de/seestro_1972/regel_26.html) – shapes for fishing vessels, cone for gear extending more than 150 m
+- [KVR Rule 27](https://www.gesetze-im-internet.de/seestro_1972/regel_27.html), [Rule 28](https://www.gesetze-im-internet.de/seestro_1972/regel_28.html) and [Rule 30](https://www.gesetze-im-internet.de/seestro_1972/regel_30.html) – vessels not under command, restricted in ability to maneuver, constrained by draught, at anchor and aground
+- [KVR Annex I, Section 6](https://www.gesetze-im-internet.de/seestro_1972/anlage_i.html) – color, form and dimensions of day shapes

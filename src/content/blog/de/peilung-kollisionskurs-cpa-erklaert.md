@@ -3,6 +3,7 @@ title: "Peilung und Kollisionskurs erkennen – CPA einfach erklärt"
 seoTitle: "Peilung, Kollisionskurs und CPA erklärt"
 description: "Wie erkennst du auf dem Wasser rechtzeitig eine Kollisionsgefahr? Peilung, gleichbleibende Peilung und CPA einfach erklärt – mit Praxistipps ohne Radar."
 date: 2026-08-08
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 9
 lang: de
@@ -108,3 +109,10 @@ Sobald du eine gleichbleibende Peilung feststellst, ist Handeln gefragt, nicht A
 ## Fazit
 
 Eine gleichbleibende Peilung bei abnehmendem Abstand ist eines der zuverlässigsten Warnzeichen für Kollisionsgefahr auf dem Wasser, ganz ohne Elektronik. Wer regelmäßig peilt, sei es mit einem festen Bezugspunkt am eigenen Boot oder mit dem Handpeilkompass, erkennt kritische Situationen frühzeitig und kann rechtzeitig und eindeutig reagieren. CPA und TCPA sind dabei nur die technische, radargestützte Variante desselben Grundprinzips. In der Boatpass-App kannst du die Fragen rund um Kollisionsverhütung und Ausweichregeln gezielt mit dem offiziellen ELWIS-Fragenkatalog üben.
+
+## Quellen
+
+- [Kollisionsverhütungsregeln (KVR), Regel 7](https://www.gesetze-im-internet.de/seestro_1972/regel_7.html) – Kollisionsgefahr bei sich nicht merklich ändernder Kompasspeilung, im Zweifel annehmen
+- [KVR Regel 8](https://www.gesetze-im-internet.de/seestro_1972/regel_8.html) – Ausweichmanöver rechtzeitig, deutlich und ausreichend groß
+- [KVR Regel 17](https://www.gesetze-im-internet.de/seestro_1972/regel_17.html) – Pflichten des Kurshalters
+- [IMO-Resolution MSC.192(79), Radar-Leistungsnormen](https://www.transportstyrelsen.se/globalassets/global/sjofart/dokument/resolution_msc_192_79.pdf) – Begriffe CPA/TCPA und CPA/TCPA-Alarm (englisch)

@@ -3,6 +3,7 @@ title: "Sea Marks & the Lateral System Explained – Buoys, Cardinal Marks & Co.
 seoTitle: "Sea Marks & the Lateral System for SBF Coastal"
 description: "Red and green buoys, cardinal marks, light characteristics: the sea-mark system for the SBF made simple – lateral, cardinal and special marks."
 date: 2026-05-31
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -109,3 +110,9 @@ The light color often matches the mark color: red port buoys show a red light, g
 ## Conclusion
 
 The sea-mark system looks confusing at first but follows clear rules: in the lateral system, when entering, red is to port and green to starboard; the cardinal system shows the safe passing side via its cone topmarks; and special marks are yellow. Once you understand the logic, there's hardly anything to memorize. In the Boatpass app you can train the sea-mark and navigation questions specifically with the official ELWIS catalog – including the typical exam images.
+
+## Sources
+
+- [German Sea Waterways Regulations (SeeSchStrO), Annex I – navigation marks](https://www.gesetze-im-internet.de/seeschstro_1971/anlage_i.html) – official description of lateral and cardinal marks, isolated danger, safe water and special marks, and light characteristics
+- [IALA Recommendation R1001 – The IALA Maritime Buoyage System](https://www.iala.int/product/r1001/) – the international buoyage system with Regions A and B
+- [ELWIS – SBF See question catalog, specific questions](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – official exam questions on channel sides, buoys and light characteristics

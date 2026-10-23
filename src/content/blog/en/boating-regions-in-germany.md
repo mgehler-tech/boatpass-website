@@ -3,6 +3,7 @@ title: "Boating Regions in Germany – Where Can You Sail with the SBF?"
 seoTitle: "Boating Regions in Germany: Which License?"
 description: "Lake Constance, the Mecklenburg Lake District, the Baltic or the Rhine: Germany's most popular boating regions and which license you need there."
 date: 2026-07-22
+updated: 2026-10-23
 tags: ["Preparation"]
 readingTime: 9
 lang: en
@@ -95,3 +96,10 @@ Boating season in Germany is generally concentrated in the warmer months between
 ## Conclusion
 
 From calm lake regions to tidal coastlines, Germany offers a wide range of boating options, requiring the SBF Inland, the SBF Coastal, or, on Lake Constance, the BSP, depending on where you go. Getting familiar with the particulars of your chosen region in advance doesn't just make your trip legally safer, it also makes it easier to find a region that matches your own experience level. Whichever exam you're preparing for, SBF Inland or SBF Coastal, the Boatpass app helps you get ready with the official ELWIS question catalog and a realistic exam mode, so you're well prepared for the region you have in mind.
+
+## Sources
+
+- [Recreational Boat Licence Ordinance (SpFV), § 3](https://www.gesetze-im-internet.de/spfv/__3.html) and [§ 4](https://www.gesetze-im-internet.de/spfv/__4.html) – licence requirement on inland and maritime waterways
+- [SpFV, § 5](https://www.gesetze-im-internet.de/spfv/__5.html) – licence-free limit of 11.03 kW (15 hp) on all inland and maritime waterways
+- [German Sea Waterways Regulations (SeeSchStrO), § 1](https://www.gesetze-im-internet.de/seeschstro_1971/__1.html) – definition of maritime waterways, including the Kiel Canal
+- [Lake Constance district office: shipping law on Lake Constance](https://bodenseekreis.de/fileadmin/02_verkehr_wirtschaft/schifffahrt/downloads/bootszulassung/info-schifffahrtsrecht-bodensee.pdf) – boating licence under the Lake Constance Shipping Regulations (PDF, German)

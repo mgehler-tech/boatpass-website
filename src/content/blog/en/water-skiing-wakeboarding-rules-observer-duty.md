@@ -3,6 +3,7 @@ title: "Water Skiing and Wakeboarding Behind the Boat: Rules, Observer Duty, and
 seoTitle: "Water Skiing & Wakeboarding Behind the Boat"
 description: "Water skiing and wakeboarding behind the boat in Germany: where it's allowed, why an observer on board is mandatory, and what the rules require."
 date: 2026-08-15
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 9
 lang: en
@@ -16,7 +17,7 @@ faq:
   - question: "Where in Germany am I allowed to water ski or wakeboard?"
     answer: "Only on areas specifically released for it. On federal inland waterways that means stretches marked with sign E.17. On coastal waterways it means areas outside the fairway, unless those areas have been specifically closed. Many state-regulated lakes add their own local rules on top."
   - question: "Does the water skier have to wear a life jacket?"
-    answer: "The Water Skiing Regulation doesn't impose a blanket life jacket requirement on the skier. In practice, though, a buoyancy aid is standard equipment and is required by local rules or club regulations on many waters, and it's strongly recommended for safety regardless of the legal situation."
+    answer: "The Water Skiing Regulation doesn't name a specific type of vest, but on federal inland waterways it requires equipment with sufficient buoyancy and impact protection (Section 1 WasSkiV). In practice, a buoyancy or impact vest is therefore standard equipment, is additionally required by local rules or club regulations on many waters, and is strongly recommended for safety regardless."
 ---
 
 A summer afternoon, flat water, and someone carving their first turns on a wakeboard behind the boat. Water skiing and wakeboarding are among the most popular activities behind a motorboat, but they're not a legal free-for-all. Where you're actually allowed to tow someone, why an observer on board is mandatory, and what else you need to keep in mind: this article covers it all.
@@ -29,7 +30,7 @@ Water skiing isn't permitted everywhere in Germany. It's only allowed on areas t
 
 On federal inland waterways, the **Water Skiing Regulation (Wasserskiverordnung, WasSkiV)** governs water skiing. Under this regulation, water skiing is only allowed on stretches and areas of water marked with shipping sign **E.17**. Supplementary signs at the marker can further restrict the permitted times. Outside a marked stretch, towing a water skier simply isn't allowed, no matter how calm the water looks.
 
-The regulation is written specifically for "water skiing", but in practice its core principles (observer duty, marked areas, permitted times) are applied to wakeboarding as well, since it's the same kind of towing behind a motorboat.
+The regulation speaks of "water skiing", but it expressly defines this as any activity in which people towed by a vessel glide over the water with or without water skis or on other objects (Section 2 WasSkiV). Wakeboarding is therefore directly covered by the same rules (observer duty, marked areas, permitted times).
 
 ### Coastal Waterways: Outside the Fairway
 
@@ -55,11 +56,11 @@ On coastal waterways, a clear order of priority applies as well. Skippers of boa
 
 ## Equipment: Life Jackets and Roadworthy Gear
 
-The WasSkiV requires that only **safe, suitable water skiing equipment** be used, meaning gear that's fit for an orderly conduct of water skiing. That doesn't translate into a blanket legal requirement for the skier to wear a life jacket or buoyancy aid. In practice, though, a buoyancy aid is standard equipment and is often required on top by local rules or the regulations of water sports clubs. Regardless of the legal situation, anyone being towed should wear a suitable flotation device, since falls while water skiing or wakeboarding happen often and frequently without warning.
+The WasSkiV requires that only **safe, suitable water skiing equipment** be used, and it defines exactly what that means: the gear must provide sufficient buoyancy, sufficient impact protection and sufficient freedom of movement. The regulation doesn't prescribe a specific type of vest, but the "sufficient buoyancy" criterion is hard to meet without a buoyancy aid. In practice, a buoyancy or impact vest is therefore standard equipment and is often required on top by local rules or the regulations of water sports clubs. Regardless of the legal situation, anyone being towed should wear a suitable flotation device, since falls while water skiing or wakeboarding happen often and frequently without warning.
 
 ## Towed Attachments: Tubing, Donuts, and Banana Boats
 
-Alongside classic water skiing and wakeboarding, inflatable towed attachments such as rings, donuts, or banana boats, commonly known as "tubing", are hugely popular. On coastal waterways, Section 31 of the SeeSchStrO covers towing these attachments in the same section as water skiing, so the same rules on fairway, timing, and staying in the wake apply. On federal inland waterways and state-regulated lakes, it's worth checking the local requirements, since similar restrictions to water skiing are common there too. When in doubt, ask the responsible water police or waterway authority in advance rather than relying on assumptions.
+Alongside classic water skiing and wakeboarding, inflatable towed attachments such as rings, donuts, or banana boats, commonly known as "tubing", are hugely popular. On coastal waterways, Section 31 of the SeeSchStrO covers towing these attachments in the same section as water skiing, so the same rules on fairway, timing, and staying in the wake apply. On federal inland waterways, towed rings, donuts and banana boats fall under the definition of water skiing in Section 2 WasSkiV, so the same rules as for water skiing apply. On state-regulated lakes, it's worth checking the local requirements, since similar restrictions to water skiing are common there too. When in doubt, ask the responsible water police or waterway authority in advance rather than relying on assumptions.
 
 ## Special Events: Jumps, Slalom, and Shows
 
@@ -80,3 +81,9 @@ Water skiing and how to behave toward water sports participants are practical to
 ## Conclusion
 
 Water skiing and wakeboarding behind the boat aren't a legal free-for-all; they're clearly regulated. Towing is only allowed on marked or released areas, during daylight with good visibility, and only with an observer on board keeping constant watch over the skier. Anyone who knows these basic rules, stays in the towing boat's wake, and uses suitable equipment helps keep the fun on the water safe, both for the skier and for everyone else out there.
+
+## Sources
+
+- [Water Skiing Regulation (WasSkiV)](https://www.gesetze-im-internet.de/wasskiv_1990/BJNR001070990.html) – definition of water skiing, E.17 stretches, times, equipment, observer, towing boat and regulatory offenses
+- [German Sea Waterways Regulations (SeeSchStrO), § 31](https://www.gesetze-im-internet.de/seeschstro_1971/__31.html) – water skiing and towed water sports attachments on coastal waterways
+- [ELWIS – water skiing](https://www.elwis.de/DE/Sportschifffahrt/Binnenbereich/Wasserskilaufen/Wasserskilaufen-node.html) – overview by the federal waterways administration on stretches, visibility, distance and towing boat

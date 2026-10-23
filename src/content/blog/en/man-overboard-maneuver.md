@@ -3,6 +3,7 @@ title: "Man-Overboard Maneuver: How to Nail It in the SBF Practical Exam"
 seoTitle: "Man-Overboard Maneuver: SBF Practical"
 description: "The man-overboard maneuver is mandatory in the practical SBF exam. Step by step from the command and propeller protection to a controlled recovery."
 date: 2026-05-27
+updated: 2026-10-23
 tags: ["Practice"]
 readingTime: 6
 lang: en
@@ -16,7 +17,7 @@ faq:
   - question: "Why do you approach against wind and current in the MOB maneuver?"
     answer: "Approaching against wind and current slows the boat and gives the best control over the final meters toward the casualty. This lets you stop right on course level with them without overrunning them."
   - question: "How many attempts do you get for mandatory maneuvers in the SBF exam?"
-    answer: "For most mandatory maneuvers, including the man-overboard maneuver, you get two attempts in the exam. Even so, it is worth internalizing the procedure so it works on the first try."
+    answer: "For every maneuver, including the man-overboard maneuver, you get two attempts in the exam. Even so, it is worth internalizing the procedure so it works on the first try."
 howTo:
   name: "Perform the man-overboard maneuver"
   description: "How the man-overboard maneuver in the practical SBF exam works, step by step."
@@ -78,12 +79,17 @@ Recovery is done **only with the boat stopped and the engine out of gear** – t
 - **Losing sight of the buoy:** Without constant visual contact, finding it again becomes a matter of luck.
 - **Recovering with the propeller running:** Before recovery, the engine must be out of gear.
 
-By the way: for most mandatory maneuvers you get **two attempts** in the exam. Even so, it's worth internalizing the procedure so it works the first time.
+By the way: for every maneuver you get **two attempts** in the exam. Even so, it's worth internalizing the procedure so it works the first time.
 
 ## How to prepare
 
-You learn the MOB maneuver on the water – but the theory behind it (why the propeller has to be steered away, why against wind and current) is just as much part of the exam knowledge and shows up in the theory questions. As a mandatory maneuver it's required for both the [SBF Inland](/en/sbf-inland/) and the [SBF Coastal](/en/sbf-coastal/). For how the entire practical exam works, read our overview [SBF exam: how it works](/en/sbf-exam/). The knots you also need to master are covered in our article on the [most important knots](/en/blog/most-important-knots-sbf/).
+You learn the MOB maneuver on the water – but the theory behind it (why the propeller has to be steered away, why against wind and current) is just as much part of the exam knowledge. As a mandatory maneuver it's required for both the [SBF Inland](/en/sbf-inland/) and the [SBF Coastal](/en/sbf-coastal/). For how the entire practical exam works, read our overview [SBF exam: how it works](/en/sbf-exam/). The knots you also need to master are covered in our article on the [most important knots](/en/blog/most-important-knots-sbf/).
 
 ## Conclusion
 
 The man-overboard maneuver is manageable once you know the thread: stay calm, throttle off and helm to the casualty's side (propeller away), keep the casualty in sight, throw a lifesaving device, approach in a controlled way against wind and current, and only recover with the boat stopped. Master this sequence reliably and you'll handle the most important maneuver of the SBF practical exam with confidence – and be prepared for a real emergency, too.
+
+## Sources
+
+- [German Recreational Boat Licence Regulation (SpFV), Annex 4](https://www.gesetze-im-internet.de/spfv/anlage_4.html) – rescue maneuver (person overboard) as a mandatory maneuver under engine and under sail, two attempts per maneuver
+- [DSV licence portal: Sportbootführerschein](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/sbf-sportbootfuehrerschein/) – mandatory maneuvers for inland and coastal, at most two attempts per task

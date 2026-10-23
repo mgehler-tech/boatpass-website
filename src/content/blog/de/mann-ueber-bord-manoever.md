@@ -3,6 +3,7 @@ title: "Mann-über-Bord-Manöver: So gelingt es in der SBF-Praxisprüfung"
 seoTitle: "Mann-über-Bord-Manöver in der Praxis"
 description: "Das Mann-über-Bord-Manöver ist Pflicht in der praktischen SBF-Prüfung. Schritt für Schritt vom Kommando über den Schraubenschutz bis zur Aufnahme."
 date: 2026-05-27
+updated: 2026-10-23
 tags: ["Praxis"]
 readingTime: 6
 lang: de
@@ -16,7 +17,7 @@ faq:
   - question: "Warum nähert man sich beim MOB-Manöver gegen Wind und Strom an?"
     answer: "Das Anfahren gegen Wind und Strom bremst das Boot ab und gibt die beste Kontrolle über die letzten Meter zum Verunglückten. So kann man auf seiner Höhe kursgerecht aufstoppen, ohne über ihn hinwegzufahren."
   - question: "Wie viele Versuche hat man für Pflichtmanöver in der SBF-Prüfung?"
-    answer: "Für die meisten Pflichtmanöver, einschließlich des Mann-über-Bord-Manövers, gibt es in der Prüfung zwei Versuche. Trotzdem lohnt es sich, den Ablauf so zu verinnerlichen, dass er beim ersten Mal sitzt."
+    answer: "Für jedes Manöver, einschließlich des Mann-über-Bord-Manövers, gibt es in der Prüfung zwei Versuche. Trotzdem lohnt es sich, den Ablauf so zu verinnerlichen, dass er beim ersten Mal sitzt."
 howTo:
   name: "Mann-über-Bord-Manöver durchführen"
   description: "So läuft das Mann-über-Bord-Manöver in der praktischen SBF-Prüfung Schritt für Schritt ab."
@@ -78,12 +79,17 @@ Die Aufnahme erfolgt **nur bei stehendem Boot mit ausgekuppelter Maschine** – 
 - **Boje aus den Augen verloren:** Ohne ständige Sichtkontrolle wird das Wiederfinden zur Glückssache.
 - **Mit laufender Schraube aufgenommen:** Vor der Aufnahme muss die Maschine aus dem Gang sein.
 
-Übrigens: Für die meisten Pflichtmanöver hast du in der Prüfung **zwei Versuche**. Trotzdem lohnt es sich, den Ablauf so zu verinnerlichen, dass er beim ersten Mal sitzt.
+Übrigens: Für jedes Manöver hast du in der Prüfung **zwei Versuche**. Trotzdem lohnt es sich, den Ablauf so zu verinnerlichen, dass er beim ersten Mal sitzt.
 
 ## So bereitest du dich vor
 
-Das MOB-Manöver lernst du auf dem Wasser – die Theorie dahinter (warum die Schraube weg muss, warum gegen Wind und Strom) gehört aber genauso ins Prüfungswissen und taucht in den Theoriefragen auf. Als Pflichtmanöver wird es sowohl beim [SBF Binnen](/sbf-binnen/) als auch beim [SBF See](/sbf-see/) verlangt. Wie die gesamte Praxisprüfung abläuft, liest du in unserem Überblick [SBF Prüfung: so läuft sie ab](/sbf-pruefung-ablauf/). Welche Knoten du parallel sicher beherrschen musst, steht im Artikel zu den [wichtigsten Knoten](/blog/wichtigste-knoten-sbf/).
+Das MOB-Manöver lernst du auf dem Wasser – die Theorie dahinter (warum die Schraube weg muss, warum gegen Wind und Strom) gehört aber genauso ins Prüfungswissen. Als Pflichtmanöver wird es sowohl beim [SBF Binnen](/sbf-binnen/) als auch beim [SBF See](/sbf-see/) verlangt. Wie die gesamte Praxisprüfung abläuft, liest du in unserem Überblick [SBF Prüfung: so läuft sie ab](/sbf-pruefung-ablauf/). Welche Knoten du parallel sicher beherrschen musst, steht im Artikel zu den [wichtigsten Knoten](/blog/wichtigste-knoten-sbf/).
 
 ## Fazit
 
 Das Mann-über-Bord-Manöver ist beherrschbar, wenn du den roten Faden kennst: Ruhe bewahren, Schub raus und Ruder zur Seite des Verunglückten (Schraube weg), Verunglückten im Blick behalten, Rettungsmittel werfen, gegen Wind und Strom kontrolliert anfahren und nur bei stehendem Boot aufnehmen. Wer diesen Ablauf sicher abrufen kann, meistert das wichtigste Manöver der SBF-Praxisprüfung souverän – und ist auch im Ernstfall vorbereitet.
+
+## Quellen
+
+- [Sportbootführerscheinverordnung (SpFV), Anlage 4](https://www.gesetze-im-internet.de/spfv/anlage_4.html) – Rettungsmanöver (Mensch über Bord) als Pflichtmanöver unter Maschine und unter Segel, zwei Versuche je Manöver
+- [Portal für Sportbootführerscheine des DSV: Sportbootführerschein](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/sbf-sportbootfuehrerschein/) – Pflichtmanöver für Binnen und See, höchstens zwei Versuche je Aufgabe

@@ -3,6 +3,7 @@ title: "Ausweichregeln auf dem Wasser – wer muss ausweichen?"
 seoTitle: "Ausweichregeln: Wer muss ausweichen?"
 description: "Auf dem Wasser gibt es keine Vorfahrt, sondern Ausweichregeln. Wer ist ausweichpflichtig, wer Kurshalter? Die KVR-Grundregeln mit Merksätzen für den SBF."
 date: 2026-05-09
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -35,7 +36,7 @@ faq:
 
 ## Vorfahrt? Gibt es nicht.
 
-In den Kollisionsverhütungsregeln (KVR / SeeSchStrO) spricht man bewusst nicht von Vorfahrt, sondern von **Ausweichpflicht** und **Kurshaltepflicht**:
+In den Kollisionsverhütungsregeln (KVR) spricht man bewusst nicht von Vorfahrt, sondern von **Ausweichpflicht** und **Kurshaltepflicht**:
 
 - Der **Ausweichpflichtige** muss frühzeitig und deutlich ausweichen.
 - Der **Kurshalter** muss seinen Kurs und seine Geschwindigkeit **beibehalten**, damit der andere sich darauf verlassen kann.
@@ -103,3 +104,10 @@ In der Praxisprüfung fragt der Prüfer typische Situationen ab: „Da vorne kom
 ## Fazit
 
 Auf dem Wasser gibt es keine Vorfahrt, sondern Ausweich- und Kurshaltepflicht. Die Rangordnung (Maschine weicht Segel weicht Fischer weicht Manövrierbehindert weicht Manövrierunfähig), die Steuerbord-Regel bei kreuzenden Motorbooten und „Luv weicht Lee" bei Seglern sind die wichtigsten Bausteine. Wer das Schema beherrscht, löst die meisten Prüfungsfragen sicher. Eng mit den Ausweichregeln verzahnt sind die [Schallsignale](/blog/schallsignale-sbf-erklaert/) und die [Lichterführung](/blog/lichterfuehrung-erklaert/), mit denen Fahrzeuge ihre Absicht und Position ankündigen. In der Boatpass-App kannst du die Fragen zu Ausweichregeln und Verkehrsrecht gezielt mit dem offiziellen ELWIS-Fragenkatalog trainieren.
+
+## Quellen
+
+- [Kollisionsverhütungsregeln (KVR), Regel 18](https://www.gesetze-im-internet.de/seestro_1972/regel_18.html) – Rangordnung der Fahrzeuge und tiefgangbehinderte Fahrzeuge
+- [KVR Regel 13](https://www.gesetze-im-internet.de/seestro_1972/regel_13.html) und [Regel 15](https://www.gesetze-im-internet.de/seestro_1972/regel_15.html) – Überholen (22,5° achterlicher als querab) und kreuzende Kurse
+- [Seeschifffahrtsstraßen-Ordnung, § 25](https://www.gesetze-im-internet.de/seeschstro_1971/__25.html) und [§ 31](https://www.gesetze-im-internet.de/seeschstro_1971/__31.html) – Vorfahrt im Fahrwasser und Ausweichpflicht von Zugbooten
+- [Binnenschifffahrtsstraßen-Ordnung, § 6.02a](https://www.gesetze-im-internet.de/binschstro_2012/__6_02a.html) – Ausweichregeln für Kleinfahrzeuge untereinander auf Binnengewässern

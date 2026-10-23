@@ -1,9 +1,9 @@
 ---
 title: "Die richtige Rettungsweste wählen – Auftriebsklassen einfach erklärt"
 seoTitle: "Rettungsweste: Auftriebsklassen erklärt"
-description: "50N, 100N, 150N oder 275N? Die vier Auftriebsklassen nach EN ISO 12402 – mit Praxisbeispielen, Kinderweste-Pflicht und der richtigen Wahl fürs Revier."
+description: "50N, 100N, 150N oder 275N? Die vier Auftriebsklassen nach EN ISO 12402 – mit Praxisbeispielen, Westen für Kinder und der richtigen Wahl fürs Revier."
 date: 2026-06-26
-updated: 2026-08-31
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 9
 lang: de
@@ -19,7 +19,7 @@ faq:
   - question: "Was ist der Unterschied zwischen einer Schwimmhilfe (50N) und einer Rettungsweste?"
     answer: "Eine 50N-Schwimmhilfe unterstützt nur einen bewussten, aktiven Schwimmer und ist offiziell keine Rettungsweste. Sie dreht eine bewusstlose Person nicht eigenständig auf den Rücken. Erst Rettungswesten ab der 150N-Klasse sind dafür ausgelegt, das Gesicht einer bewusstlosen Person über Wasser zu halten."
   - question: "Wann müssen Kinder an Bord eine Rettungsweste tragen?"
-    answer: "Nach der Binnenschifffahrtsstraßen-Ordnung (BinSchStrO) müssen Kinder unter 14 Jahren auf Bundeswasserstraßen an Deck oder im offenen Boot eine CE-zugelassene, zum Körpergewicht passende Rettungsweste nach EN ISO 12402 tragen. Für Babys bis 15 kg gibt es eigens genormte 100N-Modelle mit automatischer Kopfdrehung. Der Skipper ist dafür verantwortlich, dass jedes Kind an Bord eine passende Weste trägt."
+    answer: "Eine eigene gesetzliche Tragepflicht für Kinder auf Sportbooten enthält die Binnenschifffahrtsstraßen-Ordnung (BinSchStrO) nicht. Trotzdem sollten Kinder an Deck oder im offenen Boot immer eine CE-gekennzeichnete, zum Körpergewicht passende Rettungsweste nach EN ISO 12402 tragen. Für Babys bis 15 kg gibt es eigens genormte 100N-Modelle mit automatischer Kopfdrehung. Als Skipper solltest du sicherstellen, dass jedes Kind an Bord eine passende Weste trägt."
 ---
 
 Eine Rettungsweste liegt im Schrank, ist zu warm, sitzt unbequem – und landet deshalb dort, wo sie am wenigsten hilft. Doch selbst wer die Weste konsequent trägt, hat sie oft ohne großes Nachdenken gekauft. Die Auftriebsklassen nach **EN ISO 12402** klingen technisch, sind aber die entscheidende Grundlage dafür, ob eine Weste im Ernstfall ihr Versprechen hält. Denn nicht jede Weste kann eine bewusstlose Person aus der Bauchlage drehen und das Gesicht über Wasser halten – und genau darauf kommt es an, wenn du nicht mehr selbst schwimmen kannst.
@@ -78,7 +78,7 @@ Die 275N-Klasse ist für professionelle Seeleute und den Offshore-Bereich entwic
 
 Die Theorie ist klar, in der Praxis tun sich trotzdem viele schwer mit der Wahl. Drei typische Szenarien zeigen, wie die Entscheidung aussieht:
 
-- **Familienausflug auf dem Binnensee:** Ruhiges Wasser, Motorboot mit wenig Fahrt, Ufer in Sichtweite. Eine **100N-Weste** reicht für die Erwachsenen, für Kinder unter 14 Jahren eine kindgerechte, gewichtspassende Ausführung derselben Klasse.
+- **Familienausflug auf dem Binnensee:** Ruhiges Wasser, Motorboot mit wenig Fahrt, Ufer in Sichtweite. Eine **100N-Weste** reicht für die Erwachsenen, für Kinder eine kindgerechte, gewichtspassende Ausführung derselben Klasse.
 - **Segeltörn auf Ostsee oder Nordsee:** Offene See, wechselnde Wetterlagen, Wellengang. Hier ist die **150N-Weste** mit Selbstaufrichtung Pflichtausrüstung, für die SBF-See-Praxis der Standard.
 - **Atlantiküberquerung oder Regatta auf offener See:** Schwere Ölzeugkombi, Sicherheitsgeschirr, potenziell lange allein an Deck. Nur die **275N-Klasse** garantiert unter diesen Bedingungen zuverlässig die Selbstaufrichtung.
 
@@ -98,7 +98,7 @@ Die Klasse (50N bis 275N) beschreibt das Schutzniveau, nicht die Bauweise. Beide
 
 In Deutschland regeln die Schifffahrtsordnungen die Tragepflicht auf Bundeswasserstraßen. Wichtige Grundsätze:
 
-**Kinder unter 14 Jahren** müssen auf Bundeswasserstraßen an Deck oder im offenen Boot eine CE-zugelassene Rettungsweste nach EN ISO 12402 tragen. Die Regelung findet sich in der **Binnenschifffahrtsstraßen-Ordnung (BinSchStrO)** und ist für alle Schiffsführer verbindlich. Wichtig: Die Weste muss zum Körpergewicht des Kindes passen, eine zu große Erwachsenenweste ist weder rechtlich noch praktisch zulässig. Für Babys bis 15 kg gibt es eigens genormte Modelle der 100N-Klasse, die den Kopf im Wasser selbstständig in die richtige Lage drehen. Wer als Skipper Kinder an Bord nimmt, trägt die Verantwortung dafür, dass jedes Kind eine passende, richtig sitzende Weste trägt.
+**Kinder:** Eine eigene gesetzliche Tragepflicht für Kinder auf Sportbooten enthält die **Binnenschifffahrtsstraßen-Ordnung (BinSchStrO)** nicht, ihre Vorgaben zu Kinderwesten betreffen Fahrgastschiffe (§ 1.08). Trotzdem gehört jedes Kind an Deck oder im offenen Boot in eine CE-gekennzeichnete Rettungsweste nach EN ISO 12402. Wichtig: Die Weste muss zum Körpergewicht des Kindes passen, eine zu große Erwachsenenweste bietet keinen sicheren Halt. Für Babys bis 15 kg gibt es eigens genormte Modelle der 100N-Klasse, die den Kopf im Wasser selbstständig in die richtige Lage drehen. Wer als Skipper Kinder an Bord nimmt, trägt die Verantwortung dafür, dass jedes Kind eine passende, richtig sitzende Weste trägt.
 
 **Erwachsene** auf Freizeitbooten sind nicht in jedem Fall gesetzlich zum Tragen verpflichtet – aber das ändert nichts daran, dass sie die Weste im Ernstfall brauchen. Viele Charterunternehmen, Segelschulen und erfahrene Skipperkollegen machen das Tragen zur Pflicht bei Nacht, schlechtem Wetter, Alleinsegeln oder MOB-Situationen. Die Weste im Schrank ist nutzlos.
 
@@ -147,3 +147,10 @@ Die vier Klassen nach EN ISO 12402 – 50N, 100N, 150N und 275N – sind klar na
 Genauso wichtig wie die richtige Klasse: die Weste tragen – und bei aufblasbaren Modellen regelmäßig warten.
 
 Wenn du dich auf die [SBF-Prüfung](/sbf-pruefung-ablauf/) vorbereitest – egal ob SBF Binnen oder SBF See –, hilft dir die **Boatpass-App** mit allen Fragen aus dem offiziellen ELWIS-Fragenkatalog – auch zu Sicherheitsausrüstung, Rettungsmitteln und Schiffsführerpflichten, im Prüfungsmodus trainierbar.
+
+## Quellen
+
+- [DIN EN ISO 12402-3 (DIN Media)](https://www.dinmedia.de/de/norm/din-en-iso-12402-3/303769608) – Rettungswesten der Stufe 150 für allgemeine Nutzung, Offshore und raue Gewässer
+- [DIN EN ISO 12402-5 (DIN Media)](https://www.dinmedia.de/de/norm/din-en-iso-12402-5/303769802) – Schwimmhilfen der Stufe 50 setzen aktive Mitwirkung voraus und sind für geschützte Gewässer mit Hilfe in der Nähe gedacht
+- [Binnenschifffahrtsstraßen-Ordnung (BinSchStrO), § 1.08](https://www.gesetze-im-internet.de/binschstro_2012/__1_08.html) – Vorgaben zu Rettungswesten; Kinderwesten sind nur für Fahrgastschiffe geregelt
+- [Sportbootführerscheinverordnung (SpFV), Anlage 3](https://www.gesetze-im-internet.de/spfv/anlage_3.html) – Wartung aufblasbarer Rettungsmittel als Prüfungsstoff der Theorie

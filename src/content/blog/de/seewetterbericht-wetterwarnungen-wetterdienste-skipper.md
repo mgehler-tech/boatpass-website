@@ -3,6 +3,7 @@ title: "Seewetterbericht und Wetterwarnungen richtig nutzen – Wetterdienste f�
 seoTitle: "Seewetterbericht & Wetterwarnungen nutzen"
 description: "DWD-Seewetterbericht, NAVTEX, UKW-Seefunk und Wetter-Apps: So nutzt du die offiziellen Wetterdienste für die Törnplanung und verstehst Warnstufen richtig."
 date: 2026-07-29
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 9
 lang: de
@@ -120,3 +121,10 @@ Im theoretischen Teil des [SBF See](/sbf-see/) wird Wetterkunde als eigener Them
 ## Fazit
 
 Der Seewetterbericht des DWD ist die zentrale amtliche Quelle für Wind- und Sturmwarnungen auf Nord- und Ostsee, ergänzt durch NAVTEX und UKW-Seefunk als funkbasierte Kanäle, die auch ohne Mobilfunknetz funktionieren. Wetter-Apps sind eine sinnvolle Ergänzung für den schnellen Überblick, ersetzen aber nicht die amtliche Warnung. Wer die verschiedenen Quellen kennt und regelmäßig nutzt, von der groben Vorplanung bis zur laufenden Kontrolle unterwegs, trifft fundiertere Entscheidungen und ist auf dem Wasser deutlich besser vor bösen Überraschungen geschützt.
+
+## Quellen
+
+- [Deutscher Wetterdienst – Seewetter Nord- und Ostsee](https://www.dwd.de/DE/fachnutzer/schifffahrt/seewetter/nordostsee/_node.html) – Seewetterberichte mehrmals täglich, Mittelfrist-Seewetterbericht über 5 Tage einmal täglich
+- [Deutscher Wetterdienst – NAVTEX](https://www.dwd.de/DE/fachnutzer/schifffahrt/funkausstrahlung/navtex/_node.html) – Sendezeiten auf 490 kHz (Kennung L, deutsch) und 518 kHz (englisch)
+- [Deutscher Wetterdienst – Warnstufen und Farbskala](https://www.dwd.de/DE/wetter/warnungen_aktuell/kriterien/warnstufen.html) – vier Warnstufen von Gelb bis Violett
+- [ELWIS – Fragenkatalog SBF See, spezifische Fragen](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – Starkwindwarnung bei 6 und 7 Bft, Sturmwarnung ab 8 Bft (Fragen 267 und 268)

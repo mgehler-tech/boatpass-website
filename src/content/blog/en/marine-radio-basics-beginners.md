@@ -3,6 +3,7 @@ title: "Marine Radio Basics: Channels, DSC and Distress Calls"
 seoTitle: "Marine Radio Basics for Beginners (UBI & SRC)"
 description: "Marine VHF radio for beginners: which channels matter, how DSC works, and how to make a distress call correctly. The essentials explained simply."
 date: 2026-09-16
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 9
 lang: en
@@ -81,3 +82,10 @@ Radio is a shared medium: only one station can transmit on a channel at a time. 
 Marine radio is not rocket science once you know the basics: **channel 16** is the calling and distress channel, **channel 70** carries the digital DSC alert, and **MAYDAY, PAN PAN, and SECURITE** mark the three levels of urgency. DSC makes the distress call fast and precise, but does not replace the voice distress call on channel 16. Once you understand these building blocks, you can use the radio confidently day to day and respond correctly in an emergency. For regular operation you need the right certificate, but in a genuine emergency all that counts is that help arrives.
 
 The **Boatpass app** helps you prepare for the SRC and UBI with the complete official question catalogs, a realistic exam mode, and targeted mistake training, so that you have channels, DSC, and the distress procedures down cold before you pick up the microphone yourself.
+
+## Sources
+
+- [SRC question catalog (ELWIS, PDF, German)](https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-SRC-2018.pdf?__blob=publicationFile&v=3) – channel 16 (156.8 MHz) as calling and distress channel, channel 70 for DSC, nine-digit MMSI, and MAYDAY, PAN PAN and SECURITE
+- [Federal Network Agency (Bundesnetzagentur) – maritime and inland waterway radio](https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/Frequenzen/SpezielleAnwendungen/Seefunk/start.html) – MMSI, call sign and ATIS number must be individually assigned before use
+- [ELWIS – radio certificates](https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html) and [DSV licence portal: SRC](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/src-short-range-certificate/) – SRC for marine radio, UBI for inland waterway radio; DSC distress alert, distress message and English component in the SRC exam
+- [Section 145 of the German Criminal Code (StGB)](https://www.gesetze-im-internet.de/stgb/__145.html) – misuse of distress calls and distress signals is a criminal offense

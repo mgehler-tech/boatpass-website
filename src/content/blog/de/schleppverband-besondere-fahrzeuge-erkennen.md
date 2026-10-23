@@ -3,6 +3,7 @@ title: "Schleppverband und besondere Fahrzeuge – Signalkörper am Tag erkennen
 seoTitle: "Schleppverband & Signalkörper am Tag"
 description: "Schubverband, Schleppverband und Sonderfahrzeuge: Bälle, Kegel, Raute und Zylinder als Signalkörper am Tag einfach erklärt, für SBF Binnen und SBF See."
 date: 2026-07-21
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -26,7 +27,7 @@ faq:
   - question: "Was ist der Unterschied zwischen Schubverband und Schleppverband bei den Signalkörpern?"
     answer: "Ein starr gekoppelter Schubverband wird nach den Kollisionsverhütungsregeln wie ein einziges Fahrzeug behandelt und führt entsprechend nur eine einzige Lichter- beziehungsweise Signalkörper-Kombination. Ein Schleppverband besteht dagegen aus zwei getrennt erkennbaren Einheiten, die jeweils eigene Signalkörper zeigen."
   - question: "Wann muss ein Schleppzug zusätzlich eine Raute führen?"
-    answer: "Überschreitet die Länge des Schleppzugs, gemessen vom Heck des schleppenden bis zum Ende des letzten geschleppten Fahrzeugs, 200 Meter, müssen sowohl das schleppende als auch das geschleppte Fahrzeug eine Raute führen. Das letzte geschleppte Fahrzeug führt die Raute zusätzlich an seinem äußersten Ende."
+    answer: "Überschreitet die Länge des Schleppzugs, gemessen vom Heck des schleppenden bis zum Ende des letzten geschleppten Fahrzeugs, 200 Meter, müssen sowohl das schleppende als auch das geschleppte Fahrzeug eine Raute führen. Ein schwer erkennbarer, teilweise getauchter geschleppter Gegenstand führt zusätzlich eine Raute an seinem äußersten Ende."
   - question: "Wie unterscheidet man manövrierunfähig von manövrierbehindert am Signalkörper?"
     answer: "Manövrierunfähige Fahrzeuge, etwa bei Maschinenausfall, führen zwei schwarze Bälle übereinander. Manövrierbehinderte Fahrzeuge, etwa beim Baggern oder Schleppen eines schweren Verbands, führen drei Signalkörper in der Reihenfolge Ball-Raute-Ball."
 ---
@@ -42,7 +43,7 @@ Alle Signalkörper der KVR setzen sich aus vier einfachen schwarzen Grundformen 
 - **Ball** (Kugel)
 - **Kegel** (Spitze nach oben oder nach unten)
 - **Zylinder**
-- **Raute** (Rhombus): zwei Kegel mit gemeinsamer Grundfläche, also Spitze an Spitze
+- **Raute** (Rhombus): zwei Kegel mit gemeinsamer Grundfläche, also Grundfläche an Grundfläche
 
 Aus diesen vier Formen und ihrer Kombination ergeben sich alle Tagzeichen, die du für die Prüfung kennen musst. Wer die Grundformen sicher auseinanderhält, kann die meisten Kombinationen danach logisch herleiten, statt jede einzeln auswendig zu lernen.
 
@@ -60,7 +61,7 @@ Gerade auf großen Binnenwasserstraßen wie dem Rhein begegnen dir Schubverbänd
 
 ### Die Raute bei langen Schleppzügen
 
-Für Schleppverbände gibt es eine zusätzliche Regel, die tagsüber wie nachts gilt: Beträgt die Länge des Schleppzugs, gemessen vom Heck des schleppenden Fahrzeugs bis zum äußersten Ende des letzten geschleppten Fahrzeugs oder Gegenstands, **mehr als 200 Meter**, müssen sowohl das schleppende als auch das geschleppte Fahrzeug zusätzlich eine **Raute** dort führen, wo sie am besten zu sehen ist. Das letzte geschleppte Fahrzeug oder der geschleppte Gegenstand führt außerdem eine Raute an oder nahe dem äußersten Ende, damit du als Kreuzungspartner erkennst, wo der Schleppzug tatsächlich endet.
+Für Schleppverbände gibt es eine zusätzliche Regel, die tagsüber gilt: Beträgt die Länge des Schleppzugs, gemessen vom Heck des schleppenden Fahrzeugs bis zum äußersten Ende des letzten geschleppten Fahrzeugs oder Gegenstands, **mehr als 200 Meter**, müssen sowohl das schleppende als auch das geschleppte Fahrzeug zusätzlich eine **Raute** dort führen, wo sie am besten zu sehen ist. Ist das letzte Geschleppte ein schwer erkennbares, teilweise getauchtes Fahrzeug oder ein solcher Gegenstand, führt es außerdem eine Raute an oder nahe dem äußersten Ende, damit du als Kreuzungspartner erkennst, wo der Schleppzug tatsächlich endet.
 
 Kann ein geschlepptes Fahrzeug, etwa ein unbemannter Ponton, die vorgeschriebenen Lichter oder Signalkörper aus baulichen Gründen nicht führen, müssen alle möglichen Maßnahmen getroffen werden, um es trotzdem zu beleuchten oder zumindest erkennbar zu machen. Für dich als Verkehrsteilnehmer bedeutet das in der Praxis: Siehst du eine Raute an einem sonst unauffälligen Fahrzeug oder Gegenstand, gehört es sehr wahrscheinlich zu einem Schleppverband, und du solltest reichlich Abstand zur gesamten Länge des Zuges halten, nicht nur zum sichtbaren Schlepper.
 
@@ -105,7 +106,7 @@ Diese beiden Zeichen wirken auf den ersten Blick ähnlich, sind aber leicht zu u
 
 ## Signalkörper und Schallsignale gehören zusammen
 
-Signalkörper sind nur die eine Hälfte des Themas. Bei guter Sicht siehst du die Form, bei Nebel oder starkem Regen hilft dir nur noch das Ohr. Deshalb geben genau dieselben Fahrzeugkategorien, also fischende, manövrierunfähige, manövrierbehinderte, tiefgangbehinderte sowie schleppende und geschobene Fahrzeuge, bei verminderter Sicht ein eigenes Schallsignal ab, damit sie auch ohne Sichtkontakt erkennbar bleiben. Wie diese Schallsignale aufgebaut sind und wo die typischen Verwechslungsfallen zwischen See und Binnen liegen, erklärt der Artikel [Schallsignale beim Sportbootführerschein](/blog/schallsignale-sbf-erklaert/). Wer die Fahrzeugkategorien aus diesem Artikel einmal verinnerlicht hat, tut sich auch bei den passenden Schallsignalen deutlich leichter.
+Signalkörper sind nur die eine Hälfte des Themas. Bei guter Sicht siehst du die Form, bei Nebel oder starkem Regen hilft dir nur noch das Ohr. Deshalb geben genau dieselben Fahrzeugkategorien, also fischende, manövrierunfähige, manövrierbehinderte, tiefgangbehinderte sowie schleppende und schiebende Fahrzeuge, bei verminderter Sicht ein eigenes Schallsignal ab, damit sie auch ohne Sichtkontakt erkennbar bleiben. Wie diese Schallsignale aufgebaut sind und wo die typischen Verwechslungsfallen zwischen See und Binnen liegen, erklärt der Artikel [Schallsignale beim Sportbootführerschein](/blog/schallsignale-sbf-erklaert/). Wer die Fahrzeugkategorien aus diesem Artikel einmal verinnerlicht hat, tut sich auch bei den passenden Schallsignalen deutlich leichter.
 
 ## So gehst du in der Prüfung vor
 
@@ -123,3 +124,10 @@ Mit diesem Schema lassen sich die meisten Prüfungsfragen zu Signalkörpern sich
 ## Fazit
 
 Signalkörper übersetzen die wichtigsten nächtlichen Lichterkombinationen in vier einfache Tagesformen: Ball, Kegel, Zylinder und Raute. Schub- und Schleppverbände, Fischereifahrzeuge, manövrierunfähige und manövrierbehinderte Fahrzeuge sowie tiefgangbehinderte, ankernde und aufgelaufene Schiffe lassen sich daran eindeutig erkennen, wenn du die Grundformen und ihre typischen Kombinationen einmal verinnerlicht hast. In der Boatpass-App kannst du genau diese Signalkörper-Fragen gezielt mit dem offiziellen ELWIS-Fragenkatalog üben, bis du jede Kombination auf Anhieb richtig zuordnest.
+
+## Quellen
+
+- [Kollisionsverhütungsregeln (KVR), Regel 24](https://www.gesetze-im-internet.de/seestro_1972/regel_24.html) – Lichter und Signalkörper von Schlepp- und Schubverbänden, Raute ab 200 m Schleppzuglänge
+- [KVR Regel 26](https://www.gesetze-im-internet.de/seestro_1972/regel_26.html) – Signalkörper fischender Fahrzeuge, Kegel bei Fanggerät über 150 m
+- [KVR Regel 27](https://www.gesetze-im-internet.de/seestro_1972/regel_27.html), [Regel 28](https://www.gesetze-im-internet.de/seestro_1972/regel_28.html) und [Regel 30](https://www.gesetze-im-internet.de/seestro_1972/regel_30.html) – manövrierunfähige, manövrierbehinderte, tiefgangbehinderte, ankernde und festgekommene Fahrzeuge
+- [KVR Anlage I, Abschnitt 6](https://www.gesetze-im-internet.de/seestro_1972/anlage_i.html) – Farbe, Form und Maße der Signalkörper
