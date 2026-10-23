@@ -15,7 +15,7 @@ faq:
   - question: "What are my legal rights if I lose my Sportbootführerschein?"
     answer: "Under Section 11 of the Sportbootführerscheinverordnung (SpFV), the licensed association issues a replacement on request once the certificate has become unusable or its loss has been credibly shown. A sworn declaration is not strictly required, but if the license was stolen, a copy of the police report is normally requested."
   - question: "How long does it take to get a replacement certificate?"
-    answer: "In practice, plan for roughly three to four weeks of processing time, depending on how quickly your original exam records can be located in the archive and how busy the examination committee currently is."
+    answer: "Once the complete application has been received, the DMYV estimates a processing time of about three to four weeks, and about six weeks during the season. It is best to apply before the season starts."
   - question: "Can I keep boating while I wait for the replacement to arrive?"
     answer: "If you can show that you hold the license but currently cannot present a valid certificate, DMYV or DSV can additionally issue a provisional Sportbootführerschein under Section 11 SpFV, which serves as a bridging document until the final replacement arrives."
 howTo:
@@ -25,13 +25,13 @@ howTo:
     - name: "Get the application form"
       text: "Download the application form from the DMYV or DSV website, or apply directly through the Bundesportal."
     - name: "Gather your documents"
-      text: "Prepare the completed application form, a current passport photo, a copy of your ID card or passport, and details about your original exam; add a copy of the police report if the certificate was stolen, or the damaged certificate itself if it was damaged."
+      text: "Prepare the completed application form, a current passport photo and details about your original exam, and for the DMYV also a copy of both sides of your ID card (or your passport plus a current certificate of registration); add a copy of the police report if the certificate was stolen, or the damaged certificate itself if it was damaged."
     - name: "Submit the application"
       text: "Submit the application by post to DMYV or DSV, or online through the Bundesportal."
     - name: "Pay the processing fee"
       text: "Pay the processing fee, usually upon request from the association or together with the application."
     - name: "Wait for your new card"
-      text: "Wait for the replacement certificate in credit-card format. Processing typically takes about three to four weeks."
+      text: "Wait for the replacement certificate in credit-card format. According to the DMYV, processing takes about three to four weeks, and about six weeks during the season."
 ---
 
 Your Sportbootführerschein, the official German recreational boating license, has gone missing from your wallet or come out of a downpour barely legible? No need to panic. There is a clearly defined procedure for exactly this situation, known as the **Ersatzausfertigung**, or replacement certificate. This article explains when you are entitled to one, which documents you need, how the process works with DMYV and DSV, and what to do if you need proof of your license on short notice.
@@ -63,7 +63,7 @@ To have your application processed smoothly, gather the following:
 
 - **Completed application form** from DMYV or DSV.
 - **A current passport photo.**
-- **A copy of your ID card or passport**, usually both sides.
+- **For the DMYV: a copy of your ID card**, both sides (you may black out the CAN number), or alternatively a copy of your passport plus a current certificate of registration (Meldebescheinigung). The DSV form does not ask for an ID copy.
 - **Details about your original exam:** the approximate date (at minimum the year and whether it was spring or autumn) and the location where you took it. These details matter because the candidate records in the archive are sorted by them; without them, locating your file takes considerably more effort.
 - **If stolen:** a copy of the police report.
 - **If damaged:** the damaged certificate itself where possible, since it needs to be returned.
@@ -76,7 +76,7 @@ If you are unsure about the exact exam date, old paperwork like your original re
 2. **Gather your documents**, as listed above.
 3. **Submit the application**, by post or online via the Bundesportal.
 4. **Pay the processing fee**, usually upon request from the association or together with the application.
-5. **Wait for your new card.** The replacement is produced, like every Sportbootführerschein issued today, in **credit-card format**. That applies regardless of whether your original certificate was still in the old paper format, which has not been issued since January 1, 2018.
+5. **Wait for your new card.** The replacement is produced, like every Sportbootführerschein issued today, in **credit-card format**. That applies regardless of whether your original certificate was still in the old paper format, since licenses have only been issued in card format since 2018.
 
 ## Does this apply the same way to SBF Inland and SBF Coastal?
 
@@ -84,11 +84,11 @@ Yes. Section 11 SpFV applies to every official Sportbootführerschein issued und
 
 ## Costs and processing time at a glance
 
-Plan for **roughly three to four weeks** of processing time, depending on how quickly your exam records can be located in the archive. Issuing the replacement involves a **processing fee that currently sits at around 40 euros**, plus shipping costs for delivery outside Germany. Because fee amounts can change, check the exact current figure on the DMYV or DSV website or through the Bundesportal.
+According to the DMYV, plan for **about three to four weeks** of processing time, and **about six weeks** during the season. According to the DSV and DMYV application forms, issuing the replacement costs a **fee of 42.66 euros** (as of 2026); for delivery outside Germany, the DMYV adds 7.86 euros. Because fee amounts can change, check the exact current figure on the DMYV or DSV website or through the Bundesportal.
 
 ## Need proof on short notice? The provisional certificate
 
-If a boating trip or charter is coming up before your final replacement arrives, you may find yourself under time pressure. Section 11 SpFV addresses exactly this situation by allowing you to additionally request a **provisional Sportbootführerschein**. It serves as a bridging document until the regular replacement is issued. Ask DMYV or DSV directly whether this option applies to your case and on what terms.
+If a boating trip or charter is coming up before your final replacement arrives, you may find yourself under time pressure. Section 11 SpFV addresses exactly this situation by allowing you to additionally request a **provisional Sportbootführerschein**. It serves as a bridging document until the regular replacement is issued. According to the DSV and DMYV application forms, it costs 24.90 euros and is valid for three months. You simply tick the option on the replacement application.
 
 ## Why the requirement to carry your license matters
 
@@ -109,11 +109,13 @@ A few simple habits make dealing with a future loss much less stressful:
 
 ## Conclusion
 
-A lost or damaged Sportbootführerschein is annoying, but it is straightforward to resolve through the replacement procedure under Section 11 SpFV. What matters is a complete application to DMYV or DSV, as accurate as possible details about the date and location of your original exam, and, in the case of theft, the police report. Plan for around three to four weeks of processing time and a fee in the mid double-digit euro range, and use the provisional certificate option if you are short on time. If you want to brush up on the exam material in the meantime, perhaps because your original exam was a while ago, the **Boatpass app** lets you refresh your knowledge in exam mode using the official ELWIS question catalog, no matter how long you have already held your license.
+A lost or damaged Sportbootführerschein is annoying, but it is straightforward to resolve through the replacement procedure under Section 11 SpFV. What matters is a complete application to DMYV or DSV, as accurate as possible details about the date and location of your original exam, and, in the case of theft, the police report. Plan for around three to four weeks of processing time (closer to six weeks during the season) and a fee of 42.66 euros, and use the provisional certificate option if you are short on time. If you want to brush up on the exam material in the meantime, perhaps because your original exam was a while ago, the **Boatpass app** lets you refresh your knowledge in exam mode using the official ELWIS question catalog, no matter how long you have already held your license.
 
 ## Sources
 
 - [Section 11 Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/__11.html) (German) – replacement copy, provisional license and duty to return the original
 - [Section 12 SpFV](https://www.gesetze-im-internet.de/spfv/__12.html) (German) – duty to carry the license on board
 - [DSV portal: SBF replacement](https://www.sportbootfuehrerscheine.org/ersatz-umschreibung/sbf-sportbootfuhrerschein/) (German) – application form with issuing fee (€42.66, as of October 2026)
-- [DMYV: replacement copy](https://www.dmyv.de/fuehrerschein/-funk/service/ersatzausfertigung) (German) – processing time of about three to four weeks
+- [DMYV: replacement copy](https://www.dmyv.de/fuehrerschein/-funk/service/ersatzausfertigung) (German) – processing time of about three to four weeks, about six weeks during the season
+- [DMYV: replacement application form (PDF)](https://www.dmyv.de/fileadmin/user_upload/SBF_Ersatz_2026_1.pdf) (German) – required documents (including an ID copy), fee of €42.66, provisional SBF €24.90, shipping abroad
+- [ELWIS: recreational boat licences](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) (German) – card format since 2018

@@ -17,7 +17,7 @@ faq:
   - question: "Is a learning app worth it compared to a boating school theory course?"
     answer: "Yes, an in-person course costs between 250 and 400 euros, while a learning app with the complete official ELWIS question catalog costs only 7 to 12 euros. The exam itself is always the same, no matter how you prepared."
   - question: "What does the cheapest route to the SBF Coastal cost?"
-    answer: "Using an app, a medical certificate, a passport photo, one practical lesson, and the exam fee, the total comes to around 280 euros. That's less than half of what a complete course at a boating school costs."
+    answer: "Using an app, a medical certificate, a passport photo, one practical lesson, and the exam fee, the total comes to around 280 to 315 euros, depending on what your doctor charges for the certificate. That's less than half of what a complete course at a boating school costs."
 howTo:
   name: "Saving money on your boating license: the 5 best tips"
   description: "Five concrete steps to pay noticeably less for theory, practical training and the exam when getting your German boating license."
@@ -48,6 +48,8 @@ Before we get to the saving tips, here's the current cost breakdown for 2026:
 | Medical certificate | €30–65 | €30–65 | €30–65 |
 | Passport photo | €5–15 | €5–15 | €5–15 |
 | **Total** | **€200–650** | **€220–700** | **€280–770** |
+
+The medical certificate is issued on the official form set out in the boating licence regulation (SpFV). It is usually not covered by statutory health insurance: the practice bills it privately under the German medical fee schedule (GOÄ), so the price depends on the practice and the scope of the examination. The range in the table is a rough estimate, so ask beforehand.
 
 The biggest variable cost is theory preparation – and that's exactly where the savings potential lies.
 
@@ -102,7 +104,7 @@ Sounds obvious – but a **retake** means paying fees all over again:
 
 Failing quickly costs an extra €100–200. Targeted studying with exam simulation and mistake training is the best investment to avoid this.
 
-The SBF failure rate is just 10–15% in the theory exam – with good preparation you'll pass the first time.
+The DSV and DMYV do not publish official failure rates. What is clearly regulated, though: you cannot retake a failed part of the exam on the same day, and the whole exam must be completed within one year. Good preparation therefore saves not only money but also time.
 
 ## Tip 5: Compare providers – especially for the practical part
 
@@ -119,11 +121,11 @@ Compare at least 2–3 providers in your region before you book.
 | Item | Cost |
 |---|---|
 | Boatpass app (full access SBF Coastal) | €9.99 |
-| Medical certificate + eye test | approx. €30 |
+| Medical certificate + eye test | approx. €30–65 (depends on the practice) |
 | Passport photo | approx. €10 |
 | 1 practice lesson at a local boating school | approx. €80 |
 | Exam fee SBF Coastal | €148.38 |
-| **Total** | **approx. €280** |
+| **Total** | **approx. €280–315** |
 
 That's less than half of what a complete course at a boating school costs.
 
@@ -144,4 +146,7 @@ The German boating license doesn't have to cost €700. If you learn the theory 
 - [Fee table of the Munich/Nuremberg examination board](https://www.pa-muenchen.de/gebuehren/) (German) – exam fees for SBF Inland, SBF Coastal and the combined exam (as of October 2026)
 - [Bremen examination board – SBF See](https://www.pa-bremen.de/scheine/see/sportbootfuehrerschein-see.html) (German) – nationwide uniform fees for DSV and DMYV, combined exam on separate days €185.67
 - [Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/) (German) – fee collection by the associations (§ 16) and the knot test (Annex 4)
+- [SpFV, Appendix 1 to Annex 2](https://www.gesetze-im-internet.de/spfv/anhang_1_zu_anlage_2.html) (German) – official form for the medical certificate (vision and hearing)
+- [German medical fee schedule (GOÄ)](https://www.gesetze-im-internet.de/go__1982/BJNR015220982.html) (German) – basis for private billing of medical certificates and examinations
+- [DSV/DMYV portal: SBF](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/sbf-sportbootfuehrerschein/) (German) – no retake on the same day, exam must be completed within one year
 - [ELWIS – Coastal question catalog](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html) (German) – the 72 basic questions, which are also part of the Inland catalog

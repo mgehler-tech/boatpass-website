@@ -12,7 +12,7 @@ faq:
   - question: "Wo gilt der SBF Binnen und wo der SBF See?"
     answer: "Der SBF Binnen gilt auf Binnenschifffahrtsstraßen (Flüsse, Kanäle und Seen im Landesinneren), der SBF See auf Seeschifffahrtsstraßen (Küstengewässer an Nord- und Ostsee sowie den Unterläufen bestimmter Flüsse). Die genaue Abgrenzung regelt § 1 der Seeschifffahrtsstraßen-Ordnung (SeeSchStrO)."
   - question: "Bis wohin brauche ich auf der Elbe den SBF See?"
-    answer: "Von der Mündung bis zum Hamburger Hafen gilt der SBF See (Grenze bei Elbe-km 638,98 am rechten bzw. 633,35 am linken Ufer). Im Hamburger Hafen selbst werden beide Scheine akzeptiert, oberhalb gilt der SBF Binnen."
+    answer: "Von der Mündung bis zum Hamburger Hafen gilt der SBF See (Grenze bei Elbe-km 638,98 am rechten bzw. 633,35 am linken Ufer). Der Hamburger Hafen hat eine rechtliche Sonderstellung: Er zählt nach der Sportbootführerscheinverordnung weder zu den See- noch zu den Binnenschifffahrtsstraßen. In der Praxis gelten dort SBF See und SBF Binnen als ausreichend, eine ausdrückliche Vorschrift dazu haben wir aber nicht gefunden. Oberhalb des Hafens gilt der SBF Binnen."
   - question: "Gilt der deutsche Sportbootführerschein im Ausland?"
     answer: "Ja. Seit 2018 wird der SBF im Scheckkartenformat mit dem ICC (International Certificate of Competence) gemäß UN-Resolution Nr. 40 ausgestellt. Formell anerkannt wird der ICC von den gut 20 Staaten, die die Resolution anwenden, darunter Kroatien und die Niederlande; viele weitere Länder wie Griechenland, Italien, Frankreich und Spanien akzeptieren ihn in der Praxis."
   - question: "Wie lange ist der SBF gültig?"
@@ -36,7 +36,7 @@ Die genaue Abgrenzung regelt die **Seeschifffahrtsstraßen-Ordnung (SeeSchStrO),
 
 Von der Mündung bis zum **Hamburger Hafen** brauchst du den SBF See. Die Grenze liegt bei Elbe-km 638,98 (rechtes Ufer, Tinsdal) bzw. km 633,35 (linkes Ufer, Finkenwerder). Das gilt auch für die Nebenarme der Elbe (Wischhafener Süderelbe, Ruthenstrom, Bützflether Süderelbe) und die in die Elbe mündenden Flüsse wie Krückau, Schwinge und Lühe.
 
-**Sonderfall Hamburger Hafen:** Im Hamburger Hafen selbst darfst du mit **beiden Scheinen** fahren – SBF See und SBF Binnen werden beide akzeptiert. Oberhalb des Hamburger Hafens gilt dann der SBF Binnen.
+**Sonderfall Hamburger Hafen:** Die Seeschifffahrtsstraße endet an der unteren Hafengrenze, und die Sportbootführerscheinverordnung nimmt die Elbe im Hamburger Hafen ausdrücklich von den Binnenschifffahrtsstraßen aus (§ 2 Nr. 1 SpFV). Rechtlich ist der Hafen damit weder das eine noch das andere. Das Hamburger Hafenverkehrs- und Schifffahrtsgesetz erklärt die SpFV für Sportfahrzeuge im Hafen für anwendbar, sagt aber nicht, welcher Geltungsbereich gemeint ist. Bootsschulen und Vermieter gehen davon aus, dass dort **SBF See und SBF Binnen** gleichermaßen reichen; eine ausdrückliche Vorschrift dazu haben wir nicht gefunden. Wer sichergehen will, fragt bei der Wasserschutzpolizei Hamburg nach. Oberhalb des Hamburger Hafens gilt dann der SBF Binnen.
 
 ### Trave (Lübeck)
 
@@ -60,7 +60,7 @@ Der NOK verbindet Nord- und Ostsee und gehört zu den Seeschifffahrtsstraßen �
 |---|---|
 | Nordsee, Ostsee (Küste) | SBF See |
 | Elbe bis Hamburg | SBF See |
-| Hamburger Hafen | SBF See **oder** Binnen |
+| Hamburger Hafen | Sonderstellung, in der Praxis SBF See **oder** Binnen |
 | Elbe oberhalb Hamburg | SBF Binnen |
 | Trave bis Hubbrücke Lübeck | SBF See |
 | Warnow bis Rostock | SBF See |
@@ -90,9 +90,11 @@ Offiziell anerkannt wird der ICC von den gut 20 Staaten, die die Resolution Nr. 
 | **Italien** | In der Praxis akzeptiert |
 | **Frankreich** | In der Praxis akzeptiert |
 | **Spanien / Mallorca** | In der Praxis akzeptiert |
-| **Türkei** | In der Praxis akzeptiert |
+| **Türkei** | Kein Resolution-40-Staat, ausländische Scheine aber per Verordnung zugelassen (siehe unten) |
 | **Niederlande** | Offiziell anerkannt |
 | **Karibik, Seychellen, Thailand** | Inoffiziell akzeptiert (reicht zum Chartern) |
+
+Zur Türkei: Seit dem 17. Juli 2026 gilt dort eine neue Verordnung über private Boote. Nach ihrem Art. 14 Abs. 3 dürfen Ausländer, die sich in der Türkei aufhalten, eigene Boote und unbemannt (bareboat) gecharterte Boote im Umfang der Berechtigung ihres ausländischen Scheins führen. Hat das Hafenamt Zweifel an Echtheit oder Gültigkeit, kann es den Schein bei der ausstellenden Stelle überprüfen lassen und die Nutzung bis zur Bestätigung untersagen.
 
 Welche Regeln in den beliebtesten Charterrevieren konkret gelten, zeigt der Beitrag [SBF im Ausland gültig? Kroatien, Niederlande & Italien](/blog/sbf-im-ausland-gueltig/).
 
@@ -114,5 +116,8 @@ Die Grenze zwischen [SBF See](/sbf-see/) und [SBF Binnen](/sbf-binnen/) verläuf
 
 - [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), § 1](https://www.gesetze-im-internet.de/seeschstro_1971/__1.html) – Geltungsbereich der Seeschifffahrtsstraßen, Grenzen an Elbe, Trave, Warnow, Weser und Nord-Ostsee-Kanal
 - [Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/) – Fahrerlaubnis für Binnen- und Seeschifffahrtsstraßen, Sonderstellung der Elbe im Hamburger Hafen (§ 2)
+- [Hafenverkehrs- und Schifffahrtsgesetz Hamburg, § 3](https://www.landesrecht-hamburg.de/bsha/document/jlr-NNLHH00006D90NN00000000011) – Anwendung der SpFV auf Sportfahrzeuge im Hamburger Hafen
+- [ELWIS – Internationale Befähigungsnachweise](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Internationale-Befaehigungsnachweise/Internationale-Befaehigungsnachweise-node.html) – Staaten, die die Resolution Nr. 40 angenommen haben
+- [Resmî Gazete Nr. 33140 vom 17.01.2026](https://www.resmigazete.gov.tr/eskiler/2026/01/20260117-12.htm) (türkisch) – Verordnung über private Boote, Art. 14 (Nutzung ausländischer Scheine) und Art. 20 (Inkrafttreten nach sechs Monaten)
 - [ELWIS – Sportbootführerscheine](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) – Scheckkartenformat seit 2018 und Ausstellung als ICC nach Resolution Nr. 40
 - [UNECE – International Certificate for Operators of Pleasure Craft (Res. No. 40)](https://web.archive.org/web/20250825153452/https://unece.org/transport/inland-water-transport/international-certificates-operator-pleasure-craft-res-no-40) (englisch, archivierte Fassung) – Liste der Staaten, die die Resolution anwenden

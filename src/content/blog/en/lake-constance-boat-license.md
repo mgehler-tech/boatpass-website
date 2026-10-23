@@ -23,7 +23,7 @@ howTo:
     - name: "Check the prerequisites"
       text: "Minimum age 18 for Category A (14 for Category D/sailing) and a medical certificate covering hearing and eyesight."
     - name: "Pass the theory exam"
-      text: "Study the Bodensee-Schifffahrts-Ordnung (BSO): navigation and right-of-way rules, buoyage and maritime signs, priority vessels, meteorology, and rules for water sports and nature reserves."
+      text: "Study the Bodensee-Schifffahrts-Ordnung (BSO): navigation and right-of-way rules, navigation signs, priority vessels, meteorology, and rules for water sports and nature reserves."
     - name: "Pass the practical exam"
       text: "Demonstrate safe motorboat maneuvering on the water, including Lake Constance-specific elements such as correct behavior around ferries and in harbor areas."
 ---
@@ -83,7 +83,7 @@ The process for obtaining the BSP is similar to that of the SBF, with content ta
 The theory section covers the Bodensee-Schifffahrts-Ordnung and its particularities, including:
 
 - **Navigation and right-of-way rules** specific to Lake Constance
-- **Buoyage and maritime signs** – Lake Constance uses the IALA system with local additions
+- **Navigation signs** under Annex B of the BSO – a system of its own rather than the IALA buoyage you know from the coast: sign boards for prohibitions, mandatory rules, restrictions, recommendations and information, yellow buoys marking the limits of areas with special rules, and the strong-wind and storm warning lights
 - **Priority vessels** such as ferries and commercial shipping
 - **Meteorology**, with a focus on local weather phenomena
 - Rules for **water sports, nature reserves, and minimum shore distances**
@@ -133,6 +133,6 @@ For building your SBF theory foundation – collision avoidance rules, buoyage, 
 
 ## Sources
 
-- [Bodensee-Schifffahrts-Ordnung (BSO), full text on BAYERN.RECHT](https://www.gesetze-bayern.de/Content/Document/BayBodSchO/true) (German) – license requirement above 4.4 kW or 12 m² of sail, categories, minimum ages and recognition of other licenses (Art. 12.01–12.09)
+- [Bodensee-Schifffahrts-Ordnung (BSO), full text on BAYERN.RECHT](https://www.gesetze-bayern.de/Content/Document/BayBodSchO/true) (German) – license requirement above 4.4 kW or 12 m² of sail, categories, minimum ages and recognition of other licenses (Art. 12.01–12.09); navigation signs in Art. 5.01 and Annex B
 - [Landratsamt Konstanz – Bodenseeschifferpatent](https://www.lrakn.de/service-und-verwaltung/aemter/strassenverkehr+und+schifffahrt/bodenseeschifferpatent) (German) – prerequisites, medical certificate and exemption from the practical exam for SBF holders
 - [Landratsamt Bodenseekreis – Ferienpatent](https://www.bodenseekreis.de/verkehr-wirtschaft/schifffahrt/bodenseeschifferpatent/ferienpatent/) (German) – temporary recognition of the SBF for up to 30 days per year

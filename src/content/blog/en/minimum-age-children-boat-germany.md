@@ -17,7 +17,7 @@ faq:
   - question: "At what age can you register for the SBF exam?"
     answer: "You can register three months before the minimum age: at 15 years 9 months for the SBF Inland and Coastal under power, and 13 years 9 months for the SBF Inland under sail. The license is issued only at the actual minimum age; minors need a guardian's written consent."
   - question: "What is the DSV youth sailing certificate?"
-    answer: "The DSV Jugendsegelschein (formerly Jüngstensegelschein) is a club-level certificate from the German Sailing Association for children roughly 7 to 14 years old. It's not an official government license, so it doesn't replace the recreational boating license, but it serves as a training and racing credential within sailing clubs."
+    answer: "The DSV Jugendsegelschein (formerly Jüngstensegelschein) is a club-level certificate from the German Sailing Association for children from age 7; it can be taken until the 14th birthday and stays valid until the 17th birthday. It's not an official government license, so it doesn't replace the recreational boating license, but it serves as a training and racing credential within sailing clubs."
 ---
 
 "Can my child take the helm yet?" It's a question most parents ask sooner or later on a family boating trip. The answer depends heavily on what kind of boat is involved: a canoe on a lake is a completely different legal matter from a motorboat on the Baltic Sea. This article explains which minimum age applies to which type of boat, when it makes sense to register for the recreational boating license, and what parents should keep in mind when it comes to supervision and safety.
@@ -78,7 +78,7 @@ Anyone eyeing the [SBF Inland](/en/sbf-inland/) or [SBF Coastal](/en/sbf-coastal
 
 ## Club Youth Sailing Certificates: Practicing Under Supervision
 
-Many sailing clubs and sailing schools offer their own, **unofficial** training levels for younger children. The best-known example is the **DSV Jugendsegelschein** from the German Sailing Association, formerly known as the Jüngstensegelschein. It's aimed at children roughly 7 to 14 years old, requires parental consent as well as a swimming badge, and is earned through DSV sailing schools or clubs.
+Many sailing clubs and sailing schools offer their own, **unofficial** training levels for younger children. The best-known example is the **DSV Jugendsegelschein** from the German Sailing Association, formerly known as the Jüngstensegelschein. Children are admitted from their 7th until their 14th birthday, and the certificate expires on the 17th birthday. Requirements are parental consent and the German youth swimming badge in bronze (or alternatively 15 minutes of continuous swimming). It is earned through DSV sailing schools or clubs.
 
 These club certificates are a sensible, protected way to gain early boating experience under qualified supervision. They **don't replace** the official recreational boating license, though, and they don't authorize independent, unsupervised operation on public waters once a motor or a full-sized boat is involved.
 
@@ -118,3 +118,5 @@ How early children can take the helm depends heavily on the type of boat: muscle
 - [Sportbootführerscheinverordnung (SpFV), § 5](https://www.gesetze-im-internet.de/spfv/__5.html) – license-free limit of 11.03 kW (15 hp) (German)
 - [Inland Waterways Traffic Regulations (BinSchStrO), § 1.09](https://www.gesetze-im-internet.de/binschstro_2012/BinSchStrO.pdf) – minimum age of 16 at the helm, not for small craft without an engine (German, PDF)
 - [DSV licence portal: Sportbootführerschein](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/sbf-sportbootfuehrerschein/) – admission to the exam from 15 years and 9 months (motor) or 13 years and 9 months (sail) (German)
+- [DSV: Jugendsegelschein](https://web.archive.org/web/20251107105547/https://www.dsv.org/jugend/jugendsegelschein/) (German, archived version) – admission from the 7th to the 14th birthday, swimming requirement, valid until the 17th birthday
+- [DSV: changes to the regulations (March 2021)](https://web.archive.org/web/20250804214606/https://www.dsv.org/nachrichten/jugend/2021/03/aenderung-der-ordnungsvorschriften-regattasegeln-in-zukunft-einheitlicher-begriff-jugend/) (German, archived version) – Jüngstensegelschein rules renamed Jugendsegelschein rules

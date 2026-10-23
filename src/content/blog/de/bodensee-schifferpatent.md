@@ -23,7 +23,7 @@ howTo:
     - name: "Voraussetzungen prüfen"
       text: "Mindestalter 18 Jahre für Kategorie A (14 Jahre für Kategorie D/Segeln) und ein ärztliches Zeugnis über Hör- und Sehvermögen."
     - name: "Theoretische Prüfung ablegen"
-      text: "Lerne die Bodensee-Schifffahrts-Ordnung (BSO): Fahr- und Ausweichregeln, Betonnung und Seezeichen, Vorrangfahrzeuge, Wetterkunde sowie Regelungen für Wassersport und Naturschutzgebiete."
+      text: "Lerne die Bodensee-Schifffahrts-Ordnung (BSO): Fahr- und Ausweichregeln, Schifffahrtszeichen, Vorrangfahrzeuge, Wetterkunde sowie Regelungen für Wassersport und Naturschutzgebiete."
     - name: "Praktische Prüfung ablegen"
       text: "Zeige auf dem Wasser sicheres Manövrieren eines Motorboots, inklusive bodenseespezifischer Elemente wie dem Verhalten gegenüber Fährschiffen und in Hafenbereichen."
 ---
@@ -83,7 +83,7 @@ Der Weg zum BSP läuft ähnlich ab wie beim SBF, mit einigen bodenseespezifische
 Die Theorie dreht sich um die Bodensee-Schifffahrts-Ordnung und ihre Besonderheiten. Das umfasst unter anderem:
 
 - **Fahrregeln und Ausweichregeln** auf dem Bodensee
-- **Betonnung und Seezeichen** – am Bodensee gilt das IALA-System mit bodenseespezifischen Ergänzungen
+- **Schifffahrtszeichen** nach Anlage B der BSO – ein eigenes System statt der IALA-Betonnung, die du von der Küste kennst: Tafelzeichen für Verbote, Gebote, Einschränkungen, Empfehlungen und Hinweise, gelbe Bojen an den Grenzen von Wasserflächen mit besonderen Anordnungen sowie die Starkwind- und Sturmwarnleuchten
 - **Vorrangfahrzeuge** wie Fährschiffe und Berufsschifffahrt
 - **Wetterkunde** mit Fokus auf lokale Phänomene
 - Regelungen für **Wassersport, Naturschutzgebiete und Schutzabstände** am Ufer
@@ -133,6 +133,6 @@ Für die parallele Prüfungsvorbereitung – SBF-Theorie, Ausweichregeln, Seezei
 
 ## Quellen
 
-- [Bodensee-Schifffahrts-Ordnung (BSO), Gesamtansicht auf BAYERN.RECHT](https://www.gesetze-bayern.de/Content/Document/BayBodSchO/true) – Patentpflicht ab 4,4 kW bzw. 12 m² Segelfläche, Kategorien, Mindestalter und Anerkennung anderer Scheine (Art. 12.01–12.09)
+- [Bodensee-Schifffahrts-Ordnung (BSO), Gesamtansicht auf BAYERN.RECHT](https://www.gesetze-bayern.de/Content/Document/BayBodSchO/true) – Patentpflicht ab 4,4 kW bzw. 12 m² Segelfläche, Kategorien, Mindestalter und Anerkennung anderer Scheine (Art. 12.01–12.09); Schifffahrtszeichen in Art. 5.01 und Anlage B
 - [Landratsamt Konstanz – Bodenseeschifferpatent](https://www.lrakn.de/service-und-verwaltung/aemter/strassenverkehr+und+schifffahrt/bodenseeschifferpatent) – Voraussetzungen, ärztliches Zeugnis und Befreiung von der praktischen Prüfung für SBF-Inhaber
 - [Landratsamt Bodenseekreis – Ferienpatent](https://www.bodenseekreis.de/verkehr-wirtschaft/schifffahrt/bodenseeschifferpatent/ferienpatent/) – befristete Anerkennung des SBF für höchstens 30 Tage im Jahr

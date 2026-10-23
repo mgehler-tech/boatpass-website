@@ -11,15 +11,15 @@ author: "Marius Gehler"
 altSlug: "promillegrenze-boot"
 faq:
   - question: "Does the 0.5 per mille car limit apply on a boat?"
-    answer: "Structurally yes, on a separate legal basis: § 1.02 BinSchStrO and § 3 SeeSchStrO prohibit operating a boat at 0.5 per mille (0.25 mg/l breath alcohol) or above as an administrative offense, similar to § 24a StVG. From 1.1 per mille it is a criminal offense."
+    answer: "Structurally yes, on a separate legal basis: § 1.02 No. 7 BinSchStrO and § 3(4) SeeSchStrO prohibit operating a boat at 0.5 per mille (0.25 mg/l breath alcohol) or above as an administrative offense, similar to § 24a StVG. From 1.1 per mille it is a criminal offense."
   - question: "At what blood alcohol level is a skipper considered absolutely incapable of operating a vessel?"
-    answer: "Under case law from Germany's higher regional courts (e.g. OLG Karlsruhe), absolute incapacity for a skipper is set at 1.1 per mille. From around 0.3 per mille, relative incapacity can apply if additional signs are present, such as unsafe handling or an accident."
+    answer: "Under case law from Germany's shipping courts of appeal (e.g. at the OLG Karlsruhe, judgment of 9 November 2020), absolute incapacity for a skipper is set at 1.1 per mille. From around 0.3 per mille, relative incapacity can apply if additional signs are present, such as unsafe handling or an accident."
   - question: "What fine can you get for drinking and operating a boat?"
     answer: "Between 0.5 and 1.09 per mille it is an administrative offense. The official German fine catalogue for inland and sea waterways (BVKatBin-See) sets 350 to 2,500 euros on inland waterways and 750 to 2,500 euros on sea shipping lanes. From 1.1 per mille, or with visible impairment, it is a criminal offense under § 316 or § 315a StGB."
   - question: "What consequences does a skipper face for operating a boat while drunk?"
     answer: "Operating a vessel while unfit is a criminal offense under § 316 StGB; with concrete danger to others, § 315a StGB applies, with up to two years' imprisonment for negligence. You also risk fines, revocation of the SBF by the GDWS, and loss of insurance coverage."
   - question: "Are passengers on a boat allowed to drink alcohol?"
-    answer: "Passengers who aren't operating the boat are generally not bound to a specific limit. Anyone who takes the helm, even spontaneously, becomes the skipper and must stay sober. On commercial passenger vessels, the crew on duty is held to 0.0 per mille."
+    answer: "Passengers who aren't operating the boat are generally not bound to a specific limit. Anyone who takes the helm, even spontaneously, becomes the skipper and must stay sober. On maritime waterways, the skipper of a passenger vessel may not drink any alcohol while on duty under way (§ 3(5) SeeSchStrO)."
 ---
 
 Many recreational boaters assume that either the exact same alcohol rules apply on the water as on the road, or that there's no fixed limit at all on a boat. Neither is quite right. German law does set a specific limit for skippers, structured similarly to the road traffic rule but resting on separate legislation – and past a certain point it becomes a criminal offense regardless of road traffic law. Whether you're preparing for your [Sportbootführerschein](/en/sbf-coastal/) or already out on the water, knowing the rules can save you from serious consequences.
@@ -47,13 +47,13 @@ Once the alcohol level goes well beyond the 0.5 per mille administrative offense
 
 **Relative incapacity (relative Fahruntüchtigkeit)** can be established under case law from **around 0.3 per mille**, provided that **additional signs of impairment** are present at the same time: erratic or unsafe handling of the vessel, an accident, unsteady movement, slurred speech, or other visible symptoms. In these cases, even a comparatively low BAC can support a criminal charge.
 
-**Absolute incapacity (absolute Fahruntüchtigkeit)** is established by case law of Germany's regional higher courts (Oberlandesgerichte, e.g. OLG Karlsruhe, which lowered its earlier threshold from 1.3 to **1.1 per mille** in 2020) for vessel skippers. The courts deliberately aligned this figure with the 1.1 per mille threshold that applies to car drivers, since operating a vessel demands comparable coordination and reaction requirements to driving a car. Only for bicycle riders does absolute incapacity kick in later, at 1.6 per mille. From 1.1 per mille onward, a skipper is considered absolutely incapable of operating a vessel safely – regardless of whether any external signs of impairment are visible.
+**Absolute incapacity (absolute Fahruntüchtigkeit)** is established by case law of Germany's regional higher courts (e.g. the shipping court of appeal at the OLG Karlsruhe, which lowered its earlier threshold from 1.3 to **1.1 per mille** in its judgment of 9 November 2020, ref. Ns 4 Rv 22 Ss 311/20) for vessel skippers. The courts deliberately aligned this figure with the 1.1 per mille threshold that applies to car drivers, since operating a vessel demands comparable coordination and reaction requirements to driving a car. Only for bicycle riders does absolute incapacity kick in later, at 1.6 per mille. From 1.1 per mille onward, a skipper is considered absolutely incapable of operating a vessel safely – regardless of whether any external signs of impairment are visible.
 
 ## What the Navigation Regulations Additionally Require
 
 Beyond the fixed BAC number, the **BinSchStrO** requires the skipper (Schiffsführer) under § 1.02 to ensure at all times that they are capable of safely fulfilling their duties. This expressly includes the skipper's own fitness to operate the vessel and applies even below 0.5 per mille, for example in cases of exhaustion or medication.
 
-For **professional mariners**, the rules are considerably stricter: on commercial **passenger vessels** and when transporting dangerous goods, the crew on watch during the voyage must stay at a **0.0 per mille limit**.
+Some areas of **commercial shipping** have stricter rules: on maritime waterways, the skipper of a **passenger vessel**, or of a vessel carrying certain dangerous goods that is subject to traffic restrictions under § 30 SeeSchStrO, may **not drink any alcohol** while on duty under way and must not be under the influence of alcohol when starting duty; the same applies to crew on bridge duty (§ 3(5) SeeSchStrO). On inland waterways, by contrast, the 0.5 per mille limit applies to passenger vessels too; the only stricter limit there is **0.2 per mille** on the Oder, West Oder and Lusatian Neisse (§ 26.29 BinSchStrO).
 
 ## The Criminal Law Dimension – § 316 and § 315a StGB
 
@@ -121,8 +121,10 @@ If you're preparing for the [SBF exam](/en/sbf-exam/), the **Boatpass app** give
 
 ## Sources
 
-- [Inland Waterways Traffic Regulations (BinSchStrO), § 1.02 No. 7](https://www.gesetze-im-internet.de/binschstro_2012/BinSchStrO.pdf) – 0.5 per mille / 0.25 mg/l limit for skippers on inland waterways (German, PDF)
-- [Maritime Waterways Traffic Regulations (SeeSchStrO), § 3](https://www.gesetze-im-internet.de/seeschstro_1971/__3.html) – alcohol limit on maritime waterways and alcohol ban for skippers of passenger vessels (German)
+- [Inland Waterways Traffic Regulations (BinSchStrO), § 1.02 No. 7](https://www.gesetze-im-internet.de/binschstro_2012/BinSchStrO.pdf) – 0.5 per mille / 0.25 mg/l limit for skippers on inland waterways; § 26.29: 0.2 per mille on the Oder, West Oder and Lusatian Neisse (German, PDF)
+- [Maritime Waterways Traffic Regulations (SeeSchStrO), § 3](https://www.gesetze-im-internet.de/seeschstro_1971/__3.html) – alcohol limit on maritime waterways and alcohol ban for skippers of passenger vessels (paras. 4 and 5, German)
+- [Maritime Waterways Traffic Regulations (SeeSchStrO), § 30](https://www.gesetze-im-internet.de/seeschstro_1971/__30.html) – vessels carrying dangerous goods that are subject to traffic restrictions (German)
+- [LTO: Karlsruhe shipping court of appeal lowers the threshold for absolute incapacity](https://www.lto.de/recht/nachrichten/n/olg-karlsruhe-schifffahrtgericht-ns-4-rv-22-ss-311-20-absolute-fahruntuechtigkeit-schifffsfuehrer) (German) – report on the judgment of 9 Nov 2020, ref. Ns 4 Rv 22 Ss 311/20 (1.1 instead of 1.3 per mille)
 - [Section 316 StGB](https://www.gesetze-im-internet.de/stgb/__316.html) and [Section 315a StGB](https://www.gesetze-im-internet.de/stgb/__315a.html) – penalties for drunk operation and for endangering shipping traffic (German)
 - [Fine catalogue for inland and sea waterways (BVKatBin-See)](https://www.elwis.de/DE/Schifffahrtsrecht/Verzeichnis-Rechtsverordnungen-Gesetze-Richtlinien/BVKatBin-See.html) (German) – fine ranges for alcohol (entries 22.210260 and 33.103000)
 - [Sportbootführerscheinverordnung (SpFV), § 16](https://www.gesetze-im-internet.de/spfv/__16.html) – the GDWS as the authority that withdraws boating licenses (German)
