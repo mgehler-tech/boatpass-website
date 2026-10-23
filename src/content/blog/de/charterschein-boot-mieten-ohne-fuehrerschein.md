@@ -3,6 +3,7 @@ title: "Charterschein: Boot mieten ohne Führerschein – so geht's"
 seoTitle: "Charterschein: Boot mieten ohne Schein"
 description: "Mit dem Charterschein mietest du auf bestimmten Binnengewässern ein Boot ohne SBF. Voraussetzungen, Gewässer, Regeln und Grenzen kompakt erklärt."
 date: 2026-06-02
+updated: 2026-10-23
 tags: ["Führerschein-Vergleich"]
 readingTime: 7
 lang: de
@@ -12,7 +13,7 @@ faq:
   - question: "Was ist der Charterschein?"
     answer: "Der Charterschein, amtlich Charterbescheinigung, erlaubt es dir, auf bestimmten ausgewiesenen Binnengewässern ein gemietetes Boot ohne Sportbootführerschein zu führen. Du bekommst dafür vom Vermieter eine Einweisung statt einer mehrwöchigen Ausbildung."
   - question: "Welche Voraussetzungen gelten für den Charterschein?"
-    answer: "Das Boot darf maximal 15 Meter lang sein und höchstens 12 km/h fahren, das Mindestalter liegt in der Regel bei 16 Jahren. Außerdem ist eine etwa 2- bis 3-stündige theoretische und praktische Einweisung durch den Vermieter erforderlich."
+    answer: "Das Boot darf maximal 15 Meter lang sein und höchstens 12 km/h fahren, das Mindestalter liegt in der Regel bei 16 Jahren. Außerdem ist eine mindestens dreistündige theoretische und praktische Einweisung durch den Vermieter erforderlich."
   - question: "Auf welchen Gewässern gilt der Charterschein?"
     answer: "Der Charterschein gilt nur auf ausdrücklich zugelassenen Binnengewässern, allen voran die Mecklenburgische Seenplatte mit der Müritz und der Kleinseenplatte. Auch Teile Brandenburgs gehören zu den freigegebenen Charterrevieren."
   - question: "Wo stößt der Charterschein an seine Grenzen?"
@@ -33,7 +34,7 @@ Damit der Charterschein gilt, müssen einige Bedingungen erfüllt sein:
 
 - **Das Boot:** maximal **15 m lang** und maximal **12 km/h** schnell.
 - **Mindestalter:** in der Regel **16 Jahre**.
-- **Einweisung:** eine etwa **2- bis 3-stündige** theoretische und praktische Einweisung durch den Vermieter (Verkehrsregeln, Bedienung, Sicherheit).
+- **Einweisung:** eine mindestens **dreistündige** theoretische und praktische Einweisung durch den Vermieter (Verkehrsregeln, Bedienung, Sicherheit).
 - **Crew:** meist auf **maximal 12 Personen** begrenzt.
 
 Die Charterbescheinigung wird auf die Person ausgestellt, die an der Einweisung teilgenommen hat – nur diese darf das Boot führen.
@@ -53,7 +54,7 @@ Auch in Teilen Brandenburgs gibt es Charterreviere. Welche Strecken genau freige
 Der Charterschein ist an Auflagen geknüpft, die der Sicherheit dienen:
 
 - **Nachtfahrverbot:** Gefahren wird nur bei Tageslicht.
-- **Fahrverbot ab Windstärke 4:** Bei zu viel Wind bleibt das Boot im Hafen.
+- **Fahrverbot ab Windstärke 4:** Auf bestimmten großen Seen, etwa der Müritz oder dem Plauer See, bleibt das Boot ab 4 Beaufort im Hafen.
 - **Schwimmwesten:** Auf großen Seen müssen die Crewmitglieder Rettungswesten tragen.
 - Die allgemeinen **Verkehrsregeln** (Ausweichregeln, Seezeichen) gelten natürlich trotzdem – sie sind Teil der Einweisung.
 
@@ -76,3 +77,10 @@ Der Charterschein ist ideal für den **einmaligen Bootsurlaub** auf der Seenplat
 ## Fazit
 
 Mit dem Charterschein kannst du ohne Sportbootführerschein einen Bootsurlaub auf der Mecklenburgischen Seenplatte machen – das Boot darf maximal 15 m lang und 12 km/h schnell sein, es gibt eine kurze Einweisung und klare Auflagen wie Nachtfahrverbot und Windgrenze. Für eigene Boote, das Meer oder das Ausland brauchst du dagegen den richtigen SBF. Wenn du den Schein machen willst, kannst du in der Boatpass-App kostenlos mit dem offiziellen ELWIS-Fragenkatalog für die Theorieprüfung starten.
+
+## Quellen
+
+- [Binnenschifffahrt-Sportbootvermietungsverordnung, § 9](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/__9.html) und [§ 8](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/__8.html) – Rechtsgrundlage der Charterbescheinigung und Mindestalter 16 Jahre für Mietboote mit Motor
+- [Anlage 4 der Verordnung](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/anlage_4.html) – Muster der Charterbescheinigung, Nachtfahrverbot und mindestens dreistündige Einweisung
+- [Anlage 5 der Verordnung](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/anlage_5.html) – Gewässer, auf denen die Charterbescheinigung gilt, mit Auflagen wie Windstärkengrenze und Westenpflicht
+- [Anlage 6 der Verordnung](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/anlage_6.html) – Anforderungen an das Boot: höchstens 15 m Länge, 12 km/h und 12 Personen

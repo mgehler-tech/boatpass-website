@@ -3,6 +3,7 @@ title: "Bootsführerschein Kosten sparen – die 5 besten Spartipps"
 seoTitle: "Bootsführerschein Kosten sparen: 5 Spartipps"
 description: "Der Sportbootführerschein muss nicht teuer sein. Mit diesen 5 Spartipps zahlst du für SBF See und Binnen deutlich weniger – ohne Qualitätsverlust."
 date: 2026-06-01
+updated: 2026-10-23
 tags: ["Vorbereitung"]
 readingTime: 6
 lang: de
@@ -41,7 +42,7 @@ Bevor wir zu den Spartipps kommen, hier die aktuelle Kostenaufstellung für 2026
 
 | Posten | [SBF Binnen](/sbf-binnen/) | SBF See | Kombi |
 |---|---|---|---|
-| Prüfungsgebühr (DMYV) | 130,78 € | 148,38 € | 178,61 € |
+| Prüfungsgebühr (DSV/DMYV) | 130,78 € | 148,38 € | 178,61 € |
 | Theorievorbereitung | 0–400 € | 0–400 € | 0–450 € |
 | Praxisausbildung | 50–150 € | 50–200 € | 80–250 € |
 | Ärztliches Zeugnis | 30–65 € | 30–65 € | 30–65 € |
@@ -85,7 +86,7 @@ Einzelne Praxisstunden kosten zwischen 50 und 150 € – deutlich weniger als e
 - An- und Ablegen
 - Wenden auf engem Raum
 - Mann-über-Bord-Manöver
-- [Knoten](/blog/wichtigste-knoten-sbf/) vorführen (6 Pflichtknoten)
+- [Knoten](/blog/wichtigste-knoten-sbf/) vorführen (von sieben verlangten Knoten müssen sechs sitzen)
 
 Viele Prüflinge kommen mit **1–2 Praxisstunden** aus, besonders wenn sie bereits Erfahrung auf dem Wasser haben (z. B. als Mitfahrer).
 
@@ -95,8 +96,8 @@ Klingt offensichtlich – aber eine **Wiederholungsprüfung** kostet erneut Geb�
 
 | Wiederholung | Kosten |
 |---|---|
-| Theorie erneut | ca. 37–49 € |
-| Praxis erneut | ca. 57–75 € |
+| Theorie erneut | ca. 37–48 € |
+| Praxis erneut | ca. 40–48 € |
 | Zusätzliche Übungsstunden | 50–150 € |
 
 Wer durchfällt, zahlt schnell 100–200 € extra. Gezieltes Lernen mit Prüfungssimulation und Fehlertraining ist die beste Investition, um das zu vermeiden.
@@ -105,7 +106,7 @@ Die Durchfallquote liegt beim SBF bei nur 10–15 % in der Theorie – mit guter
 
 ## Tipp 5: Anbieter vergleichen – vor allem bei der Praxis
 
-Die Prüfungsgebühren sind überall gleich (festgelegt vom DMYV/DSV). Aber die **Praxisausbildung** variiert stark nach Region und Anbieter:
+Die Prüfungsgebühren sind überall gleich (bundesweit per Gebührenverordnung des Bundesverkehrsministeriums festgelegt und von DSV und DMYV erhoben). Aber die **Praxisausbildung** variiert stark nach Region und Anbieter:
 
 - Großstädte (Hamburg, Berlin, München): teurer
 - Ländliche Gebiete und Küstenstandorte: oft günstiger
@@ -129,7 +130,7 @@ Das ist weniger als die Hälfte dessen, was ein Komplettkurs bei einer Bootsschu
 ## Was du nicht sparen solltest
 
 ### Praxisstunden
-Zu wenige Praxisstunden sind falsche Sparsamkeit. Wer bei der praktischen Prüfung durchfällt, zahlt die Prüfungsgebühr erneut (57–75 €) plus zusätzliche Übungsstunden. Eine Stunde mehr vorher ist günstiger als ein zweiter Anlauf.
+Zu wenige Praxisstunden sind falsche Sparsamkeit. Wer bei der praktischen Prüfung durchfällt, zahlt die Prüfungsgebühr erneut (40–48 €) plus zusätzliche Übungsstunden. Eine Stunde mehr vorher ist günstiger als ein zweiter Anlauf.
 
 ### Navigationsbesteck (bei SBF See)
 Für die Navigationsaufgabe beim [SBF See](/sbf-see/) brauchst du Kursdreieck und Zirkel. Billige Sets funktionieren oft schlecht auf der Seekarte. Investiere in brauchbares Material – es kostet nur 10–20 € und du brauchst es auch in der Prüfung.
@@ -137,3 +138,10 @@ Für die Navigationsaufgabe beim [SBF See](/sbf-see/) brauchst du Kursdreieck un
 ## Fazit
 
 Der Sportbootführerschein muss nicht 700 € kosten. Wer die Theorie mit einer App lernt, die Kombiprüfung nutzt und die Praxis separat bucht, kommt für 275–400 € durch – und hat die gleiche Prüfung bestanden wie jemand, der das Doppelte bezahlt hat.
+
+## Quellen
+
+- [Gebührentabelle des Prüfungsausschusses München/Nürnberg](https://www.pa-muenchen.de/gebuehren/) – Prüfungsgebühren SBF Binnen, SBF See und Kombi (Stand Oktober 2026)
+- [Prüfungsausschuss Bremen – Sportbootführerschein See](https://www.pa-bremen.de/scheine/see/sportbootfuehrerschein-see.html) – bundesweit einheitliche Gebühren für DSV und DMYV, Kombi an getrennten Tagen 185,67 €
+- [Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/) – Gebührenerhebung durch die Verbände (§ 16) und Knotenprüfung (Anlage 4)
+- [ELWIS – Fragenkatalog See](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html) – 72 Basisfragen, die auch im Katalog Binnen enthalten sind

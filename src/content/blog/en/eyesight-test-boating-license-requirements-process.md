@@ -3,6 +3,7 @@ title: "Eyesight Test for the German Boating License – Requirements and Proces
 seoTitle: "Eyesight Test for the Boating License"
 description: "How strict is the eyesight test for the German boating license? Visual acuity, color vision, process, cost, and what happens if you fail it."
 date: 2026-08-22
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -14,7 +15,7 @@ faq:
   - question: "Can I get the eye test done at an optician, or do I have to see a doctor?"
     answer: "The eye test itself can be carried out by an optician, and many offer it free of charge. The official medical certificate confirming the results, which you need for exam registration, must be filled out and signed by a doctor. A visit to your GP is enough."
   - question: "Can I still get the boating license with red-green color blindness?"
-    answer: "Red-green color blindness doesn't automatically disqualify you. The examining doctor decides case by case how relevant the impairment actually is. In many cases a restriction is noted on the certificate instead of refusing fitness altogether."
+    answer: "Red-green color blindness doesn't automatically disqualify you. Under the Sportbootführerscheinverordnung, a green weakness (deuteranomaly) is permitted up to a set limit, which is checked with an anomaloscope if in doubt. Insufficient color vision, however, cannot be compensated for by a restriction."
   - question: "How long is the medical certificate with the eye test result valid?"
     answer: "The medical certificate is valid for 12 months from the date it was issued. Don't submit it too early, or it can expire before your actual exam date and you'll need a new one."
 howTo:
@@ -29,8 +30,8 @@ howTo:
       text: "Visual acuity in both eyes and color discrimination are tested, with or without your usual visual aid."
     - name: "Have the doctor fill out the medical certificate"
       text: "The doctor enters the results, confirms your fitness, and signs the form."
-    - name: "Attach the certificate to your exam registration"
-      text: "Submit the completed certificate, no more than 12 months old, together with the rest of your documents to the examination board."
+    - name: "Get the certificate to the examination board"
+      text: "Under the regulation, the doctor sends the certificate in a sealed envelope directly to the examination board and you receive a copy. Some boards also accept it enclosed with the application. At registration it must be no more than 12 months old."
 ---
 
 No boating license without adequate eyesight, because anyone who can't reliably tell lights, buoys, and other vessels apart puts themselves and others at risk on the water. That's why the eye test is one of the formal requirements for exam registration. This article explains exactly what's tested, how the process works, and what you can do if your visual acuity is borderline.
@@ -60,7 +61,7 @@ Important: if adequate visual acuity is only established **with** a visual aid, 
 
 Besides visual acuity, the eye test also checks your color discrimination, usually with special test plates showing colored patterns or numbers. This matters because on the water you need to reliably distinguish red and green lights, as well as the correspondingly colored sea marks, as described in our articles on [navigation lights](/en/blog/navigation-lights-explained/) and the [lateral buoyage system](/en/blog/sea-marks-lateral-system-explained/).
 
-**Red-green color blindness doesn't automatically disqualify you** from getting the boating license. The examining doctor has a certain amount of discretion here and assesses case by case how pronounced the impairment actually is and whether it would endanger safe boat operation. In many cases of mild to moderate color vision deficiency, a corresponding restriction is noted on the certificate instead of denying fitness outright. If you're unsure whether a known color vision deficiency might be relevant, it's worth discussing it openly with the examining doctor before the official test is carried out.
+**Red-green color blindness doesn't automatically disqualify you** from getting the boating license. The Sportbootführerscheinverordnung sets fixed criteria for this: your color vision counts as sufficient if you pass the test with 24 Ishihara plates with no more than two errors, or a recognized alternative test. If in doubt, an anomaloscope test follows, and a green weakness (deuteranomaly) is permitted up to a set limit. Unlike visual acuity and hearing, insufficient color vision cannot be compensated for by a restriction. If you're unsure whether a known color vision deficiency might be relevant, it's worth discussing it openly with the examining doctor before the official test is carried out.
 
 ## Who can perform the eye test: optician or doctor
 
@@ -74,7 +75,7 @@ The practical process is straightforward:
 2. **Book an appointment:** Either directly with your GP, or have the eye test done at an optician first and bring the result to the doctor afterward.
 3. **Get examined:** Visual acuity, color discrimination, and hearing are tested, bring your usual visual aid with you if you wear one.
 4. **Have the form filled out and signed:** The doctor enters the results and confirms your fitness.
-5. **Attach the certificate to your exam registration:** Submit the completed certificate together with the rest of your documents to the examination board, as described in [How to register for the SBF exam](/en/blog/how-to-register-sbf-exam/).
+5. **Get the certificate to the examination board:** Under the recreational boating license regulation, the examining doctor sends the certificate in a sealed envelope directly to the examination board and you receive a copy (section 7(2) no. 4 SpFV). Some examination boards also accept it enclosed with the application in practice – ask yours which route it expects. The rest of the registration process is described in [How to register for the SBF exam](/en/blog/how-to-register-sbf-exam/).
 
 Don't expect the appointment to take long, the examination itself usually takes only a few minutes.
 
@@ -86,7 +87,7 @@ The medical certificate is **valid for 12 months from the date it was issued**. 
 
 ## What happens if your visual acuity isn't sufficient?
 
-If you don't reach the required visual acuity even with a visual aid, the doctor can restrict or, in rare, very pronounced cases, refuse fitness on a case-by-case basis. If you have known eyesight issues, it's worth talking to your ophthalmologist before your official appointment, they can assess whether your current glasses or new contact lenses would reach the required value. Often, an updated visual aid alone is enough to reliably meet the requirement.
+If you don't reach the required visual acuity even with a visual aid, the minimum requirement isn't met and the doctor cannot certify your fitness. If you have known eyesight issues, it's worth talking to your ophthalmologist before your official appointment, they can assess whether your current glasses or new contact lenses would reach the required value. Often, an updated visual aid alone is enough to reliably meet the requirement.
 
 Important to know: a negative result on the eye test doesn't necessarily mean the end of your plans. In the vast majority of cases, visual acuity can easily be brought up to the required value with suitable glasses or contact lenses, and you'll receive your certificate with the note "with visual aid" issued normally.
 
@@ -100,7 +101,7 @@ If you don't pass the theory or practical exam on your first attempt, you genera
 - **Get current values checked:** If your last vision measurement was a while ago, have it updated beforehand at an optician or ophthalmologist.
 - **Plan ahead:** Since the certificate is only valid for 12 months, schedule your appointment so it's neither too early nor too late before your exam registration.
 - **Be open about known impairments:** Mention a known color vision deficiency or eyesight issue openly, so the doctor can address it specifically instead of it becoming a surprise during the actual test.
-- **Keep the original and a copy:** Keep a copy of the completed certificate in case the examination board has any follow-up questions.
+- **Keep your copy:** Hold on to your copy of the certificate in case the examination board has any follow-up questions.
 - **Plan a spare visual aid for the exam and for boating:** If a visual aid is noted on your certificate, always keep a spare pair of glasses or contact lenses handy, both on exam day and later when boating.
 
 ## Eyesight and the SBF exam
@@ -110,3 +111,10 @@ The eye test itself isn't an exam question in the theory portion, it's a formal 
 ## Conclusion
 
 The eye test for the [German boating license](/en/licenses/) is straightforward but mandatory: you need a visual acuity of at least 0.8, with or without a visual aid, and adequate color discrimination. An optician can carry out the eye test, but the official medical certificate must be issued by a doctor, a visit to your GP is enough. Anyone who plans the appointment in good time and speaks openly with the doctor about known impairments can quickly get this part of the admission requirements out of the way and focus fully on preparing for the exam content.
+
+## Sources
+
+- [Annex 2 of the Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/anlage_2.html) (German) – minimum visual acuity of 0.8, criteria for color vision and hearing
+- [Section 6 SpFV](https://www.gesetze-im-internet.de/spfv/__6.html) (German) – medical certificate, eyesight test centers and restrictions
+- [Sportbootführerscheinverordnung (SpFV), section 7](https://www.gesetze-im-internet.de/spfv/__7.html) (German) – how the medical certificate reaches the examination board
+- [Munich examination board: registration](https://www.pa-muenchen.de/anmeldung/) (German) – medical certificate no older than 12 months

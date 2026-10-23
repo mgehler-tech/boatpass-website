@@ -3,6 +3,7 @@ title: "Failed the SBF Inland Exam? Here's What to Do Next"
 seoTitle: "Failed the SBF Inland Exam? What Now"
 description: "Didn't pass the SBF Inland (SBF Binnen) exam? It's not the end of the road: how the retake works, what to do right away, and how to prepare better."
 date: 2026-07-16
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -12,7 +13,7 @@ faq:
   - question: "Can I retake the SBF Inland exam if I failed?"
     answer: "Yes. There's no legal cap on the number of attempts for the SBF Inland – you can retake the part you failed as many times as needed. The retake happens at a later date, you have to register again with the examination board, and you pay a separate, usually lower fee for it."
   - question: "Do I have to retake the whole SBF Inland exam or just the part I failed?"
-    answer: "Generally just the part you failed. For the SBF Inland, the theory exam (30 multiple-choice questions) and the practical exam are graded independently. However, a part you've already passed only stays valid for a limited time – the deadline is set by your examination board, so you should complete the missing part promptly."
+    answer: "Generally just the part you failed. For the SBF Inland, the theory exam (30 multiple-choice questions) and the practical exam are graded independently. However, a part you've already passed only stays valid for a limited time – under the Sportbootführerscheinverordnung, all exam parts must be passed within one year of starting the first part, so you should complete the missing part promptly."
   - question: "How should I prepare after failing an attempt?"
     answer: "First honestly analyze what went wrong, then work specifically on your weak spots instead of aimlessly working through the entire question catalog again. For the theory exam, mistake-tracking and full practice exams under a time limit help; for the practical exam, extra practice of the maneuvers and knots on the water helps."
 howTo:
@@ -22,7 +23,7 @@ howTo:
     - name: "Ask for feedback if you can"
       text: "Ask the examination board or the examiner which theory topics gave you trouble, or which maneuver didn't quite meet the standard in the practical exam."
     - name: "Sort out your retake date early"
-      text: "Since a passed part only stays valid for a limited time, it's worth arranging a new date sooner rather than putting the whole thing aside for a while."
+      text: "Since all parts must be passed within one year of starting the first part, it's worth arranging a new date sooner rather than putting the whole thing aside for a while."
     - name: "Be honest about what went wrong"
       text: "Was it a gap in your preparation on certain topics, nerves under time pressure, or just bad luck with the questions or maneuver you got? Your honest answer determines how you should prepare for the retake."
     - name: "Don't just go back to studying at random"
@@ -35,7 +36,7 @@ Didn't pass the [SBF Inland (SBF Binnen)](/en/sbf-inland/) exam and wondering wh
 
 The SBF Inland exam has two separate parts: the **theory exam** with 30 multiple-choice questions, and the **practical exam** on the water, which includes a knot test. Both parts are graded independently. That means if you failed one of the two parts, you'll generally only need to retake that one part, not the entire exam from scratch.
 
-One thing worth knowing: a part you've already passed doesn't stay valid forever. Your examination board sets a deadline by which you need to complete the remaining part, otherwise the part you already passed expires and you'd have to retake that one too. Exactly how long that deadline is varies by examination board, so it's worth asking directly when you schedule your retake, to avoid any unpleasant surprises.
+One thing worth knowing: a part you've already passed doesn't stay valid forever. The Sportbootführerscheinverordnung requires all exam parts to be passed within one year, counted from the start of the first part. If you don't complete the remaining part in time, the part you already passed expires and you'd have to retake that one too. So schedule your retake well within this one-year deadline.
 
 ## Can you retake the exam? Yes, as many times as it takes
 
@@ -44,14 +45,14 @@ There's no legal cap on the number of attempts for the Sportbootführerschein. Y
 - **Not on the same day.** A retake doesn't happen right after the failed attempt, it takes place at a later date.
 - **You need to register again.** For a retake you have to re-register with the responsible examination board, usually through the same process as your original registration.
 - **A separate fee applies.** Retaking a part usually comes with its own fee, typically lower than the full original exam fee since only the one part is being billed again. The exact amount is set by your examination board, so it's best to ask when you register for the retake.
-- **Your board and region decide the details.** Waiting periods, exact deadlines, and fees can differ between DMYV examination boards or other recognized boards. A quick call or message to your board will clarify exactly what applies to you.
+- **Your board and region decide the details.** Waiting periods, registration deadlines, and fees can differ between DMYV examination boards or other recognized boards. A quick call or message to your board will clarify exactly what applies to you.
 
 ## What to do right after the exam
 
 Instead of just being frustrated, it's worth taking a few active steps:
 
 1. **Ask for feedback if you can.** Ask the examination board or the examiner which theory topics gave you trouble, or which maneuver didn't quite meet the standard in the practical exam. Not every board gives detailed feedback, but it's always worth asking.
-2. **Sort out your retake date early.** Since a passed part only stays valid for a limited time, it's worth arranging a new date sooner rather than putting the whole thing aside for a while.
+2. **Sort out your retake date early.** Since all parts must be passed within one year of starting the first part, it's worth arranging a new date sooner rather than putting the whole thing aside for a while.
 3. **Be honest about what went wrong.** Was it a gap in your preparation on certain topics, nerves under time pressure, or just bad luck with the questions or maneuver you got? Your honest answer determines how you should prepare for the retake.
 4. **Don't just go back to studying at random.** Clicking through more questions without knowing your actual weak spots wastes time. Targeted practice gets you much further than simply repeating what you already know.
 
@@ -93,3 +94,10 @@ If you've already failed once, you often walk into the next attempt more tense t
 ## Conclusion
 
 Failing the SBF Inland exam is frustrating, but it isn't a permanent obstacle. You can retake the part you failed as many times as you need, just keep an eye on the deadline for the part you already passed and arrange a new date in good time. If you honestly assess your weak spots and work on them specifically before your next attempt instead of just repeating what you did before, your chances of passing confidently go up considerably.
+
+## Sources
+
+- [Section 8 Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/__8.html) (German) – exam parts, one-year deadline and no retake on the same day
+- [ELWIS – scoring key](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html) (German) – number of questions and pass marks for the theory exam
+- [Munich examination board: FAQ](https://www.pa-muenchen.de/faq/) (German) – registering for a retake and expiry of passed parts
+- [Fee table of the Munich examination board](https://www.pa-muenchen.de/gebuehren/) (German) – fees per exam part (as of October 2026)

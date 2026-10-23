@@ -3,6 +3,7 @@ title: "Fines and Violations on the Water: The Costliest Mistakes and Their Cons
 seoTitle: "Fines & Violations on the Water in Germany"
 description: "Boating without a license, alcohol, missing registration: which violations on the water get expensive fast, and when a fine turns into a criminal offense."
 date: 2026-07-31
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -39,11 +40,11 @@ Whether your plans call for a license and your own boat, or a chartered boat wit
 
 ## Alcohol and Drugs at the Helm
 
-One of the costliest mistakes of all is operating a boat under the influence of alcohol or drugs. Unlike on the road, there's no simple blood-alcohol fine threshold for recreational boats, the legal situation is more complex and reaches all the way to criminal liability under Section 315a StGB. We covered the topic in full detail, thresholds, and consequences in a dedicated article on the [blood alcohol limit on a boat](/en/blog/blood-alcohol-limit-boat/). The short version: anyone who operates a boat while unfit to do so and endangers others risks a fine, a prison sentence, and losing their license all at once, often made worse by losing insurance cover on top of it.
+One of the costliest mistakes of all is operating a boat under the influence of alcohol or drugs. As on the road, operating a recreational boat with 0.5 per mille or more is already an administrative offense (Section 1.02 No. 7 BinSchStrO, Section 3(4) SeeSchStrO), and the legal situation reaches all the way to criminal liability under Section 315a StGB. We covered the topic in full detail, thresholds, and consequences in a dedicated article on the [blood alcohol limit on a boat](/en/blog/blood-alcohol-limit-boat/). The short version: anyone who operates a boat while unfit to do so and endangers others risks a fine, a prison sentence, and losing their license all at once, often made worse by losing insurance cover on top of it.
 
 ## Missing or Incorrect Boat Registration
 
-Motorized recreational boats under 20 meters in length must carry an official or officially recognized registration number on federal inland waterways, under the Inland Waterways Registration Ordinance. Muscle-powered craft such as rowing boats, canoes, kayaks, and simple tenders are exempt. Operating without a valid registration number, failing to display it clearly, or running a boat whose registration no longer matches its current owner all risk a fine. The reason for the registration requirement is straightforward: the water police need to be able to trace a boat back to an owner if necessary, for example after an accident or another offense.
+Small craft under 20 meters in length, which includes most motorboats and sailing boats, must carry an official or officially recognized registration number on federal inland waterways, under the Inland Waterways Registration Ordinance. Exemptions include craft propelled only by muscle power such as rowing boats, canoes, and kayaks, pure sailing boats up to 5.50 meters, boats with an engine of no more than 2.21 kW, and tenders. Operating without a valid registration number, failing to display it clearly, or running a boat whose registration no longer matches its current owner all risk a fine. The reason for the registration requirement is straightforward: the water police need to be able to trace a boat back to an owner if necessary, for example after an accident or another offense.
 
 ## Missing Safety Equipment on Board
 
@@ -87,3 +88,10 @@ In the theory portion of both the SBF Binnen and SBF See exams, a skipper's basi
 ## Conclusion
 
 The costliest mistakes on the water are rarely the most obvious ones. Boating without a license, alcohol at the helm, missing registration or safety equipment, ignored right-of-way rules, and environmental violations often feel minor in the moment, but they can lead to fines reaching five figures, the loss of your license, and in the worst case, criminal proceedings. Knowing and taking these basic legal duties seriously doesn't just make you a safer skipper, it also makes for a far more relaxed one, because you know exactly where you stand.
+
+## Sources
+
+- [Binnenschifffahrtsaufgabengesetz (BinSchAufgG), § 7](https://www.gesetze-im-internet.de/binschg/__7.html) plus [OWiG Section 17](https://www.gesetze-im-internet.de/owig_1968/__17.html) and [Section 67](https://www.gesetze-im-internet.de/owig_1968/__67.html) – fines of up to 10,000 euros, the general fine range and the two-week objection deadline (German)
+- [Inland Waterways Traffic Regulations (BinSchStrO)](https://www.gesetze-im-internet.de/binschstro_2012/BinSchStrO.pdf) (§ 1.02 No. 7, § 1.16 No. 3) and [Maritime Waterways Traffic Regulations (SeeSchStrO), § 3](https://www.gesetze-im-internet.de/seeschstro_1971/__3.html) – 0.5 per mille limit and duties after a shipping accident (German)
+- [Inland Waterways Registration Ordinance (KlFzKV-BinSch)](https://www.gesetze-im-internet.de/klfzkv-binsch/) – registration requirement for small craft and its exemptions (German)
+- [Section 324 StGB](https://www.gesetze-im-internet.de/stgb/__324.html) – penalties for water pollution (German)

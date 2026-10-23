@@ -5,8 +5,12 @@
  * lesen ausschließlich hier. Keine Zahl darf in einer .astro-Datei stehen –
  * sonst driften die Seiten bei der nächsten Preisänderung auseinander.
  *
- * Stand der Erhebung: siehe DATA_AS_OF. Quellen sind die jeweiligen
- * Play-Store-Listings und Anbieter-Websites.
+ * Stand der Erhebung: siehe DATA_AS_OF. Quellen: Google Play (hl=de, gl=de),
+ * App Store Deutschland (iTunes-Lookup, country=de) und Anbieter-Websites.
+ *
+ * Auswahl (SELECTION_NOTE): alle Lern-Apps mit mindestens 500 Bewertungen in
+ * einem Store, dazu Sailbyte (einziges Abo-Modell) und Bootsprüfung von
+ * PriorApps (vorn bei der Suche nach „Bootsführerschein App").
  */
 
 import { ALL_PRODUCTS, APP_STORE_URL, PLAY_STORE_URL, maxPrice, minPrice } from './stores';
@@ -37,8 +41,9 @@ export const LICENSE_LABELS: Record<LicenseKey, { de: string; en: string }> = {
   fkn: { de: 'FKN (Pyroschein)', en: 'FKN (pyrotechnics)' },
 };
 
-/** 'free' = dauerhaft kostenlos, 'freemium-onetime' = gratis + Einmalkauf, 'freemium-sub' = gratis + Abo */
-export type PricingModel = 'free' | 'freemium-onetime' | 'freemium-sub';
+/** 'free' = dauerhaft kostenlos, 'freemium-onetime' = gratis + Einmalkauf, 'freemium-sub' = gratis + Abo,
+ *  'course' = App ist Teil eines bezahlten Kurses */
+export type PricingModel = 'free' | 'freemium-onetime' | 'freemium-sub' | 'course';
 
 export interface LearningApp {
   id: string;
@@ -50,7 +55,7 @@ export interface LearningApp {
   /** Play-Store-Bewertung, null wenn nicht erhoben */
   rating: number | null;
   ratingCount: number | null;
-  /** App-Store-Bewertung (bisher nur für BoatPass erhoben) */
+  /** App-Store-Bewertung (Deutschland), null wenn keine App oder keine Bewertungen */
   iosRating?: number | null;
   iosRatingCount?: number | null;
   /** Play-Store-Downloadklasse, z. B. '100.000+' */
@@ -63,6 +68,8 @@ export interface LearningApp {
   singleApp: boolean;
   offline: boolean | 'partial' | null;
   examSimulation: boolean | null;
+  /** Optionaler Hinweis zur Bewertung, z. B. bei mehreren Apps je Anbieter */
+  ratingNote?: { de: string; en: string };
   /** Unsere eigene App – löst den Transparenzhinweis aus */
   isOwn: boolean;
   summary: { de: string; en: string };
@@ -70,8 +77,14 @@ export interface LearningApp {
 }
 
 /** Stand der Wettbewerbsdaten. Wird auf allen Vergleichsseiten sichtbar ausgegeben. */
-export const DATA_AS_OF = '2026-07-21';
-export const DATA_AS_OF_LABEL = { de: '21. Juli 2026', en: '21 July 2026' };
+export const DATA_AS_OF = '2026-10-23';
+export const DATA_AS_OF_LABEL = { de: '23. Oktober 2026', en: '23 October 2026' };
+
+/** Nach welchem Kriterium die Apps ausgewählt sind – wird unter jeder Tabelle ausgegeben. */
+export const SELECTION_NOTE = {
+  de: 'Auswahl: alle Lern-Apps mit mindestens 500 Bewertungen in einem Store, dazu Sailbyte als einziges Abo-Modell und Bootsprüfung (PriorApps), das bei der Suche nach „Bootsführerschein App" vorn steht.',
+  en: 'Selection: every learning app with at least 500 ratings in one store, plus Sailbyte as the only subscription model and Bootsprüfung (PriorApps), which ranks at the top for "Bootsführerschein App".',
+};
 
 /** Alphabetisch nach Name sortiert – BoatPass steht bewusst nicht an erster Stelle. */
 export const LEARNING_APPS: LearningApp[] = [
@@ -82,10 +95,10 @@ export const LEARNING_APPS: LearningApp[] = [
     playUrl: PLAY_STORE_URL,
     appStoreUrl: APP_STORE_URL,
     website: 'https://boatpass.de/',
-    rating: 4.96,
-    ratingCount: 28,
+    rating: 4.97,
+    ratingCount: 30,
     iosRating: 5.0,
-    iosRatingCount: 1,
+    iosRatingCount: 13,
     downloads: '100+',
     licenses: ['sbf-see', 'sbf-binnen', 'ubi', 'src', 'lrc'],
     pricingModel: 'freemium-onetime',
@@ -115,18 +128,20 @@ export const LEARNING_APPS: LearningApp[] = [
     appStoreUrl: 'https://apps.apple.com/de/app/bootspruefung-de/id1118642913',
     website: 'https://www.bootspruefung.de/',
     rating: 4.9,
-    ratingCount: 8880,
+    ratingCount: 9036,
+    iosRating: 4.88,
+    iosRatingCount: 18468,
     downloads: '100.000+',
     licenses: ['sbf-see', 'sbf-binnen', 'bsp', 'ubi', 'src', 'lrc', 'fkn'],
     pricingModel: 'freemium-onetime',
-    price: { de: 'Fragen gratis, Pro kostenpflichtig', en: 'Questions free, Pro paid' },
+    price: { de: 'Fragen gratis, Pro ab 18,90 € je Schein', en: 'Questions free, Pro from €18.90 per licence' },
     singleApp: true,
     offline: 'partial',
     examSimulation: true,
     isOwn: false,
     summary: {
-      de: 'Der Platzhirsch: seit 2013 am Markt, nach eigenen Angaben über 900.000 Kunden, die breiteste Scheinabdeckung im Test. Alle amtlichen Prüfungsfragen sind kostenlos nutzbar; Theorietexte, vollständige Offline-Nutzung und PDF-Downloads stecken in der Pro-Version. Der Lernfortschritt synchronisiert mit dem Onlinekurs der Website.',
-      en: 'The market leader: on sale since 2013, over 900,000 customers by its own account, and the broadest licence coverage here. All official exam questions are free to use; theory texts, full offline use and PDF downloads sit behind Pro. Progress syncs with the website course.',
+      de: 'Der Platzhirsch: seit 2013 am Markt, nach eigenen Angaben über 800.000 Kunden und mit rund 27.000 Store-Bewertungen die am meisten bewertete App im Vergleich. Alle amtlichen Prüfungsfragen sind kostenlos nutzbar; Theorietexte, vollständige Offline-Nutzung und PDF-Downloads stecken in der Pro-Version. Der Lernfortschritt synchronisiert mit dem Onlinekurs der Website.',
+      en: 'The market leader: on sale since 2013, over 800,000 customers by its own account and, with around 27,000 store ratings, the most-rated app in this comparison. All official exam questions are free to use; theory texts, full offline use and PDF downloads sit behind Pro. Progress syncs with the website course.',
     },
     bestFor: {
       de: 'Wer die größte Auswahl an Scheinen und einen begleitenden Onlinekurs will.',
@@ -134,18 +149,77 @@ export const LEARNING_APPS: LearningApp[] = [
     },
   },
   {
+    id: 'bootspruefung-app',
+    name: 'Bootsprüfung',
+    vendor: 'PriorApps GmbH',
+    playUrl: 'https://play.google.com/store/apps/details?id=com.priorapps.boot',
+    appStoreUrl: 'https://apps.apple.com/de/app/bootspr%C3%BCfung/id6746387873',
+    website: 'https://www.bootspruefung.app/',
+    rating: 4.55,
+    ratingCount: 12,
+    iosRating: 4.69,
+    iosRatingCount: 36,
+    downloads: '1.000+',
+    licenses: ['sbf-see', 'sbf-binnen', 'bsp', 'ubi', 'src', 'lrc'],
+    pricingModel: 'freemium-onetime',
+    price: { de: 'ab 15,99 € einmalig', en: 'from €15.99 one-off' },
+    singleApp: true,
+    offline: true,
+    examSimulation: true,
+    isOwn: false,
+    summary: {
+      de: 'Die jüngste App im Vergleich (seit April 2026) von PriorApps, die auch Lern-Apps für andere Prüfungen anbietet. Deckt SBF See, SBF Binnen, Bodenseeschifferpatent, UBI, SRC und LRC in einer App ab, mit Prüfungssimulation, Navigationsaufgaben, Knoten, Offline-Modus und einem KI-Tutor. In den Stores bisher wenig bewertet.',
+      en: 'The newest app in this comparison (since April 2026), from PriorApps, which also makes study apps for other exams. Covers SBF See, SBF Binnen, the Lake Constance licence, UBI, SRC and LRC in one app, with exam simulation, navigation tasks, knots, an offline mode and an AI tutor. Few store ratings so far.',
+    },
+    bestFor: {
+      de: 'Wer mehrere Scheine inklusive Bodensee in einer App lernen und einen KI-Tutor ausprobieren will.',
+      en: 'Anyone who wants several licences including Lake Constance in one app and wants to try an AI tutor.',
+    },
+  },
+  {
+    id: 'bootsschule1',
+    name: 'Bootsschule1',
+    vendor: 'Bootsschule1 GmbH & Co. KG',
+    playUrl: 'https://play.google.com/store/apps/details?id=de.bootsschule1.app',
+    appStoreUrl: 'https://apps.apple.com/de/app/bootsschule1/id6463636573',
+    website: 'https://bootsschule1.de/',
+    rating: 4.89,
+    ratingCount: 1979,
+    iosRating: 4.89,
+    iosRatingCount: 4680,
+    downloads: '10.000+',
+    licenses: ['sbf-see', 'sbf-binnen', 'sks', 'bsp', 'ubi', 'src', 'fkn'],
+    pricingModel: 'course',
+    price: { de: 'Teil des Onlinekurses inkl. Praxis, ab 280 € (Aktionspreis 10/2026)', en: 'Part of the online course incl. practice, from €280 (promo price 10/2026)' },
+    singleApp: true,
+    offline: null,
+    examSimulation: null,
+    isOwn: false,
+    summary: {
+      de: 'Die App der Online-Bootsschule Bootsschule1. Sie begleitet den bezahlten Onlinekurs, der Theorie, Praxisausbildung an Partnerstandorten und die Prüfung bündelt; als eigenständige Lern-App für die Theorie ist sie nicht gedacht. Mit rund 6.700 Store-Bewertungen eine der meistbewerteten Apps im Vergleich.',
+      en: 'The app of the online boating school Bootsschule1. It accompanies the paid online course, which bundles theory, practical training at partner locations and the exam; it is not meant as a standalone theory app. With around 6,700 store ratings it is one of the most-rated apps in this comparison.',
+    },
+    bestFor: {
+      de: 'Wer Theorie und Praxis als Komplettpaket bei einem Anbieter buchen will.',
+      en: 'Anyone who wants to book theory and practice as a complete package from one provider.',
+    },
+  },
+  {
     id: 'sailbyte',
     name: 'Sailbyte',
     vendor: 'Sailbyte',
     playUrl: 'https://play.google.com/store/apps/details?id=com.sbf_binnen_trainer',
-    appStoreUrl: null,
+    appStoreUrl: 'https://apps.apple.com/de/app/id6809900590',
     website: 'https://sailbyte.de/',
-    rating: null,
-    ratingCount: null,
-    downloads: '3.000+',
+    rating: 4.69,
+    ratingCount: 96,
+    iosRating: null,
+    iosRatingCount: null,
+    ratingNote: { de: 'Werte der SBF-Binnen-App; die SBF-See-App hat bei Google Play 4,73 ★ aus 176 Bewertungen', en: 'Figures for the SBF Binnen app; the SBF See app has 4.73 ★ from 176 ratings on Google Play' },
+    downloads: '500+',
     licenses: ['sbf-see', 'sbf-binnen', 'sks'],
     pricingModel: 'freemium-sub',
-    price: { de: '4,79 € / Monat je App', en: '€4.79 / month per app' },
+    price: { de: '4,99 € / Monat je App (SKS 6,99 €)', en: '€4.99 / month per app (SKS €6.99)' },
     singleApp: false,
     offline: 'partial',
     examSimulation: true,
@@ -166,8 +240,10 @@ export const LEARNING_APPS: LearningApp[] = [
     playUrl: 'https://play.google.com/store/apps/details?id=de.goritz.android.binnen2',
     appStoreUrl: 'https://apps.apple.com/de/app/sbf-binnen/id540303206',
     website: 'https://sbf.goritz.de/',
-    rating: 4.8,
-    ratingCount: 567,
+    rating: 4.86,
+    ratingCount: 572,
+    iosRating: 4.85,
+    iosRatingCount: 5698,
     downloads: '10.000+',
     licenses: ['sbf-binnen'],
     pricingModel: 'freemium-onetime',
@@ -186,15 +262,45 @@ export const LEARNING_APPS: LearningApp[] = [
     },
   },
   {
+    id: 'goritz-see',
+    name: 'SBF See',
+    vendor: 'Ralf Goritz',
+    playUrl: null,
+    appStoreUrl: 'https://apps.apple.com/de/app/sbf-see/id540305397',
+    website: 'https://sbf.goritz.de/',
+    rating: null,
+    ratingCount: null,
+    iosRating: 4.85,
+    iosRatingCount: 6353,
+    downloads: null,
+    licenses: ['sbf-see'],
+    pricingModel: 'freemium-onetime',
+    price: { de: 'Gratis-Version + Vollversion per In-App-Kauf', en: 'Free version + full version via in-app purchase' },
+    singleApp: false,
+    offline: true,
+    examSimulation: true,
+    isOwn: false,
+    summary: {
+      de: 'Das See-Gegenstück zu Goritz’ SBF-Binnen-App, nur für iPhone und iPad: Leitner-Lernboxen, Modus für unsichere Fragen, Erklärungen zu den Antworten, alle Prüfungsbögen und Animationen zu allen Navigationsaufgaben für Papier- und Digitalkarte. Wer den SBF Binnen schon hat, bekommt nur die noch nötigen Fragen. Eine Variante „inkl. digitaler Karte“ kostet einmalig 29,99 €.',
+      en: 'The coastal counterpart to Goritz’s SBF Binnen app, for iPhone and iPad only: Leitner boxes, a mode for uncertain questions, answer explanations, all exam papers and animations for every navigation task on paper and digital charts. If you already hold SBF Binnen, you only get the questions you still need. A variant "incl. digital chart" costs €29.99 one-off.',
+    },
+    bestFor: {
+      de: 'Wer auf dem iPhone die Navigationsaufgaben gründlich üben will.',
+      en: 'Anyone who wants to practise the navigation tasks thoroughly on an iPhone.',
+    },
+  },
+  {
     id: 'sbf-fragen',
     name: 'SBF-Fragen',
     vendor: 'Delius Klasing Verlag',
     playUrl: 'https://play.google.com/store/apps/details?id=de.deliusklasing.sbffragen2.app',
     appStoreUrl: 'https://apps.apple.com/de/app/sbf-fragen-bootsf%C3%BChrerschein/id1658976227',
     website: 'https://sbf-fragen.de/',
-    rating: 4.7,
-    ratingCount: 647,
-    downloads: null,
+    rating: 4.69,
+    ratingCount: 761,
+    iosRating: 4.76,
+    iosRatingCount: 5151,
+    downloads: '10.000+',
     licenses: ['sbf-see', 'sbf-binnen', 'sks', 'bsp', 'ubi', 'src', 'lrc', 'fkn'],
     pricingModel: 'freemium-onetime',
     price: { de: 'Gratis eingeschränkt + In-App-Kauf je Schein', en: 'Limited free + in-app purchase per licence' },
@@ -219,7 +325,7 @@ export const LEARNING_APPS: LearningApp[] = [
     appStoreUrl: null,
     website: null,
     rating: 4.9,
-    ratingCount: 772,
+    ratingCount: 773,
     downloads: '100.000+',
     licenses: ['sbf-binnen'],
     pricingModel: 'free',
@@ -244,8 +350,8 @@ export const LEARNING_APPS: LearningApp[] = [
     playUrl: 'https://play.google.com/store/apps/details?id=eu.wimmerinformatik.sbfs',
     appStoreUrl: null,
     website: null,
-    rating: 4.8,
-    ratingCount: 703,
+    rating: 4.81,
+    ratingCount: 704,
     downloads: '100.000+',
     licenses: ['sbf-see'],
     pricingModel: 'free',
