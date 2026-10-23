@@ -118,8 +118,8 @@ test.describe('Basisfragen', () => {
       for (const t of TOPICS.basis) {
         await expect(page.locator(`[id="${t.slug[lang]}"] h2`)).toHaveText(t.title[lang]);
       }
-      await expect(page.locator(`a[href="${CATALOGS.binnen.hub[lang]}"]`).first()).toBeVisible();
-      await expect(page.locator(`a[href="${CATALOGS.see.hub[lang]}"]`).first()).toBeVisible();
+      await expect(page.locator(`main a[href="${CATALOGS.binnen.hub[lang]}"]`).first()).toBeVisible();
+      await expect(page.locator(`main a[href="${CATALOGS.see.hub[lang]}"]`).first()).toBeVisible();
     });
   }
 });
@@ -185,6 +185,7 @@ test.describe('Fragebogen', () => {
   test('EN See: Zufallsbogen mit 7 Basis- und 23 spezifischen Fragen', async ({ page }) => {
     await expectMigrated(page, practiceUrl('see', 'en'), { h1: /SBF Coastal practice test/, facts: 5, cta: false });
     await page.locator('[data-pt-setup] button[type="submit"]').click();
+    await expect(page.locator('fieldset.pt-q')).toHaveCount(30);
     const nums = await page.locator('fieldset.pt-q').evaluateAll(els => els.map(e => Number((e as HTMLElement).dataset.n)));
     expect(nums).toHaveLength(30);
     expect(nums.filter(n => n <= 72)).toHaveLength(7);

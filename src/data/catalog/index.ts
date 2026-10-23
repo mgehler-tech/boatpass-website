@@ -14,10 +14,10 @@
  * spezifische Fragen und Segelfragen). Sie sind eine redaktionelle Gliederung
  * dieser Website nach Nummernbereichen, damit jede Seite ein klares Thema hat.
  */
-import basisData from './basis.json';
-import binnenData from './binnen.json';
-import seeData from './see.json';
-import sheetsData from './sheets.json';
+import basisData from './basis.json' with { type: 'json' };
+import binnenData from './binnen.json' with { type: 'json' };
+import seeData from './see.json' with { type: 'json' };
+import sheetsData from './sheets.json' with { type: 'json' };
 
 export type Lang = 'de' | 'en';
 export type CatalogKey = 'basis' | 'binnen' | 'see';
