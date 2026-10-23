@@ -3,6 +3,7 @@ title: "Eyesight Test for the German Boating License – Requirements and Proces
 seoTitle: "Eyesight Test for the Boating License"
 description: "How strict is the eyesight test for the German boating license? Visual acuity, color vision, process, cost, and what happens if you fail it."
 date: 2026-08-22
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -14,7 +15,7 @@ faq:
   - question: "Can I get the eye test done at an optician, or do I have to see a doctor?"
     answer: "The eye test itself can be carried out by an optician, and many offer it free of charge. The official medical certificate confirming the results, which you need for exam registration, must be filled out and signed by a doctor. A visit to your GP is enough."
   - question: "Can I still get the boating license with red-green color blindness?"
-    answer: "Red-green color blindness doesn't automatically disqualify you. The examining doctor decides case by case how relevant the impairment actually is. In many cases a restriction is noted on the certificate instead of refusing fitness altogether."
+    answer: "Red-green color blindness doesn't automatically disqualify you. Under the Sportbootführerscheinverordnung, a green weakness (deuteranomaly) is permitted up to a set limit, which is checked with an anomaloscope if in doubt. Insufficient color vision, however, cannot be compensated for by a restriction."
   - question: "How long is the medical certificate with the eye test result valid?"
     answer: "The medical certificate is valid for 12 months from the date it was issued. Don't submit it too early, or it can expire before your actual exam date and you'll need a new one."
 howTo:
@@ -60,7 +61,7 @@ Important: if adequate visual acuity is only established **with** a visual aid, 
 
 Besides visual acuity, the eye test also checks your color discrimination, usually with special test plates showing colored patterns or numbers. This matters because on the water you need to reliably distinguish red and green lights, as well as the correspondingly colored sea marks, as described in our articles on [navigation lights](/en/blog/navigation-lights-explained/) and the [lateral buoyage system](/en/blog/sea-marks-lateral-system-explained/).
 
-**Red-green color blindness doesn't automatically disqualify you** from getting the boating license. The examining doctor has a certain amount of discretion here and assesses case by case how pronounced the impairment actually is and whether it would endanger safe boat operation. In many cases of mild to moderate color vision deficiency, a corresponding restriction is noted on the certificate instead of denying fitness outright. If you're unsure whether a known color vision deficiency might be relevant, it's worth discussing it openly with the examining doctor before the official test is carried out.
+**Red-green color blindness doesn't automatically disqualify you** from getting the boating license. The Sportbootführerscheinverordnung sets fixed criteria for this: your color vision counts as sufficient if you pass the test with 24 Ishihara plates with no more than two errors, or a recognized alternative test. If in doubt, an anomaloscope test follows, and a green weakness (deuteranomaly) is permitted up to a set limit. Unlike visual acuity and hearing, insufficient color vision cannot be compensated for by a restriction. If you're unsure whether a known color vision deficiency might be relevant, it's worth discussing it openly with the examining doctor before the official test is carried out.
 
 ## Who can perform the eye test: optician or doctor
 
@@ -86,7 +87,7 @@ The medical certificate is **valid for 12 months from the date it was issued**. 
 
 ## What happens if your visual acuity isn't sufficient?
 
-If you don't reach the required visual acuity even with a visual aid, the doctor can restrict or, in rare, very pronounced cases, refuse fitness on a case-by-case basis. If you have known eyesight issues, it's worth talking to your ophthalmologist before your official appointment, they can assess whether your current glasses or new contact lenses would reach the required value. Often, an updated visual aid alone is enough to reliably meet the requirement.
+If you don't reach the required visual acuity even with a visual aid, the minimum requirement isn't met and the doctor cannot certify your fitness. If you have known eyesight issues, it's worth talking to your ophthalmologist before your official appointment, they can assess whether your current glasses or new contact lenses would reach the required value. Often, an updated visual aid alone is enough to reliably meet the requirement.
 
 Important to know: a negative result on the eye test doesn't necessarily mean the end of your plans. In the vast majority of cases, visual acuity can easily be brought up to the required value with suitable glasses or contact lenses, and you'll receive your certificate with the note "with visual aid" issued normally.
 
@@ -110,3 +111,9 @@ The eye test itself isn't an exam question in the theory portion, it's a formal 
 ## Conclusion
 
 The eye test for the [German boating license](/en/licenses/) is straightforward but mandatory: you need a visual acuity of at least 0.8, with or without a visual aid, and adequate color discrimination. An optician can carry out the eye test, but the official medical certificate must be issued by a doctor, a visit to your GP is enough. Anyone who plans the appointment in good time and speaks openly with the doctor about known impairments can quickly get this part of the admission requirements out of the way and focus fully on preparing for the exam content.
+
+## Sources
+
+- [Annex 2 of the Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/anlage_2.html) (German) – minimum visual acuity of 0.8, criteria for color vision and hearing
+- [Section 6 SpFV](https://www.gesetze-im-internet.de/spfv/__6.html) (German) – medical certificate, eyesight test centers and restrictions
+- [Munich examination board: registration](https://www.pa-muenchen.de/anmeldung/) (German) – medical certificate no older than 12 months

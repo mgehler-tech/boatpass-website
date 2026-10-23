@@ -11,7 +11,7 @@ const apps = LEARNING_APPS.filter(app =>
 const faqs = [
   {
     q: 'Welche App ist die beste für den Funkschein?',
-    a: 'Das Feld ist kleiner als beim Sportbootführerschein: Nur drei Apps decken UBI, SRC und LRC ab. Bootspruefung.de bringt zusätzlich Musterfunksprüche mit, SBF-Fragen kommt vom Delius-Klasing-Verlag mit Karteikasten-System, und Boatpass bündelt die drei Funkkataloge mit SBF See und Binnen in einer App. Die kostenlosen Wimmer-Apps und Sailbyte decken keine Funkzeugnisse ab.',
+    a: 'Das Feld ist kleiner als beim Sportbootführerschein: Fünf Apps decken die Funkzeugnisse ab. Bootspruefung.de bringt zusätzlich Musterfunksprüche mit, SBF-Fragen kommt vom Delius-Klasing-Verlag mit Karteikasten-System, Bootsprüfung deckt UBI, SRC und LRC zusammen mit SBF und Bodensee ab, Bootsschule1 bietet UBI und SRC als Teil seiner Kurse, und Boatpass bündelt die drei Funkkataloge mit SBF See und Binnen in einer App. Die kostenlosen Wimmer-Apps, Goritz und Sailbyte decken keine Funkzeugnisse ab.',
   },
   {
     q: 'UBI, SRC oder LRC – welches Funkzeugnis brauche ich?',
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: 'Gibt es die Funkschein-Apps auch für iPhone?',
-    a: 'Ja. Bootspruefung.de, SBF-Fragen und – seit Oktober 2026 – Boatpass sind für Android und iOS verfügbar.',
+    a: 'Ja. Alle fünf Apps – Bootspruefung.de, Bootsprüfung, Bootsschule1, SBF-Fragen und seit Oktober 2026 auch Boatpass – gibt es für Android und iOS.',
   },
 ];
 
@@ -54,19 +54,19 @@ const relatedLinks = [
   breadcrumbName="Funkschein-Apps im Vergleich"
   badge="UBI · SRC · LRC"
   h1="Funkschein-Apps im Vergleich"
-  heroIntro="Für die Funkzeugnisse ist die Auswahl deutlich kleiner als beim Sportbootführerschein – nur drei Apps decken UBI, SRC und LRC überhaupt ab. Hier stehen sie nebeneinander."
-  answer="Für die Funkzeugnisse UBI, SRC und LRC gibt es drei Lern-Apps: Bootspruefung.de mit kostenlosen amtlichen Fragen und Musterfunksprüchen in der Pro-Version, SBF-Fragen vom Delius-Klasing-Verlag mit Karteikasten-System, und Boatpass, das alle drei Funkkataloge zusammen mit SBF See und Binnen in einer App bündelt."
+  heroIntro="Für die Funkzeugnisse ist die Auswahl deutlich kleiner als beim Sportbootführerschein – fünf Apps decken UBI, SRC oder LRC überhaupt ab. Hier stehen sie nebeneinander."
+  answer="Für die Funkzeugnisse UBI, SRC und LRC gibt es fünf Lern-Apps, die mindestens eines davon abdecken: Bootspruefung.de mit kostenlosen amtlichen Fragen und Musterfunksprüchen in der Pro-Version, SBF-Fragen vom Delius-Klasing-Verlag mit Karteikasten-System, Bootsprüfung als jüngster Anbieter mit allen drei Zeugnissen, Bootsschule1 mit UBI und SRC als Teil eines Kurses, und Boatpass, das alle drei Funkkataloge zusammen mit SBF See und Binnen in einer App bündelt."
   apps={apps}
   tableCaption="Alle Apps, die mindestens eines der Funkzeugnisse UBI, SRC oder LRC abdecken – alphabetisch sortiert."
   androidHeading="Funkschein-App für Android"
   androidParagraphs={[
-    'Alle drei Apps sind im Google Play Store verfügbar. Der Unterschied liegt weniger im Fragenkatalog – der ist amtlich und überall gleich – als im Drumherum: <strong>Bootspruefung.de</strong> liefert in der Pro-Version Musterfunksprüche und Theorietexte, <strong>SBF-Fragen</strong> setzt auf ein Karteikasten-System mit Prüfungssimulation nach Original-Bögen.',
-    'Die beliebten kostenlosen Apps von Matthias Wimmer decken <strong>keine Funkzeugnisse</strong> ab, ebenso wenig Sailbyte. Wer den Funkschein lernen will, hat also faktisch drei Optionen.',
+    'Alle fünf Apps sind im Google Play Store verfügbar. Der Unterschied liegt weniger im Fragenkatalog – der ist amtlich und überall gleich – als im Drumherum: <strong>Bootspruefung.de</strong> liefert in der Pro-Version Musterfunksprüche und Theorietexte, <strong>SBF-Fragen</strong> setzt auf ein Karteikasten-System mit Prüfungssimulation nach Original-Bögen.',
+    'Die beliebten kostenlosen Apps von Matthias Wimmer decken <strong>keine Funkzeugnisse</strong> ab, ebenso wenig die Goritz-Apps und Sailbyte. <strong>Bootsprüfung</strong> ist neu am Markt und deckt alle drei Zeugnisse ab, <strong>Bootsschule1</strong> bietet UBI und SRC nur im Rahmen seiner bezahlten Kurse.',
     'Bei Boatpass kosten die Funkmodule einmalig ' + priceText('ubi', 'de') + ' (UBI und SRC) beziehungsweise ' + priceText('lrc', 'de') + ' (LRC) – kein Abo, dauerhafter Zugriff.',
   ]}
   iosHeading="Funkschein-App für iPhone und iPad"
   iosParagraphs={[
-    'Auf iOS sind alle drei verglichenen Apps verfügbar: <strong>Bootspruefung.de</strong>, <strong>SBF-Fragen</strong> und <strong>Boatpass</strong>. Alle decken UBI, SRC und LRC ab.',
+    'Auf iOS sind alle fünf verglichenen Apps verfügbar. <strong>Bootspruefung.de</strong>, <strong>SBF-Fragen</strong>, <strong>Bootsprüfung</strong> und <strong>Boatpass</strong> decken UBI, SRC und LRC ab, <strong>Bootsschule1</strong> UBI und SRC.',
     '<strong>Boatpass ist seit Oktober 2026 im App Store</strong>. In beiden Stores gibt es zusätzlich ein Funk-Paket für alle drei Zeugnisse. Ein Kauf gilt nur im jeweiligen Store, ein Android-Kauf schaltet auf dem iPhone nichts frei.',
   ]}
   strengths={[
@@ -86,4 +86,17 @@ const relatedLinks = [
   ]}
   faqs={faqs}
   relatedLinks={relatedLinks}
-/>
+>
+  <section slot="after-table" style="margin-bottom:48px;">
+    <h2 class="content-section-title" style="margin-bottom:16px;">Theorie und Praxis: was eine Funk-App leisten kann</h2>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+      Jedes Funkzeugnis hat zwei Teile. Die Theorie ist ein Multiple-Choice-Bogen aus dem amtlichen Katalog – genau dafür sind die Apps gebaut. Im praktischen Teil bedienst du ein Funkgerät, setzt einen DSC-Alarm ab und sprichst Not-, Dringlichkeits- und Sicherheitsmeldungen nach festem Schema. Das ersetzt keine App.
+    </p>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+      Was Apps für die Praxis beitragen können, ist begrenzt: <strong>Bootspruefung.de</strong> bietet Musterfunksprüche zum Nachlesen, die übrigen Apps konzentrieren sich auf die Theorie. Für die Praxis brauchst du einen Kurs mit Übungsgerät oder einen Funksimulator. Unterschätze den Teil nicht: Die feste Reihenfolge einer Notmeldung muss in der Prüfung ohne Spickzettel sitzen.
+    </p>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+      Beim UBI gilt seit dem 1. Oktober 2026 ein neuer amtlicher Fragenkatalog. Achte darauf, dass deine App ihn schon enthält; was sich geändert hat, steht im Artikel <a href="/blog/ubi-fragenkatalog-2026/" style="color:#3366FF; text-decoration:underline;">UBI-Fragenkatalog 2026</a>. Welches Zeugnis du brauchst, klären die Seiten zu <a href="/ubi/" style="color:#3366FF; text-decoration:underline;">UBI</a>, <a href="/src/" style="color:#3366FF; text-decoration:underline;">SRC</a> und <a href="/lrc/" style="color:#3366FF; text-decoration:underline;">LRC</a>.
+    </p>
+  </section>
+</AppLandingPage>

@@ -3,6 +3,7 @@ title: "Sportbootführerschein trotz gesundheitlicher Einschränkung"
 seoTitle: "SBF mit gesundheitlicher Einschränkung"
 description: "Ärztliches Zeugnis für den Sportbootführerschein: Auflagen, Hilfsmittel und Einschränkungen – und was du vor der Anmeldung zur Prüfung klären solltest."
 date: 2026-10-20
+updated: 2026-10-23
 tags: ["Vorbereitung", "Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -59,7 +60,7 @@ Weil das Zeugnis genau diese Bereiche abdeckt, lohnt ein ehrlicher Blick darauf.
 
 ### Sehvermögen und Farbsehen
 
-Die Mindestanforderung an die Sehschärfe und der Umgang mit einer Rot-Grün-Schwäche sind im Sehtest-Artikel ausführlich beschrieben. Kurz gesagt: Eine Sehschwäche oder Farbsehschwäche schließt dich nicht automatisch aus, der Arzt beurteilt sie im Einzelfall. Bei den Lichtern und der Betonnung spielt Farbe eine große Rolle, mehr dazu in [Lichterführung erklärt](/blog/lichterfuehrung-erklaert/).
+Die Mindestanforderung an die Sehschärfe und der Umgang mit einer Rot-Grün-Schwäche sind im Sehtest-Artikel ausführlich beschrieben. Kurz gesagt: Eine Sehschwäche oder Farbsehschwäche schließt dich nicht automatisch aus, entscheidend sind die in der Verordnung festgelegten Mindestwerte. Bei den Lichtern und der Betonnung spielt Farbe eine große Rolle, mehr dazu in [Lichterführung erklärt](/blog/lichterfuehrung-erklaert/).
 
 ### Hörvermögen
 
@@ -114,3 +115,9 @@ Der Theorieteil der Prüfung besteht aus Fragen aus dem offiziellen ELWIS-Katalo
 ## Fazit
 
 Das ärztliche Zeugnis für den Sportbootführerschein ist keine Hürde, die nur Gesunde nehmen, sondern eine individuelle Einschätzung, ob du ein Boot sicher führen kannst. Sehhilfe und Hörhilfe sind ausdrücklich zulässig, Auflagen werden im Zeugnis vermerkt. Sprich offen mit deinem Arzt, bring Befunde und Hilfsmittel mit und kläre Unsicherheiten rechtzeitig mit dem Prüfungsausschuss. Danach gilt: Sei ehrlich zu dir selbst, hab Ersatz an Bord und fahr nur, wenn du dich fit fühlst. Dann steht deinem [SBF Binnen](/sbf-binnen/) oder [SBF See](/sbf-see/) nichts im Weg.
+
+## Quellen
+
+- [Anlage 2 der Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/anlage_2.html) – medizinische Tauglichkeitskriterien bei Gesundheitsstörungen, Anforderungen an Seh- und Hörvermögen sowie mögliche Beschränkungen
+- [§ 6 SpFV](https://www.gesetze-im-internet.de/spfv/__6.html) – medizinische Tauglichkeit, Auflagen und fachärztliche Gutachten bei Zweifeln
+- [Prüfungsausschuss München: Anmeldung](https://www.pa-muenchen.de/anmeldung/) – ärztliches Zeugnis nicht älter als 12 Monate

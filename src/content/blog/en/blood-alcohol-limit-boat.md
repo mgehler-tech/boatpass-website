@@ -3,7 +3,7 @@ title: "Blood Alcohol Limit on a Boat – What Skippers Need to Know"
 seoTitle: "Blood Alcohol Limit on a Boat in Germany"
 description: "Does the 0.5 per mille car rule apply to boats in Germany? The real legal limits for skippers and what the SBF exam tests about drunk boating."
 date: 2026-06-25
-updated: 2026-09-14
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 9
 lang: en
@@ -118,3 +118,10 @@ On the water, a fixed 0.5 per mille (or 0.25 mg/l breath alcohol) threshold appl
 The simplest and safest rule remains: **As skipper, you do not drink.** Anyone who wants to relax with a drink passes the helm to a sober person in good time.
 
 If you're preparing for the [SBF exam](/en/sbf-exam/), the **Boatpass app** gives you access to all questions from the official ELWIS catalog – including skipper duties, fitness to operate, and conduct on the water – in a dedicated practice and exam mode.
+
+## Sources
+
+- [Inland Waterways Traffic Regulations (BinSchStrO), § 1.02 No. 7](https://www.gesetze-im-internet.de/binschstro_2012/BinSchStrO.pdf) – 0.5 per mille / 0.25 mg/l limit for skippers on inland waterways (German, PDF)
+- [Maritime Waterways Traffic Regulations (SeeSchStrO), § 3](https://www.gesetze-im-internet.de/seeschstro_1971/__3.html) – alcohol limit on maritime waterways and alcohol ban for skippers of passenger vessels (German)
+- [Section 316 StGB](https://www.gesetze-im-internet.de/stgb/__316.html) and [Section 315a StGB](https://www.gesetze-im-internet.de/stgb/__315a.html) – penalties for drunk operation and for endangering shipping traffic (German)
+- [Sportbootführerscheinverordnung (SpFV), § 16](https://www.gesetze-im-internet.de/spfv/__16.html) – the GDWS as the authority that withdraws boating licenses (German)

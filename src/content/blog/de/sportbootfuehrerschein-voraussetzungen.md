@@ -3,6 +3,7 @@ title: "Sportbootführerschein Voraussetzungen – Was du für die Anmeldung bra
 seoTitle: "Sportbootführerschein: Voraussetzungen"
 description: "Alle Voraussetzungen für den Sportbootführerschein: Mindestalter, ärztliches Zeugnis, Unterlagen und Prüfungsanmeldung – Schritt für Schritt erklärt."
 date: 2026-04-15
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 6
 lang: de
@@ -10,7 +11,7 @@ author: "Marius Gehler"
 altSlug: "boating-license-requirements"
 faq:
   - question: "Welches Mindestalter gilt für den Sportbootführerschein?"
-    answer: "Der SBF Binnen unter Motor und der SBF See sind ab 16 Jahren möglich, der SBF Binnen unter Segel bereits ab 14 Jahren. Zur Prüfung anmelden kannst du dich schon mit 15 Jahren und 9 Monaten – bei der Aushändigung des Führerscheins musst du das Mindestalter aber erreicht haben."
+    answer: "Der SBF Binnen unter Motor und der SBF See sind ab 16 Jahren möglich, der SBF Binnen unter Segel bereits ab 14 Jahren. Zur Prüfung anmelden kannst du dich schon mit 15 Jahren und 9 Monaten (unter Segel mit 13 Jahren und 9 Monaten) – bei der Aushändigung des Führerscheins musst du das Mindestalter aber erreicht haben."
   - question: "Brauche ich ein ärztliches Zeugnis für den Sportbootführerschein?"
     answer: "Ja. Du brauchst ein ärztliches Zeugnis für Sportbootführerscheinbewerber, das Seh-, Farbunterscheidungs- und Hörvermögen bestätigt. Ein Besuch beim Hausarzt reicht, das Zeugnis ist 12 Monate gültig und kostet je nach Arzt zwischen 30 und 65 €."
   - question: "Welche Unterlagen brauche ich für die Anmeldung zur SBF-Prüfung?"
@@ -43,7 +44,7 @@ Bevor du die [SBF-Prüfung](/sbf-pruefung-ablauf/) ablegen kannst, musst du eini
 | SBF Binnen unter Segel | 14 Jahre |
 | SBF See | 16 Jahre |
 
-**Wichtig:** Du kannst dich bereits mit **15 Jahren und 9 Monaten** zur Prüfung anmelden – am Prüfungstag selbst musst du das Mindestalter noch nicht erreicht haben, aber bei der Aushändigung des Führerscheins schon.
+**Wichtig:** Du kannst dich bereits mit **15 Jahren und 9 Monaten** (unter Segel mit 13 Jahren und 9 Monaten) zur Prüfung anmelden – am Prüfungstag selbst musst du das Mindestalter noch nicht erreicht haben, aber bei der Aushändigung des Führerscheins schon.
 
 ## Körperliche Tauglichkeit
 
@@ -100,10 +101,10 @@ Die Prüfung wird von den **Prüfungsausschüssen des DMYV und DSV** abgenommen 
 | [SBF Binnen](/sbf-binnen/) (Theorie + Praxis) | ca. 131 € |
 | [SBF See](/sbf-see/) (Theorie + Praxis) | ca. 148 € |
 | Kombi Binnen + See | ca. 179 € |
-| Wiederholungsprüfung Theorie | ca. 37–49 € |
-| Wiederholungsprüfung Praxis | ca. 57–75 € |
+| Wiederholungsprüfung Theorie | ca. 37–48 € |
+| Wiederholungsprüfung Praxis | ca. 40–48 € |
 
-*(Quelle: DMYV-Gebührenordnung. Preise können je nach Prüfungsausschuss leicht variieren.)*
+*(Quelle: [Gebührentabelle des Prüfungsausschusses München](https://www.pa-muenchen.de/gebuehren/), Stand Oktober 2026. Die Gebühren sind bundesweit einheitlich; bei einer Wiederholung fällt in der Regel die Gebühr des jeweiligen Prüfungsteils erneut an.)*
 
 ## Häufige Fehler bei der Anmeldung
 
@@ -122,3 +123,10 @@ Unterlagen müssen je nach Prüfungsausschuss meist ein bis zwei Wochen vor dem 
 ## Fazit
 
 Die Voraussetzungen für den Sportbootführerschein sind überschaubar: Mindestalter 16 (Motor) bzw. 14 (Segel), ein ärztliches Zeugnis, ein Passfoto und ein Zuverlässigkeitsnachweis. Die Anmeldung läuft direkt über den Prüfungsausschuss – ein Kursbesuch ist keine Voraussetzung. Wer die Checkliste abhakt und die Anmeldefrist des Prüfungsausschusses einhält, hat die formale Seite schnell erledigt – dann zählt nur noch die Vorbereitung.
+
+## Quellen
+
+- [§ 6 Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/__6.html) – Mindestalter, medizinische Tauglichkeit und Zuverlässigkeit
+- [§ 7 SpFV](https://www.gesetze-im-internet.de/spfv/__7.html) – Antrag auf Zulassung, erforderliche Unterlagen und Mindestfrist für die Anmeldung
+- [DSV-Portal: SBF-Voraussetzungen](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/sbf-sportbootfuehrerschein/) – Zulassung ab 15 Jahren und 9 Monaten, Verzicht auf Zuverlässigkeitsnachweis bei Minderjährigen
+- [Prüfungsausschuss München: Anmeldung](https://www.pa-muenchen.de/anmeldung/) und [Gebühren](https://www.pa-muenchen.de/gebuehren/) – Gültigkeit des ärztlichen Zeugnisses, Führungszeugnis und Prüfungsgebühren (Stand Oktober 2026)

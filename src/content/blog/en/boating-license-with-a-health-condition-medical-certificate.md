@@ -3,6 +3,7 @@ title: "German Boating License With a Health Condition"
 seoTitle: "Boating License With a Health Condition"
 description: "What does the medical certificate for the German boating license really mean? Conditions, aids, limitations and what to clarify before you register."
 date: 2026-10-20
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -59,7 +60,7 @@ Since the certificate covers exactly these areas, an honest look is worthwhile.
 
 ### Vision and color vision
 
-The minimum visual acuity and the handling of red-green color deficiency are described in detail in the vision test article. In short: poor eyesight or a color deficiency does not automatically rule you out, the doctor assesses it case by case. Color plays a big role for lights and buoyage, more in [Navigation Lights Explained](/en/blog/navigation-lights-explained/).
+The minimum visual acuity and the handling of red-green color deficiency are described in detail in the vision test article. In short: poor eyesight or a color deficiency does not automatically rule you out, what matters are the minimum values set out in the regulation. Color plays a big role for lights and buoyage, more in [Navigation Lights Explained](/en/blog/navigation-lights-explained/).
 
 ### Hearing
 
@@ -114,3 +115,9 @@ The theory part of the exam consists of questions from the official ELWIS catalo
 ## Conclusion
 
 The medical certificate for the boating license is not a hurdle only the healthy can clear, but an individual assessment of whether you can operate a boat safely. Visual and hearing aids are expressly permitted, and conditions are noted on the certificate. Talk openly with your doctor, bring findings and aids, and clarify uncertainties with the examination committee in good time. After that, be honest with yourself, keep spares on board and only skipper when you feel fit. Then nothing stands between you and your [SBF Inland](/en/sbf-inland/) or [SBF Coastal](/en/sbf-coastal/).
+
+## Sources
+
+- [Annex 2 of the Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/anlage_2.html) (German) – medical fitness criteria for health conditions, eyesight and hearing requirements and possible restrictions
+- [Section 6 SpFV](https://www.gesetze-im-internet.de/spfv/__6.html) (German) – medical fitness, restrictions and specialist reports in case of doubt
+- [Munich examination board: registration](https://www.pa-muenchen.de/anmeldung/) (German) – medical certificate no older than 12 months

@@ -3,7 +3,7 @@ title: "Promillegrenze auf dem Boot – was Sportbootführer wissen müssen"
 seoTitle: "Promillegrenze auf dem Boot: Grenzwerte"
 description: "Gilt auf dem Boot die 0,5-Promille-Grenze wie beim Auto? Was BinSchStrO und StGB sagen – Fahruntüchtigkeit, Konsequenzen und Regeln für den SBF."
 date: 2026-06-25
-updated: 2026-09-14
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -118,3 +118,10 @@ Auf dem Boot gilt ab 0,5 Promille (bzw. 0,25 mg/l Atemalkohol) eine Ordnungswidr
 Die einfachste und sicherste Regel bleibt: **Als Schiffsführer trinkst du keinen Alkohol.** Wer entspannen und trinken möchte, gibt das Steuer rechtzeitig an eine nüchterne Person ab.
 
 Wenn du dich auf die [SBF-Prüfung](/sbf-pruefung-ablauf/) vorbereitest, hilft dir die **Boatpass-App** mit allen Prüfungsfragen aus dem offiziellen ELWIS-Fragenkatalog – auch zu Schiffsführerpflichten, Fahrtüchtigkeit und Verhaltensregeln auf dem Wasser, im Prüfungsmodus trainierbar.
+
+## Quellen
+
+- [Binnenschifffahrtsstraßen-Ordnung (BinSchStrO), § 1.02 Nr. 7](https://www.gesetze-im-internet.de/binschstro_2012/BinSchStrO.pdf) – Grenze von 0,5 Promille bzw. 0,25 mg/l für Schiffsführer auf Binnenschifffahrtsstraßen (PDF)
+- [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), § 3](https://www.gesetze-im-internet.de/seeschstro_1971/__3.html) – Promillegrenze auf Seeschifffahrtsstraßen und Alkoholverbot für Schiffsführer von Fahrgastschiffen
+- [§ 316 StGB](https://www.gesetze-im-internet.de/stgb/__316.html) und [§ 315a StGB](https://www.gesetze-im-internet.de/stgb/__315a.html) – Strafrahmen bei Trunkenheit im Verkehr und Gefährdung des Schiffsverkehrs
+- [Sportbootführerscheinverordnung (SpFV), § 16](https://www.gesetze-im-internet.de/spfv/__16.html) – Zuständigkeit der GDWS für die Entziehung des Sportbootführerscheins

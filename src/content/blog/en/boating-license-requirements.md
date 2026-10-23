@@ -3,6 +3,7 @@ title: "Boating License Requirements – What You Need to Register"
 seoTitle: "Boating License Requirements in Germany"
 description: "All the requirements for the German boating license: minimum age, medical certificate, documents and exam registration – explained step by step."
 date: 2026-04-15
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 6
 lang: en
@@ -10,7 +11,7 @@ author: "Marius Gehler"
 altSlug: "sportbootfuehrerschein-voraussetzungen"
 faq:
   - question: "What's the minimum age for the boating license?"
-    answer: "The SBF Inland under engine and the SBF Coastal are available from age 16, while the SBF Inland under sail is available from age 14. You can register for the exam as early as 15 years and 9 months, but you must have reached the minimum age by the time the license is handed over."
+    answer: "The SBF Inland under engine and the SBF Coastal are available from age 16, while the SBF Inland under sail is available from age 14. You can register for the exam as early as 15 years and 9 months (13 years and 9 months for sail), but you must have reached the minimum age by the time the license is handed over."
   - question: "Do I need a medical certificate for the boating license?"
     answer: "Yes. You need a medical certificate for boating license applicants confirming your eyesight, color vision and hearing. A visit to your GP is enough, the certificate is valid for 12 months, and it costs between about €30 and €65 depending on the doctor."
   - question: "What documents do I need to register for the SBF exam?"
@@ -43,7 +44,7 @@ Before you can sit the [SBF exam](/en/sbf-exam/), you have to meet a few formal 
 | SBF Inland under sail | 14 years |
 | SBF Coastal | 16 years |
 
-**Important:** You can already register for the exam at **15 years and 9 months** – on the exam day itself you don't yet have to have reached the minimum age, but you do by the time the license is handed over.
+**Important:** You can already register for the exam at **15 years and 9 months** (13 years and 9 months for sail) – on the exam day itself you don't yet have to have reached the minimum age, but you do by the time the license is handed over.
 
 ## Physical fitness
 
@@ -100,10 +101,10 @@ The exam is administered by the **examination boards of the DMYV and DSV** – n
 | [SBF Inland](/en/sbf-inland/) (theory + practice) | approx. €131 |
 | [SBF Coastal](/en/sbf-coastal/) (theory + practice) | approx. €148 |
 | Combined Inland + Coastal | approx. €179 |
-| Theory retake | approx. €37–49 |
-| Practice retake | approx. €57–75 |
+| Theory retake | approx. €37–48 |
+| Practice retake | approx. €40–48 |
 
-*(Source: DMYV fee schedule. Prices may vary slightly by examination board.)*
+*(Source: [fee table of the Munich examination board](https://www.pa-muenchen.de/gebuehren/) (German), as of October 2026. Fees are uniform nationwide; for a retake, the fee for that exam part is usually charged again.)*
 
 ## Common registration mistakes
 
@@ -122,3 +123,10 @@ Documents usually have to arrive one to two weeks before the exam date, dependin
 ## Conclusion
 
 The requirements for the German boating license are manageable: minimum age 16 (engine) or 14 (sail), a medical certificate, a passport photo and proof of reliability. Registration goes directly through the examination board – attending a course is not a requirement. Anyone who ticks off the checklist and meets the examination board's registration deadline quickly handles the formal side – then all that counts is the preparation.
+
+## Sources
+
+- [Section 6 of the Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/__6.html) (German) – minimum age, medical fitness and reliability
+- [Section 7 SpFV](https://www.gesetze-im-internet.de/spfv/__7.html) (German) – application for admission, required documents and minimum registration deadline
+- [DSV portal: SBF requirements](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/sbf-sportbootfuehrerschein/) (German) – admission from 15 years and 9 months, no proof of reliability required for minors
+- [Munich examination board: registration](https://www.pa-muenchen.de/anmeldung/) and [fees](https://www.pa-muenchen.de/gebuehren/) (German) – validity of the medical certificate, certificate of good conduct and exam fees (as of October 2026)
