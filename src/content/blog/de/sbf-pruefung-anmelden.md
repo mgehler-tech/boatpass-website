@@ -3,6 +3,7 @@ title: "SBF-Prüfung anmelden – Schritt für Schritt zu DSV & DMYV"
 seoTitle: "SBF-Prüfung anmelden: DSV & DMYV Ablauf"
 description: "Wie meldest du dich zur SBF-Prüfung an? Prüfungsorganisationen DSV und DMYV, nötige Unterlagen, Ablauf und Kosten – Schritt für Schritt erklärt."
 date: 2026-04-11
+updated: 2026-10-23
 tags: ["Vorbereitung"]
 readingTime: 7
 lang: de
@@ -114,3 +115,10 @@ Wenn du SBF Binnen und See kombinierst, sparst du, weil sich Teile der Prüfung 
 ## Fazit
 
 Die Anmeldung zur SBF-Prüfung läuft über die Verbände DSV oder DMYV – am einfachsten über deine Bootsschule, alternativ als Direktbewerber. Wichtig sind das ärztliche Zeugnis, ein Passbild und der Altersnachweis. Wer früh die Unterlagen zusammenstellt, vermeidet Verzögerungen. Für die Theorie kannst du dich kostenlos in der Boatpass-App mit dem offiziellen ELWIS-Fragenkatalog vorbereiten – inklusive Prüfungssimulation, damit du am Prüfungstag genau weißt, was dich erwartet.
+
+## Quellen
+
+- [Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/) – Rechtsgrundlage für Prüfung, Mindestalter und Unterlagen
+- [ELWIS – Sportbootführerscheine](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) – amtliche Informationen und Fragenkataloge
+- [Portal für Sportbootführerscheine des DSV](https://www.sportbootfuehrerscheine.org/) und [DMYV](https://www.dmyv.de/) – Prüfungsausschüsse und Anmeldung
+- [Gebührentabelle des Prüfungsausschusses München](https://www.pa-muenchen.de/gebuehren/) – Prüfungsgebühren (Stand Oktober 2026)

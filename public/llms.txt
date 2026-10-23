@@ -35,7 +35,7 @@
 - [SRC Funkzeugnis](https://boatpass.de/src/): Short Range Certificate (Seefunk).
 - [LRC Funkzeugnis](https://boatpass.de/lrc/): Long Range Certificate (weltweiter Seefunk).
 - [Kosten](https://boatpass.de/sbf-kosten/): Was der Sportbootführerschein kostet.
-- [Prüfungsablauf](https://boatpass.de/sbf-pruefung-ablauf/): Wie die SBF-Prüfung abläuft.
+- [Prüfungsablauf](https://boatpass.de/sbf-pruefung-ablauf/): Wie die SBF-Prüfung abläuft: Theorie, Praxis, Bestehensgrenzen, Unterlagen, Fristen und Dauer.
 - [FAQ](https://boatpass.de/faq/): Häufige Fragen zu Schein, Prüfung und Fragenkatalog.
 
 ## Tools
@@ -61,7 +61,6 @@
 ### Wichtige Ratgeber-Artikel
 
 - [SBF Binnen vs. SBF See – Was ist der Unterschied?](https://boatpass.de/blog/sbf-binnen-vs-see/): Welchen Sportbootführerschein brauchst du? Geltungsbereich, Prüfungsunterschiede, Kosten und der Kombinations-Tipp der die meisten Geld spart.
-- [SBF Prüfung: Alles was du wissen musst](https://boatpass.de/blog/sbf-pruefung-alles-wissenswerte/): Vollständiger Leitfaden zur SBF-Theorieprüfung: Prüfungsaufbau, Bestehensgrenze, nötige Unterlagen, Ablauf, Kosten und die richtige Vorbereitung.
 - [SBF-Prüfung anmelden – Schritt für Schritt zu DSV & DMYV](https://boatpass.de/blog/sbf-pruefung-anmelden/): Wie meldest du dich zur SBF-Prüfung an? Prüfungsorganisationen DSV und DMYV, nötige Unterlagen, Ablauf und Kosten – Schritt für Schritt erklärt.
 - [Sportbootführerschein Voraussetzungen – Was du für die Anmeldung brauchst](https://boatpass.de/blog/sportbootfuehrerschein-voraussetzungen/): Alle Voraussetzungen für den Sportbootführerschein: Mindestalter, ärztliches Zeugnis, Unterlagen und Prüfungsanmeldung – Schritt für Schritt erklärt.
 - [Wie lange dauert die Vorbereitung auf den SBF?](https://boatpass.de/blog/sbf-vorbereitung-wie-lange/): Realistische Zeitplanung für den Sportbootführerschein: konkrete Wochenpläne für verschiedene Lerntypen und die Kategorien, die am meisten Zeit kosten.
@@ -158,7 +157,7 @@
 - [SRC Radio Certificate (EN)](https://boatpass.de/en/src/): Short Range Certificate (maritime radio).
 - [LRC Radio Certificate (EN)](https://boatpass.de/en/lrc/): Long Range Certificate (worldwide maritime radio).
 - [Costs (EN)](https://boatpass.de/en/sbf-costs/): What the German boating license costs.
-- [Exam Process (EN)](https://boatpass.de/en/sbf-exam/): How the SBF exam works, theory and practice.
+- [Exam Process (EN)](https://boatpass.de/en/sbf-exam/): How the SBF exam works: theory, practice, pass marks, documents, deadlines and duration.
 - [FAQ (EN)](https://boatpass.de/en/faq/): Common questions on license, exam and question catalog.
 - [Which Boating License? (EN)](https://boatpass.de/en/tools/which-boating-license/): Free finder tool – 3 questions, then the matching license.
 - [Boating License Apps Compared (EN)](https://boatpass.de/en/sbf-app/): Honest comparison of all German boating-licence study apps – prices, licence coverage, ratings, Android/iOS.
@@ -174,7 +173,6 @@
 ### Key guides (EN)
 
 - [SBF Inland vs. SBF Coastal – What's the Difference?](https://boatpass.de/en/blog/sbf-inland-vs-coastal/): Which German boating license do you need? Coverage, exam differences, costs, and why combining both licenses is cheaper than doing them separately.
-- [SBF Exam: Everything You Need to Know](https://boatpass.de/en/blog/sbf-exam-everything-you-need-to-know/): Complete guide to the German boating license exam: exam structure, pass thresholds, required documents, costs, and how to register correctly.
 - [How to Register for the SBF Exam – Step by Step With DSV & DMYV](https://boatpass.de/en/blog/how-to-register-sbf-exam/): How do you register for the German boating license exam? DSV and DMYV, required documents, the full application process, and costs – step by step.
 - [Boating License Requirements – What You Need to Register](https://boatpass.de/en/blog/boating-license-requirements/): All the requirements for the German boating license: minimum age, medical certificate, documents and exam registration – explained step by step.
 - [How Long Does It Take to Prepare for the SBF Exam?](https://boatpass.de/en/blog/sbf-preparation-how-long/): Realistic preparation timelines for the German boating license – with weekly plans for different learning types and the topics that take longest.

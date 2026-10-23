@@ -2,8 +2,9 @@
  * Amtliche Fragenkataloge je Lizenz – eine Quelle für die Lizenzseiten
  * (CatalogSources).
  *
- * Lizenz-Namen, Stände und ELWIS-Links sind amtlich verifiziert (Stand Juni 2026).
- * Verlinkt sind die kanonischen ELWIS-Seiten, die stets die gültige Fassung zeigen.
+ * Lizenz-Namen, Stände und Links sind amtlich verifiziert (Stand Oktober 2026).
+ * Verlinkt sind die kanonischen ELWIS-Seiten bzw. für den UBI die Seite der
+ * ausgebenden Stelle (ABVT der WSV), die stets die gültige Fassung zeigen.
  * Die Texte (Katalog-Bezeichnung, "gültig seit") kommen aus i18n/catalogSources.
  */
 import { useTranslations, type Lang } from '../i18n/index';
@@ -22,11 +23,11 @@ export interface CatalogRow {
 export function catalogRows(lang: Lang): CatalogRow[] {
   const cs = useTranslations(lang).catalogSources;
   return [
-    { key: 'binnen', license: 'SBF Binnen', catalog: cs.binnenCat, stand: cs.binnenStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-neu-node.html' },
-    { key: 'see', license: 'SBF See', catalog: cs.seeCat, stand: cs.seeStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-neu-node.html' },
+    { key: 'binnen', license: 'SBF Binnen', catalog: cs.binnenCat, stand: cs.binnenStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-node.html' },
+    { key: 'see', license: 'SBF See', catalog: cs.seeCat, stand: cs.seeStand, url: 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html' },
     { key: 'src', license: 'SRC', catalog: cs.srcCat, stand: cs.srcStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-SRC-2018.html' },
     { key: 'lrc', license: 'LRC', catalog: cs.lrcCat, stand: cs.lrcStand, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-LRC-2018.html' },
-    { key: 'ubi', license: 'UBI', catalog: cs.ubiCat, stand: cs.ubiStand, next: cs.ubiNext, url: 'https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html' },
+    { key: 'ubi', license: 'UBI', catalog: cs.ubiCat, stand: cs.ubiStand, url: 'https://www.abvt.wsv.de/Webs/WSA/ABVT/DE/UKW-Sprechfunkzeugnisse/UBI_node.html' },
   ];
 }
 

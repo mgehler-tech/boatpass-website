@@ -1,4 +1,13 @@
 # Alte, flache Blog-URL-Struktur (/blog/de|en/<slug>) auf die aktuelle Struktur
 # umleiten. Rettet Link-Equity und beseitigt 404s aus dem Google-Index.
+# Zusammengeführt in die Prüfungsseite (SEO-Audit 23.10.2026). Vor den
+# Platzhalter-Regeln, damit alte /blog/de/-Links nicht über zwei Sprünge laufen.
+/blog/sbf-pruefung-alles-wissenswerte/            /sbf-pruefung-ablauf/  301
+/blog/sbf-pruefung-alles-wissenswerte             /sbf-pruefung-ablauf/  301
+/blog/de/sbf-pruefung-alles-wissenswerte/         /sbf-pruefung-ablauf/  301
+/en/blog/sbf-exam-everything-you-need-to-know/    /en/sbf-exam/          301
+/en/blog/sbf-exam-everything-you-need-to-know     /en/sbf-exam/          301
+/blog/en/sbf-exam-everything-you-need-to-know/    /en/sbf-exam/          301
+
 /blog/de/*   /blog/:splat       301
 /blog/en/*   /en/blog/:splat    301

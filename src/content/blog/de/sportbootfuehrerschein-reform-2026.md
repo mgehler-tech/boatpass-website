@@ -1,8 +1,9 @@
 ---
 title: "Sportbootführerschein-Reform 2026: Was sich ändert und was bleibt"
 seoTitle: "Sportbootführerschein-Reform 2026: Änderungen"
-description: "Die SBF-Reform 2026 ersetzt den Sportbootführerschein durch Verbandsscheine. Was das bedeutet, ob dein Schein gültig bleibt und was bei E-Motoren neu ist."
+description: "Die geplante SBF-Reform soll den Sportbootführerschein durch Verbandsscheine ersetzen. Was das bedeutet, ob dein Schein gültig bleibt, was bei E-Motoren gilt."
 date: 2026-07-25
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -95,3 +96,11 @@ Wenn du gerade überlegst, den Sportbootführerschein zu machen, gibt es keinen 
 Die Sportbootführerschein-Reform 2026 klingt dramatischer, als sie für die meisten Bootsfahrer tatsächlich ist. Bestehende Führerscheine bleiben gültig, die Prüfungsinhalte ändern sich nicht und die einheitliche 15-PS-Grenze für alle Antriebsarten ist eine sinnvolle Vereinfachung. Die größte offene Frage bleibt, wie sich der Wegfall des amtlichen Status auf die internationale Anerkennung auswirkt.
 
 Falls du gerade auf dem Weg zum Sportbootführerschein bist, bleib dran: Die Boatpass-App enthält den vollständigen ELWIS-Fragenkatalog und einen realistischen Prüfungsmodus, mit dem du dich auf genau die Fragen vorbereitest, die auch in der Prüfung drankommen.
+
+## Quellen
+
+- [Bundesministerium für Verkehr: Pressemitteilung zur Modernisierung der Sportbootführerscheine (2025)](https://www.bmv.de/SharedDocs/DE/Pressemitteilungen/2025/051-hirte-regeln-fuer-sportbootfuehrerscheine-werden-modernisiert.html)
+- [ELWIS – Sportbootführerscheine](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) – aktuell geltende Rechtslage
+- [Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/) – gültige Fassung
+
+Stand dieses Artikels: Oktober 2026. Eine neue Verordnung ist bis dahin nicht in Kraft getreten.

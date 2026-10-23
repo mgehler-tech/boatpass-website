@@ -27,7 +27,11 @@ const faqs = [
   },
   {
     q: 'Was passiert, wenn ich durchfalle?',
-    a: 'Du kannst den nicht bestandenen Teil wiederholen. Dabei fallen erneut Prüfungsgebühren an. Mit gezielter Vorbereitung – Prüfungssimulation und Fehlertraining – bestehen die meisten Prüflinge jedoch beim ersten Versuch.',
+    a: 'Du wiederholst nur den nicht bestandenen Teil, nicht die ganze Prüfung. Das ist frühestens am Folgetag möglich und erfordert eine neue Anmeldung beim Prüfungsausschuss sowie eine eigene Gebühr. Die Zahl der Versuche ist nicht begrenzt, ein bestandener Teil bleibt aber nur befristet gültig – die Frist legt dein Prüfungsausschuss fest.',
+  },
+  {
+    q: 'Wie lange dauert die SBF-Prüfung?',
+    a: 'Die Theorieprüfung dauert beim SBF Binnen 45 Minuten, beim SBF See 60 Minuten (inklusive Navigationsaufgabe). Die praktische Prüfung dauert pro Person meist wenige Minuten bis etwa eine halbe Stunde, je nachdem, wie viele Manöver abgefragt werden. Mit Wartezeiten bei Sammelterminen solltest du für den Prüfungstag einen halben Tag einplanen.',
   },
   {
     q: 'Welche Voraussetzungen brauche ich für die SBF-Prüfung?',
@@ -74,7 +78,7 @@ const howToSchema = {
 
 <BaseLayout
   title="SBF Prüfung Ablauf – Theorie & Praxis erklärt"
-  description="Wie läuft die Sportbootführerschein-Prüfung ab? Theorie & Praxis: Aufbau, Fragen, Manöver, Bestehensgrenzen und Voraussetzungen – Binnen und See."
+  description="Wie läuft die Sportbootführerschein-Prüfung ab? Theorie und Praxis, Bestehensgrenzen, Unterlagen, Fristen und Dauer – für SBF Binnen und SBF See."
   lang="de"
   altUrl="https://boatpass.de/en/sbf-exam/"
 >
@@ -199,6 +203,57 @@ const howToSchema = {
       </div>
       <p class="pg-note pg-note--after">
         Eine Schritt-für-Schritt-Anleitung zur Anmeldung bei DSV und DMYV findest du im <a href="/blog/sbf-pruefung-anmelden/" class="pg-inline-link">Artikel zur SBF-Prüfungsanmeldung</a>.
+      </p>
+      <p class="pg-note pg-note--sm">
+        Quellen: <a href="https://www.gesetze-im-internet.de/spfv/" target="_blank" rel="noopener noreferrer" class="pg-inline-link">Sportbootführerscheinverordnung (SpFV)</a>, <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">ELWIS – Sportbootführerscheine</a>, Prüfungsportale von <a href="https://www.sportbootfuehrerscheine.org/" target="_blank" rel="noopener noreferrer" class="pg-inline-link">DSV</a> und <a href="https://www.dmyv.de/" target="_blank" rel="noopener noreferrer" class="pg-inline-link">DMYV</a>. Stand: Oktober 2026.
+      </p>
+    </section>
+
+    <!-- Unterlagen und Fristen (übernommen aus dem früheren Blogartikel
+         „SBF Prüfung: Alles was du wissen musst", der hierher umgeleitet wird) -->
+    <section class="pg-section">
+      <h2 class="pg-h2">Unterlagen und Fristen</h2>
+      <p class="pg-p">
+        Für die Zulassung zur Prüfung reichst du beim Prüfungsausschuss neben dem Antrag diese Unterlagen ein:
+      </p>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-label">Ausweis</p>
+          <p class="pg-card-text">Gültiger Personalausweis oder Reisepass</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-label">Passbild</p>
+          <p class="pg-card-text">35 × 45 mm, ohne Kopfbedeckung</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-label">Ärztliches Zeugnis</p>
+          <p class="pg-card-text">Amtliches Formular mit Seh- und Hörtest, ab Ausstellung 12 Monate gültig</p>
+        </div>
+      </div>
+      <p class="pg-p pg-p--after">
+        Die Prüfungsgebühr muss meist spätestens <strong>7 Tage vor dem Termin</strong> beim Prüfungsausschuss eingegangen sein; manche Ausschüsse setzen längere Fristen. Am Prüfungstag bringst du Ausweis und Prüfungszulassung mit. Fehlt ein Dokument oder ist das ärztliche Zeugnis abgelaufen, darfst du unter Umständen nicht teilnehmen. Die aktuellen Gebühren stehen in der <a href="/sbf-kosten/" class="pg-inline-link">Kostenübersicht</a>.
+      </p>
+    </section>
+
+    <!-- Dauer -->
+    <section class="pg-section">
+      <h2 class="pg-h2">Wie lange dauern Prüfung und Vorbereitung?</h2>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-label">Theorieprüfung</p>
+          <p class="pg-card-text">SBF Binnen 45 Minuten<br>SBF See 60 Minuten</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-label">Praxisprüfung</p>
+          <p class="pg-card-text">Pro Person meist wenige Minuten bis etwa eine halbe Stunde</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-label">Vorbereitung</p>
+          <p class="pg-card-text">SBF Binnen 3–6 Wochen bei 30–45 Minuten täglich; SBF See etwas länger</p>
+        </div>
+      </div>
+      <p class="pg-p pg-p--after">
+        Die praktische Prüfung findet oft als Sammeltermin statt: Während einer das Boot führt, werden andere parallel auf die Knoten geprüft. Wie du deine Lernzeit planst, zeigt der Artikel <a href="/blog/sbf-vorbereitung-wie-lange/" class="pg-inline-link">Wie lange dauert die SBF-Vorbereitung?</a>
       </p>
     </section>
 

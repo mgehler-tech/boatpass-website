@@ -96,7 +96,8 @@ test.describe('SBF Binnen vollständig', () => {
     await expect(page.locator('.pg-table table')).toHaveCount(1);
     await expect(page.locator('.pg-faq .pg-faq-item')).toHaveCount(5);
     await expect(page.locator('.pg-rows').first().locator('.pg-row')).toHaveCount(7);
-    await expect(page.locator('ul.pg-related a')).toHaveCount(30);
+    // 29: der Artikel „SBF Prüfung: Alles was du wissen musst" ist in /sbf-pruefung-ablauf/ aufgegangen (SEO-Audit 23.10.2026).
+    await expect(page.locator('ul.pg-related a')).toHaveCount(29);
     await expect(page.locator('ul.pg-related a').first()).toHaveAttribute('href', '/sbf-binnen-pruefungsfragen/');
     await expect(page.locator('h2.pg-h2')).toHaveCount(10);
     // Alte Klassen nur noch im unangetasteten BoatSchoolFinder (eigene section), nicht in den Seitenabschnitten.

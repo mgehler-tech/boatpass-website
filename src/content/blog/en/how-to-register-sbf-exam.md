@@ -3,6 +3,7 @@ title: "How to Register for the SBF Exam – Step by Step With DSV & DMYV"
 seoTitle: "How to Register for the SBF Exam (DSV & DMYV)"
 description: "How do you register for the German boating license exam? DSV and DMYV, required documents, the full application process, and costs – step by step."
 date: 2026-04-11
+updated: 2026-10-23
 tags: ["Preparation"]
 readingTime: 7
 lang: en
@@ -112,3 +113,10 @@ If you combine SBF Binnen and See, you save, because parts of the exam and fees 
 ## Conclusion
 
 Registration for the SBF exam goes through the DSV or DMYV associations – most easily through your boating school, or alternatively as a direct applicant. The key items are the medical certificate, a passport photo and proof of age. Gathering the documents early avoids delays. For the theory you can prepare for free in the Boatpass app with the official ELWIS question catalog – including an exam simulation, so on exam day you know exactly what to expect.
+
+## Sources
+
+- [Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/) – legal basis for the exam, minimum age and documents
+- [ELWIS – recreational boat licences](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) – official information and question catalogs
+- [DSV licence portal](https://www.sportbootfuehrerscheine.org/) and [DMYV](https://www.dmyv.de/) – examination boards and registration
+- [Fee table of the Munich examination board](https://www.pa-muenchen.de/gebuehren/) – exam fees (as of October 2026)

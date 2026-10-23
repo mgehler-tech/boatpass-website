@@ -3,6 +3,7 @@ title: "UBI-Fragenkatalog 2026: Das ändert sich zum 1. Oktober"
 seoTitle: "UBI-Fragenkatalog 2026: das ändert sich"
 description: "Neuer UBI-Fragenkatalog ab 1. Oktober 2026: VDES statt MIB, aktualisierte Rechtsbezüge, neue Sprechfunktafel. Was sich ändert und wie du dich vorbereitest."
 date: 2026-09-09
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 7
 lang: de
@@ -74,3 +75,7 @@ Bewährt hat sich, die Themenblöcke einzeln durchzuarbeiten, typische Fehlerque
 Zum 1. Oktober 2026 löst der UBI-Gesamtfragenkatalog 2026 die bisherige Fassung von 2018 ab. Die Themenbereiche bleiben grundsätzlich gleich, überarbeitet wurden einzelne Fragen, Fachbegriffe und Rechtsbezüge. Am deutlichsten sichtbar sind der Wechsel von MIB zu VDES beim digitalen Datenfunk und die neue Sprechfunktafel für die praktische Prüfung. Der Prüfungsaufbau selbst bleibt unverändert. Entscheidend für die Wahl des Katalogs ist immer dein Prüfungsdatum.
 
 Die **Boatpass-App** ist bereits auf dem neuen Stand: Du lernst mit dem aktuellen UBI-Gesamtfragenkatalog 2026, übst im realistischen Prüfungsmodus und trainierst gezielt deine Fehler, damit du sicher und gut vorbereitet in die Prüfung gehst, egal ob dein Termin vor oder nach dem 1. Oktober liegt.
+
+## Quellen
+
+- [ABVT der WSV – UKW-Sprechfunkzeugnis UBI](https://www.abvt.wsv.de/Webs/WSA/ABVT/DE/UKW-Sprechfunkzeugnisse/UBI_node.html) – Gesamtfragenkatalog UBI 2026, Frageverteilung, Übungsfragebögen und Sprechfunktafel (gültig ab 1. Oktober 2026)
