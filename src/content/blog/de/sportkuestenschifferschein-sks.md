@@ -3,6 +3,7 @@ title: "Sportküstenschifferschein (SKS) – die nächste Stufe nach dem SBF See
 seoTitle: "Sportküstenschifferschein (SKS) nach SBF"
 description: "Sportküstenschifferschein (SKS): Voraussetzungen, Seemeilen-Nachweis und Prüfungsablauf erklärt. So baust du nach dem SBF See sinnvoll weiter aus."
 date: 2026-07-18
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -29,7 +30,7 @@ Wichtig für die Einordnung: Der SKS baut inhaltlich und formal auf dem SBF See 
 
 ## SKS und SBF See im Vergleich
 
-Der SBF See ist die gesetzliche Grundausbildung: verpflichtend, sobald du auf bestimmten Gewässern ein Sportboot mit entsprechender Motorleistung oder unter Segel mit entsprechender Segelfläche führst, mit Multiple-Choice-Fragen und einer eher überschaubaren praktischen Prüfung. Der SKS setzt darauf auf und geht in fast jeder Hinsicht einen deutlichen Schritt weiter: Statt Ankreuzfragen erwartet dich echtes Freitextwissen, statt einfacher Manöver eine vollständige Kartenaufgabe mit Kursberechnung, Strömungsversatz und Distanzen, dazu anspruchsvollere Manöver unter Motor und Segel. Wer den SBF See nur für die Küste in der Nähe des Heimathafens braucht, kommt oft ohne SKS aus. Wer regelmäßig größere Distanzen plant, chartert oder auf fremde Reviere ausweicht, profitiert dagegen spürbar vom zusätzlichen Wissen und der international anerkannten Qualifikation.
+Der SBF See ist die gesetzliche Grundausbildung: verpflichtend, sobald du auf den Seeschifffahrtsstraßen ein Sportboot mit einer Motorleistung über 11,03 kW (15 PS) bei Verbrennungsmotoren bzw. 7,5 kW bei Elektromotoren führst, mit Multiple-Choice-Fragen und einer eher überschaubaren praktischen Prüfung. Der SKS setzt darauf auf und geht in fast jeder Hinsicht einen deutlichen Schritt weiter: Statt Ankreuzfragen erwartet dich echtes Freitextwissen, statt einfacher Manöver eine vollständige Kartenaufgabe mit Kursberechnung, Strömungsversatz und Distanzen, dazu anspruchsvollere Manöver unter Motor und Segel. Wer den SBF See nur für die Küste in der Nähe des Heimathafens braucht, kommt oft ohne SKS aus. Wer regelmäßig größere Distanzen plant, chartert oder auf fremde Reviere ausweicht, profitiert dagegen spürbar vom zusätzlichen Wissen und der international anerkannten Qualifikation.
 
 ## Voraussetzungen für den SKS
 
@@ -71,12 +72,12 @@ Zusätzlich zum Fragebogen musst du eine mehrteilige **Navigationsaufgabe** (Kar
 
 Die praktische Prüfung dauert maximal **30 Minuten pro Prüfling** und findet auf einer Yacht von etwa 10 Metern Länge statt. Geprüft wird abhängig davon, ob du die Prüfung unter Motor oder unter Segel und Motor ablegst:
 
-- **Prüfung unter Motor:** An- und Ablegen, Fahren nach Schifffahrtszeichen, Person-über-Bord-Manöver.
-- **Prüfung unter Segel und Motor:** zusätzlich das Fahren von Kursen und das Person-über-Bord-Manöver unter Segeln.
+- **Prüfung unter Motor:** Pflichtaufgaben sind An- und Ablegen mit Antriebsmaschine sowie ein Person-über-Bord-Manöver mit Antriebsmaschine.
+- **Prüfung unter Segel und Motor:** Pflicht sind zwei Person-über-Bord-Manöver, eines unter Segel und eines mit Maschinenunterstützung, dazu An- und Ablegen mit Antriebsmaschine sowie Wenden oder Halsen/Q-Wende und Beidrehen/Beiliegen.
 
-Dazu kommen weitere Manöverelemente wie kursgerechtes Aufstoppen, Wenden auf engem Raum, Fahren nach Schifffahrtszeichen und Landmarken, das korrekte Anlegen einer Rettungsweste oder eines Sicherheitsgurts sowie die passenden Manöverschallsignale.
+Dazu kommen sonstige Aufgaben aus den Bereichen Seemannschaft (etwa Sicherheitseinweisung, Notrolle, Lifebelt und Lifeline), Wetterkunde (Thermometer und Barometer ablesen, Wetterlage beurteilen), Navigation (Schiffsort bestimmen, Kurse absetzen, Arbeit mit GPS und Kompass) sowie Motor, elektrische Anlage und Gasanlage. Außerdem kann der Prüfer Manöver wie Drehen oder Aufstoppen auf engem Raum, ein Ankermanöver, Segelsetzen, Reffen oder einen Aufschießer verlangen.
 
-Auch **[Knotenkunde](/blog/wichtigste-knoten-sbf/)** gehört zur Praxisprüfung. Geprüft werden sechs Knoten aus einem Repertoire von bis zu sieben: Achtknoten, Kreuzknoten, Schotstek, Palstek, Stopperstek, Webleinstek, Rundtörn mit zwei halben Schlägen sowie das Belegen einer Klampe mit Kopfschlag. Wer diese Knoten nicht regelmäßig übt, verliert in der Prüfung oft wertvolle Zeit, weil die korrekte Ausführung unter leichtem Zeitdruck erfolgen muss.
+Eine eigene Knotenprüfung wie beim SBF sieht die SKS-Praxisprüfung nicht vor. Geprüft werden kann aber das Anwenden von Leinen beim An- oder Ablegen, also Spring, Vor- und Achterleine oder eine Leine auf Slip. Die **[Knoten](/blog/wichtigste-knoten-sbf/)** aus dem SBF solltest du trotzdem sicher beherrschen, denn ohne sie gelingt kein sauberes Hafenmanöver.
 
 ## Fristen: Die gesamte Prüfung muss innerhalb von 24 Monaten stehen
 
@@ -84,7 +85,7 @@ Ein Detail, das leicht übersehen wird: Zwischen der ersten abgelegten Teilprüf
 
 ## Kosten für den SKS
 
-Anders als beim SBF gibt es beim SKS keine bundesweit einheitliche Gebührentabelle. Die Prüfungsgebühren werden von den jeweiligen regionalen Prüfungsausschüssen der Landesverbände von DSV und DMYV selbst festgelegt und können sich deshalb je nach Bundesland unterscheiden. Als Anhaltspunkt verlangt beispielsweise der Prüfungsausschuss NRW des DMYV rund **150 Euro** für die Prüfung. Hinzu kommen, je nach gewähltem Weg, Kosten für einen optionalen Vorbereitungskurs bei einer Segel- oder Bootsschule sowie für Lernmaterialien, ein verpflichtender Kurs ist für die Zulassung zur Prüfung jedoch nicht vorgeschrieben. Wer sich die aktuellen Gebühren für den eigenen Prüfungsausschuss genau ansehen möchte, findet die Details direkt auf den Seiten der zuständigen Landes-Prüfungsausschüsse von DSV oder DMYV.
+Wie beim SBF sind auch die Gebühren für den SKS bundesrechtlich geregelt: DSV und DMYV erheben sie nach einer besonderen Gebührenverordnung des Bundesverkehrsministeriums (§ 2 Sportseeschifferscheinverordnung). Beim DSV kostet die gesamte Prüfung aus Zulassung, Theorie, Praxis und Erteilung des Scheins derzeit **244,58 Euro** inklusive Mehrwertsteuer (Stand Oktober 2026). Hinzu kommen, je nach gewähltem Weg, Kosten für einen optionalen Vorbereitungskurs bei einer Segel- oder Bootsschule sowie für Lernmaterialien, ein verpflichtender Kurs ist für die Zulassung zur Prüfung jedoch nicht vorgeschrieben. Wer sich die aktuellen Gebühren genau ansehen möchte, findet die Details direkt auf den Seiten von DSV oder DMYV.
 
 ## Wofür der SKS wirklich berechtigt
 
@@ -94,7 +95,7 @@ Ein weiterer praktischer Vorteil: Der SKS wird im Kreditkartenformat ausgestellt
 
 ## Wie geht es nach dem SKS weiter?
 
-Wer noch weiter hinaus möchte, kann auf dem SKS aufbauen. Der nächste Schritt ist der **Sportseeschifferschein (SSS)**, für den du entweder den SBF See mit 1.000 zusätzlichen Seemeilen oder den SKS mit 700 zusätzlichen Seemeilen nachweisen musst. Der SSS berechtigt zum Führen von Segelyachten innerhalb der 30-Seemeilen-Zone, einschließlich des gesamten Mittelmeers sowie Nord- und Ostsee.
+Wer noch weiter hinaus möchte, kann auf dem SKS aufbauen. Der nächste Schritt ist der **Sportseeschifferschein (SSS)**, für den du entweder den SBF See mit 1.000 zusätzlichen Seemeilen oder den SKS mit 700 zusätzlichen Seemeilen nachweisen musst. Der SSS berechtigt zum Führen von Yachten innerhalb der 30-Seemeilen-Zone, einschließlich des gesamten Mittelmeers sowie Nord- und Ostsee.
 
 Wer danach noch weiter auf die offene See hinaus will, kann als Ergänzung den **Sporthochseeschifferschein (SHS)** ablegen, für den zusätzliche 1.000 Seemeilen nach dem SSS erforderlich sind. Der SHS befähigt zum Führen von Yachten auf weltweiter Fahrt. Die typische Reihenfolge lautet also: SBF See, dann SKS, dann SSS, dann SHS, wobei jede Stufe freiwillig ist und du nur so weit gehen musst, wie es zu deinen Segelplänen passt.
 
@@ -107,3 +108,10 @@ Bevor du überhaupt an den SKS denkst, muss der [SBF See](/sbf-see/) sicher sitz
 ## Fazit
 
 Der Sportküstenschifferschein ist keine Pflicht, aber für alle, die regelmäßig an der Küste unterwegs sind oder im Ausland chartern wollen, ein sinnvoller nächster Schritt nach dem SBF See. Er verlangt mit Fragebogen, Kartenaufgabe und praktischer Manöverprüfung deutlich mehr als der SBF, öffnet dafür aber auch mehr Reviere und wird international über das enthaltene ICC anerkannt. Wer die 300 Seemeilen zusammen hat und den SBF See sicher beherrscht, ist gut vorbereitet, um den nächsten Schritt zu gehen.
+
+## Quellen
+
+- [Sportseeschifferscheinverordnung, § 6](https://www.gesetze-im-internet.de/sportseeschv/__6.html) – Voraussetzungen für SKS (SBF See, 300 Seemeilen), SSS (700 bzw. 1.000 Seemeilen) und SHS (1.000 Seemeilen)
+- [Sportseeschifferscheinverordnung, § 1](https://www.gesetze-im-internet.de/sportseeschv/__1.html) – Küstengewässer bis 12 Seemeilen und küstennahe Seegewässer bis 30 Seemeilen
+- [Durchführungsrichtlinien Sportküstenschifferschein (ELWIS, PDF)](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/SportSeeSchiffV/Richtlinien-SKS.pdf?__blob=publicationFile&v=2) – Fragebogen und Kartenaufgabe mit Punkten und Bearbeitungszeiten, Inhalte der praktischen Prüfung, 24-Monats-Frist
+- [DSV-Führerscheinportal – SKS](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/sks-sportkuestenschifferschein/) – Mindestalter, Prüfungsablauf und Gebühren

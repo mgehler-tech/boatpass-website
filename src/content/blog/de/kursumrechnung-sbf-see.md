@@ -3,7 +3,7 @@ title: "Kursumrechnung beim SBF See: rwK, mwK & MgK einfach erklärt"
 seoTitle: "Kursumrechnung SBF See: rwK, mwK, MgK"
 description: "rwK, mwK und MgK sicher umrechnen: Formel, Vorzeichen-Regel Ost/West und drei Rechenbeispiele für die SBF-See-Navigationsaufgabe – inklusive Beschickung."
 date: 2026-06-05
-updated: 2026-08-20
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 9
 lang: de
@@ -19,7 +19,7 @@ faq:
   - question: "Was ist der Unterschied zwischen rwK, mwK und MgK?"
     answer: "rwK ist der rechtweisende Kurs bezogen auf den geografischen Nordpol, mwK der missweisende Kurs bezogen auf den magnetischen Nordpol, und MgK die Anzeige deines Bordkompasses. Zwischen ihnen liegen die Korrekturen für Missweisung und Ablenkung."
   - question: "Was ist die Beschickung für Wind und Strom?"
-    answer: "Die Beschickung korrigiert den Versatz durch Wind (Abdrift) oder Strom, damit der tatsächlich gefahrene Kurs über Grund (KüG) erreicht wird. Sie wird nach derselben Ost-plus-West-minus-Logik wie Missweisung und Ablenkung verrechnet."
+    answer: "Die Beschickung korrigiert den Versatz durch Wind (Abdrift) oder Strom, damit der tatsächlich gefahrene Kurs über Grund (KüG) erreicht wird. Sie wird wie Missweisung und Ablenkung mit Vorzeichen verrechnet: Versetzung nach Steuerbord zählt plus, nach Backbord minus."
   - question: "Wie viele der Navigationsfragen muss ich beim SBF See richtig lösen?"
     answer: "Die Navigationsaufgabe umfasst 9 Teilfragen, von denen du mindestens 7 richtig beantworten musst. Sie wird getrennt vom übrigen Fragenkatalog gewertet, die Kursumrechnung ist einer von mehreren möglichen Aufgabentypen darin."
 howTo:
@@ -108,17 +108,17 @@ Der Kurs, den du tatsächlich über Grund machst, heißt **Kurs über Grund (Kü
 
 > rwK + Beschickung (Wind/Strom) → **KüG** (bzw. umgekehrt der zu steuernde Kurs, um einen gewünschten KüG zu erreichen)
 
-Auch hier gilt die Ost-plus-West-minus-Logik für die Richtung der Versetzung. Wichtig fürs Verständnis: Missweisung und Ablenkung sind **Kompassfehler**, Wind und Strom sind **äußere Kräfte** – beides wird aber nach demselben Vorzeichen-Prinzip verrechnet.
+Auch hier wird mit Vorzeichen gerechnet, allerdings nach der Seite der Versetzung: nach Steuerbord = plus, nach Backbord = minus. Wichtig fürs Verständnis: Missweisung und Ablenkung sind **Kompassfehler**, Wind und Strom sind **äußere Kräfte** – beides wird aber mit Vorzeichen addiert.
 
 ## Rechenbeispiel 3: Kurs über Grund mit Beschickung
 
-Du steuerst einen rechtweisenden Kurs von **rwK = 090°**. Die Strömung versetzt dich mit einer Beschickung von **4° W**.
+Du steuerst einen rechtweisenden Kurs von **rwK = 090°**. Die Strömung versetzt dich mit einer Beschickung von **4° nach Backbord**.
 
 1. Vorzeichen setzen: Beschickung = −4°
 2. KüG = rwK + Beschickung
 3. KüG = 090° + (−4°) = **086°**
 
-Dein tatsächlicher Kurs über Grund beträgt also **086°**, obwohl du 090° gesteuert hast – die Strömung hat dich um 4° nach Westen versetzt. Genau dasselbe Vorzeichen-Prinzip (Ost +, West −) gilt hier wie bei Missweisung und Ablenkung, nur dass die Beschickung zwischen rwK und KüG wirkt, nicht zwischen Karte und Kompass.
+Dein tatsächlicher Kurs über Grund beträgt also **086°**, obwohl du 090° gesteuert hast – die Strömung hat dich um 4° nach Backbord versetzt. Das Rechnen mit Vorzeichen funktioniert hier wie bei Missweisung und Ablenkung, nur dass sich das Vorzeichen nach der Seite der Versetzung richtet (Steuerbord +, Backbord −) und die Beschickung zwischen rwK und KüG wirkt, nicht zwischen Karte und Kompass.
 
 ## Die häufigsten Fehler – und wie du sie vermeidest
 
@@ -136,3 +136,10 @@ Wie die Kursumrechnung in die komplette Navigationsaufgabe eingebettet ist, lies
 ## Fazit
 
 Die Kursumrechnung beim SBF See ist kein Hexenwerk: Eine Formel (**rwK = MgK + Ablenkung + Missweisung**), eine Vorzeichen-Regel (**Ost +, West −**) und etwas Übung reichen aus. Wer beides verinnerlicht hat, löst die Kursfragen der Navigationsaufgabe in Sekunden – und geht entspannt in den Prüfungstag.
+
+## Quellen
+
+- [ELWIS – Navigationsaufgaben SBF See](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Navigationsaufgaben/Navigationsaufgaben-node.html) – amtliche Aufgabenstellungen, 9 von 15 Fragen je Navigationsaufgabe
+- [ELWIS – Navigationsaufgabe 1](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Navigationsaufgaben/Navigationsaufgabe-01/Navigationsaufgabe-01-node.html) – amtliches Rechenbeispiel: rwK 079°, Ablenkung +4°, Missweisung +1° ergibt MgK 074°
+- [ELWIS – Navigationsaufgaben SKS (PDF)](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Navigationsaufgaben-SKS.pdf?__blob=publicationFile&v=2) – Kursumrechnung mit Beschickung für Wind und Strom (BW, BS) samt Vorzeichen
+- [NOAA NCEI – Magnetic Declination](https://www.ncei.noaa.gov/products/magnetic-declination) – Vorzeichenregel Ost positiv, West negativ

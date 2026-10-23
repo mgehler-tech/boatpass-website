@@ -3,6 +3,7 @@ title: "Own Boat or Charter Boat After the SBF – What Fits You?"
 seoTitle: "Own Boat or Charter Boat After the SBF"
 description: "Buy your own boat or keep chartering? A comparison of cost, effort, flexibility, and responsibility for new SBF holders and anyone still deciding."
 date: 2026-07-11
+updated: 2026-10-23
 tags: ["Preparation"]
 readingTime: 9
 lang: en
@@ -94,3 +95,9 @@ Between these two clear poles there are also middle paths: boat-sharing arrangem
 ## Conclusion
 
 There's no universally "right" answer to owning versus chartering, only the answer that fits how you boat, your budget, and your life situation. If you go out often, spontaneously, and over years, you'll usually benefit from owning your own boat despite the ongoing responsibility. If you go out rarely, seasonally, or are still undecided which type of boat suits you, chartering is generally the better fit. Either way, the Sportbootführerschein remains the foundation everything else builds on. If you're still preparing for the exam, you can use the Boatpass app to practice the official ELWIS question catalog in exam mode, whether you go on to buy your own boat or keep chartering for now.
+
+## Sources
+
+- [Recreational Boat Licence Regulation (SpFV), § 3](https://www.gesetze-im-internet.de/spfv/__3.html) – licence requirement for recreational boats on inland waterways
+- [German Inland Boat Rental Regulation (BinSch-SportbootVermV), § 9](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/__9.html) – charter certificate as an exception for renters without a boating licence
+- [German Inland Boat Rental Regulation (BinSch-SportbootVermV), Annex 5](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/anlage_5.html) – inland waterways that may be navigated with a charter certificate

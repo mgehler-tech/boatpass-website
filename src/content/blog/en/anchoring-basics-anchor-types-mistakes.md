@@ -3,6 +3,7 @@ title: "Anchoring Basics – Anchor Types and Common Mistakes"
 seoTitle: "Anchoring Basics: Types and Mistakes"
 description: "How to anchor properly: which anchor types exist, how much chain or rode to pay out, and the mistakes that cause dragging anchors and collisions."
 date: 2026-07-06
+updated: 2026-10-23
 tags: ["Practice"]
 readingTime: 9
 lang: en
@@ -116,3 +117,10 @@ You can train the theory questions on anchoring maneuvers, sea marks, and behavi
 ## Conclusion
 
 Safe anchoring isn't a matter of luck, it follows clear principles: choose the right anchor type and anchorage based on the seabed, pay out enough chain or rode for a flat angle of pull, lower the anchor under control rather than throwing it, and actively check the hold after the maneuver. If you also factor in the swinging circle and any possible change in weather, you can lie at anchor with confidence, whether it's a quick stop between legs or a calm night in your favorite bay.
+
+## Sources
+
+- [International Regulations for Preventing Collisions at Sea (COLREGs/KVR), Rule 30](https://www.gesetze-im-internet.de/seestro_1972/regel_30.html) – anchor light and anchor ball; vessels under 50 m may show a single white all-round light
+- [German Inland Waterways Regulations (BinSchStrO), § 3.20](https://www.gesetze-im-internet.de/binschstro_2012/__3_20.html) – lights for small craft lying stationary at night on inland waters
+- [Recreational Boat Licence Regulation (SpFV), Annex 4](https://www.gesetze-im-internet.de/spfv/anlage_4.html) – mandatory and other maneuvers of the practical exam (anchoring is not among them)
+- [ELWIS – basic questions of the official question catalogue](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Basisfragen/Basisfragen-node.html) – exam question on how to tell whether the anchor is holding

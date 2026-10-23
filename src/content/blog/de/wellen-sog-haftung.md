@@ -3,6 +3,7 @@ title: "Wellenschlag und Sog: Rücksicht und Haftung auf dem Wasser"
 seoTitle: "Wellenschlag und Sog: Haftung beim Boot"
 description: "Wellenschlag und Sog vom eigenen Boot: Welche Schäden sie anrichten, was die Regeln verlangen und wer haftet. Rücksicht gegenüber anderen Wassernutzern."
 date: 2026-09-17
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 6
 lang: de
@@ -82,3 +83,10 @@ Wer die Ausweich- und Verhaltensregeln insgesamt sicher beherrscht, fährt auch 
 Wellenschlag und Sog sind mehr als eine Frage der Höflichkeit. Auf Binnenschifffahrtsstraßen schreibt **§ 6.20 BinSchStrO** ausdrücklich vor, die Geschwindigkeit so einzurichten, dass schädlicher Wellenschlag vermieden wird, und auf See gelten sichere Geschwindigkeit und gute Seemannschaft. Wer Schäden verursacht, haftet dafür und riskiert zusätzlich ein Bußgeld. Die gute Nachricht: Mit rechtzeitigem Gaswegnehmen, ausreichend Abstand und einem Blick auf die eigene Heckwelle lässt sich das meiste ganz einfach vermeiden.
 
 Die **Boatpass-App** hilft dir, die Verkehrsregeln auf dem Wasser sicher zu lernen, von der Vermeidung von Wellenschlag bis zu den Ausweichregeln, mit den offiziellen Prüfungsfragen und realistischem Prüfungsmodus, damit du rücksichtsvoll und regelkonform unterwegs bist.
+
+## Quellen
+
+- [Binnenschifffahrtsstraßen-Ordnung (BinSchStrO), § 6.20](https://www.gesetze-im-internet.de/binschstro_2012/__6_20.html) – Pflicht zur Vermeidung von Wellenschlag und Sog mit den genannten Situationen
+- [Verordnung zur Einführung der BinSchStrO, § 13](https://www.gesetze-im-internet.de/binschstrev_2012/__13.html) – Verstoß gegen § 6.20 als Ordnungswidrigkeit
+- [Binnenschifffahrtsgesetz (BinSchG), § 92](https://www.gesetze-im-internet.de/binschprg/__92.html) und [BGB, § 823](https://www.gesetze-im-internet.de/bgb/__823.html) – zivilrechtliche Haftung, auch für Schäden durch ein Manöver ohne Zusammenstoß
+- [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), § 26](https://www.gesetze-im-internet.de/seeschstro_1971/__26.html) – sichere Geschwindigkeit nach KVR Regel 6 und Vermeidung von Sog und Wellenschlag auf See

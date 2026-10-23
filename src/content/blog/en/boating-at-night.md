@@ -3,6 +3,7 @@ title: "Boating at Night: How to Stay Safe After Sunset"
 seoTitle: "Boating at Night: Rules, Lights & Safety"
 description: "Boating at night with a sportboat: preparation, night vision, orientation, and your duties after dark. How to plan a safe passage once the sun goes down."
 date: 2026-09-11
+updated: 2026-10-23
 tags: ["Practice"]
 readingTime: 9
 lang: en
@@ -90,3 +91,9 @@ If you are out in the dark for the first time, ease into it:
 A night passage in a sportboat is a special experience, but it demands more preparation and calm than a daytime trip. Four things are decisive: **careful preparation in daylight**, **protecting your night vision**, **clean orientation** using lights, sea marks, and instruments, and consistent attention to your duties under the COLREGs, namely navigation lights, safe speed, and lookout. If you start slowly and choose a familiar area, you quickly build the confidence for more passages after sunset.
 
 The **Boatpass app** helps you build the necessary foundational knowledge reliably, from navigation lights and sea marks to the right-of-way rules, with the official exam questions and a realistic exam mode, so that even at night you know what the lights around you mean.
+
+## Sources
+
+- [German Collision Regulations (KVR), Rule 20](https://www.gesetze-im-internet.de/seestro_1972/regel_20.html) – lights from sunset to sunrise and in restricted visibility
+- [KVR Rule 5](https://www.gesetze-im-internet.de/seestro_1972/regel_5.html) – proper lookout by sight, hearing and all available means
+- [KVR Rule 6](https://www.gesetze-im-internet.de/seestro_1972/regel_6.html) – safe speed, including background light at night

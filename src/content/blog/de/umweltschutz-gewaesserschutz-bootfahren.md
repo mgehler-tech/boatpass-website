@@ -3,6 +3,7 @@ title: "Umweltschutz und Gewässerschutz beim Bootfahren"
 seoTitle: "Umweltschutz beim Bootfahren: Regeln im SBF"
 description: "Öl, Abwasser, Müll und Naturschutzgebiete: Was beim Gewässerschutz mit dem Sportboot rechtlich gilt und was dazu in der SBF-Prüfung wirklich drankommt."
 date: 2026-08-18
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -12,7 +13,7 @@ faq:
   - question: "Darf ich Bilgenwasser einfach über Bord pumpen?"
     answer: "Nur, wenn es tatsächlich ölfrei ist. Sobald sich ein Ölfilm oder Kraftstoffreste im Bilgenwasser befinden, darf es nicht ins Gewässer gelangen. Öl- oder kraftstoffhaltiges Bilgenwasser gehört an einer Entsorgungsstation abgegeben, nicht abgepumpt."
   - question: "Wohin mit dem Inhalt der Chemietoilette?"
-    answer: "An Land oder auf See außerhalb der jeweils geltenden Einleitgrenzen, niemals in geschützten Binnengewässern, engen Häfen oder ausgewiesenen Schutzgebieten. Viele Marinas und Häfen bieten dafür feste Entsorgungsstationen für Fäkalientanks an."
+    answer: "Nicht ins Wasser, sondern an Land: Der Inhalt der Chemietoilette gehört wie Altöl an eine Sammel- oder Entsorgungsstation im Hafen. Viele Marinas und Häfen bieten dafür feste Entsorgungsstationen für Fäkalientanks an."
   - question: "Warum ist Gewässerschutz Teil der SBF-Prüfung?"
     answer: "Weil die Sorgfaltspflicht, Gewässerverunreinigungen zu vermeiden, ausdrücklich zu den Pflichten eines Sportbootführers gehört. Der ELWIS-Fragenkatalog prüft entsprechend Grundwissen zu Öl, Abfall, Abwasser und dem Verhalten in Naturschutzgebieten."
   - question: "Muss ich in Naturschutzgebieten besondere Regeln beachten?"
@@ -96,3 +97,10 @@ Im theoretischen Teil sowohl des [SBF Binnen](/sbf-binnen/) als auch des [SBF Se
 ## Fazit
 
 Umweltschutz auf dem Wasser ist keine Kür, sondern gehört zu den grundlegenden Pflichten jedes Sportbootführers. Wer Öl und Kraftstoff fachgerecht entsorgt, Abwasser und Müll nicht ins Gewässer gelangen lässt und die Regeln in Naturschutzgebieten respektiert, trägt aktiv dazu bei, dass Gewässer für alle, Mensch und Tier, lebenswert bleiben. Diese Grundregeln sind schnell verinnerlicht und zahlen sich nicht nur in der Prüfung, sondern auf jeder Fahrt aus.
+
+## Quellen
+
+- [Binnenschifffahrtsstraßen-Ordnung (BinSchStrO), § 29.02](https://www.gesetze-im-internet.de/binschstro_2012/__29_02.html) – allgemeine Sorgfaltspflicht zur Vermeidung von Gewässerverschmutzung
+- [See-Umweltverhaltensverordnung (SeeUmwVerhV), § 9](https://www.gesetze-im-internet.de/seeumwverhv/__9.html) – Einleitverbot für Schiffsabwasser von Sportbooten in der Ostsee
+- [Bundesministerium für Verkehr – Sicherheit auf dem Wasser](https://www.bmv.de/SharedDocs/DE/Publikationen/WS/sicherheit-auf-dem-wasser.html) – amtliche Broschüre mit Regeln zu Abfällen, Chemietoilette, Bootswäsche und Naturschutzgebieten
+- [Umweltbundesamt – Antifouling im Wassersport](https://www.umweltbundesamt.de/themen/chemikalien/biozide/biozidprodukte/antifouling-mittel/antifouling-im-wassersport-tipps-umweltschonenden) – Biozide in Antifouling-Beschichtungen und umweltschonende Alternativen

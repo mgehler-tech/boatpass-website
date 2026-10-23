@@ -3,6 +3,7 @@ title: "Seefunk für Einsteiger: Kanäle, DSC und Notruf verstehen"
 seoTitle: "Seefunk für Einsteiger: Grundlagen"
 description: "Seefunk für Einsteiger: Welche UKW-Kanäle wichtig sind, wie DSC funktioniert und wie du einen Notruf richtig absetzt. Die Grundlagen einfach erklärt."
 date: 2026-09-16
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 9
 lang: de
@@ -81,3 +82,10 @@ Funk ist ein geteiltes Medium: Auf einem Kanal kann immer nur einer senden. Desh
 Seefunk ist kein Hexenwerk, wenn man die Grundlagen kennt: **Kanal 16** ist der Anruf- und Notrufkanal, **Kanal 70** trägt den digitalen DSC-Alarm, und **MAYDAY, PAN PAN und SECURITE** kennzeichnen die drei Dringlichkeitsstufen. DSC macht den Notruf schnell und präzise, ersetzt aber nicht den Sprech-Notruf auf Kanal 16. Wer diese Bausteine verstanden hat, kann das Funkgerät im Alltag sicher nutzen und im Ernstfall richtig reagieren. Für den regulären Betrieb brauchst du das passende Zeugnis, im echten Notfall zählt aber nur, dass Hilfe kommt.
 
 Die **Boatpass-App** hilft dir bei der Vorbereitung auf SRC und UBI mit den vollständigen amtlichen Fragenkatalogen, realistischem Prüfungsmodus und gezieltem Fehlertraining, damit du Kanäle, DSC und die Notrufverfahren sicher beherrschst, bevor du selbst zum Mikrofon greifst.
+
+## Quellen
+
+- [Fragenkatalog SRC (ELWIS, PDF)](https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-SRC-2018.pdf?__blob=publicationFile&v=3) – Kanal 16 (156,8 MHz) als Anruf- und Notkanal, Kanal 70 für DSC, neunstellige MMSI sowie MAYDAY, PAN PAN und SECURITE
+- [Bundesnetzagentur – Seefunk und Binnenschifffahrtsfunk](https://www.bundesnetzagentur.de/DE/Fachthemen/Telekommunikation/Frequenzen/SpezielleAnwendungen/Seefunk/start.html) – MMSI, Rufzeichen und ATIS-Nummer müssen vor der Nutzung individuell zugeteilt werden
+- [ELWIS – Sprechfunkzeugnisse](https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Sprechfunkzeugnisse-node.html) und [Portal für Sportbootführerscheine des DSV: SRC](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/src-short-range-certificate/) – SRC für den Seefunk, UBI für den Binnenschifffahrtsfunk; DSC-Notalarm, Notmeldung und Englisch-Teil in der SRC-Prüfung
+- [§ 145 StGB](https://www.gesetze-im-internet.de/stgb/__145.html) – Missbrauch von Notrufen und Notzeichen ist strafbar

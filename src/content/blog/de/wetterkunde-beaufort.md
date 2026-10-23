@@ -3,6 +3,7 @@ title: "Wetterkunde & Beaufort-Skala für den SBF See – einfach erklärt"
 seoTitle: "Wetterkunde & Beaufort-Skala (SBF See)"
 description: "Windstärken, Hoch und Tief, Wetterzeichen: die Grundlagen der Wetterkunde für den SBF See. Beaufort-Skala und barisches Windgesetz einfach erklärt."
 date: 2026-04-18
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -95,3 +96,9 @@ Vor jeder Fahrt gehört der **Seewetterbericht** zur Vorbereitung. Er nennt unte
 ## Fazit
 
 Wetterkunde wirkt umfangreich, lässt sich aber auf wenige Kernpunkte reduzieren: die Beaufort-Skala mit ihren Wirkungen und Warnschwellen, der Unterschied zwischen Hoch und Tief, das barische Windgesetz und die thermischen Land-/Seewinde. Wer diese Bausteine versteht, beantwortet die Prüfungsfragen sicher. In der Boatpass-App kannst du die Wetterfragen gezielt mit dem offiziellen ELWIS-Fragenkatalog üben – inklusive der typischen Beaufort-Tabellen.
+
+## Quellen
+
+- [Deutscher Wetterdienst – Beaufort-Skala See](https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?lv2=100310&lv3=536590) – Windstärken 0 bis 12 mit Bezeichnungen und Auswirkungen auf die See
+- [ELWIS – Fragenkatalog SBF See, spezifische Fragen](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – amtliche Prüfungsfragen zu Beaufort-Skala, Luftdruck und Warnschwellen (Starkwind 6–7, Sturm ab 8 Bft)
+- [Deutscher Wetterdienst – Seewetter Nord- und Ostsee](https://www.dwd.de/DE/fachnutzer/schifffahrt/seewetter/nordostsee/_node.html) – amtliche Seewetterberichte und Vorhersagen

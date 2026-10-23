@@ -3,6 +3,7 @@ title: "Restricted Visibility and Fog: How to Behave With Your Boating License"
 seoTitle: "Restricted Visibility & Fog: How to Behave"
 description: "Fog, rain, snow: how to navigate safely in restricted visibility, which rules apply at sea and inland, and what matters most with sound signals."
 date: 2026-07-23
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 9
 lang: en
@@ -58,9 +59,9 @@ One detail that is often overlooked in practice: in restricted visibility you mu
 
 ## Restricted visibility on inland waterways
 
-Inland waterways have their own regulations for navigating in poor visibility. Larger vessels there are generally only permitted to continue if they are equipped with functioning **radar** approved for inland navigation and matching **radio equipment**. Most recreational boats and small craft, however, do not carry this equipment.
+Inland waterways have their own regulations for navigating in poor visibility. Vessels there are generally only permitted to continue if they are equipped with functioning **radar** approved for inland navigation and matching **radio equipment**. Most recreational boats and small craft, however, do not carry this equipment.
 
-For you as a recreational skipper, that means in plain terms: if you cannot use radar, you should, as soon as visibility becomes significantly restricted, head for a **safe mooring or anchorage** at the earliest opportunity and make fast there, rather than continuing your passage. When doing so, adapt your speed on the approach to the visibility conditions, other traffic, and local circumstances, and once stopped, avoid blocking the fairway as much as possible, so that other vessels navigating by radar can still pass safely. If you regularly cruise busy inland waterways, this principle will already be familiar from dealing with commercial shipping traffic: it is better to give way clearly and early than to hope for a close pass.
+For you as a recreational skipper, that means in plain terms: if you cannot use radar, you must, as soon as visibility becomes restricted, head for a **safe mooring or anchorage** without delay and make fast there, rather than continuing your passage. When doing so, adapt your speed on the approach to the visibility conditions, other traffic, and local circumstances, and once stopped, avoid blocking the fairway as much as possible, so that other vessels navigating by radar can still pass safely. If you regularly cruise busy inland waterways, this principle will already be familiar from dealing with commercial shipping traffic: it is better to give way clearly and early than to hope for a close pass.
 
 In practice this also means: if you are planning a trip and the forecast suggests fog, build enough slack into your schedule that you can wait it out if needed without being under time pressure. Fog on rivers and lakes forms especially often in the early morning and during transitional seasons, but it frequently burns off again over the course of the morning.
 
@@ -84,4 +85,11 @@ The theory exam usually tests the underlying logic: what speed is required in re
 
 ## Conclusion
 
-Restricted visibility from fog, rain, or snow demands one thing above all from you as a recreational skipper: adapted, cautious behavior instead of routine. Reduce your speed, keep a heightened lookout, sound the required signals, and show your navigation lights even during the day. If you lack the necessary equipment, such as radar on inland waterways, heading for a mooring or anchorage in good time is the safer choice over pressing on uncertainly. Once you have internalized these principles, you will get through even an unexpectedly rolling-in fog bank safely, and you will keep a clear head both in the exam and out on the water.
+Restricted visibility from fog, rain, or snow demands one thing above all from you as a recreational skipper: adapted, cautious behavior instead of routine. Reduce your speed, keep a heightened lookout, sound the required signals, and show your navigation lights even during the day. If you lack the necessary equipment, such as radar on inland waterways, heading for a mooring or anchorage without delay is mandatory there and the safer choice over pressing on uncertainly. Once you have internalized these principles, you will get through even an unexpectedly rolling-in fog bank safely, and you will keep a clear head both in the exam and out on the water.
+
+## Sources
+
+- [German COLREGs (KVR), Rule 19](https://www.gesetze-im-internet.de/seestro_1972/regel_19.html) – conduct of vessels in restricted visibility at sea
+- [KVR Rule 35](https://www.gesetze-im-internet.de/seestro_1972/regel_35.html) and [Rule 20](https://www.gesetze-im-internet.de/seestro_1972/regel_20.html) – sound signals in restricted visibility and lights by day
+- [German Inland Waterways Regulations (BinSchStrO), § 6.30](https://www.gesetze-im-internet.de/binschstro_2012/__6_30.html) and [§ 6.33](https://www.gesetze-im-internet.de/binschstro_2012/__6_33.html) – radar requirement, seeking a berth, fog signal without radar
+- [BinSchStrO § 3.01](https://www.gesetze-im-internet.de/binschstro_2012/__3_01.html) – night lights also by day when visibility requires

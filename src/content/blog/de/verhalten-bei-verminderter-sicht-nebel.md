@@ -3,6 +3,7 @@ title: "Verminderte Sicht und Nebel: Richtig verhalten mit dem Sportbootführers
 seoTitle: "Verminderte Sicht & Nebel: Richtig verhalten"
 description: "Nebel, Regen, Schneefall: Wie du bei verminderter Sicht sicher fährst, welche Regeln auf See und Binnen gelten und worauf es bei Schallsignalen ankommt."
 date: 2026-07-23
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 9
 lang: de
@@ -58,9 +59,9 @@ Ein Detail, das in der Praxis häufig übersehen wird: Bei verminderter Sicht mu
 
 ## Verminderte Sicht auf Binnenschifffahrtsstraßen
 
-Auf Binnenschifffahrtsstraßen gelten eigene Vorschriften für die Fahrt bei unsichtigem Wetter. Größere Fahrzeuge dürfen dort in der Regel nur mit funktionierendem, für die Binnenschifffahrt zugelassenem **Radar** und passender **Funkausrüstung** weiterfahren. Die meisten Sportboote und Kleinfahrzeuge sind mit dieser Ausrüstung jedoch nicht ausgestattet.
+Auf Binnenschifffahrtsstraßen gelten eigene Vorschriften für die Fahrt bei unsichtigem Wetter. Fahrzeuge dürfen dort grundsätzlich nur mit funktionierendem, für die Binnenschifffahrt zugelassenem **Radar** und passender **Funkausrüstung** weiterfahren. Die meisten Sportboote und Kleinfahrzeuge sind mit dieser Ausrüstung jedoch nicht ausgestattet.
 
-Für dich als Sportbootfahrer heißt das im Klartext: Kannst du kein Radar nutzen, solltest du bei stark eingeschränkter Sicht möglichst frühzeitig einen **sicheren Liegeplatz** aufsuchen und dort festmachen oder ankern, statt die Fahrt fortzusetzen. Dabei gilt: Die Geschwindigkeit beim Anlaufen des Liegeplatzes an die Sichtverhältnisse, den übrigen Verkehr und die örtlichen Gegebenheiten anpassen, und beim Stoppen möglichst nicht das Fahrwasser blockieren, damit andere, radargestützt fahrende Fahrzeuge weiterhin sicher passieren können. Wer sein Boot ohnehin regelmäßig auf belebten Binnenwasserstraßen bewegt, kennt dieses Prinzip bereits aus dem Umgang mit der Berufsschifffahrt: lieber frühzeitig und deutlich Platz machen, als auf ein knappes Passieren zu hoffen.
+Für dich als Sportbootfahrer heißt das im Klartext: Kannst du kein Radar nutzen, musst du bei unsichtigem Wetter unverzüglich einen **sicheren Liegeplatz** aufsuchen und dort festmachen oder ankern, statt die Fahrt fortzusetzen. Dabei gilt: Die Geschwindigkeit beim Anlaufen des Liegeplatzes an die Sichtverhältnisse, den übrigen Verkehr und die örtlichen Gegebenheiten anpassen, und beim Stoppen möglichst nicht das Fahrwasser blockieren, damit andere, radargestützt fahrende Fahrzeuge weiterhin sicher passieren können. Wer sein Boot ohnehin regelmäßig auf belebten Binnenwasserstraßen bewegt, kennt dieses Prinzip bereits aus dem Umgang mit der Berufsschifffahrt: lieber frühzeitig und deutlich Platz machen, als auf ein knappes Passieren zu hoffen.
 
 Praktisch bedeutet das auch: Wer eine Fahrt plant und laut Wetterbericht mit Nebel rechnen muss, sollte den Zeitplan so legen, dass er notfalls warten kann, ohne in Zeitdruck zu geraten. Gerade am frühen Morgen und in den Übergangsjahreszeiten bildet sich Nebel auf Flüssen und Seen häufig, löst sich aber oft im Laufe des Vormittags wieder auf.
 
@@ -84,4 +85,11 @@ In der Theorieprüfung wird meist nach der grundsätzlichen Systematik gefragt: 
 
 ## Fazit
 
-Verminderte Sicht durch Nebel, Regen oder Schneefall verlangt von dir als Sportbootführer vor allem eines: angepasstes, vorsichtiges Verhalten statt Routine. Reduziere die Geschwindigkeit, verstärke den Ausguck, gib die vorgeschriebenen Schallsignale und setze deine Navigationslichter auch tagsüber. Fehlt dir die nötige Ausrüstung, etwa Radar auf Binnenschifffahrtsstraßen, ist ein rechtzeitiges Anlegen oder Ankern die sicherere Wahl als eine unsichere Weiterfahrt. Wer diese Grundsätze verinnerlicht hat, übersteht auch überraschend aufziehende Nebelbänke sicher und behält in der Prüfung wie auf dem Wasser einen klaren Kopf.
+Verminderte Sicht durch Nebel, Regen oder Schneefall verlangt von dir als Sportbootführer vor allem eines: angepasstes, vorsichtiges Verhalten statt Routine. Reduziere die Geschwindigkeit, verstärke den Ausguck, gib die vorgeschriebenen Schallsignale und setze deine Navigationslichter auch tagsüber. Fehlt dir die nötige Ausrüstung, etwa Radar auf Binnenschifffahrtsstraßen, ist ein unverzügliches Anlegen oder Ankern dort Pflicht und die sicherere Wahl als eine unsichere Weiterfahrt. Wer diese Grundsätze verinnerlicht hat, übersteht auch überraschend aufziehende Nebelbänke sicher und behält in der Prüfung wie auf dem Wasser einen klaren Kopf.
+
+## Quellen
+
+- [Kollisionsverhütungsregeln (KVR), Regel 19](https://www.gesetze-im-internet.de/seestro_1972/regel_19.html) – Verhalten bei verminderter Sicht auf See
+- [KVR Regel 35](https://www.gesetze-im-internet.de/seestro_1972/regel_35.html) und [Regel 20](https://www.gesetze-im-internet.de/seestro_1972/regel_20.html) – Schallsignale bei verminderter Sicht und Lichter auch am Tag
+- [Binnenschifffahrtsstraßen-Ordnung, § 6.30](https://www.gesetze-im-internet.de/binschstro_2012/__6_30.html) und [§ 6.33](https://www.gesetze-im-internet.de/binschstro_2012/__6_33.html) – Radarpflicht, Liegeplatz aufsuchen, Nebelzeichen ohne Radar
+- [BinSchStrO § 3.01](https://www.gesetze-im-internet.de/binschstro_2012/__3_01.html) – Lichter bei schlechter Sicht auch am Tag

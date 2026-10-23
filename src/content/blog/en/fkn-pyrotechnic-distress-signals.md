@@ -3,6 +3,7 @@ title: "Flares Explained: The FKN Certificate for Distress Signals"
 seoTitle: "FKN Certificate: Pyrotechnic Flares Explained"
 description: "FKN competence certificate, categories P1 and P2, storage and expiry dates: everything you need to know about pyrotechnic distress signals on board."
 date: 2026-07-09
+updated: 2026-10-23
 tags: ["Safety"]
 readingTime: 9
 lang: en
@@ -110,3 +111,9 @@ You can practice the relevant exam questions on onboard safety and distress sign
 ## Conclusion
 
 The FKN governs access to the more powerful category P2 pyrotechnic distress signals, above all the red parachute signal rocket. The red hand flare and smaller smoke signals in category P1, by contrast, are available from age 18 without any special certificate. Once you've earned the FKN, it stays valid for life, but you still need to regularly check your own pyrotechnics on board for expiry dates and proper storage. That way, when it really matters, you can be sure the signal devices will actually work.
+
+## Sources
+
+- [First Ordinance to the German Explosives Act (1. SprengV), Section 1](https://www.gesetze-im-internet.de/sprengv_1/__1.html) – acquisition, storage, use and transport of category P2 distress signals by holders of an official recreational boating license with documented instruction (para. 2)
+- [1. SprengV, Section 20](https://www.gesetze-im-internet.de/sprengv_1/__20.html) and [Section 22](https://www.gesetze-im-internet.de/sprengv_1/__22.html) – minimum age of 18 for category P1, P2 devices supplied only to authorized persons
+- [DSV licence portal: FKN](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/fkn-fachkundenachweis/) – P2 signal devices, minimum age 16, recreational boating license as a prerequisite, theory and practical exam

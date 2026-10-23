@@ -3,6 +3,7 @@ title: "Notsignale auf See: Diese Seenotsignale musst du kennen"
 seoTitle: "Notsignale auf See: Übersicht für den SBF"
 description: "Rote Fallschirmrakete, Handfackel, Mayday und Co.: Welche Notsignale es gibt, was sie bedeuten und welche du als Sportbootfahrer einsetzen darfst."
 date: 2026-05-20
+updated: 2026-10-23
 tags: ["Sicherheit"]
 readingTime: 7
 lang: de
@@ -68,3 +69,9 @@ Die akustischen Pendants im normalen Fahrbetrieb – wer wann welchen Ton gibt �
 ## Fazit
 
 Die wichtigsten Seenotsignale stehen in der KVR-Anlage IV: rote Fallschirmrakete und Handfackel, orangefarbenes Rauchsignal, MAYDAY und DSC-Alarm über Funk sowie eine Reihe einfacher Zeichen bis hin zum Heben und Senken der Arme. Wer weiß, welches Signal wofür steht – und dass die roten Pyrotechnik-Signale einen Fachkundenachweis erfordern –, hat die Notsignal-Fragen in der Prüfung sicher im Griff.
+
+## Quellen
+
+- [Kollisionsverhütungsregeln (KVR), Regel 37](https://www.gesetze-im-internet.de/seestro_1972/regel_37.html) und [Anlage IV](https://www.gesetze-im-internet.de/seestro_1972/anlage_iv.html) – international anerkannte Notzeichen und Verbot der missbräuchlichen Verwendung
+- [Erste Verordnung zum Sprengstoffgesetz (1. SprengV), § 1](https://www.gesetze-im-internet.de/sprengv_1/__1.html) – Ausnahme für Seenotsignalmittel der Kategorie P2 bei Inhabern eines amtlichen Sportbootführerscheins mit Unterweisung
+- [1. SprengV § 20](https://www.gesetze-im-internet.de/sprengv_1/__20.html) – Mindestalter für pyrotechnische Gegenstände (Kategorie P1: 18 Jahre)

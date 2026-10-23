@@ -3,6 +3,7 @@ title: "Buoyage Direction: North Sea vs. Baltic Sea Differences"
 seoTitle: "Buoyage: North Sea vs. Baltic Sea (SBF Coastal)"
 description: "Why the direction of buoyage works differently in the North Sea than in the Baltic, and how to read it on the chart. Explained for the SBF See exam."
 date: 2026-07-10
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 8
 lang: en
@@ -84,3 +85,10 @@ Once you've internalized that the direction of buoyage doesn't always match your
 ## Conclusion
 
 The lateral system itself is identical in the North Sea and the Baltic; colors, shapes, and topmarks don't differ. The decisive difference lies in the direction of buoyage: in the tidal North Sea, the "from seaward" direction usually emerges naturally from the tidal flow, while in the nearly tideless Baltic, that natural orientation is missing in many places, which is why the authorities fix the direction there and mark it on the chart with a dedicated arrow symbol. Once you've internalized that, you'll read chart excerpts more confidently in the exam, and you'll be less surprised in real channels when port and starboard suddenly sit differently than expected. In the Boatpass app, you can train exactly these kinds of buoyage chart questions with the official ELWIS question catalog, separated by [SBF Inland](/en/sbf-inland/) and [SBF Coastal](/en/sbf-coastal/).
+
+## Sources
+
+- [German Sea Waterways Regulations (SeeSchStrO), Section 2 definitions](https://www.gesetze-im-internet.de/seeschstro_1971/__2.html) – definition of the starboard side of a channel, including channels connecting two sea areas (para. 1 no. 2)
+- [SeeSchStrO, Annex I – navigation marks](https://www.gesetze-im-internet.de/seeschstro_1971/anlage_i.html) – lateral marks with odd (starboard) and even (port) numbers, starting from seaward or following a fixed direction (mark B.11)
+- [IALA Recommendation R1001 – The IALA Maritime Buoyage System](https://www.iala.int/product/r1001/) – how the direction of buoyage is defined and shown on charts
+- [BSH – German chart datum](https://www.bsh.de/DE/THEMEN/Vermessung_und_Kartographie/Seekartennull/Deutsches_Seekartennull/deutsches-seekartennull_node.html) – tidal reference in the North Sea, mean sea level as reference in the Baltic

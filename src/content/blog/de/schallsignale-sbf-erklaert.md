@@ -3,6 +3,7 @@ title: "Schallsignale beim Sportbootführerschein: See & Binnen im Überblick"
 seoTitle: "Schallsignale SBF: See & Binnen erklärt"
 description: "Ein kurzer Ton, ein langer Ton – was bedeutet was? Alle wichtigen Schallsignale für SBF See und Binnen, getrennt und mit den typischen Fallen."
 date: 2026-05-13
+updated: 2026-10-23
 tags: ["Sicherheit"]
 readingTime: 7
 lang: de
@@ -10,7 +11,7 @@ author: "Marius Gehler"
 altSlug: "sound-signals-sbf-explained"
 faq:
   - question: "Wie lang ist ein kurzer und ein langer Ton bei Schallsignalen?"
-    answer: "Ein kurzer Ton dauert etwa eine Sekunde, ein langer Ton etwa vier bis sechs Sekunden. Aus diesen beiden Bausteinen setzen sich alle Schallsignale beim SBF See und SBF Binnen zusammen."
+    answer: "Ein kurzer Ton dauert etwa eine Sekunde, ein langer Ton auf See vier bis sechs Sekunden, auf Binnen etwa vier Sekunden. Aus diesen beiden Bausteinen setzen sich alle Schallsignale beim SBF See und SBF Binnen zusammen."
   - question: "Was bedeutet ein kurzer Ton beim Sportbootführerschein?"
     answer: "Ein kurzer Ton bedeutet „Ich ändere meinen Kurs nach Steuerbord“, zwei kurze Töne „nach Backbord“ und drei kurze Töne „Ich arbeite mit Maschine rückwärts“. Diese Grundbedeutungen gelten auf See (KVR) wie auf Binnen."
   - question: "Was ist der Unterschied zwischen fünf kurzen Tönen auf See und auf Binnen?"
@@ -26,7 +27,7 @@ Schallsignale sind ein Dauerbrenner in der SBF-Theorieprüfung – und eine beli
 Bevor es um die Bedeutung geht, brauchst du die zwei Bausteine:
 
 - **Kurzer Ton (●):** dauert etwa **eine Sekunde**.
-- **Langer Ton (▬):** dauert etwa **vier bis sechs Sekunden**.
+- **Langer Ton (▬):** dauert auf See **vier bis sechs Sekunden**, auf Binnen **etwa vier Sekunden**.
 
 Aus diesen beiden Bausteinen setzen sich alle Schallsignale zusammen. Geübt wird das Hören und Zuordnen – in der Prüfung musst du die Bedeutung einer vorgegebenen Tonfolge kennen.
 
@@ -94,4 +95,11 @@ Eng verwandt sind die optischen Pendants – die Lichter und Signale anderer Fah
 
 ## Fazit
 
-Schallsignale sind kein Hexenwerk, wenn du **See und Binnen sauber trennst**. Kurzer Ton ≈ 1 Sekunde, langer Ton ≈ 4–6 Sekunden – und dann gilt: ein kurzer Ton heißt Steuerbord, zwei kurze Backbord, drei kurze Maschine rückwärts. Die wenigen Stellen, an denen sich See und Binnen unterscheiden, lernst du gezielt – dann sind die Schallsignal-Fragen sichere Punkte in der Prüfung.
+Schallsignale sind kein Hexenwerk, wenn du **See und Binnen sauber trennst**. Kurzer Ton ≈ 1 Sekunde, langer Ton 4–6 Sekunden (Binnen: etwa 4 Sekunden) – und dann gilt: ein kurzer Ton heißt Steuerbord, zwei kurze Backbord, drei kurze Maschine rückwärts. Die wenigen Stellen, an denen sich See und Binnen unterscheiden, lernst du gezielt – dann sind die Schallsignal-Fragen sichere Punkte in der Prüfung.
+
+## Quellen
+
+- [Kollisionsverhütungsregeln (KVR), Regel 32](https://www.gesetze-im-internet.de/seestro_1972/regel_32.html) und [Regel 34](https://www.gesetze-im-internet.de/seestro_1972/regel_34.html) – Dauer von kurzem und langem Ton, Manöver- und Warnsignale auf See
+- [KVR Regel 35](https://www.gesetze-im-internet.de/seestro_1972/regel_35.html) – Schallsignale bei verminderter Sicht
+- [Binnenschifffahrtsstraßen-Ordnung (BinSchStrO), Anlage 6](https://www.gesetze-im-internet.de/binschstro_2012/anlage_6.html) – Schallzeichen und Tondauer auf Binnenschifffahrtsstraßen
+- [BinSchStrO § 4.02](https://www.gesetze-im-internet.de/binschstro_2012/__4_02.html) – welche Schallzeichen Kleinfahrzeuge geben

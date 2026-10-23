@@ -3,6 +3,7 @@ title: "SBF App vs. Boating School – Is a Theory Course Worth It?"
 seoTitle: "SBF App vs. Boating School: Which Is Better?"
 description: "Can you pass the German boating license without a course? Costs, pros and cons of app-based learning vs. a boating school in an honest comparison."
 date: 2026-05-28
+updated: 2026-10-23
 tags: ["Preparation"]
 readingTime: 7
 lang: en
@@ -122,3 +123,10 @@ The **practical exam** is identical too. You have to demonstrate maneuvers on th
 ## Conclusion
 
 A theory course is not mandatory – and for pure exam preparation it isn't even necessary. The official question catalog is public, and an app with exam simulation and mistake training is enough to pass the theory. Anyone with little prior experience benefits from a course – but that's a personal decision, not a requirement.
+
+## Sources
+
+- [German Recreational Boat Licence Regulation (SpFV) § 7](https://www.gesetze-im-internet.de/spfv/__7.html) – application for admission to the exam: required documents, which do not include proof of a course
+- [German Recreational Boat Licence Regulation (SpFV) § 8](https://www.gesetze-im-internet.de/spfv/__8.html) – exam with a theory and a practical part, content set out in Annexes 3 and 4
+- [ELWIS – SBF Coastal question catalog](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html) – publicly available official question catalog
+- [Fee table of the Munich examination board](https://www.pa-muenchen.de/gebuehren/) – exam fees SBF Coastal €148.38, SBF Inland €130.78 (as of October 2026)

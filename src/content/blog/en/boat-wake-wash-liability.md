@@ -3,6 +3,7 @@ title: "Boat Wake and Suction: Consideration and Liability"
 seoTitle: "Boat Wake and Wash: Liability Explained"
 description: "Wake and suction from your own boat: what damage they cause, what the rules require, and who is liable. Being considerate toward other water users."
 date: 2026-09-17
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 6
 lang: en
@@ -82,3 +83,10 @@ Anyone who has the collision and conduct rules down cold handles tight situation
 Wake and suction are more than a question of courtesy. On German inland waterways, **§ 6.20 BinSchStrO** explicitly requires setting your speed so that harmful wake is avoided, and at sea, safe speed and good seamanship apply. Whoever causes damage is liable for it and additionally risks a fine. The good news: with early throttle reduction, enough distance, and an eye on your own stern wave, most of it is easy to avoid.
 
 The **Boatpass app** helps you learn the traffic rules on the water reliably, from avoiding wake to the right-of-way rules, with the official exam questions and a realistic exam mode, so that you travel considerately and by the book.
+
+## Sources
+
+- [German Inland Waterways Regulations (BinSchStrO), § 6.20](https://www.gesetze-im-internet.de/binschstro_2012/__6_20.html) – duty to avoid wake and suction, including the listed situations
+- [Ordinance introducing the BinSchStrO, § 13](https://www.gesetze-im-internet.de/binschstrev_2012/__13.html) – breach of § 6.20 as a regulatory offense
+- [Inland Navigation Act (BinSchG), § 92](https://www.gesetze-im-internet.de/binschprg/__92.html) and [German Civil Code (BGB), § 823](https://www.gesetze-im-internet.de/bgb/__823.html) – civil liability, including damage caused by a maneuver without a collision
+- [German Sea Waterways Regulations (SeeSchStrO), § 26](https://www.gesetze-im-internet.de/seeschstro_1971/__26.html) – safe speed under COLREGs Rule 6 and avoiding suction and wake at sea

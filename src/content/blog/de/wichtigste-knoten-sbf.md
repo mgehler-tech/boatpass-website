@@ -3,6 +3,7 @@ title: "Die wichtigsten Knoten für den Sportbootführerschein – Schritt für 
 seoTitle: "Die wichtigsten Knoten für den SBF"
 description: "Welche Knoten du für die SBF-Praxisprüfung beherrschen musst, wofür du sie brauchst und wie du sie übst. Alle prüfungsrelevanten Knoten erklärt."
 date: 2026-05-21
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -12,7 +13,7 @@ image: "/images/blog/wichtigste-knoten-sbf.jpg"
 imageAlt: "Nahaufnahme von zwei Händen, die einen nautischen Knoten in ein Tau binden, im Hintergrund eine Klampe auf dem Bootsdeck"
 faq:
   - question: "Wie viele Knoten muss ich für die SBF-See-Praxisprüfung können?"
-    answer: "Geprüft wird aus einer Liste von neun Knoten, von denen du in der Regel mindestens sechs korrekt vorführen und ihren Verwendungszweck erklären musst."
+    answer: "Aus einer Liste von neun Knoten werden sieben verlangt, von denen du mindestens sechs korrekt vorführen und ihren Verwendungszweck erklären musst."
   - question: "Welcher Knoten bildet eine feste, sich nicht zuziehende Schlaufe?"
     answer: "Der Palstek bildet eine feste, sich nicht zuziehende Schlaufe und gilt als der wichtigste Knoten an Bord. Er lässt sich auch nach starker Belastung wieder lösen."
   - question: "Wofür wird der Schotstek verwendet?"
@@ -47,7 +48,7 @@ Die Knoten sind für viele der praktische Teil mit dem größten „Aha-Effekt" 
 
 ## Wie viele Knoten musst du können?
 
-In der **SBF-See-Praxisprüfung** wird aus einer Liste von **neun Knoten** geprüft. Du musst in der Regel **mindestens sechs davon korrekt vorführen** und jeweils erklären, wofür der Knoten verwendet wird. Auch in der **SBF-Binnen-Praxis** (Antriebsart Motor) gehören das Belegen einer Klampe und einfache Knoten dazu.
+In der **SBF-See-Praxisprüfung** wird aus einer Liste von **neun Knoten** geprüft. Sieben davon werden verlangt, und du musst **mindestens sechs korrekt vorführen** und jeweils erklären, wofür der Knoten verwendet wird. Für die **SBF-Binnen-Praxis** gilt dieselbe Knotenliste.
 
 Der Prüfer sagt dir den Knoten an – du knüpfst ihn und nennst den Verwendungszweck. Geschwindigkeit ist zweitrangig; wichtiger ist, dass der Knoten **richtig** sitzt und du seine Funktion kennst. Die Knotenprüfung ist dabei nur einer von drei Prüfungsteilen – einen Überblick gibt der Beitrag [SBF Prüfung: Alles was du wissen musst](/sbf-pruefung-ablauf/).
 
@@ -123,4 +124,9 @@ Fünf Minuten täglich bringen mehr als eine lange Session vor der Prüfung. Kno
 
 ## Fazit
 
-Für die SBF-See-Praxis musst du aus neun Knoten mindestens sechs sicher knüpfen und ihren Zweck erklären – Palstek, Rundtörn mit zwei halben Schlägen und das Belegen einer Klampe gehören zu den Wichtigsten. Mit einem Stück Tampen und ein paar Minuten täglich hast du sie schnell drauf. Während du die Praxis übst, kannst du die Theorie parallel in der Boatpass-App mit dem offiziellen ELWIS-Fragenkatalog trainieren – so bist du für beide Prüfungsteile vorbereitet.
+Für die SBF-See-Praxis musst du von sieben verlangten Knoten aus der Liste der neun mindestens sechs sicher knüpfen und ihren Zweck erklären – Palstek, Rundtörn mit zwei halben Schlägen und das Belegen einer Klampe gehören zu den Wichtigsten. Mit einem Stück Tampen und ein paar Minuten täglich hast du sie schnell drauf. Während du die Praxis übst, kannst du die Theorie parallel in der Boatpass-App mit dem offiziellen ELWIS-Fragenkatalog trainieren – so bist du für beide Prüfungsteile vorbereitet.
+
+## Quellen
+
+- [Sportbootführerscheinverordnung (SpFV), Anlage 4](https://www.gesetze-im-internet.de/spfv/anlage_4.html) – amtliche Liste der neun Prüfungsknoten, sieben verlangt, sechs müssen ausgeführt und erklärt werden (für Binnen und See)
+- [SpFV, § 8](https://www.gesetze-im-internet.de/spfv/__8.html) – Aufbau der Prüfung aus theoretischem und praktischem Teil

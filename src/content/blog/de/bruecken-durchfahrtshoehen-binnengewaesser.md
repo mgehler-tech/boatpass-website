@@ -3,6 +3,7 @@ title: "Durchfahrtshöhen an Brücken – was du auf Binnengewässern beachten m
 seoTitle: "Durchfahrtshöhen an Brücken: SBF Binnen"
 description: "Warum Brückenhöhen vom Wasserstand abhängen, wie du Höhentafeln richtig liest und wo du aktuelle Durchfahrtshöhen für den SBF Binnen findest."
 date: 2026-07-15
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 9
 lang: de
@@ -105,3 +106,10 @@ Die Kennzeichen und Signale an Brücken und Schleusen sowie das grundsätzliche 
 ## Fazit
 
 Durchfahrtshöhen an Brücken sind kein starrer Wert, sondern immer eine Momentaufnahme, die vom aktuellen Wasserstand abhängt. Wer den Unterschied zwischen Bezugswasserstand und tatsächlichem Pegel kennt, Höhentafeln und Lichtzeichen richtig liest und die eigene Bootshöhe genau kennt, vermeidet böse Überraschungen unter der Brücke. In der [Boatpass-App](/sbf-binnen-pruefungsfragen/) kannst du dein Wissen zu Streckenkennzeichen und Signalen aus dem offiziellen Fragenkatalog gezielt trainieren und dich so optimal auf die SBF-Binnen-Prüfung vorbereiten.
+
+## Quellen
+
+- [Binnenschifffahrtsstraßen-Ordnung (BinSchStrO), § 6.25](https://www.gesetze-im-internet.de/binschstro_2012/__6_25.html) und [§ 6.26](https://www.gesetze-im-internet.de/binschstro_2012/__6_26.html) – gekennzeichnete Durchfahrtsöffnungen fester Brücken sowie Annäherung und Signallichter an beweglichen Brücken
+- [BinSchStrO, § 16.16](https://www.gesetze-im-internet.de/binschstro_2012/__16_16.html) – Beispiel Mittelweser: Durchfahrtshöhe bezogen auf den Höchsten Schifffahrtswasserstand (HSW) an Richtpegeln
+- [PEGELONLINE der WSV](https://www.pegelonline.wsv.de/gast/start) – aktuelle Wasserstände an den Pegeln der Bundeswasserstraßen
+- [ELWIS – Nachrichten für die Binnenschifffahrt (NfB)](https://www.elwis.de/DE/dynamisch/Nfb/) – amtliche Meldungen zu Sperrungen und Einschränkungen auf Bundeswasserstraßen

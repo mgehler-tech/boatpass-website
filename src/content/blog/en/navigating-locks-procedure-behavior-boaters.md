@@ -3,6 +3,7 @@ title: "Navigating Locks: Procedure and Behavior for Recreational Boaters"
 seoTitle: "Navigating Locks: Procedure & Behavior"
 description: "Locking through with a recreational boat in Germany: signal lights, behavior in the chamber, self-service locks, and what you need for the SBF Inland exam."
 date: 2026-08-16
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 9
 lang: en
@@ -99,3 +100,10 @@ Locks are part of the route-knowledge material (Streckenkenntnis) tested in the 
 ## Conclusion
 
 Navigating a lock feels unfamiliar the first time, but it follows a clear system: watch the signals, reduce speed, respect the priority of commercial traffic, and inside the chamber keep lines running freely instead of making them fast. Once you've internalized these basic rules, even unstaffed self-service locks stop being a source of stress, and you'll move from one water level to the next safely and calmly.
+
+## Sources
+
+- [German Inland Waterways Regulations (BinSchStrO), § 6.28a](https://www.gesetze-im-internet.de/binschstro_2012/__6_28a.html) – signal lights for entering and leaving locks
+- [BinSchStrO, § 6.28](https://www.gesetze-im-internet.de/binschstro_2012/__6_28.html) – conduct in the lock area: slowing down, no overtaking, mooring, no use of the engine once moored, instructions at self-service locks
+- [BinSchStrO, § 6.29](https://www.gesetze-im-internet.de/binschstro_2012/__6_29.html) – locking order; small craft and recreational boats are locked through after other vessels
+- [ELWIS – lock information](https://www.elwis.de/DE/Binnenschifffahrt/Schleuseninformationen/Schleuseninformationen-node.html) – operating hours, closures and boat locks of the federal waterways administration

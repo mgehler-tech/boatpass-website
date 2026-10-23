@@ -3,6 +3,7 @@ title: "Anlegen und Ablegen – Hafenmanöver für Einsteiger"
 seoTitle: "Anlegen & Ablegen: Hafenmanöver mit Boot"
 description: "An- und Ablegen sicher meistern: Wind, Strom und Ruderwirkung richtig einschätzen, Leinen und Fender clever einsetzen für die SBF-Praxisprüfung."
 date: 2026-07-05
+updated: 2026-10-23
 tags: ["Praxis"]
 readingTime: 7
 lang: de
@@ -106,3 +107,8 @@ Die Theoriefragen rund um Manöver, Vorfahrtsregeln und Verhalten im Hafen kanns
 ## Fazit
 
 An- und Ablegen wirken zunächst einschüchternd, folgen aber klaren Prinzipien: Wind und Strom vorab einschätzen, Leinen in der richtigen Reihenfolge lösen oder festmachen, mit wenig statt zu viel Fahrt anlaufen und im Zweifel lieber einen zweiten, ruhigen Versuch starten. Wer Vor- und Achterspring gezielt einsetzt und Fender rechtzeitig platziert, hat die wichtigsten Werkzeuge für souveräne Hafenmanöver in der Hand, in der Prüfung genauso wie im Bootsalltag.
+
+## Quellen
+
+- [Sportbootführerscheinverordnung (SpFV), Anlage 4](https://www.gesetze-im-internet.de/spfv/anlage_4.html) – Praxisprotokoll: Anlegen und Ablegen sind Pflichtmanöver der praktischen Prüfung
+- [ELWIS – Basisfragen des amtlichen Fragenkatalogs](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Basisfragen/Basisfragen-node.html) – Fragen zu Anlaufwinkel beim Anlegen, Radeffekt und einsetzender Ruderwirkung

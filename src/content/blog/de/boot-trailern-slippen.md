@@ -3,6 +3,7 @@ title: "Boot trailern und slippen – was Sportbootfahrer wissen müssen"
 seoTitle: "Boot trailern & slippen: Anleitung"
 description: "Trailer, Zugfahrzeug, Slipvorgang: die wichtigsten Grundlagen, damit du dein Boot sicher zum Wasser transportierst und entspannt zu Wasser lässt."
 date: 2026-07-16
+updated: 2026-10-23
 tags: ["Vorbereitung"]
 readingTime: 8
 lang: de
@@ -111,3 +112,10 @@ Für die theoretische Prüfung selbst lohnt sich weiterhin das gezielte Training
 ## Fazit
 
 Trailern und Slippen sind Fertigkeiten, die sich mit ein wenig Übung schnell einspielen. Wer die Kombination aus Zugfahrzeug und Trailer sorgfältig prüft, das Boot sicher verzurrt, sich an der Rampe gut vorbereitet und ruhig sowie rücksichtsvoll gegenüber anderen Wassersportlern handelt, erspart sich Stress und Pannen. So wird der Weg zum Wasser zu einem entspannten Teil deines Bootsausflugs statt zu einer stressigen Hürde davor.
+
+## Quellen
+
+- [Fahrerlaubnis-Verordnung (FeV), § 6](https://www.gesetze-im-internet.de/fev_2010/__6.html) – Fahrerlaubnisklassen B und BE und ihre Gewichtsgrenzen für Gespanne
+- [Fahrzeug-Zulassungsverordnung (FZV), § 4](https://www.gesetze-im-internet.de/fzv_2023/__4.html) – Kennzeichenpflicht auch für zulassungsfreie Sportgeräteanhänger
+- [Straßenverkehrs-Ordnung (StVO), § 3](https://www.gesetze-im-internet.de/stvo_2013/__3.html) – Höchstgeschwindigkeit für Pkw mit Anhänger außerorts
+- [Straßenverkehrs-Ordnung (StVO), § 22](https://www.gesetze-im-internet.de/stvo_2013/__22.html) – Pflicht zur Ladungssicherung

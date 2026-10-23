@@ -3,6 +3,7 @@ title: "Motorboot oder Segelboot – welcher SBF und welche Praxis?"
 seoTitle: "Motorboot oder Segelboot: welcher SBF?"
 description: "Motor oder Segel für den Sportbootführerschein? Unterschiede bei Geltungsbereich, Theorie, Praxis und Lernaufwand – damit du die richtige Wahl triffst."
 date: 2026-07-15
+updated: 2026-10-23
 tags: ["Vorbereitung"]
 readingTime: 8
 lang: de
@@ -43,7 +44,7 @@ Wer ohnehin beide Geltungsbereiche anstrebt, kann Theorie und Praxis meist gemei
 
 ## Praktische Prüfung: Motor- und Segelmanöver im Vergleich
 
-Die praktische Prüfung unter Motor konzentriert sich auf Manöver, die für den sicheren Umgang mit einem Motorboot entscheidend sind: An- und Ablegen, Wenden auf engem Raum, das Mann-über-Bord-Manöver und häufig auch Ankermanöver. Eine ausführliche Schritt-für-Schritt-Anleitung zum wichtigsten Pflichtmanöver findest du im Beitrag zum [Mann-über-Bord-Manöver unter Motor](/blog/mann-ueber-bord-manoever/), Hafenmanöver wie An- und Ablegen erklärt der Beitrag [Anlegen und Ablegen – Hafenmanöver für Einsteiger](/blog/anlegen-ablegen-hafenmanoever/).
+Die praktische Prüfung unter Motor konzentriert sich auf Manöver, die für den sicheren Umgang mit einem Motorboot entscheidend sind: An- und Ablegen, Wenden auf engem Raum, das Mann-über-Bord-Manöver und kursgerechtes Aufstoppen. Eine ausführliche Schritt-für-Schritt-Anleitung zum wichtigsten Pflichtmanöver findest du im Beitrag zum [Mann-über-Bord-Manöver unter Motor](/blog/mann-ueber-bord-manoever/), Hafenmanöver wie An- und Ablegen erklärt der Beitrag [Anlegen und Ablegen – Hafenmanöver für Einsteiger](/blog/anlegen-ablegen-hafenmanoever/).
 
 Unter Segel kommen zusätzliche Fertigkeiten hinzu, die sich nur auf dem Wasser üben lassen: Segel setzen und bergen, Kurse zum Wind fahren, Wende und Halse sicher beherrschen, sowie das kontrollierte Stoppen des Bootes unter Segel, etwa durch Beidrehen. Diese Manöver hängen stärker vom Wetter ab als das Fahren unter Motor, weshalb sich die Segelpraxis in der Regel nicht an einem einzigen Tag komprimieren lässt, sondern mehrere Übungstage mit unterschiedlichen Windverhältnissen sinnvoll sind.
 
@@ -90,3 +91,10 @@ Wenn du dir noch unsicher bist, welcher Schein und welcher Geltungsbereich zu de
 ## Fazit
 
 Motor oder Segel ist mehr als eine Geschmacksfrage, sie entscheidet direkt darüber, wie viel Theorie du lernst und welche praktischen Fertigkeiten du nachweisen musst. Beim SBF Binnen bedeutet der Geltungsbereich Segeln zusätzliche 47 Fragen und eine eigene praktische Prüfung, beim SBF See ist die Trennung dagegen theoretisch nicht vorgesehen, während die praktische Segelerfahrung trotzdem gezielt geübt werden sollte. Überlege dir vor der Anmeldung ehrlich, wie du künftig fahren willst, das spart Lernzeit und unnötige Zusatzprüfungen. Mit der Boatpass-App kannst du den kompletten offiziellen ELWIS-Fragenkatalog lernen, inklusive der Segelfragen, und gezielt im Prüfungsmodus üben, egal für welchen Geltungsbereich du dich entscheidest.
+
+## Quellen
+
+- [Sportbootführerscheinverordnung (SpFV), § 6](https://www.gesetze-im-internet.de/spfv/__6.html) – Mindestalter 16 Jahre mit Antriebsmaschine, 14 Jahre unter Segel
+- [SpFV, Anlage 4](https://www.gesetze-im-internet.de/spfv/anlage_4.html) – praktische Prüfung getrennt nach Antriebsart, Pflicht- und sonstige Manöver mit Antriebsmaschine und unter Segel
+- [ELWIS – Sportbootführerscheine](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) – Führerscheinpflicht ab 11,03 kW (Verbrennungsmotor) bzw. 7,5 kW (Elektromotor), SBF See nur mit Antriebsmaschine
+- [ELWIS – Fragenkatalog Binnen](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-node.html) und [Fragenkatalog See](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html) – 72 Basisfragen, 181 spezifische Binnenfragen, 47 Segelfragen und 213 spezifische See-Fragen

@@ -3,6 +3,7 @@ title: "Weather & the Beaufort Scale for the SBF See – Simply Explained"
 seoTitle: "Weather & the Beaufort Scale (SBF See)"
 description: "Wind forces, highs and lows, weather signs: the weather basics for the German coastal license. Beaufort scale and baric wind law explained simply."
 date: 2026-04-18
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -95,3 +96,9 @@ Before every trip, the **marine weather report** is part of your preparation. It
 ## Conclusion
 
 Weather seems vast but reduces to a few core points: the Beaufort scale with its effects and warning thresholds, the difference between high and low, the baric wind law, and the thermal land/sea breezes. Understand these building blocks and you'll answer the exam questions confidently. In the Boatpass app you can practice the weather questions specifically with the official ELWIS question catalog – including the typical Beaufort tables.
+
+## Sources
+
+- [Deutscher Wetterdienst – Beaufort scale at sea (German)](https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?lv2=100310&lv3=536590) – wind forces 0 to 12 with names and effects on the sea
+- [ELWIS – SBF See question catalog, specific questions (German)](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – official exam questions on the Beaufort scale, air pressure and warning thresholds (strong wind 6–7, gale from 8 Bft)
+- [Deutscher Wetterdienst – marine weather for the North Sea and Baltic (German)](https://www.dwd.de/DE/fachnutzer/schifffahrt/seewetter/nordostsee/_node.html) – official marine weather reports and forecasts

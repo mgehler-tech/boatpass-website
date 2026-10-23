@@ -3,6 +3,7 @@ title: "Environmental Protection and Water Conservation for Boaters"
 seoTitle: "Environmental Protection While Boating: Rules"
 description: "Oil, wastewater, trash, and protected areas: what water conservation rules apply on a recreational boat, and what the SBF exam expects on the topic."
 date: 2026-08-18
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -12,7 +13,7 @@ faq:
   - question: "Can I just pump bilge water overboard?"
     answer: "Only if it's genuinely free of oil. As soon as an oil sheen or fuel residue shows up in the bilge water, it must not reach the water. Oil- or fuel-contaminated bilge water needs to be disposed of at a proper collection station, not pumped out."
   - question: "Where do I empty a chemical toilet?"
-    answer: "On land, or at sea outside the applicable discharge limits, never in protected inland waters, tight harbors, or designated protected areas. Many marinas and harbors offer dedicated disposal stations for holding tanks."
+    answer: "Not in the water, but on land: like used oil, the contents of a chemical toilet belong at a collection or disposal station in the harbor. Many marinas and harbors offer dedicated disposal stations for holding tanks."
   - question: "Why is environmental protection part of the SBF exam?"
     answer: "Because the duty of care to avoid polluting waterways is explicitly one of a skipper's obligations. The official ELWIS question catalog tests basic knowledge on oil, waste, wastewater, and behavior in protected areas accordingly."
   - question: "Do special rules apply in nature reserves?"
@@ -96,3 +97,10 @@ The theory portion of both the [SBF Inland](/en/sbf-inland/) and [SBF Coastal](/
 ## Conclusion
 
 Environmental protection on the water isn't optional, it's one of the basic duties of every recreational boater. Disposing of oil and fuel properly, keeping wastewater and trash out of the water, and respecting the rules in nature reserves all actively help keep waterways livable for people and wildlife alike. These basic rules are quick to learn and pay off not just on the exam, but on every trip you take.
+
+## Sources
+
+- [German Inland Waterways Regulations (BinSchStrO), section 29.02](https://www.gesetze-im-internet.de/binschstro_2012/__29_02.html) – general duty of care to avoid polluting the waterway
+- [German Maritime Environmental Conduct Regulation (SeeUmwVerhV), section 9](https://www.gesetze-im-internet.de/seeumwverhv/__9.html) – ban on sewage discharge from recreational boats in the Baltic Sea
+- [German Federal Ministry of Transport – Sicherheit auf dem Wasser](https://www.bmv.de/SharedDocs/DE/Publikationen/WS/sicherheit-auf-dem-wasser.html) – official brochure with rules on waste, chemical toilets, boat washing and nature reserves
+- [German Environment Agency (UBA) – antifouling in water sports](https://www.umweltbundesamt.de/themen/chemikalien/biozide/biozidprodukte/antifouling-mittel/antifouling-im-wassersport-tipps-umweltschonenden) – biocides in antifouling coatings and lower-impact alternatives

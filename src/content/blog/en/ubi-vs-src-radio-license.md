@@ -3,6 +3,7 @@ title: "UBI or SRC – Which German Radio License Do You Need?"
 seoTitle: "UBI or SRC: Which Radio License Do You Need?"
 description: "UBI or SRC? We explain the difference between inland and coastal VHF radio licenses in Germany, exam structure, costs, and which one you need."
 date: 2026-07-02
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 9
 lang: en
@@ -31,7 +32,7 @@ Which certificate you need depends on your area of operation: inland waters or t
 
 ## UBI: The VHF Certificate for Inland Waterways
 
-The [**UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk (UBI)**](/en/ubi/), roughly "VHF radio certificate for inland shipping radio," is the officially recognized authorization to operate and supervise a ship radio station on inland waterways. It is administered by the examination boards of the German Sailing Association (Deutscher Segler-Verband, DSV).
+The [**UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk (UBI)**](/en/ubi/), roughly "VHF radio certificate for inland shipping radio," is the officially recognized authorization to operate and supervise a ship radio station on inland waterways. It is administered by the examination boards of the German Sailing Association (Deutscher Segler-Verband, DSV) and the German Motor Yacht Association (Deutscher Motoryachtverband, DMYV).
 
 ### Who Needs the UBI?
 
@@ -118,3 +119,10 @@ If you're also preparing for the [SBF Binnen](/en/sbf-inland/) or the [SBF See](
 UBI and SRC are two separate radio certificates for different areas of operation: inland shipping for the UBI, coastal radio for the SRC. Both are independent of the Sportbootführerschein, have their own question catalogs, and their own exam requirements. If you only operate in one of the two areas, you only need the matching certificate. If you want to cover both, you benefit from the shortened UBI exam by getting the SRC first.
 
 The **Boatpass app** helps you prepare for both the UBI and the SRC with the complete official question catalogs, realistic exam simulation, and targeted mistake training, so you can walk into the exam confident and well prepared.
+
+## Sources
+
+- [ABVT (Federal Waterways and Shipping Administration) – UBI radio certificate](https://www.abvt.wsv.de/Webs/WSA/ABVT/DE/UKW-Sprechfunkzeugnisse/UBI_node.html) – examination boards at DSV and DMYV, 22 questions in 60 minutes (17 to pass), shortened supplementary exam for SRC and LRC holders, new question catalog from October 1, 2026
+- [Implementing guidelines for radio operator certificates (ELWIS, PDF, German)](https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Durchfuehrungsrichtlinien-Funkbetriebszeugnisse/Durchfuehrungsrichtlinie.pdf?__blob=publicationFile&v=3) – SRC questionnaire with 30 minutes, passed with 19 of 24 points
+- [DSV licence portal: UBI](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/ubi-ukw-sprechfunkzeugnis/) and [SRC](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/src-short-range-certificate/) – minimum age 15, exam procedure and fees of 108.71 euros and 127.88 euros (as of October 2026)
+- [UBI question catalog 2026 (ABVT, PDF, German)](https://www.abvt.wsv.de/Webs/WSA/ABVT/DE/SharedDocs/Downloads/UBI_Gesamtfragenkatalog_2026-10.pdf?__blob=publicationFile&v=5) and [SRC question catalog (ELWIS, PDF, German)](https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-SRC-2018.pdf?__blob=publicationFile&v=3) – 130 and 180 official exam questions respectively

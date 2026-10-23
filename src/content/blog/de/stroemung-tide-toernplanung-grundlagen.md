@@ -3,6 +3,7 @@ title: "Strömung und Tide praktisch nutzen – Grundlagen der Törnplanung"
 seoTitle: "Strömung & Tide bei der Törnplanung nutzen"
 description: "Wie du Strömung und Tide clever in deine Törnplanung einbeziehst: Fahrtzeiten optimal legen, Revierwissen nutzen und typische Anfängerfehler vermeiden."
 date: 2026-07-24
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 9
 lang: de
@@ -33,7 +34,7 @@ howTo:
       text: "Prüfe die aktuelle Vorhersage kurz vor Fahrtantritt, da Wind und Luftdruck den tatsächlichen Wasserstand und die Stromverhältnisse gegenüber der Tabelle verschieben können."
 ---
 
-Auf tidebeeinflussten Revieren wie Nord- und Ostsee, aber auch auf manchen Flüssen mit Gezeiteneinfluss, entscheidet die richtige Fahrtzeit oft darüber, ob ein Törn entspannt verläuft oder zur Zitterpartie wird. Wer Strömung und Tide bei der Planung berücksichtigt, spart nicht nur Sprit und Zeit, sondern reduziert auch das Risiko, an ungünstigen Stellen in Grundberührung oder gefährliche Verhältnisse zu geraten. Dieser Artikel zeigt, wie du als Sportbootführer die Grundlagen der Törnplanung mit Strömung und Tide praktisch angehst.
+Auf tidebeeinflussten Revieren wie der Nordsee, aber auch auf manchen Flüssen mit Gezeiteneinfluss, entscheidet die richtige Fahrtzeit oft darüber, ob ein Törn entspannt verläuft oder zur Zitterpartie wird. Wer Strömung und Tide bei der Planung berücksichtigt, spart nicht nur Sprit und Zeit, sondern reduziert auch das Risiko, an ungünstigen Stellen in Grundberührung oder gefährliche Verhältnisse zu geraten. Dieser Artikel zeigt, wie du als Sportbootführer die Grundlagen der Törnplanung mit Strömung und Tide praktisch angehst.
 
 ## Warum Strömung und Tide die Planung bestimmen
 
@@ -104,3 +105,10 @@ Im theoretischen Teil des [SBF See](/sbf-see/) werden Grundbegriffe rund um Geze
 ## Fazit
 
 Strömung und Tide sind auf vielen Revieren keine Nebensache, sondern ein zentraler Faktor für eine sichere und angenehme Törnplanung. Mit Tidenkalender und Stromatlas als Grundlage, einer bewussten Wahl der Abfahrtszeit und ausreichend Pufferzeit für Unvorhergesehenes lässt sich die Fahrt spürbar entspannter gestalten, als wenn du dich starr an eine feste Uhrzeit hältst. Wer diese Grundlagen verinnerlicht, profitiert davon sowohl beim eigenen Törn als auch bei den entsprechenden Fragen in der SBF-See-Prüfung.
+
+## Quellen
+
+- [BSH – Die Gezeiten](https://www.bsh.de/DE/THEMEN/Wasserstand_und_Gezeiten/Gezeiten/gezeiten_node.html) – Gezeitentafeln und Gezeitenkalender, Gezeitenstrom und wetterbedingte Abweichungen vom vorausberechneten Wasserstand
+- [DWD – Gezeiten an Nord- und Ostsee](https://www.dwd.de/DE/wetter/thema_des_tages/2026/3/15.html) – Windstau und Windeinfluss auf den Wasserstand, nur schwache Gezeiten an der Ostsee
+- [ELWIS – Fragenkatalog SBF See, spezifische Fragen](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – Wind gegen Tidenstrom (Frage 233) und Gezeitengrundbegriffe (Fragen 249 bis 255)
+- [Sportbootführerscheinverordnung (SpFV), Anlage 3](https://www.gesetze-im-internet.de/spfv/anlage_3.html) – Gezeiten sowie Strom- und Windversatz als Prüfungsstoff des SBF See (Nr. 2.3.1)

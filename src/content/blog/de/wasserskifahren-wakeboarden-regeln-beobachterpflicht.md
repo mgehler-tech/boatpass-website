@@ -3,6 +3,7 @@ title: "Wasserskifahren und Wakeboarden hinter dem Boot: Regeln, Beobachterpflic
 seoTitle: "Wasserski & Wakeboard hinter dem Boot"
 description: "Wasserski und Wakeboard hinter dem Boot: Wo es erlaubt ist, warum ein Beobachter an Bord Pflicht ist und was du beim Schleppen rechtlich beachten musst."
 date: 2026-08-15
+updated: 2026-10-23
 tags: ["Vorbereitung", "Prüfungswissen"]
 readingTime: 9
 lang: de
@@ -16,7 +17,7 @@ faq:
   - question: "Wo darf ich in Deutschland Wasserski fahren oder wakeboarden?"
     answer: "Nur auf dafür freigegebenen Flächen. Auf Bundeswasserstraßen sind das mit dem Kennzeichen E.17 markierte Strecken, auf Seeschifffahrtsstraßen Flächen außerhalb des Fahrwassers, sofern sie nicht extra gesperrt sind. Auf vielen Landesgewässern gelten zusätzlich lokale Vorgaben der zuständigen Behörde."
   - question: "Muss der Wasserskiläufer eine Rettungsweste tragen?"
-    answer: "Die Wasserskiverordnung schreibt keine pauschale Schwimmwestenpflicht für den Läufer vor. In der Praxis gehört eine Auftriebshilfe aber zur Standardausrüstung und ist auf vielen Gewässern durch lokale Vorschriften oder Vereinsregeln vorgeschrieben, aus Sicherheitsgründen ist sie ohnehin dringend zu empfehlen."
+    answer: "Die Wasserskiverordnung nennt kein bestimmtes Westenmodell, verlangt auf Bundeswasserstraßen aber eine Ausrüstung mit ausreichendem Auftrieb und Aufprallschutz (§ 1 WasSkiV). In der Praxis gehört eine Auftriebs- oder Prallschutzweste deshalb zur Standardausrüstung und ist auf vielen Gewässern zusätzlich durch lokale Vorschriften oder Vereinsregeln vorgeschrieben, aus Sicherheitsgründen ist sie ohnehin dringend zu empfehlen."
 ---
 
 Ein Sommertag, glattes Wasser, und hinter dem Boot zieht jemand seine ersten Schwünge auf dem Wakeboard. Wasserskifahren und Wakeboarden gehören zu den beliebtesten Wassersportarten hinter dem Motorboot, sind aber kein rechtsfreier Raum. Wo du überhaupt schleppen darfst, warum ein Beobachter an Bord Pflicht ist und was du sonst beachten musst, erklärt dieser Artikel.
@@ -29,7 +30,7 @@ Wasserskifahren ist in Deutschland nicht auf jedem Gewässer und nicht überall 
 
 Auf Bundeswasserstraßen regelt die **Wasserskiverordnung (WasSkiV)** das Wasserskilaufen. Danach ist Wasserskilaufen nur auf den Strecken und Wasserflächen erlaubt, die mit dem Schifffahrtszeichen **E.17** gekennzeichnet sind. Zusatzschilder an diesem Kennzeichen können die erlaubten Zeiten weiter einschränken. Fährst du außerhalb einer solchen markierten Strecke, ist das Schleppen eines Wasserskiläufers schlicht nicht erlaubt, unabhängig davon, wie ruhig das Gewässer gerade wirkt.
 
-Die Verordnung spricht wörtlich vom „Wasserskilaufen", ihre Grundgedanken (Beobachterpflicht, Kennzeichnung, erlaubte Zeiten) werden in der Praxis aber ebenso auf das Wakeboarden angewendet, da es sich um dieselbe Art des Schleppens hinter einem Motorboot handelt.
+Die Verordnung spricht vom „Wasserskilaufen", fasst darunter aber ausdrücklich alle Betätigungen, bei denen Personen von einem Fahrzeug gezogen mit oder ohne Wasserski oder auf sonstigen Gegenständen über das Wasser gleiten (§ 2 WasSkiV). Für das Wakeboarden gelten damit unmittelbar dieselben Regeln (Beobachterpflicht, Kennzeichnung, erlaubte Zeiten).
 
 ### Seeschifffahrtsstraßen: außerhalb des Fahrwassers
 
@@ -55,11 +56,11 @@ Auf Seeschifffahrtsstraßen gilt außerdem eine klare Rangordnung: Die Führer v
 
 ## Ausrüstung: Rettungsweste und verkehrssicheres Gerät
 
-Die WasSkiV verlangt, dass nur **verkehrssicheres Wasserskigerät** verwendet wird, also Ausrüstung, die für einen geordneten Ablauf des Wasserskilaufens geeignet ist. Eine pauschale gesetzliche Pflicht zum Tragen einer Schwimm- oder Rettungsweste für den Skiläufer selbst lässt sich daraus nicht ableiten, in der Praxis ist eine Auftriebshilfe aber Standard und wird auf vielen Gewässern zusätzlich durch lokale Vorschriften, Vereinsregeln oder Auflagen von Wassersportvereinen gefordert. Unabhängig von der rechtlichen Lage gilt: Wer geschleppt wird, sollte grundsätzlich eine geeignete Schwimmhilfe tragen, denn Stürze beim Wasserskifahren und Wakeboarden passieren häufig und oft unvorhersehbar.
+Die WasSkiV verlangt, dass nur **verkehrssicheres Wasserskigerät** verwendet wird, und definiert das genau: Die Ausrüstung muss ausreichenden Auftrieb, ausreichenden Aufprallschutz und ausreichende Bewegungsfreiheit bieten. Ein bestimmtes Westenmodell schreibt die Verordnung nicht vor, ohne Auftriebshilfe lässt sich das Kriterium „ausreichender Auftrieb" aber kaum erfüllen. In der Praxis ist eine Auftriebs- oder Prallschutzweste deshalb Standard und wird auf vielen Gewässern zusätzlich durch lokale Vorschriften, Vereinsregeln oder Auflagen von Wassersportvereinen gefordert. Unabhängig von der rechtlichen Lage gilt: Wer geschleppt wird, sollte grundsätzlich eine geeignete Schwimmhilfe tragen, denn Stürze beim Wasserskifahren und Wakeboarden passieren häufig und oft unvorhersehbar.
 
 ## Wassersportanhänge: Tubing, Donuts und Bananenboote
 
-Neben klassischem Wasserski und Wakeboard erfreuen sich aufblasbare Wassersportanhänge wie Ringe, Donuts oder Bananenboote großer Beliebtheit, im Volksmund oft „Tubing" genannt. Auf Seeschifffahrtsstraßen behandelt § 31 SeeSchStrO das Schleppen solcher Anhänge im selben Paragrafen wie das Wasserskilaufen, es gelten also dieselben Regeln zu Fahrwasser, Zeiten und Kielwasser. Auf Bundeswasserstraßen und Landesgewässern lohnt sich ein Blick auf die örtlichen Vorgaben, da hier ähnliche Einschränkungen wie beim Wasserskifahren üblich sind. Im Zweifel gilt: Bei der zuständigen Wasserschutzpolizei oder dem Wasserstraßen- und Schifffahrtsamt vorab nachfragen, statt sich auf Vermutungen zu verlassen.
+Neben klassischem Wasserski und Wakeboard erfreuen sich aufblasbare Wassersportanhänge wie Ringe, Donuts oder Bananenboote großer Beliebtheit, im Volksmund oft „Tubing" genannt. Auf Seeschifffahrtsstraßen behandelt § 31 SeeSchStrO das Schleppen solcher Anhänge im selben Paragrafen wie das Wasserskilaufen, es gelten also dieselben Regeln zu Fahrwasser, Zeiten und Kielwasser. Auf Bundeswasserstraßen fallen gezogene Ringe, Donuts und Bananenboote unter den Begriff des Wasserskilaufens in § 2 WasSkiV, es gelten also dieselben Regeln wie für Wasserski. Auf Landesgewässern lohnt sich ein Blick auf die örtlichen Vorgaben, da hier ähnliche Einschränkungen wie beim Wasserskifahren üblich sind. Im Zweifel gilt: Bei der zuständigen Wasserschutzpolizei oder dem Wasserstraßen- und Schifffahrtsamt vorab nachfragen, statt sich auf Vermutungen zu verlassen.
 
 ## Sonderveranstaltungen: Sprünge, Slalom und Shows
 
@@ -80,3 +81,9 @@ Wasserskifahren und das Verhalten gegenüber Wassersportlern gehören zu den pra
 ## Fazit
 
 Wasserskifahren und Wakeboarden hinter dem Boot sind kein rechtsfreier Spaß, sondern klar geregelt: Erlaubt ist das Schleppen nur auf gekennzeichneten oder freigegebenen Flächen, bei Tag und ausreichender Sicht, und nur mit einem Beobachter an Bord, der den Läufer ständig im Blick behält. Wer diese Grundregeln kennt, sich im Kielwasser des Zugboots hält und auf geeignete Ausrüstung achtet, sorgt dafür, dass der Spaß auf dem Wasser sicher bleibt, für den Skiläufer selbst wie für alle anderen auf dem Gewässer.
+
+## Quellen
+
+- [Wasserskiverordnung (WasSkiV)](https://www.gesetze-im-internet.de/wasskiv_1990/BJNR001070990.html) – Begriff des Wasserskilaufens, Strecken mit Tafelzeichen E.17, Zeiten, Ausrüstung, Beobachter, Zugboot und Ordnungswidrigkeiten
+- [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), § 31](https://www.gesetze-im-internet.de/seeschstro_1971/__31.html) – Wasserskilaufen und Wassersportanhänge auf Seeschifffahrtsstraßen
+- [ELWIS – Wasserskilaufen](https://www.elwis.de/DE/Sportschifffahrt/Binnenbereich/Wasserskilaufen/Wasserskilaufen-node.html) – Übersicht der Wasserstraßen- und Schifffahrtsverwaltung zu Strecken, Sicht, Abstand und Zugboot

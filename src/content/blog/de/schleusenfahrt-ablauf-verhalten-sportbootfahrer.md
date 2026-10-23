@@ -3,6 +3,7 @@ title: "Schleusenfahrt – Ablauf und Verhalten für Sportbootfahrer"
 seoTitle: "Schleusenfahrt: Ablauf & Verhalten"
 description: "Schleuse fahren mit dem Sportboot: Signale lesen, Verhalten in der Kammer, Selbstbedienungsschleusen und was du für die SBF-Binnen-Prüfung wissen musst."
 date: 2026-08-16
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 9
 lang: de
@@ -99,3 +100,10 @@ Schleusen gehören zur Streckenkenntnis, die im theoretischen Teil der Prüfung 
 ## Fazit
 
 Schleusenfahrt wirkt beim ersten Mal ungewohnt, folgt aber einem klaren System: Signale beachten, Geschwindigkeit reduzieren, den Vorrang der Berufsschifffahrt respektieren und in der Kammer Leinen locker nachführen statt fest zu belegen. Wer diese Grundregeln verinnerlicht hat, meistert auch unbesetzte Selbstbedienungsschleusen ohne größere Unsicherheit und kommt sicher und entspannt von einer Wasserstufe zur nächsten.
+
+## Quellen
+
+- [Binnenschifffahrtsstraßen-Ordnung (BinSchStrO), § 6.28a](https://www.gesetze-im-internet.de/binschstro_2012/__6_28a.html) – Signallichter für Einfahrt und Ausfahrt an Schleusen
+- [BinSchStrO, § 6.28](https://www.gesetze-im-internet.de/binschstro_2012/__6_28.html) – Verhalten im Schleusenbereich: Fahrt verlangsamen, Überholverbot, Festmachen, Maschinenverbot nach dem Festmachen, Hinweise an Selbstbedienungsschleusen
+- [BinSchStrO, § 6.29](https://www.gesetze-im-internet.de/binschstro_2012/__6_29.html) – Reihenfolge der Schleusungen; Klein- und Sportfahrzeuge werden nach anderen Fahrzeugen geschleust
+- [ELWIS – Schleuseninformationen](https://www.elwis.de/DE/Binnenschifffahrt/Schleuseninformationen/Schleuseninformationen-node.html) – Betriebszeiten, Sperrungen und Bootsschleusen der Wasserstraßen- und Schifffahrtsverwaltung

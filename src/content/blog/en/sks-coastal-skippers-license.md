@@ -3,6 +3,7 @@ title: "SKS (Sportküstenschifferschein) – The Next Step After the SBF Coastal
 seoTitle: "SKS: Coastal Skipper License After SBF"
 description: "SKS coastal skipper's license explained: requirements, the 300 nautical mile logbook, and exam structure. How to build on your SBF See the right way."
 date: 2026-07-18
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -29,7 +30,7 @@ One point matters for context: the SKS builds directly on the SBF See, both in c
 
 ## SKS vs. SBF See at a Glance
 
-The SBF See is the mandatory basic qualification: required as soon as you operate a sport boat above a certain engine power or sail area on certain waters, tested with multiple-choice questions and a relatively modest practical exam. The SKS builds on that and goes noticeably further in almost every respect. Instead of ticking boxes, you need genuine free-text knowledge; instead of simple maneuvers, you face a full chart-based navigation task involving course calculations, current drift, and distances, plus more demanding maneuvers under both engine and sail. If you only ever sail near your home port, you may well get by without the SKS. If you regularly plan longer passages, charter boats, or venture into unfamiliar cruising grounds, the additional knowledge and the internationally recognized qualification pay off noticeably.
+The SBF See is the mandatory basic qualification: required as soon as you operate a sport boat on Germany's maritime waterways with more than 11.03 kW (15 hp) for combustion engines or 7.5 kW for electric motors, tested with multiple-choice questions and a relatively modest practical exam. The SKS builds on that and goes noticeably further in almost every respect. Instead of ticking boxes, you need genuine free-text knowledge; instead of simple maneuvers, you face a full chart-based navigation task involving course calculations, current drift, and distances, plus more demanding maneuvers under both engine and sail. If you only ever sail near your home port, you may well get by without the SKS. If you regularly plan longer passages, charter boats, or venture into unfamiliar cruising grounds, the additional knowledge and the internationally recognized qualification pay off noticeably.
 
 ## Requirements for the SKS
 
@@ -71,12 +72,12 @@ In addition to the questionnaire, you have to solve a multi-part **navigation ta
 
 The practical exam takes a maximum of **30 minutes per candidate** and takes place on a yacht roughly 10 meters long. What's tested depends on whether you take the exam under power or under sail and power:
 
-- **Exam under power:** docking and undocking, navigating by shipping marks, man overboard maneuver.
-- **Exam under sail and power:** additionally, sailing set courses and the man overboard maneuver under sail.
+- **Exam under power:** the mandatory tasks are docking and undocking under engine and a man overboard maneuver under engine.
+- **Exam under sail and power:** two man overboard maneuvers are mandatory, one under sail and one with engine assistance, plus docking and undocking under engine, tacking or gybing/Q-turn, and heaving to.
 
-On top of that come further maneuver elements such as stopping precisely on course, tacking or turning in a tight space, navigating by shipping marks and landmarks, correctly putting on a life jacket or safety harness, and the appropriate sound signals for maneuvers.
+On top of that come further tasks from seamanship (such as a safety briefing, emergency roles, lifebelt and jackline), meteorology (reading the thermometer and barometer, assessing the weather), navigation (fixing the position, plotting courses, working with GPS and compass), and engine, electrical system and gas installation. The examiner may also ask for maneuvers such as turning or stopping in a tight space, anchoring, setting sails, reefing, or shooting up into the wind.
 
-**[Knot skills](/en/blog/most-important-knots-sbf/)** are also part of the practical exam. You're tested on six knots out of a set of up to seven: figure-eight knot, reef knot, sheet bend, bowline, stopper knot, clove hitch, round turn with two half hitches, and securing a line to a cleat with a locking hitch. If you don't practice these regularly, it's easy to lose valuable time in the exam, since they need to be tied correctly under mild time pressure.
+Unlike the SBF, the SKS practical exam has no separate knot test. What can be tested is using lines when docking or undocking, such as springs, bow and stern lines, or a slipped line. You should still have the **[knots](/en/blog/most-important-knots-sbf/)** from the SBF down pat, though, since no harbor maneuver goes smoothly without them.
 
 ## Deadlines: The Whole Exam Must Be Completed Within 24 Months
 
@@ -90,13 +91,13 @@ There's another practical advantage: the SKS is issued in credit-card format and
 
 ## What Comes After the SKS?
 
-If you want to go further offshore, you can build on the SKS. The next step is the **Sportseeschifferschein (SSS)**, for which you need either the SBF See plus 1,000 additional nautical miles, or the SKS plus 700 additional nautical miles. The SSS qualifies you to skipper sailing yachts within the 30-nautical-mile zone, including the entire Mediterranean as well as the North Sea and Baltic Sea.
+If you want to go further offshore, you can build on the SKS. The next step is the **Sportseeschifferschein (SSS)**, for which you need either the SBF See plus 1,000 additional nautical miles, or the SKS plus 700 additional nautical miles. The SSS qualifies you to skipper yachts within the 30-nautical-mile zone, including the entire Mediterranean as well as the North Sea and Baltic Sea.
 
 Beyond that, as a further step, you can take the **Sporthochseeschifferschein (SHS)**, which requires an additional 1,000 nautical miles after the SSS. The SHS qualifies you for worldwide passages. The typical progression is therefore: SBF See, then SKS, then SSS, then SHS, with each level being voluntary, so you only need to go as far as your own sailing plans require.
 
 ## Costs for the SKS
 
-Unlike the SBF, there is no uniform nationwide fee schedule for the SKS. Exam fees are set independently by the regional examination boards of the state associations under the DSV and DMYV, so they can vary by region. As a reference point, the DMYV's examination board in North Rhine-Westphalia charges around **150 euros** for the exam. Depending on the path you choose, additional costs may include an optional preparatory course at a sailing or boating school and study materials, though a mandatory course is not a prerequisite for admission to the exam. If you want the current fees for your specific board, check the pages of the responsible regional examination board of the DSV or DMYV directly.
+As with the SBF, SKS fees are set by federal law: the DSV and DMYV charge them under a special fee ordinance of the Federal Ministry of Transport (Section 2 of the Sportseeschifferscheinverordnung). At the DSV, the complete exam, covering admission, theory, practical exam and issuing the license, currently costs **244.58 euros** including VAT (as of October 2026). Depending on the path you choose, additional costs may include an optional preparatory course at a sailing or boating school and study materials, though a mandatory course is not a prerequisite for admission to the exam. If you want the current fees in detail, check the pages of the DSV or DMYV directly.
 
 ## How to Prepare Effectively
 
@@ -107,3 +108,10 @@ Before you even think about the SKS, your [SBF See](/en/sbf-coastal/) needs to b
 ## Conclusion
 
 The Sportküstenschifferschein isn't mandatory, but for anyone who regularly cruises coastal waters or wants to charter abroad, it's a sensible next step after the SBF See. With its written questionnaire, chart task, and practical maneuver exam, it demands considerably more than the SBF, but in return it opens up more cruising grounds and is internationally recognized through the included ICC. If you've logged your 300 nautical miles and have a solid handle on the SBF See, you're well prepared to take the next step.
+
+## Sources
+
+- [Sportseeschifferscheinverordnung, Section 6](https://www.gesetze-im-internet.de/sportseeschv/__6.html) – requirements for the SKS (SBF See, 300 nautical miles), SSS (700 or 1,000 nautical miles) and SHS (1,000 nautical miles)
+- [Sportseeschifferscheinverordnung, Section 1](https://www.gesetze-im-internet.de/sportseeschv/__1.html) – coastal waters up to 12 nautical miles and near-coastal waters up to 30 nautical miles
+- [SKS implementing guidelines (ELWIS, PDF)](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/SportSeeSchiffV/Richtlinien-SKS.pdf?__blob=publicationFile&v=2) – questionnaire and chart task with points and time limits, practical exam content, 24-month deadline
+- [DSV licence portal – SKS](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/sks-sportkuestenschifferschein/) – minimum age, exam procedure and fees

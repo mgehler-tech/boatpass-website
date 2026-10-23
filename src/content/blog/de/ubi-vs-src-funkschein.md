@@ -3,6 +3,7 @@ title: "UBI oder SRC – welcher Funkschein passt zu deinem Boot?"
 seoTitle: "UBI oder SRC: Welcher Funkschein passt?"
 description: "UBI oder SRC? Wir erklären den Unterschied zwischen Binnenfunk und Seefunk, Prüfungsaufbau, Kosten und welches Sprechfunkzeugnis du wirklich brauchst."
 date: 2026-07-02
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -31,7 +32,7 @@ Welches Zeugnis du brauchst, hängt vom Fahrtgebiet ab: Binnengewässer oder Kü
 
 ## UBI: Das Sprechfunkzeugnis für die Binnenschifffahrt
 
-Das [**UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk (UBI)**](/ubi/) ist die amtlich anerkannte Erlaubnis zum Bedienen und Beaufsichtigen einer Schiffsfunkstelle auf Binnenschifffahrtsstraßen. Es wird von den Prüfungsausschüssen des Deutschen Segler-Verbands (DSV) abgenommen.
+Das [**UKW-Sprechfunkzeugnis für den Binnenschifffahrtsfunk (UBI)**](/ubi/) ist die amtlich anerkannte Erlaubnis zum Bedienen und Beaufsichtigen einer Schiffsfunkstelle auf Binnenschifffahrtsstraßen. Es wird von den Prüfungsausschüssen des Deutschen Segler-Verbands (DSV) und des Deutschen Motoryachtverbands (DMYV) abgenommen.
 
 ### Wer braucht das UBI?
 
@@ -118,3 +119,10 @@ Wenn du dich zusätzlich auf den [SBF Binnen](https://boatpass.de/sbf-binnen/) o
 UBI und SRC sind zwei eigenständige Sprechfunkzeugnisse für unterschiedliche Fahrtgebiete: Binnenschifffahrt beim UBI, Küstenfunk beim SRC. Beide sind unabhängig vom Sportbootführerschein, haben eigene Fragenkataloge und eigene Prüfungsmodalitäten. Wer nur auf einem der beiden Reviere unterwegs ist, braucht auch nur das jeweils passende Zeugnis. Wer beide Fahrtgebiete abdecken will, profitiert von der verkürzten UBI-Prüfung, wenn zuerst das SRC erworben wird.
 
 Die **Boatpass-App** hilft dir bei der Vorbereitung auf UBI und SRC mit den vollständigen amtlichen Fragenkatalogen, Prüfungssimulation unter realistischen Bedingungen und gezieltem Fehlertraining, damit du sicher und gut vorbereitet in die Prüfung gehst.
+
+## Quellen
+
+- [ABVT der WSV – UKW-Sprechfunkzeugnis UBI](https://www.abvt.wsv.de/Webs/WSA/ABVT/DE/UKW-Sprechfunkzeugnisse/UBI_node.html) – Prüfungsausschüsse bei DSV und DMYV, 22 Fragen in 60 Minuten (17 zum Bestehen), verkürzte Ergänzungsprüfung für SRC- und LRC-Inhaber, neuer Fragenkatalog ab 1. Oktober 2026
+- [Durchführungsrichtlinien Funkbetriebszeugnisse (ELWIS, PDF)](https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Durchfuehrungsrichtlinien-Funkbetriebszeugnisse/Durchfuehrungsrichtlinie.pdf?__blob=publicationFile&v=3) – SRC-Fragebogen mit 30 Minuten Bearbeitungszeit, bestanden ab 19 von 24 Punkten
+- [Portal für Sportbootführerscheine des DSV: UBI](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/ubi-ukw-sprechfunkzeugnis/) und [SRC](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/src-short-range-certificate/) – Mindestalter 15 Jahre, Prüfungsablauf und Gebühren von 108,71 € bzw. 127,88 € (Stand Oktober 2026)
+- [UBI-Gesamtfragenkatalog 2026 (ABVT, PDF)](https://www.abvt.wsv.de/Webs/WSA/ABVT/DE/SharedDocs/Downloads/UBI_Gesamtfragenkatalog_2026-10.pdf?__blob=publicationFile&v=5) und [Fragenkatalog SRC (ELWIS, PDF)](https://www.elwis.de/DE/Schifffahrtsrecht/Sprechfunkzeugnisse/Fragenkatalog-SRC-2018.pdf?__blob=publicationFile&v=3) – 130 bzw. 180 amtliche Prüfungsfragen

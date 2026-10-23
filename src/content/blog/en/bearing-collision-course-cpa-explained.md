@@ -3,6 +3,7 @@ title: "Bearing and Collision Course – CPA Explained Simply"
 seoTitle: "Bearing, Collision Course and CPA Explained"
 description: "How do you spot a collision risk on the water in time? Bearings, constant bearing and CPA explained simply, with practical tips even without radar."
 date: 2026-08-08
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 9
 lang: en
@@ -108,3 +109,10 @@ As soon as you notice a constant bearing, it is time to act, not to wait:
 ## Conclusion
 
 A constant bearing combined with a decreasing distance is one of the most reliable warning signs of a risk of collision on the water, with no electronics required. Anyone who takes bearings regularly, whether using a fixed reference point on their own boat or a handbearing compass, spots critical situations early and can react in time and unambiguously. CPA and TCPA are simply the technical, radar-based version of the same basic principle. In the Boatpass app you can practice the questions on collision avoidance and right-of-way rules with the official ELWIS question catalog.
+
+## Sources
+
+- [German COLREGs (KVR), Rule 7](https://www.gesetze-im-internet.de/seestro_1972/regel_7.html) – risk of collision when the compass bearing does not appreciably change; assume it in case of doubt
+- [KVR Rule 8](https://www.gesetze-im-internet.de/seestro_1972/regel_8.html) – action to avoid collision: in good time, clear and large enough
+- [KVR Rule 17](https://www.gesetze-im-internet.de/seestro_1972/regel_17.html) – duties of the stand-on vessel
+- [IMO Resolution MSC.192(79), radar performance standards](https://www.transportstyrelsen.se/globalassets/global/sjofart/dokument/resolution_msc_192_79.pdf) – definitions of CPA/TCPA and the CPA/TCPA alarm

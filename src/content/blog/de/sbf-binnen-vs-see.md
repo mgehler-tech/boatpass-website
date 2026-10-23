@@ -3,6 +3,7 @@ title: "SBF Binnen vs. SBF See – Was ist der Unterschied?"
 seoTitle: "SBF Binnen vs. See: der Unterschied"
 description: "Welchen Sportbootführerschein brauchst du? Geltungsbereich, Prüfungsunterschiede, Kosten und der Kombinations-Tipp der die meisten Geld spart."
 date: 2026-04-22
+updated: 2026-10-23
 tags: ["Führerschein-Vergleich"]
 readingTime: 7
 lang: de
@@ -28,9 +29,8 @@ Wenn du anfängst, dich mit dem Sportbootführerschein zu beschäftigen, stößt
 Der [SBF Binnen](/sbf-binnen/) gilt auf allen **deutschen Binnenschifffahrtsstraßen** – also auf Flüssen, Kanälen und Seen, die offiziell als Bundeswasserstraßen eingestuft sind. Dazu gehören:
 
 - Rhein, Elbe, Mosel, Donau, Weser, Oder
-- Havel, Spree, Müritz, Chiemsee
+- Havel, Spree, Müritz
 - Elbe-Lübeck-Kanal
-- Masurische Seen (Polen – hier gelten jedoch polnische Regeln)
 
 **Für wen:** Wer hauptsächlich in Deutschland auf Binnengewässern fahren möchte – Hausboottörns, Flussreisen, Seen in Brandenburg oder Bayern.
 
@@ -53,8 +53,8 @@ Wo genau die Grenze zwischen beiden verläuft – etwa an der Elbe, der Trave od
 
 | | SBF Binnen | SBF See |
 |---|---|---|
-| Theorieprüfung | 30 Fragen, 45 Min | 30 Fragen + 9 Navigationsaufgaben, 60 Min |
-| Bestehensgrenze | 5/7 Basis + 18/23 spezifisch | 5/7 Basis + 18/23 spezifisch |
+| Theorieprüfung | 30 Fragen, 45 Min | 30 Fragen + Navigationsaufgabe (9 Fragen), 60 Min |
+| Bestehensgrenze | 5/7 Basis + 18/23 spezifisch | 5/7 Basis + 18/23 spezifisch + 7/9 Navigation |
 | Schwerpunkte | Fahrregeln, Lichterführung, Schallzeichen, Binnenwasserstraßen | Navigation, Seekartenarbeit, Seerecht, Gezeiten |
 | Praktische Prüfung | Ja | Ja (auf Küstengewässer) |
 | [Knotenprüfung](/blog/wichtigste-knoten-sbf/) | Ja | Ja |
@@ -92,3 +92,10 @@ Wenn du dir trotzdem unsicher bist, beantwortet unser [Bootsführerschein-Finder
 ## Fazit
 
 Der wichtigste Unterschied ist der Geltungsbereich: Binnen für Flüsse und Seen in Deutschland, See für Küstengewässer national und international. Wer langfristig flexibel sein will, sollte die Kombiprüfung in Betracht ziehen – sie ist günstiger als beide Scheine separat.
+
+## Quellen
+
+- [Sportbootführerscheinverordnung (SpFV), § 2](https://www.gesetze-im-internet.de/spfv/__2.html) und [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), § 1](https://www.gesetze-im-internet.de/seeschstro_1971/__1.html) – Abgrenzung von Binnen- und Seeschifffahrtsstraßen, Nord-Ostsee-Kanal als Seeschifffahrtsstraße
+- [Bundeswasserstraßengesetz (WaStrG), Anlage 1](https://www.gesetze-im-internet.de/wastrg/anlage_1.html) – Verzeichnis der Bundeswasserstraßen (u. a. Rhein, Mosel, Donau, Elbe-Lübeck-Kanal, Müritz-Elde-Wasserstraße)
+- [ELWIS – Bewertungsschlüssel](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html) – Fragenzahl, Bearbeitungszeit und Bestehensgrenzen der Theorieprüfung, Basisfragen bei Prüfung beider Scheine an einem Tag
+- [Gebührentabelle des Prüfungsausschusses München/Nürnberg](https://www.pa-muenchen.de/gebuehren/) – Prüfungsgebühren SBF Binnen, SBF See und Kombi (Stand Oktober 2026)

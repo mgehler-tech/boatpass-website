@@ -3,6 +3,7 @@ title: "Verkehrstrennungsgebiete: Regeln für Sportbootfahrer auf See"
 seoTitle: "Verkehrstrennungsgebiete auf See: SBF See"
 description: "Verkehrstrennungsgebiete auf See erklärt: Aufbau, KVR Regel 10 und wie du als Sportbootfahrer richtig querst, ausweichst und die Küstenverkehrszone nutzt."
 date: 2026-09-24
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -67,3 +68,9 @@ Beachte: Das Queren im rechten Winkel entbindet dich nicht von den übrigen [Aus
 Verkehrstrennungsgebiete ordnen den Verkehr großer Schiffe und sind für Sportbootfahrer vor allem beim Queren relevant. Die Kernregeln aus **KVR Regel 10**: in Verkehrsrichtung fahren, die Trennzone freihalten, die Küstenverkehrszone nutzen, große Schiffe in der Einbahn nicht behindern und, wenn nötig, mit der **Kiellinie im rechten Winkel** zügig queren. Wer diese Punkte beherrscht und den Verkehr vorausschauend beobachtet, bewegt sich auch in stark befahrenen Revieren sicher.
 
 Die **Boatpass-App** hilft dir, KVR Regel 10 und die übrigen Verkehrsregeln auf See sicher zu lernen, mit den offiziellen Prüfungsfragen, realistischem Prüfungsmodus und gezieltem Fehlertraining, damit du in der Prüfung und auf dem Wasser richtig reagierst.
+
+## Quellen
+
+- [Kollisionsverhütungsregeln (KVR), Regel 10](https://www.gesetze-im-internet.de/seestro_1972/regel_10.html) – Verhalten in Verkehrstrennungsgebieten, Queren, Küstenverkehrszone
+- [Verordnung zu den Internationalen Regeln (SeeStrOV), § 6](https://www.gesetze-im-internet.de/seestrov/__6.html) – Begriff Verkehrstrennungsgebiet und Bekanntmachung durch das BSH
+- [IMO – COLREGs](https://www.imo.org/en/About/Conventions/Pages/COLREG.aspx) – Hintergrund zu Regel 10 und den Verkehrstrennungsgebieten

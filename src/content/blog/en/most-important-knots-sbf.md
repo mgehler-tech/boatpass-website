@@ -3,6 +3,7 @@ title: "The Most Important Knots for the German Boating License – Step by Step
 seoTitle: "The Most Important Knots for the SBF"
 description: "Which knots you must master for the SBF practical exam, what each one is used for and how to practice them. All exam-relevant knots explained."
 date: 2026-05-21
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -12,7 +13,7 @@ image: "/images/blog/wichtigste-knoten-sbf.jpg"
 imageAlt: "Close-up of two hands tying a nautical knot into a rope, with a boat deck cleat visible in the background"
 faq:
   - question: "How many knots do you need to know for the SBF See practical exam?"
-    answer: "You're tested on a list of nine knots, and generally have to demonstrate at least six of them correctly and explain what each one is used for."
+    answer: "Seven knots are asked from a list of nine, and you have to demonstrate at least six of them correctly and explain what each one is used for."
   - question: "Which knot forms a fixed, non-tightening loop?"
     answer: "The bowline forms a fixed, non-tightening loop and is considered the most important knot on board. It can be undone again even after heavy load."
   - question: "What is the sheet bend used for?"
@@ -47,7 +48,7 @@ For many, the knots are the part of the practical exam with the biggest "aha" mo
 
 ## How Many Knots Do You Need?
 
-In the **SBF See [practical exam](/en/sbf-exam/)**, you're tested on a list of **nine knots**. You generally have to **demonstrate at least six of them correctly** and explain what each knot is used for. The **SBF Binnen practical** (engine) also includes cleating a line and basic knots.
+In the **SBF See [practical exam](/en/sbf-exam/)**, you're tested on a list of **nine knots**. Seven of them are asked, and you have to **demonstrate at least six correctly** and explain what each knot is used for. The **SBF Binnen practical** uses the same list of knots.
 
 The examiner names the knot – you tie it and state its purpose. Speed is secondary; what matters is that the knot is **correct** and that you know its function.
 
@@ -123,4 +124,9 @@ Five minutes a day beats one long session before the exam. Knots are pure practi
 
 ## Conclusion
 
-For the [SBF See](/en/sbf-coastal/) practical you must tie at least six of nine knots reliably and explain their purpose – the bowline, the round turn with two half hitches, and cleating a line are among the most important. With a piece of rope and a few minutes a day you'll have them down quickly. While you practice the hands-on part, you can train the theory in parallel in the Boatpass app with the official ELWIS question catalog – so you're ready for both parts of the exam.
+For the [SBF See](/en/sbf-coastal/) practical you must reliably tie at least six of the seven knots asked from the list of nine and explain their purpose – the bowline, the round turn with two half hitches, and cleating a line are among the most important. With a piece of rope and a few minutes a day you'll have them down quickly. While you practice the hands-on part, you can train the theory in parallel in the Boatpass app with the official ELWIS question catalog – so you're ready for both parts of the exam.
+
+## Sources
+
+- [German Recreational Boat Licence Regulation (SpFV), Annex 4](https://www.gesetze-im-internet.de/spfv/anlage_4.html) – official list of the nine exam knots, seven asked, six must be tied and explained (for inland and coastal)
+- [SpFV, § 8](https://www.gesetze-im-internet.de/spfv/__8.html) – structure of the exam with a theory part and a practical part

@@ -3,6 +3,7 @@ title: "Traffic Separation Schemes: Rules for Recreational Boaters"
 seoTitle: "Traffic Separation Schemes at Sea: SBF Coastal"
 description: "Traffic separation schemes explained simply: layout, COLREGs Rule 10, and how to cross correctly, give way, and use the inshore traffic zone as a boater."
 date: 2026-09-24
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -67,3 +68,9 @@ Note: crossing at right angles does not release you from the other [right-of-way
 Traffic separation schemes organize the traffic of large ships and are relevant to recreational boaters mainly when crossing. The core rules from **COLREGs Rule 10**: travel with the direction of traffic, keep the separation zone clear, use the inshore traffic zone, do not impede large ships in the lane, and when necessary cross promptly with your **heading at right angles**. Anyone who has these points down and watches the traffic ahead moves safely even in busy areas.
 
 The **Boatpass app** helps you learn COLREGs Rule 10 and the other traffic rules at sea reliably, with the official exam questions, a realistic exam mode, and targeted mistake training, so that you react correctly in the exam and on the water.
+
+## Sources
+
+- [German COLREGs (KVR), Rule 10](https://www.gesetze-im-internet.de/seestro_1972/regel_10.html) – conduct in traffic separation schemes, crossing, inshore traffic zone
+- [German COLREGs Ordinance (SeeStrOV), § 6](https://www.gesetze-im-internet.de/seestrov/__6.html) – definition of traffic separation schemes and publication by the BSH
+- [IMO – COLREGs](https://www.imo.org/en/About/Conventions/Pages/COLREG.aspx) – background on Rule 10 and traffic separation schemes

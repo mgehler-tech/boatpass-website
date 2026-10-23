@@ -3,6 +3,7 @@ title: "5 Tips to Pass Your German Boating License Exam First Try"
 seoTitle: "5 Tips to Pass the SBF Exam First Try"
 description: "Five concrete strategies for the SBF exam – with real facts about the exam format, scoring, and the most effective preparation methods to pass."
 date: 2026-04-29
+updated: 2026-10-23
 tags: ["Preparation"]
 readingTime: 7
 lang: en
@@ -94,3 +95,9 @@ The official exam fee for SBF Inland (DMYV) is currently around **€131** (as o
 ## Summary
 
 With the right exam structure knowledge, daily practice, and targeted weak-spot training, the SBF is achievable for anyone – even without prior nautical knowledge. Start for free with the Boatpass app: 15 questions daily, official ELWIS catalog, mistake training included.
+
+## Sources
+
+- [ELWIS – assessment key for the theory exam](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html) – 30 questions (7 basic, at least 5 correct; 23 specific, at least 18 correct) and 45 minutes for the SBF Inland
+- [ELWIS – SBF Inland question catalog](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-node.html) – official question catalog for the theory exam
+- [Fee table of the Munich examination board](https://www.pa-muenchen.de/gebuehren/) – SBF Inland exam fee €130.78 (as of October 2026)

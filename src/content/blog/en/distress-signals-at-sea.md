@@ -3,6 +3,7 @@ title: "Distress Signals at Sea: The Ones You Need to Know"
 seoTitle: "Distress Signals at Sea Explained for the SBF"
 description: "Red parachute rocket, hand flare, Mayday and more: which distress signals exist, what they mean and which ones you may use as a recreational boater."
 date: 2026-05-20
+updated: 2026-10-23
 tags: ["Safety"]
 readingTime: 7
 lang: en
@@ -68,3 +69,9 @@ The acoustic counterparts in normal operation – who gives which sound and when
 ## Conclusion
 
 The most important distress signals are listed in COLREGs Annex IV: red parachute rocket and hand flare, orange smoke signal, MAYDAY and DSC alert via radio, plus a range of simple signs right down to raising and lowering your arms. Anyone who knows which signal stands for what – and that the red pyrotechnic signals require a competence certificate – has the distress-signal questions firmly under control in the exam.
+
+## Sources
+
+- [German Collision Regulations (KVR), Rule 37](https://www.gesetze-im-internet.de/seestro_1972/regel_37.html) and [Annex IV](https://www.gesetze-im-internet.de/seestro_1972/anlage_iv.html) – internationally recognized distress signals and the ban on misuse
+- [First Ordinance to the Explosives Act (1. SprengV), § 1](https://www.gesetze-im-internet.de/sprengv_1/__1.html) – exemption for category P2 distress signals for holders of an official boating licence with instruction
+- [1. SprengV § 20](https://www.gesetze-im-internet.de/sprengv_1/__20.html) – minimum age for pyrotechnic articles (category P1: 18 years)

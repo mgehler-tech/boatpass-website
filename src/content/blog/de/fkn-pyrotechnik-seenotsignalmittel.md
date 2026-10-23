@@ -3,6 +3,7 @@ title: "FKN und Pyrotechnik an Bord: Seenotsignalmittel erklärt"
 seoTitle: "FKN & Pyrotechnik: Seenotsignalmittel"
 description: "Fachkundenachweis (FKN), Kategorien P1 und P2, Lagerung und Verfallsdatum: Alles Wichtige zu pyrotechnischen Seenotsignalmitteln an Bord kompakt erklärt."
 date: 2026-07-09
+updated: 2026-10-23
 tags: ["Sicherheit"]
 readingTime: 9
 lang: de
@@ -108,3 +109,9 @@ Die passenden Prüfungsfragen zu Sicherheit an Bord und Seenotsignalen kannst du
 ## Fazit
 
 Der Fachkundenachweis regelt den Zugang zu den stärkeren pyrotechnischen Seenotsignalmitteln der Kategorie P2, allen voran die rote Fallschirmsignalrakete. Die rote Handfackel und kleinere Rauchsignale der Kategorie P1 sind dagegen ab 18 Jahren ohne besonderen Nachweis erhältlich. Wer den FKN einmal erworben hat, profitiert von einer unbefristeten Gültigkeit, muss die eigene Pyrotechnik an Bord aber trotzdem regelmäßig auf Verfallsdatum und ordnungsgemäße Lagerung prüfen. So ist im Ernstfall sichergestellt, dass die Signalmittel wirklich funktionieren, wenn es darauf ankommt.
+
+## Quellen
+
+- [Erste Verordnung zum Sprengstoffgesetz (1. SprengV), § 1](https://www.gesetze-im-internet.de/sprengv_1/__1.html) – Erwerb, Aufbewahrung, Verwendung und Verbringen von P2-Seenotsignalmitteln durch Inhaber eines amtlichen Sportbootführerscheins mit nachgewiesener Unterweisung (Abs. 2)
+- [1. SprengV, § 20](https://www.gesetze-im-internet.de/sprengv_1/__20.html) und [§ 22](https://www.gesetze-im-internet.de/sprengv_1/__22.html) – Mindestalter 18 Jahre für die Kategorie P1, Abgabe von P2-Gegenständen nur an Berechtigte
+- [Portal für Sportbootführerscheine des DSV: FKN](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/fkn-fachkundenachweis/) – P2-Signalmittel, Mindestalter 16 Jahre, Sportbootführerschein als Voraussetzung, theoretische und praktische Prüfung

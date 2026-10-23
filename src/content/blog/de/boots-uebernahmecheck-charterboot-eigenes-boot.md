@@ -3,6 +3,7 @@ title: "Boots-Übernahmecheck: Charterboot und eigenes Boot prüfen"
 seoTitle: "Boots-Übernahmecheck vor der ersten Fahrt"
 description: "Boots-Übernahmecheck vor der ersten Fahrt: Papiere, Sicherheitsausrüstung, Technik und Übergabeprotokoll bei Charterboot oder gekauftem Boot im Überblick."
 date: 2026-10-17
+updated: 2026-10-23
 tags: ["Vorbereitung"]
 readingTime: 9
 lang: de
@@ -142,3 +143,9 @@ Damit du nichts vergisst, hier der Ablauf in Kurzform:
 ## Fazit
 
 Ein Übernahmecheck kostet ein wenig Zeit, spart aber Stress, Geld und im Ernstfall Sicherheit. Wer Papiere, Ausrüstung und Technik systematisch prüft, die Einweisung aktiv nutzt und das Übergabeprotokoll ernst nimmt, startet entspannter in den ersten Törn. Das gilt für das Charterboot genauso wie für das eigene Boot. Der Check ersetzt keine Fachbegutachtung und keine Rückfrage beim Vermieter, ist aber eine solide Grundlage. Wenn du dich noch auf die Prüfung vorbereitest, kannst du mit der Boatpass-App den offiziellen ELWIS-Fragenkatalog im Prüfungsmodus üben, damit du bei der ersten Übernahme nicht nur das Boot, sondern auch die Regeln sicher im Griff hast.
+
+## Quellen
+
+- [Binnenschifffahrt-Sportbootvermietungsverordnung, § 8](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/__8.html) – Pflichten des Vermieters: Bootszeugnis, eingetragene Ausrüstung einsatzbereit an Bord, Hinweise auf örtliche Besonderheiten
+- [Binnenschifffahrt-Kennzeichnungsverordnung (KlFzKV-BinSch), § 6](https://www.gesetze-im-internet.de/klfzkv-binsch/__6.html) – welche Urkunde zum Kennzeichen an Bord mitzuführen ist
+- [Sportbootführerscheinverordnung (SpFV), § 3](https://www.gesetze-im-internet.de/spfv/__3.html) – Fahrerlaubnispflicht für Sportboote auf Binnenschifffahrtsstraßen

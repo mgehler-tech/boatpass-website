@@ -3,6 +3,7 @@ title: "Erste Hilfe an Bord: Die wichtigsten Maßnahmen auf dem Wasser"
 seoTitle: "Erste Hilfe an Bord: Das Wichtigste"
 description: "Erste Hilfe auf dem Boot: Notruf absetzen, stabile Seitenlage, Wiederbelebung und Sofortmaßnahmen bei Unterkühlung, Seekrankheit und Verletzungen an Bord."
 date: 2026-07-08
+updated: 2026-10-23
 tags: ["Sicherheit"]
 readingTime: 8
 lang: de
@@ -101,7 +102,7 @@ An Bord passieren die meisten kleineren Verletzungen an Leinen, Winschen, Klappe
 
 - **Blutende Wunden:** Mit einem sauberen Tuch oder Verbandsmaterial festen Druck ausüben, die verletzte Stelle wenn möglich hochlagern.
 - **Quetschungen:** Kühlen und ruhigstellen, bei starken Schmerzen oder Verformung an einen möglichen Bruch denken und die Stelle nicht belasten.
-- **Verbrennungen**, etwa am heißen Motor: Sofort mit handwarmem Wasser kühlen, keine Hausmittel wie Butter oder Mehl verwenden, die Wunde locker und steril abdecken.
+- **Verbrennungen**, etwa am heißen Motor: Sofort mit kühlem, nicht eiskaltem Wasser mindestens 20 Minuten kühlen, keine Hausmittel wie Butter oder Mehl verwenden, die Wunde locker und steril abdecken.
 
 ### Verschlucken und Ersticken
 
@@ -129,3 +130,10 @@ Kommen Rettungsboot, Hubschrauber oder Sanitäter vor Ort an, erleichtert eine k
 ## Fazit
 
 Erste Hilfe an Bord folgt denselben Grundprinzipien wie an Land, kommt aber mit ein paar zusätzlichen Herausforderungen: weniger Platz, Bewegung, Kälte und Nässe, und Hilfe, die länger braucht als gewohnt. Wer Eigenschutz, Notruf, stabile Seitenlage und die Basics der Wiederbelebung sicher beherrscht und die typischen Notfälle an Bord wie Unterkühlung, Seekrankheit oder Verbrennungen einordnen kann, ist im Ernstfall in der Lage, die entscheidenden ersten Minuten zu überbrücken, bis professionelle Hilfe übernimmt.
+
+## Quellen
+
+- [DRK – Herz-Lungen-Wiederbelebung](https://www.drk.de/hilfe-in-deutschland/erste-hilfe/herz-lungen-wiederbelebung/) – Drucktiefe 5 bis 6 cm, Frequenz 100 bis 120 pro Minute, Verhältnis 30:2
+- [DRK – Ersticken](https://www.drk.de/hilfe-in-deutschland/erste-hilfe/ersticken/) – bis zu fünf Rückenschläge und fünf Oberbauchkompressionen im Wechsel
+- [DRK – Verbrennungen](https://www.drk.de/hilfe-in-deutschland/erste-hilfe/verbrennungen/) und [Unterkühlungen](https://www.drk.de/hilfe-in-deutschland/erste-hilfe/erfrierungen-und-unterkuehlungen/) – Kühlen von Brandwunden, langsames Aufwärmen, warme gezuckerte Getränke, kein Alkohol
+- [DGzRS – Rettungsleitstelle See (MRCC Bremen)](https://www.dgzrs.de/crews-stationen/die-zentrale-der-seenotretter) – Erreichbarkeit im Seenotfall, unter anderem über UKW-Kanal 16

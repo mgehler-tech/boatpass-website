@@ -3,6 +3,7 @@ title: "Seekarte lesen lernen – Symbole, Tiefenangaben und Maßstäbe"
 seoTitle: "Seekarte lesen: Symbole, Tiefen & Navigation"
 description: "Seekartennull, Untiefen, Kompassrose und Maßstab: So liest du eine Seekarte sicher für den SBF See. Die wichtigsten Symbole verständlich erklärt."
 date: 2026-07-03
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 8
 lang: de
@@ -10,7 +11,7 @@ author: "Marius Gehler"
 altSlug: "how-to-read-a-nautical-chart"
 faq:
   - question: "Was bedeutet Seekartennull?"
-    answer: "Seekartennull (SKN) ist das Bezugsniveau, auf das sich alle Tiefenangaben einer Seekarte beziehen. Es liegt bewusst niedrig, damit die angegebene Tiefe unter normalen Bedingungen nicht unterschritten wird."
+    answer: "Seekartennull (SKN) ist das Bezugsniveau, auf das sich alle Tiefenangaben einer Seekarte beziehen. In Gezeitengewässern wie der Nordsee liegt es bewusst niedrig (am niedrigstmöglichen Gezeitenwasserstand, LAT), damit die angegebene Tiefe nur selten unterschritten wird. In der Ostsee entspricht es dagegen etwa dem mittleren Wasserstand."
   - question: "Warum misst man Entfernungen auf der Seekarte an der Breitenskala?"
     answer: "Weil eine Bogenminute der geografischen Breite exakt einer Seemeile entspricht, während eine Bogenminute der Länge je nach Breitengrad unterschiedlich lang ist. Deshalb wird die Entfernung immer am seitlichen Kartenrand auf Höhe der gemessenen Strecke abgegriffen."
   - question: "Was ist der Vorteil der Mercator-Projektion?"
@@ -74,7 +75,7 @@ Der Nachteil der Mercator-Projektion zeigt sich erst bei sehr großen Entfernung
 
 ## Tiefenangaben lesen: Seekartennull und Solltiefen
 
-Die Zahlen im Wasser auf der Karte sind **Tiefenangaben**, meist in Metern. Sie beziehen sich nicht auf den aktuellen Wasserstand, sondern auf ein festgelegtes Bezugsniveau, das **Seekartennull (SKN)**. Dieses Niveau ist bewusst niedrig angesetzt, damit die angegebene Tiefe unter normalen Bedingungen nicht unterschritten wird. Die tatsächliche Wassertiefe an einer Stelle ergibt sich aus der Kartentiefe plus der aktuellen Gezeitenhöhe. Wie du diese Gezeitenhöhe berechnest, erklärt der Artikel zur [Zwölftelregel](/blog/gezeiten-zwoelftelregel/) ausführlich.
+Die Zahlen im Wasser auf der Karte sind **Tiefenangaben**, meist in Metern. Sie beziehen sich nicht auf den aktuellen Wasserstand, sondern auf ein festgelegtes Bezugsniveau, das **Seekartennull (SKN)**. In Gezeitengewässern wie der Nordsee ist dieses Niveau bewusst niedrig angesetzt (am niedrigstmöglichen Gezeitenwasserstand, LAT), damit die angegebene Tiefe nur selten unterschritten wird. In der nahezu gezeitenfreien Ostsee entspricht Seekartennull dagegen etwa dem mittleren Wasserstand, die tatsächliche Tiefe kann dort also auch geringer sein als angegeben. Die tatsächliche Wassertiefe an einer Stelle ergibt sich aus der Kartentiefe plus der aktuellen Gezeitenhöhe. Wie du diese Gezeitenhöhe berechnest, erklärt der Artikel zur [Zwölftelregel](/blog/gezeiten-zwoelftelregel/) ausführlich.
 
 Besonders wichtig sind **trockenfallende Flächen**: Bereiche, die bei Niedrigwasser aus dem Wasser ragen, etwa Wattflächen. Sie werden auf der Karte anders eingefärbt oder schraffiert dargestellt als dauerhaft überflutete Flächen, und die zugehörigen Höhenangaben sind meist unterstrichen, um sie von normalen Tiefenangaben zu unterscheiden.
 
@@ -128,3 +129,10 @@ Kartenkunde-Fragen im theoretischen Teil der SBF-See-Prüfung testen genau diese
 ## Fazit
 
 Eine Seekarte lesen zu können bedeutet, ihre Sprache aus Symbolen, Tiefenangaben und Skalen zu verstehen: der Maßstab bestimmt Detailgrad und Abdeckung, die Breitenskala am Kartenrand liefert die richtige Entfernung, und Seekartennull ist die Referenz für jede Tiefenangabe. Wer diese Grundlagen sicher beherrscht, gewinnt nicht nur Punkte in der Prüfung, sondern auch die Sicherheit, sich auf dem Wasser jederzeit selbst orientieren zu können.
+
+## Quellen
+
+- [BSH – Deutsches Seekartennull](https://www.bsh.de/DE/THEMEN/Vermessung_und_Kartographie/Seekartennull/Deutsches_Seekartennull/deutsches-seekartennull_node.html) – Bezugsniveau der Tiefenangaben: LAT in der Nordsee, mittlerer Wasserstand in der Ostsee
+- [BSH – Seekartenwerk des BSH](https://www.bsh.de/DE/PUBLIKATIONEN/Seekartenwerk/seekartenwerk-des-BSH_node.html) – amtliche deutsche Seekarten nach dem Zeichenschlüssel Karte 1/INT 1
+- [BSH – Nachrichten für Seefahrer (NfS)](https://www.bsh.de/DE/THEMEN/Schifffahrt/Nautische_Informationen/Nachrichten_fuer_Seefahrer/Nachrichten_fuer_Seefahrer_node.html) – wöchentliche Berichtigungen für Seekarten
+- [ELWIS – Fragenkatalog SBF See, Spezifische Fragen](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – amtliche Prüfungsfragen zu Tiefenangaben, Karte 1/INT 1 und Seemeile (Fragen 236 bis 240)

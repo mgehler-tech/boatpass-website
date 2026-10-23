@@ -3,6 +3,7 @@ title: "SBF Coastal Navigation Tasks Explained – Structure, Task Types & Tips"
 seoTitle: "SBF Coastal Navigation Tasks Explained"
 description: "The navigation task is the toughest part of the SBF Coastal exam. How it is structured, which task types come up and how to prepare for them."
 date: 2026-06-03
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 9
 lang: en
@@ -14,7 +15,7 @@ faq:
   - question: "How many navigation questions do I need to answer correctly for the SBF Coastal?"
     answer: "You need to answer at least 7 of the 9 navigation questions correctly. The navigation task is graded separately – even if you get every other question right, you fail if you solve fewer than 7 of the 9 navigation questions correctly."
   - question: "Which tools am I allowed to bring to the SBF Coastal navigation task?"
-    answer: "You need a course plotter (navigation triangle) for plotting and reading off courses, dividers for measuring distances, a pencil and eraser, and a simple calculator (not a smartphone) for time and speed calculations."
+    answer: "You need a course plotter (navigation triangle) for plotting and reading off courses, dividers for measuring distances, and a pencil and eraser. Under the German Recreational Boat Licence Regulation, the only permitted aids are a navigation triangle, a set square, a parallel ruler, a Portland plotter and dividers. A calculator is not allowed, so you work out time and speed calculations by hand."
   - question: "Which nautical chart is used in the SBF Coastal exam?"
     answer: "All navigation tasks are based on the training chart D49 – a chart excerpt of the mouths of the Jade, Weser and Elbe. It is the official basis for all 15 navigation tasks in the official ELWIS question catalog."
 howTo:
@@ -107,7 +108,7 @@ For the navigation task you need (and may bring):
 - **Course plotter (navigation triangle):** For plotting and reading off courses
 - **Dividers:** For measuring distances
 - **Pencil and eraser:** The chart gets written on and plotted
-- **Calculator:** For time/speed calculations (a simple calculator, not a smartphone)
+- **No calculator:** You work out time/speed calculations by hand. Under the German Recreational Boat Licence Regulation, only a navigation triangle, a set square, a parallel ruler, a Portland plotter and dividers are permitted, no other aids (including electronic ones)
 
 ## Time management in the exam
 
@@ -134,3 +135,10 @@ The questions on navigation marks and chart entries are pure knowledge questions
 ## Conclusion
 
 The navigation task in the SBF Coastal is demanding but manageable. There are exactly 15 tasks in the official question catalog, and the task types repeat. Anyone who works through all 15 tasks, masters the conversion formulas and practices with the real D49 chart is well prepared. In the Boatpass app you can train the navigation questions in a targeted way – separately from the rest of the question catalog.
+
+## Sources
+
+- [ELWIS – SBF See navigation tasks](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Navigationsaufgaben/Navigationsaufgaben-node.html) – training chart D49, the 15 possible sub-questions (9 selected per task) and the 15 navigation tasks
+- [ELWIS – Theory exam scoring key](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html) – 7 basic, 23 specific and 9 navigation questions, pass mark of 7 out of 9, 60 minutes to complete
+- [German Recreational Boat Licence Regulation (SpFV), Annex 3](https://www.gesetze-im-internet.de/spfv/anlage_3.html) – scoring of the navigation task and permitted aids (no. 1.1 and 1.3)
+- [DMYV – Exam procedure](https://www.dmyv.de/fuehrerschein/-funk/pruefungen/ablauf) – calculators, smartphones and reference works are not allowed in the theory exam (German Motor Yacht Association)

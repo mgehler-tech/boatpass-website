@@ -3,6 +3,7 @@ title: "How to Read a Nautical Chart – Symbols, Depths and Scale"
 seoTitle: "How to Read a Nautical Chart: SBF Coastal"
 description: "Chart datum, shoals, compass rose and scale: how to read a nautical chart safely for the SBF Coastal exam. The key symbols and terms explained."
 date: 2026-07-03
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 8
 lang: en
@@ -10,7 +11,7 @@ author: "Marius Gehler"
 altSlug: "seekarte-lesen-lernen"
 faq:
   - question: "What is chart datum?"
-    answer: "Chart datum (CD) is the fixed reference level that all depth figures on a nautical chart are measured from. It is set deliberately low so that under normal conditions the actual water depth does not fall short of the charted figure."
+    answer: "Chart datum (CD) is the fixed reference level that all depth figures on a nautical chart are measured from. In tidal waters such as the North Sea it is set deliberately low (at the lowest astronomical tide, LAT), so the actual water depth only rarely falls short of the charted figure. In the Baltic Sea, by contrast, it corresponds roughly to mean sea level."
   - question: "Why do you measure distances on a nautical chart using the latitude scale?"
     answer: "Because one arc minute of latitude equals exactly one nautical mile, while a minute of longitude covers a different distance depending on your latitude. Distances are always measured on the latitude scale at the side of the chart, level with the leg being measured."
   - question: "What is the advantage of the Mercator projection?"
@@ -74,7 +75,7 @@ The downside of the Mercator projection only shows up at very large distances: a
 
 ## Reading depth figures: chart datum and sounding values
 
-The numbers shown in the water on the chart are **soundings** (depth figures), usually in meters. They don't refer to the current water level, but to a fixed reference plane called **chart datum (CD)**. This level is deliberately set low, so that under normal conditions the actual depth doesn't fall short of the figure shown. The actual water depth at a given spot is the charted depth plus the current tidal height. How to calculate that tidal height is explained in detail in the article on the [rule of twelfths](/en/blog/tides-rule-of-twelfths/).
+The numbers shown in the water on the chart are **soundings** (depth figures), usually in meters. They don't refer to the current water level, but to a fixed reference plane called **chart datum (CD)**. In tidal waters such as the North Sea, this level is deliberately set low (at the lowest astronomical tide, LAT), so the actual depth only rarely falls short of the figure shown. In the nearly tideless Baltic Sea, chart datum corresponds roughly to mean sea level instead, so the actual depth there can also be less than charted. The actual water depth at a given spot is the charted depth plus the current tidal height. How to calculate that tidal height is explained in detail in the article on the [rule of twelfths](/en/blog/tides-rule-of-twelfths/).
 
 **Drying areas** are especially important: areas that emerge from the water at low tide, such as tidal flats. On the chart they're shown with different coloring or shading than permanently submerged areas, and the associated height figures are usually underlined to distinguish them from ordinary depth figures.
 
@@ -128,3 +129,10 @@ Chartwork questions in the theory part of the SBF Coastal exam test exactly this
 ## Conclusion
 
 Being able to read a nautical chart means understanding its language of symbols, depth figures and scales: the scale determines the level of detail and coverage, the latitude scale at the chart's edge gives you the correct distance, and chart datum is the reference for every depth figure. Master these basics and you'll not only pick up points in the exam, but also gain the confidence to orient yourself on the water at any time.
+
+## Sources
+
+- [BSH – German chart datum](https://www.bsh.de/DE/THEMEN/Vermessung_und_Kartographie/Seekartennull/Deutsches_Seekartennull/deutsches-seekartennull_node.html) – reference level for charted depths: LAT in the North Sea, mean sea level in the Baltic
+- [BSH – chart portfolio](https://www.bsh.de/DE/PUBLIKATIONEN/Seekartenwerk/seekartenwerk-des-BSH_node.html) – official German nautical charts based on the symbol key Chart 1/INT 1
+- [BSH – Notices to Mariners (NfS)](https://www.bsh.de/DE/THEMEN/Schifffahrt/Nautische_Informationen/Nachrichten_fuer_Seefahrer/Nachrichten_fuer_Seefahrer_node.html) – weekly chart corrections
+- [ELWIS – SBF See question catalog, specific questions](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – official exam questions on depths, Chart 1/INT 1 and the nautical mile (questions 236 to 240)

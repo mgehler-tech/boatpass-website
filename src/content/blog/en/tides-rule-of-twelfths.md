@@ -3,7 +3,7 @@ title: "Calculating Tides with the Rule of Twelfths – Simply Explained"
 seoTitle: "Tides: The Rule of Twelfths Explained"
 description: "Rule of twelfths explained: estimate tidal range, high and low water and depth under the keel – with worked examples. Learn to calculate tides now."
 date: 2026-06-02
-updated: 2026-10-17
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 8
 lang: en
@@ -34,7 +34,7 @@ howTo:
       text: "Take the charted depth plus the tidal height minus your boat's draft. Add a safety margin on top, because wind and air pressure can make the real water level deviate from the forecast."
 ---
 
-Anyone sailing the North Sea or Baltic can't avoid the tides. In the Wadden Sea in particular, the right timing decides whether there's still enough water under the keel. The **rule of twelfths** makes it easy to estimate the water level between high and low water – without complicated tables. Here's how it works.
+Anyone sailing the North Sea can't avoid the tides. In the Wadden Sea in particular, the right timing decides whether there's still enough water under the keel. The **rule of twelfths** makes it easy to estimate the water level between high and low water – without complicated tables. Here's how it works.
 
 ## The basic terms
 
@@ -111,8 +111,15 @@ On the Baltic Sea the tidal range is usually so small that wind and air pressure
 
 ## What comes next?
 
-Tidal science is not part of the Sportbootführerschein. It belongs to more advanced sea qualifications such as the [SKS](/en/blog/sks-coastal-skippers-license/). Still, the topic is worthwhile for passages in tidal waters, even with the [SBF Coastal](/en/sbf-coastal/) in your pocket. The article on [using currents and tides for trip planning](/en/blog/using-currents-and-tides-for-trip-planning/) shows how to apply it in practice. For the SBF Coastal exam material, such as the [navigation tasks](/en/blog/sbf-coastal-navigation-tasks-explained/), practice in the Boatpass app with the official ELWIS question catalog.
+Basic terms such as tide, tidal range, high and low water are already tested in the theory exam for the [SBF Coastal](/en/sbf-coastal/), but tidal calculations like the rule of twelfths are not required there. Tidal science is covered in more depth in advanced sea qualifications such as the [SKS](/en/blog/sks-coastal-skippers-license/). So the topic is worthwhile for passages in tidal waters, even with the SBF Coastal in your pocket. The article on [using currents and tides for trip planning](/en/blog/using-currents-and-tides-for-trip-planning/) shows how to apply it in practice. For the SBF Coastal exam material, such as the [navigation tasks](/en/blog/sbf-coastal-navigation-tasks-explained/), practice in the Boatpass app with the official ELWIS question catalog.
 
 ## Conclusion
 
 The rule of twelfths makes tidal calculation surprisingly simple: divide the tidal range by twelve, apply the sequence **1 – 2 – 3 – 3 – 2 – 1**, and add the result to the low water height (or subtract it when the water is falling). Together with the formula for the water under the keel, you have a practical tool for passage planning on board.
+
+## Sources
+
+- [BSH – The tides](https://www.bsh.de/DE/THEMEN/Wasserstand_und_Gezeiten/Gezeiten/gezeiten_node.html) – high and low water, tidal range, chart datum, tide tables and tidal calendar, and weather-related deviations (German Federal Maritime and Hydrographic Agency)
+- [ELWIS – SBF See question catalog, specific questions](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – basic tidal terms in the SBF Coastal exam (questions 249 to 255)
+- [German Recreational Boat Licence Regulation (SpFV), Annex 3](https://www.gesetze-im-internet.de/spfv/anlage_3.html) – tides as part of the SBF Coastal syllabus (no. 2.3.1)
+- [DWD – Tides on the North Sea and Baltic](https://www.dwd.de/DE/wetter/thema_des_tages/2026/3/15.html) – only weak tides on the Baltic, where wind mainly drives the water level (German Weather Service)

@@ -3,6 +3,7 @@ title: "Gewitter und Blitzschlag auf dem Wasser – Verhalten und Vorsorge für 
 seoTitle: "Gewitter & Blitzschlag auf dem Wasser"
 description: "Gewitterzeichen früh erkennen, Blitzschlag auf dem Boot vermeiden: So bereitest du dich als Sportbootfahrer richtig vor und verhältst dich sicher."
 date: 2026-08-14
+updated: 2026-10-23
 tags: ["Vorbereitung", "Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -12,7 +13,7 @@ faq:
   - question: "Warum sind Gewitter auf dem Wasser besonders gefährlich?"
     answer: "Auf offenem Wasser bist du meist der höchste Punkt weit und breit, ein Mast oder eine Angel wirkt zusätzlich exponierend. Zudem ziehen Gewitter über Wasser oft ohne schützendes Gelände heran, und du hast keine Möglichkeit, dich schnell in ein Gebäude zu flüchten."
   - question: "Was besagt die 30-30-Regel bei Gewittern?"
-    answer: "Zähle die Sekunden zwischen Blitz und Donner und teile durch drei, das ergibt die ungefähre Entfernung des Gewitters in Kilometern. Als Faustregel gilt: Liegen weniger als 30 Sekunden zwischen Blitz und Donner, solltest du das Wasser zügig verlassen beziehungsweise dich in Sicherheit bringen."
+    answer: "Zähle die Sekunden zwischen Blitz und Donner und teile durch drei, das ergibt die ungefähre Entfernung des Gewitters in Kilometern. Als Faustregel gilt: Liegen weniger als 30 Sekunden zwischen Blitz und Donner, solltest du das Wasser zügig verlassen beziehungsweise dich in Sicherheit bringen. Die zweite 30 steht für die Wartezeit: Erst 30 Minuten nach dem letzten Donner gilt die Gefahr als vorbei."
   - question: "Was mache ich, wenn mich ein Gewitter auf dem Wasser überrascht?"
     answer: "Steuere den nächstgelegenen sicheren Hafen oder eine geschützte Bucht an, ziehe Rettungswesten an, sichere lose Gegenstände und meide während des Gewitters den Kontakt mit Metallteilen wie Reling, Want oder Mast. Bleib möglichst tief im Boot und geh nicht ins Wasser."
   - question: "Kann ein Blitz mein Boot beschädigen, auch wenn ich unverletzt bleibe?"
@@ -59,7 +60,7 @@ Zusätzlich zur eigenen Beobachtung solltest du vor und während der Fahrt Wette
 
 Eine einfache Faustregel hilft, die Entfernung eines Gewitters grob einzuschätzen: Zähle die Sekunden zwischen dem Aufblitzen und dem folgenden Donner und teile das Ergebnis durch drei. So erhältst du die ungefähre Entfernung in Kilometern, denn Schall braucht rund drei Sekunden für einen Kilometer, während das Licht des Blitzes praktisch verzögerungsfrei ankommt.
 
-Als Orientierung gilt: Liegen **weniger als 30 Sekunden** zwischen Blitz und Donner, ist das Gewitter nah genug, dass du zügig reagieren solltest, also das offene Wasser verlassen oder zumindest alle Vorbereitungen für den Ernstfall treffen. Diese Regel ersetzt keine offizielle Wetterwarnung, ist aber eine nützliche Ergänzung, um die Lage unterwegs selbst einzuschätzen.
+Als Orientierung gilt: Liegen **weniger als 30 Sekunden** zwischen Blitz und Donner, ist das Gewitter nah genug, dass du zügig reagieren solltest, also das offene Wasser verlassen oder zumindest alle Vorbereitungen für den Ernstfall treffen. Die zweite 30 der Regel betrifft das Ende des Gewitters: Erst wenn 30 Minuten lang kein Donner mehr zu hören war, gilt die Gefahr als vorbei. Diese Regel ersetzt keine offizielle Wetterwarnung, ist aber eine nützliche Ergänzung, um die Lage unterwegs selbst einzuschätzen.
 
 ## Vorbereitung: Was du vor dem Gewitter tun solltest
 
@@ -107,7 +108,7 @@ Bei Segelbooten ist der Mast durch seine Höhe besonders exponiert. Manche Segel
 
 Schlägt ein Blitz in der Nähe oder direkt in dein Boot ein, kann das auch dann Folgen haben, wenn niemand an Bord verletzt wurde. Prüfe nach einem Gewitter mit nahen Einschlägen möglichst zeitnah:
 
-- **Kompass:** Ein naher Blitzeinschlag kann die Missweisung des Kompasses beeinflussen. Prüfe die Anzeige gegen bekannte Referenzpunkte, bevor du dich bei der Navigation vollständig auf sie verlässt.
+- **Kompass:** Ein naher Blitzeinschlag kann die Ablenkung (Deviation) des Kompasses beeinflussen. Prüfe die Anzeige gegen bekannte Referenzpunkte, bevor du dich bei der Navigation vollständig auf sie verlässt.
 - **Elektronik und Bordelektrik:** GPS, Funkgerät, Kartenplotter und andere elektronische Geräte können durch einen nahen Einschlag beschädigt werden, auch ohne sichtbare äußere Spuren.
 - **Rumpf und Beschläge:** Sichtbare Schmauchspuren, Verfärbungen oder Beschädigungen an Metallteilen können auf einen direkten Einschlag hindeuten.
 - **Bei Unsicherheit fachkundig prüfen lassen.** Insbesondere nach einem direkten Einschlag lohnt sich eine Kontrolle durch eine Fachwerft, bevor du dich wieder auf sicherheitsrelevante Systeme wie Navigation oder Funk verlässt.
@@ -119,3 +120,10 @@ Gewitter sind kein eigenständiges Prüfungsthema mit festen Merksätzen, wie es
 ## Fazit
 
 Gewitter zählen zu den Wetterlagen, bei denen Vorsicht und frühzeitiges Handeln über Sicherheit an Bord entscheiden. Wer Warnzeichen wie aufragende Wolkentürme und fallenden Luftdruck kennt, die 30-30-Regel als Faustregel nutzt und rechtzeitig Kurs auf einen sicheren Hafen nimmt, reduziert das Risiko erheblich. Lässt sich ein Gewitter nicht mehr umgehen, helfen Abstand zu Metallteilen, eine tiefe Position im Boot und Ruhe in der Besatzung, sicher durch die Situation zu kommen.
+
+## Quellen
+
+- [VDE – Blitzschutz beim Schwimmen, Tauchen und Wassersport](https://www.vde.com/de/blitzschutz/infos/beimwassersport) – Gefährdung auf und im Wasser, Verhalten an Bord, Blitzschutzsystem für Segelboote
+- [VDE – Empfehlungen zum Verhalten bei Gewitter](https://www.vde.com/de/blitzschutz/ueber-uns/interessantes-aus-dem-abb/empfehlungen-bestaetigt) – Gefahr erst vorbei, wenn 30 Minuten lang kein Donner mehr zu hören war
+- [Deutscher Wetterdienst – Donner](https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?lv2=100578&lv3=100620) – etwa drei Sekunden zwischen Blitz und Donner entsprechen rund einem Kilometer
+- [Deutscher Wetterdienst – Gewitter](https://www.dwd.de/DE/service/lexikon/Functions/glossar.html?lv2=100932&lv3=101028) – Entstehung, Cumulonimbus-Wolken und Begleiterscheinungen wie Böen und Starkregen

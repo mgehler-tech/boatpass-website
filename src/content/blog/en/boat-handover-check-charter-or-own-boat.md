@@ -3,6 +3,7 @@ title: "Boat Handover Check: Charter or Own Boat"
 seoTitle: "Boat Handover Check Before Your First Trip"
 description: "Boat handover check before your first trip: papers, safety gear, engine and handover protocol for a charter boat or your own boat, explained step by step."
 date: 2026-10-17
+updated: 2026-10-23
 tags: ["Preparation"]
 readingTime: 9
 lang: en
@@ -142,3 +143,9 @@ So you forget nothing, here is the flow in short:
 ## Conclusion
 
 A handover check costs a little time but saves stress, money and, in an emergency, safety. If you check papers, equipment and technology systematically, use the briefing actively and take the handover protocol seriously, you start your first trip more relaxed. That holds for a charter boat as much as for your own. The check does not replace a professional survey or a question to the charter company, but it is a solid foundation. If you are still preparing for the exam, you can use the Boatpass app to practice the official ELWIS question catalog in exam mode, so that at your first handover you have not only the boat but also the rules firmly under control.
+
+## Sources
+
+- [German Inland Boat Rental Regulation (BinSch-SportbootVermV), § 8](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/__8.html) – rental company duties: boat certificate, listed equipment ready for use on board, briefing on local features
+- [German Small Craft Marking Regulation (KlFzKV-BinSch), § 6](https://www.gesetze-im-internet.de/klfzkv-binsch/__6.html) – which registration document must be carried on board
+- [Recreational Boat Licence Regulation (SpFV), § 3](https://www.gesetze-im-internet.de/spfv/__3.html) – licence requirement for recreational boats on inland waterways

@@ -3,6 +3,7 @@ title: "Getting Your Boat Ready in Spring – A Season Start Checklist"
 seoTitle: "Spring Boat Checklist: Season Start"
 description: "Hull, engine, battery, and safety gear: the checklist for a smooth season start, so your boat goes back in the water safely after winter storage."
 date: 2026-08-07
+updated: 2026-10-23
 tags: ["Preparation"]
 readingTime: 9
 lang: en
@@ -141,3 +142,9 @@ For the theoretical exam itself, targeted practice with the official question ca
 ## Conclusion
 
 A systematic spring check is the best preparation for a relaxed and safe season. Work through the hull, engine, battery, water systems, safety gear, and electronics in order, and treat the first outing deliberately as a shakedown run, and you'll avoid most unpleasant surprises on the water. Give the season start the time it needs, and when a step feels beyond you, a qualified workshop can help with the more technical parts, then nothing stands in the way of a great new season.
+
+## Sources
+
+- [German Federal Ministry of Transport – Sicherheit auf dem Wasser](https://www.bmv.de/SharedDocs/DE/Publikationen/WS/sicherheit-auf-dem-wasser.html) – official brochure on safety equipment, fire extinguisher inspection intervals, distress signals and boat marking
+- [German Small Craft Marking Regulation (KlFzKV-BinSch), section 2](https://www.gesetze-im-internet.de/klfzkv-binsch/__2.html) – marking requirement for small craft on inland waterways
+- [German Small Craft Marking Regulation (KlFzKV-BinSch), section 6](https://www.gesetze-im-internet.de/klfzkv-binsch/__6.html) – documents proving the registration mark that must be carried on board

@@ -3,6 +3,7 @@ title: "Mit diesen 5 Tipps besteht du die SBF-Prüfung beim ersten Versuch"
 seoTitle: "SBF-Prüfung bestehen: 5 Tipps zum Lernen"
 description: "Fünf konkrete Tipps für die optimale SBF-Prüfungsvorbereitung – mit echten Fakten zu Prüfungsaufbau, Lernmethoden und dem richtigen Lern-Timing."
 date: 2026-04-29
+updated: 2026-10-23
 tags: ["Vorbereitung"]
 readingTime: 7
 lang: de
@@ -94,3 +95,9 @@ Die Prüfungsgebühr beim DMYV liegt für den SBF Binnen aktuell bei ca. **131 �
 ## Fazit
 
 Mit dem richtigen Prüfungsverständnis, regelmäßigem Lernen und gezieltem Schwächentraining ist der [SBF Binnen](/sbf-binnen/) gut zu schaffen – auch ohne Vorwissen. Starte kostenlos mit der Boatpass-App: 15 Fragen täglich, offizieller ELWIS-Fragenkatalog, Fehlertraining inklusive.
+
+## Quellen
+
+- [ELWIS – Bewertungsschlüssel für die theoretische Prüfung](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html) – 30 Fragen (7 Basis, mind. 5 richtig; 23 spezifisch, mind. 18 richtig) und 45 Minuten beim SBF Binnen
+- [ELWIS – Fragenkatalog SBF Binnen](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-node.html) – amtlicher Fragenkatalog für die Theorieprüfung
+- [Gebührentabelle des Prüfungsausschusses München](https://www.pa-muenchen.de/gebuehren/) – Prüfungsgebühr SBF Binnen 130,78 € (Stand Oktober 2026)

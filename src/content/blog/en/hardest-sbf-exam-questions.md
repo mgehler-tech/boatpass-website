@@ -3,6 +3,7 @@ title: "The Hardest SBF Exam Questions – and How to Master Them"
 seoTitle: "The Hardest SBF Exam Questions Explained"
 description: "Which boating license questions have the highest error rate, why they're so difficult, and how to answer them correctly on your SBF exam anyway."
 date: 2026-05-18
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -111,3 +112,10 @@ If you're doing both licenses at the same time, separate the learning phases. On
 ## Conclusion
 
 The hardest SBF questions in the [SBF Coastal exam questions](/en/sbf-coastal-exam-questions/) mainly concern meteorology, navigation lights and sound signals – in the [SBF Inland exam questions](/en/sbf-inland-exam-questions/) it's the sailing questions. The error rates (up to 48%) show that even committed candidates fail on certain questions. The key: targeted mistake training instead of blindly repeating all questions. In the Boatpass app, exactly the questions you don't yet have a firm grasp of are prioritized.
+
+## Sources
+
+- [ELWIS – SBF Coastal specific questions](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – official catalog with 213 questions; question 267: strong wind warning for wind force 6 and 7, question 268: gale warning from wind force 8
+- [ELWIS – SBF Coastal question catalog](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html) – structure with 72 basic questions, specific questions and navigation tasks
+- [ELWIS – sailing questions (SBF Inland)](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Spezifische-Fragen-Segeln/Spezifische-Fragen-Segeln-node.html) – 47 sailing questions, including trim questions 291 and 292 on a dinghy close-hauled
+- [ELWIS – assessment key for the theory exam](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html) – sailing questions only when taking the exam for sailing

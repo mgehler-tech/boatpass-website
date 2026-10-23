@@ -3,6 +3,7 @@ title: "Magnetic Compass, Variation and Deviation Explained Simply"
 seoTitle: "Compass Variation & Deviation Explained"
 description: "Why doesn't a boat compass point exactly north? Variation and deviation explained: causes, compass rose and deviation table for the SBF Coastal exam."
 date: 2026-07-04
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 8
 lang: en
@@ -111,3 +112,9 @@ The theory part of the SBF Coastal exam regularly tests whether you understand t
 ## Conclusion
 
 Variation and deviation are two distinct but related sources of error in a magnetic compass: variation arises from the distance between the geographic and magnetic poles and is location-dependent, while deviation arises from the vessel itself and is boat- and heading-dependent. Knowing both causes, and knowing where to find each value, variation in the chart's compass rose and deviation in the boat's own deviation table, gives you the essential foundation for course conversion in the SBF Coastal exam.
+
+## Sources
+
+- [NOAA NCEI – Magnetic Declination](https://www.ncei.noaa.gov/products/magnetic-declination) – definition of variation, east positive and west negative, change with location and time
+- [BSH – recreational boat equipment, magnetic compass](https://www.bsh.de/DE/THEMEN/Schifffahrt/Sportschifffahrt/Sportbootausruestung/sportbootausruestung_node.html) – compass requirements and the recommended one-metre iron-free zone
+- [ELWIS – SBF See question catalog, specific questions](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html) – official exam questions on the deviation table and compass installation (questions 242 and 248)

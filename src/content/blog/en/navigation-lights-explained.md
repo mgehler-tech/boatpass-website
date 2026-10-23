@@ -3,7 +3,7 @@ title: "Navigation Lights Explained – Which Lights Does a Boat Show at Night?"
 seoTitle: "Navigation Lights Explained for the SBF"
 description: "Masthead light, sidelights, sternlight: how do you tell at night what vessel is ahead? Navigation lights for the SBF made simple, with memory aids."
 date: 2026-05-26
-updated: 2026-08-18
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 9
 lang: en
@@ -101,7 +101,7 @@ Color and arc aren't the only things that matter – the **minimum visibility ra
 - **Sternlight:** at least 2 nautical miles
 - **White, red, green, or yellow all-round light:** at least 2 nautical miles
 
-From 12 m upward the requirements increase: the masthead light must then be visible for 3 or 5 nautical miles depending on vessel size, and sidelights for at least 2 nautical miles. For the SBF exam, the values for boats under 12 m are usually what you need, since most recreational boats fall into that category.
+From 12 m upward the requirements increase: the masthead light must then be visible for 3, 5, or 6 nautical miles depending on vessel size, and sidelights for at least 2 nautical miles. For the SBF exam, the values for boats under 12 m are usually what you need, since most recreational boats fall into that category.
 
 ## How to Learn Navigation Lights
 
@@ -115,3 +115,10 @@ From 12 m upward the requirements increase: the masthead light must then be visi
 Navigation lights can be derived from a few building blocks: masthead light (225°, forward), sidelights (green/red, 112.5° each) and sternlight (135°, aft). The masthead light distinguishes motor from sail, the minimum visibility ranges are fixed exam material, and the rhymes ("red over red – the captain is dead") help with the special lights. Once these building blocks are second nature, you'll also recognize unfamiliar light combinations reliably in the exam. To see how this knowledge applies on an actual [night passage](/en/blog/boating-at-night/), check out the companion article.
 
 The Boatpass app gives you the typical exam images straight from the official ELWIS question catalog, lets you practice them in exam mode under realistic conditions, and shows you right away which light combinations still trip you up.
+
+## Sources
+
+- [German Collision Regulations (KVR), Rule 21](https://www.gesetze-im-internet.de/seestro_1972/regel_21.html) – definitions and arcs of masthead light, sidelights, sternlight and all-round light
+- [KVR Rule 22](https://www.gesetze-im-internet.de/seestro_1972/regel_22.html) – minimum visibility ranges of lights by vessel length
+- [KVR Rule 23](https://www.gesetze-im-internet.de/seestro_1972/regel_23.html) and [Rule 25](https://www.gesetze-im-internet.de/seestro_1972/regel_25.html) – lights for power-driven vessels (including under 12 m and 7 m) and sailing vessels
+- [KVR Rule 27](https://www.gesetze-im-internet.de/seestro_1972/regel_27.html) – vessels not under command and restricted in their ability to maneuver

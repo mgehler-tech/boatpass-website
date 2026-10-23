@@ -3,6 +3,7 @@ title: "Richtig ankern – Grundlagen, Ankerarten und häufige Fehler"
 seoTitle: "Richtig ankern: Ankerarten & Fehler"
 description: "Ankern lernen: welche Ankerarten es gibt, wie viel Kette oder Leine du steckst und welche Fehler beim Ankermanöver zu Dragen und Kollisionen führen."
 date: 2026-07-06
+updated: 2026-10-23
 tags: ["Praxis"]
 readingTime: 8
 lang: de
@@ -116,3 +117,10 @@ Die Theoriefragen rund um Ankermanöver, Seezeichen und Verhalten am Ankerplatz 
 ## Fazit
 
 Sicheres Ankern ist keine Glückssache, sondern folgt klaren Prinzipien: den passenden Ankertyp und Ankerplatz nach Grundbeschaffenheit wählen, ausreichend Kette oder Leine für einen flachen Zugwinkel stecken, den Anker kontrolliert fieren statt werfen und den Halt nach dem Manöver aktiv prüfen. Wer zusätzlich den Schwoiraum und mögliche Wetterumschwünge mitdenkt, kann entspannt vor Anker liegen, egal ob beim Kurzstopp zwischen zwei Etappen oder als ruhige Nacht in der Lieblingsbucht.
+
+## Quellen
+
+- [Kollisionsverhütungsregeln (KVR), Regel 30](https://www.gesetze-im-internet.de/seestro_1972/regel_30.html) – Ankerlicht bzw. Ankerball; Fahrzeuge unter 50 m dürfen ein einzelnes weißes Rundumlicht führen
+- [Binnenschifffahrtsstraßen-Ordnung (BinSchStrO), § 3.20](https://www.gesetze-im-internet.de/binschstro_2012/__3_20.html) – Bezeichnung stillliegender Kleinfahrzeuge bei Nacht auf Binnengewässern
+- [Sportbootführerscheinverordnung (SpFV), Anlage 4](https://www.gesetze-im-internet.de/spfv/anlage_4.html) – Pflicht- und sonstige Manöver der praktischen Prüfung (Ankern gehört nicht dazu)
+- [ELWIS – Basisfragen des amtlichen Fragenkatalogs](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Basisfragen/Basisfragen-node.html) – Prüfungsfrage, woran man erkennt, ob der Anker hält

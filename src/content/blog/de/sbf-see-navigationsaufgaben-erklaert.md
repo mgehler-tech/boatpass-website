@@ -3,6 +3,7 @@ title: "SBF See Navigationsaufgaben erklärt – Aufbau, Aufgabentypen & Tipps"
 seoTitle: "SBF See Navigationsaufgaben erklärt"
 description: "Die Navigationsaufgabe ist der anspruchsvollste Teil der SBF-See-Prüfung. Aufbau, Aufgabentypen und wie du dich gezielt darauf vorbereitest."
 date: 2026-06-03
+updated: 2026-10-23
 tags: ["Navigation"]
 readingTime: 9
 lang: de
@@ -14,7 +15,7 @@ faq:
   - question: "Wie viele Navigationsfragen muss ich beim SBF See richtig beantworten?"
     answer: "Von den 9 Navigationsfragen musst du mindestens 7 richtig beantworten. Die Navigationsaufgabe wird getrennt gewertet – selbst wenn du alle anderen Fragen richtig hast, fällst du durch, wenn du weniger als 7 der 9 Navigationsfragen korrekt löst."
   - question: "Welche Hilfsmittel darf ich zur SBF-See-Navigationsaufgabe mitbringen?"
-    answer: "Du brauchst ein Kursdreieck (Navigationsdreieck) zum Abtragen und Ablesen von Kursen, einen Zirkel oder Stechzirkel zum Messen von Distanzen, Bleistift und Radiergummi sowie einen einfachen Taschenrechner (kein Smartphone) für Zeit- und Geschwindigkeitsberechnungen."
+    answer: "Du brauchst ein Kursdreieck (Navigationsdreieck) zum Abtragen und Ablesen von Kursen, einen Zirkel oder Stechzirkel zum Messen von Distanzen sowie Bleistift und Radiergummi. Als Hilfsmittel erlaubt sind laut Sportbootführerscheinverordnung nur Navigationsdreieck, Anlegedreieck, Doppellineal, Portland Plotter und Zirkel. Ein Taschenrechner ist nicht zugelassen, Zeit- und Geschwindigkeitsberechnungen löst du von Hand."
   - question: "Welche Seekarte wird bei der SBF-See-Prüfung verwendet?"
     answer: "Allen Navigationsaufgaben liegt die Übungskarte D49 zugrunde – ein Seekartenausschnitt der Mündungen von Jade, Weser und Elbe. Sie ist die offizielle Grundlage für alle 15 Navigationsaufgaben im amtlichen ELWIS-Fragenkatalog."
 howTo:
@@ -107,7 +108,7 @@ Für die Navigationsaufgabe brauchst du (und darfst mitbringen):
 - **Kursdreieck (Navigationsdreieck):** Zum Abtragen und Ablesen von Kursen
 - **Zirkel oder Stechzirkel:** Zum Messen von Distanzen
 - **Bleistift und Radiergummi:** Die Seekarte wird beschriftet und eingezeichnet
-- **Taschenrechner:** Für Zeit-/Geschwindigkeitsberechnungen (einfacher Taschenrechner, kein Smartphone)
+- **Kein Taschenrechner:** Zeit-/Geschwindigkeitsberechnungen löst du von Hand. Erlaubt sind laut Sportbootführerscheinverordnung nur Navigationsdreieck, Anlegedreieck, Doppellineal, Portland Plotter und Zirkel, andere Hilfsmittel (auch elektronische) nicht
 
 ## Zeitplanung in der Prüfung
 
@@ -134,3 +135,10 @@ Die Fragen zu Schifffahrtszeichen und Seekarteneinträgen sind reine Wissensfrag
 ## Fazit
 
 Die Navigationsaufgabe beim SBF See ist anspruchsvoll, aber beherrschbar. Es gibt genau 15 Aufgaben im amtlichen Fragenkatalog, und die Aufgabentypen wiederholen sich. Wer alle 15 Aufgaben durcharbeitet, die Umrechnungsformeln beherrscht und mit der echten Seekarte D49 übt, ist gut vorbereitet. In der Boatpass-App kannst du die Navigationsfragen gezielt trainieren – getrennt vom restlichen Fragenkatalog.
+
+## Quellen
+
+- [ELWIS – Navigationsaufgaben SBF See](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Navigationsaufgaben/Navigationsaufgaben-node.html) – Übungskarte D49, die 15 möglichen Teilfragen (je Aufgabe 9 ausgewählt) und die 15 Navigationsaufgaben
+- [ELWIS – Bewertungsschlüssel Theorieprüfung](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html) – 7 Basis-, 23 spezifische und 9 Navigationsfragen, Bestehensgrenze 7 von 9, 60 Minuten Bearbeitungszeit
+- [Sportbootführerscheinverordnung (SpFV), Anlage 3](https://www.gesetze-im-internet.de/spfv/anlage_3.html) – Bewertung der Navigationsaufgabe und zugelassene Hilfsmittel (Nr. 1.1 und 1.3)
+- [DMYV – Ablauf der Prüfung](https://www.dmyv.de/fuehrerschein/-funk/pruefungen/ablauf) – Taschenrechner, Smartphones und Nachschlagewerke sind in der Theorieprüfung nicht erlaubt
