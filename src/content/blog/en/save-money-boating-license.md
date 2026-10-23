@@ -3,6 +3,7 @@ title: "Saving Money on Your Boating License – the 5 Best Tips"
 seoTitle: "Saving Money on Your Boating License"
 description: "The German boating license doesn't have to be expensive. With these 5 tips you'll pay noticeably less for SBF Coastal and Inland – without cutting quality."
 date: 2026-06-01
+updated: 2026-10-23
 tags: ["Preparation"]
 readingTime: 6
 lang: en
@@ -41,7 +42,7 @@ Before we get to the saving tips, here's the current cost breakdown for 2026:
 
 | Item | [SBF Inland](/en/sbf-inland/) | SBF Coastal | Combined |
 |---|---|---|---|
-| Exam fee (DMYV) | €130.78 | €148.38 | €178.61 |
+| Exam fee (DSV/DMYV) | €130.78 | €148.38 | €178.61 |
 | Theory preparation | €0–400 | €0–400 | €0–450 |
 | Practical training | €50–150 | €50–200 | €80–250 |
 | Medical certificate | €30–65 | €30–65 | €30–65 |
@@ -85,7 +86,7 @@ Individual practical lessons cost between €50 and €150 – significantly les
 - Casting off and coming alongside
 - Turning in a confined space
 - Man-overboard maneuver
-- Demonstrating [knots](/en/blog/most-important-knots-sbf/) (6 mandatory knots)
+- Demonstrating [knots](/en/blog/most-important-knots-sbf/) (six of seven requested knots must be tied correctly)
 
 Many candidates manage with **1–2 practical lessons**, especially if they already have experience on the water (e.g. as a passenger).
 
@@ -95,8 +96,8 @@ Sounds obvious – but a **retake** means paying fees all over again:
 
 | Retake | Cost |
 |---|---|
-| Theory again | approx. €37–49 |
-| Practice again | approx. €57–75 |
+| Theory again | approx. €37–48 |
+| Practice again | approx. €40–48 |
 | Additional practice lessons | €50–150 |
 
 Failing quickly costs an extra €100–200. Targeted studying with exam simulation and mistake training is the best investment to avoid this.
@@ -105,7 +106,7 @@ The SBF failure rate is just 10–15% in the theory exam – with good preparati
 
 ## Tip 5: Compare providers – especially for the practical part
 
-The exam fees are the same everywhere (set by DMYV/DSV). But the **practical training** varies considerably by region and provider:
+The exam fees are the same everywhere (set nationwide by a fee ordinance of the Federal Transport Ministry and collected by DSV and DMYV). But the **practical training** varies considerably by region and provider:
 
 - Big cities (Hamburg, Berlin, Munich): more expensive
 - Rural areas and coastal locations: often cheaper
@@ -129,7 +130,7 @@ That's less than half of what a complete course at a boating school costs.
 ## What you shouldn't skimp on
 
 ### Practice lessons
-Too few practice lessons is false economy. Anyone who fails the practical exam pays the exam fee again (€57–75) plus additional practice lessons. One extra lesson beforehand is cheaper than a second attempt.
+Too few practice lessons is false economy. Anyone who fails the practical exam pays the exam fee again (€40–48) plus additional practice lessons. One extra lesson beforehand is cheaper than a second attempt.
 
 ### Navigation tools (for [SBF Coastal](/en/sbf-coastal/))
 For the navigation task you need a course plotter and dividers. Cheap sets often perform poorly on the nautical chart. Invest in usable equipment – it only costs €10–20 and you'll need it in the exam too.
@@ -137,3 +138,10 @@ For the navigation task you need a course plotter and dividers. Cheap sets often
 ## Conclusion
 
 The German boating license doesn't have to cost €700. If you learn the theory with an app, use the combined exam, and book the practical part separately, you'll get through for €275–400 – and you'll have passed the exact same exam as someone who paid double.
+
+## Sources
+
+- [Fee table of the Munich/Nuremberg examination board](https://www.pa-muenchen.de/gebuehren/) (German) – exam fees for SBF Inland, SBF Coastal and the combined exam (as of October 2026)
+- [Bremen examination board – SBF See](https://www.pa-bremen.de/scheine/see/sportbootfuehrerschein-see.html) (German) – nationwide uniform fees for DSV and DMYV, combined exam on separate days €185.67
+- [Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/) (German) – fee collection by the associations (§ 16) and the knot test (Annex 4)
+- [ELWIS – Coastal question catalog](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html) (German) – the 72 basic questions, which are also part of the Inland catalog

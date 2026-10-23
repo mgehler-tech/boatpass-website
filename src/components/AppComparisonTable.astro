@@ -1,5 +1,5 @@
 ---
-import { DATA_AS_OF_LABEL, LICENSE_LABELS, formatRating, type LearningApp } from '../data/apps';
+import { DATA_AS_OF_LABEL, LICENSE_LABELS, SELECTION_NOTE, type LearningApp } from '../data/apps';
 
 interface Props {
   apps: LearningApp[];
@@ -13,16 +13,16 @@ const { apps, lang, caption } = Astro.props;
 const t = lang === 'de'
   ? {
       app: 'App', rating: 'Bewertung', price: 'Preis', licenses: 'Scheine',
-      offline: 'Offline', platforms: 'Plattformen', reviews: 'Bew.',
+      offline: 'Offline', platforms: 'Plattformen',
       yes: 'Ja', no: 'Nein', partial: 'Teilweise', unknown: 'k. A.',
-      asOf: `Stand der Daten: ${DATA_AS_OF_LABEL.de}. Quellen: Listings bei Google Play und im App Store sowie Anbieter-Websites. Bewertungen: Google Play.`,
+      asOf: `Stand der Daten: ${DATA_AS_OF_LABEL.de}. Quellen: Google Play und App Store (Deutschland) sowie Anbieter-Websites. ${SELECTION_NOTE.de}`,
       ownHint: 'unsere App',
     }
   : {
       app: 'App', rating: 'Rating', price: 'Price', licenses: 'Licences',
-      offline: 'Offline', platforms: 'Platforms', reviews: 'reviews',
+      offline: 'Offline', platforms: 'Platforms',
       yes: 'Yes', no: 'No', partial: 'Partly', unknown: 'n/a',
-      asOf: `Data as of ${DATA_AS_OF_LABEL.en}. Sources: Google Play and App Store listings and vendor websites. Ratings: Google Play.`,
+      asOf: `Data as of ${DATA_AS_OF_LABEL.en}. Sources: Google Play and the German App Store plus vendor websites. ${SELECTION_NOTE.en}`,
       ownHint: 'our app',
     };
 
@@ -31,6 +31,16 @@ function offlineLabel(value: LearningApp['offline']): string {
   if (value === false) return t.no;
   if (value === 'partial') return t.partial;
   return t.unknown;
+}
+
+/** Bewertung je Store als eigene Zeile: „Play 4,90 ★ · 9.036“, „iOS 4,88 ★ · 18.468“. */
+function storeLines(app: LearningApp): string[] {
+  const num = (n: number) => n.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB');
+  const score = (x: number) => x.toFixed(2).replace('.', lang === 'de' ? ',' : '.');
+  const lines: string[] = [];
+  if (app.rating && app.ratingCount) lines.push(`Play ${score(app.rating)} ★ · ${num(app.ratingCount)}`);
+  if (app.iosRating && app.iosRatingCount) lines.push(`iOS ${score(app.iosRating)} ★ · ${num(app.iosRatingCount)}`);
+  return lines;
 }
 
 function platformLabel(app: LearningApp): string {
@@ -62,10 +72,11 @@ function platformLabel(app: LearningApp): string {
             <div style="font-size:12px; font-weight:500; color:#656B78; margin-top:3px;">{app.vendor}</div>
           </th>
           <td style="padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; color:#4B5563;">
-            {app.rating
-              ? <span>{formatRating(app.rating).replace('.', lang === 'de' ? ',' : '.')} ★<br /><span style="font-size:12px; color:#656B78;">{app.ratingCount?.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} {t.reviews}</span></span>
+            {storeLines(app).length
+              ? storeLines(app).map(l => <div style="white-space:nowrap;">{l}</div>)
               : <span style="color:#656B78;">{t.unknown}</span>}
-            {app.downloads && <div style="font-size:12px; color:#656B78; margin-top:4px;">{app.downloads}</div>}
+            {app.ratingNote && <div style="font-size:12px; color:#656B78; margin-top:4px; max-width:200px;">{app.ratingNote[lang]}</div>}
+            {app.downloads && <div style="font-size:12px; color:#656B78; margin-top:4px;">{app.downloads} Downloads</div>}
           </td>
           <td style="padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; color:#4B5563;">{app.price[lang]}</td>
           <td style="padding:16px; border-bottom:1px solid rgba(51,102,255,0.08); vertical-align:top; color:#4B5563;">
@@ -103,10 +114,11 @@ function platformLabel(app: LearningApp): string {
         <div class="cmp-card-row">
           <dt>{t.rating}</dt>
           <dd>
-            {app.rating
-              ? <span>{formatRating(app.rating).replace('.', lang === 'de' ? ',' : '.')} ★ <span class="cmp-card-sub">· {app.ratingCount?.toLocaleString(lang === 'de' ? 'de-DE' : 'en-GB')} {t.reviews}</span></span>
+            {storeLines(app).length
+              ? storeLines(app).map(l => <div>{l}</div>)
               : <span class="cmp-card-muted">{t.unknown}</span>}
-            {app.downloads && <span class="cmp-card-sub"> · {app.downloads}</span>}
+            {app.ratingNote && <div class="cmp-card-sub">{app.ratingNote[lang]}</div>}
+            {app.downloads && <div class="cmp-card-sub">{app.downloads} Downloads</div>}
           </dd>
         </div>
         <div class="cmp-card-row">

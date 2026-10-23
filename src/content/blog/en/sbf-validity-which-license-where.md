@@ -2,6 +2,7 @@
 title: "SBF Validity: Which License Is Valid Where?"
 description: "Where is the SBF Coastal valid, where the SBF Inland? The exact boundaries on the Elbe, Weser and Baltic – plus validity abroad with the ICC."
 date: 2026-05-23
+updated: 2026-10-23
 tags: ["License Comparison"]
 readingTime: 7
 lang: en
@@ -13,7 +14,7 @@ faq:
   - question: "Up to where on the Elbe do I need the SBF Coastal?"
     answer: "From the mouth of the Elbe up to the Port of Hamburg, you need the SBF Coastal (the boundary is at Elbe km 638.98 on the right bank and km 633.35 on the left bank). In the Port of Hamburg itself, both licenses are accepted; above it, the SBF Inland applies."
   - question: "Is the German boating license valid abroad?"
-    answer: "Yes. Since 2018 the SBF has been issued in credit-card format with the ICC (International Certificate of Competence) under UN Resolution No. 40 on the back. The ICC is recognized by over 30 countries, including Croatia, Greece, Italy, France, Spain, and the Netherlands."
+    answer: "Yes. Since 2018 the SBF has been issued in credit-card format with the ICC (International Certificate of Competence) under UN Resolution No. 40 on the back. It is formally recognized by the 20-odd states that apply the resolution, including Croatia and the Netherlands; many other countries such as Greece, Italy, France and Spain accept it in practice."
   - question: "How long is the SBF valid?"
     answer: "The German SBF with ICC is valid for life – no renewal or re-issue needed. That's an advantage over the licenses of some other countries, which have to be renewed regularly."
   - question: "When do I need both licenses?"
@@ -80,16 +81,16 @@ Since 2018 the German boating license in credit-card format has been issued with
 
 ### Where is the ICC officially recognized?
 
-The ICC is officially recognized by over 30 countries, including the most important charter destinations:
+The ICC is officially recognized by the 20-odd states that apply Resolution No. 40 (22 according to UNECE, as of July 2024). Many other countries accept it in practice. Here is how it looks in the most important charter destinations:
 
 | Region | Recognition |
 |---|---|
 | **Croatia** | Officially recognized |
-| **Greece** | Officially recognized |
-| **Italy** | Officially recognized |
-| **France** | Officially recognized |
-| **Spain / Mallorca** | Officially recognized |
-| **Turkey** | Officially recognized |
+| **Greece** | Accepted in practice |
+| **Italy** | Accepted in practice |
+| **France** | Accepted in practice |
+| **Spain / Mallorca** | Accepted in practice |
+| **Turkey** | Accepted in practice |
 | **Netherlands** | Officially recognized |
 | **Caribbean, Seychelles, Thailand** | Unofficially accepted (sufficient to charter) |
 
@@ -105,4 +106,11 @@ The combined exam saves around €100 in exam fees – and the 72 basic question
 
 ## Conclusion
 
-The boundary between [SBF Coastal](/en/sbf-coastal/) and [SBF Inland](/en/sbf-inland/) runs at the river mouths – not along the coastline. Anyone navigating the Elbe up to Hamburg needs the SBF Coastal. Abroad, [the German SBF with ICC is recognized in over 30 countries](/en/blog/sbf-valid-abroad/) and valid for life. Anyone who wants to navigate flexibly on all waters should consider the combined exam.
+The boundary between [SBF Coastal](/en/sbf-coastal/) and [SBF Inland](/en/sbf-inland/) runs at the river mouths – not along the coastline. Anyone navigating the Elbe up to Hamburg needs the SBF Coastal. Abroad, [the German SBF with ICC is formally recognized in 20-odd states and accepted in many more](/en/blog/sbf-valid-abroad/), and it is valid for life. Anyone who wants to navigate flexibly on all waters should consider the combined exam.
+
+## Sources
+
+- [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), § 1](https://www.gesetze-im-internet.de/seeschstro_1971/__1.html) (German) – scope of the maritime waterways, boundaries on the Elbe, Trave, Warnow, Weser and Kiel Canal
+- [Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/) (German) – licences for inland and maritime waterways, special status of the Elbe in the Port of Hamburg (§ 2)
+- [ELWIS – recreational boat licences](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) (German) – credit-card format since 2018, issued as an ICC under Resolution No. 40
+- [UNECE – International Certificate for Operators of Pleasure Craft (Res. No. 40)](https://web.archive.org/web/20250825153452/https://unece.org/transport/inland-water-transport/international-certificates-operator-pleasure-craft-res-no-40) (archived version) – list of states applying the resolution

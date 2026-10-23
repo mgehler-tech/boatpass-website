@@ -3,6 +3,7 @@ title: "SBF-Binnen-Prüfung nicht bestanden – was jetzt zu tun ist"
 seoTitle: "SBF Binnen nicht bestanden: was tun?"
 description: "SBF Binnen durchgefallen? Kein Beinbruch: Wie die Wiederholungsprüfung abläuft, was du sofort tun solltest und wie du dich gezielt neu vorbereitest."
 date: 2026-07-16
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -12,7 +13,7 @@ faq:
   - question: "Kann ich die SBF-Binnen-Prüfung wiederholen, wenn ich durchgefallen bin?"
     answer: "Ja. Für den Sportbootführerschein Binnen gibt es keine gesetzliche Obergrenze an Versuchen – du kannst den nicht bestandenen Teil so oft wiederholen wie nötig. Die Wiederholung findet an einem späteren Termin statt, du musst dich beim Prüfungsausschuss neu anmelden und zahlst dafür eine eigene, meist geringere Gebühr."
   - question: "Muss ich die ganze SBF-Binnen-Prüfung neu machen oder nur den nicht bestandenen Teil?"
-    answer: "In der Regel nur den nicht bestandenen Teil. Theorie (30 Multiple-Choice-Fragen) und Praxis werden beim SBF Binnen unabhängig voneinander bewertet. Ein bereits bestandener Teil bleibt aber nur befristet gültig – die Frist legt dein Prüfungsausschuss fest, deshalb solltest du den fehlenden Teil zeitnah nachholen."
+    answer: "In der Regel nur den nicht bestandenen Teil. Theorie (30 Multiple-Choice-Fragen) und Praxis werden beim SBF Binnen unabhängig voneinander bewertet. Ein bereits bestandener Teil bleibt aber nur befristet gültig – laut Sportbootführerscheinverordnung müssen alle Prüfungsteile innerhalb eines Jahres ab Antritt der ersten Teilprüfung bestanden sein, deshalb solltest du den fehlenden Teil zeitnah nachholen."
   - question: "Wie bereite ich mich nach einem nicht bestandenen Versuch gezielt vor?"
     answer: "Analysiere zuerst ehrlich, woran es lag, und arbeite dann gezielt an deinen Schwachstellen, statt planlos den ganzen Fragenkatalog zu wiederholen. Für die Theorie helfen ein Fehlertraining und vollständige Probeprüfungen unter Zeitlimit, für die Praxis zusätzliches Üben der Manöver und Knoten auf dem Wasser."
 howTo:
@@ -22,7 +23,7 @@ howTo:
     - name: "Feedback einholen, wenn möglich"
       text: "Frag beim Prüfungsausschuss oder bei der Prüferin bzw. dem Prüfer nach, in welchen Themenbereichen es bei der Theorie geharkt hat oder bei welchem Manöver es in der Praxis nicht gereicht hat."
     - name: "Wiederholungstermin zeitnah klären"
-      text: "Da ein bestandener Teil nur befristet gültig bleibt, solltest du dich frühzeitig um einen neuen Termin kümmern, statt das Thema erst einmal beiseitezulegen."
+      text: "Da alle Prüfungsteile innerhalb eines Jahres ab der ersten Teilprüfung bestanden sein müssen, solltest du dich frühzeitig um einen neuen Termin kümmern, statt das Thema erst einmal beiseitezulegen."
     - name: "Realistisch einschätzen, was gefehlt hat"
       text: "War es mangelnde Vorbereitung, Nervosität unter Zeitdruck oder Pech bei den gezogenen Fragen bzw. dem geforderten Manöver? Die ehrliche Antwort entscheidet, wie du dich für die Wiederholung vorbereitest."
     - name: "Nicht sofort wieder planlos weiterlernen"
@@ -37,7 +38,7 @@ Egal ob dich die Theorie mit ihren 30 Fragen aus dem Konzept gebracht hat oder o
 
 Die SBF-Binnen-Prüfung besteht aus zwei getrennten Teilen: der **Theorieprüfung** mit 30 Multiple-Choice-Fragen und der **praktischen Prüfung** auf dem Wasser inklusive Knotenprüfung. Beide Teile werden unabhängig voneinander bewertet. Das bedeutet für dich: Wenn du einen der beiden Teile nicht bestanden hast, musst du in aller Regel nur diesen einen Teil wiederholen, nicht die komplette Prüfung von vorne.
 
-Wichtig zu wissen: Ein bereits bestandener Teil bleibt nicht unbegrenzt gültig. Dein Prüfungsausschuss legt eine Frist fest, innerhalb derer du den noch fehlenden Teil nachholen musst, sonst verfällt der bestandene Teil und du müsstest ihn ebenfalls erneut ablegen. Wie lang diese Frist genau ist, unterscheidet sich je nach zuständigem Prüfungsausschuss. Frag am besten direkt nach, wenn du deinen Wiederholungstermin vereinbarst, damit du hier keine bösen Überraschungen erlebst.
+Wichtig zu wissen: Ein bereits bestandener Teil bleibt nicht unbegrenzt gültig. Die Sportbootführerscheinverordnung schreibt vor, dass alle Prüfungsteile innerhalb eines Jahres bestanden werden müssen, gerechnet ab Antritt der ersten Teilprüfung. Holst du den fehlenden Teil nicht rechtzeitig nach, verfällt der bestandene Teil und du müsstest ihn ebenfalls erneut ablegen. Plane deinen Wiederholungstermin deshalb so, dass er sicher innerhalb dieser Jahresfrist liegt.
 
 ## Kannst du die Prüfung wiederholen? Ja, so oft wie nötig
 
@@ -46,7 +47,7 @@ Es gibt keine gesetzliche Obergrenze für die Anzahl der Versuche beim Sportboot
 - **Nicht am selben Tag.** Eine Wiederholungsprüfung findet nicht direkt im Anschluss an die nicht bestandene Prüfung statt, sondern zu einem späteren Termin.
 - **Erneute Anmeldung nötig.** Für die Wiederholungsprüfung musst du dich beim zuständigen Prüfungsausschuss neu anmelden, meist über dasselbe Verfahren wie bei der Erstanmeldung.
 - **Eigene Gebühr für die Wiederholung.** Für den wiederholten Prüfungsteil fällt in der Regel eine eigene Gebühr an, die üblicherweise günstiger ausfällt als die volle Erstprüfungsgebühr, weil nur der eine Teil erneut abgerechnet wird. Die genaue Höhe legt dein Prüfungsausschuss fest, am besten erfragst du sie direkt bei der Anmeldung zur Wiederholung.
-- **Prüfungsausschuss und Region entscheiden über Details.** Wartezeiten, genaue Fristen und Gebühren können sich je nach DMYV-Prüfungsausschuss oder anderem anerkannten Ausschuss unterscheiden. Ein Anruf oder eine kurze Nachricht an deinen Ausschuss klärt die für dich geltenden Details zuverlässig.
+- **Prüfungsausschuss und Region entscheiden über Details.** Wartezeiten, Anmeldefristen und Gebühren können sich je nach DMYV-Prüfungsausschuss oder anderem anerkannten Ausschuss unterscheiden. Ein Anruf oder eine kurze Nachricht an deinen Ausschuss klärt die für dich geltenden Details zuverlässig.
 
 Am einfachsten gehst du dabei über dieselbe Bootsschule oder denselben Verein, über den du auch zur Erstprüfung angemeldet warst. Sie kennen den Ablauf bei "ihrem" Prüfungsausschuss meist genau und können dir sagen, wie schnell ein neuer Termin realistisch zu bekommen ist. Warst du für die Theorie im Selbststudium unterwegs, wendest du dich direkt an den Prüfungsausschuss in deiner Region, bei dem du die Erstprüfung abgelegt hast.
 
@@ -55,7 +56,7 @@ Am einfachsten gehst du dabei über dieselbe Bootsschule oder denselben Verein, 
 Statt dich zu ärgern, lohnt es sich, die Situation aktiv anzugehen:
 
 1. **Feedback einholen, wenn möglich.** Frag beim Prüfungsausschuss oder bei der Prüferin bzw. dem Prüfer nach, in welchen Themenbereichen es bei der Theorie geharkt hat, oder bei welchem Manöver es in der Praxis nicht gereicht hat. Nicht jeder Ausschuss gibt eine detaillierte Rückmeldung, aber ein Versuch lohnt sich immer.
-2. **Wiederholungstermin zeitnah klären.** Da ein bestandener Teil nur befristet gültig bleibt, solltest du dich frühzeitig um einen neuen Termin kümmern, statt das Thema erst einmal beiseitezulegen.
+2. **Wiederholungstermin zeitnah klären.** Da alle Prüfungsteile innerhalb eines Jahres ab der ersten Teilprüfung bestanden sein müssen, solltest du dich frühzeitig um einen neuen Termin kümmern, statt das Thema erst einmal beiseitezulegen.
 3. **Realistisch einschätzen, was gefehlt hat.** War es mangelnde Vorbereitung in bestimmten Themenfeldern, Nervosität unter Zeitdruck oder einfach Pech bei den gezogenen Fragen bzw. dem geforderten Manöver? Die ehrliche Antwort entscheidet, wie du dich für die Wiederholung vorbereitest.
 4. **Nicht sofort wieder planlos weiterlernen.** Wer einfach nur noch mehr Fragen durchklickt, ohne die eigenen Schwachstellen zu kennen, verschenkt Zeit. Gezieltes Training bringt hier deutlich mehr als reines Wiederholen des bereits Gekonnten.
 
@@ -97,3 +98,10 @@ Wer schon einmal durchgefallen ist, geht oft mit mehr Anspannung in den nächste
 ## Fazit
 
 Eine nicht bestandene SBF-Binnen-Prüfung ist ärgerlich, aber kein dauerhaftes Hindernis. Du kannst den betroffenen Teil wiederholen, so oft es nötig ist, solltest dabei aber die Frist für den bereits bestandenen Teil im Blick behalten und dich rechtzeitig um einen neuen Termin kümmern. Wer die eigenen Schwachstellen ehrlich analysiert und beim zweiten Anlauf gezielt daran arbeitet statt einfach weiterzumachen wie zuvor, hat deutlich bessere Chancen, die Prüfung sicher zu bestehen.
+
+## Quellen
+
+- [§ 8 Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/__8.html) – Prüfungsteile, Jahresfrist und keine Wiederholung am selben Tag
+- [ELWIS – Bewertungsschlüssel](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html) – Anzahl der Fragen und Bestehensgrenzen der Theorieprüfung
+- [Prüfungsausschuss München: FAQ](https://www.pa-muenchen.de/faq/) – Anmeldung zur Wiederholungsprüfung und Verfall bestandener Teile
+- [Gebührentabelle des Prüfungsausschusses München](https://www.pa-muenchen.de/gebuehren/) – Gebühren je Prüfungsteil (Stand Oktober 2026)

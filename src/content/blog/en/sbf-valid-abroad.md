@@ -3,7 +3,7 @@ title: "German Boat License Abroad: Croatia, Netherlands & Italy"
 seoTitle: "German Boat License Abroad: Where Valid"
 description: "Does your German SBF work in Croatia, the Netherlands, and Italy? ICC recognition, license requirements, and what documents to bring on your charter."
 date: 2026-06-18
-updated: 2026-09-07
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 12
 lang: en
@@ -191,3 +191,10 @@ Maritime regulations change. What is accurate today may be outdated after a new 
 The German SBF See in card format with its ICC Coastal endorsement gives you a solid foundation for sailing across Europe. Croatia and the Netherlands formally recognise the ICC, and Italy accepts it in practice – on charter yachts in all three countries, expect to also need the SRC wherever a VHF radio is on board. Prepare your documents well in advance, double-check requirements before you travel, and then enjoy the sailing.
 
 Still working towards your SBF? The **[Boatpass app](/)** trains you with the official ELWIS question catalogue in exam mode – so you can pass the licence exam and then put it to good use on the water.
+
+## Sources
+
+- [ELWIS – recreational boat licences](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) (German) – card format and issue as an ICC under Resolution No. 40
+- [UNECE – International Certificate for Operators of Pleasure Craft (Res. No. 40)](https://web.archive.org/web/20250825153452/https://unece.org/transport/inland-water-transport/international-certificates-operator-pleasure-craft-res-no-40) (archived version) – states applying the resolution (including Croatia and the Netherlands, not Italy)
+- [Rijksoverheid – Klein vaarbewijs](https://www.rijksoverheid.nl/wetten-en-regelingen/productbeschrijvingen/klein-vaarbewijs) (Dutch) – licence required for boats longer than 15 m or faster than 20 km/h
+- [Codice della nautica da diporto, Art. 39 (Normattiva)](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-07-18;171~art39) (Italian) – licence required beyond 6 nautical miles or above 30 kW (40.8 hp)

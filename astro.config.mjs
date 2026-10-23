@@ -40,6 +40,19 @@ function alternatesFromHtml(url) {
   return links.length > 1 ? links : undefined;
 }
 
+// lastmod nur dort, wo ein echtes Änderungsdatum existiert: Blogartikel tragen
+// `dateModified` (Frontmatter `updated`, sonst `date`) im BlogPosting-Schema.
+// Übernommen aus dem gerenderten HTML, damit Sitemap und Seite übereinstimmen.
+/** @param {string} url */
+function lastmodFromHtml(url) {
+  const pathname = url.startsWith(SITE) ? url.slice(SITE.length) : url;
+  if (!/^\/(en\/)?blog\/[^/]+\/$/.test(pathname)) return undefined;
+  const file = join(OUT_DIR, pathname.replace(/^\//, ''), 'index.html');
+  if (!existsSync(file)) return undefined;
+  const m = readFileSync(file, 'utf8').match(/"@type":"BlogPosting"[^]*?"dateModified":"([^"]+)"/);
+  return m ? m[1] : undefined;
+}
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://boatpass.de',
@@ -64,12 +77,15 @@ export default defineConfig({
         if (links) item.links = links;
         // Kein künstliches lastmod: `new Date()` bei jedem Build würde Google
         // signalisieren, dass sich alle Seiten ständig ändern – ein unglaubwürdiges
-        // Freshness-Signal, das das Vertrauen in die Sitemap untergräbt. Lieber gar
-        // kein lastmod als ein falsches.
+        // Freshness-Signal, das das Vertrauen in die Sitemap untergräbt. Nur
+        // Blogartikel bekommen ihr echtes Änderungsdatum (lastmodFromHtml).
+        const lastmod = lastmodFromHtml(url);
+        if (lastmod) item.lastmod = lastmod;
         if (path === '/' || path === '') {
           item.priority = 1.0;
           item.changefreq = 'weekly';
-        } else if (/^\/(sbf-binnen|sbf-see|sbf-kosten|sbf-pruefung-ablauf|sbf-binnen-pruefungsfragen|sbf-see-pruefungsfragen|fuehrerscheine|licenses)\/?$/.test(path)) {
+        } else if (/^\/(sbf-binnen|sbf-see|sbf-kosten|sbf-pruefung-ablauf|sbf-binnen-pruefungsfragen|sbf-see-pruefungsfragen|sbf-see-navigationsaufgaben|fuehrerscheine|licenses|sbf-inland|sbf-coastal|sbf-costs|sbf-exam|sbf-inland-exam-questions|sbf-coastal-exam-questions|sbf-coastal-navigation-tasks)\/?$/.test(path)) {
+          // Pillar-Seiten DE und ihre EN-Gegenstücke (übersetzte Slugs, `path` ohne /en).
           item.priority = 0.9;
           item.changefreq = 'monthly';
         } else if (/^\/(src|ubi|lrc|faq)\/?$/.test(path)) {

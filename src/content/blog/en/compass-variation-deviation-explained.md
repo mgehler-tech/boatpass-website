@@ -84,7 +84,7 @@ A compensated table should not be treated as valid forever. If the boat's load c
 
 Variation and deviation are both **systematic errors** that sit between what is drawn on the chart and what your compass actually shows. To convert between true course, magnetic course and compass course, you need to account for both corrections, each with its own sign (east = plus, west = minus).
 
-This conversion is a core part of the navigation task in the SBF Coastal exam. The exact formula, the sign rule and worked examples are covered in [Course Conversion for the SBF Coastal: True, Magnetic & Compass Course Explained](/en/blog/course-conversion-sbf-coastal/). How course conversion fits into the full navigation task is shown in the overview article [SBF Coastal Navigation Tasks Explained](/en/blog/sbf-coastal-navigation-tasks-explained/).
+This conversion is a core part of the navigation task in the SBF Coastal exam. The exact formula, the sign rule and worked examples are covered in [Course Conversion for the SBF Coastal: True, Magnetic & Compass Course Explained](/en/blog/course-conversion-sbf-coastal/). How course conversion fits into the full navigation task is shown in the overview article [SBF Coastal Navigation Tasks Explained](/en/blog/sbf-coastal-navigation-tasks-explained/). How to convert course and bearing in the exam is shown step by step on the page [SBF Coastal navigation tasks](/en/sbf-coastal-navigation-tasks/#course-conversion).
 
 ## Placing the compass correctly on board
 

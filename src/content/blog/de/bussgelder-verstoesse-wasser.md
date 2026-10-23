@@ -3,6 +3,7 @@ title: "Bußgelder und Verstöße auf dem Wasser – die teuersten Fehler und ih
 seoTitle: "Bußgelder auf dem Wasser – Verstöße & Folgen"
 description: "Fahren ohne Führerschein, Alkohol, fehlende Kennzeichnung: Welche Verstöße auf dem Wasser teuer werden und wann aus einem Bußgeld eine Straftat wird."
 date: 2026-07-31
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 8
 lang: de
@@ -39,11 +40,11 @@ Ob du für dein Vorhaben überhaupt einen Führerschein mit eigenem Boot brauchs
 
 ## Alkohol und Drogen am Ruder
 
-Einer der teuersten Fehler überhaupt ist Fahren unter Alkohol- oder Drogeneinfluss. Anders als im Straßenverkehr gibt es für Sportboote keine einfache 0,5-Promille-Bußgeldgrenze, die Rechtslage ist komplexer und reicht bis zur Strafbarkeit nach Paragraf 315a StGB. Wir haben das Thema mit allen Details, Grenzwerten und Konsequenzen in einem eigenen Artikel zur [Promillegrenze auf dem Boot](/blog/promillegrenze-boot/) aufgearbeitet. Kurz gesagt: Wer fahruntüchtig ein Boot führt und dabei andere gefährdet, riskiert Geldstrafe, Freiheitsstrafe und den Entzug des Sportbootführerscheins gleichzeitig, oft zusätzlich verschärft durch den Verlust des Versicherungsschutzes.
+Einer der teuersten Fehler überhaupt ist Fahren unter Alkohol- oder Drogeneinfluss. Ähnlich wie im Straßenverkehr ist das Führen eines Sportboots ab 0,5 Promille bereits eine Ordnungswidrigkeit (Paragraf 1.02 Nummer 7 BinSchStrO, Paragraf 3 Absatz 4 SeeSchStrO), die Rechtslage reicht aber bis zur Strafbarkeit nach Paragraf 315a StGB. Wir haben das Thema mit allen Details, Grenzwerten und Konsequenzen in einem eigenen Artikel zur [Promillegrenze auf dem Boot](/blog/promillegrenze-boot/) aufgearbeitet. Kurz gesagt: Wer fahruntüchtig ein Boot führt und dabei andere gefährdet, riskiert Geldstrafe, Freiheitsstrafe und den Entzug des Sportbootführerscheins gleichzeitig, oft zusätzlich verschärft durch den Verlust des Versicherungsschutzes.
 
 ## Fehlende oder falsche Kennzeichnung des Bootes
 
-Motorisierte Sportboote unter 20 Metern Länge müssen auf Bundeswasserstraßen ein amtliches oder amtlich anerkanntes Kennzeichen nach der Binnenschifffahrt-Kennzeichnungsverordnung führen. Ausgenommen sind mit Muskelkraft angetriebene Boote wie Ruderboote, Kanus, Kajaks und einfache Beiboote. Wer ohne gültiges Kennzeichen unterwegs ist, es nicht deutlich sichtbar anbringt oder ein Boot führt, dessen Kennzeichen nicht mehr zum aktuellen Eigentümer passt, muss mit einem Bußgeld rechnen. Der Sinn der Kennzeichnungspflicht liegt auf der Hand: Die Wasserschutzpolizei muss ein Boot im Zweifel einem Eigentümer zuordnen können, etwa nach einem Unfall oder einer Ordnungswidrigkeit.
+Kleinfahrzeuge unter 20 Metern Länge, also auch die meisten Motor- und Segelboote, müssen auf den Binnenschifffahrtsstraßen ein amtliches oder amtlich anerkanntes Kennzeichen nach der Binnenschifffahrt-Kennzeichnungsverordnung führen. Ausgenommen sind unter anderem Boote, die nur mit Muskelkraft fortbewegt werden, wie Ruderboote, Kanus und Kajaks, reine Segelboote bis 5,50 Meter Länge, Boote mit einem Motor bis 2,21 kW sowie Beiboote. Wer ohne gültiges Kennzeichen unterwegs ist, es nicht deutlich sichtbar anbringt oder ein Boot führt, dessen Kennzeichen nicht mehr zum aktuellen Eigentümer passt, muss mit einem Bußgeld rechnen. Der Sinn der Kennzeichnungspflicht liegt auf der Hand: Die Wasserschutzpolizei muss ein Boot im Zweifel einem Eigentümer zuordnen können, etwa nach einem Unfall oder einer Ordnungswidrigkeit.
 
 ## Fehlende Sicherheitsausrüstung an Bord
 
@@ -87,3 +88,10 @@ Im theoretischen Teil des SBF Binnen und des SBF See werden rechtliche Grundpfli
 ## Fazit
 
 Die teuersten Fehler auf dem Wasser sind selten die offensichtlichsten. Fahren ohne Führerschein, Alkohol am Ruder, fehlende Kennzeichnung oder Sicherheitsausrüstung, missachtete Vorfahrtsregeln und Umweltverstöße wirken im Alltag oft wie Kleinigkeiten, können aber Bußgelder bis in den fünfstelligen Bereich, den Entzug des Sportbootführerscheins und im schlimmsten Fall ein Strafverfahren nach sich ziehen. Wer die rechtlichen Grundpflichten kennt und ernst nimmt, fährt nicht nur sicherer, sondern auch deutlich entspannter, weil er weiß, woran er ist.
+
+## Quellen
+
+- [Binnenschifffahrtsaufgabengesetz (BinSchAufgG), § 7](https://www.gesetze-im-internet.de/binschg/__7.html) sowie [OWiG § 17](https://www.gesetze-im-internet.de/owig_1968/__17.html) und [§ 67](https://www.gesetze-im-internet.de/owig_1968/__67.html) – Bußgeldrahmen bis 10.000 Euro, allgemeiner Bußgeldrahmen und zweiwöchige Einspruchsfrist
+- [Binnenschifffahrtsstraßen-Ordnung (BinSchStrO)](https://www.gesetze-im-internet.de/binschstro_2012/BinSchStrO.pdf) (§ 1.02 Nr. 7, § 1.16 Nr. 3) und [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), § 3](https://www.gesetze-im-internet.de/seeschstro_1971/__3.html) – 0,5-Promille-Grenze und Pflichten nach einem Schiffsunfall
+- [Binnenschifffahrt-Kennzeichnungsverordnung (KlFzKV-BinSch)](https://www.gesetze-im-internet.de/klfzkv-binsch/) – Kennzeichnungspflicht für Kleinfahrzeuge und ihre Ausnahmen
+- [§ 324 StGB](https://www.gesetze-im-internet.de/stgb/__324.html) – Strafrahmen bei Gewässerverunreinigung

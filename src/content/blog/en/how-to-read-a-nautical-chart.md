@@ -112,7 +112,7 @@ For the navigation task you need more than just reading skills, you also need to
 - **Dividers:** used to pick up a distance on the chart and transfer it to the latitude scale at the side margin, at the same level as the leg you measured.
 - **Parallel ruler (or plotting triangle):** used to draw a course line between two points and "walk" it, parallel, to the nearest compass rose to read off the true course.
 
-You plot your own position on the chart with the date, time and, ideally, your dead-reckoning position (derived from course, speed and elapsed time). That way you, or anyone checking afterward, can always trace where you were and where you're heading next. This interplay of reading the chart and actively working on it is exactly what the [navigation task](/en/blog/sbf-coastal-navigation-tasks-explained/) tests in the SBF Coastal exam.
+You plot your own position on the chart with the date, time and, ideally, your dead-reckoning position (derived from course, speed and elapsed time). That way you, or anyone checking afterward, can always trace where you were and where you're heading next. This interplay of reading the chart and actively working on it is exactly what the [navigation task](/en/blog/sbf-coastal-navigation-tasks-explained/) tests in the SBF Coastal exam. How to solve each task type on the training chart is shown on the page [SBF Coastal navigation tasks step by step](/en/sbf-coastal-navigation-tasks/).
 
 ## Keeping charts up to date
 

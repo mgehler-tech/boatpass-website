@@ -3,7 +3,7 @@ title: "SBF im Ausland gültig? Kroatien, Niederlande & Italien"
 seoTitle: "SBF im Ausland: Wo gilt der Schein wirklich?"
 description: "Gilt dein Sportbootführerschein in Kroatien, den Niederlanden und Italien? Alles über ICC, Führerscheinpflicht und welche Dokumente du brauchst."
 date: 2026-06-18
-updated: 2026-09-07
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 11
 lang: de
@@ -193,3 +193,10 @@ Bootfahrvorschriften im Ausland können sich ändern: neue Gesetze, veränderte 
 Mit dem deutschen SBF See im Scheckkartenformat und dem ICC Coastal auf der Rückseite bist du für die beliebtesten Segelreviere in Europa gut gerüstet. Kroatien und die Niederlande erkennen den ICC formell an, Italien akzeptiert ihn in der Praxis – in allen drei Ländern brauchst du auf Charteryachten in der Regel zusätzlich das SRC. Bereite deine Dokumente rechtzeitig vor, hole aktuelle Infos ein – und genieße dann unbeschwert deinen Törn auf den schönsten Gewässern Europas.
 
 Du lernst noch für deinen SBF? Die **[Boatpass-App](/)** enthält den offiziellen ELWIS-Fragenkatalog mit Prüfungsmodus – ideal zum Vorbereiten, wo immer du gerade bist. So kommst du gut vorbereitet in die Prüfung und bald darauf auf das Wasser.
+
+## Quellen
+
+- [ELWIS – Sportbootführerscheine](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) – Scheckkartenformat und Ausstellung als ICC nach Resolution Nr. 40
+- [UNECE – International Certificate for Operators of Pleasure Craft (Res. No. 40)](https://web.archive.org/web/20250825153452/https://unece.org/transport/inland-water-transport/international-certificates-operator-pleasure-craft-res-no-40) (englisch, archivierte Fassung) – Staaten, die die Resolution anwenden (u. a. Kroatien und Niederlande, nicht Italien)
+- [Rijksoverheid – Klein vaarbewijs](https://www.rijksoverheid.nl/wetten-en-regelingen/productbeschrijvingen/klein-vaarbewijs) (niederländisch) – Vaarbewijs-Pflicht für Boote über 15 m Länge oder schneller als 20 km/h
+- [Codice della nautica da diporto, Art. 39 (Normattiva)](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-07-18;171~art39) (italienisch) – Führerscheinpflicht über 6 Seemeilen oder über 30 kW (40,8 PS)
