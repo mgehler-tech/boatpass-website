@@ -86,7 +86,10 @@ function applyOfficial(key, q) {
     for (const t of [q.q, ...q.a]) {
       if (t.de.includes(from)) { t.de = t.de.split(from).join(to); hit = true; }
     }
-    if (!hit) throw new Error(`${key}: Ersetzung „${from}“ nicht gefunden – App-Text geändert?`);
+    // Seit dem App-Branch fix/elwis-amtlicher-wortlaut (23.10.2026) steht der amtliche Text
+    // auch in der App; dann ist nichts mehr zu ersetzen.
+    const done = [q.q, ...q.a].some(t => t.de.includes(to));
+    if (!hit && !done) throw new Error(`${key}: Ersetzung „${from}“ nicht gefunden – App-Text geändert?`);
   }
 }
 
