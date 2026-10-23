@@ -111,7 +111,7 @@ Für die Navigationsaufgabe brauchst du neben dem Lesen auch das aktive Arbeiten
 - **Stechzirkel:** Damit greifst du eine Strecke auf der Karte ab und überträgst sie zur Distanzmessung auf die Breitenskala am seitlichen Kartenrand, auf Höhe der gemessenen Strecke.
 - **Parallellineal (oder Kursdreieck):** Damit legst du eine Kurslinie zwischen zwei Punkten fest und "wanderst" parallel zur nächstgelegenen Kompassrose, um dort den rechtweisenden Kurs abzulesen.
 
-Deine eigene Position trägst du mit Datum, Uhrzeit und möglichst der Koppelposition (aus Kurs, Fahrt und vergangener Zeit) in die Karte ein. So lässt sich im Nachhinein und während der Fahrt jederzeit nachvollziehen, wo du warst und wo du als Nächstes hinsteuerst. Genau dieses Zusammenspiel aus Kartenlesen und Kartenarbeit prüft die [Navigationsaufgabe](/blog/sbf-see-navigationsaufgaben-erklaert/) beim SBF See.
+Deine eigene Position trägst du mit Datum, Uhrzeit und möglichst der Koppelposition (aus Kurs, Fahrt und vergangener Zeit) in die Karte ein. So lässt sich im Nachhinein und während der Fahrt jederzeit nachvollziehen, wo du warst und wo du als Nächstes hinsteuerst. Genau dieses Zusammenspiel aus Kartenlesen und Kartenarbeit prüft die [Navigationsaufgabe](/blog/sbf-see-navigationsaufgaben-erklaert/) beim SBF See. Wie du jeden Aufgabentyp auf der Übungskarte löst, zeigt die Seite [SBF See Navigationsaufgaben Schritt für Schritt](/sbf-see-navigationsaufgaben/).
 
 ## Karten aktuell halten
 

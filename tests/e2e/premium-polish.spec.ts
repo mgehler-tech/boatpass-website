@@ -1,5 +1,17 @@
 import { test, expect } from '@playwright/test';
-import { MIN_STORE_RATINGS, getBoatpassStoreRatingsForDisplay } from '../../src/data/apps';
+import {
+  MIN_STORE_RATINGS,
+  formatRating,
+  getBoatpassCombinedRating,
+  getBoatpassRating,
+  getBoatpassStoreRatingsForDisplay,
+} from '../../src/data/apps';
+
+// Bewertungen aus den Daten statt fest im Test: sonst bricht jeder Daten-Refresh die Suite.
+const combined = getBoatpassCombinedRating()!;
+const play = getBoatpassRating()!;
+const fmt = (score: number, lang: 'de' | 'en') => formatRating(score).replace('.', lang === 'de' ? ',' : '.');
+const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
 /**
  * Startseite Premium-Politur (Spec docs/superpowers/specs/2026-10-17-premium-polish-design.md).
@@ -152,7 +164,7 @@ test.describe('Footer', () => {
     expect(shown.every(r => r.rating.ratings >= MIN_STORE_RATINGS)).toBe(true);
     await page.goto('/');
     await expect(page.locator('footer .footer-rating')).toHaveCount(shown.length);
-    await expect(page.locator('footer .footer-rating', { hasText: 'App Store' })).toHaveCount(0);
+    await expect(page.locator('footer .footer-rating', { hasText: 'App Store' })).toHaveCount(shown.filter(r => r.store === 'ios').length);
     await expect(page.locator('footer .footer-links svg')).toHaveCount(0);
     await expect(page.locator('footer .footer-col')).toHaveCount(3);
     await expect(page.locator('footer .theme-toggle')).toHaveCount(0);
@@ -164,19 +176,24 @@ test.describe('Footer', () => {
 test.describe('Hero reduction', () => {
   test('rating is one line, facts are one sentence, catalogs are text links, rating appears three times (DE)', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('.hh-rating')).toContainText(/4,96 · 29 Bewertungen/);
+    await expect(page.locator('.hh-rating')).toContainText(`${fmt(combined.score, 'de')} · ${combined.ratings} Bewertungen`);
     await expect(page.locator('.hh-rating-score, .hh-facts, .hh-chip, .hh-data')).toHaveCount(0);
     await expect(page.locator('.hh-note')).toContainText('Ohne Account starten');
     await expect(page.locator('.hh-catalogs a')).toHaveCount(5);
     await expect(page.locator('.hh-catalogs a').nth(1)).toHaveAttribute('href', '/sbf-see/');
     await expect(page.locator('.hx-rating')).toHaveCount(0);
-    expect(await page.evaluate(() => (document.body.innerText.match(/4,96/g) ?? []).length)).toBe(3);
+    // Google-Play-Wert: Rezensionsblock und Footer; der Hero zeigt beide Stores zusammen.
+    const playDe = fmt(play.score, 'de');
+    const expectedDe = 2 + (fmt(combined.score, 'de') === playDe ? 1 : 0);
+    expect(await page.evaluate((p) => (document.body.innerText.match(new RegExp(p, 'g')) ?? []).length, esc(playDe))).toBe(expectedDe);
   });
   test('EN parity', async ({ page }) => {
     await page.goto('/en/');
-    await expect(page.locator('.hh-rating')).toContainText(/4\.96 · 29 ratings/);
+    await expect(page.locator('.hh-rating')).toContainText(`${fmt(combined.score, 'en')} · ${combined.ratings} ratings`);
     await expect(page.locator('.hh-catalogs a')).toHaveCount(5);
-    expect(await page.evaluate(() => (document.body.innerText.match(/4\.96/g) ?? []).length)).toBe(2);
+    const playEn = fmt(play.score, 'en');
+    const expectedEn = 1 + (fmt(combined.score, 'en') === playEn ? 1 : 0);
+    expect(await page.evaluate((p) => (document.body.innerText.match(new RegExp(p, 'g')) ?? []).length, esc(playEn))).toBe(expectedEn);
   });
 });
 

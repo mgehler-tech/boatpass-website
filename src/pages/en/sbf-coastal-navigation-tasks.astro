@@ -1,0 +1,396 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../../components/page/PageHead.astro';
+import PageLayout from '../../components/page/PageLayout.astro';
+import PageFacts from '../../components/page/PageFacts.astro';
+import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
+import Icon from '../../components/Icon.astro';
+import type { IconName } from '../../icons';
+
+// EN-Gegenstück zum Navigationsaufgaben-Hub (/sbf-see-navigationsaufgaben/).
+// Inhalt 1:1 wie DE; Prüfungsfakten aus ELWIS und SpFV Anlage 3, Stand Oktober 2026.
+const ELWIS_NAV = 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Navigationsaufgaben/Navigationsaufgaben-node.html';
+const ELWIS_SCORE = 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html';
+const ELWIS_SEE = 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html';
+const SPFV_ANLAGE_3 = 'https://www.gesetze-im-internet.de/spfv/anlage_3.html';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://boatpass.de/en/" },
+    { "@type": "ListItem", "position": 2, "name": "SBF Coastal", "item": "https://boatpass.de/en/sbf-coastal/" },
+    { "@type": "ListItem", "position": 3, "name": "Navigation tasks", "item": "https://boatpass.de/en/sbf-coastal-navigation-tasks/" },
+  ],
+};
+
+const faqs = [
+  {
+    q: 'How many navigation tasks are there in the SBF Coastal?',
+    a: 'The official question catalog contains 15 navigation tasks. In the exam you get one of them, with 9 sub-questions. The sub-questions come from a fixed pool of 15 question types (catalog questions 286 to 300), for example true course, compass course, bearing, position or dead-reckoning error.',
+  },
+  {
+    q: 'How is the navigation task marked?',
+    a: 'Every correct answer or chart entry earns one point; there are no partial points. You pass the navigation part with at least 7 of 9 points. It is marked separately from the question paper. Follow-on errors are not penalised twice: if you carry a wrong intermediate result forward correctly, the later answer still earns its point.',
+  },
+  {
+    q: 'What is the difference between the navigation task and the chart task?',
+    a: 'There is none. “Chart task” (Kartenaufgabe) is the everyday name, because you solve the navigation task on an excerpt of training chart D49. In the official catalog the part is called the navigation task (Navigationsaufgabe).',
+  },
+  {
+    q: 'Which aids are allowed in the navigation task?',
+    a: 'The German Recreational Boat Licence Regulation (SpFV) allows a navigation triangle, a set square, a parallel ruler, a Portland plotter and dividers. Other aids, including electronic ones, are excluded. So you have no calculator: you work out time and speed in your head or on paper.',
+  },
+  {
+    q: 'Do tides come up in the navigation task?',
+    a: 'No. None of the 15 sub-questions asks you to calculate tides, current set or a correction for wind and current. Basic tidal terms such as tidal range, high and low water are asked in the question paper as knowledge questions among the specific coastal questions.',
+  },
+  {
+    q: 'How much time do I have for the navigation task?',
+    a: 'There is no separate time for the navigation part. You have 60 minutes for the whole paper of 39 questions; if you already hold the SBF Inland for motorboats, you get 32 questions in 50 minutes. You divide the time yourself.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Convert true course to compass course (SBF Coastal)",
+  "description": "Course conversion for the navigation task of the SBF Coastal exam: from true course via magnetic course to compass course.",
+  "step": [
+    { "@type": "HowToStep", "name": "Read the true course from the chart", "text": "Join start and destination, place the navigation triangle on a meridian and read off the true course." },
+    { "@type": "HowToStep", "name": "Subtract variation", "text": "Take the variation from the chart and add the annual change up to the year of the task, rounded to whole degrees. Easterly values are positive, westerly negative. True course minus variation gives the magnetic course." },
+    { "@type": "HowToStep", "name": "Subtract deviation", "text": "The deviation is given in the task text. Magnetic course minus deviation gives the compass course." },
+    { "@type": "HowToStep", "name": "Check the result", "text": "Compass course plus deviation plus variation must give the true course again." },
+  ],
+};
+
+type TaskType = {
+  id: string;
+  icon: IconName;
+  title: string;
+  pool: string;
+  intro: string;
+  steps: string[];
+  example?: string[];
+  links: { href: string; label: string }[];
+};
+
+const taskTypes: TaskType[] = [
+  {
+    id: 'course',
+    icon: 'compass',
+    title: 'Reading and plotting a course',
+    pool: 'Sub-questions “true course” (rwK) and “plot the course”',
+    intro: 'The true course (rwK) is the angle between geographic north and your course line. You read it off the chart with the navigation triangle, or you plot a given course.',
+    steps: [
+      'Join the start and destination cleanly with the ruler and extend the line a little beyond both points.',
+      'Place the edge of the navigation triangle on the course line and slide it until the centre of the degree scale sits on a <strong>meridian</strong> (line of longitude).',
+      'Read the course where the meridian crosses the scale. Of the two values, use the one pointing in your <strong>direction of travel</strong>.',
+      'Sanity check: if you are heading roughly south-east, the course must lie between 90° and 180°.',
+    ],
+    links: [{ href: '/en/blog/how-to-read-a-nautical-chart/', label: 'How to read a nautical chart' }],
+  },
+  {
+    id: 'course-conversion',
+    icon: 'refresh',
+    title: 'Course conversion: from true to compass course',
+    pool: 'Sub-question “compass course” (MgK)',
+    intro: 'The compass on board does not point to geographic north. Variation (Mw) depends on the location and the year and is shown on the chart; deviation (Abl) depends on the boat and is given in the task text. Easterly values are positive, westerly negative.',
+    steps: [
+      'Read the true course from the chart (see above).',
+      'Bring the variation up to the year of the task: the chart gives it for a <strong>reference year</strong> with an <strong>annual change</strong>. Add the change for every year, with its sign, and round to whole degrees (under 30\' down, from 30\' up). In the official tasks this gives 0° or +1°.',
+      'Subtract the variation: <strong>true − variation = magnetic course</strong> (rwK − Mw = mwK).',
+      'Subtract the deviation from the task text: <strong>magnetic − deviation = compass course</strong> (mwK − Abl = MgK).',
+      'Check in reverse: <strong>compass + deviation + variation = true course</strong> (MgK + Abl + Mw = rwK).',
+    ],
+    example: [
+      'Example: the chart shows 1°30\'W 2010 with an annual change of 8\'E, and the task is set in 2016. Variation = −90\' + 6 × 8\' = −42\', rounded to −1°. Deviation +3° (east), true course 125°.',
+      'Magnetic course = 125° − (−1°) = 126°. Compass course = 126° − 3° = 123°. Check: 123° + 3° − 1° = 125°.',
+    ],
+    links: [
+      { href: '/en/blog/course-conversion-sbf-coastal/', label: 'Course conversion for the SBF Coastal' },
+      { href: '/en/blog/compass-variation-deviation-explained/', label: 'Compass, variation and deviation' },
+    ],
+  },
+  {
+    id: 'bearing',
+    icon: 'target',
+    title: 'Converting and plotting bearings',
+    pool: 'Sub-questions “bearings” and “plot the bearings”',
+    intro: 'Directions to lights or buoys taken with the compass are compass bearings (MgP). For the chart you need the true bearing (rwP). The sum is the same as for the course, just in the other direction.',
+    steps: [
+      'Add deviation and variation: <strong>compass bearing + deviation + variation = true bearing</strong> (MgP + Abl + Mw = rwP). Which deviation applies depends on the compass: with a <strong>bearing attachment on the steering compass</strong>, its deviation for the current heading applies, not the one for the direction of the bearing. With a <strong>hand bearing compass</strong>, the deviation is given in the task, usually 0°.',
+      'Place the navigation triangle so that its edge runs through the object you took the bearing on and shows the true bearing at the meridian.',
+      'Draw the line from the object back towards you. This position line holds every point from which the object lies in that direction.',
+      'Plot a second bearing on another object the same way. Where the two lines cross is your observed position.',
+    ],
+    links: [{ href: '/en/blog/bearing-collision-course-cpa-explained/', label: 'Bearing and collision course' }],
+  },
+  {
+    id: 'position',
+    icon: 'mapPin',
+    title: 'Position, dead reckoning and dead-reckoning error',
+    pool: 'Sub-questions “geographical position”, “plot the position”, “position by dead reckoning”, “dead-reckoning error” (Besteckversetzung)',
+    intro: 'Fixing your position means reading a position off the chart, plotting a given position, or working it out in advance from course, speed and time (dead reckoning). The difference between the dead-reckoning position and the observed position is the dead-reckoning error.',
+    steps: [
+      '<strong>Reading:</strong> take the latitude from the side edge of the chart and the longitude from the top or bottom edge, for example with dividers or a triangle moved parallel. Give latitude with N, longitude with E.',
+      '<strong>Plotting:</strong> mark latitude and longitude on the edges, carry both lines into the chart and set the position where they cross.',
+      '<strong>Dead reckoning:</strong> work out distance = speed × time, take that distance off the latitude scale with the dividers and mark it along the course line from the starting point. The result is the dead-reckoning position.',
+      '<strong>Dead-reckoning error:</strong> draw a line from the dead-reckoning position to the observed position and give its direction (true) and length in nautical miles.',
+    ],
+    links: [{ href: '/en/blog/sbf-coastal-navigation-tasks-explained/', label: 'Structure of the navigation task' }],
+  },
+  {
+    id: 'distance-time',
+    icon: 'clipboard',
+    title: 'Distance, time and speed',
+    pool: 'Sub-questions “distance”, “time”, “speed”',
+    intro: 'Distances are measured in nautical miles (nm), speeds in knots (kn, nautical miles per hour). One minute of arc on the latitude scale equals one nautical mile.',
+    steps: [
+      'Set the dividers on the two points and read the opening on the <strong>latitude scale</strong> (side edge), ideally at the same height as the distance. Never measure on the longitude scale at the top or bottom.',
+      'Time: <strong>t = d ÷ v</strong>. The result is in hours; multiply by 60 for minutes.',
+      'Speed: <strong>v = d ÷ t</strong>, converting the time to hours first.',
+      'Mental shortcut without a calculator: one nautical mile takes <strong>60 ÷ speed</strong> minutes. At 6 kn that is 10 minutes per nautical mile.',
+      'If a clock time is asked for, add the passage time to the departure time.',
+    ],
+    example: [
+      'Example: 6 nm at 8 kn take 6 ÷ 8 = 0.75 h = 45 minutes. Departure 10:20, arrival 11:05.',
+      'The other way round: 5 nm in 40 minutes is 5 ÷ (40 ÷ 60) = 7.5 kn.',
+    ],
+    links: [{ href: '/en/blog/how-to-read-a-nautical-chart/', label: 'Nautical mile and latitude scale' }],
+  },
+  {
+    id: 'symbols',
+    icon: 'lightbulb',
+    title: 'Navigation marks and chart entries',
+    pool: 'Sub-questions “meaning” and “description of a navigation mark”, “chart entry”',
+    intro: 'These sub-questions test pure chart knowledge. You name a mark, describe a light or explain an entry. The abbreviations are listed in the chart symbol key (Chart 1 / INT 1).',
+    steps: [
+      'Find the mark on the chart and read the label next to it in full.',
+      'For buoys, name the type (for example starboard-hand or cardinal buoy) and give colour and shape. <strong>Only mention a topmark if it is drawn on the symbol</strong>.',
+      'For lights, break down the characteristic: type (flashing, occulting, isophase), group, colour, period in seconds, plus elevation and range if given. If there is no colour letter, the light is white.',
+      'Write down everything shown on the symbol, but do not add anything. Anything missing counts as incomplete; anything guessed counts as wrong.',
+    ],
+    links: [{ href: '/en/blog/how-to-read-a-nautical-chart/', label: 'Reading chart symbols' }],
+  },
+];
+
+const mistakes = [
+  { title: 'Reading the reciprocal course', desc: 'The triangle shows two values 180° apart. Before reading, check which direction you are heading.' },
+  { title: 'Mixing up the signs', desc: 'East is plus, west is minus. From true to compass course you subtract; from compass course or compass bearing to true you add. The check exposes the mistake.' },
+  { title: 'Forgetting the annual change in variation', desc: 'The chart value applies to a reference year. Without the change up to the year of the task, the conversion can easily be a degree out.' },
+  { title: 'Wrong deviation for bearings', desc: 'With a bearing attachment, the steering compass deviation for the current heading applies, not the one for the direction to the object. With a hand bearing compass, use the given value, usually 0°.' },
+  { title: 'Measuring distance on the longitude scale', desc: 'Only the latitude scale on the side edge measures nautical miles. At these latitudes the longitude scale is noticeably compressed.' },
+  { title: 'Confusing decimal hours with minutes', desc: '0.4 h is 24 minutes, not 40. Convert to minutes first, then add to the clock time.' },
+  { title: 'Not writing down the working', desc: 'Follow-on errors do not cost a second point, but only if it is clear you carried on correctly. Jot down intermediate values and the sum.' },
+  { title: 'Imprecise drawing', desc: 'A thick line or a slipped triangle can easily cost one or two degrees. For buoys, line up on the small circle at the foot of the symbol, not on its tip.' },
+  { title: 'Guessing a topmark', desc: 'A topmark only belongs in the answer if it is drawn on the symbol. And do not forget the colour white when there is no colour letter.' },
+];
+---
+
+<BaseLayout
+  title="SBF Coastal Navigation Task – Chart Task Step by Step"
+  description="The SBF Coastal (SBF See) navigation task: 15 tasks, 9 sub-questions, 7 points to pass. Course, bearing, position and course conversion explained step by step."
+  lang="en"
+  altUrl="https://boatpass.de/sbf-see-navigationsaufgaben/"
+>
+  <DisplayFontPreload slot="head" />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+
+  <PageHead
+    lang="en"
+    eyebrow="SBF Coastal · Navigation task"
+    lede="The chart task is the part of the SBF Coastal exam that the inland licence does not have. Here is how it is marked, which task types come up and how to solve each of them step by step."
+    ctaLabel="Practise navigation tasks"
+    cta
+  >
+    SBF Coastal navigation task –<br />step by step
+  </PageHead>
+
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="en"
+      title="At a glance"
+      product="sbfSee"
+      items={[
+        { k: 'Tasks in the catalog', v: '15 navigation tasks' },
+        { k: 'In the exam', v: '1 task · 9 sub-questions' },
+        { k: 'Pass mark', v: 'at least 7 of 9 points' },
+        { k: 'Time', v: '60 min for the whole paper' },
+        { k: 'Chart', v: 'Training chart D49' },
+      ]}
+    />
+
+    <div class="pg-answer">
+      <p class="pg-answer-label">In short</p>
+      <p class="pg-answer-text">
+        In the SBF Coastal theory exam you solve one of 15 official navigation tasks on training chart D49. It has 9 sub-questions, each correct answer earns one point, and you pass with 7 points. The questions cover courses, course conversion, bearings, positions, distance, time, speed and chart symbols. Tides do not come up in the task.
+      </p>
+    </div>
+
+    <section class="pg-section">
+      <h2 class="pg-h2">What the navigation task is in the exam</h2>
+      <p class="pg-p">
+        The theory exam for the <a href="/en/sbf-coastal/" class="pg-inline-link">SBF Coastal</a> consists of a question paper with 30 questions (7 basic, 23 specific coastal questions) and a <strong>navigation task with 9 sub-questions</strong>. You answer the sub-questions in writing and plot courses and positions on the chart excerpt that belongs to your paper. That is why this part is also called the <strong>chart task</strong>.
+      </p>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-label">Scope</p>
+          <p class="pg-card-text">15 tasks in the official catalog, one of them in the exam. The 9 sub-questions come from a pool of 15 question types.</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-label">Marking</p>
+          <p class="pg-card-text">1 point per correct answer or chart entry, no partial points. Pass with at least 7 of 9 points, marked separately from the paper.</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-label">Time</p>
+          <p class="pg-card-text">60 minutes for all 39 questions. With the SBF Inland for motorboats: 32 questions in 50 minutes. No separate time for navigation.</p>
+        </div>
+      </div>
+      <p class="pg-p pg-p--after">
+        Good to know: <strong>follow-on errors are not penalised twice.</strong> If an answer is wrong only because you correctly carried forward a wrong value from an earlier sub-question, it still earns its point. So write your working down briefly, so the examiner can follow it. You may not lose more than two points.
+      </p>
+      <p class="pg-p">
+        All tasks are based on <strong>training chart D49</strong>, covering the estuaries of the Jade, Weser and Elbe. The boat’s deviation is given as a number in the task text; you take the variation from the chart.
+      </p>
+    </section>
+
+    <section class="pg-section">
+      <h2 class="pg-h2">The task types step by step</h2>
+      <p class="pg-p">
+        The 15 question types fall into six groups. For each one, here is the solution in a few steps. The numbers in the examples are made up and do not come from an official task.
+      </p>
+    </section>
+
+    {taskTypes.map((t, i) => (
+      <section class="pg-section" id={t.id}>
+        <h3 class="pg-h2 pg-h2--sm">{`${i + 1}. ${t.title}`}</h3>
+        <p class="pg-note pg-note--sm">{t.pool}</p>
+        <p class="pg-p">{t.intro}</p>
+        <ol class="pg-steps">
+          {t.steps.map(s => <li><span set:html={s} /></li>)}
+        </ol>
+        {t.example && (
+          <div class="pg-card pg-card--soft pg-example">
+            {t.example.map(e => <p class="pg-card-text">{e}</p>)}
+          </div>
+        )}
+        <p class="pg-note">
+          Further reading: {t.links.map((l, j) => (
+            <>{j > 0 && ' · '}<a href={l.href} class="pg-inline-link">{l.label}</a></>
+          ))}
+        </p>
+      </section>
+    ))}
+
+    <section class="pg-section" id="tides">
+      <h2 class="pg-h2">And the tides?</h2>
+      <p class="pg-p">
+        Tides are part of the SBF Coastal syllabus, but <strong>not part of the navigation task</strong>. None of the 15 sub-questions asks you to calculate a water level, current set or a correction for wind and current. In the question paper, tides appear as knowledge questions:
+      </p>
+      <ol class="pg-steps">
+        <li><span><strong>Terms:</strong> ebb, flood, tide, high water, low water and tidal range (the difference between high and low water heights).</span></li>
+        <li><span><strong>Sources:</strong> where to find high and low water times, namely in the tide tables or tide calendar of the BSH (German Federal Maritime and Hydrographic Agency).</span></li>
+        <li><span><strong>Set:</strong> what current set and leeway mean, i.e. how far and in which direction the boat is carried over ground.</span></li>
+      </ol>
+      <p class="pg-p pg-p--after">
+        For passage planning in the Wadden Sea that is not enough. How to estimate the water level between high and low water is shown in the article <a href="/en/blog/tides-rule-of-twelfths/" class="pg-inline-link">Calculating tides with the rule of twelfths</a>. You do not need the calculation for the exam.
+      </p>
+    </section>
+
+    <section class="pg-section">
+      <h2 class="pg-h2">Common mistakes and how to avoid them</h2>
+      <div class="pg-rows">
+        {mistakes.map(m => (
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name="warning" size={21} strokeWidth={1.75} />
+            </span>
+            <div>
+              <div class="pg-row-title">{m.title}</div>
+              <p class="pg-row-text">{m.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="pg-section">
+      <h2 class="pg-h2">What equipment you need</h2>
+      <p class="pg-p">
+        Under the German Recreational Boat Licence Regulation, exactly these aids are allowed: <strong>navigation triangle, set square, parallel ruler, Portland plotter and dividers</strong>. Other aids, including electronic ones, are excluded. So you work without a calculator.
+      </p>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-label">For the exam</p>
+          <p class="pg-card-text">Two navigation triangles (or a navigation triangle and a set square), dividers, a sharp hard pencil and an eraser.</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-label">For practice</p>
+          <p class="pg-card-text">A printed copy of training chart D49 and the 15 tasks from the ELWIS catalog. Practise on paper, because there is no screen in the exam.</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-label">No calculator</p>
+          <p class="pg-card-text">It is not on the list of permitted aids. You work out time and speed in your head, for example with “minutes per nautical mile = 60 ÷ speed”.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pg-section">
+      <h2 class="pg-h2">How to prepare</h2>
+      <ol class="pg-steps">
+        <li><span><strong>Learn the tools:</strong> practise reading a course, plotting a course and measuring distance until the movements are second nature.</span></li>
+        <li><span><strong>Automate the sums:</strong> work through course and bearing conversions with changing signs, always with a check.</span></li>
+        <li><span><strong>Solve all 15 tasks:</strong> work through every official task once in full on the paper chart and compare it with the model solution.</span></li>
+        <li><span><strong>Under exam conditions:</strong> question paper and navigation task together in 60 minutes. In the <a href="/en/sbf-coastal-exam-questions/" class="pg-inline-link">Boatpass app</a> you practise the full ELWIS catalog and every navigation task in its nine sub-questions.</span></li>
+      </ol>
+      <p class="pg-note pg-note--after">
+        How the whole exam works, from registration to the practical test, is explained on the page <a href="/en/sbf-exam/" class="pg-inline-link">SBF exam: how it works</a>.
+      </p>
+    </section>
+
+    <section class="pg-section">
+      <h2 class="pg-h2">Frequently asked questions about the navigation task</h2>
+      <div class="pg-faq">
+        {faqs.map(f => (
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
+          </div>
+        ))}
+      </div>
+      <p class="pg-note pg-note--sm pg-note--after">
+        Sources (in German): <a href={ELWIS_NAV} target="_blank" rel="noopener noreferrer" class="pg-inline-link">ELWIS – navigation tasks</a>, <a href={ELWIS_SCORE} target="_blank" rel="noopener noreferrer" class="pg-inline-link">ELWIS – marking scheme</a>, <a href={ELWIS_SEE} target="_blank" rel="noopener noreferrer" class="pg-inline-link">ELWIS – specific coastal questions</a> (tides: questions 249 to 255), <a href={SPFV_ANLAGE_3} target="_blank" rel="noopener noreferrer" class="pg-inline-link">SpFV, Annex 3</a> (marking and aids). As of October 2026.
+      </p>
+    </section>
+
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Related pages</h2>
+      <ul class="pg-related">
+        <li><a href="/en/blog/sbf-coastal-navigation-tasks-explained/">SBF Coastal navigation tasks explained – structure and tips<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/course-conversion-sbf-coastal/">Course conversion for the SBF Coastal: true, magnetic and compass course<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/compass-variation-deviation-explained/">Magnetic compass, variation and deviation explained<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/bearing-collision-course-cpa-explained/">Bearing and collision course<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/how-to-read-a-nautical-chart/">How to read a nautical chart – symbols, depths and scale<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/blog/tides-rule-of-twelfths/">Calculating tides with the rule of twelfths<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-coastal-exam-questions/">Practise SBF Coastal exam questions<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-coastal/">SBF Coastal: everything about the coastal licence<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-coastal-app/">SBF Coastal apps compared<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
+    </section>
+
+  </PageLayout>
+</BaseLayout>

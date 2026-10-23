@@ -131,7 +131,7 @@ Dein tatsächlicher Kurs über Grund beträgt also **086°**, obwohl du 090° ge
 
 Die Kursumrechnung ist reine Routine – sie muss sitzen, bis du sie ohne Nachdenken kannst. Am besten rechnest du Dutzende Varianten mit wechselnden Vorzeichen durch, bis die Formel automatisch abläuft. Genau dafür kannst du in der [Boatpass-App den Navigationsteil](/sbf-see-pruefungsfragen/) getrennt vom restlichen Fragenkatalog trainieren: mit echten Aufgaben wie in der Prüfung, sofortiger Auswertung und der Möglichkeit, gezielt die Aufgabentypen zu wiederholen, bei denen du noch unsicher bist.
 
-Wie die Kursumrechnung in die komplette Navigationsaufgabe eingebettet ist, liest du im Überblicksartikel [SBF See Navigationsaufgaben erklärt](/blog/sbf-see-navigationsaufgaben-erklaert/). Und wenn du noch unsicher bist, ob der SBF See überhaupt der richtige Schein für dich ist, hilft dir der Vergleich [SBF Binnen vs. SBF See](/blog/sbf-binnen-vs-see/).
+Wie die Kursumrechnung in die komplette Navigationsaufgabe eingebettet ist, liest du im Überblicksartikel [SBF See Navigationsaufgaben erklärt](/blog/sbf-see-navigationsaufgaben-erklaert/). Den Lösungsweg für alle Aufgabentypen der Navigationsaufgabe zeigt die Seite [SBF See Navigationsaufgaben Schritt für Schritt](/sbf-see-navigationsaufgaben/). Und wenn du noch unsicher bist, ob der SBF See überhaupt der richtige Schein für dich ist, hilft dir der Vergleich [SBF Binnen vs. SBF See](/blog/sbf-binnen-vs-see/).
 
 ## Fazit
 

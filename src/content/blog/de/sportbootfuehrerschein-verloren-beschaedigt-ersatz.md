@@ -3,6 +3,7 @@ title: "Sportbootführerschein verloren oder beschädigt – so bekommst du Ersa
 seoTitle: "SBF verloren? So bekommst du Ersatz"
 description: "Sportbootführerschein verloren oder beschädigt? So beantragst du die Ersatzausfertigung bei DMYV oder DSV: Unterlagen, Ablauf, Kosten und Dauer."
 date: 2026-08-13
+updated: 2026-10-23
 tags: ["Prüfungswissen"]
 readingTime: 9
 lang: de
@@ -109,3 +110,10 @@ Ein paar einfache Gewohnheiten machen einen künftigen Verlust deutlich weniger 
 ## Fazit
 
 Ein verlorener oder beschädigter Sportbootführerschein ist ärgerlich, aber mit der Ersatzausfertigung nach Paragraf 11 SpFV gut lösbar. Wichtig sind ein vollständiger Antrag bei DMYV oder DSV, möglichst genaue Angaben zu Zeitpunkt und Ort der ursprünglichen Prüfung sowie, im Diebstahlfall, die polizeiliche Anzeige. Plane rund drei bis vier Wochen Bearbeitungszeit und eine Gebühr im mittleren zweistelligen Euro-Bereich ein, und nutze bei Zeitdruck die Möglichkeit eines vorläufigen Führerscheins. Wer sich zwischenzeitlich ohnehin wieder mit dem Prüfungsstoff beschäftigen möchte, etwa weil die alte Prüfung schon eine Weile zurückliegt, kann mit der **Boatpass-App** und dem offiziellen ELWIS-Fragenkatalog sein Wissen im Prüfungsmodus auffrischen, ganz unabhängig davon, wie lange der eigene Führerschein schon gültig ist.
+
+## Quellen
+
+- [§ 11 Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/__11.html) – Ersatzausfertigung, vorläufiger Sportbootführerschein und Rückgabepflicht
+- [§ 12 SpFV](https://www.gesetze-im-internet.de/spfv/__12.html) – Pflicht, den Befähigungsnachweis an Bord mitzuführen
+- [DSV-Portal: Ersatzausfertigung SBF](https://www.sportbootfuehrerscheine.org/ersatz-umschreibung/sbf-sportbootfuhrerschein/) – Antragsformular mit Ausstellungsgebühr (42,66 €, Stand Oktober 2026)
+- [DMYV: Ersatzausfertigung](https://www.dmyv.de/fuehrerschein/-funk/service/ersatzausfertigung) – Bearbeitungsdauer von etwa drei bis vier Wochen

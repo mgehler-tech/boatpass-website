@@ -11,7 +11,7 @@ const apps = LEARNING_APPS.filter(app =>
 const faqs = [
   {
     q: 'Which app is best for the radio certificate?',
-    a: 'The field is smaller than for the boating licence: only three apps cover UBI, SRC and LRC at all. Bootspruefung.de adds sample radio messages, SBF-Fragen from publisher Delius Klasing uses a spaced-repetition box, and Boatpass bundles the three radio catalogues with SBF See and Binnen in one app. The free Wimmer apps and Sailbyte cover no radio certificates.',
+    a: 'The field is smaller than for the boating licence: five apps cover the radio certificates. Bootspruefung.de adds sample radio messages, SBF-Fragen from publisher Delius Klasing uses a spaced-repetition box, Bootsprüfung covers UBI, SRC and LRC together with SBF and the Lake Constance licence, Bootsschule1 offers UBI and SRC as part of its courses, and Boatpass bundles the three radio catalogues with SBF See and Binnen in one app. The free Wimmer apps, the Goritz apps and Sailbyte cover no radio certificates.',
   },
   {
     q: 'UBI, SRC or LRC – which certificate do I need?',
@@ -31,7 +31,7 @@ const faqs = [
   },
   {
     q: 'Are the radio apps available for iPhone?',
-    a: 'Yes. Bootspruefung.de, SBF-Fragen and – since October 2026 – Boatpass are available for Android and iOS.',
+    a: 'Yes. All five apps – Bootspruefung.de, Bootsprüfung, Bootsschule1, SBF-Fragen and, since October 2026, Boatpass – are available for Android and iOS.',
   },
 ];
 
@@ -54,19 +54,19 @@ const relatedLinks = [
   breadcrumbName="Radio certificate apps compared"
   badge="UBI · SRC · LRC"
   h1="Radio certificate apps compared"
-  heroIntro="For the radio certificates the choice is far smaller than for the boating licence – only three apps cover UBI, SRC and LRC at all. Here they are side by side."
-  answer="Three learning apps cover the German radio certificates UBI, SRC and LRC: Bootspruefung.de with free official questions and sample radio messages in its Pro version, SBF-Fragen from publisher Delius Klasing with a spaced-repetition box, and Boatpass, which bundles all three radio catalogues with SBF See and Binnen in one app."
+  heroIntro="For the radio certificates the choice is far smaller than for the boating licence – five apps cover UBI, SRC or LRC at all. Here they are side by side."
+  answer="Five learning apps cover at least one of the German radio certificates UBI, SRC and LRC: Bootspruefung.de with free official questions and sample radio messages in its Pro version, SBF-Fragen from publisher Delius Klasing with a spaced-repetition box, Bootsprüfung as the newest provider with all three certificates, Bootsschule1 with UBI and SRC as part of a course, and Boatpass, which bundles all three radio catalogues with SBF See and Binnen in one app."
   apps={apps}
   tableCaption="Every app covering at least one of the radio certificates UBI, SRC or LRC – sorted alphabetically."
   androidHeading="Radio certificate app for Android"
   androidParagraphs={[
-    'All three apps are on Google Play. The difference lies less in the question catalogue – that is official and identical everywhere – than in what surrounds it: <strong>Bootspruefung.de</strong> supplies sample radio messages and theory texts in its Pro version, while <strong>SBF-Fragen</strong> relies on a spaced-repetition box with exam simulation on original papers.',
-    'The popular free apps by Matthias Wimmer cover <strong>no radio certificates</strong>, and neither does Sailbyte. Anyone studying for a radio certificate effectively has three options.',
+    'All five apps are on Google Play. The difference lies less in the question catalogue – that is official and identical everywhere – than in what surrounds it: <strong>Bootspruefung.de</strong> supplies sample radio messages and theory texts in its Pro version, while <strong>SBF-Fragen</strong> relies on a spaced-repetition box with exam simulation on original papers.',
+    'The popular free apps by Matthias Wimmer cover <strong>no radio certificates</strong>, and neither do the Goritz apps or Sailbyte. <strong>Bootsprüfung</strong> is new to the market and covers all three certificates, while <strong>Bootsschule1</strong> offers UBI and SRC only as part of its paid courses.',
     'With Boatpass the radio modules cost ' + priceText('ubi', 'en') + ' one-off (UBI and SRC) and ' + priceText('lrc', 'en') + ' (LRC) – no subscription, permanent access.',
   ]}
   iosHeading="Radio certificate app for iPhone and iPad"
   iosParagraphs={[
-    'On iOS all three compared apps are available: <strong>Bootspruefung.de</strong>, <strong>SBF-Fragen</strong> and <strong>Boatpass</strong>. All cover UBI, SRC and LRC.',
+    'On iOS all five compared apps are available. <strong>Bootspruefung.de</strong>, <strong>SBF-Fragen</strong>, <strong>Bootsprüfung</strong> and <strong>Boatpass</strong> cover UBI, SRC and LRC, <strong>Bootsschule1</strong> covers UBI and SRC.',
     '<strong>Boatpass has been on the App Store since October 2026</strong>. Both stores also offer a radio bundle for all three certificates. A purchase only applies to the store you bought in, so an Android purchase does not unlock anything on iPhone.',
   ]}
   strengths={[
@@ -86,4 +86,17 @@ const relatedLinks = [
   ]}
   faqs={faqs}
   relatedLinks={relatedLinks}
-/>
+>
+  <section slot="after-table" style="margin-bottom:48px;">
+    <h2 class="content-section-title" style="margin-bottom:16px;">Theory and practice: what a radio app can do</h2>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+      Every radio certificate has two parts. The theory is a multiple-choice paper from the official catalogue – exactly what the apps are built for. In the practical part you operate a radio set, send a DSC alert and speak distress, urgency and safety messages in a fixed format. No app replaces that.
+    </p>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+      What apps can contribute to the practical part is limited: <strong>Bootspruefung.de</strong> offers sample radio messages to read through, while the other apps focus on the theory. For the practical part you need a course with a training set or a radio simulator. Do not underestimate it: in the exam you have to know the fixed sequence of a distress message without notes.
+    </p>
+    <p style="font-size:16px; color:#4B5563; line-height:1.75; margin-bottom:12px;">
+      For the UBI, a new official question catalogue has applied since 1 October 2026. Make sure your app already includes it; what has changed is explained in the article <a href="/en/blog/ubi-question-catalog-2026/" style="color:#3366FF; text-decoration:underline;">UBI question catalogue 2026</a>. Which certificate you need is covered on the pages for <a href="/en/ubi/" style="color:#3366FF; text-decoration:underline;">UBI</a>, <a href="/en/src/" style="color:#3366FF; text-decoration:underline;">SRC</a> and <a href="/en/lrc/" style="color:#3366FF; text-decoration:underline;">LRC</a>.
+    </p>
+  </section>
+</AppLandingPage>

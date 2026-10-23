@@ -1,5 +1,9 @@
 import { test, expect } from '@playwright/test';
 import { expectMigrated, noInline } from './helpers/migrated';
+import { formatRating, getBoatpassCombinedRating } from '../../src/data/apps';
+
+const combined = getBoatpassCombinedRating()!;
+const combinedDe = formatRating(combined.score).replace('.', ',');
 
 /**
  * Premium-Politur, Runde 2b (Spec docs/superpowers/specs/2026-10-18-premium-round-2-design.md,
@@ -27,7 +31,7 @@ test.describe('Seitenkopf', () => {
     await expect(cta).toHaveAttribute('href', '/app/');
     await expect(cta.locator('.h-off-android')).toBeVisible();
     await expect(cta.locator('.h-on-android')).toBeHidden();
-    await expect(page.locator('.pg-actions .hh-rating')).toContainText(/4,96/);
+    await expect(page.locator('.pg-actions .hh-rating')).toContainText(combinedDe);
     await expect(page.locator('main a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
   });
   test('Archivo wird auf Lizenzseiten vorgeladen, auf anderen Seiten nicht', async ({ page }) => {
@@ -54,7 +58,7 @@ test.describe('Seitenkopf', () => {
   });
   test('Startseite behält ihre Bewertungszeile', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator('.hh-actions .hh-rating')).toContainText(/4,96 · 29 Bewertungen/);
+    await expect(page.locator('.hh-actions .hh-rating')).toContainText(`${combinedDe} · ${combined.ratings} Bewertungen`);
   });
 });
 

@@ -2,6 +2,7 @@
 title: "SBF-Gültigkeit: Welcher Schein gilt wo?"
 description: "Wo gilt der SBF See, wo der SBF Binnen? Die genauen Grenzen an Elbe, Weser und Ostsee – plus Gültigkeit im Ausland mit dem ICC-Äquivalent erklärt."
 date: 2026-05-23
+updated: 2026-10-23
 tags: ["Führerschein-Vergleich"]
 readingTime: 7
 lang: de
@@ -13,7 +14,7 @@ faq:
   - question: "Bis wohin brauche ich auf der Elbe den SBF See?"
     answer: "Von der Mündung bis zum Hamburger Hafen gilt der SBF See (Grenze bei Elbe-km 638,98 am rechten bzw. 633,35 am linken Ufer). Im Hamburger Hafen selbst werden beide Scheine akzeptiert, oberhalb gilt der SBF Binnen."
   - question: "Gilt der deutsche Sportbootführerschein im Ausland?"
-    answer: "Ja. Seit 2018 wird der SBF im Scheckkartenformat mit dem ICC (International Certificate of Competence) gemäß UN-Resolution Nr. 40 ausgestellt. Der ICC wird von über 30 Ländern anerkannt, darunter Kroatien, Griechenland, Italien, Frankreich, Spanien und die Niederlande."
+    answer: "Ja. Seit 2018 wird der SBF im Scheckkartenformat mit dem ICC (International Certificate of Competence) gemäß UN-Resolution Nr. 40 ausgestellt. Formell anerkannt wird der ICC von den gut 20 Staaten, die die Resolution anwenden, darunter Kroatien und die Niederlande; viele weitere Länder wie Griechenland, Italien, Frankreich und Spanien akzeptieren ihn in der Praxis."
   - question: "Wie lange ist der SBF gültig?"
     answer: "Der deutsche SBF mit ICC ist lebenslang gültig – ohne Verlängerung oder Erneuerung. Das ist ein Vorteil gegenüber den Führerscheinen einiger anderer Länder, die regelmäßig erneuert werden müssen."
   - question: "Wann brauche ich beide Scheine?"
@@ -80,16 +81,16 @@ Seit 2018 wird der deutsche Sportbootführerschein im Scheckkartenformat mit dem
 
 ### Wo wird der ICC offiziell anerkannt?
 
-Der ICC wird von über 30 Ländern offiziell anerkannt, darunter die wichtigsten Charterreviere:
+Offiziell anerkannt wird der ICC von den gut 20 Staaten, die die Resolution Nr. 40 anwenden (laut UNECE 22, Stand Juli 2024). Viele weitere Länder akzeptieren ihn in der Praxis. So sieht es in den wichtigsten Charterrevieren aus:
 
 | Region | Anerkennung |
 |---|---|
 | **Kroatien** | Offiziell anerkannt |
-| **Griechenland** | Offiziell anerkannt |
-| **Italien** | Offiziell anerkannt |
-| **Frankreich** | Offiziell anerkannt |
-| **Spanien / Mallorca** | Offiziell anerkannt |
-| **Türkei** | Offiziell anerkannt |
+| **Griechenland** | In der Praxis akzeptiert |
+| **Italien** | In der Praxis akzeptiert |
+| **Frankreich** | In der Praxis akzeptiert |
+| **Spanien / Mallorca** | In der Praxis akzeptiert |
+| **Türkei** | In der Praxis akzeptiert |
 | **Niederlande** | Offiziell anerkannt |
 | **Karibik, Seychellen, Thailand** | Inoffiziell akzeptiert (reicht zum Chartern) |
 
@@ -107,4 +108,11 @@ Die Kombiprüfung spart dabei rund 100 € an Prüfungsgebühren – und die 72 
 
 ## Fazit
 
-Die Grenze zwischen [SBF See](/sbf-see/) und [SBF Binnen](/sbf-binnen/) verläuft an den Flussmündungen – nicht an der Küstenlinie. Wer auf der Elbe bis Hamburg fährt, braucht den SBF See. Im Ausland ist der deutsche SBF mit ICC in über 30 Ländern anerkannt und lebenslang gültig. Wer flexibel auf allen Gewässern fahren will, sollte die Kombiprüfung in Betracht ziehen.
+Die Grenze zwischen [SBF See](/sbf-see/) und [SBF Binnen](/sbf-binnen/) verläuft an den Flussmündungen – nicht an der Küstenlinie. Wer auf der Elbe bis Hamburg fährt, braucht den SBF See. Im Ausland ist der deutsche SBF mit ICC in gut 20 Staaten formell anerkannt, wird in vielen weiteren akzeptiert und ist lebenslang gültig. Wer flexibel auf allen Gewässern fahren will, sollte die Kombiprüfung in Betracht ziehen.
+
+## Quellen
+
+- [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), § 1](https://www.gesetze-im-internet.de/seeschstro_1971/__1.html) – Geltungsbereich der Seeschifffahrtsstraßen, Grenzen an Elbe, Trave, Warnow, Weser und Nord-Ostsee-Kanal
+- [Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/) – Fahrerlaubnis für Binnen- und Seeschifffahrtsstraßen, Sonderstellung der Elbe im Hamburger Hafen (§ 2)
+- [ELWIS – Sportbootführerscheine](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) – Scheckkartenformat seit 2018 und Ausstellung als ICC nach Resolution Nr. 40
+- [UNECE – International Certificate for Operators of Pleasure Craft (Res. No. 40)](https://web.archive.org/web/20250825153452/https://unece.org/transport/inland-water-transport/international-certificates-operator-pleasure-craft-res-no-40) (englisch, archivierte Fassung) – Liste der Staaten, die die Resolution anwenden

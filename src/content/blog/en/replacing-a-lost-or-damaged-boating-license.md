@@ -3,6 +3,7 @@ title: "Lost or Damaged Boating License – How to Get a Replacement"
 seoTitle: "Lost Boating License? Get a Replacement"
 description: "Lost or damaged your Sportbootführerschein? Here's how to request a replacement (Ersatzausfertigung) from DMYV or DSV: documents, process, and costs."
 date: 2026-08-13
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 9
 lang: en
@@ -109,3 +110,10 @@ A few simple habits make dealing with a future loss much less stressful:
 ## Conclusion
 
 A lost or damaged Sportbootführerschein is annoying, but it is straightforward to resolve through the replacement procedure under Section 11 SpFV. What matters is a complete application to DMYV or DSV, as accurate as possible details about the date and location of your original exam, and, in the case of theft, the police report. Plan for around three to four weeks of processing time and a fee in the mid double-digit euro range, and use the provisional certificate option if you are short on time. If you want to brush up on the exam material in the meantime, perhaps because your original exam was a while ago, the **Boatpass app** lets you refresh your knowledge in exam mode using the official ELWIS question catalog, no matter how long you have already held your license.
+
+## Sources
+
+- [Section 11 Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/__11.html) (German) – replacement copy, provisional license and duty to return the original
+- [Section 12 SpFV](https://www.gesetze-im-internet.de/spfv/__12.html) (German) – duty to carry the license on board
+- [DSV portal: SBF replacement](https://www.sportbootfuehrerscheine.org/ersatz-umschreibung/sbf-sportbootfuhrerschein/) (German) – application form with issuing fee (€42.66, as of October 2026)
+- [DMYV: replacement copy](https://www.dmyv.de/fuehrerschein/-funk/service/ersatzausfertigung) (German) – processing time of about three to four weeks

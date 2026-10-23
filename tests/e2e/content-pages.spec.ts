@@ -69,6 +69,50 @@ test.describe('Prüfungsfragen', () => {
   });
 });
 
+test.describe('Navigationsaufgaben-Hub', () => {
+  // SEO-Audit 23.10.2026, Content-Lücke 3: Einstieg für „SBF See Navigationsaufgabe / Kartenaufgabe“.
+  const hubs = [
+    { path: '/sbf-see-navigationsaufgaben/', alt: '/en/sbf-coastal-navigation-tasks/', altLang: 'en', h1: /Navigations/, pass: '7 von 9', blog: '/blog/sbf-see-navigationsaufgaben-erklaert/', parent: '/sbf-see/' },
+    { path: '/en/sbf-coastal-navigation-tasks/', alt: '/sbf-see-navigationsaufgaben/', altLang: 'de', h1: /navigation task/i, pass: '7 of 9', blog: '/en/blog/sbf-coastal-navigation-tasks-explained/', parent: '/en/sbf-coastal/' },
+  ];
+  for (const h of hubs) {
+    test(`${h.path}: Kennzahlen, sechs Aufgabentypen mit Schritten, Quellen, Gegenstück`, async ({ page }) => {
+      await expectMigrated(page, h.path, { h1: h.h1, facts: 5 });
+      const facts = page.locator('.pg-aside dl.pg-facts');
+      await expect(facts).toContainText('15');
+      await expect(facts).toContainText(h.pass);
+      await expect(facts).toContainText('D49');
+      // Sechs Aufgabentypen, jeder mit nummerierten Schritten.
+      await expect(page.locator('.pg-section[id] ol.pg-steps')).toHaveCount(7);
+      await expect(page.locator('main h3.pg-h2')).toHaveCount(6);
+      // Primärquellen und interne Verlinkung.
+      await expect(page.locator('main a[href*="elwis.de"]')).toHaveCount(3);
+      await expect(page.locator('main a[href="https://www.gesetze-im-internet.de/spfv/anlage_3.html"]')).toHaveCount(1);
+      await expect(page.locator(`main a[href="${h.blog}"]`).first()).toBeVisible();
+      await expect(page.locator(`main a[href="${h.parent}"]`).first()).toBeVisible();
+      await expect(page.locator(`link[rel="alternate"][hreflang="${h.altLang}"][href="https://boatpass.de${h.alt}"]`)).toHaveCount(1);
+      const types = await page.locator('script[type="application/ld+json"]').allTextContents();
+      expect(types.join(' ')).toContain('"FAQPage"');
+      expect(types.join(' ')).toContain('"HowTo"');
+    });
+  }
+  test('Einstiege verlinken auf den Hub (DE und EN)', async ({ page }) => {
+    for (const [from, to] of [
+      ['/sbf-see/', '/sbf-see-navigationsaufgaben/'],
+      ['/sbf-see-pruefungsfragen/', '/sbf-see-navigationsaufgaben/'],
+      ['/sbf-see-app/', '/sbf-see-navigationsaufgaben/'],
+      ['/blog/sbf-see-navigationsaufgaben-erklaert/', '/sbf-see-navigationsaufgaben/'],
+      ['/en/sbf-coastal/', '/en/sbf-coastal-navigation-tasks/'],
+      ['/en/sbf-coastal-exam-questions/', '/en/sbf-coastal-navigation-tasks/'],
+      ['/en/sbf-coastal-app/', '/en/sbf-coastal-navigation-tasks/'],
+      ['/en/blog/sbf-coastal-navigation-tasks-explained/', '/en/sbf-coastal-navigation-tasks/'],
+    ]) {
+      await page.goto(from);
+      await expect(page.locator(`main a[href="${to}"]`).first(), from).toBeAttached();
+    }
+  });
+});
+
 test.describe('Schein-Finder', () => {
   test('DE: schmale Spalte, Konfigurator bedienbar bis zum Ergebnis, Tabelle mit Zeilenköpfen', async ({ page }) => {
     await expectMigrated(page, '/tools/welcher-bootsfuehrerschein/', { h1: /Bootsführerschein/, facts: 0, cta: false, variant: 'narrow' });

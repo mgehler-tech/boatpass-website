@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: 'How does the navigation task work?',
-    a: 'In the navigation task you work with a nautical chart: plotting courses, determining positions, accounting for tides and current. Of the 9 questions you have to answer at least 7 correctly. Exactly this part is practiced in the Boatpass app with a real navigation section.',
+    a: 'In the navigation task you work with a nautical chart: reading and converting courses, plotting bearings and determining positions. Of the 9 questions you have to answer at least 7 correctly. Exactly this part is practiced in the Boatpass app with a real navigation section.',
   },
   {
     q: 'Where do I find the official SBF Coastal exam questions?',
@@ -143,10 +143,13 @@ const faqSchema = {
     <section class="pg-section">
       <h2 class="pg-h2">The navigation task – the sticking point of the SBF Coastal</h2>
       <p class="pg-p">
-        The navigation task is the part most candidates are wary of. On the official <strong>training chart</strong> you plot courses, determine positions and account for influences such as <strong>current, wind and tides</strong>. Of the 9 individual questions you have to solve at least 7 correctly.
+        The navigation task is the part most candidates are wary of. On the official <strong>training chart</strong> you plot courses, convert them to compass courses, work out <strong>bearings</strong> and determine <strong>positions</strong>. Of the 9 individual questions you have to solve at least 7 correctly.
       </p>
       <p class="pg-p">
         The big advantage: there are only <strong>15 official navigation tasks</strong> in total, one of which is set unchanged in the exam. Anyone who practices these 15 tasks with a <strong>real navigation section</strong> – just like in the actual exam – heads into exam day with confidence. That's exactly what the Boatpass app replicates.
+      </p>
+      <p class="pg-p">
+        The solution for each task type, common mistakes and the permitted equipment are on the page <a href="/en/sbf-coastal-navigation-tasks/" class="pg-inline-link">SBF Coastal navigation tasks step by step</a>.
       </p>
     </section>
 
@@ -156,7 +159,7 @@ const faqSchema = {
       <div class="pg-rows">
         {[
           { icon: 'book', title: 'Complete ELWIS coastal catalog', desc: 'All questions on the coast and maritime waterways – fully covered, always up to date.' },
-          { icon: 'compass', title: 'Navigation with a real navigation section', desc: 'Practice the navigation task the way it is set in the real exam – courses, positions, tides.' },
+          { icon: 'compass', title: 'Navigation with a real navigation section', desc: 'Practice the navigation task the way it is set in the real exam – courses, bearings, positions.' },
           { icon: 'target', title: 'Exam simulation: 39 questions, 60 minutes', desc: 'Real exam conditions including the navigation section and passing threshold.' },
           { icon: 'refresh', title: 'Mistake training', desc: 'Specifically repeat your weak spots instead of learning everything from scratch.' },
         ].map(f => (
@@ -216,6 +219,7 @@ const faqSchema = {
         <li><a href="/en/sbf-inland-exam-questions/">Practice SBF Inland exam questions<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/en/sbf-exam/">SBF exam: how theory & practice work<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/en/sbf-costs/">What does the boating license cost?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-coastal-navigation-tasks/">SBF Coastal navigation tasks step by step<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/en/blog/sbf-coastal-navigation-tasks-explained/">SBF Coastal navigation tasks explained – structure & tips<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/en/blog/hardest-sbf-exam-questions/">The hardest SBF exam questions – and how to master them<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
       </ul>

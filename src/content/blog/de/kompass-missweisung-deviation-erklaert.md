@@ -83,7 +83,7 @@ Nach einer Kompensierung sollte die Tabelle nicht als dauerhaft gültig betracht
 
 Missweisung und Deviation sind beides **systematische Fehler**, die zwischen dem, was auf der Seekarte steht, und dem, was dein Kompass anzeigt, liegen. Um zwischen rechtweisendem Kurs, missweisendem Kurs und Magnetkompasskurs hin- und herzurechnen, musst du beide Korrekturen berücksichtigen, jeweils mit Vorzeichen (Ost = plus, West = minus).
 
-Diese Umrechnung ist fester Bestandteil der Navigationsaufgabe beim SBF See. Die genaue Formel, die Vorzeichen-Regel und durchgerechnete Beispiele findest du im Artikel [Kursumrechnung beim SBF See: rwK, mwK & MgK einfach erklärt](/blog/kursumrechnung-sbf-see/). Wie die Kursumrechnung in die komplette Navigationsaufgabe eingebettet ist, zeigt der Überblicksartikel [SBF See Navigationsaufgaben erklärt](/blog/sbf-see-navigationsaufgaben-erklaert/).
+Diese Umrechnung ist fester Bestandteil der Navigationsaufgabe beim SBF See. Die genaue Formel, die Vorzeichen-Regel und durchgerechnete Beispiele findest du im Artikel [Kursumrechnung beim SBF See: rwK, mwK & MgK einfach erklärt](/blog/kursumrechnung-sbf-see/). Wie die Kursumrechnung in die komplette Navigationsaufgabe eingebettet ist, zeigt der Überblicksartikel [SBF See Navigationsaufgaben erklärt](/blog/sbf-see-navigationsaufgaben-erklaert/). Wie du Kurs und Peilung in der Prüfung umrechnest, steht Schritt für Schritt auf der Seite [SBF See Navigationsaufgaben](/sbf-see-navigationsaufgaben/#kursumrechnung).
 
 ## Den Kompass an Bord richtig platzieren
 

@@ -31,7 +31,7 @@ faq:
     answer: "Regel 7 der Kollisionsverhütungsregeln verlangt, mit allen verfügbaren Mitteln laufend zu prüfen, ob Kollisionsgefahr besteht. Bestehen Zweifel, ist anzunehmen, dass eine solche Gefahr besteht. Eine gleichbleibende Peilung bei abnehmendem Abstand gilt dabei als deutliches Warnzeichen."
 ---
 
-Auf dem Wasser gibt es keine Ampeln, keine Fahrspuren und oft auch keinen Funkkontakt zum anderen Boot. Trotzdem musst du frühzeitig erkennen, ob sich zwei Fahrzeuge auf Kollisionskurs befinden. Der Schlüssel dazu ist eine einfache, jahrhundertealte Methode: die Peilung, ein zentraler Baustein der Ausweichregeln im [SBF Binnen](/sbf-binnen/) und im [SBF See](/sbf-see/). Dieser Artikel erklärt, was eine Peilung ist, warum eine gleichbleibende Peilung Alarmzeichen ist und was der Begriff CPA damit zu tun hat.
+Auf dem Wasser gibt es keine Ampeln, keine Fahrspuren und oft auch keinen Funkkontakt zum anderen Boot. Trotzdem musst du frühzeitig erkennen, ob sich zwei Fahrzeuge auf Kollisionskurs befinden. Der Schlüssel dazu ist eine einfache, jahrhundertealte Methode: die Peilung, ein zentraler Baustein der Ausweichregeln im [SBF Binnen](/sbf-binnen/) und im [SBF See](/sbf-see/). Dieser Artikel erklärt, was eine Peilung ist, warum eine gleichbleibende Peilung Alarmzeichen ist und was der Begriff CPA damit zu tun hat. Wie du Peilungen in der Navigationsaufgabe des SBF See umrechnest und in die Karte einträgst, zeigt die Seite [SBF See Navigationsaufgaben](/sbf-see-navigationsaufgaben/#peilung).
 
 ## Was ist eine Peilung?
 

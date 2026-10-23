@@ -3,6 +3,7 @@ title: "Charter Certificate: Renting a Boat Without a License"
 seoTitle: "Charter Certificate: Rent Without a License"
 description: "The German charter certificate lets you rent a boat on certain inland waters without an SBF. Requirements, waters, rules and limits explained."
 date: 2026-06-02
+updated: 2026-10-23
 tags: ["License Comparison"]
 readingTime: 7
 lang: en
@@ -12,7 +13,7 @@ faq:
   - question: "What is the charter certificate?"
     answer: "The charter certificate, officially the Charterbescheinigung, lets you operate a rented boat on certain designated German inland waters without a Sportbootführerschein. You get a briefing from the rental company instead of weeks of training."
   - question: "What are the requirements for the charter certificate?"
-    answer: "The boat must be no more than 15 meters long and no faster than 12 km/h, and the minimum age is generally 16 years. A roughly 2- to 3-hour theoretical and practical briefing by the rental company is also required."
+    answer: "The boat must be no more than 15 meters long and no faster than 12 km/h, and the minimum age is generally 16 years. A theoretical and practical briefing of at least three hours by the rental company is also required."
   - question: "Which waters is the charter certificate valid on?"
     answer: "It is valid only on expressly approved inland waters, most importantly the Mecklenburg Lake District with the Müritz and the Kleinseenplatte. Parts of Brandenburg also have approved charter areas."
   - question: "Where does the charter certificate reach its limits?"
@@ -33,7 +34,7 @@ For the charter certificate to be valid, several conditions must be met:
 
 - **The boat:** a maximum of **15 m long** and a maximum of **12 km/h** fast.
 - **Minimum age:** generally **16 years**.
-- **Briefing:** a roughly **2- to 3-hour** theoretical and practical briefing by the rental company (traffic rules, operation, safety).
+- **Briefing:** a **minimum three-hour** theoretical and practical briefing by the rental company (traffic rules, operation, safety).
 - **Crew:** usually limited to a **maximum of 12 people**.
 
 The charter certificate is issued to the person who took part in the briefing – only that person may operate the boat.
@@ -53,7 +54,7 @@ Parts of Brandenburg also have charter areas. Exactly which stretches are approv
 The charter certificate comes with conditions that serve safety:
 
 - **No night travel:** you sail only in daylight.
-- **No travel above wind force 4:** in too much wind the boat stays in the harbor.
+- **No travel from wind force 4:** on certain large lakes, such as the Müritz or the Plauer See, the boat stays in the harbor from 4 Beaufort.
 - **Life jackets:** on large lakes the crew must wear life jackets.
 - The general **traffic rules** (give-way rules, sea marks) of course still apply – they are part of the briefing.
 
@@ -76,3 +77,10 @@ The charter certificate is ideal for a **one-off boating holiday** on the lake d
 ## Conclusion
 
 With the charter certificate you can take a boating holiday on the Mecklenburg Lake District without a Sportbootführerschein – the boat may be at most 15 m long and 12 km/h fast, there's a short briefing and clear conditions like the night-travel ban and the wind limit. For your own boat, the sea, or abroad, however, you need the proper [SBF](/en/sbf-inland/). If you want to take the license, you can start for free in the Boatpass app with the official ELWIS question catalog for the theory exam.
+
+## Sources
+
+- [Inland Waterways Boat Rental Ordinance (BinSch-SportbootVermV), § 9](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/__9.html) and [§ 8](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/__8.html) – legal basis of the charter certificate and minimum age of 16 for rented motorboats (German)
+- [Annex 4 of the ordinance](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/anlage_4.html) – charter certificate template, night-time ban and briefing of at least three hours (German)
+- [Annex 5 of the ordinance](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/anlage_5.html) – waters where the charter certificate is valid, with conditions such as the wind limit and life-jacket requirement (German)
+- [Annex 6 of the ordinance](https://www.gesetze-im-internet.de/sportbootvermv-bin2000/anlage_6.html) – boat requirements: at most 15 m long, 12 km/h and 12 persons (German)
