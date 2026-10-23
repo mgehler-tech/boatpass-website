@@ -670,3 +670,20 @@ details[open] > .pg-faq-q svg { transform: rotate(90deg); }
 .pg-faq-q > h3 { margin: 0; font: inherit; color: inherit; }
 .pg-faq-a p + p, .pg-faq-a ul, .pg-faq-a ol { margin-top: 10px; }
 .pg-faq-a a { color: var(--h-blue-ink); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── Schrittfolgen (Navigationsaufgaben-Hub): nummerierte Arbeitsschritte je Aufgabentyp ── */
+.pg-steps { margin: 0 0 16px; padding: 0; list-style: none; counter-reset: pg-step; display: flex; flex-direction: column; gap: 10px; }
+.pg-steps > li { counter-increment: pg-step; display: flex; align-items: flex-start; gap: 12px; font-size: 15.5px; line-height: 1.6; color: var(--h-text); }
+.pg-steps > li::before {
+  content: counter(pg-step);
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 26px; height: 26px; margin-top: 1px;
+  border-radius: var(--h-r-pill);
+  background: var(--h-blue-wash);
+  font: 650 13px/1 var(--h-sans);
+  color: var(--h-blue-ink);
+}
+.pg-steps strong { color: var(--h-ink); font-weight: 650; }
+.pg-example { margin: 0 0 16px; }
+.pg-example .pg-card-text + .pg-card-text { margin-top: 6px; }

@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: 'Wie funktioniert die Navigationsaufgabe?',
-    a: 'In der Navigationsaufgabe arbeitest du mit einer Seekarte: Kurse abtragen, Positionen bestimmen, Gezeiten und Strom berücksichtigen. Von den 9 Fragen musst du mindestens 7 richtig beantworten. Genau dieser Teil wird in der Boatpass-App mit realem Navigationsteil geübt.',
+    a: 'In der Navigationsaufgabe arbeitest du mit einer Seekarte: Kurse ablesen und umrechnen, Peilungen eintragen und Positionen bestimmen. Von den 9 Fragen musst du mindestens 7 richtig beantworten. Genau dieser Teil wird in der Boatpass-App mit realem Navigationsteil geübt.',
   },
   {
     q: 'Wo finde ich die offiziellen SBF-See-Prüfungsfragen?',
@@ -143,10 +143,13 @@ const faqSchema = {
     <section class="pg-section">
       <h2 class="pg-h2">Die Navigationsaufgabe – der Knackpunkt beim SBF See</h2>
       <p class="pg-p">
-        Die Navigationsaufgabe ist der Teil, vor dem die meisten Prüflinge Respekt haben. Auf der amtlichen <strong>Übungs-Seekarte</strong> trägst du Kurse ab, bestimmst Positionen und berücksichtigst Einflüsse wie <strong>Strom, Wind und Gezeiten</strong>. Von den 9 Einzelfragen musst du mindestens 7 richtig lösen.
+        Die Navigationsaufgabe ist der Teil, vor dem die meisten Prüflinge Respekt haben. Auf der amtlichen <strong>Übungs-Seekarte</strong> trägst du Kurse ab, rechnest sie auf den Kompass um, wertest <strong>Peilungen</strong> aus und bestimmst <strong>Positionen</strong>. Von den 9 Einzelfragen musst du mindestens 7 richtig lösen.
       </p>
       <p class="pg-p">
         Der große Vorteil: Es gibt insgesamt nur <strong>15 amtliche Navigationsaufgaben</strong>, von denen in der Prüfung eine unverändert gestellt wird. Wer diese 15 Aufgaben mit einem <strong>realen Navigationsteil</strong> durchübt – genau wie in der echten Prüfung – geht souverän in den Prüfungstag. Genau das bildet die Boatpass-App ab.
+      </p>
+      <p class="pg-p">
+        Den Lösungsweg für jeden Aufgabentyp, typische Fehler und das erlaubte Material findest du auf der Seite <a href="/sbf-see-navigationsaufgaben/" class="pg-inline-link">SBF See Navigationsaufgaben Schritt für Schritt</a>.
       </p>
     </section>
 
@@ -156,7 +159,7 @@ const faqSchema = {
       <div class="pg-rows">
         {[
           { icon: 'book', title: 'Kompletter ELWIS-Katalog See', desc: 'Alle Fragen zu Küste und Seeschifffahrtsstraßen – vollständig abgedeckt, immer aktuell.' },
-          { icon: 'compass', title: 'Navigation mit realem Navigationsteil', desc: 'Übe die Navigationsaufgabe so, wie sie in der echten Prüfung gestellt wird – Kurse, Positionen, Gezeiten.' },
+          { icon: 'compass', title: 'Navigation mit realem Navigationsteil', desc: 'Übe die Navigationsaufgabe so, wie sie in der echten Prüfung gestellt wird – Kurse, Peilungen, Positionen.' },
           { icon: 'target', title: 'Prüfungssimulation: 39 Fragen, 60 Minuten', desc: 'Echte Prüfungsbedingungen inklusive Navigationsteil und Bestehensgrenze.' },
           { icon: 'refresh', title: 'Fehlertraining', desc: 'Wiederhole gezielt deine Schwachstellen, statt alles von vorne zu lernen.' },
         ].map(f => (
@@ -216,6 +219,7 @@ const faqSchema = {
         <li><a href="/sbf-binnen-pruefungsfragen/">SBF Binnen Prüfungsfragen üben<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/sbf-pruefung-ablauf/">SBF Prüfung: Ablauf von Theorie & Praxis<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/sbf-kosten/">Was kostet der Sportbootführerschein?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-see-navigationsaufgaben/">SBF See Navigationsaufgaben Schritt für Schritt<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/blog/sbf-see-navigationsaufgaben-erklaert/">SBF See Navigationsaufgaben erklärt – Aufbau & Tipps<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/blog/schwierigste-sbf-pruefungsfragen/">Die schwierigsten SBF-Prüfungsfragen – und wie du sie meisterst<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
       </ul>

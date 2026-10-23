@@ -111,7 +111,7 @@ An der Ostsee ist der Tidenhub meist so gering, dass Wind und Luftdruck den Wass
 
 ## Wie geht es weiter?
 
-Die Gezeitenkunde gehört nicht zum Sportbootführerschein, sondern zu weiterführenden Seeausbildungen wie dem [Sportküstenschifferschein (SKS)](/blog/sportkuestenschifferschein-sks/). Für Törns in Tidenrevieren lohnt sich das Thema trotzdem, auch mit dem [SBF See](/sbf-see/) in der Tasche. Wie du Strömung und Tide konkret für die Törnplanung nutzt, zeigt der Beitrag [Strömung und Tide praktisch nutzen](/blog/stroemung-tide-toernplanung-grundlagen/). Den Prüfungsstoff des SBF See, etwa die [Navigationsaufgaben](/blog/sbf-see-navigationsaufgaben-erklaert/), übst du in der Boatpass-App mit dem offiziellen ELWIS-Fragenkatalog.
+Die Gezeitenkunde gehört nicht zum Sportbootführerschein, sondern zu weiterführenden Seeausbildungen wie dem [Sportküstenschifferschein (SKS)](/blog/sportkuestenschifferschein-sks/). Für Törns in Tidenrevieren lohnt sich das Thema trotzdem, auch mit dem [SBF See](/sbf-see/) in der Tasche. Wie du Strömung und Tide konkret für die Törnplanung nutzt, zeigt der Beitrag [Strömung und Tide praktisch nutzen](/blog/stroemung-tide-toernplanung-grundlagen/). Den Prüfungsstoff des SBF See, etwa die [Navigationsaufgaben](/blog/sbf-see-navigationsaufgaben-erklaert/), übst du in der Boatpass-App mit dem offiziellen ELWIS-Fragenkatalog. Welche Gezeiten-Fragen die Prüfung tatsächlich stellt und warum die Navigationsaufgabe ohne Gezeitenrechnung auskommt, steht auf der Seite [SBF See Navigationsaufgaben](/sbf-see-navigationsaufgaben/#gezeiten).
 
 ## Fazit
 

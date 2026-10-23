@@ -133,7 +133,7 @@ Your actual course over ground is therefore **086°**, even though you steered 0
 
 Course conversion is pure routine – it has to be second nature, so you can do it without thinking. The best approach is to work through dozens of variants with changing signs until the formula runs automatically. In the [Boatpass app you can train the navigation section](/en/sbf-coastal-exam-questions/) separately from the rest of the question catalogue: with real tasks just like in the exam, immediate feedback, and the option to specifically repeat the task types you are still unsure about.
 
-To see how course conversion fits into the complete navigation task, read the overview article [SBF Coastal Navigation Tasks Explained](/en/blog/sbf-coastal-navigation-tasks-explained/). And if you are still deciding which licence fits you, the comparison [SBF Inland vs. Coastal](/en/blog/sbf-inland-vs-coastal/) helps, or browse every German boating licence on the [licences overview](/en/licenses/).
+To see how course conversion fits into the complete navigation task, read the overview article [SBF Coastal Navigation Tasks Explained](/en/blog/sbf-coastal-navigation-tasks-explained/). The solution for every task type in the navigation task is on the page [SBF Coastal navigation tasks step by step](/en/sbf-coastal-navigation-tasks/). And if you are still deciding which licence fits you, the comparison [SBF Inland vs. Coastal](/en/blog/sbf-inland-vs-coastal/) helps, or browse every German boating licence on the [licences overview](/en/licenses/).
 
 ## Conclusion
 

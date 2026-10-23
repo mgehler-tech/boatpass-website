@@ -84,7 +84,8 @@ export default defineConfig({
         if (path === '/' || path === '') {
           item.priority = 1.0;
           item.changefreq = 'weekly';
-        } else if (/^\/(sbf-binnen|sbf-see|sbf-kosten|sbf-pruefung-ablauf|sbf-binnen-pruefungsfragen|sbf-see-pruefungsfragen|fuehrerscheine|licenses)\/?$/.test(path)) {
+        } else if (/^\/(sbf-binnen|sbf-see|sbf-kosten|sbf-pruefung-ablauf|sbf-binnen-pruefungsfragen|sbf-see-pruefungsfragen|sbf-see-navigationsaufgaben|fuehrerscheine|licenses|sbf-inland|sbf-coastal|sbf-costs|sbf-exam|sbf-inland-exam-questions|sbf-coastal-exam-questions|sbf-coastal-navigation-tasks)\/?$/.test(path)) {
+          // Pillar-Seiten DE und ihre EN-Gegenstücke (übersetzte Slugs, `path` ohne /en).
           item.priority = 0.9;
           item.changefreq = 'monthly';
         } else if (/^\/(src|ubi|lrc|faq)\/?$/.test(path)) {

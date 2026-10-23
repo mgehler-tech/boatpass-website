@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: 'Was ist die Navigationsaufgabe?',
-    a: 'In der Navigationsaufgabe arbeitest du mit einer amtlichen Übungsseekarte: Kurse abtragen, den eigenen Standort bestimmen, Wind- und Stromversatz berücksichtigen und Gezeiten einrechnen. Sie gilt als anspruchsvollster Teil der Prüfung – deshalb übst du sie bei Boatpass gezielt und getrennt vom Fragebogen.',
+    a: 'In der Navigationsaufgabe arbeitest du mit einer amtlichen Übungsseekarte: Kurse ablesen und umrechnen, Peilungen eintragen, den eigenen Standort bestimmen und Distanz, Zeit und Geschwindigkeit berechnen. Gezeiten kommen darin nicht vor. Sie gilt als anspruchsvollster Teil der Prüfung – deshalb übst du sie bei Boatpass gezielt und getrennt vom Fragebogen.',
   },
   {
     q: 'Welche Voraussetzungen muss ich erfüllen?',
@@ -120,7 +120,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName }[
   { name: 'Signale & Zeichen', desc: 'Schall-, Sicht- und Seezeichen', count: 28, icon: 'bell' },
   { name: 'Wetterkunde', desc: 'Wind, Wetter, Gezeitentafel & Vorhersage', count: 10, icon: 'cloud' },
   { name: 'Allgemein', desc: 'Allgemeine Grundlagen & Seemannschaft', count: 5, icon: 'document' },
-  { name: 'Navigationsaufgaben', desc: '15 Kartenaufgaben à 9 Fragen: Kurse, Standort, Gezeiten & Stromversatz', count: 135, icon: 'target' },
+  { name: 'Navigationsaufgaben', desc: '15 Kartenaufgaben à 9 Fragen: Kurse, Peilung, Standort & Besteckversetzung', count: 135, icon: 'target' },
 ];
 ---
 
@@ -209,7 +209,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName }[
         </div>
       </div>
       <p class="pg-note">
-        Der SBF See beinhaltet eine <strong>Navigationsaufgabe</strong> – das ist der anspruchsvollste Teil der Prüfung. Boatpass trainiert alle Fragentypen gezielt. Die amtliche Prüfungsgebühr beträgt 2026 <strong>148,38 €</strong> (Theorie + Praxis).
+        Der SBF See beinhaltet eine <strong>Navigationsaufgabe</strong> – das ist der anspruchsvollste Teil der Prüfung. Wie du jeden Aufgabentyp löst, zeigt die Übersicht <a href="/sbf-see-navigationsaufgaben/" class="pg-inline-link">SBF See Navigationsaufgaben Schritt für Schritt</a>. Boatpass trainiert alle Fragentypen gezielt. Die amtliche Prüfungsgebühr beträgt 2026 <strong>148,38 €</strong> (Theorie + Praxis).
       </p>
     </section>
 
@@ -282,7 +282,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName }[
         </div>
         <div class="pg-card">
           <p class="pg-card-title">Besonderheit</p>
-          <p class="pg-card-text">Zusätzliche Navigationsaufgabe mit Seekarte, Kursberechnung und Gezeiten.</p>
+          <p class="pg-card-text">Zusätzliche Navigationsaufgabe mit Seekarte, Kursberechnung und Standortbestimmung.</p>
         </div>
       </div>
     </section>
@@ -384,6 +384,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName }[
       <h2 class="pg-h2 pg-h2--sm">Weiterführende Artikel</h2>
       <ul class="pg-related">
         <li><a href="/sbf-see-pruefungsfragen/">SBF See Prüfungsfragen üben<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-see-navigationsaufgaben/">SBF See Navigationsaufgaben Schritt für Schritt<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/sbf-see-app/">SBF-See-Apps im Vergleich<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/sbf-kosten/">Was kostet der Sportbootführerschein?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/sbf-pruefung-ablauf/">SBF Prüfung: Ablauf von Theorie & Praxis<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>

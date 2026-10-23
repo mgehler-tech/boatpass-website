@@ -34,7 +34,7 @@ const faqs = [
   },
   {
     q: 'What is the navigation task?',
-    a: 'In the navigation task you work with an official training chart: plotting courses, determining your own position, accounting for wind and current set and factoring in tides. It is considered the most demanding part of the exam – which is why you practice it specifically and separately from the question paper with Boatpass.',
+    a: 'In the navigation task you work with an official training chart: reading and converting courses, plotting bearings, determining your own position and working out distance, time and speed. Tides do not come up in it. It is considered the most demanding part of the exam – which is why you practice it specifically and separately from the question paper with Boatpass.',
   },
   {
     q: 'What requirements do I have to meet?',
@@ -120,7 +120,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName }[
   { name: 'Signals & marks', desc: 'Sound, visual and sea marks', count: 28, icon: 'bell' },
   { name: 'Meteorology', desc: 'Wind, weather, tide tables & forecasting', count: 10, icon: 'cloud' },
   { name: 'General', desc: 'General fundamentals & seamanship', count: 5, icon: 'document' },
-  { name: 'Navigation tasks', desc: '15 chart tasks of 9 questions each: courses, position, tides & current set', count: 135, icon: 'target' },
+  { name: 'Navigation tasks', desc: '15 chart tasks of 9 questions each: courses, bearings, position & dead-reckoning error', count: 135, icon: 'target' },
 ];
 
 ---
@@ -210,7 +210,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName }[
         </div>
       </div>
       <p class="pg-note">
-        The SBF Coastal includes a <strong>navigation task</strong> – this is the most demanding part of the exam. Boatpass trains all question types in a targeted way. The official exam fee in 2026 is <strong>€148.38</strong> (theory + practice).
+        The SBF Coastal includes a <strong>navigation task</strong> – this is the most demanding part of the exam. How to solve each task type is shown in the overview <a href="/en/sbf-coastal-navigation-tasks/" class="pg-inline-link">SBF Coastal navigation tasks step by step</a>. Boatpass trains all question types in a targeted way. The official exam fee in 2026 is <strong>€148.38</strong> (theory + practice).
       </p>
     </section>
 
@@ -282,7 +282,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName }[
         </div>
         <div class="pg-card">
           <p class="pg-card-title">Special feature</p>
-          <p class="pg-card-text">An additional navigation task with a chart, course calculation and tides.</p>
+          <p class="pg-card-text">An additional navigation task with a chart, course calculation and position fixing.</p>
         </div>
       </div>
     </section>
@@ -384,6 +384,7 @@ const categories: { name: string; desc: string; count: number; icon: IconName }[
       <h2 class="pg-h2 pg-h2--sm">Further reading</h2>
       <ul class="pg-related">
         <li><a href="/en/sbf-coastal-exam-questions/">Practice SBF Coastal exam questions<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/en/sbf-coastal-navigation-tasks/">SBF Coastal navigation tasks step by step<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/en/sbf-coastal-app/">SBF See apps compared<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/en/sbf-costs/">What does the boating license cost?<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
         <li><a href="/en/sbf-exam/">SBF exam: how theory & practice work<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>

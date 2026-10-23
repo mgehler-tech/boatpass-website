@@ -1,0 +1,402 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHead from '../components/page/PageHead.astro';
+import PageLayout from '../components/page/PageLayout.astro';
+import PageFacts from '../components/page/PageFacts.astro';
+import DisplayFontPreload from '../components/page/DisplayFontPreload.astro';
+import Icon from '../components/Icon.astro';
+import type { IconName } from '../icons';
+
+// Hub zu den Navigationsaufgaben (Karten­aufgaben) der SBF-See-Prüfung
+// (SEO-Audit 23.10.2026, Content-Lücke 3). Alle Prüfungsfakten aus ELWIS und
+// SpFV Anlage 3, Stand Oktober 2026; Quellen unten auf der Seite verlinkt.
+const ELWIS_NAV = 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Navigationsaufgaben/Navigationsaufgaben-node.html';
+const ELWIS_SCORE = 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Bewertungsschluessel/Bewertungsschluessel-node.html';
+const ELWIS_SEE = 'https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Spezifische-Fragen-See/Spezifische-Fragen-See-node.html';
+const SPFV_ANLAGE_3 = 'https://www.gesetze-im-internet.de/spfv/anlage_3.html';
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://boatpass.de/" },
+    { "@type": "ListItem", "position": 2, "name": "SBF See", "item": "https://boatpass.de/sbf-see/" },
+    { "@type": "ListItem", "position": 3, "name": "Navigationsaufgaben", "item": "https://boatpass.de/sbf-see-navigationsaufgaben/" },
+  ],
+};
+
+const faqs = [
+  {
+    q: 'Wie viele Navigationsaufgaben gibt es beim SBF See?',
+    a: 'Der amtliche Fragenkatalog enthält 15 Navigationsaufgaben. In der Prüfung bekommst du eine davon mit 9 Teilfragen. Die Teilfragen stammen aus einem festen Pool von 15 Fragetypen (Katalogfragen 286 bis 300), zum Beispiel rechtweisender Kurs, Magnetkompasskurs, Peilung, Position oder Besteckversetzung.',
+  },
+  {
+    q: 'Wie wird die Navigationsaufgabe bewertet?',
+    a: 'Jede richtige Antwort oder Eintragung bringt einen Punkt, Teilpunkte gibt es nicht. Bestanden hast du den Navigationsteil ab 7 von 9 Punkten. Er wird getrennt vom Fragebogen gewertet. Folgefehler zählen nicht doppelt: Rechnest du mit einem falschen Zwischenergebnis folgerichtig weiter, bekommst du für die spätere Antwort trotzdem den Punkt.',
+  },
+  {
+    q: 'Was ist der Unterschied zwischen Navigationsaufgabe und Kartenaufgabe?',
+    a: 'Es gibt keinen. „Kartenaufgabe“ ist der umgangssprachliche Name, weil du die Navigationsaufgabe auf einem Ausschnitt der Übungskarte D49 löst. Im amtlichen Katalog heißt der Teil Navigationsaufgabe.',
+  },
+  {
+    q: 'Welche Hilfsmittel sind in der Navigationsaufgabe erlaubt?',
+    a: 'Die Sportbootführerscheinverordnung erlaubt Navigationsdreieck, Anlegedreieck, Doppellineal, Portland Plotter und Zirkel. Andere Hilfsmittel, auch elektronische Nachschlagewerke, sind ausgeschlossen. Ein Taschenrechner wird in der Liste nicht genannt; frag deinen Prüfungsausschuss, bevor du dich darauf verlässt, und übe die Zeit- und Fahrtrechnung im Kopf.',
+  },
+  {
+    q: 'Kommen Gezeiten in der Navigationsaufgabe vor?',
+    a: 'Nein. Keine der 15 Teilfragen verlangt eine Gezeitenrechnung, einen Stromversatz oder eine Beschickung. Gezeiten-Grundbegriffe wie Tidenhub, Hoch- und Niedrigwasser fragt der Fragebogen in den spezifischen See-Fragen als Wissensfragen ab.',
+  },
+  {
+    q: 'Wie viel Zeit habe ich für die Navigationsaufgabe?',
+    a: 'Es gibt keine eigene Zeit für den Navigationsteil. Für den ganzen Bogen mit 39 Fragen hast du 60 Minuten; wer schon den SBF Binnen unter Motor hat, bekommt 32 Fragen in 50 Minuten. Die Zeit teilst du selbst ein.',
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+};
+
+// HowTo-Schema für die Kursumrechnung, den Rechenschritt, der in fast jeder Aufgabe vorkommt.
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Rechtweisenden Kurs in Magnetkompasskurs umrechnen (SBF See)",
+  "description": "Kursumrechnung für die Navigationsaufgabe der SBF-See-Prüfung: vom rechtweisenden Kurs über den missweisenden Kurs zum Magnetkompasskurs.",
+  "step": [
+    { "@type": "HowToStep", "name": "rwK aus der Karte ablesen", "text": "Verbinde Start und Ziel, lege das Navigationsdreieck an einen Meridian und lies den rechtweisenden Kurs ab." },
+    { "@type": "HowToStep", "name": "Missweisung abziehen", "text": "Entnimm die Missweisung der Kompassrose der Karte. Östliche Werte sind positiv, westliche negativ. rwK minus Mw ergibt den missweisenden Kurs mwK." },
+    { "@type": "HowToStep", "name": "Ablenkung abziehen", "text": "Die Ablenkung steht im Aufgabentext. mwK minus Abl ergibt den Magnetkompasskurs MgK." },
+    { "@type": "HowToStep", "name": "Probe rechnen", "text": "MgK plus Abl plus Mw muss wieder den rwK ergeben." },
+  ],
+};
+
+type TaskType = {
+  id: string;
+  icon: IconName;
+  title: string;
+  pool: string;
+  intro: string;
+  steps: string[];
+  example?: string[];
+  links: { href: string; label: string }[];
+};
+
+const taskTypes: TaskType[] = [
+  {
+    id: 'kurs',
+    icon: 'compass',
+    title: 'Kurs ablesen und eintragen',
+    pool: 'Teilfragen „rwK“ und „Kurs eintragen“',
+    intro: 'Der rechtweisende Kurs (rwK) ist der Winkel zwischen geografisch Nord und deiner Kurslinie. Du liest ihn mit dem Navigationsdreieck aus der Karte ab oder trägst einen vorgegebenen Kurs ein.',
+    steps: [
+      'Start- und Zielpunkt mit dem Lineal sauber verbinden, die Linie ein Stück über beide Punkte hinaus ziehen.',
+      'Navigationsdreieck mit der Kante an die Kurslinie legen und so verschieben, dass der Mittelpunkt der Gradskala auf einem <strong>Meridian</strong> (Längengrad-Linie) liegt.',
+      'Den Kurs an der Stelle ablesen, an der der Meridian die Skala schneidet. Von den beiden Werten gilt der, der in <strong>Fahrtrichtung</strong> zeigt.',
+      'Plausibel prüfen: Fährst du grob nach Südost, muss der Kurs zwischen 90° und 180° liegen.',
+    ],
+    links: [{ href: '/blog/seekarte-lesen-lernen/', label: 'Seekarte lesen lernen' }],
+  },
+  {
+    id: 'kursumrechnung',
+    icon: 'refresh',
+    title: 'Kursumrechnung: vom rwK zum MgK',
+    pool: 'Teilfrage „MgK“',
+    intro: 'Der Kompass an Bord zeigt nicht nach geografisch Nord. Die Missweisung (Mw) hängt vom Ort ab und steht in der Kompassrose der Karte, die Ablenkung (Abl) hängt vom Boot ab und wird im Aufgabentext genannt. Östliche Werte sind positiv, westliche negativ.',
+    steps: [
+      'rwK aus der Karte ablesen (siehe oben).',
+      'Missweisung aus der Kompassrose entnehmen und abziehen: <strong>rwK − Mw = mwK</strong>.',
+      'Ablenkung aus dem Aufgabentext abziehen: <strong>mwK − Abl = MgK</strong>.',
+      'Probe in der Gegenrichtung: <strong>MgK + Abl + Mw = rwK</strong>.',
+    ],
+    example: [
+      'Beispiel: rwK 125°, Mw +2° (Ost), Abl −3° (West).',
+      'mwK = 125° − 2° = 123°. MgK = 123° − (−3°) = 126°. Probe: 126° − 3° + 2° = 125°.',
+    ],
+    links: [
+      { href: '/blog/kursumrechnung-sbf-see/', label: 'Kursumrechnung beim SBF See' },
+      { href: '/blog/kompass-missweisung-deviation-erklaert/', label: 'Kompass, Missweisung und Deviation' },
+    ],
+  },
+  {
+    id: 'peilung',
+    icon: 'target',
+    title: 'Peilungen umrechnen und eintragen',
+    pool: 'Teilfragen „rw-Peilungen“ und „Peilungen eintragen“',
+    intro: 'Mit dem Kompass gepeilte Richtungen zu Leuchtfeuern oder Tonnen sind Magnetkompasspeilungen (MgP). Für die Karte brauchst du die rechtweisende Peilung (rwP). Gerechnet wird wie beim Kurs, nur in die andere Richtung.',
+    steps: [
+      'Ablenkung und Missweisung addieren: <strong>MgP + Abl + Mw = rwP</strong>. Die Ablenkung gilt für den <strong>Kurs, den du steuerst</strong>, nicht für die Peilrichtung.',
+      'Navigationsdreieck so anlegen, dass seine Kante durch das gepeilte Objekt läuft und am Meridian die rwP anzeigt.',
+      'Die Linie vom Objekt aus zu dir hin zeichnen. Diese Standlinie ist die Menge aller Punkte, von denen aus das Objekt in dieser Richtung liegt.',
+      'Eine zweite Peilung auf ein anderes Objekt ebenso eintragen. Der Schnittpunkt beider Linien ist dein beobachteter Ort.',
+    ],
+    links: [{ href: '/blog/peilung-kollisionskurs-cpa-erklaert/', label: 'Peilung und Kollisionskurs' }],
+  },
+  {
+    id: 'position',
+    icon: 'mapPin',
+    title: 'Position, Koppelort und Besteckversetzung',
+    pool: 'Teilfragen „geographische Position“, „Position eintragen“, „Koppelort“, „Besteckversetzung“',
+    intro: 'Standortbestimmung heißt: eine Position aus der Karte ablesen, eine vorgegebene Position eintragen oder sie aus Kurs, Fahrt und Zeit vorausberechnen (koppeln). Die Differenz zwischen gekoppeltem und beobachtetem Ort ist die Besteckversetzung.',
+    steps: [
+      '<strong>Ablesen:</strong> Breite am seitlichen Kartenrand, Länge am oberen oder unteren Rand abgreifen, etwa mit dem Zirkel oder parallel verschobenem Dreieck. Breite mit N, Länge mit E angeben.',
+      '<strong>Eintragen:</strong> Breite und Länge am Rand markieren, beide Linien in die Karte übertragen, am Schnittpunkt den Ort setzen.',
+      '<strong>Koppeln:</strong> Distanz = Fahrt × Zeit rechnen, mit dem Zirkel an der Breitenskala abgreifen und vom Startpunkt auf der Kurslinie abtragen. Das Ergebnis ist der Koppelort.',
+      '<strong>Besteckversetzung:</strong> Linie vom Koppelort zum beobachteten Ort ziehen, Richtung (rechtweisend) und Länge in Seemeilen angeben.',
+    ],
+    links: [{ href: '/blog/sbf-see-navigationsaufgaben-erklaert/', label: 'Aufbau der Navigationsaufgabe' }],
+  },
+  {
+    id: 'distanz-zeit',
+    icon: 'clipboard',
+    title: 'Distanz, Zeit und Geschwindigkeit',
+    pool: 'Teilfragen „Distanz“, „Zeit“, „Geschwindigkeit“',
+    intro: 'Distanzen misst du in Seemeilen (sm), Geschwindigkeiten in Knoten (kn, Seemeilen pro Stunde). Eine Bogenminute auf der Breitenskala entspricht einer Seemeile.',
+    steps: [
+      'Zirkel auf die beiden Punkte setzen und die Öffnung an der <strong>Breitenskala</strong> (seitlicher Rand) ablesen, möglichst auf gleicher Höhe wie die Strecke. Nie an der Längenskala oben oder unten messen.',
+      'Zeit: <strong>t = s ÷ v</strong>. Das Ergebnis ist in Stunden; mal 60 ergibt Minuten.',
+      'Geschwindigkeit: <strong>v = s ÷ t</strong>, dabei die Zeit vorher in Stunden umrechnen.',
+      'Wird eine Uhrzeit gefragt, die Fahrzeit zur Abfahrtszeit addieren.',
+    ],
+    example: [
+      'Beispiel: 6 sm bei 8 kn dauern 6 ÷ 8 = 0,75 h = 45 Minuten. Abfahrt 10:20 Uhr, Ankunft 11:05 Uhr.',
+      'Umgekehrt: 5 sm in 40 Minuten sind 5 ÷ (40 ÷ 60) = 7,5 kn.',
+    ],
+    links: [{ href: '/blog/seekarte-lesen-lernen/', label: 'Seemeile und Breitenskala' }],
+  },
+  {
+    id: 'zeichen',
+    icon: 'lightbulb',
+    title: 'Schifffahrtszeichen und Karteneintragungen',
+    pool: 'Teilfragen „Bedeutung“ und „Beschreibung Schifffahrtszeichen“, „Eintragung in der Seekarte“',
+    intro: 'Diese Teilfragen sind reine Wissensfragen zur Karte. Du sollst ein Zeichen benennen, ein Leuchtfeuer beschreiben oder eine Eintragung erklären. Die Abkürzungen stehen in der Zeichenerklärung für Seekarten (Karte 1 / INT 1).',
+    steps: [
+      'Zeichen in der Karte suchen und die Beschriftung daneben vollständig lesen.',
+      'Bei Tonnen die Art benennen (zum Beispiel Steuerbord- oder Kardinaltonne) und Farbe, Form und Toppzeichen angeben.',
+      'Bei Leuchtfeuern die Kennung zerlegen: Art (Blitz, unterbrochen, Gleichtakt), Gruppe, Farbe, Wiederkehr in Sekunden, Feuerhöhe in Metern und Tragweite in Seemeilen.',
+      'Alle Teile hinschreiben, die in der Karte stehen. Was fehlt, gilt als unvollständig.',
+    ],
+    links: [{ href: '/blog/seekarte-lesen-lernen/', label: 'Seekartenzeichen lesen' }],
+  },
+];
+
+const mistakes = [
+  { title: 'Gegenkurs abgelesen', desc: 'Das Dreieck zeigt zwei Werte, die 180° auseinanderliegen. Vor dem Ablesen kurz prüfen, in welche Himmelsrichtung du fährst.' },
+  { title: 'Vorzeichen vertauscht', desc: 'Ost ist plus, West ist minus. Vom rwK zum MgK wird abgezogen, vom MgK oder von der MgP zum rw-Wert addiert. Die Probe deckt den Fehler auf.' },
+  { title: 'Falsche Ablenkung bei Peilungen', desc: 'Die Ablenkung hängt vom gesteuerten Kurs ab, nicht von der Richtung zum gepeilten Objekt.' },
+  { title: 'Distanz an der Längenskala gemessen', desc: 'Nur die Breitenskala am seitlichen Rand misst Seemeilen. Die Längenskala ist in diesen Breiten deutlich gestaucht.' },
+  { title: 'Dezimalstunden mit Minuten verwechselt', desc: '0,4 h sind 24 Minuten, nicht 40. Erst in Minuten umrechnen, dann zur Uhrzeit addieren.' },
+  { title: 'Rechenweg nicht notiert', desc: 'Folgefehler kosten keinen zweiten Punkt, aber nur, wenn erkennbar ist, dass du folgerichtig weitergerechnet hast. Zwischenwerte und Rechnung kurz hinschreiben.' },
+  { title: 'Ungenau gezeichnet', desc: 'Ein dicker Strich oder ein verrutschtes Dreieck kostet schnell ein oder zwei Grad. Spitzer, harter Bleistift und ruhig anlegen.' },
+];
+---
+
+<BaseLayout
+  title="SBF See Navigationsaufgabe – Kartenaufgabe Schritt für Schritt"
+  description="Navigationsaufgabe beim SBF See: 15 Aufgaben, 9 Teilfragen, 7 Punkte zum Bestehen. Kurs, Peilung, Position und Kursumrechnung Schritt für Schritt erklärt."
+  lang="de"
+  altUrl="https://boatpass.de/en/sbf-coastal-navigation-tasks/"
+>
+  <DisplayFontPreload slot="head" />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(howToSchema)} />
+
+  <PageHead
+    lang="de"
+    eyebrow="SBF See · Navigationsaufgabe"
+    lede="Die Kartenaufgabe ist der Teil der SBF-See-Prüfung, den es beim Binnenschein nicht gibt. Hier steht, wie sie bewertet wird, welche Aufgabentypen vorkommen und wie du jeden davon Schritt für Schritt löst."
+    ctaLabel="Navigationsaufgaben üben"
+    cta
+  >
+    SBF See Navigations&shy;aufgabe –<br />Schritt für Schritt
+  </PageHead>
+
+  <PageLayout>
+    <PageFacts
+      slot="aside"
+      lang="de"
+      title="Auf einen Blick"
+      product="sbfSee"
+      items={[
+        { k: 'Aufgaben im Katalog', v: '15 Navigationsaufgaben' },
+        { k: 'In der Prüfung', v: '1 Aufgabe · 9 Teilfragen' },
+        { k: 'Bestanden', v: 'ab 7 von 9 Punkten' },
+        { k: 'Zeit', v: '60 Min für den ganzen Bogen' },
+        { k: 'Karte', v: 'Übungskarte D49' },
+      ]}
+    />
+
+    <div class="pg-answer">
+      <p class="pg-answer-label">Auf den Punkt</p>
+      <p class="pg-answer-text">
+        In der Theorieprüfung zum SBF See löst du eine von 15 amtlichen Navigationsaufgaben auf der Übungskarte D49. Sie hat 9 Teilfragen, jede richtige Antwort gibt einen Punkt, bestanden ist ab 7 Punkten. Gefragt werden Kurse, Kursumrechnung, Peilungen, Positionen, Distanz, Zeit, Geschwindigkeit und Seekartenzeichen. Gezeiten kommen in der Aufgabe nicht vor.
+      </p>
+    </div>
+
+    <!-- Prüfungsrahmen -->
+    <section class="pg-section">
+      <h2 class="pg-h2">Was die Navigationsaufgabe in der Prüfung ist</h2>
+      <p class="pg-p">
+        Die Theorieprüfung zum <a href="/sbf-see/" class="pg-inline-link">SBF See</a> besteht aus einem Fragebogen mit 30 Fragen (7 Basisfragen, 23 spezifische See-Fragen) und einer <strong>Navigationsaufgabe mit 9 Teilfragen</strong>. Die Teilfragen beantwortest du schriftlich, Kurse und Orte trägst du in den Kartenausschnitt ein, der zu deinem Fragebogen gehört. Umgangssprachlich heißt dieser Teil deshalb auch <strong>Kartenaufgabe</strong>.
+      </p>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-label">Umfang</p>
+          <p class="pg-card-text">15 Aufgaben im amtlichen Katalog, in der Prüfung eine davon. Die 9 Teilfragen kommen aus einem Pool von 15 Fragetypen.</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-label">Bewertung</p>
+          <p class="pg-card-text">1 Punkt je richtige Antwort oder Eintragung, keine Teilpunkte. Bestanden ab 7 von 9 Punkten, getrennt vom Fragebogen.</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-label">Zeit</p>
+          <p class="pg-card-text">60 Minuten für alle 39 Fragen. Mit SBF Binnen unter Motor: 32 Fragen in 50 Minuten. Keine eigene Zeit für die Navigation.</p>
+        </div>
+      </div>
+      <p class="pg-p pg-p--after">
+        Gut zu wissen: <strong>Folgefehler werden nicht doppelt bestraft.</strong> Ist eine Antwort nur deshalb falsch, weil du mit einem falschen Wert aus einer früheren Teilfrage richtig weitergerechnet hast, bekommt sie trotzdem den Punkt. Schreib den Rechenweg deshalb kurz auf, damit der Prüfer ihn nachvollziehen kann. Mehr als zwei Punkte darfst du nicht verlieren.
+      </p>
+      <p class="pg-p">
+        Grundlage aller Aufgaben ist die <strong>Übungskarte D49</strong> mit den Mündungen von Jade, Weser und Elbe. Die Ablenkung des Bootes steht als Zahl im Aufgabentext, die Missweisung entnimmst du der Karte.
+      </p>
+    </section>
+
+    <!-- Aufgabentypen -->
+    <section class="pg-section">
+      <h2 class="pg-h2">Die Aufgabentypen Schritt für Schritt</h2>
+      <p class="pg-p">
+        Die 15 Fragetypen lassen sich in sechs Gruppen fassen. Für jede steht hier der Lösungsweg in wenigen Schritten. Die Zahlen in den Beispielen sind ausgedacht und stammen nicht aus einer amtlichen Aufgabe.
+      </p>
+    </section>
+
+    {taskTypes.map((t, i) => (
+      <section class="pg-section" id={t.id}>
+        <h3 class="pg-h2 pg-h2--sm">{`${i + 1}. ${t.title}`}</h3>
+        <p class="pg-note pg-note--sm">{t.pool}</p>
+        <p class="pg-p">{t.intro}</p>
+        <ol class="pg-steps">
+          {t.steps.map(s => <li><span set:html={s} /></li>)}
+        </ol>
+        {t.example && (
+          <div class="pg-card pg-card--soft pg-example">
+            {t.example.map(e => <p class="pg-card-text">{e}</p>)}
+          </div>
+        )}
+        <p class="pg-note">
+          Vertiefung: {t.links.map((l, j) => (
+            <>{j > 0 && ' · '}<a href={l.href} class="pg-inline-link">{l.label}</a></>
+          ))}
+        </p>
+      </section>
+    ))}
+
+    <!-- Gezeiten -->
+    <section class="pg-section" id="gezeiten">
+      <h2 class="pg-h2">Und die Gezeiten?</h2>
+      <p class="pg-p">
+        Gezeiten gehören zum Prüfungsstoff des SBF See, aber <strong>nicht zur Navigationsaufgabe</strong>. Keine der 15 Teilfragen verlangt, einen Wasserstand, einen Stromversatz oder eine Beschickung zu rechnen. Im Fragebogen kommen die Gezeiten als Wissensfragen vor:
+      </p>
+      <ol class="pg-steps">
+        <li><span><strong>Begriffe:</strong> Ebbe, Flut, Tide, Hochwasser, Niedrigwasser und Tidenhub (der Unterschied zwischen Hoch- und Niedrigwasserhöhe).</span></li>
+        <li><span><strong>Quellen:</strong> Wo du Hoch- und Niedrigwasserzeiten findest, nämlich in den Gezeitentafeln oder im Gezeitenkalender des BSH.</span></li>
+        <li><span><strong>Versatz:</strong> Was Strom- und Windversetzung bedeuten, also wie weit und in welche Richtung das Boot über Grund abgetrieben wird.</span></li>
+      </ol>
+      <p class="pg-p pg-p--after">
+        Für die Törnplanung im Wattenmeer reicht das nicht. Wie du den Wasserstand zwischen Hoch- und Niedrigwasser abschätzt, zeigt der Artikel <a href="/blog/gezeiten-zwoelftelregel/" class="pg-inline-link">Gezeiten berechnen mit der Zwölftelregel</a>. Für die Prüfung brauchst du die Rechnung nicht.
+      </p>
+    </section>
+
+    <!-- Typische Fehler -->
+    <section class="pg-section">
+      <h2 class="pg-h2">Typische Fehler und wie du sie vermeidest</h2>
+      <div class="pg-rows">
+        {mistakes.map(m => (
+          <div class="pg-row">
+            <span class="pg-row-icon">
+              <Icon name="warning" size={21} strokeWidth={1.75} />
+            </span>
+            <div>
+              <div class="pg-row-title">{m.title}</div>
+              <p class="pg-row-text">{m.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Material -->
+    <section class="pg-section">
+      <h2 class="pg-h2">Was du an Material brauchst</h2>
+      <p class="pg-p">
+        Erlaubt sind laut Sportbootführerscheinverordnung genau diese Hilfsmittel: <strong>Navigationsdreieck, Anlegedreieck, Doppellineal, Portland Plotter und Zirkel</strong>. Andere Hilfsmittel, auch elektronische Nachschlagewerke, sind ausgeschlossen.
+      </p>
+      <div class="pg-cards pg-cards--3">
+        <div class="pg-card">
+          <p class="pg-card-label">Für die Prüfung</p>
+          <p class="pg-card-text">Zwei Navigationsdreiecke (oder Navigations- und Anlegedreieck), ein Zirkel, ein spitzer harter Bleistift und ein Radiergummi.</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-label">Zum Üben</p>
+          <p class="pg-card-text">Ein gedruckter Abzug der Übungskarte D49 und die 15 Aufgaben aus dem ELWIS-Katalog. Auf Papier üben, denn in der Prüfung gibt es kein Display.</p>
+        </div>
+        <div class="pg-card">
+          <p class="pg-card-label">Taschenrechner</p>
+          <p class="pg-card-text">Steht nicht in der Liste der erlaubten Hilfsmittel. Frag deinen Prüfungsausschuss und übe die Rechnungen so, dass du sie auch ohne schaffst.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lernplan -->
+    <section class="pg-section">
+      <h2 class="pg-h2">So bereitest du dich vor</h2>
+      <ol class="pg-steps">
+        <li><span><strong>Werkzeug lernen:</strong> Kurs ablesen, Kurs eintragen und Distanz messen so lange üben, bis die Handgriffe sitzen.</span></li>
+        <li><span><strong>Rechnen automatisieren:</strong> Kursumrechnung und Peilungsumrechnung mit wechselnden Vorzeichen durchrechnen, immer mit Probe.</span></li>
+        <li><span><strong>Alle 15 Aufgaben lösen:</strong> Jede amtliche Aufgabe einmal komplett auf der Papierkarte bearbeiten und mit der Musterlösung vergleichen.</span></li>
+        <li><span><strong>Unter Prüfungsbedingungen:</strong> Fragebogen und Navigationsaufgabe zusammen in 60 Minuten. In der <a href="/sbf-see-pruefungsfragen/" class="pg-inline-link">Boatpass-App</a> übst du dafür den kompletten ELWIS-Katalog und jede Navigationsaufgabe in ihren neun Teilfragen.</span></li>
+      </ol>
+      <p class="pg-note pg-note--after">
+        Wie die ganze Prüfung abläuft, von der Anmeldung bis zur Praxis, steht auf der Seite <a href="/sbf-pruefung-ablauf/" class="pg-inline-link">SBF-Prüfung: Ablauf</a>.
+      </p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="pg-section">
+      <h2 class="pg-h2">Häufige Fragen zur Navigationsaufgabe</h2>
+      <div class="pg-faq">
+        {faqs.map(f => (
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
+          </div>
+        ))}
+      </div>
+      <p class="pg-note pg-note--sm pg-note--after">
+        Quellen: <a href={ELWIS_NAV} target="_blank" rel="noopener noreferrer" class="pg-inline-link">ELWIS – Navigationsaufgaben</a>, <a href={ELWIS_SCORE} target="_blank" rel="noopener noreferrer" class="pg-inline-link">ELWIS – Bewertungsschlüssel</a>, <a href={ELWIS_SEE} target="_blank" rel="noopener noreferrer" class="pg-inline-link">ELWIS – Spezifische Fragen See</a> (Gezeiten: Fragen 249 bis 255), <a href={SPFV_ANLAGE_3} target="_blank" rel="noopener noreferrer" class="pg-inline-link">SpFV, Anlage 3</a> (Bewertung und Hilfsmittel). Stand: Oktober 2026.
+      </p>
+    </section>
+
+    <!-- Interne Links -->
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">Weiterführende Seiten</h2>
+      <ul class="pg-related">
+        <li><a href="/blog/sbf-see-navigationsaufgaben-erklaert/">SBF See Navigationsaufgaben erklärt – Aufbau und Tipps<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/kursumrechnung-sbf-see/">Kursumrechnung beim SBF See: rwK, mwK und MgK<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/kompass-missweisung-deviation-erklaert/">Kompass, Missweisung und Deviation einfach erklärt<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/peilung-kollisionskurs-cpa-erklaert/">Peilung und Kollisionskurs erkennen<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/seekarte-lesen-lernen/">Seekarte lesen lernen – Symbole, Tiefen, Maßstäbe<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/blog/gezeiten-zwoelftelregel/">Gezeiten berechnen mit der Zwölftelregel<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-see-pruefungsfragen/">SBF See Prüfungsfragen üben<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-see/">SBF See: alles zum Sportbootführerschein See<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href="/sbf-see-app/">SBF-See-Apps im Vergleich<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
+    </section>
+
+  </PageLayout>
+</BaseLayout>
