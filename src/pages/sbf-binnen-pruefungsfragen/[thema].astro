@@ -1,0 +1,13 @@
+---
+// Themenseiten der Prüfungsfragen (Vorlage: components/catalog/CatalogTopicPage).
+import CatalogTopicPage from '../../components/catalog/CatalogTopicPage.astro';
+import { TOPICS, type Topic } from '../../data/catalog';
+
+export function getStaticPaths() {
+  return TOPICS.binnen.map(topic => ({ params: { thema: topic.slug.de }, props: { topic } }));
+}
+
+const { topic } = Astro.props as { topic: Topic };
+---
+
+<CatalogTopicPage lang="de" catalog="binnen" topic={topic} />

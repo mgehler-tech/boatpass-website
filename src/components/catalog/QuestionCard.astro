@@ -1,0 +1,82 @@
+---
+// Eine Katalogfrage als Karte: Nummer, Frage, Abbildungen, die vier Antworten
+// in amtlicher Reihenfolge (a ist richtig und markiert) und der Anriss der
+// Boatpass-Erklärung. Der Rest der Erklärung und die Merkhilfe stehen nur in
+// der App: Die verschwommenen Zeilen sind reine Platzhalter ohne Text.
+// Im Selbsttest (QuestionList) mischt ein Skript die Reihenfolge und verdeckt
+// Markierung und Erklärung bis zur Antwort.
+import { Image } from 'astro:assets';
+import Icon from '../Icon.astro';
+import type { ImageMetadata } from 'astro';
+import { questionAnchor, figureWidth, type CatalogKey, type CatalogQuestion, type Lang } from '../../data/catalog';
+
+interface Props {
+  lang: Lang;
+  catalog: CatalogKey;
+  q: CatalogQuestion;
+}
+
+const { lang, catalog, q } = Astro.props;
+const de = lang === 'de';
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/catalog/**/*.webp', { eager: true });
+const keys = ['A', 'B', 'C', 'D'];
+const anchor = questionAnchor(q.n, lang);
+const sectionLabel: Record<string, { de: string; en: string }> = {
+  basis: { de: 'Basisfrage', en: 'Basic question' },
+  binnen: { de: 'Spezifische Frage Binnen', en: 'Specific question Inland' },
+  segeln: { de: 'Spezifische Frage Segeln', en: 'Specific question Sailing' },
+  see: { de: 'Spezifische Frage See', en: 'Specific question Coastal' },
+};
+const section = sectionLabel[catalog === 'basis' ? 'basis' : q.section];
+const unlock = q.more && q.mn
+  ? (de ? 'Ganze Erklärung und Merkhilfe in der App' : 'Full explanation and memory aid in the app')
+  : q.more
+    ? (de ? 'Ganze Erklärung in der App' : 'Full explanation in the app')
+    : q.mn
+      ? (de ? 'Merkhilfe in der App' : 'Memory aid in the app')
+      : null;
+---
+
+<article class="cq" id={anchor} data-q>
+  <p class="cq-num">
+    <a href={`#${anchor}`}>{de ? 'Frage' : 'Question'} {q.n}</a>
+    {section && <span class="cq-section">· {section[lang]}</span>}
+  </p>
+  <h3 class="cq-q">{q.q[lang]}</h3>
+  {q.img.length > 0 && (
+    <div class="cq-figs">
+      {q.img.map((path, i) => {
+        const img = images[`/src/assets/catalog/${path}`];
+        if (!img) throw new Error(`Bild fehlt: ${path}`);
+        const alt = de
+          ? `Abbildung${q.img.length > 1 ? ` ${i + 1}` : ''} zu Frage ${q.n}`
+          : `Figure${q.img.length > 1 ? ` ${i + 1}` : ''} for question ${q.n}`;
+        const width = figureWidth(img.default.width, img.default.height);
+        return <Image src={img.default} alt={alt} width={width} densities={[1, 2]} loading="lazy" decoding="async" />;
+      })}
+    </div>
+  )}
+  <ol class="cq-answers" aria-label={de ? 'Antworten' : 'Answers'}>
+    {q.a.map((a, i) => (
+      <li class:list={['cq-a', { 'is-correct': i === 0 }]} data-correct={i === 0 ? '' : undefined}>
+        <span class="cq-key" aria-hidden="true">{keys[i]}</span>
+        <span class="cq-a-text">{a[lang]}</span>
+        {i === 0 && <span class="cq-tag">{de ? 'Richtig' : 'Correct'}</span>}
+      </li>
+    ))}
+  </ol>
+  <p class="cq-verdict" aria-live="polite" hidden></p>
+  <div class="cq-x">
+    <p class="cq-x-label">{de ? 'Erklärung von Boatpass' : 'Explanation by Boatpass'}</p>
+    <p class="cq-x-text">{q.x[lang]}</p>
+    {unlock && (
+      <div class="cq-locked">
+        <div class="cq-blur" aria-hidden="true"><span></span><span></span><span></span></div>
+        <a class="cq-unlock" href={de ? '/app/' : '/en/app/'} data-cta-position="catalog-question">
+          <Icon name="lock" size={16} strokeWidth={2} />
+          {unlock}
+        </a>
+      </div>
+    )}
+  </div>
+</article>

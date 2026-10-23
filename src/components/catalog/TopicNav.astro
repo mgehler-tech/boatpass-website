@@ -1,0 +1,36 @@
+---
+// Alle Themengebiete eines Katalogs als Chips mit Fragenzahl. Die aktuelle
+// Seite ist markiert; Basisfragen und Fragebogen stehen mit dabei, damit jede
+// Themenseite die anderen verlinkt.
+import { TOPICS, CATALOGS, topicUrl, practiceUrl, type Lang, type CatalogKey } from '../../data/catalog';
+
+interface Props {
+  lang: Lang;
+  catalog: 'binnen' | 'see';
+  /** key des aktuellen Themas; 'basis' für die Basisfragen-Seite, 'practice' für den Fragebogen. */
+  current?: string;
+  label?: string;
+}
+
+const { lang, catalog, current, label } = Astro.props;
+const de = lang === 'de';
+const basisCount = TOPICS.basis.reduce((n, t) => n + t.numbers.length, 0);
+const items: { key: string; href: string; title: string; count?: number }[] = [
+  { key: 'basis', href: CATALOGS.basis.hub[lang], title: de ? 'Basisfragen' : 'Basic questions', count: basisCount },
+  ...TOPICS[catalog as CatalogKey].map(t => ({ key: t.key, href: topicUrl(catalog, t, lang), title: t.title[lang], count: t.numbers.length })),
+  { key: 'practice', href: practiceUrl(catalog, lang), title: de ? 'Fragebogen üben' : 'Practice test' },
+];
+---
+
+<nav aria-label={label ?? (de ? `Themen ${CATALOGS[catalog].name.de}` : `Topics ${CATALOGS[catalog].name.en}`)}>
+  <ul class="cq-topics">
+    {items.map(i => (
+      <li>
+        <a href={i.href} aria-current={i.key === current ? 'page' : undefined}>
+          {i.title}
+          {i.count !== undefined && <span class="cq-count">{i.count}</span>}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>

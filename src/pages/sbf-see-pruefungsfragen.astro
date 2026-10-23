@@ -4,6 +4,7 @@ import PageHead from '../components/page/PageHead.astro';
 import PageLayout from '../components/page/PageLayout.astro';
 import PageFacts from '../components/page/PageFacts.astro';
 import DisplayFontPreload from '../components/page/DisplayFontPreload.astro';
+import CatalogHubTopics from '../components/catalog/CatalogHubTopics.astro';
 import Icon from '../components/Icon.astro';
 import type { IconName } from '../icons';
 
@@ -17,14 +18,6 @@ const breadcrumbSchema = {
   ],
 };
 
-const categories: { name: string; desc: string; count: number; icon: IconName }[] = [
-  { name: 'Schifffahrtsrecht', desc: 'Vorfahrtregeln, Lichterführung & Kollisionsverhütungsregeln', count: 130, icon: 'scale' },
-  { name: 'Navigation & Seekarte', desc: 'Kartenarbeit, Kurse, Gezeiten & Strom', count: 72, icon: 'compass' },
-  { name: 'Sicherheit', desc: 'Rettungsausrüstung, Notsignale & Sicherheitsverhalten', count: 40, icon: 'shield' },
-  { name: 'Signale & Zeichen', desc: 'Schall-, Sicht- und Seezeichen', count: 28, icon: 'bell' },
-  { name: 'Wetterkunde', desc: 'Wind, Wetter, Gezeitentafel & Vorhersage', count: 10, icon: 'cloud' },
-  { name: 'Allgemein', desc: 'Allgemeine Grundlagen & Seemannschaft', count: 5, icon: 'document' },
-];
 
 const faqs = [
   {
@@ -106,15 +99,18 @@ const faqSchema = {
     <section class="pg-section">
       <h2 class="pg-h2">Der offizielle SBF-See-Fragenkatalog</h2>
       <p class="pg-p">
-        Die <strong>Prüfungsfragen für den SBF See</strong> stammen aus dem amtlichen Fragenkatalog (DSV/DMYV, veröffentlicht über ELWIS) für die <strong>Seeschifffahrtsstraßen</strong> (Nord- und Ostsee). Er umfasst <strong>72 Basisfragen und 213 spezifische See-Fragen</strong> (zusammen 285 Fragen). Dazu kommt der entscheidende Teil, den es beim Binnen nicht gibt: die <strong>Navigationsaufgabe</strong>.
+        Die <strong>Prüfungsfragen für den SBF See</strong> stammen aus dem amtlichen Fragenkatalog (bekannt gemacht vom BMDV, veröffentlicht über ELWIS) für die <strong>Seeschifffahrtsstraßen</strong> (Nord- und Ostsee). Er umfasst <strong>72 Basisfragen und 213 spezifische See-Fragen</strong> (zusammen 285 Fragen). Dazu kommt der entscheidende Teil, den es beim Binnen nicht gibt: die <strong>Navigationsaufgabe</strong>.
       </p>
       <p class="pg-p">
         Die Theorieprüfung umfasst insgesamt <strong>39 Fragen in 60 Minuten</strong> – 30 Standardfragen plus 9 Fragen zur Navigationsaufgabe auf der Seekarte.
       </p>
       <p class="pg-note pg-note--sm pg-note--after">
-        Quelle: amtlicher Fragenkatalog (DSV/DMYV), kostenlos veröffentlicht über <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
+        Quelle: amtlicher Fragenkatalog des BMDV, gültig seit 01.08.2023, kostenlos veröffentlicht über <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
       </p>
     </section>
+
+    <!-- Alle Fragen nach Themen (Prüfungsfragen-Hubs) -->
+    <CatalogHubTopics lang="de" catalog="see" />
 
     <!-- Aufbau der Prüfung -->
     <section class="pg-section">
@@ -189,27 +185,6 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- Lernen nach Kategorie -->
-    <section class="pg-section">
-      <h2 class="pg-h2">Lernen nach Kategorie</h2>
-      <p class="pg-p">
-        Der Fragenkatalog ist in Themengebiete unterteilt – übe gezielt nach Schwachstellen.
-      </p>
-      <div class="pg-rows">
-        {categories.map(c => (
-          <div class="pg-row">
-            <span class="pg-row-icon">
-              <Icon name={c.icon} size={20} strokeWidth={1.75} />
-            </span>
-            <div class="pg-row-body">
-              <p class="pg-row-title">{c.name}</p>
-              <p class="pg-row-text">{c.desc}</p>
-            </div>
-            <span class="pg-pill">{c.count} Fragen</span>
-          </div>
-        ))}
-      </div>
-    </section>
 
     <!-- Interne Links -->
     <section class="pg-section pg-section--related">

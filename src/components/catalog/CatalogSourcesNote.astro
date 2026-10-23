@@ -1,0 +1,78 @@
+---
+// Abschnitt „Quellen und Stand“ der Prüfungsfragen-Seiten: amtliche Quelle
+// mit Link, Fassung, Bekanntmachung, was von Boatpass stammt und der
+// Urheberhinweis zu den Erklärungen.
+import {
+  CATALOGS, ELWIS_CATALOG_URL, ELWIS_CHANGE_NOTICE, ELWIS_SHEETS_URL, CATALOG_VALID_FROM,
+  type CatalogKey, type Lang,
+} from '../../data/catalog';
+
+interface Props {
+  lang: Lang;
+  catalog: CatalogKey;
+  /** Auf dem Fragebogen zusätzlich die Bekanntmachung der Fragenverteilung. */
+  sheets?: boolean;
+}
+
+const { lang, catalog, sheets = false } = Astro.props;
+const de = lang === 'de';
+const official = catalog === 'basis' ? (['binnen', 'see'] as const) : ([catalog] as const);
+const name = (k: 'binnen' | 'see') => CATALOGS[k].name[lang];
+---
+
+<section class="pg-section" id={de ? 'quellen' : 'sources'}>
+  <h2 class="pg-h2 pg-h2--sm">{de ? 'Quellen und Stand' : 'Sources and status'}</h2>
+  <ul class="cq-sources">
+    <li>
+      {de ? 'Fragen und Antworten: amtlicher Fragen- und Antwortenkatalog, ' : 'Questions and answers: official German question and answer catalogue, '}
+      {official.map((k, i) => (
+        <>
+          {i > 0 && (de ? ' und ' : ' and ')}
+          <a href={ELWIS_CATALOG_URL[k]} target="_blank" rel="noopener noreferrer">{name(k)} {de ? 'bei www.elwis.de' : 'at www.elwis.de'}</a>
+        </>
+      ))}
+      {de
+        ? `, gültig seit ${CATALOG_VALID_FROM.de}. Herausgeber ist das Bundesministerium für Digitales und Verkehr (BMDV), bekannt gemacht im Verkehrsblatt.`
+        : `, valid since ${CATALOG_VALID_FROM.en}. Issued by the German Federal Ministry for Digital and Transport (BMDV) and published in the Verkehrsblatt.`}
+    </li>
+    <li>
+      {de ? 'Geltende Fassung: Bekanntmachungen des BMDV vom 28.04.2023 zur Änderung der Kataloge ' : 'Current version: BMDV notices of 28 April 2023 amending the catalogues '}
+      {official.map((k, i) => (
+        <>
+          {i > 0 && (de ? ' und ' : ' and ')}
+          <a href={ELWIS_CHANGE_NOTICE[k]} target="_blank" rel="noopener noreferrer">{name(k)} (PDF)</a>
+        </>
+      ))}
+      {de ? ', in Kraft seit 01.08.2023.' : ', in force since 1 August 2023.'}
+    </li>
+    {sheets && catalog !== 'basis' && (
+      <li>
+        {de ? 'Fragebögen 1–15: ' : 'Exam papers 1–15: '}
+        <a href={ELWIS_SHEETS_URL[catalog]} target="_blank" rel="noopener noreferrer">
+          {de ? `Bekanntmachung der Verteilung der Fragen ${name(catalog)} (PDF)` : `Official distribution of questions ${name(catalog)} (PDF, German)`}
+        </a>
+        {de
+          ? (catalog === 'binnen' ? ', Verkehrsblatt 2012, S. 225.' : ', Verkehrsblatt 2012, S. 224.')
+          : (catalog === 'binnen' ? ', Verkehrsblatt 2012, p. 225.' : ', Verkehrsblatt 2012, p. 224.')}
+      </li>
+    )}
+    <li>
+      {de
+        ? 'Der deutsche Wortlaut von Fragen und Antworten ist unverändert übernommen; offensichtliche Schreibfehler des Katalogs sind berichtigt. Im amtlichen Katalog ist Antwort a immer die richtige. Die Einteilung in Themengebiete stammt von Boatpass, der amtliche Katalog gliedert nur in Basisfragen und spezifische Fragen.'
+        : 'The German wording of questions and answers is reproduced unchanged; obvious typos in the catalogue are corrected. In the official catalogue answer a is always the correct one. The grouping into topics is by Boatpass; the official catalogue only distinguishes basic and specific questions.'}
+    </li>
+    {!de && (
+      <li>The official catalogue and the exam are in German. The English text is an unofficial translation by Boatpass for learning purposes; only the German wording is authoritative.</li>
+    )}
+    <li>
+      {de
+        ? 'Abbildungen nach dem amtlichen Fragenkatalog (ELWIS), teilweise von Boatpass nachgezeichnet.'
+        : 'Figures based on the official question catalogue (ELWIS), some redrawn by Boatpass.'}
+    </li>
+    <li>
+      {de
+        ? '„Erklärung von Boatpass“: eigene Texte von Boatpass, hier als Anriss; die vollständigen Erklärungen und Merkhilfen stehen in der App. © Boatpass, Nachdruck und Übernahme nur mit Genehmigung.'
+        : '“Explanation by Boatpass”: original texts by Boatpass, shown here as an excerpt; the full explanations and memory aids are in the app. © Boatpass, reproduction only with permission.'}
+    </li>
+  </ul>
+</section>

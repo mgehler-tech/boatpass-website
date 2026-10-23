@@ -1,0 +1,135 @@
+---
+// Fragenliste einer Themenseite: Kopfzeile mit Selbsttest-Schalter, Karten,
+// nach der zehnten Frage ein Hinweis auf die App. Ohne JavaScript bleibt die
+// Liste eine lesbare Übersicht mit markierter richtiger Antwort; der Schalter
+// erscheint erst mit Skript (.h-js-only).
+import QuestionCard from './QuestionCard.astro';
+import AppTeaser from './AppTeaser.astro';
+import type { CatalogKey, CatalogQuestion, Lang } from '../../data/catalog';
+
+interface Group {
+  id?: string;
+  title?: string;
+  intro?: string;
+  questions: CatalogQuestion[];
+}
+
+interface Props {
+  lang: Lang;
+  catalog: CatalogKey;
+  title: string;
+  groups: Group[];
+  /** Produkt für den App-Hinweis. */
+  product: 'sbfBinnen' | 'sbfSee';
+}
+
+const { lang, catalog, title, groups, product } = Astro.props;
+const de = lang === 'de';
+const teaserAfter = 10;
+let index = 0;
+---
+
+<section class="pg-section">
+  <div class="cq-toolbar">
+    <h2 class="pg-h2">{title}</h2>
+    <button type="button" class="cq-toggle h-js-only" aria-pressed="false" data-cq-toggle>
+      <span class="cq-toggle-track" aria-hidden="true"></span>
+      {de ? 'Selbst testen' : 'Test yourself'}
+    </button>
+    <p class="cq-toolbar-hint">
+      {de
+        ? 'Antwort A ist im amtlichen Katalog immer die richtige. Mit „Selbst testen“ werden die Antworten gemischt und erst nach deiner Wahl aufgelöst.'
+        : 'In the official catalogue answer A is always the correct one. “Test yourself” shuffles the answers and only reveals them after you choose.'}
+    </p>
+  </div>
+
+  <div class="cq-list" data-cq-list data-right={de ? 'Richtig!' : 'Correct!'} data-wrong={de ? 'Leider falsch. Die richtige Antwort ist grün markiert.' : 'Not quite. The correct answer is marked green.'}>
+    {groups.map(g => (
+      <>
+        {g.title && (
+          <div class="cq-group" id={g.id}>
+            <h2 class="pg-h2 pg-h2--sm">{g.title}</h2>
+            {g.intro && <p class="pg-p">{g.intro}</p>}
+          </div>
+        )}
+        {g.questions.map(q => {
+          index++;
+          return (
+            <>
+              <QuestionCard lang={lang} catalog={catalog} q={q} />
+              {index === teaserAfter && <AppTeaser lang={lang} product={product} />}
+            </>
+          );
+        })}
+      </>
+    ))}
+  </div>
+</section>
+
+<script>
+  const keys = ['A', 'B', 'C', 'D'];
+
+  function shuffle<T>(items: T[]): T[] {
+    const a = [...items];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function setMode(list: HTMLElement, test: boolean) {
+    list.dataset.mode = test ? 'test' : 'read';
+    for (const card of list.querySelectorAll<HTMLElement>('[data-q]')) {
+      delete card.dataset.answered;
+      const verdict = card.querySelector<HTMLElement>('.cq-verdict');
+      if (verdict) { verdict.hidden = true; verdict.textContent = ''; delete verdict.dataset.state; }
+      const answers = [...card.querySelectorAll<HTMLElement>('.cq-a')];
+      const order = test ? shuffle(answers.map((_, i) => i)) : answers.map((_, i) => i);
+      answers.forEach((li, i) => {
+        li.classList.remove('is-chosen-wrong');
+        li.style.order = test ? String(order[i]) : '';
+        const key = li.querySelector('.cq-key');
+        if (key) key.textContent = keys[test ? order[i] : i];
+        if (test) { li.setAttribute('role', 'button'); li.tabIndex = 0; }
+        else { li.removeAttribute('role'); li.removeAttribute('tabindex'); }
+      });
+    }
+  }
+
+  function answer(list: HTMLElement, li: HTMLElement) {
+    if (list.dataset.mode !== 'test') return;
+    const card = li.closest<HTMLElement>('[data-q]');
+    if (!card || card.dataset.answered) return;
+    card.dataset.answered = '';
+    const right = li.hasAttribute('data-correct');
+    if (!right) li.classList.add('is-chosen-wrong');
+    card.querySelectorAll<HTMLElement>('.cq-a').forEach(a => { a.removeAttribute('role'); a.removeAttribute('tabindex'); });
+    const verdict = card.querySelector<HTMLElement>('.cq-verdict');
+    if (verdict) {
+      verdict.hidden = false;
+      verdict.dataset.state = right ? 'right' : 'wrong';
+      verdict.textContent = (right ? list.dataset.right : list.dataset.wrong) ?? '';
+    }
+  }
+
+  for (const list of document.querySelectorAll<HTMLElement>('[data-cq-list]')) {
+    const toggle = list.closest('section')?.querySelector<HTMLButtonElement>('[data-cq-toggle]');
+    toggle?.addEventListener('click', () => {
+      const on = toggle.getAttribute('aria-pressed') !== 'true';
+      toggle.setAttribute('aria-pressed', String(on));
+      setMode(list, on);
+    });
+    list.addEventListener('click', e => {
+      const li = (e.target as HTMLElement).closest<HTMLElement>('.cq-a');
+      if (li) answer(list, li);
+    });
+    list.addEventListener('keydown', e => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const li = (e.target as HTMLElement).closest<HTMLElement>('.cq-a[role="button"]');
+      if (!li) return;
+      e.preventDefault();
+      answer(list, li);
+    });
+  }
+</script>

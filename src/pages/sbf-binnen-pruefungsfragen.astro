@@ -4,6 +4,7 @@ import PageHead from '../components/page/PageHead.astro';
 import PageLayout from '../components/page/PageLayout.astro';
 import PageFacts from '../components/page/PageFacts.astro';
 import DisplayFontPreload from '../components/page/DisplayFontPreload.astro';
+import CatalogHubTopics from '../components/catalog/CatalogHubTopics.astro';
 import Icon from '../components/Icon.astro';
 import type { IconName } from '../icons';
 
@@ -17,14 +18,6 @@ const breadcrumbSchema = {
   ],
 };
 
-const categories: { name: string; desc: string; count: number; icon: IconName }[] = [
-  { name: 'Schifffahrtsrecht', desc: 'Vorfahrtregeln, Lichterführung & Wasserstraßenordnung', count: 124, icon: 'scale' },
-  { name: 'Navigation', desc: 'Karten, Kurse, Positionen & Peilungen', count: 52, icon: 'compass' },
-  { name: 'Sicherheit', desc: 'Rettungsausrüstung, Notsignale & Sicherheitsverhalten', count: 39, icon: 'shield' },
-  { name: 'Signale & Zeichen', desc: 'Schallzeichen, Sichtzeichen & Flaggen', count: 28, icon: 'bell' },
-  { name: 'Wetterkunde', desc: 'Wind, Wetter & Vorhersage', count: 5, icon: 'cloud' },
-  { name: 'Allgemein', desc: 'Allgemeine Grundlagen & Seemannschaft', count: 3, icon: 'document' },
-];
 
 const faqs = [
   {
@@ -58,7 +51,7 @@ const faqSchema = {
 
 <BaseLayout
   title="SBF Binnen Prüfungsfragen – ELWIS-Katalog"
-  description="Alle SBF-Binnen-Prüfungsfragen aus dem offiziellen ELWIS-Katalog üben: Aufbau, Kategorien, Bestehensgrenze und wie du die 30 Fragen effektiv lernst."
+  description="Alle 300 SBF-Binnen-Prüfungsfragen aus dem amtlichen ELWIS-Katalog nach Themen, mit richtiger Antwort und Fragebogen online. Dazu Aufbau und Bestehensgrenze."
   lang="de"
   altUrl="https://boatpass.de/en/sbf-inland-exam-questions/"
 >
@@ -70,7 +63,7 @@ const faqSchema = {
   <PageHead
     lang="de"
     eyebrow="SBF Binnen Prüfungsfragen"
-    lede="Über 250 amtliche ELWIS-Fragen, übersichtlich nach Kategorien sortiert. Lern mit echter Prüfungssimulation und gezieltem Fehlertraining – und geh sicher in die SBF-Binnen-Theorieprüfung."
+    lede="Alle 300 amtlichen ELWIS-Fragen, nach Themen sortiert und mit richtiger Antwort. Lern mit echter Prüfungssimulation und gezieltem Fehlertraining – und geh sicher in die SBF-Binnen-Theorieprüfung."
     ctaLabel="Kostenlos Fragen üben"
     cta
   >
@@ -105,15 +98,18 @@ const faqSchema = {
     <section class="pg-section">
       <h2 class="pg-h2">Der offizielle SBF-Binnen-Fragenkatalog</h2>
       <p class="pg-p">
-        Die <strong>Prüfungsfragen für den SBF Binnen</strong> stammen aus dem amtlichen Fragenkatalog, den <strong>DSV und DMYV</strong> festlegen und der über <strong>ELWIS</strong> kostenlos veröffentlicht wird. Für den Geltungsbereich <strong>unter Motor</strong> umfasst er <strong>72 Basisfragen und 181 spezifische Binnenfragen</strong> (zusammen 253 Fragen). Wer zusätzlich <strong>unter Segel</strong> fahren möchte, lernt 47 weitere Segelfragen.
+        Die <strong>Prüfungsfragen für den SBF Binnen</strong> stammen aus dem amtlichen Fragen- und Antwortenkatalog, den das <strong>Bundesministerium für Digitales und Verkehr (BMDV)</strong> im Verkehrsblatt bekannt gemacht hat und der über <strong>ELWIS</strong> kostenlos veröffentlicht wird. Für den Geltungsbereich <strong>unter Motor</strong> umfasst er <strong>72 Basisfragen und 181 spezifische Binnenfragen</strong> (zusammen 253 Fragen). Wer zusätzlich <strong>unter Segel</strong> fahren möchte, lernt 47 weitere Segelfragen.
       </p>
       <p class="pg-p">
         In der echten Theorieprüfung wird daraus ein Bogen mit <strong>30 Fragen</strong> zusammengestellt – 7 Basisfragen und 23 spezifische Fragen. Wer den Katalog systematisch durcharbeitet, kennt am Prüfungstag jede mögliche Frage.
       </p>
       <p class="pg-note pg-note--sm pg-note--after">
-        Quelle: amtlicher Fragenkatalog (DSV/DMYV), kostenlos veröffentlicht über <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
+        Quelle: amtlicher Fragenkatalog des BMDV, gültig seit 01.08.2023, kostenlos veröffentlicht über <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
       </p>
     </section>
+
+    <!-- Alle Fragen nach Themen (Prüfungsfragen-Hubs) -->
+    <CatalogHubTopics lang="de" catalog="binnen" />
 
     <!-- Aufbau der Prüfung -->
     <section class="pg-section">
@@ -174,27 +170,6 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- Lernen nach Kategorie -->
-    <section class="pg-section">
-      <h2 class="pg-h2">Lernen nach Kategorie</h2>
-      <p class="pg-p">
-        Der Fragenkatalog ist in Themengebiete unterteilt – übe gezielt nach Schwachstellen.
-      </p>
-      <div class="pg-rows">
-        {categories.map(c => (
-          <div class="pg-row">
-            <span class="pg-row-icon">
-              <Icon name={c.icon} size={20} strokeWidth={1.75} />
-            </span>
-            <div class="pg-row-body">
-              <p class="pg-row-title">{c.name}</p>
-              <p class="pg-row-text">{c.desc}</p>
-            </div>
-            <span class="pg-pill">{c.count} Fragen</span>
-          </div>
-        ))}
-      </div>
-    </section>
 
     <!-- Interne Links -->
     <section class="pg-section pg-section--related">

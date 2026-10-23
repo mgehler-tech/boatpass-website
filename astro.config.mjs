@@ -91,7 +91,12 @@ export default defineConfig({
         } else if (/^\/(src|ubi|lrc|faq)\/?$/.test(path)) {
           item.priority = 0.8;
           item.changefreq = 'monthly';
-        } else if (path.startsWith('/tools/') || path.startsWith('/bootsfahrschulen') || path.startsWith('/boat-schools')) {
+        } else if (
+          path.startsWith('/tools/') || path.startsWith('/bootsfahrschulen') || path.startsWith('/boat-schools')
+          // Prüfungsfragen-Hubs: Themenseiten, Basisfragen und Fragebogen.
+          || /^\/(sbf-binnen-pruefungsfragen|sbf-see-pruefungsfragen|sbf-inland-exam-questions|sbf-coastal-exam-questions)\/[^/]+\/$/.test(path)
+          || /^\/(sbf-basisfragen|sbf-basic-questions)\/$/.test(path)
+        ) {
           item.priority = 0.8;
           item.changefreq = 'monthly';
         } else if (path.startsWith('/blog')) {

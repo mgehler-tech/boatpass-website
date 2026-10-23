@@ -1,0 +1,57 @@
+---
+// Themenblock der Prüfungsfragen-Übersichten (/sbf-binnen-pruefungsfragen/,
+// /sbf-see-pruefungsfragen/ und EN): Basisfragen, alle Themenseiten mit
+// Fragenzahl und der Fragebogen. Ersetzt die frühere Liste der App-Kategorien.
+import '../../styles/catalog.css';
+import Icon from '../Icon.astro';
+import { TOPICS, CATALOGS, topicUrl, practiceUrl, type Lang } from '../../data/catalog';
+
+interface Props {
+  lang: Lang;
+  catalog: 'binnen' | 'see';
+}
+
+const { lang, catalog } = Astro.props;
+const de = lang === 'de';
+const name = CATALOGS[catalog].name[lang];
+const total = TOPICS[catalog].reduce((n, t) => n + t.numbers.length, 0) + 72;
+const rows = [
+  { href: CATALOGS.basis.hub[lang], title: de ? 'Basisfragen' : 'Basic questions', text: de ? 'Gemeinsam für SBF Binnen und SBF See: Grundbegriffe, Zeichen, Antrieb, Sicherheit.' : 'Shared by SBF Inland and SBF Coastal: basics, signs, propulsion, safety.', count: 72 },
+  ...TOPICS[catalog].map(t => ({ href: topicUrl(catalog, t, lang), title: t.title[lang], text: t.intro[lang].split(/(?<=[.?!])\s/)[0], count: t.numbers.length })),
+];
+---
+
+<section class="pg-section" id={de ? 'themen' : 'topics'}>
+  <h2 class="pg-h2">{de ? `Alle ${total} ${name}-Prüfungsfragen nach Themen` : `All ${total} ${name} exam questions by topic`}</h2>
+  <p class="pg-p">
+    {de
+      ? 'Jede Katalogfrage mit allen vier Antworten und markierter richtiger Antwort, im amtlichen Wortlaut. Mit „Selbst testen“ prüfst du dich direkt auf der Seite.'
+      : 'Every catalogue question with all four answers and the correct one marked. Use “Test yourself” to check your knowledge right on the page.'}
+  </p>
+  <div class="pg-rows">
+    {rows.map(r => (
+      <a class="pg-row cq-hub-row" href={r.href}>
+        <div class="pg-row-body">
+          <p class="pg-row-title">{r.title}</p>
+          <p class="pg-row-text">{r.text}</p>
+        </div>
+        <span class="pg-pill">{de ? `${r.count} Fragen` : `${r.count} questions`}</span>
+        <Icon name="chevronRight" size={16} strokeWidth={2.25} />
+      </a>
+    ))}
+  </div>
+  <div class="cq-app cq-hub-practice">
+    <div>
+      <p class="cq-app-title">{de ? `${name} Fragebogen online` : `${name} practice test online`}</p>
+      <p class="cq-app-text">
+        {de
+          ? 'Einer der 15 amtlichen Fragebögen oder ein Zufallsbogen, ausgewertet nach der echten Bestehensgrenze.'
+          : 'One of the 15 official papers or a random paper, marked against the real pass mark.'}
+      </p>
+    </div>
+    <a class="h-btn" href={practiceUrl(catalog, lang)}>
+      {de ? 'Fragebogen starten' : 'Start practice test'}
+      <Icon name="chevronRight" size={16} strokeWidth={2.25} class="h-btn-arrow" />
+    </a>
+  </div>
+</section>
