@@ -40,7 +40,7 @@ const faqs = [
   },
   {
     q: 'Welche Hilfsmittel sind in der Navigationsaufgabe erlaubt?',
-    a: 'Die Sportbootführerscheinverordnung erlaubt Navigationsdreieck, Anlegedreieck, Doppellineal, Portland Plotter und Zirkel. Andere Hilfsmittel, auch elektronische Nachschlagewerke, sind ausgeschlossen. Ein Taschenrechner wird in der Liste nicht genannt; frag deinen Prüfungsausschuss, bevor du dich darauf verlässt, und übe die Zeit- und Fahrtrechnung im Kopf.',
+    a: 'Die Sportbootführerscheinverordnung erlaubt Navigationsdreieck, Anlegedreieck, Doppellineal, Portland Plotter und Zirkel. Andere Hilfsmittel, auch elektronische, sind ausgeschlossen. Einen Taschenrechner hast du also nicht: Zeit und Fahrt rechnest du im Kopf oder auf dem Papier.',
   },
   {
     q: 'Kommen Gezeiten in der Navigationsaufgabe vor?',
@@ -70,7 +70,7 @@ const howToSchema = {
   "description": "Kursumrechnung für die Navigationsaufgabe der SBF-See-Prüfung: vom rechtweisenden Kurs über den missweisenden Kurs zum Magnetkompasskurs.",
   "step": [
     { "@type": "HowToStep", "name": "rwK aus der Karte ablesen", "text": "Verbinde Start und Ziel, lege das Navigationsdreieck an einen Meridian und lies den rechtweisenden Kurs ab." },
-    { "@type": "HowToStep", "name": "Missweisung abziehen", "text": "Entnimm die Missweisung der Kompassrose der Karte. Östliche Werte sind positiv, westliche negativ. rwK minus Mw ergibt den missweisenden Kurs mwK." },
+    { "@type": "HowToStep", "name": "Missweisung abziehen", "text": "Entnimm die Missweisung der Seekarte und rechne die jährliche Änderung bis zum Jahr der Aufgabe dazu, gerundet auf volle Grad. Östliche Werte sind positiv, westliche negativ. rwK minus Mw ergibt den missweisenden Kurs mwK." },
     { "@type": "HowToStep", "name": "Ablenkung abziehen", "text": "Die Ablenkung steht im Aufgabentext. mwK minus Abl ergibt den Magnetkompasskurs MgK." },
     { "@type": "HowToStep", "name": "Probe rechnen", "text": "MgK plus Abl plus Mw muss wieder den rwK ergeben." },
   ],
@@ -107,16 +107,17 @@ const taskTypes: TaskType[] = [
     icon: 'refresh',
     title: 'Kursumrechnung: vom rwK zum MgK',
     pool: 'Teilfrage „MgK“',
-    intro: 'Der Kompass an Bord zeigt nicht nach geografisch Nord. Die Missweisung (Mw) hängt vom Ort ab und steht in der Kompassrose der Karte, die Ablenkung (Abl) hängt vom Boot ab und wird im Aufgabentext genannt. Östliche Werte sind positiv, westliche negativ.',
+    intro: 'Der Kompass an Bord zeigt nicht nach geografisch Nord. Die Missweisung (Mw) hängt vom Ort und vom Jahr ab und steht in der Seekarte, die Ablenkung (Abl) hängt vom Boot ab und wird im Aufgabentext genannt. Östliche Werte sind positiv, westliche negativ.',
     steps: [
       'rwK aus der Karte ablesen (siehe oben).',
-      'Missweisung aus der Kompassrose entnehmen und abziehen: <strong>rwK − Mw = mwK</strong>.',
+      'Missweisung auf das Jahr der Aufgabe bringen: In der Karte steht sie für ein <strong>Bezugsjahr</strong> mit der <strong>jährlichen Änderung</strong>. Die Änderung für jedes Jahr mit Vorzeichen dazurechnen und auf volle Grad runden (unter 30\' ab, ab 30\' auf). In den amtlichen Aufgaben kommt so 0° oder +1° heraus.',
+      'Missweisung abziehen: <strong>rwK − Mw = mwK</strong>.',
       'Ablenkung aus dem Aufgabentext abziehen: <strong>mwK − Abl = MgK</strong>.',
       'Probe in der Gegenrichtung: <strong>MgK + Abl + Mw = rwK</strong>.',
     ],
     example: [
-      'Beispiel: rwK 125°, Mw +2° (Ost), Abl −3° (West).',
-      'mwK = 125° − 2° = 123°. MgK = 123° − (−3°) = 126°. Probe: 126° − 3° + 2° = 125°.',
+      'Beispiel: In der Karte steht 1°30\'W 2010 mit 8\'E jährlicher Änderung, die Aufgabe spielt 2016. Mw = −90\' + 6 × 8\' = −42\', gerundet −1°. Abl +3° (Ost), rwK 125°.',
+      'mwK = 125° − (−1°) = 126°. MgK = 126° − 3° = 123°. Probe: 123° + 3° − 1° = 125°.',
     ],
     links: [
       { href: '/blog/kursumrechnung-sbf-see/', label: 'Kursumrechnung beim SBF See' },
@@ -130,7 +131,7 @@ const taskTypes: TaskType[] = [
     pool: 'Teilfragen „rw-Peilungen“ und „Peilungen eintragen“',
     intro: 'Mit dem Kompass gepeilte Richtungen zu Leuchtfeuern oder Tonnen sind Magnetkompasspeilungen (MgP). Für die Karte brauchst du die rechtweisende Peilung (rwP). Gerechnet wird wie beim Kurs, nur in die andere Richtung.',
     steps: [
-      'Ablenkung und Missweisung addieren: <strong>MgP + Abl + Mw = rwP</strong>. Die Ablenkung gilt für den <strong>Kurs, den du steuerst</strong>, nicht für die Peilrichtung.',
+      'Ablenkung und Missweisung addieren: <strong>MgP + Abl + Mw = rwP</strong>. Welche Ablenkung gilt, hängt vom Kompass ab: Mit dem <strong>Peilaufsatz auf dem Steuerkompass</strong> gilt dessen Ablenkung für den anliegenden Kurs, nicht für die Peilrichtung. Beim <strong>Hand-Peilkompass</strong> ist die Ablenkung in der Aufgabe vorgegeben, meist 0°.',
       'Navigationsdreieck so anlegen, dass seine Kante durch das gepeilte Objekt läuft und am Meridian die rwP anzeigt.',
       'Die Linie vom Objekt aus zu dir hin zeichnen. Diese Standlinie ist die Menge aller Punkte, von denen aus das Objekt in dieser Richtung liegt.',
       'Eine zweite Peilung auf ein anderes Objekt ebenso eintragen. Der Schnittpunkt beider Linien ist dein beobachteter Ort.',
@@ -161,6 +162,7 @@ const taskTypes: TaskType[] = [
       'Zirkel auf die beiden Punkte setzen und die Öffnung an der <strong>Breitenskala</strong> (seitlicher Rand) ablesen, möglichst auf gleicher Höhe wie die Strecke. Nie an der Längenskala oben oder unten messen.',
       'Zeit: <strong>t = s ÷ v</strong>. Das Ergebnis ist in Stunden; mal 60 ergibt Minuten.',
       'Geschwindigkeit: <strong>v = s ÷ t</strong>, dabei die Zeit vorher in Stunden umrechnen.',
+      'Kopftrick ohne Taschenrechner: Eine Seemeile dauert <strong>60 ÷ Fahrt</strong> Minuten. Bei 6 kn sind das 10 Minuten je Seemeile.',
       'Wird eine Uhrzeit gefragt, die Fahrzeit zur Abfahrtszeit addieren.',
     ],
     example: [
@@ -177,9 +179,9 @@ const taskTypes: TaskType[] = [
     intro: 'Diese Teilfragen sind reine Wissensfragen zur Karte. Du sollst ein Zeichen benennen, ein Leuchtfeuer beschreiben oder eine Eintragung erklären. Die Abkürzungen stehen in der Zeichenerklärung für Seekarten (Karte 1 / INT 1).',
     steps: [
       'Zeichen in der Karte suchen und die Beschriftung daneben vollständig lesen.',
-      'Bei Tonnen die Art benennen (zum Beispiel Steuerbord- oder Kardinaltonne) und Farbe, Form und Toppzeichen angeben.',
-      'Bei Leuchtfeuern die Kennung zerlegen: Art (Blitz, unterbrochen, Gleichtakt), Gruppe, Farbe, Wiederkehr in Sekunden, Feuerhöhe in Metern und Tragweite in Seemeilen.',
-      'Alle Teile hinschreiben, die in der Karte stehen. Was fehlt, gilt als unvollständig.',
+      'Bei Tonnen die Art benennen (zum Beispiel Steuerbord- oder Kardinaltonne) und Farbe und Form angeben. Ein <strong>Toppzeichen nennst du nur, wenn es am Symbol eingezeichnet ist</strong>.',
+      'Bei Leuchtfeuern die Kennung zerlegen: Art (Blitz, unterbrochen, Gleichtakt), Gruppe, Farbe, Wiederkehr in Sekunden, dazu Feuerhöhe und Tragweite, falls angegeben. Steht kein Farbbuchstabe dabei, ist das Licht weiß.',
+      'Alles hinschreiben, was am Symbol steht, aber nichts dazuerfinden. Was fehlt, gilt als unvollständig; was geraten ist, als falsch.',
     ],
     links: [{ href: '/blog/seekarte-lesen-lernen/', label: 'Seekartenzeichen lesen' }],
   },
@@ -188,11 +190,13 @@ const taskTypes: TaskType[] = [
 const mistakes = [
   { title: 'Gegenkurs abgelesen', desc: 'Das Dreieck zeigt zwei Werte, die 180° auseinanderliegen. Vor dem Ablesen kurz prüfen, in welche Himmelsrichtung du fährst.' },
   { title: 'Vorzeichen vertauscht', desc: 'Ost ist plus, West ist minus. Vom rwK zum MgK wird abgezogen, vom MgK oder von der MgP zum rw-Wert addiert. Die Probe deckt den Fehler auf.' },
-  { title: 'Falsche Ablenkung bei Peilungen', desc: 'Die Ablenkung hängt vom gesteuerten Kurs ab, nicht von der Richtung zum gepeilten Objekt.' },
+  { title: 'Jährliche Änderung der Missweisung vergessen', desc: 'Der Wert in der Karte gilt für ein Bezugsjahr. Ohne die Änderung bis zum Jahr der Aufgabe stimmt die Umrechnung schnell um ein Grad nicht.' },
+  { title: 'Falsche Ablenkung bei Peilungen', desc: 'Beim Peilaufsatz gilt die Ablenkung des Steuerkompasses für den anliegenden Kurs, nicht für die Richtung zum Objekt. Beim Hand-Peilkompass nimmst du den vorgegebenen Wert, meist 0°.' },
   { title: 'Distanz an der Längenskala gemessen', desc: 'Nur die Breitenskala am seitlichen Rand misst Seemeilen. Die Längenskala ist in diesen Breiten deutlich gestaucht.' },
   { title: 'Dezimalstunden mit Minuten verwechselt', desc: '0,4 h sind 24 Minuten, nicht 40. Erst in Minuten umrechnen, dann zur Uhrzeit addieren.' },
   { title: 'Rechenweg nicht notiert', desc: 'Folgefehler kosten keinen zweiten Punkt, aber nur, wenn erkennbar ist, dass du folgerichtig weitergerechnet hast. Zwischenwerte und Rechnung kurz hinschreiben.' },
-  { title: 'Ungenau gezeichnet', desc: 'Ein dicker Strich oder ein verrutschtes Dreieck kostet schnell ein oder zwei Grad. Spitzer, harter Bleistift und ruhig anlegen.' },
+  { title: 'Ungenau gezeichnet', desc: 'Ein dicker Strich oder ein verrutschtes Dreieck kostet schnell ein oder zwei Grad. Bei Tonnen am kleinen Kreis am Fuß des Symbols anlegen, nicht an der Spitze.' },
+  { title: 'Toppzeichen geraten', desc: 'Ein Toppzeichen gehört nur in die Antwort, wenn es am Symbol eingezeichnet ist. Auch die Lichtfarbe Weiß nicht vergessen, wenn kein Farbbuchstabe dasteht.' },
 ];
 ---
 
@@ -334,7 +338,7 @@ const mistakes = [
     <section class="pg-section">
       <h2 class="pg-h2">Was du an Material brauchst</h2>
       <p class="pg-p">
-        Erlaubt sind laut Sportbootführerscheinverordnung genau diese Hilfsmittel: <strong>Navigationsdreieck, Anlegedreieck, Doppellineal, Portland Plotter und Zirkel</strong>. Andere Hilfsmittel, auch elektronische Nachschlagewerke, sind ausgeschlossen.
+        Erlaubt sind laut Sportbootführerscheinverordnung genau diese Hilfsmittel: <strong>Navigationsdreieck, Anlegedreieck, Doppellineal, Portland Plotter und Zirkel</strong>. Andere Hilfsmittel, auch elektronische, sind ausgeschlossen. Du rechnest also ohne Taschenrechner.
       </p>
       <div class="pg-cards pg-cards--3">
         <div class="pg-card">
@@ -346,8 +350,8 @@ const mistakes = [
           <p class="pg-card-text">Ein gedruckter Abzug der Übungskarte D49 und die 15 Aufgaben aus dem ELWIS-Katalog. Auf Papier üben, denn in der Prüfung gibt es kein Display.</p>
         </div>
         <div class="pg-card">
-          <p class="pg-card-label">Taschenrechner</p>
-          <p class="pg-card-text">Steht nicht in der Liste der erlaubten Hilfsmittel. Frag deinen Prüfungsausschuss und übe die Rechnungen so, dass du sie auch ohne schaffst.</p>
+          <p class="pg-card-label">Kein Taschenrechner</p>
+          <p class="pg-card-text">Er steht nicht in der Liste der erlaubten Hilfsmittel. Zeit und Fahrt rechnest du im Kopf, etwa mit „Minuten pro Seemeile = 60 ÷ Fahrt“.</p>
         </div>
       </div>
     </section>

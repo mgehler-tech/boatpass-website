@@ -39,7 +39,7 @@ const faqs = [
   },
   {
     q: 'Which aids are allowed in the navigation task?',
-    a: 'The German Recreational Boat Licence Regulation (SpFV) allows a navigation triangle, a set square, a parallel ruler, a Portland plotter and dividers. Other aids, including electronic reference works, are excluded. A calculator is not on the list; ask your examination board before relying on one, and practise the time and speed sums in your head.',
+    a: 'The German Recreational Boat Licence Regulation (SpFV) allows a navigation triangle, a set square, a parallel ruler, a Portland plotter and dividers. Other aids, including electronic ones, are excluded. So you have no calculator: you work out time and speed in your head or on paper.',
   },
   {
     q: 'Do tides come up in the navigation task?',
@@ -68,7 +68,7 @@ const howToSchema = {
   "description": "Course conversion for the navigation task of the SBF Coastal exam: from true course via magnetic course to compass course.",
   "step": [
     { "@type": "HowToStep", "name": "Read the true course from the chart", "text": "Join start and destination, place the navigation triangle on a meridian and read off the true course." },
-    { "@type": "HowToStep", "name": "Subtract variation", "text": "Take the variation from the compass rose on the chart. Easterly values are positive, westerly negative. True course minus variation gives the magnetic course." },
+    { "@type": "HowToStep", "name": "Subtract variation", "text": "Take the variation from the chart and add the annual change up to the year of the task, rounded to whole degrees. Easterly values are positive, westerly negative. True course minus variation gives the magnetic course." },
     { "@type": "HowToStep", "name": "Subtract deviation", "text": "The deviation is given in the task text. Magnetic course minus deviation gives the compass course." },
     { "@type": "HowToStep", "name": "Check the result", "text": "Compass course plus deviation plus variation must give the true course again." },
   ],
@@ -105,16 +105,17 @@ const taskTypes: TaskType[] = [
     icon: 'refresh',
     title: 'Course conversion: from true to compass course',
     pool: 'Sub-question “compass course” (MgK)',
-    intro: 'The compass on board does not point to geographic north. Variation (Mw) depends on the location and is shown in the compass rose of the chart; deviation (Abl) depends on the boat and is given in the task text. Easterly values are positive, westerly negative.',
+    intro: 'The compass on board does not point to geographic north. Variation (Mw) depends on the location and the year and is shown on the chart; deviation (Abl) depends on the boat and is given in the task text. Easterly values are positive, westerly negative.',
     steps: [
       'Read the true course from the chart (see above).',
-      'Take the variation from the compass rose and subtract it: <strong>true − variation = magnetic course</strong> (rwK − Mw = mwK).',
+      'Bring the variation up to the year of the task: the chart gives it for a <strong>reference year</strong> with an <strong>annual change</strong>. Add the change for every year, with its sign, and round to whole degrees (under 30\' down, from 30\' up). In the official tasks this gives 0° or +1°.',
+      'Subtract the variation: <strong>true − variation = magnetic course</strong> (rwK − Mw = mwK).',
       'Subtract the deviation from the task text: <strong>magnetic − deviation = compass course</strong> (mwK − Abl = MgK).',
       'Check in reverse: <strong>compass + deviation + variation = true course</strong> (MgK + Abl + Mw = rwK).',
     ],
     example: [
-      'Example: true course 125°, variation +2° (east), deviation −3° (west).',
-      'Magnetic course = 125° − 2° = 123°. Compass course = 123° − (−3°) = 126°. Check: 126° − 3° + 2° = 125°.',
+      'Example: the chart shows 1°30\'W 2010 with an annual change of 8\'E, and the task is set in 2016. Variation = −90\' + 6 × 8\' = −42\', rounded to −1°. Deviation +3° (east), true course 125°.',
+      'Magnetic course = 125° − (−1°) = 126°. Compass course = 126° − 3° = 123°. Check: 123° + 3° − 1° = 125°.',
     ],
     links: [
       { href: '/en/blog/course-conversion-sbf-coastal/', label: 'Course conversion for the SBF Coastal' },
@@ -128,7 +129,7 @@ const taskTypes: TaskType[] = [
     pool: 'Sub-questions “bearings” and “plot the bearings”',
     intro: 'Directions to lights or buoys taken with the compass are compass bearings (MgP). For the chart you need the true bearing (rwP). The sum is the same as for the course, just in the other direction.',
     steps: [
-      'Add deviation and variation: <strong>compass bearing + deviation + variation = true bearing</strong> (MgP + Abl + Mw = rwP). The deviation applies to the <strong>course you are steering</strong>, not to the direction of the bearing.',
+      'Add deviation and variation: <strong>compass bearing + deviation + variation = true bearing</strong> (MgP + Abl + Mw = rwP). Which deviation applies depends on the compass: with a <strong>bearing attachment on the steering compass</strong>, its deviation for the current heading applies, not the one for the direction of the bearing. With a <strong>hand bearing compass</strong>, the deviation is given in the task, usually 0°.',
       'Place the navigation triangle so that its edge runs through the object you took the bearing on and shows the true bearing at the meridian.',
       'Draw the line from the object back towards you. This position line holds every point from which the object lies in that direction.',
       'Plot a second bearing on another object the same way. Where the two lines cross is your observed position.',
@@ -159,6 +160,7 @@ const taskTypes: TaskType[] = [
       'Set the dividers on the two points and read the opening on the <strong>latitude scale</strong> (side edge), ideally at the same height as the distance. Never measure on the longitude scale at the top or bottom.',
       'Time: <strong>t = d ÷ v</strong>. The result is in hours; multiply by 60 for minutes.',
       'Speed: <strong>v = d ÷ t</strong>, converting the time to hours first.',
+      'Mental shortcut without a calculator: one nautical mile takes <strong>60 ÷ speed</strong> minutes. At 6 kn that is 10 minutes per nautical mile.',
       'If a clock time is asked for, add the passage time to the departure time.',
     ],
     example: [
@@ -175,9 +177,9 @@ const taskTypes: TaskType[] = [
     intro: 'These sub-questions test pure chart knowledge. You name a mark, describe a light or explain an entry. The abbreviations are listed in the chart symbol key (Chart 1 / INT 1).',
     steps: [
       'Find the mark on the chart and read the label next to it in full.',
-      'For buoys, name the type (for example starboard-hand or cardinal buoy) and give colour, shape and topmark.',
-      'For lights, break down the characteristic: type (flashing, occulting, isophase), group, colour, period in seconds, elevation in metres and range in nautical miles.',
-      'Write down every part shown on the chart. Anything missing counts as incomplete.',
+      'For buoys, name the type (for example starboard-hand or cardinal buoy) and give colour and shape. <strong>Only mention a topmark if it is drawn on the symbol</strong>.',
+      'For lights, break down the characteristic: type (flashing, occulting, isophase), group, colour, period in seconds, plus elevation and range if given. If there is no colour letter, the light is white.',
+      'Write down everything shown on the symbol, but do not add anything. Anything missing counts as incomplete; anything guessed counts as wrong.',
     ],
     links: [{ href: '/en/blog/how-to-read-a-nautical-chart/', label: 'Reading chart symbols' }],
   },
@@ -186,11 +188,13 @@ const taskTypes: TaskType[] = [
 const mistakes = [
   { title: 'Reading the reciprocal course', desc: 'The triangle shows two values 180° apart. Before reading, check which direction you are heading.' },
   { title: 'Mixing up the signs', desc: 'East is plus, west is minus. From true to compass course you subtract; from compass course or compass bearing to true you add. The check exposes the mistake.' },
-  { title: 'Wrong deviation for bearings', desc: 'Deviation depends on the course you are steering, not on the direction to the object.' },
+  { title: 'Forgetting the annual change in variation', desc: 'The chart value applies to a reference year. Without the change up to the year of the task, the conversion can easily be a degree out.' },
+  { title: 'Wrong deviation for bearings', desc: 'With a bearing attachment, the steering compass deviation for the current heading applies, not the one for the direction to the object. With a hand bearing compass, use the given value, usually 0°.' },
   { title: 'Measuring distance on the longitude scale', desc: 'Only the latitude scale on the side edge measures nautical miles. At these latitudes the longitude scale is noticeably compressed.' },
   { title: 'Confusing decimal hours with minutes', desc: '0.4 h is 24 minutes, not 40. Convert to minutes first, then add to the clock time.' },
   { title: 'Not writing down the working', desc: 'Follow-on errors do not cost a second point, but only if it is clear you carried on correctly. Jot down intermediate values and the sum.' },
-  { title: 'Imprecise drawing', desc: 'A thick line or a slipped triangle can easily cost one or two degrees. Use a sharp, hard pencil and place the triangle calmly.' },
+  { title: 'Imprecise drawing', desc: 'A thick line or a slipped triangle can easily cost one or two degrees. For buoys, line up on the small circle at the foot of the symbol, not on its tip.' },
+  { title: 'Guessing a topmark', desc: 'A topmark only belongs in the answer if it is drawn on the symbol. And do not forget the colour white when there is no colour letter.' },
 ];
 ---
 
@@ -327,7 +331,7 @@ const mistakes = [
     <section class="pg-section">
       <h2 class="pg-h2">What equipment you need</h2>
       <p class="pg-p">
-        Under the German Recreational Boat Licence Regulation, exactly these aids are allowed: <strong>navigation triangle, set square, parallel ruler, Portland plotter and dividers</strong>. Other aids, including electronic reference works, are excluded.
+        Under the German Recreational Boat Licence Regulation, exactly these aids are allowed: <strong>navigation triangle, set square, parallel ruler, Portland plotter and dividers</strong>. Other aids, including electronic ones, are excluded. So you work without a calculator.
       </p>
       <div class="pg-cards pg-cards--3">
         <div class="pg-card">
@@ -339,8 +343,8 @@ const mistakes = [
           <p class="pg-card-text">A printed copy of training chart D49 and the 15 tasks from the ELWIS catalog. Practise on paper, because there is no screen in the exam.</p>
         </div>
         <div class="pg-card">
-          <p class="pg-card-label">Calculator</p>
-          <p class="pg-card-text">Not on the list of permitted aids. Ask your examination board and practise the sums so that you can manage without one.</p>
+          <p class="pg-card-label">No calculator</p>
+          <p class="pg-card-text">It is not on the list of permitted aids. You work out time and speed in your head, for example with “minutes per nautical mile = 60 ÷ speed”.</p>
         </div>
       </div>
     </section>
