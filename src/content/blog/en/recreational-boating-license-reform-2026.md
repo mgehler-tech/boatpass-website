@@ -1,8 +1,9 @@
 ---
 title: "German Boating License Reform 2026: What's Changing and What Stays the Same"
 seoTitle: "German Boating License Reform 2026"
-description: "The 2026 reform replaces Germany's Sportbootführerschein with association-issued certificates. What it means and whether your existing license stays valid."
+description: "Germany's planned reform would replace the Sportbootführerschein with association certificates. What it means and whether your license stays valid."
 date: 2026-07-25
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 8
 lang: en
@@ -95,3 +96,11 @@ If you are considering getting your Sportbootführerschein, there is no reason t
 The 2026 Sportbootführerschein reform sounds more dramatic than it actually is for most boaters. Existing licenses remain valid, exam content does not change and the unified 15 HP threshold for all drive types is a sensible simplification. The biggest open question remains how the loss of official government status will affect international recognition.
 
 If you are on your way to getting your Sportbootführerschein, stay the course: the Boatpass app contains the complete ELWIS question catalog and a realistic exam simulation mode, so you can prepare with exactly the questions that will appear in the actual exam.
+
+## Sources
+
+- [Federal Ministry of Transport: press release on modernising boating licences (2025, German)](https://www.bmv.de/SharedDocs/DE/Pressemitteilungen/2025/051-hirte-regeln-fuer-sportbootfuehrerscheine-werden-modernisiert.html)
+- [ELWIS – recreational boat licences](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) – current legal situation
+- [Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/) – current version
+
+This article reflects the situation as of October 2026. No new regulation had entered into force by then.

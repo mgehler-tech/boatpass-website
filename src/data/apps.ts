@@ -344,7 +344,12 @@ export function getBoatpassCombinedRating(): AppRating | null {
   return storeRatings(appById('boatpass'));
 }
 
-/** JSON-LD SoftwareApplication für eine App. aggregateRating nur, wenn Bewertungen vorliegen. */
+/**
+ * JSON-LD SoftwareApplication für eine App auf den Vergleichsseiten.
+ * Bewusst ohne aggregateRating: Google erlaubt keine aus anderen Websites/Stores
+ * übernommenen Bewertungen und keine Bewertungen für Listen mehrerer Produkte
+ * (Review-Snippet-Richtlinien). Die Bewertungen stehen sichtbar in der Tabelle.
+ */
 export function softwareApplicationSchema(app: LearningApp, lang: 'de' | 'en') {
   const os = [app.playUrl ? 'Android' : null, app.appStoreUrl ? 'iOS' : null]
     .filter(Boolean)
@@ -368,16 +373,5 @@ export function softwareApplicationSchema(app: LearningApp, lang: 'de' | 'en') {
       price: app.pricingModel === 'free' ? '0' : '0',
       description: app.price[lang],
     },
-    ...(storeRatings(app)
-      ? {
-          aggregateRating: {
-            '@type': 'AggregateRating',
-            ratingValue: formatRating(storeRatings(app)!.score),
-            ratingCount: String(storeRatings(app)!.ratings),
-            bestRating: '5',
-            worstRating: '1',
-          },
-        }
-      : {}),
   };
 }

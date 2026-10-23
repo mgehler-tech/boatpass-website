@@ -221,12 +221,11 @@ export const de = {
     lrcCat: 'Fragenkatalog LRC · Seefunk (weltweit)',
     lrcStand: 'gültig seit 01.02.2024',
     ubiCat: 'Fragenkatalog UBI · UKW-Sprechfunk Binnen',
-    ubiStand: 'gültig seit 01.10.2018',
-    ubiNext: 'Neufassung ab 01.10.2026',
+    ubiStand: 'gültig seit 01.10.2026',
     validityNote: 'Das Datum zeigt, seit wann die jeweilige amtliche Fassung gilt – nicht das Alter der Fragen. Alle hier gelisteten Kataloge sind für das Prüfungsjahr 2026 maßgeblich. Kommt eine neue Fassung heraus, bauen wir sie automatisch ein.',
-    issuerNote: 'Alle Kataloge werden im Auftrag des Bundesministeriums für Digitales und Verkehr (BMDV) bzw. der Wasserstraßen- und Schifffahrtsverwaltung des Bundes über ELWIS veröffentlicht. Rechtsverbindlich ist allein die Bekanntmachung im Verkehrsblatt.',
+    issuerNote: 'Alle Kataloge werden im Auftrag des Bundesministeriums für Digitales und Verkehr (BMDV) bzw. der Wasserstraßen- und Schifffahrtsverwaltung des Bundes veröffentlicht: SBF-, SRC- und LRC-Kataloge über ELWIS, der UBI-Katalog über die Fachstelle ABVT der WSV. Rechtsverbindlich ist allein die Bekanntmachung im Verkehrsblatt.',
     pageStandLabel: 'Stand dieser Übersicht',
-    disclaimer: 'Maßgeblich ist immer die amtliche Veröffentlichung – die verlinkten ELWIS-Seiten zeigen stets die aktuell gültige Fassung.',
+    disclaimer: 'Maßgeblich ist immer die amtliche Veröffentlichung – die verlinkten amtlichen Seiten zeigen stets die aktuell gültige Fassung.',
   },
   blog: {
     eyebrow: 'Ratgeber',
@@ -283,8 +282,9 @@ export const de = {
     // Faktenzeile unter dem Button, ein Satz statt vier Häkchen.
     heroNote: 'Ohne Account starten, 15 Fragen täglich gratis. Danach Einmalkauf statt Abo, für iPhone, iPad und Android.',
     ratingOutOf: 'von 5 Sternen',
-    // Einzeilige Bewertung im Hero: „4,96 · 29 Bewertungen"
-    ratingCountLabel: 'Bewertungen',
+    // Einzeilige Bewertung im Hero: „4,96 · 29 Bewertungen · iOS & Android".
+    // Quelle immer nennen: Footer und Rezensionen zeigen Google Play allein (28).
+    ratingCountLabel: 'Bewertungen · iOS & Android',
     heroQr: 'Aufs Handy per QR-Code',
     ratingSourcePlay: 'Bewertungen bei Google Play',
     // Haupt-CTA je Gerät (StoreCta): Android, iPhone/iPad, sonst hero.cta.
@@ -338,7 +338,7 @@ export const de = {
     colPrice: 'Preis',
     once: 'einmalig',
     finderTitle: 'Unsicher, welcher Schein zu dir passt?',
-    finderText: 'Fünf Fragen, eine klare Empfehlung.',
+    finderText: 'Drei Fragen, eine klare Empfehlung.',
     finderCta: 'Zum Schein-Finder',
     faqTitle: 'Häufig gestellte Fragen',
     faqMore: 'Alle Fragen & Antworten',

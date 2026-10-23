@@ -3,6 +3,7 @@ title: "UBI Question Catalog 2026: What Changes on October 1"
 seoTitle: "UBI Question Catalog 2026: Changes"
 description: "New UBI question catalog from 1 October 2026: VDES replaces MIB, updated legal references and a new radio table. What changes and how to prepare."
 date: 2026-09-09
+updated: 2026-10-23
 tags: ["Exam Knowledge"]
 readingTime: 7
 lang: en
@@ -74,3 +75,7 @@ A proven approach is to work through the topic blocks one by one, deliberately r
 On 1 October 2026, the UBI complete question catalog 2026 replaces the previous 2018 version. The subject areas stay largely the same; what was revised are individual questions, technical terms, and legal references. The most visible changes are the switch from MIB to VDES for digital data radio and the new radio procedure table for the practical exam. The exam structure itself is unchanged. What always determines which catalog applies is your exam date.
 
 The **Boatpass app** is already up to date: you study with the current UBI complete question catalog 2026, practice in a realistic exam mode, and train your mistakes specifically, so you go into the exam confident and well prepared, whether your date falls before or after 1 October.
+
+## Sources
+
+- [ABVT of the WSV – UBI VHF radio certificate](https://www.abvt.wsv.de/Webs/WSA/ABVT/DE/UKW-Sprechfunkzeugnisse/UBI_node.html) – UBI complete question catalog 2026, question distribution, practice papers and radio table (valid from 1 October 2026)
