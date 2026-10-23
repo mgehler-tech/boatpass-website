@@ -13,7 +13,7 @@ image: "/images/blog/boot-fahren-ohne-fuehrerschein-15-ps.jpg"
 imageAlt: "A small open motorboat with an outboard engine cruising on a calm lake in front of green hills, the driver steering at the wheel"
 faq:
   - question: "Up to how much horsepower can I operate a boat in Germany without a license?"
-    answer: "Germany's 15-HP rule lets you operate motorboats with an output up to and including 15 HP (11.03 kW) without an official Sportbootführerschein from age 16 – on both inland and coastal waterways. Only above 15 HP does the SBF become mandatory. Lake Constance has a lower limit."
+    answer: "Germany's 15-HP rule lets you operate motorboats with an output up to and including 15 HP (11.03 kW) without an official Sportbootführerschein – on both inland and coastal waterways; on inland waters you must be at least 16. Only above 15 HP does the SBF become mandatory. Lake Constance has a lower limit."
   - question: "When do I need the Sportbootführerschein?"
     answer: "At the latest, once your engine exceeds 15 HP, once you go out on the sea or abroad – Mediterranean charter companies usually require the SBF See, often plus the SRC radio certificate – or in special navigation zones where a license is required regardless of horsepower."
   - question: "Do I need the SBF Inland or the SBF Coastal?"
@@ -32,7 +32,7 @@ This covers the vast majority of German waters. Only **above 15 HP** does the Sp
 
 ### Minimum Age
 
-License-free does not mean rule-free: anyone operating a motorboat up to 15 HP must be **at least 16 years old**. For the license-required Sportbootführerschein with an engine (motor), the minimum age is **16** – this applies to both the SBF Binnen (inland) and SBF See (coastal). Only for the **sailing** endorsement (SBF Binnen under sail) is the minimum age **14**.
+License-free does not mean rule-free: anyone operating a motorboat on inland waterways must be **at least 16 years old** (section 1.09 BinSchStrO), even below 15 HP. On coastal waterways there is no statutory minimum age for license-free boats; parents remain responsible there. For the license-required Sportbootführerschein with an engine (motor), the minimum age is **16** – this applies to both the SBF Binnen (inland) and SBF See (coastal). Only for the **sailing** endorsement (SBF Binnen under sail) is the minimum age **14**.
 
 What other age limits apply to children and teenagers – from riding along to taking the helm themselves – is covered in our guide to the [minimum age for children and teenagers at the helm](/en/blog/minimum-age-children-boat-germany/).
 
@@ -94,7 +94,7 @@ Many people take both in combination, because the theory overlaps and the second
 
 ## Conclusion
 
-Up to 15 HP (11.03 kW) you can generally operate a boat in Germany without a license from age 16 – but Lake Constance, individual special zones and electric drives over 7.5 kW all have their own, lower limits. As soon as you go for more power, the open sea, or a charter boat abroad, you need the [Sportbootführerschein](/en/sbf-inland/). If in doubt, check your engine's rated output and the rules for your specific waters before you head out. Once you know the SBF is coming up, you can start for free in the Boatpass app with the official ELWIS question catalog and prepare specifically for the theory exam.
+Up to 15 HP (11.03 kW) you can generally operate a boat in Germany without a license, on inland waters from age 16 – but Lake Constance, individual special zones and electric drives over 7.5 kW all have their own, lower limits. As soon as you go for more power, the open sea, or a charter boat abroad, you need the [Sportbootführerschein](/en/sbf-inland/). If in doubt, check your engine's rated output and the rules for your specific waters before you head out. Once you know the SBF is coming up, you can start for free in the Boatpass app with the official ELWIS question catalog and prepare specifically for the theory exam.
 
 ## Sources
 

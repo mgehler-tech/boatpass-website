@@ -13,7 +13,7 @@ faq:
   - question: "Ab welchem Alter dürfen Kinder ohne Motor Boot fahren?"
     answer: "Für muskelbetriebene Boote wie Ruderboote, Kanus, Kajaks oder SUPs gibt es kein gesetzliches Mindestalter und keine Führerscheinpflicht. Entscheidend ist, dass Kinder schwimmen können und eine passende Rettungsweste tragen. Die Aufsichtspflicht liegt bei den Erziehungsberechtigten."
   - question: "Dürfen Kinder unter 16 Jahren ein Motorboot führen?"
-    answer: "Grundsätzlich nicht. Sowohl für den Sportbootführerschein mit Antriebsmaschine als auch für führerscheinfreie Boote bis 15 PS (11,03 kW) gilt ein Mindestalter von 16 Jahren. Eine kleine Ausnahme gibt es auf Seeschifffahrtsstraßen für sehr schwache Motoren bis 5 PS (3,68 kW)."
+    answer: "Auf Binnenschifffahrtsstraßen nicht: Dort muss am Ruder jedes Boots mit Motor eine Person von mindestens 16 Jahren stehen (§ 1.09 BinSchStrO), auch bei führerscheinfreien Booten bis 15 PS (11,03 kW). Auf Seeschifffahrtsstraßen schreiben weder die Sportbootführerscheinverordnung noch die Seeschifffahrtsstraßen-Ordnung ein Mindestalter für führerscheinfreie Boote vor; dort liegt die Verantwortung bei den Erziehungsberechtigten. Für den Sportbootführerschein mit Antriebsmaschine gilt überall 16 Jahre."
   - question: "Ab welchem Alter kann man sich zur SBF-Prüfung anmelden?"
     answer: "Die Anmeldung ist drei Monate vor dem Mindestalter möglich: mit 15 Jahren und 9 Monaten für SBF Binnen und See unter Motor, mit 13 Jahren und 9 Monaten für SBF Binnen unter Segel. Der Schein wird erst ab Mindestalter ausgehändigt; Minderjährige brauchen die Einverständniserklärung eines Erziehungsberechtigten."
   - question: "Was ist der DSV-Jugendsegelschein?"
@@ -42,20 +42,23 @@ Damit du auf einen Blick siehst, welche Regel für welches Boot gilt, hier die w
 | Bootsart | Mindestalter |
 |---|---|
 | Ruderboot, Kanu, Kajak, SUP (ohne Motor) | kein festes Mindestalter |
-| Motorboot bis 15 PS (führerscheinfrei) | 16 Jahre |
+| Motorboot bis 15 PS (führerscheinfrei), Binnen | 16 Jahre |
+| Motorboot bis 15 PS (führerscheinfrei), See | keine gesetzliche Altersgrenze |
 | SBF Binnen / SBF See unter Motor | 16 Jahre |
 | SBF Binnen unter Segel | 14 Jahre |
 | Jetski / Wassermotorrad | in der Regel 16 Jahre (siehe unten) |
 
 ## Motorboote: Die 16-Jahre-Grenze
 
-Sobald ein Motor ins Spiel kommt, wird es strenger. In Deutschland gilt für das Führen von Motorbooten grundsätzlich ein **Mindestalter von 16 Jahren** – und zwar unabhängig davon, ob ein Sportbootführerschein nötig ist oder nicht.
+Sobald ein Motor ins Spiel kommt, wird es strenger. Auf den **Binnenschifffahrtsstraßen** muss das Ruder jedes Fahrzeugs mit Antriebsmaschine mit einer Person von **mindestens 16 Jahren** besetzt sein (§ 1.09 BinSchStrO) – unabhängig davon, ob ein Sportbootführerschein nötig ist oder nicht.
 
-Das betrifft auch die beliebte **15-PS-Regel**: Motorboote mit einer Nutzleistung bis einschließlich 15 PS (11,03 kW) dürfen zwar ohne amtlichen Sportbootführerschein gefahren werden, aber eben erst ab 16 Jahren. Mehr zu dieser Regel und ihren Ausnahmen (Bodensee, regionale Sonderzonen) liest du in unserem Artikel [Boot fahren ohne Führerschein](/blog/boot-fahren-ohne-fuehrerschein-15-ps/). Ein zwölf- oder vierzehnjähriges Kind darf also auch ein kleines, führerscheinfreies Motorboot nicht eigenständig führen, egal wie schwach der Motor ist – von einer Ausnahme abgesehen.
+Das betrifft auch die beliebte **15-PS-Regel**: Motorboote mit einer Nutzleistung bis einschließlich 15 PS (11,03 kW) dürfen zwar ohne amtlichen Sportbootführerschein gefahren werden, auf Binnengewässern aber eben erst ab 16 Jahren. Mehr zu dieser Regel und ihren Ausnahmen (Bodensee, regionale Sonderzonen) liest du in unserem Artikel [Boot fahren ohne Führerschein](/blog/boot-fahren-ohne-fuehrerschein-15-ps/). Ein zwölf- oder vierzehnjähriges Kind darf dort also auch ein kleines, führerscheinfreies Motorboot nicht eigenständig führen, egal wie schwach der Motor ist.
 
-### Die Ausnahme: sehr schwache Motoren auf Seeschifffahrtsstraßen
+### Auf See: keine gesetzliche Altersgrenze für führerscheinfreie Boote
 
-Auf den **Seeschifffahrtsstraßen**, also den Bundeswasserstraßen im Küstenbereich, gilt für besonders leistungsschwache Antriebe eine Sonderregel: Für das nicht gewerbsmäßige Führen eines Sportbootes mit einer Nutzleistung bis 3,68 kW (rund 5 PS) ist dort keine feste Altersgrenze vorgeschrieben. In der Praxis betrifft das vor allem sehr kleine Beiboote und Schlauchboote mit schwachem Außenborder. Das ändert nichts daran, dass die grundsätzliche Aufsichtspflicht der Eltern bestehen bleibt und ein so kleines Kind ohnehin nicht ohne begleitenden Erwachsenen an Bord fahren sollte. Auf Binnengewässern und bei stärkeren Motoren gilt diese Ausnahme nicht, hier bleibt es bei den 16 Jahren.
+Auf den **Seeschifffahrtsstraßen**, also den Bundeswasserstraßen im Küstenbereich, ist die Lage anders: Weder die Sportbootführerscheinverordnung noch die Seeschifffahrtsstraßen-Ordnung legen für führerscheinfreie Boote bis 11,03 kW (15 PS) ein Mindestalter fest. Eine früher oft genannte Sonderregel für Motoren bis 3,68 kW (rund 5 PS) stammt aus älterem Recht und steht in der seit 2017 geltenden Sportbootführerscheinverordnung nicht mehr.
+
+Das heißt nicht, dass Kinder dort allein losfahren sollten. Die Aufsichtspflicht der Eltern bleibt bestehen, Vermieter setzen meist eigene Altersgrenzen, und wer von der Küste in Binnengewässer einfährt, unterliegt dort wieder der 16-Jahre-Grenze.
 
 ### Und der Jetski?
 
@@ -107,7 +110,7 @@ Fragen zum Mindestalter und zu den Voraussetzungen für den Sportbootführersche
 
 ## Fazit
 
-Wie früh Kinder ans Steuer dürfen, hängt entscheidend vom Bootstyp ab: Muskelbetriebene Boote wie Kanu, Kajak oder SUP sind ohne festes Mindestalter erlaubt, solange Schwimmfähigkeit, passende Rettungsweste und ausreichende Aufsicht gegeben sind. Bei Motorbooten gilt dagegen fast immer die 16-Jahre-Grenze, auch für führerscheinfreie Boote bis 15 PS. Wer früh mit der Vorbereitung starten will, kann sich schon drei Monate vor dem jeweiligen Mindestalter zur SBF-Prüfung anmelden und den Führerschein direkt mit Erreichen des Mindestalters in der Tasche haben. Bis dahin bleibt genug Zeit, um mit Vereinsscheinen, gut betreuten Ausflügen und der passenden Sicherheitsausrüstung erste, sichere Erfahrungen auf dem Wasser zu sammeln.
+Wie früh Kinder ans Steuer dürfen, hängt entscheidend vom Bootstyp ab: Muskelbetriebene Boote wie Kanu, Kajak oder SUP sind ohne festes Mindestalter erlaubt, solange Schwimmfähigkeit, passende Rettungsweste und ausreichende Aufsicht gegeben sind. Bei Motorbooten gilt auf Binnengewässern die 16-Jahre-Grenze, auch für führerscheinfreie Boote bis 15 PS; auf See gibt es für führerscheinfreie Boote keine gesetzliche Altersgrenze, wohl aber die Aufsichtspflicht der Eltern. Wer früh mit der Vorbereitung starten will, kann sich schon drei Monate vor dem jeweiligen Mindestalter zur SBF-Prüfung anmelden und den Führerschein direkt mit Erreichen des Mindestalters in der Tasche haben. Bis dahin bleibt genug Zeit, um mit Vereinsscheinen, gut betreuten Ausflügen und der passenden Sicherheitsausrüstung erste, sichere Erfahrungen auf dem Wasser zu sammeln.
 
 ## Quellen
 

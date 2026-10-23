@@ -15,7 +15,7 @@ faq:
   - question: "At what blood alcohol level is a skipper considered absolutely incapable of operating a vessel?"
     answer: "Under case law from Germany's higher regional courts (e.g. OLG Karlsruhe), absolute incapacity for a skipper is set at 1.1 per mille. From around 0.3 per mille, relative incapacity can apply if additional signs are present, such as unsafe handling or an accident."
   - question: "What fine can you get for drinking and operating a boat?"
-    answer: "Between 0.5 and 1.09 per mille it is an administrative offense, with fines typically of 350 to 2,500 euros inland and 750 to 2,500 euros at sea. From 1.1 per mille, or with visible impairment, it is a criminal offense under § 316 or § 315a StGB."
+    answer: "Between 0.5 and 1.09 per mille it is an administrative offense. The official German fine catalogue for inland and sea waterways (BVKatBin-See) sets 350 to 2,500 euros on inland waterways and 750 to 2,500 euros on sea shipping lanes. From 1.1 per mille, or with visible impairment, it is a criminal offense under § 316 or § 315a StGB."
   - question: "What consequences does a skipper face for operating a boat while drunk?"
     answer: "Operating a vessel while unfit is a criminal offense under § 316 StGB; with concrete danger to others, § 315a StGB applies, with up to two years' imprisonment for negligence. You also risk fines, revocation of the SBF by the GDWS, and loss of insurance coverage."
   - question: "Are passengers on a boat allowed to drink alcohol?"
@@ -34,12 +34,12 @@ Crossing the 0.5 per mille limit on inland waterways or coastal shipping lanes i
 
 ## What the Fine Actually Costs
 
-The amount follows the current fine schedule for shipping and varies by waterway and case:
+The amount follows the [official fine catalogue for inland and sea waterways (BVKatBin-See)](https://www.elwis.de/DE/Schifffahrtsrecht/Verzeichnis-Rechtsverordnungen-Gesetze-Richtlinien/BVKatBin-See.html) (German), a federal administrative regulation (as of 1 June 2023). For operating a boat at 0.5 per mille or 0.25 mg/l breath alcohol or more, it sets:
 
-- **Inland waterways:** fines between 0.5 and 1.09 per mille typically range from **350 to 2,500 euros**.
-- **Coastal shipping lanes:** the usual range is **750 to 2,500 euros**.
+- **Inland waterways:** **350 to 2,500 euros** (entry 22.210260)
+- **Sea shipping lanes:** **750 to 2,500 euros** (entry 33.103000)
 
-The exact amount depends on the responsible water police authority, the specific BAC level, and any prior offenses. For other costly violations on the water – from boating without a license to leaving the scene of an accident – see our article on [fines and violations on the water](/en/blog/fines-violations-on-the-water/).
+Within that range, the amount depends on the individual case, such as the BAC level and any prior offenses. If the maximum is not sufficient, the catalogue allows it to be exceeded. For other costly violations on the water – from boating without a license to leaving the scene of an accident – see our article on [fines and violations on the water](/en/blog/fines-violations-on-the-water/).
 
 ## Relative and Absolute Incapacity to Operate a Vessel
 
@@ -113,7 +113,7 @@ For a broader overview of the most demanding topics in the exam, see our article
 
 ## Conclusion
 
-On the water, a fixed 0.5 per mille (or 0.25 mg/l breath alcohol) threshold applies as an administrative offense under the BinSchStrO or SeeSchStrO, with fines typically between 350 and 2,500 euros. From around 0.3 per mille with visible impairment, or at the latest from 1.1 per mille, it becomes a criminal offense under § 316 StGB, and under the stricter § 315a StGB if others are concretely endangered. The consequences range from administrative fines through criminal prosecution to loss of the boating license, the car driving license, and insurance coverage.
+On the water, a fixed 0.5 per mille (or 0.25 mg/l breath alcohol) threshold applies as an administrative offense under the BinSchStrO or SeeSchStrO, with fines under the official catalogue of 350 to 2,500 euros inland and 750 to 2,500 euros at sea. From around 0.3 per mille with visible impairment, or at the latest from 1.1 per mille, it becomes a criminal offense under § 316 StGB, and under the stricter § 315a StGB if others are concretely endangered. The consequences range from administrative fines through criminal prosecution to loss of the boating license, the car driving license, and insurance coverage.
 
 The simplest and safest rule remains: **As skipper, you do not drink.** Anyone who wants to relax with a drink passes the helm to a sober person in good time.
 
@@ -124,4 +124,5 @@ If you're preparing for the [SBF exam](/en/sbf-exam/), the **Boatpass app** give
 - [Inland Waterways Traffic Regulations (BinSchStrO), § 1.02 No. 7](https://www.gesetze-im-internet.de/binschstro_2012/BinSchStrO.pdf) – 0.5 per mille / 0.25 mg/l limit for skippers on inland waterways (German, PDF)
 - [Maritime Waterways Traffic Regulations (SeeSchStrO), § 3](https://www.gesetze-im-internet.de/seeschstro_1971/__3.html) – alcohol limit on maritime waterways and alcohol ban for skippers of passenger vessels (German)
 - [Section 316 StGB](https://www.gesetze-im-internet.de/stgb/__316.html) and [Section 315a StGB](https://www.gesetze-im-internet.de/stgb/__315a.html) – penalties for drunk operation and for endangering shipping traffic (German)
+- [Fine catalogue for inland and sea waterways (BVKatBin-See)](https://www.elwis.de/DE/Schifffahrtsrecht/Verzeichnis-Rechtsverordnungen-Gesetze-Richtlinien/BVKatBin-See.html) (German) – fine ranges for alcohol (entries 22.210260 and 33.103000)
 - [Sportbootführerscheinverordnung (SpFV), § 16](https://www.gesetze-im-internet.de/spfv/__16.html) – the GDWS as the authority that withdraws boating licenses (German)

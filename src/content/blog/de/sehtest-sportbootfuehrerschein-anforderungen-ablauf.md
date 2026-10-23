@@ -30,8 +30,8 @@ howTo:
       text: "Sehschärfe auf beiden Augen sowie das Farbunterscheidungsvermögen werden getestet, mit oder ohne deine gewohnte Sehhilfe."
     - name: "Ärztliches Zeugnis ausfüllen lassen"
       text: "Der Arzt trägt die Ergebnisse ein, bestätigt die Tauglichkeit und unterschreibt das Formular."
-    - name: "Zeugnis der Prüfungsanmeldung beilegen"
-      text: "Reiche das ausgefüllte, nicht älter als 12 Monate alte Zeugnis zusammen mit den übrigen Unterlagen beim Prüfungsausschuss ein."
+    - name: "Zeugnis an den Prüfungsausschuss geben"
+      text: "Laut Verordnung schickt der Arzt das Zeugnis im verschlossenen Umschlag direkt an den Prüfungsausschuss, du erhältst eine Abschrift. Manche Ausschüsse lassen es auch mit dem Antrag einreichen. Bei der Anmeldung darf es nicht älter als 12 Monate sein."
 ---
 
 Ohne ausreichendes Sehvermögen kein Sportbootführerschein, denn wer Lichter, Tonnen und andere Fahrzeuge nicht sicher erkennt, gefährdet sich und andere auf dem Wasser. Deshalb gehört der Sehtest zu den formalen Voraussetzungen für die Prüfungsanmeldung. Dieser Artikel zeigt, was dabei genau geprüft wird, wie der Ablauf funktioniert und was du tun kannst, wenn deine Sehschärfe an der Grenze liegt.
@@ -75,7 +75,7 @@ Der praktische Ablauf ist unkompliziert:
 2. **Termin vereinbaren:** Entweder direkt beim Hausarzt, oder zuerst beim Optiker den Sehtest machen lassen und das Ergebnis anschließend beim Arzt vorlegen.
 3. **Untersuchung durchführen lassen:** Sehschärfe, Farbunterscheidungsvermögen und Hörvermögen werden geprüft, bring deine gewohnte Sehhilfe mit, falls du eine trägst.
 4. **Formular ausfüllen und unterschreiben lassen:** Der Arzt trägt die Ergebnisse ein und bestätigt deine Tauglichkeit.
-5. **Zeugnis zur Prüfungsanmeldung beilegen:** Reiche das ausgefüllte Zeugnis zusammen mit den übrigen Unterlagen beim Prüfungsausschuss ein, wie im Artikel [SBF-Prüfung anmelden](/blog/sbf-pruefung-anmelden/) beschrieben.
+5. **Zeugnis an den Prüfungsausschuss geben:** Laut Sportbootführerscheinverordnung schickt der untersuchende Arzt das Zeugnis im verschlossenen Umschlag direkt an den Prüfungsausschuss, du bekommst eine Abschrift (§ 7 Abs. 2 Nr. 4 SpFV). Manche Prüfungsausschüsse lassen es in der Praxis auch mit dem Antrag einreichen – frag bei deinem Ausschuss nach, welchen Weg er erwartet. Wie die übrige Anmeldung abläuft, steht im Artikel [SBF-Prüfung anmelden](/blog/sbf-pruefung-anmelden/).
 
 Plane für den gesamten Termin nicht viel Zeit ein, die Untersuchung selbst dauert in der Regel nur wenige Minuten.
 
@@ -101,7 +101,7 @@ Bestehst du die theoretische oder praktische Prüfung im ersten Anlauf nicht, mu
 - **Aktuelle Werte prüfen lassen:** Ist deine letzte Sehstärkenbestimmung schon länger her, lass sie vorab beim Optiker oder Augenarzt aktualisieren.
 - **Rechtzeitig planen:** Da das Zeugnis nur 12 Monate gültig ist, plane den Termin so, dass er weder zu früh noch zu spät vor der Prüfungsanmeldung liegt.
 - **Bei bekannten Einschränkungen offen sein:** Sprich eine bekannte Farbsehschwäche oder Sehproblematik offen an, so kann der Arzt gezielt darauf eingehen, statt dass es beim eigentlichen Test zu Überraschungen kommt.
-- **Original und Kopie bereithalten:** Bewahre eine Kopie des ausgefüllten Zeugnisses auf, falls beim Prüfungsausschuss Rückfragen entstehen.
+- **Abschrift aufbewahren:** Hebe deine Abschrift des Zeugnisses auf, falls beim Prüfungsausschuss Rückfragen entstehen.
 - **Ersatzsehhilfe für die Prüfung und die Praxis einplanen:** Ist im Zeugnis eine Sehhilfe vermerkt, solltest du auch am Prüfungstag und später beim Bootfahren immer eine Ersatzbrille oder Ersatzkontaktlinsen griffbereit haben.
 
 ## Sehvermögen und die SBF-Prüfung
@@ -116,4 +116,5 @@ Der Sehtest für den [Sportbootführerschein](/fuehrerscheine/) ist unkomplizier
 
 - [Anlage 2 der Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/anlage_2.html) – Mindestsehschärfe 0,8, Kriterien für das Farbunterscheidungsvermögen und das Hörvermögen
 - [§ 6 SpFV](https://www.gesetze-im-internet.de/spfv/__6.html) – Tauglichkeitsnachweis, Sehteststellen und Auflagen
+- [Sportbootführerscheinverordnung (SpFV), § 7](https://www.gesetze-im-internet.de/spfv/__7.html) – Weg des Tauglichkeitsnachweises zum Prüfungsausschuss
 - [Prüfungsausschuss München: Anmeldung](https://www.pa-muenchen.de/anmeldung/) – ärztliches Zeugnis nicht älter als 12 Monate

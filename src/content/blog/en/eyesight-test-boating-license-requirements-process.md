@@ -30,8 +30,8 @@ howTo:
       text: "Visual acuity in both eyes and color discrimination are tested, with or without your usual visual aid."
     - name: "Have the doctor fill out the medical certificate"
       text: "The doctor enters the results, confirms your fitness, and signs the form."
-    - name: "Attach the certificate to your exam registration"
-      text: "Submit the completed certificate, no more than 12 months old, together with the rest of your documents to the examination board."
+    - name: "Get the certificate to the examination board"
+      text: "Under the regulation, the doctor sends the certificate in a sealed envelope directly to the examination board and you receive a copy. Some boards also accept it enclosed with the application. At registration it must be no more than 12 months old."
 ---
 
 No boating license without adequate eyesight, because anyone who can't reliably tell lights, buoys, and other vessels apart puts themselves and others at risk on the water. That's why the eye test is one of the formal requirements for exam registration. This article explains exactly what's tested, how the process works, and what you can do if your visual acuity is borderline.
@@ -75,7 +75,7 @@ The practical process is straightforward:
 2. **Book an appointment:** Either directly with your GP, or have the eye test done at an optician first and bring the result to the doctor afterward.
 3. **Get examined:** Visual acuity, color discrimination, and hearing are tested, bring your usual visual aid with you if you wear one.
 4. **Have the form filled out and signed:** The doctor enters the results and confirms your fitness.
-5. **Attach the certificate to your exam registration:** Submit the completed certificate together with the rest of your documents to the examination board, as described in [How to register for the SBF exam](/en/blog/how-to-register-sbf-exam/).
+5. **Get the certificate to the examination board:** Under the recreational boating license regulation, the examining doctor sends the certificate in a sealed envelope directly to the examination board and you receive a copy (section 7(2) no. 4 SpFV). Some examination boards also accept it enclosed with the application in practice – ask yours which route it expects. The rest of the registration process is described in [How to register for the SBF exam](/en/blog/how-to-register-sbf-exam/).
 
 Don't expect the appointment to take long, the examination itself usually takes only a few minutes.
 
@@ -101,7 +101,7 @@ If you don't pass the theory or practical exam on your first attempt, you genera
 - **Get current values checked:** If your last vision measurement was a while ago, have it updated beforehand at an optician or ophthalmologist.
 - **Plan ahead:** Since the certificate is only valid for 12 months, schedule your appointment so it's neither too early nor too late before your exam registration.
 - **Be open about known impairments:** Mention a known color vision deficiency or eyesight issue openly, so the doctor can address it specifically instead of it becoming a surprise during the actual test.
-- **Keep the original and a copy:** Keep a copy of the completed certificate in case the examination board has any follow-up questions.
+- **Keep your copy:** Hold on to your copy of the certificate in case the examination board has any follow-up questions.
 - **Plan a spare visual aid for the exam and for boating:** If a visual aid is noted on your certificate, always keep a spare pair of glasses or contact lenses handy, both on exam day and later when boating.
 
 ## Eyesight and the SBF exam
@@ -116,4 +116,5 @@ The eye test for the [German boating license](/en/licenses/) is straightforward 
 
 - [Annex 2 of the Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/anlage_2.html) (German) – minimum visual acuity of 0.8, criteria for color vision and hearing
 - [Section 6 SpFV](https://www.gesetze-im-internet.de/spfv/__6.html) (German) – medical certificate, eyesight test centers and restrictions
+- [Sportbootführerscheinverordnung (SpFV), section 7](https://www.gesetze-im-internet.de/spfv/__7.html) (German) – how the medical certificate reaches the examination board
 - [Munich examination board: registration](https://www.pa-muenchen.de/anmeldung/) (German) – medical certificate no older than 12 months

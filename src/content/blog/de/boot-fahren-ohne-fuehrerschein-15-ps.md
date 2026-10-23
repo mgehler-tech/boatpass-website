@@ -13,7 +13,7 @@ image: "/images/blog/boot-fahren-ohne-fuehrerschein-15-ps.jpg"
 imageAlt: "Ein kleines offenes Motorboot mit Außenborder fährt auf einem ruhigen See vor grüner Hügellandschaft, der Fahrer steuert am Lenkrad"
 faq:
   - question: "Bis wie viel PS darf ich in Deutschland ohne Bootsführerschein fahren?"
-    answer: "In Deutschland gilt die 15-PS-Regel: Motorboote mit einer Nutzleistung bis einschließlich 15 PS (11,03 kW) darfst du ab 16 Jahren ohne amtlichen Sportbootführerschein führen – auf Binnen- wie Seeschifffahrtsstraßen. Erst oberhalb von 15 PS wird der SBF zur Pflicht. Auf dem Bodensee gilt eine niedrigere Grenze."
+    answer: "In Deutschland gilt die 15-PS-Regel: Motorboote mit einer Nutzleistung bis einschließlich 15 PS (11,03 kW) darfst du ohne amtlichen Sportbootführerschein führen – auf Binnen- wie Seeschifffahrtsstraßen; auf Binnengewässern musst du dafür mindestens 16 Jahre alt sein. Erst oberhalb von 15 PS wird der SBF zur Pflicht. Auf dem Bodensee gilt eine niedrigere Grenze."
   - question: "Ab wann brauche ich den Sportbootführerschein?"
     answer: "Spätestens bei einer Motorleistung über 15 PS, beim Fahren auf dem Meer oder im Ausland – Charterfirmen im Mittelmeer verlangen meist den SBF See, oft zusätzlich das Funkzeugnis SRC – sowie in speziellen Befahrenszonen, in denen die Führerscheinpflicht unabhängig von der PS-Zahl gilt."
   - question: "Brauche ich den SBF Binnen oder den SBF See?"
@@ -32,7 +32,7 @@ Das gilt für die allermeisten Gewässer in Deutschland. Erst **oberhalb von 15 
 
 ### Mindestalter
 
-Führerscheinfrei heißt nicht regellos: Wer ein Motorboot bis 15 PS führt, muss **mindestens 16 Jahre alt** sein. Für den führerscheinpflichtigen Sportbootführerschein gilt mit Antriebsmaschine (Motor) ein Mindestalter von **16 Jahren** – das gilt für SBF Binnen und SBF See gleichermaßen. Nur für den Erwerb **unter Segel** (SBF Binnen) liegt das Mindestalter bei **14 Jahren**.
+Führerscheinfrei heißt nicht regellos: Wer auf Binnenschifffahrtsstraßen ein Motorboot führt, muss **mindestens 16 Jahre alt** sein (§ 1.09 BinSchStrO), auch unter 15 PS. Auf Seeschifffahrtsstraßen gibt es für führerscheinfreie Boote keine gesetzliche Altersgrenze; dort bleiben die Eltern in der Pflicht. Für den führerscheinpflichtigen Sportbootführerschein gilt mit Antriebsmaschine (Motor) ein Mindestalter von **16 Jahren** – das gilt für SBF Binnen und SBF See gleichermaßen. Nur für den Erwerb **unter Segel** (SBF Binnen) liegt das Mindestalter bei **14 Jahren**.
 
 Welche Altersgrenzen für Kinder und Jugendliche sonst noch gelten – vom Mitfahren bis zum eigenständigen Steuern –, fasst unser Ratgeber zum [Mindestalter für Kinder und Jugendliche am Steuer](/blog/kinder-jugendliche-boot-fahren-mindestalter/) zusammen.
 
@@ -94,7 +94,7 @@ Viele machen beide Scheine in Kombination, weil die Theorie sich überschneidet 
 
 ## Fazit
 
-Bis 15 PS (11,03 kW) darfst du in Deutschland ab 16 Jahren grundsätzlich ohne Führerschein Boot fahren – aber Bodensee, einzelne Sonderzonen und Elektroantriebe über 7,5 kW haben eigene, niedrigere Grenzen. Sobald du mehr Leistung, das offene Meer oder ein Charterboot im Ausland ansteuerst, brauchst du den Sportbootführerschein. Prüf im Zweifel die Leistungsangabe deines Motors und die Regeln für dein Revier, bevor du ablegst. Wenn du weißt, dass der SBF ansteht, kannst du in der Boatpass-App kostenlos mit dem offiziellen ELWIS-Fragenkatalog starten und dich gezielt auf die Theorieprüfung vorbereiten.
+Bis 15 PS (11,03 kW) darfst du in Deutschland grundsätzlich ohne Führerschein Boot fahren, auf Binnengewässern ab 16 Jahren – aber Bodensee, einzelne Sonderzonen und Elektroantriebe über 7,5 kW haben eigene, niedrigere Grenzen. Sobald du mehr Leistung, das offene Meer oder ein Charterboot im Ausland ansteuerst, brauchst du den Sportbootführerschein. Prüf im Zweifel die Leistungsangabe deines Motors und die Regeln für dein Revier, bevor du ablegst. Wenn du weißt, dass der SBF ansteht, kannst du in der Boatpass-App kostenlos mit dem offiziellen ELWIS-Fragenkatalog starten und dich gezielt auf die Theorieprüfung vorbereiten.
 
 ## Quellen
 

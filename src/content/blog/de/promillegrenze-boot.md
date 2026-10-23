@@ -15,7 +15,7 @@ faq:
   - question: "Ab wie viel Promille gilt man auf dem Boot als absolut fahruntüchtig?"
     answer: "Nach der Rechtsprechung der Oberlandesgerichte (z. B. OLG Karlsruhe) liegt die absolute Fahruntüchtigkeit eines Schiffsführers bei 1,1 Promille – unabhängig davon, ob äußere Ausfallerscheinungen erkennbar sind. Bereits ab 0,3 Promille kann relative Fahruntüchtigkeit vorliegen, wenn zusätzliche Anzeichen wie eine unsichere Fahrweise oder ein Unfall hinzukommen."
   - question: "Welches Bußgeld droht bei Alkohol am Steuer eines Boots?"
-    answer: "Zwischen 0,5 und 1,09 Promille ist es eine Ordnungswidrigkeit mit Bußgeldern von meist 350 bis 2.500 Euro (Binnen) bzw. 750 bis 2.500 Euro (See). Ab 1,1 Promille oder bei Ausfallerscheinungen droht eine Strafe nach § 316 oder § 315a StGB."
+    answer: "Zwischen 0,5 und 1,09 Promille ist es eine Ordnungswidrigkeit. Der amtliche Buß- und Verwarnungsgeldkatalog (BVKatBin-See) sieht dafür 350 bis 2.500 Euro auf Binnenschifffahrtsstraßen und 750 bis 2.500 Euro auf Seeschifffahrtsstraßen vor. Ab 1,1 Promille oder bei Ausfallerscheinungen droht eine Strafe nach § 316 oder § 315a StGB."
   - question: "Welche Konsequenzen drohen bei Trunkenheit als Schiffsführer?"
     answer: "Wer fahruntüchtig ein Boot führt, macht sich nach § 316 StGB strafbar; bei konkreter Gefährdung greift § 315a StGB mit bis zu zwei Jahren Freiheitsstrafe bei Fahrlässigkeit. Dazu drohen Bußgeld, Entzug des SBF durch die GDWS und der Verlust des Versicherungsschutzes."
   - question: "Dürfen Mitfahrer auf dem Boot Alkohol trinken?"
@@ -34,12 +34,12 @@ Wer die 0,5-Promille-Grenze auf Bundeswasserstraßen oder Seeschifffahrtsstraße
 
 ## Was das Bußgeld kostet
 
-Die Höhe richtet sich nach dem aktuellen Bußgeldkatalog für die Schifffahrt und variiert je nach Gewässer und Einzelfall:
+Die Höhe richtet sich nach dem [Buß- und Verwarnungsgeldkatalog Binnen- und Seeschifffahrtsstraßen (BVKatBin-See)](https://www.elwis.de/DE/Schifffahrtsrecht/Verzeichnis-Rechtsverordnungen-Gesetze-Richtlinien/BVKatBin-See.html), einer Verwaltungsvorschrift des Bundes (Stand 1. Juni 2023). Für das Führen eines Boots ab 0,5 Promille oder 0,25 mg/l Atemalkohol nennt er:
 
-- **Binnenwasserstraßen:** Bußgelder bei 0,5 bis 1,09 Promille bewegen sich in der Praxis meist zwischen **350 und 2.500 Euro**.
-- **Seeschifffahrtsstraßen:** Hier liegt der übliche Rahmen bei **750 bis 2.500 Euro**.
+- **Binnenschifffahrtsstraßen:** **350 bis 2.500 Euro** (lfd. Nr. 22.210260)
+- **Seeschifffahrtsstraßen:** **750 bis 2.500 Euro** (lfd. Nr. 33.103000)
 
-Die genaue Summe hängt von der zuständigen Wasserschutzpolizei, dem konkreten Promillewert und eventuellen Vorbelastungen ab. Weitere teure Verstöße auf dem Wasser – von der Fahrt ohne Führerschein bis zur Unfallflucht – findest du im Artikel [Bußgelder und Verstöße auf dem Wasser](/blog/bussgelder-verstoesse-wasser/).
+Innerhalb dieses Rahmens hängt die Summe vom Einzelfall ab, etwa vom Promillewert und von Vorbelastungen. Reicht das Höchstmaß nicht aus, darf es laut Katalog überschritten werden. Weitere teure Verstöße auf dem Wasser – von der Fahrt ohne Führerschein bis zur Unfallflucht – findest du im Artikel [Bußgelder und Verstöße auf dem Wasser](/blog/bussgelder-verstoesse-wasser/).
 
 ## Relative und absolute Fahruntüchtigkeit
 
@@ -113,7 +113,7 @@ Mehr zu den häufigsten Prüfungsthemen findest du in unserem Artikel zu den [sc
 
 ## Fazit
 
-Auf dem Boot gilt ab 0,5 Promille (bzw. 0,25 mg/l Atemalkohol) eine Ordnungswidrigkeit nach BinSchStrO oder SeeSchStrO, mit Bußgeldern meist zwischen 350 und 2.500 Euro. Ab 0,3 Promille mit erkennbaren Ausfallerscheinungen oder spätestens ab 1,1 Promille wird daraus eine Straftat nach § 316 StGB, bei konkreter Gefährdung anderer nach dem schärferen § 315a StGB. Die Konsequenzen reichen von Bußgeldern über strafrechtliche Verurteilungen bis zum Entzug von Bootsführerschein, Kfz-Führerschein und Versicherungsschutz.
+Auf dem Boot gilt ab 0,5 Promille (bzw. 0,25 mg/l Atemalkohol) eine Ordnungswidrigkeit nach BinSchStrO oder SeeSchStrO, mit Bußgeldern laut amtlichem Katalog von 350 bis 2.500 Euro (Binnen) bzw. 750 bis 2.500 Euro (See). Ab 0,3 Promille mit erkennbaren Ausfallerscheinungen oder spätestens ab 1,1 Promille wird daraus eine Straftat nach § 316 StGB, bei konkreter Gefährdung anderer nach dem schärferen § 315a StGB. Die Konsequenzen reichen von Bußgeldern über strafrechtliche Verurteilungen bis zum Entzug von Bootsführerschein, Kfz-Führerschein und Versicherungsschutz.
 
 Die einfachste und sicherste Regel bleibt: **Als Schiffsführer trinkst du keinen Alkohol.** Wer entspannen und trinken möchte, gibt das Steuer rechtzeitig an eine nüchterne Person ab.
 
@@ -124,4 +124,5 @@ Wenn du dich auf die [SBF-Prüfung](/sbf-pruefung-ablauf/) vorbereitest, hilft d
 - [Binnenschifffahrtsstraßen-Ordnung (BinSchStrO), § 1.02 Nr. 7](https://www.gesetze-im-internet.de/binschstro_2012/BinSchStrO.pdf) – Grenze von 0,5 Promille bzw. 0,25 mg/l für Schiffsführer auf Binnenschifffahrtsstraßen (PDF)
 - [Seeschifffahrtsstraßen-Ordnung (SeeSchStrO), § 3](https://www.gesetze-im-internet.de/seeschstro_1971/__3.html) – Promillegrenze auf Seeschifffahrtsstraßen und Alkoholverbot für Schiffsführer von Fahrgastschiffen
 - [§ 316 StGB](https://www.gesetze-im-internet.de/stgb/__316.html) und [§ 315a StGB](https://www.gesetze-im-internet.de/stgb/__315a.html) – Strafrahmen bei Trunkenheit im Verkehr und Gefährdung des Schiffsverkehrs
+- [Buß- und Verwarnungsgeldkatalog Binnen- und Seeschifffahrtsstraßen (BVKatBin-See)](https://www.elwis.de/DE/Schifffahrtsrecht/Verzeichnis-Rechtsverordnungen-Gesetze-Richtlinien/BVKatBin-See.html) – Bußgeldrahmen bei Alkohol (lfd. Nr. 22.210260 und 33.103000)
 - [Sportbootführerscheinverordnung (SpFV), § 16](https://www.gesetze-im-internet.de/spfv/__16.html) – Zuständigkeit der GDWS für die Entziehung des Sportbootführerscheins
