@@ -264,6 +264,7 @@ export const en: Translations = {
     ratingCountLabel: 'ratings · iOS & Android',
     heroQr: 'Get it on your phone via QR code',
     ratingSourcePlay: 'ratings on Google Play',
+    ratingSourceIos: 'ratings on the App Store',
     ctaPlay: 'Free on Google Play',
     phoneAlt: 'Boatpass app – home screen with licence, progress, streak and study modes',
     journeyChips: [
@@ -293,8 +294,9 @@ export const en: Translations = {
       restart: 'Start again',
     },
     reviewsTitle: 'What learners write',
-    reviewsIntro: 'Real reviews from the Play Store, quoted word for word.',
+    reviewsIntro: 'Real reviews from the App Store and Google Play, quoted word for word.',
     reviewsAll: 'See all ratings on Google Play',
+    reviewsAllIos: 'See all ratings on the App Store',
     reviewsListLabel: 'Reviews from learners',
     founderPortraitAlt: 'Marius Gehler, founder of Boatpass, at the helm of a motorboat in the harbour',
     founderInsetAlt: 'Marius Gehler at the helm of a sailing boat on the water',

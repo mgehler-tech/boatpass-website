@@ -283,10 +283,11 @@ export const de = {
     heroNote: 'Ohne Account starten, 15 Fragen täglich gratis. Danach Einmalkauf statt Abo, für iPhone, iPad und Android.',
     ratingOutOf: 'von 5 Sternen',
     // Einzeilige Bewertung im Hero: „4,96 · 29 Bewertungen · iOS & Android".
-    // Quelle immer nennen: Footer und Rezensionen zeigen Google Play allein (28).
+    // Quelle immer nennen: Footer und Rezensionen zeigen beide Stores einzeln.
     ratingCountLabel: 'Bewertungen · iOS & Android',
     heroQr: 'Aufs Handy per QR-Code',
     ratingSourcePlay: 'Bewertungen bei Google Play',
+    ratingSourceIos: 'Bewertungen im App Store',
     // Haupt-CTA je Gerät (StoreCta): Android, iPhone/iPad, sonst hero.cta.
     ctaPlay: 'Kostenlos bei Google Play',
     phoneAlt: 'Boatpass App – Startbildschirm mit Lizenz, Fortschritt, Streak und Lernmodi',
@@ -318,8 +319,9 @@ export const de = {
       restart: 'Nochmal von vorn',
     },
     reviewsTitle: 'Was Lernende schreiben',
-    reviewsIntro: 'Echte Rezensionen aus dem Play Store, Wort für Wort übernommen.',
+    reviewsIntro: 'Echte Rezensionen aus App Store und Google Play, Wort für Wort übernommen.',
     reviewsAll: 'Alle Bewertungen bei Google Play',
+    reviewsAllIos: 'Alle Bewertungen im App Store',
     reviewsListLabel: 'Bewertungen von Lernenden',
     founderPortraitAlt: 'Marius Gehler, Gründer von Boatpass, am Steuerstand eines Motorboots im Hafen',
     founderInsetAlt: 'Marius Gehler am Ruder eines Segelboots auf dem Wasser',
