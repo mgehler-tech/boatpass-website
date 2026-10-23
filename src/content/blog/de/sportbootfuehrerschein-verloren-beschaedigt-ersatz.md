@@ -15,7 +15,7 @@ faq:
   - question: "Was passiert rechtlich, wenn ich meinen Sportbootführerschein verloren habe?"
     answer: "Nach Paragraf 11 der Sportbootführerscheinverordnung (SpFV) stellt die beliehene Vereinigung auf Antrag eine Ersatzausfertigung aus, wenn der Führerschein unbrauchbar geworden ist oder glaubhaft gemacht wird, dass er abhandengekommen ist. Eine eidesstattliche Versicherung ist dafür nicht zwingend vorgeschrieben, bei Diebstahl wird aber üblicherweise eine Kopie der Anzeige verlangt."
   - question: "Wie lange dauert die Ausstellung einer Ersatzausfertigung?"
-    answer: "In der Praxis solltest du mit rund drei bis vier Wochen Bearbeitungszeit rechnen, je nachdem wie schnell sich die Prüfungsunterlagen aus dem Archiv zuordnen lassen und wie ausgelastet der Prüfungsausschuss aktuell ist."
+    answer: "Der DMYV nennt nach Eingang des vollständigen Antrags eine voraussichtliche Bearbeitungsdauer von etwa drei bis vier Wochen, in der Saison von etwa sechs Wochen. Stell den Antrag deshalb am besten vor Saisonbeginn."
   - question: "Darf ich mit dem Boot fahren, solange die Ersatzausfertigung noch nicht da ist?"
     answer: "Wenn du nachweislich im Besitz der Fahrerlaubnis bist, aber aktuell keinen gültigen Führerschein vorlegen kannst, kannst du bei DMYV oder DSV zusätzlich einen vorläufigen Sportbootführerschein nach Paragraf 11 SpFV beantragen, der als Übergangsnachweis dient, bis die endgültige Ersatzausfertigung vorliegt."
 howTo:
@@ -25,13 +25,13 @@ howTo:
     - name: "Antragsformular besorgen"
       text: "Lade das Antragsformular von der Website des DMYV oder DSV herunter oder stelle den Antrag direkt über das Bundesportal."
     - name: "Unterlagen zusammenstellen"
-      text: "Halte ausgefülltes Antragsformular, aktuelles Passfoto, Kopie des Personalausweises oder Reisepasses sowie Angaben zur ursprünglichen Prüfung bereit, bei Diebstahl zusätzlich die Kopie der polizeilichen Anzeige, bei Beschädigung den alten Führerschein."
+      text: "Halte ausgefülltes Antragsformular, aktuelles Passfoto und Angaben zur ursprünglichen Prüfung bereit, beim DMYV zusätzlich eine beidseitige Kopie des Personalausweises (alternativ Reisepass plus aktuelle Meldebescheinigung), bei Diebstahl zusätzlich die Kopie der polizeilichen Anzeige, bei Beschädigung den alten Führerschein."
     - name: "Antrag einreichen"
       text: "Reiche den Antrag postalisch bei DMYV oder DSV ein oder stelle ihn online über das Bundesportal."
     - name: "Bearbeitungsgebühr zahlen"
       text: "Zahle die Bearbeitungsgebühr, meist nach Aufforderung durch den Verband oder direkt mit der Antragstellung."
     - name: "Auf die neue Karte warten"
-      text: "Warte auf die Ersatzausfertigung im Scheckkartenformat. Die Bearbeitung dauert in der Regel etwa drei bis vier Wochen."
+      text: "Warte auf die Ersatzausfertigung im Scheckkartenformat. Die Bearbeitung dauert laut DMYV etwa drei bis vier Wochen, in der Saison etwa sechs Wochen."
 ---
 
 Der Sportbootführerschein ist weg, im Portemonnaie verloren gegangen oder nach einem Regenguss kaum noch lesbar? Kein Grund zur Panik: Für genau diesen Fall gibt es ein geregeltes Verfahren, die sogenannte **Ersatzausfertigung**. Dieser Artikel erklärt, wann du Anspruch darauf hast, welche Unterlagen du brauchst, wie der Ablauf bei DMYV und DSV funktioniert und was du tust, wenn du kurzfristig einen Nachweis brauchst.
@@ -63,7 +63,7 @@ Damit dein Antrag zügig bearbeitet werden kann, solltest du Folgendes bereithal
 
 - **Ausgefülltes Antragsformular** von DMYV oder DSV.
 - **Aktuelles Passfoto.**
-- **Kopie deines Personalausweises oder Reisepasses**, in der Regel beidseitig.
+- **Beim DMYV: Kopie deines Personalausweises**, beidseitig (die CAN-Nummer darfst du schwärzen), alternativ Kopie des Reisepasses plus aktuelle Meldebescheinigung. Das DSV-Formular verlangt keine Ausweiskopie.
 - **Angaben zur ursprünglichen Prüfung:** ungefährer Zeitpunkt (mindestens Jahr und ob Frühjahr oder Herbst) sowie der Ort, an dem du die Prüfung abgelegt hast. Diese Angaben sind wichtig, weil die Prüflingslisten im Archiv danach sortiert sind, ohne sie lässt sich dein Datensatz nur mit deutlich mehr Aufwand finden.
 - **Bei Diebstahl:** eine Kopie der polizeilichen Anzeige.
 - **Bei Beschädigung:** nach Möglichkeit den beschädigten Führerschein selbst, da dieser zurückzugeben ist.
@@ -76,7 +76,7 @@ Wenn du dir beim genauen Prüfungsdatum unsicher bist, hilft oft ein Blick in al
 2. **Unterlagen zusammenstellen**, siehe Liste oben.
 3. **Antrag einreichen**, postalisch oder online über das Bundesportal.
 4. **Bearbeitungsgebühr zahlen**, meist nach Aufforderung durch den Verband oder direkt mit der Antragstellung.
-5. **Auf die neue Karte warten.** Die Ersatzausfertigung wird, wie alle aktuell ausgestellten Sportbootführerscheine, im **Scheckkartenformat** produziert. Das gilt unabhängig davon, ob dein ursprünglicher Schein noch die alte Papierform hatte, die seit dem 1. Januar 2018 nicht mehr neu ausgestellt wird.
+5. **Auf die neue Karte warten.** Die Ersatzausfertigung wird, wie alle aktuell ausgestellten Sportbootführerscheine, im **Scheckkartenformat** produziert. Das gilt unabhängig davon, ob dein ursprünglicher Schein noch die alte Papierform hatte, denn seit 2018 werden Sportbootführerscheine nur noch im Kartenformat ausgegeben.
 
 ## Gilt das Verfahren für SBF Binnen und SBF See gleichermaßen?
 
@@ -84,11 +84,11 @@ Ja. Paragraf 11 SpFV gilt für alle amtlichen Sportbootführerscheine, die nach 
 
 ## Kosten und Bearbeitungsdauer im Überblick
 
-Für die Bearbeitung solltest du **etwa drei bis vier Wochen** einplanen, abhängig davon, wie schnell sich deine Prüfungsunterlagen im Archiv zuordnen lassen. Für die Ausstellung fällt eine **Bearbeitungsgebühr an, die aktuell im Bereich von rund 40 Euro liegt**, zuzüglich Versandkosten bei Zustellung ins Ausland. Da sich Gebührensätze ändern können, findest du die exakte, aktuell gültige Höhe auf den Websites von DMYV oder DSV beziehungsweise im Bundesportal.
+Für die Bearbeitung solltest du laut DMYV **etwa drei bis vier Wochen** einplanen, in der Saison **etwa sechs Wochen**. Für die Ausstellung fällt laut den Antragsformularen von DSV und DMYV eine **Gebühr von 42,66 Euro** an (Stand 2026), beim Versand ins Ausland kommen beim DMYV 7,86 Euro hinzu. Da sich Gebührensätze ändern können, findest du die exakte, aktuell gültige Höhe auf den Websites von DMYV oder DSV beziehungsweise im Bundesportal.
 
 ## Kurzfristig einen Nachweis nötig? Der vorläufige Sportbootführerschein
 
-Steht eine Bootstour oder Chartertour an, bevor die endgültige Ersatzausfertigung eintrifft, siehst du dich womöglich unter Zeitdruck. Für genau diesen Fall sieht Paragraf 11 SpFV die Möglichkeit vor, auf Antrag zusätzlich einen **vorläufigen Sportbootführerschein** ausstellen zu lassen. Dieser dient als Übergangsnachweis, bis die reguläre Ersatzausfertigung vorliegt. Frage am besten direkt bei DMYV oder DSV nach, ob und zu welchen Konditionen das in deinem Fall möglich ist.
+Steht eine Bootstour oder Chartertour an, bevor die endgültige Ersatzausfertigung eintrifft, siehst du dich womöglich unter Zeitdruck. Für genau diesen Fall sieht Paragraf 11 SpFV die Möglichkeit vor, auf Antrag zusätzlich einen **vorläufigen Sportbootführerschein** ausstellen zu lassen. Dieser dient als Übergangsnachweis, bis die reguläre Ersatzausfertigung vorliegt. Laut den Antragsformularen von DSV und DMYV kostet er 24,90 Euro und gilt drei Monate. Du kreuzt ihn direkt im Antrag auf die Ersatzausfertigung mit an.
 
 ## Warum die Mitführpflicht so wichtig ist
 
@@ -109,11 +109,13 @@ Ein paar einfache Gewohnheiten machen einen künftigen Verlust deutlich weniger 
 
 ## Fazit
 
-Ein verlorener oder beschädigter Sportbootführerschein ist ärgerlich, aber mit der Ersatzausfertigung nach Paragraf 11 SpFV gut lösbar. Wichtig sind ein vollständiger Antrag bei DMYV oder DSV, möglichst genaue Angaben zu Zeitpunkt und Ort der ursprünglichen Prüfung sowie, im Diebstahlfall, die polizeiliche Anzeige. Plane rund drei bis vier Wochen Bearbeitungszeit und eine Gebühr im mittleren zweistelligen Euro-Bereich ein, und nutze bei Zeitdruck die Möglichkeit eines vorläufigen Führerscheins. Wer sich zwischenzeitlich ohnehin wieder mit dem Prüfungsstoff beschäftigen möchte, etwa weil die alte Prüfung schon eine Weile zurückliegt, kann mit der **Boatpass-App** und dem offiziellen ELWIS-Fragenkatalog sein Wissen im Prüfungsmodus auffrischen, ganz unabhängig davon, wie lange der eigene Führerschein schon gültig ist.
+Ein verlorener oder beschädigter Sportbootführerschein ist ärgerlich, aber mit der Ersatzausfertigung nach Paragraf 11 SpFV gut lösbar. Wichtig sind ein vollständiger Antrag bei DMYV oder DSV, möglichst genaue Angaben zu Zeitpunkt und Ort der ursprünglichen Prüfung sowie, im Diebstahlfall, die polizeiliche Anzeige. Plane rund drei bis vier Wochen Bearbeitungszeit (in der Saison eher sechs Wochen) und eine Gebühr von 42,66 Euro ein, und nutze bei Zeitdruck die Möglichkeit eines vorläufigen Führerscheins. Wer sich zwischenzeitlich ohnehin wieder mit dem Prüfungsstoff beschäftigen möchte, etwa weil die alte Prüfung schon eine Weile zurückliegt, kann mit der **Boatpass-App** und dem offiziellen ELWIS-Fragenkatalog sein Wissen im Prüfungsmodus auffrischen, ganz unabhängig davon, wie lange der eigene Führerschein schon gültig ist.
 
 ## Quellen
 
 - [§ 11 Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/__11.html) – Ersatzausfertigung, vorläufiger Sportbootführerschein und Rückgabepflicht
 - [§ 12 SpFV](https://www.gesetze-im-internet.de/spfv/__12.html) – Pflicht, den Befähigungsnachweis an Bord mitzuführen
 - [DSV-Portal: Ersatzausfertigung SBF](https://www.sportbootfuehrerscheine.org/ersatz-umschreibung/sbf-sportbootfuhrerschein/) – Antragsformular mit Ausstellungsgebühr (42,66 €, Stand Oktober 2026)
-- [DMYV: Ersatzausfertigung](https://www.dmyv.de/fuehrerschein/-funk/service/ersatzausfertigung) – Bearbeitungsdauer von etwa drei bis vier Wochen
+- [DMYV: Ersatzausfertigung](https://www.dmyv.de/fuehrerschein/-funk/service/ersatzausfertigung) – Bearbeitungsdauer von etwa drei bis vier Wochen, in der Saison etwa sechs Wochen
+- [DMYV: Antragsformular Ersatzausfertigung (PDF)](https://www.dmyv.de/fileadmin/user_upload/SBF_Ersatz_2026_1.pdf) – beizufügende Unterlagen (u. a. Ausweiskopie), Gebühr 42,66 €, vorläufiger SBF 24,90 €, Auslandsversand
+- [ELWIS: Sportbootführerscheine](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Sportbootfuehrerscheine-node.html) – Ausgabe im Kartenformat seit 2018

@@ -17,7 +17,7 @@ faq:
   - question: "Ab welchem Alter kann man sich zur SBF-Prüfung anmelden?"
     answer: "Die Anmeldung ist drei Monate vor dem Mindestalter möglich: mit 15 Jahren und 9 Monaten für SBF Binnen und See unter Motor, mit 13 Jahren und 9 Monaten für SBF Binnen unter Segel. Der Schein wird erst ab Mindestalter ausgehändigt; Minderjährige brauchen die Einverständniserklärung eines Erziehungsberechtigten."
   - question: "Was ist der DSV-Jugendsegelschein?"
-    answer: "Der DSV-Jugendsegelschein (früher Jüngstensegelschein) ist ein vereinsinterner Schein des Deutschen Segler-Verbandes für Kinder von etwa 7 bis 14 Jahren. Er ist nicht amtlich, ersetzt also nicht den Sportbootführerschein, sondern dient als Ausbildungs- und Regattanachweis im Verein."
+    answer: "Der DSV-Jugendsegelschein (früher Jüngstensegelschein) ist ein vereinsinterner Schein des Deutschen Segler-Verbandes für Kinder ab 7 Jahren; ablegen kann man ihn bis zum 14. Geburtstag, gültig bleibt er bis zum 17. Geburtstag. Er ist nicht amtlich, ersetzt also nicht den Sportbootführerschein, sondern dient als Ausbildungs- und Regattanachweis im Verein."
 ---
 
 „Darf mein Kind schon mal ans Ruder?" Diese Frage stellen sich viele Eltern spätestens beim ersten gemeinsamen Bootsausflug. Die Antwort hängt stark davon ab, um welches Boot es geht: Ein Kanu auf dem See ist rechtlich etwas völlig anderes als ein Motorboot auf der Ostsee. Dieser Artikel gibt einen Überblick, welches Mindestalter für welche Bootsart gilt, wann sich die Anmeldung zum Sportbootführerschein lohnt und worauf Eltern in Sachen Aufsicht und Sicherheit achten sollten.
@@ -78,7 +78,7 @@ Wer den [SBF Binnen](/sbf-binnen/) oder [SBF See](/sbf-see/) frühzeitig ins Aug
 
 ## Vereins-Jugendsegelscheine: Üben unter Aufsicht
 
-Viele Segelvereine und Segelschulen bieten für jüngere Kinder eigene, **nicht amtliche** Ausbildungsstufen an. Bekanntestes Beispiel ist der **DSV-Jugendsegelschein** des Deutschen Segler-Verbandes, früher als Jüngstensegelschein bekannt. Er richtet sich an Kinder von etwa 7 bis 14 Jahren, setzt die Zustimmung der Erziehungsberechtigten sowie ein Schwimmabzeichen voraus und wird an DSV-Segelschulen oder in Vereinen erworben.
+Viele Segelvereine und Segelschulen bieten für jüngere Kinder eigene, **nicht amtliche** Ausbildungsstufen an. Bekanntestes Beispiel ist der **DSV-Jugendsegelschein** des Deutschen Segler-Verbandes, früher als Jüngstensegelschein bekannt. Zugelassen sind Kinder ab dem vollendeten 7. bis zum vollendeten 14. Lebensjahr, mit dem 17. Geburtstag wird der Schein ungültig. Voraussetzung sind die Zustimmung der Erziehungsberechtigten und das Deutsche Jugendschwimmabzeichen in Bronze (alternativ 15 Minuten Dauerschwimmen). Erworben wird er an DSV-Segelschulen oder in Vereinen.
 
 Solche Vereinsscheine sind eine sinnvolle, geschützte Möglichkeit, früh Bootserfahrung unter fachkundiger Aufsicht zu sammeln. Sie **ersetzen aber nicht** den amtlichen Sportbootführerschein und berechtigen nicht dazu, eigenständig und ohne Aufsicht auf öffentlichen Gewässern zu fahren, sobald ein Motor oder die volle Bootsgröße im Spiel ist.
 
@@ -118,3 +118,5 @@ Wie früh Kinder ans Steuer dürfen, hängt entscheidend vom Bootstyp ab: Muskel
 - [Sportbootführerscheinverordnung (SpFV), § 5](https://www.gesetze-im-internet.de/spfv/__5.html) – führerscheinfreie Grenze von 11,03 kW (15 PS)
 - [Binnenschifffahrtsstraßen-Ordnung (BinSchStrO), § 1.09](https://www.gesetze-im-internet.de/binschstro_2012/BinSchStrO.pdf) – Mindestalter 16 Jahre am Ruder, nicht für Kleinfahrzeuge ohne Antriebsmaschine (PDF)
 - [Portal für Sportbootführerscheine des DSV: Sportbootführerschein](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/sbf-sportbootfuehrerschein/) – Zulassung zur Prüfung ab 15 Jahren und 9 Monaten (Motor) bzw. 13 Jahren und 9 Monaten (Segel)
+- [DSV: Jugendsegelschein](https://web.archive.org/web/20251107105547/https://www.dsv.org/jugend/jugendsegelschein/) (archivierte Fassung) – Zulassung vom vollendeten 7. bis zum vollendeten 14. Lebensjahr, Schwimmnachweis, Gültigkeit bis zum 17. Lebensjahr
+- [DSV: Änderung der Ordnungsvorschriften (März 2021)](https://web.archive.org/web/20250804214606/https://www.dsv.org/nachrichten/jugend/2021/03/aenderung-der-ordnungsvorschriften-regattasegeln-in-zukunft-einheitlicher-begriff-jugend/) (archivierte Fassung) – Umbenennung der Jüngstensegelscheinvorschrift in Jugendsegelscheinvorschrift

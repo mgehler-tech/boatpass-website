@@ -17,7 +17,7 @@ faq:
   - question: "Lohnt sich eine Lern-App statt eines Theoriekurses bei der Bootsschule?"
     answer: "Ja, ein Präsenzkurs kostet 250 bis 400 Euro, während eine Lern-App mit dem vollständigen offiziellen ELWIS-Fragenkatalog nur 7 bis 12 Euro kostet. Die Prüfung ist dabei immer dieselbe, unabhängig davon, wie du dich vorbereitet hast."
   - question: "Was kostet der günstigste Weg zum SBF See?"
-    answer: "Mit App, ärztlichem Zeugnis, Passfoto, einer Praxisstunde und der Prüfungsgebühr kommst du auf rund 280 Euro. Das ist weniger als die Hälfte dessen, was ein Komplettkurs bei einer Bootsschule kostet."
+    answer: "Mit App, ärztlichem Zeugnis, Passfoto, einer Praxisstunde und der Prüfungsgebühr kommst du auf rund 280 bis 315 Euro, je nachdem, was deine Arztpraxis für das Zeugnis berechnet. Das ist weniger als die Hälfte dessen, was ein Komplettkurs bei einer Bootsschule kostet."
 howTo:
   name: "Beim Bootsführerschein sparen: die 5 besten Tipps"
   description: "Fünf konkrete Schritte, mit denen du beim Sportbootführerschein deutlich weniger für Theorie, Praxis und Prüfung bezahlst."
@@ -48,6 +48,8 @@ Bevor wir zu den Spartipps kommen, hier die aktuelle Kostenaufstellung für 2026
 | Ärztliches Zeugnis | 30–65 € | 30–65 € | 30–65 € |
 | Passfoto | 5–15 € | 5–15 € | 5–15 € |
 | **Gesamt** | **200–650 €** | **220–700 €** | **280–770 €** |
+
+Das ärztliche Zeugnis stellst du auf dem amtlichen Muster der Sportbootführerscheinverordnung aus. Es ist in der Regel keine Kassenleistung: Die Praxis rechnet privat nach der Gebührenordnung für Ärzte (GOÄ) ab, der Preis hängt also von Praxis und Untersuchungsumfang ab. Die Spanne in der Tabelle ist eine grobe Schätzung, frag am besten vorher nach.
 
 Der größte variable Kostenpunkt ist die Theorievorbereitung – genau hier liegt das Sparpotenzial.
 
@@ -102,7 +104,7 @@ Klingt offensichtlich – aber eine **Wiederholungsprüfung** kostet erneut Geb�
 
 Wer durchfällt, zahlt schnell 100–200 € extra. Gezieltes Lernen mit Prüfungssimulation und Fehlertraining ist die beste Investition, um das zu vermeiden.
 
-Die Durchfallquote liegt beim SBF bei nur 10–15 % in der Theorie – mit guter Vorbereitung bestehst du beim ersten Mal.
+Offizielle Durchfallquoten veröffentlichen DSV und DMYV nicht. Klar geregelt ist aber: Einen nicht bestandenen Prüfungsteil kannst du nicht am selben Tag wiederholen, und die gesamte Prüfung muss innerhalb eines Jahres abgeschlossen sein. Gute Vorbereitung spart also nicht nur Geld, sondern auch Zeit.
 
 ## Tipp 5: Anbieter vergleichen – vor allem bei der Praxis
 
@@ -119,11 +121,11 @@ Vergleiche mindestens 2–3 Anbieter in deiner Region, bevor du buchst.
 | Posten | Kosten |
 |---|---|
 | Boatpass-App (Vollzugang SBF See) | 9,99 € |
-| Ärztliches Zeugnis + Sehtest | ca. 30 € |
+| Ärztliches Zeugnis + Sehtest | ca. 30–65 € (je nach Praxis) |
 | Passfoto | ca. 10 € |
 | 1 Praxisstunde bei lokaler Bootsschule | ca. 80 € |
 | Prüfungsgebühr SBF See | 148,38 € |
-| **Gesamt** | **ca. 280 €** |
+| **Gesamt** | **ca. 280–315 €** |
 
 Das ist weniger als die Hälfte dessen, was ein Komplettkurs bei einer Bootsschule kostet.
 
@@ -144,4 +146,7 @@ Der Sportbootführerschein muss nicht 700 € kosten. Wer die Theorie mit einer 
 - [Gebührentabelle des Prüfungsausschusses München/Nürnberg](https://www.pa-muenchen.de/gebuehren/) – Prüfungsgebühren SBF Binnen, SBF See und Kombi (Stand Oktober 2026)
 - [Prüfungsausschuss Bremen – Sportbootführerschein See](https://www.pa-bremen.de/scheine/see/sportbootfuehrerschein-see.html) – bundesweit einheitliche Gebühren für DSV und DMYV, Kombi an getrennten Tagen 185,67 €
 - [Sportbootführerscheinverordnung (SpFV)](https://www.gesetze-im-internet.de/spfv/) – Gebührenerhebung durch die Verbände (§ 16) und Knotenprüfung (Anlage 4)
+- [SpFV, Anhang 1 zu Anlage 2](https://www.gesetze-im-internet.de/spfv/anhang_1_zu_anlage_2.html) – amtliches Muster des ärztlichen Zeugnisses (Seh- und Hörvermögen)
+- [Gebührenordnung für Ärzte (GOÄ)](https://www.gesetze-im-internet.de/go__1982/BJNR015220982.html) – Grundlage für die private Abrechnung ärztlicher Zeugnisse und Untersuchungen
+- [DSV/DMYV-Portal: SBF](https://www.sportbootfuehrerscheine.org/fuehrerscheine-funk/sbf-sportbootfuehrerschein/) – keine Wiederholung am selben Tag, Abschluss der Prüfung innerhalb eines Jahres
 - [ELWIS – Fragenkatalog See](https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html) – 72 Basisfragen, die auch im Katalog Binnen enthalten sind

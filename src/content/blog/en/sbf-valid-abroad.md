@@ -17,7 +17,7 @@ faq:
   - question: "What documents do I need to charter a boat abroad?"
     answer: "Generally: your passport or national ID (original), your SBF See with ICC Coastal on the reverse, the SRC (if there's a radio on board), plus documents provided by the charter company such as the boat registration, insurance document, and country-specific paperwork (for example the Vinjeta in Croatia)."
   - question: "Do I need a radio licence (SRC) abroad?"
-    answer: "Charter yachts almost always have a VHF radio on board. As soon as you operate it, the SRC (Short Range Certificate) is required in Croatia, Italy, and most other European countries."
+    answer: "Charter yachts almost always have a VHF radio on board. Under the ITU Radio Regulations (Art. 47), a ship station may only be operated under the control of a person holding a suitable operator's certificate; for VHF marine radio on recreational boats this is usually the SRC (Short Range Certificate). So plan for at least one person on board to hold it."
   - question: "Does Croatia have a licence-free rule like Germany's 15 hp exemption?"
     answer: "No. In Croatia, any vessel over 2.5 m hull length or over 5 kW engine power counts as a 'brodica' (motorboat) and generally requires a licence. The widely circulated exemption for rental boats was only a 2022 ministry proposal and never became law."
   - question: "At what point do I actually need a licence in Italy?"
@@ -41,7 +41,7 @@ For most charter destinations – Croatia, the Italian coast, the Greek islands 
 
 ### Still Using the Old Paper Format?
 
-If your German boat licence is an older paper document, it does **not include an ICC**. You can upgrade to the card format through the **DMYV (Deutschen Motoryachtverband)** or the **DSV (Deutschen Segler-Verband)**. The re-issue fee is around 42.66 EUR, plus a passport photo and proof of identity. Processing typically takes a few weeks, so check with your association for the exact requirements – don't leave it until two days before departure.
+If your German boat licence is an older paper document, it does **not include an ICC**. You can upgrade to the card format through the **DMYV (Deutschen Motoryachtverband)** or the **DSV (Deutschen Segler-Verband)**. According to both associations' application forms, the fee is 42.66 EUR (as of 2026); at the DMYV this includes shipping within Germany, and shipping abroad costs an extra 7.86 EUR. You must send in your original paper licence and a passport photo, and the DMYV also asks for a copy of your ID card. According to the DMYV, processing takes about three to four weeks, and about six weeks during the season – don't leave it until two days before departure.
 
 ### Valid for Life
 
@@ -56,11 +56,11 @@ With more than a thousand islands, crystal-clear Adriatic water, and hundreds of
 Croatia is a signatory to UNECE Resolution No. 40 and formally recognises the German ICC. To skipper a charter boat in Croatian waters, you will generally need:
 
 - **ICC Coastal** (the reverse of your SBF See) – required for motorboats and sailing vessels
-- **SRC (Short Range Certificate)** – the VHF radio operator's licence; virtually every charter yacht in Croatia has a VHF radio fitted, making the SRC a practical necessity
+- **SRC (Short Range Certificate)** – the VHF radio operator's licence; virtually every charter yacht in Croatia has a VHF radio fitted, and under the ITU radio rules a person with an operator's certificate must control the station, which makes the SRC practically indispensable for charter skippers
 
 ### How Checks Work
 
-Croatian coastguard and maritime authorities conduct regular inspections both at sea and in marinas. Beyond checking your licence and SRC, they will want to see proof of the **Vinjeta** – actually two separate fees paid at the harbour master's office: an annual **navigation safety fee** (independent of how long you stay) and, for boats 7 m and longer where the crew sleeps aboard, an additional **accommodation tax**, charged per person per day (as of 2026: around 1.33 EUR per person/day, or alternatively tiered by boat length and length of stay). Children up to 12 and people with a disability rating of 70% or more are exempt from the accommodation tax. Charter companies typically arrange both fees, but confirm they are paid and on board when you pick up the boat.
+Croatian coastguard and maritime authorities conduct regular inspections both at sea and in marinas. Beyond checking your licence and SRC, they will want to see proof of the **Vinjeta** – actually two separate charges: a **fee for the safety of navigation and protection of the sea**, valid for the calendar year (regardless of how long you stay), and the **tourist tax (turistička pristojba)** for everyone who spends the night on board. On charter boats, each person pays a fixed amount per night, set at 10 kuna by the 2020 regulation, which is around 1.33 EUR at the fixed euro conversion rate. For private boats over 7 m with built-in berths, the tourist tax can be paid per night or as a lump sum tiered by boat length and length of stay; it is paid online via nautika.evisitor.hr before departure. Children up to 12, people with a disability rating of 70% or more and one companion are exempt, and young people aged 12 to 18 pay half. Charter companies typically arrange both fees, but confirm they are paid and on board when you pick up the boat.
 
 **Documents to keep at hand:**
 
@@ -122,7 +122,7 @@ Only boats that both stay within 6 nautical miles **and** have no more than 30 k
 
 ### Adriatic vs. Tyrrhenian: Two Very Different Seas
 
-Italy's coastline falls into two broad sailing environments. The Adriatic coast (Venice, the Marche region, Puglia) offers comparatively sheltered waters with moderate distances between ports. The Tyrrhenian side and the islands – Tuscany, the Aeolian Islands, Sardinia, Sicily, the Amalfi Coast – can expose you to the Mistral, Tramontane, and other strong seasonal winds. Neither environment requires additional licences beyond the ICC Coastal, but the sailing demands are very different. Know your destination's typical weather patterns before you book.
+Italy's coastline falls into two broad sailing environments. The Adriatic coast (Venice, the Marche region, Puglia) offers comparatively sheltered waters with moderate distances between ports. The Tyrrhenian side and the islands – Tuscany, the Aeolian Islands, Sardinia, Sicily, the Amalfi Coast – can expose you to the Mistral, Tramontane, and other strong seasonal winds. For most typical charter routes in both regions the same applies: the ICC Coastal is required, and the SRC is usually part of the package, but the sailing demands are very different. Know your destination's typical weather patterns before you book.
 
 ### The Guardia Costiera
 
@@ -130,13 +130,13 @@ Italy's coastguard, the **Guardia Costiera**, actively patrols popular sailing a
 
 ### Radio Licence in Italy
 
-Charter yachts in Italy are routinely fitted with VHF radios. As in Croatia, you will need the **SRC** if you intend to use the radio – for communicating with ports, monitoring weather channels, or sending a distress signal.
+Charter yachts in Italy are routinely fitted with VHF radios. As in Croatia, plan for at least one person on board to hold the **SRC** if you intend to use the radio – for communicating with ports, monitoring weather channels, or sending a distress signal.
 
 ## The SRC: Why You Almost Always Need It
 
 The **[SRC (Short Range Certificate)](/en/src/)** is the VHF radio operator's licence for recreational boaters. It is often treated as a secondary concern after the boat licence itself – but in practice, it is just as important for chartering abroad.
 
-Every charter yacht comes with a VHF set fitted as standard. Using it without an SRC – for routine harbour communication, weather reports, or emergencies – is not permitted in Croatia, Italy, or most other European countries.
+Every charter yacht comes with a VHF set fitted as standard. Under the ITU Radio Regulations (Art. 47), a ship station may only be operated under the control of a person holding a suitable operator's certificate, which for VHF marine radio on recreational boats is usually the SRC. For routine harbour communication and weather reports, at least one person on board should therefore hold it; only in an emergency may anyone send a distress call.
 
 In Germany, the SRC is taken as a separate exam. It covers:
 
@@ -198,3 +198,9 @@ Still working towards your SBF? The **[Boatpass app](/)** trains you with the of
 - [UNECE – International Certificate for Operators of Pleasure Craft (Res. No. 40)](https://web.archive.org/web/20250825153452/https://unece.org/transport/inland-water-transport/international-certificates-operator-pleasure-craft-res-no-40) (archived version) – states applying the resolution (including Croatia and the Netherlands, not Italy)
 - [Rijksoverheid – Klein vaarbewijs](https://www.rijksoverheid.nl/wetten-en-regelingen/productbeschrijvingen/klein-vaarbewijs) (Dutch) – licence required for boats longer than 15 m or faster than 20 km/h
 - [Codice della nautica da diporto, Art. 39 (Normattiva)](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-07-18;171~art39) (Italian) – licence required beyond 6 nautical miles or above 30 kW (40.8 hp)
+- [DMYV: application to exchange a paper licence for a card (PDF)](https://www.dmyv.de/fileadmin/user_upload/SBF_Umtausch_Papier-_in_Karte_2026_1.pdf) (German) – fee of €42.66 incl. shipping within Germany, €7.86 for shipping abroad, required documents
+- [DSV portal: SBF replacement and re-issue](https://www.sportbootfuehrerscheine.org/ersatz-umschreibung/sbf-sportbootfuhrerschein/) (German) – exchange of older formats via the replacement application, fee of €42.66
+- [Zakon o turističkoj pristojbi (NN 52/19)](https://narodne-novine.nn.hr/clanci/sluzbeni/2019_05_52_992.html) (Croatian) – tourist tax for boaters (Art. 14), exemptions (Art. 5) and 50% reduction for ages 12 to 18 (Art. 6)
+- [Pravilnik o najnižem i najvišem iznosu turističke pristojbe (NN 73/20)](https://narodne-novine.nn.hr/clanci/sluzbeni/2020_06_73_1416.html) (Croatian) – 10 kuna per person and night on charter boats, lump sums by boat length
+- [Croatian National Tourist Board – information for boaters](https://nautickabrosura.htz.hr/nautical-croatia-en/information-for-boaters.html) – navigation safety fee per calendar year, tourist tax paid via nautika.evisitor.hr
+- [ITU Radio Regulations](https://www.itu.int/pub/R-REG-RR-2024) – Art. 47: operator's certificate for ship stations, exception for distress calls

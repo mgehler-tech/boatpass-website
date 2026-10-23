@@ -17,7 +17,7 @@ faq:
   - question: "Welche Dokumente brauche ich zum Chartern im Ausland?"
     answer: "In der Regel: Personalausweis oder Reisepass (Original), SBF See mit ICC Coastal auf der Rückseite, das SRC (wenn ein Funkgerät an Bord ist) sowie die vom Charterer gestellten Papiere wie Zulassung, Versicherungsnachweis und landesspezifische Dokumente (z. B. die Vinjeta in Kroatien)."
   - question: "Brauche ich im Ausland ein Funkzeugnis (SRC)?"
-    answer: "Auf Charteryachten ist ein UKW-Seefunkgerät praktisch immer vorhanden. Sobald du es bedienst, ist in Kroatien, Italien und den meisten anderen europäischen Ländern das SRC (Short Range Certificate) Pflicht."
+    answer: "Auf Charteryachten ist ein UKW-Seefunkgerät praktisch immer vorhanden. Nach der Vollzugsordnung für den Funkdienst der ITU (Art. 47) darf eine Seefunkstelle nur unter der Aufsicht einer Person mit passendem Funkbetriebszeugnis betrieben werden, für UKW-Seefunk auf Sportbooten ist das in der Regel das SRC (Short Range Certificate). Plane es deshalb für mindestens eine Person an Bord ein."
   - question: "Gilt in Kroatien auch die 15-PS-Regel wie in Deutschland?"
     answer: "Nein. Als Brodica (Motorboot) gilt in Kroatien jedes Wasserfahrzeug mit mehr als 2,5 m Rumpflänge oder mehr als 5 kW Motorleistung, und dafür ist grundsätzlich ein Führerschein nötig. Die kursierende Ausnahme für Mietboote war nur ein Ministeriumsvorschlag von 2022 und nie in Kraft."
   - question: "Ab wann brauche ich in Italien wirklich einen Bootsführerschein?"
@@ -41,7 +41,7 @@ Wer also den SBF See besitzt, hat auf der Rückseite den ICC Coastal – und der
 
 ### Noch einen alten Papierschein?
 
-Wer noch den alten deutschen Sportbootführerschein im Papierformat besitzt, hat **keinen ICC**. Der Umtausch auf das neue Scheckkartenformat ist unkompliziert und wird vom **DMYV (Deutschen Motoryachtverband)** und vom **DSV (Deutschen Segler-Verband)** angeboten. Die Umschreibungsgebühr liegt bei rund 42,66 €, hinzu kommt meist ein Passfoto sowie ein Identitätsnachweis. Die Bearbeitung dauert erfahrungsgemäß einige Wochen, die genauen Anforderungen erfährst du direkt beim jeweiligen Verband.
+Wer noch den alten deutschen Sportbootführerschein im Papierformat besitzt, hat **keinen ICC**. Der Umtausch auf das neue Scheckkartenformat ist unkompliziert und wird vom **DMYV (Deutschen Motoryachtverband)** und vom **DSV (Deutschen Segler-Verband)** angeboten. Die Gebühr beträgt laut den Antragsformularen beider Verbände 42,66 € (Stand 2026), beim DMYV inklusive Versand innerhalb Deutschlands, bei Versand ins Ausland kommen 7,86 € hinzu. Mitschicken musst du den alten Originalschein und ein Passfoto, der DMYV verlangt zusätzlich eine Kopie des Personalausweises. Die Bearbeitung dauert laut DMYV etwa drei bis vier Wochen, in der Saison etwa sechs Wochen.
 
 **Praxistipp:** Prüfe jetzt, ob dein Führerschein ICC-fähig ist – nicht erst zwei Tage vor der Abfahrt.
 
@@ -58,11 +58,11 @@ Kroatien gilt mit seinen mehr als tausend Inseln und dem kristallklaren Adriawas
 Kroatien ist Unterzeichnerstaat der UNECE-Resolution Nr. 40 und erkennt den deutschen ICC an. Für das Führen von Sportbooten auf kroatischen Gewässern benötigst du in der Regel:
 
 - **ICC Coastal** (Rückseite deines SBF See) – die anerkannte Fahrerlaubnis für Motorboote und Segelboote
-- **SRC (Short Range Certificate)** – das UKW-Seefunkzeugnis; auf praktisch jeder Charteryacht ist ein Seefunkgerät installiert, weshalb das SRC in Kroatien faktisch Pflicht ist
+- **SRC (Short Range Certificate)** – das UKW-Seefunkzeugnis; auf praktisch jeder Charteryacht ist ein Seefunkgerät installiert, und nach den internationalen Funkregeln der ITU muss eine Person mit Funkzeugnis die Funkstelle beaufsichtigen; damit ist das SRC für Charterskipper in Kroatien praktisch unverzichtbar
 
 ### Wie laufen Kontrollen ab?
 
-Die kroatische Küstenwache führt auf dem Wasser und in den Häfen regelmäßige Kontrollen durch. Dabei wird neben Führerschein und SRC auch die sogenannte **Vinjeta** geprüft – tatsächlich zwei getrennte Gebühren, die beim Hafenamt zu entrichten sind: eine jährliche **Navigationssicherheitsgebühr** (unabhängig von der Aufenthaltsdauer) sowie für Boote ab 7 m mit Übernachtung an Bord zusätzlich eine **Aufenthaltsgebühr (Kurtaxe)**, die pro Person und Tag berechnet wird (Stand 2026: rund 1,33 € pro Person/Tag, alternativ gestaffelt nach Bootslänge und Aufenthaltsdauer). Kinder bis 12 Jahre und Personen mit einem Behinderungsgrad ab 70 % sind von der Kurtaxe befreit. Charterunternehmen kümmern sich in der Regel um beide Gebühren, aber prüfe ihre Vollständigkeit bei der Bootsübergabe.
+Die kroatische Küstenwache führt auf dem Wasser und in den Häfen regelmäßige Kontrollen durch. Dabei wird neben Führerschein und SRC auch die sogenannte **Vinjeta** geprüft – tatsächlich zwei getrennte Abgaben: eine **Gebühr für die Sicherheit der Schifffahrt und den Meeresschutz**, die für das Kalenderjahr gilt (unabhängig von der Aufenthaltsdauer), sowie die **Kurtaxe (turistička pristojba)** für alle, die an Bord übernachten. Auf Charterbooten zahlt jede Person pro Übernachtung einen festen Betrag, laut Verordnung von 2020 10 Kuna, umgerechnet zum Euro-Festkurs rund 1,33 €. Für private Boote über 7 m mit eingebauten Kojen kann die Kurtaxe pro Übernachtung oder als Pauschale bezahlt werden, die nach Bootslänge und Aufenthaltsdauer gestaffelt ist; bezahlt wird vor dem Auslaufen online über nautika.evisitor.hr. Kinder bis 12 Jahre sowie Personen mit einem Behinderungsgrad ab 70 % und eine Begleitperson sind von der Kurtaxe befreit, Jugendliche von 12 bis 18 Jahren zahlen die Hälfte. Charterunternehmen kümmern sich in der Regel um beide Gebühren, aber prüfe ihre Vollständigkeit bei der Bootsübergabe.
 
 **Welche Dokumente gehören ans Bord?**
 
@@ -124,7 +124,7 @@ Nur wer innerhalb von 6 Seemeilen bleibt **und** ein Boot mit höchstens 30 kW/4
 
 ### Adriatische vs. Tyrrhenische Seite
 
-Die Adriaküste (z. B. Venedig, Rimini, Bari) und die Tyrrhenische Seite (Toskana, Neapel, Amalfi, Sardinien) unterscheiden sich deutlich in Reviercharakter und Voraussetzungen. Im Adriatischen Meer sind die Meeresgebiete vergleichsweise geschützt; im Tyrrhenischen Meer und rund um Sardinien kannst du je nach Jahreszeit kräftigem Mistral oder Tramontane ausgesetzt sein. Für die meisten typischen Charterrouten in beiden Regionen gilt aber das Gleiche: ICC Coastal ist Pflicht, SRC ist obligatorisch.
+Die Adriaküste (z. B. Venedig, Rimini, Bari) und die Tyrrhenische Seite (Toskana, Neapel, Amalfi, Sardinien) unterscheiden sich deutlich in Reviercharakter und Voraussetzungen. Im Adriatischen Meer sind die Meeresgebiete vergleichsweise geschützt; im Tyrrhenischen Meer und rund um Sardinien kannst du je nach Jahreszeit kräftigem Mistral oder Tramontane ausgesetzt sein. Für die meisten typischen Charterrouten in beiden Regionen gilt aber das Gleiche: ICC Coastal ist Pflicht, und das SRC gehört in aller Regel dazu.
 
 ### Kontrollen durch die Guardia Costiera
 
@@ -136,9 +136,9 @@ Auf Charteryachten in Italien ist ein VHF-Seefunkgerät Standard. Auch hier soll
 
 ## Das SRC – Warum es in fast jedem Revier Pflicht ist
 
-Der **[SRC (Short Range Certificate)](/src/)** ist das UKW-Seefunkzeugnis und berechtigt zur Bedienung von Seefunkgeräten auf Sportbooten. Viele unterschätzen seine Bedeutung – aber sobald ein Funkgerät an Bord ist und du es bedienst, brauchst du in den meisten Ländern diesen Schein.
+Der **[SRC (Short Range Certificate)](/src/)** ist das UKW-Seefunkzeugnis und berechtigt zur Bedienung von Seefunkgeräten auf Sportbooten. Viele unterschätzen seine Bedeutung – aber nach der Vollzugsordnung für den Funkdienst der ITU (Art. 47) darf eine Seefunkstelle nur unter der Aufsicht einer Person mit passendem Funkbetriebszeugnis betrieben werden. Für UKW-Seefunk auf Sportbooten ist das in der Regel das SRC.
 
-Auf Charteryachten ist ein UKW-Funkgerät immer vorhanden. Das Gerät für Notrufe und die tägliche Kommunikation mit Häfen, Schleusen und anderen Booten zu nutzen, ohne das SRC zu haben, ist in Kroatien, Italien und den meisten anderen europäischen Ländern nicht erlaubt.
+Auf Charteryachten ist ein UKW-Funkgerät immer vorhanden. Für die tägliche Kommunikation mit Häfen, Schleusen und anderen Booten sollte deshalb mindestens eine Person an Bord das SRC haben. Nur im Notfall darf nach den ITU-Regeln ausnahmsweise jeder einen Notruf absetzen.
 
 Das SRC wird in Deutschland als separate Prüfung abgenommen. Es deckt unter anderem ab:
 
@@ -200,3 +200,9 @@ Du lernst noch für deinen SBF? Die **[Boatpass-App](/)** enthält den offiziell
 - [UNECE – International Certificate for Operators of Pleasure Craft (Res. No. 40)](https://web.archive.org/web/20250825153452/https://unece.org/transport/inland-water-transport/international-certificates-operator-pleasure-craft-res-no-40) (englisch, archivierte Fassung) – Staaten, die die Resolution anwenden (u. a. Kroatien und Niederlande, nicht Italien)
 - [Rijksoverheid – Klein vaarbewijs](https://www.rijksoverheid.nl/wetten-en-regelingen/productbeschrijvingen/klein-vaarbewijs) (niederländisch) – Vaarbewijs-Pflicht für Boote über 15 m Länge oder schneller als 20 km/h
 - [Codice della nautica da diporto, Art. 39 (Normattiva)](https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2005-07-18;171~art39) (italienisch) – Führerscheinpflicht über 6 Seemeilen oder über 30 kW (40,8 PS)
+- [DMYV: Antrag Umtausch Papier- in Kartenführerschein (PDF)](https://www.dmyv.de/fileadmin/user_upload/SBF_Umtausch_Papier-_in_Karte_2026_1.pdf) – Gebühr 42,66 € inkl. Inlandsversand, 7,86 € Auslandsversand, beizufügende Unterlagen
+- [DSV-Portal: Ersatzausfertigung und Umschreibung SBF](https://www.sportbootfuehrerscheine.org/ersatz-umschreibung/sbf-sportbootfuhrerschein/) – Umtausch älterer Formate über den Ersatzantrag, Gebühr 42,66 €
+- [Zakon o turističkoj pristojbi (NN 52/19)](https://narodne-novine.nn.hr/clanci/sluzbeni/2019_05_52_992.html) (kroatisch) – Kurtaxe für Nautiker (Art. 14), Befreiungen (Art. 5) und 50-%-Ermäßigung für 12- bis 18-Jährige (Art. 6)
+- [Pravilnik o najnižem i najvišem iznosu turističke pristojbe (NN 73/20)](https://narodne-novine.nn.hr/clanci/sluzbeni/2020_06_73_1416.html) (kroatisch) – 10 Kuna pro Person und Übernachtung auf Charterbooten, Pauschalen nach Bootslänge
+- [Kroatische Zentrale für Tourismus – Informationen für Nautiker](https://nautickabrosura.htz.hr/nautical-croatia-en/information-for-boaters.html) (englisch) – Schifffahrtssicherheitsgebühr pro Kalenderjahr, Zahlung der Kurtaxe über nautika.evisitor.hr
+- [ITU-Vollzugsordnung für den Funkdienst (Radio Regulations)](https://www.itu.int/pub/R-REG-RR-2024) (englisch) – Art. 47: Funkbetriebszeugnis für Seefunkstellen, Ausnahme für Notrufe
