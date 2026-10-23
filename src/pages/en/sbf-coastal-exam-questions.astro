@@ -4,6 +4,7 @@ import PageHead from '../../components/page/PageHead.astro';
 import PageLayout from '../../components/page/PageLayout.astro';
 import PageFacts from '../../components/page/PageFacts.astro';
 import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
+import CatalogHubTopics from '../../components/catalog/CatalogHubTopics.astro';
 import Icon from '../../components/Icon.astro';
 import type { IconName } from '../../icons';
 
@@ -17,14 +18,6 @@ const breadcrumbSchema = {
   ],
 };
 
-const categories: { name: string; desc: string; count: number; icon: IconName }[] = [
-  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & collision regulations', count: 130, icon: 'scale' },
-  { name: 'Navigation & charts', desc: 'Chartwork, courses, tides & current', count: 72, icon: 'compass' },
-  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 40, icon: 'shield' },
-  { name: 'Signals & marks', desc: 'Sound, visual and sea marks', count: 28, icon: 'bell' },
-  { name: 'Meteorology', desc: 'Wind, weather, tide tables & forecasting', count: 10, icon: 'cloud' },
-  { name: 'General', desc: 'General fundamentals & seamanship', count: 5, icon: 'document' },
-];
 
 const faqs = [
   {
@@ -106,15 +99,18 @@ const faqSchema = {
     <section class="pg-section">
       <h2 class="pg-h2">The official SBF Coastal question catalog</h2>
       <p class="pg-p">
-        The <strong>exam questions for the SBF Coastal</strong> come from the official question catalog (DSV/DMYV, published via ELWIS) for the <strong>maritime waterways</strong> (North and Baltic Sea). It comprises <strong>72 basic questions and 213 specific coastal questions</strong> (285 questions in total). On top of that comes the decisive part that Inland doesn't have: the <strong>navigation task</strong>.
+        The <strong>exam questions for the SBF Coastal</strong> come from the official question catalog (issued by the BMDV, published via ELWIS) for the <strong>maritime waterways</strong> (North and Baltic Sea). It comprises <strong>72 basic questions and 213 specific coastal questions</strong> (285 questions in total). On top of that comes the decisive part that Inland doesn't have: the <strong>navigation task</strong>.
       </p>
       <p class="pg-p">
         The theory exam comprises a total of <strong>39 questions in 60 minutes</strong> – 30 standard questions plus 9 questions on the navigation task on the nautical chart.
       </p>
       <p class="pg-note pg-note--sm pg-note--after">
-        Source: official question catalog (DSV/DMYV), published free of charge via <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
+        Source: official question catalogue of the BMDV, valid since 1 August 2023, published free of charge via <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-See/Fragenkatalog-See-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
       </p>
     </section>
+
+    <!-- Alle Fragen nach Themen (Prüfungsfragen-Hubs) -->
+    <CatalogHubTopics lang="en" catalog="see" />
 
     <!-- Exam structure -->
     <section class="pg-section">
@@ -186,27 +182,6 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- Learn by category -->
-    <section class="pg-section">
-      <h2 class="pg-h2">Learn by category</h2>
-      <p class="pg-p">
-        The question catalog is divided into topic areas – practice in a targeted way based on your weak spots.
-      </p>
-      <div class="pg-rows">
-        {categories.map(c => (
-          <div class="pg-row">
-            <span class="pg-row-icon">
-              <Icon name={c.icon} size={20} strokeWidth={1.75} />
-            </span>
-            <div class="pg-row-body">
-              <p class="pg-row-title">{c.name}</p>
-              <p class="pg-row-text">{c.desc}</p>
-            </div>
-            <span class="pg-pill">{c.count} questions</span>
-          </div>
-        ))}
-      </div>
-    </section>
 
     <!-- Internal links -->
     <section class="pg-section pg-section--related">

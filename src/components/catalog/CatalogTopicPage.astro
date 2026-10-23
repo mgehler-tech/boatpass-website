@@ -1,0 +1,212 @@
+---
+// Seitenvorlage einer Themenseite (SBF Binnen / SBF See) und der
+// Basisfragen-Seite: Kopf, Faktenkarte, Themennavigation, alle Fragen des
+// Themas, Weiterüben, „Quellen und Stand“ und weiterführende Seiten.
+// DE und EN nutzen dieselbe Vorlage, damit beide Sprachen gleich aufgebaut sind.
+import '../../styles/catalog.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../page/PageHead.astro';
+import PageLayout from '../page/PageLayout.astro';
+import PageFacts from '../page/PageFacts.astro';
+import DisplayFontPreload from '../page/DisplayFontPreload.astro';
+import Icon from '../Icon.astro';
+import QuestionList from './QuestionList.astro';
+import TopicNav from './TopicNav.astro';
+import CatalogSourcesNote from './CatalogSourcesNote.astro';
+import {
+  CATALOGS, TOPICS, CATALOG_VALID_FROM, topicQuestions, topicUrl, practiceUrl,
+  type Lang, type Topic,
+} from '../../data/catalog';
+
+interface Props {
+  lang: Lang;
+  catalog: 'binnen' | 'see' | 'basis';
+  /** Thema der Seite; fehlt auf der Basisfragen-Seite (dort alle Themen als Abschnitte). */
+  topic?: Topic;
+}
+
+const { lang, catalog, topic } = Astro.props;
+const de = lang === 'de';
+const SITE = 'https://boatpass.de';
+const other: Lang = de ? 'en' : 'de';
+const isBasis = catalog === 'basis';
+const meta = CATALOGS[catalog];
+
+const topics = isBasis ? TOPICS.basis : [topic!];
+const groups = topics.map(t => ({
+  id: isBasis ? t.slug[lang] : undefined,
+  title: isBasis ? t.title[lang] : undefined,
+  intro: isBasis ? t.intro[lang] : undefined,
+  questions: topicQuestions(catalog, t),
+}));
+const count = groups.reduce((n, g) => n + g.questions.length, 0);
+
+const path = (l: Lang) => (isBasis ? CATALOGS.basis.hub[l] : topicUrl(catalog, topic!, l));
+const name = meta.name[lang];
+
+// Titel und Beschreibung
+const title = isBasis
+  ? (de ? `SBF Basisfragen: alle ${count} Fragen mit Antworten` : `SBF basic questions: all ${count} with answers`)
+  : (de ? `${topic!.title.de}: ${count} Prüfungsfragen ${name}` : `${topic!.title.en}: ${count} ${name} exam questions`);
+const description = isBasis
+  ? (de
+    ? `Alle ${count} amtlichen Basisfragen für SBF Binnen und SBF See mit richtiger Antwort, nach Themen sortiert. Online selbst testen, Katalogstand ${CATALOG_VALID_FROM.de}.`
+    : `All ${count} official basic questions for SBF Inland and SBF Coastal with the correct answer, sorted by topic. Test yourself online, catalogue valid since ${CATALOG_VALID_FROM.en}.`)
+  : (de
+    ? `Alle ${count} amtlichen ${name}-Prüfungsfragen zum Thema ${topic!.title.de} mit richtiger Antwort. Online selbst testen, Katalogstand ${CATALOG_VALID_FROM.de}.`
+    : `All ${count} official ${name} exam questions on ${topic!.title.en.toLowerCase()} with the correct answer. Test yourself online, catalogue valid since ${CATALOG_VALID_FROM.en}.`);
+
+const heading = isBasis
+  ? (de ? 'SBF Basisfragen – alle 72 Fragen' : 'SBF basic questions – all 72')
+  : topic!.title[lang];
+const eyebrow = isBasis ? (de ? 'SBF Binnen & See · Basisfragen' : 'SBF Inland & Coastal · Basic questions') : (de ? `${name} Prüfungsfragen` : `${name} exam questions`);
+const lede = isBasis
+  ? (de
+    ? 'Die 72 Basisfragen stehen gleichlautend in beiden Katalogen, im SBF Binnen und im SBF See. In der Theorieprüfung kommen 7 davon dran, mindestens 5 musst du richtig haben.'
+    : 'The 72 basic questions are identical in both catalogues, SBF Inland and SBF Coastal. The theory exam includes 7 of them, and you need at least 5 right.')
+  : topic!.intro[lang];
+
+// Brotkrumen
+const licencePage = { binnen: { de: '/sbf-binnen/', en: '/en/sbf-inland/' }, see: { de: '/sbf-see/', en: '/en/sbf-coastal/' } };
+const crumbs = isBasis
+  ? [
+    { name: de ? 'Startseite' : 'Home', item: de ? '/' : '/en/' },
+    { name: de ? 'Basisfragen' : 'Basic questions', item: path(lang) },
+  ]
+  : [
+    { name: de ? 'Startseite' : 'Home', item: de ? '/' : '/en/' },
+    { name, item: licencePage[catalog as 'binnen' | 'see'][lang] },
+    { name: de ? 'Prüfungsfragen' : 'Exam questions', item: meta.hub[lang] },
+    { name: topic!.title[lang], item: path(lang) },
+  ];
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: `${SITE}${c.item}` })),
+};
+
+// Faktenkarte
+const facts = isBasis
+  ? [
+    { k: de ? 'Basisfragen' : 'Basic questions', v: de ? '72, in beiden Katalogen' : '72, in both catalogues' },
+    { k: de ? 'In der Prüfung' : 'In the exam', v: de ? '7 Fragen, mind. 5 richtig' : '7 questions, at least 5 right' },
+    { k: de ? 'Themen' : 'Topics', v: String(TOPICS.basis.length) },
+    { k: de ? 'Amtliche Fassung' : 'Official version', v: de ? `gültig seit ${CATALOG_VALID_FROM.de}` : `valid since ${CATALOG_VALID_FROM.en}` },
+  ]
+  : [
+    { k: de ? 'Fragen in diesem Thema' : 'Questions in this topic', v: String(count) },
+    { k: de ? 'Themen im Katalog' : 'Topics in the catalogue', v: de ? `${TOPICS[catalog].length} + Basisfragen` : `${TOPICS[catalog].length} + basic questions` },
+    { k: de ? 'Theorieprüfung' : 'Theory exam', v: de ? '30 Fragen (7 Basis + 23 spezifisch)' : '30 questions (7 basic + 23 specific)' },
+    { k: de ? 'Amtliche Fassung' : 'Official version', v: de ? `gültig seit ${CATALOG_VALID_FROM.de}` : `valid since ${CATALOG_VALID_FROM.en}` },
+  ];
+const product = catalog === 'see' ? 'sbfSee' : 'sbfBinnen';
+
+// Nächstes Thema für „Weiter üben“
+const list = isBasis ? [] : TOPICS[catalog];
+const next = isBasis ? undefined : list[(list.indexOf(topic!) + 1) % list.length];
+
+const listTitle = isBasis
+  ? (de ? `Alle ${count} Basisfragen` : `All ${count} basic questions`)
+  : (de ? `Alle ${count} Fragen zum Thema` : `All ${count} questions in this topic`);
+---
+
+<BaseLayout title={title} description={description} lang={lang} altUrl={`${SITE}${path(other)}`}>
+  <DisplayFontPreload slot="head" />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <PageHead lang={lang} eyebrow={eyebrow} lede={lede} cta ctaLabel={de ? 'Kostenlos Fragen üben' : 'Practise for free'}>
+    {heading}
+  </PageHead>
+
+  <PageLayout>
+    <PageFacts slot="aside" lang={lang} title={de ? 'Auf einen Blick' : 'At a glance'} items={facts} product={isBasis ? undefined : product} />
+
+    <section class="pg-section">
+      {isBasis ? (
+        <>
+          <h2 class="pg-h2 pg-h2--sm">{de ? 'Themen der Basisfragen' : 'Topics of the basic questions'}</h2>
+          <ul class="cq-topics">
+            {TOPICS.basis.map(t => (
+              <li><a href={`#${t.slug[lang]}`}>{t.title[lang]}<span class="cq-count">{t.numbers.length}</span></a></li>
+            ))}
+          </ul>
+          <p class="pg-p pg-p--after">
+            {de ? 'Die spezifischen Fragen nach Themen: ' : 'The specific questions by topic: '}
+            <a class="pg-inline-link" href={CATALOGS.binnen.hub[lang]}>{de ? 'SBF Binnen Prüfungsfragen' : 'SBF Inland exam questions'}</a>
+            {de ? ' und ' : ' and '}
+            <a class="pg-inline-link" href={CATALOGS.see.hub[lang]}>{de ? 'SBF See Prüfungsfragen' : 'SBF Coastal exam questions'}</a>.
+          </p>
+        </>
+      ) : (
+        <>
+          <h2 class="pg-h2 pg-h2--sm">{de ? `Alle Themen ${name}` : `All ${name} topics`}</h2>
+          <TopicNav lang={lang} catalog={catalog as 'binnen' | 'see'} current={topic!.key} />
+        </>
+      )}
+    </section>
+
+    <QuestionList lang={lang} catalog={catalog} title={listTitle} groups={groups} product={product} />
+
+    <section class="pg-section">
+      <h2 class="pg-h2">{de ? 'Weiter üben' : 'Keep practising'}</h2>
+      <div class="pg-cards pg-cards--3">
+        {isBasis ? (
+          <>
+            <a class="pg-card" href={practiceUrl('binnen', lang)}>
+              <p class="pg-card-label">{de ? 'Fragebogen' : 'Practice test'}</p>
+              <p class="pg-card-title">{de ? 'SBF Binnen Fragebogen online' : 'SBF Inland practice test online'}</p>
+              <p class="pg-card-text">{de ? '30 Fragen wie in der Prüfung, mit Auswertung.' : '30 questions as in the exam, with results.'}</p>
+            </a>
+            <a class="pg-card" href={practiceUrl('see', lang)}>
+              <p class="pg-card-label">{de ? 'Fragebogen' : 'Practice test'}</p>
+              <p class="pg-card-title">{de ? 'SBF See Fragebogen online' : 'SBF Coastal practice test online'}</p>
+              <p class="pg-card-text">{de ? '30 Fragen wie in der Prüfung, mit Auswertung.' : '30 questions as in the exam, with results.'}</p>
+            </a>
+          </>
+        ) : (
+          <>
+            <a class="pg-card" href={practiceUrl(catalog as 'binnen' | 'see', lang)}>
+              <p class="pg-card-label">{de ? 'Fragebogen' : 'Practice test'}</p>
+              <p class="pg-card-title">{de ? `${name} Fragebogen online` : `${name} practice test online`}</p>
+              <p class="pg-card-text">{de ? 'Amtliche Bögen 1–15 oder ein Zufallsbogen, mit Auswertung.' : 'Official papers 1–15 or a random paper, with results.'}</p>
+            </a>
+            {next && (
+              <a class="pg-card" href={topicUrl(catalog, next, lang)}>
+                <p class="pg-card-label">{de ? 'Nächstes Thema' : 'Next topic'}</p>
+                <p class="pg-card-title">{next.title[lang]}</p>
+                <p class="pg-card-text">{de ? `${next.numbers.length} Fragen` : `${next.numbers.length} questions`}</p>
+              </a>
+            )}
+          </>
+        )}
+        {!isBasis && (
+          <a class="pg-card" href={CATALOGS.basis.hub[lang]}>
+            <p class="pg-card-label">{de ? 'Basisfragen' : 'Basic questions'}</p>
+            <p class="pg-card-title">{de ? 'Alle 72 Basisfragen' : 'All 72 basic questions'}</p>
+            <p class="pg-card-text">{de ? 'Gemeinsam für SBF Binnen und SBF See.' : 'Shared by SBF Inland and SBF Coastal.'}</p>
+          </a>
+        )}
+      </div>
+    </section>
+
+    <CatalogSourcesNote lang={lang} catalog={catalog} />
+
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">{de ? 'Weiterführende Seiten' : 'Related pages'}</h2>
+      <ul class="pg-related">
+        {!isBasis && (
+          <li><a href={meta.hub[lang]}>{de ? `${name} Prüfungsfragen: alle Themen` : `${name} exam questions: all topics`}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        )}
+        {isBasis ? (
+          <>
+            <li><a href={CATALOGS.binnen.hub[lang]}>{de ? 'SBF Binnen Prüfungsfragen nach Themen' : 'SBF Inland exam questions by topic'}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+            <li><a href={CATALOGS.see.hub[lang]}>{de ? 'SBF See Prüfungsfragen nach Themen' : 'SBF Coastal exam questions by topic'}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+          </>
+        ) : (
+          <li><a href={licencePage[catalog as 'binnen' | 'see'][lang]}>{de ? `${name} lernen: Überblick & App` : `Learn ${name}: overview & app`}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        )}
+        <li><a href={de ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'}>{de ? 'SBF Prüfung: Ablauf von Theorie & Praxis' : 'SBF exam: theory & practical step by step'}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
+    </section>
+  </PageLayout>
+</BaseLayout>

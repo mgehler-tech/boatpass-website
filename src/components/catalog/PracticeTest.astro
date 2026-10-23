@@ -1,0 +1,310 @@
+---
+// Fragebogen im Browser: amtlicher Bogen 1–15 oder Zufallsbogen, beim
+// SBF Binnen wahlweise mit Ergänzungsbogen Segeln. Ausgewertet wird nach dem
+// ELWIS-Bewertungsschlüssel (Basis mind. 5 von 7, spezifisch mind. 18 von 23,
+// Segeln mind. 5 von 7). Die Fragen lädt das Skript erst beim Start aus
+// /catalog-data/<katalog>-<sprache>.json; Erklärungen gibt es dort nicht,
+// jede falsche Antwort verlinkt die Frage auf ihrer Themenseite.
+import StoreCta from '../home/StoreCta.astro';
+import type { Lang } from '../../data/catalog';
+
+interface Props {
+  lang: Lang;
+  catalog: 'binnen' | 'see';
+}
+
+const { lang, catalog } = Astro.props;
+const de = lang === 'de';
+const binnen = catalog === 'binnen';
+const t = {
+  sheet: de ? 'Fragebogen' : 'Exam paper',
+  random: de ? 'Zufallsbogen (7 + 23 Fragen)' : 'Random paper (7 + 23 questions)',
+  official: (n: number) => (de ? `Amtlicher Fragebogen ${n}` : `Official paper ${n}`),
+  segel: de ? 'Mit Ergänzungsbogen Segeln (7 Fragen)' : 'With sailing supplement (7 questions)',
+  start: de ? 'Bogen starten' : 'Start paper',
+};
+const strings = {
+  basis: de ? 'Basisfragen' : 'Basic questions',
+  spec: de ? (binnen ? 'Spezifische Fragen Binnen' : 'Spezifische Fragen See') : (binnen ? 'Specific questions Inland' : 'Specific questions Coastal'),
+  segeln: de ? 'Ergänzungsbogen Segeln' : 'Sailing supplement',
+  question: de ? 'Frage' : 'Question',
+  answered: de ? '{n} von {total} beantwortet' : '{n} of {total} answered',
+  submit: de ? 'Bogen abgeben' : 'Hand in paper',
+  unanswered: de ? 'Noch {n} Fragen offen. Trotzdem abgeben?' : '{n} questions still open. Hand in anyway?',
+  pass: de ? 'Bestanden' : 'Passed',
+  fail: de ? 'Noch nicht bestanden' : 'Not passed yet',
+  line: de ? '{part}: {score} von {total} richtig (nötig: {min})' : '{part}: {score} of {total} correct (needed: {min})',
+  time: binnen
+    ? (de ? 'Bearbeitungszeit: {t} (in der Prüfung: {max} Minuten)' : 'Time taken: {t} (in the exam: {max} minutes)')
+    : (de ? 'Bearbeitungszeit: {t} (in der Prüfung: 60 Minuten für Fragebogen und Navigationsaufgabe)' : 'Time taken: {t} (in the exam: 60 minutes for the paper and the chartwork task)'),
+  passText: de
+    ? 'Stark. Wiederhole trotzdem die Fragen, bei denen du unsicher warst, und probier einen anderen Bogen.'
+    : 'Well done. Still, review the questions you were unsure about and try another paper.',
+  failText: de
+    ? 'Kein Problem, genau dafür übst du. Unter jeder falschen Antwort steht die richtige, mit Link zur Frage und Erklärung.'
+    : 'No problem, that is what practice is for. Below every wrong answer you will find the correct one, with a link to the question and explanation.',
+  right: de ? 'Richtig' : 'Correct',
+  wrong: de ? 'Falsch' : 'Wrong',
+  open: de ? 'Nicht beantwortet' : 'Not answered',
+  more: de ? 'Frage mit Erklärung ansehen' : 'See question with explanation',
+  figure: de ? 'Abbildung zu Frage {n}' : 'Figure for question {n}',
+  error: de ? 'Die Fragen konnten nicht geladen werden. Bitte lade die Seite neu.' : 'The questions could not be loaded. Please reload the page.',
+  firstWrong: de ? 'Zur ersten falschen Antwort' : 'Go to the first wrong answer',
+};
+// Bearbeitungszeit laut ELWIS-Bewertungsschlüssel: Binnen 45 Minuten, mit Segeln 60.
+const maxMinutes = { plain: 45, segel: 60 };
+---
+
+<section class="pg-section" data-pt data-src={`/catalog-data/${catalog}-${lang}.json`} data-strings={JSON.stringify(strings)} data-catalog={catalog} data-max={JSON.stringify(binnen ? maxMinutes : { plain: 60, segel: 60 })}>
+  <h2 class="pg-h2">{de ? 'Fragebogen wählen' : 'Choose a paper'}</h2>
+  <noscript>
+    <p class="pg-p">
+      {de
+        ? 'Der Fragebogen braucht JavaScript. Alle Fragen mit Antworten findest du auch ohne JavaScript auf den Themenseiten unten.'
+        : 'The practice test needs JavaScript. All questions with answers are also available without JavaScript on the topic pages below.'}
+    </p>
+  </noscript>
+  <form class="pt-setup h-js-only" data-pt-setup>
+    <div class="pt-field">
+      <label for={`pt-sheet-${catalog}`}>{t.sheet}</label>
+      <select id={`pt-sheet-${catalog}`} name="sheet">
+        <option value="random">{t.random}</option>
+        {Array.from({ length: 15 }, (_, i) => <option value={String(i + 1)}>{t.official(i + 1)}</option>)}
+      </select>
+    </div>
+    {binnen && (
+      <label class="pt-check">
+        <input type="checkbox" name="segel" />
+        {t.segel}
+      </label>
+    )}
+    <button type="submit" class="h-btn pt-start">{t.start}</button>
+  </form>
+
+  <div class="pt-run pt-hidden" data-pt-run>
+    <p class="pt-progress" aria-live="off"><span data-pt-count></span> · <span data-pt-time>00:00</span></p>
+    <form data-pt-form novalidate>
+      <div data-pt-questions></div>
+      <button type="submit" class="h-btn pt-submit">{strings.submit}</button>
+    </form>
+  </div>
+
+  <div class="pt-result pt-hidden" data-pt-result tabindex="-1">
+    <p class="pt-result-title" data-pt-verdict></p>
+    <ul class="pt-result-lines" data-pt-lines></ul>
+    <p class="pg-p" data-pt-text></p>
+    <div class="pt-result-actions">
+      <button type="button" class="cq-toggle pt-again" data-pt-again>{de ? 'Neuen Bogen wählen' : 'Choose a new paper'}</button>
+      <a class="pg-inline-link" href="#" data-pt-first-wrong hidden>{strings.firstWrong}</a>
+    </div>
+    <div class="cq-app pt-app">
+      <div>
+        <p class="cq-app-title">{de ? 'Weiter in der App' : 'Continue in the app'}</p>
+        <p class="cq-app-text">
+          {de
+            ? `In der Boatpass-App übst du mit Prüfungssimulation unter Zeitdruck, Fehlertraining für genau die Fragen von eben und Merkhilfen zu jeder Frage${binnen ? '' : ', dazu alle 15 Navigationsaufgaben'}.`
+            : `In the Boatpass app you practise with a timed exam simulation, mistake training for exactly the questions you just missed and memory aids for every question${binnen ? '' : ', plus all 15 chartwork tasks'}.`}
+        </p>
+      </div>
+      <StoreCta lang={lang} position="practice-result" label={de ? 'Kostenlos laden' : 'Download for free'} />
+    </div>
+  </div>
+</section>
+
+<script>
+  type Q = { n: number; part: 'basis' | 'spec' | 'segeln'; q: string; a: string[]; img: { src: string; srcset: string; w: number; h: number }[]; url: string };
+  type Data = { sheets: number[][]; segelSheets?: number[][]; questions: Q[] };
+  type Strings = Record<string, string>;
+
+  const MIN = { basis: 5, spec: 18, segeln: 5 } as const;
+  const keys = ['A', 'B', 'C', 'D'];
+  const fill = (s: string, v: Record<string, string | number>) => s.replace(/\{(\w+)\}/g, (_, k) => String(v[k] ?? ''));
+  const shuffle = <T,>(items: T[]) => {
+    const a = [...items];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+  const el = <K extends keyof HTMLElementTagNameMap>(tag: K, cls?: string, text?: string) => {
+    const e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text !== undefined) e.textContent = text;
+    return e;
+  };
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-pt]')) {
+    const s = JSON.parse(root.dataset.strings!) as Strings;
+    const max = JSON.parse(root.dataset.max!) as { plain: number; segel: number };
+    const setup = root.querySelector<HTMLFormElement>('[data-pt-setup]')!;
+    const run = root.querySelector<HTMLElement>('[data-pt-run]')!;
+    const form = root.querySelector<HTMLFormElement>('[data-pt-form]')!;
+    const list = root.querySelector<HTMLElement>('[data-pt-questions]')!;
+    const count = root.querySelector<HTMLElement>('[data-pt-count]')!;
+    const clock = root.querySelector<HTMLElement>('[data-pt-time]')!;
+    const result = root.querySelector<HTMLElement>('[data-pt-result]')!;
+    let data: Data | undefined;
+    let current: { q: Q; order: number[] }[] = [];
+    let started = 0;
+    let timer = 0;
+    let withSegel = false;
+
+    const elapsed = () => {
+      const sec = Math.floor((Date.now() - started) / 1000);
+      return `${String(Math.floor(sec / 60)).padStart(2, '0')}:${String(sec % 60).padStart(2, '0')}`;
+    };
+    const updateCount = () => {
+      const n = current.filter(c => form.querySelector(`input[name="q${c.q.n}"]:checked`)).length;
+      count.textContent = fill(s.answered, { n, total: current.length });
+    };
+
+    async function load(): Promise<Data> {
+      if (data) return data;
+      const res = await fetch(root.dataset.src!);
+      if (!res.ok) throw new Error(String(res.status));
+      data = (await res.json()) as Data;
+      return data;
+    }
+
+    function pick(d: Data, sheet: string): Q[] {
+      const byN = new Map(d.questions.map(q => [q.n, q]));
+      let nums: number[];
+      let segel: number[] = [];
+      if (sheet === 'random') {
+        const basis = shuffle(d.questions.filter(q => q.part === 'basis')).slice(0, 7);
+        const spec = shuffle(d.questions.filter(q => q.part === 'spec')).slice(0, 23);
+        nums = [...basis, ...spec].map(q => q.n);
+        if (withSegel) segel = shuffle(d.questions.filter(q => q.part === 'segeln')).slice(0, 7).map(q => q.n);
+      } else {
+        const i = Number(sheet) - 1;
+        nums = d.sheets[i];
+        if (withSegel && d.segelSheets) segel = d.segelSheets[i];
+      }
+      // Basisfragen tragen die Nummern 1–72, die spezifischen ab 73: aufsteigend sortiert stehen die Basisfragen vorn.
+      return [...[...nums].sort((x, y) => x - y), ...[...segel].sort((x, y) => x - y)]
+        .map(n => byN.get(n))
+        .filter((q): q is Q => Boolean(q));
+    }
+
+    function render(qs: Q[]) {
+      list.replaceChildren();
+      current = qs.map(q => ({ q, order: shuffle([0, 1, 2, 3]) }));
+      let lastPart = '';
+      current.forEach(({ q, order }, idx) => {
+        if (q.part !== lastPart) {
+          list.append(el('h3', 'pt-part', s[q.part]));
+          lastPart = q.part;
+        }
+        const fs = el('fieldset', 'cq pt-q');
+        fs.dataset.n = String(q.n);
+        const legend = el('legend', 'cq-q');
+        legend.append(el('span', 'cq-num', `${s.question} ${idx + 1} · Nr. ${q.n}`), document.createTextNode(q.q));
+        fs.append(legend);
+        if (q.img.length) {
+          const figs = el('div', 'cq-figs');
+          for (const im of q.img) {
+            const img = el('img');
+            img.src = im.src; img.srcset = im.srcset; img.width = im.w; img.height = im.h;
+            img.alt = fill(s.figure, { n: q.n }); img.decoding = 'async';
+            figs.append(img);
+          }
+          fs.append(figs);
+        }
+        const answers = el('div', 'cq-answers');
+        order.forEach((orig, pos) => {
+          const label = el('label', 'cq-a pt-opt');
+          label.dataset.orig = String(orig);
+          const input = el('input');
+          input.type = 'radio'; input.name = `q${q.n}`; input.value = String(orig);
+          label.append(input, el('span', 'cq-key', keys[pos]), el('span', 'cq-a-text', q.a[orig]));
+          answers.append(label);
+        });
+        fs.append(answers);
+        list.append(fs);
+      });
+      updateCount();
+    }
+
+    setup.addEventListener('submit', async e => {
+      e.preventDefault();
+      const fd = new FormData(setup);
+      withSegel = fd.get('segel') === 'on';
+      try {
+        const d = await load();
+        render(pick(d, String(fd.get('sheet'))));
+      } catch {
+        count.textContent = s.error;
+      }
+      result.classList.add('pt-hidden');
+      run.classList.remove('pt-hidden');
+      started = Date.now();
+      clearInterval(timer);
+      timer = window.setInterval(() => { clock.textContent = elapsed(); }, 1000);
+      clock.textContent = '00:00';
+      run.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    form.addEventListener('change', updateCount);
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const open = current.filter(c => !form.querySelector(`input[name="q${c.q.n}"]:checked`)).length;
+      if (open > 0 && !window.confirm(fill(s.unanswered, { n: open }))) return;
+      clearInterval(timer);
+      const score = { basis: 0, spec: 0, segeln: 0 };
+      const total = { basis: 0, spec: 0, segeln: 0 };
+      let firstWrong: HTMLElement | null = null;
+      for (const { q } of current) {
+        const fs = list.querySelector<HTMLElement>(`fieldset[data-n="${q.n}"]`)!;
+        const chosen = form.querySelector<HTMLInputElement>(`input[name="q${q.n}"]:checked`);
+        const ok = chosen?.value === '0';
+        total[q.part]++;
+        if (ok) score[q.part]++;
+        fs.querySelectorAll('input').forEach(i => { i.disabled = true; });
+        fs.querySelectorAll<HTMLElement>('.pt-opt').forEach(l => {
+          if (l.dataset.orig === '0') l.classList.add('is-correct');
+          else if (l.contains(chosen)) l.classList.add('is-chosen-wrong');
+        });
+        const verdict = el('p', 'cq-verdict', ok ? s.right : chosen ? s.wrong : s.open);
+        verdict.dataset.state = ok ? 'right' : 'wrong';
+        fs.append(verdict);
+        if (!ok) {
+          fs.id = `pt-wrong-${q.n}`;
+          firstWrong ??= fs;
+          const more = el('p', 'cq-more');
+          const a = el('a', undefined, s.more);
+          a.href = q.url;
+          more.append(a);
+          fs.append(more);
+        }
+      }
+      const parts = (['basis', 'spec', 'segeln'] as const).filter(p => total[p] > 0);
+      const pass = parts.every(p => score[p] >= MIN[p]);
+      result.dataset.pass = String(pass);
+      result.querySelector('[data-pt-verdict]')!.textContent = pass ? s.pass : s.fail;
+      const lines = result.querySelector<HTMLElement>('[data-pt-lines]')!;
+      lines.replaceChildren(
+        ...parts.map(p => el('li', undefined, fill(s.line, { part: s[p], score: score[p], total: total[p], min: MIN[p] }))),
+        el('li', undefined, fill(s.time, { t: elapsed(), max: withSegel ? max.segel : max.plain })),
+      );
+      result.querySelector('[data-pt-text]')!.textContent = pass ? s.passText : s.failText;
+      const jump = result.querySelector<HTMLAnchorElement>('[data-pt-first-wrong]')!;
+      jump.hidden = !firstWrong;
+      if (firstWrong) jump.href = `#${firstWrong.id}`;
+      form.querySelector<HTMLButtonElement>('.pt-submit')!.hidden = true;
+      result.classList.remove('pt-hidden');
+      run.parentElement?.insertBefore(result, run);
+      result.focus();
+      result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    result.querySelector('[data-pt-again]')!.addEventListener('click', () => {
+      run.classList.add('pt-hidden');
+      result.classList.add('pt-hidden');
+      form.querySelector<HTMLButtonElement>('.pt-submit')!.hidden = false;
+      setup.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      setup.querySelector('select')?.focus();
+    });
+  }
+</script>

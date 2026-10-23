@@ -4,6 +4,7 @@ import PageHead from '../../components/page/PageHead.astro';
 import PageLayout from '../../components/page/PageLayout.astro';
 import PageFacts from '../../components/page/PageFacts.astro';
 import DisplayFontPreload from '../../components/page/DisplayFontPreload.astro';
+import CatalogHubTopics from '../../components/catalog/CatalogHubTopics.astro';
 import Icon from '../../components/Icon.astro';
 import type { IconName } from '../../icons';
 
@@ -17,14 +18,6 @@ const breadcrumbSchema = {
   ],
 };
 
-const categories: { name: string; desc: string; count: number; icon: IconName }[] = [
-  { name: 'Maritime law', desc: 'Right-of-way rules, navigation lights & waterways regulations', count: 124, icon: 'scale' },
-  { name: 'Navigation', desc: 'Charts, courses, positions & bearings', count: 52, icon: 'compass' },
-  { name: 'Safety', desc: 'Rescue equipment, distress signals & safety behavior', count: 39, icon: 'shield' },
-  { name: 'Signals & marks', desc: 'Sound signals, visual signals & flags', count: 28, icon: 'bell' },
-  { name: 'Meteorology', desc: 'Wind, weather & forecasting', count: 5, icon: 'cloud' },
-  { name: 'General', desc: 'General fundamentals & seamanship', count: 3, icon: 'document' },
-];
 
 const faqs = [
   {
@@ -58,7 +51,7 @@ const faqSchema = {
 
 <BaseLayout
   title="SBF Inland Exam Questions – ELWIS Catalog"
-  description="Practice all SBF Inland exam questions from the official ELWIS catalog: structure, categories, passing threshold and how to master the 30 questions."
+  description="All 300 SBF Inland exam questions from the official ELWIS catalogue by topic, with the correct answer and an online practice test. Plus structure and pass mark."
   lang="en"
   altUrl="https://boatpass.de/sbf-binnen-pruefungsfragen/"
 >
@@ -70,7 +63,7 @@ const faqSchema = {
   <PageHead
     lang="en"
     eyebrow="SBF Inland Exam Questions"
-    lede="Over 250 official ELWIS questions, clearly sorted by category. Learn with a real exam simulation and targeted mistake training – and head into the SBF Inland theory exam with confidence."
+    lede="All 300 official ELWIS questions, sorted by topic with the correct answer. Learn with a real exam simulation and targeted mistake training – and head into the SBF Inland theory exam with confidence."
     ctaLabel="Practice questions for free"
     cta
   >
@@ -105,15 +98,18 @@ const faqSchema = {
     <section class="pg-section">
       <h2 class="pg-h2">The official SBF Inland question catalog</h2>
       <p class="pg-p">
-        The <strong>exam questions for the SBF Inland</strong> come from the official question catalog set by the <strong>DSV and DMYV</strong> and published free of charge via <strong>ELWIS</strong>. For the <strong>under engine</strong> scope it comprises <strong>72 basic questions and 181 specific inland questions</strong> (253 questions in total). Anyone who also wants to navigate <strong>under sail</strong> learns 47 additional sailing questions.
+        The <strong>exam questions for the SBF Inland</strong> come from the official question catalog issued by the <strong>German Federal Ministry for Digital and Transport (BMDV)</strong> in the Verkehrsblatt and published free of charge via <strong>ELWIS</strong>. For the <strong>under engine</strong> scope it comprises <strong>72 basic questions and 181 specific inland questions</strong> (253 questions in total). Anyone who also wants to navigate <strong>under sail</strong> learns 47 additional sailing questions.
       </p>
       <p class="pg-p">
         In the real theory exam, a paper of <strong>30 questions</strong> is compiled from these – 7 basic questions and 23 specific questions. Anyone who works through the catalog systematically knows every possible question on exam day.
       </p>
       <p class="pg-note pg-note--sm pg-note--after">
-        Source: official question catalog (DSV/DMYV), published free of charge via <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
+        Source: official question catalogue of the BMDV, valid since 1 August 2023, published free of charge via <a href="https://www.elwis.de/DE/Sportschifffahrt/Sportbootfuehrerscheine/Fragenkatalog-Binnen/Fragenkatalog-Binnen-node.html" target="_blank" rel="noopener noreferrer" class="pg-inline-link">elwis.de</a>.
       </p>
     </section>
+
+    <!-- Alle Fragen nach Themen (Prüfungsfragen-Hubs) -->
+    <CatalogHubTopics lang="en" catalog="binnen" />
 
     <!-- Exam structure -->
     <section class="pg-section">
@@ -174,27 +170,6 @@ const faqSchema = {
       </div>
     </section>
 
-    <!-- Learn by category -->
-    <section class="pg-section">
-      <h2 class="pg-h2">Learn by category</h2>
-      <p class="pg-p">
-        The question catalog is divided into topic areas – practice in a targeted way based on your weak spots.
-      </p>
-      <div class="pg-rows">
-        {categories.map(c => (
-          <div class="pg-row">
-            <span class="pg-row-icon">
-              <Icon name={c.icon} size={20} strokeWidth={1.75} />
-            </span>
-            <div class="pg-row-body">
-              <p class="pg-row-title">{c.name}</p>
-              <p class="pg-row-text">{c.desc}</p>
-            </div>
-            <span class="pg-pill">{c.count} questions</span>
-          </div>
-        ))}
-      </div>
-    </section>
 
     <!-- Internal links -->
     <section class="pg-section pg-section--related">

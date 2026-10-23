@@ -1,0 +1,29 @@
+---
+// Hinweis auf die App zwischen den Fragen: was die Website nicht hat
+// (Merkhilfen, Prüfungssimulation, Fehlertraining, Navigationsaufgaben).
+import StoreCta from '../home/StoreCta.astro';
+import type { Lang } from '../../data/catalog';
+
+interface Props {
+  lang: Lang;
+  product: 'sbfBinnen' | 'sbfSee';
+  /** data-cta-position für die Plausible-Store-Events. */
+  position?: string;
+}
+
+const { lang, product, position = 'catalog-teaser' } = Astro.props;
+const de = lang === 'de';
+const see = product === 'sbfSee';
+const title = de ? 'Lernen statt nur lesen' : 'Learn, don’t just read';
+const text = de
+  ? `In der Boatpass-App bekommst du Merkhilfen zu den Fragen, eine Prüfungssimulation mit Zeit und Bestehensgrenze und ein Fehlertraining, das nur deine Wackelkandidaten wiederholt${see ? ', dazu alle 15 Navigationsaufgaben' : ''}.`
+  : `The Boatpass app adds memory aids for the questions, an exam simulation with timer and pass mark and mistake training that repeats only the questions you are unsure of${see ? ', plus all 15 chartwork tasks' : ''}.`;
+---
+
+<aside class="cq-app" aria-label={de ? 'Boatpass-App' : 'Boatpass app'}>
+  <div>
+    <p class="cq-app-title">{title}</p>
+    <p class="cq-app-text">{text}</p>
+  </div>
+  <StoreCta lang={lang} position={position} label={de ? 'Kostenlos laden' : 'Download for free'} />
+</aside>

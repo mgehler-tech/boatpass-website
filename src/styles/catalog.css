@@ -1,0 +1,282 @@
+/* Prüfungsfragen-Hubs: Fragekarten, Themennavigation, Fragebogen. Ergänzt
+   page.css (pg-Vokabular) und nutzt nur die --h-*-Tokens aus brand.css, damit
+   der Dark Mode von selbst stimmt. Eigene Datei, damit die Seiten ohne
+   Fragen nichts davon laden. */
+
+/* ── Themennavigation ───────────────────────────────────────────────── */
+.cq-topics { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+.cq-topics a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 7px 14px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r-pill);
+  background: var(--h-card);
+  font: 550 14px/1.3 var(--h-sans);
+  color: var(--h-ink);
+  text-decoration: none;
+}
+.cq-topics a:hover { border-color: var(--h-blue); color: var(--h-blue-ink); }
+.cq-topics a[aria-current='page'] { border-color: var(--h-blue); background: var(--h-blue-wash); color: var(--h-blue-ink); }
+.cq-topics .cq-count { font: 600 12px/1 var(--h-sans); color: var(--h-muted); }
+.cq-topics a[aria-current='page'] .cq-count { color: inherit; }
+
+/* ── Kopfzeile der Fragenliste mit Selbsttest-Schalter ──────────────── */
+.cq-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 20px;
+  margin: 0 0 18px;
+}
+.cq-toolbar .pg-h2 { margin: 0; }
+.cq-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r-pill);
+  background: var(--h-card);
+  font: 600 14px/1.3 var(--h-sans);
+  color: var(--h-ink);
+  cursor: pointer;
+}
+.cq-toggle:hover { border-color: var(--h-blue); }
+.cq-toggle:focus-visible { outline: 2px solid var(--h-blue); outline-offset: 2px; }
+.cq-toggle-track {
+  position: relative;
+  width: 34px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: var(--h-line);
+  transition: background 0.2s var(--h-ease);
+}
+.cq-toggle-track::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.25);
+  transition: transform 0.2s var(--h-ease);
+}
+.cq-toggle[aria-pressed='true'] .cq-toggle-track { background: var(--h-blue); }
+.cq-toggle[aria-pressed='true'] .cq-toggle-track::after { transform: translateX(14px); }
+@media (prefers-reduced-motion: reduce) {
+  .cq-toggle-track, .cq-toggle-track::after { transition: none; }
+}
+.cq-toolbar-hint { flex-basis: 100%; margin: 0; font-size: 14px; color: var(--h-muted); }
+
+/* ── Fragekarte ─────────────────────────────────────────────────────── */
+.cq-list { display: flex; flex-direction: column; gap: 16px; }
+.cq {
+  padding: 22px 22px 20px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r);
+  background: var(--h-card);
+  scroll-margin-top: 96px;
+}
+.cq:target { border-color: var(--h-blue); box-shadow: 0 0 0 3px var(--h-blue-wash); }
+.cq-num {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  margin: 0 0 8px;
+  font: 600 12px/1.4 var(--h-sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--h-blue-ink);
+}
+.cq-num a { color: inherit; text-decoration: none; }
+.cq-num a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.cq-section { color: var(--h-muted); letter-spacing: 0.04em; }
+.cq-q { margin: 0 0 14px; font: 650 17px/1.45 var(--h-sans); color: var(--h-ink); text-wrap: pretty; }
+.cq-figs { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 16px; }
+/* Breite kommt aus dem width-Attribut (höchstens 320 px), so steht der Platz schon vor dem Laden fest. */
+.cq-figs img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r-sm);
+  background: #fff;
+}
+.cq-answers { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.cq-a {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r-sm);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--h-text);
+}
+.cq-a-text { flex: 1; min-width: 0; }
+.cq-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--h-line);
+  border-radius: 50%;
+  font: 650 13px/1 var(--h-sans);
+  color: var(--h-muted);
+}
+.cq-tag {
+  flex-shrink: 0;
+  align-self: center;
+  padding: 2px 9px;
+  border-radius: var(--h-r-pill);
+  background: var(--h-stbd);
+  font: 650 12px/1.5 var(--h-sans);
+  color: #fff;
+}
+.cq-a.is-correct { border-color: var(--h-stbd); background: var(--h-stbd-wash); color: var(--h-ink); }
+.cq-a.is-correct .cq-key { border-color: var(--h-stbd); background: var(--h-stbd); color: #fff; }
+.cq-x { margin: 16px 0 0; padding: 14px 0 0; border-top: 1px solid var(--h-line); }
+.cq-x-label { margin: 0 0 4px; font: 600 12px/1.4 var(--h-sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--h-muted); }
+.cq-x-text { margin: 0; font-size: 15px; line-height: 1.6; color: var(--h-text); }
+
+/* Selbsttest: richtige Antwort und Erklärung verdeckt, bis eine Antwort gewählt ist. */
+.cq-btn {
+  all: unset;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  cursor: pointer;
+}
+.cq-btn:focus-visible { outline: 2px solid var(--h-blue); outline-offset: 4px; border-radius: 4px; }
+.cq-list[data-mode='test'] .cq:not([data-answered]) .cq-a.is-correct { border-color: var(--h-line); background: none; color: var(--h-text); }
+.cq-list[data-mode='test'] .cq:not([data-answered]) .cq-a.is-correct .cq-key { border-color: var(--h-line); background: none; color: var(--h-muted); }
+.cq-list[data-mode='test'] .cq:not([data-answered]) .cq-tag,
+.cq-list[data-mode='test'] .cq:not([data-answered]) .cq-x { display: none; }
+.cq-list[data-mode='test'] .cq:not([data-answered]) .cq-a:hover { border-color: var(--h-blue); }
+.cq-a.is-chosen-wrong { border-color: var(--h-port); background: var(--h-port-wash); }
+.cq-a.is-chosen-wrong .cq-key { border-color: var(--h-port); background: var(--h-port); color: #fff; }
+.cq-verdict { margin: 12px 0 0; font: 650 14px/1.4 var(--h-sans); }
+.cq-verdict[data-state='right'] { color: var(--h-stbd-ink); }
+.cq-verdict[data-state='wrong'] { color: var(--h-port-ink); }
+
+/* ── App-Hinweis zwischen den Fragen ────────────────────────────────── */
+.cq-app {
+  display: grid;
+  gap: 16px;
+  padding: 24px;
+  border-radius: var(--h-r);
+  background: var(--h-blue-wash);
+}
+@media (min-width: 720px) {
+  .cq-app { grid-template-columns: 1fr auto; align-items: center; }
+}
+.cq-app-title { margin: 0 0 6px; font: 700 18px/1.35 var(--h-sans); color: var(--h-ink); }
+.cq-app-text { margin: 0; font-size: 15px; line-height: 1.6; color: var(--h-text); }
+
+/* ── Quellen und Stand ──────────────────────────────────────────────── */
+.cq-sources { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.cq-sources li { font-size: 15px; line-height: 1.6; color: var(--h-text); }
+.cq-sources a { color: var(--h-blue-ink); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ── Fragebogen ─────────────────────────────────────────────────────── */
+.pt-setup { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 14px 18px; }
+.pt-field { display: flex; flex-direction: column; gap: 6px; }
+.pt-field label { font: 600 13px/1.4 var(--h-sans); color: var(--h-ink); }
+.pt-field select {
+  min-height: 44px;
+  min-width: 220px;
+  padding: 8px 12px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r-sm);
+  background: var(--h-card);
+  font: 500 15px/1.3 var(--h-sans);
+  color: var(--h-ink);
+}
+.pt-start, .pt-submit { cursor: pointer; border: 0; }
+.pt-progress { position: sticky; top: 72px; z-index: 2; margin: 0 0 16px; padding: 12px 16px; border: 1px solid var(--h-line); border-radius: var(--h-r); background: var(--h-card); font: 600 14px/1.4 var(--h-sans); color: var(--h-ink); }
+.pt-part { margin: 28px 0 12px; font: 650 15px/1.4 var(--h-sans); color: var(--h-muted); }
+.pt-result { padding: 24px; border: 1px solid var(--h-line); border-radius: var(--h-r); background: var(--h-card); }
+.pt-result[data-pass='true'] { border-color: var(--h-stbd); }
+.pt-result[data-pass='false'] { border-color: var(--h-port); }
+.pt-result-title { margin: 0 0 8px; font-family: var(--h-display); font-stretch: 84%; font-weight: 720; font-size: 28px; line-height: 1.15; color: var(--h-ink); }
+.pt-result-lines { margin: 0 0 16px; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 4px; font-size: 15px; color: var(--h-text); }
+.pt-hidden { display: none !important; }
+.cq-more { margin: 10px 0 0; font-size: 14px; }
+.cq-more a { color: var(--h-blue-ink); text-decoration: underline; text-underline-offset: 3px; }
+/* .h-js-only setzt display:block; der Schalter braucht inline-flex. */
+.h-js .cq-toggle.h-js-only { display: inline-flex; }
+
+/* ── Erklärung nur als Anriss: Platzhalterzeilen ohne Text, darüber der App-Hinweis ── */
+.cq-locked { position: relative; margin-top: 10px; min-height: 64px; }
+.cq-blur { display: flex; flex-direction: column; gap: 9px; padding-top: 4px; filter: blur(3px); opacity: 0.7; }
+.cq-blur span { display: block; height: 11px; border-radius: 6px; background: var(--h-line); }
+.cq-blur span:nth-child(1) { width: 96%; }
+.cq-blur span:nth-child(2) { width: 88%; }
+.cq-blur span:nth-child(3) { width: 62%; }
+.cq-unlock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100% - 16px);
+  min-height: 40px;
+  padding: 8px 16px;
+  border: 1px solid var(--h-line);
+  border-radius: var(--h-r-pill);
+  background: var(--h-card);
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.08);
+  font: 600 14px/1.3 var(--h-sans);
+  color: var(--h-blue-ink);
+  text-decoration: none;
+  text-align: center;
+}
+.cq-unlock:hover { border-color: var(--h-blue); }
+.cq-unlock svg { flex-shrink: 0; }
+
+/* Fragebogen: Fieldset als Karte, Radio-Antworten im Stil der Antwortzeilen */
+.pt-check { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font: 500 15px/1.4 var(--h-sans); color: var(--h-ink); cursor: pointer; }
+.pt-check input { width: 18px; height: 18px; accent-color: var(--h-blue); }
+.pt-list, [data-pt-questions] { display: flex; flex-direction: column; gap: 16px; margin-bottom: 20px; }
+fieldset.pt-q { margin: 0; min-width: 0; }
+fieldset.pt-q > legend { float: left; width: 100%; padding: 0; }
+fieldset.pt-q > legend + * { clear: both; }
+fieldset.pt-q .cq-num { display: block; }
+.pt-opt { cursor: pointer; }
+.pt-opt input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.pt-opt:hover { border-color: var(--h-blue); }
+.pt-opt:has(input:checked) { border-color: var(--h-blue); background: var(--h-blue-wash); color: var(--h-ink); }
+.pt-opt:has(input:checked) .cq-key { border-color: var(--h-blue); background: var(--h-blue); color: #fff; }
+.pt-opt:has(input:focus-visible) { outline: 2px solid var(--h-blue); outline-offset: 2px; }
+.pt-opt:has(input:disabled) { cursor: default; }
+.pt-opt.is-correct, .pt-opt.is-correct:has(input:checked) { border-color: var(--h-stbd); background: var(--h-stbd-wash); }
+.pt-opt.is-correct .cq-key, .pt-opt.is-correct:has(input:checked) .cq-key { border-color: var(--h-stbd); background: var(--h-stbd); color: #fff; }
+.pt-opt.is-chosen-wrong, .pt-opt.is-chosen-wrong:has(input:checked) { border-color: var(--h-port); background: var(--h-port-wash); }
+.pt-opt.is-chosen-wrong .cq-key, .pt-opt.is-chosen-wrong:has(input:checked) .cq-key { border-color: var(--h-port); background: var(--h-port); color: #fff; }
+.pt-result { margin-bottom: 24px; scroll-margin-top: 96px; }
+.pt-result:focus { outline: none; }
+.pt-result-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin: 0 0 20px; }
+.pt-app { margin-top: 4px; }
+.pt-run { scroll-margin-top: 80px; }
+.h-js .pt-setup.h-js-only { display: flex; }
+
+/* Themenzeilen der Übersichtsseiten: ganze Zeile ist der Link */
+.cq-hub-row { color: inherit; text-decoration: none; }
+.cq-hub-row > svg { flex-shrink: 0; color: var(--h-blue-ink); }
+.cq-hub-row:hover .pg-row-title { color: var(--h-blue-ink); text-decoration: underline; text-underline-offset: 3px; }
+.cq-hub-practice { margin-top: 20px; }

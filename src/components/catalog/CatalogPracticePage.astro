@@ -1,0 +1,110 @@
+---
+// Seitenvorlage „Fragebogen online üben“ (SBF Binnen / SBF See, DE und EN):
+// Kopf, Faktenkarte, der Bogen im Browser, Prüfungsaufbau, Themen,
+// „Quellen und Stand“ und weiterführende Seiten.
+import '../../styles/catalog.css';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHead from '../page/PageHead.astro';
+import PageLayout from '../page/PageLayout.astro';
+import PageFacts from '../page/PageFacts.astro';
+import DisplayFontPreload from '../page/DisplayFontPreload.astro';
+import Icon from '../Icon.astro';
+import PracticeTest from './PracticeTest.astro';
+import TopicNav from './TopicNav.astro';
+import CatalogSourcesNote from './CatalogSourcesNote.astro';
+import { CATALOGS, CATALOG_VALID_FROM, practiceUrl, type Lang } from '../../data/catalog';
+
+interface Props {
+  lang: Lang;
+  catalog: 'binnen' | 'see';
+}
+
+const { lang, catalog } = Astro.props;
+const de = lang === 'de';
+const SITE = 'https://boatpass.de';
+const other: Lang = de ? 'en' : 'de';
+const binnen = catalog === 'binnen';
+const meta = CATALOGS[catalog];
+const name = meta.name[lang];
+
+const title = de ? `${name} Fragebogen online üben – amtliche Bögen 1–15` : `${name} practice test online – official papers 1–15`;
+const description = de
+  ? `${name} Fragebogen kostenlos im Browser: amtliche Bögen 1–15 oder Zufallsbogen mit 30 Fragen, Auswertung nach der echten Bestehensgrenze.`
+  : `Free ${name} practice test in your browser: official papers 1–15 or a random paper with 30 questions, marked against the real pass mark.`;
+const lede = de
+  ? `Wähle einen der 15 amtlichen Fragebögen oder einen Zufallsbogen, kreuze an und gib ab. Ausgewertet wird wie in der Prüfung: mindestens 5 von 7 Basisfragen und 18 von 23 spezifischen Fragen.${binnen ? ' Mit dem Ergänzungsbogen Segeln kommen 7 Segelfragen dazu.' : ''}`
+  : `Pick one of the 15 official papers or a random paper, answer and hand in. It is marked like the exam: at least 5 of 7 basic questions and 18 of 23 specific questions.${binnen ? ' The sailing supplement adds 7 sailing questions.' : ''}`;
+
+const licencePage = binnen ? { de: '/sbf-binnen/', en: '/en/sbf-inland/' } : { de: '/sbf-see/', en: '/en/sbf-coastal/' };
+const crumbs = [
+  { name: de ? 'Startseite' : 'Home', item: de ? '/' : '/en/' },
+  { name, item: licencePage[lang] },
+  { name: de ? 'Prüfungsfragen' : 'Exam questions', item: meta.hub[lang] },
+  { name: de ? 'Fragebogen' : 'Practice test', item: practiceUrl(catalog, lang) },
+];
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: crumbs.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: `${SITE}${c.item}` })),
+};
+
+const facts = [
+  { k: de ? 'Fragebogen' : 'Paper', v: de ? '30 Fragen (7 Basis + 23 spezifisch)' : '30 questions (7 basic + 23 specific)' },
+  { k: de ? 'Bestanden ab' : 'Pass mark', v: de ? 'Basis 5 von 7, spezifisch 18 von 23' : 'basic 5 of 7, specific 18 of 23' },
+  binnen
+    ? { k: de ? 'Segeln (Ergänzung)' : 'Sailing (supplement)', v: de ? '7 Fragen, mind. 5 richtig' : '7 questions, at least 5 right' }
+    : { k: de ? 'Navigationsaufgabe' : 'Chartwork task', v: de ? '9 Fragen, mind. 7 (in der App)' : '9 questions, at least 7 (in the app)' },
+  { k: de ? 'Bearbeitungszeit' : 'Time allowed', v: binnen ? (de ? '45 Min., mit Segeln 60 Min.' : '45 min, with sailing 60 min') : (de ? '60 Min. inkl. Navigation' : '60 min incl. chartwork') },
+  { k: de ? 'Amtliche Fassung' : 'Official version', v: de ? `gültig seit ${CATALOG_VALID_FROM.de}` : `valid since ${CATALOG_VALID_FROM.en}` },
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang} altUrl={`${SITE}${practiceUrl(catalog, other)}`}>
+  <DisplayFontPreload slot="head" />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+
+  <PageHead lang={lang} eyebrow={de ? `${name} Fragebogen` : `${name} practice test`} lede={lede}>
+    {de ? `${name} Fragebogen online üben` : `${name} practice test online`}
+  </PageHead>
+
+  <PageLayout>
+    <PageFacts slot="aside" lang={lang} title={de ? 'So wird gewertet' : 'How it is marked'} items={facts} product={binnen ? 'sbfBinnen' : 'sbfSee'} />
+
+    <PracticeTest lang={lang} catalog={catalog} />
+
+    <section class="pg-section">
+      <h2 class="pg-h2">{de ? 'Wie im echten Prüfungsbogen' : 'Just like the real exam paper'}</h2>
+      <p class="pg-p">
+        {de
+          ? `Die 15 Fragebögen sind die amtliche Verteilung der Katalogfragen, so wie sie das Ministerium bekannt gemacht hat. In der Prüfung bekommst du einen dieser Bögen. Weil im Katalog Antwort a immer die richtige ist, werden die Antworten hier gemischt, damit du den Inhalt lernst und nicht die Position. Der Zufallsbogen zieht 7 Basisfragen und 23 spezifische Fragen frei aus dem Katalog.`
+          : `The 15 papers are the official distribution of the catalogue questions as published by the ministry. In the exam you get one of these papers. Because answer a is always correct in the catalogue, the answers are shuffled here so you learn the content rather than the position. The random paper draws 7 basic and 23 specific questions freely from the catalogue.`}
+      </p>
+      {!binnen && (
+        <p class="pg-p">
+          {de
+            ? 'Zum SBF See gehört außerdem die Navigationsaufgabe auf der Übungsseekarte mit 9 Fragen. Die kann ein Browser-Fragebogen nicht sinnvoll abbilden; alle 15 Navigationsaufgaben übst du in der Boatpass-App.'
+            : 'SBF Coastal also includes the chartwork task on the training chart with 9 questions. A browser test cannot do it justice; you can practise all 15 chartwork tasks in the Boatpass app.'}
+        </p>
+      )}
+    </section>
+
+    <section class="pg-section">
+      <h2 class="pg-h2 pg-h2--sm">{de ? 'Alle Fragen nach Themen' : 'All questions by topic'}</h2>
+      <p class="pg-p">
+        {de ? 'Unsicher bei einem Thema? Hier stehen alle Katalogfragen mit richtiger Antwort.' : 'Unsure about a topic? Here are all catalogue questions with the correct answer.'}
+      </p>
+      <TopicNav lang={lang} catalog={catalog} current="practice" />
+    </section>
+
+    <CatalogSourcesNote lang={lang} catalog={catalog} sheets />
+
+    <section class="pg-section pg-section--related">
+      <h2 class="pg-h2 pg-h2--sm">{de ? 'Weiterführende Seiten' : 'Related pages'}</h2>
+      <ul class="pg-related">
+        <li><a href={meta.hub[lang]}>{de ? `${name} Prüfungsfragen: alle Themen` : `${name} exam questions: all topics`}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href={practiceUrl(binnen ? 'see' : 'binnen', lang)}>{de ? `${binnen ? 'SBF See' : 'SBF Binnen'} Fragebogen online üben` : `${binnen ? 'SBF Coastal' : 'SBF Inland'} practice test online`}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+        <li><a href={de ? '/sbf-pruefung-ablauf/' : '/en/sbf-exam/'}>{de ? 'SBF Prüfung: Ablauf von Theorie & Praxis' : 'SBF exam: theory & practical step by step'}<Icon name="chevronRight" size={16} strokeWidth={2.25} /></a></li>
+      </ul>
+    </section>
+  </PageLayout>
+</BaseLayout>
