@@ -105,6 +105,26 @@ const product = catalog === 'see' ? 'sbfSee' : 'sbfBinnen';
 const list = isBasis ? [] : TOPICS[catalog];
 const next = isBasis ? undefined : list[(list.indexOf(topic!) + 1) % list.length];
 
+// FAQ nur auf der Basisfragen-Seite (AEO: direkte Antworten, sichtbar und als FAQPage-Schema)
+const faqs = !isBasis ? [] : de
+  ? [
+    { q: 'Was sind die SBF-Basisfragen?', a: 'Die SBF-Basisfragen sind 72 amtliche Prüfungsfragen, die im Fragenkatalog für den SBF Binnen und den SBF See gleichlautend vorkommen. Sie decken allgemeine Themen wie Verhalten auf dem Wasser, Sicherheit und Umweltschutz ab.' },
+    { q: 'Wie viele Basisfragen kommen in der SBF-Prüfung dran?', a: 'In der Theorieprüfung kommen 7 Basisfragen dran, von denen du mindestens 5 richtig beantworten musst. Dazu kommen 23 spezifische Fragen (Binnen) bzw. die Fragen des Seekatalogs.' },
+    { q: 'Gelten die Basisfragen für SBF Binnen und SBF See?', a: 'Ja, die 72 Basisfragen sind in beiden Katalogen identisch. Wenn du sie einmal gelernt hast, helfen sie dir bei beiden Sportbootführerscheinen.' },
+    { q: 'Woher stammen die Fragen?', a: 'Die Fragen stammen aus dem amtlichen ELWIS-Fragenkatalog, herausgegeben von DSV und DMYV. Auf dieser Seite siehst du die Fassung, die seit ' + CATALOG_VALID_FROM.de + ' gilt.' },
+  ]
+  : [
+    { q: 'What are the SBF basic questions?', a: 'The SBF basic questions are 72 official exam questions that appear identically in the catalogues for SBF Inland and SBF Coastal. They cover general topics such as conduct on the water, safety and environmental protection.' },
+    { q: 'How many basic questions are in the SBF exam?', a: 'The theory exam includes 7 basic questions, and you must answer at least 5 correctly. They are joined by 23 specific questions (Inland) or the questions of the coastal catalogue.' },
+    { q: 'Do the basic questions apply to both SBF Inland and SBF Coastal?', a: 'Yes, the 72 basic questions are identical in both catalogues. Once you have learned them, they help you with both powerboat licences.' },
+    { q: 'Where do the questions come from?', a: 'The questions come from the official ELWIS question catalogue, published by DSV and DMYV. This page shows the version valid since ' + CATALOG_VALID_FROM.en + '.' },
+  ];
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
+
 const listTitle = isBasis
   ? (de ? `Alle ${count} Basisfragen` : `All ${count} basic questions`)
   : (de ? `Alle ${count} Fragen zum Thema` : `All ${count} questions in this topic`);
@@ -113,6 +133,7 @@ const listTitle = isBasis
 <BaseLayout title={title} description={description} lang={lang} altUrl={`${SITE}${path(other)}`}>
   <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  {isBasis && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />}
 
   <PageHead lang={lang} eyebrow={eyebrow} lede={lede} cta ctaLabel={de ? 'Kostenlos Fragen üben' : 'Practise for free'}>
     {heading}
@@ -188,6 +209,20 @@ const listTitle = isBasis
         )}
       </div>
     </section>
+
+    {isBasis && (
+      <section class="pg-section">
+        <h2 class="pg-h2">{de ? 'Häufige Fragen zu den Basisfragen' : 'Frequently asked questions about the basic questions'}</h2>
+        <div class="pg-faq">
+          {faqs.map(f => (
+            <div class="pg-faq-item">
+              <h3 class="pg-h3">{f.q}</h3>
+              <p class="pg-card-text">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
 
     <CatalogSourcesNote lang={lang} catalog={catalog} />
 
