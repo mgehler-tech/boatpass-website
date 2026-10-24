@@ -211,8 +211,17 @@
 /* ── Karten ─────────────────────────────────────────────────────────── */
 .pg-cards { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 0 0 18px; }
 .pg-cards:last-child { margin-bottom: 0; }
+/* .pg-cards--4 nimmt die 2-Spalten-Zwischenstufe (1 → 2×2 → 4): vier Karten
+   füllen beide Reihen vollständig. .pg-cards--3 trägt fast überall genau drei
+   Karten – dort ließe dieselbe Zwischenstufe die dritte Karte allein in einer
+   zweiten Reihe mit leerer Zelle daneben stehen (unsauberes, asymmetrisches
+   Alignment). Deshalb bewusst dieselbe symmetrische Leiter wie bei den
+   Feature-Karten der Startseite (1-spaltig → 3-spaltig, ohne 2er-Stufe): so
+   verwaist nie eine Karte, und auf Tablets steht jede Karte ruhig auf voller
+   Breite statt gequetscht in einer halbleeren Reihe. Corporate Design
+   (Farben, Weights) unberührt – reiner Layout-Feinschliff. */
 @media (min-width: 560px) {
-  .pg-cards--3, .pg-cards--4 { grid-template-columns: repeat(2, 1fr); }
+  .pg-cards--4 { grid-template-columns: repeat(2, 1fr); }
 }
 @media (min-width: 900px) {
   .pg-cards--3 { grid-template-columns: repeat(3, 1fr); }
