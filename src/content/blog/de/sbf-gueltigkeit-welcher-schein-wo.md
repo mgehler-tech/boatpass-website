@@ -98,6 +98,8 @@ Zur Türkei: Seit dem 17. Juli 2026 gilt dort eine neue Verordnung über private
 
 Welche Regeln in den beliebtesten Charterrevieren konkret gelten, zeigt der Beitrag [SBF im Ausland gültig? Kroatien, Niederlande & Italien](/blog/sbf-im-ausland-gueltig/).
 
+Für größere Törns weiter vor der Küste verlangen viele Vercharterer über den SBF See hinaus den [Sportküstenschifferschein (SKS)](/blog/sportkuestenschifferschein-sks/) als Qualifikationsnachweis.
+
 ### Lebenslang gültig
 
 Der deutsche SBF mit ICC ist **lebenslang gültig** – keine Verlängerung, keine Erneuerung nötig. Das ist ein Vorteil gegenüber den Führerscheinen einiger anderer Länder, die regelmäßig erneuert werden müssen.
