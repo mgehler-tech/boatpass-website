@@ -34,7 +34,7 @@ Damit der Charterschein gilt, müssen einige Bedingungen erfüllt sein:
 
 - **Das Boot:** maximal **15 m lang** und maximal **12 km/h** schnell.
 - **Mindestalter:** in der Regel **16 Jahre**.
-- **Einweisung:** eine mindestens **dreistündige** theoretische und praktische Einweisung durch den Vermieter (Verkehrsregeln, Bedienung, Sicherheit).
+- **Einweisung:** eine mindestens **dreistündige** theoretische und praktische Einweisung durch den Vermieter (Verkehrsregeln, Bedienung, Sicherheit). Worauf du bei der Bootsübernahme außerdem achten solltest, steht im [Übernahmecheck für Charterboot und eigenes Boot](/blog/boots-uebernahmecheck-charterboot-eigenes-boot/).
 - **Crew:** meist auf **maximal 12 Personen** begrenzt.
 
 Die Charterbescheinigung wird auf die Person ausgestellt, die an der Einweisung teilgenommen hat – nur diese darf das Boot führen.

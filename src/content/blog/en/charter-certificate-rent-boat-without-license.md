@@ -34,7 +34,7 @@ For the charter certificate to be valid, several conditions must be met:
 
 - **The boat:** a maximum of **15 m long** and a maximum of **12 km/h** fast.
 - **Minimum age:** generally **16 years**.
-- **Briefing:** a **minimum three-hour** theoretical and practical briefing by the rental company (traffic rules, operation, safety).
+- **Briefing:** a **minimum three-hour** theoretical and practical briefing by the rental company (traffic rules, operation, safety). What else to check when you take over the boat is covered in the [handover check for charter and own boats](/en/blog/boat-handover-check-charter-or-own-boat/).
 - **Crew:** usually limited to a **maximum of 12 people**.
 
 The charter certificate is issued to the person who took part in the briefing – only that person may operate the boat.
