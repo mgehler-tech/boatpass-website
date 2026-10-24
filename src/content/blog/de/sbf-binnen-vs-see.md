@@ -87,6 +87,8 @@ Empfehlung der meisten Bootsschulen: Beginne mit dem **SBF See** (schwieriger), 
 
 **Noch unsicher, welche Gewässer?** → Starte mit SBF Binnen (günstiger, einfacher) und ergänze später den SBF See
 
+Wer über das Küstenrevier hinaus will, kann auf dem SBF See aufbauen: Der [Sportküstenschifferschein (SKS)](/blog/sportkuestenschifferschein-sks/) ist der nächste Schritt für Törns weiter vor der Küste und bei vielen Vercharterern im Ausland Pflicht.
+
 Wenn du dir trotzdem unsicher bist, beantwortet unser [Bootsführerschein-Finder](/tools/welcher-bootsfuehrerschein/) mit drei kurzen Fragen, welcher Schein zu deinem Vorhaben passt.
 
 ## Fazit

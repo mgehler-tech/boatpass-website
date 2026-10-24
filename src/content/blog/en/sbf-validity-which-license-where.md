@@ -100,6 +100,8 @@ On Turkey: a new regulation on private boats has applied there since 17 July 202
 
 The German SBF with ICC is **valid for life** – no renewal, no re-issue needed. That's an advantage over the licenses of some other countries, which have to be renewed regularly.
 
+For larger trips further offshore, many charter companies require the [SKS (Sportküstenschifferschein)](/en/blog/sks-coastal-skippers-license/) on top of the SBF Coastal as proof of qualification.
+
 ## When do I need both licenses?
 
 If you want to navigate both coastal and inland waters, you need **both licenses**. A typical scenario: you charter on the Baltic during your summer holiday (SBF Coastal) and go out on the Müritz at the weekend (SBF Inland).
