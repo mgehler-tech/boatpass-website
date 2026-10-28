@@ -68,12 +68,14 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
         <p class="hh-note">{h.heroNote}</p>
       </div>
 
-      <!-- Foto-Paneel: Wasser als Bühne, das Gerät steht unten mittig davor und
-           ist vollständig zu sehen (Höhe folgt dem Paneel, nie angeschnitten). -->
+      <!-- Foto-Paneel: Wasser als Bühne. Das Gerät steht groß und geneigt im
+           Raum und läuft unten aus dem Paneel; davor liegt die Zielkarte. Der
+           Hero zeigt das Ziel, der Lernweg darunter den Weg dorthin. -->
       <div class="hh-visual hh-panel">
         <HeroPhoto />
         <div class="hh-phone-pos">
           <div class="hh-phone-wrap">
+            <div class="hh-phone-lean">
             <div class="h-phone hh-phone" data-tilt>
               <div class="h-phone-screen">
                 <Image
@@ -85,6 +87,30 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
                   loading="eager"
                 />
               </div>
+            </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Zielkarte: rein dekorativ, eigenständig im Boatpass-Stil (kein
+             Wappen, kein amtliches Layout). Drei Ebenen, damit sich die
+             Transforms nicht überschreiben: Position + Maus (GSAP), Schweben
+             (CSS) und die feste Neigung. -->
+        <div class="hh-card-pos" aria-hidden="true" data-tilt-card>
+          <div class="hh-card-float">
+            <div class="hh-card">
+              <div class="hh-card-head">
+                <Icon name="anchor" size={18} strokeWidth={1.75} />
+                <span>Boatpass</span>
+              </div>
+              <p class="hh-card-title">{h.heroCard.title}</p>
+              <p class="hh-card-sub">{h.heroCard.sub}</p>
+              <span class="hh-card-line"></span>
+              <span class="hh-card-line hh-card-line--short"></span>
+              <span class="hh-seal">
+                <Icon name="check" size={22} strokeWidth={2.25} />
+                <span>{h.heroCard.passed}</span>
+              </span>
             </div>
           </div>
         </div>
@@ -266,19 +292,122 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
   }
   html.dark .hh-panel::after { opacity: 0.3; }
 
+  /* ── Gerät groß, geneigt, unten angeschnitten ──
+     --pw hängt am Paneel (Größen-Container), damit Gerät und Karte dieselbe
+     Bezugsgröße haben. Das Gerät beginnt bei 14cqh und läuft unten aus dem
+     Paneel (overflow: hidden): Oben bleibt der Screen mit Lizenz und Streak
+     lesbar, unten wirkt es nah statt klein. */
+  .hh-panel { --pw: min(62cqw, 60cqh, 440px); }
+
   .hh-phone-pos {
     position: absolute;
-    left: 50%;
-    bottom: 5cqh;
+    left: 60cqw;
+    top: 14cqh;
     z-index: 2;
     transform: translateX(-50%);
   }
-  .hh-phone-wrap { perspective: 1400px; }
+  .hh-phone-wrap { perspective: 1600px; }
+  /* Feste Neigung auf eigener Ebene: GSAP setzt das Neigen per Maus direkt
+     auf .hh-phone und würde eine Neigung dort überschreiben. */
+  .hh-phone-lean {
+    transform: rotateY(-14deg) rotateX(5deg) rotateZ(4deg);
+    transform-style: preserve-3d;
+    transform-origin: 50% 20%;
+  }
   .hh-phone {
-    --pw: min(220px, calc(90cqh / 2.1));
     transform-style: preserve-3d;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), var(--h-shadow-device);
   }
+
+  /* ── Zielkarte (dekorativ) ──
+     Sitzt links vor dem Gerät und überdeckt nur dessen untere Hälfte. Breite
+     und Schrift folgen --pw, die Schrift hat eine Untergrenze für Handys. */
+  .hh-card-pos {
+    --cw: calc(var(--pw) * 0.86);
+    position: absolute;
+    z-index: 3;
+    top: 52cqh;
+    left: max(4cqw, calc(60cqw - var(--pw) * 1.12));
+    width: var(--cw);
+  }
+  .hh-card {
+    position: relative;
+    box-sizing: border-box;
+    aspect-ratio: 85.6 / 54;
+    padding: 7% 8%;
+    border-radius: calc(var(--cw) * 0.055);
+    background: #F7F4EC;
+    color: #0B1530;
+    font-size: clamp(10px, calc(var(--cw) * 0.045), 15px);
+    box-shadow:
+      inset 0 0 0 1px rgba(11, 21, 48, 0.08),
+      0 40px 70px -30px rgba(11, 21, 48, 0.6),
+      0 8px 18px -10px rgba(11, 21, 48, 0.4);
+    transform: rotate(-7deg);
+  }
+  html.dark .hh-card {
+    background: #E8E3D6;
+    box-shadow:
+      inset 0 0 0 1px rgba(11, 21, 48, 0.1),
+      0 40px 70px -30px rgba(0, 0, 0, 0.85),
+      0 8px 18px -10px rgba(0, 0, 0, 0.6);
+  }
+  .hh-card-head {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.92em;
+    font-weight: 600;
+    color: #5C5643;
+  }
+  .hh-card-head svg { flex: none; width: 1.4em; height: 1.4em; color: #2449D8; }
+  .hh-card-title {
+    margin: 1.1em 0 0.2em;
+    font-family: var(--h-display);
+    font-stretch: 85%;
+    font-weight: 720;
+    font-size: 1.55em;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  .hh-card-sub { margin: 0; font-size: 0.92em; color: #5C5643; }
+  .hh-card-line {
+    display: block;
+    width: 62%;
+    height: 0.45em;
+    margin-top: 0.9em;
+    border-radius: 99px;
+    background: #E4DDCB;
+  }
+  .hh-card-line--short { width: 38%; margin-top: 0.55em; }
+  /* Siegel ragt über die Ecke. Festes Blau in beiden Modi: weiße Schrift
+     erreicht so auch im Dark Mode genug Kontrast. */
+  .hh-seal {
+    position: absolute;
+    right: -6%;
+    bottom: -14%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.1em;
+    width: 30%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #2449D8;
+    color: #fff;
+    font-size: 0.82em;
+    font-weight: 700;
+    box-shadow: 0 0 0 0.3em #F7F4EC, 0 12px 24px -10px rgba(11, 21, 48, 0.6);
+    transform: rotate(-12deg);
+  }
+  html.dark .hh-seal { box-shadow: 0 0 0 0.3em #E8E3D6, 0 12px 24px -10px rgba(0, 0, 0, 0.7); }
+  .hh-seal svg { width: 1.6em; height: 1.6em; }
+
+  /* Schweben nur mit erlaubter Bewegung (h-motion fällt bei reduzierter
+     Bewegung weg). */
+  .h-motion .hh-card-float { animation: hh-float 6s ease-in-out 1.6s infinite; }
+  @keyframes hh-float { 50% { transform: translateY(-8px); } }
 
   @media (min-width: 1024px) {
     .hh-panel {
@@ -287,20 +416,21 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
       height: clamp(560px, 86vh, 820px);
       border-radius: 28px 0 0 28px;
     }
-    .hh-phone-pos { bottom: 6cqh; }
-    .hh-phone { --pw: min(clamp(280px, 24vw, 360px), calc(88cqh / 2.1)); }
   }
   @media (prefers-reduced-motion: reduce) {
     .hh-panel::after { transition: none; }
+    .hh-card-float { animation: none !important; }
   }
 
   /* ── Auftakt (nur mit h-motion, ab dem ersten Paint) ──
-     Nur transform – das Handy bleibt LCP-tauglich sichtbar. Der Hub bleibt
-     unter der Luft zum Paneelrand (5cqh bzw. 6cqh), damit das Gerät auch im
-     Startbild der Animation nicht angeschnitten ist; Chrome startet sie bei
-     einem Paneel unterhalb der Falte erst, wenn es ins Bild scrollt. */
+     Nur transform – das Handy bleibt LCP-tauglich sichtbar. Es hebt sich aus
+     dem unteren Paneelrand; Chrome startet die Animation bei einem Paneel
+     unterhalb der Falte erst, wenn es ins Bild scrollt. Die Karte folgt
+     leicht verzögert. */
   .hh-phone-wrap { --hh-rise: 20px; }
   .h-motion .hh-phone-wrap { animation: hh-rise 1.4s var(--h-ease) 0.1s both; }
+  .h-motion .hh-card { animation: hh-card-in 1.2s var(--h-ease) 0.45s both; }
+  @keyframes hh-card-in { from { transform: translateY(28px) rotate(-3deg); opacity: 0; } }
   @keyframes hh-rise { from { transform: translateY(var(--hh-rise)); } }
   @media (min-width: 1024px) {
     .hh-phone-wrap { --hh-rise: 32px; }
