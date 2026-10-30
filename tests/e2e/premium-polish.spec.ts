@@ -177,7 +177,7 @@ test.describe('Hero reduction', () => {
   test('rating is one line, facts are one sentence, catalogs are text links, rating appears three times (DE)', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('.hh-rating')).toContainText(`${fmt(combined.score, 'de')} · ${combined.ratings} Bewertungen`);
-    await expect(page.locator('.hh-rating-score, .hh-facts, .hh-chip, .hh-data')).toHaveCount(0);
+    await expect(page.locator('.hh-rating-score, .hh-data')).toHaveCount(0);
     await expect(page.locator('.hh-note')).toContainText('Ohne Account starten');
     await expect(page.locator('.hh-catalogs a')).toHaveCount(5);
     await expect(page.locator('.hh-catalogs a').nth(1)).toHaveAttribute('href', '/sbf-see/');
@@ -198,10 +198,11 @@ test.describe('Hero reduction', () => {
 });
 
 test.describe('Hero photo pipeline', () => {
-  test('renders a day picture with art direction and avif/webp sources', async ({ page }) => {
+  test('renders a day picture per scene; the start scene (Binnen) loads eagerly with avif/webp sources', async ({ page }) => {
     await page.goto('/');
-    const pic = page.locator('.hh-panel picture.hh-photo--day');
-    await expect(pic).toHaveCount(1);
+    await expect(page.locator('.hh-panel picture.hh-photo--day')).toHaveCount(3);
+    const pic = page.locator('.hh-panel picture.hh-photo--day[data-scene="binnen"]');
+    await expect(pic).toHaveClass(/is-active/);
     await expect(pic.locator('source[media="(min-width: 1024px)"][type="image/avif"]')).toHaveCount(1);
     await expect(pic.locator('source:not([media])[type="image/webp"]')).toHaveCount(1);
     const img = pic.locator('img');
@@ -213,29 +214,30 @@ test.describe('Hero photo pipeline', () => {
 
   test('ships a dusk picture that only shows (and only loads) in dark mode', async ({ page }) => {
     await page.goto('/');
-    const dusk = page.locator('.hh-panel picture.hh-photo--dusk');
+    const dusk = page.locator('.hh-panel picture.hh-photo--dusk[data-scene="binnen"]');
     await expect(dusk).toHaveCount(1);
     await expect(dusk.locator('img')).toHaveAttribute('loading', 'lazy');
     // Hell: Dämmerung unsichtbar und nicht geladen, Tag sichtbar.
     await expect(dusk).toBeHidden();
     expect(await dusk.locator('img').evaluate(el => (el as HTMLImageElement).currentSrc)).toBe('');
-    await expect(page.locator('.hh-photo--day')).toBeVisible();
+    await expect(page.locator('.hh-photo--day.is-active')).toBeVisible();
     // Dunkel (per Umschalter): Dämmerung sichtbar, Tag unsichtbar.
     await page.locator('header .theme-choice[data-theme-set="dark"]').click();
     await expect(dusk).toBeVisible();
-    await expect(page.locator('.hh-photo--day')).toBeHidden();
+    await expect(page.locator('.hh-photo--day.is-active')).toBeHidden();
   });
 
   test('mobile band sizes match the rendered width and the parallax overhang is desktop-only', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto('/');
-    // 16:9-Bild, das ein 124vw hohes Band per object-fit: cover füllt, ist ~220vw breit.
+    // Unter 640 px füllt das 2:3-Bild das hochkante Band, rund 100vw breit.
     for (const variant of ['day', 'dusk']) {
-      await expect(page.locator(`.hh-photo--${variant} source:not([media])[type="image/webp"]`)).toHaveAttribute('sizes', '(max-width: 639px) 220vw, 100vw');
+      await expect(page.locator(`.hh-photo--${variant}[data-scene="binnen"] source:not([media])[type="image/webp"]`)).toHaveAttribute('sizes', '(min-width: 1024px) 42vw, 100vw');
     }
-    expect(await page.locator('.hh-photo--day').evaluate(el => getComputedStyle(el).bottom)).toBe('0px');
+    const day = page.locator('.hh-photo--day.is-active');
+    expect(await day.evaluate(el => getComputedStyle(el).bottom)).toBe('0px');
     await page.setViewportSize({ width: 1280, height: 800 });
-    expect(parseFloat(await page.locator('.hh-photo--day').evaluate(el => getComputedStyle(el).bottom))).toBeLessThan(0);
+    expect(parseFloat(await day.evaluate(el => getComputedStyle(el).bottom))).toBeLessThan(0);
   });
 });
 
@@ -256,15 +258,18 @@ test.describe('Hero panel', () => {
       const phone = await page.locator('.hh-phone').boundingBox();
       const panel = await page.locator('.hh-panel').boundingBox();
       expect(phone!.y).toBeLessThan(vp.h);
-      // Nie angeschnitten: oben wie unten Luft zum Paneelrand; nie kleiner als 230 px.
-      expect(phone!.width).toBeGreaterThanOrEqual(230);
+      // Nie angeschnitten: oben wie unten Luft zum Paneelrand; über den Chips
+      // bleibt eine Kopfzone, deshalb bei niedrigen Fenstern mindestens 200 px.
+      expect(phone!.width).toBeGreaterThanOrEqual(200);
       expect(phone!.width).toBeLessThanOrEqual(360);
       expect(phone!.y).toBeGreaterThanOrEqual(panel!.y + 16);
       expect(phone!.y + phone!.height).toBeLessThanOrEqual(panel!.y + panel!.height - 16);
       expect(panel!.y).toBeGreaterThanOrEqual(64);
       // Rechte Kante am Viewport-Rand; 16 px Toleranz für eine eventuelle Scrollbar.
       expect(panel!.x + panel!.width).toBeGreaterThanOrEqual(vp.w - 16);
-      await expect(page.locator('.hh-stage')).toHaveCount(0);
+      // Das Gerät beginnt unterhalb der Faktenzeile.
+      const facts = await page.locator('.hh-fact:not([hidden])').boundingBox();
+      expect(phone!.y).toBeGreaterThan(facts!.y + facts!.height);
     });
   }
   for (const w of [360, 1024, 1280, 1920]) {
@@ -282,21 +287,21 @@ test.describe('Hero panel', () => {
     const panel = await page.locator('.hh-panel').boundingBox();
     expect(panel!.x).toBe(0);
     expect(panel!.width).toBe(375);
-    expect(panel!.height).toBeGreaterThanOrEqual(460);
-    expect(panel!.height).toBeLessThanOrEqual(560);
+    expect(panel!.height).toBeGreaterThanOrEqual(560);
+    expect(panel!.height).toBeLessThanOrEqual(680);
     const phone = await page.locator('.hh-phone').boundingBox();
-    expect(phone!.width).toBeGreaterThanOrEqual(190);
+    expect(phone!.width).toBeGreaterThanOrEqual(185);
     expect(phone!.width).toBeLessThanOrEqual(220);
     expect(phone!.y).toBeGreaterThanOrEqual(panel!.y + 16);
     expect(phone!.y + phone!.height).toBeLessThanOrEqual(panel!.y + panel!.height - 16);
   });
-  test('tablet panel keeps 16:9 (size containment must not break aspect-ratio) with the phone inside', async ({ page }) => {
+  test('tablet panel has a fixed height (size containment) with the phone inside', async ({ page }) => {
     await page.setViewportSize({ width: 768, height: 1024 });
     await page.goto('/');
     await phoneSettled(page);
     const panel = await page.locator('.hh-panel').boundingBox();
     expect(panel!.width).toBe(768);
-    expect(Math.round(panel!.height)).toBe(432);
+    expect(Math.round(panel!.height)).toBe(568);
     const phone = await page.locator('.hh-phone').boundingBox();
     expect(phone!.width).toBeGreaterThanOrEqual(170);
     expect(phone!.y).toBeGreaterThanOrEqual(panel!.y + 16);
@@ -306,13 +311,41 @@ test.describe('Hero panel', () => {
     await page.emulateMedia({ colorScheme: 'dark' });
     await page.goto('/');
     await expect(page.locator('html')).toHaveClass(/dark/);
-    await expect(page.locator('.hh-photo--dusk')).toBeVisible();
-    await expect(page.locator('.hh-photo--day')).toBeHidden();
+    await expect(page.locator('.hh-photo--dusk.is-active')).toBeVisible();
+    await expect(page.locator('.hh-photo--day.is-active')).toBeHidden();
     // Ein nicht erzeugtes ::after meldet ebenfalls Opazität 1 – deshalb zusätzlich der Verlauf.
     expect(await page.locator('.hh-panel').evaluate(el => getComputedStyle(el, '::after').backgroundImage)).toContain('linear-gradient');
     const opacity = parseFloat(await page.locator('.hh-panel').evaluate(el => getComputedStyle(el, '::after').opacity));
     expect(opacity).toBeGreaterThan(0);
     expect(opacity).toBeLessThan(0.6);
+  });
+});
+
+test.describe('Hero licence picker', () => {
+  test('chips switch screenshot, facts and scene; arrow keys move the selection', async ({ page }) => {
+    await page.goto('/');
+    const tabs = page.getByRole('tab');
+    await expect(tabs).toHaveCount(5);
+    await expect(tabs.nth(0)).toHaveAttribute('aria-selected', 'true');
+    await expect(page.locator('.hh-fact:not([hidden])')).toContainText('300 Fragen');
+    await tabs.nth(1).click();
+    await expect(tabs.nth(1)).toHaveAttribute('aria-selected', 'true');
+    await expect(page.locator('.hh-fact:not([hidden])')).toContainText('420 Fragen');
+    await expect(page.locator('.hh-shot.is-active')).toHaveAttribute('data-license', 'see');
+    await expect(page.locator('.hh-photo--day.is-active')).toHaveAttribute('data-scene', 'see');
+    await expect(page.getByRole('tabpanel')).toHaveAttribute('aria-labelledby', 'hh-tab-see');
+    await page.keyboard.press('ArrowRight');
+    await expect(tabs.nth(2)).toBeFocused();
+    await expect(tabs.nth(2)).toHaveAttribute('aria-selected', 'true');
+    await page.keyboard.press('End');
+    await expect(tabs.nth(4)).toHaveAttribute('aria-selected', 'true');
+    await expect(page.locator('.hh-photo--day.is-active')).toHaveAttribute('data-scene', 'funk');
+  });
+  test('EN parity', async ({ page }) => {
+    await page.goto('/en/');
+    await expect(page.getByRole('tablist')).toHaveAttribute('aria-label', 'Choose a licence');
+    await page.getByRole('tab', { name: 'SBF Coastal' }).click();
+    await expect(page.locator('.hh-fact:not([hidden])')).toContainText('420 questions');
   });
 });
 

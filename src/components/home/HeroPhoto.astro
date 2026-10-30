@@ -1,92 +1,130 @@
 ---
-// Foto-Bühne des Heros (Spec 4.1): Art Direction mit je zwei Quellen (3:4 ab
-// 1024 px, 16:9 darunter) für Tag und Dämmerung (Spec Anhang A1 und A2).
+// Foto-Bühne des Heros: je Szene (Binnen, See, Funk) ein Tag- und ein
+// Dämmerungsfoto, jeweils mit zwei Quellen: 2:3 für das Paneel ab 1024 px und
+// das hochkante Band unter 640 px, 16:9 für das Querband dazwischen.
 // Astros <Picture> kennt kein <source media>, deshalb getImage() je Quelle und
 // Format und handgebaute <picture>-Elemente; so lädt das Handy nie beide
 // Bildformate.
 //
-// Der Dark Mode ist klassenbasiert (html.dark), deshalb zwei <picture>: Tag
-// eager mit hoher Priorität (LCP-Kandidat), Dämmerung lazy. CSS blendet die
-// jeweils andere aus; ein per display:none verborgenes lazy-Bild wird nicht
-// geladen. Im Dark Mode kostet das Tagbild einmalig einen versteckten Download
-// (rund 30 bis 60 KB), dafür steht das Tagbild im Hellmodus ab dem ersten Paint.
+// Der Schein-Wähler im Hero schaltet die Szene per Klasse .is-active um
+// (Überblendung über opacity). Die Startszene lädt eager, die übrigen lazy:
+// Sie liegen unsichtbar im Paneel und kommen kurz nach dem ersten Paint nach,
+// damit der Wechsel ohne Nachladen gelingt.
+//
+// Der Dark Mode ist klassenbasiert (html.dark): Das jeweils andere Set ist per
+// display:none verborgen und wird als lazy-Bild gar nicht erst geladen. Das
+// eager geladene Tagbild der Startszene kostet im Dark Mode einmalig einen
+// versteckten Download, dafür steht es im Hellmodus ab dem ersten Paint.
 import { getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
-import waterDay from '../../assets/images/hero/water-day.webp';
-import waterDayWide from '../../assets/images/hero/water-day-wide.webp';
-import waterDusk from '../../assets/images/hero/water-dusk.webp';
-import waterDuskWide from '../../assets/images/hero/water-dusk-wide.webp';
+import binnenDay from '../../assets/images/hero/binnen-day.webp';
+import binnenDayWide from '../../assets/images/hero/binnen-day-wide.webp';
+import binnenDusk from '../../assets/images/hero/binnen-dusk.webp';
+import binnenDuskWide from '../../assets/images/hero/binnen-dusk-wide.webp';
+import seeDay from '../../assets/images/hero/see-day.webp';
+import seeDayWide from '../../assets/images/hero/see-day-wide.webp';
+import seeDusk from '../../assets/images/hero/see-dusk.webp';
+import seeDuskWide from '../../assets/images/hero/see-dusk-wide.webp';
+import funkDay from '../../assets/images/hero/funk-day.webp';
+import funkDayWide from '../../assets/images/hero/funk-day-wide.webp';
+// Funk bei Dämmerung folgt noch; bis dahin das ruhige Wasserfoto.
+import funkDusk from '../../assets/images/hero/water-dusk.webp';
+import funkDuskWide from '../../assets/images/hero/water-dusk-wide.webp';
+
+export type HeroScene = 'binnen' | 'see' | 'funk';
 
 interface Props {
-  class?: string;
+  active?: HeroScene;
 }
 
-const { class: className } = Astro.props;
+const { active = 'binnen' } = Astro.props;
 
 const widths = [640, 960, 1280, 1920];
 const quality = 68;
-// Paneel ab 1024 px: 5 von 12 Spalten plus Rand, rund 42 % der Breite.
-const portraitSizes = '42vw';
-// Unter 640 px ist das Band 124vw hoch; ein 16:9-Bild, das es per object-fit:
-// cover füllt, ist rund 220vw breit. Zwischen 640 und 1023 px hat das Band
-// selbst 16:9, also 100vw.
-const wideSizes = '(max-width: 639px) 220vw, 100vw';
+// Paneel ab 1024 px: 5 von 12 Spalten plus Rand, rund 42 % der Breite. Unter
+// 640 px füllt das 2:3-Bild das hochkante Band per cover, rund 100vw breit.
+const portraitSizes = '(min-width: 1024px) 42vw, 100vw';
+// Zwischen 640 und 1023 px hat das Band selbst 16:9, also 100vw.
+const wideSizes = '100vw';
 
 async function sources(portrait: ImageMetadata, wide: ImageMetadata) {
   const [pAvif, pWebp, wAvif, wWebp] = await Promise.all([
     getImage({ src: portrait, width: 960, widths, format: 'avif', quality }),
     getImage({ src: portrait, width: 960, widths, format: 'webp', quality }),
-    getImage({ src: wide, width: 1280, widths, format: 'avif', quality }),
-    getImage({ src: wide, width: 1280, widths, format: 'webp', quality }),
+    getImage({ src: wide, width: 1280, widths: [640, 960, 1024], format: 'avif', quality }),
+    getImage({ src: wide, width: 1024, widths: [640, 960, 1024], format: 'webp', quality }),
   ]);
   return { pAvif, pWebp, wAvif, wWebp };
 }
 
-const day = await sources(waterDay, waterDayWide);
-const dusk = await sources(waterDusk, waterDuskWide);
+const raw: Record<HeroScene, ImageMetadata[]> = {
+  binnen: [binnenDay, binnenDayWide, binnenDusk, binnenDuskWide],
+  see: [seeDay, seeDayWide, seeDusk, seeDuskWide],
+  funk: [funkDay, funkDayWide, funkDusk, funkDuskWide],
+};
+
+const scenes = await Promise.all(
+  (Object.keys(raw) as HeroScene[]).map(async (key) => {
+    const [d, dw, n, nw] = raw[key];
+    return { key, day: await sources(d, dw), dusk: await sources(n, nw) };
+  }),
+);
 ---
 
-<picture class:list={['hh-photo', 'hh-photo--day', className]}>
-  <source media="(min-width: 1024px)" type="image/avif" srcset={day.pAvif.srcSet.attribute} sizes={portraitSizes} />
-  <source media="(min-width: 1024px)" type="image/webp" srcset={day.pWebp.srcSet.attribute} sizes={portraitSizes} />
-  <source type="image/avif" srcset={day.wAvif.srcSet.attribute} sizes={wideSizes} />
-  <source type="image/webp" srcset={day.wWebp.srcSet.attribute} sizes={wideSizes} />
-  <img
-    src={day.wWebp.src}
-    width={day.wWebp.attributes.width}
-    height={day.wWebp.attributes.height}
-    alt=""
-    loading="eager"
-    fetchpriority="high"
-    decoding="async"
-  />
-</picture>
-<picture class:list={['hh-photo', 'hh-photo--dusk', className]}>
-  <source media="(min-width: 1024px)" type="image/avif" srcset={dusk.pAvif.srcSet.attribute} sizes={portraitSizes} />
-  <source media="(min-width: 1024px)" type="image/webp" srcset={dusk.pWebp.srcSet.attribute} sizes={portraitSizes} />
-  <source type="image/avif" srcset={dusk.wAvif.srcSet.attribute} sizes={wideSizes} />
-  <source type="image/webp" srcset={dusk.wWebp.srcSet.attribute} sizes={wideSizes} />
-  <img
-    src={dusk.wWebp.src}
-    width={dusk.wWebp.attributes.width}
-    height={dusk.wWebp.attributes.height}
-    alt=""
-    loading="lazy"
-    decoding="async"
-  />
-</picture>
+{scenes.map(({ key, day, dusk }) => {
+  const isActive = key === active;
+  return (
+    <>
+      <picture class:list={['hh-photo', 'hh-photo--day', { 'is-active': isActive }]} data-scene={key}>
+        <source media="(min-width: 1024px)" type="image/avif" srcset={day.pAvif.srcSet.attribute} sizes={portraitSizes} />
+        <source media="(min-width: 1024px)" type="image/webp" srcset={day.pWebp.srcSet.attribute} sizes={portraitSizes} />
+        <source media="(min-width: 640px)" type="image/avif" srcset={day.wAvif.srcSet.attribute} sizes={wideSizes} />
+        <source media="(min-width: 640px)" type="image/webp" srcset={day.wWebp.srcSet.attribute} sizes={wideSizes} />
+        <source type="image/avif" srcset={day.pAvif.srcSet.attribute} sizes={portraitSizes} />
+        <source type="image/webp" srcset={day.pWebp.srcSet.attribute} sizes={portraitSizes} />
+        <img
+          src={day.pWebp.src}
+          width={day.pWebp.attributes.width}
+          height={day.pWebp.attributes.height}
+          alt=""
+          loading={isActive ? 'eager' : 'lazy'}
+          fetchpriority={isActive ? 'high' : undefined}
+          decoding="async"
+        />
+      </picture>
+      <picture class:list={['hh-photo', 'hh-photo--dusk', { 'is-active': isActive }]} data-scene={key}>
+        <source media="(min-width: 1024px)" type="image/avif" srcset={dusk.pAvif.srcSet.attribute} sizes={portraitSizes} />
+        <source media="(min-width: 1024px)" type="image/webp" srcset={dusk.pWebp.srcSet.attribute} sizes={portraitSizes} />
+        <source media="(min-width: 640px)" type="image/avif" srcset={dusk.wAvif.srcSet.attribute} sizes={wideSizes} />
+        <source media="(min-width: 640px)" type="image/webp" srcset={dusk.wWebp.srcSet.attribute} sizes={wideSizes} />
+        <source type="image/avif" srcset={dusk.pAvif.srcSet.attribute} sizes={portraitSizes} />
+        <source type="image/webp" srcset={dusk.pWebp.srcSet.attribute} sizes={portraitSizes} />
+        <img
+          src={dusk.pWebp.src}
+          width={dusk.pWebp.attributes.width}
+          height={dusk.pWebp.attributes.height}
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      </picture>
+    </>
+  );
+})}
 
 <style is:global>
   /* Füllt das Paneel. Ab 1024 px 12 % Überhang unten als Reserve für die
      Scroll-Parallaxe (home-motion.ts), damit kein Rand durchblitzt; darunter
-     läuft keine Parallaxe, deshalb kein Überhang (der würde nur den
-     Bildausschnitt verschieben). */
+     läuft keine Parallaxe, deshalb kein Überhang. */
   .hh-photo {
     position: absolute;
     inset: 0;
     display: block;
     line-height: 0;
+    opacity: 0;
+    transition: opacity 0.7s var(--h-ease);
   }
+  .hh-photo.is-active { opacity: 1; }
   @media (min-width: 1024px) {
     .hh-photo { bottom: -12%; }
   }
@@ -94,10 +132,13 @@ const dusk = await sources(waterDusk, waterDuskWide);
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 60%;
+    object-position: center 45%;
     display: block;
   }
   /* Tag oder Dämmerung, nie beide: ein verborgenes lazy-Bild wird nicht geladen. */
   html.dark .hh-photo--day { display: none; }
   html:not(.dark) .hh-photo--dusk { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .hh-photo { transition: none; }
+  }
 </style>

@@ -267,7 +267,10 @@ export const en: Translations = {
     ratingSourceIos: 'ratings on the App Store',
     ctaPlay: 'Free on Google Play',
     phoneAlt: 'Boatpass app – home screen with licence, progress, streak and study modes',
-    heroCard: { title: 'Boating licence', sub: 'Inland · motor and sail', passed: 'Passed' },
+    heroPickerLabel: 'Choose a licence',
+    heroPhoneAlt: 'Boatpass app – home screen for {license} with progress, streak and study modes',
+    heroQuestions: 'questions',
+    heroNotes: ['Motor and sail', 'incl. 15 navigation tasks', 'Inland VHF with ATIS', 'Marine VHF with DSC distress', 'Satellite and distress radio'],
     journeyChips: [
       ['Study today', 'Study by topic', 'Streak & daily goal'],
       ['Explanation for every answer', 'Mnemonic'],

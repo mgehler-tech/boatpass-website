@@ -1,6 +1,7 @@
 ---
-// Hero – links die Aussage mit dem einen CTA, rechts der echte Startbildschirm
-// der App. Erster Viewport bewusst auf fünf Elemente reduziert (Spec
+// Hero – links die Aussage mit dem einen CTA, rechts ein Schein-Wähler: Chips
+// für die fünf Lizenzen wechseln den echten Startbildschirm der App, die
+// Faktenzeile und die Foto-Szene. Erster Viewport bewusst auf fünf Elemente reduziert (Spec
 // docs/superpowers/specs/2026-10-17-premium-polish-design.md, 4.2): H1,
 // Subline, Button mit einzeiliger Bewertung, eine Faktenzeile als Satz und
 // darunter die amtlichen Kataloge als ruhige Textzeile mit Links zur
@@ -23,8 +24,18 @@ import StoreRating from '../StoreRating.astro';
 import Icon from '../Icon.astro';
 import { useTranslations } from '../../i18n/index';
 import { smartAppPath } from '../../data/stores';
-import homeShotDe from '../../assets/images/app.screenshot.0.de.png';
-import homeShotEn from '../../assets/images/app.screenshot.0.en.png';
+import type { ImageMetadata } from 'astro';
+import type { HeroScene } from './HeroPhoto.astro';
+import shotBinnenDe from '../../assets/images/hero-app/binnen.de.webp';
+import shotSeeDe from '../../assets/images/hero-app/see.de.webp';
+import shotUbiDe from '../../assets/images/hero-app/ubi.de.webp';
+import shotSrcDe from '../../assets/images/hero-app/src.de.webp';
+import shotLrcDe from '../../assets/images/hero-app/lrc.de.webp';
+import shotBinnenEn from '../../assets/images/hero-app/binnen.en.webp';
+import shotSeeEn from '../../assets/images/hero-app/see.en.webp';
+import shotUbiEn from '../../assets/images/hero-app/ubi.en.webp';
+import shotSrcEn from '../../assets/images/hero-app/src.en.webp';
+import shotLrcEn from '../../assets/images/hero-app/lrc.en.webp';
 
 interface Props {
   lang: 'de' | 'en';
@@ -33,7 +44,28 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 const h = t.home;
-const homeShot = lang === 'de' ? homeShotDe : homeShotEn;
+const p = t.pricing;
+
+// Schein-Wähler: Reihenfolge wie t.hero.licenses (Binnen, See, UBI, SRC, LRC).
+// Die Zahlen kommen aus der Preisliste, damit beide Stellen gleich bleiben;
+// die Zusätze sind eigene Kurzformen (home.heroNotes). UBI ist Binnenfunk und teilt sich die Binnen-Szene.
+const shots: Record<'de' | 'en', ImageMetadata[]> = {
+  de: [shotBinnenDe, shotSeeDe, shotUbiDe, shotSrcDe, shotLrcDe],
+  en: [shotBinnenEn, shotSeeEn, shotUbiEn, shotSrcEn, shotLrcEn],
+};
+const meta: { key: string; scene: HeroScene; questions: string; note: string }[] = [
+  { key: 'binnen', scene: 'binnen', questions: p.catalog1Questions, note: h.heroNotes[0] },
+  { key: 'see', scene: 'see', questions: p.catalog2Questions, note: h.heroNotes[1] },
+  { key: 'ubi', scene: 'binnen', questions: p.catalog3Questions, note: h.heroNotes[2] },
+  { key: 'src', scene: 'funk', questions: p.srcQuestions, note: h.heroNotes[3] },
+  { key: 'lrc', scene: 'funk', questions: p.lrcQuestions, note: h.heroNotes[4] },
+];
+const licenses = meta.map((m, i) => {
+  const name = t.hero.licenses[i];
+  // "SBF Binnen" → Präfix "SBF" plus Kurzform "Binnen" (s. CSS, schmale Handys).
+  const [pre, short] = name.startsWith('SBF ') ? ['SBF', name.slice(4)] : ['', name];
+  return { ...m, name, pre, short, shot: shots[lang][i] };
+});
 
 // Reihenfolge wie t.hero.licenses: Binnen, See, UBI, SRC, LRC.
 const hrefs = lang === 'de'
@@ -68,49 +100,62 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
         <p class="hh-note">{h.heroNote}</p>
       </div>
 
-      <!-- Foto-Paneel: Wasser als Bühne. Das Gerät steht groß und geneigt im
-           Raum und läuft unten aus dem Paneel; davor liegt die Zielkarte. Der
-           Hero zeigt das Ziel, der Lernweg darunter den Weg dorthin. -->
-      <div class="hh-visual hh-panel">
-        <HeroPhoto />
-        <div class="hh-phone-pos">
-          <div class="hh-phone-wrap">
-            <div class="hh-phone-lean">
-            <div class="h-phone hh-phone" data-tilt>
-              <div class="h-phone-screen">
-                <Image
-                  src={homeShot}
-                  alt={h.phoneAlt}
-                  widths={[300, 480, 640, 760]}
-                  sizes="(min-width: 1024px) 360px, 220px"
-                  quality={80}
-                  loading="eager"
-                />
-              </div>
-            </div>
-            </div>
+      <!-- Foto-Paneel mit Schein-Wähler: Die Chips wechseln den echten
+           Startbildschirm der App, die Faktenzeile und die Szene dahinter
+           (Binnen, See, Funk). Ohne JavaScript bleibt SBF Binnen stehen. -->
+      <div class="hh-visual hh-panel" data-hero-picker>
+        <HeroPhoto active="binnen" />
+
+        <div class="hh-picker">
+          <div class="hh-chips" role="tablist" aria-label={h.heroPickerLabel}>
+            {licenses.map((l, i) => (
+              <button
+                type="button"
+                class="hh-chip"
+                role="tab"
+                id={`hh-tab-${l.key}`}
+                aria-selected={i === 0 ? 'true' : 'false'}
+                aria-controls="hh-stage"
+                tabindex={i === 0 ? 0 : -1}
+                data-license={l.key}
+                data-scene={l.scene}
+              >
+                {l.pre && <span class="hh-chip-pre">{l.pre} </span>}{l.short}
+              </button>
+            ))}
           </div>
         </div>
 
-        <!-- Zielkarte: rein dekorativ, eigenständig im Boatpass-Stil (kein
-             Wappen, kein amtliches Layout). Drei Ebenen, damit sich die
-             Transforms nicht überschreiben: Position + Maus (GSAP), Schweben
-             (CSS) und die feste Neigung. -->
-        <div class="hh-card-pos" aria-hidden="true" data-tilt-card>
-          <div class="hh-card-float">
-            <div class="hh-card">
-              <div class="hh-card-head">
-                <Icon name="anchor" size={18} strokeWidth={1.75} />
-                <span>Boatpass</span>
-              </div>
-              <p class="hh-card-title">{h.heroCard.title}</p>
-              <p class="hh-card-sub">{h.heroCard.sub}</p>
-              <span class="hh-card-line"></span>
-              <span class="hh-card-line hh-card-line--short"></span>
-              <span class="hh-seal">
-                <Icon name="check" size={22} strokeWidth={2.25} />
-                <span>{h.heroCard.passed}</span>
+        <div class="hh-stage" id="hh-stage" role="tabpanel" aria-labelledby="hh-tab-binnen">
+          <p class="hh-facts">
+            {licenses.map((l, i) => (
+              <span class="hh-fact" data-license={l.key} hidden={i !== 0}>
+                <strong>{l.questions}</strong> {h.heroQuestions}
+                <span class="hh-fact-sep" aria-hidden="true">·</span>
+                {l.note}
               </span>
+            ))}
+          </p>
+
+          <div class="hh-phone-pos">
+            <div class="hh-phone-wrap">
+              <div class="h-phone hh-phone" data-tilt>
+                <div class="h-phone-screen">
+                  {licenses.map((l, i) => (
+                    <Image
+                      src={l.shot}
+                      alt={h.heroPhoneAlt.replace('{license}', l.name)}
+                      class:list={['hh-shot', { 'is-active': i === 0 }]}
+                      data-license={l.key}
+                      widths={[300, 480, 640, 760]}
+                      sizes="(min-width: 1024px) 340px, 240px"
+                      quality={80}
+                      loading={i === 0 ? 'eager' : 'lazy'}
+                      aria-hidden={i === 0 ? undefined : 'true'}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -260,26 +305,26 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
     text-wrap: pretty;
   }
 
-  /* ── Foto-Paneel mit Gerät (Spec 4.1, nach Sichtung geändert) ──
+  /* ── Foto-Paneel mit Schein-Wähler ──
      Unter 1024 px ein randabfallendes Band, ab 1024 px ein Paneel, das rechts
-     bis an den Viewport läuft. Das Foto (HeroPhoto) liegt absolut dahinter.
-     Das Gerät steht vollständig im Paneel: Seine Breite ist durch die
-     Paneelhöhe begrenzt (100cqh, Paneel ist Größen-Container; Gerät ist
-     2,09-mal so hoch wie breit), oben und unten bleibt Luft. */
+     bis an den Viewport läuft. Das Foto (HeroPhoto) liegt absolut dahinter,
+     oben sitzen Chips und Faktenzeile, darunter steht das Gerät vollständig im
+     Paneel. Seine Breite folgt der Paneelhöhe abzüglich der Kopfzone
+     (Paneel ist Größen-Container; Gerät ist rund 2,13-mal so hoch wie breit). */
   .hh-visual { margin: 0; }
   .hh-panel {
     position: relative;
     overflow: hidden;
     margin-inline: calc(-1 * var(--h-gutter));
-    height: clamp(460px, 124vw, 560px);
+    height: clamp(560px, 150vw, 680px);
     background: var(--h-paper-2);
     container-type: size;
   }
   @media (min-width: 640px) and (max-width: 1023px) {
-    .hh-panel { height: auto; aspect-ratio: 16 / 9; }
+    .hh-panel { height: clamp(560px, 74vw, 700px); }
   }
-  /* Dark Mode: leichte Abdunkelung über dem (ohnehin dunklen) Dämmerungsfoto,
-     unter dem Gerät – hält den Kontaktschatten des Geräts lesbar. */
+  /* Dark Mode: leichte Abdunkelung über dem Dämmerungsfoto, unter Gerät und
+     Chips – hält Kontaktschatten und Bedienelemente lesbar. */
   .hh-panel::after {
     content: '';
     position: absolute;
@@ -292,147 +337,187 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
   }
   html.dark .hh-panel::after { opacity: 0.3; }
 
-  /* ── Gerät groß, geneigt, unten angeschnitten ──
-     --pw hängt am Paneel (Größen-Container), damit Gerät und Karte dieselbe
-     Bezugsgröße haben. Das Gerät beginnt bei 14cqh und läuft unten aus dem
-     Paneel (overflow: hidden): Oben bleibt der Screen mit Lizenz und Streak
-     lesbar, unten wirkt es nah statt klein. */
-  .hh-panel { --pw: min(62cqw, 60cqh, 440px); }
+  /* ── Chips und Faktenzeile ──
+     Feste, fast deckende Flächen statt Glas: Kontrast bleibt auf hellem
+     Himmel wie auf dunkler Dämmerung über 4,5:1. */
+  .hh-picker {
+    position: absolute;
+    z-index: 3;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  .hh-chips {
+    display: flex;
+    gap: 2px;
+    max-width: 100%;
+    padding: 4px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 30px -14px rgba(11, 21, 48, 0.45), inset 0 0 0 1px rgba(11, 21, 48, 0.06);
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .hh-chips::-webkit-scrollbar { display: none; }
+  .hh-chip {
+    flex: none;
+    min-height: 40px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #0B1530;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 0.25s var(--h-ease), color 0.25s var(--h-ease);
+  }
+  .hh-chip:hover { background: rgba(11, 21, 48, 0.06); }
+  .hh-chip[aria-selected='true'] { background: #0B1530; color: #fff; }
+  .hh-chip:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 1px; }
+  html.dark .hh-chips {
+    background: rgba(11, 16, 36, 0.82);
+    box-shadow: 0 10px 30px -14px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+  html.dark .hh-chip { color: #E6ECF8; }
+  html.dark .hh-chip:hover { background: rgba(255, 255, 255, 0.08); }
+  html.dark .hh-chip[aria-selected='true'] { background: #fff; color: #0B1530; }
+  /* Schmale Handys: "SBF" bleibt für Screenreader, sichtbar nur "Binnen" und
+     "See", damit alle fünf Chips ohne Scrollen nebeneinander passen. */
+  @media (max-width: 479px) {
+    .hh-chip { padding: 0 12px; font-size: 13px; }
+    .hh-chip-pre {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+  }
 
+  .hh-stage { position: absolute; inset: 0; z-index: 2; }
+  .hh-facts {
+    position: absolute;
+    top: 76px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  .hh-fact {
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.86);
+    color: #33405F;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: center;
+    text-wrap: balance;
+  }
+  .hh-fact strong { color: #0B1530; font-weight: 700; }
+  .hh-fact-sep { margin: 0 6px; color: #8A93AB; }
+  html.dark .hh-fact { background: rgba(11, 16, 36, 0.78); color: #C3CCE0; }
+  html.dark .hh-fact strong { color: #fff; }
+  html.dark .hh-fact-sep { color: #6F7A96; }
+  .hh-fact[hidden] { display: none; }
+
+  /* ── Gerät ── */
   .hh-phone-pos {
     position: absolute;
-    left: 60cqw;
-    top: 14cqh;
-    z-index: 2;
+    left: 50%;
+    bottom: 4cqh;
     transform: translateX(-50%);
   }
-  .hh-phone-wrap { perspective: 1600px; }
-  /* Feste Neigung auf eigener Ebene: GSAP setzt das Neigen per Maus direkt
-     auf .hh-phone und würde eine Neigung dort überschreiben. */
-  .hh-phone-lean {
-    transform: rotateY(-14deg) rotateX(5deg) rotateZ(4deg);
-    transform-style: preserve-3d;
-    transform-origin: 50% 20%;
-  }
+  .hh-phone-wrap { perspective: 1400px; }
   .hh-phone {
+    --pw: min(240px, 64cqw, calc((100cqh - 150px) / 2.13));
     transform-style: preserve-3d;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), var(--h-shadow-device);
   }
-
-  /* ── Zielkarte (dekorativ) ──
-     Sitzt links vor dem Gerät und überdeckt nur dessen untere Hälfte. Breite
-     und Schrift folgen --pw, die Schrift hat eine Untergrenze für Handys. */
-  .hh-card-pos {
-    --cw: calc(var(--pw) * 0.86);
-    position: absolute;
-    z-index: 3;
-    top: 52cqh;
-    left: max(4cqw, calc(60cqw - var(--pw) * 1.12));
-    width: var(--cw);
-  }
-  .hh-card {
-    position: relative;
-    box-sizing: border-box;
-    aspect-ratio: 85.6 / 54;
-    padding: 7% 8%;
-    border-radius: calc(var(--cw) * 0.055);
-    background: #F7F4EC;
-    color: #0B1530;
-    font-size: clamp(10px, calc(var(--cw) * 0.045), 15px);
-    box-shadow:
-      inset 0 0 0 1px rgba(11, 21, 48, 0.08),
-      0 40px 70px -30px rgba(11, 21, 48, 0.6),
-      0 8px 18px -10px rgba(11, 21, 48, 0.4);
-    transform: rotate(-7deg);
-  }
-  html.dark .hh-card {
-    background: #E8E3D6;
-    box-shadow:
-      inset 0 0 0 1px rgba(11, 21, 48, 0.1),
-      0 40px 70px -30px rgba(0, 0, 0, 0.85),
-      0 8px 18px -10px rgba(0, 0, 0, 0.6);
-  }
-  .hh-card-head {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    font-size: 0.92em;
-    font-weight: 600;
-    color: #5C5643;
-  }
-  .hh-card-head svg { flex: none; width: 1.4em; height: 1.4em; color: #2449D8; }
-  .hh-card-title {
-    margin: 1.1em 0 0.2em;
-    font-family: var(--h-display);
-    font-stretch: 85%;
-    font-weight: 720;
-    font-size: 1.55em;
-    line-height: 1.05;
-    letter-spacing: -0.01em;
-  }
-  .hh-card-sub { margin: 0; font-size: 0.92em; color: #5C5643; }
-  .hh-card-line {
-    display: block;
-    width: 62%;
-    height: 0.45em;
-    margin-top: 0.9em;
-    border-radius: 99px;
-    background: #E4DDCB;
-  }
-  .hh-card-line--short { width: 38%; margin-top: 0.55em; }
-  /* Siegel ragt über die Ecke. Festes Blau in beiden Modi: weiße Schrift
-     erreicht so auch im Dark Mode genug Kontrast. */
-  .hh-seal {
-    position: absolute;
-    right: -6%;
-    bottom: -14%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.1em;
-    width: 30%;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: #2449D8;
-    color: #fff;
-    font-size: 0.82em;
-    font-weight: 700;
-    box-shadow: 0 0 0 0.3em #F7F4EC, 0 12px 24px -10px rgba(11, 21, 48, 0.6);
-    transform: rotate(-12deg);
-  }
-  html.dark .hh-seal { box-shadow: 0 0 0 0.3em #E8E3D6, 0 12px 24px -10px rgba(0, 0, 0, 0.7); }
-  .hh-seal svg { width: 1.6em; height: 1.6em; }
-
-  /* Schweben nur mit erlaubter Bewegung (h-motion fällt bei reduzierter
-     Bewegung weg). */
-  .h-motion .hh-card-float { animation: hh-float 6s ease-in-out 1.6s infinite; }
-  @keyframes hh-float { 50% { transform: translateY(-8px); } }
+  /* Alle Screenshots liegen übereinander, der aktive blendet ein. */
+  .hh-shot { opacity: 0; transition: opacity 0.45s var(--h-ease); }
+  .hh-shot.is-active { opacity: 1; }
 
   @media (min-width: 1024px) {
     .hh-panel {
       /* Bis an den rechten Viewport-Rand: Containerrest plus Gutter zurückgeben. */
       margin-inline: 0 calc(-1 * ((100cqw - min(100cqw, var(--h-max))) / 2 + var(--h-gutter)));
-      height: clamp(560px, 86vh, 820px);
+      height: clamp(600px, 86vh, 820px);
       border-radius: 28px 0 0 28px;
     }
+    .hh-picker { top: 28px; left: 28px; right: 28px; }
+    .hh-facts { top: 86px; left: 28px; right: 28px; }
+    .hh-phone { --pw: min(340px, 60cqw, calc((100cqh - 170px) / 2.13)); }
   }
   @media (prefers-reduced-motion: reduce) {
-    .hh-panel::after { transition: none; }
-    .hh-card-float { animation: none !important; }
+    .hh-panel::after, .hh-chip, .hh-shot { transition: none; }
   }
 
   /* ── Auftakt (nur mit h-motion, ab dem ersten Paint) ──
-     Nur transform – das Handy bleibt LCP-tauglich sichtbar. Es hebt sich aus
-     dem unteren Paneelrand; Chrome startet die Animation bei einem Paneel
-     unterhalb der Falte erst, wenn es ins Bild scrollt. Die Karte folgt
-     leicht verzögert. */
-  .hh-phone-wrap { --hh-rise: 20px; }
+     Nur transform – das Handy bleibt LCP-tauglich sichtbar. Der Hub bleibt
+     unter der Luft zum Paneelrand, damit das Gerät auch im Startbild der
+     Animation nicht angeschnitten ist. */
+  .hh-phone-wrap { --hh-rise: 18px; }
   .h-motion .hh-phone-wrap { animation: hh-rise 1.4s var(--h-ease) 0.1s both; }
-  .h-motion .hh-card { animation: hh-card-in 1.2s var(--h-ease) 0.45s both; }
-  @keyframes hh-card-in { from { transform: translateY(28px) rotate(-3deg); opacity: 0; } }
   @keyframes hh-rise { from { transform: translateY(var(--hh-rise)); } }
   @media (min-width: 1024px) {
-    .hh-phone-wrap { --hh-rise: 32px; }
+    .hh-phone-wrap { --hh-rise: 24px; }
   }
 </style>
+
+<script>
+  // Schein-Wähler: Tabs nach WAI-ARIA (Pfeiltasten, Pos1/Ende, automatische
+  // Aktivierung). Schaltet Screenshot, Faktenzeile und Foto-Szene um.
+  const root = document.querySelector<HTMLElement>('[data-hero-picker]');
+  if (root) {
+    const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>('.hh-chip'));
+    const stage = root.querySelector<HTMLElement>('.hh-stage');
+    const shots = Array.from(root.querySelectorAll<HTMLElement>('.hh-shot'));
+    const facts = Array.from(root.querySelectorAll<HTMLElement>('.hh-fact'));
+    const photos = Array.from(root.querySelectorAll<HTMLElement>('.hh-photo'));
+
+    const select = (tab: HTMLButtonElement, focus = false) => {
+      const key = tab.dataset.license;
+      const scene = tab.dataset.scene;
+      tabs.forEach((t) => {
+        const on = t === tab;
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+      });
+      stage?.setAttribute('aria-labelledby', tab.id);
+      shots.forEach((s) => {
+        const on = s.dataset.license === key;
+        s.classList.toggle('is-active', on);
+        if (on) s.removeAttribute('aria-hidden');
+        else s.setAttribute('aria-hidden', 'true');
+      });
+      facts.forEach((f) => { f.hidden = f.dataset.license !== key; });
+      photos.forEach((p) => p.classList.toggle('is-active', p.dataset.scene === scene));
+      if (focus) {
+        tab.focus();
+        tab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      }
+    };
+
+    tabs.forEach((tab, i) => {
+      tab.addEventListener('click', () => select(tab));
+      tab.addEventListener('keydown', (e) => {
+        let next = -1;
+        if (e.key === 'ArrowRight') next = (i + 1) % tabs.length;
+        else if (e.key === 'ArrowLeft') next = (i - 1 + tabs.length) % tabs.length;
+        else if (e.key === 'Home') next = 0;
+        else if (e.key === 'End') next = tabs.length - 1;
+        if (next < 0) return;
+        e.preventDefault();
+        select(tabs[next], true);
+      });
+    });
+  }
+</script>
