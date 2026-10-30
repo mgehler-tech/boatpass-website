@@ -291,8 +291,12 @@ export const de = {
     // Haupt-CTA je Gerät (StoreCta): Android, iPhone/iPad, sonst hero.cta.
     ctaPlay: 'Kostenlos bei Google Play',
     phoneAlt: 'Boatpass App – Startbildschirm mit Lizenz, Fortschritt, Streak und Lernmodi',
-    // Dekorative Zielkarte im Hero (aria-hidden), bewusst kein amtliches Layout.
-    heroCard: { title: 'Sportbootführerschein', sub: 'Binnen · Motor und Segel', passed: 'Bestanden' },
+    // Schein-Wähler im Hero: Chips wechseln Screenshot, Foto und Faktenzeile.
+    heroPickerLabel: 'Lizenz wählen',
+    heroPhoneAlt: 'Boatpass App – Startbildschirm für {license} mit Fortschritt, Streak und Lernmodi',
+    heroQuestions: 'Fragen',
+    // Kurz, damit die Faktenzeile einzeilig bleibt (Reihenfolge wie hero.licenses).
+    heroNotes: ['Motor und Segel', 'inkl. 15 Navigationsaufgaben', 'Binnenfunk mit ATIS', 'Seefunk mit DSC-Notruf', 'Satelliten- und Seenotfunk'],
     // Konkrete Funktionen je Etappe – alle auf den jeweiligen Screenshots sichtbar.
     journeyChips: [
       ['Heute lernen', 'Nach Themen lernen', 'Streak & Tagesziel'],

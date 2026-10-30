@@ -110,11 +110,6 @@ function initTilt() {
 
   const rx = gsap.quickTo(phone, 'rotationX', { duration: 0.9, ease: 'power3.out' });
   const ry = gsap.quickTo(phone, 'rotationY', { duration: 0.9, ease: 'power3.out' });
-  // Die Zielkarte liegt näher am Betrachter: Sie verschiebt sich leicht
-  // gegenläufig, das trennt die beiden Ebenen.
-  const card = hero.querySelector<HTMLElement>('[data-tilt-card]');
-  const cx = card ? gsap.quickTo(card, 'x', { duration: 1.1, ease: 'power3.out' }) : null;
-  const cy = card ? gsap.quickTo(card, 'y', { duration: 1.1, ease: 'power3.out' }) : null;
   let frame = 0;
   let px = 0;
   let py = 0;
@@ -129,12 +124,8 @@ function initTilt() {
       frame = requestAnimationFrame(() => {
         frame = 0;
         const r = hero.getBoundingClientRect();
-        const nx = (px - r.left) / r.width - 0.5;
-        const ny = (py - r.top) / r.height - 0.5;
-        ry(nx * 10);
-        rx(-ny * 8);
-        cx?.(-nx * 18);
-        cy?.(-ny * 12);
+        ry(((px - r.left) / r.width - 0.5) * 10);
+        rx(-((py - r.top) / r.height - 0.5) * 8);
       });
     },
     { passive: true },
@@ -144,8 +135,6 @@ function initTilt() {
     frame = 0;
     rx(0);
     ry(0);
-    cx?.(0);
-    cy?.(0);
   };
   hero.addEventListener('pointerleave', reset);
   window.addEventListener('blur', reset);
@@ -209,7 +198,7 @@ function initParallax() {
    (HeroPhoto), damit beim Verschieben kein Rand durchblitzt. */
 function initHeroParallax() {
   const hero = document.querySelector<HTMLElement>('.hh');
-  // Tag- und Dämmerungsbild (HeroPhoto); sichtbar ist immer nur eines.
+  // Alle Szenen (HeroPhoto) wandern gemeinsam; sichtbar ist immer nur eine.
   const photos = hero ? Array.from(hero.querySelectorAll<HTMLElement>('.hh-photo')) : [];
   if (!hero || !photos.length) return;
   gsap.matchMedia().add('(min-width: 1024px)', () => {
