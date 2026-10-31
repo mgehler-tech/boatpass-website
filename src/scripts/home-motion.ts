@@ -194,15 +194,16 @@ function initParallax() {
 
 /* ── Hero: Foto läuft beim Scrollen etwas langsamer als die Seite ───────
    Nur am Desktop (darunter ist das Band kurz und scrollt nativ). Das Gerät
-   bewegt sich nicht mit – es steht „im Wasser". Das Foto hat 12 % Überhang
-   (HeroPhoto), damit beim Verschieben kein Rand durchblitzt. */
+   bewegt sich nicht mit – es steht „im Wasser". Fotos und Videos haben 12 %
+   Überhang (HeroPhoto), damit beim Verschieben kein Rand durchblitzt. */
 function initHeroParallax() {
   const hero = document.querySelector<HTMLElement>('.hh');
-  // Alle Szenen (HeroPhoto) wandern gemeinsam; sichtbar ist immer nur eine.
-  const photos = hero ? Array.from(hero.querySelectorAll<HTMLElement>('.hh-photo')) : [];
-  if (!hero || !photos.length) return;
+  // Die ganze Medienebene (alle Szenen, Fotos wie spätere Videos aus
+  // hero-stage.ts) wandert gemeinsam; sichtbar ist immer nur eine Szene.
+  const media = hero?.querySelector<HTMLElement>('.hh-media');
+  if (!hero || !media) return;
   gsap.matchMedia().add('(min-width: 1024px)', () => {
-    gsap.to(photos, {
+    gsap.to(media, {
       yPercent: -10,
       ease: 'none',
       scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true },

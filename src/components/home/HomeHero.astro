@@ -16,7 +16,13 @@
 // Der Text steht ab dem ersten Paint fertig da (H1 = LCP-Element, CTA sofort
 // nutzbar). Der Auftakt des Handys läuft als CSS-Animation und wartet nicht
 // auf das JS-Bundle; GSAP übernimmt nur das Neigen per Maus.
-import { Image } from 'astro:assets';
+//
+// Richtung „Horizont“ (2026-10-31): Das Paneel ist ein Fenster aufs Wasser.
+// Das Handy steht darin, hebt sich kaum merklich mit der Dünung und spiegelt
+// sich weich im Wasser. Ein Lizenzwechsel öffnet die neue Szene vom Horizont
+// aus, der App-Screen gleitet nach (src/scripts/hero-stage.ts). Je Szene kann
+// ein Video-Loop das Foto ablösen (HeroPhoto.astro).
+import { Image, getImage } from 'astro:assets';
 import StoreCta from './StoreCta.astro';
 import StoreBadges from '../StoreBadges.astro';
 import HeroPhoto from './HeroPhoto.astro';
@@ -72,6 +78,10 @@ const hrefs = lang === 'de'
   ? ['/sbf-binnen/', '/sbf-see/', '/ubi/', '/src/', '/lrc/']
   : ['/en/sbf-inland/', '/en/sbf-coastal/', '/en/ubi/', '/en/src/', '/en/lrc/'];
 const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
+
+// Spiegelung im Wasser: kleines Bild des Startscreens, das Skript tauscht es
+// beim Lizenzwechsel gegen den aktiven Screen.
+const reflectShot = await getImage({ src: licenses[0].shot, width: 300, format: 'webp', quality: 60 });
 ---
 
 <section class="hh" aria-labelledby="hh-title">
@@ -138,6 +148,7 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
           </p>
 
           <div class="hh-phone-pos">
+            <div class="hh-phone-float">
             <div class="hh-phone-wrap">
               <div class="h-phone hh-phone" data-tilt>
                 <div class="h-phone-screen">
@@ -156,6 +167,10 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
                   ))}
                 </div>
               </div>
+            </div>
+            </div>
+            <div class="hh-reflect" aria-hidden="true">
+              <img src={reflectShot.src} alt="" width={reflectShot.attributes.width} height={reflectShot.attributes.height} loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
@@ -429,21 +444,64 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
   .hh-fact[hidden] { display: none; }
 
   /* ── Gerät ── */
+  /* Unter dem Gerät bleiben 6 % Paneelhöhe Wasser für die Spiegelung. */
   .hh-phone-pos {
+    --pw: min(240px, 64cqw, calc((100cqh - 150px - 2cqh) / 2.13));
     position: absolute;
     left: 50%;
-    bottom: 4cqh;
+    bottom: 6cqh;
     transform: translateX(-50%);
   }
   .hh-phone-wrap { perspective: 1400px; }
   .hh-phone {
-    --pw: min(240px, 64cqw, calc((100cqh - 150px) / 2.13));
     transform-style: preserve-3d;
     box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), var(--h-shadow-device);
   }
-  /* Alle Screenshots liegen übereinander, der aktive blendet ein. */
+  /* Alle Screenshots liegen übereinander, der aktive blendet ein. Mit
+     Bewegung übernimmt hero-stage.ts den Wechsel (Gleiten von unten). */
   .hh-shot { opacity: 0; transition: opacity 0.45s var(--h-ease); }
   .hh-shot.is-active { opacity: 1; }
+
+  /* Dünung: Das Gerät hebt sich kaum merklich, erst nach dem Auftakt und
+     nur, solange der Hero im Bild ist. */
+  .h-motion .hh-phone-float { animation: hh-bob 7s ease-in-out 1.5s infinite; }
+  .hh.is-offscreen .hh-phone-float { animation-play-state: paused; }
+  @keyframes hh-bob {
+    /* Nur senkrecht: Schon 0,3° Drehung macht die Schrift im Screen weich. */
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+  }
+
+  /* Spiegelung: das untere Ende des aktiven Screens, gespiegelt, weich und
+     nach unten auslaufend – wie auf ruhigem Wasser. */
+  .hh-reflect {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: var(--pw);
+    height: 6cqh;
+    padding: 0 calc(var(--pw) * 0.032);
+    border-radius: calc(var(--pw) * 0.155) calc(var(--pw) * 0.155) 0 0;
+    background: #0B1024;
+    overflow: hidden;
+    pointer-events: none;
+    opacity: 0.3;
+    filter: blur(3px);
+    -webkit-mask-image: linear-gradient(180deg, #000, transparent 90%);
+    mask-image: linear-gradient(180deg, #000, transparent 90%);
+  }
+  .hh-reflect img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    transform: scaleY(-1);
+    border-radius: calc(var(--pw) * 0.125) calc(var(--pw) * 0.125) 0 0;
+  }
+  html.dark .hh-reflect { opacity: 0.16; }
+  .h-motion .hh-reflect { animation: hh-reflect-in 1.4s var(--h-ease) 0.5s both; }
+  @keyframes hh-reflect-in { from { opacity: 0; } }
 
   @media (min-width: 1024px) {
     .hh-panel {
@@ -454,10 +512,11 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
     }
     .hh-picker { top: 28px; left: 28px; right: 28px; }
     .hh-facts { top: 86px; left: 28px; right: 28px; }
-    .hh-phone { --pw: min(340px, 60cqw, calc((100cqh - 170px) / 2.13)); }
+    .hh-phone-pos { --pw: min(340px, 60cqw, calc((100cqh - 160px - 2cqh) / 2.13)); }
   }
   @media (prefers-reduced-motion: reduce) {
     .hh-panel::after, .hh-chip, .hh-shot { transition: none; }
+    .hh-phone-float, .hh-reflect { animation: none !important; }
   }
 
   /* ── Auftakt (nur mit h-motion, ab dem ersten Paint) ──
@@ -474,32 +533,41 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
 
 <script>
   // Schein-Wähler: Tabs nach WAI-ARIA (Pfeiltasten, Pos1/Ende, automatische
-  // Aktivierung). Schaltet Screenshot, Faktenzeile und Foto-Szene um.
+  // Aktivierung). Schaltet Screenshot, Faktenzeile und Foto-Szene um; die
+  // Übergänge (Horizont-Blende, gleitender Screen, Video) macht hero-stage.ts.
+  import { createHeroStage } from '../../scripts/hero-stage';
+
+  const hero = document.querySelector<HTMLElement>('.hh');
   const root = document.querySelector<HTMLElement>('[data-hero-picker]');
-  if (root) {
+  if (hero && root) {
+    const stage = createHeroStage(hero, root);
     const tabs = Array.from(root.querySelectorAll<HTMLButtonElement>('.hh-chip'));
-    const stage = root.querySelector<HTMLElement>('.hh-stage');
-    const shots = Array.from(root.querySelectorAll<HTMLElement>('.hh-shot'));
+    const panel = root.querySelector<HTMLElement>('.hh-stage');
     const facts = Array.from(root.querySelectorAll<HTMLElement>('.hh-fact'));
-    const photos = Array.from(root.querySelectorAll<HTMLElement>('.hh-photo'));
+    const motion = () =>
+      document.documentElement.classList.contains('h-motion') &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     const select = (tab: HTMLButtonElement, focus = false) => {
-      const key = tab.dataset.license;
-      const scene = tab.dataset.scene;
+      const key = tab.dataset.license ?? '';
       tabs.forEach((t) => {
         const on = t === tab;
         t.setAttribute('aria-selected', String(on));
         t.tabIndex = on ? 0 : -1;
       });
-      stage?.setAttribute('aria-labelledby', tab.id);
-      shots.forEach((s) => {
-        const on = s.dataset.license === key;
-        s.classList.toggle('is-active', on);
-        if (on) s.removeAttribute('aria-hidden');
-        else s.setAttribute('aria-hidden', 'true');
+      panel?.setAttribute('aria-labelledby', tab.id);
+      stage.showShot(key);
+      if (tab.dataset.scene) stage.showScene(tab.dataset.scene);
+      facts.forEach((f) => {
+        const on = f.dataset.license === key;
+        if (on && f.hidden && motion()) {
+          f.animate([{ opacity: 0, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }], {
+            duration: 320,
+            easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          });
+        }
+        f.hidden = !on;
       });
-      facts.forEach((f) => { f.hidden = f.dataset.license !== key; });
-      photos.forEach((p) => p.classList.toggle('is-active', p.dataset.scene === scene));
       if (focus) {
         tab.focus();
         tab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
