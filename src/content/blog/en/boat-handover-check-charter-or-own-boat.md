@@ -48,7 +48,7 @@ With a **charter boat** there is a second layer: existing scratches, dents or br
 
 Before looking at the boat itself, sort out the formalities. It pays not to take anything for granted:
 
-- **Your own license:** Does your license match the boat and the cruising area? Which license applies where is explained in [SBF Validity: Which License Where](/en/blog/sbf-validity-which-license-where/).
+- **Your own license:** Does your license match the boat and the cruising area? For inland waters you usually need the [SBF Inland](/en/sbf-inland/), for coastal and sea waters the [SBF Coastal](/en/sbf-coastal/). Which license applies where is explained in [SBF Validity: Which License Where](/en/blog/sbf-validity-which-license-where/).
 - **Boat papers:** Ask which documents belong to the boat and should be on board. Exactly which are required depends on the area, boat type and ownership. If in doubt, ask the charter company or the responsible authority instead of guessing.
 - **Insurance:** With charter, ask what the company's insurance covers and what deductible applies in case of damage. For your own boat, [Boat Insurance for Sport Boats](/en/blog/boat-insurance-for-sportboats-what-makes-sense/) explains what matters.
 - **Cruising area and restrictions:** Are there areas the company excludes, or rules on weather, night trips and crew?
@@ -77,7 +77,7 @@ This deserves particular care, because in the worst case you will really need it
 - **First aid kit:** Is it complete and accessible? Basics are in [First Aid on Board](/en/blog/first-aid-on-board/).
 - **Signaling devices and tools:** Which signals are on board, and are they still in date? For pyrotechnics see [Pyrotechnic Distress Signals](/en/blog/fkn-pyrotechnic-distress-signals/). Basic tools and a spare parts kit are useful too.
 - **Bailing:** Do the bilge pump or hand pump work, and do you know where they are?
-- **Communication:** Is there a VHF radio or another means of communication on board, and how is it operated? Basics are in [Marine Radio Basics for Beginners](/en/blog/marine-radio-basics-beginners/).
+- **Communication:** Is there a VHF radio or another means of communication on board, and how is it operated? To operate a marine radio you need the matching radio certificate – on inland waters the [UBI](/en/ubi/), at sea the [SRC or LRC](/en/lrc/). Basics are in [Marine Radio Basics for Beginners](/en/blog/marine-radio-basics-beginners/).
 
 If something is missing or damaged, raise it immediately and have it noted in the protocol or replaced. Legal minimum equipment requirements depend on the rules for your cruising area, so if in doubt ask the charter company or the responsible authority.
 
@@ -142,7 +142,7 @@ So you forget nothing, here is the flow in short:
 
 ## Conclusion
 
-A handover check costs a little time but saves stress, money and, in an emergency, safety. If you check papers, equipment and technology systematically, use the briefing actively and take the handover protocol seriously, you start your first trip more relaxed. That holds for a charter boat as much as for your own. The check does not replace a professional survey or a question to the charter company, but it is a solid foundation. If you are still preparing for the exam, you can use the Boatpass app to practice the official ELWIS question catalog in exam mode, so that at your first handover you have not only the boat but also the rules firmly under control.
+A handover check costs a little time but saves stress, money and, in an emergency, safety. If you check papers, equipment and technology systematically, use the briefing actively and take the handover protocol seriously, you start your first trip more relaxed. That holds for a charter boat as much as for your own. The check does not replace a professional survey or a question to the charter company, but it is a solid foundation. If you are still preparing for the exam, you can practice the [SBF Inland exam questions](/en/sbf-inland-exam-questions/) and [SBF Coastal exam questions](/en/sbf-coastal-exam-questions/) with the Boatpass app in exam mode, using the official ELWIS question catalog, so that at your first handover you have not only the boat but also the rules firmly under control.
 
 ## Sources
 
