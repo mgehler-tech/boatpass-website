@@ -48,7 +48,7 @@ Bei einem **Charterboot** kommt eine zweite Ebene dazu: Vorhandene Kratzer, Dell
 
 Bevor du das Boot selbst anschaust, kläre die Formalitäten. Hier ist es sinnvoll, nichts als gegeben hinzunehmen:
 
-- **Dein eigener Führerschein:** Passt dein Schein zum Boot und zum Fahrtgebiet? Welcher Schein wo gilt, erklärt der Beitrag [Sportbootführerschein: Gültigkeit und Geltungsbereich](/blog/sbf-gueltigkeit-welcher-schein-wo/).
+- **Dein eigener Führerschein:** Passt dein Schein zum Boot und zum Fahrtgebiet? Für Binnengewässer brauchst du in der Regel den [SBF Binnen](/sbf-binnen/), für Küsten- und Seegewässer den [SBF See](/sbf-see/). Welcher Schein wo gilt, erklärt der Beitrag [Sportbootführerschein: Gültigkeit und Geltungsbereich](/blog/sbf-gueltigkeit-welcher-schein-wo/).
 - **Bootspapiere:** Lass dir zeigen, welche Unterlagen zum Boot gehören und an Bord sein sollten. Welche genau verlangt werden, hängt von Revier, Bootstyp und Eigentumsverhältnissen ab. Frag im Zweifel beim Vermieter oder der zuständigen Stelle nach, statt zu raten.
 - **Versicherung:** Frag bei Charter, was die Versicherung des Vermieters abdeckt und welche Selbstbeteiligung bei Schäden anfällt. Beim eigenen Boot erfährst du im Beitrag [Bootsversicherung für Sportboote](/blog/bootsversicherung-sportboote-sinnvoll/), worauf es ankommt.
 - **Fahrtgebiet und Einschränkungen:** Gibt es Gebiete, die der Vermieter ausschließt, oder Vorgaben zu Wetter, Nachtfahrt und Besatzung?
@@ -77,7 +77,7 @@ Hier lohnt sich besondere Sorgfalt, denn diese Ausrüstung brauchst du im schlim
 - **Erste-Hilfe-Ausrüstung:** Ist der Verbandkasten vollständig und zugänglich? Hilfreiche Grundlagen findest du im Beitrag [Erste Hilfe an Bord](/blog/erste-hilfe-an-bord/).
 - **Signalmittel und Werkzeug:** Welche Signalmittel sind an Bord, und sind sie noch in Ordnung? Zum Thema Pyrotechnik lohnt der Beitrag [Pyrotechnik an Bord](/blog/fkn-pyrotechnik-seenotsignalmittel/). Ein einfaches Bordwerkzeug und ein Ersatzteilset sind ebenfalls nützlich.
 - **Lenzmöglichkeit:** Funktionieren Bilgenpumpe oder Handpumpe, und weißt du, wo sie sitzt?
-- **Kommunikation:** Ist ein Funkgerät oder ein anderes Kommunikationsmittel an Bord, und wie wird es bedient? Grundlagen dazu im Beitrag [Seefunk und Sprechfunk für Einsteiger](/blog/seefunk-grundlagen-einsteiger/).
+- **Kommunikation:** Ist ein Funkgerät oder ein anderes Kommunikationsmittel an Bord, und wie wird es bedient? Zum Bedienen eines Seefunkgeräts brauchst du das passende Funkzeugnis – auf Binnengewässern das [UBI](/ubi/), auf See das [SRC oder LRC](/lrc/). Grundlagen dazu im Beitrag [Seefunk und Sprechfunk für Einsteiger](/blog/seefunk-grundlagen-einsteiger/).
 
 Wenn etwas fehlt oder beschädigt ist, sprich es sofort an und lass es ins Protokoll aufnehmen oder ersetzen. Bei gesetzlichen Anforderungen an die Mindestausrüstung gilt die jeweils geltende Regelung für dein Fahrtgebiet, im Zweifel fragst du den Vermieter oder die zuständige Stelle.
 
@@ -142,7 +142,7 @@ Damit du nichts vergisst, hier der Ablauf in Kurzform:
 
 ## Fazit
 
-Ein Übernahmecheck kostet ein wenig Zeit, spart aber Stress, Geld und im Ernstfall Sicherheit. Wer Papiere, Ausrüstung und Technik systematisch prüft, die Einweisung aktiv nutzt und das Übergabeprotokoll ernst nimmt, startet entspannter in den ersten Törn. Das gilt für das Charterboot genauso wie für das eigene Boot. Der Check ersetzt keine Fachbegutachtung und keine Rückfrage beim Vermieter, ist aber eine solide Grundlage. Wenn du dich noch auf die Prüfung vorbereitest, kannst du mit der Boatpass-App den offiziellen ELWIS-Fragenkatalog im Prüfungsmodus üben, damit du bei der ersten Übernahme nicht nur das Boot, sondern auch die Regeln sicher im Griff hast.
+Ein Übernahmecheck kostet ein wenig Zeit, spart aber Stress, Geld und im Ernstfall Sicherheit. Wer Papiere, Ausrüstung und Technik systematisch prüft, die Einweisung aktiv nutzt und das Übergabeprotokoll ernst nimmt, startet entspannter in den ersten Törn. Das gilt für das Charterboot genauso wie für das eigene Boot. Der Check ersetzt keine Fachbegutachtung und keine Rückfrage beim Vermieter, ist aber eine solide Grundlage. Wenn du dich noch auf die Prüfung vorbereitest, kannst du die [SBF-Binnen-Prüfungsfragen](/sbf-binnen-pruefungsfragen/) und [SBF-See-Prüfungsfragen](/sbf-see-pruefungsfragen/) mit der Boatpass-App im Prüfungsmodus üben – mit dem offiziellen ELWIS-Fragenkatalog, damit du bei der ersten Übernahme nicht nur das Boot, sondern auch die Regeln sicher im Griff hast.
 
 ## Quellen
 
