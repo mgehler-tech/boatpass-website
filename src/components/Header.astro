@@ -742,11 +742,20 @@ const homeHref = getLocalizedPath(lang, '/');
   .mobile-menu-footer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
     margin-top: 8px;
     padding: 12px 12px 0;
     border-top: 1px solid var(--h-line);
+  }
+  /* Primärer CTA des mobilen Menüs über die volle Breite, Inhalt zentriert –
+     wie jeder prominente CTA auf dem Handy (Hero, CtaBanner, FinderTeaser,
+     Blog-Übersicht). Vorher ließ das justify-content:space-between des Footers
+     den einzigen Button inhaltsbreit links hängen (schwächere Hierarchie der
+     wichtigsten Handlung, kleinere Tap-Fläche). Reiner Layout-Feinschliff,
+     Markenfarben unberührt. */
+  .mobile-cta-btn {
+    flex: 1;
+    justify-content: center;
+    min-height: 48px;
   }
   .mobile-nav-link:focus-visible,
   .mobile-nav-sublink:focus-visible { outline: 3px solid var(--h-blue); outline-offset: -3px; }
