@@ -30,6 +30,8 @@
 - [SBF See](https://boatpass.de/sbf-see/): Vorbereitung auf den Sportbootführerschein See.
 - [SBF Binnen Prüfungsfragen](https://boatpass.de/sbf-binnen-pruefungsfragen/): Amtlicher Fragenkatalog Binnen.
 - [SBF See Prüfungsfragen](https://boatpass.de/sbf-see-pruefungsfragen/): Amtlicher Fragenkatalog See.
+- [SBF Basisfragen](https://boatpass.de/sbf-basisfragen/): Die 72 Basisfragen des amtlichen Katalogs, gemeinsam für SBF Binnen und SBF See.
+- [SBF See Navigationsaufgabe](https://boatpass.de/sbf-see-navigationsaufgaben/): Navigationsaufgabe beim SBF See: 15 Aufgaben, 9 Teilfragen, 7 Punkte zum Bestehen – Kurs, Peilung, Position und Kursumrechnung erklärt.
 - [Führerscheine im Überblick](https://boatpass.de/fuehrerscheine/): Welcher Schein für welches Revier.
 - [UBI Funkzeugnis](https://boatpass.de/ubi/): UKW-Sprechfunkzeugnis Binnenschifffahrt.
 - [SRC Funkzeugnis](https://boatpass.de/src/): Short Range Certificate (Seefunk).
@@ -132,6 +134,9 @@
 - [Wassersport-Reviere in Deutschland – wo darfst du mit dem SBF fahren?](https://boatpass.de/blog/wassersport-reviere-deutschland/): Bodensee, Mecklenburgische Seenplatte, Ostsee oder Rhein: die beliebtesten Wassersport-Reviere Deutschlands und welchen SBF du dort brauchst.
 - [Wellenschlag und Sog: Rücksicht und Haftung auf dem Wasser](https://boatpass.de/blog/wellen-sog-haftung/): Wellenschlag und Sog vom eigenen Boot: Welche Schäden sie anrichten, was die Regeln verlangen und wer haftet. Rücksicht gegenüber anderen Wassernutzern.
 - [Wetterkunde & Beaufort-Skala für den SBF See – einfach erklärt](https://boatpass.de/blog/wetterkunde-beaufort/): Windstärken, Hoch und Tief, Wetterzeichen: die Grundlagen der Wetterkunde für den SBF See. Beaufort-Skala und barisches Windgesetz einfach erklärt.
+- [Boots-Übernahmecheck: Charterboot und eigenes Boot prüfen](https://boatpass.de/blog/boots-uebernahmecheck-charterboot-eigenes-boot/): Boots-Übernahmecheck vor der ersten Fahrt: Papiere, Sicherheitsausrüstung, Technik und Übergabeprotokoll bei Charterboot oder gekauftem Boot im Überblick.
+- [Funkzeugnis LRC: Wann das SRC nicht mehr ausreicht](https://boatpass.de/blog/funkzeugnis-lrc-wann-src-nicht-ausreicht/): Funkschein LRC erklärt: Wann das SRC nicht mehr reicht, was Seegebiete A1 bis A4 bedeuten, wie die LRC-Prüfung abläuft und für wen sich der Aufwand lohnt.
+- [Sportbootführerschein trotz gesundheitlicher Einschränkung](https://boatpass.de/blog/sportbootfuehrerschein-gesundheitliche-einschraenkung-aerztliches-zeugnis/): Ärztliches Zeugnis für den Sportbootführerschein: Auflagen, Hilfsmittel und Einschränkungen – und was du vor der Anmeldung zur Prüfung klären solltest.
 
 ## Über
 
@@ -152,6 +157,8 @@
 - [SBF Coastal (EN)](https://boatpass.de/en/sbf-coastal/): Prep for the SBF Coastal (German coastal-waters boating license).
 - [SBF Inland Exam Questions (EN)](https://boatpass.de/en/sbf-inland-exam-questions/): Official ELWIS question catalog for SBF Inland.
 - [SBF Coastal Exam Questions (EN)](https://boatpass.de/en/sbf-coastal-exam-questions/): Official ELWIS question catalog for SBF Coastal.
+- [SBF Basic Questions (EN)](https://boatpass.de/en/sbf-basic-questions/): The 72 basic questions of the official catalog, shared by SBF Inland and SBF Coastal.
+- [SBF Coastal Navigation Task (EN)](https://boatpass.de/en/sbf-coastal-navigation-tasks/): The SBF Coastal navigation task: 15 tasks, 9 sub-questions, 7 points to pass – course, bearing, position and course conversion explained.
 - [Licenses Overview (EN)](https://boatpass.de/en/licenses/): Which German boating license fits which waters.
 - [UBI Radio Certificate (EN)](https://boatpass.de/en/ubi/): VHF radio certificate for inland navigation.
 - [SRC Radio Certificate (EN)](https://boatpass.de/en/src/): Short Range Certificate (maritime radio).
@@ -244,3 +251,6 @@
 - [Water Skiing and Wakeboarding Behind the Boat: Rules, Observer Duty, and Markings](https://boatpass.de/en/blog/water-skiing-wakeboarding-rules-observer-duty/): Water skiing and wakeboarding behind the boat in Germany: where it's allowed, why an observer on board is mandatory, and what the rules require.
 - [Weather & the Beaufort Scale for the SBF See – Simply Explained](https://boatpass.de/en/blog/weather-beaufort-scale/): Wind forces, highs and lows, weather signs: the weather basics for the German coastal license. Beaufort scale and baric wind law explained simply.
 - [Winterizing a Boat – A Checklist for Winter Storage](https://boatpass.de/en/blog/winterizing-a-boat-checklist-for-winter-storage/): Engine, water system, battery, and hull: how to prepare your boat properly for winter storage and avoid costly frost damage before the next season.
+- [Boat Handover Check: Charter or Own Boat](https://boatpass.de/en/blog/boat-handover-check-charter-or-own-boat/): Boat handover check before your first trip: papers, safety gear, engine and handover protocol for a charter boat or your own boat, explained step by step.
+- [LRC Radio Certificate: When the SRC Is No Longer Enough](https://boatpass.de/en/blog/lrc-radio-certificate-when-src-is-not-enough/): LRC radio certificate explained: when the SRC is not enough, what sea areas A1 to A4 mean, how the LRC exam works and who really needs the extra effort.
+- [German Boating License With a Health Condition](https://boatpass.de/en/blog/boating-license-with-a-health-condition-medical-certificate/): What does the medical certificate for the German boating license really mean? Conditions, aids, limitations and what to clarify before you register.
