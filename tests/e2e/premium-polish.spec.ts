@@ -401,6 +401,20 @@ test.describe('Hero horizon stage', () => {
     await expect(page.locator('.hh')).toHaveClass(/is-offscreen/);
   });
 
+  test('desktop: scrolling out pushes the camera towards the water, the phone stays put', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+    await expect(page.locator('html')).toHaveClass(/h-ready/);
+    await phoneSettled(page);
+    const scale = () => page.locator('.hh-media').evaluate(el => new DOMMatrix(getComputedStyle(el).transform).a);
+    expect(await scale()).toBeCloseTo(1, 2);
+    const phoneBefore = (await page.locator('.hh-phone-pos').evaluate(el => el.getBoundingClientRect().top + window.scrollY));
+    await page.mouse.wheel(0, 400);
+    await expect.poll(scale).toBeGreaterThan(1.02);
+    const phoneAfter = (await page.locator('.hh-phone-pos').evaluate(el => el.getBoundingClientRect().top + window.scrollY));
+    expect(Math.abs(phoneAfter - phoneBefore)).toBeLessThan(1);
+  });
+
   test('reduced motion: no drift, no swell, scenes switch without the horizon wipe', async ({ page }) => {
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await page.setViewportSize({ width: 1440, height: 900 });

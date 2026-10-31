@@ -192,10 +192,14 @@ function initParallax() {
   if (inset) gsap.fromTo(inset, { yPercent: 18 }, { yPercent: -12, ease: 'none', scrollTrigger: { ...st } });
 }
 
-/* ── Hero: Foto läuft beim Scrollen etwas langsamer als die Seite ───────
-   Nur am Desktop (darunter ist das Band kurz und scrollt nativ). Das Gerät
-   bewegt sich nicht mit – es steht „im Wasser". Fotos und Videos haben 12 %
-   Überhang (HeroPhoto), damit beim Verschieben kein Rand durchblitzt. */
+/* ── Hero: Kamerafahrt beim Herausscrollen ───────────────────────────────
+   Nur am Desktop (darunter ist das Band kurz und scrollt nativ). Das Bild
+   läuft etwas langsamer als die Seite und die Kamera fährt dabei leicht aufs
+   Wasser zu (Zoom um den Horizont). Kein zusätzlicher Scrollweg: Die Fahrt
+   passiert, während der Hero ohnehin aus dem Bild scrollt. Das Gerät bewegt
+   sich nicht mit – es steht „im Wasser". Fotos und Videos haben 12 % Überhang
+   (HeroPhoto); der Zoom vergrößert die Fläche zusätzlich, es blitzt also nie
+   ein Rand durch. */
 function initHeroParallax() {
   const hero = document.querySelector<HTMLElement>('.hh');
   // Die ganze Medienebene (alle Szenen, Fotos wie spätere Videos aus
@@ -203,8 +207,10 @@ function initHeroParallax() {
   const media = hero?.querySelector<HTMLElement>('.hh-media');
   if (!hero || !media) return;
   gsap.matchMedia().add('(min-width: 1024px)', () => {
+    gsap.set(media, { transformOrigin: '50% 40%' });
     gsap.to(media, {
       yPercent: -10,
+      scale: 1.1,
       ease: 'none',
       scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true },
     });
