@@ -332,20 +332,100 @@ test.describe('Hero licence picker', () => {
     await expect(tabs.nth(1)).toHaveAttribute('aria-selected', 'true');
     await expect(page.locator('.hh-fact:not([hidden])')).toContainText('420 Fragen');
     await expect(page.locator('.hh-shot.is-active')).toHaveAttribute('data-license', 'see');
-    await expect(page.locator('.hh-photo--day.is-active')).toHaveAttribute('data-scene', 'see');
+    // Während der Horizont-Blende sind kurz beide Szenen aktiv; danach nur See.
+    await expect(page.locator('.hh-photo--day[data-scene="see"]')).toHaveClass(/is-active/);
+    await expect(page.locator('.hh-photo--day.is-active')).toHaveCount(1);
     await expect(page.getByRole('tabpanel')).toHaveAttribute('aria-labelledby', 'hh-tab-see');
     await page.keyboard.press('ArrowRight');
     await expect(tabs.nth(2)).toBeFocused();
     await expect(tabs.nth(2)).toHaveAttribute('aria-selected', 'true');
     await page.keyboard.press('End');
     await expect(tabs.nth(4)).toHaveAttribute('aria-selected', 'true');
-    await expect(page.locator('.hh-photo--day.is-active')).toHaveAttribute('data-scene', 'funk');
+    await expect(page.locator('.hh-photo--day[data-scene="funk"]')).toHaveClass(/is-active/);
+    await expect(page.locator('.hh-photo--day.is-active')).toHaveCount(1);
   });
   test('EN parity', async ({ page }) => {
     await page.goto('/en/');
     await expect(page.getByRole('tablist')).toHaveAttribute('aria-label', 'Choose a licence');
     await page.getByRole('tab', { name: 'SBF Coastal' }).click();
     await expect(page.locator('.hh-fact:not([hidden])')).toContainText('420 questions');
+  });
+});
+
+// Richtung „Horizont“ (2026-10-31): Szenenwechsel als Blende vom Horizont,
+// Handy mit Dünung und Spiegelung, Video-Slots je Szene (noch ohne Clips).
+test.describe('Hero horizon stage', () => {
+  test('switching the scene opens the new photo from the horizon, then only it stays active', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+    await expect(page.locator('html')).toHaveClass(/h-ready/);
+    await page.getByRole('tab', { name: 'SBF See' }).click();
+    const see = page.locator('.hh-photo--day[data-scene="see"]');
+    // Während der Blende liegt die neue Szene über der alten, beschnitten auf ein Band um den Horizont.
+    await expect(see).toHaveClass(/is-entering/);
+    expect(await see.evaluate(el => getComputedStyle(el).clipPath)).toContain('inset');
+    await expect(page.locator('.hh-photo--day[data-scene="binnen"]')).toHaveClass(/is-active/);
+    // Danach: nur noch See aktiv, ohne Beschnitt.
+    await expect(see).not.toHaveClass(/is-entering/);
+    await expect(page.locator('.hh-photo--day.is-active')).toHaveCount(1);
+    expect(await see.evaluate(el => getComputedStyle(el).clipPath)).toBe('none');
+  });
+
+  test('the phone floats with a soft reflection that follows the active screen', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+    await expect(page.locator('html')).toHaveClass(/h-ready/);
+    const reflect = page.locator('.hh-reflect');
+    await expect(reflect).toHaveAttribute('aria-hidden', 'true');
+    await expect(reflect.locator('img')).toHaveAttribute('alt', '');
+    await phoneSettled(page);
+    // Unter dem Gerät, im Paneel, kein Text-Ersatz für den Screenshot.
+    const phone = (await page.locator('.hh-phone').boundingBox())!;
+    const box = (await reflect.boundingBox())!;
+    const panel = (await page.locator('.hh-panel').boundingBox())!;
+    expect(box.y).toBeGreaterThanOrEqual(phone.y + phone.height - 8);
+    expect(box.y + box.height).toBeLessThanOrEqual(panel.y + panel.height + 1);
+    expect(await page.locator('.hh-phone-float').evaluate(el => el.getAnimations().some(a => (a as CSSAnimation).animationName === 'hh-bob'))).toBe(true);
+    await page.getByRole('tab', { name: 'SRC' }).click();
+    await expect.poll(() => reflect.locator('img').evaluate(el => (el as HTMLImageElement).src)).toContain('src.de');
+  });
+
+  test('ships no video until clips exist, and the stage rests when the hero leaves the screen', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+    await expect(page.locator('html')).toHaveClass(/h-ready/);
+    await expect(page.locator('.hh-video')).toHaveCount(0);
+    await expect(page.locator('.hh-photo[data-video-tall], .hh-photo[data-video-wide]')).toHaveCount(0);
+    await expect(page.locator('.hh')).not.toHaveClass(/is-offscreen/);
+    await page.evaluate(() => window.scrollTo(0, 3000));
+    await expect(page.locator('.hh')).toHaveClass(/is-offscreen/);
+  });
+
+  test('desktop: scrolling out pushes the camera towards the water, the phone stays put', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+    await expect(page.locator('html')).toHaveClass(/h-ready/);
+    await phoneSettled(page);
+    const scale = () => page.locator('.hh-media').evaluate(el => new DOMMatrix(getComputedStyle(el).transform).a);
+    expect(await scale()).toBeCloseTo(1, 2);
+    const phoneBefore = (await page.locator('.hh-phone-pos').evaluate(el => el.getBoundingClientRect().top + window.scrollY));
+    await page.mouse.wheel(0, 400);
+    await expect.poll(scale).toBeGreaterThan(1.02);
+    const phoneAfter = (await page.locator('.hh-phone-pos').evaluate(el => el.getBoundingClientRect().top + window.scrollY));
+    expect(Math.abs(phoneAfter - phoneBefore)).toBeLessThan(1);
+  });
+
+  test('reduced motion: no drift, no swell, scenes switch without the horizon wipe', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+    expect(await page.evaluate(() => document.getAnimations().map(a => (a as CSSAnimation).animationName).filter(n => ['hh-drift', 'hh-bob'].includes(n)))).toEqual([]);
+    await page.getByRole('tab', { name: 'SBF See' }).click();
+    const see = page.locator('.hh-photo--day[data-scene="see"]');
+    await expect(see).toHaveClass(/is-active/);
+    await expect(see).not.toHaveClass(/is-entering/);
+    await expect(page.locator('.hh-photo--day.is-active')).toHaveCount(1);
+    await expect(page.locator('.hh-shot.is-active')).toHaveAttribute('data-license', 'see');
   });
 });
 

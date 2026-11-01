@@ -9,7 +9,9 @@
      Inter. Keine Monospace-Schrift, keine nummerierten Abschnittsköpfe.
    • Eine Akzentfarbe (BoatPass-Blau). Rot/Grün nur für falsch/richtig,
      Bernstein nur für die Merkhilfe – wie in der App.
-   • Nichts bewegt sich von selbst in Dauerschleife.
+   • Nichts bewegt sich von selbst in Dauerschleife – mit einer Ausnahme:
+     Die Hero-Bühne (Wasser, Dünung, später Video) läuft ruhig weiter,
+     pausiert außerhalb des Bildschirms und steht bei reduzierter Bewegung.
    Alle Klassen tragen das Präfix h- (bzw. hh-, hj-, … je Abschnitt).
    Tokens liegen seit 2026-10-17 in brand.css (seitenweit); hier bleiben
    Layout, Bausteine und die Archivo-Einbindung der Startseite.
