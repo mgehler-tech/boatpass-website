@@ -3,8 +3,9 @@ title: "How Long Does It Take to Prepare for the SBF Exam?"
 seoTitle: "How Long to Prepare for the SBF Exam?"
 description: "Realistic preparation timelines for the German boating license – with weekly plans for different learning types and the topics that take longest."
 date: 2026-05-06
+updated: 2026-11-02
 tags: ["Preparation"]
-readingTime: 6
+readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "sbf-vorbereitung-wie-lange"
@@ -17,6 +18,8 @@ faq:
     answer: "Studying a little every day is more effective. The brain consolidates new knowledge primarily during sleep – 30 minutes daily over 30 days produces better retention than the same total study time packed into a few long weekend sessions."
   - question: "When should I book my SBF exam slot?"
     answer: "It's best to book your exam date once you've covered roughly 60–70% of the material. A concrete deadline keeps you motivated and stops you from endlessly postponing. DMYV exam slots often fill up 4–8 weeks in advance, especially in spring."
+  - question: "Should I wait to start studying until the SBF reform takes effect?"
+    answer: "No. The exam content and the ELWIS question catalog remain the basis, and licenses already issued keep their unlimited validity. There is still no binding start date for the planned association licenses. Starting now does not cost you any time."
 howTo:
   name: "SBF exam prep in 5 weeks: the study plan for average learners"
   description: "How to realistically spread SBF exam preparation across 5 weeks with no prior knowledge and 30 minutes of study time daily."
@@ -40,6 +43,12 @@ One of the most common questions before starting SBF prep: how long do I actuall
 This applies to **SBF Inland (Binnen) for motor vessels** – the most common license. Studying 30–45 minutes daily, most candidates are exam-ready in 3–6 weeks. Fast learners with technical background can be ready in 2–3 weeks; casual learners may need 6–8 weeks.
 
 > Note: This is for **theory only**. The practical exam (driving a boat on the water) requires separate on-water practice sessions – no app can substitute for that.
+
+## What to expect in the theory exam
+
+The scope of the exam determines how much you need to learn. The SBF Inland paper has **30 multiple-choice questions**: 7 base questions and 23 inland-specific questions, drawn from the official ELWIS question catalog. The catalog is public, so there are no surprises. Anyone who works through it systematically will have seen every possible question.
+
+Useful for planning: if you take the license for **motor only**, the sailing questions in the catalog do not apply. That saves noticeable study time. For the full exam procedure, see [how the SBF exam works](/en/sbf-exam/). You can practice every question in the [SBF Inland exam questions](/en/sbf-inland-exam-questions/).
 
 ## Study plans by learning type
 
@@ -95,11 +104,19 @@ The brain consolidates new information primarily **during sleep**. Someone who s
 
 **Concretely:** 30 minutes daily × 30 days = 15 hours of study. Spread across 5 weekends at 3 hours each = also 15 hours – but with significantly lower retention.
 
+## The 2026 reform: no reason to wait
+
+Beginners often ask whether they should hold off because of the planned switch to association licenses. As things stand, no: there is still no binding start date, the exam content stays the same, and a license you have already earned keeps its unlimited validity. The details are covered in our article on the [2026 SBF reform](/en/blog/recreational-boating-license-reform-2026/). Your study time is well invested either way.
+
 ## When to book your exam slot
 
-Book your exam date **before** you finish your study plan. A concrete deadline motivates and prevents endless postponement. DMYV exam slots fill up 4–8 weeks in advance – especially in spring.
+Book your exam date **before** you finish your study plan. A concrete deadline motivates and prevents endless postponement. DMYV exam slots fill up 4–8 weeks in advance – especially in spring. How registration works is explained in [how to register for the SBF exam](/en/blog/how-to-register-sbf-exam/).
 
 **Recommendation:** Register when you've covered roughly 60–70% of the material. The exam date will motivate you to complete the rest.
+
+## The final week: closing out safely
+
+At the end of your study phase, focus beats volume. Take one full 30-question mock exam each day and mark every wrong answer. Repeat exactly those questions the next day. Typical stumbling blocks are covered in [the hardest SBF exam questions](/en/blog/hardest-sbf-exam-questions/), and general strategies in [5 tips to pass the SBF](/en/blog/5-tips-pass-sbf/). If you feel confident in mock exams several days in a row, you are ready.
 
 ## Summary
 

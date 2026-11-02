@@ -2,8 +2,9 @@
 title: "Wie lange dauert die Vorbereitung auf den SBF?"
 description: "Realistische Zeitplanung für den Sportbootführerschein: konkrete Wochenpläne für verschiedene Lerntypen und die Kategorien, die am meisten Zeit kosten."
 date: 2026-05-06
+updated: 2026-11-02
 tags: ["Vorbereitung"]
-readingTime: 6
+readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "sbf-preparation-how-long"
@@ -16,6 +17,8 @@ faq:
     answer: "Täglich kurz zu lernen ist effektiver. Das Gehirn konsolidiert neues Wissen vor allem im Schlaf – 30 Minuten täglich über 30 Tage bringen mehr Behaltenseffekt als dieselbe Gesamtzeit an wenigen langen Wochenend-Einheiten."
   - question: "Wann sollte ich die SBF-Prüfung anmelden?"
     answer: "Am besten buchst du den Prüfungstermin, wenn du etwa 60–70 % des Stoffs beherrschst. Eine konkrete Deadline motiviert und verhindert das endlose Verschieben. Prüfungstermine beim DMYV sind oft 4–8 Wochen im Voraus ausgebucht, besonders im Frühjahr."
+  - question: "Muss ich mit dem Lernen warten, bis die SBF-Reform in Kraft tritt?"
+    answer: "Nein. Die Prüfungsinhalte und der ELWIS-Fragenkatalog bleiben die Grundlage, und bereits ausgestellte Scheine behalten ihre unbefristete Gültigkeit. Ein verbindlicher Starttermin für die geplanten Verbandsscheine steht noch nicht fest. Wer jetzt lernt, verliert also keine Zeit."
 howTo:
   name: "SBF-Vorbereitung in 5 Wochen: der Lernplan für Normallerner"
   description: "So verteilst du den Lernstoff für den Sportbootführerschein realistisch auf 5 Wochen, ohne Vorwissen und mit 30 Minuten Lernzeit täglich."
@@ -39,6 +42,12 @@ Eine der häufigsten Fragen vor dem SBF: Wie lange muss ich eigentlich lernen? D
 Das gilt für den **SBF Binnen mit Antriebsmaschine** (der häufigste Führerschein). Wer täglich 30–45 Minuten lernt, ist realistisch in 3–6 Wochen prüfungsbereit. Schnelle Lerner mit technischem Vorwissen schaffen es in 2–3 Wochen, Gelegenheitslerner brauchen 6–8 Wochen.
 
 > Wichtig: Das gilt nur für die **Theorie**. Die praktische Prüfung (Fahren auf dem Wasser) erfordert separate Übungseinheiten auf einem Boot – das ist nicht durch App-Lernen ersetzbar.
+
+## Was dich in der Theorieprüfung erwartet
+
+Der Umfang bestimmt, wie viel du lernen musst. Der Bogen für den SBF Binnen besteht aus **30 Multiple-Choice-Fragen**: 7 Basisfragen und 23 binnenspezifische Fragen, gezogen aus dem offiziellen ELWIS-Fragenkatalog. Der Katalog ist öffentlich, es gibt also keine Überraschungen. Wer ihn systematisch durcharbeitet, kennt am Ende jede mögliche Frage.
+
+Wichtig für die Planung: Legst du den Schein nur **unter Motor** ab, entfallen die Segelfragen des Katalogs. Das spart spürbar Lernzeit. Wie die Prüfung insgesamt abläuft, steht auf der Seite zum [Ablauf der SBF-Prüfung](/sbf-pruefung-ablauf/). Alle Fragen zum Üben findest du bei den [SBF-Binnen-Prüfungsfragen](/sbf-binnen-pruefungsfragen/).
 
 ## Lernpläne nach Lerntyp
 
@@ -96,11 +105,19 @@ Das Gehirn konsolidiert neues Wissen vor allem **im Schlaf**. Wer vier Stunden a
 
 **Konkret:** 30 Minuten täglich × 30 Tage = 15 Stunden Lernzeit. Das ist realistisch für den SBF Binnen. Verteilt auf 5 Wochenenden mit je 3 Stunden = ebenfalls 15 Stunden – aber mit erheblich weniger Behaltenseffekt.
 
+## Die Reform 2026: kein Grund zu warten
+
+Immer wieder fragen Einsteiger, ob sie wegen der geplanten Umstellung auf Verbandsscheine lieber abwarten sollten. Nach aktuellem Stand nicht: Ein verbindlicher Starttermin steht noch nicht fest, die Prüfungsinhalte bleiben gleich, und ein bereits erworbener Schein behält seine unbefristete Gültigkeit. Die Details erklärt der Beitrag zur [SBF-Reform 2026](/blog/sportbootfuehrerschein-reform-2026/). Deine Lernzeit ist also in jedem Fall gut investiert.
+
 ## Der richtige Zeitpunkt für die Prüfungsanmeldung
 
-Buche den Prüfungstermin **vor** dem Ende deiner Lernphase. Eine konkrete Deadline motiviert und verhindert das endlose Verschieben. Prüfungstermine beim DMYV sind oft 4–8 Wochen im Voraus ausgebucht – besonders im Frühjahr.
+Buche den Prüfungstermin **vor** dem Ende deiner Lernphase. Eine konkrete Deadline motiviert und verhindert das endlose Verschieben. Prüfungstermine beim DMYV sind oft 4–8 Wochen im Voraus ausgebucht – besonders im Frühjahr. Wie die Anmeldung konkret funktioniert, erklärt unser Beitrag [SBF-Prüfung anmelden](/blog/sbf-pruefung-anmelden/).
 
 **Empfehlung:** Melde dich an, wenn du ungefähr 60–70% des Stoffs beherrschst. Der Prüfungstermin gibt dir dann die nötige Motivation, die restlichen 30–40% zu lernen.
+
+## Die letzte Woche: so schließt du sicher ab
+
+Zum Ende der Lernphase zählt gezieltes Vorgehen statt Masse. Mache täglich eine vollständige Probeprüfung mit 30 Fragen und markiere jede falsche Antwort. Wiederhole genau diese Fragen am nächsten Tag. Typische Stolpersteine zeigt der Beitrag zu den [schwierigsten SBF-Prüfungsfragen](/blog/schwierigste-sbf-pruefungsfragen/), allgemeine Strategien findest du in den [5 Tipps zum Bestehen](/blog/5-tipps-sbf-bestehen/). Fühlst du dich in den Probeprüfungen mehrere Tage in Folge sicher, bist du bereit.
 
 ## Fazit
 
