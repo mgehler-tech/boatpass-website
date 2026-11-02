@@ -85,3 +85,32 @@ test.describe('Mobile Navigation → SBF See → App Store CTA', () => {
     await expect(page.locator('main a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
   });
 });
+
+test.describe('Mobile License Finder → Recommendation → App Store CTA', () => {
+  test.use({ ...iPhone13 });
+
+  test('configurator on a phone yields a recommendation whose store CTA is the App Store', async ({ page }) => {
+    await page.goto('/tools/welcher-bootsfuehrerschein/');
+
+    await page.locator('.cfg-opt', { hasText: 'Küste (Nord- & Ostsee)' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Verbrenner über 15 PS' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Ja' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Küstennah' }).click();
+
+    const result = page.locator('#cfg-result');
+    await expect(result).toBeVisible();
+
+    const recommendationLinks = result.locator('a.res-card');
+    await expect(recommendationLinks).toHaveCount(2);
+
+    // The result is rendered after load; on an iPhone its store CTA must be
+    // the App Store, never the desktop chooser or Google Play.
+    await expect(result.locator(`a[href="${APP_STORE_URL}"]`)).toHaveCount(1);
+    await expect(result.locator('a[href="/app/"]')).toHaveCount(0);
+    await expect(result.locator('a[href*="play.google.com"]:not([data-store])')).toHaveCount(0);
+
+    const firstHref = await recommendationLinks.first().getAttribute('href');
+    await recommendationLinks.first().click();
+    await expect(page).toHaveURL(new RegExp(`${firstHref}$`));
+  });
+});
