@@ -36,7 +36,7 @@ Once you keep these pieces apart, it becomes clear why the answer to "Does my bo
 
 ## Inland waterways: marking small craft
 
-On federal inland waterways (for example the Moselle, Danube, Elbe and Main), the **KlFzKV-BinSch**, the German regulation on marking small craft on inland waterways, requires small craft to carry an **official or officially recognized registration number**. Small craft are essentially watercraft with a hull length under 20 meters.
+On federal inland waterways (for example the Moselle, Danube and Main), the **KlFzKV-BinSch**, the German regulation on marking small craft on inland waterways, requires small craft to carry an **official or officially recognized registration number**. Small craft are essentially watercraft with a hull length under 20 meters.
 
 According to the authorities, the duty applies in principle to watercraft of all kinds. There are **exceptions**, however. Those mentioned include:
 

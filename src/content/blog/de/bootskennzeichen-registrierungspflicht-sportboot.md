@@ -36,7 +36,7 @@ Wer diese Bausteine auseinanderhält, versteht schnell, warum die Antwort auf �
 
 ## Binnenschifffahrtsstraßen: Kennzeichnung der Kleinfahrzeuge
 
-Auf den Binnenschifffahrtsstraßen des Bundes (zum Beispiel Mosel, Donau, Elbe und Main) regelt die **Kleinfahrzeug-Kennzeichnungsverordnung für Binnenschifffahrtsstraßen** (KlFzKV-BinSch), dass Kleinfahrzeuge ein **amtliches oder amtlich anerkanntes Kennzeichen** führen müssen. Kleinfahrzeuge sind im Kern Wasserfahrzeuge mit einer Rumpflänge unter 20 Metern.
+Auf den Binnenschifffahrtsstraßen des Bundes (zum Beispiel Mosel, Donau und Main) regelt die **Kleinfahrzeug-Kennzeichnungsverordnung für Binnenschifffahrtsstraßen** (KlFzKV-BinSch), dass Kleinfahrzeuge ein **amtliches oder amtlich anerkanntes Kennzeichen** führen müssen. Kleinfahrzeuge sind im Kern Wasserfahrzeuge mit einer Rumpflänge unter 20 Metern.
 
 Nach den Angaben der Behörden gilt die Pflicht grundsätzlich für Wasserfahrzeuge aller Art. Es gibt aber **Ausnahmen**. Genannt werden unter anderem:
 
