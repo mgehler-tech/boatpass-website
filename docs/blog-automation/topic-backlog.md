@@ -55,10 +55,14 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Boots-Übernahmecheck vor der ersten Fahrt – Charterboot oder eigenes Boot sicher prüfen (2026-10-17: boots-uebernahmecheck-charterboot-eigenes-boot / boat-handover-check-charter-or-own-boat)
 - [x] Sportbootführerschein trotz gesundheitlicher Einschränkung – was das ärztliche Zeugnis wirklich bedeutet (2026-10-20: sportbootfuehrerschein-gesundheitliche-einschraenkung-aerztliches-zeugnis / boating-license-with-a-health-condition-medical-certificate)
 - [x] Funkzeugnis LRC (Long Range Certificate) – wann reicht das SRC nicht mehr aus? (2026-10-28: funkzeugnis-lrc-wann-src-nicht-ausreicht / lrc-radio-certificate-when-src-is-not-enough; GSC: Query "funkschein lrc", 20 Impr./Pos. 73, unbesetzt – Ergänzung zu ubi-vs-src-funkschein)
-- [ ] Bootskennzeichen und Registrierungspflicht – wann muss mein Sportboot amtlich gekennzeichnet werden? (GSC: Query "boat registration", 10 Impr./Pos. 53, unbesetzt – bislang keine Inhalte zu Kennzeichnungspflicht/Registrierung)
+- [x] Bootskennzeichen und Registrierungspflicht – wann muss mein Sportboot amtlich gekennzeichnet werden? (2026-11-03: bootskennzeichen-registrierungspflicht-sportboot / boat-registration-and-identification-requirements-germany; GSC: Query "boat registration", 10 Impr./Pos. 53, unbesetzt – bislang keine Inhalte zu Kennzeichnungspflicht/Registrierung)
 - [ ] Die ersten eigenen Fahrten nach dem SBF – typische Anfängerfehler in der Bootspraxis vermeiden (Themen-Lücke: Bootspraxis für Einsteiger nach Scheinerwerb, ergänzt Boots-Übernahmecheck und Prüfungsvorbereitung-Themen)
 - [ ] Sprechfunk-Verkehr in der Praxis – Beispieldialoge für Anruf, Antwort und Verbindungsabbau (Themen-Lücke: praktische Funkdisziplin/Phraseologie, ergänzt das offene Thema "Seefunk und Sprechfunk – Grundlagen")
 - [ ] Rettungsinsel, Rettungsmittel und Sicherheitsausrüstung – was gehört auf ein Sportboot? (Themen-Lücke: Ausrüstungs-Überblick jenseits von Rettungsweste und Pyrotechnik)
 - [ ] Ruderlage, Drehkreis und Bremsweg – wie Boote auf Manöver reagieren (Themen-Lücke: Manövriereigenschaften, ergänzt Anlegen/Ablegen und Mann-über-Bord)
+- [ ] Hund und Kinder an Bord – Sicherheit, Rettungswesten und Verhalten auf dem Boot (Themen-Lücke: Familien- und Haustier-Sicherheit, ergänzt Rettungsweste und Kinder am Steuer)
+- [ ] Tanken und Kraftstoffverbrauch planen – Reichweite, Reserve und Sicherheit beim Bunkern (Themen-Lücke: Törnplanung Kraftstoff, ergänzt Außenborder-Basiswartung)
+- [ ] Festmacherleinen, Fender und Leinenführung – richtig vertäuen im Hafen (Themen-Lücke: Ausrüstung und Technik, ergänzt Anlegen/Ablegen und Knoten)
+- [ ] Segeln für Einsteiger – Segelstellungen, Kurse zum Wind und Wende/Halse verständlich erklärt (Themen-Lücke: Segelpraxis, ergänzt Motorboot oder Segelboot)
 
 ## Erledigt
