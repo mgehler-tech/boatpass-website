@@ -10,11 +10,11 @@ author: "Marius Gehler"
 altSlug: "bootskennzeichen-registrierungspflicht-sportboot"
 faq:
   - question: "Does my recreational boat need an official registration number?"
-    answer: "On federal inland waterways, small craft generally have to carry an official or officially recognized registration number. There are exceptions, for example for very small motorboats and boats without an engine. Sea waterways follow different rules. If in doubt, check the current regulation or ask the responsible waterways and shipping office."
+    answer: "On federal inland waterways, small craft generally have to carry an official or officially recognized registration number. There are exceptions, for example for muscle-powered boats, tenders, small pure sailboats and very small motorboats. Sea waterways follow different requirements. If in doubt, check the current regulation or ask the responsible waterways and shipping office."
   - question: "Who issues the boat registration number?"
     answer: "Official numbers are issued by the Wasserstraßen- und Schifffahrtsämter (waterways and shipping offices). Officially recognized numbers are issued by recognized associations, which according to the authorities include the DSV, the DMYV and the ADAC."
   - question: "Is the flag certificate mandatory?"
-    answer: "According to the authorities, the BSH flag certificate is voluntary for recreational boats at sea. It serves as proof that you may fly the German federal flag and can be useful abroad."
+    answer: "The BSH issues a flag certificate for recreational boats up to 15 m hull length as proof of the right to fly the German federal flag. Whether you need it depends on your cruising area and destination country. It is often requested abroad, so clarify this before your trip."
   - question: "Does the registration number replace boat insurance?"
     answer: "No. The number identifies the vessel, while insurance covers liability and damage. They are two separate topics."
 ---
@@ -28,24 +28,26 @@ One caveat up front: these rules sit in regulations that can change, and some fe
 On the road everything is standardized: registration office, vehicle papers, license plate. On the water it works differently. There is no central register that lists every recreational boat. Instead, several instruments exist side by side:
 
 - the **registration number for small craft** on inland waterways
-- the **boat name and home port**, which have to be displayed on the boat
-- the voluntary **flag certificate** for sea-going vessels
+- **boat name and home port**, which are usually displayed on the stern
+- the BSH **flag certificate** as proof of the right to fly the federal flag
 - **insurance and proof of ownership**, which play a separate legal role
 
 Once you keep these pieces apart, it becomes clear why the answer to "Does my boat need to be registered?" always starts with "It depends".
 
 ## Inland waterways: marking small craft
 
-On federal inland waterways (for example the Rhine, Moselle, Danube and other federal waterways covered by the inland waterway traffic rules), the **KlFzKV-BinSch**, the German regulation on marking small craft on inland waterways, requires small craft to carry an **official or officially recognized registration number**. Small craft are essentially boats under 20 meters in length.
+On federal inland waterways (for example the Moselle, Danube, Elbe and Main), the **KlFzKV-BinSch**, the German regulation on marking small craft on inland waterways, requires small craft to carry an **official or officially recognized registration number**. Small craft are essentially watercraft with a hull length under 20 meters.
 
 According to the authorities, the duty applies in principle to watercraft of all kinds. There are **exceptions**, however. Those mentioned include:
 
-- **very small motorboats** with an engine output of up to about 2.21 kW (3 hp)
-- **rowing boats and boats without an engine**, such as tenders and similar craft
-- vehicles of authorities and rescue services with their own official marking
-- passenger vessels that are not small craft in the sense of the regulation
+- **muscle-powered boats** such as rowing boats and paddle boats
+- **tenders**
+- **pure sailboats up to 5.50 meters in length**
+- **motorboats** with an engine output of up to about 2.21 kW (3 hp)
 
-Do not guess whether your boat falls under an exception. For **sailboats**, **inflatables** and **boats with small engines** in particular, it pays to read the current version of the regulation. Some states have also extended the marking duty to **state waterways**, for example for certain waters in Brandenburg. If you boat in several regions, clarify this beforehand.
+Important: a sailboat without an engine is not automatically exempt. To our knowledge, larger sailboats, for example an eight-meter keelboat, are subject to the marking duty. Passenger vessels and ferries are not small craft in the sense of the regulation.
+
+Do not guess whether your boat falls under an exception. For **sailboats**, **inflatables** and **boats with small engines** in particular, it pays to read the current version of the regulation, because length and power limits decide. Some states have also extended the marking duty to **state waterways**, for example for certain waters in Brandenburg. If you boat in several regions, clarify this beforehand.
 
 If you are not sure which license rules apply on inland waterways, our overview of the [SBF Inland](/en/sbf-inland/) helps. Registration number and license are two separate duties.
 
@@ -56,30 +58,25 @@ There are two routes to a number:
 - **Official number:** you apply for it at the responsible **Wasserstraßen- und Schifffahrtsamt** (WSA).
 - **Officially recognized number:** it is issued by **recognized associations**. According to the authorities these include the **DSV**, the **DMYV** and the **ADAC**.
 
-Both variants fulfill the duty. An association usually asks for membership or at least a fee, the office charges an administrative fee. Ask for current costs in advance, as they change.
+Both variants fulfill the duty. Depending on the association, membership or a fee is common; the office charges an administrative fee. Ask for current costs in advance, as they change.
 
 ### How the number is displayed
 
 The number consists of a combination of letters and digits and has to be attached to the hull so that it is **clearly legible**. What matters is that it is not covered, shortened or altered. The exact requirements for size, position and color are set out in the regulation. Do not simply stick a plate anywhere; follow those requirements, otherwise an inspection can become unpleasant. How costly such violations can be is covered in [Fines and Violations on the Water](/en/blog/fines-violations-on-the-water/).
 
-## Sea waterways: different rules
+## Sea waterways: different requirements
 
-On sea waterways (for example coastal waters and estuary areas of the North Sea and Baltic Sea), the marking logic differs from inland waterways. You will hear different statements here, and sources are not always consistent. As a guide:
-
-- According to the Wasser- und Schifffahrtsamt Elbe-Nordsee, mainly **personal watercraft** need an official registration number on sea waterways. For other boats, **boat name and home port** at the stern are sufficient.
-- Other official material points out that vessels operating exclusively on sea waterways may also be subject to number rules.
-
-These differences show one thing above all: clarify the situation for **your specific cruising area** directly with the responsible office. This applies especially if you move between inland and sea areas, for example on the Elbe or in the transition to the Baltic Sea. Which license counts where is explained in [SBF Validity: Which License Where?](/en/blog/sbf-validity-which-license-where/).
+The small craft marking regulation concerns **inland waterways**. On **sea waterways** (for example coastal waters and estuary areas of the North Sea and Baltic Sea), different requirements apply that do not follow the same logic. According to the Wasser- und Schifffahrtsamt Elbe-Nordsee, mainly personal watercraft need an official registration number there. Since we have not verified the legal position on sea waterways against the full text, the advice is: clarify it for **your specific cruising area** before the trip, directly with the responsible Wasserstraßen- und Schifffahrtsamt. This applies especially if you move between inland and sea areas, for example on the Elbe or in the transition to the Baltic Sea. Which license counts where is explained in [SBF Validity: Which License Where?](/en/blog/sbf-validity-which-license-where/).
 
 ## Boat name and home port
 
-Regardless of any number, a sea-going vessel is expected to show its **name** and **home port** on the stern. The home port is the place the boat is assigned to, not necessarily where it is moored. Clear lettering helps during inspections, in emergency calls and on the radio, because rescue coordination can identify your boat more easily. How to call properly in an emergency is covered in [Marine Radio Basics for Beginners](/en/blog/marine-radio-basics-beginners/).
+Independent of any registration number, it is common practice and recommended to display your **boat name** and **home port** clearly on the stern. The home port is the place the boat is assigned to, not necessarily where it is moored. Clear lettering helps during inspections, in emergency calls and on the radio, because rescue coordination can identify your boat more easily. How to call properly in an emergency is covered in [Marine Radio Basics for Beginners](/en/blog/marine-radio-basics-beginners/).
 
-## The flag certificate: voluntary, but useful
+## The BSH flag certificate
 
-According to the authorities, sea-going vessels up to 15 meters hull length need **no state authorization** to fly the **German federal flag**. If you want an official proof, you can apply to the **Federal Maritime and Hydrographic Agency (BSH)** for a **flag certificate**. It costs a fee, is limited in time and can be renewed.
+If you want to fly the **German federal flag** on your recreational boat, you can apply to the **Federal Maritime and Hydrographic Agency (BSH)** for a **flag certificate**. It serves as proof of the right to fly the federal flag and is issued for recreational boats up to 15 meters hull length. It costs a fee, is limited in time and can be renewed. To our knowledge it requires residence or a registered seat in Germany.
 
-Why it can be useful: abroad, the certificate can help you show that your boat is a German vessel. On trips to other countries, harbor authorities sometimes ask for boat papers. For recreational boats the certificate is not mandatory as things stand, but it can shorten discussions. More on cruising abroad in [Is the SBF Valid Abroad?](/en/blog/sbf-valid-abroad/).
+Whether you need it depends on your cruising area and destination country. Abroad, harbor authorities sometimes ask for boat papers, and the certificate can shorten discussions. Before a trip abroad, ask the BSH or the destination country. More on cruising abroad in [Is the SBF Valid Abroad?](/en/blog/sbf-valid-abroad/).
 
 ## What else should be on board
 
@@ -106,14 +103,14 @@ For insurance, see [Boat Insurance for Recreational Boats](/en/blog/boat-insuran
 1. Define your area: inland waterway, sea waterway or both?
 2. Check whether your boat falls under the marking duty or an exception.
 3. Apply for the number at the WSA or a recognized association, if needed.
-4. Display number, boat name and home port clearly.
+4. Display the number clearly, and boat name and home port on the stern.
 5. Keep documents and proofs in order on board.
 6. Check your insurance and keep the proof handy.
 7. When unsure, ask the responsible office or association directly.
 
 ## Conclusion
 
-There is no uniform boat register like the one for cars. On **inland waterways**, small craft generally have to carry an **official or officially recognized registration number**, with exceptions such as very small motorboats and boats without an engine. On **sea waterways**, partly different rules apply, with boat name and home port in the foreground. The **flag certificate** is voluntary but can help abroad. Because requirements change and differ regionally, a call to the office or association before you cast off is time well spent.
+There is no uniform boat register like the one for cars. On **inland waterways**, small craft generally have to carry an **official or officially recognized registration number**, with exceptions such as muscle-powered boats, tenders, small sailboats and very small motorboats. On **sea waterways**, different requirements apply that you should clarify with the office beforehand. The **BSH flag certificate** can help abroad. Because requirements change and differ regionally, a call to the office or association before you cast off is time well spent.
 
 The **Boatpass app** helps you prepare for the exam with the official ELWIS question catalog and an exam mode, so that once you hold the license, the registration number is the only paperwork left to sort out. Start here: [SBF Coastal in the app](/en/sbf-coastal/) or [SBF Inland in the app](/en/sbf-inland/).
 
@@ -121,4 +118,4 @@ The **Boatpass app** helps you prepare for the exam with the official ELWIS ques
 
 - [KlFzKV-BinSch (Gesetze im Internet, German)](https://www.gesetze-im-internet.de/klfzkv-binsch/BJNR022600995.html) – regulation on marking small craft on inland waterways
 - [Wasser- und Schifffahrtsamt Elbe-Nordsee (Hamburg.de, German)](https://www.hamburg.de/service/info/11409366/) – notes on registration numbers and flag certificate
-- [Federal Maritime and Hydrographic Agency (BSH)](https://www.bsh.de/) – flag certificate
+- [Federal portal: flag certificate](https://verwaltung.bund.de/leistungsverzeichnis/en/leistung/LeiKa/580784) – information on the flag certificate
