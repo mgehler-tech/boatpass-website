@@ -44,10 +44,17 @@ const count = groups.reduce((n, g) => n + g.questions.length, 0);
 const path = (l: Lang) => (isBasis ? CATALOGS.basis.hub[l] : topicUrl(catalog, topic!, l));
 const name = meta.name[lang];
 
-// Titel und Beschreibung
+// Titel und Beschreibung. Fokus-Keyword (SBF Binnen / SBF See) steht vorn; mit
+// dem Seitennamen „| Boatpass“ bleiben die Titel möglichst unter 60 Zeichen.
+function topicTitle() {
+  const t = topic!.title[lang];
+  const base = `${name}: ${t}`;
+  const full = de ? `${base} – Prüfungsfragen` : `${base} – exam questions`;
+  return full.length + ' | Boatpass'.length + 0 <= 60 ? full : base;
+}
 const title = isBasis
   ? (de ? `SBF Basisfragen: alle ${count} Fragen mit Antworten` : `SBF basic questions: all ${count} with answers`)
-  : (de ? `${topic!.title.de}: ${count} Prüfungsfragen ${name}` : `${topic!.title.en}: ${count} ${name} exam questions`);
+  : topicTitle();
 const description = isBasis
   ? (de
     ? `Alle ${count} amtlichen Basisfragen für SBF Binnen und SBF See mit richtiger Antwort, nach Themen sortiert. Online selbst testen, Katalogstand ${CATALOG_VALID_FROM.de}.`
