@@ -4,7 +4,7 @@ seoTitle: "Erste Fahrten nach dem SBF: Anfängerfehler"
 description: "Erste Fahrten nach dem Sportbootführerschein: Die typischen Anfängerfehler bei Planung, Manövern und Wetter und wie du sie mit einfachen Gewohnheiten vermeidest."
 date: 2026-11-06
 tags: ["Vorbereitung"]
-readingTime: 8
+readingTime: 7
 lang: de
 author: "Marius Gehler"
 altSlug: "first-trips-after-sbf-beginner-mistakes"

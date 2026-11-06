@@ -3,8 +3,8 @@ title: "First Trips After the SBF: Avoiding Beginner Mistakes"
 seoTitle: "First Trips After the SBF: Beginner Mistakes"
 description: "First trips after your German boating license: the typical beginner mistakes in planning, maneuvers and weather, and how to avoid them with simple habits."
 date: 2026-11-06
-tags: ["Exam Knowledge"]
-readingTime: 8
+tags: ["Preparation"]
+readingTime: 7
 lang: en
 author: "Marius Gehler"
 altSlug: "erste-fahrten-nach-dem-sbf-anfaengerfehler"
@@ -131,7 +131,7 @@ Experience comes from repetition and reflection. These routines help you learn f
 - **Review briefly after each trip:** What went well, what do you want to do differently next time?
 - **Keep a simple logbook** with date, conditions and notable events.
 - **Practice deliberately**, for example repeating one maneuver several times on a calm day.
-- **Learn from others:** Sail along with experienced skippers now and then or attend a safety or maneuvering course.
+- **Learn from others:** Ride along with experienced skippers now and then or attend a safety or maneuvering course.
 - **Refresh your knowledge:** Rules, lights and signals fade faster than you think.
 
 ## Conclusion
