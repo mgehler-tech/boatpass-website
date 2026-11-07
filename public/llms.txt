@@ -137,6 +137,8 @@
 - [Boots-Übernahmecheck: Charterboot und eigenes Boot prüfen](https://boatpass.de/blog/boots-uebernahmecheck-charterboot-eigenes-boot/): Boots-Übernahmecheck vor der ersten Fahrt: Papiere, Sicherheitsausrüstung, Technik und Übergabeprotokoll bei Charterboot oder gekauftem Boot im Überblick.
 - [Funkzeugnis LRC: Wann das SRC nicht mehr ausreicht](https://boatpass.de/blog/funkzeugnis-lrc-wann-src-nicht-ausreicht/): Funkschein LRC erklärt: Wann das SRC nicht mehr reicht, was Seegebiete A1 bis A4 bedeuten, wie die LRC-Prüfung abläuft und für wen sich der Aufwand lohnt.
 - [Sportbootführerschein trotz gesundheitlicher Einschränkung](https://boatpass.de/blog/sportbootfuehrerschein-gesundheitliche-einschraenkung-aerztliches-zeugnis/): Ärztliches Zeugnis für den Sportbootführerschein: Auflagen, Hilfsmittel und Einschränkungen – und was du vor der Anmeldung zur Prüfung klären solltest.
+- [Bootskennzeichen und Registrierungspflicht beim Sportboot](https://boatpass.de/blog/bootskennzeichen-registrierungspflicht-sportboot/): Bootskennzeichen und Registrierung erklärt: Wann Sportboote auf Binnen- und Seeschifffahrtsstraßen amtlich gekennzeichnet sein müssen und wer das Kennzeichen vergibt.
+- [Erste Fahrten nach dem SBF: Anfängerfehler vermeiden](https://boatpass.de/blog/erste-fahrten-nach-dem-sbf-anfaengerfehler/): Erste Fahrten nach dem Sportbootführerschein: Die typischen Anfängerfehler bei Planung, Manövern und Wetter und wie du sie mit einfachen Gewohnheiten vermeidest.
 
 ## Über
 
@@ -254,3 +256,5 @@
 - [Boat Handover Check: Charter or Own Boat](https://boatpass.de/en/blog/boat-handover-check-charter-or-own-boat/): Boat handover check before your first trip: papers, safety gear, engine and handover protocol for a charter boat or your own boat, explained step by step.
 - [LRC Radio Certificate: When the SRC Is No Longer Enough](https://boatpass.de/en/blog/lrc-radio-certificate-when-src-is-not-enough/): LRC radio certificate explained: when the SRC is not enough, what sea areas A1 to A4 mean, how the LRC exam works and who really needs the extra effort.
 - [German Boating License With a Health Condition](https://boatpass.de/en/blog/boating-license-with-a-health-condition-medical-certificate/): What does the medical certificate for the German boating license really mean? Conditions, aids, limitations and what to clarify before you register.
+- [Boat Registration and ID Marking Rules in Germany](https://boatpass.de/en/blog/boat-registration-and-identification-requirements-germany/): Boat registration in Germany explained: when recreational boats need an official registration number on inland and sea waterways, and who issues it.
+- [First Trips After the SBF: Avoiding Beginner Mistakes](https://boatpass.de/en/blog/first-trips-after-sbf-beginner-mistakes/): First trips after your German boating license: the typical beginner mistakes in planning, maneuvers and weather, and how to avoid them with simple habits.
