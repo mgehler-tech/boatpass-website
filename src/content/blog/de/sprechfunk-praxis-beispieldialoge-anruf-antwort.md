@@ -1,7 +1,7 @@
 ---
 title: "Sprechfunk in der Praxis: Beispieldialoge für Anruf und Antwort"
 seoTitle: "Sprechfunk Praxis: Beispieldialoge"
-description: "Sprechfunk in der Praxis: So läuft ein Funkgespräch ab, mit Beispieldialogen für Anruf, Antwort, Kanalwechsel, Verbindungsabbau und den Notruf Schritt für Schritt."
+description: "Sprechfunk in der Praxis: So läuft ein Funkgespräch ab, mit Beispieldialogen für Anruf, Antwort, Kanalwechsel, Verbindungsabbau und Notruf."
 date: 2026-11-10
 tags: ["Prüfungswissen"]
 readingTime: 8
@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "marine-radio-in-practice-example-dialogues"
 faq:
   - question: "Wie ruft man ein anderes Schiff über UKW-Funk an?"
-    answer: "Du nennst zuerst den Namen der gerufenen Station, dann das Wort „hier“ bzw. „this is“, dann deinen eigenen Schiffsnamen und schließt mit „kommen“ bzw. „over“. Nach der Antwort schlägst du einen Arbeitskanal vor, auf den beide wechseln."
+    answer: "Du nennst zuerst den Namen der gerufenen Station, dann das Wort „hier“ bzw. „this is“, dann deinen eigenen Schiffsnamen und schließt mit „kommen“ bzw. „over“. Nach der Antwort schlägt eine der beiden Stationen einen Arbeitskanal vor, auf den beide wechseln."
   - question: "Was bedeutet „over“ und was bedeutet „out“ im Sprechfunk?"
     answer: "„Over“ (deutsch „kommen“) bedeutet: Ich bin fertig mit meiner Meldung, du bist dran. „Out“ (deutsch „Ende“) beendet das Gespräch und bedeutet, dass keine Antwort erwartet wird."
   - question: "Wie läuft ein Notruf im Sprechfunk ab?"
@@ -31,15 +31,15 @@ Funk ist ein Wechselspiel. Auf einem Kanal kann immer nur eine Station senden, w
 - **Taste loslassen**, wenn du fertig bist. Nur dann kann die Gegenstelle antworten.
 - **Kurze Sätze und feste Begriffe** statt langer Erzählungen.
 
-Zu den festen Begriffen gehören sogenannte **Verfahrensworte**. Die wichtigsten sind „over“ (deutsch „kommen“), „out“ (deutsch „Ende“), „say again“ (bitte wiederholen), „roger“ (Verstanden) und „stand by“ (bitte warten). Wichtig ist der Unterschied zwischen „over“ und „out“: **Over** heißt „Ich bin fertig, jetzt bist du dran“. **Out** heißt „Das Gespräch ist beendet, ich erwarte keine Antwort“. Beides zusammen („over and out“) ist deshalb widersprüchlich und gehört nicht ins korrekte Funkverfahren.
+Zu den festen Begriffen gehören sogenannte **Verfahrensworte**. Die wichtigsten sind „over“ (deutsch „kommen“), „out“ (deutsch „Ende“), „say again“ (bitte wiederholen) und „received“ bzw. „understood“ (verstanden). Wichtig ist der Unterschied zwischen „over“ und „out“: **Over** heißt „Ich bin fertig, jetzt bist du dran“. **Out** heißt „Das Gespräch ist beendet, ich erwarte keine Antwort“. Beides zusammen („over and out“) ist deshalb widersprüchlich und gehört nicht ins korrekte Funkverfahren.
 
 ## Schritt 1: Der Anruf
 
-Ein Anruf besteht aus drei Bausteinen: **Wen** rufst du, **wer** bist du, und ein Zeichen zum Antworten. Im internationalen Seefunk läuft das auf Englisch, im Binnenfunk üblicherweise auf Deutsch. Hier ein Beispiel für einen Anruf von Schiff zu Schiff:
+Ein Anruf besteht aus drei Bausteinen: **Wen** rufst du, **wer** bist du, und ein Zeichen zum Antworten. Im internationalen Seefunk läuft das auf Englisch, im Binnenfunk üblicherweise auf Deutsch („hier ist“ statt „this is“). Hier ein Beispiel für einen Anruf von Schiff zu Schiff:
 
 > **Blaue Möwe:** „Seestern, Seestern, Seestern, this is Blaue Möwe, Blaue Möwe, Blaue Möwe, over.“
 
-Das „this is“ (deutsch: „hier ist“) trennt die gerufene Station von der rufenden. Der Name wird zur sicheren Verständigung bei der **ersten Kontaktaufnahme mehrfach** genannt, höchstens dreimal. Ist die Verbindung schon etabliert, reicht der Name einmal oder die Kurzform. Wer sehr gutes Funkwetter hat, kann den Anruf entsprechend kürzen. Im Zweifel gilt: Lieber einmal zu deutlich als einmal zu undeutlich.
+Das „this is“ (deutsch: „hier ist“) trennt die gerufene Station von der rufenden. Der Name wird zur sicheren Verständigung bei der **ersten Kontaktaufnahme mehrfach** genannt, höchstens dreimal. Ist die Verbindung schon etabliert, reicht der Name einmal oder die Kurzform. Im Zweifel gilt: Lieber einmal zu deutlich als einmal zu undeutlich.
 
 Wichtig ist der **Kanal**: Den ersten Anruf setzt du auf dem dafür vorgesehenen **Anrufkanal** ab (im UKW-Seefunk ist das Kanal 16) oder, wenn dein Gerät das kann, per **DSC-Einzelanruf**. Auf Kanal 16 findet dabei kein langes Gespräch statt. Das führt zum nächsten Schritt.
 
@@ -75,7 +75,7 @@ Das Wort **out** beendet das Gespräch. Danach schaltest du das Funkgerät wiede
 
 ## Der Notruf: Der Ablauf, den du sicher können musst
 
-Der wichtigste Funkverkehr überhaupt ist der Notruf. Das Verfahren ist streng aufgebaut, damit auch unter Stress nichts fehlt. Bei einem DSC-fähigen Gerät löst du zuerst den **DSC-Notalarm** aus und setzt danach den **Sprech-Notruf auf Kanal 16** ab. Er folgt dieser Struktur:
+Der wichtigste Funkverkehr überhaupt ist der Notruf. Das Verfahren ist streng aufgebaut, damit auch unter Stress nichts fehlt. Bei einem DSC-fähigen Gerät löst du zuerst den **DSC-Notalarm** aus (er läuft über Kanal 70) und setzt danach den **Sprech-Notruf auf Kanal 16** ab. Er folgt dieser Struktur:
 
 1. **MAYDAY, MAYDAY, MAYDAY** (dreimal)
 2. **THIS IS** und den **Schiffsnamen** (dreimal), dazu Rufzeichen oder MMSI
@@ -89,7 +89,7 @@ Der wichtigste Funkverkehr überhaupt ist der Notruf. Das Verfahren ist streng a
 
 Ein verkürztes Beispiel, so wie es sich in einer Übung anhören könnte:
 
-> „MAYDAY, MAYDAY, MAYDAY. This is Blaue Möwe, Blaue Möwe, Blaue Möwe. MAYDAY Blaue Möwe. Position: 2 nautical miles north of the lighthouse. Taking on water, sinking. Require immediate assistance. Four persons on board. Over.“
+> „MAYDAY, MAYDAY, MAYDAY. This is Blaue Möwe, Blaue Möwe, Blaue Möwe, MMSI (neun Ziffern). MAYDAY Blaue Möwe, MMSI. Position: 2 nautical miles north of the lighthouse. Taking on water, sinking. Require immediate assistance. Four persons on board. Over.“
 
 Bei einem Notruf kommt es nicht auf Eleganz an, sondern auf **Vollständigkeit und Ruhe**. Die wichtigsten Punkte sind, wo du bist, was passiert ist und wie viele Menschen betroffen sind. Dazu gehört auch: Nach dem Absetzen des Notrufs **bleibst du am Funkgerät** und wartest auf die Antwort. Wird dein Notruf nicht bestätigt, wiederholst du ihn. Welche weiteren Signale in einer Notlage sinnvoll sind, erklärt der Artikel [Notsignale auf See](/blog/notsignale-auf-see/).
 

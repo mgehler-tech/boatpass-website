@@ -1,7 +1,7 @@
 ---
 title: "Marine Radio in Practice: Example Dialogues for Calls"
 seoTitle: "Marine Radio Practice: Example Dialogues"
-description: "Marine radio in practice: how a VHF conversation works, with example dialogues for calling, replying, switching channels, ending a call and a MAYDAY, step by step."
+description: "Marine radio in practice: how a VHF conversation works, with example dialogues for calling, replying, switching channels, ending a call and a MAYDAY."
 date: 2026-11-10
 tags: ["Exam Knowledge"]
 readingTime: 8
@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "sprechfunk-praxis-beispieldialoge-anruf-antwort"
 faq:
   - question: "How do you call another vessel on VHF?"
-    answer: "You say the name of the station you are calling, then \"this is\", then your own vessel name, and finish with \"over\". After the reply, you propose a working channel and both stations switch to it."
+    answer: "You say the name of the station you are calling, then \"this is\", then your own vessel name, and finish with \"over\". After the reply, one of the two stations proposes a working channel and both switch to it."
   - question: "What do \"over\" and \"out\" mean in radio procedure?"
     answer: "\"Over\" means: I have finished my message, it is your turn. \"Out\" ends the conversation and means that no reply is expected."
   - question: "How does a MAYDAY call work?"
@@ -19,7 +19,7 @@ faq:
 
 You may already know that channel 16 is the calling and distress channel and what MAYDAY means. The tricky part starts when you sit at the microphone for the first time: What do you say, and in which order? When do you switch channels? How do you end the conversation? This article walks you through a typical radio exchange with **example dialogues** and explains the rules behind it, so that radio procedure is second nature in real life and in the exam.
 
-A quick note up front: the examples follow **VHF marine radio** and its internationally common procedure. The exact wording, the channel plan for your area and the current rules are set out in the official question catalogue and in local waterway information. The dialogues here are **learning examples**, not a script to memorize word for word. (In Germany, the radio certificates are the SRC for sea and the UBI for inland waters, both separate from the Sportbootführerschein, the recreational boating license.)
+A quick note up front: the examples follow **VHF marine radio** and its internationally common procedure. The exact wording, the channel plan for your area and the current rules are set out in the official question catalogue and in local waterway information. The dialogues here are **learning examples**, not a script to memorize word for word. (In inland radio, German is usually spoken, with "hier ist" instead of "this is". In Germany, the radio certificates are the SRC for sea and the UBI for inland waters, both separate from the Sportbootführerschein, the recreational boating license.)
 
 ## The basic idea: short, clear, one sender at a time
 
@@ -31,7 +31,7 @@ Radio is an exchange. Only one station can transmit on a channel at a time while
 - **Release the key** when you are done. Only then can the other station reply.
 - **Short sentences and fixed terms** instead of long stories.
 
-Fixed terms include so-called **procedure words**. The most important ones are "over", "out", "say again", "roger" (understood) and "stand by". The difference between "over" and "out" matters: **Over** means "I am done, it is your turn". **Out** means "The conversation is finished, I expect no reply". Saying both together ("over and out") is therefore contradictory and not correct procedure.
+Fixed terms include so-called **procedure words**. The most important ones are "over", "out", "say again" and "received" or "understood". The difference between "over" and "out" matters: **Over** means "I am done, it is your turn". **Out** means "The conversation is finished, I expect no reply". Saying both together ("over and out") is therefore contradictory and not correct procedure.
 
 ## Step 1: The call
 
@@ -39,7 +39,7 @@ A call has three building blocks: **who** you are calling, **who** you are, and 
 
 > **Blue Gull:** "Seastar, Seastar, Seastar, this is Blue Gull, Blue Gull, Blue Gull, over."
 
-"This is" separates the called station from the calling station. For safe identification, the name is repeated at **first contact**, at most three times. Once contact is established, saying the name once or using a short form is enough. With very good reception you can shorten the call accordingly. When in doubt, it is better to be once too clear than once too unclear.
+"This is" separates the called station from the calling station. For safe identification, the name is repeated at **first contact**, at most three times. Once contact is established, saying the name once or using a short form is enough. When in doubt, it is better to be once too clear than once too unclear.
 
 The **channel** matters: you make your first call on the designated **calling channel** (on VHF marine radio this is channel 16) or, if your set supports it, by **DSC individual call**. No long conversation takes place on channel 16, which leads to the next step.
 
@@ -75,7 +75,7 @@ The word **out** ends the conversation. After that, you switch your radio back t
 
 ## The distress call: the sequence you must know
 
-The most important radio traffic of all is the distress call. The procedure is strictly structured so that nothing is missed even under stress. On a DSC-capable set, you first trigger the **DSC distress alert** and then make the **voice distress call on channel 16**. It follows this structure:
+The most important radio traffic of all is the distress call. The procedure is strictly structured so that nothing is missed even under stress. On a DSC-capable set, you first trigger the **DSC distress alert** (sent on channel 70) and then make the **voice distress call on channel 16**. It follows this structure:
 
 1. **MAYDAY, MAYDAY, MAYDAY** (three times)
 2. **THIS IS** and the **vessel name** (three times), plus call sign or MMSI
@@ -89,7 +89,7 @@ The most important radio traffic of all is the distress call. The procedure is s
 
 A shortened example, as it might sound in a drill:
 
-> "MAYDAY, MAYDAY, MAYDAY. This is Blue Gull, Blue Gull, Blue Gull. MAYDAY Blue Gull. Position: 2 nautical miles north of the lighthouse. Taking on water, sinking. Require immediate assistance. Four persons on board. Over."
+> "MAYDAY, MAYDAY, MAYDAY. This is Blue Gull, Blue Gull, Blue Gull, MMSI (nine digits). MAYDAY Blue Gull, MMSI. Position: 2 nautical miles north of the lighthouse. Taking on water, sinking. Require immediate assistance. Four persons on board. Over."
 
 A distress call is not about elegance but about **completeness and calm**. The key points are where you are, what has happened and how many people are affected. Afterwards you **stay at the radio** and wait for the answer. If your call is not acknowledged, you repeat it. Which other signals make sense in an emergency is explained in our article [Distress signals at sea](/en/blog/distress-signals-at-sea/).
 
