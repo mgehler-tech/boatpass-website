@@ -27,10 +27,11 @@ const binnen = catalog === 'binnen';
 const meta = CATALOGS[catalog];
 const name = meta.name[lang];
 
-const title = de ? `${name} Fragebogen online üben – amtliche Bögen 1–15` : `${name} practice test online – official papers 1–15`;
+// Titel ≤ 60 Zeichen inkl. „ | Boatpass“, Description 140–155 Zeichen mit Handlungsaufforderung.
+const title = de ? `${name} Fragebogen online üben – Bögen 1–15` : `${name} practice test online – papers 1–15`;
 const description = de
-  ? `${name} Fragebogen kostenlos im Browser: amtliche Bögen 1–15 oder Zufallsbogen mit 30 Fragen, Auswertung nach der echten Bestehensgrenze.`
-  : `Free ${name} practice test in your browser: official papers 1–15 or a random paper with 30 questions, marked against the real pass mark.`;
+  ? `${name} Fragebogen kostenlos online üben: amtliche Bögen 1–15 oder Zufallsbogen mit 30 Fragen, Auswertung wie in der Prüfung. Jetzt im Browser testen.`
+  : `Free ${name} practice test online: official papers 1–15 or a random paper with 30 questions, marked like the real exam. Try it in your browser now.`;
 const lede = de
   ? `Wähle einen der 15 amtlichen Fragebögen oder einen Zufallsbogen, kreuze an und gib ab. Ausgewertet wird wie in der Prüfung: mindestens 5 von 7 Basisfragen und 18 von 23 spezifischen Fragen.${binnen ? ' Mit dem Ergänzungsbogen Segeln kommen 7 Segelfragen dazu.' : ''}`
   : `Pick one of the 15 official papers or a random paper, answer and hand in. It is marked like the exam: at least 5 of 7 basic questions and 18 of 23 specific questions.${binnen ? ' The sailing supplement adds 7 sailing questions.' : ''}`;
