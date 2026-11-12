@@ -242,3 +242,27 @@ test.describe('PracticeBridge', () => {
     await expect(en.locator('h2.pg-h2')).toContainText('Mastering chart tasks');
   });
 });
+
+test.describe('Tabellen-Scrollbereich per Tastatur', () => {
+  // WCAG 2.1.1: Auf schmalen Viewports scrollt die Vergleichstabelle horizontal
+  // (min-width 640px). Ohne fokussierbaren Wrapper erreichen Tastaturnutzer die
+  // abgeschnittenen Spalten nicht in jedem Browser.
+  for (const path of ['/sbf-binnen/', '/sbf-see/', '/sbf-kosten/', '/en/sbf-inland/']) {
+    test(`${path}: Wrapper ist fokussierbar, benannt und scrollt mit Pfeiltasten`, async ({ page }) => {
+      await page.setViewportSize({ width: 375, height: 800 });
+      await page.goto(path);
+      const wrap = page.locator('.pg-table');
+      await expect(wrap).toHaveCount(1);
+      await expect(wrap).toHaveAttribute('tabindex', '0');
+      await expect(wrap).toHaveAttribute('role', 'region');
+      const heading = page.locator(`#${await wrap.getAttribute('aria-labelledby')}`);
+      await expect(heading).toHaveCount(1);
+      await expect(heading).not.toBeEmpty();
+      expect(await wrap.evaluate(el => el.scrollWidth > el.clientWidth)).toBe(true);
+      await wrap.focus();
+      await expect(wrap).toBeFocused();
+      await page.keyboard.press('ArrowRight');
+      await expect.poll(() => wrap.evaluate(el => el.scrollLeft)).toBeGreaterThan(0);
+    });
+  }
+});

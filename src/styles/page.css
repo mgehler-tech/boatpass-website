@@ -260,6 +260,10 @@
   border-radius: var(--h-r);
   background: var(--h-card);
 }
+/* Der Wrapper ist per tabindex="0" fokussierbar, damit die auf schmalen
+   Viewports horizontal scrollende Tabelle auch per Tastatur (Pfeiltasten)
+   erreichbar ist (WCAG 2.1.1). */
+.pg-table:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
 .pg-table table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 15px; }
 .pg-table th, .pg-table td { padding: 13px 18px; text-align: left; vertical-align: top; }
 .pg-table thead th { background: var(--h-paper-2); font-weight: 700; color: var(--h-ink); }
