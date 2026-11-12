@@ -30,6 +30,8 @@
 - [SBF See](https://boatpass.de/sbf-see/): Vorbereitung auf den Sportbootführerschein See.
 - [SBF Binnen Prüfungsfragen](https://boatpass.de/sbf-binnen-pruefungsfragen/): Amtlicher Fragenkatalog Binnen.
 - [SBF See Prüfungsfragen](https://boatpass.de/sbf-see-pruefungsfragen/): Amtlicher Fragenkatalog See.
+- [SBF Binnen Fragebogen online üben](https://boatpass.de/sbf-binnen-pruefungsfragen/fragebogen/): Die 15 amtlichen Fragebögen oder ein Zufallsbogen mit 30 Fragen kostenlos im Browser, Auswertung wie in der Prüfung.
+- [SBF See Fragebogen online üben](https://boatpass.de/sbf-see-pruefungsfragen/fragebogen/): Die 15 amtlichen Fragebögen oder ein Zufallsbogen mit 30 Fragen kostenlos im Browser, Auswertung wie in der Prüfung (ohne Navigationsaufgabe).
 - [SBF Basisfragen](https://boatpass.de/sbf-basisfragen/): Die 72 Basisfragen des amtlichen Katalogs, gemeinsam für SBF Binnen und SBF See.
 - [SBF See Navigationsaufgabe](https://boatpass.de/sbf-see-navigationsaufgaben/): Navigationsaufgabe beim SBF See: 15 Aufgaben, 9 Teilfragen, 7 Punkte zum Bestehen – Kurs, Peilung, Position und Kursumrechnung erklärt.
 - [Führerscheine im Überblick](https://boatpass.de/fuehrerscheine/): Welcher Schein für welches Revier.
@@ -139,6 +141,7 @@
 - [Sportbootführerschein trotz gesundheitlicher Einschränkung](https://boatpass.de/blog/sportbootfuehrerschein-gesundheitliche-einschraenkung-aerztliches-zeugnis/): Ärztliches Zeugnis für den Sportbootführerschein: Auflagen, Hilfsmittel und Einschränkungen – und was du vor der Anmeldung zur Prüfung klären solltest.
 - [Bootskennzeichen und Registrierungspflicht beim Sportboot](https://boatpass.de/blog/bootskennzeichen-registrierungspflicht-sportboot/): Bootskennzeichen und Registrierung erklärt: Wann Sportboote auf Binnen- und Seeschifffahrtsstraßen amtlich gekennzeichnet sein müssen und wer das Kennzeichen vergibt.
 - [Erste Fahrten nach dem SBF: Anfängerfehler vermeiden](https://boatpass.de/blog/erste-fahrten-nach-dem-sbf-anfaengerfehler/): Erste Fahrten nach dem Sportbootführerschein: Die typischen Anfängerfehler bei Planung, Manövern und Wetter und wie du sie mit einfachen Gewohnheiten vermeidest.
+- [Sprechfunk in der Praxis: Beispieldialoge für Anruf und Antwort](https://boatpass.de/blog/sprechfunk-praxis-beispieldialoge-anruf-antwort/): Sprechfunk in der Praxis: So läuft ein Funkgespräch ab, mit Beispieldialogen für Anruf, Antwort, Kanalwechsel, Verbindungsabbau und Notruf.
 
 ## Über
 
@@ -159,6 +162,8 @@
 - [SBF Coastal (EN)](https://boatpass.de/en/sbf-coastal/): Prep for the SBF Coastal (German coastal-waters boating license).
 - [SBF Inland Exam Questions (EN)](https://boatpass.de/en/sbf-inland-exam-questions/): Official ELWIS question catalog for SBF Inland.
 - [SBF Coastal Exam Questions (EN)](https://boatpass.de/en/sbf-coastal-exam-questions/): Official ELWIS question catalog for SBF Coastal.
+- [SBF Inland Practice Test (EN)](https://boatpass.de/en/sbf-inland-exam-questions/practice-test/): Official papers 1–15 or a random paper with 30 questions, free in the browser, marked like the real exam.
+- [SBF Coastal Practice Test (EN)](https://boatpass.de/en/sbf-coastal-exam-questions/practice-test/): Official papers 1–15 or a random paper with 30 questions, free in the browser, marked like the real exam (without the navigation task).
 - [SBF Basic Questions (EN)](https://boatpass.de/en/sbf-basic-questions/): The 72 basic questions of the official catalog, shared by SBF Inland and SBF Coastal.
 - [SBF Coastal Navigation Task (EN)](https://boatpass.de/en/sbf-coastal-navigation-tasks/): The SBF Coastal navigation task: 15 tasks, 9 sub-questions, 7 points to pass – course, bearing, position and course conversion explained.
 - [Licenses Overview (EN)](https://boatpass.de/en/licenses/): Which German boating license fits which waters.
@@ -258,3 +263,4 @@
 - [German Boating License With a Health Condition](https://boatpass.de/en/blog/boating-license-with-a-health-condition-medical-certificate/): What does the medical certificate for the German boating license really mean? Conditions, aids, limitations and what to clarify before you register.
 - [Boat Registration and ID Marking Rules in Germany](https://boatpass.de/en/blog/boat-registration-and-identification-requirements-germany/): Boat registration in Germany explained: when recreational boats need an official registration number on inland and sea waterways, and who issues it.
 - [First Trips After the SBF: Avoiding Beginner Mistakes](https://boatpass.de/en/blog/first-trips-after-sbf-beginner-mistakes/): First trips after your German boating license: the typical beginner mistakes in planning, maneuvers and weather, and how to avoid them with simple habits.
+- [Marine Radio in Practice: Example Dialogues for Calls](https://boatpass.de/en/blog/marine-radio-in-practice-example-dialogues/): Marine radio in practice: how a VHF conversation works, with example dialogues for calling, replying, switching channels, ending a call and a MAYDAY.
