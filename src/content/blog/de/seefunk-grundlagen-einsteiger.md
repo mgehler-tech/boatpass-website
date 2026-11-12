@@ -81,7 +81,7 @@ Funk ist ein geteiltes Medium: Auf einem Kanal kann immer nur einer senden. Desh
 
 Seefunk ist kein Hexenwerk, wenn man die Grundlagen kennt: **Kanal 16** ist der Anruf- und Notrufkanal, **Kanal 70** trägt den digitalen DSC-Alarm, und **MAYDAY, PAN PAN und SECURITE** kennzeichnen die drei Dringlichkeitsstufen. DSC macht den Notruf schnell und präzise, ersetzt aber nicht den Sprech-Notruf auf Kanal 16. Wer diese Bausteine verstanden hat, kann das Funkgerät im Alltag sicher nutzen und im Ernstfall richtig reagieren. Für den regulären Betrieb brauchst du das passende Zeugnis, im echten Notfall zählt aber nur, dass Hilfe kommt.
 
-Die **Boatpass-App** hilft dir bei der Vorbereitung auf SRC und UBI mit den vollständigen amtlichen Fragenkatalogen, realistischem Prüfungsmodus und gezieltem Fehlertraining, damit du Kanäle, DSC und die Notrufverfahren sicher beherrschst, bevor du selbst zum Mikrofon greifst.
+Die **Boatpass-App** hilft dir bei der [Vorbereitung auf SRC und UBI](/funkschein-app/) mit den vollständigen amtlichen Fragenkatalogen, realistischem Prüfungsmodus und gezieltem Fehlertraining, damit du Kanäle, DSC und die Notrufverfahren sicher beherrschst, bevor du selbst zum Mikrofon greifst.
 
 ## Quellen
 
