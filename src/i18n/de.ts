@@ -299,10 +299,10 @@ export const de = {
     heroNotes: ['Motor und Segel', 'inkl. 15 Navigationsaufgaben', 'Binnenfunk mit ATIS', 'Seefunk mit DSC-Notruf', 'Satelliten- und Seenotfunk'],
     // Konkrete Funktionen je Etappe – alle auf den jeweiligen Screenshots sichtbar.
     journeyChips: [
-      ['Heute lernen', 'Nach Themen lernen', 'Streak & Tagesziel'],
-      ['Erklärung zu jeder Antwort', 'Merkhilfe'],
-      ['Logbuch je Kategorie', 'Gespeicherte Fragen', 'Alle Fragen durchblättern'],
-      ['Amtliche Bögen', 'Zufallsprüfung', 'Formkurve'],
+      ['Plan für heute', 'Lernplan & Prüfungsreife', 'Nach Themen lernen'],
+      ['Bildfragen', 'Erklärung & Merkhilfe', 'Navigationsaufgaben'],
+      ['Logbuch je Thema', 'Knotenkunde'],
+      ['Amtliche Bögen', 'Zufallsprüfung & Formkurve', 'Ergebnis nach Bereichen'],
     ],
     // Bedienung des Quiz. Die zehn Fragen selbst stehen wortgleich aus der
     // App in data/quiz-questions.json.

@@ -272,10 +272,10 @@ export const en: Translations = {
     heroQuestions: 'questions',
     heroNotes: ['Motor and sail', 'incl. 15 navigation tasks', 'Inland VHF with ATIS', 'Marine VHF with DSC distress', 'Satellite and distress radio'],
     journeyChips: [
-      ['Study today', 'Study by topic', 'Streak & daily goal'],
-      ['Explanation for every answer', 'Mnemonic'],
-      ['Logbook per category', 'Saved questions', 'Browse all questions'],
-      ['Official exam papers', 'Random exam', 'Performance curve'],
+      ['Plan for today', 'Study plan & exam readiness', 'Study by topic'],
+      ['Picture questions', 'Explanation & mnemonic', 'Navigation tasks'],
+      ['Logbook per topic', 'Knots'],
+      ['Official exam papers', 'Random exam & progress curve', 'Results by section'],
     ],
     // Quiz controls. The ten questions come verbatim from the app, see
     // data/quiz-questions.json.

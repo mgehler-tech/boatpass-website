@@ -37,20 +37,82 @@ function initJourney() {
   const fill = grid.querySelector<HTMLElement>('[data-journey-fill]');
   if (!steps.length) return;
 
-  // Die Bühne gibt es nur am Desktop. Dort alle vier Screens vorab laden,
-  // sonst wischt beim Etappenwechsel womöglich ein noch leeres Bild herein.
-  if (window.matchMedia('(min-width: 1024px)').matches) {
+  const chips = Array.from(grid.querySelectorAll<HTMLButtonElement>('[data-journey-chip]'));
+  const inlines = Array.from(grid.querySelectorAll<HTMLElement>('[data-journey-inline]'));
+  const desktop = window.matchMedia('(min-width: 1024px)');
+  const idOf = (i: number, k: number) => `${i}-${k}`;
+  const countOf = (i: number) => chips.filter((c) => c.dataset.journeyChip?.startsWith(`${i}-`)).length;
+
+  // Die Bühne gibt es nur am Desktop. Dort den ersten Screen jeder Etappe
+  // vorab laden, die übrigen erst, wenn ihre Etappe aktiv wird – sonst wischt
+  // beim Wechsel womöglich ein noch leeres Bild herein.
+  const preload = (match: (id: string) => boolean) => {
+    if (!desktop.matches) return;
     screens.forEach((img) => {
-      if (img instanceof HTMLImageElement) img.loading = 'eager';
+      if (img instanceof HTMLImageElement && match(img.dataset.journeyScreen ?? '')) img.loading = 'eager';
     });
-  }
+  };
+  preload((id) => id.endsWith('-0'));
 
   let current = -1;
+  let shown = '';
   let prevTimer = 0;
+  let tourTimer = 0;
+  const selected = steps.map(() => 0);
+  const toured = steps.map(() => false);
+
+  // Zeigt Screen k der Etappe i: auf der Bühne (Wisch), im Handy der Etappe
+  // (Blende, unter 1024px) und am gedrückten Chip.
+  const show = (i: number, k: number) => {
+    selected[i] = k;
+    const id = idOf(i, k);
+    chips.forEach((c) => {
+      const [ci, ck] = (c.dataset.journeyChip ?? '').split('-').map(Number);
+      if (ci === i) c.setAttribute('aria-pressed', String(ck === k));
+    });
+    inlines.forEach((el) => {
+      const cid = el.dataset.journeyInline ?? '';
+      if (!cid.startsWith(`${i}-`)) return;
+      el.classList.toggle('is-active', cid === id);
+      // Unsichtbare Screens laden träge; der gewählte soll sofort kommen.
+      if (cid === id && el instanceof HTMLImageElement) el.loading = 'eager';
+    });
+    if (i !== current || id === shown) return;
+
+    // Der alte Screen bleibt unter dem neuen stehen, bis dessen Wisch-
+    // Übergang (clip-path, CSS) fertig ist – sonst blitzt der Grund durch.
+    window.clearTimeout(prevTimer);
+    screens.forEach((s) => {
+      const sid = s.dataset.journeyScreen;
+      s.classList.toggle('is-prev', sid === shown);
+      s.classList.toggle('is-active', sid === id);
+    });
+    shown = id;
+    prevTimer = window.setTimeout(() => screens.forEach((s) => s.classList.remove('is-prev')), 950);
+  };
+
+  const stopTour = () => window.clearTimeout(tourTimer);
+
+  // Beim ersten Erreichen einer Etappe einmal durch ihre Screens blättern und
+  // zum ersten zurück – zeigt, dass die Chips schalten. Nur am Desktop und
+  // nur mit Bewegung; jede Bedienung der Chips beendet es.
+  const tour = (i: number) => {
+    stopTour();
+    if (toured[i] || !motion || !desktop.matches) return;
+    toured[i] = true;
+    const n = countOf(i);
+    let k = 0;
+    const next = () => {
+      if (current !== i) return;
+      k = (k + 1) % n;
+      show(i, k);
+      if (k !== 0) tourTimer = window.setTimeout(next, 2600);
+    };
+    tourTimer = window.setTimeout(next, 2200);
+  };
 
   const activate = (i: number) => {
     if (i < 0 || i === current) return;
-    const prev = current;
     current = i;
 
     steps.forEach((step, j) => {
@@ -58,25 +120,37 @@ function initJourney() {
       step.classList.toggle('is-done', j < i);
     });
 
-    // Der alte Screen bleibt unter dem neuen stehen, bis dessen Wisch-
-    // Übergang (clip-path, CSS) fertig ist – sonst blitzt der Grund durch.
-    if (screens.length) {
-      window.clearTimeout(prevTimer);
-      screens.forEach((s) => s.classList.remove('is-prev'));
-      if (prev >= 0) screens[prev]?.classList.add('is-prev');
-      screens.forEach((s, j) => s.classList.toggle('is-active', j === i));
-      prevTimer = window.setTimeout(() => screens.forEach((s) => s.classList.remove('is-prev')), 950);
-    }
+    preload((id) => id.startsWith(`${i}-`));
+    show(i, selected[i]);
 
     // Ohne Scrub zeigt die Linie den Stand der aktiven Etappe.
     if (!motion && fill) fill.style.setProperty('--hj-progress', String(i / (steps.length - 1)));
   };
 
+  chips.forEach((chip) => {
+    const [i, k] = (chip.dataset.journeyChip ?? '').split('-').map(Number);
+    chip.addEventListener('click', () => {
+      stopTour();
+      toured[i] = true;
+      // Am Desktop zeigt die Bühne die Etappe des gedrückten Chips.
+      if (desktop.matches) activate(i);
+      show(i, k);
+    });
+    chip.addEventListener('pointerenter', () => {
+      if (current === i) stopTour();
+    });
+  });
+
   // Aktiv ist die Etappe, die gerade die Bildschirmmitte kreuzt.
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
-        if (e.isIntersecting) activate(steps.indexOf(e.target as HTMLElement));
+        if (!e.isIntersecting) return;
+        const i = steps.indexOf(e.target as HTMLElement);
+        activate(i);
+        // Erst hier, nicht in activate(): Beim Laden ist Etappe 01 schon
+        // aktiv, aber noch nicht im Bild.
+        if (i === current) tour(i);
       });
     },
     { rootMargin: '-50% 0px -50% 0px' },

@@ -4,8 +4,9 @@
 //
 // Desktop (≥1024px): links die Etappen als Zeilen mit einer Fortschrittslinie
 // in der Nummernspalte, rechts ein mitlaufendes Handy auf einer ruhigen Fläche
-// (CSS sticky), dessen Screen zur jeweils aktiven Etappe wechselt. Etappe 02
-// enthält das Quiz. Darunter: jede Etappe mit eigenem Screenshot. Etappen sind
+// (CSS sticky), dessen Screen zur jeweils aktiven Etappe wechselt. Jede Etappe
+// hat zwei bis drei Screens; ihre Chips sind Schalter (aria-pressed) dafür.
+// Etappe 02 enthält das Quiz. Darunter: jede Etappe mit eigenem Handy. Etappen sind
 // so hoch wie ihr Inhalt (am Desktop mindestens 44vh); die Nummer steht nur
 // einmal, als Marker auf der Linie (Spec Runde 2, 5.1).
 // Die Aktivierung läuft über home-motion.ts (IntersectionObserver) und
@@ -14,15 +15,6 @@ import { Image } from 'astro:assets';
 import SectionHead from './SectionHead.astro';
 import QuizDemo from './QuizDemo.astro';
 import { useTranslations } from '../../i18n/index';
-import shotHomeDe from '../../assets/images/app.screenshot.0.de.png';
-import shotQuestionDe from '../../assets/images/app.screenshot.3.de.png';
-import shotLogDe from '../../assets/images/app.screenshot.1.de.png';
-import shotExamDe from '../../assets/images/app.screenshot.2.de.png';
-import shotHomeEn from '../../assets/images/app.screenshot.0.en.png';
-import shotQuestionEn from '../../assets/images/app.screenshot.3.en.png';
-import shotLogEn from '../../assets/images/app.screenshot.1.en.png';
-import shotExamEn from '../../assets/images/app.screenshot.2.en.png';
-
 interface Props {
   lang: 'de' | 'en';
 }
@@ -32,32 +24,64 @@ const t = useTranslations(lang);
 const h = t.home;
 const de = lang === 'de';
 
-const shots = de
-  ? [shotHomeDe, shotQuestionDe, shotLogDe, shotExamDe]
-  : [shotHomeEn, shotQuestionEn, shotLogEn, shotExamEn];
+// Echte App-Screens (iOS 1.4.x, Simulator, 9:41, einheitliche Demodaten) als
+// journey/<name>.<lang>.webp. Je Etappe mehrere Screens; die Chips schalten sie.
+const files = import.meta.glob<{ default: ImageMetadata }>('../../assets/images/journey/*.webp', { eager: true });
+const shot = (name: string) => files[`../../assets/images/journey/${name}.${lang}.webp`].default;
 
-const alts = de
+// Reihenfolge je Etappe = Reihenfolge der Chips in home.journeyChips.
+const screens: { name: string; alt: string }[][] = de
   ? [
-      'Boatpass App – Startbildschirm mit Tagesziel, Streak und Lernmodi',
-      'Boatpass App – Frage mit Erklärung und Merkhilfe',
-      'Boatpass App – Logbuch mit Fortschritt je Kategorie',
-      'Boatpass App – Prüfungsbereich mit Formkurve',
+      [
+        { name: 'start', alt: 'Boatpass App – Startbildschirm mit Lernplan, Prüfungsreife und Plan für heute' },
+        { name: 'plan', alt: 'Boatpass App – Lernplan mit Prüfungstermin, Prüfungsreife und Tagesziel' },
+        { name: 'topics', alt: 'Boatpass App – Themenübersicht mit Fortschritt je Thema' },
+      ],
+      [
+        { name: 'picture', alt: 'Boatpass App – Bildfrage zu Tafelzeichen mit richtiger Antwort' },
+        { name: 'explain', alt: 'Boatpass App – Erklärung zur Antwort mit Merkhilfe' },
+        { name: 'nav', alt: 'Boatpass App – Navigationsaufgabe mit amtlicher Lösung und Lösungsweg' },
+      ],
+      [
+        { name: 'logbook', alt: 'Boatpass App – Logbuch mit Fortschritt je Thema' },
+        { name: 'knots', alt: 'Boatpass App – Knotenkunde: Palstek Schritt für Schritt' },
+      ],
+      [
+        { name: 'sheets', alt: 'Boatpass App – Prüfung mit den 15 amtlichen Prüfungsbögen' },
+        { name: 'curve', alt: 'Boatpass App – Zufallsprüfung mit Formkurve der letzten Prüfungen' },
+        { name: 'result', alt: 'Boatpass App – bestandene Prüfung mit Ergebnis nach Bereichen' },
+      ],
     ]
   : [
-      'Boatpass app – home screen with daily goal, streak and study modes',
-      'Boatpass app – question with explanation and mnemonic',
-      'Boatpass app – logbook with progress per category',
-      'Boatpass app – exam area with performance curve',
+      [
+        { name: 'start', alt: 'Boatpass app – home screen with study plan, exam readiness and plan for today' },
+        { name: 'plan', alt: 'Boatpass app – study plan with exam date, exam readiness and daily goal' },
+        { name: 'topics', alt: 'Boatpass app – topic overview with progress per topic' },
+      ],
+      [
+        { name: 'picture', alt: 'Boatpass app – picture question on signs with the correct answer' },
+        { name: 'explain', alt: 'Boatpass app – explanation of the answer with mnemonic' },
+        { name: 'nav', alt: 'Boatpass app – navigation task with official solution and worked solution' },
+      ],
+      [
+        { name: 'logbook', alt: 'Boatpass app – logbook with progress per topic' },
+        { name: 'knots', alt: 'Boatpass app – knots: bowline step by step' },
+      ],
+      [
+        { name: 'sheets', alt: 'Boatpass app – exam with the 15 official exam sheets' },
+        { name: 'curve', alt: 'Boatpass app – random exam with progress curve of recent exams' },
+        { name: 'result', alt: 'Boatpass app – passed exam with results by section' },
+      ],
     ];
 
 const steps = t.steps.items.map((item, i) => ({
   ...item,
   num: String(i + 1).padStart(2, '0'),
-  shot: shots[i],
-  alt: alts[i],
-  chips: h.journeyChips[i],
+  screens: screens[i].map((sc, k) => ({ ...sc, src: shot(sc.name), chip: h.journeyChips[i][k] })),
 }));
+const chipsLabel = de ? 'Screen wählen' : 'Choose screen';
 ---
+
 
 <section id="features" class="hj h-section" aria-labelledby="hj-title">
   <div class="h-container">
@@ -78,17 +102,37 @@ const steps = t.steps.items.map((item, i) => ({
               <div class="hj-body">
                 <h3 class="hj-title">{step.title}</h3>
                 <p class="hj-desc">{step.desc}</p>
-                <ul class="h-tags">
-                  {step.chips.map(chip => <li class="h-tag">{chip}</li>)}
+                <ul class="h-tags hj-chips" aria-label={chipsLabel}>
+                  {step.screens.map((sc, k) => (
+                    <li>
+                      <button
+                        type="button"
+                        class="h-tag hj-chip"
+                        aria-pressed={k === 0 ? 'true' : 'false'}
+                        data-journey-chip={`${i}-${k}`}
+                      >{sc.chip}</button>
+                    </li>
+                  ))}
                 </ul>
-                {i === 1 && <QuizDemo lang={lang} />}
                 <figure class="hj-shot">
                   <div class="h-phone hj-shot-phone">
                     <div class="h-phone-screen">
-                      <Image src={step.shot} alt={step.alt} widths={[240, 480]} sizes="220px" quality={78} loading="lazy" />
+                      {step.screens.map((sc, k) => (
+                        <Image
+                          src={sc.src}
+                          alt={sc.alt}
+                          widths={[240, 480]}
+                          sizes="220px"
+                          quality={78}
+                          loading="lazy"
+                          class:list={['hj-inline', { 'is-active': k === 0 }]}
+                          data-journey-inline={`${i}-${k}`}
+                        />
+                      ))}
                     </div>
                   </div>
                 </figure>
+                {i === 1 && <QuizDemo lang={lang} />}
               </div>
             </li>
           ))}
@@ -102,18 +146,20 @@ const steps = t.steps.items.map((item, i) => ({
           <div class="hj-backdrop">
             <div class="h-phone hj-phone">
               <div class="h-phone-screen">
-                {steps.map((step, i) => (
-                  <Image
-                    src={step.shot}
-                    alt={step.alt}
-                    widths={[300, 600]}
-                    sizes="300px"
-                    quality={80}
-                    loading="lazy"
-                    class:list={['hj-screen', { 'is-active': i === 0 }]}
-                    data-journey-screen={i}
-                  />
-                ))}
+                {steps.map((step, i) =>
+                  step.screens.map((sc, k) => (
+                    <Image
+                      src={sc.src}
+                      alt={sc.alt}
+                      widths={[300, 600]}
+                      sizes="300px"
+                      quality={80}
+                      loading="lazy"
+                      class:list={['hj-screen', { 'is-active': i === 0 && k === 0 }]}
+                      data-journey-screen={`${i}-${k}`}
+                    />
+                  )),
+                )}
               </div>
             </div>
           </div>
@@ -197,11 +243,32 @@ const steps = t.steps.items.map((item, i) => ({
     color: var(--h-muted);
   }
 
-  /* Screenshot je Etappe (nur unter 1024px). */
+  /* Chips als Schalter für die Screens der Etappe. Ohne JS bleiben sie reine
+     Beschriftung (kein Zeiger, kein Fokus-Versprechen). */
+  .hj-chip {
+    display: block;
+    min-height: 32px;
+    padding: 5px 12px;
+    background: transparent;
+    cursor: default;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
+  .h-js .hj-chip { cursor: pointer; }
+  .h-js .hj-chip:hover { border-color: var(--h-blue); }
+  .h-js .hj-chip[aria-pressed='true'] {
+    border-color: var(--h-blue);
+    background: var(--h-blue);
+    color: #fff;
+  }
+  .hj-chip:focus-visible { outline: 2px solid var(--h-blue); outline-offset: 2px; }
+  html:not(.h-js) .hj-chip { pointer-events: none; }
+
+  /* Handy je Etappe (nur unter 1024px); die Chips blenden seine Screens um. */
   .hj-shot { margin: 28px 0 0; }
   .hj-shot-phone { --pw: 220px; }
-  /* Mit JS zeigt Etappe 02 das Quiz – derselbe Inhalt wie ihr Screenshot. */
-  .h-js .hj-step--quiz .hj-shot { display: none; }
+  .hj-inline { opacity: 0; transition: opacity 0.4s ease; }
+  .hj-inline.is-active { opacity: 1; }
+  .hj-step--quiz .hj-shot { margin-bottom: 28px; }
 
   .hj-stage { display: none; }
 
@@ -265,6 +332,6 @@ const steps = t.steps.items.map((item, i) => ({
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .hj-screen, .hj-marker { transition: none !important; }
+    .hj-screen, .hj-marker, .hj-inline, .hj-chip { transition: none !important; }
   }
 </style>
