@@ -5,12 +5,21 @@
 
 /* ── Themennavigation ───────────────────────────────────────────────── */
 .cq-topics { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+/* Die Themen-Chips sind die Hauptnavigation jeder Fragen-Hub-, Themen- und
+   Fragebogenseite und damit das am häufigsten angetippte Bedienelement dieser
+   Seiten. Mit 40px Höhe und 7px vertikalem Padding blieben sie unter der
+   WCAG-2.5.5-Trefferfläche (44px) und fielen aus dem Rahmen der übrigen
+   interaktiven Elemente dieser Datei, die bereits auf 44px stehen (.cq-toggle,
+   .pt-field select, .pt-check). 44px Höhe und 8px (statt 7px) vertikales
+   Padding bringen sie auf das 4px-Raster und auf dieselbe Treffergröße – mehr
+   Luft um die Chips, bessere Tappbarkeit auf dem Handy. Reiner Layout-
+   Feinschliff; Farben und Font-Weights des Corporate Designs bleiben unberührt. */
 .cq-topics a {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-height: 40px;
-  padding: 7px 14px;
+  min-height: 44px;
+  padding: 8px 14px;
   border: 1px solid var(--h-line);
   border-radius: var(--h-r-pill);
   background: var(--h-card);
