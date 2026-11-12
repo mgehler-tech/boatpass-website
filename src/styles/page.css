@@ -254,12 +254,33 @@
 .pg-kpi--accent { color: var(--h-blue-ink); }
 
 /* ── Tabelle ────────────────────────────────────────────────────────── */
+/* Die dreispaltigen Tabellen tragen min-width: 640px und scrollen auf
+   schmalen Screens horizontal (s. Kommentar in den Tool-/Vergleichsseiten).
+   Ohne Hinweis sah die abgeschnittene Spalte aber wie ein Textfehler aus,
+   nicht wie scrollbarer Inhalt. Die reinen CSS-Scroll-Schatten blenden am
+   überlaufenden Rand einen weichen Schatten ein und an den Scroll-Enden
+   wieder aus – so ist auf dem Handy erkennbar, dass sich die Tabelle (und
+   die wichtige Führerschein-/Kosten-Spalte) seitlich weiterschieben lässt.
+   background-attachment local/scroll trägt die Mechanik; der Schatten ist
+   ein neutraler Tintenton, keine Markenfarbe. */
 .pg-table {
+  --pg-fade: rgb(from var(--h-card) r g b / 0);
+  --pg-shadow: rgba(11, 21, 48, 0.16);
   overflow-x: auto;
   border: 1px solid var(--h-line);
   border-radius: var(--h-r);
-  background: var(--h-card);
+  background-color: var(--h-card);
+  background-image:
+    linear-gradient(to right, var(--h-card), var(--pg-fade)),
+    linear-gradient(to left, var(--h-card), var(--pg-fade)),
+    radial-gradient(farthest-side at 0 50%, var(--pg-shadow), rgb(from var(--pg-shadow) r g b / 0)),
+    radial-gradient(farthest-side at 100% 50%, var(--pg-shadow), rgb(from var(--pg-shadow) r g b / 0));
+  background-position: 0 0, 100% 0, 0 0, 100% 0;
+  background-size: 34px 100%, 34px 100%, 16px 100%, 16px 100%;
+  background-repeat: no-repeat;
+  background-attachment: local, local, scroll, scroll;
 }
+html.dark .pg-table { --pg-shadow: rgba(0, 0, 0, 0.55); }
 .pg-table table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 15px; }
 .pg-table th, .pg-table td { padding: 13px 18px; text-align: left; vertical-align: top; }
 .pg-table thead th { background: var(--h-paper-2); font-weight: 700; color: var(--h-ink); }
