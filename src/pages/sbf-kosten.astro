@@ -97,9 +97,9 @@ const faqSchema = {
 
     <!-- Kostentabelle -->
     <section class="pg-section">
-      <h2 class="pg-h2">Die einzelnen Kostenpunkte</h2>
+      <h2 class="pg-h2" id="pg-table-title">Die einzelnen Kostenpunkte</h2>
       <!-- min-width aktiviert das horizontale Scrollen des overflow-x-Wrappers auf schmalen Screens (wie AppComparisonTable/CatalogSources). Ohne min-width wurde die Tabelle stattdessen auf Handybreite gequetscht: die drei Spalten brachen mehrzeilig um und wurden unleserlich. -->
-      <div class="pg-table">
+      <div class="pg-table" role="region" aria-labelledby="pg-table-title" tabindex="0">
         <table>
           <thead>
             <tr>

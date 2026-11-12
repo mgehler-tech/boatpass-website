@@ -285,13 +285,13 @@ const categories: { name: string; desc: string; count: number; icon: IconName }[
 
     <!-- Vergleich Binnen vs. See -->
     <section class="pg-section">
-      <h2 class="pg-h2">SBF Binnen oder See – was brauchst du?</h2>
+      <h2 class="pg-h2" id="pg-table-title">SBF Binnen oder See – was brauchst du?</h2>
       <p class="pg-p">
         Binnen und See sind zwei eigenständige Scheine. Wer beide Reviere befahren will, kann sie in einer
         <strong>kombinierten Prüfung</strong> günstiger zusammen ablegen (rund 178,61 € statt zweimal einzeln).
       </p>
       <!-- min-width aktiviert das horizontale Scrollen des overflow-x-Wrappers auf schmalen Screens (wie AppComparisonTable/CatalogSources). Ohne min-width wurde die Tabelle stattdessen auf Handybreite gequetscht: die drei Spalten brachen mehrzeilig um und wurden unleserlich. -->
-      <div class="pg-table">
+      <div class="pg-table" role="region" aria-labelledby="pg-table-title" tabindex="0">
         <table>
           <thead>
             <tr>
