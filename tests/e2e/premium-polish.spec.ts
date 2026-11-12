@@ -354,11 +354,36 @@ test.describe('Hero licence picker', () => {
 });
 
 // Prüfungsfrage im Hero (HeroQuestion.astro): je Schein eine echte Frage zum
-// Antippen; nach der Antwort führt die Auflösung in die App und zum Quiz.
+// Antippen; nach der Antwort kommen Erklärung und Merkhilfe wie in der App,
+// darunter der Weg in die App und zum Quiz.
 test.describe('Hero question', () => {
   const item = (page: import('@playwright/test').Page) => page.locator('.hhq-item:not([hidden])');
+  // Vor der Antwort passt die Frage ganz in den Screen, nichts scrollt.
   const fits = (page: import('@playwright/test').Page) =>
-    page.locator('.hhq-screen').evaluate(el => el.scrollHeight <= el.clientHeight + 1);
+    page.evaluate(() => {
+      const screen = document.querySelector('.hhq-screen')!;
+      const scroll = document.querySelector('.hhq-item:not([hidden]) .hhq-scroll')!;
+      return screen.scrollHeight <= screen.clientHeight + 1 && scroll.scrollHeight <= scroll.clientHeight + 1;
+    });
+  // Nach der Antwort: Button und Link bleiben im Screen stehen, das Urteil
+  // liegt im sichtbaren Teil der Frage (sie scrollt, wenn die Höhe fest ist).
+  const resolved = (page: import('@playwright/test').Page) =>
+    page.evaluate(() => {
+      const box = (sel: string) => document.querySelector(sel)!.getBoundingClientRect();
+      const shown = '.hhq-item:not([hidden])';
+      const screen = box('.hhq-screen');
+      const scroll = box(`${shown} .hhq-scroll`);
+      const verdict = box(`${shown} .hhq-verdict`);
+      const cta = box(`${shown} .hhq-cta`);
+      const more = box(`${shown} .hhq-more`);
+      return (
+        document.querySelector('.hhq-screen')!.scrollHeight <= document.querySelector('.hhq-screen')!.clientHeight + 1 &&
+        cta.top >= scroll.bottom - 1 &&
+        more.bottom <= screen.bottom + 1 &&
+        verdict.top >= scroll.top - 1 &&
+        verdict.bottom <= scroll.bottom + 1
+      );
+    });
   // Das Handy hebt sich mit der Dünung; der Zeiger über dem Gerät hält sie an.
   // (Zeiger direkt setzen: hover() würde selbst auf Stillstand warten.)
   const rest = async (page: import('@playwright/test').Page) => {
@@ -388,9 +413,14 @@ test.describe('Hero question', () => {
     await expect(answers.nth(1)).toContainText('Fahrverbot für Fahrzeuge mit Maschinenantrieb.');
     await expect(item(page).locator('.hhq-answer:visible')).toHaveCount(2);
     await expect(item(page).locator('.hhq-verdict')).toHaveText('Leider falsch');
-    await expect(item(page).locator('.hhq-expl')).toContainText('A.12');
+    // Erklärung vollständig und Merkhilfe wortgleich wie in der App.
+    await expect(item(page).locator('.hhq-expl')).toHaveText('Das Zeichen A.12 verbietet die Fahrt für jedes Fahrzeug mit Maschinenantrieb. Andere Antriebsarten, insbesondere Segel- und Muskelkraft, werden von diesem Zeichen nicht erfasst.');
+    await expect(item(page).locator('.hhq-mnemo-label')).toHaveText('Merkhilfe');
+    await expect(item(page).locator('[data-mnemonic]')).toHaveText('Durchgestrichener Propeller: Maschinenantrieb verboten; Segel- und Muskelkraft erfasst dieses Zeichen nicht.');
+    await expect(item(page).locator('[data-mnemonic]')).toBeInViewport();
     await expect(item(page).locator('.hhq-hint')).toBeHidden();
     await expect(page.locator('.hhq [data-status]')).toContainText('Richtige Antwort: Fahrverbot für Fahrzeuge mit Maschinenantrieb.');
+    await expect(page.locator('.hhq [data-status]')).toContainText('Merkhilfe: Durchgestrichener Propeller');
     const cta = item(page).locator('.hhq-cta');
     await expect(cta).toBeVisible();
     await expect(cta).toHaveAttribute('data-cta-position', 'hero-question');
@@ -398,8 +428,8 @@ test.describe('Hero question', () => {
     await expect(cta).toContainText('In der App weiterlernen');
     await expect(item(page).locator('.hhq-more')).toHaveAttribute('href', '#quiz');
     await expect(page.locator('#quiz')).toHaveCount(1);
-    // Nichts verdeckt, nichts abgeschnitten: Auflösung und Button liegen im Screen.
-    expect(await fits(page)).toBe(true);
+    // Nichts verdeckt: Urteil sichtbar, Button und Link stehen im Screen.
+    await expect.poll(() => resolved(page)).toBe(true);
     // Ein zweiter Klick ändert nichts mehr (aria-disabled, deshalb erzwungen).
     await answers.nth(1).click({ force: true });
     await expect(item(page)).toHaveAttribute('data-state', 'wrong');
@@ -428,7 +458,19 @@ test.describe('Hero question', () => {
       await expect(item(page).locator('.hhq-verdict')).toHaveText('Richtig!');
       await expect(item(page).locator('.hhq-answer:visible')).toHaveCount(1);
       await expect(item(page).locator('.hhq-cta')).toBeVisible();
-      expect(await fits(page)).toBe(true);
+      await expect.poll(() => resolved(page)).toBe(true);
+      // Passt die Auflösung nicht ganz, ist die Frage per Tastatur scrollbar;
+      // am Ende steht in jedem Fall die Merkhilfe im Bild.
+      const scroll = item(page).locator('.hhq-scroll');
+      const overflows = await scroll.evaluate(el => el.scrollHeight > el.clientHeight + 1);
+      if (overflows) {
+        await expect(scroll).toHaveAttribute('tabindex', '0');
+        await expect(scroll).toHaveAttribute('aria-label', 'Frage mit Erklärung und Merkhilfe');
+      } else {
+        await expect(scroll).not.toHaveAttribute('tabindex');
+      }
+      await scroll.evaluate(el => el.scrollTo(0, el.scrollHeight));
+      await expect(item(page).locator('[data-mnemonic]')).toBeInViewport({ ratio: 1 });
     }
   });
 
@@ -443,6 +485,9 @@ test.describe('Hero question', () => {
     await page.getByRole('tab', { name: 'LRC' }).click();
     await item(page).locator('.hhq-answer[data-right]').click();
     await expect(item(page).locator('.hhq-verdict')).toHaveText('Richtig!');
+    // Die Karte wächst mit: Erklärung und Merkhilfe stehen ganz da, nichts scrollt.
+    await expect(item(page).locator('[data-mnemonic]')).toContainText('Inmarsat-Satelliten sind geostationär');
+    expect(await item(page).locator('.hhq-scroll').evaluate(el => el.scrollHeight <= el.clientHeight + 1)).toBe(true);
     const more = (await item(page).locator('.hhq-more').boundingBox())!;
     expect(more.height).toBeGreaterThanOrEqual(44);
     const card = (await page.locator('.hh-phone').boundingBox())!;
@@ -459,12 +504,15 @@ test.describe('Hero question', () => {
       await page.getByRole('tab', { name }).click();
       await item(page).locator('.hhq-answer:not([data-right])').first().click();
       await expect(item(page).locator('.hhq-cta')).toBeVisible();
+      // Erst messen, wenn Frage und Auflösung stehen (beide gleiten nach).
+      await item(page).evaluate(el => Promise.all(el.getAnimations({ subtree: true }).map(a => a.finished)));
       const card = (await page.locator('.hh-phone').boundingBox())!;
       const panel = (await page.locator('.hh-panel').boundingBox())!;
       expect(card.y + card.height).toBeLessThanOrEqual(panel.y + panel.height - 16);
       const more = (await item(page).locator('.hhq-more').boundingBox())!;
       expect(more.y + more.height).toBeLessThanOrEqual(card.y + card.height + 1);
       expect((await item(page).locator('.hhq-fig').boundingBox())!.height).toBeGreaterThanOrEqual(56);
+      await expect.poll(() => resolved(page)).toBe(true);
     }
   });
 
@@ -475,6 +523,9 @@ test.describe('Hero question', () => {
     await expect(item(page).locator('.hhq-q')).toHaveText('On which VHF channel does alerting by DSC take place?');
     await item(page).locator('.hhq-answer', { hasText: 'Channel 70' }).click();
     await expect(item(page).locator('.hhq-verdict')).toHaveText('Correct!');
+    await expect(item(page).locator('.hhq-expl')).toContainText('The spoken distress call, by contrast, is on channel 16.');
+    await expect(item(page).locator('.hhq-mnemo-label')).toHaveText('Mnemonic');
+    await expect(item(page).locator('[data-mnemonic]')).toHaveText('DSC = channel 70; voice distress = channel 16.');
     await expect(item(page).locator('.hhq-cta')).toContainText('Keep learning in the app');
     await expect(item(page).locator('.hhq-more')).toHaveText('Try more questions here');
   });
@@ -486,6 +537,8 @@ test.describe('Hero question', () => {
     await expect(item(page).locator('.hhq-after')).toBeVisible();
     await expect(item(page).locator('.hhq-verdict')).toBeHidden();
     await expect(item(page).locator('.hhq-expl')).toContainText('A.12');
+    await expect(item(page).locator('[data-mnemonic]')).toContainText('Durchgestrichener Propeller');
+    await expect(item(page).locator('.hhq-cta')).toBeVisible();
     expect(await item(page).locator('.hhq-answer[data-right]').evaluate(el => getComputedStyle(el).pointerEvents)).toBe('none');
     await context.close();
   });

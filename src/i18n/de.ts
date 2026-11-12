@@ -299,6 +299,7 @@ export const de = {
     heroQuestionHint: 'Echte Prüfungsfrage. Tippe auf eine Antwort.',
     heroQuestionCta: 'In der App weiterlernen',
     heroQuestionMore: 'Weitere Fragen hier probieren',
+    heroQuestionScroll: 'Frage mit Erklärung und Merkhilfe',
     heroQuestions: 'Fragen',
     // Kurz, damit die Faktenzeile einzeilig bleibt (Reihenfolge wie hero.licenses).
     heroNotes: ['Motor und Segel', 'inkl. 15 Navigationsaufgaben', 'Binnenfunk mit ATIS', 'Seefunk mit DSC-Notruf', 'Satelliten- und Seenotfunk'],
