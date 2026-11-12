@@ -32,6 +32,37 @@ test.describe('Lernweg kompakt', () => {
     await expect(page.locator('.hj-kicker')).toHaveCount(0);
     await expect(page.locator('.hj-shot')).toHaveCount(4);
   });
+
+  // Die Chips sind Schalter: je Etappe zwei bis drei Screens (elf insgesamt).
+  test('Chips schalten den Screen auf der Bühne (Desktop)', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.goto('/');
+    await expect(page.locator('[data-journey-chip]')).toHaveCount(11);
+    await expect(page.locator('[data-journey-screen]')).toHaveCount(11);
+    const step = page.locator('[data-journey-step="3"]');
+    await step.evaluate(el => el.scrollIntoView({ block: 'center' }));
+    await expect(step).toHaveClass(/is-active/);
+    await expect(page.locator('.hj-screen.is-active')).toHaveAttribute('data-journey-screen', '3-0');
+    const chip = page.getByRole('button', { name: 'Ergebnis nach Bereichen' });
+    await chip.click();
+    await expect(chip).toHaveAttribute('aria-pressed', 'true');
+    await expect(page.getByRole('button', { name: 'Amtliche Bögen' })).toHaveAttribute('aria-pressed', 'false');
+    await expect(page.locator('.hj-screen.is-active')).toHaveCount(1);
+    await expect(page.locator('.hj-screen.is-active')).toHaveAttribute('data-journey-screen', '3-2');
+  });
+  test('Chips schalten das Handy der Etappe (Handy), auch auf Englisch', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto('/en/');
+    const chip = page.getByRole('button', { name: 'Knots' });
+    await chip.scrollIntoViewIfNeeded();
+    await chip.click();
+    await expect(chip).toHaveAttribute('aria-pressed', 'true');
+    const active = page.locator('[data-journey-step="2"] .hj-inline.is-active');
+    await expect(active).toHaveCount(1);
+    await expect(active).toHaveAttribute('data-journey-inline', '2-1');
+    await expect(active).toHaveJSProperty('complete', true);
+  });
 });
 
 test.describe('Preisliste: Paket-Karten', () => {
