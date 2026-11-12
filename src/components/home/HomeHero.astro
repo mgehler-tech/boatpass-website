@@ -461,18 +461,21 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
       min-height: 0;
     }
     .hh-phone { --px: 1px; width: 100%; }
+    /* Reicht die Höhe nicht für Erklärung und Merkhilfe, scrollt die Frage
+       über dem Fuß mit Button und Link. */
+    .hhq-scroll { overflow-y: auto; scrollbar-width: thin; }
     .hhq-fig { flex: 0 1 132px; height: auto; min-height: 56px; }
     /* Mit Abbildung: Bild neben der Frage statt darunter. So bleibt es groß
        genug, obwohl die Höhe knapp ist; die Zeile gibt bei Bedarf nach. */
-    .hhq-item:has(.hhq-fig) {
+    .hhq-scroll:has(.hhq-fig) {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 132px;
       grid-template-rows: auto minmax(72px, 120px);
       align-content: start;
     }
-    .hhq-item:has(.hhq-fig) > * { grid-column: 1 / -1; }
-    .hhq-item:has(.hhq-fig) > .hhq-q { grid-column: 1; align-self: center; }
-    .hhq-item:has(.hhq-fig) > .hhq-fig { grid-column: 2; }
+    .hhq-scroll:has(.hhq-fig) > * { grid-column: 1 / -1; }
+    .hhq-scroll:has(.hhq-fig) > .hhq-q { grid-column: 1; align-self: center; }
+    .hhq-scroll:has(.hhq-fig) > .hhq-fig { grid-column: 2; }
   }
 
   /* Hohe Desktop-Fenster: Handy mit Rahmen. Unter dem Gerät bleiben 6 %
@@ -506,7 +509,13 @@ const catalogs = t.hero.licenses.map((name, i) => ({ name, href: hrefs[i] }));
       container-type: inline-size;
     }
     .hhq { display: flex; flex: 1; flex-direction: column; min-height: 0; }
-    .hhq-item { flex: 1; padding-top: calc(var(--u) * 30); }
+    .hhq-item { flex: 1; }
+    .hhq-scroll {
+      flex: 1;
+      padding-top: calc(var(--u) * 30);
+      overflow-y: auto;
+      scrollbar-width: none;
+    }
     .hhq-fig { flex: 1 1 0; height: auto; min-height: calc(var(--u) * 56); max-height: calc(var(--u) * 150); }
     .hhq-more { min-height: calc(var(--u) * 30); }
 

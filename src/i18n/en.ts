@@ -273,6 +273,7 @@ export const en: Translations = {
     heroQuestionHint: 'Real exam question. Tap an answer.',
     heroQuestionCta: 'Keep learning in the app',
     heroQuestionMore: 'Try more questions here',
+    heroQuestionScroll: 'Question with explanation and mnemonic',
     heroQuestions: 'questions',
     heroNotes: ['Motor and sail', 'incl. 15 navigation tasks', 'Inland VHF with ATIS', 'Marine VHF with DSC distress', 'Satellite and distress radio'],
     journeyChips: [

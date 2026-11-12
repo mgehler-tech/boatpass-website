@@ -1,8 +1,13 @@
 ---
 // Frage-Bühne des Heros: je Schein eine echte Prüfungsfrage zum Antippen
 // (data/hero-questions.ts). Nach der Antwort bleiben die richtige und die
-// eigene Antwort stehen, darunter kommen der Anriss der Erklärung, der Weg in
-// die App und ein Link zum Quiz im Lernweg.
+// eigene Antwort stehen, darunter kommen Erklärung und Merkhilfe wie in der
+// App, dann der Weg in die App und ein Link zum Quiz im Lernweg.
+//
+// Aufbau je Frage: .hhq-scroll (Frage, Antworten, Auflösung) und .hhq-foot
+// (Button, Link). Wo die Höhe fest ist (Handy mit Rahmen, Karte im niedrigen
+// Desktop-Fenster, s. HomeHero), scrollt nur .hhq-scroll, der Fuß bleibt
+// stehen: Eine lange Erklärung schiebt den Button nie aus dem Bild.
 //
 // Alle fünf Fragen stehen im HTML, der Schein-Wähler (HomeHero) zeigt jeweils
 // eine (Klasse .hh-shot, src/scripts/hero-stage.ts). Zwei Darstellungen aus
@@ -45,6 +50,7 @@ const items = HERO_QUESTIONS.map((item, i) => {
   data-right={q.right}
   data-wrong={q.wrong}
   data-correct-is={q.correctIs}
+  data-mnemonic-label={q.mnemonicLabel}
 >
   {items.map((item, i) => (
     <section
@@ -54,6 +60,7 @@ const items = HERO_QUESTIONS.map((item, i) => {
       hidden={i !== 0}
       aria-labelledby={`${idBase}-${item.licence}`}
     >
+      <div class="hhq-scroll" data-scroll data-label={h.heroQuestionScroll}>
       <p class="hhq-source">
         {item.name}<span aria-hidden="true"> · </span>{h.heroQuestionSource.replace('{n}', String(item.number))}
       </p>
@@ -97,6 +104,14 @@ const items = HERO_QUESTIONS.map((item, i) => {
       <div class="hhq-after" data-after>
         <p class="hhq-verdict"><span class="hhq-verdict-mark" aria-hidden="true"></span><span data-verdict></span></p>
         <p class="hhq-expl" data-explanation>{item.explanation[lang]}</p>
+        <div class="hhq-mnemo">
+          <span class="hhq-mnemo-label"><Icon name="lightbulb" size={14} strokeWidth={2} />{q.mnemonicLabel}</span>
+          <p data-mnemonic>{item.mnemonic[lang]}</p>
+        </div>
+      </div>
+      </div>
+
+      <div class="hhq-foot" data-foot>
         <StoreCta lang={lang} position="hero-question" label={h.heroQuestionCta} class="hhq-cta" />
         <a class="hhq-more" href="#quiz">{h.heroQuestionMore}</a>
       </div>
@@ -114,10 +129,27 @@ const items = HERO_QUESTIONS.map((item, i) => {
   .hhq-item {
     display: flex;
     flex-direction: column;
+    min-height: 0;
+  }
+  /* Innenabstand am Scrollbereich statt an der Frage: So schneidet er die
+     Fokusringe der Antworten nicht ab. */
+  .hhq-scroll {
+    display: flex;
+    flex-direction: column;
     gap: calc(var(--u) * 10);
     min-height: 0;
     padding: calc(var(--u) * 16) calc(var(--u) * 14);
   }
+  .hhq-scroll:focus-visible { outline: 3px solid var(--h-blue); outline-offset: -3px; }
+  /* Geht es oben oder unten weiter, läuft der Inhalt dort weich aus. */
+  .hhq-scroll[data-above],
+  .hhq-scroll[data-more] {
+    --fade: linear-gradient(180deg, transparent, #000 var(--fade-top, 0px), #000 calc(100% - var(--fade-end, 0px)), transparent);
+    -webkit-mask-image: var(--fade);
+    mask-image: var(--fade);
+  }
+  .hhq-scroll[data-above] { --fade-top: calc(var(--u) * 22); }
+  .hhq-scroll[data-more] { --fade-end: calc(var(--u) * 30); }
 
   .hhq-source {
     margin: 0;
@@ -218,14 +250,23 @@ const items = HERO_QUESTIONS.map((item, i) => {
   }
   .hhq-item[data-state] .hhq-hint { display: none; }
 
-  /* ── Auflösung: Urteil, Anriss der Erklärung, Weg in die App ── */
+  /* ── Auflösung: Urteil, Erklärung und Merkhilfe; im Fuß der Weg in die App ── */
   .hhq-after {
     display: none;
+    flex: none;
     gap: calc(var(--u) * 8);
     padding-top: calc(var(--u) * 10);
     border-top: 1px solid var(--h-line);
   }
-  .hhq-item[data-state] .hhq-after { display: grid; }
+  .hhq-foot {
+    display: none;
+    flex: none;
+    gap: calc(var(--u) * 6);
+    padding: 0 calc(var(--u) * 14) calc(var(--u) * 12);
+  }
+  .hhq-item[data-state] .hhq-after,
+  .hhq-item[data-state] .hhq-foot { display: grid; }
+  .hhq-item[data-state] .hhq-scroll { padding-bottom: calc(var(--u) * 12); }
   .hhq-verdict {
     display: flex;
     align-items: center;
@@ -245,13 +286,36 @@ const items = HERO_QUESTIONS.map((item, i) => {
     line-height: 1.5;
     color: var(--h-text);
   }
+  /* Merkhilfe wie in der App und im Quiz des Lernwegs: Bernstein. */
+  .hhq-mnemo { margin-top: calc(var(--u) * 2); }
+  .hhq-mnemo-label {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(var(--u) * 5);
+    margin-bottom: calc(var(--u) * 5);
+    font-size: calc(var(--u) * 11);
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--h-beacon-ink);
+  }
+  .hhq-mnemo-label svg { width: calc(var(--u) * 13); height: calc(var(--u) * 13); color: var(--h-beacon); }
+  .hhq-mnemo p {
+    margin: 0;
+    padding: calc(var(--u) * 8) calc(var(--u) * 10);
+    border: 1px solid color-mix(in srgb, var(--h-beacon) 55%, transparent);
+    border-radius: calc(var(--u) * 10);
+    background: var(--h-beacon-wash);
+    font-size: calc(var(--u) * 12.5);
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--h-text);
+  }
 
   .hhq-cta.h-btn {
     justify-content: center;
     gap: calc(var(--u) * 8);
     width: 100%;
     min-height: calc(var(--u) * 44);
-    margin-top: calc(var(--u) * 2);
     padding: 0 calc(var(--u) * 14);
     font-size: calc(var(--u) * 14);
   }
@@ -284,7 +348,9 @@ const items = HERO_QUESTIONS.map((item, i) => {
   html:not(.h-js) .hhq-answer[data-right] .hhq-key-ok { opacity: 1; }
   html:not(.h-js) .hhq-hint,
   html:not(.h-js) .hhq-verdict { display: none; }
-  html:not(.h-js) .hhq-after { display: grid; }
+  html:not(.h-js) .hhq-after,
+  html:not(.h-js) .hhq-foot { display: grid; }
+  html:not(.h-js) .hhq-scroll { padding-bottom: calc(var(--u) * 12); }
 
   @media (prefers-reduced-motion: reduce) {
     .hhq-answer, .hhq-key, .hhq-more { transition: none; }
@@ -305,9 +371,45 @@ const items = HERO_QUESTIONS.map((item, i) => {
     root.querySelectorAll<HTMLElement>('.hhq-item').forEach((item) => {
       const correct = Number(item.dataset.correct);
       const answers = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-answer]'));
+      const scroll = item.querySelector<HTMLElement>('[data-scroll]');
       const after = item.querySelector<HTMLElement>('[data-after]');
+      const foot = item.querySelector<HTMLElement>('[data-foot]');
       const verdict = item.querySelector<HTMLElement>('[data-verdict]');
       const explanation = item.querySelector<HTMLElement>('[data-explanation]')?.textContent ?? '';
+      const mnemonic = item.querySelector<HTMLElement>('[data-mnemonic]')?.textContent ?? '';
+
+      // Scrollt der Bereich (feste Höhe, lange Erklärung), ist er per Tastatur
+      // erreichbar und zeigt unten an, dass es weitergeht.
+      const syncScroll = () => {
+        if (!scroll) return;
+        const max = scroll.scrollHeight - scroll.clientHeight;
+        if (max > 1) {
+          scroll.tabIndex = 0;
+          scroll.setAttribute('role', 'group');
+          scroll.setAttribute('aria-label', scroll.dataset.label ?? '');
+        } else {
+          scroll.removeAttribute('tabindex');
+          scroll.removeAttribute('role');
+          scroll.removeAttribute('aria-label');
+        }
+        scroll.toggleAttribute('data-above', scroll.scrollTop > 4);
+        scroll.toggleAttribute('data-more', max - scroll.scrollTop > 4);
+      };
+      // Auflösung ins Bild holen: passt sie ganz, bis ans Ende; sonst beginnt
+      // sie oben am Rand, mit dem Urteil als erster Zeile.
+      const reveal = () => {
+        if (!scroll || !after) return;
+        const max = scroll.scrollHeight - scroll.clientHeight;
+        if (max > 1) {
+          const top = after.getBoundingClientRect().top - scroll.getBoundingClientRect().top + scroll.scrollTop;
+          scroll.scrollTo({ top: Math.min(max, top), behavior: moving() ? 'smooth' : 'auto' });
+        }
+        syncScroll();
+      };
+      if (scroll) {
+        scroll.addEventListener('scroll', syncScroll, { passive: true });
+        new ResizeObserver(syncScroll).observe(scroll);
+      }
 
       answers.forEach((btn, j) => {
         btn.addEventListener('click', () => {
@@ -322,16 +424,20 @@ const items = HERO_QUESTIONS.map((item, i) => {
           });
           btn.setAttribute('aria-pressed', 'true');
           if (verdict) verdict.textContent = (right ? d.right : d.wrong) ?? '';
-          if (after && moving()) {
-            after.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], {
-              duration: 360,
-              easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
-            });
+          if (moving()) {
+            [after, foot].forEach((el) =>
+              el?.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], {
+                duration: 360,
+                easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+              }),
+            );
           }
+          reveal();
           if (status) {
+            const solved = `${explanation} ${d.mnemonicLabel}: ${mnemonic}`;
             status.textContent = right
-              ? `${d.right} ${explanation}`
-              : `${d.wrong}. ${d.correctIs} ${textOf(answers[correct])} ${explanation}`;
+              ? `${d.right} ${solved}`
+              : `${d.wrong}. ${d.correctIs} ${textOf(answers[correct])} ${solved}`;
           }
         });
       });
