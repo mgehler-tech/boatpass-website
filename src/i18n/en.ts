@@ -268,7 +268,11 @@ export const en: Translations = {
     ctaPlay: 'Free on Google Play',
     phoneAlt: 'Boatpass app – home screen with licence, progress, streak and study modes',
     heroPickerLabel: 'Choose a licence',
-    heroPhoneAlt: 'Boatpass app – home screen for {license} with progress, streak and study modes',
+    heroQuestionSource: 'Official question {n}',
+    heroFigureAlt: 'Figure for question {n}',
+    heroQuestionHint: 'Real exam question. Tap an answer.',
+    heroQuestionCta: 'Keep learning in the app',
+    heroQuestionMore: 'Try more questions here',
     heroQuestions: 'questions',
     heroNotes: ['Motor and sail', 'incl. 15 navigation tasks', 'Inland VHF with ATIS', 'Marine VHF with DSC distress', 'Satellite and distress radio'],
     journeyChips: [
