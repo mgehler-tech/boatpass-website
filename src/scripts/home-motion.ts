@@ -176,47 +176,6 @@ function initJourney() {
   }
 }
 
-/* ── Hero: Handy folgt dezent dem Zeiger (nur Maus) ───────────────────── */
-function initTilt() {
-  const hero = document.querySelector<HTMLElement>('.hh');
-  const phone = hero?.querySelector<HTMLElement>('[data-tilt]');
-  if (!hero || !phone || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
-
-  const rx = gsap.quickTo(phone, 'rotationX', { duration: 0.9, ease: 'power3.out' });
-  const ry = gsap.quickTo(phone, 'rotationY', { duration: 0.9, ease: 'power3.out' });
-  let frame = 0;
-  let px = 0;
-  let py = 0;
-
-  hero.addEventListener(
-    'pointermove',
-    (e) => {
-      if (e.pointerType !== 'mouse') return;
-      px = e.clientX;
-      py = e.clientY;
-      if (frame) return;
-      frame = requestAnimationFrame(() => {
-        frame = 0;
-        const r = hero.getBoundingClientRect();
-        ry(((px - r.left) / r.width - 0.5) * 10);
-        rx(-((py - r.top) / r.height - 0.5) * 8);
-      });
-    },
-    { passive: true },
-  );
-  const reset = () => {
-    cancelAnimationFrame(frame);
-    frame = 0;
-    rx(0);
-    ry(0);
-  };
-  hero.addEventListener('pointerleave', reset);
-  window.addEventListener('blur', reset);
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) reset();
-  });
-}
-
 /* ── Einblenden beim Scrollen ─────────────────────────────────────────────
    Inhalte heben sich dezent an, das Gründerporträt wird aufgezogen.
    IntersectionObserver statt ScrollTrigger: Er meldet für jedes Element
@@ -338,7 +297,6 @@ function initSmoothScroll() {
 if (motion) {
   initReveals();
   initParallax();
-  initTilt();
   initHeroParallax();
   initSmoothScroll();
   // Ab hier gelten die Inline-Werte von GSAP, nicht mehr die CSS-Startzustände.

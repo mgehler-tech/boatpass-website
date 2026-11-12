@@ -1,19 +1,19 @@
 /**
- * Bühne des Heros (Richtung „Horizont“): Szenenwechsel, Screen-Wechsel im
- * Handy, Spiegelung im Wasser und die Video-Loops je Szene.
+ * Bühne des Heros (Richtung „Horizont“): Szenenwechsel, Wechsel der
+ * Prüfungsfrage und die Video-Loops je Szene.
  *
  * - Szenenwechsel: Die neue Szene öffnet sich vom Horizont aus nach oben und
  *   unten (clip-path), die alte bleibt darunter stehen, bis die Blende fertig
  *   ist. Reduzierte Bewegung: kurze Überblendung über die CSS-Klassen.
- * - Screen-Wechsel: Der neue App-Screen gleitet von unten nach, der alte
- *   weicht nach oben – wie beim Blättern in der App.
+ * - Fragen-Wechsel: Je Schein steht eine Frage im HTML (.hh-shot), sichtbar
+ *   ist genau eine (Attribut hidden). Die neue gleitet von unten nach.
  * - Video: Liegt zur aktiven Szene ein Clip vor (data-video-* an den Bildern,
  *   HeroPhoto.astro), lädt er erst nach dem Seiten-Load und nur bei erlaubter
  *   Bewegung ohne Datensparmodus. Er blendet ein, sobald er läuft, und hält
  *   an, wenn der Hero aus dem Bild scrollt oder der Tab im Hintergrund liegt.
  *   Fehlt der Clip, bleibt das Foto mit seiner langsamen Drift stehen.
  *
- * Alle Zustände stehen in Klassen (is-active), damit der Hero ohne dieses
+ * Alle Zustände stehen in Klassen (is-active) und im Attribut hidden, damit der Hero ohne dieses
  * Skript und nach jeder abgebrochenen Animation korrekt dasteht.
  */
 
@@ -31,8 +31,7 @@ const band = window.matchMedia('(min-width: 640px)');
 const moving = () => root.classList.contains('h-motion') && !reduced.matches;
 
 export function createHeroStage(hero: HTMLElement, panel: HTMLElement) {
-  const shots = Array.from(panel.querySelectorAll<HTMLImageElement>('.hh-shot'));
-  const reflect = panel.querySelector<HTMLImageElement>('.hh-reflect img');
+  const shots = Array.from(panel.querySelectorAll<HTMLElement>('.hh-shot'));
   const media = panel.querySelector<HTMLElement>('.hh-media');
   let scene = panel.querySelector<HTMLElement>('.hh-photo.is-active')?.dataset.scene ?? 'binnen';
   let running: Animation[] = [];
@@ -99,50 +98,27 @@ export function createHeroStage(hero: HTMLElement, panel: HTMLElement) {
     else done();
   }
 
-  /* ── App-Screens ── */
+  /* ── Prüfungsfragen ── */
   let shotAnims: Animation[] = [];
   function showShot(key: string) {
     const next = shots.find((s) => s.dataset.license === key);
-    const prev = shots.find((s) => s.classList.contains('is-active'));
+    const prev = shots.find((s) => !s.hidden);
     if (!next || next === prev) return;
     shotAnims.forEach((a) => a.finish());
     shotAnims = [];
 
     shots.forEach((s) => {
-      const on = s === next;
-      s.classList.toggle('is-active', on);
-      if (on) s.removeAttribute('aria-hidden');
-      else s.setAttribute('aria-hidden', 'true');
+      s.hidden = s !== next;
     });
 
-    if (moving() && prev) {
+    if (moving()) {
       shotAnims = [
-        prev.animate(
-          [{ opacity: 1, transform: 'translateY(0)' }, { opacity: 0, transform: 'translateY(-6%)' }],
-          { duration: 380, easing: 'cubic-bezier(0.4, 0, 1, 1)' },
-        ),
         next.animate(
-          [{ opacity: 0, transform: 'translateY(12%)' }, { opacity: 1, transform: 'translateY(0)' }],
-          { duration: 640, delay: 90, easing: EASE_OUT, fill: 'backwards' },
+          [{ opacity: 0, transform: 'translateY(14px)' }, { opacity: 1, transform: 'none' }],
+          { duration: 520, easing: EASE_OUT },
         ),
       ];
     }
-    updateReflection(next);
-  }
-
-  /* ── Spiegelung: zeigt den aktiven Screen, gespiegelt und weich ── */
-  function updateReflection(shot: HTMLImageElement) {
-    if (!reflect) return;
-    const src = shot.currentSrc || shot.src;
-    if (src && reflect.src !== src) {
-      reflect.removeAttribute('srcset');
-      reflect.src = src;
-    }
-  }
-  const first = shots.find((s) => s.classList.contains('is-active'));
-  if (first) {
-    if (first.complete) updateReflection(first);
-    else first.addEventListener('load', () => updateReflection(first), { once: true });
   }
 
   /* ── Video ── */
