@@ -65,7 +65,7 @@ Für die Anmeldung zur SBF-Prüfung benötigst du in der Regel:
 
 - **Ausgefülltes Antragsformular** des zuständigen Verbands (DSV oder DMYV)
 - **Biometrisches Passbild** für den späteren Führerschein
-- **Ärztliches Zeugnis** über Seh- und Hörvermögen (Tauglichkeit) – nicht älter als meist 12 Monate
+- **Ärztliches Zeugnis** über Seh- und Hörvermögen (Tauglichkeit) – nicht älter als meist 12 Monate; was bei Vorerkrankungen gilt, steht im Artikel zum [Sportbootführerschein trotz gesundheitlicher Einschränkung](/blog/sportbootfuehrerschein-gesundheitliche-einschraenkung-aerztliches-zeugnis/)
 - **Kopie eines gültigen Personalausweises oder Reisepasses** zum Altersnachweis
 - Falls vorhanden: **Kopie eines Kfz-Führerscheins** – manche Sehtest-/Formalitäten entfallen dann
 - Ggf. **Auszug aus dem Fahreignungsregister** (Flensburg), je nach Verband und Vorgaben

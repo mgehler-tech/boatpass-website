@@ -51,7 +51,7 @@ Warnings in the marine weather report are based on the Beaufort scale. Two thres
 - **Strong-wind warning:** from **Beaufort force 6**.
 - **Gale warning:** from **Beaufort force 8**.
 
-A strong-wind warning doesn't yet mean a gale, but it's already a clear signal to critically reconsider your planned trip, especially on open water or in a boat not well suited to rough conditions. A gale warning is a clear signal to postpone or abandon the trip. Our article on the [Beaufort scale](/en/blog/weather-beaufort-scale/) explains in detail how each Beaufort level actually affects the water surface.
+A strong-wind warning doesn't yet mean a gale, but it's already a clear signal to critically reconsider your planned trip, especially on open water or in a boat not well suited to rough conditions. A gale warning is a clear signal to postpone or abandon the trip. Our article on the [Beaufort scale](/en/blog/weather-beaufort-scale/) explains in detail how each Beaufort level actually affects the water surface. What to do if a thunderstorm catches you out despite the forecast is covered in [thunderstorms and lightning on the water](/en/blog/thunderstorms-lightning-on-the-water/).
 
 One thing that matters in practice: a warning always applies to a specific **sea area** and a specific **time window**. So don't just read the warning level itself, but also which area and time period it covers, and whether your planned course actually passes through that area.
 

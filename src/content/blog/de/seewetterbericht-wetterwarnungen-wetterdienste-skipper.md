@@ -51,7 +51,7 @@ Warnungen im Seewetterbericht orientieren sich an der Beaufort-Skala. Zwei Schwe
 - **Starkwindwarnung:** ab **6 Beaufort**.
 - **Sturmwarnung:** ab **8 Beaufort**.
 
-Eine Starkwindwarnung bedeutet also noch keinen Sturm, ist aber bereits ein klares Signal, die geplante Fahrt kritisch zu hinterfragen, besonders auf offenen Gewässern oder mit einem für raue Bedingungen wenig geeigneten Boot. Eine Sturmwarnung ist ein deutliches Signal, die Fahrt zu verschieben oder abzubrechen. Wie sich die einzelnen Beaufort-Stufen konkret auf die Wasseroberfläche auswirken, erklärt unser Artikel zur [Beaufort-Skala](/blog/wetterkunde-beaufort/) im Detail.
+Eine Starkwindwarnung bedeutet also noch keinen Sturm, ist aber bereits ein klares Signal, die geplante Fahrt kritisch zu hinterfragen, besonders auf offenen Gewässern oder mit einem für raue Bedingungen wenig geeigneten Boot. Eine Sturmwarnung ist ein deutliches Signal, die Fahrt zu verschieben oder abzubrechen. Wie sich die einzelnen Beaufort-Stufen konkret auf die Wasseroberfläche auswirken, erklärt unser Artikel zur [Beaufort-Skala](/blog/wetterkunde-beaufort/) im Detail. Was zu tun ist, wenn dich trotz Wetterbericht ein Gewitter überrascht, steht im Beitrag [Gewitter und Blitzschlag auf dem Wasser](/blog/gewitter-blitzschlag-wasser-verhalten-vorsorge/).
 
 Wichtig für die Praxis: Eine Warnung bezieht sich immer auf ein bestimmtes **Seegebiet** und einen bestimmten **Zeitraum**. Lies deshalb nicht nur die Warnstufe, sondern auch, für welches Gebiet und welchen Zeitpunkt sie gilt, und ob dein geplanter Kurs dieses Gebiet überhaupt berührt.
 

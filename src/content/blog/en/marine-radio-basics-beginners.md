@@ -65,7 +65,7 @@ This ranking ensures that everyone listening immediately knows how serious a mes
 
 A normal call follows a clear pattern. You call the other station on the **calling channel** (or via DSC), stating their name first, then your own, and propose a **working channel**. After confirmation, both sides switch to that working channel and handle the conversation there. That keeps the calling channel free for others.
 
-So that everyone understands each other, the **international phonetic alphabet** is used for spelling (Alfa, Bravo, Charlie, and so on). International marine radio is also conducted in **English**, which is why the SRC exam includes an English component. Detailed example dialogues go beyond this overview, but they are part of any good radio preparation.
+So that everyone understands each other, the **international phonetic alphabet** is used for spelling (Alfa, Bravo, Charlie, and so on). International marine radio is also conducted in **English**, which is why the SRC exam includes an English component. Detailed [example dialogues for marine radio calls and replies](/en/blog/marine-radio-in-practice-example-dialogues/) go beyond this overview, but they are part of any good radio preparation.
 
 ## The Key Rules of Radio Discipline
 

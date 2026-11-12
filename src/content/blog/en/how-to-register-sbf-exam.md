@@ -65,7 +65,7 @@ To register for the SBF exam you generally need:
 
 - **A completed application form** from the responsible association (DSV or DMYV)
 - **A biometric passport photo** for the later license
-- **A medical certificate** of vision and hearing (fitness) – usually no older than 12 months
+- **A medical certificate** of vision and hearing (fitness) – usually no older than 12 months; for pre-existing conditions, see [getting the boating license with a health condition](/en/blog/boating-license-with-a-health-condition-medical-certificate/)
 - **A copy of a valid ID card or passport** as proof of age
 - If available: **a copy of a car driving license** – some eyesight tests/formalities may then be waived
 - Possibly **an extract from the driving aptitude register** (Flensburg), depending on the association and requirements

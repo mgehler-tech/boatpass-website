@@ -44,7 +44,7 @@ One of the costliest mistakes of all is operating a boat under the influence of 
 
 ## Missing or Incorrect Boat Registration
 
-Small craft under 20 meters in length, which includes most motorboats and sailing boats, must carry an official or officially recognized registration number on federal inland waterways, under the Inland Waterways Registration Ordinance. Exemptions include craft propelled only by muscle power such as rowing boats, canoes, and kayaks, pure sailing boats up to 5.50 meters, boats with an engine of no more than 2.21 kW, and tenders. Operating without a valid registration number, failing to display it clearly, or running a boat whose registration no longer matches its current owner all risk a fine. The reason for the registration requirement is straightforward: the water police need to be able to trace a boat back to an owner if necessary, for example after an accident or another offense.
+Small craft under 20 meters in length, which includes most motorboats and sailing boats, must carry an official or officially recognized registration number on federal inland waterways, under the Inland Waterways Registration Ordinance. Exemptions include craft propelled only by muscle power such as rowing boats, canoes, and kayaks, pure sailing boats up to 5.50 meters, boats with an engine of no more than 2.21 kW, and tenders. Operating without a valid registration number, failing to display it clearly, or running a boat whose registration no longer matches its current owner all risk a fine. The reason for the [boat registration and marking requirement](/en/blog/boat-registration-and-identification-requirements-germany/) is straightforward: the water police need to be able to trace a boat back to an owner if necessary, for example after an accident or another offense.
 
 ## Missing Safety Equipment on Board
 
@@ -60,7 +60,7 @@ Many inland lakes, river sections, and coastal waters have their own speed limit
 
 ## Polluting a Waterway: When a Fine Turns Into a Crime
 
-One area where something seemingly minor can quickly turn serious is environmental protection. Unlawfully discharging oil, bilge water, or other pollutants into a body of water isn't just a regulatory matter, it can also be a criminal offense under **Section 324 StGB (water pollution)**. The sentencing range goes up to **five years in prison** or a fine. That applies not just to large freighters but in principle to anyone who unlawfully pollutes a body of water, including with a small recreational boat. Maintaining your engine and bilge regularly, following the guidance in our article on [basic outboard motor maintenance](/en/blog/outboard-motor-basic-maintenance/), noticeably reduces this risk.
+One area where something seemingly minor can quickly turn serious is [environmental protection and water conservation on the water](/en/blog/environmental-protection-boating-water-conservation/). Unlawfully discharging oil, bilge water, or other pollutants into a body of water isn't just a regulatory matter, it can also be a criminal offense under **Section 324 StGB (water pollution)**. The sentencing range goes up to **five years in prison** or a fine. That applies not just to large freighters but in principle to anyone who unlawfully pollutes a body of water, including with a small recreational boat. Maintaining your engine and bilge regularly, following the guidance in our article on [basic outboard motor maintenance](/en/blog/outboard-motor-basic-maintenance/), noticeably reduces this risk.
 
 ## Duties After an Accident
 

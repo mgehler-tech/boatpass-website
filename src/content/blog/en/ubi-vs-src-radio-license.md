@@ -106,7 +106,7 @@ In that case, it makes sense to get the SRC first, since its content is more ext
 
 ## What About Offshore? The LRC
 
-If you want to communicate beyond VHF range, for example on longer offshore passages, the SRC alone is not sufficient. That is where the [**Long Range Certificate (LRC)**](/en/lrc/) comes in, which additionally covers medium and short wave radio as well as satellite communication under GMDSS, and applies to sea areas A1 through A4. For most coastal areas of the North Sea and Baltic Sea, however, the SRC is entirely sufficient.
+If you want to communicate beyond VHF range, for example on longer offshore passages, the SRC alone is not sufficient. That is where the [**Long Range Certificate (LRC)**](/en/lrc/) comes in, which additionally covers medium and short wave radio as well as satellite communication under GMDSS, and applies to sea areas A1 through A4. For most coastal areas of the North Sea and Baltic Sea, however, the SRC is entirely sufficient. Our article on the [LRC radio certificate and when the SRC is no longer enough](/en/blog/lrc-radio-certificate-when-src-is-not-enough/) shows where the line runs.
 
 ## How to Prepare
 

@@ -104,7 +104,7 @@ Klingt offensichtlich – aber eine **Wiederholungsprüfung** kostet erneut Geb�
 
 Wer durchfällt, zahlt schnell 100–200 € extra. Gezieltes Lernen mit Prüfungssimulation und Fehlertraining ist die beste Investition, um das zu vermeiden.
 
-Offizielle Durchfallquoten veröffentlichen DSV und DMYV nicht. Klar geregelt ist aber: Einen nicht bestandenen Prüfungsteil kannst du nicht am selben Tag wiederholen, und die gesamte Prüfung muss innerhalb eines Jahres abgeschlossen sein. Gute Vorbereitung spart also nicht nur Geld, sondern auch Zeit.
+Offizielle Durchfallquoten veröffentlichen DSV und DMYV nicht. Klar geregelt ist aber: Einen nicht bestandenen Prüfungsteil kannst du nicht am selben Tag wiederholen, und die gesamte Prüfung muss innerhalb eines Jahres abgeschlossen sein. Gute Vorbereitung spart also nicht nur Geld, sondern auch Zeit. Wie es nach einem Fehlversuch weitergeht, erklärt der Artikel [SBF-Binnen-Prüfung nicht bestanden – was jetzt zu tun ist](/blog/sbf-binnen-pruefung-nicht-bestanden/).
 
 ## Tipp 5: Anbieter vergleichen – vor allem bei der Praxis
 

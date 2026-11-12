@@ -65,7 +65,7 @@ Diese Rangfolge sorgt dafür, dass alle Mithörer sofort wissen, wie ernst eine 
 
 Ein normaler Anruf folgt einem klaren Muster. Du rufst die Gegenstelle auf dem **Anrufkanal** (oder per DSC), nennst zuerst ihren Namen, dann deinen eigenen, und schlägst einen **Arbeitskanal** vor. Nach Bestätigung wechseln beide Seiten auf diesen Arbeitskanal und wickeln das Gespräch dort ab. So bleibt der Anrufkanal frei für andere.
 
-Damit sich alle verstehen, wird beim Buchstabieren das **internationale Buchstabieralphabet** verwendet (Alfa, Bravo, Charlie und so weiter). Der internationale Seefunk wird zudem auf **Englisch** abgewickelt, weshalb die SRC-Prüfung einen Englisch-Teil enthält. Ausführliche Beispieldialoge sprengen den Rahmen dieses Überblicks, gehören aber zu jeder guten Funkvorbereitung.
+Damit sich alle verstehen, wird beim Buchstabieren das **internationale Buchstabieralphabet** verwendet (Alfa, Bravo, Charlie und so weiter). Der internationale Seefunk wird zudem auf **Englisch** abgewickelt, weshalb die SRC-Prüfung einen Englisch-Teil enthält. Ausführliche [Beispieldialoge für Anruf und Antwort im Sprechfunk](/blog/sprechfunk-praxis-beispieldialoge-anruf-antwort/) sprengen den Rahmen dieses Überblicks, gehören aber zu jeder guten Funkvorbereitung.
 
 ## Die wichtigsten Regeln der Funkdisziplin
 

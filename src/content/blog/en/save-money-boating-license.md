@@ -104,7 +104,7 @@ Sounds obvious – but a **retake** means paying fees all over again:
 
 Failing quickly costs an extra €100–200. Targeted studying with exam simulation and mistake training is the best investment to avoid this.
 
-The DSV and DMYV do not publish official failure rates. What is clearly regulated, though: you cannot retake a failed part of the exam on the same day, and the whole exam must be completed within one year. Good preparation therefore saves not only money but also time.
+The DSV and DMYV do not publish official failure rates. What is clearly regulated, though: you cannot retake a failed part of the exam on the same day, and the whole exam must be completed within one year. Good preparation therefore saves not only money but also time. What happens after a failed attempt is covered in [failed the SBF Inland exam: what to do next](/en/blog/failed-sbf-inland-exam-what-to-do-next/).
 
 ## Tip 5: Compare providers – especially for the practical part
 
