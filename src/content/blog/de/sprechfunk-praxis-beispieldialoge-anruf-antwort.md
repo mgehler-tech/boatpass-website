@@ -114,4 +114,4 @@ Welche Funkprüfung für dein Revier infrage kommt, zeigen die Seiten zu [SRC](/
 
 Ein Funkgespräch folgt immer demselben Muster: **Anruf** auf dem Anrufkanal, **Antwort** mit Kanalvorschlag, **Wechsel** auf den Arbeitskanal, kurzes **Gespräch** mit klaren Begriffen und zum Schluss der saubere **Verbindungsabbau** mit „out“ samt Rückschalten auf Kanal 16. Der **Notruf** folgt einem noch strengeren Schema, das du sicher beherrschen solltest, bevor du es brauchst. Wer die Abläufe laut geübt hat, funkt im Alltag entspannt und im Ernstfall zielgerichtet.
 
-Die **Boatpass-App** unterstützt dich bei der Vorbereitung auf SRC und UBI mit den amtlichen Fragenkatalogen, einem realistischen Prüfungsmodus und gezieltem Fehlertraining. So sind Kanäle, Verfahrensworte und Notrufablauf im Kopf, wenn du zum ersten Mal selbst das Mikrofon in der Hand hältst.
+Die **Boatpass-App** unterstützt dich bei der [Vorbereitung auf SRC und UBI](/funkschein-app/) mit den amtlichen Fragenkatalogen, einem realistischen Prüfungsmodus und gezieltem Fehlertraining. So sind Kanäle, Verfahrensworte und Notrufablauf im Kopf, wenn du zum ersten Mal selbst das Mikrofon in der Hand hältst.

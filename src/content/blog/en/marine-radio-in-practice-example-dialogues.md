@@ -114,4 +114,4 @@ Which radio exam fits your waters is shown on the pages for [SRC](/en/src/) and 
 
 A radio conversation always follows the same pattern: **call** on the calling channel, **reply** with a channel proposal, **switch** to the working channel, a short **conversation** with clear terms and finally a clean **close** with "out" and a switch back to channel 16. The **distress call** follows an even stricter scheme that you should master before you need it. If you have practiced the sequences out loud, you will radio calmly day to day and purposefully in an emergency.
 
-The **Boatpass app** supports your preparation for SRC and UBI with the official question catalogues, a realistic exam mode and targeted mistake training. That way channels, procedure words and the distress sequence are in your head when you pick up the microphone for the first time.
+The **Boatpass app** supports your [preparation for SRC and UBI](/en/radio-certificate-app/) with the official question catalogues, a realistic exam mode and targeted mistake training. That way channels, procedure words and the distress sequence are in your head when you pick up the microphone for the first time.
