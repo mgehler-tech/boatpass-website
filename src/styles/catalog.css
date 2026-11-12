@@ -147,6 +147,21 @@
 }
 .cq-a.is-correct { border-color: var(--h-stbd); background: var(--h-stbd-wash); color: var(--h-ink); }
 .cq-a.is-correct .cq-key { border-color: var(--h-stbd); background: var(--h-stbd); color: #fff; }
+/* Auf schmalen Screens stiehlt die rechts stehende „Richtig“-Marke der richtigen
+   Antwort rund 80px Textbreite: ihr Antworttext bricht dadurch eine Zeile früher
+   um und wirkt gequetscht, während die übrigen Antworten über die volle Breite
+   laufen – eine sichtbare, asymmetrische Zeile neben einer halbleeren Marke.
+   Unter 480px darf der Antworttext deshalb die volle Zeilenbreite nutzen (er
+   bricht dann wie alle anderen Antworten um), und die Marke rückt bündig unter
+   den Text in eine eigene Zeile (Einzug 38px = Schlüsselkreis 26px + 12px Lücke,
+   Reihenabstand über die bestehende 12px-Flex-Lücke, also auf dem 4px-Raster).
+   Reiner Layout-Feinschliff – Farben und Font-Weights des Corporate Designs
+   bleiben unverändert. */
+@media (max-width: 479px) {
+  .cq-a { flex-wrap: wrap; }
+  .cq-a-text { flex-basis: calc(100% - 38px); }
+  .cq-tag { align-self: flex-start; margin-left: 38px; }
+}
 .cq-x { margin: 16px 0 0; padding: 14px 0 0; border-top: 1px solid var(--h-line); }
 .cq-x-label { margin: 0 0 4px; font: 600 12px/1.4 var(--h-sans); letter-spacing: 0.06em; text-transform: uppercase; color: var(--h-muted); }
 .cq-x-text { margin: 0; font-size: 15px; line-height: 1.6; color: var(--h-text); }
