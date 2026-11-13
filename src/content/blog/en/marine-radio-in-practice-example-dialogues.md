@@ -15,6 +15,18 @@ faq:
     answer: "\"Over\" means: I have finished my message, it is your turn. \"Out\" ends the conversation and means that no reply is expected."
   - question: "How does a MAYDAY call work?"
     answer: "After the DSC distress alert, you say MAYDAY three times on channel 16, then \"this is\" and the vessel name three times with call sign. Then follow MAYDAY, vessel name, position, nature of distress, assistance required and number of persons on board, finishing with \"over\"."
+howTo:
+  name: "How a VHF marine radio conversation works"
+  description: "Four steps from the call on the calling channel to ending the call – the typical sequence of a ship-to-ship radio conversation."
+  steps:
+    - name: "Make the call"
+      text: "On the calling channel (channel 16 on VHF marine radio), say the name of the station you are calling, then \"this is\", your own vessel name, and finish with \"over\". At first contact, the names are repeated at most three times."
+    - name: "Wait for the reply and switch to a working channel"
+      text: "The called station replies with your name, then its own, and proposes a working channel. Acknowledge, switch to that channel and call again there."
+    - name: "Keep the conversation short and unambiguous"
+      text: "Exchange your information on the working channel in short sentences using fixed procedure words. Repeat important details such as positions, numbers and channels, and say \"say again\" if you have not understood something."
+    - name: "End the call"
+      text: "End the conversation with \"out\" and then switch the radio back to channel 16 so that you keep listening for calls and distress messages."
 ---
 
 You may already know that channel 16 is the calling and distress channel and what MAYDAY means. The tricky part starts when you sit at the microphone for the first time: What do you say, and in which order? When do you switch channels? How do you end the conversation? This article walks you through a typical radio exchange with **example dialogues** and explains the rules behind it, so that radio procedure is second nature in real life and in the exam.
@@ -114,4 +126,4 @@ Which radio exam fits your waters is shown on the pages for [SRC](/en/src/) and 
 
 A radio conversation always follows the same pattern: **call** on the calling channel, **reply** with a channel proposal, **switch** to the working channel, a short **conversation** with clear terms and finally a clean **close** with "out" and a switch back to channel 16. The **distress call** follows an even stricter scheme that you should master before you need it. If you have practiced the sequences out loud, you will radio calmly day to day and purposefully in an emergency.
 
-The **Boatpass app** supports your preparation for SRC and UBI with the official question catalogues, a realistic exam mode and targeted mistake training. That way channels, procedure words and the distress sequence are in your head when you pick up the microphone for the first time.
+The **Boatpass app** supports your [preparation for SRC and UBI](/en/radio-certificate-app/) with the official question catalogues, a realistic exam mode and targeted mistake training. That way channels, procedure words and the distress sequence are in your head when you pick up the microphone for the first time.

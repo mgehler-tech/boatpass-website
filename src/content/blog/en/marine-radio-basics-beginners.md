@@ -81,7 +81,7 @@ Radio is a shared medium: only one station can transmit on a channel at a time. 
 
 Marine radio is not rocket science once you know the basics: **channel 16** is the calling and distress channel, **channel 70** carries the digital DSC alert, and **MAYDAY, PAN PAN, and SECURITE** mark the three levels of urgency. DSC makes the distress call fast and precise, but does not replace the voice distress call on channel 16. Once you understand these building blocks, you can use the radio confidently day to day and respond correctly in an emergency. For regular operation you need the right certificate, but in a genuine emergency all that counts is that help arrives.
 
-The **Boatpass app** helps you prepare for the SRC and UBI with the complete official question catalogs, a realistic exam mode, and targeted mistake training, so that you have channels, DSC, and the distress procedures down cold before you pick up the microphone yourself.
+The **Boatpass app** helps you [prepare for the SRC and UBI](/en/radio-certificate-app/) with the complete official question catalogs, a realistic exam mode, and targeted mistake training, so that you have channels, DSC, and the distress procedures down cold before you pick up the microphone yourself.
 
 ## Sources
 

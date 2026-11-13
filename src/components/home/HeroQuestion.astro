@@ -1,0 +1,446 @@
+---
+// Frage-Bühne des Heros: je Schein eine echte Prüfungsfrage zum Antippen
+// (data/hero-questions.ts). Nach der Antwort bleiben die richtige und die
+// eigene Antwort stehen, darunter kommen Erklärung und Merkhilfe wie in der
+// App, dann der Weg in die App und ein Link zum Quiz im Lernweg.
+//
+// Aufbau je Frage: .hhq-scroll (Frage, Antworten, Auflösung) und .hhq-foot
+// (Button, Link). Wo die Höhe fest ist (Handy mit Rahmen, Karte im niedrigen
+// Desktop-Fenster, s. HomeHero), scrollt nur .hhq-scroll, der Fuß bleibt
+// stehen: Eine lange Erklärung schiebt den Button nie aus dem Bild.
+//
+// Alle fünf Fragen stehen im HTML, der Schein-Wähler (HomeHero) zeigt jeweils
+// eine (Klasse .hh-shot, src/scripts/hero-stage.ts). Zwei Darstellungen aus
+// demselben Markup, die Wahl trifft allein das CSS:
+// - Karte ohne Geräterahmen: Handy, Tablet und niedrige Desktop-Fenster. Dort
+//   wäre ein Handy im Paneel zu klein, um die Frage zu lesen und zu treffen.
+// - Handy mit Rahmen: ab 1024 px Breite und 840 px Höhe. Alle Maße im Screen
+//   hängen an --px (Screen-Breite / 272), der Screen skaliert wie ein Bild.
+//
+// Ohne JavaScript ist die richtige Antwort markiert und die Erklärung offen.
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Icon from '../Icon.astro';
+import StoreCta from './StoreCta.astro';
+import { useTranslations } from '../../i18n/index';
+import { HERO_QUESTIONS } from '../../data/hero-questions';
+
+interface Props {
+  lang: 'de' | 'en';
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const h = t.home;
+const q = h.quiz;
+const keys = ['A', 'B', 'C', 'D'];
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/catalog/**/*.webp', { eager: true });
+const idBase = `hhq-${lang}`;
+
+const items = HERO_QUESTIONS.map((item, i) => {
+  const img = item.img ? images[`/src/assets/catalog/${item.img}`]?.default : undefined;
+  if (item.img && !img) throw new Error(`Bild fehlt: ${item.img}`);
+  return { ...item, name: t.hero.licenses[i], image: img };
+});
+---
+
+<div
+  class="hhq"
+  data-hero-question
+  data-right={q.right}
+  data-wrong={q.wrong}
+  data-correct-is={q.correctIs}
+  data-mnemonic-label={q.mnemonicLabel}
+>
+  {items.map((item, i) => (
+    <section
+      class="hhq-item hh-shot"
+      data-license={item.licence}
+      data-correct={item.correct}
+      hidden={i !== 0}
+      aria-labelledby={`${idBase}-${item.licence}`}
+    >
+      <div class="hhq-scroll" data-scroll data-label={h.heroQuestionScroll}>
+      <p class="hhq-source">
+        {item.name}<span aria-hidden="true"> · </span>{h.heroQuestionSource.replace('{n}', String(item.number))}
+      </p>
+      <p class="hhq-q" id={`${idBase}-${item.licence}`}>{item.question[lang]}</p>
+
+      {item.image && (
+        <div class="hhq-fig">
+          <Image
+            src={item.image}
+            alt={h.heroFigureAlt.replace('{n}', String(item.number))}
+            widths={[240, 480, 640]}
+            sizes="(min-width: 1024px) 300px, 340px"
+            quality={80}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            decoding="async"
+          />
+        </div>
+      )}
+
+      <div class="hhq-answers" role="group" aria-labelledby={`${idBase}-${item.licence}`}>
+        {item.answers.map((answer, j) => (
+          <button
+            type="button"
+            class="hhq-answer"
+            data-answer={j}
+            data-right={j === item.correct ? '' : undefined}
+            aria-pressed="false"
+          >
+            <span class="hhq-key" aria-hidden="true">
+              <span class="hhq-key-letter">{keys[j]}</span>
+              <Icon name="check" size={14} strokeWidth={3} class="hhq-key-ok" />
+              <Icon name="xmark" size={14} strokeWidth={3} class="hhq-key-no" />
+            </span>
+            <span class="hhq-text" data-answer-text>{answer[lang]}</span>
+          </button>
+        ))}
+      </div>
+
+      <p class="hhq-hint">{h.heroQuestionHint}</p>
+
+      <div class="hhq-after" data-after>
+        <p class="hhq-verdict"><span class="hhq-verdict-mark" aria-hidden="true"></span><span data-verdict></span></p>
+        <p class="hhq-expl" data-explanation>{item.explanation[lang]}</p>
+        <div class="hhq-mnemo">
+          <span class="hhq-mnemo-label"><Icon name="lightbulb" size={14} strokeWidth={2} />{q.mnemonicLabel}</span>
+          <p data-mnemonic>{item.mnemonic[lang]}</p>
+        </div>
+      </div>
+      </div>
+
+      <div class="hhq-foot" data-foot>
+        <StoreCta lang={lang} position="hero-question" label={h.heroQuestionCta} class="hhq-cta" />
+        <a class="hhq-more" href="#quiz">{h.heroQuestionMore}</a>
+      </div>
+    </section>
+  ))}
+  <p class="sr-only" aria-live="polite" data-status></p>
+</div>
+
+<style is:global>
+  /* Alle Maße der Frage hängen an --px: 1 Einheit ist 1 px im Entwurf bei
+     272 px Screen-Breite. Die Karte setzt --px fest, das Handy bindet es an
+     die Screen-Breite (s. HomeHero, Abschnitt Gerät). */
+  .hhq { --u: var(--px, 1px); font-family: var(--h-sans); }
+
+  .hhq-item {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+  /* Innenabstand am Scrollbereich statt an der Frage: So schneidet er die
+     Fokusringe der Antworten nicht ab. */
+  .hhq-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--u) * 10);
+    min-height: 0;
+    padding: calc(var(--u) * 16) calc(var(--u) * 14);
+  }
+  .hhq-scroll:focus-visible { outline: 3px solid var(--h-blue); outline-offset: -3px; }
+  /* Geht es oben oder unten weiter, läuft der Inhalt dort weich aus. */
+  .hhq-scroll[data-above],
+  .hhq-scroll[data-more] {
+    --fade: linear-gradient(180deg, transparent, #000 var(--fade-top, 0px), #000 calc(100% - var(--fade-end, 0px)), transparent);
+    -webkit-mask-image: var(--fade);
+    mask-image: var(--fade);
+  }
+  .hhq-scroll[data-above] { --fade-top: calc(var(--u) * 22); }
+  .hhq-scroll[data-more] { --fade-end: calc(var(--u) * 30); }
+
+  .hhq-source {
+    margin: 0;
+    font-size: calc(var(--u) * 11.5);
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--h-muted);
+  }
+  .hhq-q {
+    margin: 0;
+    font-size: calc(var(--u) * 15.5);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--h-ink);
+    text-wrap: balance;
+  }
+
+  /* Abbildungen sind für weißen Grund gezeichnet, deshalb in beiden Modi weiß. */
+  .hhq-fig {
+    position: relative;
+    flex: none;
+    height: calc(var(--u) * 132);
+    min-height: 0;
+    border: 1px solid var(--h-line);
+    border-radius: calc(var(--u) * 12);
+    background: #fff;
+    overflow: hidden;
+  }
+  /* Absolut eingepasst: Das Bild folgt der Höhe der Fläche, auch wenn sie
+     in einer Flex-Spalte nachgibt. */
+  .hhq-fig img {
+    position: absolute;
+    inset: calc(var(--u) * 8);
+    width: calc(100% - var(--u) * 16);
+    height: calc(100% - var(--u) * 16);
+    object-fit: contain;
+  }
+
+  .hhq-answers { display: grid; gap: calc(var(--u) * 7); }
+  .hhq-answer {
+    display: grid;
+    grid-template-columns: calc(var(--u) * 26) minmax(0, 1fr);
+    align-items: center;
+    gap: calc(var(--u) * 10);
+    width: 100%;
+    min-height: calc(var(--u) * 46);
+    padding: calc(var(--u) * 8) calc(var(--u) * 12) calc(var(--u) * 8) calc(var(--u) * 9);
+    border: 1px solid var(--h-line-2);
+    border-radius: calc(var(--u) * 13);
+    background: var(--h-card);
+    color: var(--h-text);
+    font: inherit;
+    font-size: calc(var(--u) * 13);
+    line-height: 1.35;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+  }
+  .hhq-answer:hover:not([aria-disabled='true']) {
+    border-color: var(--h-blue);
+    background: var(--h-blue-wash);
+  }
+  .hhq-answer:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; }
+  .hhq-answer[aria-disabled='true'] { cursor: default; }
+
+  /* Buchstaben im Kreis wie in der App. */
+  .hhq-key {
+    display: grid;
+    place-items: center;
+    width: calc(var(--u) * 26);
+    height: calc(var(--u) * 26);
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--h-ink) 8%, transparent);
+    color: var(--h-ink);
+    font-size: calc(var(--u) * 12);
+    font-weight: 600;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+  .hhq-key > * { grid-area: 1 / 1; }
+  .hhq-key svg { width: calc(var(--u) * 14); height: calc(var(--u) * 14); }
+  .hhq-key-ok, .hhq-key-no { opacity: 0; }
+
+  .hhq-answer.is-correct { border-color: var(--h-stbd); background: var(--h-stbd-wash); }
+  .hhq-answer.is-correct .hhq-key { background: var(--h-stbd); color: #fff; }
+  .hhq-answer.is-correct .hhq-key-letter { opacity: 0; }
+  .hhq-answer.is-correct .hhq-key-ok { opacity: 1; }
+  .hhq-answer.is-wrong { border-color: var(--h-port); background: var(--h-port-wash); }
+  .hhq-answer.is-wrong .hhq-key { background: var(--h-port); color: #fff; }
+  .hhq-answer.is-wrong .hhq-key-letter { opacity: 0; }
+  .hhq-answer.is-wrong .hhq-key-no { opacity: 1; }
+
+  .hhq-hint {
+    margin: 0;
+    font-size: calc(var(--u) * 11.5);
+    line-height: 1.4;
+    color: var(--h-muted);
+  }
+  .hhq-item[data-state] .hhq-hint { display: none; }
+
+  /* ── Auflösung: Urteil, Erklärung und Merkhilfe; im Fuß der Weg in die App ── */
+  .hhq-after {
+    display: none;
+    flex: none;
+    gap: calc(var(--u) * 8);
+    padding-top: calc(var(--u) * 10);
+    border-top: 1px solid var(--h-line);
+  }
+  .hhq-foot {
+    display: none;
+    flex: none;
+    gap: calc(var(--u) * 6);
+    padding: 0 calc(var(--u) * 14) calc(var(--u) * 12);
+  }
+  .hhq-item[data-state] .hhq-after,
+  .hhq-item[data-state] .hhq-foot { display: grid; }
+  .hhq-item[data-state] .hhq-scroll { padding-bottom: calc(var(--u) * 12); }
+  .hhq-verdict {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--u) * 7);
+    margin: 0;
+    font-size: calc(var(--u) * 15);
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--h-port-ink);
+  }
+  .hhq-verdict-mark { width: calc(var(--u) * 9); height: calc(var(--u) * 9); background: var(--h-port); }
+  .hhq-item[data-state='right'] .hhq-verdict { color: var(--h-stbd-ink); }
+  .hhq-item[data-state='right'] .hhq-verdict-mark { background: var(--h-stbd); }
+  .hhq-expl {
+    margin: 0;
+    font-size: calc(var(--u) * 12.5);
+    line-height: 1.5;
+    color: var(--h-text);
+  }
+  /* Merkhilfe wie in der App und im Quiz des Lernwegs: Bernstein. */
+  .hhq-mnemo { margin-top: calc(var(--u) * 2); }
+  .hhq-mnemo-label {
+    display: inline-flex;
+    align-items: center;
+    gap: calc(var(--u) * 5);
+    margin-bottom: calc(var(--u) * 5);
+    font-size: calc(var(--u) * 11);
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--h-beacon-ink);
+  }
+  .hhq-mnemo-label svg { width: calc(var(--u) * 13); height: calc(var(--u) * 13); color: var(--h-beacon); }
+  .hhq-mnemo p {
+    margin: 0;
+    padding: calc(var(--u) * 8) calc(var(--u) * 10);
+    border: 1px solid color-mix(in srgb, var(--h-beacon) 55%, transparent);
+    border-radius: calc(var(--u) * 10);
+    background: var(--h-beacon-wash);
+    font-size: calc(var(--u) * 12.5);
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--h-text);
+  }
+
+  .hhq-cta.h-btn {
+    justify-content: center;
+    gap: calc(var(--u) * 8);
+    width: 100%;
+    min-height: calc(var(--u) * 44);
+    padding: 0 calc(var(--u) * 14);
+    font-size: calc(var(--u) * 14);
+  }
+  .hhq-cta .h-btn-mark { display: none; }
+  .hhq-cta .h-btn-arrow { width: calc(var(--u) * 16); height: calc(var(--u) * 16); }
+  .hhq-more {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    min-height: 44px;
+    padding: 0 calc(var(--u) * 6);
+    color: var(--h-blue-ink);
+    font-size: calc(var(--u) * 12.5);
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 4px;
+    text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+    transition: text-decoration-color 0.2s ease;
+  }
+  .hhq-more:hover { text-decoration-color: currentColor; }
+  .hhq-more:focus-visible { outline: 3px solid var(--h-blue); outline-offset: 2px; border-radius: var(--h-r-sm); }
+
+  /* Ohne JavaScript: Lösung zeigen statt toter Knöpfe. */
+  html:not(.h-js) .hhq-answer { pointer-events: none; }
+  html:not(.h-js) .hhq-answer[data-right] { border-color: var(--h-stbd); background: var(--h-stbd-wash); }
+  html:not(.h-js) .hhq-answer[data-right] .hhq-key { background: var(--h-stbd); color: #fff; }
+  html:not(.h-js) .hhq-answer[data-right] .hhq-key-letter { opacity: 0; }
+  html:not(.h-js) .hhq-answer[data-right] .hhq-key-ok { opacity: 1; }
+  html:not(.h-js) .hhq-hint,
+  html:not(.h-js) .hhq-verdict { display: none; }
+  html:not(.h-js) .hhq-after,
+  html:not(.h-js) .hhq-foot { display: grid; }
+  html:not(.h-js) .hhq-scroll { padding-bottom: calc(var(--u) * 12); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hhq-answer, .hhq-key, .hhq-more { transition: none; }
+  }
+</style>
+
+<script>
+  // Antwort auswerten: richtige und eigene Antwort bleiben stehen, die übrigen
+  // weichen. Das Ergebnis steht zusätzlich in einer aria-live-Zeile.
+  document.querySelectorAll<HTMLElement>('[data-hero-question]').forEach((root) => {
+    const d = root.dataset;
+    const status = root.querySelector<HTMLElement>('[data-status]');
+    const moving = () =>
+      document.documentElement.classList.contains('h-motion') &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const textOf = (el: Element | undefined) => el?.querySelector('[data-answer-text]')?.textContent?.trim() ?? '';
+
+    root.querySelectorAll<HTMLElement>('.hhq-item').forEach((item) => {
+      const correct = Number(item.dataset.correct);
+      const answers = Array.from(item.querySelectorAll<HTMLButtonElement>('[data-answer]'));
+      const scroll = item.querySelector<HTMLElement>('[data-scroll]');
+      const after = item.querySelector<HTMLElement>('[data-after]');
+      const foot = item.querySelector<HTMLElement>('[data-foot]');
+      const verdict = item.querySelector<HTMLElement>('[data-verdict]');
+      const explanation = item.querySelector<HTMLElement>('[data-explanation]')?.textContent ?? '';
+      const mnemonic = item.querySelector<HTMLElement>('[data-mnemonic]')?.textContent ?? '';
+
+      // Scrollt der Bereich (feste Höhe, lange Erklärung), ist er per Tastatur
+      // erreichbar und zeigt unten an, dass es weitergeht.
+      const syncScroll = () => {
+        if (!scroll) return;
+        const max = scroll.scrollHeight - scroll.clientHeight;
+        if (max > 1) {
+          scroll.tabIndex = 0;
+          scroll.setAttribute('role', 'group');
+          scroll.setAttribute('aria-label', scroll.dataset.label ?? '');
+        } else {
+          scroll.removeAttribute('tabindex');
+          scroll.removeAttribute('role');
+          scroll.removeAttribute('aria-label');
+        }
+        scroll.toggleAttribute('data-above', scroll.scrollTop > 4);
+        scroll.toggleAttribute('data-more', max - scroll.scrollTop > 4);
+      };
+      // Auflösung ins Bild holen: passt sie ganz, bis ans Ende; sonst beginnt
+      // sie oben am Rand, mit dem Urteil als erster Zeile.
+      const reveal = () => {
+        if (!scroll || !after) return;
+        const max = scroll.scrollHeight - scroll.clientHeight;
+        if (max > 1) {
+          const top = after.getBoundingClientRect().top - scroll.getBoundingClientRect().top + scroll.scrollTop;
+          scroll.scrollTo({ top: Math.min(max, top), behavior: moving() ? 'smooth' : 'auto' });
+        }
+        syncScroll();
+      };
+      if (scroll) {
+        scroll.addEventListener('scroll', syncScroll, { passive: true });
+        new ResizeObserver(syncScroll).observe(scroll);
+      }
+
+      answers.forEach((btn, j) => {
+        btn.addEventListener('click', () => {
+          if (item.dataset.state) return;
+          const right = j === correct;
+          item.dataset.state = right ? 'right' : 'wrong';
+          answers.forEach((other, k) => {
+            other.setAttribute('aria-disabled', 'true');
+            if (k === correct) other.classList.add('is-correct');
+            else if (k === j) other.classList.add('is-wrong');
+            else other.hidden = true;
+          });
+          btn.setAttribute('aria-pressed', 'true');
+          if (verdict) verdict.textContent = (right ? d.right : d.wrong) ?? '';
+          if (moving()) {
+            [after, foot].forEach((el) =>
+              el?.animate([{ opacity: 0, transform: 'translateY(6px)' }, { opacity: 1, transform: 'none' }], {
+                duration: 360,
+                easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+              }),
+            );
+          }
+          reveal();
+          if (status) {
+            const solved = `${explanation} ${d.mnemonicLabel}: ${mnemonic}`;
+            status.textContent = right
+              ? `${d.right} ${solved}`
+              : `${d.wrong}. ${d.correctIs} ${textOf(answers[correct])} ${solved}`;
+          }
+        });
+      });
+    });
+  });
+</script>

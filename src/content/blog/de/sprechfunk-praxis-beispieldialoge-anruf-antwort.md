@@ -15,6 +15,18 @@ faq:
     answer: "„Over“ (deutsch „kommen“) bedeutet: Ich bin fertig mit meiner Meldung, du bist dran. „Out“ (deutsch „Ende“) beendet das Gespräch und bedeutet, dass keine Antwort erwartet wird."
   - question: "Wie läuft ein Notruf im Sprechfunk ab?"
     answer: "Nach dem DSC-Notalarm sprichst du auf Kanal 16 dreimal MAYDAY, dann „this is“ und dreimal den Schiffsnamen mit Kennung. Danach folgen MAYDAY, Schiffsname, Position, Art der Not, gewünschte Hilfe und Zahl der Personen an Bord, zum Schluss „over“."
+howTo:
+  name: "So läuft ein Funkgespräch im UKW-Sprechfunk ab"
+  description: "Vier Schritte vom Anruf auf dem Anrufkanal bis zum Verbindungsabbau – der typische Ablauf eines Funkgesprächs von Schiff zu Schiff."
+  steps:
+    - name: "Anruf absetzen"
+      text: "Nenne auf dem Anrufkanal (im UKW-Seefunk Kanal 16) den Namen der gerufenen Station, dann „this is“ bzw. „hier ist“, deinen eigenen Schiffsnamen und schließe mit „over“. Bei der ersten Kontaktaufnahme werden die Namen höchstens dreimal genannt."
+    - name: "Antwort abwarten und auf den Arbeitskanal wechseln"
+      text: "Die gerufene Station antwortet mit deinem Namen, dann ihrem eigenen, und schlägt einen Arbeitskanal vor. Bestätige, schalte auf diesen Kanal und rufe dort erneut."
+    - name: "Gespräch kurz und eindeutig führen"
+      text: "Tausche deine Information auf dem Arbeitskanal in kurzen Sätzen mit festen Verfahrensworten aus. Wiederhole wichtige Angaben wie Positionen, Zahlen und Kanäle und sage „say again“, wenn du etwas nicht verstanden hast."
+    - name: "Verbindung abbauen"
+      text: "Beende das Gespräch mit „out“ und schalte das Funkgerät danach wieder auf Kanal 16 zurück, damit du Rufe und Notmeldungen weiterhin mithörst."
 ---
 
 Dass Kanal 16 der Anruf- und Notrufkanal ist und was MAYDAY bedeutet, weißt du vielleicht schon. Spannend wird es, wenn du das erste Mal selbst am Mikrofon sitzt: Was sagst du in welcher Reihenfolge? Wann wechselst du den Kanal? Wie beendest du das Gespräch? Dieser Artikel zeigt dir den typischen Ablauf anhand von **Beispieldialogen** und erklärt die Regeln dahinter, damit Funken im Ernstfall und in der Prüfung sitzt.
@@ -114,4 +126,4 @@ Welche Funkprüfung für dein Revier infrage kommt, zeigen die Seiten zu [SRC](/
 
 Ein Funkgespräch folgt immer demselben Muster: **Anruf** auf dem Anrufkanal, **Antwort** mit Kanalvorschlag, **Wechsel** auf den Arbeitskanal, kurzes **Gespräch** mit klaren Begriffen und zum Schluss der saubere **Verbindungsabbau** mit „out“ samt Rückschalten auf Kanal 16. Der **Notruf** folgt einem noch strengeren Schema, das du sicher beherrschen solltest, bevor du es brauchst. Wer die Abläufe laut geübt hat, funkt im Alltag entspannt und im Ernstfall zielgerichtet.
 
-Die **Boatpass-App** unterstützt dich bei der Vorbereitung auf SRC und UBI mit den amtlichen Fragenkatalogen, einem realistischen Prüfungsmodus und gezieltem Fehlertraining. So sind Kanäle, Verfahrensworte und Notrufablauf im Kopf, wenn du zum ersten Mal selbst das Mikrofon in der Hand hältst.
+Die **Boatpass-App** unterstützt dich bei der [Vorbereitung auf SRC und UBI](/funkschein-app/) mit den amtlichen Fragenkatalogen, einem realistischen Prüfungsmodus und gezieltem Fehlertraining. So sind Kanäle, Verfahrensworte und Notrufablauf im Kopf, wenn du zum ersten Mal selbst das Mikrofon in der Hand hältst.

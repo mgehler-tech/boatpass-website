@@ -241,14 +241,14 @@ test.describe('Hero photo pipeline', () => {
   });
 });
 
-// Der Auftakt hebt das Gerät 1,4 s lang an; Maße erst danach nehmen.
+// Der Auftakt hebt Karte bzw. Gerät 1,4 s lang an; Maße erst danach nehmen.
 async function phoneSettled(page: import('@playwright/test').Page) {
   await page.locator('.hh-phone-wrap').evaluate(el => Promise.all(el.getAnimations().map(a => a.finished)));
 }
 
 test.describe('Hero panel', () => {
   for (const vp of [{ w: 1280, h: 720 }, { w: 1280, h: 620 }, { w: 1440, h: 900 }]) {
-    test(`CTA visible without scrolling, phone fully inside the panel at ${vp.w}x${vp.h}`, async ({ page }) => {
+    test(`CTA visible without scrolling, question fully inside the panel at ${vp.w}x${vp.h}`, async ({ page }) => {
       await page.setViewportSize({ width: vp.w, height: vp.h });
       await page.goto('/');
       // Desktop: die Store-Badges sind der Hero-CTA.
@@ -258,10 +258,12 @@ test.describe('Hero panel', () => {
       const phone = await page.locator('.hh-phone').boundingBox();
       const panel = await page.locator('.hh-panel').boundingBox();
       expect(phone!.y).toBeLessThan(vp.h);
-      // Nie angeschnitten: oben wie unten Luft zum Paneelrand; über den Chips
-      // bleibt eine Kopfzone, deshalb bei niedrigen Fenstern mindestens 200 px.
-      expect(phone!.width).toBeGreaterThanOrEqual(200);
-      expect(phone!.width).toBeLessThanOrEqual(360);
+      // Ab 840 px Fensterhöhe ein Handy mit Rahmen, darunter die Karte ohne
+      // Rahmen. Nie angeschnitten: oben wie unten Luft zum Paneelrand.
+      const framed = vp.h >= 840;
+      expect(phone!.width).toBeGreaterThanOrEqual(framed ? 200 : 300);
+      expect(phone!.width).toBeLessThanOrEqual(framed ? 360 : 420);
+      expect(await page.locator('.hhq-screen').evaluate(el => getComputedStyle(el).containerType)).toBe(framed ? 'inline-size' : 'normal');
       expect(phone!.y).toBeGreaterThanOrEqual(panel!.y + 16);
       expect(phone!.y + phone!.height).toBeLessThanOrEqual(panel!.y + panel!.height - 16);
       expect(panel!.y).toBeGreaterThanOrEqual(64);
@@ -280,7 +282,7 @@ test.describe('Hero panel', () => {
       expect(over).toBeLessThanOrEqual(0);
     });
   }
-  test('mobile band is full-bleed with the phone fully visible', async ({ page }) => {
+  test('mobile band is full-bleed and grows with the question card (no device frame)', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto('/');
     await phoneSettled(page);
@@ -288,22 +290,20 @@ test.describe('Hero panel', () => {
     expect(panel!.x).toBe(0);
     expect(panel!.width).toBe(375);
     expect(panel!.height).toBeGreaterThanOrEqual(560);
-    expect(panel!.height).toBeLessThanOrEqual(680);
     const phone = await page.locator('.hh-phone').boundingBox();
-    expect(phone!.width).toBeGreaterThanOrEqual(185);
-    expect(phone!.width).toBeLessThanOrEqual(220);
+    expect(phone!.width).toBe(343);
     expect(phone!.y).toBeGreaterThanOrEqual(panel!.y + 16);
     expect(phone!.y + phone!.height).toBeLessThanOrEqual(panel!.y + panel!.height - 16);
   });
-  test('tablet panel has a fixed height (size containment) with the phone inside', async ({ page }) => {
+  test('tablet panel centres the question card', async ({ page }) => {
     await page.setViewportSize({ width: 768, height: 1024 });
     await page.goto('/');
     await phoneSettled(page);
     const panel = await page.locator('.hh-panel').boundingBox();
     expect(panel!.width).toBe(768);
-    expect(Math.round(panel!.height)).toBe(568);
     const phone = await page.locator('.hh-phone').boundingBox();
-    expect(phone!.width).toBeGreaterThanOrEqual(170);
+    expect(phone!.width).toBe(440);
+    expect(Math.round(phone!.x + phone!.width / 2)).toBe(384);
     expect(phone!.y).toBeGreaterThanOrEqual(panel!.y + 16);
     expect(phone!.y + phone!.height).toBeLessThanOrEqual(panel!.y + panel!.height - 16);
   });
@@ -322,7 +322,7 @@ test.describe('Hero panel', () => {
 });
 
 test.describe('Hero licence picker', () => {
-  test('chips switch screenshot, facts and scene; arrow keys move the selection', async ({ page }) => {
+  test('chips switch question, facts and scene; arrow keys move the selection', async ({ page }) => {
     await page.goto('/');
     const tabs = page.getByRole('tab');
     await expect(tabs).toHaveCount(5);
@@ -331,7 +331,8 @@ test.describe('Hero licence picker', () => {
     await tabs.nth(1).click();
     await expect(tabs.nth(1)).toHaveAttribute('aria-selected', 'true');
     await expect(page.locator('.hh-fact:not([hidden])')).toContainText('420 Fragen');
-    await expect(page.locator('.hh-shot.is-active')).toHaveAttribute('data-license', 'see');
+    await expect(page.locator('.hh-shot:not([hidden])')).toHaveAttribute('data-license', 'see');
+    await expect(page.locator('.hh-shot:not([hidden])')).toHaveCount(1);
     // Während der Horizont-Blende sind kurz beide Szenen aktiv; danach nur See.
     await expect(page.locator('.hh-photo--day[data-scene="see"]')).toHaveClass(/is-active/);
     await expect(page.locator('.hh-photo--day.is-active')).toHaveCount(1);
@@ -352,8 +353,200 @@ test.describe('Hero licence picker', () => {
   });
 });
 
+// Prüfungsfrage im Hero (HeroQuestion.astro): je Schein eine echte Frage zum
+// Antippen; nach der Antwort kommen Erklärung und Merkhilfe wie in der App,
+// darunter der Weg in die App und zum Quiz.
+test.describe('Hero question', () => {
+  const item = (page: import('@playwright/test').Page) => page.locator('.hhq-item:not([hidden])');
+  // Vor der Antwort passt die Frage ganz in den Screen, nichts scrollt.
+  const fits = (page: import('@playwright/test').Page) =>
+    page.evaluate(() => {
+      const screen = document.querySelector('.hhq-screen')!;
+      const scroll = document.querySelector('.hhq-item:not([hidden]) .hhq-scroll')!;
+      return screen.scrollHeight <= screen.clientHeight + 1 && scroll.scrollHeight <= scroll.clientHeight + 1;
+    });
+  // Nach der Antwort: Button und Link bleiben im Screen stehen, das Urteil
+  // liegt im sichtbaren Teil der Frage (sie scrollt, wenn die Höhe fest ist).
+  const resolved = (page: import('@playwright/test').Page) =>
+    page.evaluate(() => {
+      const box = (sel: string) => document.querySelector(sel)!.getBoundingClientRect();
+      const shown = '.hhq-item:not([hidden])';
+      const screen = box('.hhq-screen');
+      const scroll = box(`${shown} .hhq-scroll`);
+      const verdict = box(`${shown} .hhq-verdict`);
+      const cta = box(`${shown} .hhq-cta`);
+      const more = box(`${shown} .hhq-more`);
+      return (
+        document.querySelector('.hhq-screen')!.scrollHeight <= document.querySelector('.hhq-screen')!.clientHeight + 1 &&
+        cta.top >= scroll.bottom - 1 &&
+        more.bottom <= screen.bottom + 1 &&
+        verdict.top >= scroll.top - 1 &&
+        verdict.bottom <= scroll.bottom + 1
+      );
+    });
+  // Das Handy hebt sich mit der Dünung; der Zeiger über dem Gerät hält sie an.
+  // (Zeiger direkt setzen: hover() würde selbst auf Stillstand warten.)
+  const rest = async (page: import('@playwright/test').Page) => {
+    const box = (await page.locator('.hh-phone').boundingBox())!;
+    await page.mouse.move(box.x + box.width / 2, box.y + 12);
+    await expect.poll(() => page.locator('.hh-phone-float').evaluate(el => getComputedStyle(el).animationPlayState)).toBe('paused');
+  };
+
+  test('a wrong answer keeps the chosen and the correct answer, explains, and leads to the app and the quiz', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+    await phoneSettled(page);
+    await expect(item(page).locator('.hhq-source')).toContainText('SBF Binnen · Amtliche Frage 157');
+    await expect(item(page).locator('.hhq-q')).toHaveText('Was bedeutet dieses Tafelzeichen?');
+    await expect(item(page).locator('.hhq-fig img')).toHaveAttribute('alt', 'Abbildung zu Frage 157');
+    expect(await item(page).locator('.hhq-fig img').evaluate(el => (el as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+    const answers = item(page).locator('.hhq-answer');
+    await expect(answers).toHaveCount(4);
+    await expect(item(page).locator('.hhq-after')).toBeHidden();
+    expect(await fits(page)).toBe(true);
+
+    await rest(page);
+    await answers.nth(0).click();
+    await expect(item(page)).toHaveAttribute('data-state', 'wrong');
+    await expect(answers.nth(0)).toHaveClass(/is-wrong/);
+    await expect(answers.nth(1)).toHaveClass(/is-correct/);
+    await expect(answers.nth(1)).toContainText('Fahrverbot für Fahrzeuge mit Maschinenantrieb.');
+    await expect(item(page).locator('.hhq-answer:visible')).toHaveCount(2);
+    await expect(item(page).locator('.hhq-verdict')).toHaveText('Leider falsch');
+    // Erklärung vollständig und Merkhilfe wortgleich wie in der App.
+    await expect(item(page).locator('.hhq-expl')).toHaveText('Das Zeichen A.12 verbietet die Fahrt für jedes Fahrzeug mit Maschinenantrieb. Andere Antriebsarten, insbesondere Segel- und Muskelkraft, werden von diesem Zeichen nicht erfasst.');
+    await expect(item(page).locator('.hhq-mnemo-label')).toHaveText('Merkhilfe');
+    await expect(item(page).locator('[data-mnemonic]')).toHaveText('Durchgestrichener Propeller: Maschinenantrieb verboten; Segel- und Muskelkraft erfasst dieses Zeichen nicht.');
+    await expect(item(page).locator('[data-mnemonic]')).toBeInViewport();
+    await expect(item(page).locator('.hhq-hint')).toBeHidden();
+    await expect(page.locator('.hhq [data-status]')).toContainText('Richtige Antwort: Fahrverbot für Fahrzeuge mit Maschinenantrieb.');
+    await expect(page.locator('.hhq [data-status]')).toContainText('Merkhilfe: Durchgestrichener Propeller');
+    const cta = item(page).locator('.hhq-cta');
+    await expect(cta).toBeVisible();
+    await expect(cta).toHaveAttribute('data-cta-position', 'hero-question');
+    await expect(cta).toHaveAttribute('href', '/app/');
+    await expect(cta).toContainText('In der App weiterlernen');
+    await expect(item(page).locator('.hhq-more')).toHaveAttribute('href', '#quiz');
+    await expect(page.locator('#quiz')).toHaveCount(1);
+    // Nichts verdeckt: Urteil sichtbar, Button und Link stehen im Screen.
+    await expect.poll(() => resolved(page)).toBe(true);
+    // Ein zweiter Klick ändert nichts mehr (aria-disabled, deshalb erzwungen).
+    await answers.nth(1).click({ force: true });
+    await expect(item(page)).toHaveAttribute('data-state', 'wrong');
+  });
+
+  test('every licence has its own question that fits the phone before and after the answer', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+    await phoneSettled(page);
+    const expected = [
+      ['SBF Binnen', 'Amtliche Frage 157'],
+      ['SBF See', 'Amtliche Frage 190'],
+      ['UBI', 'Amtliche Frage 111'],
+      ['SRC', 'Amtliche Frage 58'],
+      ['LRC', 'Amtliche Frage 55'],
+    ];
+    for (const [name, source] of expected) {
+      await page.getByRole('tab', { name }).click();
+      await expect(item(page).locator('.hhq-source')).toContainText(`${name} · ${source}`);
+      await expect(item(page).locator('.hhq-answer')).toHaveCount(4);
+      // Die neue Frage gleitet von unten nach; erst danach messen.
+      await item(page).evaluate(el => Promise.all(el.getAnimations().map(a => a.finished)));
+      expect(await fits(page)).toBe(true);
+      await rest(page);
+      await item(page).locator('.hhq-answer[data-right]').click();
+      await expect(item(page).locator('.hhq-verdict')).toHaveText('Richtig!');
+      await expect(item(page).locator('.hhq-answer:visible')).toHaveCount(1);
+      await expect(item(page).locator('.hhq-cta')).toBeVisible();
+      await expect.poll(() => resolved(page)).toBe(true);
+      // Passt die Auflösung nicht ganz, ist die Frage per Tastatur scrollbar;
+      // am Ende steht in jedem Fall die Merkhilfe im Bild.
+      const scroll = item(page).locator('.hhq-scroll');
+      const overflows = await scroll.evaluate(el => el.scrollHeight > el.clientHeight + 1);
+      if (overflows) {
+        await expect(scroll).toHaveAttribute('tabindex', '0');
+        await expect(scroll).toHaveAttribute('aria-label', 'Frage mit Erklärung und Merkhilfe');
+      } else {
+        await expect(scroll).not.toHaveAttribute('tabindex');
+      }
+      await scroll.evaluate(el => el.scrollTo(0, el.scrollHeight));
+      await expect(item(page).locator('[data-mnemonic]')).toBeInViewport({ ratio: 1 });
+    }
+  });
+
+  test('on a phone the question is a readable card with large touch targets', async ({ page }) => {
+    await page.setViewportSize({ width: 375, height: 812 });
+    await page.goto('/');
+    await phoneSettled(page);
+    const answer = item(page).locator('.hhq-answer').first();
+    expect(parseFloat(await answer.evaluate(el => getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(15);
+    expect((await answer.boundingBox())!.height).toBeGreaterThanOrEqual(48);
+    expect(parseFloat(await item(page).locator('.hhq-q').evaluate(el => getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(17);
+    await page.getByRole('tab', { name: 'LRC' }).click();
+    await item(page).locator('.hhq-answer[data-right]').click();
+    await expect(item(page).locator('.hhq-verdict')).toHaveText('Richtig!');
+    // Die Karte wächst mit: Erklärung und Merkhilfe stehen ganz da, nichts scrollt.
+    await expect(item(page).locator('[data-mnemonic]')).toContainText('Inmarsat-Satelliten sind geostationär');
+    expect(await item(page).locator('.hhq-scroll').evaluate(el => el.scrollHeight <= el.clientHeight + 1)).toBe(true);
+    const more = (await item(page).locator('.hhq-more').boundingBox())!;
+    expect(more.height).toBeGreaterThanOrEqual(44);
+    const card = (await page.locator('.hh-phone').boundingBox())!;
+    const panel = (await page.locator('.hh-panel').boundingBox())!;
+    expect(card.y + card.height).toBeLessThanOrEqual(panel.y + panel.height - 16);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth)).toBeLessThanOrEqual(0);
+  });
+
+  test('in a low desktop window the card stays inside the panel after the answer', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 620 });
+    await page.goto('/');
+    await phoneSettled(page);
+    for (const name of ['SBF Binnen', 'SBF See']) {
+      await page.getByRole('tab', { name }).click();
+      await item(page).locator('.hhq-answer:not([data-right])').first().click();
+      await expect(item(page).locator('.hhq-cta')).toBeVisible();
+      // Erst messen, wenn Frage und Auflösung stehen (beide gleiten nach).
+      await item(page).evaluate(el => Promise.all(el.getAnimations({ subtree: true }).map(a => a.finished)));
+      const card = (await page.locator('.hh-phone').boundingBox())!;
+      const panel = (await page.locator('.hh-panel').boundingBox())!;
+      expect(card.y + card.height).toBeLessThanOrEqual(panel.y + panel.height - 16);
+      const more = (await item(page).locator('.hhq-more').boundingBox())!;
+      expect(more.y + more.height).toBeLessThanOrEqual(card.y + card.height + 1);
+      expect((await item(page).locator('.hhq-fig').boundingBox())!.height).toBeGreaterThanOrEqual(56);
+      await expect.poll(() => resolved(page)).toBe(true);
+    }
+  });
+
+  test('EN parity', async ({ page }) => {
+    await page.goto('/en/');
+    await expect(item(page).locator('.hhq-source')).toContainText('SBF Inland · Official question 157');
+    await page.getByRole('tab', { name: 'SRC' }).click();
+    await expect(item(page).locator('.hhq-q')).toHaveText('On which VHF channel does alerting by DSC take place?');
+    await item(page).locator('.hhq-answer', { hasText: 'Channel 70' }).click();
+    await expect(item(page).locator('.hhq-verdict')).toHaveText('Correct!');
+    await expect(item(page).locator('.hhq-expl')).toContainText('The spoken distress call, by contrast, is on channel 16.');
+    await expect(item(page).locator('.hhq-mnemo-label')).toHaveText('Mnemonic');
+    await expect(item(page).locator('[data-mnemonic]')).toHaveText('DSC = channel 70; voice distress = channel 16.');
+    await expect(item(page).locator('.hhq-cta')).toContainText('Keep learning in the app');
+    await expect(item(page).locator('.hhq-more')).toHaveText('Try more questions here');
+  });
+
+  test('without JavaScript the solution is shown instead of dead buttons', async ({ browser, baseURL }) => {
+    const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
+    const page = await context.newPage();
+    await page.goto('/');
+    await expect(item(page).locator('.hhq-after')).toBeVisible();
+    await expect(item(page).locator('.hhq-verdict')).toBeHidden();
+    await expect(item(page).locator('.hhq-expl')).toContainText('A.12');
+    await expect(item(page).locator('[data-mnemonic]')).toContainText('Durchgestrichener Propeller');
+    await expect(item(page).locator('.hhq-cta')).toBeVisible();
+    expect(await item(page).locator('.hhq-answer[data-right]').evaluate(el => getComputedStyle(el).pointerEvents)).toBe('none');
+    await context.close();
+  });
+});
+
 // Richtung „Horizont“ (2026-10-31): Szenenwechsel als Blende vom Horizont,
-// Handy mit Dünung und Spiegelung, Video-Slots je Szene (noch ohne Clips).
+// Handy mit Dünung und Spiegelung (ab 840 px Fensterhöhe), Video-Slots je
+// Szene (noch ohne Clips).
 test.describe('Hero horizon stage', () => {
   test('switching the scene opens the new photo from the horizon, then only it stays active', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
@@ -371,23 +564,23 @@ test.describe('Hero horizon stage', () => {
     expect(await see.evaluate(el => getComputedStyle(el).clipPath)).toBe('none');
   });
 
-  test('the phone floats with a soft reflection that follows the active screen', async ({ page }) => {
+  test('the phone floats with a soft reflection and rests while the question is in use', async ({ page }) => {
     await page.setViewportSize({ width: 1440, height: 900 });
     await page.goto('/');
     await expect(page.locator('html')).toHaveClass(/h-ready/);
     const reflect = page.locator('.hh-reflect');
     await expect(reflect).toHaveAttribute('aria-hidden', 'true');
-    await expect(reflect.locator('img')).toHaveAttribute('alt', '');
     await phoneSettled(page);
-    // Unter dem Gerät, im Paneel, kein Text-Ersatz für den Screenshot.
+    // Unter dem Gerät, im Paneel, rein dekorativ.
     const phone = (await page.locator('.hh-phone').boundingBox())!;
     const box = (await reflect.boundingBox())!;
     const panel = (await page.locator('.hh-panel').boundingBox())!;
     expect(box.y).toBeGreaterThanOrEqual(phone.y + phone.height - 8);
     expect(box.y + box.height).toBeLessThanOrEqual(panel.y + panel.height + 1);
     expect(await page.locator('.hh-phone-float').evaluate(el => el.getAnimations().some(a => (a as CSSAnimation).animationName === 'hh-bob'))).toBe(true);
-    await page.getByRole('tab', { name: 'SRC' }).click();
-    await expect.poll(() => reflect.locator('img').evaluate(el => (el as HTMLImageElement).src)).toContain('src.de');
+    // Fokus in der Frage hält die Dünung an, damit die Antworten stillstehen.
+    await page.locator('.hhq-item:not([hidden]) .hhq-answer').first().focus();
+    expect(await page.locator('.hh-phone-float').evaluate(el => getComputedStyle(el).animationPlayState)).toBe('paused');
   });
 
   test('ships no video until clips exist, and the stage rests when the hero leaves the screen', async ({ page }) => {
@@ -425,7 +618,7 @@ test.describe('Hero horizon stage', () => {
     await expect(see).toHaveClass(/is-active/);
     await expect(see).not.toHaveClass(/is-entering/);
     await expect(page.locator('.hh-photo--day.is-active')).toHaveCount(1);
-    await expect(page.locator('.hh-shot.is-active')).toHaveAttribute('data-license', 'see');
+    await expect(page.locator('.hh-shot:not([hidden])')).toHaveAttribute('data-license', 'see');
   });
 });
 

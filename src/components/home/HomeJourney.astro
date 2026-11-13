@@ -220,8 +220,10 @@ const chipsLabel = de ? 'Screen wählen' : 'Choose screen';
   }
   .hj-step.is-done .hj-marker,
   .hj-step.is-active .hj-marker {
-    border-color: var(--h-blue);
-    background: var(--h-blue);
+    /* --h-btn statt --h-blue: bleibt im Dark Mode #3366FF, Weiß darauf 4,7:1
+       (auf dem aufgehellten --h-blue #5B8CFF wären es nur 3,2:1). */
+    border-color: var(--h-btn);
+    background: var(--h-btn);
     color: #fff;
   }
 
@@ -256,8 +258,8 @@ const chipsLabel = de ? 'Screen wählen' : 'Choose screen';
   .h-js .hj-chip { cursor: pointer; }
   .h-js .hj-chip:hover { border-color: var(--h-blue); }
   .h-js .hj-chip[aria-pressed='true'] {
-    border-color: var(--h-blue);
-    background: var(--h-blue);
+    border-color: var(--h-btn);
+    background: var(--h-btn);
     color: #fff;
   }
   .hj-chip:focus-visible { outline: 2px solid var(--h-blue); outline-offset: 2px; }
