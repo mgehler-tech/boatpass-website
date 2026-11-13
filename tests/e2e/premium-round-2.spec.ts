@@ -26,6 +26,22 @@ test.describe('Lernweg kompakt', () => {
       }
     });
   }
+  // Die letzte Etappe ist kurz: Endet die Bühne mit dem Raster, schiebt dessen
+  // Ende das Handy schon nach oben, bevor Etappe 04 überhaupt aktiv ist.
+  for (const vp of [{ w: 1440, h: 900 }, { w: 1280, h: 620 }]) {
+    test(`Handy bleibt in der letzten Etappe mittig (${vp.w}x${vp.h})`, async ({ page }) => {
+      await page.setViewportSize({ width: vp.w, height: vp.h });
+      await page.emulateMedia({ reducedMotion: 'reduce' });
+      await page.goto('/');
+      const step = page.locator('[data-journey-step="3"]');
+      // Etappe 04 in Leseposition: Oberkante auf 40 % der Fensterhöhe.
+      await step.evaluate(el => window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.4));
+      await expect(step).toHaveClass(/is-active/);
+      const box = (await page.locator('.hj-phone').boundingBox())!;
+      const middle = 64 + (vp.h - 64) / 2;
+      expect(Math.abs(box.y + box.height / 2 - middle)).toBeLessThan(2);
+    });
+  }
   test('Kicker auch am Handy weg, Screenshot je Etappe bleibt', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 812 });
     await page.goto('/');

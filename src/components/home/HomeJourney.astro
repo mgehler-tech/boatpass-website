@@ -294,16 +294,23 @@ const chipsLabel = de ? 'Screen wählen' : 'Choose screen';
     }
     .hj-shot { display: none; }
 
-    .hj-stage { display: block; position: relative; }
+    /* Die Bühne klebt nur so hoch, wie das Gerät samt Luft ist (nicht fenster-
+       hoch), und reicht unten in den Abschnittsabstand hinein. Sonst schiebt
+       das Rasterende das Handy schon weg, bevor die kurze letzte Etappe aktiv
+       ist. --hj-box: Gerät = 2,092 × Breite (siehe .h-phone) plus 2 × 40 px
+       Luft; --hj-inset stellt es unter der Leiste mittig ins Fenster. */
+    .hj-stage {
+      --hj-pw: min(320px, calc((100svh - 64px) * 0.36));
+      --hj-box: calc(var(--hj-pw) * 2.092 + 80px);
+      --hj-inset: max(0px, calc((100svh - 64px - var(--hj-box)) / 2));
+      display: block;
+      position: relative;
+      padding-top: var(--hj-inset);
+      margin-bottom: calc(-1 * var(--h-section-pad));
+    }
     .hj-stage-sticky {
       position: sticky;
-      top: 64px;
-      height: calc(100vh - 64px);
-      height: calc(100svh - 64px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 12px;
+      top: calc(64px + var(--hj-inset));
     }
     .hj-backdrop {
       position: relative;
@@ -322,7 +329,7 @@ const chipsLabel = de ? 'Screen wählen' : 'Choose screen';
     }
     .hj-phone {
       position: relative;
-      --pw: min(320px, calc((100svh - 64px) * 0.36));
+      --pw: var(--hj-pw);
       box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1), var(--h-shadow-device);
     }
     .hj-screen {

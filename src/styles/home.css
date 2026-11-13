@@ -34,7 +34,8 @@
    (Modifier in den Komponenten), nicht überall dieselben 120px. */
 .h-section {
   position: relative;
-  padding-block: clamp(72px, 9vw, 128px);
+  --h-section-pad: clamp(72px, 9vw, 128px);
+  padding-block: var(--h-section-pad);
   scroll-margin-top: 64px;
 }
 
