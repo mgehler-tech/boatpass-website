@@ -58,11 +58,35 @@ const facts = [
   { k: de ? 'Bearbeitungszeit' : 'Time allowed', v: binnen ? (de ? '45 Min., mit Segeln 60 Min.' : '45 min, with sailing 60 min') : (de ? '60 Min. inkl. Navigation' : '60 min incl. chartwork') },
   { k: de ? 'Amtliche Fassung' : 'Official version', v: de ? `gültig seit ${CATALOG_VALID_FROM.de}` : `valid since ${CATALOG_VALID_FROM.en}` },
 ];
+
+// FAQ (AEO): direkte Antworten im ersten Satz, sichtbar und als FAQPage-Schema.
+// Nur Fakten, die auch in Faktenkarte und Fließtext dieser Seite stehen.
+const faqs = de
+  ? [
+    { q: `Wie viele Fragebögen gibt es für den ${name}?`, a: `Für den ${name} gibt es 15 amtliche Fragebögen mit je 30 Fragen: 7 Basisfragen und 23 spezifische Fragen. ${binnen ? 'Wer Segeln dazunimmt, bekommt einen Ergänzungsbogen mit 7 Segelfragen.' : 'Dazu kommt eine Navigationsaufgabe auf der Übungsseekarte mit 9 Fragen.'}` },
+    { q: `Wann ist der ${name} Fragebogen bestanden?`, a: `Bestanden hast du mit mindestens 5 von 7 richtigen Basisfragen und mindestens 18 von 23 richtigen spezifischen Fragen. ${binnen ? 'Beim Ergänzungsbogen Segeln müssen mindestens 5 von 7 Fragen stimmen.' : 'Bei der Navigationsaufgabe müssen mindestens 7 von 9 Fragen stimmen.'}` },
+    { q: `Wie viel Zeit hat man für den ${name} Fragebogen?`, a: binnen ? 'Für den SBF Binnen Fragebogen hast du 45 Minuten Zeit. Mit dem Ergänzungsbogen Segeln verlängert sich die Bearbeitungszeit auf 60 Minuten.' : 'Für den SBF See hast du 60 Minuten Zeit, die Navigationsaufgabe ist darin enthalten.' },
+    { q: 'Kommen die Fragebögen so in der echten Prüfung dran?', a: `Ja, die 15 Fragebögen sind die amtliche Verteilung der Katalogfragen, und in der Prüfung bekommst du einen davon. Grundlage ist der amtliche Fragenkatalog in der Fassung, die seit ${CATALOG_VALID_FROM.de} gilt.` },
+    { q: `Kann ich den ${name} Fragebogen kostenlos online üben?`, a: `Ja, alle 15 amtlichen Bögen und ein Zufallsbogen lassen sich hier kostenlos im Browser üben und werden wie in der Prüfung ausgewertet.${binnen ? '' : ' Die Navigationsaufgaben übst du in der Boatpass-App.'}` },
+  ]
+  : [
+    { q: `How many practice papers are there for ${name}?`, a: `There are 15 official papers for ${name}, each with 30 questions: 7 basic and 23 specific questions. ${binnen ? 'If you add sailing, a supplementary paper adds 7 sailing questions.' : 'They are joined by a chartwork task on the training chart with 9 questions.'}` },
+    { q: `What is the pass mark for the ${name} exam paper?`, a: `You pass with at least 5 of 7 basic questions and at least 18 of 23 specific questions correct. ${binnen ? 'On the sailing supplement, at least 5 of 7 questions must be correct.' : 'On the chartwork task, at least 7 of 9 questions must be correct.'}` },
+    { q: `How much time do you get for the ${name} exam paper?`, a: binnen ? 'You get 45 minutes for the SBF Inland paper. With the sailing supplement, the time allowed is extended to 60 minutes.' : 'You get 60 minutes for the SBF Coastal exam, including the chartwork task.' },
+    { q: 'Are these the papers used in the real exam?', a: `Yes, the 15 papers are the official distribution of the catalogue questions, and in the exam you get one of them. They are based on the official question catalogue in the version valid since ${CATALOG_VALID_FROM.en}.` },
+    { q: `Can I practise the ${name} exam paper online for free?`, a: `Yes, all 15 official papers and a random paper can be practised here for free in your browser, marked like the real exam.${binnen ? '' : ' You can practise the chartwork tasks in the Boatpass app.'}` },
+  ];
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+};
 ---
 
 <BaseLayout title={title} description={description} lang={lang} altUrl={`${SITE}${practiceUrl(catalog, other)}`}>
   <DisplayFontPreload slot="head" />
   <script is:inline type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <PageHead lang={lang} eyebrow={de ? `${name} Fragebogen` : `${name} practice test`} lede={lede}>
     {de ? `${name} Fragebogen online üben` : `${name} practice test online`}
@@ -95,6 +119,18 @@ const facts = [
         {de ? 'Unsicher bei einem Thema? Hier stehen alle Katalogfragen mit richtiger Antwort.' : 'Unsure about a topic? Here are all catalogue questions with the correct answer.'}
       </p>
       <TopicNav lang={lang} catalog={catalog} current="practice" />
+    </section>
+
+    <section class="pg-section">
+      <h2 class="pg-h2">{de ? `Häufige Fragen zum ${name} Fragebogen` : `Frequently asked questions about the ${name} practice test`}</h2>
+      <div class="pg-faq">
+        {faqs.map(f => (
+          <div class="pg-faq-item">
+            <h3 class="pg-h3">{f.q}</h3>
+            <p class="pg-card-text">{f.a}</p>
+          </div>
+        ))}
+      </div>
     </section>
 
     <CatalogSourcesNote lang={lang} catalog={catalog} sheets />
