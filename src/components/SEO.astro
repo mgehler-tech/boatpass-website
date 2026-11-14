@@ -150,7 +150,9 @@ const isHomepage = Astro.url.pathname === '/' || Astro.url.pathname === '/en/' |
       }
     } : {}),
     "description": description,
-    "inLanguage": "de",
+    // Die App selbst ist zweisprachig (Fragen, Erklärungen, Merkhilfen auf DE und EN,
+    // umschaltbar in den Einstellungen) – gilt für die DE- wie die EN-Startseite.
+    "inLanguage": ["de", "en"],
     "publisher": {
       "@type": "Organization",
       "name": "Boatpass",
