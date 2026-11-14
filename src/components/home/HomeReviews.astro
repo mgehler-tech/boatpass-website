@@ -180,9 +180,26 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
     width: 1px;
     background: var(--h-line);
   }
-  /* Schmal: untereinander, ohne Trennlinie (sie hinge sonst links im Leeren). */
+  /* Schmal: untereinander, ohne Trennlinie (sie hinge sonst links im Leeren).
+     Beide Store-Bewertungen teilen sich dabei dieselben zwei Spalten
+     (Zahl | Sterne + Anzahl). Als einfache flex-Spalte begann jede Zeile für
+     sich – wegen der unterschiedlich breiten Zahlen (z. B. „5,0" vs. „4,97")
+     starteten Sterne und Anzahl der beiden Zeilen an verschiedenen
+     x-Positionen (sichtbar unsauberes Alignment). Über das gemeinsame Raster
+     landet jede Zahl in derselben, an der breitesten Zahl ausgerichteten
+     Spalte, sodass Sterne und Anzahl beider Zeilen exakt untereinander stehen.
+     display:contents hebt die Zwischenebene je Bewertung auf, damit Zahl und
+     Textblock direkt zu Rasterzellen werden. Reiner Alignment-Feinschliff;
+     Maße auf dem bestehenden 4/8px-Rhythmus, Marken-Werte unberührt. */
   @media (max-width: 699px) {
-    .hr-scores { flex-direction: column; align-items: flex-start; }
+    .hr-scores {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 14px;
+      row-gap: 20px;
+      align-items: center;
+    }
+    .hr-score { display: contents; }
     .hr-score + .hr-score::before { display: none; }
   }
   .hr-score-num {
