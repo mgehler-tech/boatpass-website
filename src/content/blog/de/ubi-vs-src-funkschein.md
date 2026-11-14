@@ -106,7 +106,7 @@ In diesem Fall bietet es sich an, zuerst das SRC zu machen, da dessen Inhalte um
 
 ## Und wenn ich aufs offene Meer will? Das LRC
 
-Wer außerhalb der UKW-Reichweite funken will, etwa bei längeren Offshore-Passagen, kommt mit dem SRC allein nicht aus. Dafür gibt es das [**Long Range Certificate (LRC)**](/lrc/), das zusätzlich Grenz- und Kurzwellenfunk sowie Satellitenfunk im Rahmen des GMDSS abdeckt und für die Seegebiete A1 bis A4 gilt. Für die meisten Küstenreviere in Nord- und Ostsee reicht das SRC jedoch völlig aus.
+Wer außerhalb der UKW-Reichweite funken will, etwa bei längeren Offshore-Passagen, kommt mit dem SRC allein nicht aus. Ab wann genau das der Fall ist, erklärt unser Beitrag [Funkzeugnis LRC: Wann das SRC nicht mehr ausreicht](/blog/funkzeugnis-lrc-wann-src-nicht-ausreicht/). Dafür gibt es das [**Long Range Certificate (LRC)**](/lrc/), das zusätzlich Grenz- und Kurzwellenfunk sowie Satellitenfunk im Rahmen des GMDSS abdeckt und für die Seegebiete A1 bis A4 gilt. Für die meisten Küstenreviere in Nord- und Ostsee reicht das SRC jedoch völlig aus.
 
 ## Wie du dich am besten vorbereitest
 

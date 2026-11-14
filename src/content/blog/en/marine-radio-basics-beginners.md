@@ -59,7 +59,7 @@ In voice radio there are three fixed signal words that clearly mark the **urgenc
 - **PAN PAN** – the **urgency message**. It concerns the safety of a vessel or person without immediate danger to life, for example loss of maneuverability without acute danger.
 - **SECURITE** (pronounced "say-cure-e-tay") – the **safety message**. It announces important navigation or weather warnings, such as gale warnings or notices of hazards.
 
-This ranking ensures that everyone listening immediately knows how serious a message is. A MAYDAY always has **absolute priority** over any other radio traffic. For how to attract attention beyond the radio in an emergency, see our article on [distress signals at sea](/en/blog/distress-signals-at-sea/).
+This ranking ensures that everyone listening immediately knows how serious a message is. A MAYDAY always has **absolute priority** over any other radio traffic. For how to attract attention beyond the radio in an emergency, see our article on [distress signals at sea](/en/blog/distress-signals-at-sea/). What a complete radio exchange sounds like is shown in our [example dialogues for marine radio calls and replies](/en/blog/marine-radio-in-practice-example-dialogues/).
 
 ## How a Simple Call Works
 

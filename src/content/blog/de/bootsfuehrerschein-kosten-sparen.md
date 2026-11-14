@@ -49,7 +49,7 @@ Bevor wir zu den Spartipps kommen, hier die aktuelle Kostenaufstellung für 2026
 | Passfoto | 5–15 € | 5–15 € | 5–15 € |
 | **Gesamt** | **200–650 €** | **220–700 €** | **280–770 €** |
 
-Das ärztliche Zeugnis stellst du auf dem amtlichen Muster der Sportbootführerscheinverordnung aus. Es ist in der Regel keine Kassenleistung: Die Praxis rechnet privat nach der Gebührenordnung für Ärzte (GOÄ) ab, der Preis hängt also von Praxis und Untersuchungsumfang ab. Die Spanne in der Tabelle ist eine grobe Schätzung, frag am besten vorher nach.
+Das ärztliche Zeugnis stellst du auf dem amtlichen Muster der Sportbootführerscheinverordnung aus. Es ist in der Regel keine Kassenleistung: Die Praxis rechnet privat nach der Gebührenordnung für Ärzte (GOÄ) ab, der Preis hängt also von Praxis und Untersuchungsumfang ab. Die Spanne in der Tabelle ist eine grobe Schätzung, frag am besten vorher nach. Was der Arzt dabei prüft und wie es mit Brille, Hörgerät oder Vorerkrankungen aussieht, liest du unter [Sportbootführerschein trotz gesundheitlicher Einschränkung](/blog/sportbootfuehrerschein-gesundheitliche-einschraenkung-aerztliches-zeugnis/).
 
 Der größte variable Kostenpunkt ist die Theorievorbereitung – genau hier liegt das Sparpotenzial.
 

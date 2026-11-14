@@ -96,7 +96,7 @@ Wer sich für eine Bootsbeteiligung interessiert, sollte vorab klare Absprachen 
 
 ## Fazit
 
-Es gibt keine pauschal „richtige" Antwort auf die Frage eigenes Boot oder Charter, sondern nur die Antwort, die zu deinem Fahrverhalten, deinem Budget und deiner Lebenssituation passt. Wer oft, spontan und über Jahre hinweg fährt, profitiert meist von einem eigenen Boot trotz der laufenden Verantwortung. Wer selten, saisonal oder noch unentschlossen ist, welcher Bootstyp zu ihm passt, ist mit Chartern in der Regel besser bedient. In beiden Fällen bleibt der Sportbootführerschein die Grundlage, auf der alles Weitere aufbaut. Wenn du dich noch auf die Prüfung vorbereitest, kannst du mit der Boatpass-App den offiziellen ELWIS-Fragenkatalog gezielt im Prüfungsmodus üben, egal ob du danach ein eigenes Boot kaufst oder erst einmal chartern gehst.
+Es gibt keine pauschal „richtige" Antwort auf die Frage eigenes Boot oder Charter, sondern nur die Antwort, die zu deinem Fahrverhalten, deinem Budget und deiner Lebenssituation passt. Wer oft, spontan und über Jahre hinweg fährt, profitiert meist von einem eigenen Boot trotz der laufenden Verantwortung. Wer selten, saisonal oder noch unentschlossen ist, welcher Bootstyp zu ihm passt, ist mit Chartern in der Regel besser bedient. In beiden Fällen bleibt der Sportbootführerschein die Grundlage, auf der alles Weitere aufbaut, und in beiden Fällen lohnt ein Blick auf die typischen [Anfängerfehler bei den ersten Fahrten nach dem SBF](/blog/erste-fahrten-nach-dem-sbf-anfaengerfehler/). Wenn du dich noch auf die Prüfung vorbereitest, kannst du mit der Boatpass-App den offiziellen ELWIS-Fragenkatalog gezielt im Prüfungsmodus üben, egal ob du danach ein eigenes Boot kaufst oder erst einmal chartern gehst.
 
 ## Quellen
 
