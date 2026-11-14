@@ -6,7 +6,7 @@
 // /catalog-data/<katalog>-<sprache>.json; Erklärungen gibt es dort nicht,
 // jede falsche Antwort verlinkt die Frage auf ihrer Themenseite.
 import StoreCta from '../home/StoreCta.astro';
-import type { Lang } from '../../data/catalog';
+import { CATALOGS, type Lang } from '../../data/catalog';
 
 interface Props {
   lang: Lang;
@@ -47,7 +47,9 @@ const strings = {
   wrong: de ? 'Falsch' : 'Wrong',
   open: de ? 'Nicht beantwortet' : 'Not answered',
   more: de ? 'Frage mit Erklärung ansehen' : 'See question with explanation',
-  figure: de ? 'Abbildung zu Frage {n}' : 'Figure for question {n}',
+  // Beschreibender Alt-Text mit amtlichem Prüfungsnamen (SBF Binnen/See) statt nur
+  // „Abbildung zu Frage 5" – gibt Screenreadern und Suchmaschinen den Katalog-Kontext.
+  figure: de ? `${CATALOGS[catalog].name.de} Prüfungsfrage {n} – Abbildung` : `${CATALOGS[catalog].name.en} exam question {n} – figure`,
   error: de ? 'Die Fragen konnten nicht geladen werden. Bitte lade die Seite neu.' : 'The questions could not be loaded. Please reload the page.',
   firstWrong: de ? 'Zur ersten falschen Antwort' : 'Go to the first wrong answer',
 };
