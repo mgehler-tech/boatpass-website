@@ -8,7 +8,7 @@
 import { Image } from 'astro:assets';
 import Icon from '../Icon.astro';
 import type { ImageMetadata } from 'astro';
-import { questionAnchor, figureWidth, type CatalogKey, type CatalogQuestion, type Lang } from '../../data/catalog';
+import { questionAnchor, figureWidth, CATALOGS, type CatalogKey, type CatalogQuestion, type Lang } from '../../data/catalog';
 
 interface Props {
   lang: Lang;
@@ -48,9 +48,13 @@ const unlock = q.more && q.mn
       {q.img.map((path, i) => {
         const img = images[`/src/assets/catalog/${path}`];
         if (!img) throw new Error(`Bild fehlt: ${path}`);
+        // Beschreibender Alt-Text mit amtlichem Prüfungsnamen (SBF Binnen/See) statt
+        // nur „Abbildung zu Frage 5" – gibt Screenreadern und Suchmaschinen den Kontext,
+        // in welchem Katalog und zu welcher Frage die Abbildung gehört.
+        const catName = CATALOGS[catalog].name[lang];
         const alt = de
-          ? `Abbildung${q.img.length > 1 ? ` ${i + 1}` : ''} zu Frage ${q.n}`
-          : `Figure${q.img.length > 1 ? ` ${i + 1}` : ''} for question ${q.n}`;
+          ? `${catName} Prüfungsfrage ${q.n} – Abbildung${q.img.length > 1 ? ` ${i + 1}` : ''}`
+          : `${catName} exam question ${q.n} – figure${q.img.length > 1 ? ` ${i + 1}` : ''}`;
         const width = figureWidth(img.default.width, img.default.height);
         return <Image src={img.default} alt={alt} width={width} densities={[1, 2]} loading="lazy" decoding="async" />;
       })}
