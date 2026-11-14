@@ -59,7 +59,7 @@ Im Sprechfunk gibt es drei feste Signalwörter, die die **Dringlichkeit** einer 
 - **PAN PAN** – die **Dringlichkeitsmeldung**. Sie betrifft die Sicherheit eines Fahrzeugs oder einer Person, ohne dass unmittelbare Lebensgefahr besteht, zum Beispiel bei Manövrierunfähigkeit ohne akute Gefahr.
 - **SECURITE** (gesprochen „sekürité") – die **Sicherheitsmeldung**. Sie kündigt wichtige Navigations- oder Wetterwarnungen an, etwa Sturmwarnungen oder Hinweise auf Hindernisse.
 
-Diese Rangfolge sorgt dafür, dass alle Mithörer sofort wissen, wie ernst eine Meldung ist. Ein MAYDAY hat immer **absoluten Vorrang** vor jedem anderen Funkverkehr. Wie du im Notfall über den Funk hinaus Aufmerksamkeit erregst, liest du ergänzend im Artikel [Notsignale auf See](/blog/notsignale-auf-see/).
+Diese Rangfolge sorgt dafür, dass alle Mithörer sofort wissen, wie ernst eine Meldung ist. Ein MAYDAY hat immer **absoluten Vorrang** vor jedem anderen Funkverkehr. Wie du im Notfall über den Funk hinaus Aufmerksamkeit erregst, liest du ergänzend im Artikel [Notsignale auf See](/blog/notsignale-auf-see/). Wie ein vollständiger Funkspruch klingt, zeigen unsere [Beispieldialoge für Anruf und Antwort im Sprechfunk](/blog/sprechfunk-praxis-beispieldialoge-anruf-antwort/).
 
 ## So läuft ein einfacher Anruf ab
 

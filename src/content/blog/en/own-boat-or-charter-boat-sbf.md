@@ -94,7 +94,7 @@ Between these two clear poles there are also middle paths: boat-sharing arrangem
 
 ## Conclusion
 
-There's no universally "right" answer to owning versus chartering, only the answer that fits how you boat, your budget, and your life situation. If you go out often, spontaneously, and over years, you'll usually benefit from owning your own boat despite the ongoing responsibility. If you go out rarely, seasonally, or are still undecided which type of boat suits you, chartering is generally the better fit. Either way, the Sportbootführerschein remains the foundation everything else builds on. If you're still preparing for the exam, you can use the Boatpass app to practice the official ELWIS question catalog in exam mode, whether you go on to buy your own boat or keep chartering for now.
+There's no universally "right" answer to owning versus chartering, only the answer that fits how you boat, your budget, and your life situation. If you go out often, spontaneously, and over years, you'll usually benefit from owning your own boat despite the ongoing responsibility. If you go out rarely, seasonally, or are still undecided which type of boat suits you, chartering is generally the better fit. Either way, the Sportbootführerschein remains the foundation everything else builds on, and either way it pays to know the typical [beginner mistakes on your first trips after the SBF](/en/blog/first-trips-after-sbf-beginner-mistakes/). If you're still preparing for the exam, you can use the Boatpass app to practice the official ELWIS question catalog in exam mode, whether you go on to buy your own boat or keep chartering for now.
 
 ## Sources
 

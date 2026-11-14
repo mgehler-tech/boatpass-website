@@ -110,7 +110,7 @@ Modern boats increasingly rely on electronics that should be tested after winter
 
 Alongside the technical checks, a few administrative points belong to the season start:
 
-- **Check boat papers and registration.** Confirm all required documents are on board and still valid.
+- **Check boat papers and registration.** Confirm all required documents are on board and still valid. Which boats need a registration mark in the first place is explained in [boat registration and ID marking rules in Germany](/en/blog/boat-registration-and-identification-requirements-germany/).
 - **Review your insurance.** It's worth a look at your existing coverage, especially if anything about the boat or how you use it has changed. Our article on [boat insurance](/en/blog/boat-insurance-for-sportboats-what-makes-sense/) covers what generally matters here.
 - **Sort out your slip and launch date early.** Check early with your marina or club about when your spot is available again and when the boat can be launched.
 

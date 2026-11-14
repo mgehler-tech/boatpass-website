@@ -110,7 +110,7 @@ Moderne Boote sind zunehmend auf funktionierende Elektronik angewiesen, die nach
 
 Neben der Technik gehört auch die Verwaltung zum Saisonstart:
 
-- **Bootspapiere und Kennzeichen kontrollieren.** Prüfe, ob alle erforderlichen Dokumente an Bord und noch gültig sind.
+- **Bootspapiere und Kennzeichen kontrollieren.** Prüfe, ob alle erforderlichen Dokumente an Bord und noch gültig sind. Welche Boote überhaupt ein Kennzeichen brauchen, steht im Beitrag [Bootskennzeichen und Registrierungspflicht](/blog/bootskennzeichen-registrierungspflicht-sportboot/).
 - **Versicherung überprüfen.** Ein Blick auf den bestehenden Versicherungsschutz lohnt sich besonders, wenn sich am Boot oder an der Nutzung etwas verändert hat. Was dabei generell zu beachten ist, beschreibt unser Artikel zur [Bootsversicherung](/blog/bootsversicherung-sportboote-sinnvoll/).
 - **Liegeplatz und Slip-Termin rechtzeitig klären.** Sprich frühzeitig mit deiner Marina oder deinem Verein ab, wann dein Platz wieder verfügbar ist und wann das Boot zu Wasser gelassen werden kann.
 

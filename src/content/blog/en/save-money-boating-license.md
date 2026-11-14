@@ -49,7 +49,7 @@ Before we get to the saving tips, here's the current cost breakdown for 2026:
 | Passport photo | €5–15 | €5–15 | €5–15 |
 | **Total** | **€200–650** | **€220–700** | **€280–770** |
 
-The medical certificate is issued on the official form set out in the boating licence regulation (SpFV). It is usually not covered by statutory health insurance: the practice bills it privately under the German medical fee schedule (GOÄ), so the price depends on the practice and the scope of the examination. The range in the table is a rough estimate, so ask beforehand.
+The medical certificate is issued on the official form set out in the boating licence regulation (SpFV). It is usually not covered by statutory health insurance: the practice bills it privately under the German medical fee schedule (GOÄ), so the price depends on the practice and the scope of the examination. The range in the table is a rough estimate, so ask beforehand. What the doctor checks, and how glasses, hearing aids or pre-existing conditions are handled, is explained in [getting the German boating license with a health condition](/en/blog/boating-license-with-a-health-condition-medical-certificate/).
 
 The biggest variable cost is theory preparation – and that's exactly where the savings potential lies.
 
