@@ -161,4 +161,30 @@ test.describe('License Finder full flow → Recommendation → Next step', () =>
 
     await expect(result.locator(`a[href="${CHOOSER}"]`)).toHaveCount(1);
   });
+
+  // The result CTA is injected by the configurator script, so it sits outside
+  // every statically tagged section. Without its own data-cta-position the
+  // click tracking in BaseLayout files it under "other" and the finder's
+  // contribution to store clicks cannot be told apart in Plausible.
+  test('the result CTA reports its store click with the finder position', async ({ page }) => {
+    // Keep the BaseLayout queue stub (window.plausible.q) instead of the real script.
+    await page.route(/plausible\.io/, (route) => route.abort());
+    await page.goto('/tools/welcher-bootsfuehrerschein/');
+
+    await page.locator('.cfg-opt', { hasText: 'Binnengewässer' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Verbrenner über 15 PS' }).click();
+    await page.locator('.cfg-opt', { hasText: 'Nein' }).click();
+
+    const cta = page.locator('#cfg-result .res-actions a');
+    await expect(cta).toHaveAttribute('href', CHOOSER);
+    await expect(cta).toHaveAttribute('data-cta-position', 'finder-result');
+
+    // Stay on the page so the queued event can be read back.
+    await cta.evaluate((el) => el.addEventListener('click', (e) => e.preventDefault()));
+    await cta.click();
+    const events = await page.evaluate(() =>
+      ((window as any).plausible.q || []).map((args: any) => [args[0], args[1]?.props?.position]),
+    );
+    expect(events).toContainEqual(['app_chooser_click', 'finder-result']);
+  });
 });
