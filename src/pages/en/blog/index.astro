@@ -247,17 +247,21 @@ const breadcrumbSchema = {
     background: white; color: #656B78;
     cursor: pointer; transition: all 0.15s;
   }
-  .cat-btn:hover { border-color: var(--accent, #3366FF); color: var(--accent, #3366FF); }
+  /* --accent-strong: category colour darkened with 30 % black. White text
+     directly on the category colours only reached 2.8:1 in places (sky blue,
+     orange, green) – darkened it is ≥ 5.2:1 throughout (WCAG 1.4.3). */
+  .cat-btn { --accent-strong: color-mix(in srgb, var(--accent, #3366FF) 70%, #000); }
+  .cat-btn:hover { border-color: var(--accent-strong); color: var(--accent-strong); }
   .cat-btn.active {
-    background: var(--accent, #3366FF); color: white;
-    border-color: var(--accent, #3366FF);
+    background: var(--accent-strong); color: white;
+    border-color: var(--accent-strong);
   }
   .cat-count {
     font-size: 11px; font-weight: 800;
     background: rgba(0,0,0,0.06); color: inherit;
     padding: 1px 7px; border-radius: 100px;
   }
-  .cat-btn.active .cat-count { background: rgba(255,255,255,0.25); }
+  .cat-btn.active .cat-count { background: rgba(0,0,0,0.2); }
 
   /* Topic clusters */
   .cluster { margin-bottom: 44px; }
@@ -285,7 +289,7 @@ const breadcrumbSchema = {
   }
   .cluster-count {
     grid-area: count;
-    font-size: 12px; font-weight: 800; color:#656B78;
+    font-size: 12px; font-weight: 800; color:#4B5563;
     background: rgba(26,31,54,0.05); padding: 4px 8px; border-radius: 100px;
   }
   .cluster-desc { grid-area: desc; font-size: 14px; color: #656B78; }
@@ -368,6 +372,16 @@ const breadcrumbSchema = {
     background: #181E2E;
     border-color: rgba(90, 120, 255, 0.16);
     color: #94A3B8;
+  }
+  /* The active filter stays filled in dark mode too (the rule above would
+     otherwise override it); hover uses a lightened category colour. */
+  html.dark .cat-btn:hover {
+    border-color: color-mix(in srgb, var(--accent, #3366FF) 55%, #fff);
+    color: color-mix(in srgb, var(--accent, #3366FF) 55%, #fff);
+  }
+  html.dark .cat-btn.active {
+    background: var(--accent-strong); color: white;
+    border-color: var(--accent-strong);
   }
   html.dark .cat-count { background: rgba(255, 255, 255, 0.08); }
 

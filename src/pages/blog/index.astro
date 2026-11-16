@@ -174,7 +174,7 @@ const breadcrumbSchema = {
   .start-eyebrow {
     display: inline-block;
     font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;
-    color: #3366FF; margin-bottom: 10px;
+    color: #2952CC; margin-bottom: 10px;
   }
   .start-title {
     font-size: 26px; font-weight: 900; letter-spacing: -0.5px;
@@ -250,17 +250,21 @@ const breadcrumbSchema = {
     background: white; color: #656B78;
     cursor: pointer; transition: all 0.15s;
   }
-  .cat-btn:hover { border-color: var(--accent, #3366FF); color: var(--accent, #3366FF); }
+  /* --accent-strong: Kategoriefarbe, zu 30 % mit Schwarz abgedunkelt. Weiße
+     Schrift direkt auf den Kategoriefarben erreichte teils nur 2.8:1 (Himmelblau,
+     Orange, Grün) – abgedunkelt sind es durchgehend ≥ 5.2:1 (WCAG 1.4.3). */
+  .cat-btn { --accent-strong: color-mix(in srgb, var(--accent, #3366FF) 70%, #000); }
+  .cat-btn:hover { border-color: var(--accent-strong); color: var(--accent-strong); }
   .cat-btn.active {
-    background: var(--accent, #3366FF); color: white;
-    border-color: var(--accent, #3366FF);
+    background: var(--accent-strong); color: white;
+    border-color: var(--accent-strong);
   }
   .cat-count {
     font-size: 11px; font-weight: 800;
     background: rgba(0,0,0,0.06); color: inherit;
     padding: 1px 7px; border-radius: 100px;
   }
-  .cat-btn.active .cat-count { background: rgba(255,255,255,0.25); }
+  .cat-btn.active .cat-count { background: rgba(0,0,0,0.2); }
 
   /* Themen-Cluster */
   .cluster { margin-bottom: 44px; }
@@ -290,7 +294,7 @@ const breadcrumbSchema = {
   }
   .cluster-count {
     grid-area: count;
-    font-size: 12px; font-weight: 800; color:#656B78;
+    font-size: 12px; font-weight: 800; color:#4B5563;
     background: rgba(26,31,54,0.05); padding: 4px 8px; border-radius: 100px;
   }
   .cluster-desc { grid-area: desc; font-size: 14px; color: #656B78; }
@@ -379,7 +383,9 @@ const breadcrumbSchema = {
   html.dark .start-title      { color: #E2E8F0; }
   html.dark .start-step-title { color: #E2E8F0; }
   html.dark .start-sub        { color: #94A3B8; }
-  html.dark .start-meta       { color: #656B78; }
+  html.dark .start-meta       { color: #94A3B8; }
+  html.dark .start-eyebrow,
+  html.dark .start-label      { color: #8AA4FF; }
 
   html.dark .blog-search {
     background: #181E2E;
@@ -390,6 +396,16 @@ const breadcrumbSchema = {
     background: #181E2E;
     border-color: rgba(90, 120, 255, 0.16);
     color: #94A3B8;
+  }
+  /* Aktiver Filter bleibt auch im Dunkelmodus gefüllt (die Regel oben hätte
+     ihn sonst überschrieben); Hover nutzt eine aufgehellte Kategoriefarbe. */
+  html.dark .cat-btn:hover {
+    border-color: color-mix(in srgb, var(--accent, #3366FF) 55%, #fff);
+    color: color-mix(in srgb, var(--accent, #3366FF) 55%, #fff);
+  }
+  html.dark .cat-btn.active {
+    background: var(--accent-strong); color: white;
+    border-color: var(--accent-strong);
   }
   html.dark .cat-count { background: rgba(255, 255, 255, 0.08); }
 
