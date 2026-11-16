@@ -387,10 +387,33 @@ const homeHref = getLocalizedPath(lang, '/');
     const trigger = document.getElementById(triggerId);
     const container = trigger?.closest('.nav-dropdown');
     if (!container || !trigger) return;
-    container.addEventListener('focusin', () => trigger.setAttribute('aria-expanded', 'true'));
+    container.addEventListener('focusin', () => {
+      if (!container.classList.contains('is-dismissed')) trigger.setAttribute('aria-expanded', 'true');
+    });
     container.addEventListener('focusout', (e: Event) => {
       const next = (e as FocusEvent).relatedTarget as Node | null;
-      if (!container.contains(next)) trigger.setAttribute('aria-expanded', 'false');
+      if (container.contains(next)) return;
+      trigger.setAttribute('aria-expanded', 'false');
+      container.classList.remove('is-dismissed');
+    });
+
+    // Escape schließt das per Hover oder Fokus geöffnete Megamenü (WCAG 1.4.13:
+    // eingeblendete Inhalte müssen sich ohne Maus- oder Fokuswechsel ausblenden
+    // lassen). Bisher blieb das Menü offen und verdeckte die Hero-Überschrift.
+    // Lag der Fokus im Menü, springt er zurück auf den Auslöser.
+    document.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key !== 'Escape' || container.classList.contains('is-dismissed')) return;
+      if (!container.matches(':hover, :focus-within')) return;
+      if (container.contains(document.activeElement)) trigger.focus();
+      container.classList.add('is-dismissed');
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+    // Wieder öffnen: Maus verlässt das Dropdown oder der Auslöser wird erneut betätigt.
+    container.addEventListener('mouseleave', () => container.classList.remove('is-dismissed'));
+    trigger.addEventListener('click', () => {
+      if (!container.classList.contains('is-dismissed')) return;
+      container.classList.remove('is-dismissed');
+      trigger.setAttribute('aria-expanded', 'true');
     });
   }
   wireDropdown('licenses-trigger');
@@ -554,6 +577,13 @@ const homeHref = getLocalizedPath(lang, '/');
     opacity: 1;
     visibility: visible;
     transform: translateX(-50%) translateY(0);
+  }
+  /* Per Escape geschlossen: bleibt zu, solange Maus oder Fokus noch im
+     Dropdown stehen (siehe wireDropdown). */
+  .nav-dropdown.is-dismissed .nav-mega {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-6px);
   }
   /* Das Ratgeber-Menü hat drei Spalten plus Promo-Kachel (~850 px). Damit es
      bei 1024 px nicht über den Rand läuft, hängt es mittig unter der ganzen

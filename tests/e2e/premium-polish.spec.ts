@@ -144,6 +144,39 @@ test.describe('Header', () => {
     expect(box!.x + box!.width).toBeLessThanOrEqual(1024);
   });
 
+  test('Escape closes the mega menu opened by keyboard focus or hover (WCAG 1.4.13)', async ({ page }) => {
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto('/');
+    const trigger = page.locator('#guides-trigger');
+    const menu = page.locator('#guides-menu');
+    // Tastatur: Fokus öffnet, Escape schließt, Fokus bleibt auf dem Auslöser.
+    await trigger.focus();
+    await expect(menu).toBeVisible();
+    await expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    await page.keyboard.press('Escape');
+    await expect(menu).toBeHidden();
+    await expect(trigger).toBeFocused();
+    await expect(trigger).toHaveAttribute('aria-expanded', 'false');
+    // Erneut betätigen öffnet wieder.
+    await page.keyboard.press('Enter');
+    await expect(menu).toBeVisible();
+    await expect(trigger).toHaveAttribute('aria-expanded', 'true');
+    // Escape aus einem Menüpunkt heraus: Fokus springt zurück auf den Auslöser.
+    await page.keyboard.press('Tab');
+    await page.keyboard.press('Escape');
+    await expect(menu).toBeHidden();
+    await expect(trigger).toBeFocused();
+    await trigger.blur();
+    // Maus: Hover öffnet, Escape schließt, nach Verlassen öffnet Hover erneut.
+    await page.locator('#licenses-trigger').hover();
+    await expect(page.locator('#licenses-menu')).toBeVisible();
+    await page.keyboard.press('Escape');
+    await expect(page.locator('#licenses-menu')).toBeHidden();
+    await page.mouse.move(700, 600);
+    await page.locator('#licenses-trigger').hover();
+    await expect(page.locator('#licenses-menu')).toBeVisible();
+  });
+
   test('mobile menu has Preise and a Ratgeber accordion with Blog; the theme toggle stays in the header', async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto('/');
