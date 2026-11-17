@@ -14,7 +14,7 @@ faq:
   - question: "Brauche ich auf einem Sportboot eine Rettungsinsel?"
     answer: "Auf Binnengewässern und bei Tagesfahrten in Landnähe ist eine Rettungsinsel meist nicht üblich. Für Fahrten weiter vor der Küste oder über offene Seegebiete ist sie dagegen ein wichtiges Rettungsmittel. Entscheidend sind Revier, Entfernung zur Küste, Wassertemperatur und wie schnell Hilfe dich erreichen kann."
   - question: "Wie oft muss eine Rettungsinsel gewartet werden?"
-    answer: "Eine Rettungsinsel muss in den vom Hersteller vorgegebenen Intervallen von einer dafür zugelassenen Servicestation geprüft und neu gepackt werden. Das Datum der nächsten Wartung steht in der Regel auf dem Behälter oder im Wartungsnachweis."
+    answer: "Eine Rettungsinsel muss entsprechend der Herstellerangabe, mindestens aber alle 2 Jahre, von einer dafür zugelassenen Servicestation geprüft und neu gepackt werden. So steht es auch im amtlichen Fragenkatalog für aufblasbare Rettungsmittel. Das Datum der nächsten Wartung steht in der Regel auf dem Behälter oder im Wartungsnachweis."
 ---
 
 Rettungswesten an Bord zu haben, ist für die meisten selbstverständlich. Doch was gehört sonst noch auf ein Sportboot, damit du im Ernstfall nicht mit leeren Händen dastehst? Dieser Beitrag gibt dir einen Überblick über die wichtigsten **Rettungsmittel** und die übrige **Sicherheitsausrüstung**, von Rettungsring und Feuerlöscher bis zur **Rettungsinsel**, und zeigt, wie du sie passend zu Boot und Revier auswählst.
@@ -23,10 +23,11 @@ Rettungswesten an Bord zu haben, ist für die meisten selbstverständlich. Doch 
 
 Eine wichtige Vorbemerkung: Für **privat genutzte Sportboote** gibt es in Deutschland keine umfassende, allgemein verbindliche Ausrüstungsliste, wie man sie aus einigen anderen Ländern kennt. Das heißt aber nicht, dass alles freiwillig ist. Einzelne Pflichten ergeben sich aus bestehenden Vorschriften, etwa aus den [Kollisionsverhütungsregeln](/blog/kollisionsverhuetungsregeln-kvr-ueberblick/) für Lichter und Schallsignale. Und vor allem trägst du als **Schiffsführerin oder Schiffsführer die Verantwortung** dafür, dass Boot und Ausrüstung für die geplante Fahrt geeignet sind. Kommt es zu einem Unfall, wird man fragen, ob du sorgfältig vorbereitet warst.
 
-Drei Situationen solltest du gesondert betrachten:
+Vier Situationen solltest du gesondert betrachten:
 
 - **Mietboote:** Bei vermieteten Booten auf Binnengewässern gelten eigene Regeln für den Vermieter. Die im Bootszeugnis eingetragene Ausrüstung muss einsatzbereit an Bord sein. Prüfe sie bei der Übernahme trotzdem selbst, wie im Beitrag zum [Boots-Übernahmecheck](/blog/boots-uebernahmecheck-charterboot-eigenes-boot/) beschrieben.
 - **Fahrten im Ausland:** Viele Länder schreiben für Sportboote eine konkrete Mindestausrüstung vor, oft abhängig von der Entfernung zur Küste. Informiere dich vor dem Törn bei den Behörden des Gastlandes. Einen Einstieg bietet der Beitrag [SBF im Ausland gültig?](/blog/sbf-im-ausland-gueltig/).
+- **Bodensee:** Auf dem Bodensee gilt die Bodensee-Schifffahrts-Ordnung mit eigenen Vorgaben zur Mindestausrüstung, etwa zu Rettungsmitteln. Informiere dich vor der Fahrt bei der zuständigen Schifffahrtsbehörde. Mehr zum Revier im Beitrag zum [Bodensee-Schifferpatent](/blog/bodensee-schifferpatent/).
 - **Prüfung:** Im amtlichen Fragenkatalog für den SBF tauchen Fragen zu Rettungsmitteln, Feuer an Bord und Seenotsignalen auf. Das Wissen aus diesem Beitrag hilft dir also nicht nur auf dem Wasser.
 
 Die folgende Übersicht orientiert sich deshalb nicht an einer Pflichtliste, sondern an der Frage: **Was brauchst du, um typische Notfälle zu bewältigen?** Dazu gehören ein Sturz über Bord, Feuer, Wassereinbruch, ein Motorausfall und im Extremfall das Verlassen des Bootes.
@@ -68,13 +69,13 @@ Auf Binnengewässern und bei Tagesfahrten in Sichtweite der Küste ist eine Rett
 
 - **Kapazität:** Die Insel muss für die Zahl der Personen an Bord zugelassen sein.
 - **Norm und Einsatzbereich:** Für Sportboote gibt es Rettungsinseln nach der Normenreihe **ISO 9650**, mit unterschiedlichen Ausführungen für küstennahe Fahrt und für Hochsee. Wähle eine Ausführung, die zu deinem Fahrtgebiet passt.
-- **Wartung:** Eine Rettungsinsel muss in den **vom Hersteller vorgegebenen Intervallen** von einer zugelassenen Servicestation geprüft und neu gepackt werden. Das Datum findest du in der Regel auf dem Behälter. Eine überfällige Insel ist ein Risiko, auf das du dich nicht verlassen solltest.
+- **Wartung:** Eine Rettungsinsel muss **entsprechend der Herstellerangabe, mindestens aber alle 2 Jahre** von einer zugelassenen Servicestation geprüft und neu gepackt werden. Das gilt laut amtlichem Fragenkatalog für alle aufblasbaren Rettungsmittel, also auch für automatische Rettungswesten. Das Datum findest du in der Regel auf dem Behälter. Eine überfällige Insel ist ein Risiko, auf das du dich nicht verlassen solltest.
 - **Lagerung:** Die Insel muss schnell erreichbar sein und sich ohne großen Kraftaufwand ins Wasser bringen lassen. Bei Containern an Deck kommt oft eine **hydrostatische Auslösevorrichtung** zum Einsatz, die die Insel freigibt, wenn das Boot sinkt.
 - **Reißleine:** Die Auslöseleine muss vor dem Werfen am Boot befestigt sein, sonst treibt die Insel davon.
 
-### Ins Boot oder in die Insel?
+### An Bord bleiben oder in die Insel?
 
-Eine verbreitete Seemannsregel lautet sinngemäß: **Steig nur nach oben in die Rettungsinsel**, also erst dann, wenn das Boot wirklich nicht mehr zu halten ist. Ein schwimmendes Boot ist größer, besser sichtbar und bietet mehr Schutz als jede Insel. Viele Unglücke zeigen, dass Besatzungen ihr Boot zu früh verlassen haben, das später noch schwimmend gefunden wurde. Plane deshalb vor dem Törn, wer im Ernstfall was übernimmt: Notruf absetzen, Insel auslösen, Notfalltasche mitnehmen.
+Eine verbreitete Seemannsregel lautet sinngemäß: **Steig nur nach oben in die Rettungsinsel**, also erst dann, wenn das Boot wirklich nicht mehr zu halten ist. Ein schwimmendes Boot ist größer, besser sichtbar und bietet mehr Schutz als jede Insel. Viele Unglücke zeigen, dass Besatzungen ihr Boot zu früh verlassen haben, obwohl es später noch schwimmend gefunden wurde. Plane deshalb vor dem Törn, wer im Ernstfall was übernimmt: Notruf absetzen, Insel auslösen, Notfalltasche mitnehmen.
 
 ### Die Notfalltasche (Grab Bag)
 
@@ -88,16 +89,16 @@ Im Notfall zählt, dass andere schnell erfahren, **dass** du Hilfe brauchst und 
 - **Seenotfunkbake (EPIRB) und persönliche Notfunkbake (PLB):** Diese Baken senden im Notfall über das Satellitensystem COSPAS-SARSAT ein Signal auf 406 MHz. Eine EPIRB ist dem Boot zugeordnet, eine PLB wird am Körper getragen. Solche Geräte müssen registriert bzw. codiert werden. Kläre das beim Kauf mit dem Händler oder der zuständigen Stelle.
 - **AIS-MOB-Sender:** Kleine Sender an der Rettungsweste, die bei Auslösung ein Signal aussenden, das AIS-Geräte in der Nähe anzeigen. Damit lässt sich eine über Bord gegangene Person leichter wiederfinden.
 - **Seenotsignalmittel:** Handfackeln, Rauchsignale und Fallschirmsignalraketen gehören auf See zur Grundausrüstung. Für bestimmte pyrotechnische Signalmittel brauchst du in Deutschland einen **Fachkundenachweis**. Mehr dazu im Beitrag [Pyrotechnik an Bord](/blog/fkn-pyrotechnik-seenotsignalmittel/), die Bedeutung der einzelnen Signale erklärt der Beitrag [Notsignale auf See](/blog/notsignale-auf-see/).
-- **Schallsignal:** Nach den Kollisionsverhütungsregeln müssen Fahrzeuge ab 12 Metern Länge eine Pfeife führen. Kleinere Fahrzeuge brauchen keine Pfeife im Sinne der Regeln, müssen aber ein anderes Mittel haben, um ein kräftiges Schallsignal zu geben, etwa ein Signalhorn. Mehr dazu im Beitrag [Schallsignale erklärt](/blog/schallsignale-sbf-erklaert/).
+- **Schallsignal:** Auf See müssen nach den Kollisionsverhütungsregeln Fahrzeuge ab 12 Metern Länge eine Pfeife führen. Kleinere Fahrzeuge brauchen keine Pfeife im Sinne der Regeln, müssen aber ein anderes Mittel haben, um ein kräftiges Schallsignal zu geben, etwa ein Signalhorn. Auf Binnenschifffahrtsstraßen gelten die Regeln der Binnenschifffahrtsstraßen-Ordnung. Mehr dazu im Beitrag [Schallsignale erklärt](/blog/schallsignale-sbf-erklaert/).
 - **Radarreflektor:** Kleine Kunststoff- oder Holzboote sind auf dem Radar anderer Schiffe schlecht zu sehen. Ein Radarreflektor, möglichst hoch angebracht, verbessert das deutlich, vor allem bei schlechter Sicht.
 
 ## Feuer an Bord
 
 Kraftstoff, Gas, Elektrik und ein enger Raum: Ein Brand auf einem Boot kann sich schnell ausbreiten, und du kannst nicht einfach weggehen. Deshalb gehören dazu:
 
-- **Feuerlöscher**, geeignet für die an Bord vorkommenden Brandklassen, gut erreichbar und nicht hinter der möglichen Brandquelle angebracht. Achte auf das **Prüfdatum** und lass Löscher regelmäßig von einer fachkundigen Person prüfen.
+- **Feuerlöscher**, geeignet für die an Bord vorkommenden Brandklassen, gut erreichbar und nicht hinter der möglichen Brandquelle angebracht. Zweckmäßig sind ABC-Pulver- oder Schaumlöscher. Achte auf das **Prüfdatum** und lass Löscher mindestens alle 2 Jahre von einer fachkundigen Person prüfen.
 - **Löschdecke**, vor allem in der Nähe des Kochers, um kleine Brände zu ersticken.
-- **Gaswarner und CO-Melder**, wenn du mit Gas kochst oder heizt oder eine Kajüte mit Verbrennungsmotor nutzt. Gas ist schwerer als Luft und sammelt sich in der Bilge.
+- **Gaswarner und CO-Melder**, wenn du mit Gas kochst oder heizt oder wenn Abgase von Motor, Generator oder Heizung in die Kajüte gelangen können. Flüssiggas (Propan, Butan) ist schwerer als Luft, sammelt sich in der Bilge und bildet mit Luft ein explosives Gemisch.
 
 Ebenso wichtig ist die Vorbeugung: Tanken mit abgestelltem Motor, Kraftstoffreste aufwischen, Motorraum lüften und Gasanlagen regelmäßig prüfen lassen.
 

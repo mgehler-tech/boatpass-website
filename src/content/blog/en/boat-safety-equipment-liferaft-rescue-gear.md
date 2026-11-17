@@ -12,9 +12,9 @@ faq:
   - question: "Is there a mandatory safety equipment list for private recreational boats in Germany?"
     answer: "For privately used recreational boats, Germany has no comprehensive, generally binding equipment list of the kind some other countries have. Individual duties follow from rules such as the collision regulations, for example for sound signals. Beyond that, you as the skipper are responsible for making sure the equipment suits the boat, the waters and the crew. Rental boats and boating abroad may come with their own requirements."
   - question: "Do I need a liferaft on a recreational boat?"
-    answer: "On inland waters and on day trips close to shore, a liferaft is usually not common. For trips further offshore or across open sea areas, however, it is an important piece of rescue equipment. What matters is the area, the distance from the coast, the water temperature and how quickly help can reach you."
+    answer: "On inland waters and on day trips close to shore, a liferaft is usually not carried. For trips further offshore or across open sea areas, however, it is an important piece of rescue equipment. What matters is the area, the distance from the coast, the water temperature and how quickly help can reach you."
   - question: "How often does a liferaft need servicing?"
-    answer: "A liferaft must be inspected and repacked by an approved service station at the intervals specified by the manufacturer. The date of the next service is usually shown on the container or in the service record."
+    answer: "A liferaft must be inspected and repacked by an approved service station as specified by the manufacturer, and at least every two years. This is also the answer the official SBF question catalog gives for inflatable life-saving equipment. The date of the next service is usually shown on the container or in the service record."
 ---
 
 Having life jackets on board is a given for most boaters. But what else belongs on a recreational boat so that you are not empty-handed in an emergency? This article gives you an overview of the most important **rescue equipment** and other **safety gear**, from lifebuoy and fire extinguisher to the **liferaft**, and shows you how to choose it to suit your boat and your waters. It is written with the German boating license, the **Sportbootführerschein (SBF)**, in mind.
@@ -23,10 +23,11 @@ Having life jackets on board is a given for most boaters. But what else belongs 
 
 An important note first: for **privately used recreational boats**, Germany has no comprehensive, generally binding equipment list like the ones some other countries have. That does not mean everything is optional. Individual duties follow from existing rules, for example the [collision regulations (COLREGs)](/en/blog/colregs-collision-regulations-overview/) for lights and sound signals. Above all, as the **skipper you are responsible** for making sure that the boat and its equipment are fit for the planned trip. If an accident happens, people will ask whether you prepared carefully.
 
-Three situations deserve a separate look:
+Four situations deserve a separate look:
 
 - **Rental boats:** For boats rented out on German inland waters, the rental company has its own obligations. The equipment listed in the boat certificate must be on board and ready for use. Still check it yourself at handover, as described in the article on the [boat handover check](/en/blog/boat-handover-check-charter-or-own-boat/).
 - **Boating abroad:** Many countries require a specific minimum set of equipment for recreational boats, often depending on the distance from the coast. Check with the authorities of the host country before your trip. The article [Is the SBF valid abroad?](/en/blog/sbf-valid-abroad/) is a good starting point.
+- **Lake Constance (Bodensee):** The Lake Constance shipping regulations set their own minimum equipment requirements, for example for rescue devices. Check with the responsible authority before you go. More about this area in the article on the [Lake Constance boat license](/en/blog/lake-constance-boat-license/).
 - **The exam:** The official SBF question catalog includes questions on rescue equipment, fire on board and distress signals. So what you learn here helps you on the water and in the exam.
 
 The overview below is therefore not based on a mandatory list but on one question: **what do you need to handle typical emergencies?** These include someone falling overboard, fire, water ingress, engine failure and, in the worst case, abandoning the boat.
@@ -67,8 +68,8 @@ On inland waters and on day trips within sight of the coast, a liferaft is unusu
 ### What to look for
 
 - **Capacity:** The liferaft must be approved for the number of people on board.
-- **Standard and intended use:** Liferafts for recreational boats are built to the **ISO 9650** series of standards, with different versions for coastal and offshore use. Choose a version that matches your sailing area.
-- **Servicing:** A liferaft must be inspected and repacked by an approved service station at the **intervals specified by the manufacturer**. You will usually find the date on the container. An overdue liferaft is a risk you should not rely on.
+- **Standard and intended use:** Liferafts for recreational boats are available built to the **ISO 9650** series of standards, with different versions for coastal and offshore use. Choose a version that matches your sailing area.
+- **Servicing:** A liferaft must be inspected and repacked by an approved service station **as specified by the manufacturer, and at least every two years**. According to the official question catalog, this applies to all inflatable life-saving equipment, including automatic life jackets. You will usually find the date on the container. An overdue liferaft is a risk you should not rely on.
 - **Stowage:** The raft must be quick to reach and easy to get into the water. Containers on deck are often fitted with a **hydrostatic release unit**, which frees the raft if the boat sinks.
 - **Painter:** The painter (firing line) must be attached to the boat before you throw the raft, or it will drift away.
 
@@ -88,16 +89,16 @@ In an emergency, what counts is that others quickly learn **that** you need help
 - **EPIRB and PLB:** These beacons transmit a 406 MHz signal via the COSPAS-SARSAT satellite system in an emergency. An EPIRB belongs to the boat, a PLB (personal locator beacon) is worn on the body. Such devices must be registered or coded. Clarify this with the dealer or the responsible authority when you buy one.
 - **AIS MOB transmitter:** Small transmitters on the life jacket that, when triggered, send a signal shown on nearby AIS devices. This makes it easier to find a person who has gone overboard.
 - **Distress flares:** Hand flares, smoke signals and parachute rockets are basic equipment at sea. In Germany you need a **certificate of competence (Fachkundenachweis, FKN)** for certain pyrotechnic signals. More on that in [Pyrotechnics on board](/en/blog/fkn-pyrotechnic-distress-signals/), and the meaning of each signal is explained in [Distress signals at sea](/en/blog/distress-signals-at-sea/).
-- **Sound signals:** Under the collision regulations, vessels of 12 meters or more in length must carry a whistle. Smaller vessels do not need a whistle in the sense of the rules, but must have some other means of making an efficient sound signal, such as a horn. More in [Sound signals explained](/en/blog/sound-signals-sbf-explained/).
+- **Sound signals:** At sea, under the collision regulations, vessels of 12 meters or more in length must carry a whistle. Smaller vessels do not need a whistle in the sense of the rules, but must have some other means of making an efficient sound signal, such as a horn. On German inland waterways, the inland navigation rules (BinSchStrO) apply. More in [Sound signals explained](/en/blog/sound-signals-sbf-explained/).
 - **Radar reflector:** Small plastic or wooden boats are hard to see on other ships' radar. A radar reflector, mounted as high as possible, improves this significantly, especially in poor visibility.
 
 ## Fire on board
 
 Fuel, gas, electrics and a confined space: a fire on a boat can spread quickly, and you cannot simply walk away. That is why you need:
 
-- **Fire extinguishers** suitable for the fire classes that can occur on board, easy to reach and not mounted behind a likely source of fire. Check the **inspection date** and have extinguishers inspected regularly by a competent person.
+- **Fire extinguishers** suitable for the fire classes that can occur on board, easy to reach and not mounted behind a likely source of fire. ABC dry powder or foam extinguishers are appropriate. Check the **inspection date** and have extinguishers inspected at least every two years by a competent person.
 - **A fire blanket**, especially near the stove, to smother small fires.
-- **Gas and CO detectors** if you cook or heat with gas or use a cabin with a combustion engine. Gas is heavier than air and collects in the bilge.
+- **Gas and CO detectors** if you cook or heat with gas or if exhaust from an engine, generator or heater can get into the cabin. Liquefied gas (propane, butane) is heavier than air, collects in the bilge and forms an explosive mixture with air.
 
 Prevention is just as important: refuel with the engine off, wipe up spilled fuel, ventilate the engine compartment and have gas systems checked regularly.
 
