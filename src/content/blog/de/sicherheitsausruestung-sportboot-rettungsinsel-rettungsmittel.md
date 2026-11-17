@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "boat-safety-equipment-liferaft-rescue-gear"
 faq:
   - question: "Gibt es in Deutschland eine Pflichtliste für die Sicherheitsausrüstung privater Sportboote?"
-    answer: "Für privat genutzte Sportboote gibt es in Deutschland keine umfassende, allgemein verbindliche Ausrüstungsliste, wie sie manche andere Länder kennen. Einzelne Pflichten ergeben sich aus Vorschriften wie den Kollisionsverhütungsregeln, etwa für Schallsignale. Ansonsten bist du als Schiffsführerin oder Schiffsführer dafür verantwortlich, dass die Ausrüstung zu Boot, Revier und Besatzung passt. Bei Mietbooten und im Ausland können eigene Vorgaben gelten."
+    answer: "Für privat genutzte Sportboote gibt es in Deutschland keine umfassende, allgemein verbindliche Ausrüstungsliste, wie sie manche andere Länder kennen. Einzelne Pflichten ergeben sich aus Vorschriften wie den Kollisionsverhütungsregeln, etwa für Schallsignale. Ansonsten bist du als Schiffsführerin oder Schiffsführer dafür verantwortlich, dass die Ausrüstung zu Boot, Revier und Besatzung passt. Bei Mietbooten, im Ausland und auf dem Bodensee können eigene Vorgaben gelten."
   - question: "Brauche ich auf einem Sportboot eine Rettungsinsel?"
     answer: "Auf Binnengewässern und bei Tagesfahrten in Landnähe ist eine Rettungsinsel meist nicht üblich. Für Fahrten weiter vor der Küste oder über offene Seegebiete ist sie dagegen ein wichtiges Rettungsmittel. Entscheidend sind Revier, Entfernung zur Küste, Wassertemperatur und wie schnell Hilfe dich erreichen kann."
   - question: "Wie oft muss eine Rettungsinsel gewartet werden?"

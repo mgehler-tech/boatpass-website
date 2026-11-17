@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "sicherheitsausruestung-sportboot-rettungsinsel-rettungsmittel"
 faq:
   - question: "Is there a mandatory safety equipment list for private recreational boats in Germany?"
-    answer: "For privately used recreational boats, Germany has no comprehensive, generally binding equipment list of the kind some other countries have. Individual duties follow from rules such as the collision regulations, for example for sound signals. Beyond that, you as the skipper are responsible for making sure the equipment suits the boat, the waters and the crew. Rental boats and boating abroad may come with their own requirements."
+    answer: "For privately used recreational boats, Germany has no comprehensive, generally binding equipment list of the kind some other countries have. Individual duties follow from rules such as the collision regulations, for example for sound signals. Beyond that, you as the skipper are responsible for making sure the equipment suits the boat, the waters and the crew. Rental boats, boating abroad and Lake Constance may come with their own requirements."
   - question: "Do I need a liferaft on a recreational boat?"
     answer: "On inland waters and on day trips close to shore, a liferaft is usually not carried. For trips further offshore or across open sea areas, however, it is an important piece of rescue equipment. What matters is the area, the distance from the coast, the water temperature and how quickly help can reach you."
   - question: "How often does a liferaft need servicing?"
