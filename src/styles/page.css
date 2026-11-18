@@ -523,7 +523,11 @@ a.license-card:hover .license-link { gap: 10px; }
   color: var(--h-muted);
   background: var(--h-card);
 }
-.license-card-disabled { opacity: 0.7; cursor: default; }
+/* Nicht verlinkte „bald"-Karte: kein Opacity auf der ganzen Karte – das drückte
+   Beschreibung und Badge unter 4.5:1 (WCAG 1.4.3). Gedimmt wird nur das Icon;
+   der „bald"-Badge und der fehlende Link signalisieren den Status. */
+.license-card-disabled { cursor: default; }
+.license-card-disabled .license-icon { opacity: 0.6; }
 @media (prefers-reduced-motion: reduce) {
   .pg-banner, .license-card, .license-link { transition: none; }
 }
