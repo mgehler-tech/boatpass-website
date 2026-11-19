@@ -74,7 +74,7 @@ When **leaving a berth** you can use this effect deliberately. If the boat is ly
 The **turning circle** is the circle a boat describes with full rudder. Its size depends on factors such as:
 
 - **Boat length and hull shape:** long, narrow hulls with a long keel usually need more room than short boats.
-- **Drive and rudder:** steerable drives, large rudder blades or a bow thruster make the turning circle smaller.
+- **Drive and rudder:** steerable drives and large rudder blades make the turning circle smaller, while a bow thruster also lets you turn almost on the spot.
 - **Speed:** at higher speed the boat carries more momentum and slides outward in the turn.
 - **Wind and current:** they distort the circle because the boat is set sideways during the turn.
 
@@ -89,7 +89,7 @@ What matters is the propeller's direction of rotation. With a **right-handed pro
 - **Going astern**, the stern is pulled to **port**. This is usually where the effect is most noticeable.
 - **Going ahead**, the force acts toward the other side, but it is largely compensated by the good rudder effect.
 
-With a left-handed propeller it is the other way round. On boats with a rudder blade, prop walk is often more noticeable than on outboards, which partly compensate through the direction of thrust. Find out which way your boat pulls in reverse. The easiest way is to engage reverse in open water with the rudder amidships and watch where the stern goes.
+With a left-handed propeller it is the other way round. On shaft drives with a rudder blade, prop walk is usually most noticeable. With outboards and sterndrives you can partly compensate for it by swiveling the drive. Find out which way your boat pulls in reverse. The easiest way is to engage reverse in open water with the rudder amidships and watch where the stern goes.
 
 Prop walk is not a defect but a tool. If you know the stern pulls to port in reverse, you prefer to come alongside port side to, because a short burst astern to stop the boat then pulls the stern toward the jetty. Experienced skippers also use the effect deliberately when turning in a tight space.
 
@@ -102,7 +102,7 @@ A boat has no brakes. This is the point beginners underestimate most often.
 When you take off the throttle, water resistance gradually slows the boat down. How quickly that happens depends heavily on the type of boat:
 
 - **Planing boats** drop off the plane when you throttle back and lose a lot of speed in the process. Watch out for your own stern wave, which can catch up from behind and give the boat a brief push.
-- **Displacement boats**, meaning heavier boats that always sit in the water, keep their way on much longer. Heavy sailing yachts under engine in particular often glide surprisingly far.
+- **Displacement boats**, meaning heavier boats that always sit in the water, keep their way on much longer. Heavy sailing yachts under engine in particular often coast surprisingly far.
 
 The **heavier** a boat, the more momentum it carries. That applies to the same boat too: fully loaded with crew, luggage and full tanks it handles more sluggishly than when you are out alone.
 

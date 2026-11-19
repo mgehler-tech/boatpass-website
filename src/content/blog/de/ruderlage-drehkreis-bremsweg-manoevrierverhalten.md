@@ -29,7 +29,7 @@ Der wichtigste Unterschied: Ein Boot hat **keinen festen Kontakt zum Untergrund*
 - **Ein Boot lenkt mit dem Heck.** Das Ruder sitzt hinten, also wird das Heck zur Seite gedrückt und der Bug dreht in die gewünschte Richtung.
 - **Ein Boot bremst nicht.** Es gibt nur Auslaufen lassen und Gegenschub. Der Weg bis zum Stillstand ist immer länger, als Einsteiger erwarten.
 
-Diese Prinzipien gelten für das kleine Motorboot auf dem Baggersee ebenso wie für die Segelyacht unter Motor. Der Umfang der Effekte unterscheidet sich je nach Bootstyp, das Grundverhalten bleibt gleich.
+Diese Prinzipien gelten für das kleine Motorboot auf dem Baggersee ebenso wie für die Segelyacht unter Motor. Wie stark die Effekte ausfallen, unterscheidet sich je nach Bootstyp, das Grundverhalten bleibt gleich.
 
 ## Ruderlage und Ruderwirkung verstehen
 
@@ -73,8 +73,8 @@ Beim **Ablegen** kannst du diesen Effekt bewusst nutzen. Liegt das Boot längsse
 
 Der **Drehkreis** ist der Kreis, den ein Boot bei voller Ruderlage beschreibt. Wie groß er ist, hängt unter anderem ab von:
 
-- **Bootslänge und Rumpfform:** Lange, schmale Rümpfe mit langem Kiel drehen meist weiter als kurze Boote.
-- **Antrieb und Ruder:** Schwenkbare Antriebe, große Ruderblätter oder ein Bugstrahlruder verkleinern den Drehkreis.
+- **Bootslänge und Rumpfform:** Lange, schmale Rümpfe mit langem Kiel brauchen meist mehr Platz zum Drehen als kurze Boote.
+- **Antrieb und Ruder:** Schwenkbare Antriebe und große Ruderblätter verkleinern den Drehkreis, ein Bugstrahlruder ermöglicht zusätzlich das Drehen fast auf der Stelle.
 - **Geschwindigkeit:** Bei höherer Fahrt baut das Boot mehr Schwung auf und driftet in der Kurve nach außen.
 - **Wind und Strom:** Sie verformen den Kreis, weil das Boot während der Drehung versetzt wird.
 
@@ -89,7 +89,7 @@ Entscheidend ist die Drehrichtung des Propellers. Bei einem **rechtsgängigen Pr
 - **Bei Rückwärtsfahrt** wird das Heck nach **Backbord** gezogen. Hier ist der Effekt meist am deutlichsten.
 - **Bei Vorausfahrt** wirkt die Kraft zur anderen Seite, wird aber durch die gute Ruderwirkung weitgehend ausgeglichen.
 
-Bei einem linksgängigen Propeller ist es entsprechend umgekehrt. Bei Booten mit Ruderblatt fällt der Radeffekt oft stärker auf als bei Außenbordern, die einen Teil durch die Schubrichtung ausgleichen. Finde heraus, in welche Richtung dein Boot beim Rückwärtsfahren zieht. Das gelingt am einfachsten, wenn du im freien Wasser mit Ruder mittschiffs rückwärts einkuppelst und beobachtest, wohin das Heck wandert.
+Bei einem linksgängigen Propeller ist es entsprechend umgekehrt. Bei Wellenantrieben mit Ruderblatt fällt der Radeffekt meist am stärksten auf. Bei Außenbordern und Z-Antrieben lässt er sich durch Schwenken des Antriebs teilweise ausgleichen. Finde heraus, in welche Richtung dein Boot beim Rückwärtsfahren zieht. Das gelingt am einfachsten, wenn du im freien Wasser mit Ruder mittschiffs rückwärts einkuppelst und beobachtest, wohin das Heck wandert.
 
 Der Radeffekt ist kein Fehler, sondern ein Werkzeug. Wer weiß, dass das Heck rückwärts nach Backbord zieht, legt bevorzugt mit der Backbordseite an, weil ein kurzer Rückwärtsschub zum Aufstoppen das Heck dann zum Steg hin zieht. Auch beim Drehen auf engem Raum nutzen erfahrene Skipper den Effekt gezielt.
 
@@ -102,7 +102,7 @@ Ein Boot hat keine Bremse. Das ist der Punkt, den Einsteiger am häufigsten unte
 Nimmst du das Gas weg, wird das Boot allmählich durch den Wasserwiderstand langsamer. Wie schnell das geht, hängt stark vom Bootstyp ab:
 
 - **Gleitboote** fallen nach dem Gaswegnehmen von der Gleitfahrt zurück ins Wasser und verlieren dabei deutlich an Fahrt. Achte darauf, dass die Heckwelle von hinten nachlaufen und das Boot kurz anschieben kann.
-- **Verdränger**, also schwerere Boote, die immer im Wasser liegen, behalten ihre Fahrt viel länger. Gerade schwere Segelyachten unter Motor gleiten oft überraschend weit.
+- **Verdränger**, also schwerere Boote, die immer im Wasser liegen, behalten ihre Fahrt viel länger. Gerade schwere Segelyachten unter Motor laufen oft überraschend weit aus.
 
 Je **schwerer** ein Boot ist, desto mehr Schwung trägt es mit sich. Das gilt auch für dasselbe Boot: Voll beladen mit Crew, Gepäck und vollen Tanks verhält es sich träger als bei einer Solofahrt.
 
@@ -118,7 +118,7 @@ Wie lang dein Weg bis zum Stillstand ist, lässt sich nicht pauschal angeben. Er
 
 Neben Ruder und Propeller wirken äußere Kräfte auf das Boot. Bei langsamer Fahrt werden sie im Verhältnis zur Ruderwirkung immer bedeutender.
 
-- **Wind:** Bug, Aufbauten, Kajüte oder Bimini bieten Angriffsfläche. Bei geringer Fahrt neigt bei vielen Motorbooten der Bug dazu, vom Wind weggedrückt zu werden, weil vorn viel Fläche, aber wenig Tiefgang ist. Wie stark das ausfällt, hängt vom Boot ab.
+- **Wind:** Bug, Aufbauten, Kajüte oder Bimini bieten Angriffsfläche. Bei vielen Motorbooten neigt der Bug bei geringer Fahrt dazu, vom Wind weggedrückt zu werden, weil vorn viel Fläche, aber wenig Tiefgang ist. Wie stark das ausfällt, hängt vom Boot ab.
 - **Strömung:** Sie versetzt das ganze Boot. In Flüssen ist es oft sinnvoll, gegen den Strom anzulegen, weil du so langsam über Grund fahren und trotzdem steuern kannst.
 - **Flaches Wasser:** Wird das Wasser unter dem Kiel knapp, kann das Boot träger reagieren, und der Rumpf kann tiefer einsinken. In flachen Abschnitten, etwa auf Kanälen, solltest du deshalb mit angepasster Fahrt unterwegs sein.
 
