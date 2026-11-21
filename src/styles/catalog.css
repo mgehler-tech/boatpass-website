@@ -259,7 +259,12 @@
   align-items: center;
   gap: 8px;
   max-width: calc(100% - 16px);
-  min-height: 40px;
+  /* Primärer Conversion-CTA jeder gesperrten Frage ("… in der App") – auf die
+     44px-Trefferfläche gebracht, die der Rest dieser Datei (.cq-topics a,
+     .cq-toggle, .pt-check, .pt-field select) bereits einhält (WCAG 2.5.5).
+     Vorher 40px: 4px unter dem Standard und als einziges Bedienelement hier
+     aus der Reihe. Rein größenbezogen, keine Marken-Hexcodes/Tokens berührt. */
+  min-height: 44px;
   padding: 8px 16px;
   border: 1px solid var(--h-line);
   border-radius: var(--h-r-pill);
