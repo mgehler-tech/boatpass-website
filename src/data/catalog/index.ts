@@ -61,6 +61,9 @@ export interface Topic {
   key: string;
   slug: L;
   title: L;
+  /** Optional kürzere Themenbezeichnung nur für den <title>, falls der volle Titel
+   *  mit „| Boatpass“ über 60 Zeichen käme. Fällt sonst auf `title` zurück. */
+  metaTitle?: Partial<L>;
   /** Einleitung über den Fragen: was das Thema abdeckt, worauf es ankommt. */
   intro: L;
   numbers: number[];
@@ -226,6 +229,7 @@ export const TOPICS: Record<CatalogKey, Topic[]> = {
       key: 'schall',
       slug: { de: 'schallsignale-verminderte-sicht', en: 'sound-signals-restricted-visibility' },
       title: { de: 'Schallsignale & verminderte Sicht', en: 'Sound signals & restricted visibility' },
+      metaTitle: { en: 'Sound signals & poor visibility' },
       intro: {
         de: 'Nebelsignale, Manöversignale, das allgemeine Gefahr- und Warnsignal und das Verhalten bei verminderter Sicht. Merk dir die Signale als Rhythmus (lang, kurz, kurz), dann lassen sich die Antworten leicht unterscheiden.',
         en: 'Fog signals, manoeuvring signals, the general danger and warning signal and conduct in restricted visibility. Remember the signals as a rhythm (long, short, short), then the answers are easy to tell apart.',
@@ -296,6 +300,7 @@ export const TOPICS: Record<CatalogKey, Topic[]> = {
       key: 'sicherheit',
       slug: { de: 'seemannschaft-sicherheit-notsignale', en: 'seamanship-safety-distress-signals' },
       title: { de: 'Seemannschaft, Sicherheit & Notsignale', en: 'Seamanship, safety & distress signals' },
+      metaTitle: { en: 'Seamanship & distress signals' },
       intro: {
         de: 'Schleppen bei Seegang, Sicherheitsmaßnahmen vor schwerem Wetter, Mensch über Bord, Kentern und die Not- und Flaggensignale. Hier geht es um die Lagen, in denen auf See schnell gehandelt werden muss.',
         en: 'Towing in a seaway, safety measures before heavy weather, man overboard, capsizing and distress and flag signals. These are the situations at sea where you have to act fast.',

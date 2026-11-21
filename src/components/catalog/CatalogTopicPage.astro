@@ -44,13 +44,50 @@ const count = groups.reduce((n, g) => n + g.questions.length, 0);
 const path = (l: Lang) => (isBasis ? CATALOGS.basis.hub[l] : topicUrl(catalog, topic!, l));
 const name = meta.name[lang];
 
-// Titel und Beschreibung. Fokus-Keyword (SBF Binnen / SBF See) steht vorn; mit
-// dem Seitennamen „| Boatpass“ bleiben die Titel möglichst unter 60 Zeichen.
+// Titel und Beschreibung. Fokus-Keyword (SBF Binnen / SBF See) steht vorn.
+// Ziel: <title> inkl. „ | Boatpass“ 50–60 Zeichen, Meta-Description 140–155 Zeichen.
+// Je Thema wird aus mehreren Formulierungen die erste gewählt, die in den Zielbereich passt.
+const BRAND_SUFFIX = ' | Boatpass'.length;
 function topicTitle() {
-  const t = topic!.title[lang];
-  const base = `${name}: ${t}`;
-  const full = de ? `${base} – Prüfungsfragen` : `${base} – exam questions`;
-  return full.length + ' | Boatpass'.length + 0 <= 60 ? full : base;
+  const t = topic!.metaTitle?.[lang] ?? topic!.title[lang];
+  const suffixes = de
+    ? [` – alle ${count} Prüfungsfragen`, ` – ${count} Prüfungsfragen`, ' – Prüfungsfragen', ' – Fragen', '']
+    : [` – all ${count} exam questions`, ` – ${count} exam questions`, ' – exam questions', ' – questions', ''];
+  const candidates = suffixes.map(s => `${name}: ${t}${s}`);
+  return candidates.find(c => c.length + BRAND_SUFFIX <= 60) ?? candidates[candidates.length - 1];
+}
+function topicDescription() {
+  const v = CATALOG_VALID_FROM[lang];
+  const t = de ? topic!.title.de : topic!.title.en.charAt(0).toLowerCase() + topic!.title.en.slice(1);
+  const leads = de
+    ? [
+      `${name} ${t}: alle ${count} amtlichen Prüfungsfragen mit richtiger Antwort.`,
+      `${name} ${t}: alle ${count} amtlichen Fragen mit Antwort.`,
+    ]
+    : [
+      `${name} ${t}: all ${count} official exam questions with the correct answer.`,
+      `${name} ${t}: all ${count} official questions with answers.`,
+    ];
+  const ctas = de
+    ? [
+      ` Jetzt kostenlos online üben und sicher in die Prüfung gehen – Katalogstand ${v}.`,
+      ` Jetzt kostenlos online üben – Katalogstand ${v}.`,
+      ` Kostenlos online üben – Katalogstand ${v}.`,
+      ` Jetzt kostenlos online üben, Stand ${v}.`,
+      ` Jetzt online üben, Stand ${v}.`,
+      ' Jetzt kostenlos online üben.',
+    ]
+    : [
+      ` Practise free online and walk into your exam prepared – catalogue valid since ${v}.`,
+      ` Practise free online now – catalogue valid since ${v}.`,
+      ` Practise free online – catalogue valid since ${v}.`,
+      ` Practise free online now, valid since ${v}.`,
+      ` Practise online now, valid since ${v}.`,
+      ' Practise free online now.',
+    ];
+  const candidates = leads.flatMap(l => ctas.map(c => l + c));
+  return candidates.find(c => c.length >= 140 && c.length <= 155)
+    ?? candidates.reduce((best, c) => (Math.abs(c.length - 147) < Math.abs(best.length - 147) ? c : best));
 }
 const title = isBasis
   ? (de ? `SBF Basisfragen: alle ${count} Fragen mit Antworten` : `SBF basic questions: all ${count} with answers`)
@@ -58,10 +95,8 @@ const title = isBasis
 const description = isBasis
   ? (de
     ? `Alle ${count} amtlichen Basisfragen für SBF Binnen und SBF See mit richtiger Antwort, nach Themen sortiert. Online selbst testen, Katalogstand ${CATALOG_VALID_FROM.de}.`
-    : `All ${count} official basic questions for SBF Inland and SBF Coastal with the correct answer, sorted by topic. Test yourself online, catalogue valid since ${CATALOG_VALID_FROM.en}.`)
-  : (de
-    ? `Alle ${count} amtlichen ${name}-Prüfungsfragen zum Thema ${topic!.title.de} mit richtiger Antwort. Online selbst testen, Katalogstand ${CATALOG_VALID_FROM.de}.`
-    : `All ${count} official ${name} exam questions on ${topic!.title.en.toLowerCase()} with the correct answer. Test yourself online, catalogue valid since ${CATALOG_VALID_FROM.en}.`);
+    : `All ${count} official basic questions for SBF Inland and SBF Coastal with answers, sorted by topic. Test yourself online, catalogue valid since ${CATALOG_VALID_FROM.en}.`)
+  : topicDescription();
 
 const heading = isBasis
   ? (de ? 'SBF Basisfragen – alle 72 Fragen' : 'SBF basic questions – all 72')
