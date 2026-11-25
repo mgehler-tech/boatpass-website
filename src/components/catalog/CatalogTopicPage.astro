@@ -44,24 +44,57 @@ const count = groups.reduce((n, g) => n + g.questions.length, 0);
 const path = (l: Lang) => (isBasis ? CATALOGS.basis.hub[l] : topicUrl(catalog, topic!, l));
 const name = meta.name[lang];
 
-// Titel und Beschreibung. Fokus-Keyword (SBF Binnen / SBF See) steht vorn; mit
-// dem Seitennamen „| Boatpass“ bleiben die Titel möglichst unter 60 Zeichen.
-function topicTitle() {
-  const t = topic!.title[lang];
-  const base = `${name}: ${t}`;
-  const full = de ? `${base} – Prüfungsfragen` : `${base} – exam questions`;
-  return full.length + ' | Boatpass'.length + 0 <= 60 ? full : base;
+// Titel und Beschreibung. Fokus-Keyword (SBF Binnen / SBF See) steht vorn.
+// Die Längen schwanken mit dem Themennamen, deshalb wird aus mehreren
+// Formulierungen die erste gewählt, die im Zielkorridor liegt: Titel inkl.
+// „ | Boatpass“ 50–60 Zeichen, Description 140–155 Zeichen.
+const TITLE_SUFFIX = ' | Boatpass'.length;
+function fit(candidates: string[], min: number, max: number, extra = 0): string {
+  const len = (s: string) => s.length + extra;
+  return candidates.find(c => len(c) >= min && len(c) <= max)
+    ?? candidates.filter(c => len(c) <= max).sort((a, b) => b.length - a.length)[0]
+    ?? candidates.slice().sort((a, b) => a.length - b.length)[0];
 }
+
+function topicTitle() {
+  const base = `${name}: ${topic!.title[lang]}`;
+  return fit(de
+    ? [`${base} – Prüfungsfragen`, `${base} – Prüfungsfragen & Antworten`, `${base} – Fragen`, base]
+    : [`${base} – exam questions`, `${base} – exam questions & answers`, `${base} – questions`, base], 50, 60, TITLE_SUFFIX);
+}
+
+function topicDescription() {
+  if (de) {
+    // „SBF-See-Prüfungsfragen“ statt „SBF See-Prüfungsfragen“ (Durchkopplung).
+    const kw = `${name.replace(' ', '-')}-Prüfungsfragen`;
+    const t = topic!.title.de;
+    const d = CATALOG_VALID_FROM.de;
+    return fit([
+      `Alle ${count} amtlichen ${kw} zum Thema ${t} mit richtiger Antwort. Online selbst testen, Katalogstand ${d}.`,
+      `Alle ${count} amtlichen ${kw} zum Thema ${t} mit richtiger Antwort. Jetzt kostenlos online selbst testen, Katalogstand ${d}.`,
+      `Alle ${count} amtlichen ${kw} zum Thema ${t} mit richtiger Antwort. Kostenlos online testen, Katalogstand ${d}.`,
+      `Alle ${count} amtlichen ${kw} zum Thema ${t} mit Antwort. Kostenlos online testen, Stand ${d}.`,
+    ], 140, 155);
+  }
+  const t = topic!.title.en.toLowerCase();
+  const d = CATALOG_VALID_FROM.en;
+  return fit([
+    `All ${count} official ${name} exam questions on ${t} with the correct answer. Test yourself online, catalogue valid since ${d}.`,
+    `All ${count} official ${name} exam questions on ${t} with the correct answer. Test yourself online for free, catalogue valid since ${d}.`,
+    `All ${count} official ${name} exam questions on ${t} with answers. Test yourself online, catalogue valid since ${d}.`,
+    `All ${count} official ${name} exam questions on ${t} with answers. Free online self-test, catalogue of ${d}.`,
+    `All ${count} official ${name} questions on ${t} with answers. Free online test, catalogue of ${d}.`,
+  ], 140, 155);
+}
+
 const title = isBasis
   ? (de ? `SBF Basisfragen: alle ${count} Fragen mit Antworten` : `SBF basic questions: all ${count} with answers`)
   : topicTitle();
 const description = isBasis
   ? (de
     ? `Alle ${count} amtlichen Basisfragen für SBF Binnen und SBF See mit richtiger Antwort, nach Themen sortiert. Online selbst testen, Katalogstand ${CATALOG_VALID_FROM.de}.`
-    : `All ${count} official basic questions for SBF Inland and SBF Coastal with the correct answer, sorted by topic. Test yourself online, catalogue valid since ${CATALOG_VALID_FROM.en}.`)
-  : (de
-    ? `Alle ${count} amtlichen ${name}-Prüfungsfragen zum Thema ${topic!.title.de} mit richtiger Antwort. Online selbst testen, Katalogstand ${CATALOG_VALID_FROM.de}.`
-    : `All ${count} official ${name} exam questions on ${topic!.title.en.toLowerCase()} with the correct answer. Test yourself online, catalogue valid since ${CATALOG_VALID_FROM.en}.`);
+    : `All ${count} official basic questions for SBF Inland and SBF Coastal with answers, sorted by topic. Test yourself online, catalogue valid since ${CATALOG_VALID_FROM.en}.`)
+  : topicDescription();
 
 const heading = isBasis
   ? (de ? 'SBF Basisfragen – alle 72 Fragen' : 'SBF basic questions – all 72')
