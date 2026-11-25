@@ -117,7 +117,12 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
         </figcaption>
       </figure>
 
-      <ol class="hr-list" aria-label={h.reviewsListLabel} data-reveal>
+      <!-- tabindex: Unter 1024px ist die Liste eine horizontale Wischreihe ohne
+           fokussierbare Inhalte. Ohne Tab-Stopp erreichen Tastaturnutzer in
+           Browsern ohne automatisch fokussierbare Scroller (u. a. Safari) nur
+           die erste Karte (WCAG 2.1.1). Ab 1024px entfernt das Skript unten den
+           Tab-Stopp wieder, weil die Karten dort vollständig im Raster stehen. -->
+      <ol class="hr-list" aria-label={h.reviewsListLabel} tabindex="0" data-reveal>
         {cards.map(({ r, row, col }) => (
           <li class="hr-card" style={`--hr-row:${row};--hr-col:${col}`}>
             <figure class="hr-fig">
@@ -158,6 +163,19 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
     </p>
   </div>
 </section>
+
+<script>
+  // Tab-Stopp nur, solange die Liste horizontal scrollt (s. Kommentar am <ol>).
+  const mq = window.matchMedia('(min-width: 1024px)');
+  const sync = () => {
+    document.querySelectorAll<HTMLElement>('.hr-list').forEach((list) => {
+      if (mq.matches) list.removeAttribute('tabindex');
+      else list.setAttribute('tabindex', '0');
+    });
+  };
+  sync();
+  mq.addEventListener('change', sync);
+</script>
 
 <style is:global>
   .hr { background: var(--h-paper); }
@@ -303,6 +321,7 @@ const STAR = 'M8 1.5l1.85 3.75 4.15.6-3 2.93.71 4.13L8 11.02l-3.71 1.9.71-4.13-3
       scrollbar-width: none;
     }
     .hr-list::-webkit-scrollbar { display: none; }
+    .hr-list:focus-visible { outline: 3px solid var(--h-blue); outline-offset: -3px; border-radius: var(--h-r); }
     .hr-card { flex: 0 0 min(84%, 340px); scroll-snap-align: start; }
     /* Gleich hohe Karten, Name direkt unter dem Zitat: Freiraum bleibt
        unten in der Karte statt mitten im Text. */
