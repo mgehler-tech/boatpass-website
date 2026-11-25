@@ -666,3 +666,28 @@ test.describe('Journey stage', () => {
     expect((await page.locator('.hj-phone').boundingBox())!.width).toBeGreaterThanOrEqual(260);
   });
 });
+
+test.describe('Reviews swipe row keyboard access', () => {
+  // WCAG 2.1.1: Below 1024px the review cards scroll horizontally and contain no
+  // focusable content. The list itself must be a tab stop, otherwise keyboard
+  // users in browsers without focusable scrollers (Safari) only see card one.
+  test('mobile: list is focusable and scrolls with the arrow keys', async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: 'reduce' });
+    await page.setViewportSize({ width: 375, height: 800 });
+    await page.goto('/');
+    const list = page.locator('.hr-list');
+    await expect(list).toHaveAttribute('tabindex', '0');
+    await expect(list).toHaveAttribute('aria-label', /.+/);
+    expect(await list.evaluate(el => el.scrollWidth > el.clientWidth)).toBe(true);
+    await list.focus();
+    await expect(list).toBeFocused();
+    await page.keyboard.press('ArrowRight');
+    await expect.poll(() => list.evaluate(el => el.scrollLeft)).toBeGreaterThan(0);
+  });
+
+  test('desktop: no extra tab stop when the cards sit in the grid', async ({ page }) => {
+    await page.setViewportSize({ width: 1280, height: 900 });
+    await page.goto('/');
+    await expect(page.locator('.hr-list')).not.toHaveAttribute('tabindex', /.*/);
+  });
+});
