@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "dogs-and-children-on-board-safety"
 faq:
   - question: "Müssen Kinder auf einem Sportboot eine Rettungsweste tragen?"
-    answer: "Für Sportboote gibt es keine eigene gesetzliche Tragepflicht für Kinder. In der Praxis gilt trotzdem: an Deck und im offenen Boot immer Weste an, auch im Hafen und bei ruhigem Wetter. Sie muss zum Körpergewicht passen, fest angezogen sein und den Schrittgurt geschlossen haben. Verantwortlich dafür ist der Schiffsführer."
+    answer: "Die Binnenschifffahrtsstraßen-Ordnung enthält für Sportboote keine eigene Tragepflicht für Kinder. In der Praxis gilt trotzdem: an Deck und im offenen Boot immer Weste an, auch im Hafen und bei ruhigem Wetter. Sie muss zum Körpergewicht passen, fest angezogen sein und den Schrittgurt geschlossen haben. Verantwortlich dafür ist der Schiffsführer."
   - question: "Braucht mein Hund an Bord eine Schwimmweste?"
     answer: "Eine gesetzliche Pflicht gibt es nicht, sinnvoll ist eine Hundeschwimmweste aber fast immer. Wichtig sind eine gute Passform, ein stabiler Haltegriff auf dem Rücken zum Herausheben und eine auffällige Farbe. Die Norm EN ISO 12402 gilt nur für Personen, bei Hundewesten kommt es deshalb besonders auf die eigene Prüfung von Sitz und Verarbeitung an."
   - question: "Was tun, wenn der Hund über Bord fällt?"

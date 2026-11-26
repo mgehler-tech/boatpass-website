@@ -10,7 +10,7 @@ author: "Marius Gehler"
 altSlug: "hund-und-kinder-an-bord-sicherheit"
 faq:
   - question: "Do children have to wear a life jacket on a recreational boat?"
-    answer: "There is no specific legal requirement for children on recreational boats. In practice, though, the rule is: life jacket on whenever on deck or in an open boat, in the harbour and in calm weather too. It must match the child's body weight, be done up tightly and have the crotch strap fastened. The skipper is responsible for this."
+    answer: "German inland waterway rules contain no specific requirement for children on recreational boats. In practice, though, the rule is: life jacket on whenever on deck or in an open boat, in the harbour and in calm weather too. It must match the child's body weight, be done up tightly and have the crotch strap fastened. The skipper is responsible for this."
   - question: "Does my dog need a life jacket on board?"
     answer: "There is no legal requirement, but a dog life jacket makes sense almost every time. What matters is a good fit, a sturdy grab handle on the back for lifting, and a bright colour. The EN ISO 12402 standard only covers people, so with dog jackets it is especially important to check the fit and build quality yourself."
   - question: "What should I do if my dog falls overboard?"
