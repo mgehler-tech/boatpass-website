@@ -55,7 +55,7 @@ altSlug: "<slug der anderen Sprache>"   # für hreflang DE↔EN, MUSS gegenseiti
 ---
 ```
 
-Bestehende Tags (DE): `Vorbereitung`, `Prüfungswissen`. EN-Pendant: `Exam Knowledge`.
+Bestehende Tags (DE): `Vorbereitung`, `Prüfungswissen`. EN-Pendants: `Vorbereitung` = `Preparation`, `Prüfungswissen` = `Exam Knowledge`.
 Neue Tags nur, wenn wirklich nötig und konsistent in beiden Sprachen.
 
 ## Stil & Aufbau (am Bestand orientiert)

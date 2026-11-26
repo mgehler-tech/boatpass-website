@@ -60,9 +60,11 @@ Slugs). Bei < 4 offenen Themen neue unten ergänzen. Keine Dopplung mit Bestand.
 - [x] Sprechfunk-Verkehr in der Praxis – Beispieldialoge für Anruf, Antwort und Verbindungsabbau (2026-11-10: sprechfunk-praxis-beispieldialoge-anruf-antwort / marine-radio-in-practice-example-dialogues; Themen-Lücke: praktische Funkdisziplin/Phraseologie, ergänzt das offene Thema "Seefunk und Sprechfunk – Grundlagen")
 - [x] Rettungsinsel, Rettungsmittel und Sicherheitsausrüstung – was gehört auf ein Sportboot? (Themen-Lücke: Ausrüstungs-Überblick jenseits von Rettungsweste und Pyrotechnik; 2026-11-17: sicherheitsausruestung-sportboot-rettungsinsel-rettungsmittel / boat-safety-equipment-liferaft-rescue-gear)
 - [x] Ruderlage, Drehkreis und Bremsweg – wie Boote auf Manöver reagieren (Themen-Lücke: Manövriereigenschaften, ergänzt Anlegen/Ablegen und Mann-über-Bord; 2026-11-19: ruderlage-drehkreis-bremsweg-manoevrierverhalten / rudder-turning-circle-stopping-distance-boat-handling)
-- [ ] Hund und Kinder an Bord – Sicherheit, Rettungswesten und Verhalten auf dem Boot (Themen-Lücke: Familien- und Haustier-Sicherheit, ergänzt Rettungsweste und Kinder am Steuer)
+- [x] Hund und Kinder an Bord – Sicherheit, Rettungswesten und Verhalten auf dem Boot (Themen-Lücke: Familien- und Haustier-Sicherheit, ergänzt Rettungsweste und Kinder am Steuer; 2026-11-26: hund-und-kinder-an-bord-sicherheit / dogs-and-children-on-board-safety)
 - [ ] Tanken und Kraftstoffverbrauch planen – Reichweite, Reserve und Sicherheit beim Bunkern (Themen-Lücke: Törnplanung Kraftstoff, ergänzt Außenborder-Basiswartung)
 - [ ] Festmacherleinen, Fender und Leinenführung – richtig vertäuen im Hafen (Themen-Lücke: Ausrüstung und Technik, ergänzt Anlegen/Ablegen und Knoten)
 - [ ] Segeln für Einsteiger – Segelstellungen, Kurse zum Wind und Wende/Halse verständlich erklärt (Themen-Lücke: Segelpraxis, ergänzt Motorboot oder Segelboot)
+- [ ] Fahrwasser, Fahrrinne und Fahrwassermitte – wo Sportboote fahren sollten und wo nicht (Themen-Lücke: Verkehrsraum-Verhalten, ergänzt Seezeichen-Lateralsystem und Ausweichregeln)
+- [ ] Bootsbatterie und Bordelektrik – Starterbatterie, Verbraucherbatterie und Landstrom einfach erklärt (Themen-Lücke: Bordtechnik, ergänzt Außenborder-Basiswartung)
 
 ## Erledigt
