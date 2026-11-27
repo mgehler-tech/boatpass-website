@@ -39,7 +39,7 @@ test.describe('Themenseiten', () => {
     await expect(card.locator('.cq-a.is-correct')).toHaveCount(1);
     await expect(card.locator('.cq-tag')).toHaveText('Richtig');
     await expect(card.locator('.cq-figs img')).toHaveCount(1);
-    await expect(card.locator('.cq-figs img')).toHaveAttribute('alt', 'Abbildung zu Frage 120');
+    await expect(card.locator('.cq-figs img')).toHaveAttribute('alt', 'SBF Binnen Prüfungsfrage 120 – Abbildung');
     // Erklärung: nur ein Satz; der verschwommene Rest sind Platzhalter ohne Text.
     await expect(card.locator('.cq-x-label')).toHaveText('Erklärung von Boatpass');
     expect((await card.locator('.cq-x-text').innerText()).length).toBeLessThanOrEqual(202);
