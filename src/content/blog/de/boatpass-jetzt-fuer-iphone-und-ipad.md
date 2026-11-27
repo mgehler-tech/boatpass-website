@@ -30,7 +30,7 @@ BoatPass für iPhone und iPad ist eine eigenständige App, gebaut mit Apples eig
 
 ### Alle amtlichen Fragen
 
-BoatPass enthält den vollständigen amtlichen Fragenkatalog, gültig für das Prüfungsjahr 2026:
+BoatPass enthält den vollständigen amtlichen Fragenkatalog in der aktuell gültigen Fassung:
 
 - **SBF Binnen** (Motor und Segel): 300 Fragen
 - **SBF See**: 285 Fragen und 15 Navigationsaufgaben
