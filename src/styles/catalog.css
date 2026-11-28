@@ -258,6 +258,18 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  /* width: max-content statt Shrink-to-fit. Als absolut positioniertes
+     inline-flex ohne eigene Breite schrumpfte die Pille auf dem Handy bis fast
+     auf ihre min-content-Breite (bei 360px nur ~141px von 282px verfügbaren)
+     und zwang das Label in 4–5 Zeilen; der so ~109px hohe Button lief dabei bis
+     zu 22px unter seine 64px hohe Blur-Platzhalterfläche hinaus. Mit max-content
+     nimmt die Pille die Einzeilerbreite an, die max-width (s. u.) auf dem Handy
+     auf die verfügbare Breite deckelt – das Label bricht sauber auf höchstens
+     zwei Zeilen und bleibt innerhalb des Platzhalters. Auf dem Desktop bleibt
+     die Pille unverändert einzeilig. Reiner Layout-Feinschliff an der primären
+     Conversion-Pille jeder gesperrten Frage; keine Marken-Hexcodes/Tokens
+     berührt. */
+  width: max-content;
   max-width: calc(100% - 16px);
   /* Primärer Conversion-CTA jeder gesperrten Frage ("… in der App") – auf die
      44px-Trefferfläche gebracht, die der Rest dieser Datei (.cq-topics a,
