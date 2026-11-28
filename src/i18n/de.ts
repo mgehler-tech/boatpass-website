@@ -169,7 +169,7 @@ export const de = {
     // Redesign der Preis-Sektion (Startseite) – Header, SBF-Karten, Funk, Katalog-Hinweis
     v2Chip: 'Amtliche Fragenkataloge',
     v2Title: 'Wähle deine Lizenz',
-    v2Subtitle: 'Alle Fragen stammen aus dem amtlichen Katalog in der für 2026 gültigen Fassung. Ändert sich der Katalog, kommen die neuen Fragen ohne Zusatzkosten in die App.',
+    v2Subtitle: 'Alle Fragen stammen aus dem amtlichen Katalog in der aktuell gültigen Fassung. Ändert sich der Katalog, kommen die neuen Fragen ohne Zusatzkosten in die App.',
     v2MetaCatalogs: 'Aktuelle Kataloge',
     v2MetaValid: 'Gültig für alle Prüfungen 2026',
     guaranteeTitle: 'Wenn sich der Katalog ändert',
@@ -222,7 +222,7 @@ export const de = {
     lrcStand: 'gültig seit 01.02.2024',
     ubiCat: 'Fragenkatalog UBI · UKW-Sprechfunk Binnen',
     ubiStand: 'gültig seit 01.10.2026',
-    validityNote: 'Das Datum zeigt, seit wann die jeweilige amtliche Fassung gilt – nicht das Alter der Fragen. Alle hier gelisteten Kataloge sind für das Prüfungsjahr 2026 maßgeblich. Kommt eine neue Fassung heraus, bauen wir sie automatisch ein.',
+    validityNote: 'Das Datum zeigt, seit wann die jeweilige amtliche Fassung gilt – nicht das Alter der Fragen. Alle hier gelisteten Kataloge sind aktuell maßgeblich. Kommt eine neue Fassung heraus, bauen wir sie automatisch ein.',
     issuerNote: 'Alle Kataloge werden im Auftrag des Bundesministeriums für Digitales und Verkehr (BMDV) bzw. der Wasserstraßen- und Schifffahrtsverwaltung des Bundes veröffentlicht: SBF-, SRC- und LRC-Kataloge über ELWIS, der UBI-Katalog über die Fachstelle ABVT der WSV. Rechtsverbindlich ist allein die Bekanntmachung im Verkehrsblatt.',
     pageStandLabel: 'Stand dieser Übersicht',
     disclaimer: 'Maßgeblich ist immer die amtliche Veröffentlichung – die verlinkten amtlichen Seiten zeigen stets die aktuell gültige Fassung.',

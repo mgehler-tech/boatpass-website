@@ -152,7 +152,7 @@ export const en: Translations = {
     // Pricing section redesign (home) – header, SBF cards, radio certs, catalogue note
     v2Chip: 'Official question catalogues',
     v2Title: 'Choose your licence',
-    v2Subtitle: 'Every question comes from the official catalogue in the edition valid for 2026. When the catalogue changes, the new questions reach the app at no extra cost.',
+    v2Subtitle: 'Every question comes from the official catalogue in its currently valid edition. When the catalogue changes, the new questions reach the app at no extra cost.',
     v2MetaCatalogs: 'Current catalogues',
     v2MetaValid: 'Valid for all 2026 exams',
     guaranteeTitle: 'When the catalogue changes',
@@ -205,7 +205,7 @@ export const en: Translations = {
     lrcStand: 'valid since 01 Feb 2024',
     ubiCat: 'UBI catalog · VHF inland radio',
     ubiStand: 'valid since 01 Oct 2026',
-    validityNote: 'The date shows when each official edition came into force – not how old the questions are. Every catalog listed here is authoritative for the 2026 exam year. When a new edition is published, we build it in automatically.',
+    validityNote: 'The date shows when each official edition came into force – not how old the questions are. Every catalog listed here is currently authoritative. When a new edition is published, we build it in automatically.',
     issuerNote: 'All catalogs are published on behalf of the German Federal Ministry for Digital and Transport (BMDV) and the Federal Waterways and Shipping Administration: the SBF, SRC and LRC catalogs via ELWIS, the UBI catalog via the ABVT office of the WSV. Only the announcement in the Verkehrsblatt is legally binding.',
     pageStandLabel: 'This overview as of',
     disclaimer: 'The official publication always prevails – the linked official pages always show the currently valid edition.',
