@@ -144,6 +144,7 @@
 - [Sprechfunk in der Praxis: Beispieldialoge für Anruf und Antwort](https://boatpass.de/blog/sprechfunk-praxis-beispieldialoge-anruf-antwort/): Sprechfunk in der Praxis: So läuft ein Funkgespräch ab, mit Beispieldialogen für Anruf, Antwort, Kanalwechsel, Verbindungsabbau und Notruf.
 - [Sicherheitsausrüstung fürs Sportboot: Rettungsinsel & Co.](https://boatpass.de/blog/sicherheitsausruestung-sportboot-rettungsinsel-rettungsmittel/): Sicherheitsausrüstung fürs Sportboot: Rettungsinsel, Rettungsring, Feuerlöscher, Lenzpumpe und Notfunk. Was an Bord gehört und wie du sie richtig auswählst.
 - [Ruderlage, Drehkreis und Bremsweg – wie Boote auf Manöver reagieren](https://boatpass.de/blog/ruderlage-drehkreis-bremsweg-manoevrierverhalten/): Warum ein Boot keine Bremse hat: Ruderwirkung, Drehpunkt, Radeffekt und Aufstoppen verständlich erklärt, für sichere Manöver und die SBF-Praxisprüfung.
+- [Hund und Kinder an Bord – Sicherheit auf dem Boot](https://boatpass.de/blog/hund-und-kinder-an-bord-sicherheit/): Mit Kindern und Hund aufs Boot: passende Rettungswesten, klare Bordregeln, Schutz vor Sonne und Kälte und was im Notfall zählt. Praxistipps für Skipper.
 
 ## Über
 
@@ -268,3 +269,4 @@
 - [Marine Radio in Practice: Example Dialogues for Calls](https://boatpass.de/en/blog/marine-radio-in-practice-example-dialogues/): Marine radio in practice: how a VHF conversation works, with example dialogues for calling, replying, switching channels, ending a call and a MAYDAY.
 - [Boat Safety Equipment: Liferaft, Rescue Gear & More](https://boatpass.de/en/blog/boat-safety-equipment-liferaft-rescue-gear/): Safety equipment for recreational boats: liferaft, lifebuoy, fire extinguisher, bilge pump and distress radio. What belongs on board and how to choose it.
 - [Rudder, Turning Circle and Stopping Distance – How Boats Respond](https://boatpass.de/en/blog/rudder-turning-circle-stopping-distance-boat-handling/): Why a boat has no brakes: rudder effect, pivot point, prop walk and stopping explained clearly, for safer maneuvers and the SBF practical exam in Germany.
+- [Dogs and Children on Board – Boat Safety Guide](https://boatpass.de/en/blog/dogs-and-children-on-board-safety/): Boating with kids and a dog: the right life jackets, clear rules on board, protection from sun and cold, and what matters in an emergency. Tips for skippers.
